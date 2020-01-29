@@ -1,13 +1,191 @@
-# Instalação {#instalacao}
+---
+title: "Instalação"
+author: "Curso-R"
+date: 2018-07-23
+categories: ["R"]
+tags: ["instalacao"]
+slug: "instalacao"
+minidesc: "Comece instalando os pacotes, IDE's necessários para iniciar a sua jornada no R."
+desc: "Comece instalando os pacotes, IDE's necessários para iniciar a sua jornada no R."
+requisitos: ["rstudio"]
+layout: "article"
+ordem: 1
+---
 
-Teste 
+```{r, message=FALSE, warning=FALSE, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, 
+  out.width = "40%", out.height = "40%",
+  fig.retina = 2
+)
+```
+# Instalação 
+## Instalação do R
 
-conteudo
+### No Windows
 
-```{r}
-1 + 1 + 1
+1. Entre [neste link](https://cran.r-project.org/bin/windows/base/) e clique em 
+"Download R x.x.x for Windows", sendo x.x.x o número da versão mais recente disponível.
+  
+2. Salve o arquivo em qualquer pasta do seu computador. Aqui, salvamos na pasta "Downloads".
+
+<img src="~/Documentos/rseis/livro-material/img/instalacao/01-r-salvo.png" style="width: 80%;">
+
+
+
+3. Clique no arquivo duas vezes com o botão esquerdo. Ele pedirá para você selecionar a linguagem da instalação. Escolha um idioma e clique em "OK".
+
+4. Clique em "Avançar" até chegar na tela da imagem abaixo. Nessa etapa, você precisará escolher a pasta de instalação. Se você escolher um local que não está dentro da pasta do seu usuário, você precisará de acesso de administrador. Se escolher uma pasta dentro do seu usuário (como na imagem abaixo), não precisará.
+
+
+<img src="~/Documentos/rseis/livro-material/img/instalacao/06-r-pasta.png" style="width: 80%;">
+
+
+5. Continue clicando em "Avançar" e, ao fim da instalação, em "Concluir".
+
+
+
+<img src="~/Documentos/rseis/livro-material/img/instalacao/09-conclusao.png" style="width: 80%;">
+
+
+Pronto! O R está instalado no seu computador!
+
+### No Linux
+
+Como a instalação no Linux depende da distribuição utilizada e, em geral, usuário de Linux são mais experientes, vamos informar apenas as coordenadas até as instruções/arquivos de instalação para cada distribuição. Se você tiver alguma dificuldade durante o processo, por favor envie a sua dúvida para contato@curso-r.com. Faremos o possível para ajudar.
+
+1. Acesse [este link](https://cran.r-project.org/) e clique em *Download R for Linux*.
+
+2. Em seguida, clique no link referente à distribuição que você utiliza.
+
+<img src = "https://user-images.githubusercontent.com/8967307/45383184-db384580-b5e0-11e8-8bac-dd40a4d7e76f.png"></img>
+
+3. Siga as instruções contidas na página para instalar o R.
+
+## Instalação do RStudio
+
+### No Windows
+
+Agora vamos instalar o RStudio, a IDE que utilizaremos para editar e executar códigos em R. 
+
+1. Entre [nesta página](https://www.rstudio.com/products/rstudio/download/#download).
+
+
+
+
+<img src="~/Documentos/rseis/livro-material/img/instalacao/rstudio-download-opt.png" style="width: 80%;">
+
+Você terá duas opções:
+
+a) Se você tiver acesso administrador, baixe a versão que está na lista de *All Installers*.  Em seguida a instalação
+será bem simples: fazer o download, abrir o instalador e seguir as instruções, clicando no botão "Avançar". 
+
+b) Se você não tiver acesso de administrador, faça o download da versão
+que está na lista *Zip/Tarballs*. (veja imagem acima)
+
+#### Instalando se você for administrador
+
+2a. Clique duas vezes no arquivo que você baixou da página do RStudio (ver imagem abaixo) e siga as instruções de instalação.
+
+
+
+
+<img src="~/Documentos/rseis/livro-material/img/instalacao/rstudio-instalador.png" style="width: 80%;">
+
+
+#### Instalação se você não for administrador
+
+2b. Se você não for administrador, você deve ter feito o download de um arquivo do tipo *.zip*, que contém o código do RStudio. É o arquivo selecionado na imagem abaixo.
+
+
+
+<img src="~/Documentos/rseis/livro-material/img/instalacao/rstudio-zip.png" style="width: 80%;">
+
+
+3. Clique com o botão direito neste arquivo e depois em *Extrair Tudo* conforme a imagem.
+
+
+
+<img src="~/Documentos/rseis/livro-material/img/instalacao/rstudio-extrair.png" style="width: 80%;">
+
+4. Você verá uma tela como a imagem a seguir. Não mude nada e clique em extrair. Espere o Windows completar a extração.
+
+
+
+<img src="~/Documentos/rseis/livro-material/img/instalacao/extrair-tudo-rstudio.png" style="width: 80%;">
+
+
+5. Agora, na pasta *Downloads*, a pasta que deixamos como local de extração (imagem acima), você terá uma pasta chamada: `RStudio-x.x.x`, em que x.x.x é o número da versão mais recente disponível. Abra essa pasta e entre na subpasta com nome `bin`. 
+
+6. Procure pelo arquivo chamado `rstudio` e clique duas vezes. Isso abrirá o RStudio. Recomendo fixar o programa na barra de tarefas  para não ter que ficar procurando nessa pasta sempre que quiser abri-lo. 
+
+**Observação**: se você excluir a pasta que extraímos, o RStudio irá parar de funcionar.
+
+
+<img src="~/Documentos/rseis/livro-material/img/instalacao/rstudio-bin.png" style="width: 80%;">
+
+
+### No Linux
+
+1. Acesse [este link](https://www.rstudio.com/products/rstudio/download/#download).
+
+2. Clique no link referente à distribuição que você utiliza para fazer o download do arquivo de instalação.
+
+<img src = "https://user-images.githubusercontent.com/8967307/45383704-5ea66680-b5e2-11e8-84df-35d56e7fcbaf.png"></img>
+
+
+## Instalação de pacotes
+
+Um pacote é um conjunto de funções que têm como objetivo resolver um problema específico. São eles que deixam o R poderoso, capaz de enfrentar qualquer tarefa de análise de dados. Assim, fique bastante à vontade para instalar e atualizar muitos e muitos pacotes ao longo da sua experiência com o R.
+
+O legal é que qualquer pessoa pode fazer um novo pacote e disponibilizar para a comunidade, o que acelera bastante o desenvolvemento da ferramenta. Dificilmente você vai fazer uma análise apenas com as funções básicas do R e dificilmente não vai existir um pacote com as funções que você precisa.
+
+Existem três principais maneiras de instalar pacotes. Em ordem de frequência, são:
+
+- Via CRAN (Comprehensive R Archive Network): `install.packages("nome-do-pacote")`.
+- Via Github: `devtools::install_github("nome-do-repo/nome-do-pacote")`.
+- Via arquivo .zip/.tar.gz: `install.packages("C:/caminho/nome-do-pacote.zip", repos = NULL)`.
+
+### Via CRAN
+
+Instale pacotes que não estão na sua biblioteca usando a função `install.packages("nome_do_pacote")`. Por exemplo:
+
+```{r eval = FALSE}
+install.packages("magrittr")
 ```
 
-git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
+```{r message=TRUE, warning=TRUE, echo=FALSE, eval = FALSE}
+install.packages("magrittr", repos = "https://cloud.r-project.org")
+```
 
+E, de agora em diante, não precisa mais instalar. Basta carregar o pacote com `library(magrittr)`.
+
+> Escreva nome_do_pacote::nome_da_funcao() se quiser usar apenas uma função de um determinado pacote. O operador :: serve para isso. Essa forma também é útil quando se tem duas funções com o mesmo nome e precisamos garantir que o código vá usar a função do pacote correto.
+
+### Via Github
+
+Desenvolvedores costumam disponibilizar a última versão de seus pacotes no Github, e alguns deles sequer estão no CRAN. Mesmo assim ainda é possível utilizá-los instalando diretamente pelo github. O comando é igualmente simples:
+
+```{r, eval=FALSE}
+devtools::install_github("rstudio/shiny")
+```
+
+Apenas será necessário o username e o nome do repositório (que geralmente tem o mesmo nome do pacote). No exemplo, o username foi "rstudio" e o repositório foi "shiny". 
+
+Se você não é familiar com o github, não se preocupe! Os pacotes disponibilizados na plataforma geralmente têm um `README` cuja primeira instrução é sobre a instalação. Se não tiver, provavelmente este pacote não te merece! =)
+
+### Via arquivo .zip ou .tar.gz
+
+Se você precisar instalar um pacote que está zipado no seu computador (ou em algum servidor), utilize o seguinte comando:
+
+```{r, eval=FALSE}
+install.packages("C:/caminho/para/o/arquivo/zipado/nome-do-pacote.zip", repos = NULL)
+```
+
+É semelhante a instalar pacotes via CRAN, com a diferença que agora o nome do pacote é o caminho inteiro até o arquivo. O parâmetro `repos = NULL` informa que estamos instalando a partir da máquina local.
+
+A aba ***Packages*** do RStudio também ajuda a administrar os seus pacotes.
+
+
+
+<img src="~/Documentos/rseis/livro-material/img/instalacao/instalar_pacote_rstudio.png" style="width: 80%;">
