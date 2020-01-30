@@ -1,26 +1,4 @@
----
-title: "Instalação"
-author: "Curso-R"
-date: '2018-07-23'
-desc: Comece instalando os pacotes, IDE's necessários para iniciar a sua jornada no
-  R.
-layout: article
-minidesc: Comece instalando os pacotes, IDE's necessários para iniciar a sua jornada
-  no R.
-ordem: 1
-requisitos: rstudio
-slug: instalacao
-tags: instalacao
-categories: R
----
 
-```{r, message=FALSE, warning=FALSE, include=FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE, 
-  out.width = "40%", out.height = "40%",
-  fig.retina = 2
-)
-```
 # Instalação 
 ## Instalação do R
 
@@ -153,7 +131,6 @@ Se você é usuário do linux, para conseguir instalar alguns pacotes, talvez vo
 Para saber quais dependencias instalar basta usar a função `install.packages("nome_do_pacote")` e ler as mensagens de erro que aparecerão.
 
 
-
 ### Via CRAN
 
 Instale pacotes que não estão na sua biblioteca usando a função `install.packages("nome_do_pacote")`. Por exemplo:
@@ -169,6 +146,7 @@ install.packages("magrittr", repos = "https://cloud.r-project.org")
 E, de agora em diante, não precisa mais instalar. Basta carregar o pacote com `library(magrittr)`.
 
 > Escreva nome_do_pacote::nome_da_funcao() se quiser usar apenas uma função de um determinado pacote. O operador :: serve para isso. Essa forma também é útil quando se tem duas funções com o mesmo nome e precisamos garantir que o código vá usar a função do pacote correto.
+
 
 
 
