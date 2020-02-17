@@ -1,0 +1,52 @@
+## readxl
+
+O pacote `readxl` do tydiverse contém funções para importação com os formatos `.xls` e `xlsx`.
+
+```{r include=FALSE}
+library(readxl)
+```
+
+
+```{r eval=FALSE}
+readxl::read_xls(path = "data/imdb.xls")
+readxl::read_xlsx(path = "data/imdb.xlsx")
+```
+
+A funçao `read_excel()` auto detecta a extensão do arquivo.
+
+```{r eval=FALSE}
+read_excel(path = "data/imdb.xls")
+read_excel(path = "data/imdb.xlsx")
+```
+
+O pacote disponibiliza 5 exemplos de arquivos com formato `.xls` e `.xlsx`.
+
+```{r}
+readxl_example()
+```
+Vamos acessar o arquivo datasets.xls.
+```{r}
+datasets <- readxl_example("datasets.xls")
+read_xls(datasets)
+```
+
+No Excel, um arquivo pode ter várias planilhas. Você pode ver quais planilhas fazem parte do arquivo:
+```{r}
+excel_sheets(datasets)
+```
+
+Observe que quando usamos a função `read_xls(datasets)`, o R transformou em tibble apenas a primeira planilha do arquivo. Caso essa não for a tabela que você deseja acessar, não se preocupe! Podemos resolver seu problema de forma simples.
+
+```{r}
+read_xls(datasets,sheet = 'chickwts')
+```
+
+Também é possivel fazer uma seleção das células da planilha que você deseja importar usando o argumento `range = ` da função `read_excel`. Podemos indicar quais colunas ou linhas desejamos com as funções `cell_cols()` e `cell_rows()` respectivamente. Ou podemos difinir a dimensão dos dados a partir de uma célula com a função `anchored()`. Veja todas as fuções disponíveis neste [manual](https://cran.r-project.org/web/packages/cellranger/cellranger.pdf).
+
+```{r}
+read_xls(datasets,sheet = 'chickwts',range = anchored('A3',dim = c(5,2)),col_names = F)
+```
+```{r include=FALSE}
+detach(package:readxl,unload=T)
+```
+
