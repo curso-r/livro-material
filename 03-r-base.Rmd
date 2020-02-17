@@ -42,8 +42,13 @@ Exemplo (repare no 'r' adicionado na busca, isso ajuda bastante):
 log("5")
 ```
 
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics(rep("img/r-base/ajuda_google.png"))
+```
 
-<img src="~/Documentos/rseis/livro-material/img/r-base/ajuda_google.png" style="width: 100%;">
+
+
+
 
 ### Stack Overflow
 
@@ -89,7 +94,12 @@ Para produção de relatórios, o R Markdown possui algumas vantagens, como:
 
 Criar um R Markdown novo no RStudio é fácil. Clique no botão de criar arquivo e selecione R Markdown.
 
-<img src="~/Documentos/rseis/livro-material/img/r-base/criar_rmarkdown.png" style="width: 30%;"></img>
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics(rep("img/r-base/criar_rmarkdown.png"))
+```
+
+
+
 
 Para detalhes sobre como utilizar o R Markdown, leia   [esta seção do R4DS](http://r4ds.had.co.nz/r-markdown.html) e [o tutorial do RStudio](http://rmarkdown.rstudio.com/lesson-1.html).
 
@@ -601,7 +611,7 @@ while (abs(erro) > 0.1) {
 print(x)
 ```
 
- Quando a diferença entre $\sqrt{x}$ e $ x$ ficou menor que 0.1, o loop foi interrompido. 
+ Quando a diferença entre $\sqrt{x}$ e $x$ ficou menor que 0.1, o loop foi interrompido. 
 Vemos que solução aproximada da equação $\sqrt{x} = x$ dada pelo algorítmo não difere muito da solução real $x=1$.
 
 
@@ -651,7 +661,7 @@ O R já vem com funções básicas que fazem gráficos estatísticos de todas as
 - Vantagens: são rápidas e simples.
 - Desvantagens: são feias e difíceis para gerar gráficos complexos.
 
-Nesta seção, mostraremos como construir alguns tipos de gráficos usando as funções base do R, mas [o nosso foco em visualização de dados](http://material.curso-r.com/ggplot/) está nas funções do pacote `ggplot2`.
+Nesta seção, mostraremos como construir alguns tipos de gráficos usando as funções base do R, mas o nosso foco em visualização de dados está nas funções do pacote `ggplot2`.
 
 ### Gráfico de dispersão
 
@@ -1007,8 +1017,7 @@ alea(2, 2, 5)
 alea(5, 100, 105)
 ```
 
-Observe que não há problema em usar os mesmos nomes para os argumentos. Isso se deve aos *environments*. Para saber mais, confira [este post](http://curso-r.com/blog/2017/06/19/2017-06-19-environments/).
-
+Observe que não há problema em usar os mesmos nomes para os argumentos. Isso se deve aos *environments*. 
 --------------------------------------------------------------------------------
 
 **10.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.

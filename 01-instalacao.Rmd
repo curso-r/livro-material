@@ -9,7 +9,10 @@
   
 2. Salve o arquivo em qualquer pasta do seu computador. Aqui, salvamos na pasta "Downloads".
 
-<img src="~/Documentos/rseis/livro-material/img/instalacao/01-r-salvo.png" style="width: 80%;">
+
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics(rep("img/instalacao/01-r-salvo.png"))
+```
 
 
 
@@ -18,14 +21,21 @@
 4. Clique em "Avançar" até chegar na tela da imagem abaixo. Nessa etapa, você precisará escolher a pasta de instalação. Se você escolher um local que não está dentro da pasta do seu usuário, você precisará de acesso de administrador. Se escolher uma pasta dentro do seu usuário (como na imagem abaixo), não precisará.
 
 
-<img src="~/Documentos/rseis/livro-material/img/instalacao/06-r-pasta.png" style="width: 80%;">
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics(rep("img/instalacao/06-r-pasta.png"))
+```
+
+
 
 
 5. Continue clicando em "Avançar" e, ao fim da instalação, em "Concluir".
 
 
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics(rep("img/instalacao/09-conclusao.png"))
+```
 
-<img src="~/Documentos/rseis/livro-material/img/instalacao/09-conclusao.png" style="width: 80%;">
+
 
 
 Pronto! O R está instalado no seu computador!
@@ -38,7 +48,10 @@ Como a instalação no Linux depende da distribuição utilizada e, em geral, us
 
 2. Em seguida, clique no link referente à distribuição que você utiliza.
 
-<img src = "https://user-images.githubusercontent.com/8967307/45383184-db384580-b5e0-11e8-8bac-dd40a4d7e76f.png"></img>
+<img src="https://user-images.githubusercontent.com/8967307/45383184-db384580-b5e0-11e8-8bac-dd40a4d7e76f.png" style="width: 80%;">
+
+
+
 
 3. Siga as instruções contidas na página para instalar o R.
 
@@ -51,9 +64,10 @@ Agora vamos instalar o RStudio, a IDE que utilizaremos para editar e executar c�
 1. Entre [nesta página](https://www.rstudio.com/products/rstudio/download/#download).
 
 
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics(rep("img/instalacao/rstudio-download-opt.png"))
+```
 
-
-<img src="~/Documentos/rseis/livro-material/img/instalacao/rstudio-download-opt.png" style="width: 80%;">
 
 Você terá duas opções:
 
@@ -67,32 +81,39 @@ que está na lista *Zip/Tarballs*. (veja imagem acima)
 
 2a. Clique duas vezes no arquivo que você baixou da página do RStudio (ver imagem abaixo) e siga as instruções de instalação.
 
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics(rep("img/instalacao/rstudio-instalador.png"))
+```
 
 
-
-<img src="~/Documentos/rseis/livro-material/img/instalacao/rstudio-instalador.png" style="width: 80%;">
 
 
 #### Instalação se você não for administrador
 
 2b. Se você não for administrador, você deve ter feito o download de um arquivo do tipo *.zip*, que contém o código do RStudio. É o arquivo selecionado na imagem abaixo.
 
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics(rep("img/instalacao/rstudio-zip.png"))
+```
 
 
-<img src="~/Documentos/rseis/livro-material/img/instalacao/rstudio-zip.png" style="width: 80%;">
 
 
 3. Clique com o botão direito neste arquivo e depois em *Extrair Tudo* conforme a imagem.
 
 
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics(rep("img/instalacao/rstudio-extrair.png"))
+```
 
-<img src="~/Documentos/rseis/livro-material/img/instalacao/rstudio-extrair.png" style="width: 80%;">
 
 4. Você verá uma tela como a imagem a seguir. Não mude nada e clique em extrair. Espere o Windows completar a extração.
 
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics(rep("img/instalacao/extrair-tudo-rstudio.png"))
+```
 
 
-<img src="~/Documentos/rseis/livro-material/img/instalacao/extrair-tudo-rstudio.png" style="width: 80%;">
 
 
 5. Agora, na pasta *Downloads*, a pasta que deixamos como local de extração (imagem acima), você terá uma pasta chamada: `RStudio-x.x.x`, em que x.x.x é o número da versão mais recente disponível. Abra essa pasta e entre na subpasta com nome `bin`. 
@@ -101,8 +122,12 @@ que está na lista *Zip/Tarballs*. (veja imagem acima)
 
 **Observação**: se você excluir a pasta que extraímos, o RStudio irá parar de funcionar.
 
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics(rep("img/instalacao/rstudio-bin.png"))
+```
 
-<img src="~/Documentos/rseis/livro-material/img/instalacao/rstudio-bin.png" style="width: 80%;">
+
+
 
 
 ### No Linux
@@ -111,7 +136,10 @@ que está na lista *Zip/Tarballs*. (veja imagem acima)
 
 2. Clique no link referente à distribuição que você utiliza para fazer o download do arquivo de instalação.
 
-<img src="~/Documentos/rseis/livro-material/img/instalacao/rstudio-linux.png" style="width: 80%;">
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics(rep("img/instalacao/rstudio-linux.png"))
+```
+
 
 ## Instalação de pacotes
 
@@ -174,6 +202,9 @@ install.packages("C:/caminho/para/o/arquivo/zipado/nome-do-pacote.zip", repos = 
 
 A aba ***Packages*** do RStudio também ajuda a administrar os seus pacotes.
 
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics(rep("img/instalacao/instalar_pacote_rstudio.png"))
+```
 
 
-<img src="~/Documentos/rseis/livro-material/img/instalacao/instalar_pacote_rstudio.png" style="width: 80%;">
+
