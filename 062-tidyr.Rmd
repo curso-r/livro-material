@@ -1,0 +1,76 @@
+## tidyr
+
+O pacote `tidyr` dispõe de funções úteis para deixar os seus dados no formato que você precisa para a análise. Na maioria das vezes, utilizamos para deixá-los _tidy_. Outras, precisamos "bagunçá-los" um pouco para poder aplicar alguma função específica.
+
+As principais funções deste pacote são a `gather()` e a `spread()`
+
+-----------------------------------------------------
+
+### `gather()`
+
+A função `gather()` "empilha" o banco de dados. Ela é utilizada principalmente quando as colunas da base não representam nomes de variáveis, mas sim seus valores.
+
+```{r include=FALSE}
+library(dplyr)
+```
+
+```{r warning=FALSE, message=FALSE}
+library(tidyr)
+
+imdb <- readr::read_rds("data/imdb.rds")
+
+imdb_gather <- imdb %>%
+  mutate(id = 1:n()) %>%
+  gather(
+    key = "importancia_ator",
+    value = "nome_ator",
+    ator_1, ator_2, ator_3
+  ) %>%
+  select(nome_ator, importancia_ator, everything())
+
+imdb_gather
+```
+
+-----------------------------------------------------
+
+### `spread()`
+
+A função `spread()` é essencialmente o inverso da `gather()`. Ela espalha uma variável nas colunas.
+
+```{r}
+imdb_spread <- imdb_gather %>%
+  spread(
+    key = importancia_ator,
+    value = nome_ator
+  )
+
+imdb_spread
+```
+
+-----------------------------------------------------
+
+### Outras funções do `tidyr`
+
+- A função `unite()` junta duas ou mais colunas usando algum separador (`_`, por exemplo).
+
+- A função `separate()` faz o inverso de `unite()`: transforma uma coluna em várias usando um separador.
+
+```{r}
+imdb %>%
+  unite(
+    col = "titulo_diretor",
+    titulo, diretor,
+    sep = " - "
+  )
+```
+
+```{r, warning=FALSE}
+imdb %>%
+  separate(
+    col = generos,
+    into = c("genero_1", "genero_2", "genero_3"),
+    sep = "\\|",
+    extra = "drop"
+  )
+```
+

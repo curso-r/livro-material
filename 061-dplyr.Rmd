@@ -1,0 +1,207 @@
+## dplyr
+
+
+O `dplyr` é o pacote mais útil para realizar transformação de dados, aliando simplicidade e eficiência de uma forma elegante. Os scripts em R que fazem uso inteligente dos verbos `dplyr` e as facilidades do operador _pipe_ tendem a ficar mais legíveis e organizados sem perder velocidade de execução.
+
+As principais funções do `dplyr` são:
+
+- `filter()` - filtra linhas
+- `select()` - seleciona colunas
+- `arrange()` - ordena a base
+- `mutate()` - cria/modifica colunas
+- `group_by()` - agrupa a base
+- `summarise()` - sumariza a base
+
+Todas essas funções seguem as mesmas características:
+
+- O _input_  é sempre uma `tibble` e o _output_  é sempre um `tibble`.
+- Colocamos o `tibble` no primeiro argumento e o que queremos fazer nos outros argumentos.
+- A utilização é facilitada com o emprego do operador `%>%`.
+- O pacote faz uso extensivo de NSE (*non standard evaluation*).
+
+As principais vantagens de se usar o `dplyr` em detrimento das funções do R base são:
+
+- Manipular dados se torna uma tarefa muito mais simples.
+- O código fica mais intuitivo de ser escrito e mais simples de ser lido.
+- O pacote `dplyr` utiliza `C` e `C++` por trás da maioria das funções, o que geralmente torna o código mais eficiente.
+- É possível trabalhar com diferentes fontes de dados, como bases relacionais (SQL) e `data.table`.
+
+
+
+Agora, vamos avaliar com mais detalhes as principais funções do pacote `dplyr`.
+
+-----------------------------------------------------
+
+### `filter()`
+
+A função `filter()` filtra linhas. Ela é semelhante à função `subset()`, do R base. O código abaixo retorna apenas filmes com nota maior que nova.
+
+```{r include=FALSE}
+
+library(dplyr)
+imdb <- readr::read_rds("data/imdb.rds")
+```
+
+
+```{r}
+imdb %>%
+  filter(nota_imdb > 9)
+```
+
+Para fazer várias condições, use os operadores lógicos `&` e `|` ou separe filtros entre vírgulas.
+
+```{r}
+imdb %>%
+  filter(ano > 2010 & nota_imdb > 8.5)
+
+imdb %>%
+  filter(receita > orcamento | nota_imdb > 9)
+```
+
+O operador `%in%` é muito útil na hora de criar filtros. O resultado das operações com `%in%` é um vetor lógico o tamanho do vetor do elemento da esquerda, identificando quais elementos da esquerda batem com algum elemento da direita.
+
+```{r}
+letters %in% c("a", "e", "z")
+
+imdb %>%
+  filter(diretor %in% c("Steven Spielberg", "Quentin Tarantino"))
+```
+
+Também podemos usar funções que retornam valores lógicos, como a `str_detect()`, do pacote `stringr`. Esse pacote possui funções para a manipulação de strings, e será abordado com mais detalhes quando falarmos sobre `stringr`.
+
+```{r}
+library(stringr)
+
+imdb %>%
+  filter(str_detect(generos, "Action"))
+```
+
+-----------------------------------------------------
+
+### `select()`
+
+A função `select()` seleciona colunas (variáveis). É possível utilizar nomes, índices, intervalos de variáveis ou utilizar as funções `starts_with(x)`, `contains(x)`, `matches(x)`, `one_of(x)` para selecionar as variáveis.
+
+```{r}
+imdb %>%
+  select(titulo, ano, orcamento)
+
+imdb %>%
+  select(starts_with("ator"))
+```
+
+O operador `:` pode ser usado para selecionar intervalos de colunas.
+
+```{r}
+imdb %>%
+  select(titulo, ator_1:ator_3)
+```
+
+Para retirar colunas da base, base acrescentar um `-` antes da seleção.
+
+```{r}
+imdb %>%
+  select(-ano, - diretor)
+
+imdb %>%
+  select(-starts_with("ator"))
+```
+
+-----------------------------------------------------
+
+### `arrange()`
+
+A função `arrange()` ordena a base segundo uma ou mais colunas. O argumento `desc=` pode ser utilizado para gerar uma ordem decrescente.
+
+```{r}
+imdb %>%
+  arrange(orcamento) %>%
+  select(orcamento, everything())
+
+imdb %>%
+  arrange(desc(orcamento)) %>%
+  select(orcamento, everything())
+
+imdb %>%
+  arrange(desc(ano), titulo) %>%
+  select(titulo, ano, everything())
+```
+
+-----------------------------------------------------
+
+### `mutate()`
+
+A função `mutate()` cria ou modifica colunas. Ela é equivalente à função `transform()`, mas aceita várias novas colunas iterativamente. Novas variáveis devem ter o mesmo número de linhas da base original (ou comprimento 1).
+
+```{r}
+# A coluna "duracao" é sobrescrita
+imdb %>%
+  mutate(duracao = duracao/60) %>%
+  select(duracao)
+
+# Criamos uma nova coluna na base
+imdb %>%
+  mutate(duracao_horas = duracao/60) %>%
+  select(duracao, duracao_horas)
+
+# Podemos fazer diversas operações em um mesmo mutate.
+imdb %>%
+  mutate(
+    lucro = receita - orcamento,
+    resultado = ifelse(lucro < 0, "prejuizo", "lucro")
+  ) %>%
+  select(lucro, resultado)
+```
+
+-----------------------------------------------------
+
+### `summarise()`
+
+A função `summarise()` sumariza a base. Ela aplica uma função às variáveis, retornando um vetor de tamanho `1`. Ela é utilizada em conjunto da função `group_by()`. A função `n()` costuma ser bastante utilizada com a função summarise().
+
+
+```{r}
+imdb %>%
+  summarise(media_orcamento = mean(orcamento, na.rm = TRUE))
+
+imdb %>%
+  summarise(
+    media_orcamento = mean(orcamento, na.rm = TRUE),
+    mediana_orcamento = median(orcamento, na.rm = TRUE),
+    qtd = n(),
+    qtd_diretores = n_distinct(diretor)
+  )
+
+imdb %>%
+  group_by(ano) %>%
+  summarise(qtd_filmes = n())
+
+imdb %>%
+  group_by(diretor) %>%
+  summarise(orcamento_medio = mean(orcamento, na.rm = TRUE))
+```
+
+### `_join()`
+
+Para juntar duas tabelas de dados, podemos utilizar a família de funções `_join()` do `dplyr`. Essas funções geralmente recebem três argumentos: uma base esquerda (`x=`), uma base direita (`y=`) e uma chave `by=`. As principais funções `_join()` são:
+
+- `left_join(x, y)`: retorna todas as linhas da base `x` e todas as colunas das bases `x` e `y`. Linhas de `x` sem correspondentes em `y` receberão `NA` na nova base.
+- `right_join()`: retorna todas as linhas da base `y` e todas as colunas das bases `x` e `y`. Linhas de `y` sem correspondentes em `x` receberão `NA` na nova base.
+- `full_join()`: retorna todas as linhas e colunas de `x`e `y`. Valores sem correspondência entre as bases receberão `NA` na nova base.
+
+A figura a seguir esquematiza as operações dessas funções:
+
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics('img/manipulacao/joins.png')
+```
+
+A figura a seguir mostra o que acontece quando temos chaves duplicadas em um `left_join()`. A ideia é equivalante para as outras funções.
+
+```{r, echo=FALSE, fig.align='center'}
+knitr::include_graphics('img/manipulacao/left-join.png')
+```
+
+```{rinclude=FALSE}
+detach(package:dplyr,unload = T)
+```
+
