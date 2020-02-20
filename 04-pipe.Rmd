@@ -13,10 +13,16 @@ Para começar a utilizar o *pipe*, instale e carregue o pacote `magrittr`.
 
 ```{r eval=FALSE}
 install.packages("magrittr")
+
 library(magrittr)
 ```
 
-A ideia do operador `%>%` (*pipe*) é bem simples: usar o valor resultante da expressão do lado esquerdo como primeiro argumento da função do lado direito. 
+
+```{r include=FALSE}
+library(magrittr)
+```
+
+A ideia do operador `%>%` (*pipe*) é bem simples: usar o valor resultante da expressão do lado esquerdo como primeiro argumento da função do lado direito.
 
 ```{r, eval=FALSE}
 # As duas linhas abaixo são equivalentes.
@@ -68,14 +74,14 @@ recipiente(rep("farinha", 2), "água", "fermento", "leite", "óleo") %>%
 # Queremos que o dataset seja recebido pelo segundo argumento (data=) da função "lm".
 
 airquality %>%
-  na.omit %>% 
-  lm(Ozone ~ Wind + Temp + Solar.R, data = .) %>% 
+  na.omit %>%
+  lm(Ozone ~ Wind + Temp + Solar.R, data = .) %>%
   summary
 ```
 
-Também é possível definir funções na sua *pipeline*. 
+Também é possível definir funções na sua *pipeline*.
 ```{r}
-c(1,2,3) %>% 
+c(1,2,3) %>%
   (function(x){
     sum(x)
   })
@@ -87,13 +93,13 @@ O *pipe* é a força da gravidade dentro do `tidyverse`. Veremos nas próximas s
 
 
 ## Outros operadores
-Existem outros operadores do mesmo pacote, que apesar de menos usados, também são úteis. 
+Existem outros operadores do mesmo pacote, que apesar de menos usados, também são úteis.
 
 São eles:
 
 - Assignment operator `%<>%`
 
-- Operador tee `%T%`
+- Operador tee `%T>%`
 
 - Exposition operator `%$%`
 
@@ -117,10 +123,10 @@ x %<>% add(10)
 
 Este operador pode ser usado sempre que desejamos fazer algo da forma `objeto <- objeto %>% função`
 
-### Operador tee 
+### Operador tee
 
 
-O operador tee retorna o valor do comando anterior a `%T>%` não o resultado do lado direito dele como o pipe faz. O seguinte exemplo vai imprimir na tela os valores de 1 a 10. Se usássemos o pipe, o código retornaria a soma dos dez números.
+O operador tee retorna o valor do comando anterior a `%T>%`, não o resultado do lado direito dele como o pipe faz. O seguinte exemplo vai imprimir na tela os valores de 1 a 10. Se usássemos o pipe, o código retornaria a soma dos dez números.
 ```{r}
 1:10 %T>% sum() %>% cat()
 ```
@@ -140,6 +146,7 @@ data.frame(z=1:10)%$% z[1]
 ```
 
 Para mais informações sobre o `pipe`, outros operadores relacionados e exemplos de utilização, visite a página [Ceci n'est pas un pipe](http://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html).
+
 ## Exercícios
 
 --------------------------------------------------------------------------------
@@ -173,10 +180,10 @@ saida <- round(media, 1)
 **3.** Sem rodar, diga qual a saída do código abaixo. Consulte o help das funções caso precise.
 
 ```{r, collapse = TRUE, eval = FALSE}
-2 %>% 
-  add(2) %>% 
-  c(6, NA) %>% 
-  mean(na.rm = T) %>% 
+2 %>%
+  add(2) %>%
+  c(6, NA) %>%
+  mean(na.rm = T) %>%
   equals(5)
 ```
 
@@ -199,9 +206,9 @@ Não há apenas uma maneira de resolver os exercícios. Você pode encontrar sol
 ```{r, collapse = TRUE}
 round(mean(sum(1:10)/3), digits = 1)
 
-1:10 %>% 
-  sum %>% 
-  divide_by(3) %>% 
+1:10 %>%
+  sum %>%
+  divide_by(3) %>%
   round(digits = 1)
 ```
 
@@ -210,7 +217,6 @@ round(mean(sum(1:10)/3), digits = 1)
 **2.** Reescreva o código abaixo utilizando o `%>%`.
 
 ```{r, collapse = TRUE}
-
 # Setamos a semente que gera números aleatórios para deixar o resultado reprodutível
 
 set.seed(137)
@@ -220,11 +226,14 @@ x.pos <- x[x>0]
 media <- mean(x.pos)
 saida <- round(media, 2)
 saida
+```
 
+
+```{r, collapse = TRUE}
 set.seed(137)
 
-rnorm(100) %>% 
-  extract(. > 0) %>% 
+rnorm(100) %>%
+  magrittr::extract(. > 0) %>%
   mean %>%
   round(digits = 2)
 
@@ -235,10 +244,10 @@ rnorm(100) %>%
 **3.** Sem rodar, diga qual a saída do código abaixo. Consulte o help das funções caso precise.
 
 ```{r, eval = FALSE, collapse = TRUE}
-2 %>% 
-  add(2) %>% 
-  c(6, NA) %>% 
-  mean(na.rm = T) %>% 
+2 %>%
+  add(2) %>%
+  c(6, NA) %>%
+  mean(na.rm = T) %>%
   equals(5)
 ```
 

@@ -20,11 +20,7 @@ write_dta(mtcars,'data/matcars.dta')
 
 Quando importamos arquivos gerados pelo SAS SPSS ou STATA para o R, os rótulos de uma variável podem não ser importados de forma correta.  O pacote `haven` tem uma soluçao para este problema. 
 
-```{r include=FALSE}
-x <- labelled(c(1,1,2,3,2,2,1,2), c(Ruim = 1,Bom = 2, Otimo = 3))
-```
-
-```{r eval=FALSE}
+```{r }
 x <- labelled(c(1,1,2,3,2,2,1,2), c(Ruim = 1, Bom = 2, Otimo = 3))
 ```
 

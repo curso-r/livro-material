@@ -37,7 +37,6 @@ Agora, vamos avaliar com mais detalhes as principais funções do pacote `dplyr`
 A função `filter()` filtra linhas. Ela é semelhante à função `subset()`, do R base. O código abaixo retorna apenas filmes com nota maior que nova.
 
 ```{r include=FALSE}
-
 library(dplyr)
 imdb <- readr::read_rds("data/imdb.rds")
 ```
@@ -158,7 +157,10 @@ imdb %>%
 ### `summarise()`
 
 A função `summarise()` sumariza a base. Ela aplica uma função às variáveis, retornando um vetor de tamanho `1`. Ela é utilizada em conjunto da função `group_by()`. A função `n()` costuma ser bastante utilizada com a função summarise().
-
+```{r include=FALSE}
+remove(list = conflicts(detail = T)$.GlobalEnv)
+library(dplyr)
+```
 
 ```{r}
 imdb %>%
@@ -201,7 +203,4 @@ A figura a seguir mostra o que acontece quando temos chaves duplicadas em um `le
 knitr::include_graphics('img/manipulacao/left-join.png')
 ```
 
-```{rinclude=FALSE}
-detach(package:dplyr,unload = T)
-```
 

@@ -63,7 +63,7 @@ imdb_tsv <- read_tsv('data/imdb.tsv')
 Essa mensagem está definindo a classe de cada variável. Se as variáveis não foram especificadas de maneira correta, você pode copiar esta messagem e reescrevê-la da forma desejada. 
 
 No exemplo, suponha que você gostaria que a variável ano fosse um inteiro. Podemos resolver isso da seguinte forma:
-```{r}
+```{r eval=FALSE}
 imdb_tsv <- read_tsv('data/imdb.tsv',col_types =  
  cols(
   titulo = col_character(),

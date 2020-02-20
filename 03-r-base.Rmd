@@ -197,7 +197,7 @@ Existem cinco classes básicas ou “atômicas” no R:
 
 Veja alguns exemplos:
 
-```{r}
+```{r eval=FALSE}
 # characters
 
 "a"
@@ -434,7 +434,7 @@ Criamos uma lista com a função `list()`, que aceita um número arbitrário de 
 
 Na lista `pedido` abaixo, temos `numeric`, `Date`, `character`, vetor de `character` e `list` contida em uma lista:
 
-```{r}
+```{r eval=FALSE}
 pedido <- list(pedido_id = 8001406,
                pedido_registro = as.Date("2017-05-25"),
                nome = "Athos", 
@@ -682,9 +682,9 @@ Além de gerar gráficos de dispersão, tentar chamar a função <b>plot(objeto_
 </div>
 
 ```{r}
-n <- 100
-x <- 1:n
-y <- 5 + 2 * x + rnorm(n, sd = 30)
+N <- 100
+x <- 1:N
+y <- 5 + 2 * x + rnorm(N, sd = 30)
 plot(x, y)
 ```
 
@@ -822,7 +822,7 @@ Dica: o número de ouro é dado pela expressão $\frac{1 + \sqrt{5}}{2}$.
 
 **Resposta:**
 
-```{r}
+```{r eval=FALSE}
 (1 + sqrt(5))/2
 ```
 
@@ -852,13 +852,18 @@ Infinito e -Infinito.
 # Significa Not A Number.
 
 0/0
+```
 
+
+```{r eval=FALSE}
 # NULL é o vazio do R. É como se o objeto não existisse.
 
 NULL
 a = NULL
+```
 
 
+```{r }
 # veja que um vetor, mesmo sem elementos não é NULL
 
 is.null(integer(length = 0)) 
