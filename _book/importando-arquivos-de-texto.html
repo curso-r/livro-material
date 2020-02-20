@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 5 Importando arquivos de texto | Ciência de dados em R</title>
+  <meta name="description" content="Livro com os tutoriais e material dos cursos da Curso-R." />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 5 Importando arquivos de texto | Ciência de dados em R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Livro com os tutoriais e material dos cursos da Curso-R." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 5 Importando arquivos de texto | Ciência de dados em R" />
+  
+  <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos da Curso-R." />
+  
+
+<meta name="author" content="Curso-R" />
+
+
+<meta name="date" content="2020-02-14" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="pipe.html"/>
+<link rel="next" href="importando-arquivos-do-excel.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><img src = "img/logo.png" width = 40%></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre</a></li>
+<li class="chapter" data-level="1" data-path="instalação.html"><a href="instalação.html"><i class="fa fa-check"></i><b>1</b> Instalação</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="instalação.html"><a href="instalação.html#instalação-do-r"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="instalação.html"><a href="instalação.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
+<li class="chapter" data-level="1.1.2" data-path="instalação.html"><a href="instalação.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="instalação.html"><a href="instalação.html#instalação-do-rstudio"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="instalação.html"><a href="instalação.html#no-windows-1"><i class="fa fa-check"></i><b>1.2.1</b> No Windows</a></li>
+<li class="chapter" data-level="1.2.2" data-path="instalação.html"><a href="instalação.html#no-linux-1"><i class="fa fa-check"></i><b>1.2.2</b> No Linux</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="instalação.html"><a href="instalação.html#instalação-de-pacotes"><i class="fa fa-check"></i><b>1.3</b> Instalação de pacotes</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="instalação.html"><a href="instalação.html#via-cran"><i class="fa fa-check"></i><b>1.3.1</b> Via CRAN</a></li>
+<li class="chapter" data-level="1.3.2" data-path="instalação.html"><a href="instalação.html#via-github"><i class="fa fa-check"></i><b>1.3.2</b> Via Github</a></li>
+<li class="chapter" data-level="1.3.3" data-path="instalação.html"><a href="instalação.html#via-arquivo-.zip-ou-.tar.gz"><i class="fa fa-check"></i><b>1.3.3</b> Via arquivo .zip ou .tar.gz</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="rstudio.html"><a href="rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="rstudio.html"><a href="rstudio.html#telas"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
+<li class="chapter" data-level="2.2" data-path="rstudio.html"><a href="rstudio.html#atalhos"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
+<li class="chapter" data-level="2.3" data-path="rstudio.html"><a href="rstudio.html#projetos"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
+<li class="chapter" data-level="2.4" data-path="rstudio.html"><a href="rstudio.html#cheatsheets"><i class="fa fa-check"></i><b>2.4</b> Cheatsheets</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-básico.html"><a href="r-básico.html"><i class="fa fa-check"></i><b>3</b> R Básico</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="r-básico.html"><a href="r-básico.html#pedindo-ajuda"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="r-básico.html"><a href="r-básico.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
+<li class="chapter" data-level="3.1.2" data-path="r-básico.html"><a href="r-básico.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
+<li class="chapter" data-level="3.1.3" data-path="r-básico.html"><a href="r-básico.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
+<li class="chapter" data-level="3.1.4" data-path="r-básico.html"><a href="r-básico.html#r-markdown"><i class="fa fa-check"></i><b>3.1.4</b> R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="r-básico.html"><a href="r-básico.html#r-como-calculadora"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a></li>
+<li class="chapter" data-level="3.3" data-path="r-básico.html"><a href="r-básico.html#objetos-e-classes"><i class="fa fa-check"></i><b>3.3</b> Objetos e Classes</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="r-básico.html"><a href="r-básico.html#objetos-atômicos"><i class="fa fa-check"></i><b>3.3.1</b> Objetos atômicos</a></li>
+<li class="chapter" data-level="3.3.2" data-path="r-básico.html"><a href="r-básico.html#vetores"><i class="fa fa-check"></i><b>3.3.2</b> Vetores</a></li>
+<li class="chapter" data-level="3.3.3" data-path="r-básico.html"><a href="r-básico.html#classes"><i class="fa fa-check"></i><b>3.3.3</b> Classes</a></li>
+<li class="chapter" data-level="3.3.4" data-path="r-básico.html"><a href="r-básico.html#coerção"><i class="fa fa-check"></i><b>3.3.4</b> Coerção</a></li>
+<li class="chapter" data-level="3.3.5" data-path="r-básico.html"><a href="r-básico.html#data.frame"><i class="fa fa-check"></i><b>3.3.5</b> data.frame</a></li>
+<li class="chapter" data-level="3.3.6" data-path="r-básico.html"><a href="r-básico.html#matrizes"><i class="fa fa-check"></i><b>3.3.6</b> Matrizes</a></li>
+<li class="chapter" data-level="3.3.7" data-path="r-básico.html"><a href="r-básico.html#fatores"><i class="fa fa-check"></i><b>3.3.7</b> Fatores</a></li>
+<li class="chapter" data-level="3.3.8" data-path="r-básico.html"><a href="r-básico.html#listas"><i class="fa fa-check"></i><b>3.3.8</b> Listas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="r-básico.html"><a href="r-básico.html#valores-especiais"><i class="fa fa-check"></i><b>3.4</b> Valores especiais</a></li>
+<li class="chapter" data-level="3.5" data-path="r-básico.html"><a href="r-básico.html#controles-de-fluxo"><i class="fa fa-check"></i><b>3.5</b> Controles de Fluxo</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="r-básico.html"><a href="r-básico.html#if-e-else"><i class="fa fa-check"></i><b>3.5.1</b> IF e ELSE</a></li>
+<li class="chapter" data-level="3.5.2" data-path="r-básico.html"><a href="r-básico.html#for"><i class="fa fa-check"></i><b>3.5.2</b> for</a></li>
+<li class="chapter" data-level="3.5.3" data-path="r-básico.html"><a href="r-básico.html#while"><i class="fa fa-check"></i><b>3.5.3</b> while</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="r-básico.html"><a href="r-básico.html#fórmulas"><i class="fa fa-check"></i><b>3.6</b> Fórmulas</a></li>
+<li class="chapter" data-level="3.7" data-path="r-básico.html"><a href="r-básico.html#gráficos-base"><i class="fa fa-check"></i><b>3.7</b> Gráficos (base)</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="r-básico.html"><a href="r-básico.html#gráfico-de-dispersão"><i class="fa fa-check"></i><b>3.7.1</b> Gráfico de dispersão</a></li>
+<li class="chapter" data-level="3.7.2" data-path="r-básico.html"><a href="r-básico.html#histograma"><i class="fa fa-check"></i><b>3.7.2</b> Histograma</a></li>
+<li class="chapter" data-level="3.7.3" data-path="r-básico.html"><a href="r-básico.html#boxplot"><i class="fa fa-check"></i><b>3.7.3</b> Boxplot</a></li>
+<li class="chapter" data-level="3.7.4" data-path="r-básico.html"><a href="r-básico.html#gráfico-de-barras"><i class="fa fa-check"></i><b>3.7.4</b> Gráfico de barras</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="r-básico.html"><a href="r-básico.html#exercícios"><i class="fa fa-check"></i><b>3.8</b> Exercícios</a></li>
+<li class="chapter" data-level="3.9" data-path="r-básico.html"><a href="r-básico.html#respostas"><i class="fa fa-check"></i><b>3.9</b> Respostas</a></li>
+<li class="chapter" data-level="3.10" data-path="r-básico.html"><a href="r-básico.html#observe-que-não-há-problema-em-usar-os-mesmos-nomes-para-os-argumentos.-isso-se-deve-aos-environments."><i class="fa fa-check"></i><b>3.10</b> Observe que não há problema em usar os mesmos nomes para os argumentos. Isso se deve aos <em>environments</em>.</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="pipe.html"><a href="pipe.html"><i class="fa fa-check"></i><b>4</b> Pipe</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="pipe.html"><a href="pipe.html#o-operador-pipe"><i class="fa fa-check"></i><b>4.1</b> O operador pipe</a></li>
+<li class="chapter" data-level="4.2" data-path="pipe.html"><a href="pipe.html#outros-operadores"><i class="fa fa-check"></i><b>4.2</b> Outros operadores</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="pipe.html"><a href="pipe.html#operador-de-atribuição-assignment-operator"><i class="fa fa-check"></i><b>4.2.1</b> Operador de atribuição ( Assignment operator )</a></li>
+<li class="chapter" data-level="4.2.2" data-path="pipe.html"><a href="pipe.html#operador-tee"><i class="fa fa-check"></i><b>4.2.2</b> Operador tee</a></li>
+<li class="chapter" data-level="4.2.3" data-path="pipe.html"><a href="pipe.html#exposition-operator"><i class="fa fa-check"></i><b>4.2.3</b> Exposition operator</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="pipe.html"><a href="pipe.html#respostas-1"><i class="fa fa-check"></i><b>4.3</b> Respostas</a></li>
+<li class="chapter" data-level="4.4" data-path="pipe.html"><a href="pipe.html#json"><i class="fa fa-check"></i><b>4.4</b> .json</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="importando-arquivos-de-texto.html"><a href="importando-arquivos-de-texto.html"><i class="fa fa-check"></i><b>5</b> Importando arquivos de texto</a></li>
+<li class="chapter" data-level="6" data-path="importando-arquivos-do-excel.html"><a href="importando-arquivos-do-excel.html"><i class="fa fa-check"></i><b>6</b> Importando arquivos do Excel</a></li>
+<li class="chapter" data-level="7" data-path="arquivos-de-outros-softwares.html"><a href="arquivos-de-outros-softwares.html"><i class="fa fa-check"></i><b>7</b> Arquivos de outros softwares</a></li>
+<li class="chapter" data-level="8" data-path="o-pacote-dplyr.html"><a href="o-pacote-dplyr.html"><i class="fa fa-check"></i><b>8</b> O pacote <code>dplyr</code></a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="o-pacote-dplyr.html"><a href="o-pacote-dplyr.html#trabalhando-com-tibbles"><i class="fa fa-check"></i><b>8.1</b> Trabalhando com tibbles</a></li>
+<li class="chapter" data-level="8.2" data-path="o-pacote-dplyr.html"><a href="o-pacote-dplyr.html#principais-funções"><i class="fa fa-check"></i><b>8.2</b> Principais funções</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="o-pacote-dplyr.html"><a href="o-pacote-dplyr.html#filtrando-linhas"><i class="fa fa-check"></i><b>8.2.1</b> Filtrando linhas</a></li>
+<li class="chapter" data-level="8.2.2" data-path="o-pacote-dplyr.html"><a href="o-pacote-dplyr.html#selecionando-colunas"><i class="fa fa-check"></i><b>8.2.2</b> Selecionando colunas</a></li>
+<li class="chapter" data-level="8.2.3" data-path="o-pacote-dplyr.html"><a href="o-pacote-dplyr.html#ordenando-a-base"><i class="fa fa-check"></i><b>8.2.3</b> Ordenando a base</a></li>
+<li class="chapter" data-level="8.2.4" data-path="o-pacote-dplyr.html"><a href="o-pacote-dplyr.html#mutate"><i class="fa fa-check"></i><b>8.2.4</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="8.2.5" data-path="o-pacote-dplyr.html"><a href="o-pacote-dplyr.html#agrupando-e-sumarizando-a-base"><i class="fa fa-check"></i><b>8.2.5</b> Agrupando e sumarizando a base</a></li>
+<li class="chapter" data-level="8.2.6" data-path="o-pacote-dplyr.html"><a href="o-pacote-dplyr.html#juntando-duas-bases"><i class="fa fa-check"></i><b>8.2.6</b> Juntando duas bases</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="o-pacote-tidyr.html"><a href="o-pacote-tidyr.html"><i class="fa fa-check"></i><b>9</b> O pacote <code>tidyr</code></a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="o-pacote-tidyr.html"><a href="o-pacote-tidyr.html#gather"><i class="fa fa-check"></i><b>9.1</b> <code>gather()</code></a></li>
+<li class="chapter" data-level="9.2" data-path="o-pacote-tidyr.html"><a href="o-pacote-tidyr.html#spread"><i class="fa fa-check"></i><b>9.2</b> <code>spread()</code></a></li>
+<li class="chapter" data-level="9.3" data-path="o-pacote-tidyr.html"><a href="o-pacote-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>9.3</b> Outras funções do <code>tidyr</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Ciência de dados em R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="importando-arquivos-de-texto" class="section level1" number="5">
+<h1><span class="header-section-number">Capítulo 5</span> Importando arquivos de texto</h1>
+<p>Para importar arquivos de texto para R, como <code>.txt</code> ou <code>.csv</code>, utilizaremos o pacote <code>readr</code> do tidyverse.</p>
+<p>Antes de começarmos, vale a pena tocarmos num ponto importante. As funções de importação do tidyverse carregam os dados em <code>tibbles</code>, que diferem da classe <code>data.frames</code> usual em dois pontos importantes:</p>
+<ul>
+<li><p>imprime os dados na tela de maneira muito mais organizada, resumida e legível; e</p></li>
+<li><p>permite a utilização de <em>list-columns</em>.</p></li>
+</ul>
+<p>Se você não estiver familiarizado com o conceito de <em>list-columns</em>, não se preocupe. Trataremos melhor do assunto no tópico sobre funcionais.</p>
+<p>O <code>readr</code> transforma 7 tipos de arquivos de textos em <code>tibbles</code> usando as funções:</p>
+<ul>
+<li><code>read_csv()</code>: arquivos separados por vírgula.</li>
+<li><code>read_tsv()</code>: arquivos separados por tab.</li>
+<li><code>read_delim()</code>: arquivos separados por um delimitador qualquer. O argumento <code>delim=</code> indica qual caracter separa cada coluna no arquivo de texto.</li>
+<li><code>read_fwf()</code>: arquivos compactos que devem ter sua largura especificada. Existem várias funções para especificar a largura ou posição.</li>
+<li><code>read_table()</code>: arquivos de texto tabular com suas colunas separadas por espaço.</li>
+<li><code>read_log()</code>: arquivos log do Apache.</li>
+</ul>
+<p>Como exemplo, utilizaremos uma base de filmes do IMDB, gravada em diversos formatos. Os arquivos podem ser encontrados <a href="https://github.com/curso-r/site-v2/raw/master/content/material/importacao/data/imdb.rds">neste link</a>.</p>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="importando-arquivos-de-texto.html#cb229-1"></a><span class="kw">library</span>(readr)</span>
+<span id="cb229-2"><a href="importando-arquivos-de-texto.html#cb229-2"></a></span>
+<span id="cb229-3"><a href="importando-arquivos-de-texto.html#cb229-3"></a>imdb_csv &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;data/imdb.csv&quot;</span>)</span></code></pre></div>
+<p>Repare que o argumento <code>file=</code> representa o caminho até o arquivo. Se o arquivo a ser lido não estiver no diretório de trabalho da sua sessão, você precisa especificar o caminho até o arquivo.</p>
+<blockquote>
+<p><strong>Exercício relâmpago!</strong> Descubra qual a diferença entre as funções “read_csv()” e “read_csv2()?”.</p>
+</blockquote>
+<p>Para a maioria das funções <code>read_</code>, existe uma respectiva função <code>write_</code>. Essas funções servem para salvar bases em um formato específico de arquivo. Além do nome do arquivo a ser criado, você também precisa passar o objeto que será gravado. Repare nos exemplos abaixo que você precisa especificar a extensão do arquivo corretamente.</p>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="importando-arquivos-de-texto.html#cb230-1"></a><span class="kw">write_csv</span>(<span class="dt">x =</span> mtcars, <span class="dt">path =</span> <span class="st">&quot;data/mtcars.csv&quot;</span>)</span>
+<span id="cb230-2"><a href="importando-arquivos-de-texto.html#cb230-2"></a><span class="kw">write_delim</span>(<span class="dt">x =</span> mtcars, <span class="dt">delim =</span> <span class="st">&quot; &quot;</span>, <span class="dt">path =</span> <span class="st">&quot;data/mtcars.txt&quot;</span>)</span></code></pre></div>
+<p>Com excessão do arquivo <code>.fwf</code>, a forma de importar e escrever arquivos são muito semelhantes. Para a função <code>read_fwf</code>, além de especificar o arquivo, também é necessário especificar a posição da coluna, <code>col_position</code>. Para isso usamos funções como <code>fwf_empty()</code> ou <code>fwf_widths()</code>. Este formato também não tem um <code>write_</code> específico no pacote, mas podemos salvar bases em <code>fwf</code> com a função <code>write.fwf()</code> do pacote <code>gdata</code>.</p>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="importando-arquivos-de-texto.html#cb231-1"></a><span class="kw">library</span>(gdata)</span>
+<span id="cb231-2"><a href="importando-arquivos-de-texto.html#cb231-2"></a><span class="kw">write.fwf</span>(mtcars[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>],<span class="st">&#39;data/mtcars.fwf&#39;</span>,<span class="dt">colnames =</span> F)</span>
+<span id="cb231-3"><a href="importando-arquivos-de-texto.html#cb231-3"></a></span>
+<span id="cb231-4"><a href="importando-arquivos-de-texto.html#cb231-4"></a><span class="kw">read_fwf</span>(<span class="st">&#39;data/mtcars.fwf&#39;</span>, <span class="dt">col_positions =</span> <span class="kw">fwf_empty</span>(<span class="st">&#39;data/mtcars.fwf&#39;</span>,<span class="dt">col_names =</span> <span class="kw">c</span>(<span class="st">&#39;mpg&#39;</span>,<span class="st">&#39;cyl&#39;</span>,<span class="st">&#39;disp&#39;</span>,<span class="st">&#39;hp&#39;</span>)))</span></code></pre></div>
+<p>Aqui, pegamos as 4 primeiras colunas de mtcars e criamos um arquivo <code>.fwf</code>, depois o transformamos em tibble. A função <code>fwf_empty</code> especifica a posição das colunas com base nas colunas que estão vazias. Para entender melhor o que cada função <code>fwf_</code> faz entre na documentação do R <code>help(read_fwf)</code>.</p>
+<p>Observe que quando chamamos a função <code>read_</code>, uma mensagem é imprimida na tela.</p>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="importando-arquivos-de-texto.html#cb232-1"></a>imdb_tsv &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(<span class="st">&#39;data/imdb.tsv&#39;</span>)</span></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   titulo = col_character(),
+##   ano = col_double(),
+##   diretor = col_character(),
+##   duracao = col_double(),
+##   cor = col_character(),
+##   generos = col_character(),
+##   pais = col_character(),
+##   classificacao = col_character(),
+##   orcamento = col_double(),
+##   receita = col_double(),
+##   nota_imdb = col_double(),
+##   likes_facebook = col_double(),
+##   ator_1 = col_character(),
+##   ator_2 = col_character(),
+##   ator_3 = col_character()
+## )</code></pre>
+<p>Essa mensagem está definindo a classe de cada variável. Se a função <code>read_</code> não especificou as variáveis de maneira correta, você pode copiar esta messagem e reescrevê-las da forma desejada.</p>
+<p>No exemplo, suponha que você gostaria que a variável ano fosse um inteiro. Podemos resolver isso da seguinte forma:</p>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="importando-arquivos-de-texto.html#cb234-1"></a>imdb_tsv &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(<span class="st">&#39;data/imdb.tsv&#39;</span>,<span class="dt">col_types =</span>  </span>
+<span id="cb234-2"><a href="importando-arquivos-de-texto.html#cb234-2"></a> <span class="kw">cols</span>(</span>
+<span id="cb234-3"><a href="importando-arquivos-de-texto.html#cb234-3"></a>  <span class="dt">titulo =</span> <span class="kw">col_character</span>(),</span>
+<span id="cb234-4"><a href="importando-arquivos-de-texto.html#cb234-4"></a>  <span class="dt">ano =</span> <span class="kw">col_integer</span>(),</span>
+<span id="cb234-5"><a href="importando-arquivos-de-texto.html#cb234-5"></a>  <span class="dt">diretor =</span> <span class="kw">col_character</span>(),</span>
+<span id="cb234-6"><a href="importando-arquivos-de-texto.html#cb234-6"></a>  <span class="dt">duracao =</span> <span class="kw">col_double</span>(),</span>
+<span id="cb234-7"><a href="importando-arquivos-de-texto.html#cb234-7"></a>  <span class="dt">cor =</span> <span class="kw">col_character</span>(),</span>
+<span id="cb234-8"><a href="importando-arquivos-de-texto.html#cb234-8"></a>  <span class="dt">generos =</span> <span class="kw">col_character</span>(),</span>
+<span id="cb234-9"><a href="importando-arquivos-de-texto.html#cb234-9"></a>  <span class="dt">pais =</span> <span class="kw">col_character</span>(),</span>
+<span id="cb234-10"><a href="importando-arquivos-de-texto.html#cb234-10"></a>  <span class="dt">classificacao =</span> <span class="kw">col_character</span>(),</span>
+<span id="cb234-11"><a href="importando-arquivos-de-texto.html#cb234-11"></a>  <span class="dt">orcamento =</span> <span class="kw">col_double</span>(),</span>
+<span id="cb234-12"><a href="importando-arquivos-de-texto.html#cb234-12"></a>  <span class="dt">receita =</span> <span class="kw">col_double</span>(),</span>
+<span id="cb234-13"><a href="importando-arquivos-de-texto.html#cb234-13"></a>  <span class="dt">nota_imdb =</span> <span class="kw">col_double</span>(),</span>
+<span id="cb234-14"><a href="importando-arquivos-de-texto.html#cb234-14"></a>  <span class="dt">likes_facebook =</span> <span class="kw">col_double</span>(),</span>
+<span id="cb234-15"><a href="importando-arquivos-de-texto.html#cb234-15"></a>  <span class="dt">ator_1 =</span> <span class="kw">col_character</span>(),</span>
+<span id="cb234-16"><a href="importando-arquivos-de-texto.html#cb234-16"></a>  <span class="dt">ator_2 =</span> <span class="kw">col_character</span>(),</span>
+<span id="cb234-17"><a href="importando-arquivos-de-texto.html#cb234-17"></a>  <span class="dt">ator_3 =</span> <span class="kw">col_character</span>()</span>
+<span id="cb234-18"><a href="importando-arquivos-de-texto.html#cb234-18"></a>))</span></code></pre></div>
+<p>Para conhecer as especificações das colunas disponíveis clique <a href="https://readr.tidyverse.org/articles/readr.html#available-column-specifications">aqui</a>.</p>
+<p>Também é possível salvar objetos, como data.frames em um tipo especial de arquivos, o <code>.rds</code>. A vantagem dessa extensão é guardar a estrutura dos dados salvos, como a classe das colunas de um data.frame. Além disso, é uma boa alternativa para lidar com grandes bancos de dados, já que arquivos <code>.rds</code> serão bem mais compactos do que arquivos Excel.</p>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="importando-arquivos-de-texto.html#cb235-1"></a>imdb_rds &lt;-<span class="st"> </span><span class="kw">read_rds</span>(<span class="dt">path =</span> <span class="st">&quot;data/imdb.rds&quot;</span>)</span>
+<span id="cb235-2"><a href="importando-arquivos-de-texto.html#cb235-2"></a><span class="kw">write_rds</span>(mtcars, <span class="dt">path =</span> <span class="st">&quot;data/mtcars.rds&quot;</span>)</span></code></pre></div>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="pipe.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="importando-arquivos-do-excel.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["temp.pdf", "temp.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

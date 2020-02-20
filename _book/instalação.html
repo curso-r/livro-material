@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 1 Instalação | Ciência de dados em R</title>
+  <meta name="description" content="Livro com os tutoriais e material dos cursos da Curso-R." />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 1 Instalação | Ciência de dados em R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Livro com os tutoriais e material dos cursos da Curso-R." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 1 Instalação | Ciência de dados em R" />
+  
+  <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos da Curso-R." />
+  
+
+<meta name="author" content="Curso-R" />
+
+
+<meta name="date" content="2020-02-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="rstudio.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><img src = "img/logo.png" width = 40%></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre</a></li>
+<li class="chapter" data-level="1" data-path="instalação.html"><a href="instalação.html"><i class="fa fa-check"></i><b>1</b> Instalação</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="instalação.html"><a href="instalação.html#instalação-do-r"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="instalação.html"><a href="instalação.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
+<li class="chapter" data-level="1.1.2" data-path="instalação.html"><a href="instalação.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="instalação.html"><a href="instalação.html#instalação-do-rstudio"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="instalação.html"><a href="instalação.html#no-windows-1"><i class="fa fa-check"></i><b>1.2.1</b> No Windows</a></li>
+<li class="chapter" data-level="1.2.2" data-path="instalação.html"><a href="instalação.html#no-linux-1"><i class="fa fa-check"></i><b>1.2.2</b> No Linux</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="instalação.html"><a href="instalação.html#instalação-de-pacotes"><i class="fa fa-check"></i><b>1.3</b> Instalação de pacotes</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="instalação.html"><a href="instalação.html#via-cran"><i class="fa fa-check"></i><b>1.3.1</b> Via CRAN</a></li>
+<li class="chapter" data-level="1.3.2" data-path="instalação.html"><a href="instalação.html#via-github"><i class="fa fa-check"></i><b>1.3.2</b> Via Github</a></li>
+<li class="chapter" data-level="1.3.3" data-path="instalação.html"><a href="instalação.html#via-arquivo-.zip-ou-.tar.gz"><i class="fa fa-check"></i><b>1.3.3</b> Via arquivo .zip ou .tar.gz</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="rstudio.html"><a href="rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="rstudio.html"><a href="rstudio.html#telas"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
+<li class="chapter" data-level="2.2" data-path="rstudio.html"><a href="rstudio.html#atalhos"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
+<li class="chapter" data-level="2.3" data-path="rstudio.html"><a href="rstudio.html#projetos"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
+<li class="chapter" data-level="2.4" data-path="rstudio.html"><a href="rstudio.html#cheatsheets"><i class="fa fa-check"></i><b>2.4</b> Cheatsheets</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-básico.html"><a href="r-básico.html"><i class="fa fa-check"></i><b>3</b> R Básico</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="r-básico.html"><a href="r-básico.html#pedindo-ajuda"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="r-básico.html"><a href="r-básico.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
+<li class="chapter" data-level="3.1.2" data-path="r-básico.html"><a href="r-básico.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
+<li class="chapter" data-level="3.1.3" data-path="r-básico.html"><a href="r-básico.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
+<li class="chapter" data-level="3.1.4" data-path="r-básico.html"><a href="r-básico.html#r-markdown"><i class="fa fa-check"></i><b>3.1.4</b> R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="r-básico.html"><a href="r-básico.html#r-como-calculadora"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a></li>
+<li class="chapter" data-level="3.3" data-path="r-básico.html"><a href="r-básico.html#objetos-e-classes"><i class="fa fa-check"></i><b>3.3</b> Objetos e Classes</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="r-básico.html"><a href="r-básico.html#objetos-atômicos"><i class="fa fa-check"></i><b>3.3.1</b> Objetos atômicos</a></li>
+<li class="chapter" data-level="3.3.2" data-path="r-básico.html"><a href="r-básico.html#vetores"><i class="fa fa-check"></i><b>3.3.2</b> Vetores</a></li>
+<li class="chapter" data-level="3.3.3" data-path="r-básico.html"><a href="r-básico.html#classes"><i class="fa fa-check"></i><b>3.3.3</b> Classes</a></li>
+<li class="chapter" data-level="3.3.4" data-path="r-básico.html"><a href="r-básico.html#coerção"><i class="fa fa-check"></i><b>3.3.4</b> Coerção</a></li>
+<li class="chapter" data-level="3.3.5" data-path="r-básico.html"><a href="r-básico.html#data.frame"><i class="fa fa-check"></i><b>3.3.5</b> data.frame</a></li>
+<li class="chapter" data-level="3.3.6" data-path="r-básico.html"><a href="r-básico.html#matrizes"><i class="fa fa-check"></i><b>3.3.6</b> Matrizes</a></li>
+<li class="chapter" data-level="3.3.7" data-path="r-básico.html"><a href="r-básico.html#fatores"><i class="fa fa-check"></i><b>3.3.7</b> Fatores</a></li>
+<li class="chapter" data-level="3.3.8" data-path="r-básico.html"><a href="r-básico.html#listas"><i class="fa fa-check"></i><b>3.3.8</b> Listas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="r-básico.html"><a href="r-básico.html#valores-especiais"><i class="fa fa-check"></i><b>3.4</b> Valores especiais</a></li>
+<li class="chapter" data-level="3.5" data-path="r-básico.html"><a href="r-básico.html#controles-de-fluxo"><i class="fa fa-check"></i><b>3.5</b> Controles de Fluxo</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="r-básico.html"><a href="r-básico.html#if-e-else"><i class="fa fa-check"></i><b>3.5.1</b> IF e ELSE</a></li>
+<li class="chapter" data-level="3.5.2" data-path="r-básico.html"><a href="r-básico.html#for"><i class="fa fa-check"></i><b>3.5.2</b> for</a></li>
+<li class="chapter" data-level="3.5.3" data-path="r-básico.html"><a href="r-básico.html#while"><i class="fa fa-check"></i><b>3.5.3</b> while</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="r-básico.html"><a href="r-básico.html#fórmulas"><i class="fa fa-check"></i><b>3.6</b> Fórmulas</a></li>
+<li class="chapter" data-level="3.7" data-path="r-básico.html"><a href="r-básico.html#gráficos-base"><i class="fa fa-check"></i><b>3.7</b> Gráficos (base)</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="r-básico.html"><a href="r-básico.html#gráfico-de-dispersão"><i class="fa fa-check"></i><b>3.7.1</b> Gráfico de dispersão</a></li>
+<li class="chapter" data-level="3.7.2" data-path="r-básico.html"><a href="r-básico.html#histograma"><i class="fa fa-check"></i><b>3.7.2</b> Histograma</a></li>
+<li class="chapter" data-level="3.7.3" data-path="r-básico.html"><a href="r-básico.html#boxplot"><i class="fa fa-check"></i><b>3.7.3</b> Boxplot</a></li>
+<li class="chapter" data-level="3.7.4" data-path="r-básico.html"><a href="r-básico.html#gráfico-de-barras"><i class="fa fa-check"></i><b>3.7.4</b> Gráfico de barras</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="r-básico.html"><a href="r-básico.html#exercícios"><i class="fa fa-check"></i><b>3.8</b> Exercícios</a></li>
+<li class="chapter" data-level="3.9" data-path="r-básico.html"><a href="r-básico.html#respostas"><i class="fa fa-check"></i><b>3.9</b> Respostas</a></li>
+<li class="chapter" data-level="3.10" data-path="r-básico.html"><a href="r-básico.html#observe-que-não-há-problema-em-usar-os-mesmos-nomes-para-os-argumentos.-isso-se-deve-aos-environments."><i class="fa fa-check"></i><b>3.10</b> Observe que não há problema em usar os mesmos nomes para os argumentos. Isso se deve aos <em>environments</em>.</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="pipe.html"><a href="pipe.html"><i class="fa fa-check"></i><b>4</b> Pipe</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="pipe.html"><a href="pipe.html#o-operador-pipe"><i class="fa fa-check"></i><b>4.1</b> O operador pipe</a></li>
+<li class="chapter" data-level="4.2" data-path="pipe.html"><a href="pipe.html#outros-operadores"><i class="fa fa-check"></i><b>4.2</b> Outros operadores</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="pipe.html"><a href="pipe.html#operador-de-atribuição-assignment-operator"><i class="fa fa-check"></i><b>4.2.1</b> Operador de atribuição ( Assignment operator )</a></li>
+<li class="chapter" data-level="4.2.2" data-path="pipe.html"><a href="pipe.html#operador-tee"><i class="fa fa-check"></i><b>4.2.2</b> Operador tee</a></li>
+<li class="chapter" data-level="4.2.3" data-path="pipe.html"><a href="pipe.html#exposition-operator"><i class="fa fa-check"></i><b>4.2.3</b> Exposition operator</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="pipe.html"><a href="pipe.html#exercícios-1"><i class="fa fa-check"></i><b>4.3</b> Exercícios</a></li>
+<li class="chapter" data-level="4.4" data-path="pipe.html"><a href="pipe.html#respostas-1"><i class="fa fa-check"></i><b>4.4</b> Respostas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="importação.html"><a href="importação.html"><i class="fa fa-check"></i><b>5</b> Importação</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="importação.html"><a href="importação.html#readr"><i class="fa fa-check"></i><b>5.1</b> readr</a></li>
+<li class="chapter" data-level="5.2" data-path="importação.html"><a href="importação.html#readxl"><i class="fa fa-check"></i><b>5.2</b> readxl</a></li>
+<li class="chapter" data-level="5.3" data-path="importação.html"><a href="importação.html#haven"><i class="fa fa-check"></i><b>5.3</b> haven</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="manipulação.html"><a href="manipulação.html"><i class="fa fa-check"></i><b>6</b> Manipulação</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="manipulação.html"><a href="manipulação.html#trabalhando-com-tibbles"><i class="fa fa-check"></i><b>6.1</b> Trabalhando com tibbles</a></li>
+<li class="chapter" data-level="6.2" data-path="manipulação.html"><a href="manipulação.html#dplyr"><i class="fa fa-check"></i><b>6.2</b> dplyr</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="manipulação.html"><a href="manipulação.html#filter"><i class="fa fa-check"></i><b>6.2.1</b> <code>filter()</code></a></li>
+<li class="chapter" data-level="6.2.2" data-path="manipulação.html"><a href="manipulação.html#select"><i class="fa fa-check"></i><b>6.2.2</b> <code>select()</code></a></li>
+<li class="chapter" data-level="6.2.3" data-path="manipulação.html"><a href="manipulação.html#arrange"><i class="fa fa-check"></i><b>6.2.3</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="6.2.4" data-path="manipulação.html"><a href="manipulação.html#mutate"><i class="fa fa-check"></i><b>6.2.4</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="6.2.5" data-path="manipulação.html"><a href="manipulação.html#summarise"><i class="fa fa-check"></i><b>6.2.5</b> <code>summarise()</code></a></li>
+<li class="chapter" data-level="6.2.6" data-path="manipulação.html"><a href="manipulação.html#join"><i class="fa fa-check"></i><b>6.2.6</b> <code>_join()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="manipulação.html"><a href="manipulação.html#tidyr"><i class="fa fa-check"></i><b>6.3</b> tidyr</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="manipulação.html"><a href="manipulação.html#gather"><i class="fa fa-check"></i><b>6.3.1</b> <code>gather()</code></a></li>
+<li class="chapter" data-level="6.3.2" data-path="manipulação.html"><a href="manipulação.html#spread"><i class="fa fa-check"></i><b>6.3.2</b> <code>spread()</code></a></li>
+<li class="chapter" data-level="6.3.3" data-path="manipulação.html"><a href="manipulação.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>6.3.3</b> Outras funções do <code>tidyr</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Ciência de dados em R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="instalação" class="section level1" number="1">
+<h1><span class="header-section-number">Capítulo 1</span> Instalação</h1>
+<div id="instalação-do-r" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Instalação do R</h2>
+<div id="no-windows" class="section level3" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> No Windows</h3>
+<ol style="list-style-type: decimal">
+<li><p>Entre <a href="https://cran.r-project.org/bin/windows/base/">neste link</a> e clique em
+“Download R x.x.x for Windows”, sendo x.x.x o número da versão mais recente disponível.</p></li>
+<li><p>Salve o arquivo em qualquer pasta do seu computador. Aqui, salvamos na pasta “Downloads”.</p></li>
+</ol>
+<p><img src="img/instalacao/01-r-salvo.png" width="326" style="display: block; margin: auto;" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Clique no arquivo duas vezes com o botão esquerdo. Ele pedirá para você selecionar a linguagem da instalação. Escolha um idioma e clique em “OK”.</p></li>
+<li><p>Clique em “Avançar” até chegar na tela da imagem abaixo. Nessa etapa, você precisará escolher a pasta de instalação. Se você escolher um local que não está dentro da pasta do seu usuário, você precisará de acesso de administrador. Se escolher uma pasta dentro do seu usuário (como na imagem abaixo), não precisará.</p></li>
+</ol>
+<p><img src="img/instalacao/06-r-pasta.png" width="257" style="display: block; margin: auto;" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Continue clicando em “Avançar” e, ao fim da instalação, em “Concluir”.</li>
+</ol>
+<p><img src="img/instalacao/09-conclusao.png" width="256" style="display: block; margin: auto;" /></p>
+<p>Pronto! O R está instalado no seu computador!</p>
+</div>
+<div id="no-linux" class="section level3" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> No Linux</h3>
+<p>Como a instalação no Linux depende da distribuição utilizada e, em geral, usuário de Linux são mais experientes, vamos informar apenas as coordenadas até as instruções/arquivos de instalação para cada distribuição. Se você tiver alguma dificuldade durante o processo, por favor envie a sua dúvida para <a href="mailto:contato@curso-r.com" class="email">contato@curso-r.com</a>. Faremos o possível para ajudar.</p>
+<ol style="list-style-type: decimal">
+<li><p>Acesse <a href="https://cran.r-project.org/">este link</a> e clique em <em>Download R for Linux</em>.</p></li>
+<li><p>Em seguida, clique no link referente à distribuição que você utiliza.</p></li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/8967307/45383184-db384580-b5e0-11e8-8bac-dd40a4d7e76f.png" style="width: 80%;"></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Siga as instruções contidas na página para instalar o R.</li>
+</ol>
+</div>
+</div>
+<div id="instalação-do-rstudio" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Instalação do RStudio</h2>
+<div id="no-windows-1" class="section level3" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> No Windows</h3>
+<p>Agora vamos instalar o RStudio, a IDE que utilizaremos para editar e executar códigos em R.</p>
+<ol style="list-style-type: decimal">
+<li>Entre <a href="https://www.rstudio.com/products/rstudio/download/#download">nesta página</a>.</li>
+</ol>
+<p><img src="img/instalacao/rstudio-download-opt.png" width="294" style="display: block; margin: auto;" /></p>
+<p>Você terá duas opções:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Se você tiver acesso administrador, baixe a versão que está na lista de <em>All Installers</em>. Em seguida a instalação
+será bem simples: fazer o download, abrir o instalador e seguir as instruções, clicando no botão “Avançar”.</p></li>
+<li><p>Se você não tiver acesso de administrador, faça o download da versão
+que está na lista <em>Zip/Tarballs</em>. (veja imagem acima)</p></li>
+</ol>
+<div id="instalando-se-você-for-administrador" class="section level4" number="1.2.1.1">
+<h4><span class="header-section-number">1.2.1.1</span> Instalando se você for administrador</h4>
+<p>2a. Clique duas vezes no arquivo que você baixou da página do RStudio (ver imagem abaixo) e siga as instruções de instalação.</p>
+<p><img src="img/instalacao/rstudio-instalador.png" width="326" style="display: block; margin: auto;" /></p>
+</div>
+<div id="instalação-se-você-não-for-administrador" class="section level4" number="1.2.1.2">
+<h4><span class="header-section-number">1.2.1.2</span> Instalação se você não for administrador</h4>
+<p>2b. Se você não for administrador, você deve ter feito o download de um arquivo do tipo <em>.zip</em>, que contém o código do RStudio. É o arquivo selecionado na imagem abaixo.</p>
+<p><img src="img/instalacao/rstudio-zip.png" width="325" style="display: block; margin: auto;" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Clique com o botão direito neste arquivo e depois em <em>Extrair Tudo</em> conforme a imagem.</li>
+</ol>
+<p><img src="img/instalacao/rstudio-extrair.png" width="326" style="display: block; margin: auto;" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Você verá uma tela como a imagem a seguir. Não mude nada e clique em extrair. Espere o Windows completar a extração.</li>
+</ol>
+<p><img src="img/instalacao/extrair-tudo-rstudio.png" width="314" style="display: block; margin: auto;" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Agora, na pasta <em>Downloads</em>, a pasta que deixamos como local de extração (imagem acima), você terá uma pasta chamada: <code>RStudio-x.x.x</code>, em que x.x.x é o número da versão mais recente disponível. Abra essa pasta e entre na subpasta com nome <code>bin</code>.</p></li>
+<li><p>Procure pelo arquivo chamado <code>rstudio</code> e clique duas vezes. Isso abrirá o RStudio. Recomendo fixar o programa na barra de tarefas para não ter que ficar procurando nessa pasta sempre que quiser abri-lo.</p></li>
+</ol>
+<p><strong>Observação</strong>: se você excluir a pasta que extraímos, o RStudio irá parar de funcionar.</p>
+<p><img src="img/instalacao/rstudio-bin.png" width="326" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="no-linux-1" class="section level3" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> No Linux</h3>
+<ol style="list-style-type: decimal">
+<li><p>Acesse <a href="https://www.rstudio.com/products/rstudio/download/#download">este link</a>.</p></li>
+<li><p>Clique no link referente à distribuição que você utiliza para fazer o download do arquivo de instalação.</p></li>
+</ol>
+<p><img src="img/instalacao/rstudio-linux.png" width="438" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="instalação-de-pacotes" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Instalação de pacotes</h2>
+<p>Um pacote é um conjunto de funções que têm como objetivo resolver um problema específico. São eles que deixam o R poderoso, capaz de enfrentar qualquer tarefa de análise de dados. Assim, fique bastante à vontade para instalar e atualizar muitos e muitos pacotes ao longo da sua experiência com o R.</p>
+<p>O legal é que qualquer pessoa pode fazer um novo pacote e disponibilizar para a comunidade, o que acelera bastante o desenvolvemento da ferramenta. Dificilmente você vai fazer uma análise apenas com as funções básicas do R e dificilmente não vai existir um pacote com as funções que você precisa.</p>
+<p>Existem três principais maneiras de instalar pacotes. Em ordem de frequência, são:</p>
+<ul>
+<li>Via CRAN (Comprehensive R Archive Network): <code>install.packages("nome-do-pacote")</code>.</li>
+<li>Via Github: <code>devtools::install_github("nome-do-repo/nome-do-pacote")</code>.</li>
+<li>Via arquivo .zip/.tar.gz: <code>install.packages("C:/caminho/nome-do-pacote.zip", repos = NULL)</code>.</li>
+</ul>
+<p>Se você é usuário do linux, para conseguir instalar alguns pacotes, talvez você precise instalar dependencias do sistema no terminal do computador manualmente. Por exemplo, se você quer instalar o pacote devtools no R, será necessário ter as dependências curl, openssl, httr e git2r.</p>
+<p>Para saber quais dependencias instalar basta usar a função <code>install.packages("nome_do_pacote")</code> e ler as mensagens de erro que aparecerão.</p>
+<div id="via-cran" class="section level3" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Via CRAN</h3>
+<p>Instale pacotes que não estão na sua biblioteca usando a função <code>install.packages("nome_do_pacote")</code>. Por exemplo:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="instalação.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;magrittr&quot;</span>)</span></code></pre></div>
+<p>E, de agora em diante, não precisa mais instalar. Basta carregar o pacote com <code>library(magrittr)</code>.</p>
+<blockquote>
+<p>Escreva nome_do_pacote::nome_da_funcao() se quiser usar apenas uma função de um determinado pacote. O operador :: serve para isso. Essa forma também é útil quando se tem duas funções com o mesmo nome e precisamos garantir que o código vá usar a função do pacote correto.</p>
+</blockquote>
+</div>
+<div id="via-github" class="section level3" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Via Github</h3>
+<p>Desenvolvedores costumam disponibilizar a última versão de seus pacotes no Github, e alguns deles sequer estão no CRAN. Mesmo assim ainda é possível utilizá-los instalando diretamente pelo github. O comando é igualmente simples:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="instalação.html#cb2-1"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;rstudio/shiny&quot;</span>)</span></code></pre></div>
+<p>Apenas será necessário o username e o nome do repositório (que geralmente tem o mesmo nome do pacote). No exemplo, o username foi “rstudio” e o repositório foi “shiny”.</p>
+<p>Se você não é familiar com o github, não se preocupe! Os pacotes disponibilizados na plataforma geralmente têm um <code>README</code> cuja primeira instrução é sobre a instalação. Se não tiver, provavelmente este pacote não te merece! =)</p>
+</div>
+<div id="via-arquivo-.zip-ou-.tar.gz" class="section level3" number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> Via arquivo .zip ou .tar.gz</h3>
+<p>Se você precisar instalar um pacote que está zipado no seu computador (ou em algum servidor), utilize o seguinte comando:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="instalação.html#cb3-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;C:/caminho/para/o/arquivo/zipado/nome-do-pacote.zip&quot;</span>, <span class="dt">repos =</span> <span class="ot">NULL</span>)</span></code></pre></div>
+<p>É semelhante a instalar pacotes via CRAN, com a diferença que agora o nome do pacote é o caminho inteiro até o arquivo. O parâmetro <code>repos = NULL</code> informa que estamos instalando a partir da máquina local.</p>
+<p>A aba <strong><em>Packages</em></strong> do RStudio também ajuda a administrar os seus pacotes.</p>
+<p><img src="img/instalacao/instalar_pacote_rstudio.png" width="326" style="display: block; margin: auto;" /></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rstudio.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["temp.pdf", "temp.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
