@@ -11,33 +11,45 @@ knitr::include_graphics(rep("img/rstudio/rstudio-editor.png"))
 ```
 
 
-Esses quadrantes representam o **editor**, o **console**, o **environment** e o **output**.  Eles vêm nesta ordem, e depois você pode organizá-los da forma que preferir.
+Esses quadrantes representam o **editor**, o **console**, o **environment** e o **output**. Eles vêm nesta ordem, mas você pode organizá-los da forma que preferir acessando a opção `Global options...` do menu `Tools`.
 
-Listamos abaixo as funções dos principais painéis:
+O editor e o console são os dois principais painéis do RStudio. Passaremos a maior parte do tempo neles.
 
-- **Editor/Scripts**: é onde escrevemos nossos códigos.
+- **Editor/Scripts**: é onde escrevemos nossos códigos. Repare que o RStudio colore algumas palavras e símbolos para facilitar a leitura do código.
 - **Console**: é onde rodamos o código e recebemos as saídas. O R vive aqui!
+
+Os demais painéis são auxiliares. O objetivo deles é facilitar pequenas tarefas que fazem parte tanto da programação quanto da análise de dados, como olhar a documentação de funções, analisar os objetos criados em uma sessão do R, procurar e organizar os arquivos que compõem a nossa análise, armazenar e analisar os gráficos criados e muito mais.
+
 - **Environment**: painel com todos os objetos criados na sessão.
+- **History**: painel com um histórico dos comandos rodados.
 - **Files**: mostra os arquivos no diretório de trabalho. É possível navegar entre diretórios.
 - **Plots**: painel onde os gráficos serão apresentados.
+- **Packages**: apresenta todos os pacotes instalados e carregados.
 - **Help**: janela onde a documentação das funções serão apresentadas.
-- **History**: painel com um histórico dos comandos rodados.
+- **Viewer**: painel onde relatórios e dashboards serão apresentados.
 
 ## Atalhos
 
-Conhecer atalhos ajuda bastante quando estamos programando no RStudio. Veja os principais:
+Conhecer os atalhos do teclado ajuda bastante quando estamos programando no RStudio. Veja os principais:
 
-- **CTRL+ENTER**: roda a linha selecionada no script. O atalho mais utilizado.
-- **ALT+-**: (<-) sinal de atribuição. Você usará o tempo todo.
-- **CTRL+SHIFT+M**: (%>%) operador *pipe*. Guarde esse atalho, você usará bastante.
+- **CTRL+ENTER**: avalia a linha selecionada no script. O atalho mais utilizado.
+- **ALT+-**: cria no script um sinal de atribuição (<-). Você o usará o tempo todo.
+- **CTRL+SHIFT+M**: (%>%) operador *pipe*. Guarde esse atalho, você o usará bastante.
 - **CTRL+1**: altera cursor para o script.
 - **CTRL+2**: altera cursor para o console.
 - **CTRL+ALT+I**: cria um chunk no R Markdown.
+- **CTRL+SHIFT+K**: compila um arquivo no R Markdown.
 - **ALT+SHIFT+K**: janela com todos os atalhos disponíveis.
+
+No MacBook, os atalhos geralmente são os mesmos, substituindo o **CTRL** por **command** e o **ALT** por **option**.
 
 ## Projetos
 
-Uma funcionalidade importante é a criação de projetos, permitindo dividir o trabalho em múltiplos ambientes, cada um com o seu diretório, documentos e *workspace*. 
+Uma funcionalidade importante é a criação de projetos, permitindo dividir o trabalho em múltiplos ambientes, cada um com o seu diretório, documentos e área de trabalho (*workspace*).
+
+Um projeto nada mais é do que uma pasta no seu computador. Nessa pasta, estarão todos os arquivos que você usurá ou criará na sua análise, o que deixa o nosso trabalho muito mais organizado. Além disso, quando usamos projetos no RStudio, fica muito mais fácil importar bases de dados para dentro do R, criar análises reprodutíveis e compartilhar o nosso trabalho.
+
+> Boa prática! Sempre crie um novo projeto para cada nova análise que for começar a fazer.
 
 Para criar um projeto, clique em `New Project...` no Menu `File`. Na caixa de diálogo que aparecerá, clique em `New Directory` para criar o projeto em uma nova pasta ou `Existing Directory` para criar em uma pasta existente. Se você tiver o `Git` instalado, você também pode usar projetos para conectar com repositórios do Github e outras plataformas de desenvolvimento. Para isso, basta clicar em `Version Control`.
 
@@ -45,8 +57,6 @@ Para criar um projeto, clique em `New Project...` no Menu `File`. Na caixa de di
 ```{r echo=FALSE, fig.align='center'}
 knitr::include_graphics(rep("img/rstudio/projetos.png"))
 ```
-
-
 
 
 A seguir, apresentamos algumas estruturas para a organização de um projeto.
@@ -76,7 +86,7 @@ project/
   - project.Rproj
 ```
 
-**Estrutura 3**. Pacote do R (avançado).
+**Estrutura 3**. Pacote do R (ver o capítulo sobre criação de pacotes).
 
 ```{r, engine='bash', eval = FALSE}
 project/
@@ -92,7 +102,7 @@ project/
 
 ## Cheatsheets
 
-Se você clicar no Menu `Help` e então em Cheatsheets, você verá algumas opções de *folhas de cola*, um guia de consulta rápido para diversos pacotes e para o próprio RStudio.
+Se você clicar no Menu `Help` e então em `Cheatsheets`, você verá algumas opções de *folhas de cola*, um guia de consulta rápido para diversos pacotes e para o próprio RStudio.
 
 ```{r echo=FALSE, fig.align='center'}
 knitr::include_graphics(rep("img/rstudio/cheatsheet-rstudio.png"))

@@ -1,4 +1,4 @@
-## dplyr
+## O pacote dplyr
 
 
 O `dplyr` é o pacote mais útil para realizar transformação de dados, aliando simplicidade e eficiência de uma forma elegante. Os scripts em R que fazem uso inteligente dos verbos `dplyr` e as facilidades do operador _pipe_ tendem a ficar mais legíveis e organizados sem perder velocidade de execução.
@@ -32,7 +32,7 @@ Agora, vamos avaliar com mais detalhes as principais funções do pacote `dplyr`
 
 -----------------------------------------------------
 
-### `filter()`
+### Filtrando linhas
 
 A função `filter()` filtra linhas. Ela é semelhante à função `subset()`, do R base. O código abaixo retorna apenas filmes com nota maior que nova.
 
@@ -77,7 +77,7 @@ imdb %>%
 
 -----------------------------------------------------
 
-### `select()`
+### Selecionando colunas
 
 A função `select()` seleciona colunas (variáveis). É possível utilizar nomes, índices, intervalos de variáveis ou utilizar as funções `starts_with(x)`, `contains(x)`, `matches(x)`, `one_of(x)` para selecionar as variáveis.
 
@@ -108,7 +108,7 @@ imdb %>%
 
 -----------------------------------------------------
 
-### `arrange()`
+### Ordenando a base
 
 A função `arrange()` ordena a base segundo uma ou mais colunas. O argumento `desc=` pode ser utilizado para gerar uma ordem decrescente.
 
@@ -128,7 +128,7 @@ imdb %>%
 
 -----------------------------------------------------
 
-### `mutate()`
+### Criando e modificando colunas
 
 A função `mutate()` cria ou modifica colunas. Ela é equivalente à função `transform()`, mas aceita várias novas colunas iterativamente. Novas variáveis devem ter o mesmo número de linhas da base original (ou comprimento 1).
 
@@ -154,7 +154,7 @@ imdb %>%
 
 -----------------------------------------------------
 
-### `summarise()`
+### Summarisando a base
 
 A função `summarise()` sumariza a base. Ela aplica uma função às variáveis, retornando um vetor de tamanho `1`. Ela é utilizada em conjunto da função `group_by()`. A função `n()` costuma ser bastante utilizada com a função summarise().
 ```{r include=FALSE}
@@ -183,7 +183,7 @@ imdb %>%
   summarise(orcamento_medio = mean(orcamento, na.rm = TRUE))
 ```
 
-### `_join()`
+### Juntando duas bases
 
 Para juntar duas tabelas de dados, podemos utilizar a família de funções `_join()` do `dplyr`. Essas funções geralmente recebem três argumentos: uma base esquerda (`x=`), uma base direita (`y=`) e uma chave `by=`. As principais funções `_join()` são:
 

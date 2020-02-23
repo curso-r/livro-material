@@ -1,13 +1,21 @@
 # R Básico
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse=TRUE)
+```
+
+
+Introduziremos aqui os principais conceitos de progamação em R. Indicamos a leitura deste capítulo a quem nunca teve contato com uma linguagem de programação ou a quem gostaria de entender um pouco melhor a estrutura de objetos, funções e classes do R.
+
 ## Pedindo Ajuda
 
-A linguagem `R` é bem intuitiva. É possível fazer bastante coisa à base da tentativa e erro. Além disso, grande parte do conhecimento é escalável, isto é, aprender a utilizar uma função é meio caminho andado para aprender todas as outras funções que operam de forma semelhante. Essa ideia é um dos princípios por trás do `tidyverse`.
+A linguagem `R` é bem intuitiva. É possível fazer bastante coisa à base da tentativa e erro. Além disso, grande parte do conhecimento é escalável, isto é, aprender a utilizar uma função é meio caminho andado para aprender todas as outras funções que operam de forma semelhante^[Essa ideia é um dos princípios por trás do `tidyverse`.].
 
 No entanto, a intuição não infalível, e recorrentemente vamos precisar de ajuda para rodar alguma função ou descobrir como fazer alguma tarefa no R. Felizmente, a comunidade R é bem ativa e existem vários lugares para buscar respostas. Nesta seção, vamos apresentar as principais maneiras algumas dessas maneiras.
 
 No R, há quatro principais entidades para se pedir ajuda:
 
-- Help/documentação do R (comandos `help(nome_da_funcao)` ou `?nome_da_funcao`)
+- Help/documentação do R
 - Google
 - Stack Overflow
 - Coleguinha
@@ -29,12 +37,12 @@ Cinco dicas:
 2. Leia a seção **Usage** para ter noção de como usar a função.
 3. Os parâmetros da função estão descritos em **Arguments**.
 4. Caso essa função não atenda às suas necessidades, a seção **See Also** sugere funções relacionadas.
-5. Alguns pacotes possuem tutorias de uso mais completos. Esses textos são chamados de `vignettes` e podem ser acessados com a função `vignette(package = 'nomeDoPacote')`. Por exemplo, `vignette(package = 'dplyr')`. Depois de ver a lista de artigos, escolha um nome e rode `vignette(topic = 'nome', package = 'nomeDoPacote')`. Por exemplo, `vignette(topic = 'introduction', package = 'dplyr')`.
-6. Bases de dados presentes em pacotes também têm documentação, e geralmente é possível encontrar o significado de cada variável nela.
+5. Alguns pacotes possuem tutorias de uso mais completos. Esses textos são chamados de `vignettes` e podem ser acessados com a função `vignette(package = 'nomeDoPacote')`. Por exemplo, `vignette(package = 'dplyr')`.
+6. Bases de dados presentes em pacotes também têm documentação, e geralmente é possível encontrar o significado de cada variável nela. Por exemplo, `help(mtcars)`.
 
 ### Google
 
-Há uma comunidade gigantesca de usuários de R gerando diariamente uma infinidade de conteúdos e discussões. Não raramente, você irá encontrar discussões sobre o seu problema simplesmente jogando o seu erro no Google. Essa deve ser sua primeira tentativa! Pesquisas em inglês aumentam consideravelmente a chance de encontrar uma resposta.
+Há uma comunidade gigantesca de usuários de R gerando diariamente uma infinidade de conteúdos e discussões. Não raramente, você irá encontrar discussões sobre o seu problema simplesmente jogando o seu erro no Google. Essa deve ser sua primeira tentativa para reseolver um problema! Pesquisas em inglês aumentam consideravelmente a chance de encontrar uma resposta.
 
 Exemplo (repare no 'r' adicionado na busca, isso ajuda bastante):
 
@@ -46,17 +54,13 @@ log("5")
 knitr::include_graphics(rep("img/r-base/ajuda_google.png"))
 ```
 
-
-
-
-
 ### Stack Overflow
 
 O [Stack Overflow](http://stackoverflow.com/) e o [Stack Overflow em Português](http://pt.stackoverflow.com/) são sites de Pergunta e Resposta amplamente utilizados por todas as linguagens de programação, e o R é uma delas. Nos EUA, chegam até a usar a reputação dos usuários como diferencial no currículo!
 
 Provavelmente o Google lhe indicará uma página deles quando você estiver procurando ajuda. E quando todas as fontes possíveis de ajuda falharem, o Stack Overflow lhe dará o espaço para **criar sua própria pergunta**.
 
-> Um ponto importante: como fazer uma **boa** pergunta no Stack Overflow?
+**Um ponto importante**: como fazer uma *boa pergunta* no Stack Overflow?
 
 No site, existe um tutorial com uma lista de boas práticas, [que se encontra aqui](http://pt.stackoverflow.com/help/how-to-ask). Resumindo, as principais dicas são
 
@@ -71,37 +75,35 @@ Porém, no caso do R, há outro requisito que vai aumentar muito sua chance de t
 
 - Ser **reprodutível**: o seu código deve rodar fora da sua máquina. Se você não fornecer uma versão do seu problema que rode (ou que imite seu erro), as pessoas vão logo desistir de te ajudar. Por isso, nunca coloque bancos de dados que só você tem acesso. Use bancos de dados que já vem no R ou disponibilize um exemplo (possivelmente anonimizado) em `.csv` na web para baixar. E se precisar utilizar funções diferentes, coloque as `library`'s correspondentes.
 
-### R Markdown
+<!-- ### R Markdown -->
 
-O R Markdown é um tipo de documento especial que contém tanto textos em *markdown* quanto *chunks* de códigos em R, tudo escrito no mesmo lugar. 
+<!-- O R Markdown é um tipo de documento especial que contém tanto textos em *markdown* quanto *chunks* de códigos em R, tudo escrito no mesmo lugar.  -->
 
-O *markdown* nada mais é do que um documento de texto com alguns padrões básicos de formatação, como negrito, itálico, títulos, subtítulos, itens e referências cruzadas. Já os *chunks* são pedaços de códigos em R encapsulados por três crases (```). Os códigos são executados sempre que o documento é processado.
+<!-- O *markdown* nada mais é do que um documento de texto com alguns padrões básicos de formatação, como negrito, itálico, títulos, subtítulos, itens e referências cruzadas. Já os *chunks* são pedaços de códigos em R encapsulados por três crases (```). Os códigos são executados sempre que o documento é processado. -->
 
-```{r, echo=FALSE}
-cat("```{r}
-isto é um chunk. 
-```")
-```
+<!-- ```{r, echo=FALSE} -->
+<!-- cat("```{r} -->
+<!-- isto é um chunk.  -->
+<!-- ```") -->
+<!-- ``` -->
 
-> Este site foi escrito em R Markdown. Toda vez que aparecer exemplos de código de R, havia um chunk no .Rmd original.
+<!-- > Este site foi escrito em R Markdown. Toda vez que aparecer exemplos de código de R, havia um chunk no .Rmd original. -->
 
-Para produção de relatórios, o R Markdown possui algumas vantagens, como:
+<!-- Para produção de relatórios, o R Markdown possui algumas vantagens, como: -->
 
-1. **Simplicidade e foco**. Permite ao usuário o foco na análise e não na formatação do documento.
-1. **Versátil**. Pode ser utilizado para gerar documentos em `LaTeX`, `Word`, `HTML` e apresentações em `beamer`, `pptx` e `HTML`. Pode ainda gerar sites, livros, dissertações de mestrado e até mesmo dashboards interativos.
-1. **Reprodutível**. O R Markdown nada mais é que um arquivo de texto. Além disso, ele tenta te obrigar a fazer o documento mais autocontido possível. Assim, um documento `.Rmd` é fácil de compartilhar e de ser utilizado pelo receptor. Lembre-se, o receptor pode ser o futuro você! Vale enfatizar que a reprodutibilidade é considerada como um dos princípios fundamentais da ciência. Então, só de usar R Markdown, você já está colaborando com o método científico. :)
-1. **Flexível**. É possível configurar e criar *templates* de análises para quaisquer tipos de aplicações e clientes. Os textos podem ser parametrizados por números que variam de versão para versão, mensalmente, por exemplo, tudo escrito somente em R. 
+<!-- 1. **Simplicidade e foco**. Permite ao usuário o foco na análise e não na formatação do documento. -->
+<!-- 1. **Versátil**. Pode ser utilizado para gerar documentos em `LaTeX`, `Word`, `HTML` e apresentações em `beamer`, `pptx` e `HTML`. Pode ainda gerar sites, livros, dissertações de mestrado e até mesmo dashboards interativos. -->
+<!-- 1. **Reprodutível**. O R Markdown nada mais é que um arquivo de texto. Além disso, ele tenta te obrigar a fazer o documento mais autocontido possível. Assim, um documento `.Rmd` é fácil de compartilhar e de ser utilizado pelo receptor. Lembre-se, o receptor pode ser o futuro você! Vale enfatizar que a reprodutibilidade é considerada como um dos princípios fundamentais da ciência. Então, só de usar R Markdown, você já está colaborando com o método científico. :) -->
+<!-- 1. **Flexível**. É possível configurar e criar *templates* de análises para quaisquer tipos de aplicações e clientes. Os textos podem ser parametrizados por números que variam de versão para versão, mensalmente, por exemplo, tudo escrito somente em R.  -->
 
-Criar um R Markdown novo no RStudio é fácil. Clique no botão de criar arquivo e selecione R Markdown.
+<!-- Criar um R Markdown novo no RStudio é fácil. Clique no botão de criar arquivo e selecione R Markdown. -->
 
-```{r echo=FALSE, fig.align='center'}
-knitr::include_graphics(rep("img/r-base/criar_rmarkdown.png"))
-```
-
-
+<!-- ```{r echo=FALSE, fig.align='center'} -->
+<!-- knitr::include_graphics(rep("img/r-base/criar_rmarkdown.png")) -->
+<!-- ``` -->
 
 
-Para detalhes sobre como utilizar o R Markdown, leia   [esta seção do R4DS](http://r4ds.had.co.nz/r-markdown.html) e [o tutorial do RStudio](http://rmarkdown.rstudio.com/lesson-1.html).
+<!-- Para detalhes sobre como utilizar o R Markdown, leia   [esta seção do R4DS](http://r4ds.had.co.nz/r-markdown.html) e [o tutorial do RStudio](http://rmarkdown.rstudio.com/lesson-1.html). -->
 
 
 ## R como calculadora
@@ -113,7 +115,7 @@ Pelo console, é possível executar qualquer comando do R.
 ```
 
 Esse comando é uma forma simplificada de criar um vetor de inteiros de 1 a 30.
-Os números que aparecem entre colchetes ([1] e [24]) indicam o índice do primeiro elemento impresso em cada linha.
+Os números que aparecem entre colchetes ([1] e [24]) indicam o índice (ordem) do primeiro elemento impresso em cada linha.
 
 > Quando compilamos? Quem vem de linguagens como o C ou Java espera que seja necessário compilar o código em texto para o código das máquinas (geralmente um código binário). No R, isso não é necessário. O R é uma linguagem de programação dinâmica que interpreta o seu código enquanto você o executa.
 
@@ -147,7 +149,7 @@ Pronto! Com essa simples expressão você já é capaz de pedir ao R para fazer 
 
 Além do mais, as operações e suas precedências são mantidas como na matemática, ou seja, divisão e multiplicação são calculadas antes da adição e subtração. E os parênteses nunca são demais!
 
-Uma outra forma de executar uma expressão é escrever o código no **script** e teclar `Ctrl + Enter` ou `Ctrl + R`. Assim, o comando é enviado para o **console**, onde é diretamente executado.
+Uma outra forma de executar uma expressão é escrever o código no **script** e teclar `Ctrl + Enter`. Assim, o comando é enviado para o **console**, onde é diretamente executado. Essa operação é chamada de **avaliar o código** ou, popularmente, de **rodar o código**.
 
 Se você digitar um comando incompleto, como `5 + `, e apertar `Enter`, o R mostrará um `+`, o que não tem nada a ver com somar alguma coisa. Isso significa que o R está esperando que você complete o seu comando. Termine o seu comando ou aperte `Esc` para recomeçar.
 
@@ -165,10 +167,10 @@ NÃO ENTRE EM PÂNICO!
 Ele só está avisando que não conseguiu interpretar o comando. Você pode digitar outro comando normalmente em seguida.
 
 ```
-> 5 % 5
-Error: unexpected input in "5 % 5"
-> 5 - 5
-[1] 0
+> 5 % 2
+Error: unexpected input in "5 % 2"
+> 5 ^ 2
+[1] 25
 ```
 
 ## Objetos e Classes
@@ -187,13 +189,23 @@ a
 
 ### Objetos atômicos
 
-Existem cinco classes básicas ou “atômicas” no R:
+A classe de um objeto é muito importante dentro do R. É a partir dela que as funções e operadores conseguem saber exatamente o que fazer com um objeto.
 
-- character 
-- numeric 
-- integer 
-- complex 
-- logical 
+Por exemplo, veja o que acontece quando tentamos somar duas letras:
+
+```{r, error=TRUE}
+1 + 1
+
+"a" + "b"
+```
+
+O operador `+` verifica que `"a"` e `"b"` não são números (a classe deles não é numérica) e devolve uma mensagem de erro informando isso.
+
+As classes mais básicas dentro do R são:
+
+- numeric
+- character
+- logical
 
 Veja alguns exemplos:
 
@@ -203,7 +215,6 @@ Veja alguns exemplos:
 "a"
 "1"
 "positivo"
-"Error: objeto x não encontrado"
 
 # numeric
 
@@ -212,23 +223,15 @@ Veja alguns exemplos:
 0.95
 pi
 
-# integer
-
-1L
-5L
-10L
-
-# complex (raramente utilizado para análise de dados)
-
-2 + 5i
-
 # logical
 
 TRUE
 FALSE
 ```
 
+Um objeto de qualquer uma dessas classes é chamado de **objeto atômico*. Esse nome se deve ao fato de que essas classes não se misturam, isto é, para um objeto ter a classe `numeric` todos os seus valores precisam ser numéricos.
 
+Mas como atribuir mais de um valor a um mesmo objeto? Para isso, precisamos criar **vetores**.
 
 ### Vetores
 
@@ -1023,6 +1026,7 @@ alea(5, 100, 105)
 ```
 
 Observe que não há problema em usar os mesmos nomes para os argumentos. Isso se deve aos *environments*. 
+
 --------------------------------------------------------------------------------
 
 **10.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.
