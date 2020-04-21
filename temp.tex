@@ -1,0 +1,3261 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode=true}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Ciência de dados em R},
+  pdfauthor={Curso-R},
+  hidelinks,
+}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{booktabs}
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{Ciência de dados em R}
+\author{Curso-R}
+\date{2020-04-20}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{sobre}{%
+\chapter*{Sobre}\label{sobre}}
+\addcontentsline{toc}{chapter}{Sobre}
+
+O R é uma linguagem de programação \emph{open source} para análise de dados que fornece uma grande variedade de ferramentas estatísticas e gráficas.
+
+\hypertarget{instalauxe7uxe3o}{%
+\chapter{Instalação}\label{instalauxe7uxe3o}}
+
+Nesta seção, abordaremos como instalar o R e o RStudio no Linux e no Windows. Também discutiremos sobre a instalação de pacotes no R.
+
+\hypertarget{instalauxe7uxe3o-do-r}{%
+\section{Instalação do R}\label{instalauxe7uxe3o-do-r}}
+
+A instalação padrão do R é feita a partir do CRAN, uma rede servidores espalhada pelo mundo que armazena versões idênticas e atualizadas de códigos e documentações para o R.
+
+\begin{quote}
+Sempre que for instalar algo do CRAN, utilize o servidor (\emph{mirror}) mais próximo de você.
+\end{quote}
+
+\hypertarget{no-windows}{%
+\subsection{No Windows}\label{no-windows}}
+
+Para instalar o R no Windows, siga os seguintes passos:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Acesse o CRAN: \url{https://cran.r-project.org/bin/windows/base/}
+\item
+  Clique em ``Download R x.x.x for Windows'', sendo x.x.x o número da versão mais recente disponível.
+\item
+  Salve o arquivo em qualquer pasta do seu computador.
+\item
+  Clique no arquivo duas vezes com o botão esquerdo e siga as instruções para instalação.
+\end{enumerate}
+
+\begin{quote}
+Na etapa de escolher a pasta de destino da instalação, se você escolher um local que não esteja dentro da sua pasta de usuário, você precisará de acesso de administrador. Se escolher uma pasta dentro da sua paste de usuário, não precisará.
+\end{quote}
+
+Pronto! O R está instalado no seu computador!
+
+\hypertarget{no-linux}{%
+\subsection{No Linux}\label{no-linux}}
+
+Como a instalação no Linux depende da distribuição utilizada e, em geral, usuário de Linux são mais experientes, vamos informar apenas as coordenadas até as instruções/arquivos de instalação para cada distribuição. Se você tiver alguma dificuldade durante o processo, por favor envie a sua dúvida para a nossa \href{https://discourse.curso-r.com/}{comunidade} ou para o e-mail \href{mailto:duvidas@curso-r.com}{\nolinkurl{duvidas@curso-r.com}}. Faremos o possível para ajudar.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Acesse o CRAN: \url{https://cran.r-project.org/}
+\item
+  Clique em \emph{Download R for Linux}.
+\item
+  Clique no link referente à distribuição que você utiliza.
+\item
+  Siga as instruções contidas na página para instalar o R.
+\end{enumerate}
+
+\hypertarget{instalauxe7uxe3o-do-rstudio}{%
+\section{Instalação do RStudio}\label{instalauxe7uxe3o-do-rstudio}}
+
+Agora vamos instalar a versão \emph{open source} do RStudio, a IDE que utilizaremos para escrever e executar códigos em R.
+
+\hypertarget{no-windows-1}{%
+\subsection{No Windows}\label{no-windows-1}}
+
+Para instalar o RStudio no Windows, siga os seguintes passos:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Entre no site da Rstudio: \url{https://rstudio.com}
+\item
+  No topo da página, clique em \href{https://rstudio.com/products/rstudio/download/}{download}.
+\end{enumerate}
+
+2a. Se você tiver acesso administrador, baixe a versão que está na lista de \emph{All Installers}.
+
+2b. Se você não tiver acesso de administrador, faça o download da versão
+que está na lista \emph{Zip/Tarballs}.
+
+\hypertarget{instalando-se-vocuxea-for-administrador}{%
+\subsubsection*{Instalando se você for administrador}\label{instalando-se-vocuxea-for-administrador}}
+\addcontentsline{toc}{subsubsection}{Instalando se você for administrador}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Clique duas vezes no arquivo que você baixou da página do RStudioe siga as instruções de instalação.
+\end{enumerate}
+
+Pronto! O RStudio está pronto para ser utilizado.
+
+\hypertarget{instalauxe7uxe3o-se-vocuxea-nuxe3o-for-administrador}{%
+\subsubsection*{Instalação se você não for administrador}\label{instalauxe7uxe3o-se-vocuxea-nuxe3o-for-administrador}}
+\addcontentsline{toc}{subsubsection}{Instalação se você não for administrador}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  Clique com o botão direito no arquivo baixado e depois em \emph{Extrair Tudo} conforme a imagem.
+\item
+  Após a descompactação do arquivo ter sido finalizada, você terá uma pasta chamada: \texttt{RStudio-x.x.x}, em que x.x.x é o número da versão baixada. Abra essa pasta e entre na subpasta com nome \texttt{bin}.
+\item
+  Procure pelo arquivo chamado \texttt{rstudio} e clique duas vezes. Isso abrirá o RStudio. Recomendo fixar o programa na barra de tarefas para não precisar repetir essa etapa sempre que for abrir o programa.
+\end{enumerate}
+
+\textbf{Observação}: se você excluir a pasta que extraímos, o RStudio irá parar de funcionar.
+
+\hypertarget{no-linux-1}{%
+\subsection{No Linux}\label{no-linux-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Entre no site da Rstudio: \url{https://rstudio.com}
+\item
+  No topo da página, clique em \href{https://rstudio.com/products/rstudio/download/}{download}.
+\item
+  Clique no link referente à distribuição que você utiliza para fazer o download do arquivo de instalação.
+\item
+  A depender da sua distribuição do Linux, instale o arquivo baixado.
+\end{enumerate}
+
+\hypertarget{instalauxe7uxe3o-de-pacotes}{%
+\section{Instalação de pacotes}\label{instalauxe7uxe3o-de-pacotes}}
+
+Um pacote é um conjunto de funções que têm como objetivo resolver um problema específico. São eles que deixam o R poderoso, capaz de enfrentar qualquer tarefa de análise de dados. Assim, fique bastante à vontade para instalar e atualizar muitos e muitos pacotes ao longo da sua experiência com o R.
+
+O legal é que qualquer pessoa pode fazer um novo pacote e disponibilizar para a comunidade, o que acelera bastante o desenvolvemento da ferramenta. Dificilmente você vai fazer uma análise apenas com as funções básicas do R e dificilmente não vai existir um pacote com as funções que você precisa.
+
+Existem três principais maneiras de instalar pacotes. Em ordem de frequência, são:
+
+\begin{itemize}
+\tightlist
+\item
+  Via CRAN (Comprehensive R Archive Network): \texttt{install.packages("nome-do-pacote")}.
+\item
+  Via Github: \texttt{devtools::install\_github("nome-do-repo/nome-do-pacote")}.
+\item
+  Via arquivo .zip/.tar.gz: \texttt{install.packages("C:/caminho/nome-do-pacote.zip",\ repos\ =\ NULL)}.
+\end{itemize}
+
+Para conseguir instalar alguns pacotes no Linux, você pode precisar instalar dependências do sistema manualmente. Por exemplo, se você quer instalar o pacote devtools no R, será necessário ter as bibliotecas \texttt{curl}, \texttt{openssl}, \texttt{httr} e \texttt{git2r}.
+
+Essas dependências geralmente podem ser instaladas no terminal por meio do comando \texttt{apt-get\ install\ nome-da-biblioteca}. Caso você não consiga instalar um pacote devido a ausência de uma dependência, uma maneira de saber quais bibliotecas você precisa instalar é observar as mensagens que aparecem no console durante a tentativa da instalação do pacote.
+
+\hypertarget{via-cran}{%
+\subsection{Via CRAN}\label{via-cran}}
+
+Instale pacotes que não estão na sua biblioteca usando a função \texttt{install.packages("nome\_do\_pacote")}. Por exemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"magrittr"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+E, de agora em diante, não precisa mais instalar. Basta carregar o pacote com \texttt{library(magrittr)}.
+
+\begin{quote}
+Escreva nome\_do\_pacote::nome\_da\_funcao() se quiser usar apenas uma função de um determinado pacote. O operador :: serve para isso. Essa forma também é útil quando se tem duas funções com o mesmo nome e precisamos garantir que o código vá usar a função do pacote correto.
+\end{quote}
+
+\hypertarget{via-github}{%
+\subsection{Via Github}\label{via-github}}
+
+Desenvolvedores costumam disponibilizar a última versão de seus pacotes no Github, e alguns deles sequer estão no CRAN. Mesmo assim ainda é possível utilizá-los instalando diretamente pelo github. O comando é igualmente simples:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{devtools}\OperatorTok{::}\KeywordTok{install_github}\NormalTok{(}\StringTok{"rstudio/shiny"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Apenas será necessário o username e o nome do repositório (que geralmente tem o mesmo nome do pacote). No exemplo, o username foi ``rstudio'' e o repositório foi ``shiny''.
+
+Se você não é familiar com o github, não se preocupe! Os pacotes disponibilizados na plataforma geralmente têm um \texttt{README} cuja primeira instrução é sobre a instalação. Se não tiver, provavelmente este pacote não te merece! =)
+
+\hypertarget{via-arquivo-.zip-ou-.tar.gz}{%
+\subsection{Via arquivo .zip ou .tar.gz}\label{via-arquivo-.zip-ou-.tar.gz}}
+
+Se você precisar instalar um pacote que está zipado no seu computador (ou em algum servidor), utilize o seguinte comando:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"C:/caminho/para/o/arquivo/zipado/nome-do-pacote.zip"}\NormalTok{, }\DataTypeTok{repos =} \OtherTok{NULL}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+É semelhante a instalar pacotes via CRAN, com a diferença que agora o nome do pacote é o caminho inteiro até o arquivo. O parâmetro \texttt{repos\ =\ NULL} informa que estamos instalando a partir da máquina local.
+
+A aba \textbf{\emph{Packages}} do RStudio também ajuda a administrar os seus pacotes.
+
+\hypertarget{rstudio}{%
+\chapter{RStudio}\label{rstudio}}
+
+O RStudio é sem dúvidas o mais completo ambiente de desenvolvimento para programação em R. Descubra aqui as funcionalidades do RStudio que nos permitem escrever códigos e analisar resultados de forma muito mais eficiente.
+
+\hypertarget{telas}{%
+\section{Telas}\label{telas}}
+
+Ao abrir o RStudio, você verá 4 quadrantes. Observe a figura abaixo.
+
+\begin{center}\includegraphics[width=56.24in]{img/rstudio/rstudio-editor} \end{center}
+
+Esses quadrantes representam o \textbf{editor}, o \textbf{console}, o \textbf{environment} e o \textbf{output}. Eles vêm nesta ordem, mas você pode organizá-los da forma que preferir acessando a opção \texttt{Global\ options...} do menu \texttt{Tools}.
+
+O editor e o console são os dois principais painéis do RStudio. Passaremos a maior parte do tempo neles.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Editor/Scripts}: é onde escrevemos nossos códigos. Repare que o RStudio colore algumas palavras e símbolos para facilitar a leitura do código.
+\item
+  \textbf{Console}: é onde rodamos o código e recebemos as saídas. O R vive aqui!
+\end{itemize}
+
+Os demais painéis são auxiliares. O objetivo deles é facilitar pequenas tarefas que fazem parte tanto da programação quanto da análise de dados, como olhar a documentação de funções, analisar os objetos criados em uma sessão do R, procurar e organizar os arquivos que compõem a nossa análise, armazenar e analisar os gráficos criados e muito mais.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Environment}: painel com todos os objetos criados na sessão.
+\item
+  \textbf{History}: painel com um histórico dos comandos rodados.
+\item
+  \textbf{Files}: mostra os arquivos no diretório de trabalho. É possível navegar entre diretórios.
+\item
+  \textbf{Plots}: painel onde os gráficos serão apresentados.
+\item
+  \textbf{Packages}: apresenta todos os pacotes instalados e carregados.
+\item
+  \textbf{Help}: janela onde a documentação das funções serão apresentadas.
+\item
+  \textbf{Viewer}: painel onde relatórios e dashboards serão apresentados.
+\end{itemize}
+
+\hypertarget{atalhos}{%
+\section{Atalhos}\label{atalhos}}
+
+Conhecer os atalhos do teclado ajuda bastante quando estamos programando no RStudio. Veja os principais:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{CTRL+ENTER}: avalia a linha selecionada no script. O atalho mais utilizado.
+\item
+  \textbf{ALT+-}: cria no script um sinal de atribuição (\textless-). Você o usará o tempo todo.
+\item
+  \textbf{CTRL+SHIFT+M}: (\%\textgreater\%) operador \emph{pipe}. Guarde esse atalho, você o usará bastante.
+\item
+  \textbf{CTRL+1}: altera cursor para o script.
+\item
+  \textbf{CTRL+2}: altera cursor para o console.
+\item
+  \textbf{CTRL+ALT+I}: cria um chunk no R Markdown.
+\item
+  \textbf{CTRL+SHIFT+K}: compila um arquivo no R Markdown.
+\item
+  \textbf{ALT+SHIFT+K}: janela com todos os atalhos disponíveis.
+\end{itemize}
+
+No MacBook, os atalhos geralmente são os mesmos, substituindo o \textbf{CTRL} por \textbf{command} e o \textbf{ALT} por \textbf{option}.
+
+\hypertarget{projetos}{%
+\section{Projetos}\label{projetos}}
+
+Uma funcionalidade importante é a criação de projetos, permitindo dividir o trabalho em múltiplos ambientes, cada um com o seu diretório, documentos e área de trabalho (\emph{workspace}).
+
+Um projeto nada mais é do que uma pasta no seu computador. Nessa pasta, estarão todos os arquivos que você usurá ou criará na sua análise, o que deixa o nosso trabalho muito mais organizado. Além disso, quando usamos projetos no RStudio, fica muito mais fácil importar bases de dados para dentro do R, criar análises reprodutíveis e compartilhar o nosso trabalho.
+
+\begin{quote}
+Boa prática! Sempre crie um novo projeto para cada nova análise que for começar a fazer.
+\end{quote}
+
+Para criar um projeto, clique em \texttt{New\ Project...} no Menu \texttt{File}. Na caixa de diálogo que aparecerá, clique em \texttt{New\ Directory} para criar o projeto em uma nova pasta ou \texttt{Existing\ Directory} para criar em uma pasta existente. Se você tiver o \texttt{Git} instalado, você também pode usar projetos para conectar com repositórios do Github e outras plataformas de desenvolvimento. Para isso, basta clicar em \texttt{Version\ Control}.
+
+\begin{center}\includegraphics[width=7.4in]{img/rstudio/projetos} \end{center}
+
+A seguir, apresentamos algumas estruturas para a organização de um projeto.
+
+\textbf{Estrutura 1}. Por extensão de arquivo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{nome_do_projeto/}
+  \ExtensionTok{-}\NormalTok{ .Rprofile   }\CommentTok{# códigos para rodar assim que abrir o projeto}
+  \ExtensionTok{-}\NormalTok{ R/          }\CommentTok{# Código R, organizado com a-carrega.R, b-prepara bd.R, c-vis.R, d-modela, ...}
+  \ExtensionTok{-}\NormalTok{ RData/      }\CommentTok{# Dados em formato .RData}
+  \ExtensionTok{-}\NormalTok{ csv/        }\CommentTok{# Dados em .csv}
+  \ExtensionTok{-}\NormalTok{ png/        }\CommentTok{# gráficos em PNG}
+  \ExtensionTok{-}\NormalTok{ nome_do_projeto.Rproj}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Estrutura 2}. Típico projeto de análise estatística.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{project/}
+  \ExtensionTok{-}\NormalTok{ README.Rmd   }\CommentTok{# Descrição do pacote}
+  \ExtensionTok{-}\NormalTok{ set-up.R     }\CommentTok{# Pacotes etc}
+  \ExtensionTok{-}\NormalTok{ R/           }\CommentTok{# Código R, organizado com 0-load.R, 1-tidy.R, 2-vis.R, ...}
+  \ExtensionTok{-}\NormalTok{ data/        }\CommentTok{# Dados (estruturados ou não)}
+  \ExtensionTok{-}\NormalTok{ figures/     }\CommentTok{# gráficos (pode ficar dentro de output/)}
+  \ExtensionTok{-}\NormalTok{ output/      }\CommentTok{# Relatórios em .Rmd, .tex etc}
+  \ExtensionTok{-}\NormalTok{ project.Rproj}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Estrutura 3}. Pacote do R (ver o capítulo sobre criação de pacotes).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{project/}
+  \ExtensionTok{-}\NormalTok{ README.md    }\CommentTok{# Descrição do pacote}
+  \ExtensionTok{-}\NormalTok{ DESCRIPTION  }\CommentTok{# Metadados estruturados do pacote e dependências}
+  \ExtensionTok{-}\NormalTok{ NAMESPACE    }\CommentTok{# importações e exportações do pacote}
+  \ExtensionTok{-}\NormalTok{ vignettes/   }\CommentTok{# Relatórios em .Rmd}
+  \ExtensionTok{-}\NormalTok{ R/           }\CommentTok{# Funções do R}
+  \ExtensionTok{-}\NormalTok{ data/        }\CommentTok{# Dados estruturados (tidy data)}
+  \ExtensionTok{-}\NormalTok{ data-raw/    }\CommentTok{# Dados não estruturados e arqs 0-load.R, 1-tidy.R, 2-vis.R, ...}
+  \ExtensionTok{-}\NormalTok{ project.Rproj}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{cheatsheets}{%
+\section{Cheatsheets}\label{cheatsheets}}
+
+Se você clicar no Menu \texttt{Help} e então em \texttt{Cheatsheets}, você verá algumas opções de \emph{folhas de cola}, um guia de consulta rápido para diversos pacotes e para o próprio RStudio.
+
+\begin{center}\includegraphics[width=11.54in]{img/rstudio/cheatsheet-rstudio} \end{center}
+
+\hypertarget{r-buxe1sico}{%
+\chapter{R Básico}\label{r-buxe1sico}}
+
+Introduziremos aqui os principais conceitos de progamação em R. Indicamos a leitura deste capítulo a quem nunca teve contato com uma linguagem de programação ou a quem gostaria de entender um pouco melhor a estrutura de objetos, funções e classes do R.
+
+\hypertarget{pedindo-ajuda}{%
+\section{Pedindo Ajuda}\label{pedindo-ajuda}}
+
+A linguagem \texttt{R} é bem intuitiva. É possível fazer bastante coisa à base da tentativa e erro. Além disso, grande parte do conhecimento é escalável, isto é, aprender a utilizar uma função é meio caminho andado para aprender todas as outras funções que operam de forma semelhante\footnote{Essa ideia é um dos princípios por trás do \texttt{tidyverse}.}.
+
+No entanto, a intuição não infalível, e recorrentemente vamos precisar de ajuda para rodar alguma função ou descobrir como fazer alguma tarefa no R. Felizmente, a comunidade R é bem ativa e existem vários lugares para buscar respostas. Nesta seção, vamos apresentar as principais maneiras algumas dessas maneiras.
+
+No R, há quatro principais entidades para se pedir ajuda:
+
+\begin{itemize}
+\tightlist
+\item
+  Help/documentação do R
+\item
+  Google
+\item
+  Stack Overflow
+\item
+  Coleguinha
+\end{itemize}
+
+A busca por ajuda é feita preferencialmente, mas não necessariamente, na ordem acima.
+
+\hypertarget{documentauxe7uxe3o-do-r}{%
+\subsection{Documentação do R}\label{documentauxe7uxe3o-do-r}}
+
+A documentação do R serve para você aprender a usar uma determinada função.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{?mean}
+\KeywordTok{help}\NormalTok{(mean)}
+\end{Highlighting}
+\end{Shaded}
+
+Cinco dicas:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Os exemplos no final são particularmente úteis.
+\item
+  Leia a seção \textbf{Usage} para ter noção de como usar a função.
+\item
+  Os parâmetros da função estão descritos em \textbf{Arguments}.
+\item
+  Caso essa função não atenda às suas necessidades, a seção \textbf{See Also} sugere funções relacionadas.
+\item
+  Alguns pacotes possuem tutorias de uso mais completos. Esses textos são chamados de \texttt{vignettes} e podem ser acessados com a função \texttt{vignette(package\ =\ \textquotesingle{}nomeDoPacote\textquotesingle{})}. Por exemplo, \texttt{vignette(package\ =\ \textquotesingle{}dplyr\textquotesingle{})}.
+\item
+  Bases de dados presentes em pacotes também têm documentação, e geralmente é possível encontrar o significado de cada variável nela. Por exemplo, \texttt{help(mtcars)}.
+\end{enumerate}
+
+\hypertarget{google}{%
+\subsection{Google}\label{google}}
+
+Há uma comunidade gigantesca de usuários de R gerando diariamente uma infinidade de conteúdos e discussões. Não raramente, você irá encontrar discussões sobre o seu problema simplesmente jogando o seu erro no Google. Essa deve ser sua primeira tentativa para reseolver um problema! Pesquisas em inglês aumentam consideravelmente a chance de encontrar uma resposta.
+
+Exemplo (repare no `r' adicionado na busca, isso ajuda bastante):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{log}\NormalTok{(}\StringTok{"5"}\NormalTok{)}
+\CommentTok{## Error in log("5"): non-numeric argument to mathematical function}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=11.04in]{img/r-base/ajuda_google} \end{center}
+
+\hypertarget{stack-overflow}{%
+\subsection{Stack Overflow}\label{stack-overflow}}
+
+O \href{http://stackoverflow.com/}{Stack Overflow} e o \href{http://pt.stackoverflow.com/}{Stack Overflow em Português} são sites de Pergunta e Resposta amplamente utilizados por todas as linguagens de programação, e o R é uma delas. Nos EUA, chegam até a usar a reputação dos usuários como diferencial no currículo!
+
+Provavelmente o Google lhe indicará uma página deles quando você estiver procurando ajuda. E quando todas as fontes possíveis de ajuda falharem, o Stack Overflow lhe dará o espaço para \textbf{criar sua própria pergunta}.
+
+\textbf{Um ponto importante}: como fazer uma \emph{boa pergunta} no Stack Overflow?
+
+No site, existe um tutorial com uma lista de boas práticas, \href{http://pt.stackoverflow.com/help/how-to-ask}{que se encontra aqui}. Resumindo, as principais dicas são
+
+\begin{itemize}
+\tightlist
+\item
+  ser conciso;
+\item
+  ser específico;
+\item
+  ter mente aberta; e
+\item
+  ser gentil.
+\end{itemize}
+
+Porém, no caso do R, há outro requisito que vai aumentar muito sua chance de ter uma boa resposta: \textbf{exemplinho minimal e reprodutível}.
+
+\begin{itemize}
+\item
+  Ser \textbf{minimal}: usar bancos de dados menores e utilizar pedaços de códigos apenas suficientes para apresentar o seu problema. Não precisa de banco de dados de um milhão de linhas e nem colocar o seu código inteiro para descrever a sua dúvida.
+\item
+  Ser \textbf{reprodutível}: o seu código deve rodar fora da sua máquina. Se você não fornecer uma versão do seu problema que rode (ou que imite seu erro), as pessoas vão logo desistir de te ajudar. Por isso, nunca coloque bancos de dados que só você tem acesso. Use bancos de dados que já vem no R ou disponibilize um exemplo (possivelmente anonimizado) em \texttt{.csv} na web para baixar. E se precisar utilizar funções diferentes, coloque as \texttt{library}'s correspondentes.
+\end{itemize}
+
+\hypertarget{r-como-calculadora}{%
+\section{R como calculadora}\label{r-como-calculadora}}
+
+Pelo console, é possível executar qualquer comando do R.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\OperatorTok{:}\DecValTok{30}
+\CommentTok{##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25}
+\CommentTok{## [26] 26 27 28 29 30}
+\end{Highlighting}
+\end{Shaded}
+
+Esse comando é uma forma simplificada de criar um vetor de inteiros de 1 a 30.
+Os números que aparecem entre colchetes ({[}1{]} e {[}24{]}) indicam o índice (ordem) do primeiro elemento impresso em cada linha.
+
+\begin{quote}
+Quando compilamos? Quem vem de linguagens como o C ou Java espera que seja necessário compilar o código em texto para o código das máquinas (geralmente um código binário). No R, isso não é necessário. O R é uma linguagem de programação dinâmica que interpreta o seu código enquanto você o executa.
+\end{quote}
+
+Tente jogar no console: \texttt{2\ *\ 2\ -\ (4\ +\ 4)\ /\ 2}.
+
+Pronto! Com essa simples expressão você já é capaz de pedir ao R para fazer qualquer uma das quatro operações aritméticas básicas. A seguir, apresentamos uma lista resumindo como fazer as principais operações no R.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# adição}
+\DecValTok{1} \OperatorTok{+}\StringTok{ }\DecValTok{1}
+\CommentTok{## [1] 2}
+
+\CommentTok{# subtração}
+\DecValTok{4} \OperatorTok{-}\StringTok{ }\DecValTok{2}
+\CommentTok{## [1] 2}
+
+\CommentTok{# multiplicação}
+\DecValTok{2} \OperatorTok{*}\StringTok{ }\DecValTok{3}
+\CommentTok{## [1] 6}
+
+\CommentTok{# divisão}
+\DecValTok{5} \OperatorTok{/}\StringTok{ }\DecValTok{3}
+\CommentTok{## [1] 1.666667}
+
+\CommentTok{# potência}
+\DecValTok{4} \OperatorTok{^}\StringTok{ }\DecValTok{2}
+\CommentTok{## [1] 16}
+
+\CommentTok{# resto da divisão de 5 por 3}
+\DecValTok{5} \OperatorTok{%%}\StringTok{ }\DecValTok{3}
+\CommentTok{## [1] 2}
+
+\CommentTok{# parte inteira da divisão de 5 por 3}
+\DecValTok{5} \OperatorTok{%/%}\StringTok{ }\DecValTok{3}  
+\CommentTok{## [1] 1}
+\end{Highlighting}
+\end{Shaded}
+
+Além do mais, as operações e suas precedências são mantidas como na matemática, ou seja, divisão e multiplicação são calculadas antes da adição e subtração. E os parênteses nunca são demais!
+
+Uma outra forma de executar uma expressão é escrever o código no \textbf{script} e teclar \texttt{Ctrl\ +\ Enter}. Assim, o comando é enviado para o \textbf{console}, onde é diretamente executado. Essa operação é chamada de \textbf{avaliar o código} ou, popularmente, de \textbf{rodar o código}.
+
+Se você digitar um comando incompleto, como \texttt{5\ +}, e apertar \texttt{Enter}, o R mostrará um \texttt{+}, o que não tem nada a ver com somar alguma coisa. Isso significa que o R está esperando que você complete o seu comando. Termine o seu comando ou aperte \texttt{Esc} para recomeçar.
+
+\begin{verbatim}
+> 5 -
++ 
++ 5
+[1] 0
+\end{verbatim}
+
+Se você digitar um comando que o R não reconhece, ele retornará uma mensagem de erro.
+
+NÃO ENTRE EM PÂNICO!
+
+Ele só está avisando que não conseguiu interpretar o comando. Você pode digitar outro comando normalmente em seguida.
+
+\begin{verbatim}
+> 5 % 2
+Error: unexpected input in "5 % 2"
+> 5 ^ 2
+[1] 25
+\end{verbatim}
+
+\hypertarget{objetos-e-classes}{%
+\section{Objetos e Classes}\label{objetos-e-classes}}
+
+O R te permite salvar dados dentro de um objeto. Para isso, utilizamos o operador \texttt{\textless{}-}.
+
+No exemplo abaixo, salvamos o valor 1 em \texttt{a}. Sempre que o R encontrar o símbolo \texttt{a}, ele vai substituí-lo por 1.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a <-}\StringTok{ }\DecValTok{1}
+\NormalTok{a}
+\CommentTok{## [1] 1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+Atenção! O R diferencia letras maiúsculas e minúsculas, isto é, ``a'' é considerado um objeto diferente de ``A''.
+\end{quote}
+
+\hypertarget{objetos-atuxf4micos}{%
+\subsection{Objetos atômicos}\label{objetos-atuxf4micos}}
+
+A classe de um objeto é muito importante dentro do R. É a partir dela que as funções e operadores conseguem saber exatamente o que fazer com um objeto.
+
+Por exemplo, veja o que acontece quando tentamos somar duas letras:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \OperatorTok{+}\StringTok{ }\DecValTok{1}
+\CommentTok{## [1] 2}
+
+\StringTok{"a"} \OperatorTok{+}\StringTok{ "b"}
+\CommentTok{## Error in "a" + "b": non-numeric argument to binary operator}
+\end{Highlighting}
+\end{Shaded}
+
+O operador \texttt{+} verifica que \texttt{"a"} e \texttt{"b"} não são números (a classe deles não é numérica) e devolve uma mensagem de erro informando isso.
+
+As classes mais básicas dentro do R são:
+
+\begin{itemize}
+\tightlist
+\item
+  numeric
+\item
+  character
+\item
+  logical
+\end{itemize}
+
+Veja alguns exemplos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# characters}
+
+\StringTok{"a"}
+\StringTok{"1"}
+\StringTok{"positivo"}
+
+\CommentTok{# numeric}
+
+\DecValTok{1}
+\FloatTok{0.10}
+\FloatTok{0.95}
+\NormalTok{pi}
+
+\CommentTok{# logical}
+
+\OtherTok{TRUE}
+\OtherTok{FALSE}
+\end{Highlighting}
+\end{Shaded}
+
+Um objeto de qualquer uma dessas classes é chamado de **objeto atômico*. Esse nome se deve ao fato de que essas classes não se misturam, isto é, para um objeto ter a classe \texttt{numeric} todos os seus valores precisam ser numéricos.
+
+Mas como atribuir mais de um valor a um mesmo objeto? Para isso, precisamos criar \textbf{vetores}.
+
+\hypertarget{vetores}{%
+\subsection{Vetores}\label{vetores}}
+
+Vetores no R são os objetos mais simples que podem guardar objetos atômicos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vetor1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{)}
+\NormalTok{vetor2 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{)}
+
+\NormalTok{vetor1}
+\CommentTok{## [1] 1 2 3 4}
+\NormalTok{vetor2}
+\CommentTok{## [1] "a" "b" "c"}
+\end{Highlighting}
+\end{Shaded}
+
+De forma bastante intuitiva, você pode fazer operações com vetores.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vetor1 }\OperatorTok{-}\StringTok{ }\DecValTok{1}
+\CommentTok{## [1] 0 1 2 3}
+\end{Highlighting}
+\end{Shaded}
+
+Quando você faz \texttt{vetor1\ -\ 1}, o R subtrai \texttt{1} de cada um dos elementos do vetor. O mesmo acontece quando você faz qualquer operação aritmética com vetores no R.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vetor1 }\OperatorTok{/}\StringTok{ }\DecValTok{2}
+\NormalTok{vetor1 }\OperatorTok{*}\StringTok{ }\DecValTok{10}
+\end{Highlighting}
+\end{Shaded}
+
+Você também pode fazer operações que envolvem mais de um vetor:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vetor1 }\OperatorTok{*}\StringTok{ }\NormalTok{vetor1}
+\CommentTok{## [1]  1  4  9 16}
+\end{Highlighting}
+\end{Shaded}
+
+Neste caso, o R irá alinhar os dois vetores e multiplicar elemento por elemento. Isso pode ficar um pouco confuso quando os dois vetores não possuem o mesmo tamanho:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vetor2 <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{3}
+\NormalTok{vetor1 }\OperatorTok{*}\StringTok{ }\NormalTok{vetor2}
+\CommentTok{## Warning in vetor1 * vetor2: longer object length is not a multiple of shorter}
+\CommentTok{## object length}
+\CommentTok{## [1] 1 4 9 4}
+\end{Highlighting}
+\end{Shaded}
+
+O R alinhou os dois vetores e, como eles não possuíam o mesmo tamanho, foi repetindo o vetor menor até completar o vetor maior. Esse comportamento é chamado de \textbf{reciclagem} e é útil para fazer operações elemento por elemento (vetorizadamente), mas às vezes pode ser confuso. Com o tempo, você aprenderá a se aproveitar dele.
+
+\hypertarget{classes}{%
+\subsection{Classes}\label{classes}}
+
+Para saber a classe de um objeto, você pode usar a função \texttt{class()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\DecValTok{1}
+\KeywordTok{class}\NormalTok{(x)}
+\CommentTok{## [1] "numeric"}
+
+\NormalTok{y <-}\StringTok{ "a"}
+\KeywordTok{class}\NormalTok{(y)}
+\CommentTok{## [1] "character"}
+
+\NormalTok{z <-}\StringTok{ }\OtherTok{TRUE}
+\KeywordTok{class}\NormalTok{(z)}
+\CommentTok{## [1] "logical"}
+\end{Highlighting}
+\end{Shaded}
+
+Um vetor tem sempre a mesma classe dos objetos que guarda.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{(vetor1)}
+\CommentTok{## [1] "numeric"}
+\KeywordTok{class}\NormalTok{(vetor2)}
+\CommentTok{## [1] "integer"}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{coeruxe7uxe3o}{%
+\subsection{Coerção}\label{coeruxe7uxe3o}}
+
+\hypertarget{misturando-objetos}{%
+\subsubsection{Misturando objetos}\label{misturando-objetos}}
+
+\begin{quote}
+Vetores são homogêneos. Os elementos de um vetor são sempre da mesma classe. Ou todos são numéricos, ou são todos character, ou todos são lógicos etc. Não dá para ter um número e um character no mesmo vetor, por exemplo.
+\end{quote}
+
+Se colocarmos duas ou mais classes diferentes dentro de um mesmo vetor, o R vai forçar que todos os elementos passem a pertencer à mesma classe. O número \texttt{1.7} viraria \texttt{"1.7"} se fosse colocado ao lado de um \texttt{"a"}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{y <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{1.7}\NormalTok{, }\StringTok{"a"}\NormalTok{)  }\CommentTok{# character}
+\NormalTok{y <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OtherTok{TRUE}\NormalTok{, }\DecValTok{2}\NormalTok{)   }\CommentTok{# numeric}
+\NormalTok{y <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OtherTok{TRUE}\NormalTok{, }\StringTok{"a"}\NormalTok{) }\CommentTok{# character}
+\end{Highlighting}
+\end{Shaded}
+
+A ordem de precedência é:
+
+\textbf{DOMINANTE} --- \texttt{character\ \textgreater{}\ complex\ \textgreater{}\ numeric\ \textgreater{}\ integer\ \textgreater{}\ logical} --- \textbf{RECESSIVO}
+
+\hypertarget{foruxe7ando-classes-explicitamente}{%
+\subsubsection{Forçando classes explicitamente}\label{foruxe7ando-classes-explicitamente}}
+
+Você pode coagir um objeto a ser de uma classe específica com as funções \texttt{as.character()}, \texttt{as.numeric()}, \texttt{as.integer()} e \texttt{as.logical()}. É equivalente à função \texttt{convert()} do SQL.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\DecValTok{0}\OperatorTok{:}\DecValTok{4}
+\KeywordTok{class}\NormalTok{(x)}
+\CommentTok{## [1] "integer"}
+\KeywordTok{as.numeric}\NormalTok{(x)}
+\CommentTok{## [1] 0 1 2 3 4}
+\KeywordTok{as.logical}\NormalTok{(x)}
+\CommentTok{## [1] FALSE  TRUE  TRUE  TRUE  TRUE}
+\KeywordTok{as.character}\NormalTok{(x)}
+\CommentTok{## [1] "0" "1" "2" "3" "4"}
+\end{Highlighting}
+\end{Shaded}
+
+Se o R não entender como coagir uma classe na outra, ele soltará um \texttt{warning} informado que colocou \texttt{NA} no lugar.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{)}
+\KeywordTok{as.numeric}\NormalTok{(x)}
+\CommentTok{## Warning: NAs introduced by coercion}
+\CommentTok{## [1] NA NA NA}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+Observação. O NA tem o mesmo papel que o null do SQL. Porém, há um NULL no R também, com diferenças sutis que vamos abordar mais adiante.
+\end{quote}
+
+\hypertarget{data.frame}{%
+\subsection{data.frame}\label{data.frame}}
+
+Um \texttt{data.frame} é o mesmo que uma tabela do SQL ou um spreadsheet do Excel, por isso são objetos muito importantes. Usualmente, seus dados serão importados para um objeto \texttt{data.frame}. Em grande parte do curso, eles serão o principal objeto de estudo.
+
+Os \texttt{data.frame}'s são listas especiais em que todos os elementos possuem \textbf{o mesmo comprimento}. Cada elemento dessa lista pode ser pensado como uma coluna da tabela. Seu comprimento representa o número de linhas.
+
+Já que são listas, essas colunas podem ser de classes diferentes. Essa é a grande diferença entre \texttt{data.frame}'s e matrizes. Algumas funções úteis para trabalhar com \texttt{data.frame}'s :
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{head()} - Mostra as primeiras 6 linhas.
+\item
+  \texttt{tail()} - Mostra as últimas 6 linhas.
+\item
+  \texttt{dim()} - Número de linhas e de colunas.
+\item
+  \texttt{names()} - Os nomes das colunas (variáveis).
+\item
+  \texttt{str()} - Estrutura do data.frame. Mostra, entre outras coisas, as classes de cada coluna.
+\item
+  \texttt{cbind()} - Acopla duas tabelas lado a lado.
+\item
+  \texttt{rbind()} - Empilha duas tabelas.
+\end{itemize}
+
+O exemplo abaixo mostra que uma lista pode virar \texttt{data.frame} apenas se todos os elementos tiverem o mesmo comprimento.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{minha_lista <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{), }\DataTypeTok{y =} \KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{))}
+\KeywordTok{as.data.frame}\NormalTok{(minha_lista)}
+\CommentTok{## Error in (function (..., row.names = NULL, check.rows = FALSE, check.names = TRUE, : arguments imply differing number of rows: 3, 2}
+
+\NormalTok{minha_lista <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{), }\DataTypeTok{y =} \KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{))}
+\KeywordTok{as.data.frame}\NormalTok{(minha_lista)}
+\CommentTok{##   x y}
+\CommentTok{## 1 1 a}
+\CommentTok{## 2 2 b}
+\CommentTok{## 3 3 c}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{matrizes}{%
+\subsection{Matrizes}\label{matrizes}}
+
+Matrizes são vetores com duas dimensões (e por isso só possuem elementos de uma mesma classe).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{6}\NormalTok{, }\DataTypeTok{nrow =} \DecValTok{2}\NormalTok{, }\DataTypeTok{ncol =} \DecValTok{3}\NormalTok{)}
+\NormalTok{m}
+\CommentTok{##      [,1] [,2] [,3]}
+\CommentTok{## [1,]    1    3    5}
+\CommentTok{## [2,]    2    4    6}
+\KeywordTok{dim}\NormalTok{(m) }\CommentTok{# funçăo dim() retorna a dimensăo do objeto.}
+\CommentTok{## [1] 2 3}
+\end{Highlighting}
+\end{Shaded}
+
+Repare que os números de 1 a 6 foram dispostos na matriz coluna por coluna (\emph{column-wise}), ou seja, preenchendo de cima para baixo e depois da esquerda para a direita.
+
+\textbf{Operações úteis}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m[}\DecValTok{3}\NormalTok{,  ]   }\CommentTok{# seleciona a terceira linha}
+\NormalTok{m[ , }\DecValTok{2}\NormalTok{]   }\CommentTok{# seleciona a segunda coluna}
+\NormalTok{m[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{]   }\CommentTok{# seleciona o primeiro elemento da segunda coluna}
+\KeywordTok{t}\NormalTok{(m)      }\CommentTok{# matriz transposta}
+\NormalTok{m }\OperatorTok{%*%}\StringTok{ }\NormalTok{n   }\CommentTok{# multiplicação matricial}
+\KeywordTok{solve}\NormalTok{(m)  }\CommentTok{# matriz inversa de m}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{fatores}{%
+\subsection{Fatores}\label{fatores}}
+
+Fatores podem ser vistos como vetores de inteiros que possuem rótulos (levels).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sexo <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"M"}\NormalTok{, }\StringTok{"H"}\NormalTok{, }\StringTok{"H"}\NormalTok{, }\StringTok{"H"}\NormalTok{, }\StringTok{"M"}\NormalTok{, }\StringTok{"M"}\NormalTok{, }\StringTok{"H"}\NormalTok{)}
+\NormalTok{fator <-}\StringTok{ }\KeywordTok{as.factor}\NormalTok{(sexo)}
+\NormalTok{fator}
+\CommentTok{## [1] M H H H M M H}
+\CommentTok{## Levels: H M}
+\KeywordTok{as.numeric}\NormalTok{(fator)}
+\CommentTok{## [1] 2 1 1 1 2 2 1}
+\end{Highlighting}
+\end{Shaded}
+
+Eles são úteis para representar uma variável categórica (nominal e ordinal). Na modelagem, eles serão tratados de maneira especial em funções como \texttt{lm()} e \texttt{glm()}.
+
+A função \texttt{levels()} retorna os rótulos do fator:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{levels}\NormalTok{(fator)}
+\CommentTok{## [1] "H" "M"}
+\end{Highlighting}
+\end{Shaded}
+
+A ordem das categorias de um fator pode importar. Como exemplo, temos as caselas de referência de modelos estatísticos e a ordem das barras de um gráfico. Para ajudar nesta tarefa, consulte o pacote \href{https://github.com/tidyverse/forcats}{forcats}.
+
+\begin{quote}
+Um erro comum e desastroso. Quando um vetor de números está como factor, ao tentar transformá-lo em numeric, você receberá um vetor de inteiros que não tem nada a ver com os valores originais!
+\end{quote}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numeros <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"10"}\NormalTok{, }\StringTok{"55"}\NormalTok{, }\StringTok{"55"}\NormalTok{, }\StringTok{"12"}\NormalTok{, }\StringTok{"10"}\NormalTok{, }\StringTok{"-5"}\NormalTok{, }\StringTok{"-90"}\NormalTok{))}
+
+\KeywordTok{as.numeric}\NormalTok{(numeros)}
+\CommentTok{## [1] 3 5 5 4 3 1 2}
+\CommentTok{#Por essa eu năo esperava!}
+\end{Highlighting}
+\end{Shaded}
+
+Para evitar isso, use \texttt{as.character()} antes de transformar para número.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{as.character}\NormalTok{(numeros))}
+\CommentTok{## [1]  10  55  55  12  10  -5 -90}
+\CommentTok{# Agora está OK!}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{listas}{%
+\subsection{Listas}\label{listas}}
+
+Listas são um tipo especial de vetor que aceita elementos de classes diferentes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{, }\StringTok{"Z"}\NormalTok{, }\OtherTok{TRUE}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{))}
+\NormalTok{x}
+\CommentTok{## [[1]]}
+\CommentTok{## [1] 1 2 3 4 5}
+\CommentTok{## }
+\CommentTok{## [[2]]}
+\CommentTok{## [1] "Z"}
+\CommentTok{## }
+\CommentTok{## [[3]]}
+\CommentTok{## [1] TRUE}
+\CommentTok{## }
+\CommentTok{## [[4]]}
+\CommentTok{## [1] "a" "b"}
+\end{Highlighting}
+\end{Shaded}
+
+É um dos objetos mais importantes para armazenar dados e vale a pena saber manuseá-los bem. Existem muitas funções que fazem das listas objetos incrivelmente úteis.
+
+Criamos uma lista com a função \texttt{list()}, que aceita um número arbitrário de elementos. Listas aceitam QUALQUER tipo de objeto. Podemos ter listas dentro de listas, por exemplo. Como para quase todas as classes de objetos no R, as funções \texttt{is.list()} e \texttt{as.list()} também existem.
+
+Na lista \texttt{pedido} abaixo, temos \texttt{numeric}, \texttt{Date}, \texttt{character}, vetor de \texttt{character} e \texttt{list} contida em uma lista:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pedido <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{pedido_id =} \DecValTok{8001406}\NormalTok{,}
+               \DataTypeTok{pedido_registro =} \KeywordTok{as.Date}\NormalTok{(}\StringTok{"2017-05-25"}\NormalTok{),}
+               \DataTypeTok{nome =} \StringTok{"Athos"}\NormalTok{, }
+               \DataTypeTok{sobrenome =} \StringTok{"Petri Damiani"}\NormalTok{, }
+               \DataTypeTok{cpf =} \StringTok{"12345678900"}\NormalTok{, }
+               \DataTypeTok{email =} \StringTok{"athos.damiani@gmail.com"}\NormalTok{, }
+               \DataTypeTok{qualidades =} \KeywordTok{c}\NormalTok{(}\StringTok{"incrível"}\NormalTok{, }\StringTok{"impressionante"}\NormalTok{),}
+               \DataTypeTok{itens =} \KeywordTok{list}\NormalTok{(}
+                 \KeywordTok{list}\NormalTok{(}\DataTypeTok{descricao =} \StringTok{"Ferrari"}\NormalTok{, }
+                      \DataTypeTok{frete =} \DecValTok{0}\NormalTok{, }
+                      \DataTypeTok{valor =} \DecValTok{500000}\NormalTok{),}
+                 \KeywordTok{list}\NormalTok{(}\DataTypeTok{descricao =} \StringTok{"Dolly"}\NormalTok{, }
+                      \DataTypeTok{frete =} \FloatTok{1.5}\NormalTok{, }
+                      \DataTypeTok{valor =} \FloatTok{3.90}\NormalTok{)}
+\NormalTok{               ), }
+               \DataTypeTok{endereco =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{entrega =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{logradouro =} \StringTok{"Rua da Glória", }
+\StringTok{                                              numero = "}\DecValTok{123}\StringTok{",}
+\StringTok{                                              complemento = "}\NormalTok{apto }\DecValTok{71}\StringTok{"),}
+\StringTok{                               cobranca = list(logradouro = "}\NormalTok{Rua Jose de Oliveira Coutinho}\StringTok{",}
+\StringTok{                                               numero = "}\DecValTok{151}\StringTok{",}
+\StringTok{                                               complemento = "}\NormalTok{5o andar}\StringTok{")}
+\StringTok{               )}
+\StringTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Operações úteis}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pedido}\OperatorTok{$}\NormalTok{cpf     }\CommentTok{# elemento chamado 'cpf'}
+\NormalTok{pedido[}\DecValTok{1}\NormalTok{]      }\CommentTok{# nova lista com apenas o primeiro elemento}
+\NormalTok{pedido[[}\DecValTok{2}\NormalTok{]]    }\CommentTok{# segundo elemento}
+\NormalTok{pedido[}\StringTok{"nome"}\NormalTok{] }\CommentTok{# nova lista com apenas o elemento chamado 'nome'}
+\end{Highlighting}
+\end{Shaded}
+
+Certamente você se deparará com listas quando for fazer análise de dados com o R. Nos tópicos mais aplicados, iremos aprofundar sobre o tema. O pacote \href{https://github.com/hadley/purrr}{purrr} contribui com funcionalidades incríveis para listas.
+
+\hypertarget{valores-especiais}{%
+\section{Valores especiais}\label{valores-especiais}}
+
+Existem valores reservados para representar dados faltantes, infinitos, e indefinições matemáticas.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{NA} (Not Available) significa dado faltante/indisponível. É o \texttt{null} do SQL ou o \texttt{.} do SAS. O \texttt{NA} tem uma classe, ou seja, podemos ter \texttt{NA} numeric, \texttt{NA} character etc.
+\item
+  \textbf{NaN} (Not a Number) representa indefinições matemáticas, como \texttt{0/0} e \texttt{log(-1)}. Um \texttt{NaN} é um \texttt{NA}, mas a recíproca não é verdadeira.
+\item
+  \textbf{Inf} (Infinito) é um número muito grande ou o limite matemático, por exemplo, \texttt{1/0} e \texttt{10\^{}310}. Aceita sinal negativo \texttt{-Inf}.
+\item
+  \textbf{NULL} representa a ausência de informação. Conceitualmente, a diferença entre \texttt{NA} e \texttt{NULL} é sutil, mas, no R, o \texttt{NA} está mais alinhado com os conceitos de estatística (ou como gostaríamos que os dados faltantes se comportassem em análise de dados) e o \texttt{NULL} está em sintonia com comportamentos de lógica de programação.
+\item
+  Use as funções \texttt{is.na()}, \texttt{is.nan()}, \texttt{is.infinite()} e \texttt{is.null()} para testar se um objeto é um desses valores.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OtherTok{NaN}\NormalTok{, }\OtherTok{Inf}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\OtherTok{NA}\NormalTok{)}
+\KeywordTok{is.na}\NormalTok{(x)}
+\CommentTok{## [1]  TRUE FALSE FALSE FALSE FALSE  TRUE}
+\KeywordTok{is.nan}\NormalTok{(x)}
+\CommentTok{## [1]  TRUE FALSE FALSE FALSE FALSE FALSE}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{controles-de-fluxo}{%
+\section{Controles de Fluxo}\label{controles-de-fluxo}}
+
+Como toda boa linguagem de programação, o R possui estruturas de \texttt{if}'s, \texttt{else}'s, \texttt{for}'s, \texttt{while}'s etc. Esses \textbf{controles de fluxo} são importantes na hora de programar.
+
+\hypertarget{if-e-else}{%
+\subsection{IF e ELSE}\label{if-e-else}}
+
+O seguinte trecho de código só será executado se o objeto \texttt{x} for igual a 1. Repare que a condição de igualdade é representada por dois iguais \texttt{==}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\DecValTok{2}
+
+\ControlFlowTok{if}\NormalTok{(x }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{) \{         }
+  \KeywordTok{Sys.time}\NormalTok{()      }\CommentTok{# Devolve a data/hora no momento da execução.}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\DecValTok{1}
+
+\ControlFlowTok{if}\NormalTok{(x }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{) \{}
+  \KeywordTok{Sys.time}\NormalTok{()}
+\NormalTok{\}}
+\CommentTok{## [1] "2020-04-20 19:33:19 -03"}
+\end{Highlighting}
+\end{Shaded}
+
+O R só vai executar o que está na expressão dentro das chaves \texttt{\{\}} se o que estiver dentro dos parênteses \texttt{()} retornar \texttt{TRUE}.
+
+A sintaxe com o \texttt{else} e o \texttt{if\ else} é
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{(x }\OperatorTok{<}\StringTok{ }\DecValTok{0}\NormalTok{) \{}
+  
+\NormalTok{  sinal <-}\StringTok{ "negativo"}
+  
+\NormalTok{\} }\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{(x }\OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{) \{}
+  
+\NormalTok{  sinal <-}\StringTok{ "neutro"}
+  
+\NormalTok{\} }\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{(x }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{) \{}
+  
+\NormalTok{  sinal <-}\StringTok{ "positivo"}
+\NormalTok{\}}
+
+\NormalTok{sinal}
+\CommentTok{## [1] "positivo"}
+\end{Highlighting}
+\end{Shaded}
+
+Diferença entre SQL e R nas comparações lógicas
+
+Igualdade: no SQL é só um sinal de igual: \textless2 = 1. No R são dois: 2 == 1.
+Diferença: teste de diferente no R é != em vez de de \textless\textgreater.
+Negação: em vez de usar a palavra ``not'' igual ao SQL, usamos !. Por exemplo, ``entidade\_id not in (`100515')'' fica ``!entidade\_id \%in\% c(`100515')''.
+
+\hypertarget{for}{%
+\subsection{for}\label{for}}
+
+Vamos usar o \texttt{for} para somar todos os elementos de um vetor.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{10}   \CommentTok{# Cria um vetor com a sequência 1, 2, ..., 10.}
+\NormalTok{soma <-}\StringTok{ }\DecValTok{0}
+
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{) \{}
+\NormalTok{  soma <-}\StringTok{ }\NormalTok{soma }\OperatorTok{+}\StringTok{ }\NormalTok{x[i]}
+\NormalTok{\}}
+
+\NormalTok{soma}
+\CommentTok{## [1] 55}
+\end{Highlighting}
+\end{Shaded}
+
+De forma equivalente, podemos usar diretamente a função \texttt{sum()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sum}\NormalTok{(x)}
+\CommentTok{## [1] 55}
+\end{Highlighting}
+\end{Shaded}
+
+Agora, vamos imprimir na tela o resultado da divisão de cada elemento de um vetor por dois. Para isso, utilizaremos a função \texttt{print()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vetor <-}\StringTok{ }\DecValTok{30}\OperatorTok{:}\DecValTok{35}
+\NormalTok{indices <-}\StringTok{ }\KeywordTok{seq_along}\NormalTok{(vetor) }\CommentTok{# cria o vetor de índices segundo o tamanho }
+                            \CommentTok{# do objeto vetor.   }
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in}\NormalTok{ indices) \{}
+  \KeywordTok{print}\NormalTok{(vetor[}\DecValTok{1}\OperatorTok{:}\NormalTok{i] }\OperatorTok{/}\StringTok{ }\DecValTok{2}\NormalTok{)}
+\NormalTok{\}}
+\CommentTok{## [1] 15}
+\CommentTok{## [1] 15.0 15.5}
+\CommentTok{## [1] 15.0 15.5 16.0}
+\CommentTok{## [1] 15.0 15.5 16.0 16.5}
+\CommentTok{## [1] 15.0 15.5 16.0 16.5 17.0}
+\CommentTok{## [1] 15.0 15.5 16.0 16.5 17.0 17.5}
+\end{Highlighting}
+\end{Shaded}
+
+No trecho de código acima, preste atenção no resultado individual de cada uma das operações para entender como o R funciona.
+
+\hypertarget{while}{%
+\subsection{while}\label{while}}
+
+O código a seguir irá imprimir na tela o valor de \texttt{i} enquanto este objeto for menor que 3. No momento em que a condição dentro das chaves \texttt{\{\}} não for mais respeitada, o processo será interrompido.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{i <-}\StringTok{ }\DecValTok{1}
+\ControlFlowTok{while}\NormalTok{(i }\OperatorTok{<}\StringTok{ }\DecValTok{3}\NormalTok{)\{}
+  \KeywordTok{print}\NormalTok{(i)}
+\NormalTok{  i =}\StringTok{ }\NormalTok{i }\OperatorTok{+}\StringTok{ }\DecValTok{1}
+\NormalTok{\}}
+\CommentTok{## [1] 1}
+\CommentTok{## [1] 2}
+\end{Highlighting}
+\end{Shaded}
+
+É importante que o valor de i seja atualizado em cada interação, caso contrário a função entrará em um loop infinito.
+
+Vamos usar o \texttt{while} para encontrar uma aproximação da solução de \(\sqrt{x} = x\). Este método é conhecido como Interação do ponto fixo e pode ser usado no cálculo aproximado de soluções de equações de uma variável real.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{x <-}\StringTok{ }\DecValTok{4}
+\NormalTok{erro <-}\StringTok{ }\DecValTok{100}
+\ControlFlowTok{while}\NormalTok{ (}\KeywordTok{abs}\NormalTok{(erro) }\OperatorTok{>}\StringTok{ }\FloatTok{0.1}\NormalTok{) \{}
+\NormalTok{  erro <-}\StringTok{ }\NormalTok{(}\KeywordTok{sqrt}\NormalTok{(x)) }\OperatorTok{-}\StringTok{ }\NormalTok{x}
+\NormalTok{  x <-}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(x)}
+\NormalTok{\}}
+\KeywordTok{print}\NormalTok{(x)}
+\CommentTok{## [1] 1.090508}
+\end{Highlighting}
+\end{Shaded}
+
+Quando a diferença entre \(\sqrt{x}\) e \(x\) ficou menor que 0.1, o loop foi interrompido.
+Vemos que solução aproximada da equação \(\sqrt{x} = x\) dada pelo algorítmo não difere muito da solução real \(x=1\).
+
+Para finalizar, listamos na tabela abaixo os principais operadores lógicos.
+
+\begin{tabular}{l|l}
+\hline
+Operador & Descrição\\
+\hline
+x < y & x menor que y?\\
+\hline
+x <= y & x menor ou igual a y?\\
+\hline
+x > y & x maior que y?\\
+\hline
+x >= y & x maior ou igual a y?\\
+\hline
+x == y & x igual a y?\\
+\hline
+x != y & x diferente de y?\\
+\hline
+!x & Negativa de x\\
+\hline
+x | y & x ou y são verdadeiros?\\
+\hline
+x \& y & x e y são verdadeiros?\\
+\hline
+xor(x, y) & x ou y são verdadeiros (apenas um deles)?\\
+\hline
+\end{tabular}
+
+\hypertarget{fuxf3rmulas}{%
+\section{Fórmulas}\label{fuxf3rmulas}}
+
+Fórmulas são objetos do tipo \texttt{y\ \textasciitilde{}\ x}. Em geral, elas representam associações entre objetos, como em um modelo de regressão. As funções as usam de diversas maneiras, mas o exemplo mais emblemático vem da modelagem estatística.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{formula <-}\StringTok{ }\NormalTok{y }\OperatorTok{~}\StringTok{ }\NormalTok{x1 }\OperatorTok{+}\StringTok{ }\NormalTok{x2}
+\KeywordTok{class}\NormalTok{(formula)}
+\CommentTok{## [1] "formula"}
+\end{Highlighting}
+\end{Shaded}
+
+A função \texttt{lm()} é a que ajusta um modelo linear no R, e \texttt{lm(y\ \textasciitilde{}\ x)} lê-se ``regressão linear de y explicada por x''.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{minha_formula <-}\StringTok{ }\NormalTok{Sepal.Width }\OperatorTok{~}\StringTok{ }\NormalTok{Petal.Length }\OperatorTok{+}\StringTok{ }\NormalTok{Petal.Width}
+\KeywordTok{class}\NormalTok{(minha_formula)}
+\CommentTok{## [1] "formula"}
+\KeywordTok{lm}\NormalTok{(minha_formula, }\DataTypeTok{data =}\NormalTok{ iris)}
+\CommentTok{## }
+\CommentTok{## Call:}
+\CommentTok{## lm(formula = minha_formula, data = iris)}
+\CommentTok{## }
+\CommentTok{## Coefficients:}
+\CommentTok{##  (Intercept)  Petal.Length   Petal.Width  }
+\CommentTok{##       3.5870       -0.2571        0.3640}
+\end{Highlighting}
+\end{Shaded}
+
+No caso específico dos modelos lineares, são nas fórmulas que conseguimos descrever as variáveis explicativas e suas interações. A fórmula \texttt{y\ \textasciitilde{}\ x1\ *\ x2} significa ``y regredido por x1, x2 e a interação entre x1 e x2''. Fórmulas aparecem frequentemente em tarefas de modelagem.
+
+Demais usos de fórmulas aparecerão em outras funções, como as do pacote \texttt{ggplot2}, com outros significados, e a documentação nos dirá como usá-las.
+
+\hypertarget{gruxe1ficos-base}{%
+\section{Gráficos (base)}\label{gruxe1ficos-base}}
+
+O R já vem com funções básicas que fazem gráficos estatísticos de todas as naturezas.
+
+\begin{itemize}
+\tightlist
+\item
+  Vantagens: são rápidas e simples.
+\item
+  Desvantagens: são feias e difíceis para gerar gráficos complexos.
+\end{itemize}
+
+Nesta seção, mostraremos como construir alguns tipos de gráficos usando as funções base do R, mas o nosso foco em visualização de dados está nas funções do pacote \texttt{ggplot2}.
+
+\hypertarget{gruxe1fico-de-dispersuxe3o}{%
+\subsection{Gráfico de dispersão}\label{gruxe1fico-de-dispersuxe3o}}
+
+Para construir um gráfico de dispersão, utilizamos a função \texttt{plot()}. Seus principais parâmetros são:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{x}, \texttt{y} - Vetores para representarem os eixos x e y.
+\item
+  \texttt{type} - Tipo de gráfico. Pode ser pontos, linhas, escada, entre outros.
+\end{itemize}
+
+Para mais detalhes sobre os argumentos, ver \texttt{help(plot)}.
+
+Outras formas de utilizar a função plot()
+
+Além de gerar gráficos de dispersão, tentar chamar a função plot(objeto\_diferentao) para qualquer tipo de objeto do R geralmente gera um gráfico interessante! Sempre tente fazer isso, a menos que seu objeto seja um data.frame com milhares de colunas!
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{N <-}\StringTok{ }\DecValTok{100}
+\NormalTok{x <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\NormalTok{N}
+\NormalTok{y <-}\StringTok{ }\DecValTok{5} \OperatorTok{+}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{x }\OperatorTok{+}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(N, }\DataTypeTok{sd =} \DecValTok{30}\NormalTok{)}
+\KeywordTok{plot}\NormalTok{(x, y)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{temp_files/figure-latex/unnamed-chunk-52-1.pdf}
+
+O parâmetro \texttt{type\ =\ "l"} indica que queremos que os pontos sejam interligados por linhas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(x, y, }\DataTypeTok{type =} \StringTok{"l"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{temp_files/figure-latex/unnamed-chunk-53-1.pdf}
+
+\hypertarget{histograma}{%
+\subsection{Histograma}\label{histograma}}
+
+Para construir histogramas, utilizamos a função \texttt{hist()}. Os principais parâmetros são:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{x} - O vetor numérico para o qual o histograma será construído.
+\item
+  \texttt{breaks} - O número (aproximado) de retângulos.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{hist}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{1000}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{temp_files/figure-latex/unnamed-chunk-54-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{hist}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{1000}\NormalTok{), }\DataTypeTok{breaks =} \DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{temp_files/figure-latex/unnamed-chunk-55-1.pdf}
+
+\hypertarget{boxplot}{%
+\subsection{Boxplot}\label{boxplot}}
+
+Para construir histogramas, utilizamos a função \texttt{boxplot()}. Os principais parâmetros são:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{x} - O vetor numérico para o qual o boxplot será construído.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{boxplot}\NormalTok{(InsectSprays}\OperatorTok{$}\NormalTok{count, }\DataTypeTok{col =} \StringTok{"lightgray"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{temp_files/figure-latex/unnamed-chunk-56-1.pdf}
+
+Observe que o argumento \texttt{col=} muda a cor da caixa do boxplot.
+
+Para mapear duas variáveis ao gráfico, utilizamos um objeto da classe \texttt{formula} e o argumento \texttt{data=}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{boxplot}\NormalTok{(count }\OperatorTok{~}\StringTok{ }\NormalTok{spray, }\DataTypeTok{data =}\NormalTok{ InsectSprays, }\DataTypeTok{col =} \StringTok{"lightgray"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{temp_files/figure-latex/unnamed-chunk-57-1.pdf}
+
+\hypertarget{gruxe1fico-de-barras}{%
+\subsection{Gráfico de barras}\label{gruxe1fico-de-barras}}
+
+Para construir gráficos de barras, precisamos combinar as funções \texttt{table()} e \texttt{barplot()}.
+
+No gráfico abaixo, primeiro criamos uma tabela de frequências com a função \texttt{table()} e, em seguida, construímos o gráfico com a função \texttt{barplot()}. A função \texttt{data()} carrega bases de dados de pacotes instalados. Veja \texttt{help(data)} para mais detalhes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{data}\NormalTok{(diamonds, }\DataTypeTok{package =} \StringTok{"ggplot2"}\NormalTok{)}
+\NormalTok{tabela <-}\StringTok{ }\KeywordTok{table}\NormalTok{(diamonds}\OperatorTok{$}\NormalTok{color)}
+\NormalTok{tabela}
+\CommentTok{## }
+\CommentTok{##     D     E     F     G     H     I     J }
+\CommentTok{##  6775  9797  9542 11292  8304  5422  2808}
+\KeywordTok{barplot}\NormalTok{(tabela)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{temp_files/figure-latex/unnamed-chunk-58-1.pdf}
+
+Também podemos mapear duas variáveis a um gráfico de barras utilizando tabelas de dupla entrada.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{VADeaths}
+\CommentTok{##       Rural Male Rural Female Urban Male Urban Female}
+\CommentTok{## 50-54       11.7          8.7       15.4          8.4}
+\CommentTok{## 55-59       18.1         11.7       24.3         13.6}
+\CommentTok{## 60-64       26.9         20.3       37.0         19.3}
+\CommentTok{## 65-69       41.0         30.9       54.6         35.1}
+\CommentTok{## 70-74       66.0         54.3       71.1         50.0}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{barplot}\NormalTok{(VADeaths)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{temp_files/figure-latex/unnamed-chunk-60-1.pdf}
+
+\hypertarget{exercuxedcios}{%
+\section{Exercícios}\label{exercuxedcios}}
+
+\textbf{Sugestão}: resolva os exercícios em arquivo R Markdown, aproveitando para fazer anotações e registrar suas dúvidas ao longo do caminho.
+
+\textbf{1.} Calculo o número de ouro no R.
+
+Dica: o número de ouro é dado pela expressão \(\frac{1 + \sqrt{5}}{2}\).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{2.} Qual o resultado da divisão de 1 por 0 no R? E de -1 por 0?
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{3.} Quais as diferenças entre \texttt{NaN}, \texttt{NULL}, \texttt{NA} e \texttt{Inf}? Digite expressões que retornam cada um desses resultados.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{4.} Sem rodar o código, calcule o que a expressão \texttt{5\ +\ 3\ *\ 10\ \%/\%\ 3\ ==\ 15} vai resultar no R. Em seguida, apenas utilizando parênteses, faço a expressão retornar o valore contrário (i.e., se originariamente for \texttt{TRUE}, faça retornar \texttt{FALSE}).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{5.} Por que o código abaixo retorna erro? Arrume o código para retornar o valor \texttt{TRUE}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\DecValTok{4}
+\ControlFlowTok{if}\NormalTok{(}\DataTypeTok{x =} \DecValTok{4}\NormalTok{) \{}
+  \OtherTok{TRUE}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{6.} Usando \texttt{if} e \texttt{else}, escreva um código que retorne a string ``número'' caso o valor seja da classe \texttt{numeric} ou \texttt{integer}; a string ``palavra'' caso o valor seja da classe \texttt{character}; e \texttt{NULL} caso contrário.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{7.} Use o \texttt{for} para retornar o valor mínimo do seguinte vetor: \texttt{vetor\ \textless{}-\ c(4,\ 2,\ 1,\ 5,\ 3)}. Modifique o seu código para receber vetores de qualquer tamanho.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{8.} Usando apenas \texttt{for} e a função \texttt{length()}, construa uma função que calcule a média de um vetor número qualquer. Construa uma condição para a função retornar \texttt{NULL} caso o vetor não seja numérico.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{9.} Rode \texttt{help(runif)} para descobrir o que a função \texttt{runif()} faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{10.} Rode \texttt{help(sample)} para descobrir o que a função \texttt{sample()} faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{11.} Rode \texttt{help(paste)} e \texttt{help(names)} para descobrir o que as funções \texttt{paste()} e \texttt{names()} fazem. Em seguida, use-as para escrever um código para gerar a fórmula \texttt{mpg\ \textasciitilde{}\ cyl\ +\ disp\ +\ hp\ +\ drat\ +\ wt\ +\ qsec\ +\ vs\ +\ am\ +\ gear\ +\ carb} a partir do data frame \texttt{mtcars}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{respostas}{%
+\section{Respostas}\label{respostas}}
+
+\textbf{1.} Calculo o número de ouro no R.
+
+Dica: o número de ouro é dado pela expressão \(\frac{1 + \sqrt{5}}{2}\).
+
+\textbf{Resposta:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{1} \OperatorTok{+}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(}\DecValTok{5}\NormalTok{))}\OperatorTok{/}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{2.} Qual o resultado da divisão de 1 por 0 no R? E de -1 por 0?
+
+\textbf{Resposta:}
+
+Infinito e -Infinito.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\OperatorTok{/}\DecValTok{0}
+\CommentTok{## [1] Inf}
+\DecValTok{-1}\OperatorTok{/}\DecValTok{0}
+\CommentTok{## [1] -Inf}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{3.} Quais as diferenças entre \texttt{NaN}, \texttt{NULL}, \texttt{NA} e \texttt{Inf}? Digite expressões que retornam cada um desses resultados.
+
+\textbf{Resposta:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# NaN é o resultado de uma operação matemática inválida. }
+\CommentTok{# Significa Not A Number.}
+
+\DecValTok{0}\OperatorTok{/}\DecValTok{0}
+\CommentTok{## [1] NaN}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# NULL é o vazio do R. É como se o objeto não existisse.}
+
+\OtherTok{NULL}
+\NormalTok{a =}\StringTok{ }\OtherTok{NULL}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# veja que um vetor, mesmo sem elementos não é NULL}
+
+\KeywordTok{is.null}\NormalTok{(}\KeywordTok{integer}\NormalTok{(}\DataTypeTok{length =} \DecValTok{0}\NormalTok{)) }
+\CommentTok{## [1] FALSE}
+
+\CommentTok{# NA é uma constante lógica do R. Siginifica Not Availlable. }
+\CommentTok{# NA pode ser convertido para quase todos os tipos de vetores do R. }
+\CommentTok{# É usado principalmente para indicar valores faltantes.}
+
+\OtherTok{NA}
+\CommentTok{## [1] NA}
+\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"1"}\NormalTok{, }\StringTok{"2"}\NormalTok{, }\StringTok{"a"}\NormalTok{))}
+\CommentTok{## Warning: NAs introduced by coercion}
+\CommentTok{## [1]  1  2 NA}
+
+\CommentTok{# Inf é significa infinito. É o resultado de operações matemáticas }
+\CommentTok{# cujo limite é infinito.}
+
+\DecValTok{1}\OperatorTok{/}\DecValTok{0}
+\CommentTok{## [1] Inf}
+\DecValTok{1}\OperatorTok{/}\OtherTok{Inf}
+\CommentTok{## [1] 0}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{4.} Sem rodar o código, calcule o que a expressão \texttt{5\ +\ 3\ *\ 10\ \%/\%\ 3\ ==\ 15} vai resultar no R. Em seguida, apenas utilizando parênteses, faço a expressão retornar o valore contrário (i.e., se originariamente for \texttt{TRUE}, faça retornar \texttt{FALSE}).
+
+\textbf{Resposta:}
+
+O resultado da parte esquerda é 14, por isso a expressão retornará \texttt{FALSE}. Para fazê-la retornar \texttt{TRUE}, basta colocar parênteses em volta de \texttt{3\ *\ 10}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{5} \OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{3} \OperatorTok{*}\StringTok{ }\DecValTok{10}\NormalTok{) }\OperatorTok{%/%}\StringTok{ }\DecValTok{3} \OperatorTok{==}\StringTok{ }\DecValTok{15}
+\CommentTok{## [1] TRUE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{5.} Por que o código abaixo retorna erro? Arrume o código para retornar o valor \texttt{TRUE}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\DecValTok{4}
+\ControlFlowTok{if}\NormalTok{(}\DataTypeTok{x =} \DecValTok{4}\NormalTok{) \{}
+  \OtherTok{TRUE}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Resposta:}
+
+A expressão \texttt{x\ =\ 4} está tentando atribuir o valor 4 ao objeto \texttt{x} dentro do if, o que não é permitido pois o controlador \texttt{if} só aceita valores lógicos. Para corrigir o código e fazê-lo retornar \texttt{TRUE}, basta trocar \texttt{=} por \texttt{==}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\DecValTok{4}
+\ControlFlowTok{if}\NormalTok{(x }\OperatorTok{==}\StringTok{ }\DecValTok{4}\NormalTok{) \{}
+  \OtherTok{TRUE}
+\NormalTok{\}}
+\CommentTok{## [1] TRUE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{6.} Usando \texttt{if} e \texttt{else}, escreva um código que retorne a string ``número'' caso o objeto \texttt{x} seja da classe \texttt{numeric} ou \texttt{integer}; a string ``palavra'' caso o objeto seja da classe \texttt{character}; e \texttt{NULL} caso contrário.
+
+\textbf{Resposta:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\DecValTok{1}
+\CommentTok{# x <- 1L}
+\CommentTok{# x <- "1"}
+
+\ControlFlowTok{if}\NormalTok{(}\KeywordTok{is.numeric}\NormalTok{(x)) \{}
+  \StringTok{"número"}
+\StringTok{\} else if(is.character(x)) \{}
+\StringTok{  "}\NormalTok{palavra}\StringTok{"}
+\StringTok{\} else \{ }
+\StringTok{  NULL}
+\StringTok{\}}
+\StringTok{## [1] "}\NormalTok{número"}
+\end{Highlighting}
+\end{Shaded}
+
+Note que a função \texttt{is.numeric()} retorna \texttt{TRUE} para as classes \texttt{integer} e \texttt{numeric}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{7.} Use o \texttt{for} para retornar o valor mínimo do seguinte vetor: \texttt{vetor\ \textless{}-\ c(4,\ 2,\ 1,\ 5,\ 3)}. Modifique o seu código para receber vetores de qualquer tamanho.
+
+\textbf{Resposta:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{vetor <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\NormalTok{minimo <-}\StringTok{ }\OtherTok{Inf}
+
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{) \{}
+  
+  \ControlFlowTok{if}\NormalTok{(minimo }\OperatorTok{>}\StringTok{ }\NormalTok{vetor[i]) \{}
+\NormalTok{    minimo <-}\StringTok{ }\NormalTok{vetor[i]}
+\NormalTok{  \}}
+  
+\NormalTok{\}}
+
+\NormalTok{minimo}
+\CommentTok{## [1] 1}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Lembrete}: o R já possui a função \texttt{min()} para calcular o mínimo de um conjunto de valores.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{8.} Usando apenas \texttt{for} e a função \texttt{length()}, construa uma função que calcule a média de um vetor número qualquer. Construa uma condição para a função retornar \texttt{NULL} caso o vetor não seja numérico.
+
+\textbf{Resposta:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{media <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) \{}
+  
+\NormalTok{  i <-}\StringTok{ }\DecValTok{1}
+\NormalTok{  tamanho <-}\StringTok{ }\KeywordTok{length}\NormalTok{(x)}
+\NormalTok{  soma <-}\StringTok{ }\DecValTok{0}
+  
+  \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\NormalTok{tamanho)\{}
+\NormalTok{    soma <-}\StringTok{ }\NormalTok{soma }\OperatorTok{+}\StringTok{ }\NormalTok{x[i]}
+\NormalTok{  \}}
+  
+  \KeywordTok{return}\NormalTok{(soma}\OperatorTok{/}\NormalTok{tamanho)}
+\NormalTok{\}}
+
+\KeywordTok{media}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{3}\NormalTok{)}
+\CommentTok{## [1] 2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{9.} Rode \texttt{help(runif)} para descobrir o que a função \texttt{runif()} faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive).
+
+\textbf{Resposta:}
+
+A função \texttt{runif()} gera números reais aleatórios entre um valor mínimo e um valor máximo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{alea <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{() \{}
+  
+\NormalTok{  x <-}\StringTok{ }\KeywordTok{runif}\NormalTok{(}\DataTypeTok{n =} \DecValTok{1}\NormalTok{, }\DataTypeTok{min =} \DecValTok{0}\NormalTok{, }\DataTypeTok{max =} \DecValTok{10}\NormalTok{)}
+\NormalTok{  x <-}\StringTok{ }\KeywordTok{round}\NormalTok{(x)}
+  
+  \KeywordTok{return}\NormalTok{(x)}
+\NormalTok{\}}
+
+\KeywordTok{alea}\NormalTok{()}
+\CommentTok{## [1] 7}
+\end{Highlighting}
+\end{Shaded}
+
+Veja que construímos uma função sem argumentos. Podemos generalizá-la incluindo os argumentos da função \texttt{runif()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{alea <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(n, min, max) \{}
+  
+\NormalTok{  x <-}\StringTok{ }\KeywordTok{runif}\NormalTok{(}\DataTypeTok{n =}\NormalTok{ n, }\DataTypeTok{min =}\NormalTok{ min, }\DataTypeTok{max =}\NormalTok{ max)}
+\NormalTok{  x <-}\StringTok{ }\KeywordTok{round}\NormalTok{(x)}
+  
+  \KeywordTok{return}\NormalTok{(x)}
+\NormalTok{\}}
+
+\KeywordTok{alea}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+\CommentTok{## [1] 4 4}
+\KeywordTok{alea}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DecValTok{105}\NormalTok{)}
+\CommentTok{## [1] 105 101 104 104 103}
+\end{Highlighting}
+\end{Shaded}
+
+Observe que não há problema em usar os mesmos nomes para os argumentos. Isso se deve aos \emph{environments}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{10.} Rode \texttt{help(sample)} para descobrir o que a função \texttt{sample()} faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.
+
+\textbf{Resposta:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{matriz <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\KeywordTok{runif}\NormalTok{(}\DecValTok{20}\NormalTok{), }\DataTypeTok{nrow =} \DecValTok{5}\NormalTok{, }\DataTypeTok{ncol =} \DecValTok{4}\NormalTok{)}
+
+\NormalTok{linha_alea <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(matriz) \{}
+  
+\NormalTok{  x <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\KeywordTok{nrow}\NormalTok{(matriz)}
+  
+\NormalTok{  linha <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(x, }\DataTypeTok{size =} \DecValTok{1}\NormalTok{)}
+  
+  \KeywordTok{return}\NormalTok{(matriz[linha,])}
+\NormalTok{\}}
+
+\NormalTok{matriz}
+\CommentTok{##           [,1]        [,2]       [,3]      [,4]}
+\CommentTok{## [1,] 0.8025565 0.002964957 0.07140848 0.1636365}
+\CommentTok{## [2,] 0.1339009 0.012767221 0.46315075 0.9719227}
+\CommentTok{## [3,] 0.2169496 0.318605008 0.55460400 0.4466407}
+\CommentTok{## [4,] 0.9628806 0.325776523 0.40919435 0.4740334}
+\CommentTok{## [5,] 0.1586835 0.380764988 0.17518011 0.5348975}
+\KeywordTok{linha_alea}\NormalTok{(matriz)}
+\CommentTok{## [1] 0.802556516 0.002964957 0.071408479 0.163636539}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{11.} Rode \texttt{help(paste)} e \texttt{help(names)} para descobrir o que as funções \texttt{paste()} e \texttt{names()} fazem. Em seguida, use-as para escrever um código para gerar a fórmula \texttt{mpg\ \textasciitilde{}\ cyl\ +\ disp\ +\ hp\ +\ drat\ +\ wt\ +\ qsec\ +\ vs\ +\ am\ +\ gear\ +\ carb} a partir do data frame \texttt{mtcars}.
+
+\textbf{Resposta:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{variaveis <-}\StringTok{ }\KeywordTok{names}\NormalTok{(mtcars)}
+
+\NormalTok{esq <-}\StringTok{ "mpg ~ "}
+\NormalTok{dir <-}\StringTok{ }\KeywordTok{paste}\NormalTok{(variaveis[}\OperatorTok{-}\DecValTok{1}\NormalTok{], }\DataTypeTok{collapse =} \StringTok{" + "}\NormalTok{)}
+
+\NormalTok{formula <-}\StringTok{ }\KeywordTok{paste0}\NormalTok{(esq, dir)}
+\KeywordTok{as.formula}\NormalTok{(formula)}
+\CommentTok{## mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb}
+\end{Highlighting}
+\end{Shaded}
+
+Observe que a função \texttt{paste0()} é equivalente à função \texttt{paste()} com o argumento \texttt{sep\ =\ ""}.
+
+\hypertarget{pipe}{%
+\chapter{Pipe}\label{pipe}}
+
+\hypertarget{o-operador-pipe}{%
+\section{O operador pipe}\label{o-operador-pipe}}
+
+O operador \texttt{\%\textgreater{}\%} (\emph{pipe}) foi uma das grandes revoluções recentes do R, tornando a leitura de códigos mais lógica, fácil e compreensível. Ele foi introduzido por \href{https://github.com/smbache}{Stefan Milton Bache} no pacote \texttt{magrittr} e já existem diversos pacotes construidos para facilitar a sua utilizaçăo.
+
+Para começar a utilizar o \emph{pipe}, instale e carregue o pacote \texttt{magrittr}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"magrittr"}\NormalTok{)}
+
+\KeywordTok{library}\NormalTok{(magrittr)}
+\end{Highlighting}
+\end{Shaded}
+
+A ideia do operador \texttt{\%\textgreater{}\%} (\emph{pipe}) é bem simples: usar o valor resultante da expressão do lado esquerdo como primeiro argumento da função do lado direito.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# As duas linhas abaixo são equivalentes.}
+
+\KeywordTok{f}\NormalTok{(x, y)}
+\NormalTok{x }\OperatorTok{%>%}\StringTok{ }\KeywordTok{f}\NormalTok{(y)}
+\end{Highlighting}
+\end{Shaded}
+
+Nos casos mais simples, o \emph{pipe} parece não trazer grandes vantagens. Agora, veja como fica um caso com mais etapas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Vamos calcular a raiz quadrada da soma dos valores de 1 a 4. Primeiro, sem o pipe.}
+
+\NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{)}
+\KeywordTok{sqrt}\NormalTok{(}\KeywordTok{sum}\NormalTok{(x))}
+\CommentTok{## [1] 3.162278}
+
+\CommentTok{# Agora com o pipe.}
+
+\NormalTok{x }\OperatorTok{%>%}\StringTok{ }\KeywordTok{sum}\NormalTok{() }\OperatorTok{%>%}\StringTok{ }\KeywordTok{sqrt}\NormalTok{()}
+\CommentTok{## [1] 3.162278}
+\end{Highlighting}
+\end{Shaded}
+
+O caminho que o código \texttt{x\ \%\textgreater{}\%\ sum\ \%\textgreater{}\%\ sqrt} seguiu foi enviar o objeto \texttt{x} como argumento da função \texttt{sum()} e, em seguida, enviar a saida da expressão \texttt{sum(x)} como argumento da função \texttt{sqrt()}. Observe que escrevemos o código na mesma ordem das operações. A utilização de parênteses após o nome das funções não é necessário, mas recomendável.
+
+Se você ainda não está convencido com o poder do \emph{pipe}, fica que vai ter bolo!
+
+No exemplo abaixo, vamos ilustrar um caso em que temos um grande número de funções aninhadas. Veja como a utilização do \emph{pipe} transforma um código confuso e difícil de ser lido em algo simples e intuitivo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Receita de bolo sem pipe. Tente entender o que é preciso fazer.}
+
+\KeywordTok{esfrie}\NormalTok{(}\KeywordTok{asse}\NormalTok{(}\KeywordTok{coloque}\NormalTok{(}\KeywordTok{bata}\NormalTok{(}\KeywordTok{acrescente}\NormalTok{(}\KeywordTok{recipiente}\NormalTok{(}\KeywordTok{rep}\NormalTok{(}\StringTok{"farinha"}\NormalTok{, }\DecValTok{2}\NormalTok{), }\StringTok{"água"}\NormalTok{, }\StringTok{"fermento"}\NormalTok{, }\StringTok{"leite"}\NormalTok{, }\StringTok{"óleo"}\NormalTok{), }\StringTok{"farinha"}\NormalTok{, até =}\StringTok{ "macio"}\NormalTok{), duraçã}\DataTypeTok{o =} \StringTok{"3min"}\NormalTok{), }\DataTypeTok{lugar =} \StringTok{"forma"}\NormalTok{, }\DataTypeTok{tipo =} \StringTok{"grande"}\NormalTok{, }\DataTypeTok{untada =} \OtherTok{TRUE}\NormalTok{), duraçã}\DataTypeTok{o =} \StringTok{"50min"}\NormalTok{), }\StringTok{"geladeira"}\NormalTok{, }\StringTok{"20min"}\NormalTok{)}
+
+
+\CommentTok{# Veja como o código acima pode ser reescrito utilizando-se o pipe. Agora realmente se parece com uma receita de bolo.}
+
+\KeywordTok{recipiente}\NormalTok{(}\KeywordTok{rep}\NormalTok{(}\StringTok{"farinha"}\NormalTok{, }\DecValTok{2}\NormalTok{), }\StringTok{"água"}\NormalTok{, }\StringTok{"fermento"}\NormalTok{, }\StringTok{"leite"}\NormalTok{, }\StringTok{"óleo"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{acrescente}\NormalTok{(}\StringTok{"farinha"}\NormalTok{, até =}\StringTok{ "macio"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{bata}\NormalTok{(duraçã}\DataTypeTok{o =} \StringTok{"3min"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{coloque}\NormalTok{(}\DataTypeTok{lugar =} \StringTok{"forma"}\NormalTok{, }\DataTypeTok{tipo =} \StringTok{"grande"}\NormalTok{, }\DataTypeTok{untada =} \OtherTok{TRUE}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{asse}\NormalTok{(duraçã}\DataTypeTok{o =} \StringTok{"50min"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{esfrie}\NormalTok{(}\StringTok{"geladeira"}\NormalTok{, }\StringTok{"20min"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Às vezes, queremos que o resultado do lado esquerdo vá para outro argumento do lado direito que não o primeiro. Para isso, utilizamos um \texttt{.} como marcador.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Queremos que o dataset seja recebido pelo segundo argumento (data=) da função "lm".}
+
+\NormalTok{airquality }\OperatorTok{%>%}
+\StringTok{  }\NormalTok{na.omit }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{lm}\NormalTok{(Ozone }\OperatorTok{~}\StringTok{ }\NormalTok{Wind }\OperatorTok{+}\StringTok{ }\NormalTok{Temp }\OperatorTok{+}\StringTok{ }\NormalTok{Solar.R, }\DataTypeTok{data =}\NormalTok{ .) }\OperatorTok{%>%}
+\StringTok{  }\NormalTok{summary}
+\CommentTok{## }
+\CommentTok{## Call:}
+\CommentTok{## lm(formula = Ozone ~ Wind + Temp + Solar.R, data = .)}
+\CommentTok{## }
+\CommentTok{## Residuals:}
+\CommentTok{##     Min      1Q  Median      3Q     Max }
+\CommentTok{## -40.485 -14.219  -3.551  10.097  95.619 }
+\CommentTok{## }
+\CommentTok{## Coefficients:}
+\CommentTok{##              Estimate Std. Error t value Pr(>|t|)    }
+\CommentTok{## (Intercept) -64.34208   23.05472  -2.791  0.00623 ** }
+\CommentTok{## Wind         -3.33359    0.65441  -5.094 1.52e-06 ***}
+\CommentTok{## Temp          1.65209    0.25353   6.516 2.42e-09 ***}
+\CommentTok{## Solar.R       0.05982    0.02319   2.580  0.01124 *  }
+\CommentTok{## ---}
+\CommentTok{## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1}
+\CommentTok{## }
+\CommentTok{## Residual standard error: 21.18 on 107 degrees of freedom}
+\CommentTok{## Multiple R-squared:  0.6059, Adjusted R-squared:  0.5948 }
+\CommentTok{## F-statistic: 54.83 on 3 and 107 DF,  p-value: < 2.2e-16}
+\end{Highlighting}
+\end{Shaded}
+
+Também é possível definir funções na sua \emph{pipeline}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\NormalTok{(}\ControlFlowTok{function}\NormalTok{(x)\{}
+    \KeywordTok{sum}\NormalTok{(x)}
+\NormalTok{  \})}
+\CommentTok{## [1] 6}
+\end{Highlighting}
+\end{Shaded}
+
+O \emph{pipe} é a força da gravidade dentro do \texttt{tidyverse}. Veremos nas próximas seções como as funções de diferentes pacotes interagem perfeitamente graças a esse operador.
+
+\hypertarget{outros-operadores}{%
+\section{Outros operadores}\label{outros-operadores}}
+
+Existem outros operadores do mesmo pacote, que apesar de menos usados, também são úteis.
+
+São eles:
+
+\begin{itemize}
+\item
+  Assignment operator \texttt{\%\textless{}\textgreater{}\%}
+\item
+  Operador tee \texttt{\%T\textgreater{}\%}
+\item
+  Exposition operator \texttt{\%\$\%}
+\end{itemize}
+
+\hypertarget{operador-de-atribuiuxe7uxe3o-assignment-operator}{%
+\subsection{Operador de atribuição ( Assignment operator )}\label{operador-de-atribuiuxe7uxe3o-assignment-operator}}
+
+Quando queremos sobrescrever um objeto, é comum utilizarmos o operador \texttt{\textless{}-}. Por exemplo, se queremos somar 10 a cada valor do vetor \(x\), podemos fazer:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{)}
+\NormalTok{x <-}\StringTok{ }\NormalTok{x }\OperatorTok{%>%}\StringTok{  }\KeywordTok{add}\NormalTok{(}\DecValTok{10}\NormalTok{)}
+\NormalTok{x}
+\CommentTok{## [1] 11 12 13 14}
+\end{Highlighting}
+\end{Shaded}
+
+Com o operador de atribuição, o código acima se reduz a
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{%<>%}\StringTok{ }\KeywordTok{add}\NormalTok{(}\DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Este operador pode ser usado sempre que desejamos fazer algo da forma \texttt{objeto\ \textless{}-\ objeto\ \%\textgreater{}\%\ função}
+
+\hypertarget{operador-tee}{%
+\subsection{Operador tee}\label{operador-tee}}
+
+O operador tee retorna o valor do comando anterior a \texttt{\%T\textgreater{}\%}, não o resultado do lado direito dele como o pipe faz. O seguinte exemplo vai imprimir na tela os valores de 1 a 10. Se usássemos o pipe, o código retornaria a soma dos dez números.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\OperatorTok{:}\DecValTok{10} \OperatorTok{%T>%}\StringTok{ }\KeywordTok{sum}\NormalTok{() }\OperatorTok{%>%}\StringTok{ }\KeywordTok{cat}\NormalTok{()}
+\CommentTok{## 1 2 3 4 5 6 7 8 9 10}
+\end{Highlighting}
+\end{Shaded}
+
+Neste caso, o operador não parece fazer sentido e apenas deixa o código mais complicado, mas se desejamos usar funções como \texttt{cat()} ou \texttt{plot()} que não retornam nada, o operador se torna muito útil.
+
+Vamos imprimir na tela os valores de 1 a 10 e depois soma-los.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\OperatorTok{:}\DecValTok{10}  \OperatorTok{%T>%}\StringTok{ }\KeywordTok{cat}\NormalTok{() }\OperatorTok{%>%}\StringTok{ }\KeywordTok{sum}\NormalTok{()}
+\CommentTok{## 1 2 3 4 5 6 7 8 9 10}
+\CommentTok{## [1] 55}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{exposition-operator}{%
+\subsection{Exposition operator}\label{exposition-operator}}
+
+Usamos o operador \texttt{\%\$\%}para salvar o valor resultante da expressão do lado esquerdo, podendo usar como quiser do lado direito.
+
+Por exemplo, para obter o primeiro elemento de um vetor, podemos fazer:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{z=}\DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{)}\OperatorTok{%$%}\StringTok{ }\NormalTok{z[}\DecValTok{1}\NormalTok{]}
+\CommentTok{## [1] 1}
+\end{Highlighting}
+\end{Shaded}
+
+Para mais informações sobre o \texttt{pipe}, outros operadores relacionados e exemplos de utilização, visite a página \href{http://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html}{Ceci n'est pas un pipe}.
+
+\hypertarget{exercuxedcios-1}{%
+\section{Exercícios}\label{exercuxedcios-1}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{1.} Reescreva a expressão abaixo utilizando o \texttt{\%\textgreater{}\%}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{round}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\KeywordTok{sum}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{)}\OperatorTok{/}\DecValTok{3}\NormalTok{), }\DataTypeTok{digits =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Dica}: utilize a função \texttt{magrittr::divide\_by()}. Veja o help da função para mais informações.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{2.} Reescreva o código abaixo utilizando o \texttt{\%\textgreater{}\%}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{x <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{)}
+
+\NormalTok{x.pos <-}\StringTok{ }\NormalTok{x[x}\OperatorTok{>}\DecValTok{0}\NormalTok{]}
+
+\NormalTok{media <-}\StringTok{ }\KeywordTok{mean}\NormalTok{(x.pos)}
+
+\NormalTok{saida <-}\StringTok{ }\KeywordTok{round}\NormalTok{(media, }\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{3.} Sem rodar, diga qual a saída do código abaixo. Consulte o help das funções caso precise.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2} \OperatorTok{%>%}
+\StringTok{  }\KeywordTok{add}\NormalTok{(}\DecValTok{2}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{c}\NormalTok{(}\DecValTok{6}\NormalTok{, }\OtherTok{NA}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mean}\NormalTok{(}\DataTypeTok{na.rm =}\NormalTok{ T) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{equals}\NormalTok{(}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{4.} Leia o capítulo sobre \emph{pipes} do \href{http://r4ds.had.co.nz/pipes.html}{R for data science}. É curto e vale muito a pena.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{5.} Pegue algum script que você já tenha programado em R e o reescreva utilizando o operador \emph{pipe}. Se você não tiver nenhum, não se preocupe. Utilizaremos \textbf{bastante} o \emph{pipe} daqui pra frente.
+
+\hypertarget{respostas-1}{%
+\section{Respostas}\label{respostas-1}}
+
+Não há apenas uma maneira de resolver os exercícios. Você pode encontrar soluções diferentes das nossas, algumas vezes mais eficientes, outras vezes menos. Quando estiver fazendo suas análises, tente buscar o equilíbrio entre eficiência e praticidade. Economizar 1 hora com a execução do código pode não valer a pena se você demorou 2 horas a mais para programá-lo.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{1.} Reescreva a expressão abaixo utilizando o \texttt{\%\textgreater{}\%}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{round}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\KeywordTok{sum}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{)}\OperatorTok{/}\DecValTok{3}\NormalTok{), }\DataTypeTok{digits =} \DecValTok{1}\NormalTok{)}
+\CommentTok{## [1] 18.3}
+
+\DecValTok{1}\OperatorTok{:}\DecValTok{10} \OperatorTok{%>%}
+\StringTok{  }\NormalTok{sum }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{divide_by}\NormalTok{(}\DecValTok{3}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{round}\NormalTok{(}\DataTypeTok{digits =} \DecValTok{1}\NormalTok{)}
+\CommentTok{## [1] 18.3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{2.} Reescreva o código abaixo utilizando o \texttt{\%\textgreater{}\%}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Setamos a semente que gera números aleatórios para deixar o resultado reprodutível}
+
+\KeywordTok{set.seed}\NormalTok{(}\DecValTok{137}\NormalTok{)}
+
+\NormalTok{x <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{)}
+\NormalTok{x.pos <-}\StringTok{ }\NormalTok{x[x}\OperatorTok{>}\DecValTok{0}\NormalTok{]}
+\NormalTok{media <-}\StringTok{ }\KeywordTok{mean}\NormalTok{(x.pos)}
+\NormalTok{saida <-}\StringTok{ }\KeywordTok{round}\NormalTok{(media, }\DecValTok{2}\NormalTok{)}
+\NormalTok{saida}
+\CommentTok{## [1] 0.78}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{set.seed}\NormalTok{(}\DecValTok{137}\NormalTok{)}
+
+\KeywordTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\NormalTok{magrittr}\OperatorTok{::}\KeywordTok{extract}\NormalTok{(. }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\NormalTok{mean }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{round}\NormalTok{(}\DataTypeTok{digits =} \DecValTok{2}\NormalTok{)}
+\CommentTok{## [1] 0.78}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{3.} Sem rodar, diga qual a saída do código abaixo. Consulte o help das funções caso precise.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2} \OperatorTok{%>%}
+\StringTok{  }\KeywordTok{add}\NormalTok{(}\DecValTok{2}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{c}\NormalTok{(}\DecValTok{6}\NormalTok{, }\OtherTok{NA}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mean}\NormalTok{(}\DataTypeTok{na.rm =}\NormalTok{ T) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{equals}\NormalTok{(}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Primeiro, somamos 2 com 2, gerando o valor 4.
+\item
+  Então colocamos esse valor em um vetor com os valores 6 e \texttt{NA}.
+\item
+  Em seguida, tiramos a média desse vetor, desconsiderando o \texttt{NA}, obtendo o valor 5.
+\item
+  Por fim, testemos se o valor é igual a 5, obtendo o valor \texttt{TRUE}.
+\end{itemize}
+
+\hypertarget{importauxe7uxe3o}{%
+\chapter{Importação}\label{importauxe7uxe3o}}
+
+Nesta seção, vamos introduzir os principais pacotes para importar dados para o R. Mostraremos como importar dados de arquivos de texto, planilhas do excel e extensões de outros programas estatísticos (SAS e SPSS, por exemplo).
+
+Antes de começarmos, vale a pena tocarmos num ponto importante. As funções de importação do tidyverse carregam os dados em \texttt{tibbles}, que diferem da classe \texttt{data.frames} usual em dois pontos importantes:
+
+\begin{itemize}
+\item
+  imprime os dados na tela de maneira muito mais organizada, resumida e legível; e
+\item
+  permite a utilização de \emph{list-columns}.
+\end{itemize}
+
+Se você não estiver familiarizado com o conceito de \emph{list-columns}, não se preocupe. Trataremos melhor do assunto no tópico sobre funcionais.
+
+\hypertarget{readr}{%
+\section{readr}\label{readr}}
+
+O pacote \texttt{readr}do tidyverse é utilizado para importar arquivos de texto, como \texttt{.txt} ou \texttt{.csv}, para o R.
+
+O \texttt{readr} transforma 7 tipos de arquivos de textos em \texttt{tibbles} usando as funções:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{read\_csv()}: arquivos separados por vírgula.
+\item
+  \texttt{read\_tsv()}: arquivos separados por tab.
+\item
+  \texttt{read\_delim()}: arquivos separados por um delimitador qualquer. O argumento \texttt{delim=} indica qual caracter separa cada coluna no arquivo de texto.
+\item
+  \texttt{read\_fwf()}: arquivos compactos que devem ter sua largura especificada. Existem várias funções para especificar a largura ou posição.
+\item
+  \texttt{read\_table()}: arquivos de texto tabular com suas colunas separadas por espaço.
+\item
+  \texttt{read\_log()}: arquivos log do Apache.
+\end{itemize}
+
+Como exemplo, utilizaremos uma base de filmes do IMDB, gravada em diversos formatos. Os arquivos podem ser encontrados \href{https://github.com/curso-r/site-v2/raw/master/content/material/importacao/data/imdb.rds}{neste link}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(readr)}
+
+\NormalTok{imdb_csv <-}\StringTok{ }\KeywordTok{read_csv}\NormalTok{(}\DataTypeTok{file =} \StringTok{"data/imdb.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Repare que o argumento \texttt{file=} representa o caminho até o arquivo. Se o arquivo a ser lido não estiver no diretório de trabalho da sua sessão, você precisa especificar o caminho até o arquivo.
+
+\begin{quote}
+\textbf{Exercício relâmpago!} Descubra qual a diferença entre as funções ``read\_csv()'' e ``read\_csv2()?''.
+\end{quote}
+
+Para a maioria das funções \texttt{read\_}, existe uma respectiva função \texttt{write\_}. Essas funções servem para salvar bases em um formato específico de arquivo. Além do nome do arquivo a ser criado, você também precisa passar o objeto que será gravado. Repare nos exemplos abaixo que você precisa especificar a extensão do arquivo corretamente.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{write_csv}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ mtcars, }\DataTypeTok{path =} \StringTok{"data/mtcars.csv"}\NormalTok{)}
+\KeywordTok{write_delim}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ mtcars, }\DataTypeTok{delim =} \StringTok{" "}\NormalTok{, }\DataTypeTok{path =} \StringTok{"data/mtcars.txt"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Com excessão do arquivo \texttt{.fwf}, a forma de importar e escrever arquivos são muito semelhantes. Para a função \texttt{read\_fwf}, além da necessidade de especificar o caminho até o arquivo, também é necessário especificar a posição da coluna, \texttt{col\_position\ =}. Para isso usamos funções como \texttt{fwf\_empty()} ou \texttt{fwf\_widths()}. Este formato não tem uma função \texttt{write\_} específica no pacote, mas podemos salvar bases em \texttt{fwf} com a função \texttt{write.fwf()} do pacote \texttt{gdata}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(gdata)}
+\KeywordTok{write.fwf}\NormalTok{(mtcars[,}\DecValTok{1}\OperatorTok{:}\DecValTok{4}\NormalTok{],}\StringTok{'data/mtcars.fwf'}\NormalTok{,}\DataTypeTok{colnames =}\NormalTok{ F)}
+
+\KeywordTok{read_fwf}\NormalTok{(}\StringTok{'data/mtcars.fwf'}\NormalTok{, }\DataTypeTok{col_positions =} \KeywordTok{fwf_empty}\NormalTok{(}\StringTok{'data/mtcars.fwf'}\NormalTok{,}\DataTypeTok{col_names =} \KeywordTok{c}\NormalTok{(}\StringTok{'mpg'}\NormalTok{,}\StringTok{'cyl'}\NormalTok{,}\StringTok{'disp'}\NormalTok{,}\StringTok{'hp'}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+Aqui, pegamos as 4 primeiras colunas de mtcars e criamos um arquivo \texttt{.fwf}, depois o transformamos em tibble. A função \texttt{fwf\_empty} especifica a posição das colunas com base nas colunas que estão vazias. Para entender melhor o que cada função \texttt{fwf\_} faz, entre em \texttt{help(read\_fwf)}.
+
+Observe que quando chamamos a função \texttt{read\_}, uma mensagem é impressa na tela.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{imdb_tsv <-}\StringTok{ }\KeywordTok{read_tsv}\NormalTok{(}\StringTok{'data/imdb.tsv'}\NormalTok{)}
+\CommentTok{## Parsed with column specification:}
+\CommentTok{## cols(}
+\CommentTok{##   titulo = col_character(),}
+\CommentTok{##   ano = col_double(),}
+\CommentTok{##   diretor = col_character(),}
+\CommentTok{##   duracao = col_double(),}
+\CommentTok{##   cor = col_character(),}
+\CommentTok{##   generos = col_character(),}
+\CommentTok{##   pais = col_character(),}
+\CommentTok{##   classificacao = col_character(),}
+\CommentTok{##   orcamento = col_double(),}
+\CommentTok{##   receita = col_double(),}
+\CommentTok{##   nota_imdb = col_double(),}
+\CommentTok{##   likes_facebook = col_double(),}
+\CommentTok{##   ator_1 = col_character(),}
+\CommentTok{##   ator_2 = col_character(),}
+\CommentTok{##   ator_3 = col_character()}
+\CommentTok{## )}
+\end{Highlighting}
+\end{Shaded}
+
+Essa mensagem está definindo a classe de cada variável. Se as variáveis não foram especificadas de maneira correta, você pode copiar esta messagem e reescrevê-la da forma desejada.
+
+No exemplo, suponha que você gostaria que a variável ano fosse um inteiro. Podemos resolver isso da seguinte forma:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{imdb_tsv <-}\StringTok{ }\KeywordTok{read_tsv}\NormalTok{(}\StringTok{'data/imdb.tsv'}\NormalTok{,}\DataTypeTok{col_types =}  
+ \KeywordTok{cols}\NormalTok{(}
+  \DataTypeTok{titulo =} \KeywordTok{col_character}\NormalTok{(),}
+  \CommentTok{#mudando de double para integer}
+  \DataTypeTok{ano =} \KeywordTok{col_integer}\NormalTok{(),}
+  \DataTypeTok{diretor =} \KeywordTok{col_character}\NormalTok{(),}
+  \DataTypeTok{duracao =} \KeywordTok{col_double}\NormalTok{(),}
+  \DataTypeTok{cor =} \KeywordTok{col_character}\NormalTok{(),}
+  \DataTypeTok{generos =} \KeywordTok{col_character}\NormalTok{(),}
+  \DataTypeTok{pais =} \KeywordTok{col_character}\NormalTok{(),}
+  \DataTypeTok{classificacao =} \KeywordTok{col_character}\NormalTok{(),}
+  \DataTypeTok{orcamento =} \KeywordTok{col_double}\NormalTok{(),}
+  \DataTypeTok{receita =} \KeywordTok{col_double}\NormalTok{(),}
+  \DataTypeTok{nota_imdb =} \KeywordTok{col_double}\NormalTok{(),}
+  \DataTypeTok{likes_facebook =} \KeywordTok{col_double}\NormalTok{(),}
+  \DataTypeTok{ator_1 =} \KeywordTok{col_character}\NormalTok{(),}
+  \DataTypeTok{ator_2 =} \KeywordTok{col_character}\NormalTok{(),}
+  \DataTypeTok{ator_3 =} \KeywordTok{col_character}\NormalTok{()}
+\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+Para conhecer as especificações das colunas disponíveis clique \href{https://readr.tidyverse.org/articles/readr.html\#available-column-specifications}{aqui}.
+
+Também é possível salvar objetos, como data.frames em um tipo especial de arquivos, o \texttt{.rds}. A vantagem dessa extensão é guardar a estrutura dos dados salvos, como a classe das colunas de um data.frame. Além disso, é uma boa alternativa para lidar com grandes bancos de dados, já que arquivos \texttt{.rds} serão bem mais compactos do que arquivos Excel.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{imdb_rds <-}\StringTok{ }\KeywordTok{read_rds}\NormalTok{(}\DataTypeTok{path =} \StringTok{"data/imdb.rds"}\NormalTok{)}
+\KeywordTok{write_rds}\NormalTok{(mtcars, }\DataTypeTok{path =} \StringTok{"data/mtcars.rds"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{readxl}{%
+\section{readxl}\label{readxl}}
+
+O pacote \texttt{readxl} do tydiverse contém funções para importação com os formatos \texttt{.xls} e \texttt{xlsx}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{readxl}\OperatorTok{::}\KeywordTok{read_xls}\NormalTok{(}\DataTypeTok{path =} \StringTok{"data/imdb.xls"}\NormalTok{)}
+\NormalTok{readxl}\OperatorTok{::}\KeywordTok{read_xlsx}\NormalTok{(}\DataTypeTok{path =} \StringTok{"data/imdb.xlsx"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+A funçao \texttt{read\_excel()} auto detecta a extensão do arquivo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{read_excel}\NormalTok{(}\DataTypeTok{path =} \StringTok{"data/imdb.xls"}\NormalTok{)}
+\KeywordTok{read_excel}\NormalTok{(}\DataTypeTok{path =} \StringTok{"data/imdb.xlsx"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+O pacote disponibiliza 5 exemplos de arquivos com formato \texttt{.xls} e \texttt{.xlsx}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{readxl_example}\NormalTok{()}
+\CommentTok{##  [1] "clippy.xls"    "clippy.xlsx"   "datasets.xls"  "datasets.xlsx"}
+\CommentTok{##  [5] "deaths.xls"    "deaths.xlsx"   "geometry.xls"  "geometry.xlsx"}
+\CommentTok{##  [9] "type-me.xls"   "type-me.xlsx"}
+\end{Highlighting}
+\end{Shaded}
+
+Vamos acessar o arquivo datasets.xls.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{datasets <-}\StringTok{ }\KeywordTok{readxl_example}\NormalTok{(}\StringTok{"datasets.xls"}\NormalTok{)}
+\KeywordTok{read_xls}\NormalTok{(datasets)}
+\CommentTok{## # A tibble: 150 x 5}
+\CommentTok{##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species}
+\CommentTok{##           <dbl>       <dbl>        <dbl>       <dbl> <chr>  }
+\CommentTok{##  1          5.1         3.5          1.4         0.2 setosa }
+\CommentTok{##  2          4.9         3            1.4         0.2 setosa }
+\CommentTok{##  3          4.7         3.2          1.3         0.2 setosa }
+\CommentTok{##  4          4.6         3.1          1.5         0.2 setosa }
+\CommentTok{##  5          5           3.6          1.4         0.2 setosa }
+\CommentTok{##  6          5.4         3.9          1.7         0.4 setosa }
+\CommentTok{##  7          4.6         3.4          1.4         0.3 setosa }
+\CommentTok{##  8          5           3.4          1.5         0.2 setosa }
+\CommentTok{##  9          4.4         2.9          1.4         0.2 setosa }
+\CommentTok{## 10          4.9         3.1          1.5         0.1 setosa }
+\CommentTok{## # ... with 140 more rows}
+\end{Highlighting}
+\end{Shaded}
+
+No Excel, um arquivo pode ter várias planilhas. Você pode ver quais planilhas fazem parte do arquivo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{excel_sheets}\NormalTok{(datasets)}
+\CommentTok{## [1] "iris"     "mtcars"   "chickwts" "quakes"}
+\end{Highlighting}
+\end{Shaded}
+
+Observe que quando usamos a função \texttt{read\_xls(datasets)}, o R transformou em tibble apenas a primeira planilha do arquivo. Caso essa não for a tabela que você deseja acessar, não se preocupe! Podemos resolver seu problema de forma simples.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{read_xls}\NormalTok{(datasets,}\DataTypeTok{sheet =} \StringTok{'chickwts'}\NormalTok{)}
+\CommentTok{## # A tibble: 71 x 2}
+\CommentTok{##    weight feed     }
+\CommentTok{##     <dbl> <chr>    }
+\CommentTok{##  1    179 horsebean}
+\CommentTok{##  2    160 horsebean}
+\CommentTok{##  3    136 horsebean}
+\CommentTok{##  4    227 horsebean}
+\CommentTok{##  5    217 horsebean}
+\CommentTok{##  6    168 horsebean}
+\CommentTok{##  7    108 horsebean}
+\CommentTok{##  8    124 horsebean}
+\CommentTok{##  9    143 horsebean}
+\CommentTok{## 10    140 horsebean}
+\CommentTok{## # ... with 61 more rows}
+\end{Highlighting}
+\end{Shaded}
+
+Também é possivel fazer uma seleção das células da planilha que você deseja importar usando o argumento \texttt{range\ =} da função \texttt{read\_excel}. Podemos indicar quais colunas ou linhas desejamos com as funções \texttt{cell\_cols()} e \texttt{cell\_rows()} respectivamente. Ou podemos difinir a dimensão dos dados a partir de uma célula com a função \texttt{anchored()}. Veja todas as fuções disponíveis neste \href{https://cran.r-project.org/web/packages/cellranger/cellranger.pdf}{manual}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{read_xls}\NormalTok{(datasets,}\DataTypeTok{sheet =} \StringTok{'chickwts'}\NormalTok{,}\DataTypeTok{range =} \KeywordTok{anchored}\NormalTok{(}\StringTok{'A3'}\NormalTok{,}\DataTypeTok{dim =} \KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{2}\NormalTok{)),}\DataTypeTok{col_names =}\NormalTok{ F)}
+\CommentTok{## New names:}
+\CommentTok{## * `` -> ...1}
+\CommentTok{## * `` -> ...2}
+\CommentTok{## # A tibble: 5 x 2}
+\CommentTok{##    ...1 ...2     }
+\CommentTok{##   <dbl> <chr>    }
+\CommentTok{## 1   160 horsebean}
+\CommentTok{## 2   136 horsebean}
+\CommentTok{## 3   227 horsebean}
+\CommentTok{## 4   217 horsebean}
+\CommentTok{## 5   168 horsebean}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{haven}{%
+\section{haven}\label{haven}}
+
+Para ler arquivos gerados por outros softwares, como SPSS, SAS e STATA, você pode usar as funções do pacote \texttt{haven}. Este pacote faz parte do \texttt{tidyverse} e é um wrapper da biblioteca ReadStat, escrita em C.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(haven)}
+
+\NormalTok{imdb_sas <-}\StringTok{ }\KeywordTok{read_sas}\NormalTok{(}\StringTok{"data/imdb.sas7bdat"}\NormalTok{)}
+\NormalTok{imdb_spss <-}\StringTok{ }\KeywordTok{read_spss}\NormalTok{(}\StringTok{"data/imdb.sav"}\NormalTok{)}
+\NormalTok{imdb_dta <-}\StringTok{ }\KeywordTok{read_dta}\NormalTok{(}\StringTok{"data/imdb.dta"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+É possível salvar ou escrever bases em SAS e STATA com as funções \texttt{write\_sas} e \texttt{write\_dta}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{write_dta}\NormalTok{(mtcars,}\StringTok{'data/matcars.dta'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Quando importamos arquivos gerados pelo SAS SPSS ou STATA para o R, os rótulos de uma variável podem não ser importados de forma correta. O pacote \texttt{haven} tem uma soluçao para este problema.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\KeywordTok{labelled}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\DataTypeTok{Ruim =} \DecValTok{1}\NormalTok{, }\DataTypeTok{Bom =} \DecValTok{2}\NormalTok{, }\DataTypeTok{Otimo =} \DecValTok{3}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{labelled()} adiciona rótulos à valores de uma variável. Para verificar quais são estes rótulos, podemos usar a função \texttt{print\_labels()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{print_labels}\NormalTok{(x)}
+\CommentTok{## }
+\CommentTok{## Labels:}
+\CommentTok{##  value label}
+\CommentTok{##      1  Ruim}
+\CommentTok{##      2   Bom}
+\CommentTok{##      3 Otimo}
+\end{Highlighting}
+\end{Shaded}
+
+Existe uma função similar a \texttt{labelled()}, exclusiva para o SPSS, que além de rotular as variáveis, também defini quais símbolos representam valores faltantes, dado que em SPSS pode haver mais de um tipo de \emph{missing}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x1 <-}\StringTok{ }\KeywordTok{labelled_spss}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\DataTypeTok{Ruim =} \DecValTok{1}\NormalTok{,}\DataTypeTok{Bom =} \DecValTok{2}\NormalTok{, }\DataTypeTok{Otimo =} \DecValTok{3}\NormalTok{), }\DataTypeTok{na_values =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{4}\NormalTok{))}
+    
+\KeywordTok{is.na}\NormalTok{(x1)}
+\CommentTok{## [1] FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE}
+\end{Highlighting}
+\end{Shaded}
+
+Agora que já definimos os \emph{missings} ``especiais'', podemos transformá-los no \emph{missing} padrão do R, representado pelo símbolo \emph{NA}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x1 <-}\StringTok{ }\KeywordTok{zap_missing}\NormalTok{(x1)}
+\NormalTok{x1}
+\CommentTok{## <Labelled double>}
+\CommentTok{## [1]  1  3 NA  2  2  1 NA  2 NA}
+\CommentTok{## }
+\CommentTok{## Labels:}
+\CommentTok{##  value label}
+\CommentTok{##      1  Ruim}
+\CommentTok{##      2   Bom}
+\CommentTok{##      3 Otimo}
+\end{Highlighting}
+\end{Shaded}
+
+Existem outras funções \texttt{zap\_} interessantes no \href{https://cran.r-project.org/web/packages/haven/haven.pdf}{pacote}.
+
+Após rotular os valores do vetor, podemos convertê-los, por exemplo, em fator. Para isso, usamos uma função do pacote \texttt{haven}.
+A função base \texttt{as.factor()} também poderia ser usada, mas quando a usamos, os rótulos não são considerados.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x_base <-}\StringTok{ }\NormalTok{base}\OperatorTok{::}\KeywordTok{as.factor}\NormalTok{(x)}
+\KeywordTok{levels}\NormalTok{(x_base)}
+\CommentTok{## [1] "1" "2" "3"}
+\NormalTok{x_factor <-}\StringTok{ }\NormalTok{haven}\OperatorTok{::}\KeywordTok{as_factor}\NormalTok{(x)}
+\KeywordTok{levels}\NormalTok{(x_factor)}
+\CommentTok{## [1] "Ruim"  "Bom"   "Otimo"}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{manipulauxe7uxe3o}{%
+\chapter{Manipulação}\label{manipulauxe7uxe3o}}
+
+\begin{quote}
+``(\ldots) The fact that data science exists as a field is a colossal failure of statistics. To me, what I do is what statistics is all about. It is gaining insight from data using modelling and visualization. Data munging and manipulation is hard and statistics has just said that's not our domain.'' - Hadley Wickham
+\end{quote}
+
+Esta seção trata do tema \emph{manipulação de dados}. Trata-se de uma tarefa dolorosa e demorada, tomando muitas vezes a maior parte do tempo de uma análise estatística. Essa etapa é essencial em qualquer análise de dados e, apesar de negligenciada pela academia, é decisiva para o sucesso de estudos aplicados.
+
+Usualmente, o cientista de dados parte de uma base ``crua'' e a transforma até obter uma base de dados analítica, que, a menos de transformações simples, está preparada para passar por análises estatísticas.
+
+A figura abaixo mostra a fase de ``disputa'' com os dados (\emph{data wrangling}) para deixá-los no formato analítico.
+
+\begin{center}\includegraphics[width=13.31in]{img/manipulacao/ciclo-ciencia-de-dados} \end{center}
+
+Um conceito importante para obtenção de uma base analítica é o \emph{data tidying}, ou arrumação de dados. Uma base é considerada \emph{tidy} se
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Cada linha da base representa uma observação.
+\item
+  Cada coluna da base representa uma variável.
+\end{enumerate}
+
+A base de dados analítica é estruturada de tal forma que pode ser colocada diretamente em ambientes de modelagem estatística ou de visualização. Nem sempre uma base de dados analítica está no formato \emph{tidy}, mas usualmente são necessários poucos passos para migrar de uma para outra. A filosofia \emph{tidy} é a base do \href{https://www.tidyverse.org/}{tidyverse}.
+
+Os principais pacotes encarregados da tarefa de estruturar os dados são o \texttt{dplyr} e o \texttt{tidyr}. Eles serão o tema desse tópico. Instale e carregue os pacotes utilizando:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{)}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"tidyr"}\NormalTok{)}
+
+\KeywordTok{library}\NormalTok{(dplyr)}
+\KeywordTok{library}\NormalTok{(tidyr)}
+\end{Highlighting}
+\end{Shaded}
+
+Mas antes de apresentar as principais funções do \texttt{dplyr} e do \texttt{tidyr}, precisamos falar sobre o conceito de \texttt{tibbles}.
+
+\hypertarget{trabalhando-com-tibbles}{%
+\section{Trabalhando com tibbles}\label{trabalhando-com-tibbles}}
+
+Uma \texttt{tibble} nada mais é do que um \texttt{data.frame}, mas com um método de impressão mais adequado.
+
+As \texttt{tibbles} são parte do pacote \texttt{tibble}. Assim, para começar a usá-las, instale e carregue o pacote.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"tibble"}\NormalTok{)}
+\KeywordTok{library}\NormalTok{(tibble)}
+\end{Highlighting}
+\end{Shaded}
+
+Mais informações sobre \texttt{tibbles} podem ser encontradas \href{http://r4ds.had.co.nz/tibbles.html}{neste link}.
+
+Nessa seção, vamos trabalhar com uma base de filmes do IMDB. Essa base pode ser baixada \href{https://github.com/curso-r/site-v2/raw/master/content/material/importacao/data/imdb.rds}{clicando aqui}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{imdb <-}\StringTok{ }\NormalTok{readr}\OperatorTok{::}\KeywordTok{read_rds}\NormalTok{(}\StringTok{"data/imdb.rds"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Assim, utilizaremos o objeto \texttt{imdb} para acessar os dados.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{imdb}
+\CommentTok{## # A tibble: 3,807 x 15}
+\CommentTok{##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento}
+\CommentTok{##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>}
+\CommentTok{##  1 Avata~  2009 James ~     178 Color Action~ USA   A partir de ~ 237000000}
+\CommentTok{##  2 Pirat~  2007 Gore V~     169 Color Action~ USA   A partir de ~ 300000000}
+\CommentTok{##  3 The D~  2012 Christ~     164 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{##  4 John ~  2012 Andrew~     132 Color Action~ USA   A partir de ~ 263700000}
+\CommentTok{##  5 Spide~  2007 Sam Ra~     156 Color Action~ USA   A partir de ~ 258000000}
+\CommentTok{##  6 Tangl~  2010 Nathan~     100 Color Advent~ USA   Livre         260000000}
+\CommentTok{##  7 Aveng~  2015 Joss W~     141 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{##  8 Batma~  2016 Zack S~     183 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{##  9 Super~  2006 Bryan ~     169 Color Action~ USA   A partir de ~ 209000000}
+\CommentTok{## 10 Pirat~  2006 Gore V~     151 Color Action~ USA   A partir de ~ 225000000}
+\CommentTok{## # ... with 3,797 more rows, and 6 more variables: receita <int>,}
+\CommentTok{## #   nota_imdb <dbl>, likes_facebook <int>, ator_1 <chr>, ator_2 <chr>,}
+\CommentTok{## #   ator_3 <chr>}
+\end{Highlighting}
+\end{Shaded}
+
+Veja que, por padrão, apenas as dez primeiras linhas da \texttt{tibble} são impressas na tela. Além disso, as colunas que não couberem na largura do console serão omitidas. Também são apresentadas a dimensão da tabela e as classes de cada coluna.
+
+\hypertarget{o-pacote-dplyr}{%
+\section{O pacote dplyr}\label{o-pacote-dplyr}}
+
+O \texttt{dplyr} é o pacote mais útil para realizar transformação de dados, aliando simplicidade e eficiência de uma forma elegante. Os scripts em R que fazem uso inteligente dos verbos \texttt{dplyr} e as facilidades do operador \emph{pipe} tendem a ficar mais legíveis e organizados sem perder velocidade de execução.
+
+As principais funções do \texttt{dplyr} são:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{filter()} - filtra linhas
+\item
+  \texttt{select()} - seleciona colunas
+\item
+  \texttt{arrange()} - ordena a base
+\item
+  \texttt{mutate()} - cria/modifica colunas
+\item
+  \texttt{group\_by()} - agrupa a base
+\item
+  \texttt{summarise()} - sumariza a base
+\end{itemize}
+
+Todas essas funções seguem as mesmas características:
+
+\begin{itemize}
+\tightlist
+\item
+  O \emph{input} é sempre uma \texttt{tibble} e o \emph{output} é sempre um \texttt{tibble}.
+\item
+  Colocamos o \texttt{tibble} no primeiro argumento e o que queremos fazer nos outros argumentos.
+\item
+  A utilização é facilitada com o emprego do operador \texttt{\%\textgreater{}\%}.
+\item
+  O pacote faz uso extensivo de NSE (\emph{non standard evaluation}).
+\end{itemize}
+
+As principais vantagens de se usar o \texttt{dplyr} em detrimento das funções do R base são:
+
+\begin{itemize}
+\tightlist
+\item
+  Manipular dados se torna uma tarefa muito mais simples.
+\item
+  O código fica mais intuitivo de ser escrito e mais simples de ser lido.
+\item
+  O pacote \texttt{dplyr} utiliza \texttt{C} e \texttt{C++} por trás da maioria das funções, o que geralmente torna o código mais eficiente.
+\item
+  É possível trabalhar com diferentes fontes de dados, como bases relacionais (SQL) e \texttt{data.table}.
+\end{itemize}
+
+Agora, vamos avaliar com mais detalhes as principais funções do pacote \texttt{dplyr}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{filtrando-linhas}{%
+\subsection{Filtrando linhas}\label{filtrando-linhas}}
+
+A função \texttt{filter()} filtra linhas. Ela é semelhante à função \texttt{subset()}, do R base. O código abaixo retorna apenas filmes com nota maior que nova.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(nota_imdb }\OperatorTok{>}\StringTok{ }\DecValTok{9}\NormalTok{)}
+\CommentTok{## # A tibble: 3 x 15}
+\CommentTok{##   titulo   ano diretor duracao cor   generos pais  classificacao orcamento}
+\CommentTok{##   <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>}
+\CommentTok{## 1 The S~  1994 Frank ~     142 Color Crime|~ USA   A partir de ~  25000000}
+\CommentTok{## 2 The G~  1972 Franci~     175 Color Crime|~ USA   A partir de ~   6000000}
+\CommentTok{## 3 Kickb~  2016 John S~      90 <NA>  Action  USA   Outros         17000000}
+\CommentTok{## # ... with 6 more variables: receita <int>, nota_imdb <dbl>,}
+\CommentTok{## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>}
+\end{Highlighting}
+\end{Shaded}
+
+Para fazer várias condições, use os operadores lógicos \texttt{\&} e \texttt{\textbar{}} ou separe filtros entre vírgulas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(ano }\OperatorTok{>}\StringTok{ }\DecValTok{2010} \OperatorTok{&}\StringTok{ }\NormalTok{nota_imdb }\OperatorTok{>}\StringTok{ }\FloatTok{8.5}\NormalTok{)}
+\CommentTok{## # A tibble: 5 x 15}
+\CommentTok{##   titulo   ano diretor duracao cor   generos pais  classificacao orcamento}
+\CommentTok{##   <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>}
+\CommentTok{## 1 Inter~  2014 Christ~     169 Color Advent~ USA   A partir de ~ 165000000}
+\CommentTok{## 2 Runni~  2015 Mike M~      88 Color Family  USA   Outros          5000000}
+\CommentTok{## 3 A Beg~  2016 Mitche~      87 Color Comedy~ USA   Outros               NA}
+\CommentTok{## 4 Kickb~  2016 John S~      90 <NA>  Action  USA   Outros         17000000}
+\CommentTok{## 5 Butte~  2014 Cary B~      78 Color Docume~ USA   Outros           180000}
+\CommentTok{## # ... with 6 more variables: receita <int>, nota_imdb <dbl>,}
+\CommentTok{## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>}
+
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(receita }\OperatorTok{>}\StringTok{ }\NormalTok{orcamento }\OperatorTok{|}\StringTok{ }\NormalTok{nota_imdb }\OperatorTok{>}\StringTok{ }\DecValTok{9}\NormalTok{)}
+\CommentTok{## # A tibble: 1,762 x 15}
+\CommentTok{##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento}
+\CommentTok{##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>}
+\CommentTok{##  1 Avata~  2009 James ~     178 Color Action~ USA   A partir de ~ 237000000}
+\CommentTok{##  2 Pirat~  2007 Gore V~     169 Color Action~ USA   A partir de ~ 300000000}
+\CommentTok{##  3 The D~  2012 Christ~     164 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{##  4 Spide~  2007 Sam Ra~     156 Color Action~ USA   A partir de ~ 258000000}
+\CommentTok{##  5 Aveng~  2015 Joss W~     141 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{##  6 Batma~  2016 Zack S~     183 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{##  7 Pirat~  2006 Gore V~     151 Color Action~ USA   A partir de ~ 225000000}
+\CommentTok{##  8 Man o~  2013 Zack S~     143 Color Action~ USA   A partir de ~ 225000000}
+\CommentTok{##  9 The A~  2012 Joss W~     173 Color Action~ USA   A partir de ~ 220000000}
+\CommentTok{## 10 The A~  2012 Marc W~     153 Color Action~ USA   A partir de ~ 230000000}
+\CommentTok{## # ... with 1,752 more rows, and 6 more variables: receita <int>,}
+\CommentTok{## #   nota_imdb <dbl>, likes_facebook <int>, ator_1 <chr>, ator_2 <chr>,}
+\CommentTok{## #   ator_3 <chr>}
+\end{Highlighting}
+\end{Shaded}
+
+O operador \texttt{\%in\%} é muito útil na hora de criar filtros. O resultado das operações com \texttt{\%in\%} é um vetor lógico o tamanho do vetor do elemento da esquerda, identificando quais elementos da esquerda batem com algum elemento da direita.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{letters }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"e"}\NormalTok{, }\StringTok{"z"}\NormalTok{)}
+\CommentTok{##  [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE}
+\CommentTok{## [13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE}
+\CommentTok{## [25] FALSE  TRUE}
+
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(diretor }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Steven Spielberg"}\NormalTok{, }\StringTok{"Quentin Tarantino"}\NormalTok{))}
+\CommentTok{## # A tibble: 32 x 15}
+\CommentTok{##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento}
+\CommentTok{##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>}
+\CommentTok{##  1 India~  2008 Steven~     122 Color Action~ USA   A partir de ~ 185000000}
+\CommentTok{##  2 War o~  2005 Steven~     116 Color Advent~ USA   A partir de ~ 132000000}
+\CommentTok{##  3 The A~  2011 Steven~     107 Color Action~ USA   Livre         135000000}
+\CommentTok{##  4 Minor~  2002 Steven~     145 Color Action~ USA   A partir de ~ 102000000}
+\CommentTok{##  5 Djang~  2012 Quenti~     165 Color Drama|~ USA   A partir de ~ 100000000}
+\CommentTok{##  6 A.I. ~  2001 Steven~     146 Color Advent~ USA   A partir de ~ 100000000}
+\CommentTok{##  7 The L~  1997 Steven~     129 Color Action~ USA   A partir de ~  73000000}
+\CommentTok{##  8 The T~  2004 Steven~     128 Color Comedy~ USA   A partir de ~  60000000}
+\CommentTok{##  9 Inglo~  2009 Quenti~     153 Color Advent~ USA   A partir de ~  75000000}
+\CommentTok{## 10 Hook    1991 Steven~     142 Color Advent~ USA   Livre          70000000}
+\CommentTok{## # ... with 22 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,}
+\CommentTok{## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>}
+\end{Highlighting}
+\end{Shaded}
+
+Também podemos usar funções que retornam valores lógicos, como a \texttt{str\_detect()}, do pacote \texttt{stringr}. Esse pacote possui funções para a manipulação de strings, e será abordado com mais detalhes quando falarmos sobre \texttt{stringr}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(stringr)}
+
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(}\KeywordTok{str_detect}\NormalTok{(generos, }\StringTok{"Action"}\NormalTok{))}
+\CommentTok{## # A tibble: 861 x 15}
+\CommentTok{##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento}
+\CommentTok{##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>}
+\CommentTok{##  1 Avata~  2009 James ~     178 Color Action~ USA   A partir de ~ 237000000}
+\CommentTok{##  2 Pirat~  2007 Gore V~     169 Color Action~ USA   A partir de ~ 300000000}
+\CommentTok{##  3 The D~  2012 Christ~     164 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{##  4 John ~  2012 Andrew~     132 Color Action~ USA   A partir de ~ 263700000}
+\CommentTok{##  5 Spide~  2007 Sam Ra~     156 Color Action~ USA   A partir de ~ 258000000}
+\CommentTok{##  6 Aveng~  2015 Joss W~     141 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{##  7 Batma~  2016 Zack S~     183 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{##  8 Super~  2006 Bryan ~     169 Color Action~ USA   A partir de ~ 209000000}
+\CommentTok{##  9 Pirat~  2006 Gore V~     151 Color Action~ USA   A partir de ~ 225000000}
+\CommentTok{## 10 The L~  2013 Gore V~     150 Color Action~ USA   A partir de ~ 215000000}
+\CommentTok{## # ... with 851 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,}
+\CommentTok{## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{selecionando-colunas}{%
+\subsection{Selecionando colunas}\label{selecionando-colunas}}
+
+A função \texttt{select()} seleciona colunas (variáveis). É possível utilizar nomes, índices, intervalos de variáveis ou utilizar as funções \texttt{starts\_with(x)}, \texttt{contains(x)}, \texttt{matches(x)}, \texttt{one\_of(x)} para selecionar as variáveis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(titulo, ano, orcamento)}
+\CommentTok{## # A tibble: 3,807 x 3}
+\CommentTok{##    titulo                                        ano orcamento}
+\CommentTok{##    <chr>                                       <int>     <int>}
+\CommentTok{##  1 Avatar                                       2009 237000000}
+\CommentTok{##  2 Pirates of the Caribbean: At World's End     2007 300000000}
+\CommentTok{##  3 The Dark Knight Rises                        2012 250000000}
+\CommentTok{##  4 John Carter                                  2012 263700000}
+\CommentTok{##  5 Spider-Man 3                                 2007 258000000}
+\CommentTok{##  6 Tangled                                      2010 260000000}
+\CommentTok{##  7 Avengers: Age of Ultron                      2015 250000000}
+\CommentTok{##  8 Batman v Superman: Dawn of Justice           2016 250000000}
+\CommentTok{##  9 Superman Returns                             2006 209000000}
+\CommentTok{## 10 Pirates of the Caribbean: Dead Man's Chest   2006 225000000}
+\CommentTok{## # ... with 3,797 more rows}
+
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(}\KeywordTok{starts_with}\NormalTok{(}\StringTok{"ator"}\NormalTok{))}
+\CommentTok{## # A tibble: 3,807 x 3}
+\CommentTok{##    ator_1          ator_2            ator_3              }
+\CommentTok{##    <chr>           <chr>             <chr>               }
+\CommentTok{##  1 CCH Pounder     Joel David Moore  Wes Studi           }
+\CommentTok{##  2 Johnny Depp     Orlando Bloom     Jack Davenport      }
+\CommentTok{##  3 Tom Hardy       Christian Bale    Joseph Gordon-Levitt}
+\CommentTok{##  4 Daryl Sabara    Samantha Morton   Polly Walker        }
+\CommentTok{##  5 J.K. Simmons    James Franco      Kirsten Dunst       }
+\CommentTok{##  6 Brad Garrett    Donna Murphy      M.C. Gainey         }
+\CommentTok{##  7 Chris Hemsworth Robert Downey Jr. Scarlett Johansson  }
+\CommentTok{##  8 Henry Cavill    Lauren Cohan      Alan D. Purwin      }
+\CommentTok{##  9 Kevin Spacey    Marlon Brando     Frank Langella      }
+\CommentTok{## 10 Johnny Depp     Orlando Bloom     Jack Davenport      }
+\CommentTok{## # ... with 3,797 more rows}
+\end{Highlighting}
+\end{Shaded}
+
+O operador \texttt{:} pode ser usado para selecionar intervalos de colunas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(titulo, ator_}\DecValTok{1}\OperatorTok{:}\NormalTok{ator_}\DecValTok{3}\NormalTok{)}
+\CommentTok{## # A tibble: 3,807 x 4}
+\CommentTok{##    titulo                            ator_1        ator_2        ator_3         }
+\CommentTok{##    <chr>                             <chr>         <chr>         <chr>          }
+\CommentTok{##  1 Avatar                            CCH Pounder   Joel David M~ Wes Studi      }
+\CommentTok{##  2 Pirates of the Caribbean: At Wor~ Johnny Depp   Orlando Bloom Jack Davenport }
+\CommentTok{##  3 The Dark Knight Rises             Tom Hardy     Christian Ba~ Joseph Gordon-~}
+\CommentTok{##  4 John Carter                       Daryl Sabara  Samantha Mor~ Polly Walker   }
+\CommentTok{##  5 Spider-Man 3                      J.K. Simmons  James Franco  Kirsten Dunst  }
+\CommentTok{##  6 Tangled                           Brad Garrett  Donna Murphy  M.C. Gainey    }
+\CommentTok{##  7 Avengers: Age of Ultron           Chris Hemswo~ Robert Downe~ Scarlett Johan~}
+\CommentTok{##  8 Batman v Superman: Dawn of Justi~ Henry Cavill  Lauren Cohan  Alan D. Purwin }
+\CommentTok{##  9 Superman Returns                  Kevin Spacey  Marlon Brando Frank Langella }
+\CommentTok{## 10 Pirates of the Caribbean: Dead M~ Johnny Depp   Orlando Bloom Jack Davenport }
+\CommentTok{## # ... with 3,797 more rows}
+\end{Highlighting}
+\end{Shaded}
+
+Para retirar colunas da base, base acrescentar um \texttt{-} antes da seleção.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(}\OperatorTok{-}\NormalTok{ano, }\OperatorTok{-}\StringTok{ }\NormalTok{diretor)}
+\CommentTok{## # A tibble: 3,807 x 13}
+\CommentTok{##    titulo duracao cor   generos pais  classificacao orcamento receita nota_imdb}
+\CommentTok{##    <chr>    <int> <chr> <chr>   <chr> <chr>             <int>   <int>     <dbl>}
+\CommentTok{##  1 Avata~     178 Color Action~ USA   A partir de ~ 237000000  7.61e8       7.9}
+\CommentTok{##  2 Pirat~     169 Color Action~ USA   A partir de ~ 300000000  3.09e8       7.1}
+\CommentTok{##  3 The D~     164 Color Action~ USA   A partir de ~ 250000000  4.48e8       8.5}
+\CommentTok{##  4 John ~     132 Color Action~ USA   A partir de ~ 263700000  7.31e7       6.6}
+\CommentTok{##  5 Spide~     156 Color Action~ USA   A partir de ~ 258000000  3.37e8       6.2}
+\CommentTok{##  6 Tangl~     100 Color Advent~ USA   Livre         260000000  2.01e8       7.8}
+\CommentTok{##  7 Aveng~     141 Color Action~ USA   A partir de ~ 250000000  4.59e8       7.5}
+\CommentTok{##  8 Batma~     183 Color Action~ USA   A partir de ~ 250000000  3.30e8       6.9}
+\CommentTok{##  9 Super~     169 Color Action~ USA   A partir de ~ 209000000  2.00e8       6.1}
+\CommentTok{## 10 Pirat~     151 Color Action~ USA   A partir de ~ 225000000  4.23e8       7.3}
+\CommentTok{## # ... with 3,797 more rows, and 4 more variables: likes_facebook <int>,}
+\CommentTok{## #   ator_1 <chr>, ator_2 <chr>, ator_3 <chr>}
+
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(}\OperatorTok{-}\KeywordTok{starts_with}\NormalTok{(}\StringTok{"ator"}\NormalTok{))}
+\CommentTok{## # A tibble: 3,807 x 12}
+\CommentTok{##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento}
+\CommentTok{##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>}
+\CommentTok{##  1 Avata~  2009 James ~     178 Color Action~ USA   A partir de ~ 237000000}
+\CommentTok{##  2 Pirat~  2007 Gore V~     169 Color Action~ USA   A partir de ~ 300000000}
+\CommentTok{##  3 The D~  2012 Christ~     164 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{##  4 John ~  2012 Andrew~     132 Color Action~ USA   A partir de ~ 263700000}
+\CommentTok{##  5 Spide~  2007 Sam Ra~     156 Color Action~ USA   A partir de ~ 258000000}
+\CommentTok{##  6 Tangl~  2010 Nathan~     100 Color Advent~ USA   Livre         260000000}
+\CommentTok{##  7 Aveng~  2015 Joss W~     141 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{##  8 Batma~  2016 Zack S~     183 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{##  9 Super~  2006 Bryan ~     169 Color Action~ USA   A partir de ~ 209000000}
+\CommentTok{## 10 Pirat~  2006 Gore V~     151 Color Action~ USA   A partir de ~ 225000000}
+\CommentTok{## # ... with 3,797 more rows, and 3 more variables: receita <int>,}
+\CommentTok{## #   nota_imdb <dbl>, likes_facebook <int>}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{ordenando-a-base}{%
+\subsection{Ordenando a base}\label{ordenando-a-base}}
+
+A função \texttt{arrange()} ordena a base segundo uma ou mais colunas. O argumento \texttt{desc=} pode ser utilizado para gerar uma ordem decrescente.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{arrange}\NormalTok{(orcamento) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(orcamento, }\KeywordTok{everything}\NormalTok{())}
+\CommentTok{## # A tibble: 3,807 x 15}
+\CommentTok{##    orcamento titulo   ano diretor duracao cor   generos pais  classificacao}
+\CommentTok{##        <int> <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>        }
+\CommentTok{##  1       218 Tarna~  2003 Jonath~      88 Color Biogra~ USA   Outros       }
+\CommentTok{##  2      1100 My Da~  2004 Jon Gu~      90 Color Docume~ USA   Livre        }
+\CommentTok{##  3      1400 A Pla~  2013 Benjam~      76 Color Drama|~ USA   Outros       }
+\CommentTok{##  4      3250 The M~  2005 Anthon~      84 Color Crime|~ USA   A partir de ~}
+\CommentTok{##  5      7000 Prime~  2004 Shane ~      77 Color Drama|~ USA   A partir de ~}
+\CommentTok{##  6      7000 El Ma~  1992 Robert~      81 Color Action~ USA   A partir de ~}
+\CommentTok{##  7      9000 Newly~  2011 Edward~      95 Color Comedy~ USA   Outros       }
+\CommentTok{##  8     10000 Pink ~  1972 John W~     108 Color Comedy~ USA   A partir de ~}
+\CommentTok{##  9     13000 The T~  2007 Jane C~       7 Color Romanc~ USA   Outros       }
+\CommentTok{## 10     15000 Paran~  2007 Oren P~      84 Color Horror  USA   A partir de ~}
+\CommentTok{## # ... with 3,797 more rows, and 6 more variables: receita <int>,}
+\CommentTok{## #   nota_imdb <dbl>, likes_facebook <int>, ator_1 <chr>, ator_2 <chr>,}
+\CommentTok{## #   ator_3 <chr>}
+
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{arrange}\NormalTok{(}\KeywordTok{desc}\NormalTok{(orcamento)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(orcamento, }\KeywordTok{everything}\NormalTok{())}
+\CommentTok{## # A tibble: 3,807 x 15}
+\CommentTok{##    orcamento titulo   ano diretor duracao cor   generos pais  classificacao}
+\CommentTok{##        <int> <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>        }
+\CommentTok{##  1 300000000 Pirat~  2007 Gore V~     169 Color Action~ USA   A partir de ~}
+\CommentTok{##  2 263700000 John ~  2012 Andrew~     132 Color Action~ USA   A partir de ~}
+\CommentTok{##  3 260000000 Tangl~  2010 Nathan~     100 Color Advent~ USA   Livre        }
+\CommentTok{##  4 258000000 Spide~  2007 Sam Ra~     156 Color Action~ USA   A partir de ~}
+\CommentTok{##  5 258000000 Spide~  2007 Sam Ra~     156 Color Action~ USA   A partir de ~}
+\CommentTok{##  6 250000000 The D~  2012 Christ~     164 Color Action~ USA   A partir de ~}
+\CommentTok{##  7 250000000 Aveng~  2015 Joss W~     141 Color Action~ USA   A partir de ~}
+\CommentTok{##  8 250000000 Batma~  2016 Zack S~     183 Color Action~ USA   A partir de ~}
+\CommentTok{##  9 250000000 Pirat~  2011 Rob Ma~     136 Color Action~ USA   A partir de ~}
+\CommentTok{## 10 250000000 Capta~  2016 Anthon~     147 Color Action~ USA   A partir de ~}
+\CommentTok{## # ... with 3,797 more rows, and 6 more variables: receita <int>,}
+\CommentTok{## #   nota_imdb <dbl>, likes_facebook <int>, ator_1 <chr>, ator_2 <chr>,}
+\CommentTok{## #   ator_3 <chr>}
+
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{arrange}\NormalTok{(}\KeywordTok{desc}\NormalTok{(ano), titulo) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(titulo, ano, }\KeywordTok{everything}\NormalTok{())}
+\CommentTok{## # A tibble: 3,807 x 15}
+\CommentTok{##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento}
+\CommentTok{##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>}
+\CommentTok{##  1 10 Cl~  2016 Dan Tr~     104 Color Drama|~ USA   A partir de ~  15000000}
+\CommentTok{##  2 13 Ho~  2016 Michae~     144 Color Action~ USA   A partir de ~  50000000}
+\CommentTok{##  3 A Beg~  2016 Mitche~      87 Color Comedy~ USA   Outros               NA}
+\CommentTok{##  4 Alice~  2016 James ~     113 Color Advent~ USA   Livre         170000000}
+\CommentTok{##  5 Alleg~  2016 Robert~     120 Color Action~ USA   A partir de ~ 110000000}
+\CommentTok{##  6 Allel~  2016 Darren~      97 Color Horror~ USA   Outros           500000}
+\CommentTok{##  7 Antib~  2016 Danny ~      94 Color Horror  USA   Outros          3500000}
+\CommentTok{##  8 Bad M~  2016 Jon Lu~     100 Color Comedy  USA   A partir de ~  20000000}
+\CommentTok{##  9 Bad M~  2016 Jon Lu~     100 Color Comedy  USA   A partir de ~  20000000}
+\CommentTok{## 10 Batma~  2016 Zack S~     183 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{## # ... with 3,797 more rows, and 6 more variables: receita <int>,}
+\CommentTok{## #   nota_imdb <dbl>, likes_facebook <int>, ator_1 <chr>, ator_2 <chr>,}
+\CommentTok{## #   ator_3 <chr>}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{criando-e-modificando-colunas}{%
+\subsection{Criando e modificando colunas}\label{criando-e-modificando-colunas}}
+
+A função \texttt{mutate()} cria ou modifica colunas. Ela é equivalente à função \texttt{transform()}, mas aceita várias novas colunas iterativamente. Novas variáveis devem ter o mesmo número de linhas da base original (ou comprimento 1).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# A coluna "duracao" é sobrescrita}
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{duracao =}\NormalTok{ duracao}\OperatorTok{/}\DecValTok{60}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(duracao)}
+\CommentTok{## # A tibble: 3,807 x 1}
+\CommentTok{##    duracao}
+\CommentTok{##      <dbl>}
+\CommentTok{##  1    2.97}
+\CommentTok{##  2    2.82}
+\CommentTok{##  3    2.73}
+\CommentTok{##  4    2.2 }
+\CommentTok{##  5    2.6 }
+\CommentTok{##  6    1.67}
+\CommentTok{##  7    2.35}
+\CommentTok{##  8    3.05}
+\CommentTok{##  9    2.82}
+\CommentTok{## 10    2.52}
+\CommentTok{## # ... with 3,797 more rows}
+
+\CommentTok{# Criamos uma nova coluna na base}
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{duracao_horas =}\NormalTok{ duracao}\OperatorTok{/}\DecValTok{60}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(duracao, duracao_horas)}
+\CommentTok{## # A tibble: 3,807 x 2}
+\CommentTok{##    duracao duracao_horas}
+\CommentTok{##      <int>         <dbl>}
+\CommentTok{##  1     178          2.97}
+\CommentTok{##  2     169          2.82}
+\CommentTok{##  3     164          2.73}
+\CommentTok{##  4     132          2.2 }
+\CommentTok{##  5     156          2.6 }
+\CommentTok{##  6     100          1.67}
+\CommentTok{##  7     141          2.35}
+\CommentTok{##  8     183          3.05}
+\CommentTok{##  9     169          2.82}
+\CommentTok{## 10     151          2.52}
+\CommentTok{## # ... with 3,797 more rows}
+
+\CommentTok{# Podemos fazer diversas operações em um mesmo mutate.}
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}
+    \DataTypeTok{lucro =}\NormalTok{ receita }\OperatorTok{-}\StringTok{ }\NormalTok{orcamento,}
+    \DataTypeTok{resultado =} \KeywordTok{ifelse}\NormalTok{(lucro }\OperatorTok{<}\StringTok{ }\DecValTok{0}\NormalTok{, }\StringTok{"prejuizo"}\NormalTok{, }\StringTok{"lucro"}\NormalTok{)}
+\NormalTok{  ) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(lucro, resultado)}
+\CommentTok{## # A tibble: 3,807 x 2}
+\CommentTok{##         lucro resultado}
+\CommentTok{##         <int> <chr>    }
+\CommentTok{##  1  523505847 lucro    }
+\CommentTok{##  2    9404152 lucro    }
+\CommentTok{##  3  198130642 lucro    }
+\CommentTok{##  4 -190641321 prejuizo }
+\CommentTok{##  5   78530303 lucro    }
+\CommentTok{##  6  -59192738 prejuizo }
+\CommentTok{##  7  208991599 lucro    }
+\CommentTok{##  8   80249062 lucro    }
+\CommentTok{##  9   -8930592 prejuizo }
+\CommentTok{## 10  198032628 lucro    }
+\CommentTok{## # ... with 3,797 more rows}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{summarisando-a-base}{%
+\subsection{Summarisando a base}\label{summarisando-a-base}}
+
+A função \texttt{summarise()} sumariza a base. Ela aplica uma função às variáveis, retornando um vetor de tamanho \texttt{1}. Ela é utilizada em conjunto da função \texttt{group\_by()}. A função \texttt{n()} costuma ser bastante utilizada com a função summarise().
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{media_orcamento =} \KeywordTok{mean}\NormalTok{(orcamento, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{))}
+\CommentTok{## # A tibble: 1 x 1}
+\CommentTok{##   media_orcamento}
+\CommentTok{##             <dbl>}
+\CommentTok{## 1       35755986.}
+
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}
+    \DataTypeTok{media_orcamento =} \KeywordTok{mean}\NormalTok{(orcamento, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{),}
+    \DataTypeTok{mediana_orcamento =} \KeywordTok{median}\NormalTok{(orcamento, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{),}
+    \DataTypeTok{qtd =} \KeywordTok{n}\NormalTok{(),}
+    \DataTypeTok{qtd_diretores =} \KeywordTok{n_distinct}\NormalTok{(diretor)}
+\NormalTok{  )}
+\CommentTok{## # A tibble: 1 x 4}
+\CommentTok{##   media_orcamento mediana_orcamento   qtd qtd_diretores}
+\CommentTok{##             <dbl>             <int> <int>         <int>}
+\CommentTok{## 1       35755986.          20000000  3807          1813}
+
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(ano) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{qtd_filmes =} \KeywordTok{n}\NormalTok{())}
+\CommentTok{## # A tibble: 91 x 2}
+\CommentTok{##      ano qtd_filmes}
+\CommentTok{##    <int>      <int>}
+\CommentTok{##  1  1916          1}
+\CommentTok{##  2  1920          1}
+\CommentTok{##  3  1925          1}
+\CommentTok{##  4  1929          1}
+\CommentTok{##  5  1930          1}
+\CommentTok{##  6  1932          1}
+\CommentTok{##  7  1933          2}
+\CommentTok{##  8  1934          1}
+\CommentTok{##  9  1935          1}
+\CommentTok{## 10  1936          2}
+\CommentTok{## # ... with 81 more rows}
+
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(diretor) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{orcamento_medio =} \KeywordTok{mean}\NormalTok{(orcamento, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{))}
+\CommentTok{## # A tibble: 1,813 x 2}
+\CommentTok{##    diretor          orcamento_medio}
+\CommentTok{##    <chr>                      <dbl>}
+\CommentTok{##  1 A. Raven Cruz            1000000}
+\CommentTok{##  2 Aaron Hann                   NaN}
+\CommentTok{##  3 Aaron Schneider          7500000}
+\CommentTok{##  4 Aaron Seltzer           20000000}
+\CommentTok{##  5 Abel Ferrara            12500000}
+\CommentTok{##  6 Adam Carolla             1500000}
+\CommentTok{##  7 Adam Goldberg            1650000}
+\CommentTok{##  8 Adam Green               1500000}
+\CommentTok{##  9 Adam Jay Epstein             NaN}
+\CommentTok{## 10 Adam Marcus              2500000}
+\CommentTok{## # ... with 1,803 more rows}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{juntando-duas-bases}{%
+\subsection{Juntando duas bases}\label{juntando-duas-bases}}
+
+Para juntar duas tabelas de dados, podemos utilizar a família de funções \texttt{\_join()} do \texttt{dplyr}. Essas funções geralmente recebem três argumentos: uma base esquerda (\texttt{x=}), uma base direita (\texttt{y=}) e uma chave \texttt{by=}. As principais funções \texttt{\_join()} são:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{left\_join(x,\ y)}: retorna todas as linhas da base \texttt{x} e todas as colunas das bases \texttt{x} e \texttt{y}. Linhas de \texttt{x} sem correspondentes em \texttt{y} receberão \texttt{NA} na nova base.
+\item
+  \texttt{right\_join()}: retorna todas as linhas da base \texttt{y} e todas as colunas das bases \texttt{x} e \texttt{y}. Linhas de \texttt{y} sem correspondentes em \texttt{x} receberão \texttt{NA} na nova base.
+\item
+  \texttt{full\_join()}: retorna todas as linhas e colunas de \texttt{x}e \texttt{y}. Valores sem correspondência entre as bases receberão \texttt{NA} na nova base.
+\end{itemize}
+
+A figura a seguir esquematiza as operações dessas funções:
+
+\begin{center}\includegraphics[width=9.86in]{img/manipulacao/joins} \end{center}
+
+A figura a seguir mostra o que acontece quando temos chaves duplicadas em um \texttt{left\_join()}. A ideia é equivalante para as outras funções.
+
+\begin{center}\includegraphics[width=7.75in]{img/manipulacao/left-join} \end{center}
+
+\hypertarget{tidyr}{%
+\section{tidyr}\label{tidyr}}
+
+O pacote \texttt{tidyr} dispõe de funções úteis para deixar os seus dados no formato que você precisa para a análise. Na maioria das vezes, utilizamos para deixá-los \emph{tidy}. Outras, precisamos ``bagunçá-los'' um pouco para poder aplicar alguma função específica.
+
+As principais funções deste pacote são a \texttt{gather()} e a \texttt{spread()}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{gather}{%
+\subsection{\texorpdfstring{\texttt{gather()}}{gather()}}\label{gather}}
+
+A função \texttt{gather()} ``empilha'' o banco de dados. Ela é utilizada principalmente quando as colunas da base não representam nomes de variáveis, mas sim seus valores.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(tidyr)}
+
+\NormalTok{imdb <-}\StringTok{ }\NormalTok{readr}\OperatorTok{::}\KeywordTok{read_rds}\NormalTok{(}\StringTok{"data/imdb.rds"}\NormalTok{)}
+
+\NormalTok{imdb_gather <-}\StringTok{ }\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{id =} \DecValTok{1}\OperatorTok{:}\KeywordTok{n}\NormalTok{()) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{gather}\NormalTok{(}
+    \DataTypeTok{key =} \StringTok{"importancia_ator"}\NormalTok{,}
+    \DataTypeTok{value =} \StringTok{"nome_ator"}\NormalTok{,}
+\NormalTok{    ator_}\DecValTok{1}\NormalTok{, ator_}\DecValTok{2}\NormalTok{, ator_}\DecValTok{3}
+\NormalTok{  ) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(nome_ator, importancia_ator, }\KeywordTok{everything}\NormalTok{())}
+
+\NormalTok{imdb_gather}
+\CommentTok{## # A tibble: 11,421 x 15}
+\CommentTok{##    nome_ator importancia_ator titulo   ano diretor duracao cor   generos pais }
+\CommentTok{##    <chr>     <chr>            <chr>  <int> <chr>     <int> <chr> <chr>   <chr>}
+\CommentTok{##  1 CCH Poun~ ator_1           Avata~  2009 James ~     178 Color Action~ USA  }
+\CommentTok{##  2 Johnny D~ ator_1           Pirat~  2007 Gore V~     169 Color Action~ USA  }
+\CommentTok{##  3 Tom Hardy ator_1           The D~  2012 Christ~     164 Color Action~ USA  }
+\CommentTok{##  4 Daryl Sa~ ator_1           John ~  2012 Andrew~     132 Color Action~ USA  }
+\CommentTok{##  5 J.K. Sim~ ator_1           Spide~  2007 Sam Ra~     156 Color Action~ USA  }
+\CommentTok{##  6 Brad Gar~ ator_1           Tangl~  2010 Nathan~     100 Color Advent~ USA  }
+\CommentTok{##  7 Chris He~ ator_1           Aveng~  2015 Joss W~     141 Color Action~ USA  }
+\CommentTok{##  8 Henry Ca~ ator_1           Batma~  2016 Zack S~     183 Color Action~ USA  }
+\CommentTok{##  9 Kevin Sp~ ator_1           Super~  2006 Bryan ~     169 Color Action~ USA  }
+\CommentTok{## 10 Johnny D~ ator_1           Pirat~  2006 Gore V~     151 Color Action~ USA  }
+\CommentTok{## # ... with 11,411 more rows, and 6 more variables: classificacao <chr>,}
+\CommentTok{## #   orcamento <int>, receita <int>, nota_imdb <dbl>, likes_facebook <int>,}
+\CommentTok{## #   id <int>}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{spread}{%
+\subsection{\texorpdfstring{\texttt{spread()}}{spread()}}\label{spread}}
+
+A função \texttt{spread()} é essencialmente o inverso da \texttt{gather()}. Ela espalha uma variável nas colunas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{imdb_spread <-}\StringTok{ }\NormalTok{imdb_gather }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{spread}\NormalTok{(}
+    \DataTypeTok{key =}\NormalTok{ importancia_ator,}
+    \DataTypeTok{value =}\NormalTok{ nome_ator}
+\NormalTok{  )}
+
+\NormalTok{imdb_spread}
+\CommentTok{## # A tibble: 3,807 x 16}
+\CommentTok{##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento}
+\CommentTok{##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>}
+\CommentTok{##  1 Avata~  2009 James ~     178 Color Action~ USA   A partir de ~ 237000000}
+\CommentTok{##  2 Pirat~  2007 Gore V~     169 Color Action~ USA   A partir de ~ 300000000}
+\CommentTok{##  3 The D~  2012 Christ~     164 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{##  4 John ~  2012 Andrew~     132 Color Action~ USA   A partir de ~ 263700000}
+\CommentTok{##  5 Spide~  2007 Sam Ra~     156 Color Action~ USA   A partir de ~ 258000000}
+\CommentTok{##  6 Tangl~  2010 Nathan~     100 Color Advent~ USA   Livre         260000000}
+\CommentTok{##  7 Aveng~  2015 Joss W~     141 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{##  8 Batma~  2016 Zack S~     183 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{##  9 Super~  2006 Bryan ~     169 Color Action~ USA   A partir de ~ 209000000}
+\CommentTok{## 10 Pirat~  2006 Gore V~     151 Color Action~ USA   A partir de ~ 225000000}
+\CommentTok{## # ... with 3,797 more rows, and 7 more variables: receita <int>,}
+\CommentTok{## #   nota_imdb <dbl>, likes_facebook <int>, id <int>, ator_1 <chr>,}
+\CommentTok{## #   ator_2 <chr>, ator_3 <chr>}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{outras-funuxe7uxf5es-do-tidyr}{%
+\subsection{\texorpdfstring{Outras funções do \texttt{tidyr}}{Outras funções do tidyr}}\label{outras-funuxe7uxf5es-do-tidyr}}
+
+\begin{itemize}
+\item
+  A função \texttt{unite()} junta duas ou mais colunas usando algum separador (\texttt{\_}, por exemplo).
+\item
+  A função \texttt{separate()} faz o inverso de \texttt{unite()}: transforma uma coluna em várias usando um separador.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{unite}\NormalTok{(}
+    \DataTypeTok{col =} \StringTok{"titulo_diretor"}\NormalTok{,}
+\NormalTok{    titulo, diretor,}
+    \DataTypeTok{sep =} \StringTok{" - "}
+\NormalTok{  )}
+\CommentTok{## # A tibble: 3,807 x 14}
+\CommentTok{##    titulo_diretor   ano duracao cor   generos pais  classificacao orcamento}
+\CommentTok{##    <chr>          <int>   <int> <chr> <chr>   <chr> <chr>             <int>}
+\CommentTok{##  1 Avatar  - Jam~  2009     178 Color Action~ USA   A partir de ~ 237000000}
+\CommentTok{##  2 Pirates of th~  2007     169 Color Action~ USA   A partir de ~ 300000000}
+\CommentTok{##  3 The Dark Knig~  2012     164 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{##  4 John Carter  ~  2012     132 Color Action~ USA   A partir de ~ 263700000}
+\CommentTok{##  5 Spider-Man 3 ~  2007     156 Color Action~ USA   A partir de ~ 258000000}
+\CommentTok{##  6 Tangled  - Na~  2010     100 Color Advent~ USA   Livre         260000000}
+\CommentTok{##  7 Avengers: Age~  2015     141 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{##  8 Batman v Supe~  2016     183 Color Action~ USA   A partir de ~ 250000000}
+\CommentTok{##  9 Superman Retu~  2006     169 Color Action~ USA   A partir de ~ 209000000}
+\CommentTok{## 10 Pirates of th~  2006     151 Color Action~ USA   A partir de ~ 225000000}
+\CommentTok{## # ... with 3,797 more rows, and 6 more variables: receita <int>,}
+\CommentTok{## #   nota_imdb <dbl>, likes_facebook <int>, ator_1 <chr>, ator_2 <chr>,}
+\CommentTok{## #   ator_3 <chr>}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{imdb }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{separate}\NormalTok{(}
+    \DataTypeTok{col =}\NormalTok{ generos,}
+    \DataTypeTok{into =} \KeywordTok{c}\NormalTok{(}\StringTok{"genero_1"}\NormalTok{, }\StringTok{"genero_2"}\NormalTok{, }\StringTok{"genero_3"}\NormalTok{),}
+    \DataTypeTok{sep =} \StringTok{"}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{|"}\NormalTok{,}
+    \DataTypeTok{extra =} \StringTok{"drop"}
+\NormalTok{  )}
+\CommentTok{## # A tibble: 3,807 x 17}
+\CommentTok{##    titulo   ano diretor duracao cor   genero_1 genero_2 genero_3 pais }
+\CommentTok{##    <chr>  <int> <chr>     <int> <chr> <chr>    <chr>    <chr>    <chr>}
+\CommentTok{##  1 Avata~  2009 James ~     178 Color Action   Adventu~ Fantasy  USA  }
+\CommentTok{##  2 Pirat~  2007 Gore V~     169 Color Action   Adventu~ Fantasy  USA  }
+\CommentTok{##  3 The D~  2012 Christ~     164 Color Action   Thriller <NA>     USA  }
+\CommentTok{##  4 John ~  2012 Andrew~     132 Color Action   Adventu~ Sci-Fi   USA  }
+\CommentTok{##  5 Spide~  2007 Sam Ra~     156 Color Action   Adventu~ Romance  USA  }
+\CommentTok{##  6 Tangl~  2010 Nathan~     100 Color Adventu~ Animati~ Comedy   USA  }
+\CommentTok{##  7 Aveng~  2015 Joss W~     141 Color Action   Adventu~ Sci-Fi   USA  }
+\CommentTok{##  8 Batma~  2016 Zack S~     183 Color Action   Adventu~ Sci-Fi   USA  }
+\CommentTok{##  9 Super~  2006 Bryan ~     169 Color Action   Adventu~ Sci-Fi   USA  }
+\CommentTok{## 10 Pirat~  2006 Gore V~     151 Color Action   Adventu~ Fantasy  USA  }
+\CommentTok{## # ... with 3,797 more rows, and 8 more variables: classificacao <chr>,}
+\CommentTok{## #   orcamento <int>, receita <int>, nota_imdb <dbl>, likes_facebook <int>,}
+\CommentTok{## #   ator_1 <chr>, ator_2 <chr>, ator_3 <chr>}
+\end{Highlighting}
+\end{Shaded}
+
+\end{document}
