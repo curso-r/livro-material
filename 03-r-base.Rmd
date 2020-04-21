@@ -1,10 +1,5 @@
 # R Básico
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(collapse=TRUE)
-```
-
-
 Introduziremos aqui os principais conceitos de progamação em R. Indicamos a leitura deste capítulo a quem nunca teve contato com uma linguagem de programação ou a quem gostaria de entender um pouco melhor a estrutura de objetos, funções e classes do R.
 
 ## Pedindo Ajuda
@@ -12,6 +7,11 @@ Introduziremos aqui os principais conceitos de progamação em R. Indicamos a le
 A linguagem `R` é bem intuitiva. É possível fazer bastante coisa à base da tentativa e erro. Além disso, grande parte do conhecimento é escalável, isto é, aprender a utilizar uma função é meio caminho andado para aprender todas as outras funções que operam de forma semelhante^[Essa ideia é um dos princípios por trás do `tidyverse`.].
 
 No entanto, a intuição não infalível, e recorrentemente vamos precisar de ajuda para rodar alguma função ou descobrir como fazer alguma tarefa no R. Felizmente, a comunidade R é bem ativa e existem vários lugares para buscar respostas. Nesta seção, vamos apresentar as principais maneiras algumas dessas maneiras.
+
+```{r, fig.cap=cap_alisson_horst, echo = FALSE}
+knitr::include_graphics("img/r-base/code_hero_rstats.png")
+```
+
 
 No R, há quatro principais entidades para se pedir ajuda:
 
@@ -175,61 +175,105 @@ Error: unexpected input in "5 % 2"
 
 ## Objetos e Classes
 
-O R te permite salvar dados dentro de um objeto. Para isso, utilizamos o operador `<-`.
+O R te permite salvar valores dentro de um objeto. Para isso, utilizamos o operador `<-`.
 
-No exemplo abaixo, salvamos o valor 1 em `a`. Sempre que o R encontrar o símbolo `a`, ele vai substituí-lo por 1.
+No exemplo abaixo, salvamos o valor `1` em `a`. Sempre que avaliarmos o nome `a`, o R vai devolver o valor 1.
 
 ```{r}
+# Salvando `1` em `a`
 a <- 1
+
+# Avaliando o objeto `a`
 a
 ```
 
 
-> Atenção! O R diferencia letras maiúsculas e minúsculas, isto é, "a" é considerado um objeto diferente de "A".
+##### Atenção! {-}
+
+O R **diferencia letras maiúsculas e minúsculas**, isto é, `b` é considerado um objeto diferente de `B`. Rode o exemplo abaixo e observe que depois objetos diferentes são criados no *Environment*.
+
+```{r}
+b <- 2
+B <- 3
+
+b
+B
+```
+
+O objeto mais importante para o cientista de dados é, claro, a base de dados. No R, uma base de dados é representa por objetos chamados de *data frames*. A seguir, vamos entender o que são esses objetos.
+
+### Data frames (parte 1)
+
+Os *data frames* são de extrema importância no R, pois são os objetos que guardam os nossos dados. Eles são equivalentes a uma tabela do SQL ou uma planilha do Excel.
+
+A principal característica de um *data frame* é possuir linhas e colunas^[Você  pode construir um *data frame* vazio, com 0 linha e 0 coluna. No entanto, a *estrutura* de linhas e colunas estará presente.]. Veja o exemplo abaixo:
+
+```{r}
+mtcars
+```
+
+O `mtcars` é um *data frame* nativo do R que contém informações sobre diversos modelos de carros. Ele possui 32 linhas e 11 colunas^[A primeira "coluna" representa apenas o *nome* das linhas (modelo do carro), não é uma coluna da base. Repare que ela não possui um nome, como as outras. Essa estrutura de nome de linha é própria de *data frames* no R. Se exportássemos essa base para o Excel, por exemplo, essa coluna não apareceria.]
+
+Nos próximos capítulos, os *data frames* serão o nosso principal objeto de estudos. Aprenderemos a selecionar, criar e modificar colunas, filtrar e ordenar linhas, juntar dois *data frames* e, a partir deles, construiremos gráficos e ajustaremos modelos.
+
+Mas, da mesma forma que é muito mais fácil aprendermos a fritar um ovo após aprendermos o que são fogões, frigideiras e ovos, vamos estudar nas próximas seções um pouco sobre as estruturas que formam os *data frames* e ficar mais à vontade com esses objetos.
 
 ### Objetos atômicos
 
 A classe de um objeto é muito importante dentro do R. É a partir dela que as funções e operadores conseguem saber exatamente o que fazer com um objeto.
 
-Por exemplo, veja o que acontece quando tentamos somar duas letras:
+Por exemplo, podemos somar dois números, mas não conseguimos somar duas letras (texto):
 
 ```{r, error=TRUE}
 1 + 1
 
+
 "a" + "b"
 ```
 
-O operador `+` verifica que `"a"` e `"b"` não são números (a classe deles não é numérica) e devolve uma mensagem de erro informando isso.
+O operador `+` verifica que `"a"` e `"b"` não são números (ou que a classe deles não é numérica) e devolve uma mensagem de erro informando isso.
+
+Observe que para criar texto no R, colocamos os caracteres entre aspas. As aspas servem para diferenciar o nome de objetos dos textos (letras e palavras), comuns em variáveis categóricas.
+
+```{r}
+a <- 10
+
+# O objeto `a`, sem aspas
+a
+
+# A letra (texto) `a`, com aspas
+"a"
+```
+
 
 As classes mais básicas dentro do R são:
 
-- numeric
-- character
-- logical
+- *numeric*
+- *character*
+- *logical*
 
 Veja alguns exemplos:
 
 ```{r eval=FALSE}
-# characters
-
-"a"
-"1"
-"positivo"
-
 # numeric
-
 1
 0.10
 0.95
 pi
 
-# logical
+# characters
+"a"
+"1"
+"positivo"
 
+# logical
 TRUE
 FALSE
 ```
 
-Um objeto de qualquer uma dessas classes é chamado de **objeto atômico*. Esse nome se deve ao fato de que essas classes não se misturam, isto é, para um objeto ter a classe `numeric` todos os seus valores precisam ser numéricos.
+Um objeto de qualquer uma dessas classes é chamado de **objeto atômico**. 
+
+Esse nome se deve ao fato de que essas classes não se misturam, isto é, para um objeto ter a classe `numeric` todos os seus valores precisam ser numéricos.
 
 Mas como atribuir mais de um valor a um mesmo objeto? Para isso, precisamos criar **vetores**.
 
@@ -332,32 +376,6 @@ as.numeric(x)
 ```
 
 > Observação. O <b>NA</b> tem o mesmo papel que o <b>null</b> do SQL. Porém, há um <b>NULL</b> no R também, com diferenças sutis que vamos abordar mais adiante.
-
-### data.frame
-
-Um `data.frame` é o mesmo que uma tabela do SQL ou um spreadsheet do Excel, por isso são objetos muito importantes. Usualmente, seus dados serão importados para um objeto `data.frame`. Em grande parte do curso, eles serão o principal objeto de estudo.
-
-Os `data.frame`'s são listas especiais em que todos os elementos possuem **o mesmo comprimento**. Cada elemento dessa lista pode ser pensado como uma coluna da tabela. Seu comprimento representa o número de linhas. 
-
-Já que são listas, essas colunas podem ser de classes diferentes. Essa é a grande diferença entre `data.frame`'s e matrizes. Algumas funções úteis para trabalhar com `data.frame`'s :
-
-- `head()` - Mostra as primeiras 6 linhas.
-- `tail()` - Mostra as últimas 6 linhas.
-- `dim()` - Número de linhas e de colunas.
-- `names()` - Os nomes das colunas (variáveis).
-- `str()` - Estrutura do data.frame. Mostra, entre outras coisas, as classes de cada coluna.
-- `cbind()` - Acopla duas tabelas lado a lado.
-- `rbind()` - Empilha duas tabelas.
-
-O exemplo abaixo mostra que uma lista pode virar `data.frame` apenas se todos os elementos tiverem o mesmo comprimento.
-
-```{r, error=TRUE}
-minha_lista <- list(x = c(1, 2, 3), y = c("a", "b"))
-as.data.frame(minha_lista)
-
-minha_lista <- list(x = c(1, 2, 3), y = c("a", "b", "c"))
-as.data.frame(minha_lista)
-```
 
 
 ### Matrizes
@@ -474,6 +492,29 @@ pedido["nome"] # nova lista com apenas o elemento chamado 'nome'
 
 Certamente você se deparará com listas quando for fazer análise de dados com o R. Nos tópicos mais aplicados, iremos aprofundar sobre o tema. O pacote [purrr](https://github.com/hadley/purrr) contribui com funcionalidades incríveis para listas.
 
+### Data frames (parte 2)
+
+Os `data.frame`'s são listas especiais em que todos os elementos possuem **o mesmo comprimento**. Cada elemento dessa lista pode ser pensado como uma coluna da tabela. Seu comprimento representa o número de linhas. 
+
+Já que são listas, essas colunas podem ser de classes diferentes. Essa é a grande diferença entre `data.frame`'s e matrizes. Algumas funções úteis para trabalhar com `data.frame`'s :
+
+- `head()` - Mostra as primeiras 6 linhas.
+- `tail()` - Mostra as últimas 6 linhas.
+- `dim()` - Número de linhas e de colunas.
+- `names()` - Os nomes das colunas (variáveis).
+- `str()` - Estrutura do data.frame. Mostra, entre outras coisas, as classes de cada coluna.
+- `cbind()` - Acopla duas tabelas lado a lado.
+- `rbind()` - Empilha duas tabelas.
+
+O exemplo abaixo mostra que uma lista pode virar `data.frame` apenas se todos os elementos tiverem o mesmo comprimento.
+
+```{r, error=TRUE}
+minha_lista <- list(x = c(1, 2, 3), y = c("a", "b"))
+as.data.frame(minha_lista)
+
+minha_lista <- list(x = c(1, 2, 3), y = c("a", "b", "c"))
+as.data.frame(minha_lista)
+```
 
 ## Valores especiais
 
