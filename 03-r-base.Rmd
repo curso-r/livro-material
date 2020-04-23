@@ -1,6 +1,8 @@
 # R Básico
 
-Introduziremos aqui os principais conceitos de progamação em R. Indicamos a leitura deste capítulo a quem nunca teve contato com uma linguagem de programação ou a quem gostaria de entender um pouco melhor a estrutura de objetos, funções e classes do R.
+Introduziremos aqui os principais conceitos de programação em R. Indicamos a leitura deste capítulo a quem nunca teve contato com uma linguagem de programação ou a quem gostaria de entender um pouco melhor a estrutura de objetos, funções e classes do R. 
+
+Os tópicos discutidos aqui são especialmente importantes para entendermos o que é um *data frame*, a nossa base de dados dentro do R, e quais operações estão sendo realizadas por trás das cortinas quando estivermos filtrando suas linhas ou modificando suas colunas. Também são importantes para começarmos a criar as nossas próprias funções, o que deixa nossos códigos muito mais organizados, eficientes e *compartilháveis*. 
 
 ## Pedindo Ajuda
 
@@ -24,39 +26,41 @@ A busca por ajuda é feita preferencialmente, mas não necessariamente, na ordem
 
 ### Documentação do R
 
-A documentação do R serve para você aprender a usar uma determinada função.
+A documentação do R serve para você aprender a usar uma determinada função. Se você não sabe o que é uma função, não se preocupe. Discutiremos esse tópico na Seção \@ref(funcoes).
+
+Você pode acessar a documentação de uma função^[Bases de dados presentes em pacotes também têm documentação, e geralmente é possível encontrar o significado de cada variável nela. Por exemplo, `help(mtcars)`.] das seguintes maneiras:
 
 ```{r, eval=FALSE}
 ?mean
 help(mean)
 ```
 
-Cinco dicas:
+Algumas dicas:
 
-1. Os exemplos no final são particularmente úteis.
-2. Leia a seção **Usage** para ter noção de como usar a função.
-3. Os parâmetros da função estão descritos em **Arguments**.
-4. Caso essa função não atenda às suas necessidades, a seção **See Also** sugere funções relacionadas.
-5. Alguns pacotes possuem tutorias de uso mais completos. Esses textos são chamados de `vignettes` e podem ser acessados com a função `vignette(package = 'nomeDoPacote')`. Por exemplo, `vignette(package = 'dplyr')`.
-6. Bases de dados presentes em pacotes também têm documentação, e geralmente é possível encontrar o significado de cada variável nela. Por exemplo, `help(mtcars)`.
+1. Leia a seção *Usage* para ter noção de como usar a função.
+2. Os parâmetros da função estão descritos em *Arguments*.
+3. Os exemplos no final são particularmente úteis.
+4. Caso essa função não atenda às suas necessidades, a seção *See Also* sugere funções relacionadas.
+
+Alguns pacotes possuem tutorias de uso mais completos. Esses textos são chamados de `vignettes` e podem ser acessados com a função `vignette(package = 'nomeDoPacote')`. Por exemplo, `vignette(package = 'dplyr')`.
 
 ### Google
 
-Há uma comunidade gigantesca de usuários de R gerando diariamente uma infinidade de conteúdos e discussões. Não raramente, você irá encontrar discussões sobre o seu problema simplesmente jogando o seu erro no Google. Essa deve ser sua primeira tentativa para reseolver um problema! Pesquisas em inglês aumentam consideravelmente a chance de encontrar uma resposta.
+Há uma comunidade gigantesca de usuários de R gerando diariamente uma infinidade de conteúdos e discussões. Não raramente, você irá encontrar discussões sobre o seu problema simplesmente o descrevendo no Google. Pesquisas em inglês aumentam consideravelmente a chance de encontrar uma resposta.
 
-Exemplo (repare no 'r' adicionado na busca, isso ajuda bastante):
+Quando você recebe um erro na tentativa de rodar algum código no R e não sabe o que está errado, uma boa estratégia é pesquisar a mensagem de erro no Google. Essa deve ser sua primeira tentativa para resolver o problema. Repare na imagem abaixo o 'r' adicionado na busca. Isso ajuda bastante a encontrar uma solução. 
 
 ```{r error = TRUE}
 log("5")
 ```
 
-```{r echo=FALSE, fig.align='center'}
-knitr::include_graphics(rep("img/r-base/ajuda_google.png"))
+```{r echo=FALSE, fig.align='center', out.width=795, out.height=267}
+knitr::include_graphics("img/r-base/ajuda_google.png")
 ```
 
 ### Stack Overflow
 
-O [Stack Overflow](http://stackoverflow.com/) e o [Stack Overflow em Português](http://pt.stackoverflow.com/) são sites de Pergunta e Resposta amplamente utilizados por todas as linguagens de programação, e o R é uma delas. Nos EUA, chegam até a usar a reputação dos usuários como diferencial no currículo!
+O [Stack Overflow](http://stackoverflow.com/) e o [Stack Overflow em Português](http://pt.stackoverflow.com/) são sites de Pergunta e Resposta amplamente utilizados por todas as linguagens de programação, e o R é uma delas. Nos EUA, chegam até a usar a reputação dos usuários dentro da plataforma como diferencial no currículo!
 
 Provavelmente o Google lhe indicará uma página deles quando você estiver procurando ajuda. E quando todas as fontes possíveis de ajuda falharem, o Stack Overflow lhe dará o espaço para **criar sua própria pergunta**.
 
@@ -73,7 +77,7 @@ Porém, no caso do R, há outro requisito que vai aumentar muito sua chance de t
 
 - Ser **minimal**: usar bancos de dados menores e utilizar pedaços de códigos apenas suficientes para apresentar o seu problema. Não precisa de banco de dados de um milhão de linhas e nem colocar o seu código inteiro para descrever a sua dúvida.
 
-- Ser **reprodutível**: o seu código deve rodar fora da sua máquina. Se você não fornecer uma versão do seu problema que rode (ou que imite seu erro), as pessoas vão logo desistir de te ajudar. Por isso, nunca coloque bancos de dados que só você tem acesso. Use bancos de dados que já vem no R ou disponibilize um exemplo (possivelmente anonimizado) em `.csv` na web para baixar. E se precisar utilizar funções diferentes, coloque as `library`'s correspondentes.
+- Ser **reprodutível**: o seu código deve rodar fora da sua máquina. Se você não fornecer uma versão do seu problema que rode (ou que imite seu erro), as pessoas vão logo desistir de te ajudar. Por isso, nunca coloque bancos de dados que só você tem acesso. Use bancos de dados que já vem no R ou disponibilize um exemplo (possivelmente anonimizado) em `.csv` na web para baixar. E se precisar utilizar funções de algum pacote, especifique os pacotes que você usou.
 
 <!-- ### R Markdown -->
 
@@ -108,21 +112,28 @@ Porém, no caso do R, há outro requisito que vai aumentar muito sua chance de t
 
 ## R como calculadora
 
-Pelo console, é possível executar qualquer comando do R.
+O papel do Console no R é executar os nossos comandos. Ele avalia o código que passamos para ele e devolve a saída correspondente --- se tudo der certo --- ou uma mensagem de erro --- se o seu código tiver algum problema.
+
+<!-- ```{r} -->
+<!-- 1:30 -->
+<!-- ``` -->
+
+<!-- Esse comando é uma forma simplificada de criar um vetor de inteiros de 1 a 30. -->
+<!-- Os números que aparecem entre colchetes ([1] e [24]) indicam o índice (ordem) do primeiro elemento impresso em cada linha. -->
+
+Vamos começar com o exemplo mais simples possível:
 
 ```{r}
-1:30
+1 + 1
 ```
 
-Esse comando é uma forma simplificada de criar um vetor de inteiros de 1 a 30.
-Os números que aparecem entre colchetes ([1] e [24]) indicam o índice (ordem) do primeiro elemento impresso em cada linha.
+Nesse caso, o nosso comando foi o código `1 + 1` e saída foi o valor `2`.
 
-> Quando compilamos? Quem vem de linguagens como o C ou Java espera que seja necessário compilar o código em texto para o código das máquinas (geralmente um código binário). No R, isso não é necessário. O R é uma linguagem de programação dinâmica que interpreta o seu código enquanto você o executa.
+> **Nota: quando compilamos?** Quem vem de linguagens como o C ou Java espera que seja necessário compilar o código em texto para o código das máquinas (geralmente um código binário). No R, isso não é necessário. O R é uma linguagem de programação dinâmica que interpreta o seu código enquanto você o executa.
 
+Tente agora jogar no console a expressão: `2 * 2 - (4 + 4) / 2`. 
 
-Tente jogar no console: `2 * 2 - (4 + 4) / 2`. 
-
-Pronto! Com essa simples expressão você já é capaz de pedir ao R para fazer qualquer uma das quatro operações aritméticas básicas. A seguir, apresentamos uma lista resumindo como fazer as principais operações no R.
+Pronto! Você já é capaz de pedir ao R para fazer qualquer uma das quatro operações aritméticas básicas. A seguir, apresentamos uma lista resumindo como fazer as principais operações no R.
 
 ```{r}
 # adição
@@ -147,11 +158,11 @@ Pronto! Com essa simples expressão você já é capaz de pedir ao R para fazer 
 5 %/% 3  
 ```
 
-Além do mais, as operações e suas precedências são mantidas como na matemática, ou seja, divisão e multiplicação são calculadas antes da adição e subtração. E os parênteses nunca são demais!
+Repare que as operações e suas precedências são mantidas como na matemática, ou seja, divisão e multiplicação são calculadas antes da adição e subtração. E os parênteses nunca são demais!
 
-Uma outra forma de executar uma expressão é escrever o código no **script** e teclar `Ctrl + Enter`. Assim, o comando é enviado para o **console**, onde é diretamente executado. Essa operação é chamada de **avaliar o código** ou, popularmente, de **rodar o código**.
+Uma outra forma de executar uma expressão é escrever o código em um **script**, deixar o cursor em cima da linha e usar o atalho `Ctrl + Enter`. Assim, o comando é enviado para o **Console**, onde é diretamente executado. Essa operação é chamada de **avaliar**, **executar** ou **rodar** o código.
 
-Se você digitar um comando incompleto, como `5 + `, e apertar `Enter`, o R mostrará um `+`, o que não tem nada a ver com somar alguma coisa. Isso significa que o R está esperando que você complete o seu comando. Termine o seu comando ou aperte `Esc` para recomeçar.
+Se você digitar um comando incompleto, como `5 + `, e apertar `Enter`, o R mostrará um `+`, o que não tem nada a ver com a adição da matemática. Isso significa que o R está esperando que você enviar **mais** algum código para completar o seu comando. Termine o seu comando ou aperte `Esc` para recomeçar.
 
 ```
 > 5 -
@@ -173,11 +184,11 @@ Error: unexpected input in "5 % 2"
 [1] 25
 ```
 
-## Objetos e Classes
+## Objetos
 
-O R te permite salvar valores dentro de um objeto. Para isso, utilizamos o operador `<-`.
+O R te permite salvar valores dentro de um **objeto**. Um objeto é simplesmente um nome que guarda um valor. Para criar um objeto, utilizamos o operador `<-`.
 
-No exemplo abaixo, salvamos o valor `1` em `a`. Sempre que avaliarmos o nome `a`, o R vai devolver o valor 1.
+No exemplo abaixo, salvamos o valor `1` em `a`. Sempre que avaliarmos o objeto `a`, o R vai devolver o valor 1.
 
 ```{r}
 # Salvando `1` em `a`
@@ -188,9 +199,9 @@ a
 ```
 
 
-##### Atenção! {-}
+**Atenção!**
 
-O R **diferencia letras maiúsculas e minúsculas**, isto é, `b` é considerado um objeto diferente de `B`. Rode o exemplo abaixo e observe que depois objetos diferentes são criados no *Environment*.
+O R **diferencia letras maiúsculas e minúsculas**, isto é, `b` é considerado um objeto diferente de `B`. Rode o exemplo abaixo e observe que dois objetos diferentes são criados no **Environment**.
 
 ```{r}
 b <- 2
@@ -202,7 +213,7 @@ B
 
 O objeto mais importante para o cientista de dados é, claro, a base de dados. No R, uma base de dados é representa por objetos chamados de *data frames*. A seguir, vamos entender o que são esses objetos.
 
-### Data frames (parte 1)
+## Data frames
 
 Os *data frames* são de extrema importância no R, pois são os objetos que guardam os nossos dados. Eles são equivalentes a uma tabela do SQL ou uma planilha do Excel.
 
@@ -212,13 +223,13 @@ A principal característica de um *data frame* é possuir linhas e colunas^[Voc�
 mtcars
 ```
 
-O `mtcars` é um *data frame* nativo do R que contém informações sobre diversos modelos de carros. Ele possui 32 linhas e 11 colunas^[A primeira "coluna" representa apenas o *nome* das linhas (modelo do carro), não é uma coluna da base. Repare que ela não possui um nome, como as outras. Essa estrutura de nome de linha é própria de *data frames* no R. Se exportássemos essa base para o Excel, por exemplo, essa coluna não apareceria.]
+O `mtcars` é um *data frame* nativo do R que contém informações sobre diversos modelos de carros. Ele possui 32 linhas e 11 colunas^[A primeira "coluna" representa apenas o *nome* das linhas (modelo do carro), não é uma coluna da base. Repare que ela não possui um nome, como as outras. Essa estrutura de nome de linha é própria de *data frames* no R. Se exportássemos essa base para o Excel, por exemplo, essa coluna não apareceria.]. Se você quiser saber mais sobre o `mtcars`, veja a documentação dele rodando `?mtcars` no **Console**.
 
-Nos próximos capítulos, os *data frames* serão o nosso principal objeto de estudos. Aprenderemos a selecionar, criar e modificar colunas, filtrar e ordenar linhas, juntar dois *data frames* e, a partir deles, construiremos gráficos e ajustaremos modelos.
+Nos próximos capítulos, os *data frames* serão o nosso principal objeto de estudo. Aprenderemos a selecionar, criar e modificar colunas, filtrar e ordenar linhas, juntar dois *data frames* e, a partir deles, construiremos gráficos e ajustaremos modelos.
 
-Mas, da mesma forma que é muito mais fácil aprendermos a fritar um ovo após aprendermos o que são fogões, frigideiras e ovos, vamos estudar nas próximas seções um pouco sobre as estruturas que formam os *data frames* e ficar mais à vontade com esses objetos.
+Mas, da mesma forma que é muito mais fácil aprendermos a fritar um ovo após entendermos o que é o fogo, uma frigideira e um ovo, vamos estudar nas próximas seções quais são as estruturas que formam os *data frames* e como manipulá-las.
 
-### Objetos atômicos
+## Classes
 
 A classe de um objeto é muito importante dentro do R. É a partir dela que as funções e operadores conseguem saber exatamente o que fazer com um objeto.
 
@@ -233,7 +244,7 @@ Por exemplo, podemos somar dois números, mas não conseguimos somar duas letras
 
 O operador `+` verifica que `"a"` e `"b"` não são números (ou que a classe deles não é numérica) e devolve uma mensagem de erro informando isso.
 
-Observe que para criar texto no R, colocamos os caracteres entre aspas. As aspas servem para diferenciar o nome de objetos dos textos (letras e palavras), comuns em variáveis categóricas.
+Observe que para criar texto no R, colocamos os caracteres entre aspas. As aspas servem para diferenciar *nomes* (objetos, funções, pacotes) de *textos* (letras e palavras). Os textos são muito comuns em variáveis categóricas.
 
 ```{r}
 a <- 10
@@ -245,6 +256,17 @@ a
 "a"
 ```
 
+Para saber a classe de um objeto, basta rodarmos `class(nome-do-objeto)`.
+
+```{r}
+x <- 1
+class(x)
+
+y <- "a"
+class(y)
+
+class(mtcars)
+```
 
 As classes mais básicas dentro do R são:
 
@@ -273,230 +295,542 @@ FALSE
 
 Um objeto de qualquer uma dessas classes é chamado de **objeto atômico**. 
 
-Esse nome se deve ao fato de que essas classes não se misturam, isto é, para um objeto ter a classe `numeric` todos os seus valores precisam ser numéricos.
+Esse nome se deve ao fato de essas classes não se misturarem, isto é, para um objeto ter a classe `numeric`, por exemplo, todos os seus valores precisam ser numéricos.
 
 Mas como atribuir mais de um valor a um mesmo objeto? Para isso, precisamos criar **vetores**.
 
-### Vetores
+## Vetores
 
-Vetores no R são os objetos mais simples que podem guardar objetos atômicos.
+Vetores no R são apenas **conjuntos indexados de valores**. Para criá-los, basta colocar os valores separados por vírgulas dentro de um `c()`.
 
 ```{r}
-vetor1 <- c(1, 2, 3, 4)
+vetor1 <- c(1, 5, 3, -10)
 vetor2 <- c("a", "b", "c")
 
 vetor1
 vetor2
 ```
 
+Os objetos `vetor1` e `vetor2` são vetores.
+
+Quando dizemos que vetores são conjuntos *indexados*, isso quer dizer que cada valor dentro de um vetor tem uma **posição**^[Essa posição é dada pela ordem em que os elementos foram colocados no momento em que o vetor foi criado.]. Isso nos permite acessar individualmente cada valor de um vetor. Para isso, colocamos o índice do valor que queremos acessar dentro de colchetes `[]`.
+
+```{r}
+vetor <- c("a", "b", "c", "d")
+
+vetor[1]
+vetor[2]
+vetor[3]
+vetor[4]
+```
+
+Você também pode colocar um conjunto de índices dentro dos colchetes, para pegar os valores contidos nessas posições:
+
+```{r}
+vetor[c(2, 3)]
+vetor[c(1, 2, 4)]
+```
+
+Essa operação é conhecida como *subsetting*, pois estamos pegando subconjuntos de valores de um vetor.
+
+Se você tentar acessar uma posição do vetor que não existe, ele retornará `NA`, indicando que esse valor não existe. Discutiremos o que são `NA`'s na Seção \@ref(valores_especiais).
+
+```{r}
+vetor[5]
+```
+
+Um vetor só pode guardar um tipo de objeto e ele terá sempre a mesma classe dos objetos que guarda. Para saber a classe de um vetor, rodamos `class(nome-do-vetor)`.
+
+```{r}
+vetor1 <- c(1, 5, 3, -10)
+vetor2 <- c("a", "b", "c")
+
+class(vetor1)
+class(vetor2)
+```
+
+Se tentarmos misturar duas classes, o R vai apresentar o comportamento conhecido como **coerção**.
+
+```{r}
+vetor <- c(1, 2, "a")
+
+vetor
+class(vetor)
+```
+
+Veja que todos os elementos do vetor se transformaram em texto. Agora temos um vetor com o texto `"1"`, o texto `"2"` e o texto `"a"`. Como um vetor só pode ter uma classe de objeto dentro dele, classes mais fracas serão sempre reprimidas pelas classes mais fortes. Como regra de bolso: caracteres serão sempre a classe mais forte. Então, sempre que você misturar números e texto em um vetor, os números virarão texto.
+
+Falaremos bastante de coerção nas próximas seções e capítulos, trazendo exemplos de quando ela ajuda e de quando ela atrapalha.
 
 De forma bastante intuitiva, você pode fazer operações com vetores.
 
 ```{r}
-vetor1 - 1
+vetor <- c(0, 5, 20, -3)
+vetor + 1
 ```
 
-Quando você faz `vetor1 - 1`, o R subtrai `1` de cada um dos elementos do vetor. O mesmo acontece quando você faz qualquer operação aritmética com vetores no R.
+Ao rodarmos `vetor1 - 1`, o R subtrai `1` de cada um dos elementos do vetor. O mesmo acontece com qualquer outra operação aritmética.
 
 ```{r, eval=FALSE}
-vetor1 / 2
-vetor1 * 10
+vetor - 1
+vetor / 2
+vetor * 10
 ```
 
 Você também pode fazer operações que envolvem mais de um vetor:
 
 ```{r}
-vetor1 * vetor1
+vetor1 <- c(1, 2, 3)
+vetor2 <- c(10, 20, 30)
+
+vetor1  + vetor2
 ```
 
-Neste caso, o R irá alinhar os dois vetores e multiplicar elemento por elemento. Isso pode ficar um pouco confuso quando os dois vetores não possuem o mesmo tamanho:
+Neste caso, o R irá alinhar os dois vetores e somar elemento a elemento. Esse tipo de comportamento é chamado de **vetorização**. Isso pode ficar um pouco confuso quando os dois vetores não possuem o mesmo tamanho. Tente adivinhar qual será a saída do código a seguir:
 
 ```{r}
-vetor2 <- 1:3
-vetor1 * vetor2
+vetor1 <- c(1, 2)
+vetor2 <- c(10, 20, 30, 40)
+
+vetor1 + vetor2
 ```
 
-O R alinhou os dois vetores e, como eles não possuíam o mesmo tamanho, foi repetindo o vetor menor até completar o vetor maior. Esse comportamento é chamado de **reciclagem** e é útil para fazer operações elemento por elemento (vetorizadamente), mas às vezes pode ser confuso. Com o tempo, você aprenderá a se aproveitar dele.
+Embora estejamos somando dois vetores de tamanho diferentes, o R não devolve um erro (o que parecia ser a resposta mais intuitiva). O R alinhou os dois vetores e, como eles não possuíam o mesmo tamanho, o primeiro foi repetido para ficar do mesmo tamanho do segundo. É como se o primeiro vetor fosse na verdade `c(1, 2, 1, 2)`. Esse comportamento é chamado de **reciclagem**. 
 
-### Classes
-Para saber a classe de um objeto, você pode usar a função `class()`.
+Embora contra-intuitiva, a reciclagem é muito útil no R graças a um caso particular muito importante. Quando somamos `vetor + 1` no nosso primeiro exemplo, o que o R está fazendo por trás é transformando o `1` em `c(1, 1, 1, 1)` e realizando a soma vetorizada `c(0, 5, 20, -3) + c(1, 1, 1, 1)`. Isso porque o número `1` nada mais é do que um vetor de tamanho 1, isto é, `1` é igual a `c(1)`.
+
+Usaremos esse comportamento no R o tempo todo e é muito importante a reciclagem para termos certeza de que o R está fazendo exatamente aquilo que gostaríamos que ele fizesse.
+
+Um outro caso interessante de reciclagem é quando o comprimento dos vetores não são múltiplos um do outro. 
 
 ```{r}
-x <- 1
-class(x)
+vetor1 <- c(1, 2, 3)
+vetor2 <- c(10, 20, 30, 40, 50)
 
-y <- "a"
-class(y)
-
-z <- TRUE
-class(z)
+vetor1 + vetor2
 ```
 
-Um vetor tem sempre a mesma classe dos objetos que guarda.
+Neste caso, duas coisas aconteceram:
+
+1. O R realizou a conta, repetindo cada valor do primeiro vetor até que os dois tenham o mesmo tamanho. No fundo, a operação realizada foi `c(1, 2, 3, 1, 2) + c(10, 20, 30, 40, 50)`.
+
+2. Como essa operação é ainda menos intuitiva e raramente desejada, o R devolveu um aviso dizendo que o comprimento do primeiro vetor maior não é um múltiplo do comprimento do vetor menor.
+
+## Testes lógicos
+
+Pode fazer qualquer tipo de operação lógica é um dos motivos pelos quais programar nos deixar mais eficientes. Dê bastante atenção a elas, pois usaremos comparações lógicas o tempo todo!
+
+Uma operação lógica nada mais é do que um teste que retorna **verdadeiro** ou **falso**. No R (e em outras linguagens de programação), esses valores dois valores recebem uma classe especial: `logical`.
+
+O verdadeiro no R vai ser representado pelo valor `TRUE` e o falso pelo valor `FALSE`. Esses nomes no R são **reservados**, isto é, você não pode chamar nenhum objeto de TRUE ou FALSE.
+
+```{r, eval = FALSE}
+TRUE <- 1
+## Error in TRUE <- 1 : invalid (do_set) left-hand side to assignment
+```
+
+Checando a classe desses valores, vemos que são lógicos^[Também conhecidos como valores binários ou booleanos]. Eles são os únicos possíveis valores dessa classe.
 
 ```{r}
-class(vetor1)
-class(vetor2)
+class(TRUE)
+class(FALSE)
 ```
 
-### Coerção
-#### Misturando objetos
-
-> Vetores são homogêneos. Os elementos de um vetor são sempre da mesma classe. Ou todos são numéricos, ou são todos character, ou todos são lógicos etc. Não dá para ter um número e um character no mesmo vetor, por exemplo.
-
-Se colocarmos duas ou mais classes diferentes dentro de um mesmo vetor, o R vai forçar que todos os elementos passem a pertencer à mesma classe. O número `1.7` viraria `"1.7"` se fosse colocado ao lado de um `"a"`.
-
-```{r, eval=FALSE}
-y <- c(1.7, "a")  # character
-y <- c(TRUE, 2)   # numeric
-y <- c(TRUE, "a") # character
-```
-
-A ordem de precedência é:
-
-**DOMINANTE** --- `character > complex > numeric > integer > logical` --- **RECESSIVO**
-
-#### Forçando classes explicitamente
-
-Você pode coagir um objeto a ser de uma classe específica com as funções `as.character()`, `as.numeric()`, `as.integer()` e `as.logical()`. É equivalente à função `convert()` do SQL. 
+Agora que conhecemos o `TRUE` e `FALSE`, podemos explorar os teste lógicos. Começando pelo mais simples: vamos testar se um valor é igual ao outro. Para isso, usamos o operador `==`.
 
 ```{r}
-x <- 0:4
-class(x)
-as.numeric(x)
-as.logical(x)
-as.character(x)
+# Testes com resultado verdadeiro
+1 == 1
+"a" == "a"
+
+# Testes com resultado falso
+1 == 2
+"a" == "b"
 ```
 
-Se o R não entender como coagir uma classe na outra, ele soltará um `warning` informado que colocou `NA` no lugar.
+Também podemos testar se dois valores são diferentes. Para isso, usamos o operador `!=`.
 
 ```{r}
-x <- c("a", "b", "c")
-as.numeric(x)
+# Testes com resultado falso
+1 != 1
+"a" != "a"
+
+# Testes com resultado verdadeiro
+1 != 2
+"a" != "b"
 ```
 
-> Observação. O <b>NA</b> tem o mesmo papel que o <b>null</b> do SQL. Porém, há um <b>NULL</b> no R também, com diferenças sutis que vamos abordar mais adiante.
-
-
-### Matrizes
-
-Matrizes são vetores com duas dimensões (e por isso só possuem elementos de uma mesma classe).
+Para comparar se um valor é maior que outro, temos à disposição 4 operadores:
 
 ```{r}
-m <- matrix(1:6, nrow = 2, ncol = 3)
-m
-dim(m) # funçăo dim() retorna a dimensăo do objeto.
+# Maior
+3 > 3
+3 > 2
+
+# Maior ou igual
+3 > 4
+3 >= 3
+
+# Menor 
+3 < 3
+3 < 4
+
+# Menor ou igual
+3 < 2
+3 <= 3
+
 ```
 
-Repare que os números de 1 a 6 foram dispostos na matriz coluna por coluna (*column-wise*), ou seja, preenchendo de cima para baixo e depois da esquerda para a direita.
-
-**Operações úteis**
-
-```{r, eval=FALSE}
-m[3,  ]   # seleciona a terceira linha
-m[ , 2]   # seleciona a segunda coluna
-m[1, 2]   # seleciona o primeiro elemento da segunda coluna
-t(m)      # matriz transposta
-m %*% n   # multiplicação matricial
-solve(m)  # matriz inversa de m
-```
-
-### Fatores
-
-Fatores podem ser vistos como vetores de inteiros que possuem rótulos (levels).
+Um outro operador muito útil é o `%in%`. Com ele, podemos verificar se um valor está dentro de um conjunto de valores (vetor).
 
 ```{r}
-sexo <- c("M", "H", "H", "H", "M", "M", "H")
-fator <- as.factor(sexo)
-fator
-as.numeric(fator)
+3 %in% c(1, 2, 3)
+"a" %in% c("b", "c")
 ```
 
-Eles são úteis para representar uma variável categórica (nominal e ordinal). Na modelagem, eles serão tratados de maneira especial em funções como `lm()` e `glm()`. 
+Nós começamos essa seção dizendo que usaremos testes lógicos o tempo todo. O motivo para isso é que eles fazem parte de uma operação muito comum na manipulação de base de dados: os **filtros**.
 
-A função `levels()` retorna os rótulos do fator:
+No Excel, por exemplo, quando você filtra uma planilha, o que está sendo feito por trás é um teste lógico.
+
+Falamos anteriormente que cada coluna das nossas bases de dados será representada dentro do R como um vetor. O comportamento que explica a importância dos testes lógicos na hora de filtrar uma base está ilustrado abaixo:
 
 ```{r}
-levels(fator)
+minha_coluna <- c(1, 3, 0, 10, -1, 5, 20)
+
+minha_coluna > 3
+
+minha_coluna[minha_coluna > 3]
 ```
 
-A ordem das categorias de um fator pode importar. Como exemplo, temos as caselas de referência de modelos estatísticos e a ordem das barras de um gráfico. Para ajudar nesta tarefa, consulte o pacote [forcats](https://github.com/tidyverse/forcats).
+Muitas coisas aconteceram aqui, vamos por partes.
 
-> Um erro comum e desastroso. Quando um vetor de números está como <b>factor</b>, ao tentar transformá-lo em <b>numeric</b>, você receberá um vetor de inteiros que não tem nada a ver com os valores originais!
+Primeiro, na operação `minha_coluna > 3` o R fez um excelente uso do comportamento de reciclagem. No fundo, o que ele fez foi transformar (reciclar) o valor `3` no vetor `c(3, 3, 3, 3, 3, 3, 3)` e  testar se `c(1, 3, 0, 10, -1, 5, 20) > c(3, 3, 3, 3, 3, 3, 3)`. 
 
-```{r, eval=TRUE}
-numeros <- factor(c("10", "55", "55", "12", "10", "-5", "-90"))
+Como os operadores lógicos também são vetorizados (fazem operações elemento a elemento), os testes realizados foram `1 > 3`, `3 > 3`, `0 > 3`, `10 > 3`, `-1 > 3`, `5 > 3` e, finalmente, `20 > 3`. Cada um desses testes tem o seu próprio resultado. Por isso a saída de `minha_coluna > 3` é um vetor de verdadeiros e falsos, respectivos a cada um desses 7 testes.
 
-as.numeric(numeros)
-#Por essa eu năo esperava!
-```
+A segunda operação traz a grande novidade aqui: podemos usar os valores `TRUE` e `FALSE` para selecionar elementos de um vetor!
 
-Para evitar isso, use `as.character()` antes de transformar para número.
+A regra é muito simples: **retornar** as posições que receberem `TRUE`, **não retornar** as posições que receberem `FALSE`. Portanto, a segunda operação é equivalente a:
 
 ```{r}
-as.numeric(as.character(numeros))
-# Agora está OK!
+minha_coluna[c(FALSE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE)]
 ```
 
+O vetor lógico filtra o vetor `minha_coluna`, retornando apenas os valores maiores que 3, já que foi esse o teste lógico que fizemos. 
 
+Essa é a *mágica* que acontece por trás de filtros no R. Na prática, não precisaremos usar colchetes, não lembraremos da reciclagem e nem veremos a cara dos `TRUE` e `FALSE`. Mas conhecer esse processo é muito importante, principalmente para encontrar problemas de código ou de base.
 
-### Listas
+## Valores especiais {#valores_especiais}
 
-Listas são um tipo especial de vetor que aceita elementos de classes diferentes.
+Vimos anteriormente que se você tentar acessar uma posição que não existe dentro de um vetor, ele retorna um valor estranho.
 
 ```{r}
-x <- list(1:5, "Z", TRUE, c("a", "b"))
-x
+vetor <- c(1, 2, 3)
+
+vetor[4]
 ```
 
-É um dos objetos mais importantes para armazenar dados e vale a pena saber manuseá-los bem. Existem muitas funções que fazem das listas objetos incrivelmente úteis.
+Esse valor, o `NA`, é tratado de forma especial no R. Ele representa a *ausência de informação*, isto é, a informação existe, mas nós (e o R) não sabemos qual é.
 
-Criamos uma lista com a função `list()`, que aceita um número arbitrário de elementos. Listas aceitam QUALQUER tipo de objeto. Podemos ter listas dentro de listas, por exemplo. Como para quase todas as classes de objetos no R, as funções `is.list()` e `as.list()` também existem.
+O `NA` para o R nada mais é do que o valor faltante ou omisso da Estatística. O famoso *missing*. Geralmente, quando temos uma base com valores faltando, como a idade para alguns indivíduos da nossa amostra, não significa que a idade deles não existe. Significa apenas que não temos essa informação.
 
-Na lista `pedido` abaixo, temos `numeric`, `Date`, `character`, vetor de `character` e `list` contida em uma lista:
+Esse conceito é muito importante para entender o resultado da expressão abaixo.
 
-```{r eval=FALSE}
-pedido <- list(pedido_id = 8001406,
-               pedido_registro = as.Date("2017-05-25"),
-               nome = "Athos", 
-               sobrenome = "Petri Damiani", 
-               cpf = "12345678900", 
-               email = "athos.damiani@gmail.com", 
-               qualidades = c("incrível", "impressionante"),
-               itens = list(
-                 list(descricao = "Ferrari", 
-                      frete = 0, 
-                      valor = 500000),
-                 list(descricao = "Dolly", 
-                      frete = 1.5, 
-                      valor = 3.90)
-               ), 
-               endereco = list(entrega = list(logradouro = "Rua da Glória", 
-                                              numero = "123",
-                                              complemento = "apto 71"),
-                               cobranca = list(logradouro = "Rua Jose de Oliveira Coutinho",
-                                               numero = "151",
-                                               complemento = "5o andar")
-               )
+```{r}
+5 == NA
+```
+
+Em um primeiro momento, poderíamos esperar que o resultado fosse `TRUE`. Mas, sabendo o significado por trás do `NA` --- um valor desconhecido ---, a verdadeira pergunta que estamos fazendo é: 5 é igual a um valor que existe, mas que não sei qual é? É como se eu perguntasse se eu tenho 5 moedas na mão, mas lhe mostrasse a mão fechada. A resposta para isso é *não sei* ou, dentro do R, `NA`.
+
+Um outro exemplo:
+
+```{r}
+idade_ana <- 30
+idade_beto <- NA
+idade_carla <- NA
+
+idade_ana == idade_beto
+
+idade_beto == idade_carla
+```
+
+Eu posso saber a idade da Ana, mas se eu não souber a idade do Beto, não sei se os dois tem a mesma idade. Por isso, `NA`. Da mesma forma, se não sei nem a idade do Beto nem da Carla, também não tenho como saber se os dois têm a mesma idade. Outra vez `NA`.
+
+Mas e quando queremos saber se um valor é NA ou não? Para fazer esse teste, temos que rodar `is.na(valor-ou-objeto)`.
+
+```{r}
+is.na(NA)
+
+is.na(idade_ana)
+
+is.na(idade_beto)
+```
+
+Repare que essa função também é vetorizada.
+
+```{r}
+is.na(c(idade_ana, idade_beto, idade_carla))
+```
+
+Assim como o `NA`, existem outros valores especiais muito comuns no R.
+
+O `NaN` (*not a number*) representa indefinições matemáticas.
+
+```{r}
+0/0
+
+log(-1)
+```
+
+O `Inf` (infinito) representa um número muito grande (que o computador não consegue representar) ou um limite matemático.
+
+```{r}
+# O computador não consegue representar um número tão grande.
+# O número é então """arredondado""" para infinito.
+10^310
+
+# Limite matemático.
+1 / 0
+
+# O "menos infinito" também existe.
+-1 / 0
+```
+
+O `NULL` (nulo) representa a ausência de um objeto. Ele não tem significado prático para a análise dados. Está mais em sintonia com comportamentos de lógica de programação. Muitas vezes vamos definir um objeto como nulo para dizer ao R que não queremos dar um valor para ele. Muito utilizado em funções (ver Seção \@ref(funcoes)).
+
+Da mesma forma que utilizados `is.na()` para testar se um objeto é `NA`, utilizamos `is.nan()`, `is.infinite()` ou `is.null()` para testar se um objeto é `NaN`, infinito ou nulo.
+
+```{r}
+nao_sou_um_numero <- NaN
+objeto_infinito <- Inf
+objeto_nulo <- NULL
+
+is.nan(nao_sou_um_numero)
+
+is.infinite(objeto_infinito)
+
+is.null(objeto_nulo)
+```
+
+## Listas
+
+Chegamos ao último tópico antes de voltarmos aos data frames: as listas.
+
+Listas são objetos muito importantes dentro do R. Primeiro porque **todo data frame é uma lista**. Segundo porque elas são bem parecidas com vetores, mas com uma diferença essencial: você pode misturar diferentes classes de objetos dentro dela.
+
+Para criar uma lista, rodamos `list(valor1, valor2, valor3)`.
+
+```{r}
+list(1, "a", TRUE)
+```
+
+Veja que não houve coerção. Ainda temos um valor número, um texto e um valor lógico dentro da lista.
+
+O *subsetting* de listas é um pouco diferente do que o de vetores. Isso porque **cada elemento de uma lista também é uma lista**. Veja o que acontece se tentarmos usar `[]` para pegar um elemento de uma lista.
+
+```{r}
+lista <- list(1, "a", TRUE)
+
+lista[1]
+
+class(lista[1])
+```
+
+O R nos retorna uma lista com apenas aquele elemento. Se quisermos o elemento de fato dentro de cada posição, precisamos usar dois colchetes:
+
+```{r}
+lista[[1]]
+
+class(lista[[1]])
+```
+
+Cada elemento de uma lista ser uma lista é importante pois isso nos permite colocar vetores de tamanhos diferentes em cada posição. Isso faz das listas uma estrutura bem flexível para guardar dados.
+
+```{r}
+lista <- list(c(1, 2, 3), "a", c(TRUE, TRUE, FALSE, FALSE))
+
+lista
+
+lista[1]
+
+lista[2]
+
+lista[3]
+```
+
+É muito comum darmos nomes para cada posição de uma lista.
+
+```{r}
+dados_cliente <- list(cliente = "Ana Silva", idade = 25, estado_civil = NA)
+
+dados_cliente
+```
+
+Agora, dentro da lista, o valor `Ana Silva`, por exemplo, está sendo atribuído ao nome `cliente`. Esse nome só existirá dentro da lista. 
+
+Um detalhe importante: os iguais utilizados nas atribuições dos nomes dentro da lista **não podem** ser substituídos por `<-`.
+
+Quando as posições de uma lista tem nome, podemos acessar seus valores diretamente utilizando o operador `$`.
+
+```{r}
+dados_cliente$cliente
+
+dados_cliente$idade
+
+dados_cliente$estado_civil
+```
+
+Repare que o R devolve o valor dentro de cada posição, e não uma lista. 
+
+```{r}
+dados_cliente[1]
+
+dados_cliente$cliente
+
+class(dados_cliente[1])
+
+class(dados_cliente$cliente)
+```
+
+Isto implica que, nesse exemplo, `dados_cliente$cliente` é equivalente a `dados_cliente[[1]]`.
+
+Conforme ficamos mais e mais proficientes na linguagem R, as listas passam a ficar cada vez mais frequentes. Voltaremos a falar delas diversas vezes nos próximos capítulos, em especial no Capítulo \@ref(funcionais).
+
+## Mais sobre data frames
+
+Chegou a hora de usarmos tudo o que aprendemos na seção anterior para exploramos ao máximo o nosso objeto favorito: o *data frame*.
+
+Na seção anterior, nós dissemos que *data frames* são listas. Isso é importante pois todas as propriedades de uma lista valem para um *data frame*.
+
+A melhor forma de entender essa equivalência é ver um *data frame* representado como uma lista.
+
+```{r}
+as.list(mtcars)
+```
+
+O código acima nos permite ver o *data frame* `mtcars` representado como uma lista. Veja que cada coluna da base se transforma em um elemento da lista. E o nome de cada coluna vira o nome de cada posição. Isso é interessante, pois podemos usar nos *data frames* as mesmas operações que aprendemos para listas. 
+
+Por exemplo, podemos usar o operador `$` para acessar cada elemento da lista, isto é, cada coluna do *data frame*.
+
+```{r}
+mtcars$mpg
+```
+
+E assim como cada elemento de uma lista também é uma lista, cada elemento (coluna) de um *data frame* também é um *data frame.
+
+```{r}
+mtcars[1]
+
+class(mtcars[1])
+```
+
+Mas se *data frames* são listas, por que existe a classe *data frame*? Na verdade, *data frames* são um tipo especial de listas, que têm as seguintes propriedades:
+
+1. Todos os seus elementos (colunas) precisam ter o mesmo comprimento (número de linhas).
+
+2. Todos os seus elementos (colunas) precisam ser nomeados.
+
+3. *Data frames* têm 2 dimensões.
+
+As propriedades (1) e (2) se devem ao formato das bases de dados. Elas são retangulares^[Também existem bases não retangulares, como dados de imagens por exemplos, mas não trataremos dessas estruturas neste livro.] --- observamos as mesmas variáveis (colunas) para todas as unidades amostrais (linhas)^[Mesmo quando uma variável não existe para uma unidade amostral, representamos esse valor como um *missing*] ---, e precisam ter algum nome especificando as colunas.
+
+Da mesma forma que podemos ver um *data frame* como uma lista, também podemos fazer o inverso.
+
+```{r}
+dados_cliente <- list(
+  cliente = c("Ana Silva", "Beto Pereira", "Carla Souza"),
+  idade = c(25, 30, 23),
+  estado_civil = c(NA, "Solteiro", "Casada")
 )
+
+dados_cliente 
+
+as.data.frame(dados_cliente)
 ```
 
-**Operações úteis**
+Quando tivermos valores faltantes na nossa base (células vazias no Excel), eles serão representados por `NA` nos *data frames*.
 
-```{r, eval=FALSE}
-pedido$cpf     # elemento chamado 'cpf'
-pedido[1]      # nova lista com apenas o primeiro elemento
-pedido[[2]]    # segundo elemento
-pedido["nome"] # nova lista com apenas o elemento chamado 'nome'
+Observe que não conseguimos transformar uma lista em *data frame* se os elementos da lista não tiverem o mesmo comprimento.
+
+```{r, error=TRUE}
+dados_cliente <- list(
+  cliente = c("Ana Silva", "Beto Pereira", "Carla Souza"),
+  idade = c(25, 30),
+  estado_civil = c(NA, "Solteiro", "Casada")
+)
+
+as.data.frame(dados_cliente)
 ```
 
-Certamente você se deparará com listas quando for fazer análise de dados com o R. Nos tópicos mais aplicados, iremos aprofundar sobre o tema. O pacote [purrr](https://github.com/hadley/purrr) contribui com funcionalidades incríveis para listas.
+Transformar uma lista não nomeada em *data frame* é possível, mas o R cria nomes nada agradáveis para as colunas.
 
-### Data frames (parte 2)
+```{r}
+dados_cliente <- list(
+  c("Ana Silva", "Beto Pereira", "Carla Souza"),
+  c(25, 30, 23),
+  c(NA, "Solteiro", "Casada")
+)
 
-Os `data.frame`'s são listas especiais em que todos os elementos possuem **o mesmo comprimento**. Cada elemento dessa lista pode ser pensado como uma coluna da tabela. Seu comprimento representa o número de linhas. 
+as.data.frame(dados_cliente)
+```
 
-Já que são listas, essas colunas podem ser de classes diferentes. Essa é a grande diferença entre `data.frame`'s e matrizes. Algumas funções úteis para trabalhar com `data.frame`'s :
+A propriedade (3) é atribuída aos *data frames* para que possamos aproveitar melhor dessa estrutura retangular dentro do R. Na prática, essas duas dimensões representam nada mais que as linhas e as colunas da base. Essa é a maior diferença entre uma lista e um *data frame*.
+
+```{r}
+class(mtcars)
+
+dim(mtcars)
+```
+
+O resultado do código `dim(mtcars)` nos dá as seguintes informações:
+
+- O *data frame* mtcars tem duas dimensões (como todo *data frame*).
+
+- A primeira dimensão tem comprimento 32 e a segunda dimensão tem comprimento 11. Em outras palavras: a base `mtcars` tem 32 linhas e 11 colunas.
+
+Veja a seguir que listas não têm dimensão.
+
+```{r}
+mtcars_como_lista <- as.list(mtcars)
+
+class(mtcars_como_lista)
+
+dim(mtcars_como_lista)
+```
+
+Ter duas dimensões significa que devemos usar dois índices para acessar (fazer *subsetting*) dos valores de um *data frame*. Para isso, ainda usamos o colchete, mas agora com dois argumentos: `[linha, coluna]`.
+
+```{r}
+mtcars[2, 3]
+```
+
+O código acima está nos devolvendo o valor presente na segunda linha da terceira coluna da base `mtcars`.
+
+Também podemos pegar todos as linhas de uma coluna ou todas as colunas de uma linha deixando um dos argumentos vazio:
+
+```{r}
+# Todas as linhas da coluna 1
+mtcars[,1]
+
+# Todas as colunas da linha 1
+mtcars[1,]
+```
+
+Por fim, lembrando que dento de cada coluna temos um vetor, podemos usar os testes lógicos para filtrar as linhas do nosso *data frame* conforme alguma regra.
+
+```{r}
+mtcars$cyl == 4
+
+mtcars[mtcars$cyl == 4, ]
+```
+
+O código `mtcars$cyl == 4` nos diz em quais linhas estão os carros com 4 cilindros. Quando usamos o vetor de `TRUE` e `FALSE` resultante dentro do *subsetting* das linhas em `mtcars[mtcars$cyl == 4, ]`, o R nos devolve todos as colunas dos carros com 4 cilindros. A regra é simples: linha com `TRUE` é retornada, linha com `FALSE` não.
+
+Encerramos aqui a nossa primeira conversa sobre `data frames` para falar de outra estrutura muito importante dentro do R: as funções.
+
+## Funções {#funcoes}
+
+Algumas funções úteis para trabalhar com `data.frame`'s :
 
 - `head()` - Mostra as primeiras 6 linhas.
 - `tail()` - Mostra as últimas 6 linhas.
@@ -506,37 +840,11 @@ Já que são listas, essas colunas podem ser de classes diferentes. Essa é a gr
 - `cbind()` - Acopla duas tabelas lado a lado.
 - `rbind()` - Empilha duas tabelas.
 
-O exemplo abaixo mostra que uma lista pode virar `data.frame` apenas se todos os elementos tiverem o mesmo comprimento.
-
-```{r, error=TRUE}
-minha_lista <- list(x = c(1, 2, 3), y = c("a", "b"))
-as.data.frame(minha_lista)
-
-minha_lista <- list(x = c(1, 2, 3), y = c("a", "b", "c"))
-as.data.frame(minha_lista)
-```
-
-## Valores especiais
-
-Existem valores reservados para representar dados faltantes, infinitos, e indefinições matemáticas.
-
-- **NA** (Not Available) significa dado faltante/indisponível. É o `null` do SQL ou o `.` do SAS. O `NA` tem uma classe, ou seja, podemos ter `NA` numeric, `NA` character etc.
-- **NaN** (Not a Number) representa indefinições matemáticas, como `0/0` e `log(-1)`. Um `NaN` é um `NA`, mas a recíproca não é verdadeira.
-- **Inf** (Infinito) é um número muito grande ou o limite matemático, por exemplo, `1/0` e `10^310`. Aceita sinal negativo `-Inf`. 
-- **NULL** representa a ausência de informação. Conceitualmente, a diferença entre `NA` e `NULL` é sutil, mas, no R, o `NA` está mais alinhado com os conceitos de estatística (ou como gostaríamos que os dados faltantes se comportassem em análise de dados) e o `NULL` está em sintonia com comportamentos de lógica de programação.
-- Use as funções `is.na()`, `is.nan()`, `is.infinite()` e `is.null()` para testar se um objeto é um desses valores.
-
-```{r}
-x <- c(NaN, Inf, 1, 2, 3, NA)
-is.na(x)
-is.nan(x)
-```
-
-## Controles de Fluxo
+## Controle de Fluxo
 
 Como toda boa linguagem de programação, o R possui estruturas de `if`'s, `else`'s, `for`'s, `while`'s etc. Esses **controles de fluxo** são importantes na hora de programar. 
 
-### IF e ELSE
+### if e else
 
 O seguinte trecho de código só será executado se o objeto `x` for igual a 1. Repare que a condição de igualdade é representada por dois iguais `==`.
 
@@ -656,10 +964,7 @@ print(x)
 ```
 
  Quando a diferença entre $\sqrt{x}$ e $x$ ficou menor que 0.1, o loop foi interrompido. 
-Vemos que solução aproximada da equação $\sqrt{x} = x$ dada pelo algorítmo não difere muito da solução real $x=1$.
-
-
-
+Vemos que solução aproximada da equação $\sqrt{x} = x$ dada pelo algoritmo não difere muito da solução real $x=1$.
 
 Para finalizar, listamos na tabela abaixo os principais operadores lógicos.
 
@@ -677,7 +982,69 @@ op_logico <- data.frame(
 knitr::kable(op_logico)
 ```
 
-## Fórmulas
+## Outros tópicos
+
+### Matrizes
+
+Matrizes são vetores com duas dimensões (e por isso só possuem elementos de uma mesma classe).
+
+```{r}
+m <- matrix(1:6, nrow = 2, ncol = 3)
+m
+dim(m) # funçăo dim() retorna a dimensăo do objeto.
+```
+
+Repare que os números de 1 a 6 foram dispostos na matriz coluna por coluna (*column-wise*), ou seja, preenchendo de cima para baixo e depois da esquerda para a direita.
+
+**Operações úteis**
+
+```{r, eval=FALSE}
+m[3,  ]   # seleciona a terceira linha
+m[ , 2]   # seleciona a segunda coluna
+m[1, 2]   # seleciona o primeiro elemento da segunda coluna
+t(m)      # matriz transposta
+m %*% n   # multiplicação matricial
+solve(m)  # matriz inversa de m
+```
+
+### Fatores
+
+Fatores podem ser vistos como vetores de inteiros que possuem rótulos (levels).
+
+```{r}
+sexo <- c("M", "H", "H", "H", "M", "M", "H")
+fator <- as.factor(sexo)
+fator
+as.numeric(fator)
+```
+
+Eles são úteis para representar uma variável categórica (nominal e ordinal). Na modelagem, eles serão tratados de maneira especial em funções como `lm()` e `glm()`. 
+
+A função `levels()` retorna os rótulos do fator:
+
+```{r}
+levels(fator)
+```
+
+A ordem das categorias de um fator pode importar. Como exemplo, temos as caselas de referência de modelos estatísticos e a ordem das barras de um gráfico. Para ajudar nesta tarefa, consulte o pacote [forcats](https://github.com/tidyverse/forcats).
+
+> Um erro comum e desastroso. Quando um vetor de números está como <b>factor</b>, ao tentar transformá-lo em <b>numeric</b>, você receberá um vetor de inteiros que não tem nada a ver com os valores originais!
+
+```{r, eval=TRUE}
+numeros <- factor(c("10", "55", "55", "12", "10", "-5", "-90"))
+
+as.numeric(numeros)
+#Por essa eu năo esperava!
+```
+
+Para evitar isso, use `as.character()` antes de transformar para número.
+
+```{r}
+as.numeric(as.character(numeros))
+# Agora está OK!
+```
+
+### Fórmulas
 
 Fórmulas são objetos do tipo `y ~ x`. Em geral, elas representam associações entre objetos, como em um modelo de regressão. As funções as usam de diversas maneiras, mas o exemplo mais emblemático vem da modelagem estatística.
 
@@ -698,7 +1065,7 @@ No caso específico dos modelos lineares, são nas fórmulas que conseguimos des
 
 Demais usos de fórmulas aparecerão em outras funções, como as do pacote `ggplot2`, com outros significados, e a documentação nos dirá como usá-las.
 
-## Gráficos (base)
+### Gráficos (base)
 
 O R já vem com funções básicas que fazem gráficos estatísticos de todas as naturezas. 
 
@@ -707,7 +1074,7 @@ O R já vem com funções básicas que fazem gráficos estatísticos de todas as
 
 Nesta seção, mostraremos como construir alguns tipos de gráficos usando as funções base do R, mas o nosso foco em visualização de dados está nas funções do pacote `ggplot2`.
 
-### Gráfico de dispersão
+#### Gráfico de dispersão
 
 Para construir um gráfico de dispersão, utilizamos a função `plot()`. Seus principais parâmetros são:
 
@@ -738,7 +1105,7 @@ O parâmetro `type = "l"` indica que queremos que os pontos sejam interligados p
 plot(x, y, type = "l")
 ```
 
-### Histograma
+#### Histograma
 
 Para construir histogramas, utilizamos a função `hist()`. Os principais parâmetros são:
 
@@ -753,7 +1120,7 @@ hist(rnorm(1000))
 hist(rnorm(1000), breaks = 6)
 ```
 
-### Boxplot
+#### Boxplot
 
 Para construir histogramas, utilizamos a função `boxplot()`. Os principais parâmetros são:
 
@@ -771,7 +1138,7 @@ Para mapear duas variáveis ao gráfico, utilizamos um objeto da classe `formula
 boxplot(count ~ spray, data = InsectSprays, col = "lightgray")
 ```
 
-### Gráfico de barras
+#### Gráfico de barras
 
 Para construir gráficos de barras, precisamos combinar as funções `table()` e `barplot()`.
 
