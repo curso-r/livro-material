@@ -198,6 +198,25 @@ a <- 1
 a
 ```
 
+Existem algumas regras para dar nomes aos objetos. A mais importante é: o nome deve começar com uma letra^[Ou com um ponto.]. O nome pode conter números, mas não pode começar com números. Você pode usar pontos `.` e underlines `_` para separar palavras.
+
+```{r, eval = FALSE}
+# Permitido
+
+x <- 1
+x1 <- 2
+objeto <- 3
+meu_objeto <- 4
+meu.objeto <- 5
+
+# Não permitido
+
+1x <- 1
+_objeto <- 2
+meu-objeto <- 3
+
+```
+
 
 **Atenção!**
 
@@ -830,15 +849,179 @@ Encerramos aqui a nossa primeira conversa sobre `data frames` para falar de outr
 
 ## Funções {#funcoes}
 
-Algumas funções úteis para trabalhar com `data.frame`'s :
+Enquanto objetos são *nomes* que guardam *valores*, funções no R são *nomes* que guardam um **código de R**. A ideia é muito simples: sempre que você rodar uma função, o código que ela guarda será executado e um resultado nos será devolvido.
+
+Funções são tão comuns (provavelmente você já usou funções no Excel) e intuitivas, que mesmo sem definir o que elas são, nós já utilizamos funções nas seções anteriores:
+
+- a função `c()` foi utilizada para criar vetores;
+- a função `class()` foi utilizada para descobrir a classe de um objeto;
+- a classe de funções `is.na()`, `is.nan()`, `is.infinite()` e `is.null` foram utilizadas para testar se um valor é `NA`, `NaN`, infinito ou `NULL`, respectivamente.
+
+Diferentemente dos objetos, as funções podem receber **argumentos**. Argumentos são os valores que colocamos dentro dos parênteses e que as funções precisam para funcionar (calcular algum resultado). Por exemplo, a função `c()` precisa saber quais são os valores que formarão o vetor que ela irá criar.
+
+```{r}
+c(1, 3, 5)
+```
+
+Nesse caso, os valores `1`, `3` e `5` são os argumentos da função `c()`. **Os argumentos de uma função são sempre separados por vírgulas**.
+
+Também podemos usar argumentos para modificar o comportamento de uma função. Por exemplo, vejamos a função `mean()`.
+
+```{r}
+mean(1, 3)
+```
+
+Como você deve ter percebido, essa função retorna a média de seus argumentos. Também podemos passar um vetor como argumento, e ela retornará a média dos elementos do vetor.
+
+```{r}
+mean(c(1, 3))
+```
+
+Isso é útil pois podemos passar a coluna de um *data frame* como argumento para saber a média dessa coluna:
+
+```{r}
+# A coluna de um data frame é um vetor:
+mtcars$mpg
+
+# Podemos passar esse vetor para a função mean()
+mean(mtcars$mpg)
+```
+
+Agora, o que acontece se algum elemento do vetor for `NA`?
+
+```{r}
+mean(c(1, 3, NA))
+```
+
+Como a função não sabe o valor do terceiro elemento do vetor, ela não sabe qual é a média desses 3 elementos e, então, devolve `NA`. Como é muito comum termos `NA` nas nossas bases de dados, é muito comum tentarmos calcular a média de uma coluna que tem `NA` e recebermos `NA` como resposta.
+
+Na grande maioria dos casos, queremos saber a média de uma coluna apesar dos `NA`s. Isto é, queremos retirar os `NA`s e então calcular a média com os valores que conhecemos. Para isso, podemos utilizar o argumento `na.rm = TRUE` da função `mean()`.
+
+```{r}
+mean(c(1, 3, NA), na.rm = TRUE)
+```
+
+Esse argumento diz à função para remover os `NA`s antes de calcular a média. Assim, a média calculada é: `(1 + 3)/2`.
+
+Claro que cada função tem os seus próprios argumentos e nem toda função terá o argumento `na.rm=`. Para saber quais são e como usar os argumentos de uma função, basta acessar a sua documentação:
+
+```{r}
+help(mean)
+```
+
+Os argumentos das funções também têm nomes, que podemos ou não usar na hora de usar uma função. Veja por exemplo a função `seq()`. 
+
+```{r}
+seq(from = 4, to = 10, by = 2)
+```
+
+Entre outros argumentos, ela possui os argumentos `from=`, `to=` e `by=`. O que ela faz é criar uma sequência (vetor) de `by` em `by` que começa em `from` e termina em `to`. No exemplo, criamos uma função de 2 em 2 que começa em 4 e termina em 10.
+
+Também poderíamos usar a mesma função sem colocar o nome dos argumentos:
+
+```{r}
+seq(0, 10, 2)
+```
+
+Para utilizar a função sem escrever o nome dos argumentos, você precisa colocar os valores na ordem em que os argumentos aparecem. E se você olhar a documentação da função `seq()`, fazendo `help(seq)`, verá que a ordem dos argumentos é justamente `from=`, `to=` e `by=`.
+
+Escrevendo o nome dos argumentos, não há problema em alterar a ordem dos argumentos:
+
+```{r}
+seq(by = 2, to = 10, from = 4)
+```
+
+Mas se especificar os argumentos, a ordem importa. Veja que o resultado será diferente.
+
+```{r}
+seq(2, 10, 4)
+```
+
+A seguir, apresentamos algumas funções nativas do R úteis para trabalhar com *data frames* :
 
 - `head()` - Mostra as primeiras 6 linhas.
 - `tail()` - Mostra as últimas 6 linhas.
 - `dim()` - Número de linhas e de colunas.
 - `names()` - Os nomes das colunas (variáveis).
-- `str()` - Estrutura do data.frame. Mostra, entre outras coisas, as classes de cada coluna.
+- `str()` - Estrutura do *data frame*. Mostra, entre outras coisas, as classes de cada coluna.
 - `cbind()` - Acopla duas tabelas lado a lado.
 - `rbind()` - Empilha duas tabelas.
+
+Além de usar funções já prontas, você pode criar a sua própria função. A sintaxe é a seguinte:
+
+```{r}
+nome_da_funcao <- function(argumento_1, argumento_2) {
+  
+  # Código que a função irá executar
+  
+}
+```
+
+Repare que `function` é um nome reservado no R, isto é, você não pode criar um objeto com esse nome.
+
+Um exemplo: vamos criar uma função que soma dois números.
+
+```{r}
+minha_soma <- function(x, y) {
+  soma <- x + y
+  
+  soma  # resultado retornado
+}
+```
+
+Essa função tem os seguintes componentes:
+
+- `minha_soma`: nome da função
+- `x` e `y`: argumentos da função
+- `soma <- x + y`: operação que a função executa
+- `soma`: valor retornado pela função
+
+Após rodarmos o código de criar a função, podemos utilizá-la como qualquer outra função do R.
+
+```{r}
+minha_soma(2, 2)
+```
+
+O objeto `soma` só existe *dentro da função*, isto é, além de ele não ser colocado no seu *environment*, ele só existirá na memória (RAM) enquanto o R estiver executando a função. Depois disso, ele será apagado. O mesmo vale para os argumentos `x` e `y`.
+
+O valor retornado pela função representa o resultado que receberemos ao utilizá-la. Por padrão, **a função retornará sempre a última linha de código que existir dentro dela**. No nosso exemplo, a função retorna o valor contido no objeto `soma`, pois é isso que fazemos na última linha de código da função.
+
+Repare que se atribuirmos o resultado a um objeto, ele não será mostrado no console:
+
+```{r}
+resultado <- minha_soma(3, 3)
+
+# Para ver o resultado, rodamos o objeto `resultado`
+resultado
+```
+
+Agora, o que acontece se a última linha da função não devolver um objeto? Veja:
+
+```{r}
+minha_nova_soma <- function(x, y) {
+  soma <- x + y
+}
+```
+
+A função `minha_nova_soma()` apenas cria o objeto `soma`, sem retorná-lo como na função `minha_soma()`. Se utilizarmos essa nova função, nenhum valor é devolvido no console:
+
+```{r}
+minha_nova_soma(1, 1)
+```
+
+No entanto, a última linha da função agora é a atribuição `soma <- x + y` e esse será o "resultado retornado". Assim, podemos visualizar o resultado da função fazendo:
+
+```{r}
+resultado <- minha_nova_soma(1, 1)
+
+resultado
+```
+
+
+É como se, por trás das cortinas, o R estivesse fazendo `resultado <- soma <- x + y`, mas apenas o objeto `resultado` continua existindo, já que os objetos `soma`, `x`e `y` são descartados após a função ser executada.
+
+Claro que, na prática, é sempre bom criarmos funções que retornem na tela os seus resultados, para evitar esse passo a mais se quisermos apenas ver o resultado no console. Assim, a função `minha_soma()` costuma ser preferível com relação à função `minha_nova_soma()`. 
+
 
 ## Controle de Fluxo
 
@@ -1165,7 +1348,7 @@ barplot(VADeaths)
 
 **Sugestão**: resolva os exercícios em arquivo R Markdown, aproveitando para fazer anotações e registrar suas dúvidas ao longo do caminho.
 
-**1.** Calculo o número de ouro no R.
+**1.** Calcule o número de ouro no R.
 
 Dica: o número de ouro é dado pela expressão $\frac{1 + \sqrt{5}}{2}$.
 
@@ -1177,7 +1360,7 @@ Dica: o número de ouro é dado pela expressão $\frac{1 + \sqrt{5}}{2}$.
 
 --------------------------------------------------------------------------------
 
-**3.** Quais as diferenças entre `NaN`, `NULL`, `NA` e `Inf`? Digite expressões que retornam cada um desses resultados.
+**3.** Quais as diferenças entre `NaN`, `NULL`, `NA` e `Inf`? Digite expressões que retornem cada um desses resultados.
 
 
 --------------------------------------------------------------------------------
@@ -1199,12 +1382,12 @@ if(x = 4) {
 
 --------------------------------------------------------------------------------
 
-**6.** Usando `if` e `else`, escreva um código que retorne a string "número" caso o valor seja da classe `numeric` ou `integer`; a string "palavra" caso o valor seja da classe `character`; e `NULL` caso contrário.
+**6.** Usando `if` e `else`, escreva um código que retorne a string `"número"` caso o valor seja da classe `numeric` ou `integer`; a string `"palavra"` caso o valor seja da classe `character`; e `NA` caso contrário.
  
 
 --------------------------------------------------------------------------------
 
-**7.** Use o `for` para retornar o valor mínimo do seguinte vetor: `vetor <- c(4, 2, 1, 5, 3)`. Modifique o seu código para receber vetores de qualquer tamanho.
+**7.** Use o `for` para retornar o menor valor do seguinte vetor: `vetor <- c(4, 2, 1, 5, 3)`. Modifique o seu código para que ele funcione com qualquer vetor.
 
 --------------------------------------------------------------------------------
 
@@ -1221,256 +1404,7 @@ if(x = 4) {
 
 --------------------------------------------------------------------------------
 
-**11.** Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do data frame `mtcars`.
+<!-- **11.** Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do data frame `mtcars`. -->
 
---------------------------------------------------------------------------------
+<!-- -------------------------------------------------------------------------------- -->
 
-## Respostas
-
-**1.** Calculo o número de ouro no R.
-
-Dica: o número de ouro é dado pela expressão $\frac{1 + \sqrt{5}}{2}$.
-
-**Resposta:**
-
-```{r eval=FALSE}
-(1 + sqrt(5))/2
-```
-
-
-
---------------------------------------------------------------------------------
-
-**2.** Qual o resultado da divisão de 1 por 0 no R? E de -1 por 0?
-
-**Resposta:**
-
-Infinito e -Infinito.
-
-```{r}
-1/0
--1/0
-```
-
---------------------------------------------------------------------------------
-
-**3.** Quais as diferenças entre `NaN`, `NULL`, `NA` e `Inf`? Digite expressões que retornam cada um desses resultados.
-
-**Resposta:**
-
-```{r}
-# NaN é o resultado de uma operação matemática inválida. 
-# Significa Not A Number.
-
-0/0
-```
-
-
-```{r eval=FALSE}
-# NULL é o vazio do R. É como se o objeto não existisse.
-
-NULL
-a = NULL
-```
-
-
-```{r }
-# veja que um vetor, mesmo sem elementos não é NULL
-
-is.null(integer(length = 0)) 
-
-# NA é uma constante lógica do R. Siginifica Not Availlable. 
-# NA pode ser convertido para quase todos os tipos de vetores do R. 
-# É usado principalmente para indicar valores faltantes.
-
-NA
-as.numeric(c("1", "2", "a"))
-
-# Inf é significa infinito. É o resultado de operações matemáticas 
-# cujo limite é infinito.
-
-1/0
-1/Inf
-```
-
---------------------------------------------------------------------------------
-
-**4.** Sem rodar o código, calcule o que a expressão `5 + 3 * 10 %/% 3 == 15` vai resultar no R. Em seguida, apenas utilizando parênteses, faço a expressão retornar o valore contrário (i.e., se originariamente for `TRUE`, faça retornar `FALSE`).
-
-**Resposta:**
-
-O resultado da parte esquerda é 14, por isso a expressão retornará `FALSE`. Para fazê-la retornar `TRUE`, basta colocar parênteses em volta de `3 * 10`.
-
-```{r}
-5 + (3 * 10) %/% 3 == 15
-```
-
---------------------------------------------------------------------------------
-
-**5.** Por que o código abaixo retorna erro? Arrume o código para retornar o valor `TRUE`.
-
-```{r, eval = FALSE}
-x <- 4
-if(x = 4) {
-  TRUE
-}
-```
-
-**Resposta:**
-
-A expressão `x = 4` está tentando atribuir o valor 4 ao objeto `x` dentro do if, o que não é permitido pois o controlador `if` só aceita valores lógicos. Para corrigir o código e fazê-lo retornar `TRUE`, basta trocar `=` por `==`.
-
-```{r}
-x <- 4
-if(x == 4) {
-  TRUE
-}
-```
-
---------------------------------------------------------------------------------
-
-**6.** Usando `if` e `else`, escreva um código que retorne a string "número" caso o objeto `x` seja da classe `numeric` ou `integer`; a string "palavra" caso o objeto seja da classe `character`; e `NULL` caso contrário.
- 
-**Resposta:**
-
-```{r}
-x <- 1
-# x <- 1L
-# x <- "1"
-
-if(is.numeric(x)) {
-  "número"
-} else if(is.character(x)) {
-  "palavra"
-} else { 
-  NULL
-}
-
-```
-
-Note que a função `is.numeric()` retorna `TRUE` para as classes `integer` e `numeric`.
-
---------------------------------------------------------------------------------
-
-**7.** Use o `for` para retornar o valor mínimo do seguinte vetor: `vetor <- c(4, 2, 1, 5, 3)`. Modifique o seu código para receber vetores de qualquer tamanho.
-
-**Resposta:**
-
-```{r}
-
-vetor <- c(4, 2, 1, 5, 3)
-minimo <- Inf
-
-for(i in 1:5) {
-  
-  if(minimo > vetor[i]) {
-    minimo <- vetor[i]
-  }
-  
-}
-
-minimo
-
-```
-
-**Lembrete**: o R já possui a função `min()` para calcular o mínimo de um conjunto de valores.
-
---------------------------------------------------------------------------------
-
-**8.** Usando apenas `for` e a função `length()`, construa uma função que calcule a média de um vetor número qualquer. Construa uma condição para a função retornar `NULL` caso o vetor não seja numérico.
-
-**Resposta:**
-
-```{r}
-media <- function(x) {
-  
-  i <- 1
-  tamanho <- length(x)
-  soma <- 0
-  
-  for(i in 1:tamanho){
-    soma <- soma + x[i]
-  }
-  
-  return(soma/tamanho)
-}
-
-media(1:3)
-```
-
---------------------------------------------------------------------------------
-
-**9.** Rode `help(runif)` para descobrir o que a função `runif()` faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive).
-
-**Resposta:**
-
-A função `runif()` gera números reais aleatórios entre um valor mínimo e um valor máximo.
-
-```{r}
-alea <- function() {
-  
-  x <- runif(n = 1, min = 0, max = 10)
-  x <- round(x)
-  
-  return(x)
-}
-
-alea()
-```
-
-Veja que construímos uma função sem argumentos. Podemos generalizá-la incluindo os argumentos da função `runif()`.
-
-```{r}
-alea <- function(n, min, max) {
-  
-  x <- runif(n = n, min = min, max = max)
-  x <- round(x)
-  
-  return(x)
-}
-
-alea(2, 2, 5)
-alea(5, 100, 105)
-```
-
-Observe que não há problema em usar os mesmos nomes para os argumentos. Isso se deve aos *environments*. 
-
---------------------------------------------------------------------------------
-
-**10.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.
-
-**Resposta:**
-
-```{r}
-matriz <- matrix(runif(20), nrow = 5, ncol = 4)
-
-linha_alea <- function(matriz) {
-  
-  x <- 1:nrow(matriz)
-  
-  linha <- sample(x, size = 1)
-  
-  return(matriz[linha,])
-}
-
-matriz
-linha_alea(matriz)
-```
-
---------------------------------------------------------------------------------
-
-**11.** Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do data frame `mtcars`.
-
-**Resposta:**
-
-```{r}
-variaveis <- names(mtcars)
-
-esq <- "mpg ~ "
-dir <- paste(variaveis[-1], collapse = " + ")
-
-formula <- paste0(esq, dir)
-as.formula(formula)
-```
-
-Observe que a função `paste0()` é equivalente à função `paste()` com o argumento `sep = ""`.
