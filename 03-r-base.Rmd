@@ -332,6 +332,19 @@ vetor2
 
 Os objetos `vetor1` e `vetor2` são vetores.
 
+Uma maneira fácil de criar um vetor com uma sequência de números é utilizar o operador `:`.
+
+```{r}
+# Vetor de 1 a 10
+1:10
+
+# Vetor de 10 a 1
+10:1
+
+# Vetor de -3 a 3
+-3:3
+```
+
 Quando dizemos que vetores são conjuntos *indexados*, isso quer dizer que cada valor dentro de um vetor tem uma **posição**^[Essa posição é dada pela ordem em que os elementos foram colocados no momento em que o vetor foi criado.]. Isso nos permite acessar individualmente cada valor de um vetor. Para isso, colocamos o índice do valor que queremos acessar dentro de colchetes `[]`.
 
 ```{r}
@@ -539,6 +552,12 @@ O vetor lógico filtra o vetor `minha_coluna`, retornando apenas os valores maio
 
 Essa é a *mágica* que acontece por trás de filtros no R. Na prática, não precisaremos usar colchetes, não lembraremos da reciclagem e nem veremos a cara dos `TRUE` e `FALSE`. Mas conhecer esse processo é muito importante, principalmente para encontrar problemas de código ou de base.
 
+Por fim, veja algumas diferenças entre comparações lógicas no SQL e no R:
+
+- **Igualdade**: no SQL é só um sinal de igual: `2 = 1`. No R são dois: `2 == 1`.
+- **Diferença**: no SQL, usamos `<>`. No R usamos `!=`.
+- **Negação**: em vez de usar a palavra `NOT` igual ao SQL, usamos `!` no R. Por exemplo, `id not in ('1', '2', '3')` fica `!(id %in% c(1, 2, 3))`.
+
 ## Valores especiais {#valores_especiais}
 
 Vimos anteriormente que se você tentar acessar uma posição que não existe dentro de um vetor, ele retorna um valor estranho.
@@ -666,7 +685,7 @@ class(lista[[1]])
 Cada elemento de uma lista ser uma lista é importante pois isso nos permite colocar vetores de tamanhos diferentes em cada posição. Isso faz das listas uma estrutura bem flexível para guardar dados.
 
 ```{r}
-lista <- list(c(1, 2, 3), "a", c(TRUE, TRUE, FALSE, FALSE))
+lista <- list(1:3, "a", c(TRUE, TRUE, FALSE, FALSE))
 
 lista
 
@@ -1025,102 +1044,216 @@ Claro que, na prática, é sempre bom criarmos funções que retornem na tela os
 
 ## Controle de Fluxo
 
-Como toda boa linguagem de programação, o R possui estruturas de `if`'s, `else`'s, `for`'s, `while`'s etc. Esses **controles de fluxo** são importantes na hora de programar. 
+Como toda boa linguagem de programação, o R possui estruturas de `if`, `else`, `for` e `while`. Esses **controles de fluxo** são muito importantes na hora de programar, pois nos permitem manipular de modo eficiente as ações do computador.
+
+A seguir, explicaremos para que servem e como utilizar cada uma dessas estruturas.
 
 ### if e else
 
-O seguinte trecho de código só será executado se o objeto `x` for igual a 1. Repare que a condição de igualdade é representada por dois iguais `==`.
+As estruturas `if` e `else` servem para executarmos um código apenas se uma condição (teste lógico) for satisfeita.
+
+No código abaixo, a função `Sys.time()`, que retorna a data/hora no momento da execução, só será executada se o objeto `x` for igual a 1.
 
 ```{r}
+# Não vai executar a função Sys.time()
 x <- 2
 
-if(x == 1) {         
-  Sys.time()      # Devolve a data/hora no momento da execução.
-}
-```
-
-
-```{r}
-x <- 1
-
-if(x == 1) {
+if (x == 1) {         
   Sys.time()
 }
+
+# Vai executar a função Sys.time()
+x <- 1
+
+if (x == 1) {         
+  Sys.time()
+}
+
 ```
 
-O R só vai executar o que está na expressão dentro das chaves `{}` se o que estiver dentro dos parênteses `()` retornar `TRUE`.
-
-A sintaxe com o `else` e o `if else` é
+O R só vai executar o que está na expressão dentro das chaves `{}` se a expressão que estiver dentro dos parênteses `()` retornar `TRUE`. Veja outro exemplo:
 
 ```{r}
+# Vai fazer  a soma
+x <- c(1, 3, 10, 15)
+
+if (class(x) == "numeric") {
+  sum(x)
+}
+
+# Não vai fazer a soma
+x <- c("a", "b", "c")
+
+if (class(x) == "numeric") {
+  sum(x)
+}
+```
+
+Nesse exemplo, a soma só é executada se a classe do objeto `x` for numérica, isto é, se `x` for um vetor de números. Essa verificação poderia ser colocada dentro de uma função para evitarmos que ela retorne um erro.
+
+```{r}
+minha_soma <- function(x, y) {
+  if (class(x) == "numeric" & class(y) == "numeric") {
+     x + y
+  }
+}
+
+# Retorna a soma
+minha_soma(1, 2)
+
+# Não retorna nada
+minha_soma("a", "b")
+```
+
+Nesses casos, é muito comum o uso das funções `return()` e `stop()` para, respectivamente, retornar um resultado antecipadamente ou para a execução da função e devolver ao usuário uma mensagem de erro personalizada.
+
+```{r, error=TRUE}
+# Devolvendo um resultado antecipadamente
+minha_soma_NA <- function(x, y) {
+  if (class(x) == "numeric" & class(y) == "numeric") {
+     soma <- x + y
+     return(soma)
+  }
+  
+  NA
+}
+
+# Retorna a soma
+minha_soma_NA(1, 2)
+
+# Retorna NA
+minha_soma_NA("a", "b")
+
+# Retorna NA
+minha_soma_NA(1, "b")
+
+# Agora, devolvendo um erro
+minha_soma_erro <- function(x, y) {
+  if (class(x) != "numeric" | class(y) != "numeric") {
+    stop("A classe dos objetos x e y deve ser numérica.")
+  }
+  
+  x + y
+}
+
+# Retorna a soma
+minha_soma_erro(1, 2)
+
+# Retorna erro
+minha_soma_erro("a", "b")
+
+# Retorna erro
+minha_soma_erro(1, "b")
+```
+Na função `minha_soma_NA()`, a soma só é calculada e retornada se `x` e `y` forem numéricos. Caso pelo menos um dos dois não seja, o código dentro do `if` não é executado e o valor retornado é o `NA`.
+
+Na função `minha_soma_erro()`, testamos no `if` se a classe de `x` **ou** a classe de `y` é diferente de `numeric`, isto é, se pelo menos um dos dois não é um número. Se esse teste retornar `TRUE`, a função para a sua execução e devolve para o usuário a seguinte mensagem de erro: "A classe dos objetos x e y deve ser numérica.". Se o teste retorna `FALSE`, a soma é realizada e seu resultado nos é retornado.
+
+O `else` funciona como uma extensão do `if`, dando uma alternativa caso o teste executado seja falso.
+
+```{r}
+# Vai fazer  a soma
+x <- c(1, 3, 10, 15)
+
+if (class(x) == "numeric") {
+  sum(x)
+} else {
+  NA
+}
+
+# Vai retornar NA
+x <- c(1, 3, 10, 15)
+
+if (class(x) == "numeric") {
+  sum(x)
+} else {
+  NA
+}
+```
+
+Também podemos usar o `else` para encadear vários `if`s. Teste o código abaixo com valores positivos e negativos para `x`.
+
+```{r}
+x <- 0
+
 if(x < 0) {
   
-  sinal <- "negativo"
+  "negativo"
   
 } else if(x == 0) {
   
-  sinal <- "neutro"
+  "neutro"
   
 } else if(x > 0) {
   
-  sinal <- "positivo"
+  "positivo"
 }
-
-sinal
-
 ```
 
-<div class='admonition note'>
-<p class='admonition-title'>
-Diferença entre SQL e R nas comparações lógicas
-</p>
-<p>
-<b>Igualdade</b>: no SQL é só um sinal de igual: <2 = 1. No R são dois: 2 == 1.
-<br>
-<b>Diferença</b>: teste de diferente no R é != em vez de de <>.
-<br>
-<b>Negação</b>: em vez de usar a palavra "not" igual ao SQL, usamos !. Por exemplo, "entidade_id not in ('100515')" fica "!entidade_id %in% c('100515')".
-</p>
-</div>
+Repare que o `if` no último `else` poderia ser omitido.
+
+```{r}
+x <- 0
+
+if(x < 0) {
+  
+  "negativo"
+  
+} else if(x == 0) {
+  
+  "neutro"
+  
+} else {
+  
+  "positivo"
+}
+```
 
 
 ### for
 
-Vamos usar o `for` para somar todos os elementos de um vetor.
-
+O `for` pode ser utilizado para fazer os famosos *loopings* de programação, isto é, repetir uma mesma tarefa para um conjunto de valores diferentes. Cada repetição é chamada de iteração e o objeto que muda de valor em cada **interação** é chamado de **iterador**.
 
 
 ```{r}
-x <- 1:10   # Cria um vetor com a sequência 1, 2, ..., 10.
-soma <- 0
+numero_de_colunas <- ncol(mtcars)
 
-for(i in 1:10) {
-  soma <- soma + x[i]
-}
-
-soma
-```
-
-De forma equivalente, podemos usar diretamente a função `sum()`.
-
-```{r}
-sum(x)
-```
-
-Agora, vamos imprimir na tela o resultado da divisão de cada elemento de um vetor por dois. Para isso, utilizaremos a função `print()`.
-
-```{r}
-vetor <- 30:35
-indices <- seq_along(vetor) # cria o vetor de índices segundo o tamanho 
-                            # do objeto vetor.   
-for(i in indices) {
-  print(vetor[1:i] / 2)
+for (coluna in 1:numero_de_colunas) {
+  media <- mean(mtcars[,coluna])
+  
+  print(media)
 }
 ```
 
-No trecho de código acima, preste atenção no resultado individual de cada uma das operações para entender como o R funciona.
+O código acima vai calcular a média de cada coluna do *data frame* `mtcars`. Alguns pontos importantes:
+
+- No exemplo, temos 11 iterações e o objeto `coluna` é o iterador.
+
+- Como `numero_de_colunas` é igual a 11, a expressão `1:numero_de_colunas` cria uma sequência de números de 1 a 11.
+
+- A expressão `coluna in 1:numero_de_colunas` indica que o valor de `coluna` será 1 na primeira iteração, 2 na segunda iteração, 3 na terceira e assim por diante.
+
+- O código dentro do `for` não é retornado para o usuário ao fim de cada iteração. Por isso, para ver os resultados no Console, usamos a função `print()`.
+
+Também podemos salvar as médias em um vetor.
+
+```{r}
+numero_de_colunas <- ncol(mtcars)
+
+# Antes, criamos um vetor vazio.
+medias <- c()
+
+for (coluna in 1:numero_de_colunas) {
+  medias[coluna] <- mean(mtcars[,coluna])
+}
+
+medias
+```
 
 ### while
+
+Assim como  o `for`, o `while` também é um iterador.
+
 O código a seguir irá imprimir na tela o valor de `i` enquanto este objeto for menor que 3. No momento em que a condição dentro das chaves `{}` não for mais respeitada, o processo será interrompido.
 
 

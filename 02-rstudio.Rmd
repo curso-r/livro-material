@@ -11,7 +11,7 @@ knitr::include_graphics(rep("img/rstudio/rstudio-editor.png"))
 ```
 
 
-Esses quadrantes representam o **editor**, o **console**, o **environment** e o **output**. Eles vêm nesta ordem, mas você pode organizá-los da forma que preferir acessando a opção `Global options...` do menu `Tools`.
+Esses quadrantes representam o **editor**, o **console**, o **environment** e o **output**. Eles vêm nesta ordem, mas você pode organizá-los da forma que preferir acessando a seção *Pane Layout* da opção `Global options...` no menu `Tools`.
 
 O editor e o console são os dois principais painéis do RStudio. Passaremos a maior parte do tempo neles.
 
@@ -45,21 +45,41 @@ No MacBook, os atalhos geralmente são os mesmos, substituindo o **CTRL** por **
 
 ## Projetos
 
-Uma funcionalidade importante é a criação de projetos, permitindo dividir o trabalho em múltiplos ambientes, cada um com o seu diretório, documentos e área de trabalho (*workspace*).
+Uma funcionalidade muito importante do RStudio é a possibilidade de criar **projetos**. 
 
-Um projeto nada mais é do que uma pasta no seu computador. Nessa pasta, estarão todos os arquivos que você usurá ou criará na sua análise, o que deixa o nosso trabalho muito mais organizado. Além disso, quando usamos projetos no RStudio, fica muito mais fácil importar bases de dados para dentro do R, criar análises reprodutíveis e compartilhar o nosso trabalho.
+Um projeto nada mais é do que uma pasta no seu computador. Nessa pasta, estarão todos os arquivos que você usurá ou criará na sua análise. 
 
-> Boa prática! Sempre crie um novo projeto para cada nova análise que for começar a fazer.
+A principal razão de utilizarmos projetos é **organização**. Com eles, fica muito mais fácil importar bases de dados para dentro do R, criar análises reprodutíveis e compartilhar o nosso trabalho.
 
-Para criar um projeto, clique em `New Project...` no Menu `File`. Na caixa de diálogo que aparecerá, clique em `New Directory` para criar o projeto em uma nova pasta ou `Existing Directory` para criar em uma pasta existente. Se você tiver o `Git` instalado, você também pode usar projetos para conectar com repositórios do Github e outras plataformas de desenvolvimento. Para isso, basta clicar em `Version Control`.
+> Você que está começando agora no R, já se habitue a criar um novo projeto para cada nova análise que for fazer.
 
+Para criar um projeto, clique em `New Project...` no Menu `File`. Na caixa de diálogo que aparecerá, clique em `New Directory` para criar o projeto em uma nova pasta ou `Existing Directory` para criar em uma pasta existente. 
+
+Se você tiver o `Git` instalado, você também pode usar projetos para conectar com repositórios do Github e outras plataformas de desenvolvimento. Para isso, basta clicar em `Version Control`.
 
 ```{r echo=FALSE, fig.align='center'}
 knitr::include_graphics(rep("img/rstudio/projetos.png"))
 ```
 
+Criando um projeto, o RStudio criará na pasta escolhida um arquivo `nome-do-projeto.Rproj`. Você pode usar esse arquivo para iniciar o RStudio já com o respectivo projeto aberto.
 
-A seguir, apresentamos algumas estruturas para a organização de um projeto.
+Quando um projeto estiver aberto no RStudio, o seu nome aparecerá no canto superior direito da tela. Na aba **Files**, aparecerão todos os arquivos contidos no projeto.
+
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics(rep("img/rstudio/exemplo-projeto-aberto.png"))
+```
+
+Você pode criar livremente novas pastas dentro da pasta do projeto. Por padrão, o R sempre começará a procurar arquivos na pasta raiz do projeto (é a pasta que contem o `nome-do-projeto.Rproj`).
+
+Uma maneira fácil de navegar entre projetos é utilizar o menu disponibilizado quando clicamos no nome do projeto. Veja a figura a seguir.
+
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics(rep("img/rstudio/exemplo-lista-projetos.png"))
+```
+
+Nesse menu, além de podermos criar novos projetos ou abrir projetos já existentes, também temos um acesso rápido a projetos abertos recentemente. Basta clicar em qualquer um deles para trocar de projeto, isto é, deixar de trabalhar em uma análise e começar a trabalhar em outra.
+
+A seguir, apresentamos algumas estruturas de organização de projetos no RStudio.
 
 **Estrutura 1**. Por extensão de arquivo.
 
@@ -86,7 +106,7 @@ project/
   - project.Rproj
 ```
 
-**Estrutura 3**. Pacote do R (ver o capítulo sobre criação de pacotes).
+**Estrutura 3**. Pacote do R.
 
 ```{r, engine='bash', eval = FALSE}
 project/
