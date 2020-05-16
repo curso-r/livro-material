@@ -24,7 +24,7 @@
 <meta name="author" content="Curso-R" />
 
 
-<meta name="date" content="2020-04-29" />
+<meta name="date" content="2020-05-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,7 +151,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="rstudio.html"><a href="rstudio.html#telas"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
 <li class="chapter" data-level="2.2" data-path="rstudio.html"><a href="rstudio.html#atalhos"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
 <li class="chapter" data-level="2.3" data-path="rstudio.html"><a href="rstudio.html#projetos"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
-<li class="chapter" data-level="2.4" data-path="rstudio.html"><a href="rstudio.html#cheatsheets"><i class="fa fa-check"></i><b>2.4</b> Cheatsheets</a></li>
+<li class="chapter" data-level="2.4" data-path="rstudio.html"><a href="rstudio.html#git-e-versionamento"><i class="fa fa-check"></i><b>2.4</b> Git e versionamento</a></li>
+<li class="chapter" data-level="2.5" data-path="rstudio.html"><a href="rstudio.html#cheatsheets"><i class="fa fa-check"></i><b>2.5</b> Cheatsheets</a></li>
+<li class="chapter" data-level="2.6" data-path="rstudio.html"><a href="rstudio.html#addins"><i class="fa fa-check"></i><b>2.6</b> Addins</a></li>
+<li class="chapter" data-level="2.7" data-path="rstudio.html"><a href="rstudio.html#snippets"><i class="fa fa-check"></i><b>2.7</b> Snippets</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="r-básico.html"><a href="r-básico.html"><i class="fa fa-check"></i><b>3</b> R Básico</a><ul>
 <li class="chapter" data-level="3.1" data-path="r-básico.html"><a href="r-básico.html#pedindo-ajuda"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a><ul>
@@ -165,7 +168,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="r-básico.html"><a href="r-básico.html#classes"><i class="fa fa-check"></i><b>3.5</b> Classes</a></li>
 <li class="chapter" data-level="3.6" data-path="r-básico.html"><a href="r-básico.html#vetores"><i class="fa fa-check"></i><b>3.6</b> Vetores</a></li>
 <li class="chapter" data-level="3.7" data-path="r-básico.html"><a href="r-básico.html#testes-lógicos"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a></li>
-<li class="chapter" data-level="3.8" data-path="r-básico.html"><a href="r-básico.html#valores_especiais"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a></li>
+<li class="chapter" data-level="3.8" data-path="r-básico.html"><a href="r-básico.html#valoresEspeciais"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a></li>
 <li class="chapter" data-level="3.9" data-path="r-básico.html"><a href="r-básico.html#listas"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
 <li class="chapter" data-level="3.10" data-path="r-básico.html"><a href="r-básico.html#mais-sobre-data-frames"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a></li>
 <li class="chapter" data-level="3.11" data-path="r-básico.html"><a href="r-básico.html#funcoes"><i class="fa fa-check"></i><b>3.11</b> Funções</a></li>
@@ -245,7 +248,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.1</span> Telas</h2>
 <p>Ao abrir o RStudio, você verá 4 quadrantes. Observe a figura abaixo.</p>
 <p><img src="img/rstudio/rstudio-editor.png" width="2024" style="display: block; margin: auto;" /></p>
-<p>Esses quadrantes representam o <strong>editor</strong>, o <strong>console</strong>, o <strong>environment</strong> e o <strong>output</strong>. Eles vêm nesta ordem, mas você pode organizá-los da forma que preferir acessando a opção <code>Global options...</code> do menu <code>Tools</code>.</p>
+<p>Esses quadrantes representam o <strong>editor</strong>, o <strong>console</strong>, o <strong>environment</strong> e o <strong>output</strong>. Eles vêm nesta ordem, mas você pode organizá-los da forma que preferir acessando a seção <em>Pane Layout</em> da opção <code>Global options...</code> no menu <code>Tools</code>.</p>
 <p>O editor e o console são os dois principais painéis do RStudio. Passaremos a maior parte do tempo neles.</p>
 <ul>
 <li><strong>Editor/Scripts</strong>: é onde escrevemos nossos códigos. Repare que o RStudio colore algumas palavras e símbolos para facilitar a leitura do código.</li>
@@ -279,14 +282,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="projetos" class="section level2">
 <h2><span class="header-section-number">2.3</span> Projetos</h2>
-<p>Uma funcionalidade importante é a criação de projetos, permitindo dividir o trabalho em múltiplos ambientes, cada um com o seu diretório, documentos e área de trabalho (<em>workspace</em>).</p>
-<p>Um projeto nada mais é do que uma pasta no seu computador. Nessa pasta, estarão todos os arquivos que você usurá ou criará na sua análise, o que deixa o nosso trabalho muito mais organizado. Além disso, quando usamos projetos no RStudio, fica muito mais fácil importar bases de dados para dentro do R, criar análises reprodutíveis e compartilhar o nosso trabalho.</p>
+<p>Uma funcionalidade muito importante do RStudio é a possibilidade de criar <strong>projetos</strong>.</p>
+<p>Um projeto nada mais é do que uma pasta no seu computador. Nessa pasta, estarão todos os arquivos que você usurá ou criará na sua análise.</p>
+<p>A principal razão de utilizarmos projetos é <strong>organização</strong>. Com eles, fica muito mais fácil importar bases de dados para dentro do R, criar análises reprodutíveis e compartilhar o nosso trabalho.</p>
 <blockquote>
-<p>Boa prática! Sempre crie um novo projeto para cada nova análise que for começar a fazer.</p>
+<p>Você que está começando agora no R, já se habitue a criar um novo projeto para cada nova análise que for fazer.</p>
 </blockquote>
-<p>Para criar um projeto, clique em <code>New Project...</code> no Menu <code>File</code>. Na caixa de diálogo que aparecerá, clique em <code>New Directory</code> para criar o projeto em uma nova pasta ou <code>Existing Directory</code> para criar em uma pasta existente. Se você tiver o <code>Git</code> instalado, você também pode usar projetos para conectar com repositórios do Github e outras plataformas de desenvolvimento. Para isso, basta clicar em <code>Version Control</code>.</p>
+<p>Para criar um projeto, clique em <code>New Project...</code> no Menu <code>File</code>. Na caixa de diálogo que aparecerá, clique em <code>New Directory</code> para criar o projeto em uma nova pasta ou <code>Existing Directory</code> para criar em uma pasta existente.</p>
+<p>Se você tiver o <code>Git</code> instalado, você também pode usar projetos para conectar com repositórios do Github e outras plataformas de desenvolvimento. Para isso, basta clicar em <code>Version Control</code>.</p>
 <p><img src="img/rstudio/projetos.png" width="266" style="display: block; margin: auto;" /></p>
-<p>A seguir, apresentamos algumas estruturas para a organização de um projeto.</p>
+<p>Criando um projeto, o RStudio criará na pasta escolhida um arquivo <code>nome-do-projeto.Rproj</code>. Você pode usar esse arquivo para iniciar o RStudio já com o respectivo projeto aberto.</p>
+<p>Quando um projeto estiver aberto no RStudio, o seu nome aparecerá no canto superior direito da tela. Na aba <strong>Files</strong>, aparecerão todos os arquivos contidos no projeto.</p>
+<p><img src="img/rstudio/exemplo-projeto-aberto.png" width="1440" style="display: block; margin: auto;" /></p>
+<p>Você pode criar livremente novas pastas dentro da pasta do projeto. Por padrão, o R sempre começará a procurar arquivos na pasta raiz do projeto (é a pasta que contem o <code>nome-do-projeto.Rproj</code>).</p>
+<p>Uma maneira fácil de navegar entre projetos é utilizar o menu disponibilizado quando clicamos no nome do projeto. Veja a figura a seguir.</p>
+<p><img src="img/rstudio/exemplo-lista-projetos.png" width="1440" style="display: block; margin: auto;" /></p>
+<p>Nesse menu, além de podermos criar novos projetos ou abrir projetos já existentes, também temos um acesso rápido a projetos abertos recentemente. Basta clicar em qualquer um deles para trocar de projeto, isto é, deixar de trabalhar em uma análise e começar a trabalhar em outra.</p>
+<p>A seguir, apresentamos algumas estruturas de organização de projetos no RStudio.</p>
 <p><strong>Estrutura 1</strong>. Por extensão de arquivo.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="ex">nome_do_projeto/</span></a>
 <a class="sourceLine" id="cb4-2" title="2">  <span class="ex">-</span> .Rprofile   <span class="co"># códigos para rodar assim que abrir o projeto</span></a>
@@ -304,7 +316,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb5-6" title="6">  <span class="ex">-</span> figures/     <span class="co"># gráficos (pode ficar dentro de output/)</span></a>
 <a class="sourceLine" id="cb5-7" title="7">  <span class="ex">-</span> output/      <span class="co"># Relatórios em .Rmd, .tex etc</span></a>
 <a class="sourceLine" id="cb5-8" title="8">  <span class="ex">-</span> project.Rproj</a></code></pre></div>
-<p><strong>Estrutura 3</strong>. Pacote do R (ver o capítulo sobre criação de pacotes).</p>
+<p><strong>Estrutura 3</strong>. Pacote do R.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="ex">project/</span></a>
 <a class="sourceLine" id="cb6-2" title="2">  <span class="ex">-</span> README.md    <span class="co"># Descrição do pacote</span></a>
 <a class="sourceLine" id="cb6-3" title="3">  <span class="ex">-</span> DESCRIPTION  <span class="co"># Metadados estruturados do pacote e dependências</span></a>
@@ -315,10 +327,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb6-8" title="8">  <span class="ex">-</span> data-raw/    <span class="co"># Dados não estruturados e arqs 0-load.R, 1-tidy.R, 2-vis.R, ...</span></a>
 <a class="sourceLine" id="cb6-9" title="9">  <span class="ex">-</span> project.Rproj</a></code></pre></div>
 </div>
+<div id="git-e-versionamento" class="section level2">
+<h2><span class="header-section-number">2.4</span> Git e versionamento</h2>
+</div>
 <div id="cheatsheets" class="section level2">
-<h2><span class="header-section-number">2.4</span> Cheatsheets</h2>
-<p>Se você clicar no Menu <code>Help</code> e então em <code>Cheatsheets</code>, você verá algumas opções de <em>folhas de cola</em>, um guia de consulta rápido para diversos pacotes e para o próprio RStudio.</p>
-<p><img src="img/rstudio/cheatsheet-rstudio.png" width="416" style="display: block; margin: auto;" /></p>
+<h2><span class="header-section-number">2.5</span> Cheatsheets</h2>
+<p>O RStudio tem à disposição algumas <em>folhas de cola</em>, as <strong>cheatsheets</strong>. Elas trazem um resumão de como utilizar diversos pacotes e até o próprio RStudio.</p>
+<p>Para acessá-las, basta clicar no menu <code>Help</code> e então em <code>Cheatsheets</code>.</p>
+<p><img src="img/rstudio/cheatsheet-rstudio.png" width="700" height="600" style="display: block; margin: auto;" /></p>
+</div>
+<div id="addins" class="section level2">
+<h2><span class="header-section-number">2.6</span> Addins</h2>
+</div>
+<div id="snippets" class="section level2">
+<h2><span class="header-section-number">2.7</span> Snippets</h2>
 
 </div>
 </div>

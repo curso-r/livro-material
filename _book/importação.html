@@ -24,7 +24,7 @@
 <meta name="author" content="Curso-R" />
 
 
-<meta name="date" content="2020-04-29" />
+<meta name="date" content="2020-05-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,7 +151,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="rstudio.html"><a href="rstudio.html#telas"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
 <li class="chapter" data-level="2.2" data-path="rstudio.html"><a href="rstudio.html#atalhos"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
 <li class="chapter" data-level="2.3" data-path="rstudio.html"><a href="rstudio.html#projetos"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
-<li class="chapter" data-level="2.4" data-path="rstudio.html"><a href="rstudio.html#cheatsheets"><i class="fa fa-check"></i><b>2.4</b> Cheatsheets</a></li>
+<li class="chapter" data-level="2.4" data-path="rstudio.html"><a href="rstudio.html#git-e-versionamento"><i class="fa fa-check"></i><b>2.4</b> Git e versionamento</a></li>
+<li class="chapter" data-level="2.5" data-path="rstudio.html"><a href="rstudio.html#cheatsheets"><i class="fa fa-check"></i><b>2.5</b> Cheatsheets</a></li>
+<li class="chapter" data-level="2.6" data-path="rstudio.html"><a href="rstudio.html#addins"><i class="fa fa-check"></i><b>2.6</b> Addins</a></li>
+<li class="chapter" data-level="2.7" data-path="rstudio.html"><a href="rstudio.html#snippets"><i class="fa fa-check"></i><b>2.7</b> Snippets</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="r-básico.html"><a href="r-básico.html"><i class="fa fa-check"></i><b>3</b> R Básico</a><ul>
 <li class="chapter" data-level="3.1" data-path="r-básico.html"><a href="r-básico.html#pedindo-ajuda"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a><ul>
@@ -165,7 +168,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="r-básico.html"><a href="r-básico.html#classes"><i class="fa fa-check"></i><b>3.5</b> Classes</a></li>
 <li class="chapter" data-level="3.6" data-path="r-básico.html"><a href="r-básico.html#vetores"><i class="fa fa-check"></i><b>3.6</b> Vetores</a></li>
 <li class="chapter" data-level="3.7" data-path="r-básico.html"><a href="r-básico.html#testes-lógicos"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a></li>
-<li class="chapter" data-level="3.8" data-path="r-básico.html"><a href="r-básico.html#valores_especiais"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a></li>
+<li class="chapter" data-level="3.8" data-path="r-básico.html"><a href="r-básico.html#valoresEspeciais"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a></li>
 <li class="chapter" data-level="3.9" data-path="r-básico.html"><a href="r-básico.html#listas"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
 <li class="chapter" data-level="3.10" data-path="r-básico.html"><a href="r-básico.html#mais-sobre-data-frames"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a></li>
 <li class="chapter" data-level="3.11" data-path="r-básico.html"><a href="r-básico.html#funcoes"><i class="fa fa-check"></i><b>3.11</b> Funções</a></li>
@@ -261,178 +264,178 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>read_log()</code>: arquivos log do Apache.</li>
 </ul>
 <p>Como exemplo, utilizaremos uma base de filmes do IMDB, gravada em diversos formatos. Os arquivos podem ser encontrados <a href="https://github.com/curso-r/site-v2/raw/master/content/material/importacao/data/imdb.rds">neste link</a>.</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" title="1"><span class="kw">library</span>(readr)</a>
-<a class="sourceLine" id="cb110-2" title="2"></a>
-<a class="sourceLine" id="cb110-3" title="3">imdb_csv &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;data/imdb.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb133-1" title="1"><span class="kw">library</span>(readr)</a>
+<a class="sourceLine" id="cb133-2" title="2"></a>
+<a class="sourceLine" id="cb133-3" title="3">imdb_csv &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;data/imdb.csv&quot;</span>)</a></code></pre></div>
 <p>Repare que o argumento <code>file=</code> representa o caminho até o arquivo. Se o arquivo a ser lido não estiver no diretório de trabalho da sua sessão, você precisa especificar o caminho até o arquivo.</p>
 <blockquote>
 <p><strong>Exercício relâmpago!</strong> Descubra qual a diferença entre as funções “read_csv()” e “read_csv2()?”.</p>
 </blockquote>
 <p>Para a maioria das funções <code>read_</code>, existe uma respectiva função <code>write_</code>. Essas funções servem para salvar bases em um formato específico de arquivo. Além do nome do arquivo a ser criado, você também precisa passar o objeto que será gravado. Repare nos exemplos abaixo que você precisa especificar a extensão do arquivo corretamente.</p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" title="1"><span class="kw">write_csv</span>(<span class="dt">x =</span> mtcars, <span class="dt">path =</span> <span class="st">&quot;data/mtcars.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb111-2" title="2"><span class="kw">write_delim</span>(<span class="dt">x =</span> mtcars, <span class="dt">delim =</span> <span class="st">&quot; &quot;</span>, <span class="dt">path =</span> <span class="st">&quot;data/mtcars.txt&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb134-1" title="1"><span class="kw">write_csv</span>(<span class="dt">x =</span> mtcars, <span class="dt">path =</span> <span class="st">&quot;data/mtcars.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb134-2" title="2"><span class="kw">write_delim</span>(<span class="dt">x =</span> mtcars, <span class="dt">delim =</span> <span class="st">&quot; &quot;</span>, <span class="dt">path =</span> <span class="st">&quot;data/mtcars.txt&quot;</span>)</a></code></pre></div>
 <p>Com excessão do arquivo <code>.fwf</code>, a forma de importar e escrever arquivos são muito semelhantes. Para a função <code>read_fwf</code>, além da necessidade de especificar o caminho até o arquivo, também é necessário especificar a posição da coluna, <code>col_position =</code>. Para isso usamos funções como <code>fwf_empty()</code> ou <code>fwf_widths()</code>. Este formato não tem uma função <code>write_</code> específica no pacote, mas podemos salvar bases em <code>fwf</code> com a função <code>write.fwf()</code> do pacote <code>gdata</code>.</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" title="1"><span class="kw">library</span>(gdata)</a>
-<a class="sourceLine" id="cb112-2" title="2"><span class="kw">write.fwf</span>(mtcars[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>],<span class="st">&#39;data/mtcars.fwf&#39;</span>,<span class="dt">colnames =</span> F)</a>
-<a class="sourceLine" id="cb112-3" title="3"></a>
-<a class="sourceLine" id="cb112-4" title="4"><span class="kw">read_fwf</span>(<span class="st">&#39;data/mtcars.fwf&#39;</span>, <span class="dt">col_positions =</span> <span class="kw">fwf_empty</span>(<span class="st">&#39;data/mtcars.fwf&#39;</span>,<span class="dt">col_names =</span> <span class="kw">c</span>(<span class="st">&#39;mpg&#39;</span>,<span class="st">&#39;cyl&#39;</span>,<span class="st">&#39;disp&#39;</span>,<span class="st">&#39;hp&#39;</span>)))</a></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" title="1"><span class="kw">library</span>(gdata)</a>
+<a class="sourceLine" id="cb135-2" title="2"><span class="kw">write.fwf</span>(mtcars[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>],<span class="st">&#39;data/mtcars.fwf&#39;</span>,<span class="dt">colnames =</span> F)</a>
+<a class="sourceLine" id="cb135-3" title="3"></a>
+<a class="sourceLine" id="cb135-4" title="4"><span class="kw">read_fwf</span>(<span class="st">&#39;data/mtcars.fwf&#39;</span>, <span class="dt">col_positions =</span> <span class="kw">fwf_empty</span>(<span class="st">&#39;data/mtcars.fwf&#39;</span>,<span class="dt">col_names =</span> <span class="kw">c</span>(<span class="st">&#39;mpg&#39;</span>,<span class="st">&#39;cyl&#39;</span>,<span class="st">&#39;disp&#39;</span>,<span class="st">&#39;hp&#39;</span>)))</a></code></pre></div>
 <p>Aqui, pegamos as 4 primeiras colunas de mtcars e criamos um arquivo <code>.fwf</code>, depois o transformamos em tibble. A função <code>fwf_empty</code> especifica a posição das colunas com base nas colunas que estão vazias. Para entender melhor o que cada função <code>fwf_</code> faz, entre em <code>help(read_fwf)</code>.</p>
 <p>Observe que quando chamamos a função <code>read_</code>, uma mensagem é impressa na tela.</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" title="1">imdb_tsv &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(<span class="st">&#39;data/imdb.tsv&#39;</span>)</a>
-<a class="sourceLine" id="cb113-2" title="2"><span class="co">## Parsed with column specification:</span></a>
-<a class="sourceLine" id="cb113-3" title="3"><span class="co">## cols(</span></a>
-<a class="sourceLine" id="cb113-4" title="4"><span class="co">##   titulo = col_character(),</span></a>
-<a class="sourceLine" id="cb113-5" title="5"><span class="co">##   ano = col_double(),</span></a>
-<a class="sourceLine" id="cb113-6" title="6"><span class="co">##   diretor = col_character(),</span></a>
-<a class="sourceLine" id="cb113-7" title="7"><span class="co">##   duracao = col_double(),</span></a>
-<a class="sourceLine" id="cb113-8" title="8"><span class="co">##   cor = col_character(),</span></a>
-<a class="sourceLine" id="cb113-9" title="9"><span class="co">##   generos = col_character(),</span></a>
-<a class="sourceLine" id="cb113-10" title="10"><span class="co">##   pais = col_character(),</span></a>
-<a class="sourceLine" id="cb113-11" title="11"><span class="co">##   classificacao = col_character(),</span></a>
-<a class="sourceLine" id="cb113-12" title="12"><span class="co">##   orcamento = col_double(),</span></a>
-<a class="sourceLine" id="cb113-13" title="13"><span class="co">##   receita = col_double(),</span></a>
-<a class="sourceLine" id="cb113-14" title="14"><span class="co">##   nota_imdb = col_double(),</span></a>
-<a class="sourceLine" id="cb113-15" title="15"><span class="co">##   likes_facebook = col_double(),</span></a>
-<a class="sourceLine" id="cb113-16" title="16"><span class="co">##   ator_1 = col_character(),</span></a>
-<a class="sourceLine" id="cb113-17" title="17"><span class="co">##   ator_2 = col_character(),</span></a>
-<a class="sourceLine" id="cb113-18" title="18"><span class="co">##   ator_3 = col_character()</span></a>
-<a class="sourceLine" id="cb113-19" title="19"><span class="co">## )</span></a></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" title="1">imdb_tsv &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(<span class="st">&#39;data/imdb.tsv&#39;</span>)</a>
+<a class="sourceLine" id="cb136-2" title="2"><span class="co">## Parsed with column specification:</span></a>
+<a class="sourceLine" id="cb136-3" title="3"><span class="co">## cols(</span></a>
+<a class="sourceLine" id="cb136-4" title="4"><span class="co">##   titulo = col_character(),</span></a>
+<a class="sourceLine" id="cb136-5" title="5"><span class="co">##   ano = col_double(),</span></a>
+<a class="sourceLine" id="cb136-6" title="6"><span class="co">##   diretor = col_character(),</span></a>
+<a class="sourceLine" id="cb136-7" title="7"><span class="co">##   duracao = col_double(),</span></a>
+<a class="sourceLine" id="cb136-8" title="8"><span class="co">##   cor = col_character(),</span></a>
+<a class="sourceLine" id="cb136-9" title="9"><span class="co">##   generos = col_character(),</span></a>
+<a class="sourceLine" id="cb136-10" title="10"><span class="co">##   pais = col_character(),</span></a>
+<a class="sourceLine" id="cb136-11" title="11"><span class="co">##   classificacao = col_character(),</span></a>
+<a class="sourceLine" id="cb136-12" title="12"><span class="co">##   orcamento = col_double(),</span></a>
+<a class="sourceLine" id="cb136-13" title="13"><span class="co">##   receita = col_double(),</span></a>
+<a class="sourceLine" id="cb136-14" title="14"><span class="co">##   nota_imdb = col_double(),</span></a>
+<a class="sourceLine" id="cb136-15" title="15"><span class="co">##   likes_facebook = col_double(),</span></a>
+<a class="sourceLine" id="cb136-16" title="16"><span class="co">##   ator_1 = col_character(),</span></a>
+<a class="sourceLine" id="cb136-17" title="17"><span class="co">##   ator_2 = col_character(),</span></a>
+<a class="sourceLine" id="cb136-18" title="18"><span class="co">##   ator_3 = col_character()</span></a>
+<a class="sourceLine" id="cb136-19" title="19"><span class="co">## )</span></a></code></pre></div>
 <p>Essa mensagem está definindo a classe de cada variável. Se as variáveis não foram especificadas de maneira correta, você pode copiar esta messagem e reescrevê-la da forma desejada.</p>
 <p>No exemplo, suponha que você gostaria que a variável ano fosse um inteiro. Podemos resolver isso da seguinte forma:</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" title="1">imdb_tsv &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(<span class="st">&#39;data/imdb.tsv&#39;</span>,<span class="dt">col_types =</span>  </a>
-<a class="sourceLine" id="cb114-2" title="2"> <span class="kw">cols</span>(</a>
-<a class="sourceLine" id="cb114-3" title="3">  <span class="dt">titulo =</span> <span class="kw">col_character</span>(),</a>
-<a class="sourceLine" id="cb114-4" title="4">  <span class="co">#mudando de double para integer</span></a>
-<a class="sourceLine" id="cb114-5" title="5">  <span class="dt">ano =</span> <span class="kw">col_integer</span>(),</a>
-<a class="sourceLine" id="cb114-6" title="6">  <span class="dt">diretor =</span> <span class="kw">col_character</span>(),</a>
-<a class="sourceLine" id="cb114-7" title="7">  <span class="dt">duracao =</span> <span class="kw">col_double</span>(),</a>
-<a class="sourceLine" id="cb114-8" title="8">  <span class="dt">cor =</span> <span class="kw">col_character</span>(),</a>
-<a class="sourceLine" id="cb114-9" title="9">  <span class="dt">generos =</span> <span class="kw">col_character</span>(),</a>
-<a class="sourceLine" id="cb114-10" title="10">  <span class="dt">pais =</span> <span class="kw">col_character</span>(),</a>
-<a class="sourceLine" id="cb114-11" title="11">  <span class="dt">classificacao =</span> <span class="kw">col_character</span>(),</a>
-<a class="sourceLine" id="cb114-12" title="12">  <span class="dt">orcamento =</span> <span class="kw">col_double</span>(),</a>
-<a class="sourceLine" id="cb114-13" title="13">  <span class="dt">receita =</span> <span class="kw">col_double</span>(),</a>
-<a class="sourceLine" id="cb114-14" title="14">  <span class="dt">nota_imdb =</span> <span class="kw">col_double</span>(),</a>
-<a class="sourceLine" id="cb114-15" title="15">  <span class="dt">likes_facebook =</span> <span class="kw">col_double</span>(),</a>
-<a class="sourceLine" id="cb114-16" title="16">  <span class="dt">ator_1 =</span> <span class="kw">col_character</span>(),</a>
-<a class="sourceLine" id="cb114-17" title="17">  <span class="dt">ator_2 =</span> <span class="kw">col_character</span>(),</a>
-<a class="sourceLine" id="cb114-18" title="18">  <span class="dt">ator_3 =</span> <span class="kw">col_character</span>()</a>
-<a class="sourceLine" id="cb114-19" title="19">))</a></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb137-1" title="1">imdb_tsv &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(<span class="st">&#39;data/imdb.tsv&#39;</span>,<span class="dt">col_types =</span>  </a>
+<a class="sourceLine" id="cb137-2" title="2"> <span class="kw">cols</span>(</a>
+<a class="sourceLine" id="cb137-3" title="3">  <span class="dt">titulo =</span> <span class="kw">col_character</span>(),</a>
+<a class="sourceLine" id="cb137-4" title="4">  <span class="co">#mudando de double para integer</span></a>
+<a class="sourceLine" id="cb137-5" title="5">  <span class="dt">ano =</span> <span class="kw">col_integer</span>(),</a>
+<a class="sourceLine" id="cb137-6" title="6">  <span class="dt">diretor =</span> <span class="kw">col_character</span>(),</a>
+<a class="sourceLine" id="cb137-7" title="7">  <span class="dt">duracao =</span> <span class="kw">col_double</span>(),</a>
+<a class="sourceLine" id="cb137-8" title="8">  <span class="dt">cor =</span> <span class="kw">col_character</span>(),</a>
+<a class="sourceLine" id="cb137-9" title="9">  <span class="dt">generos =</span> <span class="kw">col_character</span>(),</a>
+<a class="sourceLine" id="cb137-10" title="10">  <span class="dt">pais =</span> <span class="kw">col_character</span>(),</a>
+<a class="sourceLine" id="cb137-11" title="11">  <span class="dt">classificacao =</span> <span class="kw">col_character</span>(),</a>
+<a class="sourceLine" id="cb137-12" title="12">  <span class="dt">orcamento =</span> <span class="kw">col_double</span>(),</a>
+<a class="sourceLine" id="cb137-13" title="13">  <span class="dt">receita =</span> <span class="kw">col_double</span>(),</a>
+<a class="sourceLine" id="cb137-14" title="14">  <span class="dt">nota_imdb =</span> <span class="kw">col_double</span>(),</a>
+<a class="sourceLine" id="cb137-15" title="15">  <span class="dt">likes_facebook =</span> <span class="kw">col_double</span>(),</a>
+<a class="sourceLine" id="cb137-16" title="16">  <span class="dt">ator_1 =</span> <span class="kw">col_character</span>(),</a>
+<a class="sourceLine" id="cb137-17" title="17">  <span class="dt">ator_2 =</span> <span class="kw">col_character</span>(),</a>
+<a class="sourceLine" id="cb137-18" title="18">  <span class="dt">ator_3 =</span> <span class="kw">col_character</span>()</a>
+<a class="sourceLine" id="cb137-19" title="19">))</a></code></pre></div>
 <p>Para conhecer as especificações das colunas disponíveis clique <a href="https://readr.tidyverse.org/articles/readr.html#available-column-specifications">aqui</a>.</p>
 <p>Também é possível salvar objetos, como data.frames em um tipo especial de arquivos, o <code>.rds</code>. A vantagem dessa extensão é guardar a estrutura dos dados salvos, como a classe das colunas de um data.frame. Além disso, é uma boa alternativa para lidar com grandes bancos de dados, já que arquivos <code>.rds</code> serão bem mais compactos do que arquivos Excel.</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" title="1">imdb_rds &lt;-<span class="st"> </span><span class="kw">read_rds</span>(<span class="dt">path =</span> <span class="st">&quot;data/imdb.rds&quot;</span>)</a>
-<a class="sourceLine" id="cb115-2" title="2"><span class="kw">write_rds</span>(mtcars, <span class="dt">path =</span> <span class="st">&quot;data/mtcars.rds&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" title="1">imdb_rds &lt;-<span class="st"> </span><span class="kw">read_rds</span>(<span class="dt">path =</span> <span class="st">&quot;data/imdb.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb138-2" title="2"><span class="kw">write_rds</span>(mtcars, <span class="dt">path =</span> <span class="st">&quot;data/mtcars.rds&quot;</span>)</a></code></pre></div>
 
 </div>
 <div id="readxl" class="section level2">
 <h2><span class="header-section-number">5.2</span> readxl</h2>
 <p>O pacote <code>readxl</code> do tydiverse contém funções para importação com os formatos <code>.xls</code> e <code>xlsx</code>.</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" title="1">readxl<span class="op">::</span><span class="kw">read_xls</span>(<span class="dt">path =</span> <span class="st">&quot;data/imdb.xls&quot;</span>)</a>
-<a class="sourceLine" id="cb116-2" title="2">readxl<span class="op">::</span><span class="kw">read_xlsx</span>(<span class="dt">path =</span> <span class="st">&quot;data/imdb.xlsx&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" title="1">readxl<span class="op">::</span><span class="kw">read_xls</span>(<span class="dt">path =</span> <span class="st">&quot;data/imdb.xls&quot;</span>)</a>
+<a class="sourceLine" id="cb139-2" title="2">readxl<span class="op">::</span><span class="kw">read_xlsx</span>(<span class="dt">path =</span> <span class="st">&quot;data/imdb.xlsx&quot;</span>)</a></code></pre></div>
 <p>A funçao <code>read_excel()</code> auto detecta a extensão do arquivo.</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" title="1"><span class="kw">read_excel</span>(<span class="dt">path =</span> <span class="st">&quot;data/imdb.xls&quot;</span>)</a>
-<a class="sourceLine" id="cb117-2" title="2"><span class="kw">read_excel</span>(<span class="dt">path =</span> <span class="st">&quot;data/imdb.xlsx&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" title="1"><span class="kw">read_excel</span>(<span class="dt">path =</span> <span class="st">&quot;data/imdb.xls&quot;</span>)</a>
+<a class="sourceLine" id="cb140-2" title="2"><span class="kw">read_excel</span>(<span class="dt">path =</span> <span class="st">&quot;data/imdb.xlsx&quot;</span>)</a></code></pre></div>
 <p>O pacote disponibiliza 5 exemplos de arquivos com formato <code>.xls</code> e <code>.xlsx</code>.</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" title="1"><span class="kw">readxl_example</span>()</a>
-<a class="sourceLine" id="cb118-2" title="2"><span class="co">##  [1] &quot;clippy.xls&quot;    &quot;clippy.xlsx&quot;   &quot;datasets.xls&quot;  &quot;datasets.xlsx&quot;</span></a>
-<a class="sourceLine" id="cb118-3" title="3"><span class="co">##  [5] &quot;deaths.xls&quot;    &quot;deaths.xlsx&quot;   &quot;geometry.xls&quot;  &quot;geometry.xlsx&quot;</span></a>
-<a class="sourceLine" id="cb118-4" title="4"><span class="co">##  [9] &quot;type-me.xls&quot;   &quot;type-me.xlsx&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb141-1" title="1"><span class="kw">readxl_example</span>()</a>
+<a class="sourceLine" id="cb141-2" title="2"><span class="co">##  [1] &quot;clippy.xls&quot;    &quot;clippy.xlsx&quot;   &quot;datasets.xls&quot;  &quot;datasets.xlsx&quot;</span></a>
+<a class="sourceLine" id="cb141-3" title="3"><span class="co">##  [5] &quot;deaths.xls&quot;    &quot;deaths.xlsx&quot;   &quot;geometry.xls&quot;  &quot;geometry.xlsx&quot;</span></a>
+<a class="sourceLine" id="cb141-4" title="4"><span class="co">##  [9] &quot;type-me.xls&quot;   &quot;type-me.xlsx&quot;</span></a></code></pre></div>
 <p>Vamos acessar o arquivo datasets.xls.</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" title="1">datasets &lt;-<span class="st"> </span><span class="kw">readxl_example</span>(<span class="st">&quot;datasets.xls&quot;</span>)</a>
-<a class="sourceLine" id="cb119-2" title="2"><span class="kw">read_xls</span>(datasets)</a>
-<a class="sourceLine" id="cb119-3" title="3"><span class="co">## # A tibble: 150 x 5</span></a>
-<a class="sourceLine" id="cb119-4" title="4"><span class="co">##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></a>
-<a class="sourceLine" id="cb119-5" title="5"><span class="co">##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  </span></a>
-<a class="sourceLine" id="cb119-6" title="6"><span class="co">##  1          5.1         3.5          1.4         0.2 setosa </span></a>
-<a class="sourceLine" id="cb119-7" title="7"><span class="co">##  2          4.9         3            1.4         0.2 setosa </span></a>
-<a class="sourceLine" id="cb119-8" title="8"><span class="co">##  3          4.7         3.2          1.3         0.2 setosa </span></a>
-<a class="sourceLine" id="cb119-9" title="9"><span class="co">##  4          4.6         3.1          1.5         0.2 setosa </span></a>
-<a class="sourceLine" id="cb119-10" title="10"><span class="co">##  5          5           3.6          1.4         0.2 setosa </span></a>
-<a class="sourceLine" id="cb119-11" title="11"><span class="co">##  6          5.4         3.9          1.7         0.4 setosa </span></a>
-<a class="sourceLine" id="cb119-12" title="12"><span class="co">##  7          4.6         3.4          1.4         0.3 setosa </span></a>
-<a class="sourceLine" id="cb119-13" title="13"><span class="co">##  8          5           3.4          1.5         0.2 setosa </span></a>
-<a class="sourceLine" id="cb119-14" title="14"><span class="co">##  9          4.4         2.9          1.4         0.2 setosa </span></a>
-<a class="sourceLine" id="cb119-15" title="15"><span class="co">## 10          4.9         3.1          1.5         0.1 setosa </span></a>
-<a class="sourceLine" id="cb119-16" title="16"><span class="co">## # … with 140 more rows</span></a></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" title="1">datasets &lt;-<span class="st"> </span><span class="kw">readxl_example</span>(<span class="st">&quot;datasets.xls&quot;</span>)</a>
+<a class="sourceLine" id="cb142-2" title="2"><span class="kw">read_xls</span>(datasets)</a>
+<a class="sourceLine" id="cb142-3" title="3"><span class="co">## # A tibble: 150 x 5</span></a>
+<a class="sourceLine" id="cb142-4" title="4"><span class="co">##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></a>
+<a class="sourceLine" id="cb142-5" title="5"><span class="co">##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  </span></a>
+<a class="sourceLine" id="cb142-6" title="6"><span class="co">##  1          5.1         3.5          1.4         0.2 setosa </span></a>
+<a class="sourceLine" id="cb142-7" title="7"><span class="co">##  2          4.9         3            1.4         0.2 setosa </span></a>
+<a class="sourceLine" id="cb142-8" title="8"><span class="co">##  3          4.7         3.2          1.3         0.2 setosa </span></a>
+<a class="sourceLine" id="cb142-9" title="9"><span class="co">##  4          4.6         3.1          1.5         0.2 setosa </span></a>
+<a class="sourceLine" id="cb142-10" title="10"><span class="co">##  5          5           3.6          1.4         0.2 setosa </span></a>
+<a class="sourceLine" id="cb142-11" title="11"><span class="co">##  6          5.4         3.9          1.7         0.4 setosa </span></a>
+<a class="sourceLine" id="cb142-12" title="12"><span class="co">##  7          4.6         3.4          1.4         0.3 setosa </span></a>
+<a class="sourceLine" id="cb142-13" title="13"><span class="co">##  8          5           3.4          1.5         0.2 setosa </span></a>
+<a class="sourceLine" id="cb142-14" title="14"><span class="co">##  9          4.4         2.9          1.4         0.2 setosa </span></a>
+<a class="sourceLine" id="cb142-15" title="15"><span class="co">## 10          4.9         3.1          1.5         0.1 setosa </span></a>
+<a class="sourceLine" id="cb142-16" title="16"><span class="co">## # … with 140 more rows</span></a></code></pre></div>
 <p>No Excel, um arquivo pode ter várias planilhas. Você pode ver quais planilhas fazem parte do arquivo:</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" title="1"><span class="kw">excel_sheets</span>(datasets)</a>
-<a class="sourceLine" id="cb120-2" title="2"><span class="co">## [1] &quot;iris&quot;     &quot;mtcars&quot;   &quot;chickwts&quot; &quot;quakes&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb143-1" title="1"><span class="kw">excel_sheets</span>(datasets)</a>
+<a class="sourceLine" id="cb143-2" title="2"><span class="co">## [1] &quot;iris&quot;     &quot;mtcars&quot;   &quot;chickwts&quot; &quot;quakes&quot;</span></a></code></pre></div>
 <p>Observe que quando usamos a função <code>read_xls(datasets)</code>, o R transformou em tibble apenas a primeira planilha do arquivo. Caso essa não for a tabela que você deseja acessar, não se preocupe! Podemos resolver seu problema de forma simples.</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" title="1"><span class="kw">read_xls</span>(datasets,<span class="dt">sheet =</span> <span class="st">&#39;chickwts&#39;</span>)</a>
-<a class="sourceLine" id="cb121-2" title="2"><span class="co">## # A tibble: 71 x 2</span></a>
-<a class="sourceLine" id="cb121-3" title="3"><span class="co">##    weight feed     </span></a>
-<a class="sourceLine" id="cb121-4" title="4"><span class="co">##     &lt;dbl&gt; &lt;chr&gt;    </span></a>
-<a class="sourceLine" id="cb121-5" title="5"><span class="co">##  1    179 horsebean</span></a>
-<a class="sourceLine" id="cb121-6" title="6"><span class="co">##  2    160 horsebean</span></a>
-<a class="sourceLine" id="cb121-7" title="7"><span class="co">##  3    136 horsebean</span></a>
-<a class="sourceLine" id="cb121-8" title="8"><span class="co">##  4    227 horsebean</span></a>
-<a class="sourceLine" id="cb121-9" title="9"><span class="co">##  5    217 horsebean</span></a>
-<a class="sourceLine" id="cb121-10" title="10"><span class="co">##  6    168 horsebean</span></a>
-<a class="sourceLine" id="cb121-11" title="11"><span class="co">##  7    108 horsebean</span></a>
-<a class="sourceLine" id="cb121-12" title="12"><span class="co">##  8    124 horsebean</span></a>
-<a class="sourceLine" id="cb121-13" title="13"><span class="co">##  9    143 horsebean</span></a>
-<a class="sourceLine" id="cb121-14" title="14"><span class="co">## 10    140 horsebean</span></a>
-<a class="sourceLine" id="cb121-15" title="15"><span class="co">## # … with 61 more rows</span></a></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" title="1"><span class="kw">read_xls</span>(datasets,<span class="dt">sheet =</span> <span class="st">&#39;chickwts&#39;</span>)</a>
+<a class="sourceLine" id="cb144-2" title="2"><span class="co">## # A tibble: 71 x 2</span></a>
+<a class="sourceLine" id="cb144-3" title="3"><span class="co">##    weight feed     </span></a>
+<a class="sourceLine" id="cb144-4" title="4"><span class="co">##     &lt;dbl&gt; &lt;chr&gt;    </span></a>
+<a class="sourceLine" id="cb144-5" title="5"><span class="co">##  1    179 horsebean</span></a>
+<a class="sourceLine" id="cb144-6" title="6"><span class="co">##  2    160 horsebean</span></a>
+<a class="sourceLine" id="cb144-7" title="7"><span class="co">##  3    136 horsebean</span></a>
+<a class="sourceLine" id="cb144-8" title="8"><span class="co">##  4    227 horsebean</span></a>
+<a class="sourceLine" id="cb144-9" title="9"><span class="co">##  5    217 horsebean</span></a>
+<a class="sourceLine" id="cb144-10" title="10"><span class="co">##  6    168 horsebean</span></a>
+<a class="sourceLine" id="cb144-11" title="11"><span class="co">##  7    108 horsebean</span></a>
+<a class="sourceLine" id="cb144-12" title="12"><span class="co">##  8    124 horsebean</span></a>
+<a class="sourceLine" id="cb144-13" title="13"><span class="co">##  9    143 horsebean</span></a>
+<a class="sourceLine" id="cb144-14" title="14"><span class="co">## 10    140 horsebean</span></a>
+<a class="sourceLine" id="cb144-15" title="15"><span class="co">## # … with 61 more rows</span></a></code></pre></div>
 <p>Também é possivel fazer uma seleção das células da planilha que você deseja importar usando o argumento <code>range =</code> da função <code>read_excel</code>. Podemos indicar quais colunas ou linhas desejamos com as funções <code>cell_cols()</code> e <code>cell_rows()</code> respectivamente. Ou podemos difinir a dimensão dos dados a partir de uma célula com a função <code>anchored()</code>. Veja todas as fuções disponíveis neste <a href="https://cran.r-project.org/web/packages/cellranger/cellranger.pdf">manual</a>.</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" title="1"><span class="kw">read_xls</span>(datasets,<span class="dt">sheet =</span> <span class="st">&#39;chickwts&#39;</span>,<span class="dt">range =</span> <span class="kw">anchored</span>(<span class="st">&#39;A3&#39;</span>,<span class="dt">dim =</span> <span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">2</span>)),<span class="dt">col_names =</span> F)</a>
-<a class="sourceLine" id="cb122-2" title="2"><span class="co">## New names:</span></a>
-<a class="sourceLine" id="cb122-3" title="3"><span class="co">## * `` -&gt; ...1</span></a>
-<a class="sourceLine" id="cb122-4" title="4"><span class="co">## * `` -&gt; ...2</span></a>
-<a class="sourceLine" id="cb122-5" title="5"><span class="co">## # A tibble: 5 x 2</span></a>
-<a class="sourceLine" id="cb122-6" title="6"><span class="co">##    ...1 ...2     </span></a>
-<a class="sourceLine" id="cb122-7" title="7"><span class="co">##   &lt;dbl&gt; &lt;chr&gt;    </span></a>
-<a class="sourceLine" id="cb122-8" title="8"><span class="co">## 1   160 horsebean</span></a>
-<a class="sourceLine" id="cb122-9" title="9"><span class="co">## 2   136 horsebean</span></a>
-<a class="sourceLine" id="cb122-10" title="10"><span class="co">## 3   227 horsebean</span></a>
-<a class="sourceLine" id="cb122-11" title="11"><span class="co">## 4   217 horsebean</span></a>
-<a class="sourceLine" id="cb122-12" title="12"><span class="co">## 5   168 horsebean</span></a></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" title="1"><span class="kw">read_xls</span>(datasets,<span class="dt">sheet =</span> <span class="st">&#39;chickwts&#39;</span>,<span class="dt">range =</span> <span class="kw">anchored</span>(<span class="st">&#39;A3&#39;</span>,<span class="dt">dim =</span> <span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">2</span>)),<span class="dt">col_names =</span> F)</a>
+<a class="sourceLine" id="cb145-2" title="2"><span class="co">## New names:</span></a>
+<a class="sourceLine" id="cb145-3" title="3"><span class="co">## * `` -&gt; ...1</span></a>
+<a class="sourceLine" id="cb145-4" title="4"><span class="co">## * `` -&gt; ...2</span></a>
+<a class="sourceLine" id="cb145-5" title="5"><span class="co">## # A tibble: 5 x 2</span></a>
+<a class="sourceLine" id="cb145-6" title="6"><span class="co">##    ...1 ...2     </span></a>
+<a class="sourceLine" id="cb145-7" title="7"><span class="co">##   &lt;dbl&gt; &lt;chr&gt;    </span></a>
+<a class="sourceLine" id="cb145-8" title="8"><span class="co">## 1   160 horsebean</span></a>
+<a class="sourceLine" id="cb145-9" title="9"><span class="co">## 2   136 horsebean</span></a>
+<a class="sourceLine" id="cb145-10" title="10"><span class="co">## 3   227 horsebean</span></a>
+<a class="sourceLine" id="cb145-11" title="11"><span class="co">## 4   217 horsebean</span></a>
+<a class="sourceLine" id="cb145-12" title="12"><span class="co">## 5   168 horsebean</span></a></code></pre></div>
 
 </div>
 <div id="haven" class="section level2">
 <h2><span class="header-section-number">5.3</span> haven</h2>
 <p>Para ler arquivos gerados por outros softwares, como SPSS, SAS e STATA, você pode usar as funções do pacote <code>haven</code>. Este pacote faz parte do <code>tidyverse</code> e é um wrapper da biblioteca ReadStat, escrita em C.</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" title="1"><span class="kw">library</span>(haven)</a>
-<a class="sourceLine" id="cb123-2" title="2"></a>
-<a class="sourceLine" id="cb123-3" title="3">imdb_sas &lt;-<span class="st"> </span><span class="kw">read_sas</span>(<span class="st">&quot;data/imdb.sas7bdat&quot;</span>)</a>
-<a class="sourceLine" id="cb123-4" title="4">imdb_spss &lt;-<span class="st"> </span><span class="kw">read_spss</span>(<span class="st">&quot;data/imdb.sav&quot;</span>)</a>
-<a class="sourceLine" id="cb123-5" title="5">imdb_dta &lt;-<span class="st"> </span><span class="kw">read_dta</span>(<span class="st">&quot;data/imdb.dta&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" title="1"><span class="kw">library</span>(haven)</a>
+<a class="sourceLine" id="cb146-2" title="2"></a>
+<a class="sourceLine" id="cb146-3" title="3">imdb_sas &lt;-<span class="st"> </span><span class="kw">read_sas</span>(<span class="st">&quot;data/imdb.sas7bdat&quot;</span>)</a>
+<a class="sourceLine" id="cb146-4" title="4">imdb_spss &lt;-<span class="st"> </span><span class="kw">read_spss</span>(<span class="st">&quot;data/imdb.sav&quot;</span>)</a>
+<a class="sourceLine" id="cb146-5" title="5">imdb_dta &lt;-<span class="st"> </span><span class="kw">read_dta</span>(<span class="st">&quot;data/imdb.dta&quot;</span>)</a></code></pre></div>
 <p>É possível salvar ou escrever bases em SAS e STATA com as funções <code>write_sas</code> e <code>write_dta</code>.</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" title="1"><span class="kw">write_dta</span>(mtcars,<span class="st">&#39;data/matcars.dta&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb147-1" title="1"><span class="kw">write_dta</span>(mtcars,<span class="st">&#39;data/matcars.dta&#39;</span>)</a></code></pre></div>
 <p>Quando importamos arquivos gerados pelo SAS SPSS ou STATA para o R, os rótulos de uma variável podem não ser importados de forma correta. O pacote <code>haven</code> tem uma soluçao para este problema.</p>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" title="1">x &lt;-<span class="st"> </span><span class="kw">labelled</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="kw">c</span>(<span class="dt">Ruim =</span> <span class="dv">1</span>, <span class="dt">Bom =</span> <span class="dv">2</span>, <span class="dt">Otimo =</span> <span class="dv">3</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" title="1">x &lt;-<span class="st"> </span><span class="kw">labelled</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="kw">c</span>(<span class="dt">Ruim =</span> <span class="dv">1</span>, <span class="dt">Bom =</span> <span class="dv">2</span>, <span class="dt">Otimo =</span> <span class="dv">3</span>))</a></code></pre></div>
 <p><code>labelled()</code> adiciona rótulos à valores de uma variável. Para verificar quais são estes rótulos, podemos usar a função <code>print_labels()</code>.</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" title="1"><span class="kw">print_labels</span>(x)</a>
-<a class="sourceLine" id="cb126-2" title="2"><span class="co">## </span></a>
-<a class="sourceLine" id="cb126-3" title="3"><span class="co">## Labels:</span></a>
-<a class="sourceLine" id="cb126-4" title="4"><span class="co">##  value label</span></a>
-<a class="sourceLine" id="cb126-5" title="5"><span class="co">##      1  Ruim</span></a>
-<a class="sourceLine" id="cb126-6" title="6"><span class="co">##      2   Bom</span></a>
-<a class="sourceLine" id="cb126-7" title="7"><span class="co">##      3 Otimo</span></a></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb149-1" title="1"><span class="kw">print_labels</span>(x)</a>
+<a class="sourceLine" id="cb149-2" title="2"><span class="co">## </span></a>
+<a class="sourceLine" id="cb149-3" title="3"><span class="co">## Labels:</span></a>
+<a class="sourceLine" id="cb149-4" title="4"><span class="co">##  value label</span></a>
+<a class="sourceLine" id="cb149-5" title="5"><span class="co">##      1  Ruim</span></a>
+<a class="sourceLine" id="cb149-6" title="6"><span class="co">##      2   Bom</span></a>
+<a class="sourceLine" id="cb149-7" title="7"><span class="co">##      3 Otimo</span></a></code></pre></div>
 <p>Existe uma função similar a <code>labelled()</code>, exclusiva para o SPSS, que além de rotular as variáveis, também defini quais símbolos representam valores faltantes, dado que em SPSS pode haver mais de um tipo de <em>missing</em>.</p>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" title="1">x1 &lt;-<span class="st"> </span><span class="kw">labelled_spss</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">4</span>), <span class="kw">c</span>(<span class="dt">Ruim =</span> <span class="dv">1</span>,<span class="dt">Bom =</span> <span class="dv">2</span>, <span class="dt">Otimo =</span> <span class="dv">3</span>), <span class="dt">na_values =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">4</span>))</a>
-<a class="sourceLine" id="cb127-2" title="2">    </a>
-<a class="sourceLine" id="cb127-3" title="3"><span class="kw">is.na</span>(x1)</a>
-<a class="sourceLine" id="cb127-4" title="4"><span class="co">## [1] FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE</span></a></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" title="1">x1 &lt;-<span class="st"> </span><span class="kw">labelled_spss</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">4</span>), <span class="kw">c</span>(<span class="dt">Ruim =</span> <span class="dv">1</span>,<span class="dt">Bom =</span> <span class="dv">2</span>, <span class="dt">Otimo =</span> <span class="dv">3</span>), <span class="dt">na_values =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">4</span>))</a>
+<a class="sourceLine" id="cb150-2" title="2">    </a>
+<a class="sourceLine" id="cb150-3" title="3"><span class="kw">is.na</span>(x1)</a>
+<a class="sourceLine" id="cb150-4" title="4"><span class="co">## [1] FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE</span></a></code></pre></div>
 <p>Agora que já definimos os <em>missings</em> “especiais”, podemos transformá-los no <em>missing</em> padrão do R, representado pelo símbolo <em>NA</em>.</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb128-1" title="1">x1 &lt;-<span class="st"> </span><span class="kw">zap_missing</span>(x1)</a>
-<a class="sourceLine" id="cb128-2" title="2">x1</a>
-<a class="sourceLine" id="cb128-3" title="3"><span class="co">## &lt;Labelled double&gt;</span></a>
-<a class="sourceLine" id="cb128-4" title="4"><span class="co">## [1]  1  3 NA  2  2  1 NA  2 NA</span></a>
-<a class="sourceLine" id="cb128-5" title="5"><span class="co">## </span></a>
-<a class="sourceLine" id="cb128-6" title="6"><span class="co">## Labels:</span></a>
-<a class="sourceLine" id="cb128-7" title="7"><span class="co">##  value label</span></a>
-<a class="sourceLine" id="cb128-8" title="8"><span class="co">##      1  Ruim</span></a>
-<a class="sourceLine" id="cb128-9" title="9"><span class="co">##      2   Bom</span></a>
-<a class="sourceLine" id="cb128-10" title="10"><span class="co">##      3 Otimo</span></a></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb151-1" title="1">x1 &lt;-<span class="st"> </span><span class="kw">zap_missing</span>(x1)</a>
+<a class="sourceLine" id="cb151-2" title="2">x1</a>
+<a class="sourceLine" id="cb151-3" title="3"><span class="co">## &lt;Labelled double&gt;</span></a>
+<a class="sourceLine" id="cb151-4" title="4"><span class="co">## [1]  1  3 NA  2  2  1 NA  2 NA</span></a>
+<a class="sourceLine" id="cb151-5" title="5"><span class="co">## </span></a>
+<a class="sourceLine" id="cb151-6" title="6"><span class="co">## Labels:</span></a>
+<a class="sourceLine" id="cb151-7" title="7"><span class="co">##  value label</span></a>
+<a class="sourceLine" id="cb151-8" title="8"><span class="co">##      1  Ruim</span></a>
+<a class="sourceLine" id="cb151-9" title="9"><span class="co">##      2   Bom</span></a>
+<a class="sourceLine" id="cb151-10" title="10"><span class="co">##      3 Otimo</span></a></code></pre></div>
 <p>Existem outras funções <code>zap_</code> interessantes no <a href="https://cran.r-project.org/web/packages/haven/haven.pdf">pacote</a>.</p>
 <p>Após rotular os valores do vetor, podemos convertê-los, por exemplo, em fator. Para isso, usamos uma função do pacote <code>haven</code>.
 A função base <code>as.factor()</code> também poderia ser usada, mas quando a usamos, os rótulos não são considerados.</p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" title="1">x_base &lt;-<span class="st"> </span>base<span class="op">::</span><span class="kw">as.factor</span>(x)</a>
-<a class="sourceLine" id="cb129-2" title="2"><span class="kw">levels</span>(x_base)</a>
-<a class="sourceLine" id="cb129-3" title="3"><span class="co">## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot;</span></a>
-<a class="sourceLine" id="cb129-4" title="4">x_factor &lt;-<span class="st"> </span>haven<span class="op">::</span><span class="kw">as_factor</span>(x)</a>
-<a class="sourceLine" id="cb129-5" title="5"><span class="kw">levels</span>(x_factor)</a>
-<a class="sourceLine" id="cb129-6" title="6"><span class="co">## [1] &quot;Ruim&quot;  &quot;Bom&quot;   &quot;Otimo&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" title="1">x_base &lt;-<span class="st"> </span>base<span class="op">::</span><span class="kw">as.factor</span>(x)</a>
+<a class="sourceLine" id="cb152-2" title="2"><span class="kw">levels</span>(x_base)</a>
+<a class="sourceLine" id="cb152-3" title="3"><span class="co">## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot;</span></a>
+<a class="sourceLine" id="cb152-4" title="4">x_factor &lt;-<span class="st"> </span>haven<span class="op">::</span><span class="kw">as_factor</span>(x)</a>
+<a class="sourceLine" id="cb152-5" title="5"><span class="kw">levels</span>(x_factor)</a>
+<a class="sourceLine" id="cb152-6" title="6"><span class="co">## [1] &quot;Ruim&quot;  &quot;Bom&quot;   &quot;Otimo&quot;</span></a></code></pre></div>
 
 </div>
 </div>
