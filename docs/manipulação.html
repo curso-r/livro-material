@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 6 Manipulação | Ciência de dados em R</title>
+  <meta name="description" content="Livro com os tutoriais e material dos cursos da Curso-R." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 6 Manipulação | Ciência de dados em R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Livro com os tutoriais e material dos cursos da Curso-R." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 6 Manipulação | Ciência de dados em R" />
+  
+  <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos da Curso-R." />
+  
+
+<meta name="author" content="Curso-R" />
+
+
+<meta name="date" content="2020-05-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="importação.html"/>
+<link rel="next" href="funcionais.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><img src = "img/logo.png" width = 40%></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre</a></li>
+<li class="chapter" data-level="1" data-path="instalação.html"><a href="instalação.html"><i class="fa fa-check"></i><b>1</b> Instalação</a><ul>
+<li class="chapter" data-level="1.1" data-path="instalação.html"><a href="instalação.html#instalação-do-r"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="instalação.html"><a href="instalação.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
+<li class="chapter" data-level="1.1.2" data-path="instalação.html"><a href="instalação.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="instalação.html"><a href="instalação.html#instalação-do-rstudio"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="instalação.html"><a href="instalação.html#no-windows-1"><i class="fa fa-check"></i><b>1.2.1</b> No Windows</a></li>
+<li class="chapter" data-level="1.2.2" data-path="instalação.html"><a href="instalação.html#no-linux-1"><i class="fa fa-check"></i><b>1.2.2</b> No Linux</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="instalação.html"><a href="instalação.html#instalação-de-pacotes"><i class="fa fa-check"></i><b>1.3</b> Instalação de pacotes</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="instalação.html"><a href="instalação.html#via-cran"><i class="fa fa-check"></i><b>1.3.1</b> Via CRAN</a></li>
+<li class="chapter" data-level="1.3.2" data-path="instalação.html"><a href="instalação.html#via-github"><i class="fa fa-check"></i><b>1.3.2</b> Via Github</a></li>
+<li class="chapter" data-level="1.3.3" data-path="instalação.html"><a href="instalação.html#via-arquivo-.zip-ou-.tar.gz"><i class="fa fa-check"></i><b>1.3.3</b> Via arquivo .zip ou .tar.gz</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="rstudio.html"><a href="rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a><ul>
+<li class="chapter" data-level="2.1" data-path="rstudio.html"><a href="rstudio.html#telas"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
+<li class="chapter" data-level="2.2" data-path="rstudio.html"><a href="rstudio.html#atalhos"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
+<li class="chapter" data-level="2.3" data-path="rstudio.html"><a href="rstudio.html#projetos"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
+<li class="chapter" data-level="2.4" data-path="rstudio.html"><a href="rstudio.html#git-e-versionamento"><i class="fa fa-check"></i><b>2.4</b> Git e versionamento</a></li>
+<li class="chapter" data-level="2.5" data-path="rstudio.html"><a href="rstudio.html#cheatsheets"><i class="fa fa-check"></i><b>2.5</b> Cheatsheets</a></li>
+<li class="chapter" data-level="2.6" data-path="rstudio.html"><a href="rstudio.html#addins"><i class="fa fa-check"></i><b>2.6</b> Addins</a></li>
+<li class="chapter" data-level="2.7" data-path="rstudio.html"><a href="rstudio.html#snippets"><i class="fa fa-check"></i><b>2.7</b> Snippets</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-básico.html"><a href="r-básico.html"><i class="fa fa-check"></i><b>3</b> R Básico</a><ul>
+<li class="chapter" data-level="3.1" data-path="r-básico.html"><a href="r-básico.html#pedindo-ajuda"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="r-básico.html"><a href="r-básico.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
+<li class="chapter" data-level="3.1.2" data-path="r-básico.html"><a href="r-básico.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
+<li class="chapter" data-level="3.1.3" data-path="r-básico.html"><a href="r-básico.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="r-básico.html"><a href="r-básico.html#r-como-calculadora"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a></li>
+<li class="chapter" data-level="3.3" data-path="r-básico.html"><a href="r-básico.html#objetos"><i class="fa fa-check"></i><b>3.3</b> Objetos</a></li>
+<li class="chapter" data-level="3.4" data-path="r-básico.html"><a href="r-básico.html#data-frames"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
+<li class="chapter" data-level="3.5" data-path="r-básico.html"><a href="r-básico.html#classes"><i class="fa fa-check"></i><b>3.5</b> Classes</a></li>
+<li class="chapter" data-level="3.6" data-path="r-básico.html"><a href="r-básico.html#vetores"><i class="fa fa-check"></i><b>3.6</b> Vetores</a></li>
+<li class="chapter" data-level="3.7" data-path="r-básico.html"><a href="r-básico.html#testes-lógicos"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a></li>
+<li class="chapter" data-level="3.8" data-path="r-básico.html"><a href="r-básico.html#valoresEspeciais"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a></li>
+<li class="chapter" data-level="3.9" data-path="r-básico.html"><a href="r-básico.html#listas"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
+<li class="chapter" data-level="3.10" data-path="r-básico.html"><a href="r-básico.html#mais-sobre-data-frames"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a></li>
+<li class="chapter" data-level="3.11" data-path="r-básico.html"><a href="r-básico.html#funcoes"><i class="fa fa-check"></i><b>3.11</b> Funções</a></li>
+<li class="chapter" data-level="3.12" data-path="r-básico.html"><a href="r-básico.html#controle-de-fluxo"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
+<li class="chapter" data-level="3.12.1" data-path="r-básico.html"><a href="r-básico.html#if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> if e else</a></li>
+<li class="chapter" data-level="3.12.2" data-path="r-básico.html"><a href="r-básico.html#for"><i class="fa fa-check"></i><b>3.12.2</b> for</a></li>
+<li class="chapter" data-level="3.12.3" data-path="r-básico.html"><a href="r-básico.html#while"><i class="fa fa-check"></i><b>3.12.3</b> while</a></li>
+</ul></li>
+<li class="chapter" data-level="3.13" data-path="r-básico.html"><a href="r-básico.html#outros-tópicos"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a><ul>
+<li class="chapter" data-level="3.13.1" data-path="r-básico.html"><a href="r-básico.html#matrizes"><i class="fa fa-check"></i><b>3.13.1</b> Matrizes</a></li>
+<li class="chapter" data-level="3.13.2" data-path="r-básico.html"><a href="r-básico.html#fatores"><i class="fa fa-check"></i><b>3.13.2</b> Fatores</a></li>
+<li class="chapter" data-level="3.13.3" data-path="r-básico.html"><a href="r-básico.html#fórmulas"><i class="fa fa-check"></i><b>3.13.3</b> Fórmulas</a></li>
+<li class="chapter" data-level="3.13.4" data-path="r-básico.html"><a href="r-básico.html#gráficos-base"><i class="fa fa-check"></i><b>3.13.4</b> Gráficos (base)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.14" data-path="r-básico.html"><a href="r-básico.html#exercícios"><i class="fa fa-check"></i><b>3.14</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="pipe.html"><a href="pipe.html"><i class="fa fa-check"></i><b>4</b> Pipe</a><ul>
+<li class="chapter" data-level="4.1" data-path="pipe.html"><a href="pipe.html#o-operador-pipe"><i class="fa fa-check"></i><b>4.1</b> O operador pipe</a></li>
+<li class="chapter" data-level="4.2" data-path="pipe.html"><a href="pipe.html#outros-operadores"><i class="fa fa-check"></i><b>4.2</b> Outros operadores</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="pipe.html"><a href="pipe.html#operador-de-atribuição-assignment-operator"><i class="fa fa-check"></i><b>4.2.1</b> Operador de atribuição ( Assignment operator )</a></li>
+<li class="chapter" data-level="4.2.2" data-path="pipe.html"><a href="pipe.html#operador-tee"><i class="fa fa-check"></i><b>4.2.2</b> Operador tee</a></li>
+<li class="chapter" data-level="4.2.3" data-path="pipe.html"><a href="pipe.html#exposition-operator"><i class="fa fa-check"></i><b>4.2.3</b> Exposition operator</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="pipe.html"><a href="pipe.html#exercícios-1"><i class="fa fa-check"></i><b>4.3</b> Exercícios</a></li>
+<li class="chapter" data-level="4.4" data-path="pipe.html"><a href="pipe.html#respostas"><i class="fa fa-check"></i><b>4.4</b> Respostas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="importação.html"><a href="importação.html"><i class="fa fa-check"></i><b>5</b> Importação</a><ul>
+<li class="chapter" data-level="5.1" data-path="importação.html"><a href="importação.html#readr"><i class="fa fa-check"></i><b>5.1</b> readr</a></li>
+<li class="chapter" data-level="5.2" data-path="importação.html"><a href="importação.html#readxl"><i class="fa fa-check"></i><b>5.2</b> readxl</a></li>
+<li class="chapter" data-level="5.3" data-path="importação.html"><a href="importação.html#haven"><i class="fa fa-check"></i><b>5.3</b> haven</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="manipulação.html"><a href="manipulação.html"><i class="fa fa-check"></i><b>6</b> Manipulação</a><ul>
+<li class="chapter" data-level="6.1" data-path="manipulação.html"><a href="manipulação.html#trabalhando-com-tibbles"><i class="fa fa-check"></i><b>6.1</b> Trabalhando com tibbles</a></li>
+<li class="chapter" data-level="6.2" data-path="manipulação.html"><a href="manipulação.html#o-pacote-dplyr"><i class="fa fa-check"></i><b>6.2</b> O pacote dplyr</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="manipulação.html"><a href="manipulação.html#filtrando-linhas"><i class="fa fa-check"></i><b>6.2.1</b> Filtrando linhas</a></li>
+<li class="chapter" data-level="6.2.2" data-path="manipulação.html"><a href="manipulação.html#selecionando-colunas"><i class="fa fa-check"></i><b>6.2.2</b> Selecionando colunas</a></li>
+<li class="chapter" data-level="6.2.3" data-path="manipulação.html"><a href="manipulação.html#ordenando-a-base"><i class="fa fa-check"></i><b>6.2.3</b> Ordenando a base</a></li>
+<li class="chapter" data-level="6.2.4" data-path="manipulação.html"><a href="manipulação.html#criando-e-modificando-colunas"><i class="fa fa-check"></i><b>6.2.4</b> Criando e modificando colunas</a></li>
+<li class="chapter" data-level="6.2.5" data-path="manipulação.html"><a href="manipulação.html#summarisando-a-base"><i class="fa fa-check"></i><b>6.2.5</b> Summarisando a base</a></li>
+<li class="chapter" data-level="6.2.6" data-path="manipulação.html"><a href="manipulação.html#juntando-duas-bases"><i class="fa fa-check"></i><b>6.2.6</b> Juntando duas bases</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="manipulação.html"><a href="manipulação.html#o-pacote-tidyr"><i class="fa fa-check"></i><b>6.3</b> O pacote tidyr</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="manipulação.html"><a href="manipulação.html#gather"><i class="fa fa-check"></i><b>6.3.1</b> <code>gather()</code></a></li>
+<li class="chapter" data-level="6.3.2" data-path="manipulação.html"><a href="manipulação.html#spread"><i class="fa fa-check"></i><b>6.3.2</b> <code>spread()</code></a></li>
+<li class="chapter" data-level="6.3.3" data-path="manipulação.html"><a href="manipulação.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>6.3.3</b> Outras funções do <code>tidyr</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="funcionais.html"><a href="funcionais.html"><i class="fa fa-check"></i><b>7</b> Funcionais</a></li>
+<li class="chapter" data-level="8" data-path="respostas-1.html"><a href="respostas-1.html"><i class="fa fa-check"></i><b>8</b> Respostas</a><ul>
+<li class="chapter" data-level="8.1" data-path="respostas-1.html"><a href="respostas-1.html#r-básico-1"><i class="fa fa-check"></i><b>8.1</b> R básico</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Ciência de dados em R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="manipulação" class="section level1">
+<h1><span class="header-section-number">Capítulo 6</span> Manipulação</h1>
+<blockquote>
+<p>“(…) The fact that data science exists as a field is a colossal failure of statistics. To me, what I do is what statistics is all about. It is gaining insight from data using modelling and visualization. Data munging and manipulation is hard and statistics has just said that’s not our domain.” - Hadley Wickham</p>
+</blockquote>
+<p>Esta seção trata do tema <em>manipulação de dados</em>. Trata-se de uma tarefa dolorosa e demorada, tomando muitas vezes a maior parte do tempo de uma análise estatística. Essa etapa é essencial em qualquer análise de dados e, apesar de negligenciada pela academia, é decisiva para o sucesso de estudos aplicados.</p>
+<p>Usualmente, o cientista de dados parte de uma base “crua” e a transforma até obter uma base de dados analítica, que, a menos de transformações simples, está preparada para passar por análises estatísticas.</p>
+<p>A figura abaixo mostra a fase de “disputa” com os dados (<em>data wrangling</em>) para deixá-los no formato analítico.</p>
+<p><img src="img/manipulacao/ciclo-ciencia-de-dados.png" width="479" style="display: block; margin: auto;" /></p>
+<p>Um conceito importante para obtenção de uma base analítica é o <em>data tidying</em>, ou arrumação de dados. Uma base é considerada <em>tidy</em> se</p>
+<ol style="list-style-type: decimal">
+<li>Cada linha da base representa uma observação.</li>
+<li>Cada coluna da base representa uma variável.</li>
+</ol>
+<p>A base de dados analítica é estruturada de tal forma que pode ser colocada diretamente em ambientes de modelagem estatística ou de visualização. Nem sempre uma base de dados analítica está no formato <em>tidy</em>, mas usualmente são necessários poucos passos para migrar de uma para outra. A filosofia <em>tidy</em> é a base do <a href="https://www.tidyverse.org/">tidyverse</a>.</p>
+<p>Os principais pacotes encarregados da tarefa de estruturar os dados são o <code>dplyr</code> e o <code>tidyr</code>. Eles serão o tema desse tópico. Instale e carregue os pacotes utilizando:</p>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb153-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</a>
+<a class="sourceLine" id="cb153-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="st">&quot;tidyr&quot;</span>)</a>
+<a class="sourceLine" id="cb153-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb153-4" data-line-number="4"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb153-5" data-line-number="5"><span class="kw">library</span>(tidyr)</a></code></pre></div>
+<p>Mas antes de apresentar as principais funções do <code>dplyr</code> e do <code>tidyr</code>, precisamos falar sobre o conceito de <code>tibbles</code>.</p>
+<div id="trabalhando-com-tibbles" class="section level2">
+<h2><span class="header-section-number">6.1</span> Trabalhando com tibbles</h2>
+<p>Uma <code>tibble</code> nada mais é do que um <code>data.frame</code>, mas com um método de impressão mais adequado.</p>
+<p>As <code>tibbles</code> são parte do pacote <code>tibble</code>. Assim, para começar a usá-las, instale e carregue o pacote.</p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;tibble&quot;</span>)</a>
+<a class="sourceLine" id="cb154-2" data-line-number="2"><span class="kw">library</span>(tibble)</a></code></pre></div>
+<p>Mais informações sobre <code>tibbles</code> podem ser encontradas <a href="http://r4ds.had.co.nz/tibbles.html">neste link</a>.</p>
+<p>Nessa seção, vamos trabalhar com uma base de filmes do IMDB. Essa base pode ser baixada <a href="https://github.com/curso-r/site-v2/raw/master/content/material/importacao/data/imdb.rds">clicando aqui</a>.</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb155-1" data-line-number="1">imdb &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_rds</span>(<span class="st">&quot;data/imdb.rds&quot;</span>)</a></code></pre></div>
+<p>Assim, utilizaremos o objeto <code>imdb</code> para acessar os dados.</p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1">imdb</a>
+<a class="sourceLine" id="cb156-2" data-line-number="2"><span class="co">## # A tibble: 3,807 x 15</span></a>
+<a class="sourceLine" id="cb156-3" data-line-number="3"><span class="co">##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento</span></a>
+<a class="sourceLine" id="cb156-4" data-line-number="4"><span class="co">##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb156-5" data-line-number="5"><span class="co">##  1 Avata~  2009 James ~     178 Color Action~ USA   A partir de ~ 237000000</span></a>
+<a class="sourceLine" id="cb156-6" data-line-number="6"><span class="co">##  2 Pirat~  2007 Gore V~     169 Color Action~ USA   A partir de ~ 300000000</span></a>
+<a class="sourceLine" id="cb156-7" data-line-number="7"><span class="co">##  3 The D~  2012 Christ~     164 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb156-8" data-line-number="8"><span class="co">##  4 John ~  2012 Andrew~     132 Color Action~ USA   A partir de ~ 263700000</span></a>
+<a class="sourceLine" id="cb156-9" data-line-number="9"><span class="co">##  5 Spide~  2007 Sam Ra~     156 Color Action~ USA   A partir de ~ 258000000</span></a>
+<a class="sourceLine" id="cb156-10" data-line-number="10"><span class="co">##  6 Tangl~  2010 Nathan~     100 Color Advent~ USA   Livre         260000000</span></a>
+<a class="sourceLine" id="cb156-11" data-line-number="11"><span class="co">##  7 Aveng~  2015 Joss W~     141 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb156-12" data-line-number="12"><span class="co">##  8 Batma~  2016 Zack S~     183 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb156-13" data-line-number="13"><span class="co">##  9 Super~  2006 Bryan ~     169 Color Action~ USA   A partir de ~ 209000000</span></a>
+<a class="sourceLine" id="cb156-14" data-line-number="14"><span class="co">## 10 Pirat~  2006 Gore V~     151 Color Action~ USA   A partir de ~ 225000000</span></a>
+<a class="sourceLine" id="cb156-15" data-line-number="15"><span class="co">## # ... with 3,797 more rows, and 6 more variables: receita &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb156-16" data-line-number="16"><span class="co">## #   nota_imdb &lt;dbl&gt;, likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb156-17" data-line-number="17"><span class="co">## #   ator_3 &lt;chr&gt;</span></a></code></pre></div>
+<p>Veja que, por padrão, apenas as dez primeiras linhas da <code>tibble</code> são impressas na tela. Além disso, as colunas que não couberem na largura do console serão omitidas. Também são apresentadas a dimensão da tabela e as classes de cada coluna.</p>
+
+</div>
+<div id="o-pacote-dplyr" class="section level2">
+<h2><span class="header-section-number">6.2</span> O pacote dplyr</h2>
+<p>O <code>dplyr</code> é o pacote mais útil para realizar transformação de dados, aliando simplicidade e eficiência de uma forma elegante. Os scripts em R que fazem uso inteligente dos verbos <code>dplyr</code> e as facilidades do operador <em>pipe</em> tendem a ficar mais legíveis e organizados sem perder velocidade de execução.</p>
+<p>As principais funções do <code>dplyr</code> são:</p>
+<ul>
+<li><code>filter()</code> - filtra linhas</li>
+<li><code>select()</code> - seleciona colunas</li>
+<li><code>arrange()</code> - ordena a base</li>
+<li><code>mutate()</code> - cria/modifica colunas</li>
+<li><code>group_by()</code> - agrupa a base</li>
+<li><code>summarise()</code> - sumariza a base</li>
+</ul>
+<p>Todas essas funções seguem as mesmas características:</p>
+<ul>
+<li>O <em>input</em> é sempre uma <code>tibble</code> e o <em>output</em> é sempre um <code>tibble</code>.</li>
+<li>Colocamos o <code>tibble</code> no primeiro argumento e o que queremos fazer nos outros argumentos.</li>
+<li>A utilização é facilitada com o emprego do operador <code>%&gt;%</code>.</li>
+<li>O pacote faz uso extensivo de NSE (<em>non standard evaluation</em>).</li>
+</ul>
+<p>As principais vantagens de se usar o <code>dplyr</code> em detrimento das funções do R base são:</p>
+<ul>
+<li>Manipular dados se torna uma tarefa muito mais simples.</li>
+<li>O código fica mais intuitivo de ser escrito e mais simples de ser lido.</li>
+<li>O pacote <code>dplyr</code> utiliza <code>C</code> e <code>C++</code> por trás da maioria das funções, o que geralmente torna o código mais eficiente.</li>
+<li>É possível trabalhar com diferentes fontes de dados, como bases relacionais (SQL) e <code>data.table</code>.</li>
+</ul>
+<p>Agora, vamos avaliar com mais detalhes as principais funções do pacote <code>dplyr</code>.</p>
+<hr />
+<div id="filtrando-linhas" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Filtrando linhas</h3>
+<p>A função <code>filter()</code> filtra linhas. Ela é semelhante à função <code>subset()</code>, do R base. O código abaixo retorna apenas filmes com nota maior que nova.</p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb157-1" data-line-number="1">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb157-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(nota_imdb <span class="op">&gt;</span><span class="st"> </span><span class="dv">9</span>)</a>
+<a class="sourceLine" id="cb157-3" data-line-number="3"><span class="co">## # A tibble: 3 x 15</span></a>
+<a class="sourceLine" id="cb157-4" data-line-number="4"><span class="co">##   titulo   ano diretor duracao cor   generos pais  classificacao orcamento</span></a>
+<a class="sourceLine" id="cb157-5" data-line-number="5"><span class="co">##   &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb157-6" data-line-number="6"><span class="co">## 1 The S~  1994 Frank ~     142 Color Crime|~ USA   A partir de ~  25000000</span></a>
+<a class="sourceLine" id="cb157-7" data-line-number="7"><span class="co">## 2 The G~  1972 Franci~     175 Color Crime|~ USA   A partir de ~   6000000</span></a>
+<a class="sourceLine" id="cb157-8" data-line-number="8"><span class="co">## 3 Kickb~  2016 John S~      90 &lt;NA&gt;  Action  USA   Outros         17000000</span></a>
+<a class="sourceLine" id="cb157-9" data-line-number="9"><span class="co">## # ... with 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb157-10" data-line-number="10"><span class="co">## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</span></a></code></pre></div>
+<p>Para fazer várias condições, use os operadores lógicos <code>&amp;</code> e <code>|</code> ou separe filtros entre vírgulas.</p>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" data-line-number="1">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb158-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(ano <span class="op">&gt;</span><span class="st"> </span><span class="dv">2010</span> <span class="op">&amp;</span><span class="st"> </span>nota_imdb <span class="op">&gt;</span><span class="st"> </span><span class="fl">8.5</span>)</a>
+<a class="sourceLine" id="cb158-3" data-line-number="3"><span class="co">## # A tibble: 5 x 15</span></a>
+<a class="sourceLine" id="cb158-4" data-line-number="4"><span class="co">##   titulo   ano diretor duracao cor   generos pais  classificacao orcamento</span></a>
+<a class="sourceLine" id="cb158-5" data-line-number="5"><span class="co">##   &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb158-6" data-line-number="6"><span class="co">## 1 Inter~  2014 Christ~     169 Color Advent~ USA   A partir de ~ 165000000</span></a>
+<a class="sourceLine" id="cb158-7" data-line-number="7"><span class="co">## 2 Runni~  2015 Mike M~      88 Color Family  USA   Outros          5000000</span></a>
+<a class="sourceLine" id="cb158-8" data-line-number="8"><span class="co">## 3 A Beg~  2016 Mitche~      87 Color Comedy~ USA   Outros               NA</span></a>
+<a class="sourceLine" id="cb158-9" data-line-number="9"><span class="co">## 4 Kickb~  2016 John S~      90 &lt;NA&gt;  Action  USA   Outros         17000000</span></a>
+<a class="sourceLine" id="cb158-10" data-line-number="10"><span class="co">## 5 Butte~  2014 Cary B~      78 Color Docume~ USA   Outros           180000</span></a>
+<a class="sourceLine" id="cb158-11" data-line-number="11"><span class="co">## # ... with 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb158-12" data-line-number="12"><span class="co">## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</span></a>
+<a class="sourceLine" id="cb158-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb158-14" data-line-number="14">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb158-15" data-line-number="15"><span class="st">  </span><span class="kw">filter</span>(receita <span class="op">&gt;</span><span class="st"> </span>orcamento <span class="op">|</span><span class="st"> </span>nota_imdb <span class="op">&gt;</span><span class="st"> </span><span class="dv">9</span>)</a>
+<a class="sourceLine" id="cb158-16" data-line-number="16"><span class="co">## # A tibble: 1,762 x 15</span></a>
+<a class="sourceLine" id="cb158-17" data-line-number="17"><span class="co">##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento</span></a>
+<a class="sourceLine" id="cb158-18" data-line-number="18"><span class="co">##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb158-19" data-line-number="19"><span class="co">##  1 Avata~  2009 James ~     178 Color Action~ USA   A partir de ~ 237000000</span></a>
+<a class="sourceLine" id="cb158-20" data-line-number="20"><span class="co">##  2 Pirat~  2007 Gore V~     169 Color Action~ USA   A partir de ~ 300000000</span></a>
+<a class="sourceLine" id="cb158-21" data-line-number="21"><span class="co">##  3 The D~  2012 Christ~     164 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb158-22" data-line-number="22"><span class="co">##  4 Spide~  2007 Sam Ra~     156 Color Action~ USA   A partir de ~ 258000000</span></a>
+<a class="sourceLine" id="cb158-23" data-line-number="23"><span class="co">##  5 Aveng~  2015 Joss W~     141 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb158-24" data-line-number="24"><span class="co">##  6 Batma~  2016 Zack S~     183 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb158-25" data-line-number="25"><span class="co">##  7 Pirat~  2006 Gore V~     151 Color Action~ USA   A partir de ~ 225000000</span></a>
+<a class="sourceLine" id="cb158-26" data-line-number="26"><span class="co">##  8 Man o~  2013 Zack S~     143 Color Action~ USA   A partir de ~ 225000000</span></a>
+<a class="sourceLine" id="cb158-27" data-line-number="27"><span class="co">##  9 The A~  2012 Joss W~     173 Color Action~ USA   A partir de ~ 220000000</span></a>
+<a class="sourceLine" id="cb158-28" data-line-number="28"><span class="co">## 10 The A~  2012 Marc W~     153 Color Action~ USA   A partir de ~ 230000000</span></a>
+<a class="sourceLine" id="cb158-29" data-line-number="29"><span class="co">## # ... with 1,752 more rows, and 6 more variables: receita &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb158-30" data-line-number="30"><span class="co">## #   nota_imdb &lt;dbl&gt;, likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb158-31" data-line-number="31"><span class="co">## #   ator_3 &lt;chr&gt;</span></a></code></pre></div>
+<p>O operador <code>%in%</code> é muito útil na hora de criar filtros. O resultado das operações com <code>%in%</code> é um vetor lógico o tamanho do vetor do elemento da esquerda, identificando quais elementos da esquerda batem com algum elemento da direita.</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb159-1" data-line-number="1">letters <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;z&quot;</span>)</a>
+<a class="sourceLine" id="cb159-2" data-line-number="2"><span class="co">##  [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb159-3" data-line-number="3"><span class="co">## [12] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb159-4" data-line-number="4"><span class="co">## [23] FALSE FALSE FALSE  TRUE</span></a>
+<a class="sourceLine" id="cb159-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb159-6" data-line-number="6">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb159-7" data-line-number="7"><span class="st">  </span><span class="kw">filter</span>(diretor <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Steven Spielberg&quot;</span>, <span class="st">&quot;Quentin Tarantino&quot;</span>))</a>
+<a class="sourceLine" id="cb159-8" data-line-number="8"><span class="co">## # A tibble: 32 x 15</span></a>
+<a class="sourceLine" id="cb159-9" data-line-number="9"><span class="co">##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento</span></a>
+<a class="sourceLine" id="cb159-10" data-line-number="10"><span class="co">##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb159-11" data-line-number="11"><span class="co">##  1 India~  2008 Steven~     122 Color Action~ USA   A partir de ~ 185000000</span></a>
+<a class="sourceLine" id="cb159-12" data-line-number="12"><span class="co">##  2 War o~  2005 Steven~     116 Color Advent~ USA   A partir de ~ 132000000</span></a>
+<a class="sourceLine" id="cb159-13" data-line-number="13"><span class="co">##  3 The A~  2011 Steven~     107 Color Action~ USA   Livre         135000000</span></a>
+<a class="sourceLine" id="cb159-14" data-line-number="14"><span class="co">##  4 Minor~  2002 Steven~     145 Color Action~ USA   A partir de ~ 102000000</span></a>
+<a class="sourceLine" id="cb159-15" data-line-number="15"><span class="co">##  5 Djang~  2012 Quenti~     165 Color Drama|~ USA   A partir de ~ 100000000</span></a>
+<a class="sourceLine" id="cb159-16" data-line-number="16"><span class="co">##  6 A.I. ~  2001 Steven~     146 Color Advent~ USA   A partir de ~ 100000000</span></a>
+<a class="sourceLine" id="cb159-17" data-line-number="17"><span class="co">##  7 The L~  1997 Steven~     129 Color Action~ USA   A partir de ~  73000000</span></a>
+<a class="sourceLine" id="cb159-18" data-line-number="18"><span class="co">##  8 The T~  2004 Steven~     128 Color Comedy~ USA   A partir de ~  60000000</span></a>
+<a class="sourceLine" id="cb159-19" data-line-number="19"><span class="co">##  9 Inglo~  2009 Quenti~     153 Color Advent~ USA   A partir de ~  75000000</span></a>
+<a class="sourceLine" id="cb159-20" data-line-number="20"><span class="co">## 10 Hook    1991 Steven~     142 Color Advent~ USA   Livre          70000000</span></a>
+<a class="sourceLine" id="cb159-21" data-line-number="21"><span class="co">## # ... with 22 more rows, and 6 more variables: receita &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb159-22" data-line-number="22"><span class="co">## #   nota_imdb &lt;dbl&gt;, likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb159-23" data-line-number="23"><span class="co">## #   ator_3 &lt;chr&gt;</span></a></code></pre></div>
+<p>Também podemos usar funções que retornam valores lógicos, como a <code>str_detect()</code>, do pacote <code>stringr</code>. Esse pacote possui funções para a manipulação de strings, e será abordado com mais detalhes quando falarmos sobre <code>stringr</code>.</p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb160-1" data-line-number="1"><span class="kw">library</span>(stringr)</a>
+<a class="sourceLine" id="cb160-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb160-3" data-line-number="3">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb160-4" data-line-number="4"><span class="st">  </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(generos, <span class="st">&quot;Action&quot;</span>))</a>
+<a class="sourceLine" id="cb160-5" data-line-number="5"><span class="co">## # A tibble: 861 x 15</span></a>
+<a class="sourceLine" id="cb160-6" data-line-number="6"><span class="co">##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento</span></a>
+<a class="sourceLine" id="cb160-7" data-line-number="7"><span class="co">##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb160-8" data-line-number="8"><span class="co">##  1 Avata~  2009 James ~     178 Color Action~ USA   A partir de ~ 237000000</span></a>
+<a class="sourceLine" id="cb160-9" data-line-number="9"><span class="co">##  2 Pirat~  2007 Gore V~     169 Color Action~ USA   A partir de ~ 300000000</span></a>
+<a class="sourceLine" id="cb160-10" data-line-number="10"><span class="co">##  3 The D~  2012 Christ~     164 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb160-11" data-line-number="11"><span class="co">##  4 John ~  2012 Andrew~     132 Color Action~ USA   A partir de ~ 263700000</span></a>
+<a class="sourceLine" id="cb160-12" data-line-number="12"><span class="co">##  5 Spide~  2007 Sam Ra~     156 Color Action~ USA   A partir de ~ 258000000</span></a>
+<a class="sourceLine" id="cb160-13" data-line-number="13"><span class="co">##  6 Aveng~  2015 Joss W~     141 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb160-14" data-line-number="14"><span class="co">##  7 Batma~  2016 Zack S~     183 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb160-15" data-line-number="15"><span class="co">##  8 Super~  2006 Bryan ~     169 Color Action~ USA   A partir de ~ 209000000</span></a>
+<a class="sourceLine" id="cb160-16" data-line-number="16"><span class="co">##  9 Pirat~  2006 Gore V~     151 Color Action~ USA   A partir de ~ 225000000</span></a>
+<a class="sourceLine" id="cb160-17" data-line-number="17"><span class="co">## 10 The L~  2013 Gore V~     150 Color Action~ USA   A partir de ~ 215000000</span></a>
+<a class="sourceLine" id="cb160-18" data-line-number="18"><span class="co">## # ... with 851 more rows, and 6 more variables: receita &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb160-19" data-line-number="19"><span class="co">## #   nota_imdb &lt;dbl&gt;, likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb160-20" data-line-number="20"><span class="co">## #   ator_3 &lt;chr&gt;</span></a></code></pre></div>
+<hr />
+</div>
+<div id="selecionando-colunas" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> Selecionando colunas</h3>
+<p>A função <code>select()</code> seleciona colunas (variáveis). É possível utilizar nomes, índices, intervalos de variáveis ou utilizar as funções <code>starts_with(x)</code>, <code>contains(x)</code>, <code>matches(x)</code>, <code>one_of(x)</code> para selecionar as variáveis.</p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb161-1" data-line-number="1">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb161-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(titulo, ano, orcamento)</a>
+<a class="sourceLine" id="cb161-3" data-line-number="3"><span class="co">## # A tibble: 3,807 x 3</span></a>
+<a class="sourceLine" id="cb161-4" data-line-number="4"><span class="co">##    titulo                                        ano orcamento</span></a>
+<a class="sourceLine" id="cb161-5" data-line-number="5"><span class="co">##    &lt;chr&gt;                                       &lt;int&gt;     &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb161-6" data-line-number="6"><span class="co">##  1 Avatar                                       2009 237000000</span></a>
+<a class="sourceLine" id="cb161-7" data-line-number="7"><span class="co">##  2 Pirates of the Caribbean: At World&#39;s End     2007 300000000</span></a>
+<a class="sourceLine" id="cb161-8" data-line-number="8"><span class="co">##  3 The Dark Knight Rises                        2012 250000000</span></a>
+<a class="sourceLine" id="cb161-9" data-line-number="9"><span class="co">##  4 John Carter                                  2012 263700000</span></a>
+<a class="sourceLine" id="cb161-10" data-line-number="10"><span class="co">##  5 Spider-Man 3                                 2007 258000000</span></a>
+<a class="sourceLine" id="cb161-11" data-line-number="11"><span class="co">##  6 Tangled                                      2010 260000000</span></a>
+<a class="sourceLine" id="cb161-12" data-line-number="12"><span class="co">##  7 Avengers: Age of Ultron                      2015 250000000</span></a>
+<a class="sourceLine" id="cb161-13" data-line-number="13"><span class="co">##  8 Batman v Superman: Dawn of Justice           2016 250000000</span></a>
+<a class="sourceLine" id="cb161-14" data-line-number="14"><span class="co">##  9 Superman Returns                             2006 209000000</span></a>
+<a class="sourceLine" id="cb161-15" data-line-number="15"><span class="co">## 10 Pirates of the Caribbean: Dead Man&#39;s Chest   2006 225000000</span></a>
+<a class="sourceLine" id="cb161-16" data-line-number="16"><span class="co">## # ... with 3,797 more rows</span></a>
+<a class="sourceLine" id="cb161-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb161-18" data-line-number="18">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb161-19" data-line-number="19"><span class="st">  </span><span class="kw">select</span>(<span class="kw">starts_with</span>(<span class="st">&quot;ator&quot;</span>))</a>
+<a class="sourceLine" id="cb161-20" data-line-number="20"><span class="co">## # A tibble: 3,807 x 3</span></a>
+<a class="sourceLine" id="cb161-21" data-line-number="21"><span class="co">##    ator_1          ator_2            ator_3              </span></a>
+<a class="sourceLine" id="cb161-22" data-line-number="22"><span class="co">##    &lt;chr&gt;           &lt;chr&gt;             &lt;chr&gt;               </span></a>
+<a class="sourceLine" id="cb161-23" data-line-number="23"><span class="co">##  1 CCH Pounder     Joel David Moore  Wes Studi           </span></a>
+<a class="sourceLine" id="cb161-24" data-line-number="24"><span class="co">##  2 Johnny Depp     Orlando Bloom     Jack Davenport      </span></a>
+<a class="sourceLine" id="cb161-25" data-line-number="25"><span class="co">##  3 Tom Hardy       Christian Bale    Joseph Gordon-Levitt</span></a>
+<a class="sourceLine" id="cb161-26" data-line-number="26"><span class="co">##  4 Daryl Sabara    Samantha Morton   Polly Walker        </span></a>
+<a class="sourceLine" id="cb161-27" data-line-number="27"><span class="co">##  5 J.K. Simmons    James Franco      Kirsten Dunst       </span></a>
+<a class="sourceLine" id="cb161-28" data-line-number="28"><span class="co">##  6 Brad Garrett    Donna Murphy      M.C. Gainey         </span></a>
+<a class="sourceLine" id="cb161-29" data-line-number="29"><span class="co">##  7 Chris Hemsworth Robert Downey Jr. Scarlett Johansson  </span></a>
+<a class="sourceLine" id="cb161-30" data-line-number="30"><span class="co">##  8 Henry Cavill    Lauren Cohan      Alan D. Purwin      </span></a>
+<a class="sourceLine" id="cb161-31" data-line-number="31"><span class="co">##  9 Kevin Spacey    Marlon Brando     Frank Langella      </span></a>
+<a class="sourceLine" id="cb161-32" data-line-number="32"><span class="co">## 10 Johnny Depp     Orlando Bloom     Jack Davenport      </span></a>
+<a class="sourceLine" id="cb161-33" data-line-number="33"><span class="co">## # ... with 3,797 more rows</span></a></code></pre></div>
+<p>O operador <code>:</code> pode ser usado para selecionar intervalos de colunas.</p>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" data-line-number="1">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb162-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(titulo, ator_<span class="dv">1</span><span class="op">:</span>ator_<span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb162-3" data-line-number="3"><span class="co">## # A tibble: 3,807 x 4</span></a>
+<a class="sourceLine" id="cb162-4" data-line-number="4"><span class="co">##    titulo                         ator_1       ator_2        ator_3        </span></a>
+<a class="sourceLine" id="cb162-5" data-line-number="5"><span class="co">##    &lt;chr&gt;                          &lt;chr&gt;        &lt;chr&gt;         &lt;chr&gt;         </span></a>
+<a class="sourceLine" id="cb162-6" data-line-number="6"><span class="co">##  1 Avatar                         CCH Pounder  Joel David M~ Wes Studi     </span></a>
+<a class="sourceLine" id="cb162-7" data-line-number="7"><span class="co">##  2 Pirates of the Caribbean: At ~ Johnny Depp  Orlando Bloom Jack Davenport</span></a>
+<a class="sourceLine" id="cb162-8" data-line-number="8"><span class="co">##  3 The Dark Knight Rises          Tom Hardy    Christian Ba~ Joseph Gordon~</span></a>
+<a class="sourceLine" id="cb162-9" data-line-number="9"><span class="co">##  4 John Carter                    Daryl Sabara Samantha Mor~ Polly Walker  </span></a>
+<a class="sourceLine" id="cb162-10" data-line-number="10"><span class="co">##  5 Spider-Man 3                   J.K. Simmons James Franco  Kirsten Dunst </span></a>
+<a class="sourceLine" id="cb162-11" data-line-number="11"><span class="co">##  6 Tangled                        Brad Garrett Donna Murphy  M.C. Gainey   </span></a>
+<a class="sourceLine" id="cb162-12" data-line-number="12"><span class="co">##  7 Avengers: Age of Ultron        Chris Hemsw~ Robert Downe~ Scarlett Joha~</span></a>
+<a class="sourceLine" id="cb162-13" data-line-number="13"><span class="co">##  8 Batman v Superman: Dawn of Ju~ Henry Cavill Lauren Cohan  Alan D. Purwin</span></a>
+<a class="sourceLine" id="cb162-14" data-line-number="14"><span class="co">##  9 Superman Returns               Kevin Spacey Marlon Brando Frank Langella</span></a>
+<a class="sourceLine" id="cb162-15" data-line-number="15"><span class="co">## 10 Pirates of the Caribbean: Dea~ Johnny Depp  Orlando Bloom Jack Davenport</span></a>
+<a class="sourceLine" id="cb162-16" data-line-number="16"><span class="co">## # ... with 3,797 more rows</span></a></code></pre></div>
+<p>Para retirar colunas da base, base acrescentar um <code>-</code> antes da seleção.</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb163-1" data-line-number="1">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb163-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>ano, <span class="op">-</span><span class="st"> </span>diretor)</a>
+<a class="sourceLine" id="cb163-3" data-line-number="3"><span class="co">## # A tibble: 3,807 x 13</span></a>
+<a class="sourceLine" id="cb163-4" data-line-number="4"><span class="co">##    titulo duracao cor   generos pais  classificacao orcamento receita</span></a>
+<a class="sourceLine" id="cb163-5" data-line-number="5"><span class="co">##    &lt;chr&gt;    &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;   &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb163-6" data-line-number="6"><span class="co">##  1 Avata~     178 Color Action~ USA   A partir de ~ 237000000  7.61e8</span></a>
+<a class="sourceLine" id="cb163-7" data-line-number="7"><span class="co">##  2 Pirat~     169 Color Action~ USA   A partir de ~ 300000000  3.09e8</span></a>
+<a class="sourceLine" id="cb163-8" data-line-number="8"><span class="co">##  3 The D~     164 Color Action~ USA   A partir de ~ 250000000  4.48e8</span></a>
+<a class="sourceLine" id="cb163-9" data-line-number="9"><span class="co">##  4 John ~     132 Color Action~ USA   A partir de ~ 263700000  7.31e7</span></a>
+<a class="sourceLine" id="cb163-10" data-line-number="10"><span class="co">##  5 Spide~     156 Color Action~ USA   A partir de ~ 258000000  3.37e8</span></a>
+<a class="sourceLine" id="cb163-11" data-line-number="11"><span class="co">##  6 Tangl~     100 Color Advent~ USA   Livre         260000000  2.01e8</span></a>
+<a class="sourceLine" id="cb163-12" data-line-number="12"><span class="co">##  7 Aveng~     141 Color Action~ USA   A partir de ~ 250000000  4.59e8</span></a>
+<a class="sourceLine" id="cb163-13" data-line-number="13"><span class="co">##  8 Batma~     183 Color Action~ USA   A partir de ~ 250000000  3.30e8</span></a>
+<a class="sourceLine" id="cb163-14" data-line-number="14"><span class="co">##  9 Super~     169 Color Action~ USA   A partir de ~ 209000000  2.00e8</span></a>
+<a class="sourceLine" id="cb163-15" data-line-number="15"><span class="co">## 10 Pirat~     151 Color Action~ USA   A partir de ~ 225000000  4.23e8</span></a>
+<a class="sourceLine" id="cb163-16" data-line-number="16"><span class="co">## # ... with 3,797 more rows, and 5 more variables: nota_imdb &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb163-17" data-line-number="17"><span class="co">## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</span></a>
+<a class="sourceLine" id="cb163-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb163-19" data-line-number="19">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb163-20" data-line-number="20"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">starts_with</span>(<span class="st">&quot;ator&quot;</span>))</a>
+<a class="sourceLine" id="cb163-21" data-line-number="21"><span class="co">## # A tibble: 3,807 x 12</span></a>
+<a class="sourceLine" id="cb163-22" data-line-number="22"><span class="co">##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento</span></a>
+<a class="sourceLine" id="cb163-23" data-line-number="23"><span class="co">##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb163-24" data-line-number="24"><span class="co">##  1 Avata~  2009 James ~     178 Color Action~ USA   A partir de ~ 237000000</span></a>
+<a class="sourceLine" id="cb163-25" data-line-number="25"><span class="co">##  2 Pirat~  2007 Gore V~     169 Color Action~ USA   A partir de ~ 300000000</span></a>
+<a class="sourceLine" id="cb163-26" data-line-number="26"><span class="co">##  3 The D~  2012 Christ~     164 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb163-27" data-line-number="27"><span class="co">##  4 John ~  2012 Andrew~     132 Color Action~ USA   A partir de ~ 263700000</span></a>
+<a class="sourceLine" id="cb163-28" data-line-number="28"><span class="co">##  5 Spide~  2007 Sam Ra~     156 Color Action~ USA   A partir de ~ 258000000</span></a>
+<a class="sourceLine" id="cb163-29" data-line-number="29"><span class="co">##  6 Tangl~  2010 Nathan~     100 Color Advent~ USA   Livre         260000000</span></a>
+<a class="sourceLine" id="cb163-30" data-line-number="30"><span class="co">##  7 Aveng~  2015 Joss W~     141 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb163-31" data-line-number="31"><span class="co">##  8 Batma~  2016 Zack S~     183 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb163-32" data-line-number="32"><span class="co">##  9 Super~  2006 Bryan ~     169 Color Action~ USA   A partir de ~ 209000000</span></a>
+<a class="sourceLine" id="cb163-33" data-line-number="33"><span class="co">## 10 Pirat~  2006 Gore V~     151 Color Action~ USA   A partir de ~ 225000000</span></a>
+<a class="sourceLine" id="cb163-34" data-line-number="34"><span class="co">## # ... with 3,797 more rows, and 3 more variables: receita &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb163-35" data-line-number="35"><span class="co">## #   nota_imdb &lt;dbl&gt;, likes_facebook &lt;int&gt;</span></a></code></pre></div>
+<hr />
+</div>
+<div id="ordenando-a-base" class="section level3">
+<h3><span class="header-section-number">6.2.3</span> Ordenando a base</h3>
+<p>A função <code>arrange()</code> ordena a base segundo uma ou mais colunas. O argumento <code>desc=</code> pode ser utilizado para gerar uma ordem decrescente.</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb164-1" data-line-number="1">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb164-2" data-line-number="2"><span class="st">  </span><span class="kw">arrange</span>(orcamento) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb164-3" data-line-number="3"><span class="st">  </span><span class="kw">select</span>(orcamento, <span class="kw">everything</span>())</a>
+<a class="sourceLine" id="cb164-4" data-line-number="4"><span class="co">## # A tibble: 3,807 x 15</span></a>
+<a class="sourceLine" id="cb164-5" data-line-number="5"><span class="co">##    orcamento titulo   ano diretor duracao cor   generos pais  classificacao</span></a>
+<a class="sourceLine" id="cb164-6" data-line-number="6"><span class="co">##        &lt;int&gt; &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;        </span></a>
+<a class="sourceLine" id="cb164-7" data-line-number="7"><span class="co">##  1       218 Tarna~  2003 Jonath~      88 Color Biogra~ USA   Outros       </span></a>
+<a class="sourceLine" id="cb164-8" data-line-number="8"><span class="co">##  2      1100 My Da~  2004 Jon Gu~      90 Color Docume~ USA   Livre        </span></a>
+<a class="sourceLine" id="cb164-9" data-line-number="9"><span class="co">##  3      1400 A Pla~  2013 Benjam~      76 Color Drama|~ USA   Outros       </span></a>
+<a class="sourceLine" id="cb164-10" data-line-number="10"><span class="co">##  4      3250 The M~  2005 Anthon~      84 Color Crime|~ USA   A partir de ~</span></a>
+<a class="sourceLine" id="cb164-11" data-line-number="11"><span class="co">##  5      7000 Prime~  2004 Shane ~      77 Color Drama|~ USA   A partir de ~</span></a>
+<a class="sourceLine" id="cb164-12" data-line-number="12"><span class="co">##  6      7000 El Ma~  1992 Robert~      81 Color Action~ USA   A partir de ~</span></a>
+<a class="sourceLine" id="cb164-13" data-line-number="13"><span class="co">##  7      9000 Newly~  2011 Edward~      95 Color Comedy~ USA   Outros       </span></a>
+<a class="sourceLine" id="cb164-14" data-line-number="14"><span class="co">##  8     10000 Pink ~  1972 John W~     108 Color Comedy~ USA   A partir de ~</span></a>
+<a class="sourceLine" id="cb164-15" data-line-number="15"><span class="co">##  9     13000 The T~  2007 Jane C~       7 Color Romanc~ USA   Outros       </span></a>
+<a class="sourceLine" id="cb164-16" data-line-number="16"><span class="co">## 10     15000 Paran~  2007 Oren P~      84 Color Horror  USA   A partir de ~</span></a>
+<a class="sourceLine" id="cb164-17" data-line-number="17"><span class="co">## # ... with 3,797 more rows, and 6 more variables: receita &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb164-18" data-line-number="18"><span class="co">## #   nota_imdb &lt;dbl&gt;, likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb164-19" data-line-number="19"><span class="co">## #   ator_3 &lt;chr&gt;</span></a>
+<a class="sourceLine" id="cb164-20" data-line-number="20"></a>
+<a class="sourceLine" id="cb164-21" data-line-number="21">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb164-22" data-line-number="22"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(orcamento)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb164-23" data-line-number="23"><span class="st">  </span><span class="kw">select</span>(orcamento, <span class="kw">everything</span>())</a>
+<a class="sourceLine" id="cb164-24" data-line-number="24"><span class="co">## # A tibble: 3,807 x 15</span></a>
+<a class="sourceLine" id="cb164-25" data-line-number="25"><span class="co">##    orcamento titulo   ano diretor duracao cor   generos pais  classificacao</span></a>
+<a class="sourceLine" id="cb164-26" data-line-number="26"><span class="co">##        &lt;int&gt; &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;        </span></a>
+<a class="sourceLine" id="cb164-27" data-line-number="27"><span class="co">##  1 300000000 Pirat~  2007 Gore V~     169 Color Action~ USA   A partir de ~</span></a>
+<a class="sourceLine" id="cb164-28" data-line-number="28"><span class="co">##  2 263700000 John ~  2012 Andrew~     132 Color Action~ USA   A partir de ~</span></a>
+<a class="sourceLine" id="cb164-29" data-line-number="29"><span class="co">##  3 260000000 Tangl~  2010 Nathan~     100 Color Advent~ USA   Livre        </span></a>
+<a class="sourceLine" id="cb164-30" data-line-number="30"><span class="co">##  4 258000000 Spide~  2007 Sam Ra~     156 Color Action~ USA   A partir de ~</span></a>
+<a class="sourceLine" id="cb164-31" data-line-number="31"><span class="co">##  5 258000000 Spide~  2007 Sam Ra~     156 Color Action~ USA   A partir de ~</span></a>
+<a class="sourceLine" id="cb164-32" data-line-number="32"><span class="co">##  6 250000000 The D~  2012 Christ~     164 Color Action~ USA   A partir de ~</span></a>
+<a class="sourceLine" id="cb164-33" data-line-number="33"><span class="co">##  7 250000000 Aveng~  2015 Joss W~     141 Color Action~ USA   A partir de ~</span></a>
+<a class="sourceLine" id="cb164-34" data-line-number="34"><span class="co">##  8 250000000 Batma~  2016 Zack S~     183 Color Action~ USA   A partir de ~</span></a>
+<a class="sourceLine" id="cb164-35" data-line-number="35"><span class="co">##  9 250000000 Pirat~  2011 Rob Ma~     136 Color Action~ USA   A partir de ~</span></a>
+<a class="sourceLine" id="cb164-36" data-line-number="36"><span class="co">## 10 250000000 Capta~  2016 Anthon~     147 Color Action~ USA   A partir de ~</span></a>
+<a class="sourceLine" id="cb164-37" data-line-number="37"><span class="co">## # ... with 3,797 more rows, and 6 more variables: receita &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb164-38" data-line-number="38"><span class="co">## #   nota_imdb &lt;dbl&gt;, likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb164-39" data-line-number="39"><span class="co">## #   ator_3 &lt;chr&gt;</span></a>
+<a class="sourceLine" id="cb164-40" data-line-number="40"></a>
+<a class="sourceLine" id="cb164-41" data-line-number="41">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb164-42" data-line-number="42"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(ano), titulo) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb164-43" data-line-number="43"><span class="st">  </span><span class="kw">select</span>(titulo, ano, <span class="kw">everything</span>())</a>
+<a class="sourceLine" id="cb164-44" data-line-number="44"><span class="co">## # A tibble: 3,807 x 15</span></a>
+<a class="sourceLine" id="cb164-45" data-line-number="45"><span class="co">##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento</span></a>
+<a class="sourceLine" id="cb164-46" data-line-number="46"><span class="co">##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb164-47" data-line-number="47"><span class="co">##  1 10 Cl~  2016 Dan Tr~     104 Color Drama|~ USA   A partir de ~  15000000</span></a>
+<a class="sourceLine" id="cb164-48" data-line-number="48"><span class="co">##  2 13 Ho~  2016 Michae~     144 Color Action~ USA   A partir de ~  50000000</span></a>
+<a class="sourceLine" id="cb164-49" data-line-number="49"><span class="co">##  3 A Beg~  2016 Mitche~      87 Color Comedy~ USA   Outros               NA</span></a>
+<a class="sourceLine" id="cb164-50" data-line-number="50"><span class="co">##  4 Alice~  2016 James ~     113 Color Advent~ USA   Livre         170000000</span></a>
+<a class="sourceLine" id="cb164-51" data-line-number="51"><span class="co">##  5 Alleg~  2016 Robert~     120 Color Action~ USA   A partir de ~ 110000000</span></a>
+<a class="sourceLine" id="cb164-52" data-line-number="52"><span class="co">##  6 Allel~  2016 Darren~      97 Color Horror~ USA   Outros           500000</span></a>
+<a class="sourceLine" id="cb164-53" data-line-number="53"><span class="co">##  7 Antib~  2016 Danny ~      94 Color Horror  USA   Outros          3500000</span></a>
+<a class="sourceLine" id="cb164-54" data-line-number="54"><span class="co">##  8 Bad M~  2016 Jon Lu~     100 Color Comedy  USA   A partir de ~  20000000</span></a>
+<a class="sourceLine" id="cb164-55" data-line-number="55"><span class="co">##  9 Bad M~  2016 Jon Lu~     100 Color Comedy  USA   A partir de ~  20000000</span></a>
+<a class="sourceLine" id="cb164-56" data-line-number="56"><span class="co">## 10 Batma~  2016 Zack S~     183 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb164-57" data-line-number="57"><span class="co">## # ... with 3,797 more rows, and 6 more variables: receita &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb164-58" data-line-number="58"><span class="co">## #   nota_imdb &lt;dbl&gt;, likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb164-59" data-line-number="59"><span class="co">## #   ator_3 &lt;chr&gt;</span></a></code></pre></div>
+<hr />
+</div>
+<div id="criando-e-modificando-colunas" class="section level3">
+<h3><span class="header-section-number">6.2.4</span> Criando e modificando colunas</h3>
+<p>A função <code>mutate()</code> cria ou modifica colunas. Ela é equivalente à função <code>transform()</code>, mas aceita várias novas colunas iterativamente. Novas variáveis devem ter o mesmo número de linhas da base original (ou comprimento 1).</p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb165-1" data-line-number="1"><span class="co"># A coluna &quot;duracao&quot; é sobrescrita</span></a>
+<a class="sourceLine" id="cb165-2" data-line-number="2">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb165-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">duracao =</span> duracao<span class="op">/</span><span class="dv">60</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb165-4" data-line-number="4"><span class="st">  </span><span class="kw">select</span>(duracao)</a>
+<a class="sourceLine" id="cb165-5" data-line-number="5"><span class="co">## # A tibble: 3,807 x 1</span></a>
+<a class="sourceLine" id="cb165-6" data-line-number="6"><span class="co">##    duracao</span></a>
+<a class="sourceLine" id="cb165-7" data-line-number="7"><span class="co">##      &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb165-8" data-line-number="8"><span class="co">##  1    2.97</span></a>
+<a class="sourceLine" id="cb165-9" data-line-number="9"><span class="co">##  2    2.82</span></a>
+<a class="sourceLine" id="cb165-10" data-line-number="10"><span class="co">##  3    2.73</span></a>
+<a class="sourceLine" id="cb165-11" data-line-number="11"><span class="co">##  4    2.2 </span></a>
+<a class="sourceLine" id="cb165-12" data-line-number="12"><span class="co">##  5    2.6 </span></a>
+<a class="sourceLine" id="cb165-13" data-line-number="13"><span class="co">##  6    1.67</span></a>
+<a class="sourceLine" id="cb165-14" data-line-number="14"><span class="co">##  7    2.35</span></a>
+<a class="sourceLine" id="cb165-15" data-line-number="15"><span class="co">##  8    3.05</span></a>
+<a class="sourceLine" id="cb165-16" data-line-number="16"><span class="co">##  9    2.82</span></a>
+<a class="sourceLine" id="cb165-17" data-line-number="17"><span class="co">## 10    2.52</span></a>
+<a class="sourceLine" id="cb165-18" data-line-number="18"><span class="co">## # ... with 3,797 more rows</span></a>
+<a class="sourceLine" id="cb165-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb165-20" data-line-number="20"><span class="co"># Criamos uma nova coluna na base</span></a>
+<a class="sourceLine" id="cb165-21" data-line-number="21">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb165-22" data-line-number="22"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">duracao_horas =</span> duracao<span class="op">/</span><span class="dv">60</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb165-23" data-line-number="23"><span class="st">  </span><span class="kw">select</span>(duracao, duracao_horas)</a>
+<a class="sourceLine" id="cb165-24" data-line-number="24"><span class="co">## # A tibble: 3,807 x 2</span></a>
+<a class="sourceLine" id="cb165-25" data-line-number="25"><span class="co">##    duracao duracao_horas</span></a>
+<a class="sourceLine" id="cb165-26" data-line-number="26"><span class="co">##      &lt;int&gt;         &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb165-27" data-line-number="27"><span class="co">##  1     178          2.97</span></a>
+<a class="sourceLine" id="cb165-28" data-line-number="28"><span class="co">##  2     169          2.82</span></a>
+<a class="sourceLine" id="cb165-29" data-line-number="29"><span class="co">##  3     164          2.73</span></a>
+<a class="sourceLine" id="cb165-30" data-line-number="30"><span class="co">##  4     132          2.2 </span></a>
+<a class="sourceLine" id="cb165-31" data-line-number="31"><span class="co">##  5     156          2.6 </span></a>
+<a class="sourceLine" id="cb165-32" data-line-number="32"><span class="co">##  6     100          1.67</span></a>
+<a class="sourceLine" id="cb165-33" data-line-number="33"><span class="co">##  7     141          2.35</span></a>
+<a class="sourceLine" id="cb165-34" data-line-number="34"><span class="co">##  8     183          3.05</span></a>
+<a class="sourceLine" id="cb165-35" data-line-number="35"><span class="co">##  9     169          2.82</span></a>
+<a class="sourceLine" id="cb165-36" data-line-number="36"><span class="co">## 10     151          2.52</span></a>
+<a class="sourceLine" id="cb165-37" data-line-number="37"><span class="co">## # ... with 3,797 more rows</span></a>
+<a class="sourceLine" id="cb165-38" data-line-number="38"></a>
+<a class="sourceLine" id="cb165-39" data-line-number="39"><span class="co"># Podemos fazer diversas operações em um mesmo mutate.</span></a>
+<a class="sourceLine" id="cb165-40" data-line-number="40">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb165-41" data-line-number="41"><span class="st">  </span><span class="kw">mutate</span>(</a>
+<a class="sourceLine" id="cb165-42" data-line-number="42">    <span class="dt">lucro =</span> receita <span class="op">-</span><span class="st"> </span>orcamento,</a>
+<a class="sourceLine" id="cb165-43" data-line-number="43">    <span class="dt">resultado =</span> <span class="kw">ifelse</span>(lucro <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>, <span class="st">&quot;prejuizo&quot;</span>, <span class="st">&quot;lucro&quot;</span>)</a>
+<a class="sourceLine" id="cb165-44" data-line-number="44">  ) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb165-45" data-line-number="45"><span class="st">  </span><span class="kw">select</span>(lucro, resultado)</a>
+<a class="sourceLine" id="cb165-46" data-line-number="46"><span class="co">## # A tibble: 3,807 x 2</span></a>
+<a class="sourceLine" id="cb165-47" data-line-number="47"><span class="co">##         lucro resultado</span></a>
+<a class="sourceLine" id="cb165-48" data-line-number="48"><span class="co">##         &lt;int&gt; &lt;chr&gt;    </span></a>
+<a class="sourceLine" id="cb165-49" data-line-number="49"><span class="co">##  1  523505847 lucro    </span></a>
+<a class="sourceLine" id="cb165-50" data-line-number="50"><span class="co">##  2    9404152 lucro    </span></a>
+<a class="sourceLine" id="cb165-51" data-line-number="51"><span class="co">##  3  198130642 lucro    </span></a>
+<a class="sourceLine" id="cb165-52" data-line-number="52"><span class="co">##  4 -190641321 prejuizo </span></a>
+<a class="sourceLine" id="cb165-53" data-line-number="53"><span class="co">##  5   78530303 lucro    </span></a>
+<a class="sourceLine" id="cb165-54" data-line-number="54"><span class="co">##  6  -59192738 prejuizo </span></a>
+<a class="sourceLine" id="cb165-55" data-line-number="55"><span class="co">##  7  208991599 lucro    </span></a>
+<a class="sourceLine" id="cb165-56" data-line-number="56"><span class="co">##  8   80249062 lucro    </span></a>
+<a class="sourceLine" id="cb165-57" data-line-number="57"><span class="co">##  9   -8930592 prejuizo </span></a>
+<a class="sourceLine" id="cb165-58" data-line-number="58"><span class="co">## 10  198032628 lucro    </span></a>
+<a class="sourceLine" id="cb165-59" data-line-number="59"><span class="co">## # ... with 3,797 more rows</span></a></code></pre></div>
+<hr />
+</div>
+<div id="summarisando-a-base" class="section level3">
+<h3><span class="header-section-number">6.2.5</span> Summarisando a base</h3>
+<p>A função <code>summarise()</code> sumariza a base. Ela aplica uma função às variáveis, retornando um vetor de tamanho <code>1</code>. Ela é utilizada em conjunto da função <code>group_by()</code>. A função <code>n()</code> costuma ser bastante utilizada com a função summarise().</p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb166-1" data-line-number="1">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb166-2" data-line-number="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">media_orcamento =</span> <span class="kw">mean</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</a>
+<a class="sourceLine" id="cb166-3" data-line-number="3"><span class="co">## # A tibble: 1 x 1</span></a>
+<a class="sourceLine" id="cb166-4" data-line-number="4"><span class="co">##   media_orcamento</span></a>
+<a class="sourceLine" id="cb166-5" data-line-number="5"><span class="co">##             &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb166-6" data-line-number="6"><span class="co">## 1       35755986.</span></a>
+<a class="sourceLine" id="cb166-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb166-8" data-line-number="8">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb166-9" data-line-number="9"><span class="st">  </span><span class="kw">summarise</span>(</a>
+<a class="sourceLine" id="cb166-10" data-line-number="10">    <span class="dt">media_orcamento =</span> <span class="kw">mean</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</a>
+<a class="sourceLine" id="cb166-11" data-line-number="11">    <span class="dt">mediana_orcamento =</span> <span class="kw">median</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</a>
+<a class="sourceLine" id="cb166-12" data-line-number="12">    <span class="dt">qtd =</span> <span class="kw">n</span>(),</a>
+<a class="sourceLine" id="cb166-13" data-line-number="13">    <span class="dt">qtd_diretores =</span> <span class="kw">n_distinct</span>(diretor)</a>
+<a class="sourceLine" id="cb166-14" data-line-number="14">  )</a>
+<a class="sourceLine" id="cb166-15" data-line-number="15"><span class="co">## # A tibble: 1 x 4</span></a>
+<a class="sourceLine" id="cb166-16" data-line-number="16"><span class="co">##   media_orcamento mediana_orcamento   qtd qtd_diretores</span></a>
+<a class="sourceLine" id="cb166-17" data-line-number="17"><span class="co">##             &lt;dbl&gt;             &lt;int&gt; &lt;int&gt;         &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb166-18" data-line-number="18"><span class="co">## 1       35755986.          20000000  3807          1813</span></a>
+<a class="sourceLine" id="cb166-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb166-20" data-line-number="20">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb166-21" data-line-number="21"><span class="st">  </span><span class="kw">group_by</span>(ano) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb166-22" data-line-number="22"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">qtd_filmes =</span> <span class="kw">n</span>())</a>
+<a class="sourceLine" id="cb166-23" data-line-number="23"><span class="co">## # A tibble: 91 x 2</span></a>
+<a class="sourceLine" id="cb166-24" data-line-number="24"><span class="co">##      ano qtd_filmes</span></a>
+<a class="sourceLine" id="cb166-25" data-line-number="25"><span class="co">##    &lt;int&gt;      &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb166-26" data-line-number="26"><span class="co">##  1  1916          1</span></a>
+<a class="sourceLine" id="cb166-27" data-line-number="27"><span class="co">##  2  1920          1</span></a>
+<a class="sourceLine" id="cb166-28" data-line-number="28"><span class="co">##  3  1925          1</span></a>
+<a class="sourceLine" id="cb166-29" data-line-number="29"><span class="co">##  4  1929          1</span></a>
+<a class="sourceLine" id="cb166-30" data-line-number="30"><span class="co">##  5  1930          1</span></a>
+<a class="sourceLine" id="cb166-31" data-line-number="31"><span class="co">##  6  1932          1</span></a>
+<a class="sourceLine" id="cb166-32" data-line-number="32"><span class="co">##  7  1933          2</span></a>
+<a class="sourceLine" id="cb166-33" data-line-number="33"><span class="co">##  8  1934          1</span></a>
+<a class="sourceLine" id="cb166-34" data-line-number="34"><span class="co">##  9  1935          1</span></a>
+<a class="sourceLine" id="cb166-35" data-line-number="35"><span class="co">## 10  1936          2</span></a>
+<a class="sourceLine" id="cb166-36" data-line-number="36"><span class="co">## # ... with 81 more rows</span></a>
+<a class="sourceLine" id="cb166-37" data-line-number="37"></a>
+<a class="sourceLine" id="cb166-38" data-line-number="38">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb166-39" data-line-number="39"><span class="st">  </span><span class="kw">group_by</span>(diretor) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb166-40" data-line-number="40"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">orcamento_medio =</span> <span class="kw">mean</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</a>
+<a class="sourceLine" id="cb166-41" data-line-number="41"><span class="co">## # A tibble: 1,813 x 2</span></a>
+<a class="sourceLine" id="cb166-42" data-line-number="42"><span class="co">##    diretor          orcamento_medio</span></a>
+<a class="sourceLine" id="cb166-43" data-line-number="43"><span class="co">##    &lt;chr&gt;                      &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb166-44" data-line-number="44"><span class="co">##  1 A. Raven Cruz            1000000</span></a>
+<a class="sourceLine" id="cb166-45" data-line-number="45"><span class="co">##  2 Aaron Hann                   NaN</span></a>
+<a class="sourceLine" id="cb166-46" data-line-number="46"><span class="co">##  3 Aaron Schneider          7500000</span></a>
+<a class="sourceLine" id="cb166-47" data-line-number="47"><span class="co">##  4 Aaron Seltzer           20000000</span></a>
+<a class="sourceLine" id="cb166-48" data-line-number="48"><span class="co">##  5 Abel Ferrara            12500000</span></a>
+<a class="sourceLine" id="cb166-49" data-line-number="49"><span class="co">##  6 Adam Carolla             1500000</span></a>
+<a class="sourceLine" id="cb166-50" data-line-number="50"><span class="co">##  7 Adam Goldberg            1650000</span></a>
+<a class="sourceLine" id="cb166-51" data-line-number="51"><span class="co">##  8 Adam Green               1500000</span></a>
+<a class="sourceLine" id="cb166-52" data-line-number="52"><span class="co">##  9 Adam Jay Epstein             NaN</span></a>
+<a class="sourceLine" id="cb166-53" data-line-number="53"><span class="co">## 10 Adam Marcus              2500000</span></a>
+<a class="sourceLine" id="cb166-54" data-line-number="54"><span class="co">## # ... with 1,803 more rows</span></a></code></pre></div>
+</div>
+<div id="juntando-duas-bases" class="section level3">
+<h3><span class="header-section-number">6.2.6</span> Juntando duas bases</h3>
+<p>Para juntar duas tabelas de dados, podemos utilizar a família de funções <code>_join()</code> do <code>dplyr</code>. Essas funções geralmente recebem três argumentos: uma base esquerda (<code>x=</code>), uma base direita (<code>y=</code>) e uma chave <code>by=</code>. As principais funções <code>_join()</code> são:</p>
+<ul>
+<li><code>left_join(x, y)</code>: retorna todas as linhas da base <code>x</code> e todas as colunas das bases <code>x</code> e <code>y</code>. Linhas de <code>x</code> sem correspondentes em <code>y</code> receberão <code>NA</code> na nova base.</li>
+<li><code>right_join()</code>: retorna todas as linhas da base <code>y</code> e todas as colunas das bases <code>x</code> e <code>y</code>. Linhas de <code>y</code> sem correspondentes em <code>x</code> receberão <code>NA</code> na nova base.</li>
+<li><code>full_join()</code>: retorna todas as linhas e colunas de <code>x</code>e <code>y</code>. Valores sem correspondência entre as bases receberão <code>NA</code> na nova base.</li>
+</ul>
+<p>A figura a seguir esquematiza as operações dessas funções:</p>
+<p><img src="img/manipulacao/joins.png" width="355" style="display: block; margin: auto;" /></p>
+<p>A figura a seguir mostra o que acontece quando temos chaves duplicadas em um <code>left_join()</code>. A ideia é equivalante para as outras funções.</p>
+<p><img src="img/manipulacao/left-join.png" width="279" style="display: block; margin: auto;" /></p>
+
+</div>
+</div>
+<div id="o-pacote-tidyr" class="section level2">
+<h2><span class="header-section-number">6.3</span> O pacote tidyr</h2>
+<p>O pacote <code>tidyr</code> dispõe de funções úteis para deixar os seus dados no formato que você precisa para a análise. Na maioria das vezes, utilizamos para deixá-los <em>tidy</em>. Outras, precisamos “bagunçá-los” um pouco para poder aplicar alguma função específica.</p>
+<p>As principais funções deste pacote são a <code>gather()</code> e a <code>spread()</code></p>
+<hr />
+<div id="gather" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> <code>gather()</code></h3>
+<p>A função <code>gather()</code> “empilha” o banco de dados. Ela é utilizada principalmente quando as colunas da base não representam nomes de variáveis, mas sim seus valores.</p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb167-1" data-line-number="1"><span class="kw">library</span>(tidyr)</a>
+<a class="sourceLine" id="cb167-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb167-3" data-line-number="3">imdb &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_rds</span>(<span class="st">&quot;data/imdb.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb167-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb167-5" data-line-number="5">imdb_gather &lt;-<span class="st"> </span>imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb167-6" data-line-number="6"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">n</span>()) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb167-7" data-line-number="7"><span class="st">  </span><span class="kw">gather</span>(</a>
+<a class="sourceLine" id="cb167-8" data-line-number="8">    <span class="dt">key =</span> <span class="st">&quot;importancia_ator&quot;</span>,</a>
+<a class="sourceLine" id="cb167-9" data-line-number="9">    <span class="dt">value =</span> <span class="st">&quot;nome_ator&quot;</span>,</a>
+<a class="sourceLine" id="cb167-10" data-line-number="10">    ator_<span class="dv">1</span>, ator_<span class="dv">2</span>, ator_<span class="dv">3</span></a>
+<a class="sourceLine" id="cb167-11" data-line-number="11">  ) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb167-12" data-line-number="12"><span class="st">  </span><span class="kw">select</span>(nome_ator, importancia_ator, <span class="kw">everything</span>())</a>
+<a class="sourceLine" id="cb167-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb167-14" data-line-number="14">imdb_gather</a>
+<a class="sourceLine" id="cb167-15" data-line-number="15"><span class="co">## # A tibble: 11,421 x 15</span></a>
+<a class="sourceLine" id="cb167-16" data-line-number="16"><span class="co">##    nome_ator importancia_ator titulo   ano diretor duracao cor   generos</span></a>
+<a class="sourceLine" id="cb167-17" data-line-number="17"><span class="co">##    &lt;chr&gt;     &lt;chr&gt;            &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  </span></a>
+<a class="sourceLine" id="cb167-18" data-line-number="18"><span class="co">##  1 CCH Poun~ ator_1           Avata~  2009 James ~     178 Color Action~</span></a>
+<a class="sourceLine" id="cb167-19" data-line-number="19"><span class="co">##  2 Johnny D~ ator_1           Pirat~  2007 Gore V~     169 Color Action~</span></a>
+<a class="sourceLine" id="cb167-20" data-line-number="20"><span class="co">##  3 Tom Hardy ator_1           The D~  2012 Christ~     164 Color Action~</span></a>
+<a class="sourceLine" id="cb167-21" data-line-number="21"><span class="co">##  4 Daryl Sa~ ator_1           John ~  2012 Andrew~     132 Color Action~</span></a>
+<a class="sourceLine" id="cb167-22" data-line-number="22"><span class="co">##  5 J.K. Sim~ ator_1           Spide~  2007 Sam Ra~     156 Color Action~</span></a>
+<a class="sourceLine" id="cb167-23" data-line-number="23"><span class="co">##  6 Brad Gar~ ator_1           Tangl~  2010 Nathan~     100 Color Advent~</span></a>
+<a class="sourceLine" id="cb167-24" data-line-number="24"><span class="co">##  7 Chris He~ ator_1           Aveng~  2015 Joss W~     141 Color Action~</span></a>
+<a class="sourceLine" id="cb167-25" data-line-number="25"><span class="co">##  8 Henry Ca~ ator_1           Batma~  2016 Zack S~     183 Color Action~</span></a>
+<a class="sourceLine" id="cb167-26" data-line-number="26"><span class="co">##  9 Kevin Sp~ ator_1           Super~  2006 Bryan ~     169 Color Action~</span></a>
+<a class="sourceLine" id="cb167-27" data-line-number="27"><span class="co">## 10 Johnny D~ ator_1           Pirat~  2006 Gore V~     151 Color Action~</span></a>
+<a class="sourceLine" id="cb167-28" data-line-number="28"><span class="co">## # ... with 11,411 more rows, and 7 more variables: pais &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb167-29" data-line-number="29"><span class="co">## #   classificacao &lt;chr&gt;, orcamento &lt;int&gt;, receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb167-30" data-line-number="30"><span class="co">## #   likes_facebook &lt;int&gt;, id &lt;int&gt;</span></a></code></pre></div>
+<hr />
+</div>
+<div id="spread" class="section level3">
+<h3><span class="header-section-number">6.3.2</span> <code>spread()</code></h3>
+<p>A função <code>spread()</code> é essencialmente o inverso da <code>gather()</code>. Ela espalha uma variável nas colunas.</p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb168-1" data-line-number="1">imdb_spread &lt;-<span class="st"> </span>imdb_gather <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb168-2" data-line-number="2"><span class="st">  </span><span class="kw">spread</span>(</a>
+<a class="sourceLine" id="cb168-3" data-line-number="3">    <span class="dt">key =</span> importancia_ator,</a>
+<a class="sourceLine" id="cb168-4" data-line-number="4">    <span class="dt">value =</span> nome_ator</a>
+<a class="sourceLine" id="cb168-5" data-line-number="5">  )</a>
+<a class="sourceLine" id="cb168-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb168-7" data-line-number="7">imdb_spread</a>
+<a class="sourceLine" id="cb168-8" data-line-number="8"><span class="co">## # A tibble: 3,807 x 16</span></a>
+<a class="sourceLine" id="cb168-9" data-line-number="9"><span class="co">##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento</span></a>
+<a class="sourceLine" id="cb168-10" data-line-number="10"><span class="co">##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb168-11" data-line-number="11"><span class="co">##  1 Avata~  2009 James ~     178 Color Action~ USA   A partir de ~ 237000000</span></a>
+<a class="sourceLine" id="cb168-12" data-line-number="12"><span class="co">##  2 Pirat~  2007 Gore V~     169 Color Action~ USA   A partir de ~ 300000000</span></a>
+<a class="sourceLine" id="cb168-13" data-line-number="13"><span class="co">##  3 The D~  2012 Christ~     164 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb168-14" data-line-number="14"><span class="co">##  4 John ~  2012 Andrew~     132 Color Action~ USA   A partir de ~ 263700000</span></a>
+<a class="sourceLine" id="cb168-15" data-line-number="15"><span class="co">##  5 Spide~  2007 Sam Ra~     156 Color Action~ USA   A partir de ~ 258000000</span></a>
+<a class="sourceLine" id="cb168-16" data-line-number="16"><span class="co">##  6 Tangl~  2010 Nathan~     100 Color Advent~ USA   Livre         260000000</span></a>
+<a class="sourceLine" id="cb168-17" data-line-number="17"><span class="co">##  7 Aveng~  2015 Joss W~     141 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb168-18" data-line-number="18"><span class="co">##  8 Batma~  2016 Zack S~     183 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb168-19" data-line-number="19"><span class="co">##  9 Super~  2006 Bryan ~     169 Color Action~ USA   A partir de ~ 209000000</span></a>
+<a class="sourceLine" id="cb168-20" data-line-number="20"><span class="co">## 10 Pirat~  2006 Gore V~     151 Color Action~ USA   A partir de ~ 225000000</span></a>
+<a class="sourceLine" id="cb168-21" data-line-number="21"><span class="co">## # ... with 3,797 more rows, and 7 more variables: receita &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb168-22" data-line-number="22"><span class="co">## #   nota_imdb &lt;dbl&gt;, likes_facebook &lt;int&gt;, id &lt;int&gt;, ator_1 &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb168-23" data-line-number="23"><span class="co">## #   ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</span></a></code></pre></div>
+<hr />
+</div>
+<div id="outras-funções-do-tidyr" class="section level3">
+<h3><span class="header-section-number">6.3.3</span> Outras funções do <code>tidyr</code></h3>
+<ul>
+<li><p>A função <code>unite()</code> junta duas ou mais colunas usando algum separador (<code>_</code>, por exemplo).</p></li>
+<li><p>A função <code>separate()</code> faz o inverso de <code>unite()</code>: transforma uma coluna em várias usando um separador.</p></li>
+</ul>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" data-line-number="1">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb169-2" data-line-number="2"><span class="st">  </span><span class="kw">unite</span>(</a>
+<a class="sourceLine" id="cb169-3" data-line-number="3">    <span class="dt">col =</span> <span class="st">&quot;titulo_diretor&quot;</span>,</a>
+<a class="sourceLine" id="cb169-4" data-line-number="4">    titulo, diretor,</a>
+<a class="sourceLine" id="cb169-5" data-line-number="5">    <span class="dt">sep =</span> <span class="st">&quot; - &quot;</span></a>
+<a class="sourceLine" id="cb169-6" data-line-number="6">  )</a>
+<a class="sourceLine" id="cb169-7" data-line-number="7"><span class="co">## # A tibble: 3,807 x 14</span></a>
+<a class="sourceLine" id="cb169-8" data-line-number="8"><span class="co">##    titulo_diretor   ano duracao cor   generos pais  classificacao orcamento</span></a>
+<a class="sourceLine" id="cb169-9" data-line-number="9"><span class="co">##    &lt;chr&gt;          &lt;int&gt;   &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb169-10" data-line-number="10"><span class="co">##  1 Avatar  - Jam~  2009     178 Color Action~ USA   A partir de ~ 237000000</span></a>
+<a class="sourceLine" id="cb169-11" data-line-number="11"><span class="co">##  2 Pirates of th~  2007     169 Color Action~ USA   A partir de ~ 300000000</span></a>
+<a class="sourceLine" id="cb169-12" data-line-number="12"><span class="co">##  3 The Dark Knig~  2012     164 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb169-13" data-line-number="13"><span class="co">##  4 John Carter  ~  2012     132 Color Action~ USA   A partir de ~ 263700000</span></a>
+<a class="sourceLine" id="cb169-14" data-line-number="14"><span class="co">##  5 Spider-Man 3 ~  2007     156 Color Action~ USA   A partir de ~ 258000000</span></a>
+<a class="sourceLine" id="cb169-15" data-line-number="15"><span class="co">##  6 Tangled  - Na~  2010     100 Color Advent~ USA   Livre         260000000</span></a>
+<a class="sourceLine" id="cb169-16" data-line-number="16"><span class="co">##  7 Avengers: Age~  2015     141 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb169-17" data-line-number="17"><span class="co">##  8 Batman v Supe~  2016     183 Color Action~ USA   A partir de ~ 250000000</span></a>
+<a class="sourceLine" id="cb169-18" data-line-number="18"><span class="co">##  9 Superman Retu~  2006     169 Color Action~ USA   A partir de ~ 209000000</span></a>
+<a class="sourceLine" id="cb169-19" data-line-number="19"><span class="co">## 10 Pirates of th~  2006     151 Color Action~ USA   A partir de ~ 225000000</span></a>
+<a class="sourceLine" id="cb169-20" data-line-number="20"><span class="co">## # ... with 3,797 more rows, and 6 more variables: receita &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb169-21" data-line-number="21"><span class="co">## #   nota_imdb &lt;dbl&gt;, likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb169-22" data-line-number="22"><span class="co">## #   ator_3 &lt;chr&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb170-1" data-line-number="1">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb170-2" data-line-number="2"><span class="st">  </span><span class="kw">separate</span>(</a>
+<a class="sourceLine" id="cb170-3" data-line-number="3">    <span class="dt">col =</span> generos,</a>
+<a class="sourceLine" id="cb170-4" data-line-number="4">    <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;genero_1&quot;</span>, <span class="st">&quot;genero_2&quot;</span>, <span class="st">&quot;genero_3&quot;</span>),</a>
+<a class="sourceLine" id="cb170-5" data-line-number="5">    <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">|&quot;</span>,</a>
+<a class="sourceLine" id="cb170-6" data-line-number="6">    <span class="dt">extra =</span> <span class="st">&quot;drop&quot;</span></a>
+<a class="sourceLine" id="cb170-7" data-line-number="7">  )</a>
+<a class="sourceLine" id="cb170-8" data-line-number="8"><span class="co">## # A tibble: 3,807 x 17</span></a>
+<a class="sourceLine" id="cb170-9" data-line-number="9"><span class="co">##    titulo   ano diretor duracao cor   genero_1 genero_2 genero_3 pais </span></a>
+<a class="sourceLine" id="cb170-10" data-line-number="10"><span class="co">##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;</span></a>
+<a class="sourceLine" id="cb170-11" data-line-number="11"><span class="co">##  1 Avata~  2009 James ~     178 Color Action   Adventu~ Fantasy  USA  </span></a>
+<a class="sourceLine" id="cb170-12" data-line-number="12"><span class="co">##  2 Pirat~  2007 Gore V~     169 Color Action   Adventu~ Fantasy  USA  </span></a>
+<a class="sourceLine" id="cb170-13" data-line-number="13"><span class="co">##  3 The D~  2012 Christ~     164 Color Action   Thriller &lt;NA&gt;     USA  </span></a>
+<a class="sourceLine" id="cb170-14" data-line-number="14"><span class="co">##  4 John ~  2012 Andrew~     132 Color Action   Adventu~ Sci-Fi   USA  </span></a>
+<a class="sourceLine" id="cb170-15" data-line-number="15"><span class="co">##  5 Spide~  2007 Sam Ra~     156 Color Action   Adventu~ Romance  USA  </span></a>
+<a class="sourceLine" id="cb170-16" data-line-number="16"><span class="co">##  6 Tangl~  2010 Nathan~     100 Color Adventu~ Animati~ Comedy   USA  </span></a>
+<a class="sourceLine" id="cb170-17" data-line-number="17"><span class="co">##  7 Aveng~  2015 Joss W~     141 Color Action   Adventu~ Sci-Fi   USA  </span></a>
+<a class="sourceLine" id="cb170-18" data-line-number="18"><span class="co">##  8 Batma~  2016 Zack S~     183 Color Action   Adventu~ Sci-Fi   USA  </span></a>
+<a class="sourceLine" id="cb170-19" data-line-number="19"><span class="co">##  9 Super~  2006 Bryan ~     169 Color Action   Adventu~ Sci-Fi   USA  </span></a>
+<a class="sourceLine" id="cb170-20" data-line-number="20"><span class="co">## 10 Pirat~  2006 Gore V~     151 Color Action   Adventu~ Fantasy  USA  </span></a>
+<a class="sourceLine" id="cb170-21" data-line-number="21"><span class="co">## # ... with 3,797 more rows, and 8 more variables: classificacao &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb170-22" data-line-number="22"><span class="co">## #   orcamento &lt;int&gt;, receita &lt;int&gt;, nota_imdb &lt;dbl&gt;, likes_facebook &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb170-23" data-line-number="23"><span class="co">## #   ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</span></a></code></pre></div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="importação.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="funcionais.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["temp.pdf", "temp.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
