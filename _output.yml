@@ -3,10 +3,12 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./"><img src = "img/logo.png" width = 40%></a></li>
+        <li><a href="./index.html"><img src = "https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width = 80%></a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
     download: ["pdf", "epub"]
+  includes:
+    in_header: [include_hyphotesis.html, google_fonts.html]
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

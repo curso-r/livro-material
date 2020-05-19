@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 3 R Básico | Ciência de Dados em R</title>
+  <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 3 R Básico | Ciência de Dados em R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="img/logo.png" />
+  <meta property="og:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
+  <meta name="github-repo" content="curso-r/livro-material" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 3 R Básico | Ciência de Dados em R" />
+  
+  <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
+  <meta name="twitter:image" content="img/logo.png" />
+
+<meta name="author" content="Curso-R" />
+
+
+<meta name="date" content="2020-05-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="rstudio.html"/>
+<link rel="next" href="pipe.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script async defer src="https://hypothes.is/embed.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html"><img src = "https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width = 80%></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre</a></li>
+<li class="chapter" data-level="1" data-path="instalação.html"><a href="instalação.html"><i class="fa fa-check"></i><b>1</b> Instalação</a><ul>
+<li class="chapter" data-level="1.1" data-path="instalação.html"><a href="instalação.html#instalação-do-r"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="instalação.html"><a href="instalação.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
+<li class="chapter" data-level="1.1.2" data-path="instalação.html"><a href="instalação.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="instalação.html"><a href="instalação.html#instalação-do-rstudio"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="instalação.html"><a href="instalação.html#no-windows-1"><i class="fa fa-check"></i><b>1.2.1</b> No Windows</a></li>
+<li class="chapter" data-level="1.2.2" data-path="instalação.html"><a href="instalação.html#no-linux-1"><i class="fa fa-check"></i><b>1.2.2</b> No Linux</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="instalação.html"><a href="instalação.html#instalação-de-pacotes"><i class="fa fa-check"></i><b>1.3</b> Instalação de pacotes</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="instalação.html"><a href="instalação.html#via-cran"><i class="fa fa-check"></i><b>1.3.1</b> Via CRAN</a></li>
+<li class="chapter" data-level="1.3.2" data-path="instalação.html"><a href="instalação.html#via-github"><i class="fa fa-check"></i><b>1.3.2</b> Via Github</a></li>
+<li class="chapter" data-level="1.3.3" data-path="instalação.html"><a href="instalação.html#via-arquivo-.zip-ou-.tar.gz"><i class="fa fa-check"></i><b>1.3.3</b> Via arquivo .zip ou .tar.gz</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="rstudio.html"><a href="rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a><ul>
+<li class="chapter" data-level="2.1" data-path="rstudio.html"><a href="rstudio.html#telas"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
+<li class="chapter" data-level="2.2" data-path="rstudio.html"><a href="rstudio.html#atalhos"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
+<li class="chapter" data-level="2.3" data-path="rstudio.html"><a href="rstudio.html#projetos"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
+<li class="chapter" data-level="2.4" data-path="rstudio.html"><a href="rstudio.html#git-e-versionamento"><i class="fa fa-check"></i><b>2.4</b> Git e versionamento</a></li>
+<li class="chapter" data-level="2.5" data-path="rstudio.html"><a href="rstudio.html#cheatsheets"><i class="fa fa-check"></i><b>2.5</b> Cheatsheets</a></li>
+<li class="chapter" data-level="2.6" data-path="rstudio.html"><a href="rstudio.html#addins"><i class="fa fa-check"></i><b>2.6</b> Addins</a></li>
+<li class="chapter" data-level="2.7" data-path="rstudio.html"><a href="rstudio.html#snippets"><i class="fa fa-check"></i><b>2.7</b> Snippets</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-básico.html"><a href="r-básico.html"><i class="fa fa-check"></i><b>3</b> R Básico</a><ul>
+<li class="chapter" data-level="3.1" data-path="r-básico.html"><a href="r-básico.html#pedindo-ajuda"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="r-básico.html"><a href="r-básico.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
+<li class="chapter" data-level="3.1.2" data-path="r-básico.html"><a href="r-básico.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
+<li class="chapter" data-level="3.1.3" data-path="r-básico.html"><a href="r-básico.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="r-básico.html"><a href="r-básico.html#r-como-calculadora"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a></li>
+<li class="chapter" data-level="3.3" data-path="r-básico.html"><a href="r-básico.html#objetos"><i class="fa fa-check"></i><b>3.3</b> Objetos</a></li>
+<li class="chapter" data-level="3.4" data-path="r-básico.html"><a href="r-básico.html#data-frames"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
+<li class="chapter" data-level="3.5" data-path="r-básico.html"><a href="r-básico.html#classes"><i class="fa fa-check"></i><b>3.5</b> Classes</a></li>
+<li class="chapter" data-level="3.6" data-path="r-básico.html"><a href="r-básico.html#vetores"><i class="fa fa-check"></i><b>3.6</b> Vetores</a></li>
+<li class="chapter" data-level="3.7" data-path="r-básico.html"><a href="r-básico.html#testes-lógicos"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a></li>
+<li class="chapter" data-level="3.8" data-path="r-básico.html"><a href="r-básico.html#valoresEspeciais"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a></li>
+<li class="chapter" data-level="3.9" data-path="r-básico.html"><a href="r-básico.html#listas"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
+<li class="chapter" data-level="3.10" data-path="r-básico.html"><a href="r-básico.html#mais-sobre-data-frames"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a></li>
+<li class="chapter" data-level="3.11" data-path="r-básico.html"><a href="r-básico.html#funcoes"><i class="fa fa-check"></i><b>3.11</b> Funções</a></li>
+<li class="chapter" data-level="3.12" data-path="r-básico.html"><a href="r-básico.html#controle-de-fluxo"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
+<li class="chapter" data-level="3.12.1" data-path="r-básico.html"><a href="r-básico.html#if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> if e else</a></li>
+<li class="chapter" data-level="3.12.2" data-path="r-básico.html"><a href="r-básico.html#for"><i class="fa fa-check"></i><b>3.12.2</b> for</a></li>
+<li class="chapter" data-level="3.12.3" data-path="r-básico.html"><a href="r-básico.html#while"><i class="fa fa-check"></i><b>3.12.3</b> while</a></li>
+</ul></li>
+<li class="chapter" data-level="3.13" data-path="r-básico.html"><a href="r-básico.html#outros-tópicos"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a><ul>
+<li class="chapter" data-level="3.13.1" data-path="r-básico.html"><a href="r-básico.html#matrizes"><i class="fa fa-check"></i><b>3.13.1</b> Matrizes</a></li>
+<li class="chapter" data-level="3.13.2" data-path="r-básico.html"><a href="r-básico.html#fatores"><i class="fa fa-check"></i><b>3.13.2</b> Fatores</a></li>
+<li class="chapter" data-level="3.13.3" data-path="r-básico.html"><a href="r-básico.html#fórmulas"><i class="fa fa-check"></i><b>3.13.3</b> Fórmulas</a></li>
+<li class="chapter" data-level="3.13.4" data-path="r-básico.html"><a href="r-básico.html#gráficos-base"><i class="fa fa-check"></i><b>3.13.4</b> Gráficos (base)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.14" data-path="r-básico.html"><a href="r-básico.html#exercícios"><i class="fa fa-check"></i><b>3.14</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="pipe.html"><a href="pipe.html"><i class="fa fa-check"></i><b>4</b> Pipe</a><ul>
+<li class="chapter" data-level="4.1" data-path="pipe.html"><a href="pipe.html#o-operador-pipe"><i class="fa fa-check"></i><b>4.1</b> O operador pipe</a></li>
+<li class="chapter" data-level="4.2" data-path="pipe.html"><a href="pipe.html#outros-operadores"><i class="fa fa-check"></i><b>4.2</b> Outros operadores</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="pipe.html"><a href="pipe.html#operador-de-atribuição-assignment-operator"><i class="fa fa-check"></i><b>4.2.1</b> Operador de atribuição ( Assignment operator )</a></li>
+<li class="chapter" data-level="4.2.2" data-path="pipe.html"><a href="pipe.html#operador-tee"><i class="fa fa-check"></i><b>4.2.2</b> Operador tee</a></li>
+<li class="chapter" data-level="4.2.3" data-path="pipe.html"><a href="pipe.html#exposition-operator"><i class="fa fa-check"></i><b>4.2.3</b> Exposition operator</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="pipe.html"><a href="pipe.html#exercícios-1"><i class="fa fa-check"></i><b>4.3</b> Exercícios</a></li>
+<li class="chapter" data-level="4.4" data-path="pipe.html"><a href="pipe.html#respostas"><i class="fa fa-check"></i><b>4.4</b> Respostas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="importação.html"><a href="importação.html"><i class="fa fa-check"></i><b>5</b> Importação</a><ul>
+<li class="chapter" data-level="5.1" data-path="importação.html"><a href="importação.html#readr"><i class="fa fa-check"></i><b>5.1</b> readr</a></li>
+<li class="chapter" data-level="5.2" data-path="importação.html"><a href="importação.html#readxl"><i class="fa fa-check"></i><b>5.2</b> readxl</a></li>
+<li class="chapter" data-level="5.3" data-path="importação.html"><a href="importação.html#haven"><i class="fa fa-check"></i><b>5.3</b> haven</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="manipulação.html"><a href="manipulação.html"><i class="fa fa-check"></i><b>6</b> Manipulação</a><ul>
+<li class="chapter" data-level="6.1" data-path="manipulação.html"><a href="manipulação.html#trabalhando-com-tibbles"><i class="fa fa-check"></i><b>6.1</b> Trabalhando com tibbles</a></li>
+<li class="chapter" data-level="6.2" data-path="manipulação.html"><a href="manipulação.html#o-pacote-dplyr"><i class="fa fa-check"></i><b>6.2</b> O pacote dplyr</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="manipulação.html"><a href="manipulação.html#filtrando-linhas"><i class="fa fa-check"></i><b>6.2.1</b> Filtrando linhas</a></li>
+<li class="chapter" data-level="6.2.2" data-path="manipulação.html"><a href="manipulação.html#selecionando-colunas"><i class="fa fa-check"></i><b>6.2.2</b> Selecionando colunas</a></li>
+<li class="chapter" data-level="6.2.3" data-path="manipulação.html"><a href="manipulação.html#ordenando-a-base"><i class="fa fa-check"></i><b>6.2.3</b> Ordenando a base</a></li>
+<li class="chapter" data-level="6.2.4" data-path="manipulação.html"><a href="manipulação.html#criando-e-modificando-colunas"><i class="fa fa-check"></i><b>6.2.4</b> Criando e modificando colunas</a></li>
+<li class="chapter" data-level="6.2.5" data-path="manipulação.html"><a href="manipulação.html#summarisando-a-base"><i class="fa fa-check"></i><b>6.2.5</b> Summarisando a base</a></li>
+<li class="chapter" data-level="6.2.6" data-path="manipulação.html"><a href="manipulação.html#juntando-duas-bases"><i class="fa fa-check"></i><b>6.2.6</b> Juntando duas bases</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="manipulação.html"><a href="manipulação.html#o-pacote-tidyr"><i class="fa fa-check"></i><b>6.3</b> O pacote tidyr</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="manipulação.html"><a href="manipulação.html#gather"><i class="fa fa-check"></i><b>6.3.1</b> <code>gather()</code></a></li>
+<li class="chapter" data-level="6.3.2" data-path="manipulação.html"><a href="manipulação.html#spread"><i class="fa fa-check"></i><b>6.3.2</b> <code>spread()</code></a></li>
+<li class="chapter" data-level="6.3.3" data-path="manipulação.html"><a href="manipulação.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>6.3.3</b> Outras funções do <code>tidyr</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="funcionais.html"><a href="funcionais.html"><i class="fa fa-check"></i><b>7</b> Funcionais</a></li>
+<li class="chapter" data-level="8" data-path="respostas-1.html"><a href="respostas-1.html"><i class="fa fa-check"></i><b>8</b> Respostas</a><ul>
+<li class="chapter" data-level="8.1" data-path="respostas-1.html"><a href="respostas-1.html#r-básico-1"><i class="fa fa-check"></i><b>8.1</b> R básico</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Ciência de Dados em R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="r-básico" class="section level1">
+<h1><span class="header-section-number">Capítulo 3</span> R Básico</h1>
+<p>Introduziremos aqui os principais conceitos de programação em R. Indicamos a leitura deste capítulo a quem nunca teve contato com uma linguagem de programação ou a quem gostaria de entender um pouco melhor a estrutura de objetos, funções e classes do R.</p>
+<p>Os tópicos discutidos aqui são especialmente importantes para entendermos o que é um <em>data frame</em>, a nossa base de dados dentro do R, e quais operações estão sendo realizadas por trás das cortinas quando estivermos filtrando suas linhas ou modificando suas colunas. Também são importantes para começarmos a criar as nossas próprias funções, o que deixa nossos códigos muito mais organizados, eficientes e <em>compartilháveis</em>.</p>
+<div id="pedindo-ajuda" class="section level2">
+<h2><span class="header-section-number">3.1</span> Pedindo Ajuda</h2>
+<p>A linguagem <code>R</code> é bem intuitiva. É possível fazer bastante coisa à base da tentativa e erro. Além disso, grande parte do conhecimento é escalável, isto é, aprender a utilizar uma função é meio caminho andado para aprender todas as outras funções que operam de forma semelhante<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p>No entanto, a intuição não infalível, e recorrentemente vamos precisar de ajuda para rodar alguma função ou descobrir como fazer alguma tarefa no R. Felizmente, a comunidade R é bem ativa e existem vários lugares para buscar respostas. Nesta seção, vamos apresentar as principais maneiras algumas dessas maneiras.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-14"></span>
+<img src="img/r-base/code_hero_rstats.png" alt="Arte por Allison Horst. Veja nas Referências onde encontrá-la." width="1378" />
+<p class="caption">
+Figure 3.1: Arte por Allison Horst. Veja nas Referências onde encontrá-la.
+</p>
+</div>
+<p>No R, há quatro principais entidades para se pedir ajuda:</p>
+<ul>
+<li>Help/documentação do R</li>
+<li>Google</li>
+<li>Stack Overflow</li>
+<li>Coleguinha</li>
+</ul>
+<p>A busca por ajuda é feita preferencialmente, mas não necessariamente, na ordem acima.</p>
+<div id="documentação-do-r" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Documentação do R</h3>
+<p>A documentação do R serve para você aprender a usar uma determinada função. Se você não sabe o que é uma função, não se preocupe. Discutiremos esse tópico na Seção <a href="r-básico.html#funcoes">3.11</a>.</p>
+<p>Você pode acessar a documentação de uma função<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> das seguintes maneiras:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">?mean</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">help</span>(mean)</a></code></pre></div>
+<p>Algumas dicas:</p>
+<ol style="list-style-type: decimal">
+<li>Leia a seção <em>Usage</em> para ter noção de como usar a função.</li>
+<li>Os parâmetros da função estão descritos em <em>Arguments</em>.</li>
+<li>Os exemplos no final são particularmente úteis.</li>
+<li>Caso essa função não atenda às suas necessidades, a seção <em>See Also</em> sugere funções relacionadas.</li>
+</ol>
+<p>Alguns pacotes possuem tutorias de uso mais completos. Esses textos são chamados de <code>vignettes</code> e podem ser acessados com a função <code>vignette(package = 'nomeDoPacote')</code>. Por exemplo, <code>vignette(package = 'dplyr')</code>.</p>
+</div>
+<div id="google" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Google</h3>
+<p>Há uma comunidade gigantesca de usuários de R gerando diariamente uma infinidade de conteúdos e discussões. Não raramente, você irá encontrar discussões sobre o seu problema simplesmente o descrevendo no Google. Pesquisas em inglês aumentam consideravelmente a chance de encontrar uma resposta.</p>
+<p>Quando você recebe um erro na tentativa de rodar algum código no R e não sabe o que está errado, uma boa estratégia é pesquisar a mensagem de erro no Google. Essa deve ser sua primeira tentativa para resolver o problema. Repare na imagem abaixo o ‘r’ adicionado na busca. Isso ajuda bastante a encontrar uma solução.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">log</span>(<span class="st">&quot;5&quot;</span>)</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">## Error in log(&quot;5&quot;): non-numeric argument to mathematical function</span></a></code></pre></div>
+<p><img src="img/r-base/ajuda_google.png" width="795" height="267" style="display: block; margin: auto;" /></p>
+</div>
+<div id="stack-overflow" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Stack Overflow</h3>
+<p>O <a href="http://stackoverflow.com/">Stack Overflow</a> e o <a href="http://pt.stackoverflow.com/">Stack Overflow em Português</a> são sites de Pergunta e Resposta amplamente utilizados por todas as linguagens de programação, e o R é uma delas. Nos EUA, chegam até a usar a reputação dos usuários dentro da plataforma como diferencial no currículo!</p>
+<p>Provavelmente o Google lhe indicará uma página deles quando você estiver procurando ajuda. E quando todas as fontes possíveis de ajuda falharem, o Stack Overflow lhe dará o espaço para <strong>criar sua própria pergunta</strong>.</p>
+<p><strong>Um ponto importante</strong>: como fazer uma <em>boa pergunta</em> no Stack Overflow?</p>
+<p>No site, existe um tutorial com uma lista de boas práticas, <a href="http://pt.stackoverflow.com/help/how-to-ask">que se encontra aqui</a>. Resumindo, as principais dicas são</p>
+<ul>
+<li>ser conciso;</li>
+<li>ser específico;</li>
+<li>ter mente aberta; e</li>
+<li>ser gentil.</li>
+</ul>
+<p>Porém, no caso do R, há outro requisito que vai aumentar muito sua chance de ter uma boa resposta: <strong>exemplinho minimal e reprodutível</strong>.</p>
+<ul>
+<li><p>Ser <strong>minimal</strong>: usar bancos de dados menores e utilizar pedaços de códigos apenas suficientes para apresentar o seu problema. Não precisa de banco de dados de um milhão de linhas e nem colocar o seu código inteiro para descrever a sua dúvida.</p></li>
+<li><p>Ser <strong>reprodutível</strong>: o seu código deve rodar fora da sua máquina. Se você não fornecer uma versão do seu problema que rode (ou que imite seu erro), as pessoas vão logo desistir de te ajudar. Por isso, nunca coloque bancos de dados que só você tem acesso. Use bancos de dados que já vem no R ou disponibilize um exemplo (possivelmente anonimizado) em <code>.csv</code> na web para baixar. E se precisar utilizar funções de algum pacote, especifique os pacotes que você usou.</p></li>
+</ul>
+<!-- ### R Markdown -->
+<!-- O R Markdown é um tipo de documento especial que contém tanto textos em *markdown* quanto *chunks* de códigos em R, tudo escrito no mesmo lugar.  -->
+<!-- O *markdown* nada mais é do que um documento de texto com alguns padrões básicos de formatação, como negrito, itálico, títulos, subtítulos, itens e referências cruzadas. Já os *chunks* são pedaços de códigos em R encapsulados por três crases (```). Os códigos são executados sempre que o documento é processado. -->
+<!-- ```{r, echo=FALSE} -->
+<!-- cat("```{r} -->
+<!-- isto é um chunk.  -->
+<!-- ```") -->
+<!-- ``` -->
+<!-- > Este site foi escrito em R Markdown. Toda vez que aparecer exemplos de código de R, havia um chunk no .Rmd original. -->
+<!-- Para produção de relatórios, o R Markdown possui algumas vantagens, como: -->
+<!-- 1. **Simplicidade e foco**. Permite ao usuário o foco na análise e não na formatação do documento. -->
+<!-- 1. **Versátil**. Pode ser utilizado para gerar documentos em `LaTeX`, `Word`, `HTML` e apresentações em `beamer`, `pptx` e `HTML`. Pode ainda gerar sites, livros, dissertações de mestrado e até mesmo dashboards interativos. -->
+<!-- 1. **Reprodutível**. O R Markdown nada mais é que um arquivo de texto. Além disso, ele tenta te obrigar a fazer o documento mais autocontido possível. Assim, um documento `.Rmd` é fácil de compartilhar e de ser utilizado pelo receptor. Lembre-se, o receptor pode ser o futuro você! Vale enfatizar que a reprodutibilidade é considerada como um dos princípios fundamentais da ciência. Então, só de usar R Markdown, você já está colaborando com o método científico. :) -->
+<!-- 1. **Flexível**. É possível configurar e criar *templates* de análises para quaisquer tipos de aplicações e clientes. Os textos podem ser parametrizados por números que variam de versão para versão, mensalmente, por exemplo, tudo escrito somente em R.  -->
+<!-- Criar um R Markdown novo no RStudio é fácil. Clique no botão de criar arquivo e selecione R Markdown. -->
+<!-- ```{r echo=FALSE, fig.align='center'} -->
+<!-- knitr::include_graphics(rep("img/r-base/criar_rmarkdown.png")) -->
+<!-- ``` -->
+<!-- Para detalhes sobre como utilizar o R Markdown, leia   [esta seção do R4DS](http://r4ds.had.co.nz/r-markdown.html) e [o tutorial do RStudio](http://rmarkdown.rstudio.com/lesson-1.html). -->
+</div>
+</div>
+<div id="r-como-calculadora" class="section level2">
+<h2><span class="header-section-number">3.2</span> R como calculadora</h2>
+<p>O papel do <strong>Console</strong> no R é executar os nossos comandos. Ele avalia o código que passamos para ele e devolve a saída correspondente — se tudo der certo — ou uma mensagem de erro — se o seu código tiver algum problema.</p>
+<p>Vamos começar com o exemplo mais simples possível:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">## [1] 2</span></a></code></pre></div>
+<p>Nesse caso, o nosso comando foi o código <code>1 + 1</code> e a saída foi o valor <code>2</code>.</p>
+<blockquote>
+<p><strong>Nota: quando compilamos?</strong> Quem vem de linguagens como o C ou Java espera que seja necessário compilar o código em texto para o código das máquinas (geralmente um código binário). No R, isso não é necessário. O R é uma linguagem de programação dinâmica que interpreta o seu código enquanto você o executa.</p>
+</blockquote>
+<p>Tente agora jogar no console a expressão: <code>2 * 2 - (4 + 4) / 2</code>.</p>
+<p>Pronto! Você já é capaz de pedir ao R para fazer qualquer uma das quatro operações aritméticas básicas. A seguir, apresentamos uma lista resumindo como fazer as principais operações no R.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># adição</span></a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="co">## [1] 2</span></a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co"># subtração</span></a>
+<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="dv">4</span> <span class="op">-</span><span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="co">## [1] 2</span></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb10-9" data-line-number="9"><span class="co"># multiplicação</span></a>
+<a class="sourceLine" id="cb10-10" data-line-number="10"><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb10-11" data-line-number="11"><span class="co">## [1] 6</span></a>
+<a class="sourceLine" id="cb10-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb10-13" data-line-number="13"><span class="co"># divisão</span></a>
+<a class="sourceLine" id="cb10-14" data-line-number="14"><span class="dv">5</span> <span class="op">/</span><span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb10-15" data-line-number="15"><span class="co">## [1] 1.666667</span></a>
+<a class="sourceLine" id="cb10-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb10-17" data-line-number="17"><span class="co"># potência</span></a>
+<a class="sourceLine" id="cb10-18" data-line-number="18"><span class="dv">4</span> <span class="op">^</span><span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb10-19" data-line-number="19"><span class="co">## [1] 16</span></a>
+<a class="sourceLine" id="cb10-20" data-line-number="20"></a>
+<a class="sourceLine" id="cb10-21" data-line-number="21"><span class="co"># resto da divisão de 5 por 3</span></a>
+<a class="sourceLine" id="cb10-22" data-line-number="22"><span class="dv">5</span> <span class="op">%%</span><span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb10-23" data-line-number="23"><span class="co">## [1] 2</span></a>
+<a class="sourceLine" id="cb10-24" data-line-number="24"></a>
+<a class="sourceLine" id="cb10-25" data-line-number="25"><span class="co"># parte inteira da divisão de 5 por 3</span></a>
+<a class="sourceLine" id="cb10-26" data-line-number="26"><span class="dv">5</span> <span class="op">%/%</span><span class="st"> </span><span class="dv">3</span>  </a>
+<a class="sourceLine" id="cb10-27" data-line-number="27"><span class="co">## [1] 1</span></a></code></pre></div>
+<p>Repare que as operações e suas precedências são mantidas como na matemática, ou seja, divisão e multiplicação são calculadas antes da adição e subtração. E os parênteses nunca são demais!</p>
+<p>Uma outra forma de executar uma expressão é escrever o código em um <strong>script</strong>, deixar o cursor em cima da linha e usar o atalho <code>Ctrl + Enter</code>. Assim, o comando é enviado para o <strong>Console</strong>, onde é diretamente executado. Essa operação é chamada de <strong>avaliar</strong>, <strong>executar</strong> ou <strong>rodar</strong> o código.</p>
+<p>Se você digitar um comando incompleto, como <code>5 +</code>, e apertar <code>Enter</code>, o R mostrará um <code>+</code>, o que não tem nada a ver com a adição da matemática. Isso significa que o R está esperando que você enviar <strong>mais</strong> algum código para completar o seu comando. Termine o seu comando ou aperte <code>Esc</code> para recomeçar.</p>
+<pre><code>&gt; 5 -
++ 
++ 5
+[1] 0</code></pre>
+<p>Se você digitar um comando que o R não reconhece, ele retornará uma mensagem de erro.</p>
+<p>NÃO ENTRE EM PÂNICO!</p>
+<p>Ele só está avisando que não conseguiu interpretar o comando. Você pode digitar outro comando normalmente em seguida.</p>
+<pre><code>&gt; 5 % 2
+Error: unexpected input in &quot;5 % 2&quot;
+&gt; 5 ^ 2
+[1] 25</code></pre>
+</div>
+<div id="objetos" class="section level2">
+<h2><span class="header-section-number">3.3</span> Objetos</h2>
+<p>O R te permite salvar valores dentro de um <strong>objeto</strong>. Um objeto é simplesmente um nome que guarda um valor. Para criar um objeto, utilizamos o operador <code>&lt;-</code>.</p>
+<p>No exemplo abaixo, salvamos o valor <code>1</code> em <code>a</code>. Sempre que avaliarmos o objeto <code>a</code>, o R vai devolver o valor 1.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co"># Salvando `1` em `a`</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">a &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="co"># Avaliando o objeto `a`</span></a>
+<a class="sourceLine" id="cb13-5" data-line-number="5">a</a>
+<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="co">## [1] 1</span></a></code></pre></div>
+<p>Existem algumas regras para dar nomes aos objetos. A mais importante é: o nome deve começar com uma letra<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. O nome pode conter números, mas não pode começar com números. Você pode usar pontos <code>.</code> e underlines <code>_</code> para separar palavras.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="co"># Permitido</span></a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb14-3" data-line-number="3">x &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb14-4" data-line-number="4">x1 &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb14-5" data-line-number="5">objeto &lt;-<span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb14-6" data-line-number="6">meu_objeto &lt;-<span class="st"> </span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb14-7" data-line-number="7">meu.objeto &lt;-<span class="st"> </span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb14-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb14-9" data-line-number="9"><span class="co"># Não permitido</span></a>
+<a class="sourceLine" id="cb14-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb14-11" data-line-number="11">1x &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb14-12" data-line-number="12">_objeto &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb14-13" data-line-number="13">meu<span class="op">-</span>objeto &lt;-<span class="st"> </span><span class="dv">3</span></a></code></pre></div>
+<p><strong>Atenção!</strong></p>
+<p>O R <strong>diferencia letras maiúsculas e minúsculas</strong>, isto é, <code>b</code> é considerado um objeto diferente de <code>B</code>. Rode o exemplo abaixo e observe que dois objetos diferentes são criados no <strong>Environment</strong>.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">b &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb15-2" data-line-number="2">B &lt;-<span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb15-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb15-4" data-line-number="4">b</a>
+<a class="sourceLine" id="cb15-5" data-line-number="5"><span class="co">## [1] 2</span></a>
+<a class="sourceLine" id="cb15-6" data-line-number="6">B</a>
+<a class="sourceLine" id="cb15-7" data-line-number="7"><span class="co">## [1] 3</span></a></code></pre></div>
+<p>O objeto mais importante para o cientista de dados é, claro, a base de dados. No R, uma base de dados é representa por objetos chamados de <em>data frames</em>. A seguir, vamos entender o que são esses objetos.</p>
+</div>
+<div id="data-frames" class="section level2">
+<h2><span class="header-section-number">3.4</span> Data frames</h2>
+<p>Os <em>data frames</em> são de extrema importância no R, pois são os objetos que guardam os nossos dados. Eles são equivalentes a uma tabela do SQL ou uma planilha do Excel.</p>
+<p>A principal característica de um <em>data frame</em> é possuir linhas e colunas<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. Veja o exemplo abaixo:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">mtcars</a>
+<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="co">##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb</span></a>
+<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="co">## Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4</span></a>
+<a class="sourceLine" id="cb16-4" data-line-number="4"><span class="co">## Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4</span></a>
+<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="co">## Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1</span></a>
+<a class="sourceLine" id="cb16-6" data-line-number="6"><span class="co">## Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1</span></a>
+<a class="sourceLine" id="cb16-7" data-line-number="7"><span class="co">## Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2</span></a>
+<a class="sourceLine" id="cb16-8" data-line-number="8"><span class="co">## Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1</span></a>
+<a class="sourceLine" id="cb16-9" data-line-number="9"><span class="co">## Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4</span></a>
+<a class="sourceLine" id="cb16-10" data-line-number="10"><span class="co">## Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2</span></a>
+<a class="sourceLine" id="cb16-11" data-line-number="11"><span class="co">## Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2</span></a>
+<a class="sourceLine" id="cb16-12" data-line-number="12"><span class="co">## Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4</span></a>
+<a class="sourceLine" id="cb16-13" data-line-number="13"><span class="co">## Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4</span></a>
+<a class="sourceLine" id="cb16-14" data-line-number="14"><span class="co">## Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3</span></a>
+<a class="sourceLine" id="cb16-15" data-line-number="15"><span class="co">## Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3</span></a>
+<a class="sourceLine" id="cb16-16" data-line-number="16"><span class="co">## Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3</span></a>
+<a class="sourceLine" id="cb16-17" data-line-number="17"><span class="co">## Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4</span></a>
+<a class="sourceLine" id="cb16-18" data-line-number="18"><span class="co">## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4</span></a>
+<a class="sourceLine" id="cb16-19" data-line-number="19"><span class="co">## Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4</span></a>
+<a class="sourceLine" id="cb16-20" data-line-number="20"><span class="co">## Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1</span></a>
+<a class="sourceLine" id="cb16-21" data-line-number="21"><span class="co">## Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2</span></a>
+<a class="sourceLine" id="cb16-22" data-line-number="22"><span class="co">## Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1</span></a>
+<a class="sourceLine" id="cb16-23" data-line-number="23"><span class="co">## Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1</span></a>
+<a class="sourceLine" id="cb16-24" data-line-number="24"><span class="co">## Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2</span></a>
+<a class="sourceLine" id="cb16-25" data-line-number="25"><span class="co">## AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2</span></a>
+<a class="sourceLine" id="cb16-26" data-line-number="26"><span class="co">## Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4</span></a>
+<a class="sourceLine" id="cb16-27" data-line-number="27"><span class="co">## Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2</span></a>
+<a class="sourceLine" id="cb16-28" data-line-number="28"><span class="co">## Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1</span></a>
+<a class="sourceLine" id="cb16-29" data-line-number="29"><span class="co">## Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2</span></a>
+<a class="sourceLine" id="cb16-30" data-line-number="30"><span class="co">## Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</span></a>
+<a class="sourceLine" id="cb16-31" data-line-number="31"><span class="co">## Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4</span></a>
+<a class="sourceLine" id="cb16-32" data-line-number="32"><span class="co">## Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6</span></a>
+<a class="sourceLine" id="cb16-33" data-line-number="33"><span class="co">## Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8</span></a>
+<a class="sourceLine" id="cb16-34" data-line-number="34"><span class="co">## Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</span></a></code></pre></div>
+<p>O <code>mtcars</code> é um <em>data frame</em> nativo do R que contém informações sobre diversos modelos de carros. Ele possui 32 linhas e 11 colunas<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>. Se você quiser saber mais sobre o <code>mtcars</code>, veja a documentação dele rodando <code>?mtcars</code> no <strong>Console</strong>.</p>
+<p>Nos próximos capítulos, os <em>data frames</em> serão o nosso principal objeto de estudo. Aprenderemos a selecionar, criar e modificar colunas, filtrar e ordenar linhas, juntar dois <em>data frames</em> e, a partir deles, construiremos gráficos e ajustaremos modelos.</p>
+<p>Mas, da mesma forma que é muito mais fácil aprendermos a fritar um ovo após entendermos o que é o fogo, uma frigideira e um ovo, vamos estudar nas próximas seções quais são as estruturas que formam os <em>data frames</em> e como manipulá-las.</p>
+</div>
+<div id="classes" class="section level2">
+<h2><span class="header-section-number">3.5</span> Classes</h2>
+<p>A classe de um objeto é muito importante dentro do R. É a partir dela que as funções e operadores conseguem saber exatamente o que fazer com um objeto.</p>
+<p>Por exemplo, podemos somar dois números, mas não conseguimos somar duas letras (texto):</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="co">## [1] 2</span></a>
+<a class="sourceLine" id="cb17-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb17-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb17-5" data-line-number="5"><span class="st">&quot;a&quot;</span> <span class="op">+</span><span class="st"> &quot;b&quot;</span></a>
+<a class="sourceLine" id="cb17-6" data-line-number="6"><span class="co">## Error in &quot;a&quot; + &quot;b&quot;: argumento não-numérico para operador binário</span></a></code></pre></div>
+<p>O operador <code>+</code> verifica que <code>&quot;a&quot;</code> e <code>&quot;b&quot;</code> não são números (ou que a classe deles não é numérica) e devolve uma mensagem de erro informando isso.</p>
+<p>Observe que para criar texto no R, colocamos os caracteres entre aspas. As aspas servem para diferenciar <em>nomes</em> (objetos, funções, pacotes) de <em>textos</em> (letras e palavras). Os textos são muito comuns em variáveis categóricas.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">a &lt;-<span class="st"> </span><span class="dv">10</span></a>
+<a class="sourceLine" id="cb18-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb18-3" data-line-number="3"><span class="co"># O objeto `a`, sem aspas</span></a>
+<a class="sourceLine" id="cb18-4" data-line-number="4">a</a>
+<a class="sourceLine" id="cb18-5" data-line-number="5"><span class="co">## [1] 10</span></a>
+<a class="sourceLine" id="cb18-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb18-7" data-line-number="7"><span class="co"># A letra (texto) `a`, com aspas</span></a>
+<a class="sourceLine" id="cb18-8" data-line-number="8"><span class="st">&quot;a&quot;</span></a>
+<a class="sourceLine" id="cb18-9" data-line-number="9"><span class="co">## [1] &quot;a&quot;</span></a></code></pre></div>
+<p>Para saber a classe de um objeto, basta rodarmos <code>class(nome-do-objeto)</code>.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb19-2" data-line-number="2"><span class="kw">class</span>(x)</a>
+<a class="sourceLine" id="cb19-3" data-line-number="3"><span class="co">## [1] &quot;numeric&quot;</span></a>
+<a class="sourceLine" id="cb19-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb19-5" data-line-number="5">y &lt;-<span class="st"> &quot;a&quot;</span></a>
+<a class="sourceLine" id="cb19-6" data-line-number="6"><span class="kw">class</span>(y)</a>
+<a class="sourceLine" id="cb19-7" data-line-number="7"><span class="co">## [1] &quot;character&quot;</span></a>
+<a class="sourceLine" id="cb19-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb19-9" data-line-number="9"><span class="kw">class</span>(mtcars)</a>
+<a class="sourceLine" id="cb19-10" data-line-number="10"><span class="co">## [1] &quot;data.frame&quot;</span></a></code></pre></div>
+<p>As classes mais básicas dentro do R são:</p>
+<ul>
+<li><em>numeric</em></li>
+<li><em>character</em></li>
+<li><em>logical</em></li>
+</ul>
+<p>Veja alguns exemplos:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="co"># numeric</span></a>
+<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="dv">1</span></a>
+<a class="sourceLine" id="cb20-3" data-line-number="3"><span class="fl">0.10</span></a>
+<a class="sourceLine" id="cb20-4" data-line-number="4"><span class="fl">0.95</span></a>
+<a class="sourceLine" id="cb20-5" data-line-number="5">pi</a>
+<a class="sourceLine" id="cb20-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb20-7" data-line-number="7"><span class="co"># characters</span></a>
+<a class="sourceLine" id="cb20-8" data-line-number="8"><span class="st">&quot;a&quot;</span></a>
+<a class="sourceLine" id="cb20-9" data-line-number="9"><span class="st">&quot;1&quot;</span></a>
+<a class="sourceLine" id="cb20-10" data-line-number="10"><span class="st">&quot;positivo&quot;</span></a>
+<a class="sourceLine" id="cb20-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb20-12" data-line-number="12"><span class="co"># logical</span></a>
+<a class="sourceLine" id="cb20-13" data-line-number="13"><span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb20-14" data-line-number="14"><span class="ot">FALSE</span></a></code></pre></div>
+<p>Um objeto de qualquer uma dessas classes é chamado de <strong>objeto atômico</strong>.</p>
+<p>Esse nome se deve ao fato de essas classes não se misturarem, isto é, para um objeto ter a classe <code>numeric</code>, por exemplo, todos os seus valores precisam ser numéricos.</p>
+<p>Mas como atribuir mais de um valor a um mesmo objeto? Para isso, precisamos criar <strong>vetores</strong>.</p>
+</div>
+<div id="vetores" class="section level2">
+<h2><span class="header-section-number">3.6</span> Vetores</h2>
+<p>Vetores são estruturas muito importantes dentro R. Em especial, pensando em análise de dados, precisamos estudá-los pois cada coluna de um <em>data frame</em> será representada como um vetor.</p>
+<p>Vetores no R são apenas <strong>conjuntos indexados de valores</strong>. Para criá-los, basta colocar os valores separados por vírgulas dentro de um <code>c()</code>.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">vetor1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">-10</span>)</a>
+<a class="sourceLine" id="cb21-2" data-line-number="2">vetor2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</a>
+<a class="sourceLine" id="cb21-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb21-4" data-line-number="4">vetor1</a>
+<a class="sourceLine" id="cb21-5" data-line-number="5"><span class="co">## [1]   1   5   3 -10</span></a>
+<a class="sourceLine" id="cb21-6" data-line-number="6">vetor2</a>
+<a class="sourceLine" id="cb21-7" data-line-number="7"><span class="co">## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</span></a></code></pre></div>
+<p>Os objetos <code>vetor1</code> e <code>vetor2</code> são vetores.</p>
+<p>Uma maneira fácil de criar um vetor com uma sequência de números é utilizar o operador <code>:</code>.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="co"># Vetor de 1 a 10</span></a>
+<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="dv">1</span><span class="op">:</span><span class="dv">10</span></a>
+<a class="sourceLine" id="cb22-3" data-line-number="3"><span class="co">##  [1]  1  2  3  4  5  6  7  8  9 10</span></a>
+<a class="sourceLine" id="cb22-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb22-5" data-line-number="5"><span class="co"># Vetor de 10 a 1</span></a>
+<a class="sourceLine" id="cb22-6" data-line-number="6"><span class="dv">10</span><span class="op">:</span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb22-7" data-line-number="7"><span class="co">##  [1] 10  9  8  7  6  5  4  3  2  1</span></a>
+<a class="sourceLine" id="cb22-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb22-9" data-line-number="9"><span class="co"># Vetor de -3 a 3</span></a>
+<a class="sourceLine" id="cb22-10" data-line-number="10"><span class="dv">-3</span><span class="op">:</span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb22-11" data-line-number="11"><span class="co">## [1] -3 -2 -1  0  1  2  3</span></a></code></pre></div>
+<p>Quando dizemos que vetores são conjuntos <em>indexados</em>, isso quer dizer que cada valor dentro de um vetor tem uma <strong>posição</strong>. Essa posição é dada pela ordem em que os elementos foram colocados no momento em que o vetor foi criado. Isso nos permite acessar individualmente cada valor de um vetor.</p>
+<p>Para isso, colocamos o índice do valor que queremos acessar dentro de colchetes <code>[]</code>.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">vetor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>)</a>
+<a class="sourceLine" id="cb23-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb23-3" data-line-number="3">vetor[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb23-4" data-line-number="4"><span class="co">## [1] &quot;a&quot;</span></a>
+<a class="sourceLine" id="cb23-5" data-line-number="5">vetor[<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb23-6" data-line-number="6"><span class="co">## [1] &quot;b&quot;</span></a>
+<a class="sourceLine" id="cb23-7" data-line-number="7">vetor[<span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb23-8" data-line-number="8"><span class="co">## [1] &quot;c&quot;</span></a>
+<a class="sourceLine" id="cb23-9" data-line-number="9">vetor[<span class="dv">4</span>]</a>
+<a class="sourceLine" id="cb23-10" data-line-number="10"><span class="co">## [1] &quot;d&quot;</span></a></code></pre></div>
+<p>Você também pode colocar um conjunto de índices dentro dos colchetes, para pegar os valores contidos nessas posições:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">vetor[<span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)]</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="co">## [1] &quot;b&quot; &quot;c&quot;</span></a>
+<a class="sourceLine" id="cb24-3" data-line-number="3">vetor[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>)]</a>
+<a class="sourceLine" id="cb24-4" data-line-number="4"><span class="co">## [1] &quot;a&quot; &quot;b&quot; &quot;d&quot;</span></a></code></pre></div>
+<p>Essa operação é conhecida como <em>subsetting</em>, pois estamos pegando subconjuntos de valores de um vetor.</p>
+<p>Se você tentar acessar uma posição do vetor que não existe, ele retornará <code>NA</code>, indicando que esse valor não existe. Discutiremos o que são <code>NA</code>’s na Seção <a href="r-básico.html#valoresEspeciais">3.8</a>.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">vetor[<span class="dv">5</span>]</a>
+<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="co">## [1] NA</span></a></code></pre></div>
+<p>Um vetor só pode guardar um tipo de objeto e ele terá sempre a mesma classe dos objetos que guarda. Para saber a classe de um vetor, rodamos <code>class(nome-do-vetor)</code>.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">vetor1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">-10</span>)</a>
+<a class="sourceLine" id="cb26-2" data-line-number="2">vetor2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</a>
+<a class="sourceLine" id="cb26-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb26-4" data-line-number="4"><span class="kw">class</span>(vetor1)</a>
+<a class="sourceLine" id="cb26-5" data-line-number="5"><span class="co">## [1] &quot;numeric&quot;</span></a>
+<a class="sourceLine" id="cb26-6" data-line-number="6"><span class="kw">class</span>(vetor2)</a>
+<a class="sourceLine" id="cb26-7" data-line-number="7"><span class="co">## [1] &quot;character&quot;</span></a></code></pre></div>
+<p>Se tentarmos misturar duas classes, o R vai apresentar o comportamento conhecido como <strong>coerção</strong>.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">vetor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">&quot;a&quot;</span>)</a>
+<a class="sourceLine" id="cb27-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb27-3" data-line-number="3">vetor</a>
+<a class="sourceLine" id="cb27-4" data-line-number="4"><span class="co">## [1] &quot;1&quot; &quot;2&quot; &quot;a&quot;</span></a>
+<a class="sourceLine" id="cb27-5" data-line-number="5"><span class="kw">class</span>(vetor)</a>
+<a class="sourceLine" id="cb27-6" data-line-number="6"><span class="co">## [1] &quot;character&quot;</span></a></code></pre></div>
+<p>Veja que todos os elementos do vetor se transformaram em texto. Agora temos um vetor com o texto <code>&quot;1&quot;</code>, o texto <code>&quot;2&quot;</code> e o texto <code>&quot;a&quot;</code>. Como um vetor só pode ter uma classe de objeto dentro dele, classes mais fracas serão sempre reprimidas pelas classes mais fortes. Como regra de bolso: caracteres serão sempre a classe mais forte. Então, sempre que você misturar números e texto em um vetor, os números virarão texto.</p>
+<p>Falaremos bastante de coerção nas próximas seções e capítulos, trazendo exemplos de quando ela ajuda e de quando ela atrapalha.</p>
+<p>De forma bastante intuitiva, você pode fazer operações com vetores.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1">vetor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">-3</span>)</a>
+<a class="sourceLine" id="cb28-2" data-line-number="2">vetor <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb28-3" data-line-number="3"><span class="co">## [1]  1  6 21 -2</span></a></code></pre></div>
+<p>Ao rodarmos <code>vetor1 + 1</code>, o R subtrai <code>1</code> de cada um dos elementos do vetor. O mesmo acontece com qualquer outra operação aritmética.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">vetor <span class="op">-</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb29-2" data-line-number="2">vetor <span class="op">/</span><span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb29-3" data-line-number="3">vetor <span class="op">*</span><span class="st"> </span><span class="dv">10</span></a></code></pre></div>
+<p>Você também pode fazer operações que envolvem mais de um vetor:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1">vetor1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb30-2" data-line-number="2">vetor2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>)</a>
+<a class="sourceLine" id="cb30-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb30-4" data-line-number="4">vetor1  <span class="op">+</span><span class="st"> </span>vetor2</a>
+<a class="sourceLine" id="cb30-5" data-line-number="5"><span class="co">## [1] 11 22 33</span></a></code></pre></div>
+<p>Neste caso, o R irá alinhar os dois vetores e somar elemento a elemento. Esse tipo de comportamento é chamado de <strong>vetorização</strong>. Isso pode ficar um pouco confuso quando os dois vetores não possuem o mesmo tamanho. Tente adivinhar qual será a saída do código a seguir:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1">vetor1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb31-2" data-line-number="2">vetor2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>)</a>
+<a class="sourceLine" id="cb31-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb31-4" data-line-number="4">vetor1 <span class="op">+</span><span class="st"> </span>vetor2</a>
+<a class="sourceLine" id="cb31-5" data-line-number="5"><span class="co">## [1] 11 22 31 42</span></a></code></pre></div>
+<p>Embora estejamos somando dois vetores de tamanho diferentes, o R não devolve um erro (o que parecia ser a resposta mais intuitiva). O R alinhou os dois vetores e, como eles não possuíam o mesmo tamanho, o primeiro foi repetido para ficar do mesmo tamanho do segundo. É como se o primeiro vetor fosse na verdade <code>c(1, 2, 1, 2)</code>. Esse comportamento é chamado de <strong>reciclagem</strong>.</p>
+<p>Embora contra-intuitiva, a reciclagem é muito útil no R graças a um caso particular muito importante. Quando somamos <code>vetor + 1</code> no nosso primeiro exemplo, o que o R está fazendo por trás é transformando o <code>1</code> em <code>c(1, 1, 1, 1)</code> e realizando a soma vetorizada <code>c(0, 5, 20, -3) + c(1, 1, 1, 1)</code>. Isso porque o número <code>1</code> nada mais é do que um vetor de tamanho 1, isto é, <code>1</code> é igual a <code>c(1)</code>.</p>
+<p>Usaremos esse comportamento no R o tempo todo e é muito importante a reciclagem para termos certeza de que o R está fazendo exatamente aquilo que gostaríamos que ele fizesse.</p>
+<p>Um outro caso interessante de reciclagem é quando o comprimento dos vetores não são múltiplos um do outro.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">vetor1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2">vetor2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>)</a>
+<a class="sourceLine" id="cb32-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb32-4" data-line-number="4">vetor1 <span class="op">+</span><span class="st"> </span>vetor2</a>
+<a class="sourceLine" id="cb32-5" data-line-number="5"><span class="co">## Warning in vetor1 + vetor2: comprimento do objeto maior não é múltiplo do</span></a>
+<a class="sourceLine" id="cb32-6" data-line-number="6"><span class="co">## comprimento do objeto menor</span></a>
+<a class="sourceLine" id="cb32-7" data-line-number="7"><span class="co">## [1] 11 22 33 41 52</span></a></code></pre></div>
+<p>Neste caso, duas coisas aconteceram:</p>
+<ol style="list-style-type: decimal">
+<li><p>O R realizou a conta, repetindo cada valor do primeiro vetor até que os dois tenham o mesmo tamanho. No fundo, a operação realizada foi <code>c(1, 2, 3, 1, 2) + c(10, 20, 30, 40, 50)</code>.</p></li>
+<li><p>Como essa operação é ainda menos intuitiva e raramente desejada, o R devolveu um aviso dizendo que o comprimento do primeiro vetor maior não é um múltiplo do comprimento do vetor menor.</p></li>
+</ol>
+</div>
+<div id="testes-lógicos" class="section level2">
+<h2><span class="header-section-number">3.7</span> Testes lógicos</h2>
+<p>Poder fazer qualquer tipo de operação lógica é um dos motivos pelos quais programar nos deixar mais eficientes. Dê bastante atenção a elas, pois usaremos comparações lógicas o tempo todo!</p>
+<p>Uma operação lógica nada mais é do que um teste que retorna <strong>verdadeiro</strong> ou <strong>falso</strong>. No R (e em outras linguagens de programação), esses valores dois valores recebem uma classe especial: <code>logical</code>.</p>
+<p>O verdadeiro no R vai ser representado pelo valor <code>TRUE</code> e o falso pelo valor <code>FALSE</code>. Esses nomes no R são <strong>reservados</strong>, isto é, você não pode chamar nenhum objeto de TRUE ou FALSE.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="ot">TRUE</span> &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb33-2" data-line-number="2"><span class="co">## Error in TRUE &lt;- 1 : invalid (do_set) left-hand side to assignment</span></a></code></pre></div>
+<p>Checando a classe desses valores, vemos que são lógicos<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>. Eles são os únicos possíveis valores dessa classe.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="kw">class</span>(<span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb34-2" data-line-number="2"><span class="co">## [1] &quot;logical&quot;</span></a>
+<a class="sourceLine" id="cb34-3" data-line-number="3"><span class="kw">class</span>(<span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb34-4" data-line-number="4"><span class="co">## [1] &quot;logical&quot;</span></a></code></pre></div>
+<p>Agora que conhecemos o <code>TRUE</code> e <code>FALSE</code>, podemos explorar os teste lógicos. Começando pelo mais simples: vamos testar se um valor é igual ao outro. Para isso, usamos o operador <code>==</code>.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="co"># Testes com resultado verdadeiro</span></a>
+<a class="sourceLine" id="cb35-2" data-line-number="2"><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb35-3" data-line-number="3"><span class="co">## [1] TRUE</span></a>
+<a class="sourceLine" id="cb35-4" data-line-number="4"><span class="st">&quot;a&quot;</span> <span class="op">==</span><span class="st"> &quot;a&quot;</span></a>
+<a class="sourceLine" id="cb35-5" data-line-number="5"><span class="co">## [1] TRUE</span></a>
+<a class="sourceLine" id="cb35-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb35-7" data-line-number="7"><span class="co"># Testes com resultado falso</span></a>
+<a class="sourceLine" id="cb35-8" data-line-number="8"><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb35-9" data-line-number="9"><span class="co">## [1] FALSE</span></a>
+<a class="sourceLine" id="cb35-10" data-line-number="10"><span class="st">&quot;a&quot;</span> <span class="op">==</span><span class="st"> &quot;b&quot;</span></a>
+<a class="sourceLine" id="cb35-11" data-line-number="11"><span class="co">## [1] FALSE</span></a></code></pre></div>
+<p>Também podemos testar se dois valores são diferentes. Para isso, usamos o operador <code>!=</code>.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="co"># Testes com resultado falso</span></a>
+<a class="sourceLine" id="cb36-2" data-line-number="2"><span class="dv">1</span> <span class="op">!=</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb36-3" data-line-number="3"><span class="co">## [1] FALSE</span></a>
+<a class="sourceLine" id="cb36-4" data-line-number="4"><span class="st">&quot;a&quot;</span> <span class="op">!=</span><span class="st"> &quot;a&quot;</span></a>
+<a class="sourceLine" id="cb36-5" data-line-number="5"><span class="co">## [1] FALSE</span></a>
+<a class="sourceLine" id="cb36-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb36-7" data-line-number="7"><span class="co"># Testes com resultado verdadeiro</span></a>
+<a class="sourceLine" id="cb36-8" data-line-number="8"><span class="dv">1</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb36-9" data-line-number="9"><span class="co">## [1] TRUE</span></a>
+<a class="sourceLine" id="cb36-10" data-line-number="10"><span class="st">&quot;a&quot;</span> <span class="op">!=</span><span class="st"> &quot;b&quot;</span></a>
+<a class="sourceLine" id="cb36-11" data-line-number="11"><span class="co">## [1] TRUE</span></a></code></pre></div>
+<p>Para comparar se um valor é maior que outro, temos à disposição 4 operadores:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="co"># Maior</span></a>
+<a class="sourceLine" id="cb37-2" data-line-number="2"><span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb37-3" data-line-number="3"><span class="co">## [1] FALSE</span></a>
+<a class="sourceLine" id="cb37-4" data-line-number="4"><span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb37-5" data-line-number="5"><span class="co">## [1] TRUE</span></a>
+<a class="sourceLine" id="cb37-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb37-7" data-line-number="7"><span class="co"># Maior ou igual</span></a>
+<a class="sourceLine" id="cb37-8" data-line-number="8"><span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb37-9" data-line-number="9"><span class="co">## [1] FALSE</span></a>
+<a class="sourceLine" id="cb37-10" data-line-number="10"><span class="dv">3</span> <span class="op">&gt;=</span><span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb37-11" data-line-number="11"><span class="co">## [1] TRUE</span></a>
+<a class="sourceLine" id="cb37-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb37-13" data-line-number="13"><span class="co"># Menor </span></a>
+<a class="sourceLine" id="cb37-14" data-line-number="14"><span class="dv">3</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb37-15" data-line-number="15"><span class="co">## [1] FALSE</span></a>
+<a class="sourceLine" id="cb37-16" data-line-number="16"><span class="dv">3</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb37-17" data-line-number="17"><span class="co">## [1] TRUE</span></a>
+<a class="sourceLine" id="cb37-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb37-19" data-line-number="19"><span class="co"># Menor ou igual</span></a>
+<a class="sourceLine" id="cb37-20" data-line-number="20"><span class="dv">3</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb37-21" data-line-number="21"><span class="co">## [1] FALSE</span></a>
+<a class="sourceLine" id="cb37-22" data-line-number="22"><span class="dv">3</span> <span class="op">&lt;=</span><span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb37-23" data-line-number="23"><span class="co">## [1] TRUE</span></a></code></pre></div>
+<p>Um outro operador muito útil é o <code>%in%</code>. Com ele, podemos verificar se um valor está dentro de um conjunto de valores (vetor).</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="dv">3</span> <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="co">## [1] TRUE</span></a>
+<a class="sourceLine" id="cb38-3" data-line-number="3"><span class="st">&quot;a&quot;</span> <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</a>
+<a class="sourceLine" id="cb38-4" data-line-number="4"><span class="co">## [1] FALSE</span></a></code></pre></div>
+<p>Nós começamos essa seção dizendo que usaremos testes lógicos o tempo todo. O motivo para isso é que eles fazem parte de uma operação muito comum na manipulação de base de dados: os <strong>filtros</strong>.</p>
+<p>No Excel, por exemplo, quando você filtra uma planilha, o que está sendo feito por trás é um teste lógico.</p>
+<p>Falamos anteriormente que cada coluna das nossas bases de dados será representada dentro do R como um vetor. O comportamento que explica a importância dos testes lógicos na hora de filtrar uma base está ilustrado abaixo:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">minha_coluna &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">-1</span>, <span class="dv">5</span>, <span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb39-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb39-3" data-line-number="3">minha_coluna <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb39-4" data-line-number="4"><span class="co">## [1] FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE</span></a>
+<a class="sourceLine" id="cb39-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb39-6" data-line-number="6">minha_coluna[minha_coluna <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb39-7" data-line-number="7"><span class="co">## [1] 10  5 20</span></a></code></pre></div>
+<p>Muitas coisas aconteceram aqui, vamos por partes.</p>
+<p>Primeiro, na operação <code>minha_coluna &gt; 3</code> o R fez um excelente uso do comportamento de reciclagem. No fundo, o que ele fez foi transformar (reciclar) o valor <code>3</code> no vetor <code>c(3, 3, 3, 3, 3, 3, 3)</code> e testar se <code>c(1, 3, 0, 10, -1, 5, 20) &gt; c(3, 3, 3, 3, 3, 3, 3)</code>.</p>
+<p>Como os operadores lógicos também são vetorizados (fazem operações elemento a elemento), os testes realizados foram <code>1 &gt; 3</code>, <code>3 &gt; 3</code>, <code>0 &gt; 3</code>, <code>10 &gt; 3</code>, <code>-1 &gt; 3</code>, <code>5 &gt; 3</code> e, finalmente, <code>20 &gt; 3</code>. Cada um desses testes tem o seu próprio resultado. Por isso a saída de <code>minha_coluna &gt; 3</code> é um vetor de verdadeiros e falsos, respectivos a cada um desses 7 testes.</p>
+<p>A segunda operação traz a grande novidade aqui: podemos usar os valores <code>TRUE</code> e <code>FALSE</code> para selecionar elementos de um vetor!</p>
+<p>A regra é muito simples: <strong>retornar</strong> as posições que receberem <code>TRUE</code>, <strong>não retornar</strong> as posições que receberem <code>FALSE</code>. Portanto, a segunda operação é equivalente a:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1">minha_coluna[<span class="kw">c</span>(<span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>)]</a>
+<a class="sourceLine" id="cb40-2" data-line-number="2"><span class="co">## [1] 10  5 20</span></a></code></pre></div>
+<p>O vetor lógico filtra o vetor <code>minha_coluna</code>, retornando apenas os valores maiores que 3, já que foi esse o teste lógico que fizemos.</p>
+<p>Essa é a <em>mágica</em> que acontece por trás de filtros no R. Na prática, não precisaremos usar colchetes, não lembraremos da reciclagem e nem veremos a cara dos <code>TRUE</code> e <code>FALSE</code>. Mas conhecer esse processo é muito importante, principalmente para encontrar problemas de código ou de base.</p>
+<p>Por fim, veja algumas diferenças entre comparações lógicas no SQL e no R:</p>
+<ul>
+<li><strong>Igualdade</strong>: no SQL é só um sinal de igual: <code>2 = 1</code>. No R são dois: <code>2 == 1</code>.</li>
+<li><strong>Diferença</strong>: no SQL, usamos <code>&lt;&gt;</code>. No R usamos <code>!=</code>.</li>
+<li><strong>Negação</strong>: em vez de usar a palavra <code>NOT</code> igual ao SQL, usamos <code>!</code> no R. Por exemplo, <code>id not in ('1', '2', '3')</code> fica <code>!(id %in% c(1, 2, 3))</code>.</li>
+</ul>
+</div>
+<div id="valoresEspeciais" class="section level2">
+<h2><span class="header-section-number">3.8</span> Valores especiais</h2>
+<p>Vimos anteriormente que se você tentar acessar uma posição que não existe dentro de um vetor, ele retorna um valor estranho.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1">vetor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb41-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb41-3" data-line-number="3">vetor[<span class="dv">4</span>]</a>
+<a class="sourceLine" id="cb41-4" data-line-number="4"><span class="co">## [1] NA</span></a></code></pre></div>
+<p>Esse valor, o <code>NA</code>, é tratado de forma especial no R. Ele representa a <em>ausência de informação</em>, isto é, a informação existe, mas nós (e o R) não sabemos qual é.</p>
+<p>O <code>NA</code> para o R nada mais é do que o valor faltante ou omisso da Estatística. O famoso <em>missing</em>. Geralmente, quando temos uma base com valores faltando, como a idade para alguns indivíduos da nossa amostra, não significa que a idade deles não existe. Significa apenas que não temos essa informação.</p>
+<p>Esse conceito é muito importante para entender o resultado da expressão abaixo.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="dv">5</span> <span class="op">==</span><span class="st"> </span><span class="ot">NA</span></a>
+<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="co">## [1] NA</span></a></code></pre></div>
+<p>Em um primeiro momento, poderíamos esperar que o resultado fosse <code>TRUE</code>. Mas, sabendo o significado por trás do <code>NA</code> — um valor desconhecido —, a verdadeira pergunta que estamos fazendo é: 5 é igual a um valor que existe, mas que não sei qual é? É como se eu perguntasse se eu tenho 5 moedas na mão, mas lhe mostrasse a mão fechada. A resposta para isso é <em>não sei</em> ou, dentro do R, <code>NA</code>.</p>
+<p>Um outro exemplo:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1">idade_ana &lt;-<span class="st"> </span><span class="dv">30</span></a>
+<a class="sourceLine" id="cb43-2" data-line-number="2">idade_beto &lt;-<span class="st"> </span><span class="ot">NA</span></a>
+<a class="sourceLine" id="cb43-3" data-line-number="3">idade_carla &lt;-<span class="st"> </span><span class="ot">NA</span></a>
+<a class="sourceLine" id="cb43-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb43-5" data-line-number="5">idade_ana <span class="op">==</span><span class="st"> </span>idade_beto</a>
+<a class="sourceLine" id="cb43-6" data-line-number="6"><span class="co">## [1] NA</span></a>
+<a class="sourceLine" id="cb43-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb43-8" data-line-number="8">idade_beto <span class="op">==</span><span class="st"> </span>idade_carla</a>
+<a class="sourceLine" id="cb43-9" data-line-number="9"><span class="co">## [1] NA</span></a></code></pre></div>
+<p>Eu posso saber a idade da Ana, mas se eu não souber a idade do Beto, não sei se os dois tem a mesma idade. Por isso, <code>NA</code>. Da mesma forma, se não sei nem a idade do Beto nem da Carla, também não tenho como saber se os dois têm a mesma idade. Outra vez <code>NA</code>.</p>
+<p>Mas e quando queremos saber se um valor é NA ou não? Para fazer esse teste, temos que rodar <code>is.na(valor-ou-objeto)</code>.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">is.na</span>(<span class="ot">NA</span>)</a>
+<a class="sourceLine" id="cb44-2" data-line-number="2"><span class="co">## [1] TRUE</span></a>
+<a class="sourceLine" id="cb44-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb44-4" data-line-number="4"><span class="kw">is.na</span>(idade_ana)</a>
+<a class="sourceLine" id="cb44-5" data-line-number="5"><span class="co">## [1] FALSE</span></a>
+<a class="sourceLine" id="cb44-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb44-7" data-line-number="7"><span class="kw">is.na</span>(idade_beto)</a>
+<a class="sourceLine" id="cb44-8" data-line-number="8"><span class="co">## [1] TRUE</span></a></code></pre></div>
+<p>Repare que essa função também é vetorizada.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="kw">is.na</span>(<span class="kw">c</span>(idade_ana, idade_beto, idade_carla))</a>
+<a class="sourceLine" id="cb45-2" data-line-number="2"><span class="co">## [1] FALSE  TRUE  TRUE</span></a></code></pre></div>
+<p>Assim como o <code>NA</code>, existem outros valores especiais muito comuns no R.</p>
+<p>O <code>NaN</code> (<em>not a number</em>) representa indefinições matemáticas.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="dv">0</span><span class="op">/</span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb46-2" data-line-number="2"><span class="co">## [1] NaN</span></a>
+<a class="sourceLine" id="cb46-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb46-4" data-line-number="4"><span class="kw">log</span>(<span class="op">-</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb46-5" data-line-number="5"><span class="co">## Warning in log(-1): NaNs produzidos</span></a>
+<a class="sourceLine" id="cb46-6" data-line-number="6"><span class="co">## [1] NaN</span></a></code></pre></div>
+<p>O <code>Inf</code> (infinito) representa um número muito grande (que o computador não consegue representar) ou um limite matemático.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="co"># O computador não consegue representar um número tão grande.</span></a>
+<a class="sourceLine" id="cb47-2" data-line-number="2"><span class="co"># O número é então &quot;&quot;&quot;arredondado&quot;&quot;&quot; para infinito.</span></a>
+<a class="sourceLine" id="cb47-3" data-line-number="3"><span class="dv">10</span><span class="op">^</span><span class="dv">310</span></a>
+<a class="sourceLine" id="cb47-4" data-line-number="4"><span class="co">## [1] Inf</span></a>
+<a class="sourceLine" id="cb47-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb47-6" data-line-number="6"><span class="co"># Limite matemático.</span></a>
+<a class="sourceLine" id="cb47-7" data-line-number="7"><span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb47-8" data-line-number="8"><span class="co">## [1] Inf</span></a>
+<a class="sourceLine" id="cb47-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb47-10" data-line-number="10"><span class="co"># O &quot;menos infinito&quot; também existe.</span></a>
+<a class="sourceLine" id="cb47-11" data-line-number="11"><span class="dv">-1</span> <span class="op">/</span><span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb47-12" data-line-number="12"><span class="co">## [1] -Inf</span></a></code></pre></div>
+<p>O <code>NULL</code> (nulo) representa a ausência de um objeto. Ele não tem significado prático para a análise dados. Está mais em sintonia com comportamentos de lógica de programação. Muitas vezes vamos definir um objeto como nulo para dizer ao R que não queremos dar um valor para ele. Muito utilizado em funções (ver Seção <a href="r-básico.html#funcoes">3.11</a>).</p>
+<p>Da mesma forma que utilizados <code>is.na()</code> para testar se um objeto é <code>NA</code>, utilizamos <code>is.nan()</code>, <code>is.infinite()</code> ou <code>is.null()</code> para testar se um objeto é <code>NaN</code>, infinito ou nulo.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1">nao_sou_um_numero &lt;-<span class="st"> </span><span class="ot">NaN</span></a>
+<a class="sourceLine" id="cb48-2" data-line-number="2">objeto_infinito &lt;-<span class="st"> </span><span class="ot">Inf</span></a>
+<a class="sourceLine" id="cb48-3" data-line-number="3">objeto_nulo &lt;-<span class="st"> </span><span class="ot">NULL</span></a>
+<a class="sourceLine" id="cb48-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb48-5" data-line-number="5"><span class="kw">is.nan</span>(nao_sou_um_numero)</a>
+<a class="sourceLine" id="cb48-6" data-line-number="6"><span class="co">## [1] TRUE</span></a>
+<a class="sourceLine" id="cb48-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb48-8" data-line-number="8"><span class="kw">is.infinite</span>(objeto_infinito)</a>
+<a class="sourceLine" id="cb48-9" data-line-number="9"><span class="co">## [1] TRUE</span></a>
+<a class="sourceLine" id="cb48-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb48-11" data-line-number="11"><span class="kw">is.null</span>(objeto_nulo)</a>
+<a class="sourceLine" id="cb48-12" data-line-number="12"><span class="co">## [1] TRUE</span></a></code></pre></div>
+</div>
+<div id="listas" class="section level2">
+<h2><span class="header-section-number">3.9</span> Listas</h2>
+<p>Chegamos ao último tópico antes de voltarmos aos data frames: as listas.</p>
+<p>Listas são objetos muito importantes dentro do R. Primeiro porque <strong>todo data frame é uma lista</strong>. Segundo porque elas são bem parecidas com vetores, mas com uma diferença essencial: você pode misturar diferentes classes de objetos dentro dela.</p>
+<p>Para criar uma lista, rodamos <code>list(valor1, valor2, valor3)</code>.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="kw">list</span>(<span class="dv">1</span>, <span class="st">&quot;a&quot;</span>, <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb49-2" data-line-number="2"><span class="co">## [[1]]</span></a>
+<a class="sourceLine" id="cb49-3" data-line-number="3"><span class="co">## [1] 1</span></a>
+<a class="sourceLine" id="cb49-4" data-line-number="4"><span class="co">## </span></a>
+<a class="sourceLine" id="cb49-5" data-line-number="5"><span class="co">## [[2]]</span></a>
+<a class="sourceLine" id="cb49-6" data-line-number="6"><span class="co">## [1] &quot;a&quot;</span></a>
+<a class="sourceLine" id="cb49-7" data-line-number="7"><span class="co">## </span></a>
+<a class="sourceLine" id="cb49-8" data-line-number="8"><span class="co">## [[3]]</span></a>
+<a class="sourceLine" id="cb49-9" data-line-number="9"><span class="co">## [1] TRUE</span></a></code></pre></div>
+<p>Veja que não houve coerção. Ainda temos um valor número, um texto e um valor lógico dentro da lista.</p>
+<p>O <em>subsetting</em> de listas é um pouco diferente do que o de vetores. Isso porque <strong>cada elemento de uma lista também é uma lista</strong>. Veja o que acontece se tentarmos usar <code>[]</code> para pegar um elemento de uma lista.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1">lista &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dv">1</span>, <span class="st">&quot;a&quot;</span>, <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb50-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb50-3" data-line-number="3">lista[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb50-4" data-line-number="4"><span class="co">## [[1]]</span></a>
+<a class="sourceLine" id="cb50-5" data-line-number="5"><span class="co">## [1] 1</span></a>
+<a class="sourceLine" id="cb50-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb50-7" data-line-number="7"><span class="kw">class</span>(lista[<span class="dv">1</span>])</a>
+<a class="sourceLine" id="cb50-8" data-line-number="8"><span class="co">## [1] &quot;list&quot;</span></a></code></pre></div>
+<p>O R nos retorna uma lista com apenas aquele elemento. Se quisermos o elemento de fato dentro de cada posição, precisamos usar dois colchetes:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1">lista[[<span class="dv">1</span>]]</a>
+<a class="sourceLine" id="cb51-2" data-line-number="2"><span class="co">## [1] 1</span></a>
+<a class="sourceLine" id="cb51-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb51-4" data-line-number="4"><span class="kw">class</span>(lista[[<span class="dv">1</span>]])</a>
+<a class="sourceLine" id="cb51-5" data-line-number="5"><span class="co">## [1] &quot;numeric&quot;</span></a></code></pre></div>
+<p>Cada elemento de uma lista ser uma lista é importante pois isso nos permite colocar vetores de tamanhos diferentes em cada posição. Isso faz das listas uma estrutura bem flexível para guardar dados.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1">lista &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="st">&quot;a&quot;</span>, <span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>))</a>
+<a class="sourceLine" id="cb52-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb52-3" data-line-number="3">lista</a>
+<a class="sourceLine" id="cb52-4" data-line-number="4"><span class="co">## [[1]]</span></a>
+<a class="sourceLine" id="cb52-5" data-line-number="5"><span class="co">## [1] 1 2 3</span></a>
+<a class="sourceLine" id="cb52-6" data-line-number="6"><span class="co">## </span></a>
+<a class="sourceLine" id="cb52-7" data-line-number="7"><span class="co">## [[2]]</span></a>
+<a class="sourceLine" id="cb52-8" data-line-number="8"><span class="co">## [1] &quot;a&quot;</span></a>
+<a class="sourceLine" id="cb52-9" data-line-number="9"><span class="co">## </span></a>
+<a class="sourceLine" id="cb52-10" data-line-number="10"><span class="co">## [[3]]</span></a>
+<a class="sourceLine" id="cb52-11" data-line-number="11"><span class="co">## [1]  TRUE  TRUE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb52-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb52-13" data-line-number="13">lista[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb52-14" data-line-number="14"><span class="co">## [[1]]</span></a>
+<a class="sourceLine" id="cb52-15" data-line-number="15"><span class="co">## [1] 1 2 3</span></a>
+<a class="sourceLine" id="cb52-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb52-17" data-line-number="17">lista[<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb52-18" data-line-number="18"><span class="co">## [[1]]</span></a>
+<a class="sourceLine" id="cb52-19" data-line-number="19"><span class="co">## [1] &quot;a&quot;</span></a>
+<a class="sourceLine" id="cb52-20" data-line-number="20"></a>
+<a class="sourceLine" id="cb52-21" data-line-number="21">lista[<span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb52-22" data-line-number="22"><span class="co">## [[1]]</span></a>
+<a class="sourceLine" id="cb52-23" data-line-number="23"><span class="co">## [1]  TRUE  TRUE FALSE FALSE</span></a></code></pre></div>
+<p>É muito comum darmos nomes para cada posição de uma lista.</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1">dados_cliente &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">cliente =</span> <span class="st">&quot;Ana Silva&quot;</span>, <span class="dt">idade =</span> <span class="dv">25</span>, <span class="dt">estado_civil =</span> <span class="ot">NA</span>)</a>
+<a class="sourceLine" id="cb53-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb53-3" data-line-number="3">dados_cliente</a>
+<a class="sourceLine" id="cb53-4" data-line-number="4"><span class="co">## $cliente</span></a>
+<a class="sourceLine" id="cb53-5" data-line-number="5"><span class="co">## [1] &quot;Ana Silva&quot;</span></a>
+<a class="sourceLine" id="cb53-6" data-line-number="6"><span class="co">## </span></a>
+<a class="sourceLine" id="cb53-7" data-line-number="7"><span class="co">## $idade</span></a>
+<a class="sourceLine" id="cb53-8" data-line-number="8"><span class="co">## [1] 25</span></a>
+<a class="sourceLine" id="cb53-9" data-line-number="9"><span class="co">## </span></a>
+<a class="sourceLine" id="cb53-10" data-line-number="10"><span class="co">## $estado_civil</span></a>
+<a class="sourceLine" id="cb53-11" data-line-number="11"><span class="co">## [1] NA</span></a></code></pre></div>
+<p>Agora, dentro da lista, o valor <code>Ana Silva</code>, por exemplo, está sendo atribuído ao nome <code>cliente</code>. Esse nome só existirá dentro da lista.</p>
+<p>Um detalhe importante: os iguais utilizados nas atribuições dos nomes dentro da lista <strong>não podem</strong> ser substituídos por <code>&lt;-</code>.</p>
+<p>Quando as posições de uma lista tem nome, podemos acessar seus valores diretamente utilizando o operador <code>$</code>.</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1">dados_cliente<span class="op">$</span>cliente</a>
+<a class="sourceLine" id="cb54-2" data-line-number="2"><span class="co">## [1] &quot;Ana Silva&quot;</span></a>
+<a class="sourceLine" id="cb54-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb54-4" data-line-number="4">dados_cliente<span class="op">$</span>idade</a>
+<a class="sourceLine" id="cb54-5" data-line-number="5"><span class="co">## [1] 25</span></a>
+<a class="sourceLine" id="cb54-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb54-7" data-line-number="7">dados_cliente<span class="op">$</span>estado_civil</a>
+<a class="sourceLine" id="cb54-8" data-line-number="8"><span class="co">## [1] NA</span></a></code></pre></div>
+<p>Repare que o R devolve o valor dentro de cada posição, e não uma lista.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1">dados_cliente[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb55-2" data-line-number="2"><span class="co">## $cliente</span></a>
+<a class="sourceLine" id="cb55-3" data-line-number="3"><span class="co">## [1] &quot;Ana Silva&quot;</span></a>
+<a class="sourceLine" id="cb55-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb55-5" data-line-number="5">dados_cliente<span class="op">$</span>cliente</a>
+<a class="sourceLine" id="cb55-6" data-line-number="6"><span class="co">## [1] &quot;Ana Silva&quot;</span></a>
+<a class="sourceLine" id="cb55-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb55-8" data-line-number="8"><span class="kw">class</span>(dados_cliente[<span class="dv">1</span>])</a>
+<a class="sourceLine" id="cb55-9" data-line-number="9"><span class="co">## [1] &quot;list&quot;</span></a>
+<a class="sourceLine" id="cb55-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb55-11" data-line-number="11"><span class="kw">class</span>(dados_cliente<span class="op">$</span>cliente)</a>
+<a class="sourceLine" id="cb55-12" data-line-number="12"><span class="co">## [1] &quot;character&quot;</span></a></code></pre></div>
+<p>Isto implica que, nesse exemplo, <code>dados_cliente$cliente</code> é equivalente a <code>dados_cliente[[1]]</code>.</p>
+<p>Conforme ficamos mais e mais proficientes na linguagem R, as listas passam a ficar cada vez mais frequentes. Voltaremos a falar delas diversas vezes nos próximos capítulos, em especial no Capítulo <a href="funcionais.html#funcionais">7</a>.</p>
+</div>
+<div id="mais-sobre-data-frames" class="section level2">
+<h2><span class="header-section-number">3.10</span> Mais sobre data frames</h2>
+<p>Chegou a hora de usarmos tudo o que aprendemos na seção anterior para exploramos ao máximo o nosso objeto favorito: o <em>data frame</em>.</p>
+<p>Na seção anterior, nós dissemos que <em>data frames</em> são listas. Isso é importante pois todas as propriedades de uma lista valem para um <em>data frame</em>.</p>
+<p>A melhor forma de entender essa equivalência é ver um <em>data frame</em> representado como uma lista.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="kw">as.list</span>(mtcars)</a>
+<a class="sourceLine" id="cb56-2" data-line-number="2"><span class="co">## $mpg</span></a>
+<a class="sourceLine" id="cb56-3" data-line-number="3"><span class="co">##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2</span></a>
+<a class="sourceLine" id="cb56-4" data-line-number="4"><span class="co">## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4</span></a>
+<a class="sourceLine" id="cb56-5" data-line-number="5"><span class="co">## [29] 15.8 19.7 15.0 21.4</span></a>
+<a class="sourceLine" id="cb56-6" data-line-number="6"><span class="co">## </span></a>
+<a class="sourceLine" id="cb56-7" data-line-number="7"><span class="co">## $cyl</span></a>
+<a class="sourceLine" id="cb56-8" data-line-number="8"><span class="co">##  [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4</span></a>
+<a class="sourceLine" id="cb56-9" data-line-number="9"><span class="co">## </span></a>
+<a class="sourceLine" id="cb56-10" data-line-number="10"><span class="co">## $disp</span></a>
+<a class="sourceLine" id="cb56-11" data-line-number="11"><span class="co">##  [1] 160.0 160.0 108.0 258.0 360.0 225.0 360.0 146.7 140.8 167.6 167.6</span></a>
+<a class="sourceLine" id="cb56-12" data-line-number="12"><span class="co">## [12] 275.8 275.8 275.8 472.0 460.0 440.0  78.7  75.7  71.1 120.1 318.0</span></a>
+<a class="sourceLine" id="cb56-13" data-line-number="13"><span class="co">## [23] 304.0 350.0 400.0  79.0 120.3  95.1 351.0 145.0 301.0 121.0</span></a>
+<a class="sourceLine" id="cb56-14" data-line-number="14"><span class="co">## </span></a>
+<a class="sourceLine" id="cb56-15" data-line-number="15"><span class="co">## $hp</span></a>
+<a class="sourceLine" id="cb56-16" data-line-number="16"><span class="co">##  [1] 110 110  93 110 175 105 245  62  95 123 123 180 180 180 205 215 230</span></a>
+<a class="sourceLine" id="cb56-17" data-line-number="17"><span class="co">## [18]  66  52  65  97 150 150 245 175  66  91 113 264 175 335 109</span></a>
+<a class="sourceLine" id="cb56-18" data-line-number="18"><span class="co">## </span></a>
+<a class="sourceLine" id="cb56-19" data-line-number="19"><span class="co">## $drat</span></a>
+<a class="sourceLine" id="cb56-20" data-line-number="20"><span class="co">##  [1] 3.90 3.90 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 3.92 3.07 3.07 3.07</span></a>
+<a class="sourceLine" id="cb56-21" data-line-number="21"><span class="co">## [15] 2.93 3.00 3.23 4.08 4.93 4.22 3.70 2.76 3.15 3.73 3.08 4.08 4.43 3.77</span></a>
+<a class="sourceLine" id="cb56-22" data-line-number="22"><span class="co">## [29] 4.22 3.62 3.54 4.11</span></a>
+<a class="sourceLine" id="cb56-23" data-line-number="23"><span class="co">## </span></a>
+<a class="sourceLine" id="cb56-24" data-line-number="24"><span class="co">## $wt</span></a>
+<a class="sourceLine" id="cb56-25" data-line-number="25"><span class="co">##  [1] 2.620 2.875 2.320 3.215 3.440 3.460 3.570 3.190 3.150 3.440 3.440</span></a>
+<a class="sourceLine" id="cb56-26" data-line-number="26"><span class="co">## [12] 4.070 3.730 3.780 5.250 5.424 5.345 2.200 1.615 1.835 2.465 3.520</span></a>
+<a class="sourceLine" id="cb56-27" data-line-number="27"><span class="co">## [23] 3.435 3.840 3.845 1.935 2.140 1.513 3.170 2.770 3.570 2.780</span></a>
+<a class="sourceLine" id="cb56-28" data-line-number="28"><span class="co">## </span></a>
+<a class="sourceLine" id="cb56-29" data-line-number="29"><span class="co">## $qsec</span></a>
+<a class="sourceLine" id="cb56-30" data-line-number="30"><span class="co">##  [1] 16.46 17.02 18.61 19.44 17.02 20.22 15.84 20.00 22.90 18.30 18.90</span></a>
+<a class="sourceLine" id="cb56-31" data-line-number="31"><span class="co">## [12] 17.40 17.60 18.00 17.98 17.82 17.42 19.47 18.52 19.90 20.01 16.87</span></a>
+<a class="sourceLine" id="cb56-32" data-line-number="32"><span class="co">## [23] 17.30 15.41 17.05 18.90 16.70 16.90 14.50 15.50 14.60 18.60</span></a>
+<a class="sourceLine" id="cb56-33" data-line-number="33"><span class="co">## </span></a>
+<a class="sourceLine" id="cb56-34" data-line-number="34"><span class="co">## $vs</span></a>
+<a class="sourceLine" id="cb56-35" data-line-number="35"><span class="co">##  [1] 0 0 1 1 0 1 0 1 1 1 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 0 1 0 0 0 1</span></a>
+<a class="sourceLine" id="cb56-36" data-line-number="36"><span class="co">## </span></a>
+<a class="sourceLine" id="cb56-37" data-line-number="37"><span class="co">## $am</span></a>
+<a class="sourceLine" id="cb56-38" data-line-number="38"><span class="co">##  [1] 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 1 1 1 1 1 1</span></a>
+<a class="sourceLine" id="cb56-39" data-line-number="39"><span class="co">## </span></a>
+<a class="sourceLine" id="cb56-40" data-line-number="40"><span class="co">## $gear</span></a>
+<a class="sourceLine" id="cb56-41" data-line-number="41"><span class="co">##  [1] 4 4 4 3 3 3 3 4 4 4 4 3 3 3 3 3 3 4 4 4 3 3 3 3 3 4 5 5 5 5 5 4</span></a>
+<a class="sourceLine" id="cb56-42" data-line-number="42"><span class="co">## </span></a>
+<a class="sourceLine" id="cb56-43" data-line-number="43"><span class="co">## $carb</span></a>
+<a class="sourceLine" id="cb56-44" data-line-number="44"><span class="co">##  [1] 4 4 1 1 2 1 4 2 2 4 4 3 3 3 4 4 4 1 2 1 1 2 2 4 2 1 2 2 4 6 8 2</span></a></code></pre></div>
+<p>O código acima nos permite ver o <em>data frame</em> <code>mtcars</code> representado como uma lista. Veja que cada coluna da base se transforma em um elemento da lista. E o nome de cada coluna vira o nome de cada posição. Isso é interessante, pois podemos usar nos <em>data frames</em> as mesmas operações que aprendemos para listas.</p>
+<p>Por exemplo, podemos usar o operador <code>$</code> para acessar cada elemento da lista, isto é, cada coluna do <em>data frame</em>.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1">mtcars<span class="op">$</span>mpg</a>
+<a class="sourceLine" id="cb57-2" data-line-number="2"><span class="co">##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2</span></a>
+<a class="sourceLine" id="cb57-3" data-line-number="3"><span class="co">## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4</span></a>
+<a class="sourceLine" id="cb57-4" data-line-number="4"><span class="co">## [29] 15.8 19.7 15.0 21.4</span></a></code></pre></div>
+<p>E assim como cada elemento de uma lista também é uma lista, cada elemento (coluna) de um <em>data frame</em> também é um *data frame.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1">mtcars[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb58-2" data-line-number="2"><span class="co">##                      mpg</span></a>
+<a class="sourceLine" id="cb58-3" data-line-number="3"><span class="co">## Mazda RX4           21.0</span></a>
+<a class="sourceLine" id="cb58-4" data-line-number="4"><span class="co">## Mazda RX4 Wag       21.0</span></a>
+<a class="sourceLine" id="cb58-5" data-line-number="5"><span class="co">## Datsun 710          22.8</span></a>
+<a class="sourceLine" id="cb58-6" data-line-number="6"><span class="co">## Hornet 4 Drive      21.4</span></a>
+<a class="sourceLine" id="cb58-7" data-line-number="7"><span class="co">## Hornet Sportabout   18.7</span></a>
+<a class="sourceLine" id="cb58-8" data-line-number="8"><span class="co">## Valiant             18.1</span></a>
+<a class="sourceLine" id="cb58-9" data-line-number="9"><span class="co">## Duster 360          14.3</span></a>
+<a class="sourceLine" id="cb58-10" data-line-number="10"><span class="co">## Merc 240D           24.4</span></a>
+<a class="sourceLine" id="cb58-11" data-line-number="11"><span class="co">## Merc 230            22.8</span></a>
+<a class="sourceLine" id="cb58-12" data-line-number="12"><span class="co">## Merc 280            19.2</span></a>
+<a class="sourceLine" id="cb58-13" data-line-number="13"><span class="co">## Merc 280C           17.8</span></a>
+<a class="sourceLine" id="cb58-14" data-line-number="14"><span class="co">## Merc 450SE          16.4</span></a>
+<a class="sourceLine" id="cb58-15" data-line-number="15"><span class="co">## Merc 450SL          17.3</span></a>
+<a class="sourceLine" id="cb58-16" data-line-number="16"><span class="co">## Merc 450SLC         15.2</span></a>
+<a class="sourceLine" id="cb58-17" data-line-number="17"><span class="co">## Cadillac Fleetwood  10.4</span></a>
+<a class="sourceLine" id="cb58-18" data-line-number="18"><span class="co">## Lincoln Continental 10.4</span></a>
+<a class="sourceLine" id="cb58-19" data-line-number="19"><span class="co">## Chrysler Imperial   14.7</span></a>
+<a class="sourceLine" id="cb58-20" data-line-number="20"><span class="co">## Fiat 128            32.4</span></a>
+<a class="sourceLine" id="cb58-21" data-line-number="21"><span class="co">## Honda Civic         30.4</span></a>
+<a class="sourceLine" id="cb58-22" data-line-number="22"><span class="co">## Toyota Corolla      33.9</span></a>
+<a class="sourceLine" id="cb58-23" data-line-number="23"><span class="co">## Toyota Corona       21.5</span></a>
+<a class="sourceLine" id="cb58-24" data-line-number="24"><span class="co">## Dodge Challenger    15.5</span></a>
+<a class="sourceLine" id="cb58-25" data-line-number="25"><span class="co">## AMC Javelin         15.2</span></a>
+<a class="sourceLine" id="cb58-26" data-line-number="26"><span class="co">## Camaro Z28          13.3</span></a>
+<a class="sourceLine" id="cb58-27" data-line-number="27"><span class="co">## Pontiac Firebird    19.2</span></a>
+<a class="sourceLine" id="cb58-28" data-line-number="28"><span class="co">## Fiat X1-9           27.3</span></a>
+<a class="sourceLine" id="cb58-29" data-line-number="29"><span class="co">## Porsche 914-2       26.0</span></a>
+<a class="sourceLine" id="cb58-30" data-line-number="30"><span class="co">## Lotus Europa        30.4</span></a>
+<a class="sourceLine" id="cb58-31" data-line-number="31"><span class="co">## Ford Pantera L      15.8</span></a>
+<a class="sourceLine" id="cb58-32" data-line-number="32"><span class="co">## Ferrari Dino        19.7</span></a>
+<a class="sourceLine" id="cb58-33" data-line-number="33"><span class="co">## Maserati Bora       15.0</span></a>
+<a class="sourceLine" id="cb58-34" data-line-number="34"><span class="co">## Volvo 142E          21.4</span></a>
+<a class="sourceLine" id="cb58-35" data-line-number="35"></a>
+<a class="sourceLine" id="cb58-36" data-line-number="36"><span class="kw">class</span>(mtcars[<span class="dv">1</span>])</a>
+<a class="sourceLine" id="cb58-37" data-line-number="37"><span class="co">## [1] &quot;data.frame&quot;</span></a></code></pre></div>
+<p>Mas se <em>data frames</em> são listas, por que existe a classe <em>data frame</em>? Na verdade, <em>data frames</em> são um tipo especial de listas, que têm as seguintes propriedades:</p>
+<ol style="list-style-type: decimal">
+<li><p>Todos os seus elementos (colunas) precisam ter o mesmo comprimento (número de linhas).</p></li>
+<li><p>Todos os seus elementos (colunas) precisam ser nomeados.</p></li>
+<li><p><em>Data frames</em> têm 2 dimensões.</p></li>
+</ol>
+<p>As propriedades (1) e (2) se devem ao formato das bases de dados. Elas são retangulares<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> — observamos as mesmas variáveis (colunas) para todas as unidades amostrais (linhas)<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> —, e precisam ter algum nome especificando as colunas.</p>
+<p>Da mesma forma que podemos ver um <em>data frame</em> como uma lista, também podemos fazer o inverso.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1">dados_cliente &lt;-<span class="st"> </span><span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb59-2" data-line-number="2">  <span class="dt">cliente =</span> <span class="kw">c</span>(<span class="st">&quot;Ana Silva&quot;</span>, <span class="st">&quot;Beto Pereira&quot;</span>, <span class="st">&quot;Carla Souza&quot;</span>),</a>
+<a class="sourceLine" id="cb59-3" data-line-number="3">  <span class="dt">idade =</span> <span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">23</span>),</a>
+<a class="sourceLine" id="cb59-4" data-line-number="4">  <span class="dt">estado_civil =</span> <span class="kw">c</span>(<span class="ot">NA</span>, <span class="st">&quot;Solteiro&quot;</span>, <span class="st">&quot;Casada&quot;</span>)</a>
+<a class="sourceLine" id="cb59-5" data-line-number="5">)</a>
+<a class="sourceLine" id="cb59-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb59-7" data-line-number="7">dados_cliente </a>
+<a class="sourceLine" id="cb59-8" data-line-number="8"><span class="co">## $cliente</span></a>
+<a class="sourceLine" id="cb59-9" data-line-number="9"><span class="co">## [1] &quot;Ana Silva&quot;    &quot;Beto Pereira&quot; &quot;Carla Souza&quot; </span></a>
+<a class="sourceLine" id="cb59-10" data-line-number="10"><span class="co">## </span></a>
+<a class="sourceLine" id="cb59-11" data-line-number="11"><span class="co">## $idade</span></a>
+<a class="sourceLine" id="cb59-12" data-line-number="12"><span class="co">## [1] 25 30 23</span></a>
+<a class="sourceLine" id="cb59-13" data-line-number="13"><span class="co">## </span></a>
+<a class="sourceLine" id="cb59-14" data-line-number="14"><span class="co">## $estado_civil</span></a>
+<a class="sourceLine" id="cb59-15" data-line-number="15"><span class="co">## [1] NA         &quot;Solteiro&quot; &quot;Casada&quot;</span></a>
+<a class="sourceLine" id="cb59-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb59-17" data-line-number="17"><span class="kw">as.data.frame</span>(dados_cliente)</a>
+<a class="sourceLine" id="cb59-18" data-line-number="18"><span class="co">##        cliente idade estado_civil</span></a>
+<a class="sourceLine" id="cb59-19" data-line-number="19"><span class="co">## 1    Ana Silva    25         &lt;NA&gt;</span></a>
+<a class="sourceLine" id="cb59-20" data-line-number="20"><span class="co">## 2 Beto Pereira    30     Solteiro</span></a>
+<a class="sourceLine" id="cb59-21" data-line-number="21"><span class="co">## 3  Carla Souza    23       Casada</span></a></code></pre></div>
+<p>Quando tivermos valores faltantes na nossa base (células vazias no Excel), eles serão representados por <code>NA</code> nos <em>data frames</em>.</p>
+<p>Observe que não conseguimos transformar uma lista em <em>data frame</em> se os elementos da lista não tiverem o mesmo comprimento.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1">dados_cliente &lt;-<span class="st"> </span><span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb60-2" data-line-number="2">  <span class="dt">cliente =</span> <span class="kw">c</span>(<span class="st">&quot;Ana Silva&quot;</span>, <span class="st">&quot;Beto Pereira&quot;</span>, <span class="st">&quot;Carla Souza&quot;</span>),</a>
+<a class="sourceLine" id="cb60-3" data-line-number="3">  <span class="dt">idade =</span> <span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">30</span>),</a>
+<a class="sourceLine" id="cb60-4" data-line-number="4">  <span class="dt">estado_civil =</span> <span class="kw">c</span>(<span class="ot">NA</span>, <span class="st">&quot;Solteiro&quot;</span>, <span class="st">&quot;Casada&quot;</span>)</a>
+<a class="sourceLine" id="cb60-5" data-line-number="5">)</a>
+<a class="sourceLine" id="cb60-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb60-7" data-line-number="7"><span class="kw">as.data.frame</span>(dados_cliente)</a>
+<a class="sourceLine" id="cb60-8" data-line-number="8"><span class="co">## Error in (function (..., row.names = NULL, check.rows = FALSE, check.names = TRUE, : arguments imply differing number of rows: 3, 2</span></a></code></pre></div>
+<p>Transformar uma lista não nomeada em <em>data frame</em> é possível, mas o R cria nomes nada agradáveis para as colunas.</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1">dados_cliente &lt;-<span class="st"> </span><span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb61-2" data-line-number="2">  <span class="kw">c</span>(<span class="st">&quot;Ana Silva&quot;</span>, <span class="st">&quot;Beto Pereira&quot;</span>, <span class="st">&quot;Carla Souza&quot;</span>),</a>
+<a class="sourceLine" id="cb61-3" data-line-number="3">  <span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">23</span>),</a>
+<a class="sourceLine" id="cb61-4" data-line-number="4">  <span class="kw">c</span>(<span class="ot">NA</span>, <span class="st">&quot;Solteiro&quot;</span>, <span class="st">&quot;Casada&quot;</span>)</a>
+<a class="sourceLine" id="cb61-5" data-line-number="5">)</a>
+<a class="sourceLine" id="cb61-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb61-7" data-line-number="7"><span class="kw">as.data.frame</span>(dados_cliente)</a>
+<a class="sourceLine" id="cb61-8" data-line-number="8"><span class="co">##   c..Ana.Silva....Beto.Pereira....Carla.Souza.. c.25..30..23.</span></a>
+<a class="sourceLine" id="cb61-9" data-line-number="9"><span class="co">## 1                                     Ana Silva            25</span></a>
+<a class="sourceLine" id="cb61-10" data-line-number="10"><span class="co">## 2                                  Beto Pereira            30</span></a>
+<a class="sourceLine" id="cb61-11" data-line-number="11"><span class="co">## 3                                   Carla Souza            23</span></a>
+<a class="sourceLine" id="cb61-12" data-line-number="12"><span class="co">##   c.NA...Solteiro....Casada..</span></a>
+<a class="sourceLine" id="cb61-13" data-line-number="13"><span class="co">## 1                        &lt;NA&gt;</span></a>
+<a class="sourceLine" id="cb61-14" data-line-number="14"><span class="co">## 2                    Solteiro</span></a>
+<a class="sourceLine" id="cb61-15" data-line-number="15"><span class="co">## 3                      Casada</span></a></code></pre></div>
+<p>A propriedade (3) é atribuída aos <em>data frames</em> para que possamos aproveitar melhor dessa estrutura retangular dentro do R. Na prática, essas duas dimensões representam nada mais que as linhas e as colunas da base. Essa é a maior diferença entre uma lista e um <em>data frame</em>.</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1"><span class="kw">class</span>(mtcars)</a>
+<a class="sourceLine" id="cb62-2" data-line-number="2"><span class="co">## [1] &quot;data.frame&quot;</span></a>
+<a class="sourceLine" id="cb62-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb62-4" data-line-number="4"><span class="kw">dim</span>(mtcars)</a>
+<a class="sourceLine" id="cb62-5" data-line-number="5"><span class="co">## [1] 32 11</span></a></code></pre></div>
+<p>O resultado do código <code>dim(mtcars)</code> nos dá as seguintes informações:</p>
+<ul>
+<li><p>O <em>data frame</em> mtcars tem duas dimensões (como todo <em>data frame</em>).</p></li>
+<li><p>A primeira dimensão tem comprimento 32 e a segunda dimensão tem comprimento 11. Em outras palavras: a base <code>mtcars</code> tem 32 linhas e 11 colunas.</p></li>
+</ul>
+<p>Veja a seguir que listas não têm dimensão.</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1">mtcars_como_lista &lt;-<span class="st"> </span><span class="kw">as.list</span>(mtcars)</a>
+<a class="sourceLine" id="cb63-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb63-3" data-line-number="3"><span class="kw">class</span>(mtcars_como_lista)</a>
+<a class="sourceLine" id="cb63-4" data-line-number="4"><span class="co">## [1] &quot;list&quot;</span></a>
+<a class="sourceLine" id="cb63-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb63-6" data-line-number="6"><span class="kw">dim</span>(mtcars_como_lista)</a>
+<a class="sourceLine" id="cb63-7" data-line-number="7"><span class="co">## NULL</span></a></code></pre></div>
+<p>Ter duas dimensões significa que devemos usar dois índices para acessar os valores de um <em>data frame</em> (fazer <em>subsetting</em>). Para isso, ainda usamos o colchete, mas agora com dois argumentos: <code>[linha, coluna]</code>.</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1">mtcars[<span class="dv">2</span>, <span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb64-2" data-line-number="2"><span class="co">## [1] 160</span></a></code></pre></div>
+<p>O código acima está nos devolvendo o valor presente na segunda linha da terceira coluna da base <code>mtcars</code>.</p>
+<p>Também podemos pegar todos as linhas de uma coluna ou todas as colunas de uma linha deixando um dos argumentos vazio:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="co"># Todas as linhas da coluna 1</span></a>
+<a class="sourceLine" id="cb65-2" data-line-number="2">mtcars[,<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb65-3" data-line-number="3"><span class="co">##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2</span></a>
+<a class="sourceLine" id="cb65-4" data-line-number="4"><span class="co">## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4</span></a>
+<a class="sourceLine" id="cb65-5" data-line-number="5"><span class="co">## [29] 15.8 19.7 15.0 21.4</span></a>
+<a class="sourceLine" id="cb65-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb65-7" data-line-number="7"><span class="co"># Todas as colunas da linha 1</span></a>
+<a class="sourceLine" id="cb65-8" data-line-number="8">mtcars[<span class="dv">1</span>,]</a>
+<a class="sourceLine" id="cb65-9" data-line-number="9"><span class="co">##           mpg cyl disp  hp drat   wt  qsec vs am gear carb</span></a>
+<a class="sourceLine" id="cb65-10" data-line-number="10"><span class="co">## Mazda RX4  21   6  160 110  3.9 2.62 16.46  0  1    4    4</span></a></code></pre></div>
+<p>Por fim, lembrando que dento de cada coluna temos um vetor, podemos usar os testes lógicos para filtrar as linhas do nosso <em>data frame</em> conforme alguma regra.</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1">mtcars<span class="op">$</span>cyl <span class="op">==</span><span class="st"> </span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb66-2" data-line-number="2"><span class="co">##  [1] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb66-3" data-line-number="3"><span class="co">## [12] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE</span></a>
+<a class="sourceLine" id="cb66-4" data-line-number="4"><span class="co">## [23] FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE</span></a>
+<a class="sourceLine" id="cb66-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb66-6" data-line-number="6">mtcars[mtcars<span class="op">$</span>cyl <span class="op">==</span><span class="st"> </span><span class="dv">4</span>, ]</a>
+<a class="sourceLine" id="cb66-7" data-line-number="7"><span class="co">##                 mpg cyl  disp  hp drat    wt  qsec vs am gear carb</span></a>
+<a class="sourceLine" id="cb66-8" data-line-number="8"><span class="co">## Datsun 710     22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1</span></a>
+<a class="sourceLine" id="cb66-9" data-line-number="9"><span class="co">## Merc 240D      24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2</span></a>
+<a class="sourceLine" id="cb66-10" data-line-number="10"><span class="co">## Merc 230       22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2</span></a>
+<a class="sourceLine" id="cb66-11" data-line-number="11"><span class="co">## Fiat 128       32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1</span></a>
+<a class="sourceLine" id="cb66-12" data-line-number="12"><span class="co">## Honda Civic    30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2</span></a>
+<a class="sourceLine" id="cb66-13" data-line-number="13"><span class="co">## Toyota Corolla 33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1</span></a>
+<a class="sourceLine" id="cb66-14" data-line-number="14"><span class="co">## Toyota Corona  21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1</span></a>
+<a class="sourceLine" id="cb66-15" data-line-number="15"><span class="co">## Fiat X1-9      27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1</span></a>
+<a class="sourceLine" id="cb66-16" data-line-number="16"><span class="co">## Porsche 914-2  26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2</span></a>
+<a class="sourceLine" id="cb66-17" data-line-number="17"><span class="co">## Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</span></a>
+<a class="sourceLine" id="cb66-18" data-line-number="18"><span class="co">## Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</span></a></code></pre></div>
+<p>O código <code>mtcars$cyl == 4</code> nos diz em quais linhas estão os carros com 4 cilindros. Quando usamos o vetor de <code>TRUE</code> e <code>FALSE</code> resultante dentro do <em>subsetting</em> das linhas em <code>mtcars[mtcars$cyl == 4, ]</code>, o R nos devolve todos as colunas dos carros com 4 cilindros. A regra é simples: linha com <code>TRUE</code> é retornada, linha com <code>FALSE</code> não.</p>
+<p>Encerramos aqui a nossa primeira conversa sobre <code>data frames</code> para falar de outra estrutura muito importante dentro do R: as funções.</p>
+</div>
+<div id="funcoes" class="section level2">
+<h2><span class="header-section-number">3.11</span> Funções</h2>
+<p>Enquanto objetos são <em>nomes</em> que guardam <em>valores</em>, funções no R são <em>nomes</em> que guardam um <strong>código de R</strong>. A ideia é muito simples: sempre que você rodar uma função, o código que ela guarda será executado e um resultado nos será devolvido.</p>
+<p>Funções são tão comuns e intuitivas (provavelmente você já usou funções no Excel), que mesmo sem definir o que elas são, nós já utilizamos funções nas seções anteriores:</p>
+<ul>
+<li>a função <code>c()</code> foi utilizada para criar vetores;</li>
+<li>a função <code>class()</code> foi utilizada para descobrir a classe de um objeto;</li>
+<li>a família de funções <code>is.na()</code>, <code>is.nan()</code>, <code>is.infinite()</code> e <code>is.null</code> foram utilizadas para testar se um valor é <code>NA</code>, <code>NaN</code>, infinito ou <code>NULL</code>, respectivamente.</li>
+</ul>
+<p>Diferentemente dos objetos, as funções podem receber <strong>argumentos</strong>. Argumentos são os valores que colocamos dentro dos parênteses e que as funções precisam para funcionar (calcular algum resultado). Por exemplo, a função <code>c()</code> precisa saber quais são os valores que formarão o vetor que ela irá criar.</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1"><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb67-2" data-line-number="2"><span class="co">## [1] 1 3 5</span></a></code></pre></div>
+<p>Nesse caso, os valores <code>1</code>, <code>3</code> e <code>5</code> são os argumentos da função <code>c()</code>. <strong>Os argumentos de uma função são sempre separados por vírgulas</strong>.</p>
+<p>Funções no R têm personalidade. Cada uma pode funcionar de um jeito diferente das demais, mesmo quando fazem tarefas parecidas. Por exemplo, vejamos a função <code>sum()</code>.</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1"><span class="kw">sum</span>(<span class="dv">1</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb68-2" data-line-number="2"><span class="co">## [1] 4</span></a></code></pre></div>
+<p>Como você deve ter percebido, essa função retorna a soma de seus argumentos. Também podemos passar um vetor como argumento, e ela retornará a soma dos elementos do vetor.</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb69-2" data-line-number="2"><span class="co">## [1] 4</span></a></code></pre></div>
+<p>Já a função <code>mean()</code>, que calcula a média de um conjunto de valores, exige que você passe valores na forma de um vetor:</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1"><span class="co"># Só vai considerar o primeiro número na média</span></a>
+<a class="sourceLine" id="cb70-2" data-line-number="2"><span class="kw">mean</span>(<span class="dv">1</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb70-3" data-line-number="3"><span class="co">## [1] 1</span></a>
+<a class="sourceLine" id="cb70-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb70-5" data-line-number="5"><span class="co"># Considera todos os valores dentro do vetor na média</span></a>
+<a class="sourceLine" id="cb70-6" data-line-number="6"><span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb70-7" data-line-number="7"><span class="co">## [1] 2</span></a></code></pre></div>
+<p>Como cada coluna de um <em>data frame</em> é um vetor, podemos calcular a média de uma coluna fazendo:</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1"><span class="co"># Podemos passar esse vetor para a função mean()</span></a>
+<a class="sourceLine" id="cb71-2" data-line-number="2"><span class="kw">mean</span>(mtcars<span class="op">$</span>mpg)</a>
+<a class="sourceLine" id="cb71-3" data-line-number="3"><span class="co">## [1] 20.09062</span></a></code></pre></div>
+<p>Também podemos usar argumentos para modificar o comportamento de uma função. O que acontece se algum elemento do vetor for <code>NA</code>?</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" data-line-number="1"><span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="ot">NA</span>))</a>
+<a class="sourceLine" id="cb72-2" data-line-number="2"><span class="co">## [1] NA</span></a></code></pre></div>
+<p>Como a função não sabe o valor do terceiro elemento do vetor, ela não sabe qual é a média desses 3 elementos e, então, devolve <code>NA</code>. Como é muito comum termos <code>NA</code> nas nossas bases de dados, é muito comum tentarmos calcular a média de uma coluna que tem <code>NA</code> e recebermos <code>NA</code> como resposta.</p>
+<p>Na grande maioria dos casos, queremos saber a média de uma coluna apesar dos <code>NA</code>s. Isto é, queremos retirar os <code>NA</code>s e então calcular a média com os valores que conhecemos. Para isso, podemos utilizar o argumento <code>na.rm = TRUE</code> da função <code>mean()</code>.</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1"><span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="ot">NA</span>), <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb73-2" data-line-number="2"><span class="co">## [1] 2</span></a></code></pre></div>
+<p>Esse argumento diz à função para remover os <code>NA</code>s antes de calcular a média. Assim, a média calculada é: <code>(1 + 3)/2</code>.</p>
+<p>Claro que cada função tem os seus próprios argumentos e nem toda função terá o argumento <code>na.rm=</code>. Para saber quais são e como usar os argumentos de uma função, basta acessar a sua documentação:</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1"><span class="kw">help</span>(mean)</a>
+<a class="sourceLine" id="cb74-2" data-line-number="2"><span class="co">## starting httpd help server ... done</span></a></code></pre></div>
+<p>Os argumentos das funções também têm nomes, que podemos ou não usar na hora de usar uma função. Veja por exemplo a função <code>seq()</code>.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">4</span>, <span class="dt">to =</span> <span class="dv">10</span>, <span class="dt">by =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb75-2" data-line-number="2"><span class="co">## [1]  4  6  8 10</span></a></code></pre></div>
+<p>Entre outros argumentos, ela possui os argumentos <code>from=</code>, <code>to=</code> e <code>by=</code>. O que ela faz é criar uma sequência (vetor) de <code>by</code> em <code>by</code> que começa em <code>from</code> e termina em <code>to</code>. No exemplo, criamos uma função de 2 em 2 que começa em 4 e termina em 10.</p>
+<p>Também poderíamos usar a mesma função sem colocar o nome dos argumentos:</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" data-line-number="1"><span class="kw">seq</span>(<span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb76-2" data-line-number="2"><span class="co">## [1]  4  6  8 10</span></a></code></pre></div>
+<p>Para utilizar a função sem escrever o nome dos argumentos, você precisa colocar os valores na ordem em que os argumentos aparecem. E se você olhar a documentação da função <code>seq()</code>, fazendo <code>help(seq)</code>, verá que a ordem dos argumentos é justamente <code>from=</code>, <code>to=</code> e <code>by=</code>.</p>
+<p>Escrevendo o nome dos argumentos, não há problema em alterar a ordem dos argumentos:</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="kw">seq</span>(<span class="dt">by =</span> <span class="dv">2</span>, <span class="dt">to =</span> <span class="dv">10</span>, <span class="dt">from =</span> <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb77-2" data-line-number="2"><span class="co">## [1]  4  6  8 10</span></a></code></pre></div>
+<p>Mas se especificar os argumentos, a ordem importa. Veja que o resultado será diferente.</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" data-line-number="1"><span class="kw">seq</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb78-2" data-line-number="2"><span class="co">## [1]  2  6 10</span></a></code></pre></div>
+<p>A seguir, apresentamos algumas funções nativas do R úteis para trabalhar com <em>data frames</em> :</p>
+<ul>
+<li><code>head()</code> - Mostra as primeiras 6 linhas.</li>
+<li><code>tail()</code> - Mostra as últimas 6 linhas.</li>
+<li><code>dim()</code> - Número de linhas e de colunas.</li>
+<li><code>names()</code> - Os nomes das colunas (variáveis).</li>
+<li><code>str()</code> - Estrutura do <em>data frame</em>. Mostra, entre outras coisas, as classes de cada coluna.</li>
+<li><code>cbind()</code> - Acopla duas tabelas lado a lado.</li>
+<li><code>rbind()</code> - Empilha duas tabelas.</li>
+</ul>
+<p>Além de usar funções já prontas, você pode criar a sua própria função. A sintaxe é a seguinte:</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1">nome_da_funcao &lt;-<span class="st"> </span><span class="cf">function</span>(argumento_<span class="dv">1</span>, argumento_<span class="dv">2</span>) {</a>
+<a class="sourceLine" id="cb79-2" data-line-number="2">  </a>
+<a class="sourceLine" id="cb79-3" data-line-number="3">  <span class="co"># Código que a função irá executar</span></a>
+<a class="sourceLine" id="cb79-4" data-line-number="4">  </a>
+<a class="sourceLine" id="cb79-5" data-line-number="5">}</a></code></pre></div>
+<p>Repare que <code>function</code> é um nome reservado no R, isto é, você não pode criar um objeto com esse nome.</p>
+<p>Um exemplo: vamos criar uma função que soma dois números.</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" data-line-number="1">minha_soma &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</a>
+<a class="sourceLine" id="cb80-2" data-line-number="2">  soma &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span>y</a>
+<a class="sourceLine" id="cb80-3" data-line-number="3">  </a>
+<a class="sourceLine" id="cb80-4" data-line-number="4">  soma  <span class="co"># resultado retornado</span></a>
+<a class="sourceLine" id="cb80-5" data-line-number="5">}</a></code></pre></div>
+<p>Essa função tem os seguintes componentes:</p>
+<ul>
+<li><code>minha_soma</code>: nome da função</li>
+<li><code>x</code> e <code>y</code>: argumentos da função</li>
+<li><code>soma &lt;- x + y</code>: operação que a função executa</li>
+<li><code>soma</code>: valor retornado pela função</li>
+</ul>
+<p>Após rodarmos o código de criar a função, podemos utilizá-la como qualquer outra função do R.</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="kw">minha_soma</span>(<span class="dv">2</span>, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb81-2" data-line-number="2"><span class="co">## [1] 4</span></a></code></pre></div>
+<p>O objeto <code>soma</code> só existe <em>dentro da função</em>, isto é, além de ele não ser colocado no seu <em>environment</em>, ele só existirá na memória (RAM) enquanto o R estiver executando a função. Depois disso, ele será apagado. O mesmo vale para os argumentos <code>x</code> e <code>y</code>.</p>
+<p>O valor retornado pela função representa o resultado que receberemos ao utilizá-la. Por padrão, <strong>a função retornará sempre a última linha de código que existir dentro dela</strong>. No nosso exemplo, a função retorna o valor contido no objeto <code>soma</code>, pois é isso que fazemos na última linha de código da função.</p>
+<p>Repare que se atribuirmos o resultado a um objeto, ele não será mostrado no console:</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1">resultado &lt;-<span class="st"> </span><span class="kw">minha_soma</span>(<span class="dv">3</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb82-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb82-3" data-line-number="3"><span class="co"># Para ver o resultado, rodamos o objeto `resultado`</span></a>
+<a class="sourceLine" id="cb82-4" data-line-number="4">resultado</a>
+<a class="sourceLine" id="cb82-5" data-line-number="5"><span class="co">## [1] 6</span></a></code></pre></div>
+<p>Agora, o que acontece se a última linha da função não devolver um objeto? Veja:</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1">minha_nova_soma &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</a>
+<a class="sourceLine" id="cb83-2" data-line-number="2">  soma &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span>y</a>
+<a class="sourceLine" id="cb83-3" data-line-number="3">}</a></code></pre></div>
+<p>A função <code>minha_nova_soma()</code> apenas cria o objeto <code>soma</code>, sem retorná-lo como na função <code>minha_soma()</code>. Se utilizarmos essa nova função, nenhum valor é devolvido no console:</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1"><span class="kw">minha_nova_soma</span>(<span class="dv">1</span>, <span class="dv">1</span>)</a></code></pre></div>
+<p>No entanto, a última linha da função agora é a atribuição <code>soma &lt;- x + y</code> e esse será o “resultado retornado”. Assim, podemos visualizar o resultado da função fazendo:</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" data-line-number="1">resultado &lt;-<span class="st"> </span><span class="kw">minha_nova_soma</span>(<span class="dv">1</span>, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb85-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb85-3" data-line-number="3">resultado</a>
+<a class="sourceLine" id="cb85-4" data-line-number="4"><span class="co">## [1] 2</span></a></code></pre></div>
+<p>É como se, por trás das cortinas, o R estivesse fazendo <code>resultado &lt;- soma &lt;- x + y</code>, mas apenas o objeto <code>resultado</code> continua existindo, já que os objetos <code>soma</code>, <code>x</code>e <code>y</code> são descartados após a função ser executada.</p>
+<p>Claro que, na prática, é sempre bom criarmos funções que retornem na tela os seus resultados, para evitar esse passo a mais se quisermos apenas ver o resultado no console. Assim, a função <code>minha_soma()</code> costuma ser preferível com relação à função <code>minha_nova_soma()</code>.</p>
+</div>
+<div id="controle-de-fluxo" class="section level2">
+<h2><span class="header-section-number">3.12</span> Controle de Fluxo</h2>
+<p>Como toda boa linguagem de programação, o R possui estruturas de <code>if</code>, <code>else</code>, <code>for</code> e <code>while</code>. Esses <strong>controles de fluxo</strong> são muito importantes na hora de programar, pois nos permitem manipular de modo eficiente as ações do computador.</p>
+<p>A seguir, explicaremos para que servem e como utilizar cada uma dessas estruturas.</p>
+<div id="if-e-else" class="section level3">
+<h3><span class="header-section-number">3.12.1</span> if e else</h3>
+<p>As estruturas <code>if</code> e <code>else</code> servem para executarmos um código apenas se uma condição (teste lógico) for satisfeita.</p>
+<p>No código abaixo, a função <code>Sys.time()</code>, que retorna a data/hora no momento da execução, só será executada se o objeto <code>x</code> for igual a 1.</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" data-line-number="1"><span class="co"># Não vai executar a função Sys.time()</span></a>
+<a class="sourceLine" id="cb86-2" data-line-number="2">x &lt;-<span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb86-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb86-4" data-line-number="4"><span class="cf">if</span> (x <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) {         </a>
+<a class="sourceLine" id="cb86-5" data-line-number="5">  <span class="kw">Sys.time</span>()</a>
+<a class="sourceLine" id="cb86-6" data-line-number="6">}</a>
+<a class="sourceLine" id="cb86-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb86-8" data-line-number="8"><span class="co"># Vai executar a função Sys.time()</span></a>
+<a class="sourceLine" id="cb86-9" data-line-number="9">x &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb86-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb86-11" data-line-number="11"><span class="cf">if</span> (x <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) {         </a>
+<a class="sourceLine" id="cb86-12" data-line-number="12">  <span class="kw">Sys.time</span>()</a>
+<a class="sourceLine" id="cb86-13" data-line-number="13">}</a>
+<a class="sourceLine" id="cb86-14" data-line-number="14"><span class="co">## [1] &quot;2020-05-17 12:32:08 -03&quot;</span></a></code></pre></div>
+<p>O R só vai executar o que está na expressão dentro das chaves <code>{}</code> se a expressão que estiver dentro dos parênteses <code>()</code> retornar <code>TRUE</code>. Veja outro exemplo:</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1"><span class="co"># Vai fazer  a soma</span></a>
+<a class="sourceLine" id="cb87-2" data-line-number="2">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">15</span>)</a>
+<a class="sourceLine" id="cb87-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb87-4" data-line-number="4"><span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>) {</a>
+<a class="sourceLine" id="cb87-5" data-line-number="5">  <span class="kw">sum</span>(x)</a>
+<a class="sourceLine" id="cb87-6" data-line-number="6">}</a>
+<a class="sourceLine" id="cb87-7" data-line-number="7"><span class="co">## [1] 29</span></a>
+<a class="sourceLine" id="cb87-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb87-9" data-line-number="9"><span class="co"># Não vai fazer a soma</span></a>
+<a class="sourceLine" id="cb87-10" data-line-number="10">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</a>
+<a class="sourceLine" id="cb87-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb87-12" data-line-number="12"><span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>) {</a>
+<a class="sourceLine" id="cb87-13" data-line-number="13">  <span class="kw">sum</span>(x)</a>
+<a class="sourceLine" id="cb87-14" data-line-number="14">}</a></code></pre></div>
+<p>Nesse exemplo, a soma só é executada se a classe do objeto <code>x</code> for numérica, isto é, se <code>x</code> for um vetor de números. Essa verificação poderia ser colocada dentro de uma função para evitarmos que ela retorne um erro.</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" data-line-number="1">minha_soma &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</a>
+<a class="sourceLine" id="cb88-2" data-line-number="2">  <span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span> <span class="op">&amp;</span><span class="st"> </span><span class="kw">class</span>(y) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>) {</a>
+<a class="sourceLine" id="cb88-3" data-line-number="3">     x <span class="op">+</span><span class="st"> </span>y</a>
+<a class="sourceLine" id="cb88-4" data-line-number="4">  }</a>
+<a class="sourceLine" id="cb88-5" data-line-number="5">}</a>
+<a class="sourceLine" id="cb88-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb88-7" data-line-number="7"><span class="co"># Retorna a soma</span></a>
+<a class="sourceLine" id="cb88-8" data-line-number="8"><span class="kw">minha_soma</span>(<span class="dv">1</span>, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb88-9" data-line-number="9"><span class="co">## [1] 3</span></a>
+<a class="sourceLine" id="cb88-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb88-11" data-line-number="11"><span class="co"># Não retorna nada</span></a>
+<a class="sourceLine" id="cb88-12" data-line-number="12"><span class="kw">minha_soma</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>)</a></code></pre></div>
+<p>Nesses casos, é muito comum o uso das funções <code>return()</code> e <code>stop()</code> para, respectivamente, retornar um resultado antecipadamente ou para a execução da função e devolver ao usuário uma mensagem de erro personalizada.</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1"><span class="co"># Devolvendo um resultado antecipadamente</span></a>
+<a class="sourceLine" id="cb89-2" data-line-number="2">minha_soma_NA &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</a>
+<a class="sourceLine" id="cb89-3" data-line-number="3">  <span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span> <span class="op">&amp;</span><span class="st"> </span><span class="kw">class</span>(y) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>) {</a>
+<a class="sourceLine" id="cb89-4" data-line-number="4">     soma &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span>y</a>
+<a class="sourceLine" id="cb89-5" data-line-number="5">     <span class="kw">return</span>(soma)</a>
+<a class="sourceLine" id="cb89-6" data-line-number="6">  }</a>
+<a class="sourceLine" id="cb89-7" data-line-number="7">  </a>
+<a class="sourceLine" id="cb89-8" data-line-number="8">  <span class="ot">NA</span></a>
+<a class="sourceLine" id="cb89-9" data-line-number="9">}</a>
+<a class="sourceLine" id="cb89-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb89-11" data-line-number="11"><span class="co"># Retorna a soma</span></a>
+<a class="sourceLine" id="cb89-12" data-line-number="12"><span class="kw">minha_soma_NA</span>(<span class="dv">1</span>, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb89-13" data-line-number="13"><span class="co">## [1] 3</span></a>
+<a class="sourceLine" id="cb89-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb89-15" data-line-number="15"><span class="co"># Retorna NA</span></a>
+<a class="sourceLine" id="cb89-16" data-line-number="16"><span class="kw">minha_soma_NA</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>)</a>
+<a class="sourceLine" id="cb89-17" data-line-number="17"><span class="co">## [1] NA</span></a>
+<a class="sourceLine" id="cb89-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb89-19" data-line-number="19"><span class="co"># Retorna NA</span></a>
+<a class="sourceLine" id="cb89-20" data-line-number="20"><span class="kw">minha_soma_NA</span>(<span class="dv">1</span>, <span class="st">&quot;b&quot;</span>)</a>
+<a class="sourceLine" id="cb89-21" data-line-number="21"><span class="co">## [1] NA</span></a>
+<a class="sourceLine" id="cb89-22" data-line-number="22"></a>
+<a class="sourceLine" id="cb89-23" data-line-number="23"><span class="co"># Agora, devolvendo um erro</span></a>
+<a class="sourceLine" id="cb89-24" data-line-number="24">minha_soma_erro &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</a>
+<a class="sourceLine" id="cb89-25" data-line-number="25">  <span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">!=</span><span class="st"> &quot;numeric&quot;</span> <span class="op">|</span><span class="st"> </span><span class="kw">class</span>(y) <span class="op">!=</span><span class="st"> &quot;numeric&quot;</span>) {</a>
+<a class="sourceLine" id="cb89-26" data-line-number="26">    <span class="kw">stop</span>(<span class="st">&quot;A classe dos objetos x e y deve ser numérica.&quot;</span>)</a>
+<a class="sourceLine" id="cb89-27" data-line-number="27">  }</a>
+<a class="sourceLine" id="cb89-28" data-line-number="28">  </a>
+<a class="sourceLine" id="cb89-29" data-line-number="29">  x <span class="op">+</span><span class="st"> </span>y</a>
+<a class="sourceLine" id="cb89-30" data-line-number="30">}</a>
+<a class="sourceLine" id="cb89-31" data-line-number="31"></a>
+<a class="sourceLine" id="cb89-32" data-line-number="32"><span class="co"># Retorna a soma</span></a>
+<a class="sourceLine" id="cb89-33" data-line-number="33"><span class="kw">minha_soma_erro</span>(<span class="dv">1</span>, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb89-34" data-line-number="34"><span class="co">## [1] 3</span></a>
+<a class="sourceLine" id="cb89-35" data-line-number="35"></a>
+<a class="sourceLine" id="cb89-36" data-line-number="36"><span class="co"># Retorna erro</span></a>
+<a class="sourceLine" id="cb89-37" data-line-number="37"><span class="kw">minha_soma_erro</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>)</a>
+<a class="sourceLine" id="cb89-38" data-line-number="38"><span class="co">## Error in minha_soma_erro(&quot;a&quot;, &quot;b&quot;): A classe dos objetos x e y deve ser numérica.</span></a>
+<a class="sourceLine" id="cb89-39" data-line-number="39"></a>
+<a class="sourceLine" id="cb89-40" data-line-number="40"><span class="co"># Retorna erro</span></a>
+<a class="sourceLine" id="cb89-41" data-line-number="41"><span class="kw">minha_soma_erro</span>(<span class="dv">1</span>, <span class="st">&quot;b&quot;</span>)</a>
+<a class="sourceLine" id="cb89-42" data-line-number="42"><span class="co">## Error in minha_soma_erro(1, &quot;b&quot;): A classe dos objetos x e y deve ser numérica.</span></a></code></pre></div>
+<p>Na função <code>minha_soma_NA()</code>, a soma só é calculada e retornada se <code>x</code> e <code>y</code> forem numéricos. Caso pelo menos um dos dois não seja, o código dentro do <code>if</code> não é executado e o valor retornado é o <code>NA</code>.</p>
+<p>Na função <code>minha_soma_erro()</code>, testamos no <code>if</code> se a classe de <code>x</code> <strong>ou</strong> a classe de <code>y</code> é diferente de <code>numeric</code>, isto é, se pelo menos um dos dois não é um número. Se esse teste retornar <code>TRUE</code>, a função para a sua execução e devolve para o usuário a seguinte mensagem de erro: “A classe dos objetos x e y deve ser numérica.”. Se o teste retorna <code>FALSE</code>, a soma é realizada e seu resultado nos é retornado.</p>
+<p>O <code>else</code> funciona como uma extensão do <code>if</code>, dando uma alternativa caso o teste executado seja falso.</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" data-line-number="1"><span class="co"># Vai fazer  a soma</span></a>
+<a class="sourceLine" id="cb90-2" data-line-number="2">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">15</span>)</a>
+<a class="sourceLine" id="cb90-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb90-4" data-line-number="4"><span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>) {</a>
+<a class="sourceLine" id="cb90-5" data-line-number="5">  <span class="kw">sum</span>(x)</a>
+<a class="sourceLine" id="cb90-6" data-line-number="6">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb90-7" data-line-number="7">  <span class="ot">NA</span></a>
+<a class="sourceLine" id="cb90-8" data-line-number="8">}</a>
+<a class="sourceLine" id="cb90-9" data-line-number="9"><span class="co">## [1] 29</span></a>
+<a class="sourceLine" id="cb90-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb90-11" data-line-number="11"><span class="co"># Vai retornar NA</span></a>
+<a class="sourceLine" id="cb90-12" data-line-number="12">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">15</span>)</a>
+<a class="sourceLine" id="cb90-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb90-14" data-line-number="14"><span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>) {</a>
+<a class="sourceLine" id="cb90-15" data-line-number="15">  <span class="kw">sum</span>(x)</a>
+<a class="sourceLine" id="cb90-16" data-line-number="16">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb90-17" data-line-number="17">  <span class="ot">NA</span></a>
+<a class="sourceLine" id="cb90-18" data-line-number="18">}</a>
+<a class="sourceLine" id="cb90-19" data-line-number="19"><span class="co">## [1] 29</span></a></code></pre></div>
+<p>Também podemos usar o <code>else</code> para encadear vários <code>if</code>s. Teste o código abaixo com valores positivos e negativos para <code>x</code>.</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb91-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb91-3" data-line-number="3"><span class="cf">if</span>(x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb91-4" data-line-number="4">  </a>
+<a class="sourceLine" id="cb91-5" data-line-number="5">  <span class="st">&quot;negativo&quot;</span></a>
+<a class="sourceLine" id="cb91-6" data-line-number="6">  </a>
+<a class="sourceLine" id="cb91-7" data-line-number="7">} <span class="cf">else</span> <span class="cf">if</span>(x <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb91-8" data-line-number="8">  </a>
+<a class="sourceLine" id="cb91-9" data-line-number="9">  <span class="st">&quot;neutro&quot;</span></a>
+<a class="sourceLine" id="cb91-10" data-line-number="10">  </a>
+<a class="sourceLine" id="cb91-11" data-line-number="11">} <span class="cf">else</span> <span class="cf">if</span>(x <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb91-12" data-line-number="12">  </a>
+<a class="sourceLine" id="cb91-13" data-line-number="13">  <span class="st">&quot;positivo&quot;</span></a>
+<a class="sourceLine" id="cb91-14" data-line-number="14">}</a>
+<a class="sourceLine" id="cb91-15" data-line-number="15"><span class="co">## [1] &quot;neutro&quot;</span></a></code></pre></div>
+<p>Repare que o <code>if</code> no último <code>else</code> poderia ser omitido.</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb92-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb92-3" data-line-number="3"><span class="cf">if</span>(x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb92-4" data-line-number="4">  </a>
+<a class="sourceLine" id="cb92-5" data-line-number="5">  <span class="st">&quot;negativo&quot;</span></a>
+<a class="sourceLine" id="cb92-6" data-line-number="6">  </a>
+<a class="sourceLine" id="cb92-7" data-line-number="7">} <span class="cf">else</span> <span class="cf">if</span>(x <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb92-8" data-line-number="8">  </a>
+<a class="sourceLine" id="cb92-9" data-line-number="9">  <span class="st">&quot;neutro&quot;</span></a>
+<a class="sourceLine" id="cb92-10" data-line-number="10">  </a>
+<a class="sourceLine" id="cb92-11" data-line-number="11">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb92-12" data-line-number="12">  </a>
+<a class="sourceLine" id="cb92-13" data-line-number="13">  <span class="st">&quot;positivo&quot;</span></a>
+<a class="sourceLine" id="cb92-14" data-line-number="14">}</a>
+<a class="sourceLine" id="cb92-15" data-line-number="15"><span class="co">## [1] &quot;neutro&quot;</span></a></code></pre></div>
+</div>
+<div id="for" class="section level3">
+<h3><span class="header-section-number">3.12.2</span> for</h3>
+<p>O <code>for</code> pode ser utilizado para fazer os famosos <em>loopings</em> de programação, isto é, repetir uma mesma tarefa para um conjunto de valores diferentes. Cada repetição é chamada de iteração e o objeto que muda de valor em cada <strong>interação</strong> é chamado de <strong>iterador</strong>.</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1">numero_de_colunas &lt;-<span class="st"> </span><span class="kw">ncol</span>(mtcars)</a>
+<a class="sourceLine" id="cb93-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb93-3" data-line-number="3"><span class="cf">for</span> (coluna <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>numero_de_colunas) {</a>
+<a class="sourceLine" id="cb93-4" data-line-number="4">  media &lt;-<span class="st"> </span><span class="kw">mean</span>(mtcars[,coluna])</a>
+<a class="sourceLine" id="cb93-5" data-line-number="5">  </a>
+<a class="sourceLine" id="cb93-6" data-line-number="6">  <span class="kw">print</span>(media)</a>
+<a class="sourceLine" id="cb93-7" data-line-number="7">}</a>
+<a class="sourceLine" id="cb93-8" data-line-number="8"><span class="co">## [1] 20.09062</span></a>
+<a class="sourceLine" id="cb93-9" data-line-number="9"><span class="co">## [1] 6.1875</span></a>
+<a class="sourceLine" id="cb93-10" data-line-number="10"><span class="co">## [1] 230.7219</span></a>
+<a class="sourceLine" id="cb93-11" data-line-number="11"><span class="co">## [1] 146.6875</span></a>
+<a class="sourceLine" id="cb93-12" data-line-number="12"><span class="co">## [1] 3.596563</span></a>
+<a class="sourceLine" id="cb93-13" data-line-number="13"><span class="co">## [1] 3.21725</span></a>
+<a class="sourceLine" id="cb93-14" data-line-number="14"><span class="co">## [1] 17.84875</span></a>
+<a class="sourceLine" id="cb93-15" data-line-number="15"><span class="co">## [1] 0.4375</span></a>
+<a class="sourceLine" id="cb93-16" data-line-number="16"><span class="co">## [1] 0.40625</span></a>
+<a class="sourceLine" id="cb93-17" data-line-number="17"><span class="co">## [1] 3.6875</span></a>
+<a class="sourceLine" id="cb93-18" data-line-number="18"><span class="co">## [1] 2.8125</span></a></code></pre></div>
+<p>O código acima vai calcular a média de cada coluna do <em>data frame</em> <code>mtcars</code>. Alguns pontos importantes:</p>
+<ul>
+<li><p>No exemplo, temos 11 iterações e o objeto <code>coluna</code> é o iterador.</p></li>
+<li><p>Como <code>numero_de_colunas</code> é igual a 11, a expressão <code>1:numero_de_colunas</code> cria uma sequência de números de 1 a 11.</p></li>
+<li><p>A expressão <code>coluna in 1:numero_de_colunas</code> indica que o valor de <code>coluna</code> será 1 na primeira iteração, 2 na segunda iteração, 3 na terceira e assim por diante.</p></li>
+<li><p>O código dentro do <code>for</code> não é retornado para o usuário ao fim de cada iteração. Por isso, para ver os resultados no Console, usamos a função <code>print()</code>.</p></li>
+</ul>
+<p>Também podemos salvar as médias em um vetor.</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" data-line-number="1">numero_de_colunas &lt;-<span class="st"> </span><span class="kw">ncol</span>(mtcars)</a>
+<a class="sourceLine" id="cb94-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb94-3" data-line-number="3"><span class="co"># Antes, criamos um vetor vazio.</span></a>
+<a class="sourceLine" id="cb94-4" data-line-number="4">medias &lt;-<span class="st"> </span><span class="kw">c</span>()</a>
+<a class="sourceLine" id="cb94-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb94-6" data-line-number="6"><span class="cf">for</span> (coluna <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>numero_de_colunas) {</a>
+<a class="sourceLine" id="cb94-7" data-line-number="7">  medias[coluna] &lt;-<span class="st"> </span><span class="kw">mean</span>(mtcars[,coluna])</a>
+<a class="sourceLine" id="cb94-8" data-line-number="8">}</a>
+<a class="sourceLine" id="cb94-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb94-10" data-line-number="10">medias</a>
+<a class="sourceLine" id="cb94-11" data-line-number="11"><span class="co">##  [1]  20.090625   6.187500 230.721875 146.687500   3.596563   3.217250</span></a>
+<a class="sourceLine" id="cb94-12" data-line-number="12"><span class="co">##  [7]  17.848750   0.437500   0.406250   3.687500   2.812500</span></a></code></pre></div>
+</div>
+<div id="while" class="section level3">
+<h3><span class="header-section-number">3.12.3</span> while</h3>
+<p>Assim como o <code>for</code>, o <code>while</code> também é um iterador.</p>
+<p>O código a seguir irá imprimir na tela o valor de <code>i</code> enquanto este objeto for menor que 3. No momento em que a condição dentro das chaves <code>{}</code> não for mais respeitada, o processo será interrompido.</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" data-line-number="1">i &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb95-2" data-line-number="2"><span class="cf">while</span>(i <span class="op">&lt;</span><span class="st"> </span><span class="dv">3</span>){</a>
+<a class="sourceLine" id="cb95-3" data-line-number="3">  <span class="kw">print</span>(i)</a>
+<a class="sourceLine" id="cb95-4" data-line-number="4">  i =<span class="st"> </span>i <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb95-5" data-line-number="5">}</a>
+<a class="sourceLine" id="cb95-6" data-line-number="6"><span class="co">## [1] 1</span></a>
+<a class="sourceLine" id="cb95-7" data-line-number="7"><span class="co">## [1] 2</span></a></code></pre></div>
+<p>É importante que o valor de i seja atualizado em cada interação, caso contrário a função entrará em um loop infinito.</p>
+<p>Vamos usar o <code>while</code> para encontrar uma aproximação da solução de <span class="math inline">\(\sqrt{x} = x\)</span>. Este método é conhecido como Interação do ponto fixo e pode ser usado no cálculo aproximado de soluções de equações de uma variável real.</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb96-2" data-line-number="2">x &lt;-<span class="st"> </span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb96-3" data-line-number="3">erro &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb96-4" data-line-number="4"><span class="cf">while</span> (<span class="kw">abs</span>(erro) <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.1</span>) {</a>
+<a class="sourceLine" id="cb96-5" data-line-number="5">  erro &lt;-<span class="st"> </span>(<span class="kw">sqrt</span>(x)) <span class="op">-</span><span class="st"> </span>x</a>
+<a class="sourceLine" id="cb96-6" data-line-number="6">  x &lt;-<span class="st"> </span><span class="kw">sqrt</span>(x)</a>
+<a class="sourceLine" id="cb96-7" data-line-number="7">}</a>
+<a class="sourceLine" id="cb96-8" data-line-number="8"><span class="kw">print</span>(x)</a>
+<a class="sourceLine" id="cb96-9" data-line-number="9"><span class="co">## [1] 1.090508</span></a></code></pre></div>
+<p>Quando a diferença entre <span class="math inline">\(\sqrt{x}\)</span> e <span class="math inline">\(x\)</span> ficou menor que 0.1, o loop foi interrompido.
+Vemos que solução aproximada da equação <span class="math inline">\(\sqrt{x} = x\)</span> dada pelo algoritmo não difere muito da solução real <span class="math inline">\(x=1\)</span>.</p>
+<p>Para finalizar, listamos na tabela abaixo os principais operadores lógicos.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Operador</th>
+<th align="left">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">x &lt; y</td>
+<td align="left">x menor que y?</td>
+</tr>
+<tr class="even">
+<td align="left">x &lt;= y</td>
+<td align="left">x menor ou igual a y?</td>
+</tr>
+<tr class="odd">
+<td align="left">x &gt; y</td>
+<td align="left">x maior que y?</td>
+</tr>
+<tr class="even">
+<td align="left">x &gt;= y</td>
+<td align="left">x maior ou igual a y?</td>
+</tr>
+<tr class="odd">
+<td align="left">x == y</td>
+<td align="left">x igual a y?</td>
+</tr>
+<tr class="even">
+<td align="left">x != y</td>
+<td align="left">x diferente de y?</td>
+</tr>
+<tr class="odd">
+<td align="left">!x</td>
+<td align="left">Negativa de x</td>
+</tr>
+<tr class="even">
+<td align="left">x | y</td>
+<td align="left">x ou y são verdadeiros?</td>
+</tr>
+<tr class="odd">
+<td align="left">x &amp; y</td>
+<td align="left">x e y são verdadeiros?</td>
+</tr>
+<tr class="even">
+<td align="left">xor(x, y)</td>
+<td align="left">x ou y são verdadeiros (apenas um deles)?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outros-tópicos" class="section level2">
+<h2><span class="header-section-number">3.13</span> Outros tópicos</h2>
+<div id="matrizes" class="section level3">
+<h3><span class="header-section-number">3.13.1</span> Matrizes</h3>
+<p>Matrizes são vetores com duas dimensões (e por isso só possuem elementos de uma mesma classe).</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" data-line-number="1">m &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dt">nrow =</span> <span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb97-2" data-line-number="2">m</a>
+<a class="sourceLine" id="cb97-3" data-line-number="3"><span class="co">##      [,1] [,2] [,3]</span></a>
+<a class="sourceLine" id="cb97-4" data-line-number="4"><span class="co">## [1,]    1    3    5</span></a>
+<a class="sourceLine" id="cb97-5" data-line-number="5"><span class="co">## [2,]    2    4    6</span></a>
+<a class="sourceLine" id="cb97-6" data-line-number="6"><span class="kw">dim</span>(m) <span class="co"># funçăo dim() retorna a dimensăo do objeto.</span></a>
+<a class="sourceLine" id="cb97-7" data-line-number="7"><span class="co">## [1] 2 3</span></a></code></pre></div>
+<p>Repare que os números de 1 a 6 foram dispostos na matriz coluna por coluna (<em>column-wise</em>), ou seja, preenchendo de cima para baixo e depois da esquerda para a direita.</p>
+<p><strong>Operações úteis</strong></p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" data-line-number="1">m[<span class="dv">3</span>,  ]   <span class="co"># seleciona a terceira linha</span></a>
+<a class="sourceLine" id="cb98-2" data-line-number="2">m[ , <span class="dv">2</span>]   <span class="co"># seleciona a segunda coluna</span></a>
+<a class="sourceLine" id="cb98-3" data-line-number="3">m[<span class="dv">1</span>, <span class="dv">2</span>]   <span class="co"># seleciona o primeiro elemento da segunda coluna</span></a>
+<a class="sourceLine" id="cb98-4" data-line-number="4"><span class="kw">t</span>(m)      <span class="co"># matriz transposta</span></a>
+<a class="sourceLine" id="cb98-5" data-line-number="5">m <span class="op">%*%</span><span class="st"> </span>n   <span class="co"># multiplicação matricial</span></a>
+<a class="sourceLine" id="cb98-6" data-line-number="6"><span class="kw">solve</span>(m)  <span class="co"># matriz inversa de m</span></a></code></pre></div>
+</div>
+<div id="fatores" class="section level3">
+<h3><span class="header-section-number">3.13.2</span> Fatores</h3>
+<p>Fatores podem ser vistos como vetores de inteiros que possuem rótulos (levels).</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1">sexo &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;H&quot;</span>, <span class="st">&quot;H&quot;</span>, <span class="st">&quot;H&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;H&quot;</span>)</a>
+<a class="sourceLine" id="cb99-2" data-line-number="2">fator &lt;-<span class="st"> </span><span class="kw">as.factor</span>(sexo)</a>
+<a class="sourceLine" id="cb99-3" data-line-number="3">fator</a>
+<a class="sourceLine" id="cb99-4" data-line-number="4"><span class="co">## [1] M H H H M M H</span></a>
+<a class="sourceLine" id="cb99-5" data-line-number="5"><span class="co">## Levels: H M</span></a>
+<a class="sourceLine" id="cb99-6" data-line-number="6"><span class="kw">as.numeric</span>(fator)</a>
+<a class="sourceLine" id="cb99-7" data-line-number="7"><span class="co">## [1] 2 1 1 1 2 2 1</span></a></code></pre></div>
+<p>Eles são úteis para representar uma variável categórica (nominal e ordinal). Na modelagem, eles serão tratados de maneira especial em funções como <code>lm()</code> e <code>glm()</code>.</p>
+<p>A função <code>levels()</code> retorna os rótulos do fator:</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" data-line-number="1"><span class="kw">levels</span>(fator)</a>
+<a class="sourceLine" id="cb100-2" data-line-number="2"><span class="co">## [1] &quot;H&quot; &quot;M&quot;</span></a></code></pre></div>
+<p>A ordem das categorias de um fator pode importar. Como exemplo, temos as caselas de referência de modelos estatísticos e a ordem das barras de um gráfico. Para ajudar nesta tarefa, consulte o pacote <a href="https://github.com/tidyverse/forcats">forcats</a>.</p>
+<blockquote>
+<p>Um erro comum e desastroso. Quando um vetor de números está como <b>factor</b>, ao tentar transformá-lo em <b>numeric</b>, você receberá um vetor de inteiros que não tem nada a ver com os valores originais!</p>
+</blockquote>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1">numeros &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;10&quot;</span>, <span class="st">&quot;55&quot;</span>, <span class="st">&quot;55&quot;</span>, <span class="st">&quot;12&quot;</span>, <span class="st">&quot;10&quot;</span>, <span class="st">&quot;-5&quot;</span>, <span class="st">&quot;-90&quot;</span>))</a>
+<a class="sourceLine" id="cb101-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb101-3" data-line-number="3"><span class="kw">as.numeric</span>(numeros)</a>
+<a class="sourceLine" id="cb101-4" data-line-number="4"><span class="co">## [1] 3 5 5 4 3 1 2</span></a>
+<a class="sourceLine" id="cb101-5" data-line-number="5"><span class="co">#Por essa eu năo esperava!</span></a></code></pre></div>
+<p>Para evitar isso, use <code>as.character()</code> antes de transformar para número.</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" data-line-number="1"><span class="kw">as.numeric</span>(<span class="kw">as.character</span>(numeros))</a>
+<a class="sourceLine" id="cb102-2" data-line-number="2"><span class="co">## [1]  10  55  55  12  10  -5 -90</span></a>
+<a class="sourceLine" id="cb102-3" data-line-number="3"><span class="co"># Agora está OK!</span></a></code></pre></div>
+</div>
+<div id="fórmulas" class="section level3">
+<h3><span class="header-section-number">3.13.3</span> Fórmulas</h3>
+<p>Fórmulas são objetos do tipo <code>y ~ x</code>. Em geral, elas representam associações entre objetos, como em um modelo de regressão. As funções as usam de diversas maneiras, mas o exemplo mais emblemático vem da modelagem estatística.</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb103-1" data-line-number="1">formula &lt;-<span class="st"> </span>y <span class="op">~</span><span class="st"> </span>x1 <span class="op">+</span><span class="st"> </span>x2</a>
+<a class="sourceLine" id="cb103-2" data-line-number="2"><span class="kw">class</span>(formula)</a>
+<a class="sourceLine" id="cb103-3" data-line-number="3"><span class="co">## [1] &quot;formula&quot;</span></a></code></pre></div>
+<p>A função <code>lm()</code> é a que ajusta um modelo linear no R, e <code>lm(y ~ x)</code> lê-se “regressão linear de y explicada por x”.</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb104-1" data-line-number="1">minha_formula &lt;-<span class="st"> </span>Sepal.Width <span class="op">~</span><span class="st"> </span>Petal.Length <span class="op">+</span><span class="st"> </span>Petal.Width</a>
+<a class="sourceLine" id="cb104-2" data-line-number="2"><span class="kw">class</span>(minha_formula)</a>
+<a class="sourceLine" id="cb104-3" data-line-number="3"><span class="co">## [1] &quot;formula&quot;</span></a>
+<a class="sourceLine" id="cb104-4" data-line-number="4"><span class="kw">lm</span>(minha_formula, <span class="dt">data =</span> iris)</a>
+<a class="sourceLine" id="cb104-5" data-line-number="5"><span class="co">## </span></a>
+<a class="sourceLine" id="cb104-6" data-line-number="6"><span class="co">## Call:</span></a>
+<a class="sourceLine" id="cb104-7" data-line-number="7"><span class="co">## lm(formula = minha_formula, data = iris)</span></a>
+<a class="sourceLine" id="cb104-8" data-line-number="8"><span class="co">## </span></a>
+<a class="sourceLine" id="cb104-9" data-line-number="9"><span class="co">## Coefficients:</span></a>
+<a class="sourceLine" id="cb104-10" data-line-number="10"><span class="co">##  (Intercept)  Petal.Length   Petal.Width  </span></a>
+<a class="sourceLine" id="cb104-11" data-line-number="11"><span class="co">##       3.5870       -0.2571        0.3640</span></a></code></pre></div>
+<p>No caso específico dos modelos lineares, são nas fórmulas que conseguimos descrever as variáveis explicativas e suas interações. A fórmula <code>y ~ x1 * x2</code> significa “y regredido por x1, x2 e a interação entre x1 e x2”. Fórmulas aparecem frequentemente em tarefas de modelagem.</p>
+<p>Demais usos de fórmulas aparecerão em outras funções, como as do pacote <code>ggplot2</code>, com outros significados, e a documentação nos dirá como usá-las.</p>
+</div>
+<div id="gráficos-base" class="section level3">
+<h3><span class="header-section-number">3.13.4</span> Gráficos (base)</h3>
+<p>O R já vem com funções básicas que fazem gráficos estatísticos de todas as naturezas.</p>
+<ul>
+<li>Vantagens: são rápidas e simples.</li>
+<li>Desvantagens: são feias e difíceis para gerar gráficos complexos.</li>
+</ul>
+<p>Nesta seção, mostraremos como construir alguns tipos de gráficos usando as funções base do R, mas o nosso foco em visualização de dados está nas funções do pacote <code>ggplot2</code>.</p>
+<div id="gráfico-de-dispersão" class="section level4">
+<h4><span class="header-section-number">3.13.4.1</span> Gráfico de dispersão</h4>
+<p>Para construir um gráfico de dispersão, utilizamos a função <code>plot()</code>. Seus principais parâmetros são:</p>
+<ul>
+<li><code>x</code>, <code>y</code> - Vetores para representarem os eixos x e y.</li>
+<li><code>type</code> - Tipo de gráfico. Pode ser pontos, linhas, escada, entre outros.</li>
+</ul>
+<p>Para mais detalhes sobre os argumentos, ver <code>help(plot)</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">
+Outras formas de utilizar a função plot()
+</p>
+<p>
+Além de gerar gráficos de dispersão, tentar chamar a função <b>plot(objeto_diferentao)</b> para qualquer tipo de objeto do R geralmente gera um gráfico interessante! Sempre tente fazer isso, a menos que seu objeto seja um <b>data.frame</b> com milhares de colunas!
+</p>
+</div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" data-line-number="1">N &lt;-<span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb105-2" data-line-number="2">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span>N</a>
+<a class="sourceLine" id="cb105-3" data-line-number="3">y &lt;-<span class="st"> </span><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(N, <span class="dt">sd =</span> <span class="dv">30</span>)</a>
+<a class="sourceLine" id="cb105-4" data-line-number="4"><span class="kw">plot</span>(x, y)</a></code></pre></div>
+<p><img src="temp_files/figure-html/unnamed-chunk-113-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>O parâmetro <code>type = &quot;l&quot;</code> indica que queremos que os pontos sejam interligados por linhas.</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb106-1" data-line-number="1"><span class="kw">plot</span>(x, y, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>)</a></code></pre></div>
+<p><img src="temp_files/figure-html/unnamed-chunk-114-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="histograma" class="section level4">
+<h4><span class="header-section-number">3.13.4.2</span> Histograma</h4>
+<p>Para construir histogramas, utilizamos a função <code>hist()</code>. Os principais parâmetros são:</p>
+<ul>
+<li><code>x</code> - O vetor numérico para o qual o histograma será construído.</li>
+<li><code>breaks</code> - O número (aproximado) de retângulos.</li>
+</ul>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" data-line-number="1"><span class="kw">hist</span>(<span class="kw">rnorm</span>(<span class="dv">1000</span>))</a></code></pre></div>
+<p><img src="temp_files/figure-html/unnamed-chunk-115-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" data-line-number="1"><span class="kw">hist</span>(<span class="kw">rnorm</span>(<span class="dv">1000</span>), <span class="dt">breaks =</span> <span class="dv">6</span>)</a></code></pre></div>
+<p><img src="temp_files/figure-html/unnamed-chunk-116-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="boxplot" class="section level4">
+<h4><span class="header-section-number">3.13.4.3</span> Boxplot</h4>
+<p>Para construir histogramas, utilizamos a função <code>boxplot()</code>. Os principais parâmetros são:</p>
+<ul>
+<li><code>x</code> - O vetor numérico para o qual o boxplot será construído.</li>
+</ul>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" data-line-number="1"><span class="kw">boxplot</span>(InsectSprays<span class="op">$</span>count, <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>)</a></code></pre></div>
+<p><img src="temp_files/figure-html/unnamed-chunk-117-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Observe que o argumento <code>col=</code> muda a cor da caixa do boxplot.</p>
+<p>Para mapear duas variáveis ao gráfico, utilizamos um objeto da classe <code>formula</code> e o argumento <code>data=</code>.</p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" data-line-number="1"><span class="kw">boxplot</span>(count <span class="op">~</span><span class="st"> </span>spray, <span class="dt">data =</span> InsectSprays, <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>)</a></code></pre></div>
+<p><img src="temp_files/figure-html/unnamed-chunk-118-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="gráfico-de-barras" class="section level4">
+<h4><span class="header-section-number">3.13.4.4</span> Gráfico de barras</h4>
+<p>Para construir gráficos de barras, precisamos combinar as funções <code>table()</code> e <code>barplot()</code>.</p>
+<p>No gráfico abaixo, primeiro criamos uma tabela de frequências com a função <code>table()</code> e, em seguida, construímos o gráfico com a função <code>barplot()</code>. A função <code>data()</code> carrega bases de dados de pacotes instalados. Veja <code>help(data)</code> para mais detalhes.</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="kw">data</span>(diamonds, <span class="dt">package =</span> <span class="st">&quot;ggplot2&quot;</span>)</a>
+<a class="sourceLine" id="cb111-2" data-line-number="2">tabela &lt;-<span class="st"> </span><span class="kw">table</span>(diamonds<span class="op">$</span>color)</a>
+<a class="sourceLine" id="cb111-3" data-line-number="3">tabela</a>
+<a class="sourceLine" id="cb111-4" data-line-number="4"><span class="co">## </span></a>
+<a class="sourceLine" id="cb111-5" data-line-number="5"><span class="co">##     D     E     F     G     H     I     J </span></a>
+<a class="sourceLine" id="cb111-6" data-line-number="6"><span class="co">##  6775  9797  9542 11292  8304  5422  2808</span></a>
+<a class="sourceLine" id="cb111-7" data-line-number="7"><span class="kw">barplot</span>(tabela)</a></code></pre></div>
+<p><img src="temp_files/figure-html/unnamed-chunk-119-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Também podemos mapear duas variáveis a um gráfico de barras utilizando tabelas de dupla entrada.</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" data-line-number="1">VADeaths</a>
+<a class="sourceLine" id="cb112-2" data-line-number="2"><span class="co">##       Rural Male Rural Female Urban Male Urban Female</span></a>
+<a class="sourceLine" id="cb112-3" data-line-number="3"><span class="co">## 50-54       11.7          8.7       15.4          8.4</span></a>
+<a class="sourceLine" id="cb112-4" data-line-number="4"><span class="co">## 55-59       18.1         11.7       24.3         13.6</span></a>
+<a class="sourceLine" id="cb112-5" data-line-number="5"><span class="co">## 60-64       26.9         20.3       37.0         19.3</span></a>
+<a class="sourceLine" id="cb112-6" data-line-number="6"><span class="co">## 65-69       41.0         30.9       54.6         35.1</span></a>
+<a class="sourceLine" id="cb112-7" data-line-number="7"><span class="co">## 70-74       66.0         54.3       71.1         50.0</span></a></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" data-line-number="1"><span class="kw">barplot</span>(VADeaths)</a></code></pre></div>
+<p><img src="temp_files/figure-html/unnamed-chunk-121-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+<div id="exercícios" class="section level2">
+<h2><span class="header-section-number">3.14</span> Exercícios</h2>
+<p><strong>Sugestão</strong>: resolva os exercícios em arquivo R Markdown, aproveitando para fazer anotações e registrar suas dúvidas ao longo do caminho.</p>
+<p><strong>1.</strong> Calcule o número de ouro no R.</p>
+<p>Dica: o número de ouro é dado pela expressão <span class="math inline">\(\frac{1 + \sqrt{5}}{2}\)</span>.</p>
+<hr />
+<p><strong>2.</strong> Qual o resultado da divisão de 1 por 0 no R? E de -1 por 0?</p>
+<hr />
+<p><strong>3.</strong> Quais as diferenças entre <code>NaN</code>, <code>NULL</code>, <code>NA</code> e <code>Inf</code>? Digite expressões que retornem cada um desses resultados.</p>
+<hr />
+<p><strong>4.</strong> Sem rodar o código, calcule o que a expressão <code>5 + 3 * 10 %/% 3 == 15</code> vai resultar no R. Em seguida, apenas utilizando parênteses, faço a expressão retornar o valore contrário (i.e., se originariamente for <code>TRUE</code>, faça retornar <code>FALSE</code>).</p>
+<hr />
+<p><strong>5.</strong> Por que o código abaixo retorna erro? Arrume o código para retornar o valor <code>TRUE</code>.</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb114-2" data-line-number="2"><span class="cf">if</span>(<span class="dt">x =</span> <span class="dv">4</span>) {</a>
+<a class="sourceLine" id="cb114-3" data-line-number="3">  <span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb114-4" data-line-number="4">}</a></code></pre></div>
+<hr />
+<p><strong>6.</strong> Usando <code>if</code> e <code>else</code>, escreva um código que retorne a string <code>&quot;número&quot;</code> caso o valor seja da classe <code>numeric</code> ou <code>integer</code>; a string <code>&quot;palavra&quot;</code> caso o valor seja da classe <code>character</code>; e <code>NA</code> caso contrário.</p>
+<hr />
+<p><strong>7.</strong> Use o <code>for</code> para retornar o menor valor do seguinte vetor: <code>vetor &lt;- c(4, 2, 1, 5, 3)</code>. Modifique o seu código para que ele funcione com qualquer vetor.</p>
+<hr />
+<p><strong>8.</strong> Usando apenas <code>for</code> e a função <code>length()</code>, construa uma função que calcule a média de um vetor número qualquer. Construa uma condição para a função retornar <code>NULL</code> caso o vetor não seja numérico.</p>
+<hr />
+<p><strong>9.</strong> Rode <code>help(runif)</code> para descobrir o que a função <code>runif()</code> faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive).</p>
+<hr />
+<p><strong>10.</strong> Rode <code>help(sample)</code> para descobrir o que a função <code>sample()</code> faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.</p>
+<hr />
+<!-- **11.** Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do data frame `mtcars`. -->
+<!-- -------------------------------------------------------------------------------- -->
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Essa ideia é um dos princípios por trás do <code>tidyverse</code>.<a href="r-básico.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Bases de dados presentes em pacotes também têm documentação, e geralmente é possível encontrar o significado de cada variável nela. Por exemplo, <code>help(mtcars)</code>.<a href="r-básico.html#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>Ou com um ponto.<a href="r-básico.html#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>Você pode construir um <em>data frame</em> vazio, com 0 linha e 0 coluna. No entanto, a <em>estrutura</em> de linhas e colunas estará presente.<a href="r-básico.html#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>A primeira “coluna” representa apenas o <em>nome</em> das linhas (modelo do carro), não é uma coluna da base. Repare que ela não possui um nome, como as outras. Essa estrutura de nome de linha é própria de <em>data frames</em> no R. Se exportássemos essa base para o Excel, por exemplo, essa coluna não apareceria.<a href="r-básico.html#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>Também conhecidos como valores binários ou booleanos<a href="r-básico.html#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>Também existem bases não retangulares, como dados de imagens por exemplos, mas não trataremos dessas estruturas neste livro.<a href="r-básico.html#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn8"><p>Mesmo quando uma variável não existe para uma unidade amostral, representamos esse valor como um <em>missing</em><a href="r-básico.html#fnref8" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="rstudio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pipe.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["temp.pdf", "temp.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
