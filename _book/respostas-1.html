@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 8 Respostas | Ciência de dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos da Curso-R." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 8 Respostas | Ciência de dados em R" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Curso-R" />
 
 
-<meta name="date" content="2020-05-16" />
+<meta name="date" content="2020-05-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -196,7 +196,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4" data-path="pipe.html"><a href="pipe.html#respostas"><i class="fa fa-check"></i><b>4.4</b> Respostas</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="importação.html"><a href="importação.html"><i class="fa fa-check"></i><b>5</b> Importação</a><ul>
-<li class="chapter" data-level="5.1" data-path="importação.html"><a href="importação.html#readr"><i class="fa fa-check"></i><b>5.1</b> readr</a></li>
+<li class="chapter" data-level="5.1" data-path="importação.html"><a href="importação.html#o-pacote-readr"><i class="fa fa-check"></i><b>5.1</b> O pacote readr</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="importação.html"><a href="importação.html#importando-arquivos-de-texto"><i class="fa fa-check"></i><b>5.1.1</b> Importando arquivos de texto</a></li>
+<li class="chapter" data-level="5.1.2" data-path="importação.html"><a href="importação.html#parseando-valores"><i class="fa fa-check"></i><b>5.1.2</b> Parseando valores</a></li>
+<li class="chapter" data-level="5.1.3" data-path="importação.html"><a href="importação.html#locale"><i class="fa fa-check"></i><b>5.1.3</b> Locale</a></li>
+<li class="chapter" data-level="5.1.4" data-path="importação.html"><a href="importação.html#escrevendo-arquivos"><i class="fa fa-check"></i><b>5.1.4</b> Escrevendo arquivos</a></li>
+</ul></li>
 <li class="chapter" data-level="5.2" data-path="importação.html"><a href="importação.html#readxl"><i class="fa fa-check"></i><b>5.2</b> readxl</a></li>
 <li class="chapter" data-level="5.3" data-path="importação.html"><a href="importação.html#haven"><i class="fa fa-check"></i><b>5.3</b> haven</a></li>
 </ul></li>
@@ -248,184 +253,184 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>1.</strong> Calcule o número de ouro no R.</p>
 <p>Dica: o número de ouro é dado pela expressão <span class="math inline">\(\frac{1 + \sqrt{5}}{2}\)</span>.</p>
 <p><strong>Resposta:</strong></p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb171-1" title="1">(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">5</span>))<span class="op">/</span><span class="dv">2</span></a></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" title="1">(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">5</span>))<span class="op">/</span><span class="dv">2</span></a></code></pre></div>
 <hr />
 <p><strong>2.</strong> Qual o resultado da divisão de 1 por 0 no R? E de -1 por 0?</p>
 <p><strong>Resposta:</strong></p>
 <p>Infinito e -Infinito.</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" title="1"><span class="dv">1</span><span class="op">/</span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb172-2" title="2"><span class="co">## [1] Inf</span></a>
-<a class="sourceLine" id="cb172-3" title="3"><span class="dv">-1</span><span class="op">/</span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb172-4" title="4"><span class="co">## [1] -Inf</span></a></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb173-1" title="1"><span class="dv">1</span><span class="op">/</span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb173-2" title="2"><span class="co">## [1] Inf</span></a>
+<a class="sourceLine" id="cb173-3" title="3"><span class="dv">-1</span><span class="op">/</span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb173-4" title="4"><span class="co">## [1] -Inf</span></a></code></pre></div>
 <hr />
 <p><strong>3.</strong> Quais as diferenças entre <code>NaN</code>, <code>NULL</code>, <code>NA</code> e <code>Inf</code>? Digite expressões que retornam cada um desses resultados.</p>
 <p><strong>Resposta:</strong></p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb173-1" title="1"><span class="co"># NaN é o resultado de uma operação matemática inválida. </span></a>
-<a class="sourceLine" id="cb173-2" title="2"><span class="co"># Significa Not A Number.</span></a>
-<a class="sourceLine" id="cb173-3" title="3"></a>
-<a class="sourceLine" id="cb173-4" title="4"><span class="dv">0</span><span class="op">/</span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb173-5" title="5"><span class="co">## [1] NaN</span></a></code></pre></div>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb174-1" title="1"><span class="co"># NULL é o vazio do R. É como se o objeto não existisse.</span></a>
-<a class="sourceLine" id="cb174-2" title="2"></a>
-<a class="sourceLine" id="cb174-3" title="3"><span class="ot">NULL</span></a>
-<a class="sourceLine" id="cb174-4" title="4">a =<span class="st"> </span><span class="ot">NULL</span></a></code></pre></div>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb175-1" title="1"><span class="co"># veja que um vetor, mesmo sem elementos não é NULL</span></a>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb174-1" title="1"><span class="co"># NaN é o resultado de uma operação matemática inválida. </span></a>
+<a class="sourceLine" id="cb174-2" title="2"><span class="co"># Significa Not A Number.</span></a>
+<a class="sourceLine" id="cb174-3" title="3"></a>
+<a class="sourceLine" id="cb174-4" title="4"><span class="dv">0</span><span class="op">/</span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb174-5" title="5"><span class="co">## [1] NaN</span></a></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb175-1" title="1"><span class="co"># NULL é o vazio do R. É como se o objeto não existisse.</span></a>
 <a class="sourceLine" id="cb175-2" title="2"></a>
-<a class="sourceLine" id="cb175-3" title="3"><span class="kw">is.null</span>(<span class="kw">integer</span>(<span class="dt">length =</span> <span class="dv">0</span>)) </a>
-<a class="sourceLine" id="cb175-4" title="4"><span class="co">## [1] FALSE</span></a>
-<a class="sourceLine" id="cb175-5" title="5"></a>
-<a class="sourceLine" id="cb175-6" title="6"><span class="co"># NA é uma constante lógica do R. Siginifica Not Availlable. </span></a>
-<a class="sourceLine" id="cb175-7" title="7"><span class="co"># NA pode ser convertido para quase todos os tipos de vetores do R. </span></a>
-<a class="sourceLine" id="cb175-8" title="8"><span class="co"># É usado principalmente para indicar valores faltantes.</span></a>
-<a class="sourceLine" id="cb175-9" title="9"></a>
-<a class="sourceLine" id="cb175-10" title="10"><span class="ot">NA</span></a>
-<a class="sourceLine" id="cb175-11" title="11"><span class="co">## [1] NA</span></a>
-<a class="sourceLine" id="cb175-12" title="12"><span class="kw">as.numeric</span>(<span class="kw">c</span>(<span class="st">&quot;1&quot;</span>, <span class="st">&quot;2&quot;</span>, <span class="st">&quot;a&quot;</span>))</a>
-<a class="sourceLine" id="cb175-13" title="13"><span class="co">## Warning: NAs introduced by coercion</span></a>
-<a class="sourceLine" id="cb175-14" title="14"><span class="co">## [1]  1  2 NA</span></a>
-<a class="sourceLine" id="cb175-15" title="15"></a>
-<a class="sourceLine" id="cb175-16" title="16"><span class="co"># Inf é significa infinito. É o resultado de operações matemáticas </span></a>
-<a class="sourceLine" id="cb175-17" title="17"><span class="co"># cujo limite é infinito.</span></a>
-<a class="sourceLine" id="cb175-18" title="18"></a>
-<a class="sourceLine" id="cb175-19" title="19"><span class="dv">1</span><span class="op">/</span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb175-20" title="20"><span class="co">## [1] Inf</span></a>
-<a class="sourceLine" id="cb175-21" title="21"><span class="dv">1</span><span class="op">/</span><span class="ot">Inf</span></a>
-<a class="sourceLine" id="cb175-22" title="22"><span class="co">## [1] 0</span></a></code></pre></div>
+<a class="sourceLine" id="cb175-3" title="3"><span class="ot">NULL</span></a>
+<a class="sourceLine" id="cb175-4" title="4">a =<span class="st"> </span><span class="ot">NULL</span></a></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" title="1"><span class="co"># veja que um vetor, mesmo sem elementos não é NULL</span></a>
+<a class="sourceLine" id="cb176-2" title="2"></a>
+<a class="sourceLine" id="cb176-3" title="3"><span class="kw">is.null</span>(<span class="kw">integer</span>(<span class="dt">length =</span> <span class="dv">0</span>)) </a>
+<a class="sourceLine" id="cb176-4" title="4"><span class="co">## [1] FALSE</span></a>
+<a class="sourceLine" id="cb176-5" title="5"></a>
+<a class="sourceLine" id="cb176-6" title="6"><span class="co"># NA é uma constante lógica do R. Siginifica Not Availlable. </span></a>
+<a class="sourceLine" id="cb176-7" title="7"><span class="co"># NA pode ser convertido para quase todos os tipos de vetores do R. </span></a>
+<a class="sourceLine" id="cb176-8" title="8"><span class="co"># É usado principalmente para indicar valores faltantes.</span></a>
+<a class="sourceLine" id="cb176-9" title="9"></a>
+<a class="sourceLine" id="cb176-10" title="10"><span class="ot">NA</span></a>
+<a class="sourceLine" id="cb176-11" title="11"><span class="co">## [1] NA</span></a>
+<a class="sourceLine" id="cb176-12" title="12"><span class="kw">as.numeric</span>(<span class="kw">c</span>(<span class="st">&quot;1&quot;</span>, <span class="st">&quot;2&quot;</span>, <span class="st">&quot;a&quot;</span>))</a>
+<a class="sourceLine" id="cb176-13" title="13"><span class="co">## Warning: NAs introduced by coercion</span></a>
+<a class="sourceLine" id="cb176-14" title="14"><span class="co">## [1]  1  2 NA</span></a>
+<a class="sourceLine" id="cb176-15" title="15"></a>
+<a class="sourceLine" id="cb176-16" title="16"><span class="co"># Inf é significa infinito. É o resultado de operações matemáticas </span></a>
+<a class="sourceLine" id="cb176-17" title="17"><span class="co"># cujo limite é infinito.</span></a>
+<a class="sourceLine" id="cb176-18" title="18"></a>
+<a class="sourceLine" id="cb176-19" title="19"><span class="dv">1</span><span class="op">/</span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb176-20" title="20"><span class="co">## [1] Inf</span></a>
+<a class="sourceLine" id="cb176-21" title="21"><span class="dv">1</span><span class="op">/</span><span class="ot">Inf</span></a>
+<a class="sourceLine" id="cb176-22" title="22"><span class="co">## [1] 0</span></a></code></pre></div>
 <hr />
 <p><strong>4.</strong> Sem rodar o código, calcule o que a expressão <code>5 + 3 * 10 %/% 3 == 15</code> vai resultar no R. Em seguida, apenas utilizando parênteses, faço a expressão retornar o valore contrário (i.e., se originariamente for <code>TRUE</code>, faça retornar <code>FALSE</code>).</p>
 <p><strong>Resposta:</strong></p>
 <p>O resultado da parte esquerda é 14, por isso a expressão retornará <code>FALSE</code>. Para fazê-la retornar <code>TRUE</code>, basta colocar parênteses em volta de <code>3 * 10</code>.</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" title="1"><span class="dv">5</span> <span class="op">+</span><span class="st"> </span>(<span class="dv">3</span> <span class="op">*</span><span class="st"> </span><span class="dv">10</span>) <span class="op">%/%</span><span class="st"> </span><span class="dv">3</span> <span class="op">==</span><span class="st"> </span><span class="dv">15</span></a>
-<a class="sourceLine" id="cb176-2" title="2"><span class="co">## [1] TRUE</span></a></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb177-1" title="1"><span class="dv">5</span> <span class="op">+</span><span class="st"> </span>(<span class="dv">3</span> <span class="op">*</span><span class="st"> </span><span class="dv">10</span>) <span class="op">%/%</span><span class="st"> </span><span class="dv">3</span> <span class="op">==</span><span class="st"> </span><span class="dv">15</span></a>
+<a class="sourceLine" id="cb177-2" title="2"><span class="co">## [1] TRUE</span></a></code></pre></div>
 <hr />
 <p><strong>5.</strong> Por que o código abaixo retorna erro? Arrume o código para retornar o valor <code>TRUE</code>.</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb177-1" title="1">x &lt;-<span class="st"> </span><span class="dv">4</span></a>
-<a class="sourceLine" id="cb177-2" title="2"><span class="cf">if</span>(<span class="dt">x =</span> <span class="dv">4</span>) {</a>
-<a class="sourceLine" id="cb177-3" title="3">  <span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb177-4" title="4">}</a></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" title="1">x &lt;-<span class="st"> </span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb178-2" title="2"><span class="cf">if</span>(<span class="dt">x =</span> <span class="dv">4</span>) {</a>
+<a class="sourceLine" id="cb178-3" title="3">  <span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb178-4" title="4">}</a></code></pre></div>
 <p><strong>Resposta:</strong></p>
 <p>A expressão <code>x = 4</code> está tentando atribuir o valor 4 ao objeto <code>x</code> dentro do if, o que não é permitido pois o controlador <code>if</code> só aceita valores lógicos. Para corrigir o código e fazê-lo retornar <code>TRUE</code>, basta trocar <code>=</code> por <code>==</code>.</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" title="1">x &lt;-<span class="st"> </span><span class="dv">4</span></a>
-<a class="sourceLine" id="cb178-2" title="2"><span class="cf">if</span>(x <span class="op">==</span><span class="st"> </span><span class="dv">4</span>) {</a>
-<a class="sourceLine" id="cb178-3" title="3">  <span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb178-4" title="4">}</a>
-<a class="sourceLine" id="cb178-5" title="5"><span class="co">## [1] TRUE</span></a></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb179-1" title="1">x &lt;-<span class="st"> </span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb179-2" title="2"><span class="cf">if</span>(x <span class="op">==</span><span class="st"> </span><span class="dv">4</span>) {</a>
+<a class="sourceLine" id="cb179-3" title="3">  <span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb179-4" title="4">}</a>
+<a class="sourceLine" id="cb179-5" title="5"><span class="co">## [1] TRUE</span></a></code></pre></div>
 <hr />
 <p><strong>6.</strong> Usando <code>if</code> e <code>else</code>, escreva um código que retorne a string “número” caso o objeto <code>x</code> seja da classe <code>numeric</code> ou <code>integer</code>; a string “palavra” caso o objeto seja da classe <code>character</code>; e <code>NULL</code> caso contrário.</p>
 <p><strong>Resposta:</strong></p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb179-1" title="1">x &lt;-<span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb179-2" title="2"><span class="co"># x &lt;- 1L</span></a>
-<a class="sourceLine" id="cb179-3" title="3"><span class="co"># x &lt;- &quot;1&quot;</span></a>
-<a class="sourceLine" id="cb179-4" title="4"></a>
-<a class="sourceLine" id="cb179-5" title="5"><span class="cf">if</span>(<span class="kw">is.numeric</span>(x)) {</a>
-<a class="sourceLine" id="cb179-6" title="6">  <span class="st">&quot;número&quot;</span></a>
-<a class="sourceLine" id="cb179-7" title="7"><span class="st">} else if(is.character(x)) {</span></a>
-<a class="sourceLine" id="cb179-8" title="8"><span class="st">  &quot;</span>palavra<span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb179-9" title="9"><span class="st">} else { </span></a>
-<a class="sourceLine" id="cb179-10" title="10"><span class="st">  NULL</span></a>
-<a class="sourceLine" id="cb179-11" title="11"><span class="st">}</span></a>
-<a class="sourceLine" id="cb179-12" title="12"><span class="st">## [1] &quot;</span>número&quot;</a></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb180-1" title="1">x &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb180-2" title="2"><span class="co"># x &lt;- 1L</span></a>
+<a class="sourceLine" id="cb180-3" title="3"><span class="co"># x &lt;- &quot;1&quot;</span></a>
+<a class="sourceLine" id="cb180-4" title="4"></a>
+<a class="sourceLine" id="cb180-5" title="5"><span class="cf">if</span>(<span class="kw">is.numeric</span>(x)) {</a>
+<a class="sourceLine" id="cb180-6" title="6">  <span class="st">&quot;número&quot;</span></a>
+<a class="sourceLine" id="cb180-7" title="7"><span class="st">} else if(is.character(x)) {</span></a>
+<a class="sourceLine" id="cb180-8" title="8"><span class="st">  &quot;</span>palavra<span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb180-9" title="9"><span class="st">} else { </span></a>
+<a class="sourceLine" id="cb180-10" title="10"><span class="st">  NULL</span></a>
+<a class="sourceLine" id="cb180-11" title="11"><span class="st">}</span></a>
+<a class="sourceLine" id="cb180-12" title="12"><span class="st">## [1] &quot;</span>número&quot;</a></code></pre></div>
 <p>Note que a função <code>is.numeric()</code> retorna <code>TRUE</code> para as classes <code>integer</code> e <code>numeric</code>.</p>
 <hr />
 <p><strong>7.</strong> Use o <code>for</code> para retornar o valor mínimo do seguinte vetor: <code>vetor &lt;- c(4, 2, 1, 5, 3)</code>. Modifique o seu código para receber vetores de qualquer tamanho.</p>
 <p><strong>Resposta:</strong></p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb180-1" title="1"></a>
-<a class="sourceLine" id="cb180-2" title="2">vetor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb180-3" title="3">minimo &lt;-<span class="st"> </span><span class="ot">Inf</span></a>
-<a class="sourceLine" id="cb180-4" title="4"></a>
-<a class="sourceLine" id="cb180-5" title="5"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>) {</a>
-<a class="sourceLine" id="cb180-6" title="6">  </a>
-<a class="sourceLine" id="cb180-7" title="7">  <span class="cf">if</span>(minimo <span class="op">&gt;</span><span class="st"> </span>vetor[i]) {</a>
-<a class="sourceLine" id="cb180-8" title="8">    minimo &lt;-<span class="st"> </span>vetor[i]</a>
-<a class="sourceLine" id="cb180-9" title="9">  }</a>
-<a class="sourceLine" id="cb180-10" title="10">  </a>
-<a class="sourceLine" id="cb180-11" title="11">}</a>
-<a class="sourceLine" id="cb180-12" title="12"></a>
-<a class="sourceLine" id="cb180-13" title="13">minimo</a>
-<a class="sourceLine" id="cb180-14" title="14"><span class="co">## [1] 1</span></a>
-<a class="sourceLine" id="cb180-15" title="15"></a>
-<a class="sourceLine" id="cb180-16" title="16"><span class="co"># Para qualquer vetor</span></a>
-<a class="sourceLine" id="cb180-17" title="17"></a>
-<a class="sourceLine" id="cb180-18" title="18"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(vetor)) {</a>
-<a class="sourceLine" id="cb180-19" title="19">  </a>
-<a class="sourceLine" id="cb180-20" title="20">  <span class="cf">if</span>(minimo <span class="op">&gt;</span><span class="st"> </span>vetor[i]) {</a>
-<a class="sourceLine" id="cb180-21" title="21">    minimo &lt;-<span class="st"> </span>vetor[i]</a>
-<a class="sourceLine" id="cb180-22" title="22">  }</a>
-<a class="sourceLine" id="cb180-23" title="23">  </a>
-<a class="sourceLine" id="cb180-24" title="24">}</a>
-<a class="sourceLine" id="cb180-25" title="25"></a>
-<a class="sourceLine" id="cb180-26" title="26">minimo</a>
-<a class="sourceLine" id="cb180-27" title="27"><span class="co">## [1] 1</span></a></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb181-1" title="1"></a>
+<a class="sourceLine" id="cb181-2" title="2">vetor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb181-3" title="3">minimo &lt;-<span class="st"> </span><span class="ot">Inf</span></a>
+<a class="sourceLine" id="cb181-4" title="4"></a>
+<a class="sourceLine" id="cb181-5" title="5"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>) {</a>
+<a class="sourceLine" id="cb181-6" title="6">  </a>
+<a class="sourceLine" id="cb181-7" title="7">  <span class="cf">if</span>(minimo <span class="op">&gt;</span><span class="st"> </span>vetor[i]) {</a>
+<a class="sourceLine" id="cb181-8" title="8">    minimo &lt;-<span class="st"> </span>vetor[i]</a>
+<a class="sourceLine" id="cb181-9" title="9">  }</a>
+<a class="sourceLine" id="cb181-10" title="10">  </a>
+<a class="sourceLine" id="cb181-11" title="11">}</a>
+<a class="sourceLine" id="cb181-12" title="12"></a>
+<a class="sourceLine" id="cb181-13" title="13">minimo</a>
+<a class="sourceLine" id="cb181-14" title="14"><span class="co">## [1] 1</span></a>
+<a class="sourceLine" id="cb181-15" title="15"></a>
+<a class="sourceLine" id="cb181-16" title="16"><span class="co"># Para qualquer vetor</span></a>
+<a class="sourceLine" id="cb181-17" title="17"></a>
+<a class="sourceLine" id="cb181-18" title="18"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(vetor)) {</a>
+<a class="sourceLine" id="cb181-19" title="19">  </a>
+<a class="sourceLine" id="cb181-20" title="20">  <span class="cf">if</span>(minimo <span class="op">&gt;</span><span class="st"> </span>vetor[i]) {</a>
+<a class="sourceLine" id="cb181-21" title="21">    minimo &lt;-<span class="st"> </span>vetor[i]</a>
+<a class="sourceLine" id="cb181-22" title="22">  }</a>
+<a class="sourceLine" id="cb181-23" title="23">  </a>
+<a class="sourceLine" id="cb181-24" title="24">}</a>
+<a class="sourceLine" id="cb181-25" title="25"></a>
+<a class="sourceLine" id="cb181-26" title="26">minimo</a>
+<a class="sourceLine" id="cb181-27" title="27"><span class="co">## [1] 1</span></a></code></pre></div>
 <p><strong>Lembrete</strong>: o R já possui a função <code>min()</code> para calcular o mínimo de um conjunto de valores.</p>
 <hr />
 <p><strong>8.</strong> Usando apenas <code>for</code> e a função <code>length()</code>, construa uma função que calcule a média de um vetor número qualquer. Construa uma condição para a função retornar <code>NULL</code> caso o vetor não seja numérico.</p>
 <p><strong>Resposta:</strong></p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb181-1" title="1">media &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
-<a class="sourceLine" id="cb181-2" title="2">  </a>
-<a class="sourceLine" id="cb181-3" title="3">  i &lt;-<span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb181-4" title="4">  tamanho &lt;-<span class="st"> </span><span class="kw">length</span>(x)</a>
-<a class="sourceLine" id="cb181-5" title="5">  soma &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb181-6" title="6">  </a>
-<a class="sourceLine" id="cb181-7" title="7">  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>tamanho){</a>
-<a class="sourceLine" id="cb181-8" title="8">    soma &lt;-<span class="st"> </span>soma <span class="op">+</span><span class="st"> </span>x[i]</a>
-<a class="sourceLine" id="cb181-9" title="9">  }</a>
-<a class="sourceLine" id="cb181-10" title="10">  </a>
-<a class="sourceLine" id="cb181-11" title="11">  <span class="kw">return</span>(soma<span class="op">/</span>tamanho)</a>
-<a class="sourceLine" id="cb181-12" title="12">}</a>
-<a class="sourceLine" id="cb181-13" title="13"></a>
-<a class="sourceLine" id="cb181-14" title="14"><span class="kw">media</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb181-15" title="15"><span class="co">## [1] 2</span></a></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb182-1" title="1">media &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
+<a class="sourceLine" id="cb182-2" title="2">  </a>
+<a class="sourceLine" id="cb182-3" title="3">  i &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb182-4" title="4">  tamanho &lt;-<span class="st"> </span><span class="kw">length</span>(x)</a>
+<a class="sourceLine" id="cb182-5" title="5">  soma &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb182-6" title="6">  </a>
+<a class="sourceLine" id="cb182-7" title="7">  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>tamanho){</a>
+<a class="sourceLine" id="cb182-8" title="8">    soma &lt;-<span class="st"> </span>soma <span class="op">+</span><span class="st"> </span>x[i]</a>
+<a class="sourceLine" id="cb182-9" title="9">  }</a>
+<a class="sourceLine" id="cb182-10" title="10">  </a>
+<a class="sourceLine" id="cb182-11" title="11">  <span class="kw">return</span>(soma<span class="op">/</span>tamanho)</a>
+<a class="sourceLine" id="cb182-12" title="12">}</a>
+<a class="sourceLine" id="cb182-13" title="13"></a>
+<a class="sourceLine" id="cb182-14" title="14"><span class="kw">media</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb182-15" title="15"><span class="co">## [1] 2</span></a></code></pre></div>
 <hr />
 <p><strong>9.</strong> Rode <code>help(runif)</code> para descobrir o que a função <code>runif()</code> faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive).</p>
 <p><strong>Resposta:</strong></p>
 <p>A função <code>runif()</code> gera números reais aleatórios entre um valor mínimo e um valor máximo.</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb182-1" title="1">alea &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
-<a class="sourceLine" id="cb182-2" title="2">  </a>
-<a class="sourceLine" id="cb182-3" title="3">  x &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dt">n =</span> <span class="dv">1</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb182-4" title="4">  x &lt;-<span class="st"> </span><span class="kw">round</span>(x)</a>
-<a class="sourceLine" id="cb182-5" title="5">  </a>
-<a class="sourceLine" id="cb182-6" title="6">  <span class="kw">return</span>(x)</a>
-<a class="sourceLine" id="cb182-7" title="7">}</a>
-<a class="sourceLine" id="cb182-8" title="8"></a>
-<a class="sourceLine" id="cb182-9" title="9"><span class="kw">alea</span>()</a>
-<a class="sourceLine" id="cb182-10" title="10"><span class="co">## [1] 4</span></a></code></pre></div>
-<p>Veja que construímos uma função sem argumentos. Podemos generalizá-la incluindo os argumentos da função <code>runif()</code>.</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb183-1" title="1">alea &lt;-<span class="st"> </span><span class="cf">function</span>(n, min, max) {</a>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb183-1" title="1">alea &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
 <a class="sourceLine" id="cb183-2" title="2">  </a>
-<a class="sourceLine" id="cb183-3" title="3">  x &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dt">n =</span> n, <span class="dt">min =</span> min, <span class="dt">max =</span> max)</a>
+<a class="sourceLine" id="cb183-3" title="3">  x &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dt">n =</span> <span class="dv">1</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">10</span>)</a>
 <a class="sourceLine" id="cb183-4" title="4">  x &lt;-<span class="st"> </span><span class="kw">round</span>(x)</a>
 <a class="sourceLine" id="cb183-5" title="5">  </a>
 <a class="sourceLine" id="cb183-6" title="6">  <span class="kw">return</span>(x)</a>
 <a class="sourceLine" id="cb183-7" title="7">}</a>
 <a class="sourceLine" id="cb183-8" title="8"></a>
-<a class="sourceLine" id="cb183-9" title="9"><span class="kw">alea</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb183-10" title="10"><span class="co">## [1] 3 3</span></a>
-<a class="sourceLine" id="cb183-11" title="11"><span class="kw">alea</span>(<span class="dv">5</span>, <span class="dv">100</span>, <span class="dv">105</span>)</a>
-<a class="sourceLine" id="cb183-12" title="12"><span class="co">## [1] 103 103 105 101 102</span></a></code></pre></div>
+<a class="sourceLine" id="cb183-9" title="9"><span class="kw">alea</span>()</a>
+<a class="sourceLine" id="cb183-10" title="10"><span class="co">## [1] 4</span></a></code></pre></div>
+<p>Veja que construímos uma função sem argumentos. Podemos generalizá-la incluindo os argumentos da função <code>runif()</code>.</p>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb184-1" title="1">alea &lt;-<span class="st"> </span><span class="cf">function</span>(n, min, max) {</a>
+<a class="sourceLine" id="cb184-2" title="2">  </a>
+<a class="sourceLine" id="cb184-3" title="3">  x &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dt">n =</span> n, <span class="dt">min =</span> min, <span class="dt">max =</span> max)</a>
+<a class="sourceLine" id="cb184-4" title="4">  x &lt;-<span class="st"> </span><span class="kw">round</span>(x)</a>
+<a class="sourceLine" id="cb184-5" title="5">  </a>
+<a class="sourceLine" id="cb184-6" title="6">  <span class="kw">return</span>(x)</a>
+<a class="sourceLine" id="cb184-7" title="7">}</a>
+<a class="sourceLine" id="cb184-8" title="8"></a>
+<a class="sourceLine" id="cb184-9" title="9"><span class="kw">alea</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb184-10" title="10"><span class="co">## [1] 3 3</span></a>
+<a class="sourceLine" id="cb184-11" title="11"><span class="kw">alea</span>(<span class="dv">5</span>, <span class="dv">100</span>, <span class="dv">105</span>)</a>
+<a class="sourceLine" id="cb184-12" title="12"><span class="co">## [1] 103 103 105 101 102</span></a></code></pre></div>
 <p>Observe que não há problema em usar os mesmos nomes para os argumentos. Isso se deve aos <em>environments</em>.</p>
 <hr />
 <p><strong>10.</strong> Rode <code>help(sample)</code> para descobrir o que a função <code>sample()</code> faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores.</p>
 <p><strong>Resposta:</strong></p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb184-1" title="1">matriz &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">20</span>), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb184-2" title="2"></a>
-<a class="sourceLine" id="cb184-3" title="3">linha_alea &lt;-<span class="st"> </span><span class="cf">function</span>(matriz) {</a>
-<a class="sourceLine" id="cb184-4" title="4">  </a>
-<a class="sourceLine" id="cb184-5" title="5">  x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(matriz)</a>
-<a class="sourceLine" id="cb184-6" title="6">  </a>
-<a class="sourceLine" id="cb184-7" title="7">  linha &lt;-<span class="st"> </span><span class="kw">sample</span>(x, <span class="dt">size =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb184-8" title="8">  </a>
-<a class="sourceLine" id="cb184-9" title="9">  <span class="kw">return</span>(matriz[linha,])</a>
-<a class="sourceLine" id="cb184-10" title="10">}</a>
-<a class="sourceLine" id="cb184-11" title="11"></a>
-<a class="sourceLine" id="cb184-12" title="12">matriz</a>
-<a class="sourceLine" id="cb184-13" title="13"><span class="co">##            [,1]         [,2]      [,3]       [,4]</span></a>
-<a class="sourceLine" id="cb184-14" title="14"><span class="co">## [1,] 0.84495106 0.1720581760 0.7165447 0.96612345</span></a>
-<a class="sourceLine" id="cb184-15" title="15"><span class="co">## [2,] 0.05887928 0.0003111884 0.4786404 0.76960623</span></a>
-<a class="sourceLine" id="cb184-16" title="16"><span class="co">## [3,] 0.51596466 0.4814076780 0.5153134 0.15161156</span></a>
-<a class="sourceLine" id="cb184-17" title="17"><span class="co">## [4,] 0.62627508 0.8148533320 0.2622319 0.46389756</span></a>
-<a class="sourceLine" id="cb184-18" title="18"><span class="co">## [5,] 0.52996816 0.7415244163 0.6922233 0.09072303</span></a>
-<a class="sourceLine" id="cb184-19" title="19"><span class="kw">linha_alea</span>(matriz)</a>
-<a class="sourceLine" id="cb184-20" title="20"><span class="co">## [1] 0.6262751 0.8148533 0.2622319 0.4638976</span></a></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb185-1" title="1">matriz &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">20</span>), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb185-2" title="2"></a>
+<a class="sourceLine" id="cb185-3" title="3">linha_alea &lt;-<span class="st"> </span><span class="cf">function</span>(matriz) {</a>
+<a class="sourceLine" id="cb185-4" title="4">  </a>
+<a class="sourceLine" id="cb185-5" title="5">  x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(matriz)</a>
+<a class="sourceLine" id="cb185-6" title="6">  </a>
+<a class="sourceLine" id="cb185-7" title="7">  linha &lt;-<span class="st"> </span><span class="kw">sample</span>(x, <span class="dt">size =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb185-8" title="8">  </a>
+<a class="sourceLine" id="cb185-9" title="9">  <span class="kw">return</span>(matriz[linha,])</a>
+<a class="sourceLine" id="cb185-10" title="10">}</a>
+<a class="sourceLine" id="cb185-11" title="11"></a>
+<a class="sourceLine" id="cb185-12" title="12">matriz</a>
+<a class="sourceLine" id="cb185-13" title="13"><span class="co">##            [,1]         [,2]      [,3]       [,4]</span></a>
+<a class="sourceLine" id="cb185-14" title="14"><span class="co">## [1,] 0.84495106 0.1720581760 0.7165447 0.96612345</span></a>
+<a class="sourceLine" id="cb185-15" title="15"><span class="co">## [2,] 0.05887928 0.0003111884 0.4786404 0.76960623</span></a>
+<a class="sourceLine" id="cb185-16" title="16"><span class="co">## [3,] 0.51596466 0.4814076780 0.5153134 0.15161156</span></a>
+<a class="sourceLine" id="cb185-17" title="17"><span class="co">## [4,] 0.62627508 0.8148533320 0.2622319 0.46389756</span></a>
+<a class="sourceLine" id="cb185-18" title="18"><span class="co">## [5,] 0.52996816 0.7415244163 0.6922233 0.09072303</span></a>
+<a class="sourceLine" id="cb185-19" title="19"><span class="kw">linha_alea</span>(matriz)</a>
+<a class="sourceLine" id="cb185-20" title="20"><span class="co">## [1] 0.6262751 0.8148533 0.2622319 0.4638976</span></a></code></pre></div>
 <hr />
 <!-- **11.** Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do data frame `mtcars`. -->
 <!-- **Resposta:** -->
