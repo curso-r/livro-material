@@ -4,15 +4,9 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<<<<<<< HEAD:_book/instalação.html
-  <title>Capítulo 1 Instalação | Ciência de dados em R</title>
-  <meta name="description" content="Livro com os tutoriais e material dos cursos da Curso-R." />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
-=======
   <title>Capítulo 1 Instalação | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
->>>>>>> c7271b41207f2966081b811e26a62b65ade05307:docs/instalação.html
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 1 Instalação | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
@@ -30,11 +24,7 @@
 <meta name="author" content="Curso-R" />
 
 
-<<<<<<< HEAD:_book/instalação.html
 <meta name="date" content="2020-05-18" />
-=======
-<meta name="date" content="2020-05-17" />
->>>>>>> c7271b41207f2966081b811e26a62b65ade05307:docs/instalação.html
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -81,7 +71,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -338,16 +328,16 @@ que está na lista <em>Zip/Tarballs</em>.</p>
 <p>O legal é que qualquer pessoa pode fazer um novo pacote e disponibilizar para a comunidade, o que acelera bastante o desenvolvemento da ferramenta. Dificilmente você vai fazer uma análise apenas com as funções básicas do R e dificilmente não vai existir um pacote com as funções que você precisa.</p>
 <p>Existem três principais maneiras de instalar pacotes. Em ordem de frequência, são:</p>
 <ul>
-<li>Via CRAN (Comprehensive R Archive Network): <code>install.packages(&quot;nome-do-pacote&quot;)</code>.</li>
-<li>Via Github: <code>devtools::install_github(&quot;nome-do-repo/nome-do-pacote&quot;)</code>.</li>
-<li>Via arquivo .zip/.tar.gz: <code>install.packages(&quot;C:/caminho/nome-do-pacote.zip&quot;, repos = NULL)</code>.</li>
+<li>Via CRAN (Comprehensive R Archive Network): <code>install.packages("nome-do-pacote")</code>.</li>
+<li>Via Github: <code>devtools::install_github("nome-do-repo/nome-do-pacote")</code>.</li>
+<li>Via arquivo .zip/.tar.gz: <code>install.packages("C:/caminho/nome-do-pacote.zip", repos = NULL)</code>.</li>
 </ul>
 <p>Para conseguir instalar alguns pacotes no Linux, você pode precisar instalar dependências do sistema manualmente. Por exemplo, se você quer instalar o pacote devtools no R, será necessário ter as bibliotecas <code>curl</code>, <code>openssl</code>, <code>httr</code> e <code>git2r</code>.</p>
 <p>Essas dependências geralmente podem ser instaladas no terminal por meio do comando <code>apt-get install nome-da-biblioteca</code>. Caso você não consiga instalar um pacote devido a ausência de uma dependência, uma maneira de saber quais bibliotecas você precisa instalar é observar as mensagens que aparecem no console durante a tentativa da instalação do pacote.</p>
 <div id="via-cran" class="section level3">
 <h3><span class="header-section-number">1.3.1</span> Via CRAN</h3>
-<p>Instale pacotes que não estão na sua biblioteca usando a função <code>install.packages(&quot;nome_do_pacote&quot;)</code>. Por exemplo:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;magrittr&quot;</span>)</a></code></pre></div>
+<p>Instale pacotes que não estão na sua biblioteca usando a função <code>install.packages("nome_do_pacote")</code>. Por exemplo:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;magrittr&quot;</span>)</a></code></pre></div>
 <p>E, de agora em diante, não precisa mais instalar. Basta carregar o pacote com <code>library(magrittr)</code>.</p>
 <blockquote>
 <p>Escreva nome_do_pacote::nome_da_funcao() se quiser usar apenas uma função de um determinado pacote. O operador :: serve para isso. Essa forma também é útil quando se tem duas funções com o mesmo nome e precisamos garantir que o código vá usar a função do pacote correto.</p>
@@ -356,14 +346,14 @@ que está na lista <em>Zip/Tarballs</em>.</p>
 <div id="via-github" class="section level3">
 <h3><span class="header-section-number">1.3.2</span> Via Github</h3>
 <p>Desenvolvedores costumam disponibilizar a última versão de seus pacotes no Github, e alguns deles sequer estão no CRAN. Mesmo assim ainda é possível utilizá-los instalando diretamente pelo github. O comando é igualmente simples:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;rstudio/shiny&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;rstudio/shiny&quot;</span>)</a></code></pre></div>
 <p>Apenas será necessário o username e o nome do repositório (que geralmente tem o mesmo nome do pacote). No exemplo, o username foi “rstudio” e o repositório foi “shiny”.</p>
 <p>Se você não é familiar com o github, não se preocupe! Os pacotes disponibilizados na plataforma geralmente têm um <code>README</code> cuja primeira instrução é sobre a instalação. Se não tiver, provavelmente este pacote não te merece! =)</p>
 </div>
 <div id="via-arquivo-.zip-ou-.tar.gz" class="section level3">
 <h3><span class="header-section-number">1.3.3</span> Via arquivo .zip ou .tar.gz</h3>
 <p>Se você precisar instalar um pacote que está zipado no seu computador (ou em algum servidor), utilize o seguinte comando:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;C:/caminho/para/o/arquivo/zipado/nome-do-pacote.zip&quot;</span>, <span class="dt">repos =</span> <span class="ot">NULL</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;C:/caminho/para/o/arquivo/zipado/nome-do-pacote.zip&quot;</span>, <span class="dt">repos =</span> <span class="ot">NULL</span>)</a></code></pre></div>
 <p>É semelhante a instalar pacotes via CRAN, com a diferença que agora o nome do pacote é o caminho inteiro até o arquivo. O parâmetro <code>repos = NULL</code> informa que estamos instalando a partir da máquina local.</p>
 <p>A aba <strong><em>Packages</em></strong> do RStudio também ajuda a administrar os seus pacotes.</p>
 

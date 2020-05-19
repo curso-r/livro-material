@@ -4,15 +4,9 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<<<<<<< HEAD:_book/pipe.html
-  <title>Capítulo 4 Pipe | Ciência de dados em R</title>
-  <meta name="description" content="Livro com os tutoriais e material dos cursos da Curso-R." />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
-=======
   <title>Capítulo 4 Pipe | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
->>>>>>> c7271b41207f2966081b811e26a62b65ade05307:docs/pipe.html
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 4 Pipe | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
@@ -30,11 +24,7 @@
 <meta name="author" content="Curso-R" />
 
 
-<<<<<<< HEAD:_book/pipe.html
 <meta name="date" content="2020-05-18" />
-=======
-<meta name="date" content="2020-05-17" />
->>>>>>> c7271b41207f2966081b811e26a62b65ade05307:docs/pipe.html
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -81,7 +71,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -264,74 +254,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.1</span> O operador pipe</h2>
 <p>O operador <code>%&gt;%</code> (<em>pipe</em>) foi uma das grandes revoluções recentes do R, tornando a leitura de códigos mais lógica, fácil e compreensível. Ele foi introduzido por <a href="https://github.com/smbache">Stefan Milton Bache</a> no pacote <code>magrittr</code> e já existem diversos pacotes construidos para facilitar a sua utilizaçăo.</p>
 <p>Para começar a utilizar o <em>pipe</em>, instale e carregue o pacote <code>magrittr</code>.</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;magrittr&quot;</span>)</a>
-<a class="sourceLine" id="cb115-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb115-3" data-line-number="3"><span class="kw">library</span>(magrittr)</a></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;magrittr&quot;</span>)</a>
+<a class="sourceLine" id="cb115-2" title="2"></a>
+<a class="sourceLine" id="cb115-3" title="3"><span class="kw">library</span>(magrittr)</a></code></pre></div>
 <p>A ideia do operador <code>%&gt;%</code> (<em>pipe</em>) é bem simples: usar o valor resultante da expressão do lado esquerdo como primeiro argumento da função do lado direito.</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" data-line-number="1"><span class="co"># As duas linhas abaixo são equivalentes.</span></a>
-<a class="sourceLine" id="cb116-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb116-3" data-line-number="3"><span class="kw">f</span>(x, y)</a>
-<a class="sourceLine" id="cb116-4" data-line-number="4">x <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">f</span>(y)</a></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" title="1"><span class="co"># As duas linhas abaixo são equivalentes.</span></a>
+<a class="sourceLine" id="cb116-2" title="2"></a>
+<a class="sourceLine" id="cb116-3" title="3"><span class="kw">f</span>(x, y)</a>
+<a class="sourceLine" id="cb116-4" title="4">x <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">f</span>(y)</a></code></pre></div>
 <p>Nos casos mais simples, o <em>pipe</em> parece não trazer grandes vantagens. Agora, veja como fica um caso com mais etapas.</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" data-line-number="1"><span class="co"># Vamos calcular a raiz quadrada da soma dos valores de 1 a 4. Primeiro, sem o pipe.</span></a>
-<a class="sourceLine" id="cb117-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb117-3" data-line-number="3">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb117-4" data-line-number="4"><span class="kw">sqrt</span>(<span class="kw">sum</span>(x))</a>
-<a class="sourceLine" id="cb117-5" data-line-number="5"><span class="co">## [1] 3.162278</span></a>
-<a class="sourceLine" id="cb117-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb117-7" data-line-number="7"><span class="co"># Agora com o pipe.</span></a>
-<a class="sourceLine" id="cb117-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb117-9" data-line-number="9">x <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sqrt</span>()</a>
-<a class="sourceLine" id="cb117-10" data-line-number="10"><span class="co">## [1] 3.162278</span></a></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" title="1"><span class="co"># Vamos calcular a raiz quadrada da soma dos valores de 1 a 4. Primeiro, sem o pipe.</span></a>
+<a class="sourceLine" id="cb117-2" title="2"></a>
+<a class="sourceLine" id="cb117-3" title="3">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb117-4" title="4"><span class="kw">sqrt</span>(<span class="kw">sum</span>(x))</a>
+<a class="sourceLine" id="cb117-5" title="5"><span class="co">## [1] 3.162278</span></a>
+<a class="sourceLine" id="cb117-6" title="6"></a>
+<a class="sourceLine" id="cb117-7" title="7"><span class="co"># Agora com o pipe.</span></a>
+<a class="sourceLine" id="cb117-8" title="8"></a>
+<a class="sourceLine" id="cb117-9" title="9">x <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sqrt</span>()</a>
+<a class="sourceLine" id="cb117-10" title="10"><span class="co">## [1] 3.162278</span></a></code></pre></div>
 <p>O caminho que o código <code>x %&gt;% sum %&gt;% sqrt</code> seguiu foi enviar o objeto <code>x</code> como argumento da função <code>sum()</code> e, em seguida, enviar a saida da expressão <code>sum(x)</code> como argumento da função <code>sqrt()</code>. Observe que escrevemos o código na mesma ordem das operações. A utilização de parênteses após o nome das funções não é necessário, mas recomendável.</p>
 <p>Se você ainda não está convencido com o poder do <em>pipe</em>, fica que vai ter bolo!</p>
 <p>No exemplo abaixo, vamos ilustrar um caso em que temos um grande número de funções aninhadas. Veja como a utilização do <em>pipe</em> transforma um código confuso e difícil de ser lido em algo simples e intuitivo.</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" data-line-number="1"><span class="co"># Receita de bolo sem pipe. Tente entender o que é preciso fazer.</span></a>
-<a class="sourceLine" id="cb118-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb118-3" data-line-number="3"><span class="kw">esfrie</span>(<span class="kw">asse</span>(<span class="kw">coloque</span>(<span class="kw">bata</span>(<span class="kw">acrescente</span>(<span class="kw">recipiente</span>(<span class="kw">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), <span class="st">&quot;água&quot;</span>, <span class="st">&quot;fermento&quot;</span>, <span class="st">&quot;leite&quot;</span>, <span class="st">&quot;óleo&quot;</span>), <span class="st">&quot;farinha&quot;</span>, até =<span class="st"> &quot;macio&quot;</span>), duraçã<span class="dt">o =</span> <span class="st">&quot;3min&quot;</span>), <span class="dt">lugar =</span> <span class="st">&quot;forma&quot;</span>, <span class="dt">tipo =</span> <span class="st">&quot;grande&quot;</span>, <span class="dt">untada =</span> <span class="ot">TRUE</span>), duraçã<span class="dt">o =</span> <span class="st">&quot;50min&quot;</span>), <span class="st">&quot;geladeira&quot;</span>, <span class="st">&quot;20min&quot;</span>)</a>
-<a class="sourceLine" id="cb118-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb118-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb118-6" data-line-number="6"><span class="co"># Veja como o código acima pode ser reescrito utilizando-se o pipe. Agora realmente se parece com uma receita de bolo.</span></a>
-<a class="sourceLine" id="cb118-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb118-8" data-line-number="8"><span class="kw">recipiente</span>(<span class="kw">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), <span class="st">&quot;água&quot;</span>, <span class="st">&quot;fermento&quot;</span>, <span class="st">&quot;leite&quot;</span>, <span class="st">&quot;óleo&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb118-9" data-line-number="9"><span class="st">  </span><span class="kw">acrescente</span>(<span class="st">&quot;farinha&quot;</span>, até =<span class="st"> &quot;macio&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb118-10" data-line-number="10"><span class="st">  </span><span class="kw">bata</span>(duraçã<span class="dt">o =</span> <span class="st">&quot;3min&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb118-11" data-line-number="11"><span class="st">  </span><span class="kw">coloque</span>(<span class="dt">lugar =</span> <span class="st">&quot;forma&quot;</span>, <span class="dt">tipo =</span> <span class="st">&quot;grande&quot;</span>, <span class="dt">untada =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb118-12" data-line-number="12"><span class="st">  </span><span class="kw">asse</span>(duraçã<span class="dt">o =</span> <span class="st">&quot;50min&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb118-13" data-line-number="13"><span class="st">  </span><span class="kw">esfrie</span>(<span class="st">&quot;geladeira&quot;</span>, <span class="st">&quot;20min&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" title="1"><span class="co"># Receita de bolo sem pipe. Tente entender o que é preciso fazer.</span></a>
+<a class="sourceLine" id="cb118-2" title="2"></a>
+<a class="sourceLine" id="cb118-3" title="3"><span class="kw">esfrie</span>(<span class="kw">asse</span>(<span class="kw">coloque</span>(<span class="kw">bata</span>(<span class="kw">acrescente</span>(<span class="kw">recipiente</span>(<span class="kw">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), <span class="st">&quot;água&quot;</span>, <span class="st">&quot;fermento&quot;</span>, <span class="st">&quot;leite&quot;</span>, <span class="st">&quot;óleo&quot;</span>), <span class="st">&quot;farinha&quot;</span>, até =<span class="st"> &quot;macio&quot;</span>), duraçã<span class="dt">o =</span> <span class="st">&quot;3min&quot;</span>), <span class="dt">lugar =</span> <span class="st">&quot;forma&quot;</span>, <span class="dt">tipo =</span> <span class="st">&quot;grande&quot;</span>, <span class="dt">untada =</span> <span class="ot">TRUE</span>), duraçã<span class="dt">o =</span> <span class="st">&quot;50min&quot;</span>), <span class="st">&quot;geladeira&quot;</span>, <span class="st">&quot;20min&quot;</span>)</a>
+<a class="sourceLine" id="cb118-4" title="4"></a>
+<a class="sourceLine" id="cb118-5" title="5"></a>
+<a class="sourceLine" id="cb118-6" title="6"><span class="co"># Veja como o código acima pode ser reescrito utilizando-se o pipe. Agora realmente se parece com uma receita de bolo.</span></a>
+<a class="sourceLine" id="cb118-7" title="7"></a>
+<a class="sourceLine" id="cb118-8" title="8"><span class="kw">recipiente</span>(<span class="kw">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), <span class="st">&quot;água&quot;</span>, <span class="st">&quot;fermento&quot;</span>, <span class="st">&quot;leite&quot;</span>, <span class="st">&quot;óleo&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb118-9" title="9"><span class="st">  </span><span class="kw">acrescente</span>(<span class="st">&quot;farinha&quot;</span>, até =<span class="st"> &quot;macio&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb118-10" title="10"><span class="st">  </span><span class="kw">bata</span>(duraçã<span class="dt">o =</span> <span class="st">&quot;3min&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb118-11" title="11"><span class="st">  </span><span class="kw">coloque</span>(<span class="dt">lugar =</span> <span class="st">&quot;forma&quot;</span>, <span class="dt">tipo =</span> <span class="st">&quot;grande&quot;</span>, <span class="dt">untada =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb118-12" title="12"><span class="st">  </span><span class="kw">asse</span>(duraçã<span class="dt">o =</span> <span class="st">&quot;50min&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb118-13" title="13"><span class="st">  </span><span class="kw">esfrie</span>(<span class="st">&quot;geladeira&quot;</span>, <span class="st">&quot;20min&quot;</span>)</a></code></pre></div>
 <p>Às vezes, queremos que o resultado do lado esquerdo vá para outro argumento do lado direito que não o primeiro. Para isso, utilizamos um <code>.</code> como marcador.</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" data-line-number="1"><span class="co"># Queremos que o dataset seja recebido pelo segundo argumento (data=) da função &quot;lm&quot;.</span></a>
-<a class="sourceLine" id="cb119-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb119-3" data-line-number="3">airquality <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb119-4" data-line-number="4"><span class="st">  </span>na.omit <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb119-5" data-line-number="5"><span class="st">  </span><span class="kw">lm</span>(Ozone <span class="op">~</span><span class="st"> </span>Wind <span class="op">+</span><span class="st"> </span>Temp <span class="op">+</span><span class="st"> </span>Solar.R, <span class="dt">data =</span> .) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb119-6" data-line-number="6"><span class="st">  </span>summary</a>
-<a class="sourceLine" id="cb119-7" data-line-number="7"><span class="co">## </span></a>
-<a class="sourceLine" id="cb119-8" data-line-number="8"><span class="co">## Call:</span></a>
-<a class="sourceLine" id="cb119-9" data-line-number="9"><span class="co">## lm(formula = Ozone ~ Wind + Temp + Solar.R, data = .)</span></a>
-<a class="sourceLine" id="cb119-10" data-line-number="10"><span class="co">## </span></a>
-<a class="sourceLine" id="cb119-11" data-line-number="11"><span class="co">## Residuals:</span></a>
-<a class="sourceLine" id="cb119-12" data-line-number="12"><span class="co">##     Min      1Q  Median      3Q     Max </span></a>
-<a class="sourceLine" id="cb119-13" data-line-number="13"><span class="co">## -40.485 -14.219  -3.551  10.097  95.619 </span></a>
-<a class="sourceLine" id="cb119-14" data-line-number="14"><span class="co">## </span></a>
-<a class="sourceLine" id="cb119-15" data-line-number="15"><span class="co">## Coefficients:</span></a>
-<a class="sourceLine" id="cb119-16" data-line-number="16"><span class="co">##              Estimate Std. Error t value Pr(&gt;|t|)    </span></a>
-<a class="sourceLine" id="cb119-17" data-line-number="17"><span class="co">## (Intercept) -64.34208   23.05472  -2.791  0.00623 ** </span></a>
-<a class="sourceLine" id="cb119-18" data-line-number="18"><span class="co">## Wind         -3.33359    0.65441  -5.094 1.52e-06 ***</span></a>
-<a class="sourceLine" id="cb119-19" data-line-number="19"><span class="co">## Temp          1.65209    0.25353   6.516 2.42e-09 ***</span></a>
-<a class="sourceLine" id="cb119-20" data-line-number="20"><span class="co">## Solar.R       0.05982    0.02319   2.580  0.01124 *  </span></a>
-<a class="sourceLine" id="cb119-21" data-line-number="21"><span class="co">## ---</span></a>
-<a class="sourceLine" id="cb119-22" data-line-number="22"><span class="co">## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span></a>
-<a class="sourceLine" id="cb119-23" data-line-number="23"><span class="co">## </span></a>
-<a class="sourceLine" id="cb119-24" data-line-number="24"><span class="co">## Residual standard error: 21.18 on 107 degrees of freedom</span></a>
-<a class="sourceLine" id="cb119-25" data-line-number="25"><span class="co">## Multiple R-squared:  0.6059, Adjusted R-squared:  0.5948 </span></a>
-<a class="sourceLine" id="cb119-26" data-line-number="26"><span class="co">## F-statistic: 54.83 on 3 and 107 DF,  p-value: &lt; 2.2e-16</span></a></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" title="1"><span class="co"># Queremos que o dataset seja recebido pelo segundo argumento (data=) da função &quot;lm&quot;.</span></a>
+<a class="sourceLine" id="cb119-2" title="2"></a>
+<a class="sourceLine" id="cb119-3" title="3">airquality <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb119-4" title="4"><span class="st">  </span>na.omit <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb119-5" title="5"><span class="st">  </span><span class="kw">lm</span>(Ozone <span class="op">~</span><span class="st"> </span>Wind <span class="op">+</span><span class="st"> </span>Temp <span class="op">+</span><span class="st"> </span>Solar.R, <span class="dt">data =</span> .) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb119-6" title="6"><span class="st">  </span>summary</a>
+<a class="sourceLine" id="cb119-7" title="7"><span class="co">## </span></a>
+<a class="sourceLine" id="cb119-8" title="8"><span class="co">## Call:</span></a>
+<a class="sourceLine" id="cb119-9" title="9"><span class="co">## lm(formula = Ozone ~ Wind + Temp + Solar.R, data = .)</span></a>
+<a class="sourceLine" id="cb119-10" title="10"><span class="co">## </span></a>
+<a class="sourceLine" id="cb119-11" title="11"><span class="co">## Residuals:</span></a>
+<a class="sourceLine" id="cb119-12" title="12"><span class="co">##     Min      1Q  Median      3Q     Max </span></a>
+<a class="sourceLine" id="cb119-13" title="13"><span class="co">## -40.485 -14.219  -3.551  10.097  95.619 </span></a>
+<a class="sourceLine" id="cb119-14" title="14"><span class="co">## </span></a>
+<a class="sourceLine" id="cb119-15" title="15"><span class="co">## Coefficients:</span></a>
+<a class="sourceLine" id="cb119-16" title="16"><span class="co">##              Estimate Std. Error t value Pr(&gt;|t|)    </span></a>
+<a class="sourceLine" id="cb119-17" title="17"><span class="co">## (Intercept) -64.34208   23.05472  -2.791  0.00623 ** </span></a>
+<a class="sourceLine" id="cb119-18" title="18"><span class="co">## Wind         -3.33359    0.65441  -5.094 1.52e-06 ***</span></a>
+<a class="sourceLine" id="cb119-19" title="19"><span class="co">## Temp          1.65209    0.25353   6.516 2.42e-09 ***</span></a>
+<a class="sourceLine" id="cb119-20" title="20"><span class="co">## Solar.R       0.05982    0.02319   2.580  0.01124 *  </span></a>
+<a class="sourceLine" id="cb119-21" title="21"><span class="co">## ---</span></a>
+<a class="sourceLine" id="cb119-22" title="22"><span class="co">## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span></a>
+<a class="sourceLine" id="cb119-23" title="23"><span class="co">## </span></a>
+<a class="sourceLine" id="cb119-24" title="24"><span class="co">## Residual standard error: 21.18 on 107 degrees of freedom</span></a>
+<a class="sourceLine" id="cb119-25" title="25"><span class="co">## Multiple R-squared:  0.6059, Adjusted R-squared:  0.5948 </span></a>
+<a class="sourceLine" id="cb119-26" title="26"><span class="co">## F-statistic: 54.83 on 3 and 107 DF,  p-value: &lt; 2.2e-16</span></a></code></pre></div>
 <p>Também é possível definir funções na sua <em>pipeline</em>.</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" data-line-number="1"><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb120-2" data-line-number="2"><span class="st">  </span>(<span class="cf">function</span>(x){</a>
-<a class="sourceLine" id="cb120-3" data-line-number="3">    <span class="kw">sum</span>(x)</a>
-<a class="sourceLine" id="cb120-4" data-line-number="4">  })</a>
-<a class="sourceLine" id="cb120-5" data-line-number="5"><span class="co">## [1] 6</span></a></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" title="1"><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb120-2" title="2"><span class="st">  </span>(<span class="cf">function</span>(x){</a>
+<a class="sourceLine" id="cb120-3" title="3">    <span class="kw">sum</span>(x)</a>
+<a class="sourceLine" id="cb120-4" title="4">  })</a>
+<a class="sourceLine" id="cb120-5" title="5"><span class="co">## [1] 6</span></a></code></pre></div>
 <p>O <em>pipe</em> é a força da gravidade dentro do <code>tidyverse</code>. Veremos nas próximas seções como as funções de diferentes pacotes interagem perfeitamente graças a esse operador.</p>
 </div>
 <div id="outros-operadores" class="section level2">
@@ -346,31 +336,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="operador-de-atribuição-assignment-operator" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Operador de atribuição ( Assignment operator )</h3>
 <p>Quando queremos sobrescrever um objeto, é comum utilizarmos o operador <code>&lt;-</code>. Por exemplo, se queremos somar 10 a cada valor do vetor <span class="math inline">\(x\)</span>, podemos fazer:</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb121-2" data-line-number="2">x &lt;-<span class="st"> </span>x <span class="op">%&gt;%</span><span class="st">  </span><span class="kw">add</span>(<span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb121-3" data-line-number="3">x</a>
-<a class="sourceLine" id="cb121-4" data-line-number="4"><span class="co">## [1] 11 12 13 14</span></a></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" title="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb121-2" title="2">x &lt;-<span class="st"> </span>x <span class="op">%&gt;%</span><span class="st">  </span><span class="kw">add</span>(<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb121-3" title="3">x</a>
+<a class="sourceLine" id="cb121-4" title="4"><span class="co">## [1] 11 12 13 14</span></a></code></pre></div>
 <p>Com o operador de atribuição, o código acima se reduz a</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" data-line-number="1">x <span class="op">%&lt;&gt;%</span><span class="st"> </span><span class="kw">add</span>(<span class="dv">10</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" title="1">x <span class="op">%&lt;&gt;%</span><span class="st"> </span><span class="kw">add</span>(<span class="dv">10</span>)</a></code></pre></div>
 <p>Este operador pode ser usado sempre que desejamos fazer algo da forma <code>objeto &lt;- objeto %&gt;% função</code></p>
 </div>
 <div id="operador-tee" class="section level3">
 <h3><span class="header-section-number">4.2.2</span> Operador tee</h3>
 <p>O operador tee retorna o valor do comando anterior a <code>%T&gt;%</code>, não o resultado do lado direito dele como o pipe faz. O seguinte exemplo vai imprimir na tela os valores de 1 a 10. Se usássemos o pipe, o código retornaria a soma dos dez números.</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" data-line-number="1"><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> <span class="op">%T&gt;%</span><span class="st"> </span><span class="kw">sum</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">cat</span>()</a>
-<a class="sourceLine" id="cb123-2" data-line-number="2"><span class="co">## 1 2 3 4 5 6 7 8 9 10</span></a></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" title="1"><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> <span class="op">%T&gt;%</span><span class="st"> </span><span class="kw">sum</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">cat</span>()</a>
+<a class="sourceLine" id="cb123-2" title="2"><span class="co">## 1 2 3 4 5 6 7 8 9 10</span></a></code></pre></div>
 <p>Neste caso, o operador não parece fazer sentido e apenas deixa o código mais complicado, mas se desejamos usar funções como <code>cat()</code> ou <code>plot()</code> que não retornam nada, o operador se torna muito útil.</p>
 <p>Vamos imprimir na tela os valores de 1 a 10 e depois soma-los.</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" data-line-number="1"><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>  <span class="op">%T&gt;%</span><span class="st"> </span><span class="kw">cat</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>()</a>
-<a class="sourceLine" id="cb124-2" data-line-number="2"><span class="co">## 1 2 3 4 5 6 7 8 9 10</span></a>
-<a class="sourceLine" id="cb124-3" data-line-number="3"><span class="co">## [1] 55</span></a></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" title="1"><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>  <span class="op">%T&gt;%</span><span class="st"> </span><span class="kw">cat</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>()</a>
+<a class="sourceLine" id="cb124-2" title="2"><span class="co">## 1 2 3 4 5 6 7 8 9 10</span></a>
+<a class="sourceLine" id="cb124-3" title="3"><span class="co">## [1] 55</span></a></code></pre></div>
 </div>
 <div id="exposition-operator" class="section level3">
 <h3><span class="header-section-number">4.2.3</span> Exposition operator</h3>
 <p>Usamos o operador <code>%$%</code>para salvar o valor resultante da expressão do lado esquerdo, podendo usar como quiser do lado direito.</p>
 <p>Por exemplo, para obter o primeiro elemento de um vetor, podemos fazer:</p>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" data-line-number="1"><span class="kw">data.frame</span>(<span class="dt">z=</span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">%$%</span><span class="st"> </span>z[<span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb125-2" data-line-number="2"><span class="co">## [1] 1</span></a></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" title="1"><span class="kw">data.frame</span>(<span class="dt">z=</span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">%$%</span><span class="st"> </span>z[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb125-2" title="2"><span class="co">## [1] 1</span></a></code></pre></div>
 <p>Para mais informações sobre o <code>pipe</code>, outros operadores relacionados e exemplos de utilização, visite a página <a href="http://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html">Ceci n’est pas un pipe</a>.</p>
 </div>
 </div>
@@ -378,25 +368,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.3</span> Exercícios</h2>
 <hr />
 <p><strong>1.</strong> Reescreva a expressão abaixo utilizando o <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">/</span><span class="dv">3</span>), <span class="dt">digits =</span> <span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" title="1"><span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">/</span><span class="dv">3</span>), <span class="dt">digits =</span> <span class="dv">1</span>)</a></code></pre></div>
 <p><strong>Dica</strong>: utilize a função <code>magrittr::divide_by()</code>. Veja o help da função para mais informações.</p>
 <hr />
 <p><strong>2.</strong> Reescreva o código abaixo utilizando o <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb127-2" data-line-number="2">x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb127-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb127-4" data-line-number="4">x.pos &lt;-<span class="st"> </span>x[x<span class="op">&gt;</span><span class="dv">0</span>]</a>
-<a class="sourceLine" id="cb127-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb127-6" data-line-number="6">media &lt;-<span class="st"> </span><span class="kw">mean</span>(x.pos)</a>
-<a class="sourceLine" id="cb127-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb127-8" data-line-number="8">saida &lt;-<span class="st"> </span><span class="kw">round</span>(media, <span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" title="1"></a>
+<a class="sourceLine" id="cb127-2" title="2">x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb127-3" title="3"></a>
+<a class="sourceLine" id="cb127-4" title="4">x.pos &lt;-<span class="st"> </span>x[x<span class="op">&gt;</span><span class="dv">0</span>]</a>
+<a class="sourceLine" id="cb127-5" title="5"></a>
+<a class="sourceLine" id="cb127-6" title="6">media &lt;-<span class="st"> </span><span class="kw">mean</span>(x.pos)</a>
+<a class="sourceLine" id="cb127-7" title="7"></a>
+<a class="sourceLine" id="cb127-8" title="8">saida &lt;-<span class="st"> </span><span class="kw">round</span>(media, <span class="dv">1</span>)</a></code></pre></div>
 <hr />
 <p><strong>3.</strong> Sem rodar, diga qual a saída do código abaixo. Consulte o help das funções caso precise.</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb128-1" data-line-number="1"><span class="dv">2</span> <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb128-2" data-line-number="2"><span class="st">  </span><span class="kw">add</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb128-3" data-line-number="3"><span class="st">  </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb128-4" data-line-number="4"><span class="st">  </span><span class="kw">mean</span>(<span class="dt">na.rm =</span> T) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb128-5" data-line-number="5"><span class="st">  </span><span class="kw">equals</span>(<span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb128-1" title="1"><span class="dv">2</span> <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb128-2" title="2"><span class="st">  </span><span class="kw">add</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb128-3" title="3"><span class="st">  </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb128-4" title="4"><span class="st">  </span><span class="kw">mean</span>(<span class="dt">na.rm =</span> T) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb128-5" title="5"><span class="st">  </span><span class="kw">equals</span>(<span class="dv">5</span>)</a></code></pre></div>
 <hr />
 <p><strong>4.</strong> Leia o capítulo sobre <em>pipes</em> do <a href="http://r4ds.had.co.nz/pipes.html">R for data science</a>. É curto e vale muito a pena.</p>
 <hr />
@@ -407,40 +397,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Não há apenas uma maneira de resolver os exercícios. Você pode encontrar soluções diferentes das nossas, algumas vezes mais eficientes, outras vezes menos. Quando estiver fazendo suas análises, tente buscar o equilíbrio entre eficiência e praticidade. Economizar 1 hora com a execução do código pode não valer a pena se você demorou 2 horas a mais para programá-lo.</p>
 <hr />
 <p><strong>1.</strong> Reescreva a expressão abaixo utilizando o <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">/</span><span class="dv">3</span>), <span class="dt">digits =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb129-2" data-line-number="2"><span class="co">## [1] 18.3</span></a>
-<a class="sourceLine" id="cb129-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb129-4" data-line-number="4"><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb129-5" data-line-number="5"><span class="st">  </span>sum <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb129-6" data-line-number="6"><span class="st">  </span><span class="kw">divide_by</span>(<span class="dv">3</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb129-7" data-line-number="7"><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb129-8" data-line-number="8"><span class="co">## [1] 18.3</span></a></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" title="1"><span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">/</span><span class="dv">3</span>), <span class="dt">digits =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb129-2" title="2"><span class="co">## [1] 18.3</span></a>
+<a class="sourceLine" id="cb129-3" title="3"></a>
+<a class="sourceLine" id="cb129-4" title="4"><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb129-5" title="5"><span class="st">  </span>sum <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb129-6" title="6"><span class="st">  </span><span class="kw">divide_by</span>(<span class="dv">3</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb129-7" title="7"><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb129-8" title="8"><span class="co">## [1] 18.3</span></a></code></pre></div>
 <hr />
 <p><strong>2.</strong> Reescreva o código abaixo utilizando o <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb130-1" data-line-number="1"><span class="co"># Setamos a semente que gera números aleatórios para deixar o resultado reprodutível</span></a>
-<a class="sourceLine" id="cb130-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb130-3" data-line-number="3"><span class="kw">set.seed</span>(<span class="dv">137</span>)</a>
-<a class="sourceLine" id="cb130-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb130-5" data-line-number="5">x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb130-6" data-line-number="6">x.pos &lt;-<span class="st"> </span>x[x<span class="op">&gt;</span><span class="dv">0</span>]</a>
-<a class="sourceLine" id="cb130-7" data-line-number="7">media &lt;-<span class="st"> </span><span class="kw">mean</span>(x.pos)</a>
-<a class="sourceLine" id="cb130-8" data-line-number="8">saida &lt;-<span class="st"> </span><span class="kw">round</span>(media, <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb130-9" data-line-number="9">saida</a>
-<a class="sourceLine" id="cb130-10" data-line-number="10"><span class="co">## [1] 0.78</span></a></code></pre></div>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">137</span>)</a>
-<a class="sourceLine" id="cb131-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb131-3" data-line-number="3"><span class="kw">rnorm</span>(<span class="dv">100</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb131-4" data-line-number="4"><span class="st">  </span>magrittr<span class="op">::</span><span class="kw">extract</span>(. <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb131-5" data-line-number="5"><span class="st">  </span>mean <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb131-6" data-line-number="6"><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb131-7" data-line-number="7"><span class="co">## [1] 0.78</span></a></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb130-1" title="1"><span class="co"># Setamos a semente que gera números aleatórios para deixar o resultado reprodutível</span></a>
+<a class="sourceLine" id="cb130-2" title="2"></a>
+<a class="sourceLine" id="cb130-3" title="3"><span class="kw">set.seed</span>(<span class="dv">137</span>)</a>
+<a class="sourceLine" id="cb130-4" title="4"></a>
+<a class="sourceLine" id="cb130-5" title="5">x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb130-6" title="6">x.pos &lt;-<span class="st"> </span>x[x<span class="op">&gt;</span><span class="dv">0</span>]</a>
+<a class="sourceLine" id="cb130-7" title="7">media &lt;-<span class="st"> </span><span class="kw">mean</span>(x.pos)</a>
+<a class="sourceLine" id="cb130-8" title="8">saida &lt;-<span class="st"> </span><span class="kw">round</span>(media, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb130-9" title="9">saida</a>
+<a class="sourceLine" id="cb130-10" title="10"><span class="co">## [1] 0.78</span></a></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" title="1"><span class="kw">set.seed</span>(<span class="dv">137</span>)</a>
+<a class="sourceLine" id="cb131-2" title="2"></a>
+<a class="sourceLine" id="cb131-3" title="3"><span class="kw">rnorm</span>(<span class="dv">100</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb131-4" title="4"><span class="st">  </span>magrittr<span class="op">::</span><span class="kw">extract</span>(. <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb131-5" title="5"><span class="st">  </span>mean <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb131-6" title="6"><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb131-7" title="7"><span class="co">## [1] 0.78</span></a></code></pre></div>
 <hr />
 <p><strong>3.</strong> Sem rodar, diga qual a saída do código abaixo. Consulte o help das funções caso precise.</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" data-line-number="1"><span class="dv">2</span> <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb132-2" data-line-number="2"><span class="st">  </span><span class="kw">add</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb132-3" data-line-number="3"><span class="st">  </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb132-4" data-line-number="4"><span class="st">  </span><span class="kw">mean</span>(<span class="dt">na.rm =</span> T) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb132-5" data-line-number="5"><span class="st">  </span><span class="kw">equals</span>(<span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" title="1"><span class="dv">2</span> <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb132-2" title="2"><span class="st">  </span><span class="kw">add</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb132-3" title="3"><span class="st">  </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb132-4" title="4"><span class="st">  </span><span class="kw">mean</span>(<span class="dt">na.rm =</span> T) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb132-5" title="5"><span class="st">  </span><span class="kw">equals</span>(<span class="dv">5</span>)</a></code></pre></div>
 <ul>
 <li>Primeiro, somamos 2 com 2, gerando o valor 4.</li>
 <li>Então colocamos esse valor em um vetor com os valores 6 e <code>NA</code>.</li>

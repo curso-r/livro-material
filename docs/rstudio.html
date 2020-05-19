@@ -4,15 +4,9 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<<<<<<< HEAD:_book/rstudio.html
-  <title>Capítulo 2 RStudio | Ciência de dados em R</title>
-  <meta name="description" content="Livro com os tutoriais e material dos cursos da Curso-R." />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
-=======
   <title>Capítulo 2 RStudio | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
->>>>>>> c7271b41207f2966081b811e26a62b65ade05307:docs/rstudio.html
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 2 RStudio | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
@@ -30,11 +24,7 @@
 <meta name="author" content="Curso-R" />
 
 
-<<<<<<< HEAD:_book/rstudio.html
 <meta name="date" content="2020-05-18" />
-=======
-<meta name="date" content="2020-05-17" />
->>>>>>> c7271b41207f2966081b811e26a62b65ade05307:docs/rstudio.html
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -81,7 +71,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -317,32 +307,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Nesse menu, além de podermos criar novos projetos ou abrir projetos já existentes, também temos um acesso rápido a projetos abertos recentemente. Basta clicar em qualquer um deles para trocar de projeto, isto é, deixar de trabalhar em uma análise e começar a trabalhar em outra.</p>
 <p>A seguir, apresentamos algumas estruturas de organização de projetos no RStudio.</p>
 <p><strong>Estrutura 1</strong>. Por extensão de arquivo.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="ex">nome_do_projeto/</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">  <span class="ex">-</span> .Rprofile   # códigos para rodar assim que abrir o projeto</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="ex">-</span> R/          # Código R, organizado com a-carrega.R, b-prepara bd.R, c-vis.R, d-modela, ...</a>
-<a class="sourceLine" id="cb4-4" data-line-number="4">  <span class="ex">-</span> RData/      # Dados em formato .RData</a>
-<a class="sourceLine" id="cb4-5" data-line-number="5">  <span class="ex">-</span> csv/        # Dados em .csv</a>
-<a class="sourceLine" id="cb4-6" data-line-number="6">  <span class="ex">-</span> png/        # gráficos em PNG</a>
-<a class="sourceLine" id="cb4-7" data-line-number="7">  <span class="ex">-</span> nome_do_projeto.Rproj</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="ex">nome_do_projeto/</span></a>
+<a class="sourceLine" id="cb4-2" title="2">  <span class="ex">-</span> .Rprofile   <span class="co"># códigos para rodar assim que abrir o projeto</span></a>
+<a class="sourceLine" id="cb4-3" title="3">  <span class="ex">-</span> R/          <span class="co"># Código R, organizado com a-carrega.R, b-prepara bd.R, c-vis.R, d-modela, ...</span></a>
+<a class="sourceLine" id="cb4-4" title="4">  <span class="ex">-</span> RData/      <span class="co"># Dados em formato .RData</span></a>
+<a class="sourceLine" id="cb4-5" title="5">  <span class="ex">-</span> csv/        <span class="co"># Dados em .csv</span></a>
+<a class="sourceLine" id="cb4-6" title="6">  <span class="ex">-</span> png/        <span class="co"># gráficos em PNG</span></a>
+<a class="sourceLine" id="cb4-7" title="7">  <span class="ex">-</span> nome_do_projeto.Rproj</a></code></pre></div>
 <p><strong>Estrutura 2</strong>. Típico projeto de análise estatística.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">project/</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">  <span class="ex">-</span> README.Rmd   # Descrição do pacote</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">  <span class="ex">-</span> set-up.R     # Pacotes etc</a>
-<a class="sourceLine" id="cb5-4" data-line-number="4">  <span class="ex">-</span> R/           # Código R, organizado com 0-load.R, 1-tidy.R, 2-vis.R, ...</a>
-<a class="sourceLine" id="cb5-5" data-line-number="5">  <span class="ex">-</span> data/        # Dados (estruturados ou não)</a>
-<a class="sourceLine" id="cb5-6" data-line-number="6">  <span class="ex">-</span> figures/     # gráficos (pode ficar dentro de output/)</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7">  <span class="ex">-</span> output/      # Relatórios em .Rmd, .tex etc</a>
-<a class="sourceLine" id="cb5-8" data-line-number="8">  <span class="ex">-</span> project.Rproj</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">project/</span></a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="ex">-</span> README.Rmd   <span class="co"># Descrição do pacote</span></a>
+<a class="sourceLine" id="cb5-3" title="3">  <span class="ex">-</span> set-up.R     <span class="co"># Pacotes etc</span></a>
+<a class="sourceLine" id="cb5-4" title="4">  <span class="ex">-</span> R/           <span class="co"># Código R, organizado com 0-load.R, 1-tidy.R, 2-vis.R, ...</span></a>
+<a class="sourceLine" id="cb5-5" title="5">  <span class="ex">-</span> data/        <span class="co"># Dados (estruturados ou não)</span></a>
+<a class="sourceLine" id="cb5-6" title="6">  <span class="ex">-</span> figures/     <span class="co"># gráficos (pode ficar dentro de output/)</span></a>
+<a class="sourceLine" id="cb5-7" title="7">  <span class="ex">-</span> output/      <span class="co"># Relatórios em .Rmd, .tex etc</span></a>
+<a class="sourceLine" id="cb5-8" title="8">  <span class="ex">-</span> project.Rproj</a></code></pre></div>
 <p><strong>Estrutura 3</strong>. Pacote do R.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="ex">project/</span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">  <span class="ex">-</span> README.md    # Descrição do pacote</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3">  <span class="ex">-</span> DESCRIPTION  # Metadados estruturados do pacote e dependências</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">  <span class="ex">-</span> NAMESPACE    # importações e exportações do pacote</a>
-<a class="sourceLine" id="cb6-5" data-line-number="5">  <span class="ex">-</span> vignettes/   # Relatórios em .Rmd</a>
-<a class="sourceLine" id="cb6-6" data-line-number="6">  <span class="ex">-</span> R/           # Funções do R</a>
-<a class="sourceLine" id="cb6-7" data-line-number="7">  <span class="ex">-</span> data/        # Dados estruturados (tidy data)</a>
-<a class="sourceLine" id="cb6-8" data-line-number="8">  <span class="ex">-</span> data-raw/    # Dados não estruturados e arqs 0-load.R, 1-tidy.R, 2-vis.R, ...</a>
-<a class="sourceLine" id="cb6-9" data-line-number="9">  <span class="ex">-</span> project.Rproj</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="ex">project/</span></a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="ex">-</span> README.md    <span class="co"># Descrição do pacote</span></a>
+<a class="sourceLine" id="cb6-3" title="3">  <span class="ex">-</span> DESCRIPTION  <span class="co"># Metadados estruturados do pacote e dependências</span></a>
+<a class="sourceLine" id="cb6-4" title="4">  <span class="ex">-</span> NAMESPACE    <span class="co"># importações e exportações do pacote</span></a>
+<a class="sourceLine" id="cb6-5" title="5">  <span class="ex">-</span> vignettes/   <span class="co"># Relatórios em .Rmd</span></a>
+<a class="sourceLine" id="cb6-6" title="6">  <span class="ex">-</span> R/           <span class="co"># Funções do R</span></a>
+<a class="sourceLine" id="cb6-7" title="7">  <span class="ex">-</span> data/        <span class="co"># Dados estruturados (tidy data)</span></a>
+<a class="sourceLine" id="cb6-8" title="8">  <span class="ex">-</span> data-raw/    <span class="co"># Dados não estruturados e arqs 0-load.R, 1-tidy.R, 2-vis.R, ...</span></a>
+<a class="sourceLine" id="cb6-9" title="9">  <span class="ex">-</span> project.Rproj</a></code></pre></div>
 </div>
 <div id="git-e-versionamento" class="section level2">
 <h2><span class="header-section-number">2.4</span> Git e versionamento</h2>
