@@ -1,4 +1,4 @@
-## O pacote dplyr
+## O pacote dplyr {#dplyr}
 
 
 O `dplyr` é o pacote mais útil para realizar transformação de dados, aliando simplicidade e eficiência de uma forma elegante. Os scripts em R que fazem uso inteligente dos verbos `dplyr` e as facilidades do operador _pipe_ tendem a ficar mais legíveis e organizados sem perder velocidade de execução.
@@ -543,10 +543,10 @@ Para juntar duas tabelas de dados, podemos utilizar a família de funções `_jo
 
 A figura a seguir esquematiza as operações dessas funções:
 
-<img src="img/manipulacao/joins.png" style="display: block; margin: auto;" />
+<img src="assets/img/manipulacao/joins.png" width="355" style="display: block; margin: auto;" />
 
 A figura a seguir mostra o que acontece quando temos chaves duplicadas em um `left_join()`. A ideia é equivalante para as outras funções.
 
-<img src="img/manipulacao/left-join.png" style="display: block; margin: auto;" />
+<img src="assets/img/manipulacao/left-join.png" width="279" style="display: block; margin: auto;" />
 
 

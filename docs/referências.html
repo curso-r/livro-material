@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Referências | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Referências | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="img/logo.png" />
+  <meta property="og:image" content="assets/img/logo.png" />
   <meta property="og:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="github-repo" content="curso-r/livro-material" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="Referências | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="twitter:image" content="img/logo.png" />
+  <meta name="twitter:image" content="assets/img/logo.png" />
 
 <meta name="author" content="Curso-R" />
 
@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="respostas-1.html"/>
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
@@ -54,9 +54,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -65,14 +65,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -81,9 +83,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -116,7 +118,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="assets/style.css" type="text/css" />
 </head>
 
 <body>
@@ -133,14 +135,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre</a></li>
-<li class="chapter" data-level="1" data-path="instalação.html"><a href="instalação.html"><i class="fa fa-check"></i><b>1</b> Instalação</a><ul>
-<li class="chapter" data-level="1.1" data-path="instalação.html"><a href="instalação.html#instalação-do-r"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="instalação.html"><a href="instalação.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
-<li class="chapter" data-level="1.1.2" data-path="instalação.html"><a href="instalação.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
+<li class="chapter" data-level="1" data-path="instalacao.html"><a href="instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a><ul>
+<li class="chapter" data-level="1.1" data-path="instalacao.html"><a href="instalacao.html#instalação-do-r"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="instalacao.html"><a href="instalacao.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
+<li class="chapter" data-level="1.1.2" data-path="instalacao.html"><a href="instalacao.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="instalação.html"><a href="instalação.html#instalação-do-rstudio"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="instalação.html"><a href="instalação.html#no-windows-1"><i class="fa fa-check"></i><b>1.2.1</b> No Windows</a></li>
-<li class="chapter" data-level="1.2.2" data-path="instalação.html"><a href="instalação.html#no-linux-1"><i class="fa fa-check"></i><b>1.2.2</b> No Linux</a></li>
+<li class="chapter" data-level="1.2" data-path="instalacao.html"><a href="instalacao.html#instalação-do-rstudio"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="instalacao.html"><a href="instalacao.html#no-windows-1"><i class="fa fa-check"></i><b>1.2.1</b> No Windows</a></li>
+<li class="chapter" data-level="1.2.2" data-path="instalacao.html"><a href="instalacao.html#no-linux-1"><i class="fa fa-check"></i><b>1.2.2</b> No Linux</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="rstudio.html"><a href="rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a><ul>
@@ -152,39 +154,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="rstudio.html"><a href="rstudio.html#addins"><i class="fa fa-check"></i><b>2.6</b> Addins</a></li>
 <li class="chapter" data-level="2.7" data-path="rstudio.html"><a href="rstudio.html#snippets"><i class="fa fa-check"></i><b>2.7</b> Snippets</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="r-básico.html"><a href="r-básico.html"><i class="fa fa-check"></i><b>3</b> R Básico</a><ul>
-<li class="chapter" data-level="3.1" data-path="r-básico.html"><a href="r-básico.html#pedindo-ajuda"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="r-básico.html"><a href="r-básico.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
-<li class="chapter" data-level="3.1.2" data-path="r-básico.html"><a href="r-básico.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
-<li class="chapter" data-level="3.1.3" data-path="r-básico.html"><a href="r-básico.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
+<li class="chapter" data-level="3" data-path="r-base.html"><a href="r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a><ul>
+<li class="chapter" data-level="3.1" data-path="r-base.html"><a href="r-base.html#pedindo-ajuda"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="r-base.html"><a href="r-base.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
+<li class="chapter" data-level="3.1.2" data-path="r-base.html"><a href="r-base.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
+<li class="chapter" data-level="3.1.3" data-path="r-base.html"><a href="r-base.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="r-básico.html"><a href="r-básico.html#r-como-calculadora"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
-<li class="chapter" data-level="" data-path="r-básico.html"><a href="r-básico.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
+<li class="chapter" data-level="3.2" data-path="r-base.html"><a href="r-base.html#r-como-calculadora"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
+<li class="chapter" data-level="" data-path="r-base.html"><a href="r-base.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="r-básico.html"><a href="r-básico.html#objetos"><i class="fa fa-check"></i><b>3.3</b> Objetos</a></li>
-<li class="chapter" data-level="3.4" data-path="r-básico.html"><a href="r-básico.html#data-frames"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
-<li class="chapter" data-level="3.5" data-path="r-básico.html"><a href="r-básico.html#classes"><i class="fa fa-check"></i><b>3.5</b> Classes</a></li>
-<li class="chapter" data-level="3.6" data-path="r-básico.html"><a href="r-básico.html#vetores"><i class="fa fa-check"></i><b>3.6</b> Vetores</a></li>
-<li class="chapter" data-level="3.7" data-path="r-básico.html"><a href="r-básico.html#testes-lógicos"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a></li>
-<li class="chapter" data-level="3.8" data-path="r-básico.html"><a href="r-básico.html#valoresEspeciais"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a><ul>
-<li class="chapter" data-level="" data-path="r-básico.html"><a href="r-básico.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
+<li class="chapter" data-level="3.3" data-path="r-base.html"><a href="r-base.html#objetos"><i class="fa fa-check"></i><b>3.3</b> Objetos</a></li>
+<li class="chapter" data-level="3.4" data-path="r-base.html"><a href="r-base.html#data-frames"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
+<li class="chapter" data-level="3.5" data-path="r-base.html"><a href="r-base.html#classes"><i class="fa fa-check"></i><b>3.5</b> Classes</a></li>
+<li class="chapter" data-level="3.6" data-path="r-base.html"><a href="r-base.html#vetores"><i class="fa fa-check"></i><b>3.6</b> Vetores</a></li>
+<li class="chapter" data-level="3.7" data-path="r-base.html"><a href="r-base.html#testes-lógicos"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a></li>
+<li class="chapter" data-level="3.8" data-path="r-base.html"><a href="r-base.html#valoresEspeciais"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a><ul>
+<li class="chapter" data-level="" data-path="r-base.html"><a href="r-base.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.9" data-path="r-básico.html"><a href="r-básico.html#listas"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
-<li class="chapter" data-level="3.10" data-path="r-básico.html"><a href="r-básico.html#mais-sobre-data-frames"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
-<li class="chapter" data-level="" data-path="r-básico.html"><a href="r-básico.html#exercícios-2"><i class="fa fa-check"></i>Exercícios</a></li>
+<li class="chapter" data-level="3.9" data-path="r-base.html"><a href="r-base.html#listas"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
+<li class="chapter" data-level="3.10" data-path="r-base.html"><a href="r-base.html#mais-sobre-data-frames"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
+<li class="chapter" data-level="" data-path="r-base.html"><a href="r-base.html#exercícios-2"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="r-básico.html"><a href="r-básico.html#funcoes"><i class="fa fa-check"></i><b>3.11</b> Funções</a><ul>
-<li class="chapter" data-level="" data-path="r-básico.html"><a href="r-básico.html#exercícios-3"><i class="fa fa-check"></i>Exercícios</a></li>
+<li class="chapter" data-level="3.11" data-path="r-base.html"><a href="r-base.html#funcoes"><i class="fa fa-check"></i><b>3.11</b> Funções</a><ul>
+<li class="chapter" data-level="" data-path="r-base.html"><a href="r-base.html#exercícios-3"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.12" data-path="r-básico.html"><a href="r-básico.html#controle-de-fluxo"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
-<li class="chapter" data-level="3.12.1" data-path="r-básico.html"><a href="r-básico.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
-<li class="chapter" data-level="3.12.2" data-path="r-básico.html"><a href="r-básico.html#iteradores-for-e-while"><i class="fa fa-check"></i><b>3.12.2</b> Iteradores: for e while</a></li>
-<li class="chapter" data-level="" data-path="r-básico.html"><a href="r-básico.html#exercícios-4"><i class="fa fa-check"></i>Exercícios</a></li>
+<li class="chapter" data-level="3.12" data-path="r-base.html"><a href="r-base.html#controle-de-fluxo"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
+<li class="chapter" data-level="3.12.1" data-path="r-base.html"><a href="r-base.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
+<li class="chapter" data-level="3.12.2" data-path="r-base.html"><a href="r-base.html#iteradores-for-e-while"><i class="fa fa-check"></i><b>3.12.2</b> Iteradores: for e while</a></li>
+<li class="chapter" data-level="" data-path="r-base.html"><a href="r-base.html#exercícios-4"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.13" data-path="r-básico.html"><a href="r-básico.html#outros-tópicos"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a><ul>
-<li class="chapter" data-level="3.13.1" data-path="r-básico.html"><a href="r-básico.html#matrizes"><i class="fa fa-check"></i><b>3.13.1</b> Matrizes</a></li>
-<li class="chapter" data-level="3.13.2" data-path="r-básico.html"><a href="r-básico.html#fatores"><i class="fa fa-check"></i><b>3.13.2</b> Fatores</a></li>
-<li class="chapter" data-level="3.13.3" data-path="r-básico.html"><a href="r-básico.html#gráficos-r-base"><i class="fa fa-check"></i><b>3.13.3</b> Gráficos (R base)</a></li>
+<li class="chapter" data-level="3.13" data-path="r-base.html"><a href="r-base.html#outros-tópicos"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a><ul>
+<li class="chapter" data-level="3.13.1" data-path="r-base.html"><a href="r-base.html#matrizes"><i class="fa fa-check"></i><b>3.13.1</b> Matrizes</a></li>
+<li class="chapter" data-level="3.13.2" data-path="r-base.html"><a href="r-base.html#fatores"><i class="fa fa-check"></i><b>3.13.2</b> Fatores</a></li>
+<li class="chapter" data-level="3.13.3" data-path="r-base.html"><a href="r-base.html#gráficos-r-base"><i class="fa fa-check"></i><b>3.13.3</b> Gráficos (R base)</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="pacotes.html"><a href="pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a><ul>
@@ -195,15 +197,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="pacotes.html"><a href="pacotes.html#tidyverse"><i class="fa fa-check"></i><b>4.2</b> Tidyverse</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="importação.html"><a href="importação.html"><i class="fa fa-check"></i><b>5</b> Importação</a><ul>
-<li class="chapter" data-level="5.1" data-path="importação.html"><a href="importação.html#o-pacote-readr"><i class="fa fa-check"></i><b>5.1</b> O pacote readr</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="importação.html"><a href="importação.html#importando-arquivos-de-texto"><i class="fa fa-check"></i><b>5.1.1</b> Importando arquivos de texto</a></li>
-<li class="chapter" data-level="5.1.2" data-path="importação.html"><a href="importação.html#parseando-valores"><i class="fa fa-check"></i><b>5.1.2</b> Parseando valores</a></li>
-<li class="chapter" data-level="5.1.3" data-path="importação.html"><a href="importação.html#locale"><i class="fa fa-check"></i><b>5.1.3</b> Locale</a></li>
-<li class="chapter" data-level="5.1.4" data-path="importação.html"><a href="importação.html#escrevendo-arquivos"><i class="fa fa-check"></i><b>5.1.4</b> Escrevendo arquivos</a></li>
+<li class="chapter" data-level="5" data-path="importacao.html"><a href="importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a><ul>
+<li class="chapter" data-level="5.1" data-path="importacao.html"><a href="importacao.html#readr"><i class="fa fa-check"></i><b>5.1</b> O pacote readr</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="importacao.html"><a href="importacao.html#importando-arquivos-de-texto"><i class="fa fa-check"></i><b>5.1.1</b> Importando arquivos de texto</a></li>
+<li class="chapter" data-level="5.1.2" data-path="importacao.html"><a href="importacao.html#parseando-valores"><i class="fa fa-check"></i><b>5.1.2</b> Parseando valores</a></li>
+<li class="chapter" data-level="5.1.3" data-path="importacao.html"><a href="importacao.html#locale"><i class="fa fa-check"></i><b>5.1.3</b> Locale</a></li>
+<li class="chapter" data-level="5.1.4" data-path="importacao.html"><a href="importacao.html#escrevendo-arquivos"><i class="fa fa-check"></i><b>5.1.4</b> Escrevendo arquivos</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="importação.html"><a href="importação.html#readxl"><i class="fa fa-check"></i><b>5.2</b> readxl</a></li>
-<li class="chapter" data-level="5.3" data-path="importação.html"><a href="importação.html#haven"><i class="fa fa-check"></i><b>5.3</b> haven</a></li>
+<li class="chapter" data-level="5.2" data-path="importacao.html"><a href="importacao.html#readxl"><i class="fa fa-check"></i><b>5.2</b> readxl</a></li>
+<li class="chapter" data-level="5.3" data-path="importacao.html"><a href="importacao.html#haven"><i class="fa fa-check"></i><b>5.3</b> haven</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="pipe.html"><a href="pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
 <li class="chapter" data-level="6.1" data-path="pipe.html"><a href="pipe.html#o-operador-pipe"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a></li>
@@ -215,20 +217,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3" data-path="pipe.html"><a href="pipe.html#exercícios-6"><i class="fa fa-check"></i><b>6.3</b> Exercícios</a></li>
 <li class="chapter" data-level="6.4" data-path="pipe.html"><a href="pipe.html#respostas"><i class="fa fa-check"></i><b>6.4</b> Respostas</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="manipulação.html"><a href="manipulação.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
-<li class="chapter" data-level="7.1" data-path="manipulação.html"><a href="manipulação.html#trabalhando-com-tibbles"><i class="fa fa-check"></i><b>7.1</b> Trabalhando com tibbles</a></li>
-<li class="chapter" data-level="7.2" data-path="manipulação.html"><a href="manipulação.html#o-pacote-dplyr"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="manipulação.html"><a href="manipulação.html#filtrando-linhas"><i class="fa fa-check"></i><b>7.2.1</b> Filtrando linhas</a></li>
-<li class="chapter" data-level="7.2.2" data-path="manipulação.html"><a href="manipulação.html#selecionando-colunas"><i class="fa fa-check"></i><b>7.2.2</b> Selecionando colunas</a></li>
-<li class="chapter" data-level="7.2.3" data-path="manipulação.html"><a href="manipulação.html#ordenando-a-base"><i class="fa fa-check"></i><b>7.2.3</b> Ordenando a base</a></li>
-<li class="chapter" data-level="7.2.4" data-path="manipulação.html"><a href="manipulação.html#criando-e-modificando-colunas"><i class="fa fa-check"></i><b>7.2.4</b> Criando e modificando colunas</a></li>
-<li class="chapter" data-level="7.2.5" data-path="manipulação.html"><a href="manipulação.html#summarisando-a-base"><i class="fa fa-check"></i><b>7.2.5</b> Summarisando a base</a></li>
-<li class="chapter" data-level="7.2.6" data-path="manipulação.html"><a href="manipulação.html#juntando-duas-bases"><i class="fa fa-check"></i><b>7.2.6</b> Juntando duas bases</a></li>
+<li class="chapter" data-level="7" data-path="manipulacao.html"><a href="manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
+<li class="chapter" data-level="7.1" data-path="manipulacao.html"><a href="manipulacao.html#trabalhando-com-tibbles"><i class="fa fa-check"></i><b>7.1</b> Trabalhando com tibbles</a></li>
+<li class="chapter" data-level="7.2" data-path="manipulacao.html"><a href="manipulacao.html#dplyr"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="manipulacao.html"><a href="manipulacao.html#filtrando-linhas"><i class="fa fa-check"></i><b>7.2.1</b> Filtrando linhas</a></li>
+<li class="chapter" data-level="7.2.2" data-path="manipulacao.html"><a href="manipulacao.html#selecionando-colunas"><i class="fa fa-check"></i><b>7.2.2</b> Selecionando colunas</a></li>
+<li class="chapter" data-level="7.2.3" data-path="manipulacao.html"><a href="manipulacao.html#ordenando-a-base"><i class="fa fa-check"></i><b>7.2.3</b> Ordenando a base</a></li>
+<li class="chapter" data-level="7.2.4" data-path="manipulacao.html"><a href="manipulacao.html#criando-e-modificando-colunas"><i class="fa fa-check"></i><b>7.2.4</b> Criando e modificando colunas</a></li>
+<li class="chapter" data-level="7.2.5" data-path="manipulacao.html"><a href="manipulacao.html#summarisando-a-base"><i class="fa fa-check"></i><b>7.2.5</b> Summarisando a base</a></li>
+<li class="chapter" data-level="7.2.6" data-path="manipulacao.html"><a href="manipulacao.html#juntando-duas-bases"><i class="fa fa-check"></i><b>7.2.6</b> Juntando duas bases</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="manipulação.html"><a href="manipulação.html#o-pacote-tidyr"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="manipulação.html"><a href="manipulação.html#gather"><i class="fa fa-check"></i><b>7.3.1</b> <code>gather()</code></a></li>
-<li class="chapter" data-level="7.3.2" data-path="manipulação.html"><a href="manipulação.html#spread"><i class="fa fa-check"></i><b>7.3.2</b> <code>spread()</code></a></li>
-<li class="chapter" data-level="7.3.3" data-path="manipulação.html"><a href="manipulação.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
+<li class="chapter" data-level="7.3" data-path="manipulacao.html"><a href="manipulacao.html#tidyr"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="manipulacao.html"><a href="manipulacao.html#gather"><i class="fa fa-check"></i><b>7.3.1</b> <code>gather()</code></a></li>
+<li class="chapter" data-level="7.3.2" data-path="manipulacao.html"><a href="manipulacao.html#spread"><i class="fa fa-check"></i><b>7.3.2</b> <code>spread()</code></a></li>
+<li class="chapter" data-level="7.3.3" data-path="manipulacao.html"><a href="manipulacao.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="graficos.html"><a href="graficos.html"><i class="fa fa-check"></i><b>8</b> Gráficos</a><ul>
@@ -274,6 +276,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
+
 
 
 
@@ -336,7 +339,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["temp.pdf", "temp.epub"],
+"download": ["livro-curso-r.pdf"],
 "toc": {
 "collapse": "subsection"
 }

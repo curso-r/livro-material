@@ -1,5 +1,4 @@
-
-# Instalação 
+# Instalação {#instalacao}
 
 Nesta seção, abordaremos como instalar o R e o RStudio no Linux e no Windows. Também discutiremos sobre a instalação de pacotes no R.
 

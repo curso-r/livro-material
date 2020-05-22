@@ -1,4 +1,4 @@
-# R Básico
+# R Básico {#r-base}
 
 
 
@@ -12,10 +12,7 @@ A linguagem `R` é bem intuitiva. É possível fazer bastante coisa à base da t
 
 No entanto, a intuição não infalível, e recorrentemente vamos precisar de ajuda para rodar alguma função ou descobrir como fazer alguma tarefa no R. Felizmente, a comunidade R é bem ativa e existem vários lugares para buscar respostas. Nesta seção, vamos apresentar as principais maneiras algumas dessas maneiras.
 
-<div class="figure" style="text-align: center">
-<img src="img/r-base/code_hero_rstats.png" alt="Arte por Allison Horst. Veja nas Referências onde encontrá-la."  />
-<p class="caption">(\#fig:unnamed-chunk-2)Arte por Allison Horst. Veja nas Referências onde encontrá-la.</p>
-</div>
+<img src="assets/img/r-base/code_hero_rstats.png" width="1378" style="display: block; margin: auto;" />
 
 
 No R, há quatro principais entidades para se pedir ajuda:
@@ -60,7 +57,7 @@ log("5")
 ## Error in log("5"): non-numeric argument to mathematical function
 ```
 
-<img src="img/r-base/ajuda_google.png" width="795" height="267" style="display: block; margin: auto;" />
+<img src="assets/img/r-base/ajuda_google.png" width="795" height="267" style="display: block; margin: auto;" />
 
 ### Stack Overflow
 
@@ -107,7 +104,7 @@ Porém, no caso do R, há outro requisito que vai aumentar muito sua chance de t
 <!-- Criar um R Markdown novo no RStudio é fácil. Clique no botão de criar arquivo e selecione R Markdown. -->
 
 <!-- ```{r echo=FALSE, fig.align='center'} -->
-<!-- knitr::include_graphics(rep("img/r-base/criar_rmarkdown.png")) -->
+<!-- knitr::include_graphics(rep("assets/img/r-base/criar_rmarkdown.png")) -->
 <!-- ``` -->
 
 
@@ -1506,7 +1503,7 @@ x <- 1
 if (x == 1) {         
   Sys.time()
 }
-## [1] "2020-05-19 13:03:38 -03"
+## [1] "2020-05-21 21:07:47 -03"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se a expressão que estiver dentro dos parênteses `()` retornar `TRUE`. Veja outro exemplo:
@@ -1979,7 +1976,7 @@ y <- 5 + 2 * x + rnorm(N, sd = 30)
 plot(x, y)
 ```
 
-<img src="03-r-base_files/figure-html/unnamed-chunk-103-1.png" width="672" style="display: block; margin: auto;" />
+<img src="03-r-base_files/figure-html/unnamed-chunk-101-1.png" width="672" style="display: block; margin: auto;" />
 
 No código acima, a função `rnorm()` gera uma amostra aleatória da distribuição Normal com média 0 e desvio-padrão 30.
 
@@ -1990,7 +1987,7 @@ O parâmetro `type = "l"` indica que queremos que os pontos sejam interligados p
 plot(x, y, type = "l")
 ```
 
-<img src="03-r-base_files/figure-html/unnamed-chunk-104-1.png" width="672" style="display: block; margin: auto;" />
+<img src="03-r-base_files/figure-html/unnamed-chunk-102-1.png" width="672" style="display: block; margin: auto;" />
 
 #### Histograma
 
@@ -2004,14 +2001,14 @@ Para construir histogramas, utilizamos a função `hist()`. Os principais parâm
 hist(rnorm(1000))
 ```
 
-<img src="03-r-base_files/figure-html/unnamed-chunk-105-1.png" width="672" style="display: block; margin: auto;" />
+<img src="03-r-base_files/figure-html/unnamed-chunk-103-1.png" width="672" style="display: block; margin: auto;" />
 
 
 ```r
 hist(rnorm(1000), breaks = 6)
 ```
 
-<img src="03-r-base_files/figure-html/unnamed-chunk-106-1.png" width="672" style="display: block; margin: auto;" />
+<img src="03-r-base_files/figure-html/unnamed-chunk-104-1.png" width="672" style="display: block; margin: auto;" />
 
 #### Boxplot
 
@@ -2024,7 +2021,7 @@ Para construir boxplots, utilizamos a função `boxplot()`. Os principais parâm
 boxplot(mtcars$mpg, col = "lightgray")
 ```
 
-<img src="03-r-base_files/figure-html/unnamed-chunk-107-1.png" width="672" style="display: block; margin: auto;" />
+<img src="03-r-base_files/figure-html/unnamed-chunk-105-1.png" width="672" style="display: block; margin: auto;" />
 
 Observe que o argumento `col=` muda a cor da caixa do boxplot.
 
@@ -2035,7 +2032,7 @@ Para mapear duas variáveis ao gráfico, passamos um *data frame* para o argumen
 boxplot(mpg ~ cyl, data = mtcars, col = "purple")
 ```
 
-<img src="03-r-base_files/figure-html/unnamed-chunk-108-1.png" width="672" style="display: block; margin: auto;" />
+<img src="03-r-base_files/figure-html/unnamed-chunk-106-1.png" width="672" style="display: block; margin: auto;" />
 
 #### Gráfico de barras
 
@@ -2054,6 +2051,6 @@ tabela
 barplot(tabela)
 ```
 
-<img src="03-r-base_files/figure-html/unnamed-chunk-109-1.png" width="672" style="display: block; margin: auto;" />
+<img src="03-r-base_files/figure-html/unnamed-chunk-107-1.png" width="672" style="display: block; margin: auto;" />
 
 

@@ -1,4 +1,4 @@
-# Pacotes
+# Pacotes {#pacotes}
 
 Um pacote é um conjunto de funções que têm como objetivo resolver um problema específico. São eles que deixam o R poderoso, capaz de enfrentar qualquer tarefa de análise de dados. Assim, fique bastante à vontade para instalar e atualizar muitos e muitos pacotes ao longo da sua experiência com o R.
 
@@ -59,5 +59,37 @@ A aba ***Packages*** do RStudio também ajuda a administrar os seus pacotes.
 
 ## Tidyverse
 
+Muitas pessoas tentam definir *o que é* ciência de dados no mercado e na academia. O problema é que esse termo pode ser descrito de várias formas distintas, seja pela formação específica da pessoa que define ou do interlocutor ao qual ela se comunica. Por isso, a definição de ciência de dados é, de certa forma, vazia.
 
+No entanto, é possível definir *como se faz* ciência de dados. Ou seja, independentemente da definição do termo, o que temos de fazer na prática em projetos reais é algo bastante conhecido.
+
+O "como faz" é definido através do *Ciclo da Ciência de Dados*, descrito na Figura \@ref(fig:04-ciclo). Primeiro, os dados brutos são coletados de fontes públicas, como arquivos Excel, portais de dados abertos ou bases de dados internos da companhia. Em seguida, os dados são arrumados, para mitigar problemas de padronização de nomes, obtenção das variáveis de interesse e exclusão de casos que estão fora do escopo de análise, produzindo o que se define como base de dados analítica. A base analítica é então transformada para produzir as tabelas e gráficos e, quando necessário, são utilizadas como insumo para o ajuste de modelos estatísticos. Finalmente, os resultados obtidos são comunicados através de uma série de ferramentas, como relatórios, dashboards interativos, indicadores ou Application Programming Interfaces (API) para automação. 
+
+<div class="figure">
+<img src="assets/img/manipulacao/ciclo-ciencia-de-dados.png" alt="O Ciclo da Ciência de Dados." width="479" />
+<p class="caption">(\#fig:04-ciclo)O Ciclo da Ciência de Dados.</p>
+</div>
+
+
+O `{tidyverse}` é um pacote guarda-chuva que consolida uma série de ferramentas que fazem parte o ciclo da ciência de dados. Fazem parte do `{tidyverse}` os pacotes `{ggplot2}`, `{dplyr}`, `{tidyr}`, `{purrr}`, `{readr}`, entre muitos outros, como é possível observar na Figura \@ref(fig:04-ciclo-pacotes). Veremos as características principais desses pacotes nas próximas Seções.
+
+<div class="figure">
+<img src="assets/img/pacotes/ciclo-ciencia-de-dados-pacotes.png" alt="A implementação do Ciclo da Ciência de Dados, através do tidyverse. Pela definição estrita do tidyverse, na imagem não fazem parte do tidyverse os pacotes janitor, data.table e os pacotes descritos nas partes de modelagem, comunicação e automatização. No entanto, a maioria desses pacotes também seguem os princípios tidy e podem ser usados em conjunto com o tidyverse sem grandes dificuldades." width="479" />
+<p class="caption">(\#fig:04-ciclo-pacotes)A implementação do Ciclo da Ciência de Dados, através do tidyverse. Pela definição estrita do tidyverse, na imagem não fazem parte do tidyverse os pacotes janitor, data.table e os pacotes descritos nas partes de modelagem, comunicação e automatização. No entanto, a maioria desses pacotes também seguem os princípios tidy e podem ser usados em conjunto com o tidyverse sem grandes dificuldades.</p>
+</div>
+
+O `{tidyverse}` traz consigo o [*manifesto tidy*](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html). Trata-se de um documento que formaliza uma série de princípios que norteiam o desenvolvimento do tidyverse. Como os pacotes do `{tidyverse}` compartilham os mesmos princípios, podem ser utilizados naturalmente em conjunto. 
+
+Pode-se dizer que existe uma linguagem R antes e outra depois do `{tidyverse}`. A linguagem mudou muito, a comunidade abraçou uso desses princípios e criou centenas de novos pacotes que conversam uns com os outros dessa forma.[^messy]
+
+[^messy]: Usar a filosofia tidy não é a única forma de fazer pacotes do R. Existem muitos pacotes excelentes que não utilizam essa filosofia. O próprio manifesto diz "O contrário de tidyverse não é o messyverse, e sim muitos outros universos de pacotes interconectados."
+
+Os princípios fundamentais do tidyverse são:
+
+1. Reutilizar estruturas de dados existentes.
+1. Organizar funções simples usando o *pipe* (Seção \@ref(pipe)).
+1. Aderir à programação funcional (Seção \@ref(funcionais)).
+1. Projetado para ser usado por seres humanos.
+
+No texto do [manifesto tidy](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html) cada um dos lemas é descrito de forma detalhada. No [nosso blog](https://www.curso-r.com/blog/2017-02-16-manifesto-tidy/), selecionamos os aspectos que achamos mais importante de cada um deles.
 

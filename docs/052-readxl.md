@@ -1,22 +1,21 @@
-## readxl
+## readxl {#readxl}
 
 O pacote `readxl` do tydiverse contém funções para importação com os formatos `.xls` e `xlsx`.
 
 
 
 
-
 ```r
-readxl::read_xls(path = "data/imdb.xls")
-readxl::read_xlsx(path = "data/imdb.xlsx")
+readxl::read_xls(path = "assets/data/imdb.xls")
+readxl::read_xlsx(path = "assets/data/imdb.xlsx")
 ```
 
 A funçao `read_excel()` auto detecta a extensão do arquivo.
 
 
 ```r
-read_excel(path = "data/imdb.xls")
-read_excel(path = "data/imdb.xlsx")
+read_excel(path = "assets/data/imdb.xls")
+read_excel(path = "assets/data/imdb.xlsx")
 ```
 
 O pacote disponibiliza 5 exemplos de arquivos com formato `.xls` e `.xlsx`.
@@ -31,7 +30,9 @@ readxl_example()
 ##  [5] "deaths.xls"    "deaths.xlsx"   "geometry.xls"  "geometry.xlsx"
 ##  [9] "type-me.xls"   "type-me.xlsx"
 ```
+
 Vamos acessar o arquivo datasets.xls.
+
 
 ```r
 datasets <- readxl_example("datasets.xls")
@@ -56,6 +57,7 @@ read_xls(datasets)
 ```
 
 No Excel, um arquivo pode ter várias planilhas. Você pode ver quais planilhas fazem parte do arquivo:
+
 
 ```r
 excel_sheets(datasets)
