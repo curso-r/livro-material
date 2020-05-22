@@ -17,7 +17,7 @@ library(dplyr)
 ```{r warning=FALSE, message=FALSE}
 library(tidyr)
 
-imdb <- readr::read_rds("data/imdb.rds")
+imdb <- readr::read_rds("assets/data/imdb.rds")
 
 imdb_gather <- imdb %>%
   mutate(id = 1:n()) %>%

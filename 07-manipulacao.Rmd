@@ -10,7 +10,7 @@ Usualmente, o cientista de dados parte de uma base "crua" e a transforma até ob
 A figura abaixo mostra a fase de "disputa" com os dados (*data wrangling*) para deixá-los no formato analítico.
 
 ```{r transform, echo=FALSE, fig.align='center'}
-knitr::include_graphics('img/manipulacao/ciclo-ciencia-de-dados.png')
+knitr::include_graphics('assets/img/manipulacao/ciclo-ciencia-de-dados.png')
 ```
 
 Um conceito importante para obtenção de uma base analítica é o *data tidying*, ou arrumação de dados. Uma base é considerada *tidy* se
@@ -48,7 +48,7 @@ Mais informações sobre `tibbles` podem ser encontradas [neste link](http://r4d
 Nessa seção, vamos trabalhar com uma base de filmes do IMDB. Essa base pode ser baixada [clicando aqui](https://github.com/curso-r/site-v2/raw/master/content/material/importacao/data/imdb.rds).
 
 ```{r}
-imdb <- readr::read_rds("data/imdb.rds")
+imdb <- readr::read_rds("assets/data/imdb.rds")
 ```
 
 Assim, utilizaremos o objeto `imdb` para acessar os dados.
