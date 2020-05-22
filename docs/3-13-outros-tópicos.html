@@ -430,11 +430,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb104-3"><a href="3-13-outros-tópicos.html#cb104-3"></a>y &lt;-<span class="st"> </span><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(N, <span class="dt">sd =</span> <span class="dv">30</span>)</span>
 <span id="cb104-4"><a href="3-13-outros-tópicos.html#cb104-4"></a></span>
 <span id="cb104-5"><a href="3-13-outros-tópicos.html#cb104-5"></a><span class="kw">plot</span>(x, y)</span></code></pre></div>
-<p><img src="03-r-base_files/figure-html/unnamed-chunk-101-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="03-r-base_files/figure-html/r-base-plot-1-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>No código acima, a função <code>rnorm()</code> gera uma amostra aleatória da distribuição Normal com média 0 e desvio-padrão 30.</p>
 <p>O parâmetro <code>type = "l"</code> indica que queremos que os pontos sejam interligados por linhas.</p>
 <div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="3-13-outros-tópicos.html#cb105-1"></a><span class="kw">plot</span>(x, y, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>)</span></code></pre></div>
-<p><img src="03-r-base_files/figure-html/unnamed-chunk-102-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="03-r-base_files/figure-html/r-base-plot-2-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="histograma" class="section level4">
 <h4><span class="header-section-number">3.13.3.2</span> Histograma</h4>
@@ -444,9 +444,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>breaks</code>: número (aproximado) de retângulos.</li>
 </ul>
 <div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="3-13-outros-tópicos.html#cb106-1"></a><span class="kw">hist</span>(<span class="kw">rnorm</span>(<span class="dv">1000</span>))</span></code></pre></div>
-<p><img src="03-r-base_files/figure-html/unnamed-chunk-103-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="03-r-base_files/figure-html/r-base-plot-3-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="3-13-outros-tópicos.html#cb107-1"></a><span class="kw">hist</span>(<span class="kw">rnorm</span>(<span class="dv">1000</span>), <span class="dt">breaks =</span> <span class="dv">6</span>)</span></code></pre></div>
-<p><img src="03-r-base_files/figure-html/unnamed-chunk-104-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="03-r-base_files/figure-html/r-base-plot-4-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="boxplot" class="section level4">
 <h4><span class="header-section-number">3.13.3.3</span> Boxplot</h4>
@@ -455,11 +455,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>x</code>: o vetor numérico para o qual o boxplot será construído.</li>
 </ul>
 <div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="3-13-outros-tópicos.html#cb108-1"></a><span class="kw">boxplot</span>(mtcars<span class="op">$</span>mpg, <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span></code></pre></div>
-<p><img src="03-r-base_files/figure-html/unnamed-chunk-105-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="03-r-base_files/figure-html/r-base-plot-5-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Observe que o argumento <code>col=</code> muda a cor da caixa do boxplot.</p>
 <p>Para mapear duas variáveis ao gráfico, passamos um <em>data frame</em> para o argumento <code>data=</code> e utilizamos a seguinte sintaxe <code>var_numerica ~ var_categorica</code>.</p>
 <div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="3-13-outros-tópicos.html#cb109-1"></a><span class="kw">boxplot</span>(mpg <span class="op">~</span><span class="st"> </span>cyl, <span class="dt">data =</span> mtcars, <span class="dt">col =</span> <span class="st">&quot;purple&quot;</span>)</span></code></pre></div>
-<p><img src="03-r-base_files/figure-html/unnamed-chunk-106-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="03-r-base_files/figure-html/r-base-plot-6-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="gráfico-de-barras" class="section level4">
 <h4><span class="header-section-number">3.13.3.4</span> Gráfico de barras</h4>
@@ -472,7 +472,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb110-5"><a href="3-13-outros-tópicos.html#cb110-5"></a><span class="co">## 11  7 14</span></span>
 <span id="cb110-6"><a href="3-13-outros-tópicos.html#cb110-6"></a></span>
 <span id="cb110-7"><a href="3-13-outros-tópicos.html#cb110-7"></a><span class="kw">barplot</span>(tabela)</span></code></pre></div>
-<p><img src="03-r-base_files/figure-html/unnamed-chunk-107-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="03-r-base_files/figure-html/r-base-plot-7-1.png" width="672" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>

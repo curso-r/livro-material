@@ -171,25 +171,22 @@ janitor::get_dupes(base_qualquer, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 16 x 4
-##    nome     sobrenome dupe_count variavel_importante
-##    <chr>    <chr>          <int>               <dbl>
-##  1 Athos    Damiani            2             -0.160 
-##  2 Athos    Damiani            2             -1.86  
-##  3 Daniel   Damiani            2             -0.449 
-##  4 Daniel   Damiani            2              1.39  
-##  5 Fernando Corrêa             2              0.0621
-##  6 Fernando Corrêa             2              1.28  
-##  7 Fernando Falbel             2             -1.41  
-##  8 Fernando Falbel             2             -0.126 
-##  9 Fernando Trecenti           2             -0.769 
-## 10 Fernando Trecenti           2             -0.124 
-## 11 Julio    Falbel             4              0.476 
-## 12 Julio    Falbel             4             -1.62  
-## 13 Julio    Falbel             4             -1.54  
-## 14 Julio    Falbel             4              0.520 
-## 15 Julio    Trecenti           2             -0.646 
-## 16 Julio    Trecenti           2              1.13
+## # A tibble: 13 x 4
+##    nome    sobrenome dupe_count variavel_importante
+##    <chr>   <chr>          <int>               <dbl>
+##  1 Athos   Corrêa             2             -0.743 
+##  2 Athos   Corrêa             2              0.626 
+##  3 Athos   Falbel             3             -0.940 
+##  4 Athos   Falbel             3              0.329 
+##  5 Athos   Falbel             3             -0.900 
+##  6 Athos   Trecenti           2             -0.389 
+##  7 Athos   Trecenti           2              0.718 
+##  8 Julio   Amorim             2              0.361 
+##  9 Julio   Amorim             2              0.492 
+## 10 William Damiani            2              0.0103
+## 11 William Damiani            2              0.0814
+## 12 William Falbel             2              1.54  
+## 13 William Falbel             2             -0.758
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.
