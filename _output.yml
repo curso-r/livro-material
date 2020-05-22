@@ -1,18 +1,18 @@
 bookdown::gitbook:
-  css: style.css
+  css: assets/style.css
   config:
     toc:
       before: |
         <li><a href="./index.html"><img src = "https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width = 80%></a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
-    download: ["pdf", "epub"]
+    download: ["pdf"]
   includes:
-    in_header: [include_hyphotesis.html, google_fonts.html]
-bookdown::pdf_book:
-  includes:
-    in_header: preamble.tex
-  latex_engine: xelatex
-  citation_package: natbib
-  keep_tex: yes
-bookdown::epub_book: default
+    in_header: [assets/include_hyphotesis.html, assets/google_fonts.html]
+# bookdown::pdf_book:
+#   includes:
+#     in_header: assets/preamble.tex
+#   latex_engine: xelatex
+#   citation_package: natbib
+#   keep_tex: yes
+# bookdown::epub_book: default
