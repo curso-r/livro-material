@@ -171,24 +171,25 @@ janitor::get_dupes(base_qualquer, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 15 x 4
-##    nome    sobrenome dupe_count variavel_importante
-##    <chr>   <chr>          <int>               <dbl>
-##  1 Athos   Damiani            3              1.81  
-##  2 Athos   Damiani            3              0.895 
-##  3 Athos   Damiani            3              0.947 
-##  4 Daniel  Amorim             3             -1.87  
-##  5 Daniel  Amorim             3              0.768 
-##  6 Daniel  Amorim             3              0.732 
-##  7 Julio   Corrêa             2              1.22  
-##  8 Julio   Corrêa             2             -0.692 
-##  9 Julio   Damiani            2             -0.113 
-## 10 Julio   Damiani            2             -0.0997
-## 11 William Amorim             2              1.01  
-## 12 William Amorim             2             -0.156 
-## 13 William Damiani            3             -0.475 
-## 14 William Damiani            3              1.19  
-## 15 William Damiani            3              0.507
+## # A tibble: 16 x 4
+##    nome     sobrenome dupe_count variavel_importante
+##    <chr>    <chr>          <int>               <dbl>
+##  1 Athos    Damiani            2             -0.160 
+##  2 Athos    Damiani            2             -1.86  
+##  3 Daniel   Damiani            2             -0.449 
+##  4 Daniel   Damiani            2              1.39  
+##  5 Fernando Corrêa             2              0.0621
+##  6 Fernando Corrêa             2              1.28  
+##  7 Fernando Falbel             2             -1.41  
+##  8 Fernando Falbel             2             -0.126 
+##  9 Fernando Trecenti           2             -0.769 
+## 10 Fernando Trecenti           2             -0.124 
+## 11 Julio    Falbel             4              0.476 
+## 12 Julio    Falbel             4             -1.62  
+## 13 Julio    Falbel             4             -1.54  
+## 14 Julio    Falbel             4              0.520 
+## 15 Julio    Trecenti           2             -0.646 
+## 16 Julio    Trecenti           2              1.13
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.

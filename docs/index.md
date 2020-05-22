@@ -31,7 +31,10 @@ O RStudio é o ambiente de desenvolvimento mais utilizado para programação em 
 
 Este livro tem como objetivo guiar o leitor por todas as etapas de uma análise de dados, utilizando o R como ferramenta.
 
-<img src="assets/img/environmental-data-science-r4ds-general.png" width="2400" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="assets/img/environmental-data-science-r4ds-general.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la." width="2400" />
+<p class="caption">(\#fig:allison-env)Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la.</p>
+</div>
 
 #### Comunidade {-}
 
@@ -47,7 +50,10 @@ Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartil
 
 - Grupo R Brasil no Telegram: https://t.me/rbrasiloficial
 
-<img src="assets/img/welcome_to_rstats_twitter.png" width="1004" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="assets/img/welcome_to_rstats_twitter.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la." width="1004" />
+<p class="caption">(\#fig:allison-twitter)Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la.</p>
+</div>
 
 #### A Curso-R {-}
 
