@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Ciência de Dados em R</title>
+  <title>5.3 haven | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Ciência de Dados em R" />
+  <meta property="og:title" content="5.3 haven | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Ciência de Dados em R" />
+  <meta name="twitter:title" content="5.3 haven | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-
-<link rel="next" href="1-instalacao.html"/>
+<link rel="prev" href="5-2-readxl.html"/>
+<link rel="next" href="6-pipe.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -272,49 +272,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Ciência de Dados em R</h1>
-<p class="author"><em>Curso-R</em></p>
-<p class="date"><em>Última atualização: 22/05/2020</em></p>
-</div>
-<div id="sobre" class="section level1 unnumbered">
-<h1>Sobre</h1>
-<p>Este livro está em <strong>construção</strong> e em <strong>revisão aberta</strong>. Fique à vontade para corrigir qualquer tipo de erro que encontrar no nosso material.</p>
-<p>Todo o conteúdo deste livro é gratuito e aberto.</p>
-<div id="o-r-e-o-rstudio" class="section level4 unnumbered">
-<h4>O R e o RStudio</h4>
-<p>O R é uma linguagem de programação <em>open source</em> para análise de dados que fornece uma grande variedade de ferramentas estatísticas e gráficas.</p>
-<p>O RStudio é o ambiente de desenvolvimento mais utilizado para programação em R. Ele possui diversas ferramentas que facilitam a utilização do R para se fazer análise de dados.</p>
-</div>
-<div id="este-livro" class="section level4 unnumbered">
-<h4>Este livro</h4>
-<p>Este livro tem como objetivo guiar o leitor por todas as etapas de uma análise de dados, utilizando o R como ferramenta.</p>
-<p><img src="assets/img/environmental-data-science-r4ds-general.png" width="2400" style="display: block; margin: auto;" /></p>
-</div>
-<div id="comunidade" class="section level4 unnumbered">
-<h4>Comunidade</h4>
-<p>Seja bem-vinda(o) ao #rstats.</p>
-<p>Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e participe dos grupos e comunidades de programadores.</p>
-<ul>
-<li><p>Comunidade RLadies: <a href="https://benubah.github.io/r-community-explorer/rladies.html" class="uri">https://benubah.github.io/r-community-explorer/rladies.html</a></p></li>
-<li><p>Fórum de dúvidas da Curso-R: <a href="https://discourse.curso-r.com/" class="uri">https://discourse.curso-r.com/</a></p></li>
-<li><p>Grupo de divulgação da Curso-R no Telegram: <a href="https://t.me/r6cursor" class="uri">https://t.me/r6cursor</a></p></li>
-<li><p>Grupo R Brasil no Telegram: <a href="https://t.me/rbrasiloficial" class="uri">https://t.me/rbrasiloficial</a></p></li>
-</ul>
-<p><img src="assets/img/welcome_to_rstats_twitter.png" width="1004" style="display: block; margin: auto;" /></p>
-</div>
-<div id="a-curso-r" class="section level4 unnumbered">
-<h4>A Curso-R</h4>
-<p>A Curso-R é o braço de Educação da R6 Consultoria, uma empresa de treinamentos e consultoria em Ciência de Dados e linguagem de programação R. Surgimos em 2015, com cursos de introdução ao R no Programa de Cursos de Verão do Instituto de Matemática e Estatística da Universidade de São Paulo (IME-USP).</p>
-<ul>
-<li><p>Conheça os nossos cursos: <a href="https://www.curso-r.com/cursos/" class="uri">https://www.curso-r.com/cursos/</a></p></li>
-<li><p>Conheça o nosso blog: <a href="https://www.curso-r.com/blog/" class="uri">https://www.curso-r.com/blog/</a></p></li>
-<li><p>Conheça o restante do nosso material: <a href="https://www.curso-r.com/material/" class="uri">https://www.curso-r.com/material/</a></p></li>
-<li><p>Saiba mais sobre a Curso-R: <a href="https://www.curso-r.com/sobre/" class="uri">https://www.curso-r.com/sobre/</a></p></li>
-</ul>
+<div id="haven" class="section level2">
+<h2><span class="header-section-number">5.3</span> haven</h2>
+<p>Para ler arquivos gerados por outros softwares, como SPSS, SAS e STATA, você pode usar as funções do pacote <code>haven</code>. Este pacote faz parte do <code>tidyverse</code> e é um wrapper da biblioteca ReadStat, escrita em C.</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="5-3-haven.html#cb133-1"></a><span class="kw">library</span>(haven)</span>
+<span id="cb133-2"><a href="5-3-haven.html#cb133-2"></a></span>
+<span id="cb133-3"><a href="5-3-haven.html#cb133-3"></a>imdb_sas &lt;-<span class="st"> </span><span class="kw">read_sas</span>(<span class="st">&quot;assets/data/imdb.sas7bdat&quot;</span>)</span>
+<span id="cb133-4"><a href="5-3-haven.html#cb133-4"></a>imdb_spss &lt;-<span class="st"> </span><span class="kw">read_spss</span>(<span class="st">&quot;assets/data/imdb.sav&quot;</span>)</span>
+<span id="cb133-5"><a href="5-3-haven.html#cb133-5"></a>imdb_dta &lt;-<span class="st"> </span><span class="kw">read_dta</span>(<span class="st">&quot;assets/data/imdb.dta&quot;</span>)</span></code></pre></div>
+<p>É possível salvar ou escrever bases em SAS e STATA com as funções <code>write_sas</code> e <code>write_dta</code>.</p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="5-3-haven.html#cb134-1"></a><span class="kw">write_dta</span>(mtcars, <span class="st">&#39;assets/data/mtcars.dta&#39;</span>)</span></code></pre></div>
+<p>Quando importamos arquivos gerados pelo SAS SPSS ou STATA para o R, os rótulos de uma variável podem não ser importados de forma correta. O pacote <code>haven</code> tem uma soluçao para este problema.</p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="5-3-haven.html#cb135-1"></a>x &lt;-<span class="st"> </span><span class="kw">labelled</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="kw">c</span>(<span class="dt">Ruim =</span> <span class="dv">1</span>, <span class="dt">Bom =</span> <span class="dv">2</span>, <span class="dt">Otimo =</span> <span class="dv">3</span>))</span></code></pre></div>
+<p><code>labelled()</code> adiciona rótulos à valores de uma variável. Para verificar quais são estes rótulos, podemos usar a função <code>print_labels()</code>.</p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="5-3-haven.html#cb136-1"></a><span class="kw">print_labels</span>(x)</span></code></pre></div>
+<pre><code>## 
+## Labels:
+##  value label
+##      1  Ruim
+##      2   Bom
+##      3 Otimo</code></pre>
+<p>Existe uma função similar a <code>labelled()</code>, exclusiva para o SPSS, que além de rotular as variáveis, também defini quais símbolos representam valores faltantes, dado que em SPSS pode haver mais de um tipo de <em>missing</em>.</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="5-3-haven.html#cb138-1"></a>x1 &lt;-<span class="st"> </span><span class="kw">labelled_spss</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">4</span>), <span class="kw">c</span>(<span class="dt">Ruim =</span> <span class="dv">1</span>,<span class="dt">Bom =</span> <span class="dv">2</span>, <span class="dt">Otimo =</span> <span class="dv">3</span>), <span class="dt">na_values =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">4</span>))</span>
+<span id="cb138-2"><a href="5-3-haven.html#cb138-2"></a>    </span>
+<span id="cb138-3"><a href="5-3-haven.html#cb138-3"></a><span class="kw">is.na</span>(x1)</span></code></pre></div>
+<pre><code>## [1] FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE</code></pre>
+<p>Agora que já definimos os <em>missings</em> “especiais”, podemos transformá-los no <em>missing</em> padrão do R, representado pelo símbolo <em>NA</em>.</p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="5-3-haven.html#cb140-1"></a>x1 &lt;-<span class="st"> </span><span class="kw">zap_missing</span>(x1)</span>
+<span id="cb140-2"><a href="5-3-haven.html#cb140-2"></a>x1</span></code></pre></div>
+<pre><code>## &lt;Labelled double&gt;
+## [1]  1  3 NA  2  2  1 NA  2 NA
+## 
+## Labels:
+##  value label
+##      1  Ruim
+##      2   Bom
+##      3 Otimo</code></pre>
+<p>Existem outras funções <code>zap_</code> interessantes no <a href="https://cran.r-project.org/web/packages/haven/haven.pdf">pacote</a>.</p>
+<p>Após rotular os valores do vetor, podemos convertê-los, por exemplo, em fator. Para isso, usamos uma função do pacote <code>haven</code>.
+A função base <code>as.factor()</code> também poderia ser usada, mas quando a usamos, os rótulos não são considerados.</p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="5-3-haven.html#cb142-1"></a>x_base &lt;-<span class="st"> </span>base<span class="op">::</span><span class="kw">as.factor</span>(x)</span>
+<span id="cb142-2"><a href="5-3-haven.html#cb142-2"></a><span class="kw">levels</span>(x_base)</span></code></pre></div>
+<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot;</code></pre>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="5-3-haven.html#cb144-1"></a>x_factor &lt;-<span class="st"> </span>haven<span class="op">::</span><span class="kw">as_factor</span>(x)</span>
+<span id="cb144-2"><a href="5-3-haven.html#cb144-2"></a><span class="kw">levels</span>(x_factor)</span></code></pre></div>
+<pre><code>## [1] &quot;Ruim&quot;  &quot;Bom&quot;   &quot;Otimo&quot;</code></pre>
 
 </div>
-</div>
+<!-- </div> -->
 <hr/>
 <footer>
 <a href="https://curso-r.com" target="_blank"><img src="https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width="15%", alt="Curso-R"/></a>
@@ -324,8 +329,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="1-instalacao.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="5-2-readxl.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="6-pipe.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

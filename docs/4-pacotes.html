@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Ciência de Dados em R</title>
+  <title>Capítulo 4 Pacotes | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Ciência de Dados em R" />
+  <meta property="og:title" content="Capítulo 4 Pacotes | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Ciência de Dados em R" />
+  <meta name="twitter:title" content="Capítulo 4 Pacotes | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-
-<link rel="next" href="1-instalacao.html"/>
+<link rel="prev" href="3-13-outros-tópicos.html"/>
+<link rel="next" href="4-1-instalação-de-pacotes.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -272,48 +272,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Ciência de Dados em R</h1>
-<p class="author"><em>Curso-R</em></p>
-<p class="date"><em>Última atualização: 22/05/2020</em></p>
-</div>
-<div id="sobre" class="section level1 unnumbered">
-<h1>Sobre</h1>
-<p>Este livro está em <strong>construção</strong> e em <strong>revisão aberta</strong>. Fique à vontade para corrigir qualquer tipo de erro que encontrar no nosso material.</p>
-<p>Todo o conteúdo deste livro é gratuito e aberto.</p>
-<div id="o-r-e-o-rstudio" class="section level4 unnumbered">
-<h4>O R e o RStudio</h4>
-<p>O R é uma linguagem de programação <em>open source</em> para análise de dados que fornece uma grande variedade de ferramentas estatísticas e gráficas.</p>
-<p>O RStudio é o ambiente de desenvolvimento mais utilizado para programação em R. Ele possui diversas ferramentas que facilitam a utilização do R para se fazer análise de dados.</p>
-</div>
-<div id="este-livro" class="section level4 unnumbered">
-<h4>Este livro</h4>
-<p>Este livro tem como objetivo guiar o leitor por todas as etapas de uma análise de dados, utilizando o R como ferramenta.</p>
-<p><img src="assets/img/environmental-data-science-r4ds-general.png" width="2400" style="display: block; margin: auto;" /></p>
-</div>
-<div id="comunidade" class="section level4 unnumbered">
-<h4>Comunidade</h4>
-<p>Seja bem-vinda(o) ao #rstats.</p>
-<p>Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e participe dos grupos e comunidades de programadores.</p>
-<ul>
-<li><p>Comunidade RLadies: <a href="https://benubah.github.io/r-community-explorer/rladies.html" class="uri">https://benubah.github.io/r-community-explorer/rladies.html</a></p></li>
-<li><p>Fórum de dúvidas da Curso-R: <a href="https://discourse.curso-r.com/" class="uri">https://discourse.curso-r.com/</a></p></li>
-<li><p>Grupo de divulgação da Curso-R no Telegram: <a href="https://t.me/r6cursor" class="uri">https://t.me/r6cursor</a></p></li>
-<li><p>Grupo R Brasil no Telegram: <a href="https://t.me/rbrasiloficial" class="uri">https://t.me/rbrasiloficial</a></p></li>
-</ul>
-<p><img src="assets/img/welcome_to_rstats_twitter.png" width="1004" style="display: block; margin: auto;" /></p>
-</div>
-<div id="a-curso-r" class="section level4 unnumbered">
-<h4>A Curso-R</h4>
-<p>A Curso-R é o braço de Educação da R6 Consultoria, uma empresa de treinamentos e consultoria em Ciência de Dados e linguagem de programação R. Surgimos em 2015, com cursos de introdução ao R no Programa de Cursos de Verão do Instituto de Matemática e Estatística da Universidade de São Paulo (IME-USP).</p>
-<ul>
-<li><p>Conheça os nossos cursos: <a href="https://www.curso-r.com/cursos/" class="uri">https://www.curso-r.com/cursos/</a></p></li>
-<li><p>Conheça o nosso blog: <a href="https://www.curso-r.com/blog/" class="uri">https://www.curso-r.com/blog/</a></p></li>
-<li><p>Conheça o restante do nosso material: <a href="https://www.curso-r.com/material/" class="uri">https://www.curso-r.com/material/</a></p></li>
-<li><p>Saiba mais sobre a Curso-R: <a href="https://www.curso-r.com/sobre/" class="uri">https://www.curso-r.com/sobre/</a></p></li>
-</ul>
-
-</div>
+<div id="pacotes" class="section level1">
+<h1><span class="header-section-number">Capítulo 4</span> Pacotes</h1>
+<p>Um pacote é um conjunto de funções que têm como objetivo resolver um problema específico. São eles que deixam o R poderoso, capaz de enfrentar qualquer tarefa de análise de dados. Assim, fique bastante à vontade para instalar e atualizar muitos e muitos pacotes ao longo da sua experiência com o R.</p>
+<p>O legal é que qualquer pessoa pode fazer um novo pacote e disponibilizar para a comunidade, o que acelera bastante o desenvolvemento da ferramenta. Dificilmente você vai fazer uma análise apenas com as funções básicas do R e dificilmente não vai existir um pacote com as funções que você precisa.</p>
 </div>
 <hr/>
 <footer>
@@ -324,8 +286,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="1-instalacao.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="3-13-outros-tópicos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="4-1-instalação-de-pacotes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Ciência de Dados em R</title>
+  <title>3.5 Classes | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Ciência de Dados em R" />
+  <meta property="og:title" content="3.5 Classes | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Ciência de Dados em R" />
+  <meta name="twitter:title" content="3.5 Classes | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-
-<link rel="next" href="1-instalacao.html"/>
+<link rel="prev" href="3-4-data-frames.html"/>
+<link rel="next" href="3-6-vetores.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -272,48 +272,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Ciência de Dados em R</h1>
-<p class="author"><em>Curso-R</em></p>
-<p class="date"><em>Última atualização: 22/05/2020</em></p>
-</div>
-<div id="sobre" class="section level1 unnumbered">
-<h1>Sobre</h1>
-<p>Este livro está em <strong>construção</strong> e em <strong>revisão aberta</strong>. Fique à vontade para corrigir qualquer tipo de erro que encontrar no nosso material.</p>
-<p>Todo o conteúdo deste livro é gratuito e aberto.</p>
-<div id="o-r-e-o-rstudio" class="section level4 unnumbered">
-<h4>O R e o RStudio</h4>
-<p>O R é uma linguagem de programação <em>open source</em> para análise de dados que fornece uma grande variedade de ferramentas estatísticas e gráficas.</p>
-<p>O RStudio é o ambiente de desenvolvimento mais utilizado para programação em R. Ele possui diversas ferramentas que facilitam a utilização do R para se fazer análise de dados.</p>
-</div>
-<div id="este-livro" class="section level4 unnumbered">
-<h4>Este livro</h4>
-<p>Este livro tem como objetivo guiar o leitor por todas as etapas de uma análise de dados, utilizando o R como ferramenta.</p>
-<p><img src="assets/img/environmental-data-science-r4ds-general.png" width="2400" style="display: block; margin: auto;" /></p>
-</div>
-<div id="comunidade" class="section level4 unnumbered">
-<h4>Comunidade</h4>
-<p>Seja bem-vinda(o) ao #rstats.</p>
-<p>Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e participe dos grupos e comunidades de programadores.</p>
+<div id="classes" class="section level2">
+<h2><span class="header-section-number">3.5</span> Classes</h2>
+<p>A classe de um objeto é muito importante dentro do R. É a partir dela que as funções e operadores conseguem saber exatamente o que fazer com um objeto.</p>
+<p>Por exemplo, podemos somar dois números, mas não conseguimos somar duas letras (texto):</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="3-5-classes.html#cb14-1"></a><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb14-2"><a href="3-5-classes.html#cb14-2"></a><span class="co">## [1] 2</span></span>
+<span id="cb14-3"><a href="3-5-classes.html#cb14-3"></a></span>
+<span id="cb14-4"><a href="3-5-classes.html#cb14-4"></a></span>
+<span id="cb14-5"><a href="3-5-classes.html#cb14-5"></a><span class="st">&quot;a&quot;</span> <span class="op">+</span><span class="st"> &quot;b&quot;</span></span>
+<span id="cb14-6"><a href="3-5-classes.html#cb14-6"></a><span class="co">## Error in &quot;a&quot; + &quot;b&quot;: non-numeric argument to binary operator</span></span></code></pre></div>
+<p>O operador <code>+</code> verifica que <code>"a"</code> e <code>"b"</code> não são números (ou que a classe deles não é numérica) e devolve uma mensagem de erro informando isso.</p>
+<p>Observe que para criar texto no R, colocamos os caracteres entre aspas. As aspas servem para diferenciar <em>nomes</em> (objetos, funções, pacotes) de <em>textos</em> (letras e palavras). Os textos são muito comuns em variáveis categóricas.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="3-5-classes.html#cb15-1"></a>a &lt;-<span class="st"> </span><span class="dv">10</span></span>
+<span id="cb15-2"><a href="3-5-classes.html#cb15-2"></a></span>
+<span id="cb15-3"><a href="3-5-classes.html#cb15-3"></a><span class="co"># O objeto `a`, sem aspas</span></span>
+<span id="cb15-4"><a href="3-5-classes.html#cb15-4"></a>a</span>
+<span id="cb15-5"><a href="3-5-classes.html#cb15-5"></a><span class="co">## [1] 10</span></span>
+<span id="cb15-6"><a href="3-5-classes.html#cb15-6"></a></span>
+<span id="cb15-7"><a href="3-5-classes.html#cb15-7"></a><span class="co"># A letra (texto) `a`, com aspas</span></span>
+<span id="cb15-8"><a href="3-5-classes.html#cb15-8"></a><span class="st">&quot;a&quot;</span></span>
+<span id="cb15-9"><a href="3-5-classes.html#cb15-9"></a><span class="co">## [1] &quot;a&quot;</span></span></code></pre></div>
+<p>Para saber a classe de um objeto, basta rodarmos <code>class(nome-do-objeto)</code>.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="3-5-classes.html#cb16-1"></a>x &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb16-2"><a href="3-5-classes.html#cb16-2"></a><span class="kw">class</span>(x)</span>
+<span id="cb16-3"><a href="3-5-classes.html#cb16-3"></a><span class="co">## [1] &quot;numeric&quot;</span></span>
+<span id="cb16-4"><a href="3-5-classes.html#cb16-4"></a></span>
+<span id="cb16-5"><a href="3-5-classes.html#cb16-5"></a>y &lt;-<span class="st"> &quot;a&quot;</span></span>
+<span id="cb16-6"><a href="3-5-classes.html#cb16-6"></a><span class="kw">class</span>(y)</span>
+<span id="cb16-7"><a href="3-5-classes.html#cb16-7"></a><span class="co">## [1] &quot;character&quot;</span></span>
+<span id="cb16-8"><a href="3-5-classes.html#cb16-8"></a></span>
+<span id="cb16-9"><a href="3-5-classes.html#cb16-9"></a><span class="kw">class</span>(mtcars)</span>
+<span id="cb16-10"><a href="3-5-classes.html#cb16-10"></a><span class="co">## [1] &quot;data.frame&quot;</span></span></code></pre></div>
+<p>As classes mais básicas dentro do R são:</p>
 <ul>
-<li><p>Comunidade RLadies: <a href="https://benubah.github.io/r-community-explorer/rladies.html" class="uri">https://benubah.github.io/r-community-explorer/rladies.html</a></p></li>
-<li><p>Fórum de dúvidas da Curso-R: <a href="https://discourse.curso-r.com/" class="uri">https://discourse.curso-r.com/</a></p></li>
-<li><p>Grupo de divulgação da Curso-R no Telegram: <a href="https://t.me/r6cursor" class="uri">https://t.me/r6cursor</a></p></li>
-<li><p>Grupo R Brasil no Telegram: <a href="https://t.me/rbrasiloficial" class="uri">https://t.me/rbrasiloficial</a></p></li>
+<li><em>numeric</em></li>
+<li><em>character</em></li>
+<li><em>logical</em></li>
 </ul>
-<p><img src="assets/img/welcome_to_rstats_twitter.png" width="1004" style="display: block; margin: auto;" /></p>
-</div>
-<div id="a-curso-r" class="section level4 unnumbered">
-<h4>A Curso-R</h4>
-<p>A Curso-R é o braço de Educação da R6 Consultoria, uma empresa de treinamentos e consultoria em Ciência de Dados e linguagem de programação R. Surgimos em 2015, com cursos de introdução ao R no Programa de Cursos de Verão do Instituto de Matemática e Estatística da Universidade de São Paulo (IME-USP).</p>
-<ul>
-<li><p>Conheça os nossos cursos: <a href="https://www.curso-r.com/cursos/" class="uri">https://www.curso-r.com/cursos/</a></p></li>
-<li><p>Conheça o nosso blog: <a href="https://www.curso-r.com/blog/" class="uri">https://www.curso-r.com/blog/</a></p></li>
-<li><p>Conheça o restante do nosso material: <a href="https://www.curso-r.com/material/" class="uri">https://www.curso-r.com/material/</a></p></li>
-<li><p>Saiba mais sobre a Curso-R: <a href="https://www.curso-r.com/sobre/" class="uri">https://www.curso-r.com/sobre/</a></p></li>
-</ul>
-
-</div>
+<p>Veja alguns exemplos:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="3-5-classes.html#cb17-1"></a><span class="co"># numeric</span></span>
+<span id="cb17-2"><a href="3-5-classes.html#cb17-2"></a><span class="dv">1</span></span>
+<span id="cb17-3"><a href="3-5-classes.html#cb17-3"></a><span class="fl">0.10</span></span>
+<span id="cb17-4"><a href="3-5-classes.html#cb17-4"></a><span class="fl">0.95</span></span>
+<span id="cb17-5"><a href="3-5-classes.html#cb17-5"></a>pi</span>
+<span id="cb17-6"><a href="3-5-classes.html#cb17-6"></a></span>
+<span id="cb17-7"><a href="3-5-classes.html#cb17-7"></a><span class="co"># characters</span></span>
+<span id="cb17-8"><a href="3-5-classes.html#cb17-8"></a><span class="st">&quot;a&quot;</span></span>
+<span id="cb17-9"><a href="3-5-classes.html#cb17-9"></a><span class="st">&quot;1&quot;</span></span>
+<span id="cb17-10"><a href="3-5-classes.html#cb17-10"></a><span class="st">&quot;positivo&quot;</span></span>
+<span id="cb17-11"><a href="3-5-classes.html#cb17-11"></a></span>
+<span id="cb17-12"><a href="3-5-classes.html#cb17-12"></a><span class="co"># logical</span></span>
+<span id="cb17-13"><a href="3-5-classes.html#cb17-13"></a><span class="ot">TRUE</span></span>
+<span id="cb17-14"><a href="3-5-classes.html#cb17-14"></a><span class="ot">FALSE</span></span></code></pre></div>
+<p>Um objeto de qualquer uma dessas classes é chamado de <strong>objeto atômico</strong>.</p>
+<p>Esse nome se deve ao fato de essas classes não se misturarem, isto é, para um objeto ter a classe <code>numeric</code>, por exemplo, todos os seus valores precisam ser numéricos.</p>
+<p>Mas como atribuir mais de um valor a um mesmo objeto? Para isso, precisamos criar <strong>vetores</strong>.</p>
 </div>
 <hr/>
 <footer>
@@ -324,8 +338,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="1-instalacao.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="3-4-data-frames.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="3-6-vetores.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

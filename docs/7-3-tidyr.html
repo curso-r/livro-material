@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Ciência de Dados em R</title>
+  <title>7.3 O pacote tidyr | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Ciência de Dados em R" />
+  <meta property="og:title" content="7.3 O pacote tidyr | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Ciência de Dados em R" />
+  <meta name="twitter:title" content="7.3 O pacote tidyr | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-
-<link rel="next" href="1-instalacao.html"/>
+<link rel="prev" href="7-2-dplyr.html"/>
+<link rel="next" href="8-graficos.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -272,49 +272,127 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Ciência de Dados em R</h1>
-<p class="author"><em>Curso-R</em></p>
-<p class="date"><em>Última atualização: 22/05/2020</em></p>
+<div id="tidyr" class="section level2">
+<h2><span class="header-section-number">7.3</span> O pacote tidyr</h2>
+<p>O pacote <code>tidyr</code> dispõe de funções úteis para deixar os seus dados no formato que você precisa para a análise. Na maioria das vezes, utilizamos para deixá-los <em>tidy</em>. Outras, precisamos “bagunçá-los” um pouco para poder aplicar alguma função específica.</p>
+<p>As principais funções deste pacote são a <code>gather()</code> e a <code>spread()</code></p>
+<hr />
+<div id="gather" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> <code>gather()</code></h3>
+<p>A função <code>gather()</code> “empilha” o banco de dados. Ela é utilizada principalmente quando as colunas da base não representam nomes de variáveis, mas sim seus valores.</p>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="7-3-tidyr.html#cb221-1"></a><span class="kw">library</span>(tidyr)</span>
+<span id="cb221-2"><a href="7-3-tidyr.html#cb221-2"></a></span>
+<span id="cb221-3"><a href="7-3-tidyr.html#cb221-3"></a>imdb &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_rds</span>(<span class="st">&quot;assets/data/imdb.rds&quot;</span>)</span>
+<span id="cb221-4"><a href="7-3-tidyr.html#cb221-4"></a></span>
+<span id="cb221-5"><a href="7-3-tidyr.html#cb221-5"></a>imdb_gather &lt;-<span class="st"> </span>imdb <span class="op">%&gt;%</span></span>
+<span id="cb221-6"><a href="7-3-tidyr.html#cb221-6"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">n</span>()) <span class="op">%&gt;%</span></span>
+<span id="cb221-7"><a href="7-3-tidyr.html#cb221-7"></a><span class="st">  </span><span class="kw">gather</span>(</span>
+<span id="cb221-8"><a href="7-3-tidyr.html#cb221-8"></a>    <span class="dt">key =</span> <span class="st">&quot;importancia_ator&quot;</span>,</span>
+<span id="cb221-9"><a href="7-3-tidyr.html#cb221-9"></a>    <span class="dt">value =</span> <span class="st">&quot;nome_ator&quot;</span>,</span>
+<span id="cb221-10"><a href="7-3-tidyr.html#cb221-10"></a>    ator_<span class="dv">1</span>, ator_<span class="dv">2</span>, ator_<span class="dv">3</span></span>
+<span id="cb221-11"><a href="7-3-tidyr.html#cb221-11"></a>  ) <span class="op">%&gt;%</span></span>
+<span id="cb221-12"><a href="7-3-tidyr.html#cb221-12"></a><span class="st">  </span><span class="kw">select</span>(nome_ator, importancia_ator, <span class="kw">everything</span>())</span>
+<span id="cb221-13"><a href="7-3-tidyr.html#cb221-13"></a></span>
+<span id="cb221-14"><a href="7-3-tidyr.html#cb221-14"></a>imdb_gather</span></code></pre></div>
+<pre><code>## # A tibble: 11,421 x 15
+##    nome_ator importancia_ator titulo   ano diretor duracao cor   generos pais 
+##    &lt;chr&gt;     &lt;chr&gt;            &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;
+##  1 CCH Poun… ator_1           Avata…  2009 James …     178 Color Action… USA  
+##  2 Johnny D… ator_1           Pirat…  2007 Gore V…     169 Color Action… USA  
+##  3 Tom Hardy ator_1           The D…  2012 Christ…     164 Color Action… USA  
+##  4 Daryl Sa… ator_1           John …  2012 Andrew…     132 Color Action… USA  
+##  5 J.K. Sim… ator_1           Spide…  2007 Sam Ra…     156 Color Action… USA  
+##  6 Brad Gar… ator_1           Tangl…  2010 Nathan…     100 Color Advent… USA  
+##  7 Chris He… ator_1           Aveng…  2015 Joss W…     141 Color Action… USA  
+##  8 Henry Ca… ator_1           Batma…  2016 Zack S…     183 Color Action… USA  
+##  9 Kevin Sp… ator_1           Super…  2006 Bryan …     169 Color Action… USA  
+## 10 Johnny D… ator_1           Pirat…  2006 Gore V…     151 Color Action… USA  
+## # … with 11,411 more rows, and 6 more variables: classificacao &lt;chr&gt;,
+## #   orcamento &lt;int&gt;, receita &lt;int&gt;, nota_imdb &lt;dbl&gt;, likes_facebook &lt;int&gt;,
+## #   id &lt;int&gt;</code></pre>
+<hr />
 </div>
-<div id="sobre" class="section level1 unnumbered">
-<h1>Sobre</h1>
-<p>Este livro está em <strong>construção</strong> e em <strong>revisão aberta</strong>. Fique à vontade para corrigir qualquer tipo de erro que encontrar no nosso material.</p>
-<p>Todo o conteúdo deste livro é gratuito e aberto.</p>
-<div id="o-r-e-o-rstudio" class="section level4 unnumbered">
-<h4>O R e o RStudio</h4>
-<p>O R é uma linguagem de programação <em>open source</em> para análise de dados que fornece uma grande variedade de ferramentas estatísticas e gráficas.</p>
-<p>O RStudio é o ambiente de desenvolvimento mais utilizado para programação em R. Ele possui diversas ferramentas que facilitam a utilização do R para se fazer análise de dados.</p>
+<div id="spread" class="section level3">
+<h3><span class="header-section-number">7.3.2</span> <code>spread()</code></h3>
+<p>A função <code>spread()</code> é essencialmente o inverso da <code>gather()</code>. Ela espalha uma variável nas colunas.</p>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="7-3-tidyr.html#cb223-1"></a>imdb_spread &lt;-<span class="st"> </span>imdb_gather <span class="op">%&gt;%</span></span>
+<span id="cb223-2"><a href="7-3-tidyr.html#cb223-2"></a><span class="st">  </span><span class="kw">spread</span>(</span>
+<span id="cb223-3"><a href="7-3-tidyr.html#cb223-3"></a>    <span class="dt">key =</span> importancia_ator,</span>
+<span id="cb223-4"><a href="7-3-tidyr.html#cb223-4"></a>    <span class="dt">value =</span> nome_ator</span>
+<span id="cb223-5"><a href="7-3-tidyr.html#cb223-5"></a>  )</span>
+<span id="cb223-6"><a href="7-3-tidyr.html#cb223-6"></a></span>
+<span id="cb223-7"><a href="7-3-tidyr.html#cb223-7"></a>imdb_spread</span></code></pre></div>
+<pre><code>## # A tibble: 3,807 x 16
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
+##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
+##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
+##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
+##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
+##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
+##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
+##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
+##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
+##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
+## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
+## # … with 3,797 more rows, and 7 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
+## #   likes_facebook &lt;int&gt;, id &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
+<hr />
 </div>
-<div id="este-livro" class="section level4 unnumbered">
-<h4>Este livro</h4>
-<p>Este livro tem como objetivo guiar o leitor por todas as etapas de uma análise de dados, utilizando o R como ferramenta.</p>
-<p><img src="assets/img/environmental-data-science-r4ds-general.png" width="2400" style="display: block; margin: auto;" /></p>
-</div>
-<div id="comunidade" class="section level4 unnumbered">
-<h4>Comunidade</h4>
-<p>Seja bem-vinda(o) ao #rstats.</p>
-<p>Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e participe dos grupos e comunidades de programadores.</p>
+<div id="outras-funções-do-tidyr" class="section level3">
+<h3><span class="header-section-number">7.3.3</span> Outras funções do <code>tidyr</code></h3>
 <ul>
-<li><p>Comunidade RLadies: <a href="https://benubah.github.io/r-community-explorer/rladies.html" class="uri">https://benubah.github.io/r-community-explorer/rladies.html</a></p></li>
-<li><p>Fórum de dúvidas da Curso-R: <a href="https://discourse.curso-r.com/" class="uri">https://discourse.curso-r.com/</a></p></li>
-<li><p>Grupo de divulgação da Curso-R no Telegram: <a href="https://t.me/r6cursor" class="uri">https://t.me/r6cursor</a></p></li>
-<li><p>Grupo R Brasil no Telegram: <a href="https://t.me/rbrasiloficial" class="uri">https://t.me/rbrasiloficial</a></p></li>
+<li><p>A função <code>unite()</code> junta duas ou mais colunas usando algum separador (<code>_</code>, por exemplo).</p></li>
+<li><p>A função <code>separate()</code> faz o inverso de <code>unite()</code>: transforma uma coluna em várias usando um separador.</p></li>
 </ul>
-<p><img src="assets/img/welcome_to_rstats_twitter.png" width="1004" style="display: block; margin: auto;" /></p>
-</div>
-<div id="a-curso-r" class="section level4 unnumbered">
-<h4>A Curso-R</h4>
-<p>A Curso-R é o braço de Educação da R6 Consultoria, uma empresa de treinamentos e consultoria em Ciência de Dados e linguagem de programação R. Surgimos em 2015, com cursos de introdução ao R no Programa de Cursos de Verão do Instituto de Matemática e Estatística da Universidade de São Paulo (IME-USP).</p>
-<ul>
-<li><p>Conheça os nossos cursos: <a href="https://www.curso-r.com/cursos/" class="uri">https://www.curso-r.com/cursos/</a></p></li>
-<li><p>Conheça o nosso blog: <a href="https://www.curso-r.com/blog/" class="uri">https://www.curso-r.com/blog/</a></p></li>
-<li><p>Conheça o restante do nosso material: <a href="https://www.curso-r.com/material/" class="uri">https://www.curso-r.com/material/</a></p></li>
-<li><p>Saiba mais sobre a Curso-R: <a href="https://www.curso-r.com/sobre/" class="uri">https://www.curso-r.com/sobre/</a></p></li>
-</ul>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="7-3-tidyr.html#cb225-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb225-2"><a href="7-3-tidyr.html#cb225-2"></a><span class="st">  </span><span class="kw">unite</span>(</span>
+<span id="cb225-3"><a href="7-3-tidyr.html#cb225-3"></a>    <span class="dt">col =</span> <span class="st">&quot;titulo_diretor&quot;</span>,</span>
+<span id="cb225-4"><a href="7-3-tidyr.html#cb225-4"></a>    titulo, diretor,</span>
+<span id="cb225-5"><a href="7-3-tidyr.html#cb225-5"></a>    <span class="dt">sep =</span> <span class="st">&quot; - &quot;</span></span>
+<span id="cb225-6"><a href="7-3-tidyr.html#cb225-6"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 3,807 x 14
+##    titulo_diretor   ano duracao cor   generos pais  classificacao orcamento
+##    &lt;chr&gt;          &lt;int&gt;   &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
+##  1 Avatar  - Jam…  2009     178 Color Action… USA   A partir de … 237000000
+##  2 Pirates of th…  2007     169 Color Action… USA   A partir de … 300000000
+##  3 The Dark Knig…  2012     164 Color Action… USA   A partir de … 250000000
+##  4 John Carter  …  2012     132 Color Action… USA   A partir de … 263700000
+##  5 Spider-Man 3 …  2007     156 Color Action… USA   A partir de … 258000000
+##  6 Tangled  - Na…  2010     100 Color Advent… USA   Livre         260000000
+##  7 Avengers: Age…  2015     141 Color Action… USA   A partir de … 250000000
+##  8 Batman v Supe…  2016     183 Color Action… USA   A partir de … 250000000
+##  9 Superman Retu…  2006     169 Color Action… USA   A partir de … 209000000
+## 10 Pirates of th…  2006     151 Color Action… USA   A partir de … 225000000
+## # … with 3,797 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
+## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="7-3-tidyr.html#cb227-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb227-2"><a href="7-3-tidyr.html#cb227-2"></a><span class="st">  </span><span class="kw">separate</span>(</span>
+<span id="cb227-3"><a href="7-3-tidyr.html#cb227-3"></a>    <span class="dt">col =</span> generos,</span>
+<span id="cb227-4"><a href="7-3-tidyr.html#cb227-4"></a>    <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;genero_1&quot;</span>, <span class="st">&quot;genero_2&quot;</span>, <span class="st">&quot;genero_3&quot;</span>),</span>
+<span id="cb227-5"><a href="7-3-tidyr.html#cb227-5"></a>    <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">|&quot;</span>,</span>
+<span id="cb227-6"><a href="7-3-tidyr.html#cb227-6"></a>    <span class="dt">extra =</span> <span class="st">&quot;drop&quot;</span></span>
+<span id="cb227-7"><a href="7-3-tidyr.html#cb227-7"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 3,807 x 17
+##    titulo   ano diretor duracao cor   genero_1 genero_2 genero_3 pais 
+##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;
+##  1 Avata…  2009 James …     178 Color Action   Adventu… Fantasy  USA  
+##  2 Pirat…  2007 Gore V…     169 Color Action   Adventu… Fantasy  USA  
+##  3 The D…  2012 Christ…     164 Color Action   Thriller &lt;NA&gt;     USA  
+##  4 John …  2012 Andrew…     132 Color Action   Adventu… Sci-Fi   USA  
+##  5 Spide…  2007 Sam Ra…     156 Color Action   Adventu… Romance  USA  
+##  6 Tangl…  2010 Nathan…     100 Color Adventu… Animati… Comedy   USA  
+##  7 Aveng…  2015 Joss W…     141 Color Action   Adventu… Sci-Fi   USA  
+##  8 Batma…  2016 Zack S…     183 Color Action   Adventu… Sci-Fi   USA  
+##  9 Super…  2006 Bryan …     169 Color Action   Adventu… Sci-Fi   USA  
+## 10 Pirat…  2006 Gore V…     151 Color Action   Adventu… Fantasy  USA  
+## # … with 3,797 more rows, and 8 more variables: classificacao &lt;chr&gt;,
+## #   orcamento &lt;int&gt;, receita &lt;int&gt;, nota_imdb &lt;dbl&gt;, likes_facebook &lt;int&gt;,
+## #   ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 
 </div>
 </div>
+<!-- </div> -->
 <hr/>
 <footer>
 <a href="https://curso-r.com" target="_blank"><img src="https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width="15%", alt="Curso-R"/></a>
@@ -324,8 +402,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="1-instalacao.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="7-2-dplyr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="8-graficos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

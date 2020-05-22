@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Ciência de Dados em R</title>
+  <title>3.3 Objetos | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Ciência de Dados em R" />
+  <meta property="og:title" content="3.3 Objetos | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Ciência de Dados em R" />
+  <meta name="twitter:title" content="3.3 Objetos | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-
-<link rel="next" href="1-instalacao.html"/>
+<link rel="prev" href="3-2-r-como-calculadora.html"/>
+<link rel="next" href="3-4-data-frames.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -272,48 +272,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Ciência de Dados em R</h1>
-<p class="author"><em>Curso-R</em></p>
-<p class="date"><em>Última atualização: 22/05/2020</em></p>
+<div id="objetos" class="section level2">
+<h2><span class="header-section-number">3.3</span> Objetos</h2>
+<p>O R te permite salvar valores dentro de um <strong>objeto</strong>. Um objeto é simplesmente um nome que guarda um valor. Para criar um objeto, utilizamos o operador <code>&lt;-</code>.</p>
+<p>No exemplo abaixo, salvamos o valor <code>1</code> em <code>a</code>. Sempre que avaliarmos o objeto <code>a</code>, o R vai devolver o valor 1.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="3-3-objetos.html#cb10-1"></a><span class="co"># Salvando `1` em `a`</span></span>
+<span id="cb10-2"><a href="3-3-objetos.html#cb10-2"></a>a &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb10-3"><a href="3-3-objetos.html#cb10-3"></a></span>
+<span id="cb10-4"><a href="3-3-objetos.html#cb10-4"></a><span class="co"># Avaliando o objeto `a`</span></span>
+<span id="cb10-5"><a href="3-3-objetos.html#cb10-5"></a>a</span>
+<span id="cb10-6"><a href="3-3-objetos.html#cb10-6"></a><span class="co">## [1] 1</span></span></code></pre></div>
+<p>Existem algumas regras para dar nomes aos objetos. A mais importante é: o nome deve começar com uma letra<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. O nome pode conter números, mas não pode começar com números. Você pode usar pontos <code>.</code> e underlines <code>_</code> para separar palavras.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="3-3-objetos.html#cb11-1"></a><span class="co"># Permitido</span></span>
+<span id="cb11-2"><a href="3-3-objetos.html#cb11-2"></a></span>
+<span id="cb11-3"><a href="3-3-objetos.html#cb11-3"></a>x &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb11-4"><a href="3-3-objetos.html#cb11-4"></a>x1 &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb11-5"><a href="3-3-objetos.html#cb11-5"></a>objeto &lt;-<span class="st"> </span><span class="dv">3</span></span>
+<span id="cb11-6"><a href="3-3-objetos.html#cb11-6"></a>meu_objeto &lt;-<span class="st"> </span><span class="dv">4</span></span>
+<span id="cb11-7"><a href="3-3-objetos.html#cb11-7"></a>meu.objeto &lt;-<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb11-8"><a href="3-3-objetos.html#cb11-8"></a></span>
+<span id="cb11-9"><a href="3-3-objetos.html#cb11-9"></a><span class="co"># Não permitido</span></span>
+<span id="cb11-10"><a href="3-3-objetos.html#cb11-10"></a></span>
+<span id="cb11-11"><a href="3-3-objetos.html#cb11-11"></a>1x &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb11-12"><a href="3-3-objetos.html#cb11-12"></a>_objeto &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb11-13"><a href="3-3-objetos.html#cb11-13"></a>meu<span class="op">-</span>objeto &lt;-<span class="st"> </span><span class="dv">3</span></span></code></pre></div>
+<p><strong>Atenção!</strong></p>
+<p>O R <strong>diferencia letras maiúsculas e minúsculas</strong>, isto é, <code>b</code> é considerado um objeto diferente de <code>B</code>. Rode o exemplo abaixo e observe que dois objetos diferentes são criados no <strong>Environment</strong>.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="3-3-objetos.html#cb12-1"></a>b &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb12-2"><a href="3-3-objetos.html#cb12-2"></a>B &lt;-<span class="st"> </span><span class="dv">3</span></span>
+<span id="cb12-3"><a href="3-3-objetos.html#cb12-3"></a></span>
+<span id="cb12-4"><a href="3-3-objetos.html#cb12-4"></a>b</span>
+<span id="cb12-5"><a href="3-3-objetos.html#cb12-5"></a><span class="co">## [1] 2</span></span>
+<span id="cb12-6"><a href="3-3-objetos.html#cb12-6"></a>B</span>
+<span id="cb12-7"><a href="3-3-objetos.html#cb12-7"></a><span class="co">## [1] 3</span></span></code></pre></div>
+<p>O objeto mais importante para o cientista de dados é, claro, a base de dados. No R, uma base de dados é representa por objetos chamados de <em>data frames</em>. A seguir, vamos entender o que são esses objetos.</p>
 </div>
-<div id="sobre" class="section level1 unnumbered">
-<h1>Sobre</h1>
-<p>Este livro está em <strong>construção</strong> e em <strong>revisão aberta</strong>. Fique à vontade para corrigir qualquer tipo de erro que encontrar no nosso material.</p>
-<p>Todo o conteúdo deste livro é gratuito e aberto.</p>
-<div id="o-r-e-o-rstudio" class="section level4 unnumbered">
-<h4>O R e o RStudio</h4>
-<p>O R é uma linguagem de programação <em>open source</em> para análise de dados que fornece uma grande variedade de ferramentas estatísticas e gráficas.</p>
-<p>O RStudio é o ambiente de desenvolvimento mais utilizado para programação em R. Ele possui diversas ferramentas que facilitam a utilização do R para se fazer análise de dados.</p>
-</div>
-<div id="este-livro" class="section level4 unnumbered">
-<h4>Este livro</h4>
-<p>Este livro tem como objetivo guiar o leitor por todas as etapas de uma análise de dados, utilizando o R como ferramenta.</p>
-<p><img src="assets/img/environmental-data-science-r4ds-general.png" width="2400" style="display: block; margin: auto;" /></p>
-</div>
-<div id="comunidade" class="section level4 unnumbered">
-<h4>Comunidade</h4>
-<p>Seja bem-vinda(o) ao #rstats.</p>
-<p>Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e participe dos grupos e comunidades de programadores.</p>
-<ul>
-<li><p>Comunidade RLadies: <a href="https://benubah.github.io/r-community-explorer/rladies.html" class="uri">https://benubah.github.io/r-community-explorer/rladies.html</a></p></li>
-<li><p>Fórum de dúvidas da Curso-R: <a href="https://discourse.curso-r.com/" class="uri">https://discourse.curso-r.com/</a></p></li>
-<li><p>Grupo de divulgação da Curso-R no Telegram: <a href="https://t.me/r6cursor" class="uri">https://t.me/r6cursor</a></p></li>
-<li><p>Grupo R Brasil no Telegram: <a href="https://t.me/rbrasiloficial" class="uri">https://t.me/rbrasiloficial</a></p></li>
-</ul>
-<p><img src="assets/img/welcome_to_rstats_twitter.png" width="1004" style="display: block; margin: auto;" /></p>
-</div>
-<div id="a-curso-r" class="section level4 unnumbered">
-<h4>A Curso-R</h4>
-<p>A Curso-R é o braço de Educação da R6 Consultoria, uma empresa de treinamentos e consultoria em Ciência de Dados e linguagem de programação R. Surgimos em 2015, com cursos de introdução ao R no Programa de Cursos de Verão do Instituto de Matemática e Estatística da Universidade de São Paulo (IME-USP).</p>
-<ul>
-<li><p>Conheça os nossos cursos: <a href="https://www.curso-r.com/cursos/" class="uri">https://www.curso-r.com/cursos/</a></p></li>
-<li><p>Conheça o nosso blog: <a href="https://www.curso-r.com/blog/" class="uri">https://www.curso-r.com/blog/</a></p></li>
-<li><p>Conheça o restante do nosso material: <a href="https://www.curso-r.com/material/" class="uri">https://www.curso-r.com/material/</a></p></li>
-<li><p>Saiba mais sobre a Curso-R: <a href="https://www.curso-r.com/sobre/" class="uri">https://www.curso-r.com/sobre/</a></p></li>
-</ul>
-
-</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p>Ou com um ponto.<a href="3-3-objetos.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 <hr/>
 <footer>
@@ -324,8 +322,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="1-instalacao.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="3-2-r-como-calculadora.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="3-4-data-frames.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

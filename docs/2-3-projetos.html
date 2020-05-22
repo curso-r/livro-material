@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Ciência de Dados em R</title>
+  <title>2.3 Projetos | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Ciência de Dados em R" />
+  <meta property="og:title" content="2.3 Projetos | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Ciência de Dados em R" />
+  <meta name="twitter:title" content="2.3 Projetos | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-
-<link rel="next" href="1-instalacao.html"/>
+<link rel="prev" href="2-2-atalhos.html"/>
+<link rel="next" href="2-4-git-e-versionamento.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -272,48 +272,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Ciência de Dados em R</h1>
-<p class="author"><em>Curso-R</em></p>
-<p class="date"><em>Última atualização: 22/05/2020</em></p>
-</div>
-<div id="sobre" class="section level1 unnumbered">
-<h1>Sobre</h1>
-<p>Este livro está em <strong>construção</strong> e em <strong>revisão aberta</strong>. Fique à vontade para corrigir qualquer tipo de erro que encontrar no nosso material.</p>
-<p>Todo o conteúdo deste livro é gratuito e aberto.</p>
-<div id="o-r-e-o-rstudio" class="section level4 unnumbered">
-<h4>O R e o RStudio</h4>
-<p>O R é uma linguagem de programação <em>open source</em> para análise de dados que fornece uma grande variedade de ferramentas estatísticas e gráficas.</p>
-<p>O RStudio é o ambiente de desenvolvimento mais utilizado para programação em R. Ele possui diversas ferramentas que facilitam a utilização do R para se fazer análise de dados.</p>
-</div>
-<div id="este-livro" class="section level4 unnumbered">
-<h4>Este livro</h4>
-<p>Este livro tem como objetivo guiar o leitor por todas as etapas de uma análise de dados, utilizando o R como ferramenta.</p>
-<p><img src="assets/img/environmental-data-science-r4ds-general.png" width="2400" style="display: block; margin: auto;" /></p>
-</div>
-<div id="comunidade" class="section level4 unnumbered">
-<h4>Comunidade</h4>
-<p>Seja bem-vinda(o) ao #rstats.</p>
-<p>Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e participe dos grupos e comunidades de programadores.</p>
-<ul>
-<li><p>Comunidade RLadies: <a href="https://benubah.github.io/r-community-explorer/rladies.html" class="uri">https://benubah.github.io/r-community-explorer/rladies.html</a></p></li>
-<li><p>Fórum de dúvidas da Curso-R: <a href="https://discourse.curso-r.com/" class="uri">https://discourse.curso-r.com/</a></p></li>
-<li><p>Grupo de divulgação da Curso-R no Telegram: <a href="https://t.me/r6cursor" class="uri">https://t.me/r6cursor</a></p></li>
-<li><p>Grupo R Brasil no Telegram: <a href="https://t.me/rbrasiloficial" class="uri">https://t.me/rbrasiloficial</a></p></li>
-</ul>
-<p><img src="assets/img/welcome_to_rstats_twitter.png" width="1004" style="display: block; margin: auto;" /></p>
-</div>
-<div id="a-curso-r" class="section level4 unnumbered">
-<h4>A Curso-R</h4>
-<p>A Curso-R é o braço de Educação da R6 Consultoria, uma empresa de treinamentos e consultoria em Ciência de Dados e linguagem de programação R. Surgimos em 2015, com cursos de introdução ao R no Programa de Cursos de Verão do Instituto de Matemática e Estatística da Universidade de São Paulo (IME-USP).</p>
-<ul>
-<li><p>Conheça os nossos cursos: <a href="https://www.curso-r.com/cursos/" class="uri">https://www.curso-r.com/cursos/</a></p></li>
-<li><p>Conheça o nosso blog: <a href="https://www.curso-r.com/blog/" class="uri">https://www.curso-r.com/blog/</a></p></li>
-<li><p>Conheça o restante do nosso material: <a href="https://www.curso-r.com/material/" class="uri">https://www.curso-r.com/material/</a></p></li>
-<li><p>Saiba mais sobre a Curso-R: <a href="https://www.curso-r.com/sobre/" class="uri">https://www.curso-r.com/sobre/</a></p></li>
-</ul>
-
-</div>
+<div id="projetos" class="section level2">
+<h2><span class="header-section-number">2.3</span> Projetos</h2>
+<p>Uma funcionalidade muito importante do RStudio é a possibilidade de criar <strong>projetos</strong>.</p>
+<p>Um projeto nada mais é do que uma pasta no seu computador. Nessa pasta, estarão todos os arquivos que você usurá ou criará na sua análise.</p>
+<p>A principal razão de utilizarmos projetos é <strong>organização</strong>. Com eles, fica muito mais fácil importar bases de dados para dentro do R, criar análises reprodutíveis e compartilhar o nosso trabalho.</p>
+<blockquote>
+<p>Você que está começando agora no R, já se habitue a criar um novo projeto para cada nova análise que for fazer.</p>
+</blockquote>
+<p>Para criar um projeto, clique em <code>New Project...</code> no Menu <code>File</code>. Na caixa de diálogo que aparecerá, clique em <code>New Directory</code> para criar o projeto em uma nova pasta ou <code>Existing Directory</code> para criar em uma pasta existente.</p>
+<p>Se você tiver o <code>Git</code> instalado, você também pode usar projetos para conectar com repositórios do Github e outras plataformas de desenvolvimento. Para isso, basta clicar em <code>Version Control</code>.</p>
+<p><img src="assets/img/rstudio/projetos.png" width="266" style="display: block; margin: auto;" /></p>
+<p>Criando um projeto, o RStudio criará na pasta escolhida um arquivo <code>nome-do-projeto.Rproj</code>. Você pode usar esse arquivo para iniciar o RStudio já com o respectivo projeto aberto.</p>
+<p>Quando um projeto estiver aberto no RStudio, o seu nome aparecerá no canto superior direito da tela. Na aba <strong>Files</strong>, aparecerão todos os arquivos contidos no projeto.</p>
+<p><img src="assets/img/rstudio/exemplo-projeto-aberto.png" width="1440" style="display: block; margin: auto;" /></p>
+<p>Você pode criar livremente novas pastas dentro da pasta do projeto. Por padrão, o R sempre começará a procurar arquivos na pasta raiz do projeto (é a pasta que contem o <code>nome-do-projeto.Rproj</code>).</p>
+<p>Uma maneira fácil de navegar entre projetos é utilizar o menu disponibilizado quando clicamos no nome do projeto. Veja a figura a seguir.</p>
+<p><img src="assets/img/rstudio/exemplo-lista-projetos.png" width="1440" style="display: block; margin: auto;" /></p>
+<p>Nesse menu, além de podermos criar novos projetos ou abrir projetos já existentes, também temos um acesso rápido a projetos abertos recentemente. Basta clicar em qualquer um deles para trocar de projeto, isto é, deixar de trabalhar em uma análise e começar a trabalhar em outra.</p>
+<p>A seguir, apresentamos algumas estruturas de organização de projetos no RStudio.</p>
+<p><strong>Estrutura 1</strong>. Por extensão de arquivo.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="2-3-projetos.html#cb1-1"></a><span class="ex">nome_do_projeto/</span></span>
+<span id="cb1-2"><a href="2-3-projetos.html#cb1-2"></a>  <span class="ex">-</span> .Rprofile   <span class="co"># códigos para rodar assim que abrir o projeto</span></span>
+<span id="cb1-3"><a href="2-3-projetos.html#cb1-3"></a>  <span class="ex">-</span> R/          <span class="co"># Código R, organizado com a-carrega.R, b-prepara bd.R, c-vis.R, d-modela, ...</span></span>
+<span id="cb1-4"><a href="2-3-projetos.html#cb1-4"></a>  <span class="ex">-</span> RData/      <span class="co"># Dados em formato .RData</span></span>
+<span id="cb1-5"><a href="2-3-projetos.html#cb1-5"></a>  <span class="ex">-</span> csv/        <span class="co"># Dados em .csv</span></span>
+<span id="cb1-6"><a href="2-3-projetos.html#cb1-6"></a>  <span class="ex">-</span> png/        <span class="co"># gráficos em PNG</span></span>
+<span id="cb1-7"><a href="2-3-projetos.html#cb1-7"></a>  <span class="ex">-</span> nome_do_projeto.Rproj</span></code></pre></div>
+<p><strong>Estrutura 2</strong>. Típico projeto de análise estatística.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="2-3-projetos.html#cb2-1"></a><span class="ex">project/</span></span>
+<span id="cb2-2"><a href="2-3-projetos.html#cb2-2"></a>  <span class="ex">-</span> README.Rmd   <span class="co"># Descrição do pacote</span></span>
+<span id="cb2-3"><a href="2-3-projetos.html#cb2-3"></a>  <span class="ex">-</span> set-up.R     <span class="co"># Pacotes etc</span></span>
+<span id="cb2-4"><a href="2-3-projetos.html#cb2-4"></a>  <span class="ex">-</span> R/           <span class="co"># Código R, organizado com 0-load.R, 1-tidy.R, 2-vis.R, ...</span></span>
+<span id="cb2-5"><a href="2-3-projetos.html#cb2-5"></a>  <span class="ex">-</span> data/        <span class="co"># Dados (estruturados ou não)</span></span>
+<span id="cb2-6"><a href="2-3-projetos.html#cb2-6"></a>  <span class="ex">-</span> figures/     <span class="co"># gráficos (pode ficar dentro de output/)</span></span>
+<span id="cb2-7"><a href="2-3-projetos.html#cb2-7"></a>  <span class="ex">-</span> output/      <span class="co"># Relatórios em .Rmd, .tex etc</span></span>
+<span id="cb2-8"><a href="2-3-projetos.html#cb2-8"></a>  <span class="ex">-</span> project.Rproj</span></code></pre></div>
+<p><strong>Estrutura 3</strong>. Pacote do R.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="2-3-projetos.html#cb3-1"></a><span class="ex">project/</span></span>
+<span id="cb3-2"><a href="2-3-projetos.html#cb3-2"></a>  <span class="ex">-</span> README.md    <span class="co"># Descrição do pacote</span></span>
+<span id="cb3-3"><a href="2-3-projetos.html#cb3-3"></a>  <span class="ex">-</span> DESCRIPTION  <span class="co"># Metadados estruturados do pacote e dependências</span></span>
+<span id="cb3-4"><a href="2-3-projetos.html#cb3-4"></a>  <span class="ex">-</span> NAMESPACE    <span class="co"># importações e exportações do pacote</span></span>
+<span id="cb3-5"><a href="2-3-projetos.html#cb3-5"></a>  <span class="ex">-</span> vignettes/   <span class="co"># Relatórios em .Rmd</span></span>
+<span id="cb3-6"><a href="2-3-projetos.html#cb3-6"></a>  <span class="ex">-</span> R/           <span class="co"># Funções do R</span></span>
+<span id="cb3-7"><a href="2-3-projetos.html#cb3-7"></a>  <span class="ex">-</span> data/        <span class="co"># Dados estruturados (tidy data)</span></span>
+<span id="cb3-8"><a href="2-3-projetos.html#cb3-8"></a>  <span class="ex">-</span> data-raw/    <span class="co"># Dados não estruturados e arqs 0-load.R, 1-tidy.R, 2-vis.R, ...</span></span>
+<span id="cb3-9"><a href="2-3-projetos.html#cb3-9"></a>  <span class="ex">-</span> project.Rproj</span></code></pre></div>
 </div>
 <hr/>
 <footer>
@@ -324,8 +328,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="1-instalacao.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="2-2-atalhos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="2-4-git-e-versionamento.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

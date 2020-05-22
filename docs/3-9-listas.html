@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Ciência de Dados em R</title>
+  <title>3.9 Listas | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Ciência de Dados em R" />
+  <meta property="og:title" content="3.9 Listas | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Ciência de Dados em R" />
+  <meta name="twitter:title" content="3.9 Listas | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-
-<link rel="next" href="1-instalacao.html"/>
+<link rel="prev" href="3-8-valoresEspeciais.html"/>
+<link rel="next" href="3-10-mais-sobre-data-frames.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -272,48 +272,98 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Ciência de Dados em R</h1>
-<p class="author"><em>Curso-R</em></p>
-<p class="date"><em>Última atualização: 22/05/2020</em></p>
-</div>
-<div id="sobre" class="section level1 unnumbered">
-<h1>Sobre</h1>
-<p>Este livro está em <strong>construção</strong> e em <strong>revisão aberta</strong>. Fique à vontade para corrigir qualquer tipo de erro que encontrar no nosso material.</p>
-<p>Todo o conteúdo deste livro é gratuito e aberto.</p>
-<div id="o-r-e-o-rstudio" class="section level4 unnumbered">
-<h4>O R e o RStudio</h4>
-<p>O R é uma linguagem de programação <em>open source</em> para análise de dados que fornece uma grande variedade de ferramentas estatísticas e gráficas.</p>
-<p>O RStudio é o ambiente de desenvolvimento mais utilizado para programação em R. Ele possui diversas ferramentas que facilitam a utilização do R para se fazer análise de dados.</p>
-</div>
-<div id="este-livro" class="section level4 unnumbered">
-<h4>Este livro</h4>
-<p>Este livro tem como objetivo guiar o leitor por todas as etapas de uma análise de dados, utilizando o R como ferramenta.</p>
-<p><img src="assets/img/environmental-data-science-r4ds-general.png" width="2400" style="display: block; margin: auto;" /></p>
-</div>
-<div id="comunidade" class="section level4 unnumbered">
-<h4>Comunidade</h4>
-<p>Seja bem-vinda(o) ao #rstats.</p>
-<p>Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e participe dos grupos e comunidades de programadores.</p>
-<ul>
-<li><p>Comunidade RLadies: <a href="https://benubah.github.io/r-community-explorer/rladies.html" class="uri">https://benubah.github.io/r-community-explorer/rladies.html</a></p></li>
-<li><p>Fórum de dúvidas da Curso-R: <a href="https://discourse.curso-r.com/" class="uri">https://discourse.curso-r.com/</a></p></li>
-<li><p>Grupo de divulgação da Curso-R no Telegram: <a href="https://t.me/r6cursor" class="uri">https://t.me/r6cursor</a></p></li>
-<li><p>Grupo R Brasil no Telegram: <a href="https://t.me/rbrasiloficial" class="uri">https://t.me/rbrasiloficial</a></p></li>
-</ul>
-<p><img src="assets/img/welcome_to_rstats_twitter.png" width="1004" style="display: block; margin: auto;" /></p>
-</div>
-<div id="a-curso-r" class="section level4 unnumbered">
-<h4>A Curso-R</h4>
-<p>A Curso-R é o braço de Educação da R6 Consultoria, uma empresa de treinamentos e consultoria em Ciência de Dados e linguagem de programação R. Surgimos em 2015, com cursos de introdução ao R no Programa de Cursos de Verão do Instituto de Matemática e Estatística da Universidade de São Paulo (IME-USP).</p>
-<ul>
-<li><p>Conheça os nossos cursos: <a href="https://www.curso-r.com/cursos/" class="uri">https://www.curso-r.com/cursos/</a></p></li>
-<li><p>Conheça o nosso blog: <a href="https://www.curso-r.com/blog/" class="uri">https://www.curso-r.com/blog/</a></p></li>
-<li><p>Conheça o restante do nosso material: <a href="https://www.curso-r.com/material/" class="uri">https://www.curso-r.com/material/</a></p></li>
-<li><p>Saiba mais sobre a Curso-R: <a href="https://www.curso-r.com/sobre/" class="uri">https://www.curso-r.com/sobre/</a></p></li>
-</ul>
-
-</div>
+<div id="listas" class="section level2">
+<h2><span class="header-section-number">3.9</span> Listas</h2>
+<p>Chegamos ao último tópico antes de voltarmos aos data frames: as listas.</p>
+<p>Listas são objetos muito importantes dentro do R. Primeiro porque <strong>todo data frame é uma lista</strong>. Segundo porque elas são bem parecidas com vetores, mas com uma diferença essencial: você pode misturar diferentes classes de objetos dentro dela.</p>
+<p>Para criar uma lista, rodamos <code>list(valor1, valor2, valor3)</code>.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="3-9-listas.html#cb46-1"></a><span class="kw">list</span>(<span class="dv">1</span>, <span class="st">&quot;a&quot;</span>, <span class="ot">TRUE</span>)</span>
+<span id="cb46-2"><a href="3-9-listas.html#cb46-2"></a><span class="co">## [[1]]</span></span>
+<span id="cb46-3"><a href="3-9-listas.html#cb46-3"></a><span class="co">## [1] 1</span></span>
+<span id="cb46-4"><a href="3-9-listas.html#cb46-4"></a><span class="co">## </span></span>
+<span id="cb46-5"><a href="3-9-listas.html#cb46-5"></a><span class="co">## [[2]]</span></span>
+<span id="cb46-6"><a href="3-9-listas.html#cb46-6"></a><span class="co">## [1] &quot;a&quot;</span></span>
+<span id="cb46-7"><a href="3-9-listas.html#cb46-7"></a><span class="co">## </span></span>
+<span id="cb46-8"><a href="3-9-listas.html#cb46-8"></a><span class="co">## [[3]]</span></span>
+<span id="cb46-9"><a href="3-9-listas.html#cb46-9"></a><span class="co">## [1] TRUE</span></span></code></pre></div>
+<p>Veja que não houve coerção. Ainda temos um valor número, um texto e um valor lógico dentro da lista.</p>
+<p>O <em>subsetting</em> de listas é um pouco diferente do que o de vetores. Isso porque <strong>cada elemento de uma lista também é uma lista</strong>. Veja o que acontece se tentarmos usar <code>[]</code> para pegar um elemento de uma lista.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="3-9-listas.html#cb47-1"></a>lista &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dv">1</span>, <span class="st">&quot;a&quot;</span>, <span class="ot">TRUE</span>)</span>
+<span id="cb47-2"><a href="3-9-listas.html#cb47-2"></a></span>
+<span id="cb47-3"><a href="3-9-listas.html#cb47-3"></a>lista[<span class="dv">1</span>]</span>
+<span id="cb47-4"><a href="3-9-listas.html#cb47-4"></a><span class="co">## [[1]]</span></span>
+<span id="cb47-5"><a href="3-9-listas.html#cb47-5"></a><span class="co">## [1] 1</span></span>
+<span id="cb47-6"><a href="3-9-listas.html#cb47-6"></a></span>
+<span id="cb47-7"><a href="3-9-listas.html#cb47-7"></a><span class="kw">class</span>(lista[<span class="dv">1</span>])</span>
+<span id="cb47-8"><a href="3-9-listas.html#cb47-8"></a><span class="co">## [1] &quot;list&quot;</span></span></code></pre></div>
+<p>O R nos retorna uma lista com apenas aquele elemento. Se quisermos o elemento de fato dentro de cada posição, precisamos usar dois colchetes:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="3-9-listas.html#cb48-1"></a>lista[[<span class="dv">1</span>]]</span>
+<span id="cb48-2"><a href="3-9-listas.html#cb48-2"></a><span class="co">## [1] 1</span></span>
+<span id="cb48-3"><a href="3-9-listas.html#cb48-3"></a></span>
+<span id="cb48-4"><a href="3-9-listas.html#cb48-4"></a><span class="kw">class</span>(lista[[<span class="dv">1</span>]])</span>
+<span id="cb48-5"><a href="3-9-listas.html#cb48-5"></a><span class="co">## [1] &quot;numeric&quot;</span></span></code></pre></div>
+<p>Cada elemento de uma lista ser uma lista é importante pois isso nos permite colocar vetores de tamanhos diferentes em cada posição. Isso faz das listas uma estrutura bem flexível para guardar dados.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="3-9-listas.html#cb49-1"></a>lista &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="st">&quot;a&quot;</span>, <span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>))</span>
+<span id="cb49-2"><a href="3-9-listas.html#cb49-2"></a></span>
+<span id="cb49-3"><a href="3-9-listas.html#cb49-3"></a>lista</span>
+<span id="cb49-4"><a href="3-9-listas.html#cb49-4"></a><span class="co">## [[1]]</span></span>
+<span id="cb49-5"><a href="3-9-listas.html#cb49-5"></a><span class="co">## [1] 1 2 3</span></span>
+<span id="cb49-6"><a href="3-9-listas.html#cb49-6"></a><span class="co">## </span></span>
+<span id="cb49-7"><a href="3-9-listas.html#cb49-7"></a><span class="co">## [[2]]</span></span>
+<span id="cb49-8"><a href="3-9-listas.html#cb49-8"></a><span class="co">## [1] &quot;a&quot;</span></span>
+<span id="cb49-9"><a href="3-9-listas.html#cb49-9"></a><span class="co">## </span></span>
+<span id="cb49-10"><a href="3-9-listas.html#cb49-10"></a><span class="co">## [[3]]</span></span>
+<span id="cb49-11"><a href="3-9-listas.html#cb49-11"></a><span class="co">## [1]  TRUE  TRUE FALSE FALSE</span></span>
+<span id="cb49-12"><a href="3-9-listas.html#cb49-12"></a></span>
+<span id="cb49-13"><a href="3-9-listas.html#cb49-13"></a>lista[<span class="dv">1</span>]</span>
+<span id="cb49-14"><a href="3-9-listas.html#cb49-14"></a><span class="co">## [[1]]</span></span>
+<span id="cb49-15"><a href="3-9-listas.html#cb49-15"></a><span class="co">## [1] 1 2 3</span></span>
+<span id="cb49-16"><a href="3-9-listas.html#cb49-16"></a></span>
+<span id="cb49-17"><a href="3-9-listas.html#cb49-17"></a>lista[<span class="dv">2</span>]</span>
+<span id="cb49-18"><a href="3-9-listas.html#cb49-18"></a><span class="co">## [[1]]</span></span>
+<span id="cb49-19"><a href="3-9-listas.html#cb49-19"></a><span class="co">## [1] &quot;a&quot;</span></span>
+<span id="cb49-20"><a href="3-9-listas.html#cb49-20"></a></span>
+<span id="cb49-21"><a href="3-9-listas.html#cb49-21"></a>lista[<span class="dv">3</span>]</span>
+<span id="cb49-22"><a href="3-9-listas.html#cb49-22"></a><span class="co">## [[1]]</span></span>
+<span id="cb49-23"><a href="3-9-listas.html#cb49-23"></a><span class="co">## [1]  TRUE  TRUE FALSE FALSE</span></span></code></pre></div>
+<p>É muito comum darmos nomes para cada posição de uma lista.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="3-9-listas.html#cb50-1"></a>dados_cliente &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">cliente =</span> <span class="st">&quot;Ana Silva&quot;</span>, <span class="dt">idade =</span> <span class="dv">25</span>, <span class="dt">estado_civil =</span> <span class="ot">NA</span>)</span>
+<span id="cb50-2"><a href="3-9-listas.html#cb50-2"></a></span>
+<span id="cb50-3"><a href="3-9-listas.html#cb50-3"></a>dados_cliente</span>
+<span id="cb50-4"><a href="3-9-listas.html#cb50-4"></a><span class="co">## $cliente</span></span>
+<span id="cb50-5"><a href="3-9-listas.html#cb50-5"></a><span class="co">## [1] &quot;Ana Silva&quot;</span></span>
+<span id="cb50-6"><a href="3-9-listas.html#cb50-6"></a><span class="co">## </span></span>
+<span id="cb50-7"><a href="3-9-listas.html#cb50-7"></a><span class="co">## $idade</span></span>
+<span id="cb50-8"><a href="3-9-listas.html#cb50-8"></a><span class="co">## [1] 25</span></span>
+<span id="cb50-9"><a href="3-9-listas.html#cb50-9"></a><span class="co">## </span></span>
+<span id="cb50-10"><a href="3-9-listas.html#cb50-10"></a><span class="co">## $estado_civil</span></span>
+<span id="cb50-11"><a href="3-9-listas.html#cb50-11"></a><span class="co">## [1] NA</span></span></code></pre></div>
+<p>Agora, dentro da lista, o valor <code>Ana Silva</code>, por exemplo, está sendo atribuído ao nome <code>cliente</code>. Esse nome só existirá dentro da lista.</p>
+<p>Um detalhe importante: os iguais utilizados nas atribuições dos nomes dentro da lista <strong>não podem</strong> ser substituídos por <code>&lt;-</code>.</p>
+<p>Quando as posições de uma lista tem nome, podemos acessar seus valores diretamente utilizando o operador <code>$</code>.</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="3-9-listas.html#cb51-1"></a>dados_cliente<span class="op">$</span>cliente</span>
+<span id="cb51-2"><a href="3-9-listas.html#cb51-2"></a><span class="co">## [1] &quot;Ana Silva&quot;</span></span>
+<span id="cb51-3"><a href="3-9-listas.html#cb51-3"></a></span>
+<span id="cb51-4"><a href="3-9-listas.html#cb51-4"></a>dados_cliente<span class="op">$</span>idade</span>
+<span id="cb51-5"><a href="3-9-listas.html#cb51-5"></a><span class="co">## [1] 25</span></span>
+<span id="cb51-6"><a href="3-9-listas.html#cb51-6"></a></span>
+<span id="cb51-7"><a href="3-9-listas.html#cb51-7"></a>dados_cliente<span class="op">$</span>estado_civil</span>
+<span id="cb51-8"><a href="3-9-listas.html#cb51-8"></a><span class="co">## [1] NA</span></span></code></pre></div>
+<p>Repare que o R devolve o valor dentro de cada posição, e não uma lista.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="3-9-listas.html#cb52-1"></a>dados_cliente[<span class="dv">1</span>]</span>
+<span id="cb52-2"><a href="3-9-listas.html#cb52-2"></a><span class="co">## $cliente</span></span>
+<span id="cb52-3"><a href="3-9-listas.html#cb52-3"></a><span class="co">## [1] &quot;Ana Silva&quot;</span></span>
+<span id="cb52-4"><a href="3-9-listas.html#cb52-4"></a></span>
+<span id="cb52-5"><a href="3-9-listas.html#cb52-5"></a>dados_cliente<span class="op">$</span>cliente</span>
+<span id="cb52-6"><a href="3-9-listas.html#cb52-6"></a><span class="co">## [1] &quot;Ana Silva&quot;</span></span>
+<span id="cb52-7"><a href="3-9-listas.html#cb52-7"></a></span>
+<span id="cb52-8"><a href="3-9-listas.html#cb52-8"></a><span class="kw">class</span>(dados_cliente[<span class="dv">1</span>])</span>
+<span id="cb52-9"><a href="3-9-listas.html#cb52-9"></a><span class="co">## [1] &quot;list&quot;</span></span>
+<span id="cb52-10"><a href="3-9-listas.html#cb52-10"></a></span>
+<span id="cb52-11"><a href="3-9-listas.html#cb52-11"></a><span class="kw">class</span>(dados_cliente<span class="op">$</span>cliente)</span>
+<span id="cb52-12"><a href="3-9-listas.html#cb52-12"></a><span class="co">## [1] &quot;character&quot;</span></span></code></pre></div>
+<p>Isto implica que, nesse exemplo, <code>dados_cliente$cliente</code> é equivalente a <code>dados_cliente[[1]]</code>.</p>
+<p>Conforme ficamos mais e mais proficientes na linguagem R, as listas passam a ficar cada vez mais frequentes. Voltaremos a falar delas diversas vezes nos próximos capítulos, em especial no Capítulo <a href="9-funcionais.html#funcionais">9</a>.</p>
 </div>
 <hr/>
 <footer>
@@ -324,8 +374,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="1-instalacao.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="3-8-valoresEspeciais.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="3-10-mais-sobre-data-frames.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

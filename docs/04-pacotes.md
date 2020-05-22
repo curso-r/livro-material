@@ -78,7 +78,7 @@ O `{tidyverse}` é um pacote guarda-chuva que consolida uma série de ferramenta
 <p class="caption">(\#fig:04-ciclo-pacotes)A implementação do Ciclo da Ciência de Dados, através do tidyverse. Pela definição estrita do tidyverse, na imagem não fazem parte do tidyverse os pacotes janitor, data.table e os pacotes descritos nas partes de modelagem, comunicação e automatização. No entanto, a maioria desses pacotes também seguem os princípios tidy e podem ser usados em conjunto com o tidyverse sem grandes dificuldades.</p>
 </div>
 
-O `{tidyverse}` traz consigo o [*manifesto tidy*](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html). Trata-se de um documento que formaliza uma série de princípios que norteiam o desenvolvimento do tidyverse. Como os pacotes do `{tidyverse}` compartilham os mesmos princípios, podem ser utilizados naturalmente em conjunto. 
+O `{tidyverse}` traz consigo o [*manifesto tidy*](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html). Trata-se de um documento que formaliza uma série de princípios que norteiam o desenvolvimento do tidyverse. Como os pacotes do `{tidyverse}` compartilham os mesmos princípios, podem ser utilizados naturalmente em conjunto.
 
 Pode-se dizer que existe uma linguagem R antes e outra depois do `{tidyverse}`. A linguagem mudou muito, a comunidade abraçou uso desses princípios e criou centenas de novos pacotes que conversam uns com os outros dessa forma.[^messy]
 

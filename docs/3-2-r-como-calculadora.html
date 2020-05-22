@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Ciência de Dados em R</title>
+  <title>3.2 R como calculadora | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Ciência de Dados em R" />
+  <meta property="og:title" content="3.2 R como calculadora | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Ciência de Dados em R" />
+  <meta name="twitter:title" content="3.2 R como calculadora | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-
-<link rel="next" href="1-instalacao.html"/>
+<link rel="prev" href="3-1-pedindo-ajuda.html"/>
+<link rel="next" href="3-3-objetos.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -272,47 +272,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Ciência de Dados em R</h1>
-<p class="author"><em>Curso-R</em></p>
-<p class="date"><em>Última atualização: 22/05/2020</em></p>
-</div>
-<div id="sobre" class="section level1 unnumbered">
-<h1>Sobre</h1>
-<p>Este livro está em <strong>construção</strong> e em <strong>revisão aberta</strong>. Fique à vontade para corrigir qualquer tipo de erro que encontrar no nosso material.</p>
-<p>Todo o conteúdo deste livro é gratuito e aberto.</p>
-<div id="o-r-e-o-rstudio" class="section level4 unnumbered">
-<h4>O R e o RStudio</h4>
-<p>O R é uma linguagem de programação <em>open source</em> para análise de dados que fornece uma grande variedade de ferramentas estatísticas e gráficas.</p>
-<p>O RStudio é o ambiente de desenvolvimento mais utilizado para programação em R. Ele possui diversas ferramentas que facilitam a utilização do R para se fazer análise de dados.</p>
-</div>
-<div id="este-livro" class="section level4 unnumbered">
-<h4>Este livro</h4>
-<p>Este livro tem como objetivo guiar o leitor por todas as etapas de uma análise de dados, utilizando o R como ferramenta.</p>
-<p><img src="assets/img/environmental-data-science-r4ds-general.png" width="2400" style="display: block; margin: auto;" /></p>
-</div>
-<div id="comunidade" class="section level4 unnumbered">
-<h4>Comunidade</h4>
-<p>Seja bem-vinda(o) ao #rstats.</p>
-<p>Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e participe dos grupos e comunidades de programadores.</p>
-<ul>
-<li><p>Comunidade RLadies: <a href="https://benubah.github.io/r-community-explorer/rladies.html" class="uri">https://benubah.github.io/r-community-explorer/rladies.html</a></p></li>
-<li><p>Fórum de dúvidas da Curso-R: <a href="https://discourse.curso-r.com/" class="uri">https://discourse.curso-r.com/</a></p></li>
-<li><p>Grupo de divulgação da Curso-R no Telegram: <a href="https://t.me/r6cursor" class="uri">https://t.me/r6cursor</a></p></li>
-<li><p>Grupo R Brasil no Telegram: <a href="https://t.me/rbrasiloficial" class="uri">https://t.me/rbrasiloficial</a></p></li>
-</ul>
-<p><img src="assets/img/welcome_to_rstats_twitter.png" width="1004" style="display: block; margin: auto;" /></p>
-</div>
-<div id="a-curso-r" class="section level4 unnumbered">
-<h4>A Curso-R</h4>
-<p>A Curso-R é o braço de Educação da R6 Consultoria, uma empresa de treinamentos e consultoria em Ciência de Dados e linguagem de programação R. Surgimos em 2015, com cursos de introdução ao R no Programa de Cursos de Verão do Instituto de Matemática e Estatística da Universidade de São Paulo (IME-USP).</p>
-<ul>
-<li><p>Conheça os nossos cursos: <a href="https://www.curso-r.com/cursos/" class="uri">https://www.curso-r.com/cursos/</a></p></li>
-<li><p>Conheça o nosso blog: <a href="https://www.curso-r.com/blog/" class="uri">https://www.curso-r.com/blog/</a></p></li>
-<li><p>Conheça o restante do nosso material: <a href="https://www.curso-r.com/material/" class="uri">https://www.curso-r.com/material/</a></p></li>
-<li><p>Saiba mais sobre a Curso-R: <a href="https://www.curso-r.com/sobre/" class="uri">https://www.curso-r.com/sobre/</a></p></li>
-</ul>
-
+<div id="r-como-calculadora" class="section level2">
+<h2><span class="header-section-number">3.2</span> R como calculadora</h2>
+<p>O papel do <strong>Console</strong> no R é executar os nossos comandos. Ele avalia o código que passamos para ele e devolve a saída correspondente — se tudo der certo — ou uma mensagem de erro — se o seu código tiver algum problema.</p>
+<p>Vamos começar com o exemplo mais simples possível:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="3-2-r-como-calculadora.html#cb6-1"></a><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb6-2"><a href="3-2-r-como-calculadora.html#cb6-2"></a><span class="co">## [1] 2</span></span></code></pre></div>
+<p>Nesse caso, o nosso comando foi o código <code>1 + 1</code> e a saída foi o valor <code>2</code>.</p>
+<blockquote>
+<p><strong>Nota: quando compilamos?</strong> Quem vem de linguagens como o C ou Java espera que seja necessário compilar o código em texto para o código das máquinas (geralmente um código binário). No R, isso não é necessário. O R é uma linguagem de programação dinâmica que interpreta o seu código enquanto você o executa.</p>
+</blockquote>
+<p>Tente agora jogar no console a expressão: <code>2 * 2 - (4 + 4) / 2</code>.</p>
+<p>Pronto! Você já é capaz de pedir ao R para fazer qualquer uma das quatro operações aritméticas básicas. A seguir, apresentamos uma lista resumindo como fazer as principais operações no R.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="3-2-r-como-calculadora.html#cb7-1"></a><span class="co"># adição</span></span>
+<span id="cb7-2"><a href="3-2-r-como-calculadora.html#cb7-2"></a><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb7-3"><a href="3-2-r-como-calculadora.html#cb7-3"></a><span class="co">## [1] 2</span></span>
+<span id="cb7-4"><a href="3-2-r-como-calculadora.html#cb7-4"></a></span>
+<span id="cb7-5"><a href="3-2-r-como-calculadora.html#cb7-5"></a><span class="co"># subtração</span></span>
+<span id="cb7-6"><a href="3-2-r-como-calculadora.html#cb7-6"></a><span class="dv">4</span> <span class="op">-</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb7-7"><a href="3-2-r-como-calculadora.html#cb7-7"></a><span class="co">## [1] 2</span></span>
+<span id="cb7-8"><a href="3-2-r-como-calculadora.html#cb7-8"></a></span>
+<span id="cb7-9"><a href="3-2-r-como-calculadora.html#cb7-9"></a><span class="co"># multiplicação</span></span>
+<span id="cb7-10"><a href="3-2-r-como-calculadora.html#cb7-10"></a><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">3</span></span>
+<span id="cb7-11"><a href="3-2-r-como-calculadora.html#cb7-11"></a><span class="co">## [1] 6</span></span>
+<span id="cb7-12"><a href="3-2-r-como-calculadora.html#cb7-12"></a></span>
+<span id="cb7-13"><a href="3-2-r-como-calculadora.html#cb7-13"></a><span class="co"># divisão</span></span>
+<span id="cb7-14"><a href="3-2-r-como-calculadora.html#cb7-14"></a><span class="dv">5</span> <span class="op">/</span><span class="st"> </span><span class="dv">3</span></span>
+<span id="cb7-15"><a href="3-2-r-como-calculadora.html#cb7-15"></a><span class="co">## [1] 1.666667</span></span>
+<span id="cb7-16"><a href="3-2-r-como-calculadora.html#cb7-16"></a></span>
+<span id="cb7-17"><a href="3-2-r-como-calculadora.html#cb7-17"></a><span class="co"># potência</span></span>
+<span id="cb7-18"><a href="3-2-r-como-calculadora.html#cb7-18"></a><span class="dv">4</span> <span class="op">^</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb7-19"><a href="3-2-r-como-calculadora.html#cb7-19"></a><span class="co">## [1] 16</span></span>
+<span id="cb7-20"><a href="3-2-r-como-calculadora.html#cb7-20"></a></span>
+<span id="cb7-21"><a href="3-2-r-como-calculadora.html#cb7-21"></a><span class="co"># resto da divisão de 5 por 3</span></span>
+<span id="cb7-22"><a href="3-2-r-como-calculadora.html#cb7-22"></a><span class="dv">5</span> <span class="op">%%</span><span class="st"> </span><span class="dv">3</span></span>
+<span id="cb7-23"><a href="3-2-r-como-calculadora.html#cb7-23"></a><span class="co">## [1] 2</span></span>
+<span id="cb7-24"><a href="3-2-r-como-calculadora.html#cb7-24"></a></span>
+<span id="cb7-25"><a href="3-2-r-como-calculadora.html#cb7-25"></a><span class="co"># parte inteira da divisão de 5 por 3</span></span>
+<span id="cb7-26"><a href="3-2-r-como-calculadora.html#cb7-26"></a><span class="dv">5</span> <span class="op">%/%</span><span class="st"> </span><span class="dv">3</span>  </span>
+<span id="cb7-27"><a href="3-2-r-como-calculadora.html#cb7-27"></a><span class="co">## [1] 1</span></span></code></pre></div>
+<p>Repare que as operações e suas precedências são mantidas como na matemática, ou seja, divisão e multiplicação são calculadas antes da adição e subtração. E os parênteses nunca são demais!</p>
+<p>Uma outra forma de executar uma expressão é escrever o código em um <strong>script</strong>, deixar o cursor em cima da linha e usar o atalho <code>Ctrl + Enter</code>. Assim, o comando é enviado para o <strong>Console</strong>, onde é diretamente executado. Essa operação é chamada de <strong>avaliar</strong>, <strong>executar</strong> ou <strong>rodar</strong> o código.</p>
+<p>Se você digitar um comando incompleto, como <code>5 +</code>, e apertar <code>Enter</code>, o R mostrará um <code>+</code>, o que não tem nada a ver com a adição da matemática. Isso significa que o R está esperando que você enviar <strong>mais</strong> algum código para completar o seu comando. Termine o seu comando ou aperte <code>Esc</code> para recomeçar.</p>
+<pre><code>&gt; 5 -
++ 
++ 5
+[1] 0</code></pre>
+<p>Se você digitar um comando que o R não reconhece, ele retornará uma mensagem de erro.</p>
+<p>NÃO ENTRE EM PÂNICO!</p>
+<p>Ele só está avisando que não conseguiu interpretar o comando. Você pode digitar outro comando normalmente em seguida.</p>
+<pre><code>&gt; 5 % 2
+Error: unexpected input in &quot;5 % 2&quot;
+&gt; 5 ^ 2
+[1] 25</code></pre>
+<div id="exercícios" class="section level3 unnumbered">
+<h3>Exercícios</h3>
+<p><strong>1.</strong> Qual a diferença entre o R e o RStudio?</p>
+<p><strong>2.</strong> Precisamos compilar nossos códigos de R?</p>
+<p><strong>3.</strong> Calcule o número de ouro no R. Dica: o número de ouro é dado pela expressão <span class="math inline">\(\frac{1 + \sqrt{5}}{2}\)</span>.</p>
 </div>
 </div>
 <hr/>
@@ -324,8 +341,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="1-instalacao.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="3-1-pedindo-ajuda.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="3-3-objetos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

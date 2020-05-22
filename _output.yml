@@ -1,6 +1,11 @@
 bookdown::gitbook:
   css: assets/style.css
+  split_by: "section+number"
   config:
+    fontsettings:
+      theme: white
+      family: serif
+      size: 2
     toc:
       before: |
         <li><a href="./index.html"><img src = "https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width = 80%></a></li>
@@ -9,6 +14,8 @@ bookdown::gitbook:
     download: ["pdf"]
   includes:
     in_header: [assets/include_hyphotesis.html, assets/google_fonts.html]
+    # in_header: ga.html
+    after_body: assets/gitbook-footer-cursor.html
 # bookdown::pdf_book:
 #   includes:
 #     in_header: assets/preamble.tex

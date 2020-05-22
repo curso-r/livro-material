@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Ciência de Dados em R</title>
+  <title>3.1 Pedindo Ajuda | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Ciência de Dados em R" />
+  <meta property="og:title" content="3.1 Pedindo Ajuda | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Ciência de Dados em R" />
+  <meta name="twitter:title" content="3.1 Pedindo Ajuda | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-
-<link rel="next" href="1-instalacao.html"/>
+<link rel="prev" href="3-r-base.html"/>
+<link rel="next" href="3-2-r-como-calculadora.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -272,48 +272,86 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Ciência de Dados em R</h1>
-<p class="author"><em>Curso-R</em></p>
-<p class="date"><em>Última atualização: 22/05/2020</em></p>
-</div>
-<div id="sobre" class="section level1 unnumbered">
-<h1>Sobre</h1>
-<p>Este livro está em <strong>construção</strong> e em <strong>revisão aberta</strong>. Fique à vontade para corrigir qualquer tipo de erro que encontrar no nosso material.</p>
-<p>Todo o conteúdo deste livro é gratuito e aberto.</p>
-<div id="o-r-e-o-rstudio" class="section level4 unnumbered">
-<h4>O R e o RStudio</h4>
-<p>O R é uma linguagem de programação <em>open source</em> para análise de dados que fornece uma grande variedade de ferramentas estatísticas e gráficas.</p>
-<p>O RStudio é o ambiente de desenvolvimento mais utilizado para programação em R. Ele possui diversas ferramentas que facilitam a utilização do R para se fazer análise de dados.</p>
-</div>
-<div id="este-livro" class="section level4 unnumbered">
-<h4>Este livro</h4>
-<p>Este livro tem como objetivo guiar o leitor por todas as etapas de uma análise de dados, utilizando o R como ferramenta.</p>
-<p><img src="assets/img/environmental-data-science-r4ds-general.png" width="2400" style="display: block; margin: auto;" /></p>
-</div>
-<div id="comunidade" class="section level4 unnumbered">
-<h4>Comunidade</h4>
-<p>Seja bem-vinda(o) ao #rstats.</p>
-<p>Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e participe dos grupos e comunidades de programadores.</p>
+<div id="pedindo-ajuda" class="section level2">
+<h2><span class="header-section-number">3.1</span> Pedindo Ajuda</h2>
+<p>A linguagem <code>R</code> é bem intuitiva. É possível fazer bastante coisa à base da tentativa e erro. Além disso, grande parte do conhecimento é escalável, isto é, aprender a utilizar uma função é meio caminho andado para aprender todas as outras funções que operam de forma semelhante<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p>No entanto, a intuição não infalível, e recorrentemente vamos precisar de ajuda para rodar alguma função ou descobrir como fazer alguma tarefa no R. Felizmente, a comunidade R é bem ativa e existem vários lugares para buscar respostas. Nesta seção, vamos apresentar as principais maneiras algumas dessas maneiras.</p>
+<p><img src="assets/img/r-base/code_hero_rstats.png" width="1378" style="display: block; margin: auto;" /></p>
+<p>No R, há quatro principais entidades para se pedir ajuda:</p>
 <ul>
-<li><p>Comunidade RLadies: <a href="https://benubah.github.io/r-community-explorer/rladies.html" class="uri">https://benubah.github.io/r-community-explorer/rladies.html</a></p></li>
-<li><p>Fórum de dúvidas da Curso-R: <a href="https://discourse.curso-r.com/" class="uri">https://discourse.curso-r.com/</a></p></li>
-<li><p>Grupo de divulgação da Curso-R no Telegram: <a href="https://t.me/r6cursor" class="uri">https://t.me/r6cursor</a></p></li>
-<li><p>Grupo R Brasil no Telegram: <a href="https://t.me/rbrasiloficial" class="uri">https://t.me/rbrasiloficial</a></p></li>
+<li>Help/documentação do R</li>
+<li>Google</li>
+<li>Stack Overflow</li>
+<li>Coleguinha</li>
 </ul>
-<p><img src="assets/img/welcome_to_rstats_twitter.png" width="1004" style="display: block; margin: auto;" /></p>
+<p>A busca por ajuda é feita preferencialmente, mas não necessariamente, na ordem acima.</p>
+<div id="documentação-do-r" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Documentação do R</h3>
+<p>A documentação do R serve para você aprender a usar uma determinada função. Se você não sabe o que é uma função, não se preocupe. Discutiremos esse tópico na Seção <a href="3-11-funcoes.html#funcoes">3.11</a>.</p>
+<p>Você pode acessar a documentação de uma função<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> das seguintes maneiras:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="3-1-pedindo-ajuda.html#cb4-1"></a>?mean</span>
+<span id="cb4-2"><a href="3-1-pedindo-ajuda.html#cb4-2"></a><span class="kw">help</span>(mean)</span></code></pre></div>
+<p>Algumas dicas:</p>
+<ol style="list-style-type: decimal">
+<li>Leia a seção <em>Usage</em> para ter noção de como usar a função.</li>
+<li>Os parâmetros da função estão descritos em <em>Arguments</em>.</li>
+<li>Os exemplos no final são particularmente úteis.</li>
+<li>Caso essa função não atenda às suas necessidades, a seção <em>See Also</em> sugere funções relacionadas.</li>
+</ol>
+<p>Alguns pacotes possuem tutorias de uso mais completos. Esses textos são chamados de <code>vignettes</code> e podem ser acessados com a função <code>vignette(package = 'nomeDoPacote')</code>. Por exemplo, <code>vignette(package = 'dplyr')</code>.</p>
 </div>
-<div id="a-curso-r" class="section level4 unnumbered">
-<h4>A Curso-R</h4>
-<p>A Curso-R é o braço de Educação da R6 Consultoria, uma empresa de treinamentos e consultoria em Ciência de Dados e linguagem de programação R. Surgimos em 2015, com cursos de introdução ao R no Programa de Cursos de Verão do Instituto de Matemática e Estatística da Universidade de São Paulo (IME-USP).</p>
+<div id="google" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Google</h3>
+<p>Há uma comunidade gigantesca de usuários de R gerando diariamente uma infinidade de conteúdos e discussões. Não raramente, você irá encontrar discussões sobre o seu problema simplesmente o descrevendo no Google. Pesquisas em inglês aumentam consideravelmente a chance de encontrar uma resposta.</p>
+<p>Quando você recebe um erro na tentativa de rodar algum código no R e não sabe o que está errado, uma boa estratégia é pesquisar a mensagem de erro no Google. Essa deve ser sua primeira tentativa para resolver o problema. Repare na imagem abaixo o ‘r’ adicionado na busca. Isso ajuda bastante a encontrar uma solução.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="3-1-pedindo-ajuda.html#cb5-1"></a><span class="kw">log</span>(<span class="st">&quot;5&quot;</span>)</span>
+<span id="cb5-2"><a href="3-1-pedindo-ajuda.html#cb5-2"></a><span class="co">## Error in log(&quot;5&quot;): non-numeric argument to mathematical function</span></span></code></pre></div>
+<p><img src="assets/img/r-base/ajuda_google.png" width="795" height="267" style="display: block; margin: auto;" /></p>
+</div>
+<div id="stack-overflow" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Stack Overflow</h3>
+<p>O <a href="http://stackoverflow.com/">Stack Overflow</a> e o <a href="http://pt.stackoverflow.com/">Stack Overflow em Português</a> são sites de Pergunta e Resposta amplamente utilizados por todas as linguagens de programação, e o R é uma delas. Nos EUA, chegam até a usar a reputação dos usuários dentro da plataforma como diferencial no currículo!</p>
+<p>Provavelmente o Google lhe indicará uma página deles quando você estiver procurando ajuda. E quando todas as fontes possíveis de ajuda falharem, o Stack Overflow lhe dará o espaço para <strong>criar sua própria pergunta</strong>.</p>
+<p><strong>Um ponto importante</strong>: como fazer uma <em>boa pergunta</em> no Stack Overflow?</p>
+<p>No site, existe um tutorial com uma lista de boas práticas, <a href="http://pt.stackoverflow.com/help/how-to-ask">que se encontra aqui</a>. Resumindo, as principais dicas são</p>
 <ul>
-<li><p>Conheça os nossos cursos: <a href="https://www.curso-r.com/cursos/" class="uri">https://www.curso-r.com/cursos/</a></p></li>
-<li><p>Conheça o nosso blog: <a href="https://www.curso-r.com/blog/" class="uri">https://www.curso-r.com/blog/</a></p></li>
-<li><p>Conheça o restante do nosso material: <a href="https://www.curso-r.com/material/" class="uri">https://www.curso-r.com/material/</a></p></li>
-<li><p>Saiba mais sobre a Curso-R: <a href="https://www.curso-r.com/sobre/" class="uri">https://www.curso-r.com/sobre/</a></p></li>
+<li>ser conciso;</li>
+<li>ser específico;</li>
+<li>ter mente aberta; e</li>
+<li>ser gentil.</li>
 </ul>
-
+<p>Porém, no caso do R, há outro requisito que vai aumentar muito sua chance de ter uma boa resposta: <strong>exemplinho minimal e reprodutível</strong>.</p>
+<ul>
+<li><p>Ser <strong>minimal</strong>: usar bancos de dados menores e utilizar pedaços de códigos apenas suficientes para apresentar o seu problema. Não precisa de banco de dados de um milhão de linhas e nem colocar o seu código inteiro para descrever a sua dúvida.</p></li>
+<li><p>Ser <strong>reprodutível</strong>: o seu código deve rodar fora da sua máquina. Se você não fornecer uma versão do seu problema que rode (ou que imite seu erro), as pessoas vão logo desistir de te ajudar. Por isso, nunca coloque bancos de dados que só você tem acesso. Use bancos de dados que já vem no R ou disponibilize um exemplo (possivelmente anonimizado) em <code>.csv</code> na web para baixar. E se precisar utilizar funções de algum pacote, especifique os pacotes que você usou.</p></li>
+</ul>
+<!-- ### R Markdown -->
+<!-- O R Markdown é um tipo de documento especial que contém tanto textos em *markdown* quanto *chunks* de códigos em R, tudo escrito no mesmo lugar.  -->
+<!-- O *markdown* nada mais é do que um documento de texto com alguns padrões básicos de formatação, como negrito, itálico, títulos, subtítulos, itens e referências cruzadas. Já os *chunks* são pedaços de códigos em R encapsulados por três crases (```). Os códigos são executados sempre que o documento é processado. -->
+<!-- ```{r, echo=FALSE} -->
+<!-- cat("```{r} -->
+<!-- isto é um chunk.  -->
+<!-- ```") -->
+<!-- ``` -->
+<!-- > Este site foi escrito em R Markdown. Toda vez que aparecer exemplos de código de R, havia um chunk no .Rmd original. -->
+<!-- Para produção de relatórios, o R Markdown possui algumas vantagens, como: -->
+<!-- 1. **Simplicidade e foco**. Permite ao usuário o foco na análise e não na formatação do documento. -->
+<!-- 1. **Versátil**. Pode ser utilizado para gerar documentos em `LaTeX`, `Word`, `HTML` e apresentações em `beamer`, `pptx` e `HTML`. Pode ainda gerar sites, livros, dissertações de mestrado e até mesmo dashboards interativos. -->
+<!-- 1. **Reprodutível**. O R Markdown nada mais é que um arquivo de texto. Além disso, ele tenta te obrigar a fazer o documento mais autocontido possível. Assim, um documento `.Rmd` é fácil de compartilhar e de ser utilizado pelo receptor. Lembre-se, o receptor pode ser o futuro você! Vale enfatizar que a reprodutibilidade é considerada como um dos princípios fundamentais da ciência. Então, só de usar R Markdown, você já está colaborando com o método científico. :) -->
+<!-- 1. **Flexível**. É possível configurar e criar *templates* de análises para quaisquer tipos de aplicações e clientes. Os textos podem ser parametrizados por números que variam de versão para versão, mensalmente, por exemplo, tudo escrito somente em R.  -->
+<!-- Criar um R Markdown novo no RStudio é fácil. Clique no botão de criar arquivo e selecione R Markdown. -->
+<!-- ```{r echo=FALSE, fig.align='center'} -->
+<!-- knitr::include_graphics(rep("assets/img/r-base/criar_rmarkdown.png")) -->
+<!-- ``` -->
+<!-- Para detalhes sobre como utilizar o R Markdown, leia   [esta seção do R4DS](http://r4ds.had.co.nz/r-markdown.html) e [o tutorial do RStudio](http://rmarkdown.rstudio.com/lesson-1.html). -->
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Essa ideia é um dos princípios por trás do <code>tidyverse</code>.<a href="3-1-pedindo-ajuda.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Bases de dados presentes em pacotes também têm documentação, e geralmente é possível encontrar o significado de cada variável nela. Por exemplo, <code>help(mtcars)</code>.<a href="3-1-pedindo-ajuda.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 <hr/>
 <footer>
@@ -324,8 +362,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="1-instalacao.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="3-r-base.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="3-2-r-como-calculadora.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

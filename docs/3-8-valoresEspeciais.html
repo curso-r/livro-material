@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Ciência de Dados em R</title>
+  <title>3.8 Valores especiais | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Ciência de Dados em R" />
+  <meta property="og:title" content="3.8 Valores especiais | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Ciência de Dados em R" />
+  <meta name="twitter:title" content="3.8 Valores especiais | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-
-<link rel="next" href="1-instalacao.html"/>
+<link rel="prev" href="3-7-testes-lógicos.html"/>
+<link rel="next" href="3-9-listas.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -272,47 +272,80 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Ciência de Dados em R</h1>
-<p class="author"><em>Curso-R</em></p>
-<p class="date"><em>Última atualização: 22/05/2020</em></p>
-</div>
-<div id="sobre" class="section level1 unnumbered">
-<h1>Sobre</h1>
-<p>Este livro está em <strong>construção</strong> e em <strong>revisão aberta</strong>. Fique à vontade para corrigir qualquer tipo de erro que encontrar no nosso material.</p>
-<p>Todo o conteúdo deste livro é gratuito e aberto.</p>
-<div id="o-r-e-o-rstudio" class="section level4 unnumbered">
-<h4>O R e o RStudio</h4>
-<p>O R é uma linguagem de programação <em>open source</em> para análise de dados que fornece uma grande variedade de ferramentas estatísticas e gráficas.</p>
-<p>O RStudio é o ambiente de desenvolvimento mais utilizado para programação em R. Ele possui diversas ferramentas que facilitam a utilização do R para se fazer análise de dados.</p>
-</div>
-<div id="este-livro" class="section level4 unnumbered">
-<h4>Este livro</h4>
-<p>Este livro tem como objetivo guiar o leitor por todas as etapas de uma análise de dados, utilizando o R como ferramenta.</p>
-<p><img src="assets/img/environmental-data-science-r4ds-general.png" width="2400" style="display: block; margin: auto;" /></p>
-</div>
-<div id="comunidade" class="section level4 unnumbered">
-<h4>Comunidade</h4>
-<p>Seja bem-vinda(o) ao #rstats.</p>
-<p>Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e participe dos grupos e comunidades de programadores.</p>
-<ul>
-<li><p>Comunidade RLadies: <a href="https://benubah.github.io/r-community-explorer/rladies.html" class="uri">https://benubah.github.io/r-community-explorer/rladies.html</a></p></li>
-<li><p>Fórum de dúvidas da Curso-R: <a href="https://discourse.curso-r.com/" class="uri">https://discourse.curso-r.com/</a></p></li>
-<li><p>Grupo de divulgação da Curso-R no Telegram: <a href="https://t.me/r6cursor" class="uri">https://t.me/r6cursor</a></p></li>
-<li><p>Grupo R Brasil no Telegram: <a href="https://t.me/rbrasiloficial" class="uri">https://t.me/rbrasiloficial</a></p></li>
-</ul>
-<p><img src="assets/img/welcome_to_rstats_twitter.png" width="1004" style="display: block; margin: auto;" /></p>
-</div>
-<div id="a-curso-r" class="section level4 unnumbered">
-<h4>A Curso-R</h4>
-<p>A Curso-R é o braço de Educação da R6 Consultoria, uma empresa de treinamentos e consultoria em Ciência de Dados e linguagem de programação R. Surgimos em 2015, com cursos de introdução ao R no Programa de Cursos de Verão do Instituto de Matemática e Estatística da Universidade de São Paulo (IME-USP).</p>
-<ul>
-<li><p>Conheça os nossos cursos: <a href="https://www.curso-r.com/cursos/" class="uri">https://www.curso-r.com/cursos/</a></p></li>
-<li><p>Conheça o nosso blog: <a href="https://www.curso-r.com/blog/" class="uri">https://www.curso-r.com/blog/</a></p></li>
-<li><p>Conheça o restante do nosso material: <a href="https://www.curso-r.com/material/" class="uri">https://www.curso-r.com/material/</a></p></li>
-<li><p>Saiba mais sobre a Curso-R: <a href="https://www.curso-r.com/sobre/" class="uri">https://www.curso-r.com/sobre/</a></p></li>
-</ul>
-
+<div id="valoresEspeciais" class="section level2">
+<h2><span class="header-section-number">3.8</span> Valores especiais</h2>
+<p>Vimos anteriormente que se você tentar acessar uma posição que não existe dentro de um vetor, ele retorna um valor estranho.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="3-8-valoresEspeciais.html#cb38-1"></a>vetor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb38-2"><a href="3-8-valoresEspeciais.html#cb38-2"></a></span>
+<span id="cb38-3"><a href="3-8-valoresEspeciais.html#cb38-3"></a>vetor[<span class="dv">4</span>]</span>
+<span id="cb38-4"><a href="3-8-valoresEspeciais.html#cb38-4"></a><span class="co">## [1] NA</span></span></code></pre></div>
+<p>Esse valor, o <code>NA</code>, é tratado de forma especial no R. Ele representa a <em>ausência de informação</em>, isto é, a informação existe, mas nós (e o R) não sabemos qual é.</p>
+<p>O <code>NA</code> para o R nada mais é do que o valor faltante ou omisso da Estatística. O famoso <em>missing</em>. Geralmente, quando temos uma base com valores faltando, como a idade para alguns indivíduos da nossa amostra, não significa que a idade deles não existe. Significa apenas que não temos essa informação.</p>
+<p>Esse conceito é muito importante para entender o resultado da expressão abaixo.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="3-8-valoresEspeciais.html#cb39-1"></a><span class="dv">5</span> <span class="op">==</span><span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb39-2"><a href="3-8-valoresEspeciais.html#cb39-2"></a><span class="co">## [1] NA</span></span></code></pre></div>
+<p>Em um primeiro momento, poderíamos esperar que o resultado fosse <code>TRUE</code>. Mas, sabendo o significado por trás do <code>NA</code> — um valor desconhecido —, a verdadeira pergunta que estamos fazendo é: 5 é igual a um valor que existe, mas que não sei qual é? É como se eu perguntasse se eu tenho 5 moedas na mão, mas lhe mostrasse a mão fechada. A resposta para isso é <em>não sei</em> ou, dentro do R, <code>NA</code>.</p>
+<p>Um outro exemplo:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="3-8-valoresEspeciais.html#cb40-1"></a>idade_ana &lt;-<span class="st"> </span><span class="dv">30</span></span>
+<span id="cb40-2"><a href="3-8-valoresEspeciais.html#cb40-2"></a>idade_beto &lt;-<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb40-3"><a href="3-8-valoresEspeciais.html#cb40-3"></a>idade_carla &lt;-<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb40-4"><a href="3-8-valoresEspeciais.html#cb40-4"></a></span>
+<span id="cb40-5"><a href="3-8-valoresEspeciais.html#cb40-5"></a>idade_ana <span class="op">==</span><span class="st"> </span>idade_beto</span>
+<span id="cb40-6"><a href="3-8-valoresEspeciais.html#cb40-6"></a><span class="co">## [1] NA</span></span>
+<span id="cb40-7"><a href="3-8-valoresEspeciais.html#cb40-7"></a></span>
+<span id="cb40-8"><a href="3-8-valoresEspeciais.html#cb40-8"></a>idade_beto <span class="op">==</span><span class="st"> </span>idade_carla</span>
+<span id="cb40-9"><a href="3-8-valoresEspeciais.html#cb40-9"></a><span class="co">## [1] NA</span></span></code></pre></div>
+<p>Eu posso saber a idade da Ana, mas se eu não souber a idade do Beto, não sei se os dois tem a mesma idade. Por isso, <code>NA</code>. Da mesma forma, se não sei nem a idade do Beto nem da Carla, também não tenho como saber se os dois têm a mesma idade. Outra vez <code>NA</code>.</p>
+<p>Mas e quando queremos saber se um valor é NA ou não? Para fazer esse teste, temos que rodar <code>is.na(valor-ou-objeto)</code>.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="3-8-valoresEspeciais.html#cb41-1"></a><span class="kw">is.na</span>(<span class="ot">NA</span>)</span>
+<span id="cb41-2"><a href="3-8-valoresEspeciais.html#cb41-2"></a><span class="co">## [1] TRUE</span></span>
+<span id="cb41-3"><a href="3-8-valoresEspeciais.html#cb41-3"></a></span>
+<span id="cb41-4"><a href="3-8-valoresEspeciais.html#cb41-4"></a><span class="kw">is.na</span>(idade_ana)</span>
+<span id="cb41-5"><a href="3-8-valoresEspeciais.html#cb41-5"></a><span class="co">## [1] FALSE</span></span>
+<span id="cb41-6"><a href="3-8-valoresEspeciais.html#cb41-6"></a></span>
+<span id="cb41-7"><a href="3-8-valoresEspeciais.html#cb41-7"></a><span class="kw">is.na</span>(idade_beto)</span>
+<span id="cb41-8"><a href="3-8-valoresEspeciais.html#cb41-8"></a><span class="co">## [1] TRUE</span></span></code></pre></div>
+<p>Repare que essa função também é vetorizada.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="3-8-valoresEspeciais.html#cb42-1"></a><span class="kw">is.na</span>(<span class="kw">c</span>(idade_ana, idade_beto, idade_carla))</span>
+<span id="cb42-2"><a href="3-8-valoresEspeciais.html#cb42-2"></a><span class="co">## [1] FALSE  TRUE  TRUE</span></span></code></pre></div>
+<p>Assim como o <code>NA</code>, existem outros valores especiais muito comuns no R.</p>
+<p>O <code>NaN</code> (<em>not a number</em>) representa indefinições matemáticas.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="3-8-valoresEspeciais.html#cb43-1"></a><span class="dv">0</span><span class="op">/</span><span class="dv">0</span></span>
+<span id="cb43-2"><a href="3-8-valoresEspeciais.html#cb43-2"></a><span class="co">## [1] NaN</span></span>
+<span id="cb43-3"><a href="3-8-valoresEspeciais.html#cb43-3"></a></span>
+<span id="cb43-4"><a href="3-8-valoresEspeciais.html#cb43-4"></a><span class="kw">log</span>(<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb43-5"><a href="3-8-valoresEspeciais.html#cb43-5"></a><span class="co">## Warning in log(-1): NaNs produced</span></span>
+<span id="cb43-6"><a href="3-8-valoresEspeciais.html#cb43-6"></a><span class="co">## [1] NaN</span></span></code></pre></div>
+<p>O <code>Inf</code> (infinito) representa um número muito grande (que o computador não consegue representar) ou um limite matemático.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="3-8-valoresEspeciais.html#cb44-1"></a><span class="co"># O computador não consegue representar um número tão grande.</span></span>
+<span id="cb44-2"><a href="3-8-valoresEspeciais.html#cb44-2"></a><span class="co"># O número é então &quot;&quot;&quot;arredondado&quot;&quot;&quot; para infinito.</span></span>
+<span id="cb44-3"><a href="3-8-valoresEspeciais.html#cb44-3"></a><span class="dv">10</span><span class="op">^</span><span class="dv">310</span></span>
+<span id="cb44-4"><a href="3-8-valoresEspeciais.html#cb44-4"></a><span class="co">## [1] Inf</span></span>
+<span id="cb44-5"><a href="3-8-valoresEspeciais.html#cb44-5"></a></span>
+<span id="cb44-6"><a href="3-8-valoresEspeciais.html#cb44-6"></a><span class="co"># Limite matemático.</span></span>
+<span id="cb44-7"><a href="3-8-valoresEspeciais.html#cb44-7"></a><span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="dv">0</span></span>
+<span id="cb44-8"><a href="3-8-valoresEspeciais.html#cb44-8"></a><span class="co">## [1] Inf</span></span>
+<span id="cb44-9"><a href="3-8-valoresEspeciais.html#cb44-9"></a></span>
+<span id="cb44-10"><a href="3-8-valoresEspeciais.html#cb44-10"></a><span class="co"># O &quot;menos infinito&quot; também existe.</span></span>
+<span id="cb44-11"><a href="3-8-valoresEspeciais.html#cb44-11"></a><span class="dv">-1</span> <span class="op">/</span><span class="st"> </span><span class="dv">0</span></span>
+<span id="cb44-12"><a href="3-8-valoresEspeciais.html#cb44-12"></a><span class="co">## [1] -Inf</span></span></code></pre></div>
+<p>O <code>NULL</code> (nulo) representa a ausência de um objeto. Ele não tem significado prático para a análise dados. Está mais em sintonia com comportamentos de lógica de programação. Muitas vezes vamos definir um objeto como nulo para dizer ao R que não queremos dar um valor para ele. Muito utilizado em funções (ver Seção <a href="3-11-funcoes.html#funcoes">3.11</a>).</p>
+<p>Da mesma forma que utilizados <code>is.na()</code> para testar se um objeto é <code>NA</code>, utilizamos <code>is.nan()</code>, <code>is.infinite()</code> ou <code>is.null()</code> para testar se um objeto é <code>NaN</code>, infinito ou nulo.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="3-8-valoresEspeciais.html#cb45-1"></a>nao_sou_um_numero &lt;-<span class="st"> </span><span class="ot">NaN</span></span>
+<span id="cb45-2"><a href="3-8-valoresEspeciais.html#cb45-2"></a>objeto_infinito &lt;-<span class="st"> </span><span class="ot">Inf</span></span>
+<span id="cb45-3"><a href="3-8-valoresEspeciais.html#cb45-3"></a>objeto_nulo &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
+<span id="cb45-4"><a href="3-8-valoresEspeciais.html#cb45-4"></a></span>
+<span id="cb45-5"><a href="3-8-valoresEspeciais.html#cb45-5"></a><span class="kw">is.nan</span>(nao_sou_um_numero)</span>
+<span id="cb45-6"><a href="3-8-valoresEspeciais.html#cb45-6"></a><span class="co">## [1] TRUE</span></span>
+<span id="cb45-7"><a href="3-8-valoresEspeciais.html#cb45-7"></a></span>
+<span id="cb45-8"><a href="3-8-valoresEspeciais.html#cb45-8"></a><span class="kw">is.infinite</span>(objeto_infinito)</span>
+<span id="cb45-9"><a href="3-8-valoresEspeciais.html#cb45-9"></a><span class="co">## [1] TRUE</span></span>
+<span id="cb45-10"><a href="3-8-valoresEspeciais.html#cb45-10"></a></span>
+<span id="cb45-11"><a href="3-8-valoresEspeciais.html#cb45-11"></a><span class="kw">is.null</span>(objeto_nulo)</span>
+<span id="cb45-12"><a href="3-8-valoresEspeciais.html#cb45-12"></a><span class="co">## [1] TRUE</span></span></code></pre></div>
+<div id="exercícios-1" class="section level3 unnumbered">
+<h3>Exercícios</h3>
+<p><strong>1.</strong> Quais as diferenças entre <code>NaN</code>, <code>NULL</code>, <code>NA</code> e <code>Inf</code>? Digite expressões que retornem cada um desses valores.</p>
 </div>
 </div>
 <hr/>
@@ -324,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="1-instalacao.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="3-7-testes-lógicos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="3-9-listas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

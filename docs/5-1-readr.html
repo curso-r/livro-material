@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Ciência de Dados em R</title>
+  <title>5.1 O pacote readr | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Ciência de Dados em R" />
+  <meta property="og:title" content="5.1 O pacote readr | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Ciência de Dados em R" />
+  <meta name="twitter:title" content="5.1 O pacote readr | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-
-<link rel="next" href="1-instalacao.html"/>
+<link rel="prev" href="5-importacao.html"/>
+<link rel="next" href="5-2-readxl.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -272,48 +272,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Ciência de Dados em R</h1>
-<p class="author"><em>Curso-R</em></p>
-<p class="date"><em>Última atualização: 22/05/2020</em></p>
-</div>
-<div id="sobre" class="section level1 unnumbered">
-<h1>Sobre</h1>
-<p>Este livro está em <strong>construção</strong> e em <strong>revisão aberta</strong>. Fique à vontade para corrigir qualquer tipo de erro que encontrar no nosso material.</p>
-<p>Todo o conteúdo deste livro é gratuito e aberto.</p>
-<div id="o-r-e-o-rstudio" class="section level4 unnumbered">
-<h4>O R e o RStudio</h4>
-<p>O R é uma linguagem de programação <em>open source</em> para análise de dados que fornece uma grande variedade de ferramentas estatísticas e gráficas.</p>
-<p>O RStudio é o ambiente de desenvolvimento mais utilizado para programação em R. Ele possui diversas ferramentas que facilitam a utilização do R para se fazer análise de dados.</p>
-</div>
-<div id="este-livro" class="section level4 unnumbered">
-<h4>Este livro</h4>
-<p>Este livro tem como objetivo guiar o leitor por todas as etapas de uma análise de dados, utilizando o R como ferramenta.</p>
-<p><img src="assets/img/environmental-data-science-r4ds-general.png" width="2400" style="display: block; margin: auto;" /></p>
-</div>
-<div id="comunidade" class="section level4 unnumbered">
-<h4>Comunidade</h4>
-<p>Seja bem-vinda(o) ao #rstats.</p>
-<p>Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e participe dos grupos e comunidades de programadores.</p>
+<div id="readr" class="section level2">
+<h2><span class="header-section-number">5.1</span> O pacote readr</h2>
+<p>O pacote <code>readr</code>do tidyverse é utilizado para importar arquivos de texto, como <code>.txt</code> ou <code>.csv</code>, para o R. Para carregá-lo, rode o código:</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="5-1-readr.html#cb114-1"></a><span class="kw">library</span>(readr)</span></code></pre></div>
+<p>O <code>readr</code> transforma 7 tipos de arquivos de textos em <code>tibbles</code> usando as funções:</p>
 <ul>
-<li><p>Comunidade RLadies: <a href="https://benubah.github.io/r-community-explorer/rladies.html" class="uri">https://benubah.github.io/r-community-explorer/rladies.html</a></p></li>
-<li><p>Fórum de dúvidas da Curso-R: <a href="https://discourse.curso-r.com/" class="uri">https://discourse.curso-r.com/</a></p></li>
-<li><p>Grupo de divulgação da Curso-R no Telegram: <a href="https://t.me/r6cursor" class="uri">https://t.me/r6cursor</a></p></li>
-<li><p>Grupo R Brasil no Telegram: <a href="https://t.me/rbrasiloficial" class="uri">https://t.me/rbrasiloficial</a></p></li>
+<li><p><code>read_csv()</code>: para arquivos separados por vírgula.</p></li>
+<li><p><code>read_tsv()</code>: para arquivos separados por tabulação.</p></li>
+<li><p><code>read_delim()</code>: para arquivos separados por um delimitador genérico. O argumento <code>delim=</code> indica qual caracter separa cada coluna no arquivo de texto.</p></li>
+<li><p><code>read_table()</code>: para arquivos de texto tabular com colunas separadas por espaço.</p></li>
+<li><p><code>read_fwf()</code>: para arquivos compactos que devem ter a largura de cada coluna especificada.</p></li>
+<li><p><code>read_log()</code>: para arquivos padrões de log.</p></li>
 </ul>
-<p><img src="assets/img/welcome_to_rstats_twitter.png" width="1004" style="display: block; margin: auto;" /></p>
-</div>
-<div id="a-curso-r" class="section level4 unnumbered">
-<h4>A Curso-R</h4>
-<p>A Curso-R é o braço de Educação da R6 Consultoria, uma empresa de treinamentos e consultoria em Ciência de Dados e linguagem de programação R. Surgimos em 2015, com cursos de introdução ao R no Programa de Cursos de Verão do Instituto de Matemática e Estatística da Universidade de São Paulo (IME-USP).</p>
+<p>Vamos mostrar na próxima seção como importar as extensões mais comuns: <code>.csv</code> e <code>.txt</code>.</p>
+<div id="importando-arquivos-de-texto" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Importando arquivos de texto</h3>
+<p>Como exemplo, utilizaremos uma base de filmes do IMDB, gravada em diversos formatos. O download dos arquivos pode ser realizado a partir <a href="https://github.com/curso-r/intro-programacao-em-r-mestre/tree/master/dados">deste repositório</a>.</p>
+<p>Primeiro, vamos ler a base em formato <code>.csv</code>.</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="5-1-readr.html#cb115-1"></a>imdb_csv &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;imdb.csv&quot;</span>)</span></code></pre></div>
+<p>A mensagem retornada pela função indica qual classe foi atribuída para cada coluna. Repare que o argumento <code>file=</code> representa o caminho até o arquivo. Se o arquivo a ser lido não estiver no diretório de trabalho da sua sessão, você precisa especificar o caminho até o arquivo.</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="5-1-readr.html#cb116-1"></a><span class="co"># Se o arquivo estiver dentro de uma pasta chamada dados.</span></span>
+<span id="cb116-2"><a href="5-1-readr.html#cb116-2"></a></span>
+<span id="cb116-3"><a href="5-1-readr.html#cb116-3"></a>imdb_csv &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;dados/imdb.csv&quot;</span>)</span></code></pre></div>
+<p>A maioria das funções de leitura do <code>readr</code> possuem argumentos muito úteis para resolver problemas de importação:</p>
 <ul>
-<li><p>Conheça os nossos cursos: <a href="https://www.curso-r.com/cursos/" class="uri">https://www.curso-r.com/cursos/</a></p></li>
-<li><p>Conheça o nosso blog: <a href="https://www.curso-r.com/blog/" class="uri">https://www.curso-r.com/blog/</a></p></li>
-<li><p>Conheça o restante do nosso material: <a href="https://www.curso-r.com/material/" class="uri">https://www.curso-r.com/material/</a></p></li>
-<li><p>Saiba mais sobre a Curso-R: <a href="https://www.curso-r.com/sobre/" class="uri">https://www.curso-r.com/sobre/</a></p></li>
+<li><p><code>col_names=</code>: indica se a primeira linha da base contém ou não o nome das colunas. Também pode ser utilizado para (re)nomear colunas.</p></li>
+<li><p><code>col_types=</code>: caso alguma coluna seja importada com a classe errada (uma coluna de números foi importada como texto, por exemplo), você pode usar esse argumento para especificar a classe das colunas.</p></li>
+<li><p><code>locale=</code>: útil para tratar problema de <em>encoding</em>.</p></li>
+<li><p><code>skip=</code>: pula linhas no começo do arquivo antes de iniciar a importação. Útil para quando o arquivo a ser importado vem com metadados ou qualquer tipo de texto nas primeiras linhas, antes da base.</p></li>
+<li><p><code>na=</code>: indica quais <em>strings</em> deverão ser considaras <code>NA</code> na hora da importação.</p></li>
 </ul>
+<p>Para ler bases com extensão <code>.txt</code> cujas colunas estão separadas por tabulação, podemos utilizar a função <code>read_tsv()</code>.</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="5-1-readr.html#cb117-1"></a>imbd_tsv &lt;-<span class="st"> </span><span class="kw">read_tsv</span>(<span class="dt">file =</span> <span class="st">&quot;imdb.tsv&quot;</span>)</span></code></pre></div>
+<p>Repare que a sintaxe é igual a da função <code>read_csv()</code>. Em geral, as funções de importação do <code>tidyverse</code> terão sintaxe muito parecidas e, caso a base que você precisa importar não apresente nenhum problema<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>, elas só precisarão do argumento <code>file=</code> para funcionar.</p>
+<p>A seguir, vamos falar das funções <code>parse_()</code>, muito úteis para tratar problemas na classe das variáveis na hora da importação.</p>
+</div>
+<div id="parseando-valores" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Parseando valores</h3>
+</div>
+<div id="locale" class="section level3">
+<h3><span class="header-section-number">5.1.3</span> Locale</h3>
+</div>
+<div id="escrevendo-arquivos" class="section level3">
+<h3><span class="header-section-number">5.1.4</span> Escrevendo arquivos</h3>
+<p>Para a maioria das funções <code>read_</code>, existe uma respectiva função <code>write_</code>. Essas funções servem para salvar bases em um formato específico de arquivo. Além do caminho/nome do arquivo a ser criado, você também precisa passar o objeto que será escrito. Para o arquivo criado funcionar corretamente, você precisa especificar a extensão correta no nome do arquivo.</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="5-1-readr.html#cb118-1"></a><span class="co"># Arquivo .csv</span></span>
+<span id="cb118-2"><a href="5-1-readr.html#cb118-2"></a><span class="kw">write_csv</span>(<span class="dt">x =</span> mtcars, <span class="dt">path =</span> <span class="st">&quot;data/mtcars.csv&quot;</span>)</span>
+<span id="cb118-3"><a href="5-1-readr.html#cb118-3"></a></span>
+<span id="cb118-4"><a href="5-1-readr.html#cb118-4"></a><span class="co"># Base separada por tabulação</span></span>
+<span id="cb118-5"><a href="5-1-readr.html#cb118-5"></a><span class="kw">write_delim</span>(<span class="dt">x =</span> mtcars, <span class="dt">delim =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, <span class="dt">path =</span> <span class="st">&quot;data/mtcars.txt&quot;</span>)</span></code></pre></div>
+<p>Também é possível salvar qualquer tipo de objeto do R em um tipo especial de arquivos, o <code>.rds</code>. A vantagem dessa extensão é guardar a estrutura dos dados salvos, como a classe das colunas de um data.frame. Além disso, é uma boa alternativa para lidar com grandes bancos de dados, já que você pode compactar os arquivos <code>.rds</code>, deixando-os bem menores que, por exemplo, um arquivo Excel.</p>
+<p>Para ler ou escrever arquivos <code>.rds</code>, utilize as funções <code>read_rds()</code> e <code>write_rds()</code>.</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="5-1-readr.html#cb119-1"></a>imdb_rds &lt;-<span class="st"> </span><span class="kw">read_rds</span>(<span class="dt">path =</span> <span class="st">&quot;imdb.rds&quot;</span>)</span>
+<span id="cb119-2"><a href="5-1-readr.html#cb119-2"></a><span class="kw">write_rds</span>(mtcars, <span class="dt">path =</span> <span class="st">&quot;mtcars.rds&quot;</span>)</span></code></pre></div>
+<div id="exercícios-5" class="section level4 unnumbered">
+<h4>Exercícios</h4>
+<ol style="list-style-type: decimal">
+<li><p>Qual a diferença entre as funções <code>read_csv()</code> e <code>read_csv2()</code>?</p></li>
+<li><p>Leia o arquivo <code>imdb.csv</code> utilizando a função <code>read_delim()</code>.</p></li>
+<li><p>Escreva a base mtcars em um arquivo <code>mtcars.csv</code> que não contenha o nome das colunas.</p></li>
+</ol>
 
 </div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="10">
+<li id="fn10"><p>O que, infelizmente, acontece muito raramente.<a href="5-1-readr.html#fnref10" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 <hr/>
 <footer>
@@ -324,8 +352,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="1-instalacao.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="5-importacao.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="5-2-readxl.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

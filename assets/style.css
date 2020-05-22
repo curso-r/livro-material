@@ -1,5 +1,3 @@
-
-
 p.caption {
   color: #777;
   margin-top: 10px;
@@ -7,20 +5,78 @@ p.caption {
 p code {
   white-space: inherit;
 }
+
 pre {
   word-break: normal;
   word-wrap: normal;
 }
+
 pre code {
   white-space: inherit;
 }
 
+/* Custom specific to OUR bookdown template */
+.body-inner {
+/*  background-color: #1e73be;*/
+    background-color: #f6f6ff;
+} 
+.book .book-body .page-wrapper .page-inner {
+    max-width: 1025px;
+}
+.book .book-body .page-wrapper .page-inner section {
+    padding: 5px 3em;
+}
+.book .book-body .page-wrapper .page-inner section.normal p.caption {
+  margin: 0 10%;
+  text-align: center;
+  font-size: 1.4rem;
+}
+.page-inner {
+        max-width: 1025px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: white;
+        /* padding: 1em 30px 15px; */
+    }
 
+.book .book-body .navigation {
+    font-size: 70px;
+    color: #ccc;
+    text-align: center;
+}
 
-/*.book.font-family-0 {
-  font-family: 'Crimson Text', serif;
-}*/
+.book .book-body .page-wrapper .page-inner section.normal a {
+    color: #E60327;
+}
+
+/* nois */
+
+.book .book-summary {
+  font-family: 'Arvo', serif;
+}
+
+.book.font-family-0 {
+  font-family: 'Arvo', serif;
+}
 
 /*.book.font-family-1 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }*/
+
+a:active {
+    color: #E60327;
+}
+h1 {
+    color: #0EADC2;
+}
+h2 {
+    color: #0EADC2;
+}
+h3 {
+    color: #0EADC2;
+}
+
+/* Footer with logo */
+footer {
+    text-align: center;
+}
