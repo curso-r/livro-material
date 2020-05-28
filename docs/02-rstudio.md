@@ -1,4 +1,4 @@
-# RStudio
+# RStudio {#rstudio}
 
 O RStudio é sem dúvidas o mais completo ambiente de desenvolvimento para programação em R. Descubra aqui as funcionalidades do RStudio que nos permitem escrever códigos e analisar resultados de forma muito mais eficiente.
 
@@ -6,7 +6,7 @@ O RStudio é sem dúvidas o mais completo ambiente de desenvolvimento para progr
 
 Ao abrir o RStudio, você verá 4 quadrantes. Observe a figura abaixo.
 
-<img src="img/rstudio/rstudio-editor.png" style="display: block; margin: auto;" />
+<img src="assets/img/rstudio/rstudio-editor.png" width="2024" style="display: block; margin: auto;" />
 
 
 Esses quadrantes representam o **editor**, o **console**, o **environment** e o **output**. Eles vêm nesta ordem, mas você pode organizá-los da forma que preferir acessando a seção *Pane Layout* da opção `Global options...` no menu `Tools`.
@@ -55,19 +55,19 @@ Para criar um projeto, clique em `New Project...` no Menu `File`. Na caixa de di
 
 Se você tiver o `Git` instalado, você também pode usar projetos para conectar com repositórios do Github e outras plataformas de desenvolvimento. Para isso, basta clicar em `Version Control`.
 
-<img src="img/rstudio/projetos.png" style="display: block; margin: auto;" />
+<img src="assets/img/rstudio/projetos.png" width="266" style="display: block; margin: auto;" />
 
 Criando um projeto, o RStudio criará na pasta escolhida um arquivo `nome-do-projeto.Rproj`. Você pode usar esse arquivo para iniciar o RStudio já com o respectivo projeto aberto.
 
 Quando um projeto estiver aberto no RStudio, o seu nome aparecerá no canto superior direito da tela. Na aba **Files**, aparecerão todos os arquivos contidos no projeto.
 
-<img src="img/rstudio/exemplo-projeto-aberto.png" style="display: block; margin: auto;" />
+<img src="assets/img/rstudio/exemplo-projeto-aberto.png" width="1440" style="display: block; margin: auto;" />
 
 Você pode criar livremente novas pastas dentro da pasta do projeto. Por padrão, o R sempre começará a procurar arquivos na pasta raiz do projeto (é a pasta que contem o `nome-do-projeto.Rproj`).
 
 Uma maneira fácil de navegar entre projetos é utilizar o menu disponibilizado quando clicamos no nome do projeto. Veja a figura a seguir.
 
-<img src="img/rstudio/exemplo-lista-projetos.png" style="display: block; margin: auto;" />
+<img src="assets/img/rstudio/exemplo-lista-projetos.png" width="1440" style="display: block; margin: auto;" />
 
 Nesse menu, além de podermos criar novos projetos ou abrir projetos já existentes, também temos um acesso rápido a projetos abertos recentemente. Basta clicar em qualquer um deles para trocar de projeto, isto é, deixar de trabalhar em uma análise e começar a trabalhar em outra.
 
@@ -124,7 +124,7 @@ O RStudio tem à disposição algumas *folhas de cola*, as **cheatsheets**. Elas
 Para acessá-las, basta clicar no menu `Help` e então em `Cheatsheets`.
 
 
-<img src="img/rstudio/cheatsheet-rstudio.png" width="700" height="600" style="display: block; margin: auto;" />
+<img src="assets/img/rstudio/cheatsheet-rstudio.png" width="700" height="600" style="display: block; margin: auto;" />
 
 ## Addins
 

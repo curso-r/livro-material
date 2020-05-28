@@ -1,4 +1,4 @@
-## haven
+## haven {#haven}
 
 Para ler arquivos gerados por outros softwares, como SPSS, SAS e STATA, você pode usar as funções do pacote `haven`. Este pacote faz parte do `tidyverse` e é um wrapper da biblioteca ReadStat, escrita em C.
 
@@ -6,15 +6,15 @@ Para ler arquivos gerados por outros softwares, como SPSS, SAS e STATA, você po
 ```{r}
 library(haven)
 
-imdb_sas <- read_sas("data/imdb.sas7bdat")
-imdb_spss <- read_spss("data/imdb.sav")
-imdb_dta <- read_dta("data/imdb.dta")
+imdb_sas <- read_sas("assets/data/imdb.sas7bdat")
+imdb_spss <- read_spss("assets/data/imdb.sav")
+imdb_dta <- read_dta("assets/data/imdb.dta")
 ```
 
 É possível salvar ou escrever bases em SAS e STATA com as funções `write_sas` e `write_dta`.
 
 ```{r}
-write_dta(mtcars,'data/matcars.dta')
+write_dta(mtcars, 'assets/data/mtcars.dta')
 ```
 
 

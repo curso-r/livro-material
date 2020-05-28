@@ -1,15 +1,15 @@
 --- 
 title: "Ciência de Dados em R"
 author: "Curso-R"
-date: "Última atualização: 19/05/2020"
+date: "Última atualização: 22/05/2020"
 github-repo: "curso-r/livro-material"
 site: bookdown::bookdown_site
 documentclass: book
-cover-image: "img/logo.png"
-# bibliography: [book.bib, packages.bib]
+cover-image: "assets/img/logo.png"
+# bibliography: [assets/book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-favicon: "img/favicon.ico"
+favicon: "assets/img/favicon.ico"
 description: "Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R."
 ---
 
@@ -32,8 +32,8 @@ O RStudio é o ambiente de desenvolvimento mais utilizado para programação em 
 Este livro tem como objetivo guiar o leitor por todas as etapas de uma análise de dados, utilizando o R como ferramenta.
 
 <div class="figure" style="text-align: center">
-<img src="img/environmental-data-science-r4ds-general.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la."  />
-<p class="caption">(\#fig:unnamed-chunk-2)Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la.</p>
+<img src="assets/img/environmental-data-science-r4ds-general.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la." width="2400" />
+<p class="caption">(\#fig:allison-env)Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la.</p>
 </div>
 
 #### Comunidade {-}
@@ -51,8 +51,8 @@ Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartil
 - Grupo R Brasil no Telegram: https://t.me/rbrasiloficial
 
 <div class="figure" style="text-align: center">
-<img src="img/welcome_to_rstats_twitter.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la."  />
-<p class="caption">(\#fig:unnamed-chunk-3)Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la.</p>
+<img src="assets/img/welcome_to_rstats_twitter.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la." width="1004" />
+<p class="caption">(\#fig:allison-twitter)Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la.</p>
 </div>
 
 #### A Curso-R {-}

@@ -1,4 +1,4 @@
-## O pacote tidyr
+## O pacote tidyr {#tidyr}
 
 O pacote `tidyr` dispõe de funções úteis para deixar os seus dados no formato que você precisa para a análise. Na maioria das vezes, utilizamos para deixá-los _tidy_. Outras, precisamos "bagunçá-los" um pouco para poder aplicar alguma função específica.
 
@@ -16,7 +16,7 @@ A função `gather()` "empilha" o banco de dados. Ela é utilizada principalment
 ```r
 library(tidyr)
 
-imdb <- readr::read_rds("data/imdb.rds")
+imdb <- readr::read_rds("assets/data/imdb.rds")
 
 imdb_gather <- imdb %>%
   mutate(id = 1:n()) %>%

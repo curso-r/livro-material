@@ -1,4 +1,4 @@
-## O pacote dplyr
+## O pacote dplyr {#dplyr}
 
 
 O `dplyr` é o pacote mais útil para realizar transformação de dados, aliando simplicidade e eficiência de uma forma elegante. Os scripts em R que fazem uso inteligente dos verbos `dplyr` e as facilidades do operador _pipe_ tendem a ficar mais legíveis e organizados sem perder velocidade de execução.
@@ -38,7 +38,7 @@ A função `filter()` filtra linhas. Ela é semelhante à função `subset()`, d
 
 ```{r include=FALSE}
 library(dplyr)
-imdb <- readr::read_rds("data/imdb.rds")
+imdb <- readr::read_rds("assets/data/imdb.rds")
 ```
 
 
@@ -193,14 +193,14 @@ Para juntar duas tabelas de dados, podemos utilizar a família de funções `_jo
 
 A figura a seguir esquematiza as operações dessas funções:
 
-```{r, echo=FALSE, fig.align='center'}
-knitr::include_graphics('img/manipulacao/joins.png')
+```{r dplyr-joins, echo=FALSE, fig.align='center'}
+knitr::include_graphics('assets/img/manipulacao/joins.png')
 ```
 
 A figura a seguir mostra o que acontece quando temos chaves duplicadas em um `left_join()`. A ideia é equivalante para as outras funções.
 
-```{r, echo=FALSE, fig.align='center'}
-knitr::include_graphics('img/manipulacao/left-join.png')
+```{r left-join, echo=FALSE, fig.align='center'}
+knitr::include_graphics('assets/img/manipulacao/left-join.png')
 ```
 
 

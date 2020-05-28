@@ -1,10 +1,9 @@
-# R Básico
+# R Básico {#r-base}
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE, 
-  fig.align = "center", 
-  cache = TRUE
+  fig.align = "center"
 )
 
 source("R/utils.R")
@@ -20,10 +19,9 @@ A linguagem `R` é bem intuitiva. É possível fazer bastante coisa à base da t
 
 No entanto, a intuição não infalível, e recorrentemente vamos precisar de ajuda para rodar alguma função ou descobrir como fazer alguma tarefa no R. Felizmente, a comunidade R é bem ativa e existem vários lugares para buscar respostas. Nesta seção, vamos apresentar as principais maneiras algumas dessas maneiras.
 
-```{r, fig.cap=Sys.getenv("cap_alisson_horst"), echo = FALSE}
-knitr::include_graphics("img/r-base/code_hero_rstats.png")
+```{r r-base-1, fig.cap=Sys.getenv("cap_alisson_horst"), echo=FALSE}
+knitr::include_graphics("assets/img/r-base/code_hero_rstats.png")
 ```
-
 
 No R, há quatro principais entidades para se pedir ajuda:
 
@@ -64,8 +62,8 @@ Quando você recebe um erro na tentativa de rodar algum código no R e não sabe
 log("5")
 ```
 
-```{r echo=FALSE, fig.align='center', out.width=795, out.height=267}
-knitr::include_graphics("img/r-base/ajuda_google.png")
+```{r r-base-2, echo=FALSE, fig.align='center', out.width=795, out.height=267}
+knitr::include_graphics("assets/img/r-base/ajuda_google.png")
 ```
 
 ### Stack Overflow
@@ -113,7 +111,7 @@ Porém, no caso do R, há outro requisito que vai aumentar muito sua chance de t
 <!-- Criar um R Markdown novo no RStudio é fácil. Clique no botão de criar arquivo e selecione R Markdown. -->
 
 <!-- ```{r echo=FALSE, fig.align='center'} -->
-<!-- knitr::include_graphics(rep("img/r-base/criar_rmarkdown.png")) -->
+<!-- knitr::include_graphics(rep("assets/img/r-base/criar_rmarkdown.png")) -->
 <!-- ``` -->
 
 
@@ -1512,7 +1510,7 @@ Para construir um gráfico de dispersão, utilizamos a função `plot()`. Seus p
 
 Para mais detalhes sobre os argumentos, ver `help(plot)`.
 
-```{r}
+```{r r-base-plot-1}
 N <- 100
 x <- 1:N
 y <- 5 + 2 * x + rnorm(N, sd = 30)
@@ -1524,7 +1522,7 @@ No código acima, a função `rnorm()` gera uma amostra aleatória da distribui�
 
 O parâmetro `type = "l"` indica que queremos que os pontos sejam interligados por linhas.
 
-```{r}
+```{r r-base-plot-2}
 plot(x, y, type = "l")
 ```
 
@@ -1535,11 +1533,11 @@ Para construir histogramas, utilizamos a função `hist()`. Os principais parâm
 - `x`: o vetor numérico para o qual o histograma será construído.
 - `breaks`:  número (aproximado) de retângulos.
 
-```{r}
+```{r r-base-plot-3}
 hist(rnorm(1000))
 ```
 
-```{r}
+```{r r-base-plot-4}
 hist(rnorm(1000), breaks = 6)
 ```
 
@@ -1549,7 +1547,7 @@ Para construir boxplots, utilizamos a função `boxplot()`. Os principais parâm
 
 - `x`: o vetor numérico para o qual o boxplot será construído.
 
-```{r}
+```{r r-base-plot-5}
 boxplot(mtcars$mpg, col = "lightgray")
 ```
 
@@ -1557,7 +1555,7 @@ Observe que o argumento `col=` muda a cor da caixa do boxplot.
 
 Para mapear duas variáveis ao gráfico, passamos um *data frame* para o argumento `data=` e utilizamos a seguinte sintaxe `var_numerica ~ var_categorica`.
 
-```{r}
+```{r r-base-plot-6}
 boxplot(mpg ~ cyl, data = mtcars, col = "purple")
 ```
 
@@ -1567,7 +1565,7 @@ Para construir gráficos de barras, precisamos combinar as funções `table()` e
 
 No gráfico abaixo, primeiro criamos uma tabela de frequências com a função `table()` e, em seguida, construímos o gráfico com a função `barplot()`.
 
-```{r}
+```{r r-base-plot-7}
 tabela <- table(mtcars$cyl)
 tabela
 
