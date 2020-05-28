@@ -1505,7 +1505,7 @@ x <- 1
 if (x == 1) {         
   Sys.time()
 }
-## [1] "2020-05-28 16:24:11 -03"
+## [1] "2020-05-28 16:32:44 -03"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se a expressão que estiver dentro dos parênteses `()` retornar `TRUE`. Veja outro exemplo:

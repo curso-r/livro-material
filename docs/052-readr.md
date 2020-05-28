@@ -27,7 +27,7 @@ Vamos mostrar na próxima seção como importar as extensões mais comuns: `.csv
 
 ### Lendo arquivos de texto
 
-Como exemplo, utilizaremos uma base de filmes do IMDB, gravada em diversos formatos. O download dos arquivos pode ser realizado a partir [deste repositório](https://github.com/curso-r/intro-programacao-em-r-mestre/tree/master/dados).
+Como exemplo, utilizaremos uma base de filmes do IMDB, gravada em diversos formatos. O download dos arquivos pode ser realizado a partir [deste repositório](https://github.com/curso-r/livro-material/raw/master/assets/data/imdb.zip).
 
 Primeiro, vamos ler a base em formato `.csv`.
 
