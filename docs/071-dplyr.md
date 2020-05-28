@@ -543,10 +543,10 @@ Para juntar duas tabelas de dados, podemos utilizar a família de funções `_jo
 
 A figura a seguir esquematiza as operações dessas funções:
 
-<img src="assets/img/manipulacao/joins.png" width="355" style="display: block; margin: auto;" />
+<img src="assets/img/manipulacao/joins.png" style="display: block; margin: auto;" />
 
 A figura a seguir mostra o que acontece quando temos chaves duplicadas em um `left_join()`. A ideia é equivalante para as outras funções.
 
-<img src="assets/img/manipulacao/left-join.png" width="279" style="display: block; margin: auto;" />
+<img src="assets/img/manipulacao/left-join.png" style="display: block; margin: auto;" />
 
 

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7.3 O pacote tidyr | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7.3 O pacote tidyr | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
@@ -55,9 +55,9 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -66,16 +66,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -84,9 +82,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -199,14 +197,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="4-2-tidyverse.html"><a href="4-2-tidyverse.html"><i class="fa fa-check"></i><b>4.2</b> Tidyverse</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a><ul>
-<li class="chapter" data-level="5.1" data-path="5-1-readr.html"><a href="5-1-readr.html"><i class="fa fa-check"></i><b>5.1</b> O pacote readr</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="5-1-readr.html"><a href="5-1-readr.html#importando-arquivos-de-texto"><i class="fa fa-check"></i><b>5.1.1</b> Importando arquivos de texto</a></li>
-<li class="chapter" data-level="5.1.2" data-path="5-1-readr.html"><a href="5-1-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.1.2</b> Parseando valores</a></li>
-<li class="chapter" data-level="5.1.3" data-path="5-1-readr.html"><a href="5-1-readr.html#locale"><i class="fa fa-check"></i><b>5.1.3</b> Locale</a></li>
-<li class="chapter" data-level="5.1.4" data-path="5-1-readr.html"><a href="5-1-readr.html#escrevendo-arquivos"><i class="fa fa-check"></i><b>5.1.4</b> Escrevendo arquivos</a></li>
+<li class="chapter" data-level="5.1" data-path="5-1-caminhos.html"><a href="5-1-caminhos.html"><i class="fa fa-check"></i><b>5.1</b> Caminhos</a></li>
+<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="5-2-readr.html"><a href="5-2-readr.html#lendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.1</b> Lendo arquivos de texto</a></li>
+<li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.2</b> Parseando valores</a></li>
+<li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.3</b> Locale</a></li>
+<li class="chapter" data-level="5.2.4" data-path="5-2-readr.html"><a href="5-2-readr.html#escrevendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.4</b> Escrevendo arquivos de texto</a></li>
+<li class="chapter" data-level="5.2.5" data-path="5-2-readr.html"><a href="5-2-readr.html#arquivos-.rds"><i class="fa fa-check"></i><b>5.2.5</b> Arquivos .rds</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="5-2-readxl.html"><a href="5-2-readxl.html"><i class="fa fa-check"></i><b>5.2</b> readxl</a></li>
-<li class="chapter" data-level="5.3" data-path="5-3-haven.html"><a href="5-3-haven.html"><i class="fa fa-check"></i><b>5.3</b> haven</a></li>
+<li class="chapter" data-level="5.3" data-path="5-3-readxl.html"><a href="5-3-readxl.html"><i class="fa fa-check"></i><b>5.3</b> Os pacotes readxl e writexl</a></li>
+<li class="chapter" data-level="5.4" data-path="5-4-haven.html"><a href="5-4-haven.html"><i class="fa fa-check"></i><b>5.4</b> haven</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a></li>
@@ -248,9 +248,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1.4" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>10.1.4</b> Outras funções</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="11-respostas-1.html"><a href="11-respostas-1.html"><i class="fa fa-check"></i><b>11</b> Respostas</a></li>
+<li class="chapter" data-level="" data-path="respostas-1.html"><a href="respostas-1.html"><i class="fa fa-check"></i>Respostas</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
+<li class="chapter" data-level="10.1.5" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i><b>10.1.5</b> Programação em R</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
@@ -280,20 +281,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="gather" class="section level3">
 <h3><span class="header-section-number">7.3.1</span> <code>gather()</code></h3>
 <p>A função <code>gather()</code> “empilha” o banco de dados. Ela é utilizada principalmente quando as colunas da base não representam nomes de variáveis, mas sim seus valores.</p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="7-3-tidyr.html#cb221-1"></a><span class="kw">library</span>(tidyr)</span>
-<span id="cb221-2"><a href="7-3-tidyr.html#cb221-2"></a></span>
-<span id="cb221-3"><a href="7-3-tidyr.html#cb221-3"></a>imdb &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_rds</span>(<span class="st">&quot;assets/data/imdb.rds&quot;</span>)</span>
-<span id="cb221-4"><a href="7-3-tidyr.html#cb221-4"></a></span>
-<span id="cb221-5"><a href="7-3-tidyr.html#cb221-5"></a>imdb_gather &lt;-<span class="st"> </span>imdb <span class="op">%&gt;%</span></span>
-<span id="cb221-6"><a href="7-3-tidyr.html#cb221-6"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">n</span>()) <span class="op">%&gt;%</span></span>
-<span id="cb221-7"><a href="7-3-tidyr.html#cb221-7"></a><span class="st">  </span><span class="kw">gather</span>(</span>
-<span id="cb221-8"><a href="7-3-tidyr.html#cb221-8"></a>    <span class="dt">key =</span> <span class="st">&quot;importancia_ator&quot;</span>,</span>
-<span id="cb221-9"><a href="7-3-tidyr.html#cb221-9"></a>    <span class="dt">value =</span> <span class="st">&quot;nome_ator&quot;</span>,</span>
-<span id="cb221-10"><a href="7-3-tidyr.html#cb221-10"></a>    ator_<span class="dv">1</span>, ator_<span class="dv">2</span>, ator_<span class="dv">3</span></span>
-<span id="cb221-11"><a href="7-3-tidyr.html#cb221-11"></a>  ) <span class="op">%&gt;%</span></span>
-<span id="cb221-12"><a href="7-3-tidyr.html#cb221-12"></a><span class="st">  </span><span class="kw">select</span>(nome_ator, importancia_ator, <span class="kw">everything</span>())</span>
-<span id="cb221-13"><a href="7-3-tidyr.html#cb221-13"></a></span>
-<span id="cb221-14"><a href="7-3-tidyr.html#cb221-14"></a>imdb_gather</span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb228-1" title="1"><span class="kw">library</span>(tidyr)</a>
+<a class="sourceLine" id="cb228-2" title="2"></a>
+<a class="sourceLine" id="cb228-3" title="3">imdb &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_rds</span>(<span class="st">&quot;assets/data/imdb.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb228-4" title="4"></a>
+<a class="sourceLine" id="cb228-5" title="5">imdb_gather &lt;-<span class="st"> </span>imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb228-6" title="6"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">n</span>()) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb228-7" title="7"><span class="st">  </span><span class="kw">gather</span>(</a>
+<a class="sourceLine" id="cb228-8" title="8">    <span class="dt">key =</span> <span class="st">&quot;importancia_ator&quot;</span>,</a>
+<a class="sourceLine" id="cb228-9" title="9">    <span class="dt">value =</span> <span class="st">&quot;nome_ator&quot;</span>,</a>
+<a class="sourceLine" id="cb228-10" title="10">    ator_<span class="dv">1</span>, ator_<span class="dv">2</span>, ator_<span class="dv">3</span></a>
+<a class="sourceLine" id="cb228-11" title="11">  ) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb228-12" title="12"><span class="st">  </span><span class="kw">select</span>(nome_ator, importancia_ator, <span class="kw">everything</span>())</a>
+<a class="sourceLine" id="cb228-13" title="13"></a>
+<a class="sourceLine" id="cb228-14" title="14">imdb_gather</a></code></pre></div>
 <pre><code>## # A tibble: 11,421 x 15
 ##    nome_ator importancia_ator titulo   ano diretor duracao cor   generos pais 
 ##    &lt;chr&gt;     &lt;chr&gt;            &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;
@@ -315,13 +316,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="spread" class="section level3">
 <h3><span class="header-section-number">7.3.2</span> <code>spread()</code></h3>
 <p>A função <code>spread()</code> é essencialmente o inverso da <code>gather()</code>. Ela espalha uma variável nas colunas.</p>
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="7-3-tidyr.html#cb223-1"></a>imdb_spread &lt;-<span class="st"> </span>imdb_gather <span class="op">%&gt;%</span></span>
-<span id="cb223-2"><a href="7-3-tidyr.html#cb223-2"></a><span class="st">  </span><span class="kw">spread</span>(</span>
-<span id="cb223-3"><a href="7-3-tidyr.html#cb223-3"></a>    <span class="dt">key =</span> importancia_ator,</span>
-<span id="cb223-4"><a href="7-3-tidyr.html#cb223-4"></a>    <span class="dt">value =</span> nome_ator</span>
-<span id="cb223-5"><a href="7-3-tidyr.html#cb223-5"></a>  )</span>
-<span id="cb223-6"><a href="7-3-tidyr.html#cb223-6"></a></span>
-<span id="cb223-7"><a href="7-3-tidyr.html#cb223-7"></a>imdb_spread</span></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb230-1" title="1">imdb_spread &lt;-<span class="st"> </span>imdb_gather <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb230-2" title="2"><span class="st">  </span><span class="kw">spread</span>(</a>
+<a class="sourceLine" id="cb230-3" title="3">    <span class="dt">key =</span> importancia_ator,</a>
+<a class="sourceLine" id="cb230-4" title="4">    <span class="dt">value =</span> nome_ator</a>
+<a class="sourceLine" id="cb230-5" title="5">  )</a>
+<a class="sourceLine" id="cb230-6" title="6"></a>
+<a class="sourceLine" id="cb230-7" title="7">imdb_spread</a></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 16
 ##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
 ##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
@@ -345,12 +346,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>A função <code>unite()</code> junta duas ou mais colunas usando algum separador (<code>_</code>, por exemplo).</p></li>
 <li><p>A função <code>separate()</code> faz o inverso de <code>unite()</code>: transforma uma coluna em várias usando um separador.</p></li>
 </ul>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="7-3-tidyr.html#cb225-1"></a>imdb <span class="op">%&gt;%</span></span>
-<span id="cb225-2"><a href="7-3-tidyr.html#cb225-2"></a><span class="st">  </span><span class="kw">unite</span>(</span>
-<span id="cb225-3"><a href="7-3-tidyr.html#cb225-3"></a>    <span class="dt">col =</span> <span class="st">&quot;titulo_diretor&quot;</span>,</span>
-<span id="cb225-4"><a href="7-3-tidyr.html#cb225-4"></a>    titulo, diretor,</span>
-<span id="cb225-5"><a href="7-3-tidyr.html#cb225-5"></a>    <span class="dt">sep =</span> <span class="st">&quot; - &quot;</span></span>
-<span id="cb225-6"><a href="7-3-tidyr.html#cb225-6"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb232-1" title="1">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb232-2" title="2"><span class="st">  </span><span class="kw">unite</span>(</a>
+<a class="sourceLine" id="cb232-3" title="3">    <span class="dt">col =</span> <span class="st">&quot;titulo_diretor&quot;</span>,</a>
+<a class="sourceLine" id="cb232-4" title="4">    titulo, diretor,</a>
+<a class="sourceLine" id="cb232-5" title="5">    <span class="dt">sep =</span> <span class="st">&quot; - &quot;</span></a>
+<a class="sourceLine" id="cb232-6" title="6">  )</a></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 14
 ##    titulo_diretor   ano duracao cor   generos pais  classificacao orcamento
 ##    &lt;chr&gt;          &lt;int&gt;   &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
@@ -366,13 +367,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 Pirates of th…  2006     151 Color Action… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="7-3-tidyr.html#cb227-1"></a>imdb <span class="op">%&gt;%</span></span>
-<span id="cb227-2"><a href="7-3-tidyr.html#cb227-2"></a><span class="st">  </span><span class="kw">separate</span>(</span>
-<span id="cb227-3"><a href="7-3-tidyr.html#cb227-3"></a>    <span class="dt">col =</span> generos,</span>
-<span id="cb227-4"><a href="7-3-tidyr.html#cb227-4"></a>    <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;genero_1&quot;</span>, <span class="st">&quot;genero_2&quot;</span>, <span class="st">&quot;genero_3&quot;</span>),</span>
-<span id="cb227-5"><a href="7-3-tidyr.html#cb227-5"></a>    <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">|&quot;</span>,</span>
-<span id="cb227-6"><a href="7-3-tidyr.html#cb227-6"></a>    <span class="dt">extra =</span> <span class="st">&quot;drop&quot;</span></span>
-<span id="cb227-7"><a href="7-3-tidyr.html#cb227-7"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb234-1" title="1">imdb <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb234-2" title="2"><span class="st">  </span><span class="kw">separate</span>(</a>
+<a class="sourceLine" id="cb234-3" title="3">    <span class="dt">col =</span> generos,</a>
+<a class="sourceLine" id="cb234-4" title="4">    <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;genero_1&quot;</span>, <span class="st">&quot;genero_2&quot;</span>, <span class="st">&quot;genero_3&quot;</span>),</a>
+<a class="sourceLine" id="cb234-5" title="5">    <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">|&quot;</span>,</a>
+<a class="sourceLine" id="cb234-6" title="6">    <span class="dt">extra =</span> <span class="st">&quot;drop&quot;</span></a>
+<a class="sourceLine" id="cb234-7" title="7">  )</a></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 17
 ##    titulo   ano diretor duracao cor   genero_1 genero_2 genero_3 pais 
 ##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;

@@ -1,6 +1,5 @@
 # Manipulação {#manipulacao}
 
-
 > "(...) The fact that data science exists as a field is a colossal failure of statistics. To me, what I do is what statistics is all about. It is gaining insight from data using modelling and visualization. Data munging and manipulation is hard and statistics has just said that’s not our domain." - Hadley Wickham
 
 Esta seção trata do tema *manipulação de dados*. Trata-se de uma tarefa dolorosa e demorada, tomando muitas vezes a maior parte do tempo de uma análise estatística. Essa etapa é essencial em qualquer análise de dados e, apesar de negligenciada pela academia, é decisiva para o sucesso de estudos aplicados.
@@ -9,7 +8,7 @@ Usualmente, o cientista de dados parte de uma base "crua" e a transforma até ob
 
 A figura abaixo mostra a fase de "disputa" com os dados (*data wrangling*) para deixá-los no formato analítico.
 
-<img src="assets/img/manipulacao/ciclo-ciencia-de-dados.png" width="479" style="display: block; margin: auto;" />
+<img src="assets/img/manipulacao/ciclo-ciencia-de-dados.png" style="display: block; margin: auto;" />
 
 Um conceito importante para obtenção de uma base analítica é o *data tidying*, ou arrumação de dados. Uma base é considerada *tidy* se
 
