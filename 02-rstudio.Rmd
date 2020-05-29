@@ -122,6 +122,41 @@ project/
 
 ## Git e versionamento
 
+O Rstudio possibilita que projetos possam ser utilizados em conjunto com controle de versão. As ferramentas de controle de versão salvam todas as versões dos seus arquivos ao longo do tempo. Desta forma, se um erro for cometido, podemos olhar as versões anteriores, observar as diferenças entre as versões e arrumar o arquivo. É claro que podemos salvar manualmente essas versões no computador se quisermos, mas estaremos muito suscetíveis a erros. Podemos, por exemplo, nos esquecer qual a última versão feita e sobreescrevermos os arquivos.
+
+Um controle de versão comumente utilizado ao desenvolver códigos no Rstudio é o Git. Ele é especialmente interessante quando o conectamos com algum repositório online, como por exemplo, o Github. Desta maneira, não precisamos nos preocupar em perder os arquivos por alguma falha do computador.
+
+Quando estamos trabalhando em grupos, o emprego do Git e Github é muito útil. Além de todos os indivíduos terem acesso à última versão dos arquivos, o controle de versionamento também ajuda a coordenar o processo de unir as mudanças feitas por diferentes indivíduos quando estão trabalhando simultaneamente no mesmo projeto. 
+
+De forma prática, para usar o Git e Github no R, você primeiro deve ter uma [conta o Github](https://github.com/join) e o [Git instalado](https://git-scm.com/download/) no seu computador. Então, entre na sua conta do Github e crie um repositório clicando em `novo repositório` no menu `+`. Você vai ser redirecionado para uma nova página.
+
+```{r , echo=FALSE, fig.align='center'}
+knitr::include_graphics(rep("assets/img/rstudio/github_rep.png"))
+```
+
+Preencha os dados do seu novo repositório e clique em `Create Repository`. 
+
+> **Observação**: Um arquivo README é uma forma de documentar seu projeto de forma simples para que outras pessoas possam saber mais dobre ele. Você também pode incluir uma [licença](https://opensource.guide/legal/#which-open-source-license-is-appropriate-for-my-project), MIT por exemplo, para deixa claro que as outras pessoas podem usar seu código.
+
+Copie a URL do reporistório (ela deve estar da forma  https://github.com/<nome-do-usuario>/<nome-do-projeto>). Em seguida entre no Rstudio e clique em `New Project...` no Menu `File`. Clique em `Version Control` e então em `Git`. Cole a URL do repositório do Github e clique em `Create Project`. Observe que há uma nova aba `Git` no painel auxiliar ao lado de **environment** e **history** e um Git dropdown na barra de ferramentas principal.
+
+```{r , echo=FALSE, fig.align='center'}
+knitr::include_graphics(rep("assets/img/rstudio/aba_git.png"))
+```
+
+Agora você já tem o projeto do Github clonado no seu Rstudio. Faça as alterações necessárias no projeto, e quando você decidir, grave as mudanças realizadas fazendo commit. Para isso, clique em `Commit` na aba `Git`. Marque as caixas de seleção ao lado dos arquivos alterados, escreva um breve comentário sobre as mudanças feitas e clique em `Commit`.
+
+```{r  echo=FALSE, fig.align='center'}
+knitr::include_graphics(rep("assets/img/rstudio/git_commit.png"))
+```
+
+Uma vez "commitado", você pode mandar essas mudanças "commitadas" para o repositório remoto do Github dando **push**. Basta clicar na setinha para cima da aba `Git` no painel auxiliar. <img src="assets/img/rstudio/git_push.png" width="50px"/>
+
+
+
+Para ficar sempre atualizado com a última versão do projeto, principalmente quando você está trabalhando em grupo, é importante nunca se esquecer de clicar no **pull** na aba `Git`. Ele "puxa" as mudanças do repositório remoto para o seu computador. <img src="assets/img/rstudio/git_pull.png" width="50px"/>
+
+
 ## Cheatsheets
 
 O RStudio tem à disposição algumas *folhas de cola*, as **cheatsheets**. Elas trazem um resumão de como utilizar diversos pacotes e até o próprio RStudio.

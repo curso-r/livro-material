@@ -315,7 +315,7 @@ Por exemplo, podemos somar dois números, mas não conseguimos somar duas letras
 
 
 "a" + "b"
-## Error in "a" + "b": non-numeric argument to binary operator
+## Error in "a" + "b": argumento não-numérico para operador binário
 ```
 
 O operador `+` verifica que `"a"` e `"b"` não são números (ou que a classe deles não é numérica) e devolve uma mensagem de erro informando isso.
@@ -540,8 +540,8 @@ vetor1 <- c(1, 2, 3)
 vetor2 <- c(10, 20, 30, 40, 50)
 
 vetor1 + vetor2
-## Warning in vetor1 + vetor2: longer object length is not a multiple of shorter
-## object length
+## Warning in vetor1 + vetor2: comprimento do objeto maior não é múltiplo do
+## comprimento do objeto menor
 ## [1] 11 22 33 41 52
 ```
 
@@ -785,7 +785,7 @@ O `NaN` (*not a number*) representa indefinições matemáticas.
 ## [1] NaN
 
 log(-1)
-## Warning in log(-1): NaNs produced
+## Warning in log(-1): NaNs produzidos
 ## [1] NaN
 ```
 
@@ -1505,7 +1505,7 @@ x <- 1
 if (x == 1) {         
   Sys.time()
 }
-## [1] "2020-05-22 10:18:53 -03"
+## [1] "2020-05-29 10:44:00 -03"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se a expressão que estiver dentro dos parênteses `()` retornar `TRUE`. Veja outro exemplo:
@@ -1887,7 +1887,7 @@ A diferença entre fatores e texto dentro do R é como eles são representados i
 ```r
 # Em geral, não é possível transforma textos em números
 as.numeric(sexo)
-## Warning: NAs introduced by coercion
+## Warning: NAs introduzidos por coerção
 ## [1] NA NA NA NA NA NA NA
 
 # Mas podemos transforrma fatores em inteiros

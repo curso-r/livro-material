@@ -32,6 +32,7 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="10-misc.html"/>
 <link rel="next" href="11-respostas-1.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -55,18 +56,17 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -86,7 +86,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -136,17 +136,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre</a></li>
-<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a><ul>
-<li class="chapter" data-level="1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
+<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a><ul>
+<li class="chapter" data-level="1.2" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a>
+<ul>
 <li class="chapter" data-level="1.2.1" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html#no-windows-1"><i class="fa fa-check"></i><b>1.2.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.2.2" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html#no-linux-1"><i class="fa fa-check"></i><b>1.2.2</b> No Linux</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a><ul>
+<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="2-1-telas.html"><a href="2-1-telas.html"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
 <li class="chapter" data-level="2.2" data-path="2-2-atalhos.html"><a href="2-2-atalhos.html"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
 <li class="chapter" data-level="2.3" data-path="2-3-projetos.html"><a href="2-3-projetos.html"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
@@ -155,13 +159,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="2-6-addins.html"><a href="2-6-addins.html"><i class="fa fa-check"></i><b>2.6</b> Addins</a></li>
 <li class="chapter" data-level="2.7" data-path="2-7-snippets.html"><a href="2-7-snippets.html"><i class="fa fa-check"></i><b>2.7</b> Snippets</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a><ul>
-<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a><ul>
+<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
 <li class="chapter" data-level="3.1.2" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
 <li class="chapter" data-level="3.1.3" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
+<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="3-3-objetos.html"><a href="3-3-objetos.html"><i class="fa fa-check"></i><b>3.3</b> Objetos</a></li>
@@ -169,37 +176,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a></li>
 <li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a></li>
 <li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a></li>
-<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a><ul>
+<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.9" data-path="3-9-listas.html"><a href="3-9-listas.html"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
-<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
+<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html#exercícios-2"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="3-11-funcoes.html"><a href="3-11-funcoes.html"><i class="fa fa-check"></i><b>3.11</b> Funções</a><ul>
+<li class="chapter" data-level="3.11" data-path="3-11-funcoes.html"><a href="3-11-funcoes.html"><i class="fa fa-check"></i><b>3.11</b> Funções</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-11-funcoes.html"><a href="3-11-funcoes.html#exercícios-3"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
+<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a>
+<ul>
 <li class="chapter" data-level="3.12.1" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
 <li class="chapter" data-level="3.12.2" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#iteradores-for-e-while"><i class="fa fa-check"></i><b>3.12.2</b> Iteradores: for e while</a></li>
 <li class="chapter" data-level="" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#exercícios-4"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a><ul>
+<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a>
+<ul>
 <li class="chapter" data-level="3.13.1" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#matrizes"><i class="fa fa-check"></i><b>3.13.1</b> Matrizes</a></li>
 <li class="chapter" data-level="3.13.2" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#fatores"><i class="fa fa-check"></i><b>3.13.2</b> Fatores</a></li>
 <li class="chapter" data-level="3.13.3" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#gráficos-r-base"><i class="fa fa-check"></i><b>3.13.3</b> Gráficos (R base)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a><ul>
-<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a><ul>
+<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-cran"><i class="fa fa-check"></i><b>4.1.1</b> Via CRAN</a></li>
 <li class="chapter" data-level="4.1.2" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-github"><i class="fa fa-check"></i><b>4.1.2</b> Via Github</a></li>
 <li class="chapter" data-level="4.1.3" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-arquivo-.zip-ou-.tar.gz"><i class="fa fa-check"></i><b>4.1.3</b> Via arquivo .zip ou .tar.gz</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="4-2-tidyverse.html"><a href="4-2-tidyverse.html"><i class="fa fa-check"></i><b>4.2</b> Tidyverse</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a><ul>
-<li class="chapter" data-level="5.1" data-path="5-1-readr.html"><a href="5-1-readr.html"><i class="fa fa-check"></i><b>5.1</b> O pacote readr</a><ul>
+<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="5-1-readr.html"><a href="5-1-readr.html"><i class="fa fa-check"></i><b>5.1</b> O pacote readr</a>
+<ul>
 <li class="chapter" data-level="5.1.1" data-path="5-1-readr.html"><a href="5-1-readr.html#importando-arquivos-de-texto"><i class="fa fa-check"></i><b>5.1.1</b> Importando arquivos de texto</a></li>
 <li class="chapter" data-level="5.1.2" data-path="5-1-readr.html"><a href="5-1-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.1.2</b> Parseando valores</a></li>
 <li class="chapter" data-level="5.1.3" data-path="5-1-readr.html"><a href="5-1-readr.html#locale"><i class="fa fa-check"></i><b>5.1.3</b> Locale</a></li>
@@ -208,9 +224,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2" data-path="5-2-readxl.html"><a href="5-2-readxl.html"><i class="fa fa-check"></i><b>5.2</b> readxl</a></li>
 <li class="chapter" data-level="5.3" data-path="5-3-haven.html"><a href="5-3-haven.html"><i class="fa fa-check"></i><b>5.3</b> haven</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
+<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a></li>
-<li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a><ul>
+<li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a>
+<ul>
 <li class="chapter" data-level="6.2.1" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#operador-de-atribuição-assignment-operator"><i class="fa fa-check"></i><b>6.2.1</b> Operador de atribuição ( Assignment operator )</a></li>
 <li class="chapter" data-level="6.2.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#operador-tee"><i class="fa fa-check"></i><b>6.2.2</b> Operador tee</a></li>
 <li class="chapter" data-level="6.2.3" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#exposition-operator"><i class="fa fa-check"></i><b>6.2.3</b> Exposition operator</a></li>
@@ -218,9 +236,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3" data-path="6-3-exercícios-6.html"><a href="6-3-exercícios-6.html"><i class="fa fa-check"></i><b>6.3</b> Exercícios</a></li>
 <li class="chapter" data-level="6.4" data-path="6-4-respostas.html"><a href="6-4-respostas.html"><i class="fa fa-check"></i><b>6.4</b> Respostas</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
+<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="7-1-trabalhando-com-tibbles.html"><a href="7-1-trabalhando-com-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Trabalhando com tibbles</a></li>
-<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a><ul>
+<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#filtrando-linhas"><i class="fa fa-check"></i><b>7.2.1</b> Filtrando linhas</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#selecionando-colunas"><i class="fa fa-check"></i><b>7.2.2</b> Selecionando colunas</a></li>
 <li class="chapter" data-level="7.2.3" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#ordenando-a-base"><i class="fa fa-check"></i><b>7.2.3</b> Ordenando a base</a></li>
@@ -228,20 +248,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.5" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#summarisando-a-base"><i class="fa fa-check"></i><b>7.2.5</b> Summarisando a base</a></li>
 <li class="chapter" data-level="7.2.6" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#juntando-duas-bases"><i class="fa fa-check"></i><b>7.2.6</b> Juntando duas bases</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a><ul>
+<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#gather"><i class="fa fa-check"></i><b>7.3.1</b> <code>gather()</code></a></li>
 <li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#spread"><i class="fa fa-check"></i><b>7.3.2</b> <code>spread()</code></a></li>
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Gráficos</a><ul>
+<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Gráficos</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a></li>
 <li class="chapter" data-level="8.2" data-path="8-2-o-pacote-plotly.html"><a href="8-2-o-pacote-plotly.html"><i class="fa fa-check"></i><b>8.2</b> O pacote plotly</a></li>
 <li class="chapter" data-level="8.3" data-path="8-3-extensões-do-ggplot2.html"><a href="8-3-extensões-do-ggplot2.html"><i class="fa fa-check"></i><b>8.3</b> Extensões do ggplot2</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="9-funcionais.html"><a href="9-funcionais.html"><i class="fa fa-check"></i><b>9</b> Funcionais</a></li>
-<li class="chapter" data-level="10" data-path="10-misc.html"><a href="10-misc.html"><i class="fa fa-check"></i><b>10</b> Miscelânea</a><ul>
-<li class="chapter" data-level="10.1" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>10.1</b> Arrumando banco de dados: o pacote janitor</a><ul>
+<li class="chapter" data-level="10" data-path="10-misc.html"><a href="10-misc.html"><i class="fa fa-check"></i><b>10</b> Miscelânea</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>10.1</b> Arrumando banco de dados: o pacote janitor</a>
+<ul>
 <li class="chapter" data-level="10.1.1" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#arrumando-o-nome-das-variáveis"><i class="fa fa-check"></i><b>10.1.1</b> Arrumando o nome das variáveis</a></li>
 <li class="chapter" data-level="10.1.2" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#removendo-linhas-e-colunas-vazias"><i class="fa fa-check"></i><b>10.1.2</b> Removendo linhas e colunas vazias</a></li>
 <li class="chapter" data-level="10.1.3" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#identificando-linhas-duplicadas"><i class="fa fa-check"></i><b>10.1.3</b> Identificando linhas duplicadas</a></li>
@@ -249,7 +273,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="11-respostas-1.html"><a href="11-respostas-1.html"><i class="fa fa-check"></i><b>11</b> Respostas</a></li>
-<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a>
+<ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
 </ul></li>
 <li class="divider"></li>
@@ -272,7 +297,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="arrumando-banco-de-dados-o-pacote-janitor" class="section level2">
+<div id="arrumando-banco-de-dados-o-pacote-janitor" class="section level2" number="10.1">
 <h2><span class="header-section-number">10.1</span> Arrumando banco de dados: o pacote janitor</h2>
 <p>Vamos falar do pacote <code>janitor</code>, que traz algumas funções para dar aquele trato nas BDs.</p>
 <p>Antes de mais nada, instale e carregue o pacote:</p>
@@ -280,7 +305,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb229-2"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb229-2"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;sfirke/janitor&quot;</span>) <span class="co"># Versão de desenvolvimento</span></span></code></pre></div>
 <div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb230-1"></a><span class="kw">library</span>(tidyverse)</span>
 <span id="cb230-2"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb230-2"></a><span class="kw">library</span>(janitor)</span></code></pre></div>
-<div id="arrumando-o-nome-das-variáveis" class="section level3">
+<div id="arrumando-o-nome-das-variáveis" class="section level3" number="10.1.1">
 <h3><span class="header-section-number">10.1.1</span> Arrumando o nome das variáveis</h3>
 <p>Assim como no post passado, utilizaremos a base com informações de pacientes com arritmia cardíaca, cujas variáveis selecionadas foram:</p>
 <div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb231-1"></a>dados <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">names</span>()</span></code></pre></div>
@@ -322,7 +347,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb237-5"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb237-5"></a></span>
 <span id="cb237-6"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb237-6"></a><span class="kw">names</span>(dados) &lt;-<span class="st"> </span>nomes</span></code></pre></div>
 </div>
-<div id="removendo-linhas-e-colunas-vazias" class="section level3">
+<div id="removendo-linhas-e-colunas-vazias" class="section level3" number="10.1.2">
 <h3><span class="header-section-number">10.1.2</span> Removendo linhas e colunas vazias</h3>
 <p>Esse banco de dados também tinha outro problema: linhas vazias. Na verdade, elas não eram completamente vazias, pois havia algumas informações de identificação do paciente, mas nenhuma outra variável tinha sido computada.</p>
 <div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb238-1"></a>dados[<span class="dv">3</span>,]</span></code></pre></div>
@@ -357,38 +382,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Eu precisei converter para <code>data.frame</code> primeiro porque não é possível definir os nomes das linhas de uma <code>tibble</code>. Se a linha estivesse completamente vazia, bastaria usar diretamente a função <code>remove_empty_rows()</code>.</p>
 <p>Equivalentemente para colunas, existe a função <code>remove_empty_cols()</code>.</p>
 </div>
-<div id="identificando-linhas-duplicadas" class="section level3">
+<div id="identificando-linhas-duplicadas" class="section level3" number="10.1.3">
 <h3><span class="header-section-number">10.1.3</span> Identificando linhas duplicadas</h3>
 <p>O pacote <code>janitor</code> possui uma função para identificar entradas duplicadas numa base de dados: <code>get_dupes()</code>. Vamos criar uma base genérica para testá-la.</p>
 <div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb244-1"></a>p_nome &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Athos&quot;</span>, <span class="st">&quot;Daniel&quot;</span>, <span class="st">&quot;Fernando&quot;</span>, <span class="st">&quot;Julio&quot;</span>, <span class="st">&quot;William&quot;</span>)</span>
-<span id="cb244-2"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb244-2"></a>sobrenome &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Damiani&quot;</span>, <span class="st">&quot;Falbel&quot;</span>, <span class="st">&quot;Corrêa&quot;, &quot;</span>Trecenti<span class="st">&quot;, &quot;</span>Amorim<span class="st">&quot;)</span></span>
+<span id="cb244-2"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb244-2"></a>sobrenome &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Damiani&quot;</span>, <span class="st">&quot;Falbel&quot;</span>, <span class="st">&quot;Corrêa&quot;</span>, <span class="st">&quot;Trecenti&quot;</span>, <span class="st">&quot;Amorim&quot;</span>)</span>
 <span id="cb244-3"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb244-3"></a></span>
-<span id="cb244-4"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb244-4"></a><span class="st">base_qualquer &lt;- tibble::tibble(</span></span>
-<span id="cb244-5"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb244-5"></a><span class="st">  nome = sample(p_nome, 25, replace = TRUE),</span></span>
-<span id="cb244-6"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb244-6"></a><span class="st">  sobrenome = sample(sobrenome, 25, replace = TRUE),</span></span>
-<span id="cb244-7"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb244-7"></a><span class="st">  variavel_importante = rnorm(25)</span></span>
-<span id="cb244-8"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb244-8"></a><span class="st">)</span></span>
+<span id="cb244-4"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb244-4"></a>base_qualquer &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">tibble</span>(</span>
+<span id="cb244-5"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb244-5"></a>  <span class="dt">nome =</span> <span class="kw">sample</span>(p_nome, <span class="dv">25</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb244-6"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb244-6"></a>  <span class="dt">sobrenome =</span> <span class="kw">sample</span>(sobrenome, <span class="dv">25</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb244-7"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb244-7"></a>  <span class="dt">variavel_importante =</span> <span class="kw">rnorm</span>(<span class="dv">25</span>)</span>
+<span id="cb244-8"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb244-8"></a>)</span>
 <span id="cb244-9"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb244-9"></a></span>
-<span id="cb244-10"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb244-10"></a><span class="st">janitor::get_dupes(base_qualquer, nome, sobrenome)</span></span></code></pre></div>
+<span id="cb244-10"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb244-10"></a>janitor<span class="op">::</span><span class="kw">get_dupes</span>(base_qualquer, nome, sobrenome)</span></code></pre></div>
 <pre><code>## # A tibble: 13 x 4
-##    nome    sobrenome dupe_count variavel_importante
-##    &lt;chr&gt;   &lt;chr&gt;          &lt;int&gt;               &lt;dbl&gt;
-##  1 Athos   Corrêa             2             -0.743 
-##  2 Athos   Corrêa             2              0.626 
-##  3 Athos   Falbel             3             -0.940 
-##  4 Athos   Falbel             3              0.329 
-##  5 Athos   Falbel             3             -0.900 
-##  6 Athos   Trecenti           2             -0.389 
-##  7 Athos   Trecenti           2              0.718 
-##  8 Julio   Amorim             2              0.361 
-##  9 Julio   Amorim             2              0.492 
-## 10 William Damiani            2              0.0103
-## 11 William Damiani            2              0.0814
-## 12 William Falbel             2              1.54  
-## 13 William Falbel             2             -0.758</code></pre>
+##    nome     sobrenome dupe_count variavel_importante
+##    &lt;chr&gt;    &lt;chr&gt;          &lt;int&gt;               &lt;dbl&gt;
+##  1 Fernando Amorim             2             -1.51  
+##  2 Fernando Amorim             2              0.467 
+##  3 Fernando Falbel             3              0.482 
+##  4 Fernando Falbel             3              0.860 
+##  5 Fernando Falbel             3             -1.69  
+##  6 Fernando Trecenti           4              0.377 
+##  7 Fernando Trecenti           4             -0.186 
+##  8 Fernando Trecenti           4             -1.24  
+##  9 Fernando Trecenti           4             -1.68  
+## 10 Julio    Amorim             2              0.0902
+## 11 Julio    Amorim             2              0.591 
+## 12 William  Damiani            2             -1.02  
+## 13 William  Damiani            2             -0.425</code></pre>
 <p>Todas as linhas na <code>tibble</code> resultante representam uma combinação de nome-sobrenome repetida.</p>
 </div>
-<div id="outras-funções" class="section level3">
+<div id="outras-funções" class="section level3" number="10.1.4">
 <h3><span class="header-section-number">10.1.4</span> Outras funções</h3>
 <p>Por fim, o <code>janitor</code> também tem funções equivalentes à <code>table()</code> para produzir tabelas de frequência:</p>
 <ul>
