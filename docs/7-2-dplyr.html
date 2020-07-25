@@ -55,9 +55,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -66,14 +66,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,9 +84,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -138,10 +140,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
+<li class="chapter" data-level="1.1.3" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a><ul>
 <li class="chapter" data-level="1.2.1" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html#no-windows-1"><i class="fa fa-check"></i><b>1.2.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.2.2" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html#no-linux-1"><i class="fa fa-check"></i><b>1.2.2</b> No Linux</a></li>
+<li class="chapter" data-level="1.2.3" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html#no-mac-1"><i class="fa fa-check"></i><b>1.2.3</b> No Mac</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a><ul>
@@ -200,8 +204,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="5-1-caminhos.html"><a href="5-1-caminhos.html"><i class="fa fa-check"></i><b>5.1</b> Caminhos</a></li>
 <li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="5-2-readr.html"><a href="5-2-readr.html#lendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.1</b> Lendo arquivos de texto</a></li>
-<li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.2</b> Parseando valores</a></li>
-<li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.3</b> Locale</a></li>
+<li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.2</b> Locale</a></li>
+<li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.3</b> Parseando valores</a></li>
 <li class="chapter" data-level="5.2.4" data-path="5-2-readr.html"><a href="5-2-readr.html#escrevendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.4</b> Escrevendo arquivos de texto</a></li>
 <li class="chapter" data-level="5.2.5" data-path="5-2-readr.html"><a href="5-2-readr.html#arquivos-.rds"><i class="fa fa-check"></i><b>5.2.5</b> Arquivos .rds</a></li>
 </ul></li>
@@ -304,8 +308,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="filtrando-linhas" class="section level3">
 <h3><span class="header-section-number">7.2.1</span> Filtrando linhas</h3>
 <p>A função <code>filter()</code> filtra linhas. Ela é semelhante à função <code>subset()</code>, do R base. O código abaixo retorna apenas filmes com nota maior que nova.</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb186-1" title="1">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb186-2" title="2"><span class="st">  </span><span class="kw">filter</span>(nota_imdb <span class="op">&gt;</span><span class="st"> </span><span class="dv">9</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="7-2-dplyr.html#cb195-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb195-2"><a href="7-2-dplyr.html#cb195-2"></a><span class="st">  </span><span class="kw">filter</span>(nota_imdb <span class="op">&gt;</span><span class="st"> </span><span class="dv">9</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 3 x 15
 ##   titulo   ano diretor duracao cor   generos pais  classificacao orcamento
 ##   &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
@@ -315,8 +319,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <p>Para fazer várias condições, use os operadores lógicos <code>&amp;</code> e <code>|</code> ou separe filtros entre vírgulas.</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb188-1" title="1">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb188-2" title="2"><span class="st">  </span><span class="kw">filter</span>(ano <span class="op">&gt;</span><span class="st"> </span><span class="dv">2010</span> <span class="op">&amp;</span><span class="st"> </span>nota_imdb <span class="op">&gt;</span><span class="st"> </span><span class="fl">8.5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="7-2-dplyr.html#cb197-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb197-2"><a href="7-2-dplyr.html#cb197-2"></a><span class="st">  </span><span class="kw">filter</span>(ano <span class="op">&gt;</span><span class="st"> </span><span class="dv">2010</span> <span class="op">&amp;</span><span class="st"> </span>nota_imdb <span class="op">&gt;</span><span class="st"> </span><span class="fl">8.5</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 5 x 15
 ##   titulo   ano diretor duracao cor   generos pais  classificacao orcamento
 ##   &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
@@ -327,8 +331,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5 Butte…  2014 Cary B…      78 Color Docume… USA   Outros           180000
 ## # … with 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb190-1" title="1">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb190-2" title="2"><span class="st">  </span><span class="kw">filter</span>(receita <span class="op">&gt;</span><span class="st"> </span>orcamento <span class="op">|</span><span class="st"> </span>nota_imdb <span class="op">&gt;</span><span class="st"> </span><span class="dv">9</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="7-2-dplyr.html#cb199-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb199-2"><a href="7-2-dplyr.html#cb199-2"></a><span class="st">  </span><span class="kw">filter</span>(receita <span class="op">&gt;</span><span class="st"> </span>orcamento <span class="op">|</span><span class="st"> </span>nota_imdb <span class="op">&gt;</span><span class="st"> </span><span class="dv">9</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 1,762 x 15
 ##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
 ##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
@@ -345,12 +349,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 1,752 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <p>O operador <code>%in%</code> é muito útil na hora de criar filtros. O resultado das operações com <code>%in%</code> é um vetor lógico o tamanho do vetor do elemento da esquerda, identificando quais elementos da esquerda batem com algum elemento da direita.</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb192-1" title="1">letters <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;z&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="7-2-dplyr.html#cb201-1"></a>letters <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;z&quot;</span>)</span></code></pre></div>
 <pre><code>##  [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
 ## [13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
 ## [25] FALSE  TRUE</code></pre>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb194-1" title="1">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb194-2" title="2"><span class="st">  </span><span class="kw">filter</span>(diretor <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Steven Spielberg&quot;</span>, <span class="st">&quot;Quentin Tarantino&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="7-2-dplyr.html#cb203-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb203-2"><a href="7-2-dplyr.html#cb203-2"></a><span class="st">  </span><span class="kw">filter</span>(diretor <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Steven Spielberg&quot;</span>, <span class="st">&quot;Quentin Tarantino&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 32 x 15
 ##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
 ##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
@@ -367,10 +371,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 22 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <p>Também podemos usar funções que retornam valores lógicos, como a <code>str_detect()</code>, do pacote <code>stringr</code>. Esse pacote possui funções para a manipulação de strings, e será abordado com mais detalhes quando falarmos sobre <code>stringr</code>.</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb196-1" title="1"><span class="kw">library</span>(stringr)</a>
-<a class="sourceLine" id="cb196-2" title="2"></a>
-<a class="sourceLine" id="cb196-3" title="3">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb196-4" title="4"><span class="st">  </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(generos, <span class="st">&quot;Action&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="7-2-dplyr.html#cb205-1"></a><span class="kw">library</span>(stringr)</span>
+<span id="cb205-2"><a href="7-2-dplyr.html#cb205-2"></a></span>
+<span id="cb205-3"><a href="7-2-dplyr.html#cb205-3"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb205-4"><a href="7-2-dplyr.html#cb205-4"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(generos, <span class="st">&quot;Action&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 861 x 15
 ##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
 ##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
@@ -391,8 +395,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="selecionando-colunas" class="section level3">
 <h3><span class="header-section-number">7.2.2</span> Selecionando colunas</h3>
 <p>A função <code>select()</code> seleciona colunas (variáveis). É possível utilizar nomes, índices, intervalos de variáveis ou utilizar as funções <code>starts_with(x)</code>, <code>contains(x)</code>, <code>matches(x)</code>, <code>one_of(x)</code> para selecionar as variáveis.</p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb198-1" title="1">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb198-2" title="2"><span class="st">  </span><span class="kw">select</span>(titulo, ano, orcamento)</a></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="7-2-dplyr.html#cb207-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb207-2"><a href="7-2-dplyr.html#cb207-2"></a><span class="st">  </span><span class="kw">select</span>(titulo, ano, orcamento)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 3
 ##    titulo                                        ano orcamento
 ##    &lt;chr&gt;                                       &lt;int&gt;     &lt;int&gt;
@@ -407,8 +411,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9 Superman Returns                             2006 209000000
 ## 10 Pirates of the Caribbean: Dead Man&#39;s Chest   2006 225000000
 ## # … with 3,797 more rows</code></pre>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb200-1" title="1">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb200-2" title="2"><span class="st">  </span><span class="kw">select</span>(<span class="kw">starts_with</span>(<span class="st">&quot;ator&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="7-2-dplyr.html#cb209-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb209-2"><a href="7-2-dplyr.html#cb209-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">starts_with</span>(<span class="st">&quot;ator&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 3
 ##    ator_1          ator_2            ator_3              
 ##    &lt;chr&gt;           &lt;chr&gt;             &lt;chr&gt;               
@@ -424,8 +428,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 Johnny Depp     Orlando Bloom     Jack Davenport      
 ## # … with 3,797 more rows</code></pre>
 <p>O operador <code>:</code> pode ser usado para selecionar intervalos de colunas.</p>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb202-1" title="1">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb202-2" title="2"><span class="st">  </span><span class="kw">select</span>(titulo, ator_<span class="dv">1</span><span class="op">:</span>ator_<span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="7-2-dplyr.html#cb211-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb211-2"><a href="7-2-dplyr.html#cb211-2"></a><span class="st">  </span><span class="kw">select</span>(titulo, ator_<span class="dv">1</span><span class="op">:</span>ator_<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 4
 ##    titulo                            ator_1        ator_2        ator_3         
 ##    &lt;chr&gt;                             &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;          
@@ -441,8 +445,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 Pirates of the Caribbean: Dead M… Johnny Depp   Orlando Bloom Jack Davenport 
 ## # … with 3,797 more rows</code></pre>
 <p>Para retirar colunas da base, base acrescentar um <code>-</code> antes da seleção.</p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb204-1" title="1">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb204-2" title="2"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>ano, <span class="op">-</span><span class="st"> </span>diretor)</a></code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="7-2-dplyr.html#cb213-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb213-2"><a href="7-2-dplyr.html#cb213-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>ano, <span class="op">-</span><span class="st"> </span>diretor)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 13
 ##    titulo duracao cor   generos pais  classificacao orcamento receita nota_imdb
 ##    &lt;chr&gt;    &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;   &lt;int&gt;     &lt;dbl&gt;
@@ -458,8 +462,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 Pirat…     151 Color Action… USA   A partir de … 225000000  4.23e8       7.3
 ## # … with 3,797 more rows, and 4 more variables: likes_facebook &lt;int&gt;,
 ## #   ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb206-1" title="1">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb206-2" title="2"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">starts_with</span>(<span class="st">&quot;ator&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="7-2-dplyr.html#cb215-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb215-2"><a href="7-2-dplyr.html#cb215-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">starts_with</span>(<span class="st">&quot;ator&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 12
 ##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
 ##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
@@ -480,9 +484,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="ordenando-a-base" class="section level3">
 <h3><span class="header-section-number">7.2.3</span> Ordenando a base</h3>
 <p>A função <code>arrange()</code> ordena a base segundo uma ou mais colunas. O argumento <code>desc=</code> pode ser utilizado para gerar uma ordem decrescente.</p>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb208-1" title="1">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb208-2" title="2"><span class="st">  </span><span class="kw">arrange</span>(orcamento) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb208-3" title="3"><span class="st">  </span><span class="kw">select</span>(orcamento, <span class="kw">everything</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="7-2-dplyr.html#cb217-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb217-2"><a href="7-2-dplyr.html#cb217-2"></a><span class="st">  </span><span class="kw">arrange</span>(orcamento) <span class="op">%&gt;%</span></span>
+<span id="cb217-3"><a href="7-2-dplyr.html#cb217-3"></a><span class="st">  </span><span class="kw">select</span>(orcamento, <span class="kw">everything</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 15
 ##    orcamento titulo   ano diretor duracao cor   generos pais  classificacao
 ##        &lt;int&gt; &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;        
@@ -498,9 +502,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10     15000 Paran…  2007 Oren P…      84 Color Horror  USA   A partir de …
 ## # … with 3,797 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb210-1" title="1">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb210-2" title="2"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(orcamento)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb210-3" title="3"><span class="st">  </span><span class="kw">select</span>(orcamento, <span class="kw">everything</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="7-2-dplyr.html#cb219-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb219-2"><a href="7-2-dplyr.html#cb219-2"></a><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(orcamento)) <span class="op">%&gt;%</span></span>
+<span id="cb219-3"><a href="7-2-dplyr.html#cb219-3"></a><span class="st">  </span><span class="kw">select</span>(orcamento, <span class="kw">everything</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 15
 ##    orcamento titulo   ano diretor duracao cor   generos pais  classificacao
 ##        &lt;int&gt; &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;        
@@ -516,9 +520,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 250000000 Capta…  2016 Anthon…     147 Color Action… USA   A partir de …
 ## # … with 3,797 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb212-1" title="1">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb212-2" title="2"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(ano), titulo) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb212-3" title="3"><span class="st">  </span><span class="kw">select</span>(titulo, ano, <span class="kw">everything</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="7-2-dplyr.html#cb221-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb221-2"><a href="7-2-dplyr.html#cb221-2"></a><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(ano), titulo) <span class="op">%&gt;%</span></span>
+<span id="cb221-3"><a href="7-2-dplyr.html#cb221-3"></a><span class="st">  </span><span class="kw">select</span>(titulo, ano, <span class="kw">everything</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 15
 ##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
 ##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
@@ -539,10 +543,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="criando-e-modificando-colunas" class="section level3">
 <h3><span class="header-section-number">7.2.4</span> Criando e modificando colunas</h3>
 <p>A função <code>mutate()</code> cria ou modifica colunas. Ela é equivalente à função <code>transform()</code>, mas aceita várias novas colunas iterativamente. Novas variáveis devem ter o mesmo número de linhas da base original (ou comprimento 1).</p>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb214-1" title="1"><span class="co"># A coluna &quot;duracao&quot; é sobrescrita</span></a>
-<a class="sourceLine" id="cb214-2" title="2">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb214-3" title="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">duracao =</span> duracao<span class="op">/</span><span class="dv">60</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb214-4" title="4"><span class="st">  </span><span class="kw">select</span>(duracao)</a></code></pre></div>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="7-2-dplyr.html#cb223-1"></a><span class="co"># A coluna &quot;duracao&quot; é sobrescrita</span></span>
+<span id="cb223-2"><a href="7-2-dplyr.html#cb223-2"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb223-3"><a href="7-2-dplyr.html#cb223-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">duracao =</span> duracao<span class="op">/</span><span class="dv">60</span>) <span class="op">%&gt;%</span></span>
+<span id="cb223-4"><a href="7-2-dplyr.html#cb223-4"></a><span class="st">  </span><span class="kw">select</span>(duracao)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 1
 ##    duracao
 ##      &lt;dbl&gt;
@@ -557,10 +561,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9    2.82
 ## 10    2.52
 ## # … with 3,797 more rows</code></pre>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb216-1" title="1"><span class="co"># Criamos uma nova coluna na base</span></a>
-<a class="sourceLine" id="cb216-2" title="2">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb216-3" title="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">duracao_horas =</span> duracao<span class="op">/</span><span class="dv">60</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb216-4" title="4"><span class="st">  </span><span class="kw">select</span>(duracao, duracao_horas)</a></code></pre></div>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="7-2-dplyr.html#cb225-1"></a><span class="co"># Criamos uma nova coluna na base</span></span>
+<span id="cb225-2"><a href="7-2-dplyr.html#cb225-2"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb225-3"><a href="7-2-dplyr.html#cb225-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">duracao_horas =</span> duracao<span class="op">/</span><span class="dv">60</span>) <span class="op">%&gt;%</span></span>
+<span id="cb225-4"><a href="7-2-dplyr.html#cb225-4"></a><span class="st">  </span><span class="kw">select</span>(duracao, duracao_horas)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 2
 ##    duracao duracao_horas
 ##      &lt;int&gt;         &lt;dbl&gt;
@@ -575,13 +579,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9     169          2.82
 ## 10     151          2.52
 ## # … with 3,797 more rows</code></pre>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb218-1" title="1"><span class="co"># Podemos fazer diversas operações em um mesmo mutate.</span></a>
-<a class="sourceLine" id="cb218-2" title="2">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb218-3" title="3"><span class="st">  </span><span class="kw">mutate</span>(</a>
-<a class="sourceLine" id="cb218-4" title="4">    <span class="dt">lucro =</span> receita <span class="op">-</span><span class="st"> </span>orcamento,</a>
-<a class="sourceLine" id="cb218-5" title="5">    <span class="dt">resultado =</span> <span class="kw">ifelse</span>(lucro <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>, <span class="st">&quot;prejuizo&quot;</span>, <span class="st">&quot;lucro&quot;</span>)</a>
-<a class="sourceLine" id="cb218-6" title="6">  ) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb218-7" title="7"><span class="st">  </span><span class="kw">select</span>(lucro, resultado)</a></code></pre></div>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="7-2-dplyr.html#cb227-1"></a><span class="co"># Podemos fazer diversas operações em um mesmo mutate.</span></span>
+<span id="cb227-2"><a href="7-2-dplyr.html#cb227-2"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb227-3"><a href="7-2-dplyr.html#cb227-3"></a><span class="st">  </span><span class="kw">mutate</span>(</span>
+<span id="cb227-4"><a href="7-2-dplyr.html#cb227-4"></a>    <span class="dt">lucro =</span> receita <span class="op">-</span><span class="st"> </span>orcamento,</span>
+<span id="cb227-5"><a href="7-2-dplyr.html#cb227-5"></a>    <span class="dt">resultado =</span> <span class="kw">ifelse</span>(lucro <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>, <span class="st">&quot;prejuizo&quot;</span>, <span class="st">&quot;lucro&quot;</span>)</span>
+<span id="cb227-6"><a href="7-2-dplyr.html#cb227-6"></a>  ) <span class="op">%&gt;%</span></span>
+<span id="cb227-7"><a href="7-2-dplyr.html#cb227-7"></a><span class="st">  </span><span class="kw">select</span>(lucro, resultado)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 2
 ##         lucro resultado
 ##         &lt;int&gt; &lt;chr&gt;    
@@ -601,26 +605,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="summarisando-a-base" class="section level3">
 <h3><span class="header-section-number">7.2.5</span> Summarisando a base</h3>
 <p>A função <code>summarise()</code> sumariza a base. Ela aplica uma função às variáveis, retornando um vetor de tamanho <code>1</code>. Ela é utilizada em conjunto da função <code>group_by()</code>. A função <code>n()</code> costuma ser bastante utilizada com a função summarise().</p>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb220-1" title="1">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb220-2" title="2"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">media_orcamento =</span> <span class="kw">mean</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="7-2-dplyr.html#cb229-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb229-2"><a href="7-2-dplyr.html#cb229-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">media_orcamento =</span> <span class="kw">mean</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##   media_orcamento
 ##             &lt;dbl&gt;
 ## 1       35755986.</code></pre>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb222-1" title="1">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb222-2" title="2"><span class="st">  </span><span class="kw">summarise</span>(</a>
-<a class="sourceLine" id="cb222-3" title="3">    <span class="dt">media_orcamento =</span> <span class="kw">mean</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</a>
-<a class="sourceLine" id="cb222-4" title="4">    <span class="dt">mediana_orcamento =</span> <span class="kw">median</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</a>
-<a class="sourceLine" id="cb222-5" title="5">    <span class="dt">qtd =</span> <span class="kw">n</span>(),</a>
-<a class="sourceLine" id="cb222-6" title="6">    <span class="dt">qtd_diretores =</span> <span class="kw">n_distinct</span>(diretor)</a>
-<a class="sourceLine" id="cb222-7" title="7">  )</a></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="7-2-dplyr.html#cb231-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb231-2"><a href="7-2-dplyr.html#cb231-2"></a><span class="st">  </span><span class="kw">summarise</span>(</span>
+<span id="cb231-3"><a href="7-2-dplyr.html#cb231-3"></a>    <span class="dt">media_orcamento =</span> <span class="kw">mean</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb231-4"><a href="7-2-dplyr.html#cb231-4"></a>    <span class="dt">mediana_orcamento =</span> <span class="kw">median</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb231-5"><a href="7-2-dplyr.html#cb231-5"></a>    <span class="dt">qtd =</span> <span class="kw">n</span>(),</span>
+<span id="cb231-6"><a href="7-2-dplyr.html#cb231-6"></a>    <span class="dt">qtd_diretores =</span> <span class="kw">n_distinct</span>(diretor)</span>
+<span id="cb231-7"><a href="7-2-dplyr.html#cb231-7"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 4
 ##   media_orcamento mediana_orcamento   qtd qtd_diretores
 ##             &lt;dbl&gt;             &lt;int&gt; &lt;int&gt;         &lt;int&gt;
 ## 1       35755986.          20000000  3807          1813</code></pre>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb224-1" title="1">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb224-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(ano) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb224-3" title="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">qtd_filmes =</span> <span class="kw">n</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="7-2-dplyr.html#cb233-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb233-2"><a href="7-2-dplyr.html#cb233-2"></a><span class="st">  </span><span class="kw">group_by</span>(ano) <span class="op">%&gt;%</span></span>
+<span id="cb233-3"><a href="7-2-dplyr.html#cb233-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">qtd_filmes =</span> <span class="kw">n</span>())</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <pre><code>## # A tibble: 91 x 2
 ##      ano qtd_filmes
 ##    &lt;int&gt;      &lt;int&gt;
@@ -635,9 +640,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9  1935          1
 ## 10  1936          2
 ## # … with 81 more rows</code></pre>
-<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb226-1" title="1">imdb <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb226-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(diretor) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb226-3" title="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">orcamento_medio =</span> <span class="kw">mean</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="7-2-dplyr.html#cb236-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb236-2"><a href="7-2-dplyr.html#cb236-2"></a><span class="st">  </span><span class="kw">group_by</span>(diretor) <span class="op">%&gt;%</span></span>
+<span id="cb236-3"><a href="7-2-dplyr.html#cb236-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">orcamento_medio =</span> <span class="kw">mean</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <pre><code>## # A tibble: 1,813 x 2
 ##    diretor          orcamento_medio
 ##    &lt;chr&gt;                      &lt;dbl&gt;
@@ -662,9 +668,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>full_join()</code>: retorna todas as linhas e colunas de <code>x</code>e <code>y</code>. Valores sem correspondência entre as bases receberão <code>NA</code> na nova base.</li>
 </ul>
 <p>A figura a seguir esquematiza as operações dessas funções:</p>
-<p><img src="assets/img/manipulacao/joins.png" style="display: block; margin: auto;" /></p>
+<p><img src="assets/img/manipulacao/joins.png" width="355" style="display: block; margin: auto;" /></p>
 <p>A figura a seguir mostra o que acontece quando temos chaves duplicadas em um <code>left_join()</code>. A ideia é equivalante para as outras funções.</p>
-<p><img src="assets/img/manipulacao/left-join.png" style="display: block; margin: auto;" /></p>
+<p><img src="assets/img/manipulacao/left-join.png" width="279" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>

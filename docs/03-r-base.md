@@ -13,7 +13,7 @@ A linguagem `R` é bem intuitiva. É possível fazer bastante coisa à base da t
 No entanto, a intuição não infalível, e recorrentemente vamos precisar de ajuda para rodar alguma função ou descobrir como fazer alguma tarefa no R. Felizmente, a comunidade R é bem ativa e existem vários lugares para buscar respostas. Nesta seção, vamos apresentar as principais maneiras algumas dessas maneiras.
 
 <div class="figure" style="text-align: center">
-<img src="assets/img/r-base/code_hero_rstats.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la."  />
+<img src="assets/img/r-base/code_hero_rstats.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la." width="1378" />
 <p class="caption">(\#fig:r-base-1)Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la.</p>
 </div>
 
@@ -1505,7 +1505,7 @@ x <- 1
 if (x == 1) {         
   Sys.time()
 }
-## [1] "2020-05-28 16:32:44 -03"
+## [1] "2020-07-25 17:49:32 -03"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se a expressão que estiver dentro dos parênteses `()` retornar `TRUE`. Veja outro exemplo:

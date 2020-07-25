@@ -36,6 +36,8 @@ Como a instalação no Linux depende da distribuição utilizada e, em geral, us
 
 4. Siga as instruções contidas na página para instalar o R.
 
+### No Mac
+
 ## Instalação do RStudio
 
 Agora vamos instalar a versão *open source* do RStudio, a IDE que utilizaremos para escrever e executar códigos em R. 
@@ -78,3 +80,7 @@ Pronto! O RStudio está pronto para ser utilizado.
 2. Clique no link referente à distribuição que você utiliza para fazer o download do arquivo de instalação.
 
 3. A depender da sua distribuição do Linux, instale o arquivo baixado.
+
+
+### No Mac
+

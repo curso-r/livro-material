@@ -55,9 +55,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -66,14 +66,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,9 +84,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -138,10 +140,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
+<li class="chapter" data-level="1.1.3" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a><ul>
 <li class="chapter" data-level="1.2.1" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html#no-windows-1"><i class="fa fa-check"></i><b>1.2.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.2.2" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html#no-linux-1"><i class="fa fa-check"></i><b>1.2.2</b> No Linux</a></li>
+<li class="chapter" data-level="1.2.3" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html#no-mac-1"><i class="fa fa-check"></i><b>1.2.3</b> No Mac</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a><ul>
@@ -200,8 +204,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="5-1-caminhos.html"><a href="5-1-caminhos.html"><i class="fa fa-check"></i><b>5.1</b> Caminhos</a></li>
 <li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="5-2-readr.html"><a href="5-2-readr.html#lendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.1</b> Lendo arquivos de texto</a></li>
-<li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.2</b> Parseando valores</a></li>
-<li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.3</b> Locale</a></li>
+<li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.2</b> Locale</a></li>
+<li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.3</b> Parseando valores</a></li>
 <li class="chapter" data-level="5.2.4" data-path="5-2-readr.html"><a href="5-2-readr.html#escrevendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.4</b> Escrevendo arquivos de texto</a></li>
 <li class="chapter" data-level="5.2.5" data-path="5-2-readr.html"><a href="5-2-readr.html#arquivos-.rds"><i class="fa fa-check"></i><b>5.2.5</b> Arquivos .rds</a></li>
 </ul></li>
@@ -280,135 +284,135 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">3.13.1</span> Matrizes</h3>
 <p>As matrizes no R podem ser tratadas como vetores com duas dimensões. Por serem vetores, elas só podem conter elementos de uma mesma classe. Por possuírem duas dimensões, as operações de <em>subsetting</em> devem ser realizadas utilizando a sintaxe <code>matriz[linha, coluna]</code>.</p>
 <p>Para criar uma matriz, utilizamos a função <code>matrix()</code>. Precisamos definir quais elementos formarão a matriz e qual será o número de linhas e colunas.</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" title="1"><span class="co"># Uma matriz de 2 linhas e 3 colunas</span></a>
-<a class="sourceLine" id="cb95-2" title="2">m &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb95-3" title="3"></a>
-<a class="sourceLine" id="cb95-4" title="4">m</a>
-<a class="sourceLine" id="cb95-5" title="5"><span class="co">##      [,1] [,2] [,3]</span></a>
-<a class="sourceLine" id="cb95-6" title="6"><span class="co">## [1,]    1    4    7</span></a>
-<a class="sourceLine" id="cb95-7" title="7"><span class="co">## [2,]    2    5    8</span></a>
-<a class="sourceLine" id="cb95-8" title="8"><span class="co">## [3,]    3    6    9</span></a>
-<a class="sourceLine" id="cb95-9" title="9"></a>
-<a class="sourceLine" id="cb95-10" title="10"><span class="kw">dim</span>(m)</a>
-<a class="sourceLine" id="cb95-11" title="11"><span class="co">## [1] 3 3</span></a></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="3-13-outros-tópicos.html#cb95-1"></a><span class="co"># Uma matriz de 2 linhas e 3 colunas</span></span>
+<span id="cb95-2"><a href="3-13-outros-tópicos.html#cb95-2"></a>m &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb95-3"><a href="3-13-outros-tópicos.html#cb95-3"></a></span>
+<span id="cb95-4"><a href="3-13-outros-tópicos.html#cb95-4"></a>m</span>
+<span id="cb95-5"><a href="3-13-outros-tópicos.html#cb95-5"></a><span class="co">##      [,1] [,2] [,3]</span></span>
+<span id="cb95-6"><a href="3-13-outros-tópicos.html#cb95-6"></a><span class="co">## [1,]    1    4    7</span></span>
+<span id="cb95-7"><a href="3-13-outros-tópicos.html#cb95-7"></a><span class="co">## [2,]    2    5    8</span></span>
+<span id="cb95-8"><a href="3-13-outros-tópicos.html#cb95-8"></a><span class="co">## [3,]    3    6    9</span></span>
+<span id="cb95-9"><a href="3-13-outros-tópicos.html#cb95-9"></a></span>
+<span id="cb95-10"><a href="3-13-outros-tópicos.html#cb95-10"></a><span class="kw">dim</span>(m)</span>
+<span id="cb95-11"><a href="3-13-outros-tópicos.html#cb95-11"></a><span class="co">## [1] 3 3</span></span></code></pre></div>
 <p>Repare que os números de 1 a 9 foram dispostos na matriz coluna por coluna (<em>column-wise</em>), ou seja, preenchendo de cima para baixo e depois da esquerda para a direita. Esse comportamento pode ser alterado se utilizarmos o argumento <code>byrow=</code>.</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" title="1"><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb96-2" title="2"><span class="co">##      [,1] [,2] [,3]</span></a>
-<a class="sourceLine" id="cb96-3" title="3"><span class="co">## [1,]    1    2    3</span></a>
-<a class="sourceLine" id="cb96-4" title="4"><span class="co">## [2,]    4    5    6</span></a>
-<a class="sourceLine" id="cb96-5" title="5"><span class="co">## [3,]    7    8    9</span></a></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="3-13-outros-tópicos.html#cb96-1"></a><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb96-2"><a href="3-13-outros-tópicos.html#cb96-2"></a><span class="co">##      [,1] [,2] [,3]</span></span>
+<span id="cb96-3"><a href="3-13-outros-tópicos.html#cb96-3"></a><span class="co">## [1,]    1    2    3</span></span>
+<span id="cb96-4"><a href="3-13-outros-tópicos.html#cb96-4"></a><span class="co">## [2,]    4    5    6</span></span>
+<span id="cb96-5"><a href="3-13-outros-tópicos.html#cb96-5"></a><span class="co">## [3,]    7    8    9</span></span></code></pre></div>
 <p><em>Subsetting</em> de matrizes é muito parecido com o de <em>data frames</em>.</p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" title="1"><span class="co"># Seleciona a terceira linha</span></a>
-<a class="sourceLine" id="cb97-2" title="2">m[<span class="dv">3</span>, ]</a>
-<a class="sourceLine" id="cb97-3" title="3"><span class="co">## [1] 3 6 9</span></a>
-<a class="sourceLine" id="cb97-4" title="4"></a>
-<a class="sourceLine" id="cb97-5" title="5"><span class="co"># Seleciona a segunda coluna</span></a>
-<a class="sourceLine" id="cb97-6" title="6">m[ , <span class="dv">2</span>]   </a>
-<a class="sourceLine" id="cb97-7" title="7"><span class="co">## [1] 4 5 6</span></a>
-<a class="sourceLine" id="cb97-8" title="8"></a>
-<a class="sourceLine" id="cb97-9" title="9"><span class="co"># Seleciona o primeiro elemento da segunda coluna</span></a>
-<a class="sourceLine" id="cb97-10" title="10">m[<span class="dv">1</span>, <span class="dv">2</span>]</a>
-<a class="sourceLine" id="cb97-11" title="11"><span class="co">## [1] 4</span></a></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="3-13-outros-tópicos.html#cb97-1"></a><span class="co"># Seleciona a terceira linha</span></span>
+<span id="cb97-2"><a href="3-13-outros-tópicos.html#cb97-2"></a>m[<span class="dv">3</span>, ]</span>
+<span id="cb97-3"><a href="3-13-outros-tópicos.html#cb97-3"></a><span class="co">## [1] 3 6 9</span></span>
+<span id="cb97-4"><a href="3-13-outros-tópicos.html#cb97-4"></a></span>
+<span id="cb97-5"><a href="3-13-outros-tópicos.html#cb97-5"></a><span class="co"># Seleciona a segunda coluna</span></span>
+<span id="cb97-6"><a href="3-13-outros-tópicos.html#cb97-6"></a>m[ , <span class="dv">2</span>]   </span>
+<span id="cb97-7"><a href="3-13-outros-tópicos.html#cb97-7"></a><span class="co">## [1] 4 5 6</span></span>
+<span id="cb97-8"><a href="3-13-outros-tópicos.html#cb97-8"></a></span>
+<span id="cb97-9"><a href="3-13-outros-tópicos.html#cb97-9"></a><span class="co"># Seleciona o primeiro elemento da segunda coluna</span></span>
+<span id="cb97-10"><a href="3-13-outros-tópicos.html#cb97-10"></a>m[<span class="dv">1</span>, <span class="dv">2</span>]</span>
+<span id="cb97-11"><a href="3-13-outros-tópicos.html#cb97-11"></a><span class="co">## [1] 4</span></span></code></pre></div>
 <p>A seguir, apresentamos algumas operações úteis para trabalhar com matrizes.</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" title="1"><span class="co"># Matriz transposta</span></a>
-<a class="sourceLine" id="cb98-2" title="2"><span class="kw">t</span>(m)     </a>
-<a class="sourceLine" id="cb98-3" title="3"><span class="co">##      [,1] [,2] [,3]</span></a>
-<a class="sourceLine" id="cb98-4" title="4"><span class="co">## [1,]    1    2    3</span></a>
-<a class="sourceLine" id="cb98-5" title="5"><span class="co">## [2,]    4    5    6</span></a>
-<a class="sourceLine" id="cb98-6" title="6"><span class="co">## [3,]    7    8    9</span></a>
-<a class="sourceLine" id="cb98-7" title="7"></a>
-<a class="sourceLine" id="cb98-8" title="8"><span class="co"># Matriz identidade 3 por 3</span></a>
-<a class="sourceLine" id="cb98-9" title="9">n &lt;-<span class="st"> </span><span class="kw">diag</span>(<span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb98-10" title="10">n</a>
-<a class="sourceLine" id="cb98-11" title="11"><span class="co">##      [,1] [,2] [,3]</span></a>
-<a class="sourceLine" id="cb98-12" title="12"><span class="co">## [1,]    1    0    0</span></a>
-<a class="sourceLine" id="cb98-13" title="13"><span class="co">## [2,]    0    1    0</span></a>
-<a class="sourceLine" id="cb98-14" title="14"><span class="co">## [3,]    0    0    1</span></a>
-<a class="sourceLine" id="cb98-15" title="15"></a>
-<a class="sourceLine" id="cb98-16" title="16"><span class="co"># Multiplicação por escalar</span></a>
-<a class="sourceLine" id="cb98-17" title="17">n <span class="op">*</span><span class="st"> </span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb98-18" title="18"><span class="co">##      [,1] [,2] [,3]</span></a>
-<a class="sourceLine" id="cb98-19" title="19"><span class="co">## [1,]    2    0    0</span></a>
-<a class="sourceLine" id="cb98-20" title="20"><span class="co">## [2,]    0    2    0</span></a>
-<a class="sourceLine" id="cb98-21" title="21"><span class="co">## [3,]    0    0    2</span></a>
-<a class="sourceLine" id="cb98-22" title="22"></a>
-<a class="sourceLine" id="cb98-23" title="23"><span class="co"># Multiplicação matricial</span></a>
-<a class="sourceLine" id="cb98-24" title="24">m <span class="op">%*%</span><span class="st"> </span>n</a>
-<a class="sourceLine" id="cb98-25" title="25"><span class="co">##      [,1] [,2] [,3]</span></a>
-<a class="sourceLine" id="cb98-26" title="26"><span class="co">## [1,]    1    4    7</span></a>
-<a class="sourceLine" id="cb98-27" title="27"><span class="co">## [2,]    2    5    8</span></a>
-<a class="sourceLine" id="cb98-28" title="28"><span class="co">## [3,]    3    6    9</span></a>
-<a class="sourceLine" id="cb98-29" title="29"></a>
-<a class="sourceLine" id="cb98-30" title="30"><span class="co"># Matriz inversa de m</span></a>
-<a class="sourceLine" id="cb98-31" title="31">n2 &lt;-<span class="st"> </span>n <span class="op">*</span><span class="st"> </span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb98-32" title="32"><span class="kw">solve</span>(n2)  </a>
-<a class="sourceLine" id="cb98-33" title="33"><span class="co">##      [,1] [,2] [,3]</span></a>
-<a class="sourceLine" id="cb98-34" title="34"><span class="co">## [1,]  0.5  0.0  0.0</span></a>
-<a class="sourceLine" id="cb98-35" title="35"><span class="co">## [2,]  0.0  0.5  0.0</span></a>
-<a class="sourceLine" id="cb98-36" title="36"><span class="co">## [3,]  0.0  0.0  0.5</span></a></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="3-13-outros-tópicos.html#cb98-1"></a><span class="co"># Matriz transposta</span></span>
+<span id="cb98-2"><a href="3-13-outros-tópicos.html#cb98-2"></a><span class="kw">t</span>(m)     </span>
+<span id="cb98-3"><a href="3-13-outros-tópicos.html#cb98-3"></a><span class="co">##      [,1] [,2] [,3]</span></span>
+<span id="cb98-4"><a href="3-13-outros-tópicos.html#cb98-4"></a><span class="co">## [1,]    1    2    3</span></span>
+<span id="cb98-5"><a href="3-13-outros-tópicos.html#cb98-5"></a><span class="co">## [2,]    4    5    6</span></span>
+<span id="cb98-6"><a href="3-13-outros-tópicos.html#cb98-6"></a><span class="co">## [3,]    7    8    9</span></span>
+<span id="cb98-7"><a href="3-13-outros-tópicos.html#cb98-7"></a></span>
+<span id="cb98-8"><a href="3-13-outros-tópicos.html#cb98-8"></a><span class="co"># Matriz identidade 3 por 3</span></span>
+<span id="cb98-9"><a href="3-13-outros-tópicos.html#cb98-9"></a>n &lt;-<span class="st"> </span><span class="kw">diag</span>(<span class="dv">3</span>)</span>
+<span id="cb98-10"><a href="3-13-outros-tópicos.html#cb98-10"></a>n</span>
+<span id="cb98-11"><a href="3-13-outros-tópicos.html#cb98-11"></a><span class="co">##      [,1] [,2] [,3]</span></span>
+<span id="cb98-12"><a href="3-13-outros-tópicos.html#cb98-12"></a><span class="co">## [1,]    1    0    0</span></span>
+<span id="cb98-13"><a href="3-13-outros-tópicos.html#cb98-13"></a><span class="co">## [2,]    0    1    0</span></span>
+<span id="cb98-14"><a href="3-13-outros-tópicos.html#cb98-14"></a><span class="co">## [3,]    0    0    1</span></span>
+<span id="cb98-15"><a href="3-13-outros-tópicos.html#cb98-15"></a></span>
+<span id="cb98-16"><a href="3-13-outros-tópicos.html#cb98-16"></a><span class="co"># Multiplicação por escalar</span></span>
+<span id="cb98-17"><a href="3-13-outros-tópicos.html#cb98-17"></a>n <span class="op">*</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb98-18"><a href="3-13-outros-tópicos.html#cb98-18"></a><span class="co">##      [,1] [,2] [,3]</span></span>
+<span id="cb98-19"><a href="3-13-outros-tópicos.html#cb98-19"></a><span class="co">## [1,]    2    0    0</span></span>
+<span id="cb98-20"><a href="3-13-outros-tópicos.html#cb98-20"></a><span class="co">## [2,]    0    2    0</span></span>
+<span id="cb98-21"><a href="3-13-outros-tópicos.html#cb98-21"></a><span class="co">## [3,]    0    0    2</span></span>
+<span id="cb98-22"><a href="3-13-outros-tópicos.html#cb98-22"></a></span>
+<span id="cb98-23"><a href="3-13-outros-tópicos.html#cb98-23"></a><span class="co"># Multiplicação matricial</span></span>
+<span id="cb98-24"><a href="3-13-outros-tópicos.html#cb98-24"></a>m <span class="op">%*%</span><span class="st"> </span>n</span>
+<span id="cb98-25"><a href="3-13-outros-tópicos.html#cb98-25"></a><span class="co">##      [,1] [,2] [,3]</span></span>
+<span id="cb98-26"><a href="3-13-outros-tópicos.html#cb98-26"></a><span class="co">## [1,]    1    4    7</span></span>
+<span id="cb98-27"><a href="3-13-outros-tópicos.html#cb98-27"></a><span class="co">## [2,]    2    5    8</span></span>
+<span id="cb98-28"><a href="3-13-outros-tópicos.html#cb98-28"></a><span class="co">## [3,]    3    6    9</span></span>
+<span id="cb98-29"><a href="3-13-outros-tópicos.html#cb98-29"></a></span>
+<span id="cb98-30"><a href="3-13-outros-tópicos.html#cb98-30"></a><span class="co"># Matriz inversa de m</span></span>
+<span id="cb98-31"><a href="3-13-outros-tópicos.html#cb98-31"></a>n2 &lt;-<span class="st"> </span>n <span class="op">*</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb98-32"><a href="3-13-outros-tópicos.html#cb98-32"></a><span class="kw">solve</span>(n2)  </span>
+<span id="cb98-33"><a href="3-13-outros-tópicos.html#cb98-33"></a><span class="co">##      [,1] [,2] [,3]</span></span>
+<span id="cb98-34"><a href="3-13-outros-tópicos.html#cb98-34"></a><span class="co">## [1,]  0.5  0.0  0.0</span></span>
+<span id="cb98-35"><a href="3-13-outros-tópicos.html#cb98-35"></a><span class="co">## [2,]  0.0  0.5  0.0</span></span>
+<span id="cb98-36"><a href="3-13-outros-tópicos.html#cb98-36"></a><span class="co">## [3,]  0.0  0.0  0.5</span></span></code></pre></div>
 </div>
 <div id="fatores" class="section level3">
 <h3><span class="header-section-number">3.13.2</span> Fatores</h3>
 <p>Fatores são uma classe de objetos no R criada para representar as variáveis categóricas numericamente. Essa classe possui um atributo especial: os <code>levels</code>. <em>Levels</em> são nada mais do que as categorias possíveis de uma variável categórica.</p>
 <p>Como exemplo, imagine que o objeto <code>sexo</code> guarde uma coluna que indica o sexo de uma pessoa: <code>F</code> para feminino e <code>M</code> para masculino. Normalmente, essa coluna seria importada para o R como texto. Podemos transformá-la em fator utilizando a função <code>as.factor()</code>.</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" title="1"><span class="co"># Variável sexo como texto</span></a>
-<a class="sourceLine" id="cb99-2" title="2">sexo &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;F&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;M&quot;</span>)</a>
-<a class="sourceLine" id="cb99-3" title="3">sexo</a>
-<a class="sourceLine" id="cb99-4" title="4"><span class="co">## [1] &quot;F&quot; &quot;M&quot; &quot;M&quot; &quot;M&quot; &quot;F&quot; &quot;F&quot; &quot;M&quot;</span></a>
-<a class="sourceLine" id="cb99-5" title="5"></a>
-<a class="sourceLine" id="cb99-6" title="6"><span class="co"># Variável sexo, como fator</span></a>
-<a class="sourceLine" id="cb99-7" title="7"><span class="kw">as.factor</span>(sexo)</a>
-<a class="sourceLine" id="cb99-8" title="8"><span class="co">## [1] F M M M F F M</span></a>
-<a class="sourceLine" id="cb99-9" title="9"><span class="co">## Levels: F M</span></a></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="3-13-outros-tópicos.html#cb99-1"></a><span class="co"># Variável sexo como texto</span></span>
+<span id="cb99-2"><a href="3-13-outros-tópicos.html#cb99-2"></a>sexo &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;F&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;M&quot;</span>)</span>
+<span id="cb99-3"><a href="3-13-outros-tópicos.html#cb99-3"></a>sexo</span>
+<span id="cb99-4"><a href="3-13-outros-tópicos.html#cb99-4"></a><span class="co">## [1] &quot;F&quot; &quot;M&quot; &quot;M&quot; &quot;M&quot; &quot;F&quot; &quot;F&quot; &quot;M&quot;</span></span>
+<span id="cb99-5"><a href="3-13-outros-tópicos.html#cb99-5"></a></span>
+<span id="cb99-6"><a href="3-13-outros-tópicos.html#cb99-6"></a><span class="co"># Variável sexo, como fator</span></span>
+<span id="cb99-7"><a href="3-13-outros-tópicos.html#cb99-7"></a><span class="kw">as.factor</span>(sexo)</span>
+<span id="cb99-8"><a href="3-13-outros-tópicos.html#cb99-8"></a><span class="co">## [1] F M M M F F M</span></span>
+<span id="cb99-9"><a href="3-13-outros-tópicos.html#cb99-9"></a><span class="co">## Levels: F M</span></span></code></pre></div>
 <p>Repare que a saída do objeto <code>sexo</code> quando o transformamos em fator tem uma informação a mais. Na última linha, visualizamos os <code>levels</code> desse fator, isto é, um conjunto das categorias possíveis do fator <code>sexo</code> (no caso, F e M).</p>
 <p>Por padrão, <strong>os levels são ordenados por ordem alfabética</strong>. Veremos mais adiante que isso pode fazer diferença na construção de gráficos e na aplicação de modelos.</p>
 <p>A diferença entre fatores e texto dentro do R é como eles são representados internamente. Enquanto objetos da classe <code>character</code> realmente são representados como texto, fatores são representados como números inteiros.</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" title="1"><span class="co"># Em geral, não é possível transforma textos em números</span></a>
-<a class="sourceLine" id="cb100-2" title="2"><span class="kw">as.numeric</span>(sexo)</a>
-<a class="sourceLine" id="cb100-3" title="3"><span class="co">## Warning: NAs introduced by coercion</span></a>
-<a class="sourceLine" id="cb100-4" title="4"><span class="co">## [1] NA NA NA NA NA NA NA</span></a>
-<a class="sourceLine" id="cb100-5" title="5"></a>
-<a class="sourceLine" id="cb100-6" title="6"><span class="co"># Mas podemos transforrma fatores em inteiros</span></a>
-<a class="sourceLine" id="cb100-7" title="7">fator &lt;-<span class="st"> </span><span class="kw">as.factor</span>(sexo)</a>
-<a class="sourceLine" id="cb100-8" title="8"><span class="kw">as.numeric</span>(fator)</a>
-<a class="sourceLine" id="cb100-9" title="9"><span class="co">## [1] 1 2 2 2 1 1 2</span></a></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="3-13-outros-tópicos.html#cb100-1"></a><span class="co"># Em geral, não é possível transforma textos em números</span></span>
+<span id="cb100-2"><a href="3-13-outros-tópicos.html#cb100-2"></a><span class="kw">as.numeric</span>(sexo)</span>
+<span id="cb100-3"><a href="3-13-outros-tópicos.html#cb100-3"></a><span class="co">## Warning: NAs introduced by coercion</span></span>
+<span id="cb100-4"><a href="3-13-outros-tópicos.html#cb100-4"></a><span class="co">## [1] NA NA NA NA NA NA NA</span></span>
+<span id="cb100-5"><a href="3-13-outros-tópicos.html#cb100-5"></a></span>
+<span id="cb100-6"><a href="3-13-outros-tópicos.html#cb100-6"></a><span class="co"># Mas podemos transforrma fatores em inteiros</span></span>
+<span id="cb100-7"><a href="3-13-outros-tópicos.html#cb100-7"></a>fator &lt;-<span class="st"> </span><span class="kw">as.factor</span>(sexo)</span>
+<span id="cb100-8"><a href="3-13-outros-tópicos.html#cb100-8"></a><span class="kw">as.numeric</span>(fator)</span>
+<span id="cb100-9"><a href="3-13-outros-tópicos.html#cb100-9"></a><span class="co">## [1] 1 2 2 2 1 1 2</span></span></code></pre></div>
 <p>Internamente, cada level de um fator é representado como um inteiro. No exemplo anterior, o level <code>F</code> está sendo representado como <code>1</code> e o level <code>M</code> como <code>2</code>. Se um fator tiver 10 levels, teremos os inteiros de <code>1</code> a <code>10</code> representando esse fator.</p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" title="1"><span class="co"># letters é um objeto nativo do R</span></a>
-<a class="sourceLine" id="cb101-2" title="2">letras &lt;-<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]</a>
-<a class="sourceLine" id="cb101-3" title="3"></a>
-<a class="sourceLine" id="cb101-4" title="4">fator &lt;-<span class="st"> </span><span class="kw">as.factor</span>(letras)</a>
-<a class="sourceLine" id="cb101-5" title="5">fator</a>
-<a class="sourceLine" id="cb101-6" title="6"><span class="co">##  [1] a b c d e f g h i j</span></a>
-<a class="sourceLine" id="cb101-7" title="7"><span class="co">## Levels: a b c d e f g h i j</span></a>
-<a class="sourceLine" id="cb101-8" title="8"></a>
-<a class="sourceLine" id="cb101-9" title="9"><span class="kw">as.numeric</span>(fator)</a>
-<a class="sourceLine" id="cb101-10" title="10"><span class="co">##  [1]  1  2  3  4  5  6  7  8  9 10</span></a></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="3-13-outros-tópicos.html#cb101-1"></a><span class="co"># letters é um objeto nativo do R</span></span>
+<span id="cb101-2"><a href="3-13-outros-tópicos.html#cb101-2"></a>letras &lt;-<span class="st"> </span>letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]</span>
+<span id="cb101-3"><a href="3-13-outros-tópicos.html#cb101-3"></a></span>
+<span id="cb101-4"><a href="3-13-outros-tópicos.html#cb101-4"></a>fator &lt;-<span class="st"> </span><span class="kw">as.factor</span>(letras)</span>
+<span id="cb101-5"><a href="3-13-outros-tópicos.html#cb101-5"></a>fator</span>
+<span id="cb101-6"><a href="3-13-outros-tópicos.html#cb101-6"></a><span class="co">##  [1] a b c d e f g h i j</span></span>
+<span id="cb101-7"><a href="3-13-outros-tópicos.html#cb101-7"></a><span class="co">## Levels: a b c d e f g h i j</span></span>
+<span id="cb101-8"><a href="3-13-outros-tópicos.html#cb101-8"></a></span>
+<span id="cb101-9"><a href="3-13-outros-tópicos.html#cb101-9"></a><span class="kw">as.numeric</span>(fator)</span>
+<span id="cb101-10"><a href="3-13-outros-tópicos.html#cb101-10"></a><span class="co">##  [1]  1  2  3  4  5  6  7  8  9 10</span></span></code></pre></div>
 <p>O texto que vemos quando avaliamos um fator (<code>F</code> e <code>M</code> em vez de <code>1</code> e <code>2</code>, por exemplo) é apenas uma “etiqueta” que o R coloca em cima dos inteiros. As diferentes etiquetas de um fator são justamente os <code>levels</code>.</p>
 <p>Como fatores são sempre representados interrnamente por inteiros sequencias começando do 1 (1, 2, 3, …) e esses inteiros são sempre atribuídos conforme a ordem alfabética dos <code>levels</code>, um erro muito comum é tentar transformar levels numéricos em números:</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" title="1"><span class="co"># Texto</span></a>
-<a class="sourceLine" id="cb102-2" title="2">vetor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;10&quot;</span>, <span class="st">&quot;55&quot;</span>, <span class="st">&quot;55&quot;</span>, <span class="st">&quot;12&quot;</span>, <span class="st">&quot;10&quot;</span>, <span class="st">&quot;-5&quot;</span>, <span class="st">&quot;-90&quot;</span>)</a>
-<a class="sourceLine" id="cb102-3" title="3">vetor</a>
-<a class="sourceLine" id="cb102-4" title="4"><span class="co">## [1] &quot;10&quot;  &quot;55&quot;  &quot;55&quot;  &quot;12&quot;  &quot;10&quot;  &quot;-5&quot;  &quot;-90&quot;</span></a>
-<a class="sourceLine" id="cb102-5" title="5"></a>
-<a class="sourceLine" id="cb102-6" title="6"><span class="co"># Fator</span></a>
-<a class="sourceLine" id="cb102-7" title="7">fator &lt;-<span class="st"> </span><span class="kw">as.factor</span>(vetor)</a>
-<a class="sourceLine" id="cb102-8" title="8">fator</a>
-<a class="sourceLine" id="cb102-9" title="9"><span class="co">## [1] 10  55  55  12  10  -5  -90</span></a>
-<a class="sourceLine" id="cb102-10" title="10"><span class="co">## Levels: -5 -90 10 12 55</span></a>
-<a class="sourceLine" id="cb102-11" title="11"></a>
-<a class="sourceLine" id="cb102-12" title="12"><span class="co"># Número</span></a>
-<a class="sourceLine" id="cb102-13" title="13"><span class="kw">as.numeric</span>(fator)</a>
-<a class="sourceLine" id="cb102-14" title="14"><span class="co">## [1] 3 5 5 4 3 1 2</span></a></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="3-13-outros-tópicos.html#cb102-1"></a><span class="co"># Texto</span></span>
+<span id="cb102-2"><a href="3-13-outros-tópicos.html#cb102-2"></a>vetor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;10&quot;</span>, <span class="st">&quot;55&quot;</span>, <span class="st">&quot;55&quot;</span>, <span class="st">&quot;12&quot;</span>, <span class="st">&quot;10&quot;</span>, <span class="st">&quot;-5&quot;</span>, <span class="st">&quot;-90&quot;</span>)</span>
+<span id="cb102-3"><a href="3-13-outros-tópicos.html#cb102-3"></a>vetor</span>
+<span id="cb102-4"><a href="3-13-outros-tópicos.html#cb102-4"></a><span class="co">## [1] &quot;10&quot;  &quot;55&quot;  &quot;55&quot;  &quot;12&quot;  &quot;10&quot;  &quot;-5&quot;  &quot;-90&quot;</span></span>
+<span id="cb102-5"><a href="3-13-outros-tópicos.html#cb102-5"></a></span>
+<span id="cb102-6"><a href="3-13-outros-tópicos.html#cb102-6"></a><span class="co"># Fator</span></span>
+<span id="cb102-7"><a href="3-13-outros-tópicos.html#cb102-7"></a>fator &lt;-<span class="st"> </span><span class="kw">as.factor</span>(vetor)</span>
+<span id="cb102-8"><a href="3-13-outros-tópicos.html#cb102-8"></a>fator</span>
+<span id="cb102-9"><a href="3-13-outros-tópicos.html#cb102-9"></a><span class="co">## [1] 10  55  55  12  10  -5  -90</span></span>
+<span id="cb102-10"><a href="3-13-outros-tópicos.html#cb102-10"></a><span class="co">## Levels: -5 -90 10 12 55</span></span>
+<span id="cb102-11"><a href="3-13-outros-tópicos.html#cb102-11"></a></span>
+<span id="cb102-12"><a href="3-13-outros-tópicos.html#cb102-12"></a><span class="co"># Número</span></span>
+<span id="cb102-13"><a href="3-13-outros-tópicos.html#cb102-13"></a><span class="kw">as.numeric</span>(fator)</span>
+<span id="cb102-14"><a href="3-13-outros-tópicos.html#cb102-14"></a><span class="co">## [1] 3 5 5 4 3 1 2</span></span></code></pre></div>
 <p>Quando transformamos o objeto <code>vetor</code> em um fator, o R não enxerga os “números” dentro dele. Para o R, é tudo texto. Então, como nos outros exemplos, cada “número” será representado por um inteiro, atribuído pela ordem alfabética.</p>
 <p>Uma forma de evitar esse problema é transformar o fator em texto antes de transformá-lo em número.</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb103-1" title="1"><span class="co"># Voltando para texto</span></a>
-<a class="sourceLine" id="cb103-2" title="2">texto &lt;-<span class="st"> </span><span class="kw">as.character</span>(fator)</a>
-<a class="sourceLine" id="cb103-3" title="3">texto</a>
-<a class="sourceLine" id="cb103-4" title="4"><span class="co">## [1] &quot;10&quot;  &quot;55&quot;  &quot;55&quot;  &quot;12&quot;  &quot;10&quot;  &quot;-5&quot;  &quot;-90&quot;</span></a>
-<a class="sourceLine" id="cb103-5" title="5"></a>
-<a class="sourceLine" id="cb103-6" title="6"><span class="co"># Agora sim os números originais</span></a>
-<a class="sourceLine" id="cb103-7" title="7"><span class="kw">as.numeric</span>(texto)</a>
-<a class="sourceLine" id="cb103-8" title="8"><span class="co">## [1]  10  55  55  12  10  -5 -90</span></a></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="3-13-outros-tópicos.html#cb103-1"></a><span class="co"># Voltando para texto</span></span>
+<span id="cb103-2"><a href="3-13-outros-tópicos.html#cb103-2"></a>texto &lt;-<span class="st"> </span><span class="kw">as.character</span>(fator)</span>
+<span id="cb103-3"><a href="3-13-outros-tópicos.html#cb103-3"></a>texto</span>
+<span id="cb103-4"><a href="3-13-outros-tópicos.html#cb103-4"></a><span class="co">## [1] &quot;10&quot;  &quot;55&quot;  &quot;55&quot;  &quot;12&quot;  &quot;10&quot;  &quot;-5&quot;  &quot;-90&quot;</span></span>
+<span id="cb103-5"><a href="3-13-outros-tópicos.html#cb103-5"></a></span>
+<span id="cb103-6"><a href="3-13-outros-tópicos.html#cb103-6"></a><span class="co"># Agora sim os números originais</span></span>
+<span id="cb103-7"><a href="3-13-outros-tópicos.html#cb103-7"></a><span class="kw">as.numeric</span>(texto)</span>
+<span id="cb103-8"><a href="3-13-outros-tópicos.html#cb103-8"></a><span class="co">## [1]  10  55  55  12  10  -5 -90</span></span></code></pre></div>
 </div>
 <div id="gráficos-r-base" class="section level3">
 <h3><span class="header-section-number">3.13.3</span> Gráficos (R base)</h3>
@@ -426,15 +430,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>type</code>: tipo de gráfico. Pode ser pontos, linhas, escada, entre outros.</li>
 </ul>
 <p>Para mais detalhes sobre os argumentos, ver <code>help(plot)</code>.</p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb104-1" title="1">N &lt;-<span class="st"> </span><span class="dv">100</span></a>
-<a class="sourceLine" id="cb104-2" title="2">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span>N</a>
-<a class="sourceLine" id="cb104-3" title="3">y &lt;-<span class="st"> </span><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(N, <span class="dt">sd =</span> <span class="dv">30</span>)</a>
-<a class="sourceLine" id="cb104-4" title="4"></a>
-<a class="sourceLine" id="cb104-5" title="5"><span class="kw">plot</span>(x, y)</a></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="3-13-outros-tópicos.html#cb104-1"></a>N &lt;-<span class="st"> </span><span class="dv">100</span></span>
+<span id="cb104-2"><a href="3-13-outros-tópicos.html#cb104-2"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span>N</span>
+<span id="cb104-3"><a href="3-13-outros-tópicos.html#cb104-3"></a>y &lt;-<span class="st"> </span><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(N, <span class="dt">sd =</span> <span class="dv">30</span>)</span>
+<span id="cb104-4"><a href="3-13-outros-tópicos.html#cb104-4"></a></span>
+<span id="cb104-5"><a href="3-13-outros-tópicos.html#cb104-5"></a><span class="kw">plot</span>(x, y)</span></code></pre></div>
 <p><img src="03-r-base_files/figure-html/r-base-plot-1-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>No código acima, a função <code>rnorm()</code> gera uma amostra aleatória da distribuição Normal com média 0 e desvio-padrão 30.</p>
 <p>O parâmetro <code>type = "l"</code> indica que queremos que os pontos sejam interligados por linhas.</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" title="1"><span class="kw">plot</span>(x, y, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="3-13-outros-tópicos.html#cb105-1"></a><span class="kw">plot</span>(x, y, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>)</span></code></pre></div>
 <p><img src="03-r-base_files/figure-html/r-base-plot-2-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="histograma" class="section level4">
@@ -444,9 +448,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>x</code>: o vetor numérico para o qual o histograma será construído.</li>
 <li><code>breaks</code>: número (aproximado) de retângulos.</li>
 </ul>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb106-1" title="1"><span class="kw">hist</span>(<span class="kw">rnorm</span>(<span class="dv">1000</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="3-13-outros-tópicos.html#cb106-1"></a><span class="kw">hist</span>(<span class="kw">rnorm</span>(<span class="dv">1000</span>))</span></code></pre></div>
 <p><img src="03-r-base_files/figure-html/r-base-plot-3-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" title="1"><span class="kw">hist</span>(<span class="kw">rnorm</span>(<span class="dv">1000</span>), <span class="dt">breaks =</span> <span class="dv">6</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="3-13-outros-tópicos.html#cb107-1"></a><span class="kw">hist</span>(<span class="kw">rnorm</span>(<span class="dv">1000</span>), <span class="dt">breaks =</span> <span class="dv">6</span>)</span></code></pre></div>
 <p><img src="03-r-base_files/figure-html/r-base-plot-4-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="boxplot" class="section level4">
@@ -455,24 +459,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><code>x</code>: o vetor numérico para o qual o boxplot será construído.</li>
 </ul>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" title="1"><span class="kw">boxplot</span>(mtcars<span class="op">$</span>mpg, <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="3-13-outros-tópicos.html#cb108-1"></a><span class="kw">boxplot</span>(mtcars<span class="op">$</span>mpg, <span class="dt">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span></code></pre></div>
 <p><img src="03-r-base_files/figure-html/r-base-plot-5-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Observe que o argumento <code>col=</code> muda a cor da caixa do boxplot.</p>
 <p>Para mapear duas variáveis ao gráfico, passamos um <em>data frame</em> para o argumento <code>data=</code> e utilizamos a seguinte sintaxe <code>var_numerica ~ var_categorica</code>.</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" title="1"><span class="kw">boxplot</span>(mpg <span class="op">~</span><span class="st"> </span>cyl, <span class="dt">data =</span> mtcars, <span class="dt">col =</span> <span class="st">&quot;purple&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="3-13-outros-tópicos.html#cb109-1"></a><span class="kw">boxplot</span>(mpg <span class="op">~</span><span class="st"> </span>cyl, <span class="dt">data =</span> mtcars, <span class="dt">col =</span> <span class="st">&quot;purple&quot;</span>)</span></code></pre></div>
 <p><img src="03-r-base_files/figure-html/r-base-plot-6-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="gráfico-de-barras" class="section level4">
 <h4><span class="header-section-number">3.13.3.4</span> Gráfico de barras</h4>
 <p>Para construir gráficos de barras, precisamos combinar as funções <code>table()</code> e <code>barplot()</code>.</p>
 <p>No gráfico abaixo, primeiro criamos uma tabela de frequências com a função <code>table()</code> e, em seguida, construímos o gráfico com a função <code>barplot()</code>.</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" title="1">tabela &lt;-<span class="st"> </span><span class="kw">table</span>(mtcars<span class="op">$</span>cyl)</a>
-<a class="sourceLine" id="cb110-2" title="2">tabela</a>
-<a class="sourceLine" id="cb110-3" title="3"><span class="co">## </span></a>
-<a class="sourceLine" id="cb110-4" title="4"><span class="co">##  4  6  8 </span></a>
-<a class="sourceLine" id="cb110-5" title="5"><span class="co">## 11  7 14</span></a>
-<a class="sourceLine" id="cb110-6" title="6"></a>
-<a class="sourceLine" id="cb110-7" title="7"><span class="kw">barplot</span>(tabela)</a></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="3-13-outros-tópicos.html#cb110-1"></a>tabela &lt;-<span class="st"> </span><span class="kw">table</span>(mtcars<span class="op">$</span>cyl)</span>
+<span id="cb110-2"><a href="3-13-outros-tópicos.html#cb110-2"></a>tabela</span>
+<span id="cb110-3"><a href="3-13-outros-tópicos.html#cb110-3"></a><span class="co">## </span></span>
+<span id="cb110-4"><a href="3-13-outros-tópicos.html#cb110-4"></a><span class="co">##  4  6  8 </span></span>
+<span id="cb110-5"><a href="3-13-outros-tópicos.html#cb110-5"></a><span class="co">## 11  7 14</span></span>
+<span id="cb110-6"><a href="3-13-outros-tópicos.html#cb110-6"></a></span>
+<span id="cb110-7"><a href="3-13-outros-tópicos.html#cb110-7"></a><span class="kw">barplot</span>(tabela)</span></code></pre></div>
 <p><img src="03-r-base_files/figure-html/r-base-plot-7-1.png" width="672" style="display: block; margin: auto;" /></p>
 
 </div>

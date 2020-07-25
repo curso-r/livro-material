@@ -10,13 +10,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-O pacote `readr`do tidyverse é utilizado para importar arquivos de texto, como `.txt` ou `.csv`, para o R. Para carregá-lo, rode o código:
+O pacote `{readr}`do tidyverse é utilizado para importar arquivos de texto, como `.txt` ou `.csv`, para o R. Para carregá-lo, rode o código:
 
 ```{r}
 library(readr)
 ```
 
-O `readr` transforma arquivos de textos em `tibbles` usando as funções:
+O `{readr}` transforma arquivos de textos em `tibbles` usando as funções:
 
 - `read_csv()`: para arquivos separados por vírgula.
 
@@ -53,7 +53,7 @@ A mensagem retornada pela função indica qual classe foi atribuída para cada c
 imdb_csv <- read_csv(file = "dados/imdb.csv")
 ```
 
-A maioria das funções de leitura do `readr` possuem argumentos muito úteis para resolver problemas de importação:
+A maioria das funções de leitura do `{readr}` possuem argumentos muito úteis para resolver problemas de importação:
 
 - `col_names=`: indica se a primeira linha da base contém ou não o nome das colunas. Também pode ser utilizado para (re)nomear colunas.
 
@@ -77,13 +77,112 @@ Arquivos `.txt` em geral podem ser lidos com a função `read_delim()`. Além do
 imdb_txt <- read_delim("dados/imdb.txt", delim = "\t")
 ```
 
-Repare que a sintaxe é igual a da função `read_csv()`. Em geral, as funções de importação do `tidyverse` terão sintaxe e comportamento muito parecidos.
+Repare que a sintaxe é igual a da função `read_csv()`. Em geral, as funções de importação do `{tidyverse}` terão sintaxe e comportamento muito parecidos.
 
 A seguir, vamos falar das funções `parse_()`, muito úteis para tratar problemas na classe das variáveis na hora da importação.
 
+### Locale
+
+Muitas funções de importação e formatação possuem um argumento `locale`. Esse argumento é utilizado para definir opções de formatação próprias de uma certa localidade, como idioma, formato de data e hora, fuso horário, separador de decimal e milhar ou encoding.
+
+O pacote `{readr}` possui uma função chamada `locale()`, que pode ser utilizada para definir todos esses atributos. Para saber quais são os padrões atualmente definidos na sua sessão, basta rodar:
+
+```{r}
+locale()
+```
+
+Em geral, teremos padrões norte-americanos. Se quisermos que os nomes de dias e meses fiquem em português, podemos fazer:
+
+```{r}
+locale(date_names = "pt")
+```
+
+Ou trocar o separador de decimal de ponto para vírgula, caso a base a ser importada esteja nesse formato.
+
+```{r}
+locale(decimal_mark = ",")
+```
+
+A função `locale()` deve ser utilizada dentro das funções `read_()`, no argumento `locale`. Uma utilização muito comum é a definição do *encoding* do arquivo. O encoding se refere a como o computador traduz os caracteres que vemos na tela para os valores binários que ele utiliza internamente. Existem vários tipos de encoding e isso é um problema principalmente porque o Windows utiliza um encoding diferente do Linux/Mac. Você saberá que tem um problema de encoding quando  letras com acento ou outros caracteres especiais ficarem desconfigurados após importar uma base para o R. 
+
+```{r}
+# Vamos produzir um problema de encoding
+
+frase_com_acentos <- "Você comerá uma maçã amanhã à tarde"
+
+# Vendo encoding. UTF-8 é o padrão do Linux/Mac
+Encoding(frase_com_acentos)
+
+# Forçando um novo encoding. 
+# latin1 é um dos padrões que funcionam no Windows.
+Encoding(frase_com_acentos) <-  "latin1"
+
+# Agora temos um problema de encoding
+frase_com_acentos
+```
+
+Quando estivermos enfrentando esse problema, devemos dizer à função `read_()` qual o encoding deve ser utilizado no arquivo.
+
+```{r, eval = FALSE}
+read_csv("base_que_veio_do_windows.csv", locale = locale(encoding = "latin1"))
+```
+
+O `latin1` é apenas um dos encodings que podem funcionar em arquivos do Windows. Outras sugestões são: `windows-1250`, `windows-1252`, `ISO-8859-2` e `ISO-8859-1`. Se você estiver lendo um arquivo cruado no Linux/Mac no Windows, basta usar o encoding `UTF-8`.
+
+> Eu consegui resolver 99% dos meus problemas de encoding quando passei a fingir que o Windows não existe. --- Julio Trecenti
+
+Na seção a seguir, mostramos mais alguns exemplos da função `locale()`.
+
 ### Parseando valores
 
-### Locale
+O pacote `{readr}` possui algumas funções muito úteis para parsear valores. Parsear é um termo muito utilizado em programação e tem o sentido de *arrumar* ou *formatar*. Se estamos parseando um número, por exemplo, estamos pegando um texto que é muito parecido com um número e o transforando em um número de fato.
+
+```{r}
+parse_number(c("5", "5.0", "5,0", "R$5.00", "5 a"))
+```
+
+```{r, fig.cap=Sys.getenv("cap_alisson_horst"), echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/curso-r/livro-material/master/assets/img/importacao/parse_number.png")
+```
+
+
+Veja que podemos usar o argumento `locale` para especificar coordenadas para o parseamento
+
+```{r}
+parse_number("5,0", locale = locale(decimal_mark = ","))
+```
+
+ou o idioma usado em datas
+
+```{r}
+# Inglês
+parse_date(
+  "01/June/2010", 
+  format = "%d/%B/%Y"
+)
+
+# Português
+parse_date(
+  "01/Junho/2010", 
+  format = "%d/%B/%Y",
+  locale = locale(date_names = "pt")
+)
+```
+
+Você também pode especificar `NAs` utilizando o argumento `na`.
+
+```{r}
+parse_number(c("5", "5.0", "5,0", "R$5.00", "5 a"), na = "5 a")
+```
+
+
+Outras funções de parseamento úteis são:
+
+- `readr::parse_integer()`, para parsear números inteiros.
+- `readr::parse_character()`, para parsear strings
+- `readr::parse_date()`, `readr::parse_time()`, `readr::parse_datetime()`para parsear datas, horas e data/horas.
+
+Todas essas funções são utilizadas nas colunas de uma base quando utilizamos as funções de importação do `{readr}`. Assim, se algum valor foi modificado incorretamente durante a importação, você pode testar importar tudo como texto (`character`) e usar essas funções para reproduzir a transformação que o `{readr}` fez.
 
 ### Escrevendo arquivos de texto
 

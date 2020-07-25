@@ -66,7 +66,7 @@ No entanto, é possível definir *como se faz* ciência de dados. Ou seja, indep
 O "como faz" é definido através do *Ciclo da Ciência de Dados*, descrito na Figura \@ref(fig:04-ciclo). Primeiro, os dados brutos são coletados de fontes públicas, como arquivos Excel, portais de dados abertos ou bases de dados internos da companhia. Em seguida, os dados são arrumados, para mitigar problemas de padronização de nomes, obtenção das variáveis de interesse e exclusão de casos que estão fora do escopo de análise, produzindo o que se define como base de dados analítica. A base analítica é então transformada para produzir as tabelas e gráficos e, quando necessário, são utilizadas como insumo para o ajuste de modelos estatísticos. Finalmente, os resultados obtidos são comunicados através de uma série de ferramentas, como relatórios, dashboards interativos, indicadores ou Application Programming Interfaces (API) para automação. 
 
 <div class="figure" style="text-align: center">
-<img src="assets/img/manipulacao/ciclo-ciencia-de-dados.png" alt="O Ciclo da Ciência de Dados."  />
+<img src="assets/img/manipulacao/ciclo-ciencia-de-dados.png" alt="O Ciclo da Ciência de Dados." width="479" />
 <p class="caption">(\#fig:04-ciclo)O Ciclo da Ciência de Dados.</p>
 </div>
 
@@ -74,7 +74,7 @@ O "como faz" é definido através do *Ciclo da Ciência de Dados*, descrito na F
 O `{tidyverse}` é um pacote guarda-chuva que consolida uma série de ferramentas que fazem parte o ciclo da ciência de dados. Fazem parte do `{tidyverse}` os pacotes `{ggplot2}`, `{dplyr}`, `{tidyr}`, `{purrr}`, `{readr}`, entre muitos outros, como é possível observar na Figura \@ref(fig:04-ciclo-pacotes). Veremos as características principais desses pacotes nas próximas Seções.
 
 <div class="figure" style="text-align: center">
-<img src="assets/img/pacotes/ciclo-ciencia-de-dados-pacotes.png" alt="A implementação do Ciclo da Ciência de Dados, através do tidyverse. Pela definição estrita do tidyverse, na imagem não fazem parte do tidyverse os pacotes janitor, data.table e os pacotes descritos nas partes de modelagem, comunicação e automatização. No entanto, a maioria desses pacotes também seguem os princípios tidy e podem ser usados em conjunto com o tidyverse sem grandes dificuldades."  />
+<img src="assets/img/pacotes/ciclo-ciencia-de-dados-pacotes.png" alt="A implementação do Ciclo da Ciência de Dados, através do tidyverse. Pela definição estrita do tidyverse, na imagem não fazem parte do tidyverse os pacotes janitor, data.table e os pacotes descritos nas partes de modelagem, comunicação e automatização. No entanto, a maioria desses pacotes também seguem os princípios tidy e podem ser usados em conjunto com o tidyverse sem grandes dificuldades." width="479" />
 <p class="caption">(\#fig:04-ciclo-pacotes)A implementação do Ciclo da Ciência de Dados, através do tidyverse. Pela definição estrita do tidyverse, na imagem não fazem parte do tidyverse os pacotes janitor, data.table e os pacotes descritos nas partes de modelagem, comunicação e automatização. No entanto, a maioria desses pacotes também seguem os princípios tidy e podem ser usados em conjunto com o tidyverse sem grandes dificuldades.</p>
 </div>
 

@@ -55,9 +55,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -66,14 +66,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,9 +84,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -138,10 +140,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
+<li class="chapter" data-level="1.1.3" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a><ul>
 <li class="chapter" data-level="1.2.1" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html#no-windows-1"><i class="fa fa-check"></i><b>1.2.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.2.2" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html#no-linux-1"><i class="fa fa-check"></i><b>1.2.2</b> No Linux</a></li>
+<li class="chapter" data-level="1.2.3" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html#no-mac-1"><i class="fa fa-check"></i><b>1.2.3</b> No Mac</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a><ul>
@@ -200,8 +204,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="5-1-caminhos.html"><a href="5-1-caminhos.html"><i class="fa fa-check"></i><b>5.1</b> Caminhos</a></li>
 <li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="5-2-readr.html"><a href="5-2-readr.html#lendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.1</b> Lendo arquivos de texto</a></li>
-<li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.2</b> Parseando valores</a></li>
-<li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.3</b> Locale</a></li>
+<li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.2</b> Locale</a></li>
+<li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.3</b> Parseando valores</a></li>
 <li class="chapter" data-level="5.2.4" data-path="5-2-readr.html"><a href="5-2-readr.html#escrevendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.4</b> Escrevendo arquivos de texto</a></li>
 <li class="chapter" data-level="5.2.5" data-path="5-2-readr.html"><a href="5-2-readr.html#arquivos-.rds"><i class="fa fa-check"></i><b>5.2.5</b> Arquivos .rds</a></li>
 </ul></li>
@@ -285,22 +289,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="operador-de-atribuição-assignment-operator" class="section level3">
 <h3><span class="header-section-number">6.2.1</span> Operador de atribuição ( Assignment operator )</h3>
 <p>Quando queremos sobrescrever um objeto, é comum utilizarmos o operador <code>&lt;-</code>. Por exemplo, se queremos somar 10 a cada valor do vetor <span class="math inline">\(x\)</span>, podemos fazer:</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb164-1" title="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb164-2" title="2">x &lt;-<span class="st"> </span>x <span class="op">%&gt;%</span><span class="st">  </span><span class="kw">add</span>(<span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb164-3" title="3">x</a></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="6-2-outros-operadores.html#cb173-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
+<span id="cb173-2"><a href="6-2-outros-operadores.html#cb173-2"></a>x &lt;-<span class="st"> </span>x <span class="op">%&gt;%</span><span class="st">  </span><span class="kw">add</span>(<span class="dv">10</span>)</span>
+<span id="cb173-3"><a href="6-2-outros-operadores.html#cb173-3"></a>x</span></code></pre></div>
 <pre><code>## [1] 11 12 13 14</code></pre>
 <p>Com o operador de atribuição, o código acima se reduz a</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb166-1" title="1">x <span class="op">%&lt;&gt;%</span><span class="st"> </span><span class="kw">add</span>(<span class="dv">10</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="6-2-outros-operadores.html#cb175-1"></a>x <span class="op">%&lt;&gt;%</span><span class="st"> </span><span class="kw">add</span>(<span class="dv">10</span>)</span></code></pre></div>
 <p>Este operador pode ser usado sempre que desejamos fazer algo da forma <code>objeto &lt;- objeto %&gt;% função</code></p>
 </div>
 <div id="operador-tee" class="section level3">
 <h3><span class="header-section-number">6.2.2</span> Operador tee</h3>
 <p>O operador tee retorna o valor do comando anterior a <code>%T&gt;%</code>, não o resultado do lado direito dele como o pipe faz. O seguinte exemplo vai imprimir na tela os valores de 1 a 10. Se usássemos o pipe, o código retornaria a soma dos dez números.</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb167-1" title="1"><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> <span class="op">%T&gt;%</span><span class="st"> </span><span class="kw">sum</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">cat</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="6-2-outros-operadores.html#cb176-1"></a><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> <span class="op">%T&gt;%</span><span class="st"> </span><span class="kw">sum</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">cat</span>()</span></code></pre></div>
 <pre><code>## 1 2 3 4 5 6 7 8 9 10</code></pre>
 <p>Neste caso, o operador não parece fazer sentido e apenas deixa o código mais complicado, mas se desejamos usar funções como <code>cat()</code> ou <code>plot()</code> que não retornam nada, o operador se torna muito útil.</p>
 <p>Vamos imprimir na tela os valores de 1 a 10 e depois soma-los.</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" title="1"><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>  <span class="op">%T&gt;%</span><span class="st"> </span><span class="kw">cat</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="6-2-outros-operadores.html#cb178-1"></a><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>  <span class="op">%T&gt;%</span><span class="st"> </span><span class="kw">cat</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>()</span></code></pre></div>
 <pre><code>## 1 2 3 4 5 6 7 8 9 10</code></pre>
 <pre><code>## [1] 55</code></pre>
 </div>
@@ -308,7 +312,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">6.2.3</span> Exposition operator</h3>
 <p>Usamos o operador <code>%$%</code>para salvar o valor resultante da expressão do lado esquerdo, podendo usar como quiser do lado direito.</p>
 <p>Por exemplo, para obter o primeiro elemento de um vetor, podemos fazer:</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" title="1"><span class="kw">data.frame</span>(<span class="dt">z=</span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">%$%</span><span class="st"> </span>z[<span class="dv">1</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="6-2-outros-operadores.html#cb181-1"></a><span class="kw">data.frame</span>(<span class="dt">z=</span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">%$%</span><span class="st"> </span>z[<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <p>Para mais informações sobre o <code>pipe</code>, outros operadores relacionados e exemplos de utilização, visite a página <a href="http://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html">Ceci n’est pas un pipe</a>.</p>
 </div>

@@ -55,9 +55,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -66,14 +66,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,9 +84,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -199,12 +201,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="6-importacao.html"><a href="6-importacao.html"><i class="fa fa-check"></i><b>6</b> Importação</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-1-caminhos.html"><a href="6-1-caminhos.html"><i class="fa fa-check"></i><b>6.1</b> Caminhos</a></li>
 <li class="chapter" data-level="6.2" data-path="6-2-readr.html"><a href="6-2-readr.html"><i class="fa fa-check"></i><b>6.2</b> O pacote readr</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="6-2-readr.html"><a href="6-2-readr.html#importando-arquivos-de-texto"><i class="fa fa-check"></i><b>6.2.1</b> Importando arquivos de texto</a></li>
-<li class="chapter" data-level="6.2.2" data-path="6-2-readr.html"><a href="6-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>6.2.2</b> Parseando valores</a></li>
-<li class="chapter" data-level="6.2.3" data-path="6-2-readr.html"><a href="6-2-readr.html#locale"><i class="fa fa-check"></i><b>6.2.3</b> Locale</a></li>
-<li class="chapter" data-level="6.2.4" data-path="6-2-readr.html"><a href="6-2-readr.html#escrevendo-arquivos"><i class="fa fa-check"></i><b>6.2.4</b> Escrevendo arquivos</a></li>
+<li class="chapter" data-level="6.2.1" data-path="6-2-readr.html"><a href="6-2-readr.html#lendo-arquivos-de-texto"><i class="fa fa-check"></i><b>6.2.1</b> Lendo arquivos de texto</a></li>
+<li class="chapter" data-level="6.2.2" data-path="6-2-readr.html"><a href="6-2-readr.html#locale"><i class="fa fa-check"></i><b>6.2.2</b> Locale</a></li>
+<li class="chapter" data-level="6.2.3" data-path="6-2-readr.html"><a href="6-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>6.2.3</b> Parseando valores</a></li>
+<li class="chapter" data-level="6.2.4" data-path="6-2-readr.html"><a href="6-2-readr.html#escrevendo-arquivos-de-texto"><i class="fa fa-check"></i><b>6.2.4</b> Escrevendo arquivos de texto</a></li>
+<li class="chapter" data-level="6.2.5" data-path="6-2-readr.html"><a href="6-2-readr.html#arquivos-.rds"><i class="fa fa-check"></i><b>6.2.5</b> Arquivos .rds</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="6-3-readxl.html"><a href="6-3-readxl.html"><i class="fa fa-check"></i><b>6.3</b> readxl</a></li>
+<li class="chapter" data-level="6.3" data-path="6-3-readxl.html"><a href="6-3-readxl.html"><i class="fa fa-check"></i><b>6.3</b> Os pacotes readxl e writexl</a></li>
 <li class="chapter" data-level="6.4" data-path="6-4-haven.html"><a href="6-4-haven.html"><i class="fa fa-check"></i><b>6.4</b> haven</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="7-pipe.html"><a href="7-pipe.html"><i class="fa fa-check"></i><b>7</b> Pipe</a><ul>
@@ -275,7 +278,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="readr" class="section level2">
 <h2><span class="header-section-number">6.2</span> O pacote readr</h2>
 <p>O pacote <code>readr</code>do tidyverse é utilizado para importar arquivos de texto, como <code>.txt</code> ou <code>.csv</code>, para o R. Para carregá-lo, rode o código:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(readr)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="6-2-readr.html#cb1-1"></a><span class="kw">library</span>(readr)</span></code></pre></div>
 <p>O <code>readr</code> transforma arquivos de textos em <code>tibbles</code> usando as funções:</p>
 <ul>
 <li><p><code>read_csv()</code>: para arquivos separados por vírgula.</p></li>
@@ -286,11 +289,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>read_log()</code>: para arquivos padrões de log.</p></li>
 </ul>
 <p>Vamos mostrar na próxima seção como importar as extensões mais comuns: <code>.csv</code> e <code>.txt</code>.</p>
-<div id="importando-arquivos-de-texto" class="section level3">
-<h3><span class="header-section-number">6.2.1</span> Importando arquivos de texto</h3>
-<p>Como exemplo, utilizaremos uma base de filmes do IMDB, gravada em diversos formatos. O download dos arquivos pode ser realizado a partir <a href="https://github.com/curso-r/intro-programacao-em-r-mestre/tree/master/dados">deste repositório</a>.</p>
+<div id="lendo-arquivos-de-texto" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Lendo arquivos de texto</h3>
+<p>Como exemplo, utilizaremos uma base de filmes do IMDB, gravada em diversos formatos. O download dos arquivos pode ser realizado a partir <a href="https://github.com/curso-r/livro-material/raw/master/assets/data/imdb.zip">deste repositório</a>.</p>
 <p>Primeiro, vamos ler a base em formato <code>.csv</code>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">imdb_csv &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;imdb.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="6-2-readr.html#cb2-1"></a>imdb_csv &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;imdb.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   titulo = col_character(),
@@ -310,8 +313,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   ator_3 = col_character()
 ## )</code></pre>
 <p>A mensagem retornada pela função indica qual classe foi atribuída para cada coluna. Repare que o argumento <code>file=</code> representa o caminho até o arquivo. Se o arquivo a ser lido não estiver no diretório de trabalho da sua sessão, você precisa especificar o caminho até o arquivo.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># Se o arquivo estiver dentro de uma pasta chamada dados.</span></a>
-<a class="sourceLine" id="cb4-2" title="2">imdb_csv &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;dados/imdb.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="6-2-readr.html#cb4-1"></a><span class="co"># Se o arquivo estiver dentro de uma pasta chamada dados.</span></span>
+<span id="cb4-2"><a href="6-2-readr.html#cb4-2"></a>imdb_csv &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file =</span> <span class="st">&quot;dados/imdb.csv&quot;</span>)</span></code></pre></div>
 <p>A maioria das funções de leitura do <code>readr</code> possuem argumentos muito úteis para resolver problemas de importação:</p>
 <ul>
 <li><p><code>col_names=</code>: indica se a primeira linha da base contém ou não o nome das colunas. Também pode ser utilizado para (re)nomear colunas.</p></li>
@@ -321,36 +324,71 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>na=</code>: indica quais <em>strings</em> deverão ser considaras <code>NA</code> na hora da importação.</p></li>
 </ul>
 <p>Em alguns países, como o Brasil, as vírgulas são utilizadas para separar as casas decimais dos números, inviabilizando o uso de arquivos <code>.csv</code>. Nesses casos, quando a vírgula é o separador de decimal, os arquivos <code>.csv</code> passam a ser separados por ponto-e-vírgula. Para importar bases de arquivos separados por ponto-e-vírgula no R, basta usar a função <code>read_csv2()</code>.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">imdb_csv2 &lt;-<span class="st"> </span><span class="kw">read_csv2</span>(<span class="st">&quot;dados/imdb2.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="6-2-readr.html#cb5-1"></a>imdb_csv2 &lt;-<span class="st"> </span><span class="kw">read_csv2</span>(<span class="st">&quot;dados/imdb2.csv&quot;</span>)</span></code></pre></div>
 <p>Arquivos <code>.txt</code> em geral podem ser lidos com a função <code>read_delim()</code>. Além do caminho até o arquivo, você também precisa indicar qual é o caractere utilizado para separar as colunas da base. Um arquivo separado por tabulação, por exemplo, pode ser lido utilizando a o código abaixo. O código <code>\t</code> é uma forma textual de representar a tecla TAB.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">imdb_txt &lt;-<span class="st"> </span><span class="kw">read_delim</span>(<span class="st">&quot;dados/imdb.txt&quot;</span>, <span class="dt">delim =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>)</a></code></pre></div>
-<p>Repare que a sintaxe é igual a da função <code>read_csv()</code>. Em geral, as funções de importação do <code>tidyverse</code> terão sintaxe e comportamento muito parecidos.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="6-2-readr.html#cb6-1"></a>imdb_txt &lt;-<span class="st"> </span><span class="kw">read_delim</span>(<span class="st">&quot;dados/imdb.txt&quot;</span>, <span class="dt">delim =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>)</span></code></pre></div>
+<p>Repare que a sintaxe é igual a da função <code>read_csv()</code>. Em geral, as funções de importação do <code>{tidyverse}</code> terão sintaxe e comportamento muito parecidos.</p>
 <p>A seguir, vamos falar das funções <code>parse_()</code>, muito úteis para tratar problemas na classe das variáveis na hora da importação.</p>
 </div>
-<div id="parseando-valores" class="section level3">
-<h3><span class="header-section-number">6.2.2</span> Parseando valores</h3>
-</div>
 <div id="locale" class="section level3">
-<h3><span class="header-section-number">6.2.3</span> Locale</h3>
+<h3><span class="header-section-number">6.2.2</span> Locale</h3>
 </div>
-<div id="escrevendo-arquivos" class="section level3">
-<h3><span class="header-section-number">6.2.4</span> Escrevendo arquivos</h3>
+<div id="parseando-valores" class="section level3">
+<h3><span class="header-section-number">6.2.3</span> Parseando valores</h3>
+<p>O pacote <code>{readr}</code> possui algumas funções muito úteis para parsear valores. Parsear é um termo muito utilizado em programação e tem o sentido de <em>arrumar</em> ou <em>formatar</em>. Se estamos parseando um número, por exemplo, estamos pegando um texto que é muito parecido com um número e o transforando em um número de fato.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="6-2-readr.html#cb7-1"></a>readr<span class="op">::</span><span class="kw">parse_number</span>(<span class="kw">c</span>(<span class="st">&quot;5&quot;</span>, <span class="st">&quot;5.0&quot;</span>, <span class="st">&quot;5,0&quot;</span>, <span class="st">&quot;R$5.00&quot;</span>, <span class="st">&quot;5 a&quot;</span>))</span>
+<span id="cb7-2"><a href="6-2-readr.html#cb7-2"></a><span class="co">## [1]  5  5 50  5  5</span></span></code></pre></div>
+<p>Veja que podemos usar o argumento <code>locale</code> para especificar coordenadas para o parseamento:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="6-2-readr.html#cb8-1"></a>readr<span class="op">::</span><span class="kw">parse_number</span>(<span class="st">&quot;5,0&quot;</span>, <span class="dt">locale =</span> readr<span class="op">::</span><span class="kw">locale</span>(<span class="dt">decimal_mark =</span> <span class="st">&quot;,&quot;</span>))</span>
+<span id="cb8-2"><a href="6-2-readr.html#cb8-2"></a><span class="co">## [1] 5</span></span></code></pre></div>
+<p>Você também pode especificar <code>NAs</code> utilizando o argumento <code>na</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="6-2-readr.html#cb9-1"></a>readr<span class="op">::</span><span class="kw">parse_number</span>(<span class="kw">c</span>(<span class="st">&quot;5&quot;</span>, <span class="st">&quot;5.0&quot;</span>, <span class="st">&quot;5,0&quot;</span>, <span class="st">&quot;R$5.00&quot;</span>, <span class="st">&quot;5 a&quot;</span>), <span class="dt">na =</span> <span class="st">&quot;5 a&quot;</span>)</span>
+<span id="cb9-2"><a href="6-2-readr.html#cb9-2"></a><span class="co">## [1]  5  5 50  5 NA</span></span></code></pre></div>
+<p>Outras funções de parseamento úteis são:</p>
+<ul>
+<li><code>readr::parse_integer()</code>, para parsear números inteiros.</li>
+<li><code>readr::parse_character()</code>, para parsear strings</li>
+<li><code>readr::parse_date()</code>, <code>readr::parse_time()</code>, <code>readr::parse_datetime()</code>para parsear datas, horas e data/horas.</li>
+</ul>
+</div>
+<div id="escrevendo-arquivos-de-texto" class="section level3">
+<h3><span class="header-section-number">6.2.4</span> Escrevendo arquivos de texto</h3>
 <p>Para a maioria das funções <code>read_</code>, existe uma respectiva função <code>write_</code>. Essas funções servem para salvar bases em um formato específico de arquivo. Além do caminho/nome do arquivo a ser criado, você também precisa passar o objeto que será escrito. Para o arquivo criado funcionar corretamente, você precisa especificar a extensão correta no nome do arquivo.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># Arquivo .csv</span></a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="kw">write_csv</span>(<span class="dt">x =</span> mtcars, <span class="dt">path =</span> <span class="st">&quot;data/mtcars.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb7-3" title="3"></a>
-<a class="sourceLine" id="cb7-4" title="4"><span class="co"># Base separada por tabulação</span></a>
-<a class="sourceLine" id="cb7-5" title="5"><span class="kw">write_delim</span>(<span class="dt">x =</span> mtcars, <span class="dt">delim =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, <span class="dt">path =</span> <span class="st">&quot;data/mtcars.txt&quot;</span>)</a></code></pre></div>
-<p>Também é possível salvar qualquer tipo de objeto do R em um tipo especial de arquivos, o <code>.rds</code>. A vantagem dessa extensão é guardar a estrutura dos dados salvos, como a classe das colunas de um data.frame. Além disso, é uma boa alternativa para lidar com grandes bancos de dados, já que você pode compactar os arquivos <code>.rds</code>, deixando-os bem menores que, por exemplo, um arquivo Excel.</p>
-<p>Para ler ou escrever arquivos <code>.rds</code>, utilize as funções <code>read_rds()</code> e <code>write_rds()</code>.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">imdb_rds &lt;-<span class="st"> </span><span class="kw">read_rds</span>(<span class="dt">path =</span> <span class="st">&quot;imdb.rds&quot;</span>)</a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="kw">write_rds</span>(mtcars, <span class="dt">path =</span> <span class="st">&quot;mtcars.rds&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="6-2-readr.html#cb10-1"></a><span class="co"># Arquivo .csv</span></span>
+<span id="cb10-2"><a href="6-2-readr.html#cb10-2"></a><span class="kw">write_csv</span>(<span class="dt">x =</span> mtcars, <span class="dt">path =</span> <span class="st">&quot;data/mtcars.csv&quot;</span>)</span>
+<span id="cb10-3"><a href="6-2-readr.html#cb10-3"></a></span>
+<span id="cb10-4"><a href="6-2-readr.html#cb10-4"></a><span class="co"># Base separada por tabulação</span></span>
+<span id="cb10-5"><a href="6-2-readr.html#cb10-5"></a><span class="kw">write_delim</span>(<span class="dt">x =</span> mtcars, <span class="dt">path =</span> <span class="st">&quot;data/mtcars.txt&quot;</span>, <span class="dt">delim =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>)</span></code></pre></div>
+</div>
+<div id="arquivos-.rds" class="section level3">
+<h3><span class="header-section-number">6.2.5</span> Arquivos .rds</h3>
+<p>A linguagem R tem uma extensão própria de arquivos binários chamada <code>RDS</code> ou <code>.rds</code>. Essa extensão pode ser utilizada para guarda qualquer tipo de objeto do R, inclusive bases de dados. Temos duas principais vantagens ao utilizarmos essa extensão para salvarvamos as nossas bases:</p>
+<ul>
+<li><p>ele salva as classes especificadas para as colunas;</p></li>
+<li><p>ele pode ser compactado, gerando arquivos muito menores.</p></li>
+</ul>
+<p>A desvantagem é que ele só poderá ser lido dentro do R.</p>
+<p>Para criar um arquivo <code>.rds</code>, utilize a função <code>write_rds()</code>.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="6-2-readr.html#cb11-1"></a><span class="kw">write_rds</span>(mtcars, <span class="dt">path =</span> <span class="st">&quot;mtcars.rds&quot;</span>, <span class="dt">compress =</span> <span class="st">&quot;gz&quot;</span>)</span></code></pre></div>
+<p>O argumento <code>compress</code> é opcional e indica qual o tipo de compactação deve ser feito. O padrão é não compactar.</p>
+<p>Para ler um arquivo <code>.rds</code> de volta para o R, utilizamos a função <code>read_rds()</code>. Repare que essa função não possui outros argumentos, pois o objeto importado será exatamente igual ao objeto que foi gravado no arquivo.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="6-2-readr.html#cb12-1"></a>imdb_rds &lt;-<span class="st"> </span><span class="kw">read_rds</span>(<span class="dt">path =</span> <span class="st">&quot;imdb.rds&quot;</span>)</span></code></pre></div>
 <div id="exercícios-5" class="section level4 unnumbered">
 <h4>Exercícios</h4>
 <ol style="list-style-type: decimal">
 <li><p>Qual a diferença entre as funções <code>read_csv()</code> e <code>read_csv2()</code>?</p></li>
 <li><p>Leia o arquivo <code>imdb.csv</code> utilizando a função <code>read_delim()</code>.</p></li>
 <li><p>Escreva a base mtcars em um arquivo <code>mtcars.csv</code> que não contenha o nome das colunas.</p></li>
+<li><p>Use a função <code>write_rds()</code> para salvar em arquivos</p></li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>Um número.</li>
+<li>Um vetor de strings.</li>
+<li>Uma lista com valores númericos, textuais e lógicos.</li>
+<li>As 3 primeiras colunas da base <code>mtcars</code>.</li>
+</ol>
+<ol start="5" style="list-style-type: decimal">
+<li>Utilize a função <code>read_rds()</code> para importar de volta para o R os arquivos criados no exercício 4.</li>
 </ol>
 
 </div>
