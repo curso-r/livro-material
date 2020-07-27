@@ -214,13 +214,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a></li>
-<li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#operador-de-atribuição-assignment-operator"><i class="fa fa-check"></i><b>6.2.1</b> Operador de atribuição ( Assignment operator )</a></li>
-<li class="chapter" data-level="6.2.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#operador-tee"><i class="fa fa-check"></i><b>6.2.2</b> Operador tee</a></li>
-<li class="chapter" data-level="6.2.3" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#exposition-operator"><i class="fa fa-check"></i><b>6.2.3</b> Exposition operator</a></li>
-</ul></li>
+<li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
 <li class="chapter" data-level="6.3" data-path="6-3-exercícios-6.html"><a href="6-3-exercícios-6.html"><i class="fa fa-check"></i><b>6.3</b> Exercícios</a></li>
-<li class="chapter" data-level="6.4" data-path="6-4-respostas.html"><a href="6-4-respostas.html"><i class="fa fa-check"></i><b>6.4</b> Respostas</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
 <li class="chapter" data-level="7.1" data-path="7-1-trabalhando-com-tibbles.html"><a href="7-1-trabalhando-com-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Trabalhando com tibbles</a></li>
@@ -252,10 +247,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1.4" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>10.1.4</b> Outras funções</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="respostas-1.html"><a href="respostas-1.html"><i class="fa fa-check"></i>Respostas</a></li>
+<li class="chapter" data-level="11" data-path="11-respostas.html"><a href="11-respostas.html"><i class="fa fa-check"></i><b>11</b> Respostas</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-1-pipe-1.html"><a href="11-1-pipe-1.html"><i class="fa fa-check"></i><b>11.1</b> Pipe</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
-<li class="chapter" data-level="10.1.5" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i><b>10.1.5</b> Programação em R</a></li>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i>Programação em R</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
@@ -279,6 +276,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="pipe" class="section level1">
 <h1><span class="header-section-number">Capítulo 6</span> Pipe</h1>
+<p>O operador <code>%&gt;%</code> (<em>pipe</em>) foi uma das grandes revoluções recentes do R, tornando a escrita e leitura de códigos mais intuitiva e compreensível. Ele foi introduzido por <a href="https://github.com/smbache">Stefan Milton Bache</a> no pacote <code>magrittr</code>, cujo nome é uma referência ao famoso quadro do pintor belga René Magritte <em>La Trahison des images (Ceci n’est pas une pipe)</em>.</p>
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<img src="https://raw.githubusercontent.com/curso-r/livro-material/master/assets/img/pipe/ceci-nest-pas-une-pipe.jpg" alt="Reprodução do quadro La Trahison des images (Ceci n’est pas une pipe). do pintor René Magritte."  />
+<p class="caption">
+Figura 6.1: Reprodução do quadro La Trahison des images (Ceci n’est pas une pipe). do pintor René Magritte.
+</p>
+</div>
+<p>Para começar a utilizar o <em>pipe</em>, instale e carregue o pacote <code>magrittr</code>.</p>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="6-pipe.html#cb162-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;magrittr&quot;</span>)</span>
+<span id="cb162-2"><a href="6-pipe.html#cb162-2"></a><span class="kw">library</span>(magrittr)</span></code></pre></div>
 </div>
 <hr/>
 <footer>

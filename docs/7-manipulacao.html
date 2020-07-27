@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="6-4-respostas.html"/>
+<link rel="prev" href="6-3-exercícios-6.html"/>
 <link rel="next" href="7-1-trabalhando-com-tibbles.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -214,13 +214,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a></li>
-<li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#operador-de-atribuição-assignment-operator"><i class="fa fa-check"></i><b>6.2.1</b> Operador de atribuição ( Assignment operator )</a></li>
-<li class="chapter" data-level="6.2.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#operador-tee"><i class="fa fa-check"></i><b>6.2.2</b> Operador tee</a></li>
-<li class="chapter" data-level="6.2.3" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#exposition-operator"><i class="fa fa-check"></i><b>6.2.3</b> Exposition operator</a></li>
-</ul></li>
+<li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
 <li class="chapter" data-level="6.3" data-path="6-3-exercícios-6.html"><a href="6-3-exercícios-6.html"><i class="fa fa-check"></i><b>6.3</b> Exercícios</a></li>
-<li class="chapter" data-level="6.4" data-path="6-4-respostas.html"><a href="6-4-respostas.html"><i class="fa fa-check"></i><b>6.4</b> Respostas</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
 <li class="chapter" data-level="7.1" data-path="7-1-trabalhando-com-tibbles.html"><a href="7-1-trabalhando-com-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Trabalhando com tibbles</a></li>
@@ -252,10 +247,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1.4" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>10.1.4</b> Outras funções</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="respostas-1.html"><a href="respostas-1.html"><i class="fa fa-check"></i>Respostas</a></li>
+<li class="chapter" data-level="11" data-path="11-respostas.html"><a href="11-respostas.html"><i class="fa fa-check"></i><b>11</b> Respostas</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-1-pipe-1.html"><a href="11-1-pipe-1.html"><i class="fa fa-check"></i><b>11.1</b> Pipe</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
-<li class="chapter" data-level="10.1.5" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i><b>10.1.5</b> Programação em R</a></li>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i>Programação em R</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
@@ -293,11 +290,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>A base de dados analítica é estruturada de tal forma que pode ser colocada diretamente em ambientes de modelagem estatística ou de visualização. Nem sempre uma base de dados analítica está no formato <em>tidy</em>, mas usualmente são necessários poucos passos para migrar de uma para outra. A filosofia <em>tidy</em> é a base do <a href="https://www.tidyverse.org/">tidyverse</a>.</p>
 <p>Os principais pacotes encarregados da tarefa de estruturar os dados são o <code>dplyr</code> e o <code>tidyr</code>. Eles serão o tema desse tópico. Instale e carregue os pacotes utilizando:</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="7-manipulacao.html#cb190-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
-<span id="cb190-2"><a href="7-manipulacao.html#cb190-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyr&quot;</span>)</span>
-<span id="cb190-3"><a href="7-manipulacao.html#cb190-3"></a></span>
-<span id="cb190-4"><a href="7-manipulacao.html#cb190-4"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb190-5"><a href="7-manipulacao.html#cb190-5"></a><span class="kw">library</span>(tidyr)</span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="7-manipulacao.html#cb192-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
+<span id="cb192-2"><a href="7-manipulacao.html#cb192-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyr&quot;</span>)</span>
+<span id="cb192-3"><a href="7-manipulacao.html#cb192-3"></a></span>
+<span id="cb192-4"><a href="7-manipulacao.html#cb192-4"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb192-5"><a href="7-manipulacao.html#cb192-5"></a><span class="kw">library</span>(tidyr)</span></code></pre></div>
 <p>Mas antes de apresentar as principais funções do <code>dplyr</code> e do <code>tidyr</code>, precisamos falar sobre o conceito de <code>tibbles</code>.</p>
 </div>
 <hr/>
@@ -309,7 +306,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="6-4-respostas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="6-3-exercícios-6.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="7-1-trabalhando-com-tibbles.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

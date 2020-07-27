@@ -12,7 +12,7 @@ As ilustrações contidas nesse livro são da Allison Horst.
 
 - Siga a Allison no Twitter: https://twitter.com/allison_horst
 
-### Programação em R
+### Programação em R {-}
 
 - [R for Data Sciente](https://r4ds.had.co.nz/), do Garrett Grolemund e Hadley Wickham
 

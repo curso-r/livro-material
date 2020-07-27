@@ -31,7 +31,7 @@
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="6-2-outros-operadores.html"/>
-<link rel="next" href="6-4-respostas.html"/>
+<link rel="next" href="7-manipulacao.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -214,13 +214,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a></li>
-<li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#operador-de-atribuição-assignment-operator"><i class="fa fa-check"></i><b>6.2.1</b> Operador de atribuição ( Assignment operator )</a></li>
-<li class="chapter" data-level="6.2.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#operador-tee"><i class="fa fa-check"></i><b>6.2.2</b> Operador tee</a></li>
-<li class="chapter" data-level="6.2.3" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#exposition-operator"><i class="fa fa-check"></i><b>6.2.3</b> Exposition operator</a></li>
-</ul></li>
+<li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
 <li class="chapter" data-level="6.3" data-path="6-3-exercícios-6.html"><a href="6-3-exercícios-6.html"><i class="fa fa-check"></i><b>6.3</b> Exercícios</a></li>
-<li class="chapter" data-level="6.4" data-path="6-4-respostas.html"><a href="6-4-respostas.html"><i class="fa fa-check"></i><b>6.4</b> Respostas</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
 <li class="chapter" data-level="7.1" data-path="7-1-trabalhando-com-tibbles.html"><a href="7-1-trabalhando-com-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Trabalhando com tibbles</a></li>
@@ -252,10 +247,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1.4" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>10.1.4</b> Outras funções</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="respostas-1.html"><a href="respostas-1.html"><i class="fa fa-check"></i>Respostas</a></li>
+<li class="chapter" data-level="11" data-path="11-respostas.html"><a href="11-respostas.html"><i class="fa fa-check"></i><b>11</b> Respostas</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-1-pipe-1.html"><a href="11-1-pipe-1.html"><i class="fa fa-check"></i><b>11.1</b> Pipe</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
-<li class="chapter" data-level="10.1.5" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i><b>10.1.5</b> Programação em R</a></li>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i>Programação em R</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
@@ -281,30 +278,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.3</span> Exercícios</h2>
 <hr />
 <p><strong>1.</strong> Reescreva a expressão abaixo utilizando o <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="6-3-exercícios-6.html#cb183-1"></a><span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">/</span><span class="dv">3</span>), <span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="6-3-exercícios-6.html#cb189-1"></a><span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">/</span><span class="dv">3</span>), <span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
 <p><strong>Dica</strong>: utilize a função <code>magrittr::divide_by()</code>. Veja o help da função para mais informações.</p>
 <hr />
 <p><strong>2.</strong> Reescreva o código abaixo utilizando o <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="6-3-exercícios-6.html#cb184-1"></a></span>
-<span id="cb184-2"><a href="6-3-exercícios-6.html#cb184-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</span>
-<span id="cb184-3"><a href="6-3-exercícios-6.html#cb184-3"></a></span>
-<span id="cb184-4"><a href="6-3-exercícios-6.html#cb184-4"></a>x.pos &lt;-<span class="st"> </span>x[x<span class="op">&gt;</span><span class="dv">0</span>]</span>
-<span id="cb184-5"><a href="6-3-exercícios-6.html#cb184-5"></a></span>
-<span id="cb184-6"><a href="6-3-exercícios-6.html#cb184-6"></a>media &lt;-<span class="st"> </span><span class="kw">mean</span>(x.pos)</span>
-<span id="cb184-7"><a href="6-3-exercícios-6.html#cb184-7"></a></span>
-<span id="cb184-8"><a href="6-3-exercícios-6.html#cb184-8"></a>saida &lt;-<span class="st"> </span><span class="kw">round</span>(media, <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="6-3-exercícios-6.html#cb190-1"></a></span>
+<span id="cb190-2"><a href="6-3-exercícios-6.html#cb190-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb190-3"><a href="6-3-exercícios-6.html#cb190-3"></a></span>
+<span id="cb190-4"><a href="6-3-exercícios-6.html#cb190-4"></a>x.pos &lt;-<span class="st"> </span>x[x<span class="op">&gt;</span><span class="dv">0</span>]</span>
+<span id="cb190-5"><a href="6-3-exercícios-6.html#cb190-5"></a></span>
+<span id="cb190-6"><a href="6-3-exercícios-6.html#cb190-6"></a>media &lt;-<span class="st"> </span><span class="kw">mean</span>(x.pos)</span>
+<span id="cb190-7"><a href="6-3-exercícios-6.html#cb190-7"></a></span>
+<span id="cb190-8"><a href="6-3-exercícios-6.html#cb190-8"></a>saida &lt;-<span class="st"> </span><span class="kw">round</span>(media, <span class="dv">1</span>)</span></code></pre></div>
 <hr />
 <p><strong>3.</strong> Sem rodar, diga qual a saída do código abaixo. Consulte o help das funções caso precise.</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="6-3-exercícios-6.html#cb185-1"></a><span class="dv">2</span> <span class="op">%&gt;%</span></span>
-<span id="cb185-2"><a href="6-3-exercícios-6.html#cb185-2"></a><span class="st">  </span><span class="kw">add</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
-<span id="cb185-3"><a href="6-3-exercícios-6.html#cb185-3"></a><span class="st">  </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span></span>
-<span id="cb185-4"><a href="6-3-exercícios-6.html#cb185-4"></a><span class="st">  </span><span class="kw">mean</span>(<span class="dt">na.rm =</span> T) <span class="op">%&gt;%</span></span>
-<span id="cb185-5"><a href="6-3-exercícios-6.html#cb185-5"></a><span class="st">  </span><span class="kw">equals</span>(<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="6-3-exercícios-6.html#cb191-1"></a><span class="dv">2</span> <span class="op">%&gt;%</span></span>
+<span id="cb191-2"><a href="6-3-exercícios-6.html#cb191-2"></a><span class="st">  </span><span class="kw">add</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
+<span id="cb191-3"><a href="6-3-exercícios-6.html#cb191-3"></a><span class="st">  </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span></span>
+<span id="cb191-4"><a href="6-3-exercícios-6.html#cb191-4"></a><span class="st">  </span><span class="kw">mean</span>(<span class="dt">na.rm =</span> T) <span class="op">%&gt;%</span></span>
+<span id="cb191-5"><a href="6-3-exercícios-6.html#cb191-5"></a><span class="st">  </span><span class="kw">equals</span>(<span class="dv">5</span>)</span></code></pre></div>
 <hr />
 <p><strong>4.</strong> Leia o capítulo sobre <em>pipes</em> do <a href="http://r4ds.had.co.nz/pipes.html">R for data science</a>. É curto e vale muito a pena.</p>
 <hr />
 <p><strong>5.</strong> Pegue algum script que você já tenha programado em R e o reescreva utilizando o operador <em>pipe</em>. Se você não tiver nenhum, não se preocupe. Utilizaremos <strong>bastante</strong> o <em>pipe</em> daqui pra frente.</p>
+
 </div>
+<!-- </div> -->
 <hr/>
 <footer>
 <a href="https://curso-r.com" target="_blank"><img src="https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width="15%", alt="Curso-R"/></a>
@@ -315,7 +314,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="6-2-outros-operadores.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="6-4-respostas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="7-manipulacao.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

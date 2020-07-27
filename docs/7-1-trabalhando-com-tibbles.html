@@ -214,13 +214,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a></li>
-<li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#operador-de-atribuição-assignment-operator"><i class="fa fa-check"></i><b>6.2.1</b> Operador de atribuição ( Assignment operator )</a></li>
-<li class="chapter" data-level="6.2.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#operador-tee"><i class="fa fa-check"></i><b>6.2.2</b> Operador tee</a></li>
-<li class="chapter" data-level="6.2.3" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#exposition-operator"><i class="fa fa-check"></i><b>6.2.3</b> Exposition operator</a></li>
-</ul></li>
+<li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
 <li class="chapter" data-level="6.3" data-path="6-3-exercícios-6.html"><a href="6-3-exercícios-6.html"><i class="fa fa-check"></i><b>6.3</b> Exercícios</a></li>
-<li class="chapter" data-level="6.4" data-path="6-4-respostas.html"><a href="6-4-respostas.html"><i class="fa fa-check"></i><b>6.4</b> Respostas</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
 <li class="chapter" data-level="7.1" data-path="7-1-trabalhando-com-tibbles.html"><a href="7-1-trabalhando-com-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Trabalhando com tibbles</a></li>
@@ -252,10 +247,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1.4" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>10.1.4</b> Outras funções</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="respostas-1.html"><a href="respostas-1.html"><i class="fa fa-check"></i>Respostas</a></li>
+<li class="chapter" data-level="11" data-path="11-respostas.html"><a href="11-respostas.html"><i class="fa fa-check"></i><b>11</b> Respostas</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-1-pipe-1.html"><a href="11-1-pipe-1.html"><i class="fa fa-check"></i><b>11.1</b> Pipe</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
-<li class="chapter" data-level="10.1.5" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i><b>10.1.5</b> Programação em R</a></li>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i>Programação em R</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
@@ -281,13 +278,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">7.1</span> Trabalhando com tibbles</h2>
 <p>Uma <code>tibble</code> nada mais é do que um <code>data.frame</code>, mas com um método de impressão mais adequado.</p>
 <p>As <code>tibbles</code> são parte do pacote <code>tibble</code>. Assim, para começar a usá-las, instale e carregue o pacote.</p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="7-1-trabalhando-com-tibbles.html#cb191-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tibble&quot;</span>)</span>
-<span id="cb191-2"><a href="7-1-trabalhando-com-tibbles.html#cb191-2"></a><span class="kw">library</span>(tibble)</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="7-1-trabalhando-com-tibbles.html#cb193-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tibble&quot;</span>)</span>
+<span id="cb193-2"><a href="7-1-trabalhando-com-tibbles.html#cb193-2"></a><span class="kw">library</span>(tibble)</span></code></pre></div>
 <p>Mais informações sobre <code>tibbles</code> podem ser encontradas <a href="http://r4ds.had.co.nz/tibbles.html">neste link</a>.</p>
 <p>Nessa seção, vamos trabalhar com uma base de filmes do IMDB. Essa base pode ser baixada <a href="https://github.com/curso-r/site-v2/raw/master/content/material/importacao/data/imdb.rds">clicando aqui</a>.</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="7-1-trabalhando-com-tibbles.html#cb192-1"></a>imdb &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_rds</span>(<span class="st">&quot;assets/data/imdb.rds&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="7-1-trabalhando-com-tibbles.html#cb194-1"></a>imdb &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_rds</span>(<span class="st">&quot;assets/data/imdb.rds&quot;</span>)</span></code></pre></div>
 <p>Assim, utilizaremos o objeto <code>imdb</code> para acessar os dados.</p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="7-1-trabalhando-com-tibbles.html#cb193-1"></a>imdb</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="7-1-trabalhando-com-tibbles.html#cb195-1"></a>imdb</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 15
 ##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
 ##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;

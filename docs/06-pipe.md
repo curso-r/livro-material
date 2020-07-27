@@ -2,22 +2,22 @@
 
 
 
+O operador `%>%` (*pipe*) foi uma das grandes revoluções recentes do R, tornando a escrita e leitura de códigos mais intuitiva e compreensível. Ele foi introduzido por [Stefan Milton Bache](https://github.com/smbache) no pacote `magrittr`, cujo nome é uma referência ao famoso quadro do pintor belga René Magritte *La Trahison des images (Ceci n'est pas une pipe)*.
 
-## O operador pipe
-
-O operador `%>%` (*pipe*) foi uma das grandes revoluções recentes do R, tornando a leitura de códigos mais lógica, fácil e compreensível. Ele foi introduzido por [Stefan Milton Bache](https://github.com/smbache) no pacote `magrittr` e já existem diversos pacotes construidos para facilitar a sua utilizaçăo.
+<div class="figure">
+<img src="https://raw.githubusercontent.com/curso-r/livro-material/master/assets/img/pipe/ceci-nest-pas-une-pipe.jpg" alt="Reprodução do quadro La Trahison des images (Ceci n’est pas une pipe). do pintor René Magritte."  />
+<p class="caption">(\#fig:unnamed-chunk-2)Reprodução do quadro La Trahison des images (Ceci n’est pas une pipe). do pintor René Magritte.</p>
+</div>
 
 Para começar a utilizar o *pipe*, instale e carregue o pacote `magrittr`.
 
 
 ```r
 install.packages("magrittr")
-
 library(magrittr)
 ```
 
-
-
+## O operador pipe
 
 A ideia do operador `%>%` (*pipe*) é bem simples: usar o valor resultante da expressão do lado esquerdo como primeiro argumento da função do lado direito.
 
@@ -53,7 +53,7 @@ x %>% sum() %>% sqrt()
 ## [1] 3.162278
 ```
 
-O caminho que o código `x %>% sum %>% sqrt` seguiu foi enviar o objeto `x` como argumento da função `sum()` e, em seguida, enviar a saida da expressão `sum(x)` como argumento da função `sqrt()`. Observe que escrevemos o código na mesma ordem das operações. A utilização de parênteses após o nome das funções não é necessário, mas recomendável.
+O caminho que o código `x %>% sum %>% sqrt` seguiu foi enviar o objeto `x` como argumento da função `sum()` e, em seguida, enviar a saida da expressão `sum(x)` como argumento da função `sqrt()`. Observe que escrevemos o código na mesma ordem em que as operações são realizadas. A utilização de parênteses após o nome das funções não é necessário, mas recomendável.
 
 Se você ainda não está convencido com o poder do *pipe*, fica que vai ter bolo!
 
@@ -64,17 +64,42 @@ No exemplo abaixo, vamos ilustrar um caso em que temos um grande número de fun�
 ```r
 # Receita de bolo sem pipe. Tente entender o que é preciso fazer.
 
-esfrie(asse(coloque(bata(acrescente(recipiente(rep("farinha", 2), "água", "fermento", "leite", "óleo"), "farinha", até = "macio"), duração = "3min"), lugar = "forma", tipo = "grande", untada = TRUE), duração = "50min"), "geladeira", "20min")
+esfrie(
+  asse(
+    coloque(
+      bata(
+        acrescente(
+          recipiente(
+            rep("farinha", 2), 
+            "água", 
+            "fermento", 
+            "leite", 
+            "óleo"
+          ), 
+          "farinha", 
+          ate = "macio"
+        ), 
+        duracao = "3min"
+      ), 
+      lugar = "forma", 
+      tipo = "grande", 
+      untada = TRUE
+    ), 
+    duracao = "50min"
+  ), 
+  lugar = "geladeira", 
+  duracao = "20min"
+)
 
 
 # Veja como o código acima pode ser reescrito utilizando-se o pipe. Agora realmente se parece com uma receita de bolo.
 
 recipiente(rep("farinha", 2), "água", "fermento", "leite", "óleo") %>%
-  acrescente("farinha", até = "macio") %>%
-  bata(duração = "3min") %>%
+  acrescente("farinha", ate = "macio") %>%
+  bata(duracao = "3min") %>%
   coloque(lugar = "forma", tipo = "grande", untada = TRUE) %>%
-  asse(duração = "50min") %>%
-  esfrie("geladeira", "20min")
+  asse(duracao = "50min") %>%
+  esfrie(lugar = "geladeira", duracao = "20min")
 ```
 
 Às vezes, queremos que o resultado do lado esquerdo vá para outro argumento do lado direito que não o primeiro. Para isso, utilizamos um `.` como marcador.
@@ -84,9 +109,9 @@ recipiente(rep("farinha", 2), "água", "fermento", "leite", "óleo") %>%
 # Queremos que o dataset seja recebido pelo segundo argumento (data=) da função "lm".
 
 airquality %>%
-  na.omit %>%
+  na.omit() %>%
   lm(Ozone ~ Wind + Temp + Solar.R, data = .) %>%
-  summary
+  summary()
 ```
 
 ```
@@ -112,63 +137,61 @@ airquality %>%
 ## F-statistic: 54.83 on 3 and 107 DF,  p-value: < 2.2e-16
 ```
 
-Também é possível definir funções na sua *pipeline*.
-
-```r
-c(1,2,3) %>%
-  (function(x){
-    sum(x)
-  })
-```
-
-```
-## [1] 6
-```
-
-
-O *pipe* é a força da gravidade dentro do `tidyverse`. Veremos nas próximas seções como as funções de diferentes pacotes interagem perfeitamente graças a esse operador.
-
-
+O *pipe* é a força da gravidade dentro do `tidyverse`. Veremos nos próximos capítulos como as funções de diferentes pacotes interagem perfeitamente graças a esse operador.
 
 ## Outros operadores
-Existem outros operadores do mesmo pacote, que apesar de menos usados, também são úteis.
 
-São eles:
+O pacote `{magrittr}` possui outros operadores, que, embora sejam menos utilizados, também são úteis. São eles:
 
-- Assignment operator `%<>%`
+- *Assignment operator* `%<>%`
 
-- Operador tee `%T>%`
+- *Operador tee* `%T>%`
 
-- Exposition operator `%$%`
+- *Exposition operator* `%$%`
 
-### Operador de atribuição ( Assignment operator )
-Quando queremos sobrescrever um objeto, é comum utilizarmos o operador ` <- `. Por exemplo, se queremos somar 10 a cada valor do vetor $x$, podemos fazer:
+Imagine que queremos tirar a raiz quadrada de um vetor de números.
 
 
 ```r
-x <- c(1,2,3,4)
-x <- x %>%  add(10)
-x
+x <- c(1, 2, 3, 4, 5)
+
+x %>% sqrt()
 ```
 
 ```
-## [1] 11 12 13 14
+## [1] 1.000000 1.414214 1.732051 2.000000 2.236068
 ```
-Com o operador de atribuição, o código acima se reduz a
 
-
+Se quisermos sobrescrever o objeto `x` com a raiz quadrada dos seus valores, basta utilizarmos o nosso bom e velho operador de atribuição `<-`. 
 
 
 ```r
-x %<>% add(10)
+x <- x %>% sqrt()
 ```
 
-Este operador pode ser usado sempre que desejamos fazer algo da forma `objeto <- objeto %>% função`
-
-### Operador tee
+Podemos, no entanto, utilizar o operador `%<>%` para reescrever o código acima de uma maneira mais compacta.
 
 
-O operador tee retorna o valor do comando anterior a `%T>%`, não o resultado do lado direito dele como o pipe faz. O seguinte exemplo vai imprimir na tela os valores de 1 a 10. Se usássemos o pipe, o código retornaria a soma dos dez números.
+```r
+x <- c(1, 2, 3, 4, 5)
+x %<>% sqrt()
+```
+
+Além de mandar o objeto `x` para o primeiro argumento da função `sqrt()`, assim como o `%>%` faria, esse operador também salva o resultado da operação de volta no objeto `x`, o sobrescrevendo.
+
+Este operador pode ser usado sempre que desejamos fazer algo da forma 
+
+
+```r
+objeto <- objeto %>% 
+  funcao_1() %>% 
+  funcao_2() %>% 
+  ...
+  funcao_n()
+```
+
+O operador `%T>%` retorna o valor do comando anterior a ele, não o resultado do lado direito como o `%>% ` faz. O seguinte exemplo vai imprimir na tela os valores de 1 a 10. Se usássemos o pipe, o código retornaria a soma dos dez números.
+
 
 ```r
 1:10 %T>% sum() %>% cat()
@@ -177,12 +200,15 @@ O operador tee retorna o valor do comando anterior a `%T>%`, não o resultado do
 ```
 ## 1 2 3 4 5 6 7 8 9 10
 ```
+
 Neste caso, o operador não parece fazer sentido e apenas deixa o código mais complicado, mas se desejamos usar funções como `cat()` ou `plot()` que não retornam nada, o operador se torna muito útil.
 
-Vamos imprimir na tela os valores de 1 a 10 e depois soma-los.
 
 ```r
-1:10  %T>% cat() %>% sum()
+# Vamos imprimir na tela os valores de 1 a 10 e depois soma-los.
+1:10 %T>% 
+  cat() %>% 
+  sum()
 ```
 
 ```
@@ -193,20 +219,56 @@ Vamos imprimir na tela os valores de 1 a 10 e depois soma-los.
 ## [1] 55
 ```
 
-### Exposition operator
-Usamos o operador `%$%`para salvar o valor resultante da expressão do lado esquerdo, podendo usar como quiser do lado direito.
+O operador `%$%` pode ser utilizado para *expor* as colunas de um *data frame* para a função aplicada no lado direito. 
 
-Por exemplo, para obter o primeiro elemento de um vetor, podemos fazer:
 
 ```r
-data.frame(z=1:10)%$% z[1]
+# Podemos chamar qualquer coluna da base diretamente.
+mtcars %$% mean(mpg)
 ```
 
 ```
-## [1] 1
+## [1] 20.09062
 ```
 
-Para mais informações sobre o `pipe`, outros operadores relacionados e exemplos de utilização, visite a página [Ceci n'est pas un pipe](http://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html).
+Se não ficou claro o que esse operador está fazendo, imagine que ele transforma todas as colunas da base em objetos (assim como a nefasta função `attach()`), mas sem salvar nada no nosso *environment*.
+
+
+```r
+mtcars %$%
+  mpg %>% 
+  mean() %>% 
+  sqrt()
+```
+
+```
+## [1] 4.482257
+```
+
+Ele faz um papel equivalente ao operador `$`.
+
+
+```r
+mtcars$mpg
+```
+
+```
+##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4
+## [16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7
+## [31] 15.0 21.4
+```
+
+```r
+mtcars %$% mpg
+```
+
+```
+##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4
+## [16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7
+## [31] 15.0 21.4
+```
+
+Para mais informações sobre o `pipe` e outras funções do pacote `{magrittr}`, visite a página [Ceci n'est pas un pipe](http://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html).
 
 ## Exercícios
 
@@ -258,71 +320,3 @@ saida <- round(media, 1)
 --------------------------------------------------------------------------------
 
 **5.** Pegue algum script que você já tenha programado em R e o reescreva utilizando o operador *pipe*. Se você não tiver nenhum, não se preocupe. Utilizaremos **bastante** o *pipe* daqui pra frente.
-
-## Respostas
-
-Não há apenas uma maneira de resolver os exercícios. Você pode encontrar soluções diferentes das nossas, algumas vezes mais eficientes, outras vezes menos. Quando estiver fazendo suas análises, tente buscar o equilíbrio entre eficiência e praticidade. Economizar 1 hora com a execução do código pode não valer a pena se você demorou 2 horas a mais para programá-lo.
-
---------------------------------------------------------------------------------
-
-**1.** Reescreva a expressão abaixo utilizando o `%>%`.
-
-
-```r
-round(mean(sum(1:10)/3), digits = 1)
-## [1] 18.3
-
-1:10 %>%
-  sum %>%
-  divide_by(3) %>%
-  round(digits = 1)
-## [1] 18.3
-```
-
---------------------------------------------------------------------------------
-
-**2.** Reescreva o código abaixo utilizando o `%>%`.
-
-
-```r
-# Setamos a semente que gera números aleatórios para deixar o resultado reprodutível
-
-set.seed(137)
-
-x <- rnorm(100)
-x.pos <- x[x>0]
-media <- mean(x.pos)
-saida <- round(media, 2)
-saida
-## [1] 0.78
-```
-
-
-
-```r
-set.seed(137)
-
-rnorm(100) %>%
-  magrittr::extract(. > 0) %>%
-  mean %>%
-  round(digits = 2)
-## [1] 0.78
-```
-
---------------------------------------------------------------------------------
-
-**3.** Sem rodar, diga qual a saída do código abaixo. Consulte o help das funções caso precise.
-
-
-```r
-2 %>%
-  add(2) %>%
-  c(6, NA) %>%
-  mean(na.rm = T) %>%
-  equals(5)
-```
-
-- Primeiro, somamos 2 com 2, gerando o valor 4.
-- Então colocamos esse valor em um vetor com os valores 6 e `NA`.
-- Em seguida, tiramos a média desse vetor, desconsiderando o `NA`, obtendo o valor 5.
-- Por fim, testemos se o valor é igual a 5, obtendo o valor `TRUE`.

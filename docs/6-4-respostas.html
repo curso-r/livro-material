@@ -214,11 +214,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a></li>
-<li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#operador-de-atribuição-assignment-operator"><i class="fa fa-check"></i><b>6.2.1</b> Operador de atribuição ( Assignment operator )</a></li>
-<li class="chapter" data-level="6.2.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#operador-tee"><i class="fa fa-check"></i><b>6.2.2</b> Operador tee</a></li>
-<li class="chapter" data-level="6.2.3" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#exposition-operator"><i class="fa fa-check"></i><b>6.2.3</b> Exposition operator</a></li>
-</ul></li>
+<li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
 <li class="chapter" data-level="6.3" data-path="6-3-exercícios-6.html"><a href="6-3-exercícios-6.html"><i class="fa fa-check"></i><b>6.3</b> Exercícios</a></li>
 <li class="chapter" data-level="6.4" data-path="6-4-respostas.html"><a href="6-4-respostas.html"><i class="fa fa-check"></i><b>6.4</b> Respostas</a></li>
 </ul></li>
@@ -282,40 +278,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Não há apenas uma maneira de resolver os exercícios. Você pode encontrar soluções diferentes das nossas, algumas vezes mais eficientes, outras vezes menos. Quando estiver fazendo suas análises, tente buscar o equilíbrio entre eficiência e praticidade. Economizar 1 hora com a execução do código pode não valer a pena se você demorou 2 horas a mais para programá-lo.</p>
 <hr />
 <p><strong>1.</strong> Reescreva a expressão abaixo utilizando o <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="6-4-respostas.html#cb186-1"></a><span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">/</span><span class="dv">3</span>), <span class="dt">digits =</span> <span class="dv">1</span>)</span>
-<span id="cb186-2"><a href="6-4-respostas.html#cb186-2"></a><span class="co">## [1] 18.3</span></span>
-<span id="cb186-3"><a href="6-4-respostas.html#cb186-3"></a></span>
-<span id="cb186-4"><a href="6-4-respostas.html#cb186-4"></a><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> <span class="op">%&gt;%</span></span>
-<span id="cb186-5"><a href="6-4-respostas.html#cb186-5"></a><span class="st">  </span>sum <span class="op">%&gt;%</span></span>
-<span id="cb186-6"><a href="6-4-respostas.html#cb186-6"></a><span class="st">  </span><span class="kw">divide_by</span>(<span class="dv">3</span>) <span class="op">%&gt;%</span></span>
-<span id="cb186-7"><a href="6-4-respostas.html#cb186-7"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">1</span>)</span>
-<span id="cb186-8"><a href="6-4-respostas.html#cb186-8"></a><span class="co">## [1] 18.3</span></span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="6-4-respostas.html#cb192-1"></a><span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">/</span><span class="dv">3</span>), <span class="dt">digits =</span> <span class="dv">1</span>)</span>
+<span id="cb192-2"><a href="6-4-respostas.html#cb192-2"></a><span class="co">## [1] 18.3</span></span>
+<span id="cb192-3"><a href="6-4-respostas.html#cb192-3"></a></span>
+<span id="cb192-4"><a href="6-4-respostas.html#cb192-4"></a><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> <span class="op">%&gt;%</span></span>
+<span id="cb192-5"><a href="6-4-respostas.html#cb192-5"></a><span class="st">  </span>sum <span class="op">%&gt;%</span></span>
+<span id="cb192-6"><a href="6-4-respostas.html#cb192-6"></a><span class="st">  </span><span class="kw">divide_by</span>(<span class="dv">3</span>) <span class="op">%&gt;%</span></span>
+<span id="cb192-7"><a href="6-4-respostas.html#cb192-7"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">1</span>)</span>
+<span id="cb192-8"><a href="6-4-respostas.html#cb192-8"></a><span class="co">## [1] 18.3</span></span></code></pre></div>
 <hr />
 <p><strong>2.</strong> Reescreva o código abaixo utilizando o <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="6-4-respostas.html#cb187-1"></a><span class="co"># Setamos a semente que gera números aleatórios para deixar o resultado reprodutível</span></span>
-<span id="cb187-2"><a href="6-4-respostas.html#cb187-2"></a></span>
-<span id="cb187-3"><a href="6-4-respostas.html#cb187-3"></a><span class="kw">set.seed</span>(<span class="dv">137</span>)</span>
-<span id="cb187-4"><a href="6-4-respostas.html#cb187-4"></a></span>
-<span id="cb187-5"><a href="6-4-respostas.html#cb187-5"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</span>
-<span id="cb187-6"><a href="6-4-respostas.html#cb187-6"></a>x.pos &lt;-<span class="st"> </span>x[x<span class="op">&gt;</span><span class="dv">0</span>]</span>
-<span id="cb187-7"><a href="6-4-respostas.html#cb187-7"></a>media &lt;-<span class="st"> </span><span class="kw">mean</span>(x.pos)</span>
-<span id="cb187-8"><a href="6-4-respostas.html#cb187-8"></a>saida &lt;-<span class="st"> </span><span class="kw">round</span>(media, <span class="dv">2</span>)</span>
-<span id="cb187-9"><a href="6-4-respostas.html#cb187-9"></a>saida</span>
-<span id="cb187-10"><a href="6-4-respostas.html#cb187-10"></a><span class="co">## [1] 0.78</span></span></code></pre></div>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="6-4-respostas.html#cb188-1"></a><span class="kw">set.seed</span>(<span class="dv">137</span>)</span>
-<span id="cb188-2"><a href="6-4-respostas.html#cb188-2"></a></span>
-<span id="cb188-3"><a href="6-4-respostas.html#cb188-3"></a><span class="kw">rnorm</span>(<span class="dv">100</span>) <span class="op">%&gt;%</span></span>
-<span id="cb188-4"><a href="6-4-respostas.html#cb188-4"></a><span class="st">  </span>magrittr<span class="op">::</span><span class="kw">extract</span>(. <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">%&gt;%</span></span>
-<span id="cb188-5"><a href="6-4-respostas.html#cb188-5"></a><span class="st">  </span>mean <span class="op">%&gt;%</span></span>
-<span id="cb188-6"><a href="6-4-respostas.html#cb188-6"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</span>
-<span id="cb188-7"><a href="6-4-respostas.html#cb188-7"></a><span class="co">## [1] 0.78</span></span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="6-4-respostas.html#cb193-1"></a><span class="co"># Setamos a semente que gera números aleatórios para deixar o resultado reprodutível</span></span>
+<span id="cb193-2"><a href="6-4-respostas.html#cb193-2"></a></span>
+<span id="cb193-3"><a href="6-4-respostas.html#cb193-3"></a><span class="kw">set.seed</span>(<span class="dv">137</span>)</span>
+<span id="cb193-4"><a href="6-4-respostas.html#cb193-4"></a></span>
+<span id="cb193-5"><a href="6-4-respostas.html#cb193-5"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb193-6"><a href="6-4-respostas.html#cb193-6"></a>x.pos &lt;-<span class="st"> </span>x[x<span class="op">&gt;</span><span class="dv">0</span>]</span>
+<span id="cb193-7"><a href="6-4-respostas.html#cb193-7"></a>media &lt;-<span class="st"> </span><span class="kw">mean</span>(x.pos)</span>
+<span id="cb193-8"><a href="6-4-respostas.html#cb193-8"></a>saida &lt;-<span class="st"> </span><span class="kw">round</span>(media, <span class="dv">2</span>)</span>
+<span id="cb193-9"><a href="6-4-respostas.html#cb193-9"></a>saida</span>
+<span id="cb193-10"><a href="6-4-respostas.html#cb193-10"></a><span class="co">## [1] 0.78</span></span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="6-4-respostas.html#cb194-1"></a><span class="kw">set.seed</span>(<span class="dv">137</span>)</span>
+<span id="cb194-2"><a href="6-4-respostas.html#cb194-2"></a></span>
+<span id="cb194-3"><a href="6-4-respostas.html#cb194-3"></a><span class="kw">rnorm</span>(<span class="dv">100</span>) <span class="op">%&gt;%</span></span>
+<span id="cb194-4"><a href="6-4-respostas.html#cb194-4"></a><span class="st">  </span>magrittr<span class="op">::</span><span class="kw">extract</span>(. <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">%&gt;%</span></span>
+<span id="cb194-5"><a href="6-4-respostas.html#cb194-5"></a><span class="st">  </span>mean <span class="op">%&gt;%</span></span>
+<span id="cb194-6"><a href="6-4-respostas.html#cb194-6"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</span>
+<span id="cb194-7"><a href="6-4-respostas.html#cb194-7"></a><span class="co">## [1] 0.78</span></span></code></pre></div>
 <hr />
 <p><strong>3.</strong> Sem rodar, diga qual a saída do código abaixo. Consulte o help das funções caso precise.</p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="6-4-respostas.html#cb189-1"></a><span class="dv">2</span> <span class="op">%&gt;%</span></span>
-<span id="cb189-2"><a href="6-4-respostas.html#cb189-2"></a><span class="st">  </span><span class="kw">add</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
-<span id="cb189-3"><a href="6-4-respostas.html#cb189-3"></a><span class="st">  </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span></span>
-<span id="cb189-4"><a href="6-4-respostas.html#cb189-4"></a><span class="st">  </span><span class="kw">mean</span>(<span class="dt">na.rm =</span> T) <span class="op">%&gt;%</span></span>
-<span id="cb189-5"><a href="6-4-respostas.html#cb189-5"></a><span class="st">  </span><span class="kw">equals</span>(<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="6-4-respostas.html#cb195-1"></a><span class="dv">2</span> <span class="op">%&gt;%</span></span>
+<span id="cb195-2"><a href="6-4-respostas.html#cb195-2"></a><span class="st">  </span><span class="kw">add</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
+<span id="cb195-3"><a href="6-4-respostas.html#cb195-3"></a><span class="st">  </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span></span>
+<span id="cb195-4"><a href="6-4-respostas.html#cb195-4"></a><span class="st">  </span><span class="kw">mean</span>(<span class="dt">na.rm =</span> T) <span class="op">%&gt;%</span></span>
+<span id="cb195-5"><a href="6-4-respostas.html#cb195-5"></a><span class="st">  </span><span class="kw">equals</span>(<span class="dv">5</span>)</span></code></pre></div>
 <ul>
 <li>Primeiro, somamos 2 com 2, gerando o valor 4.</li>
 <li>Então colocamos esse valor em um vetor com os valores 6 e <code>NA</code>.</li>

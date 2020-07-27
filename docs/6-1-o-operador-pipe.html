@@ -214,13 +214,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a></li>
-<li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#operador-de-atribuição-assignment-operator"><i class="fa fa-check"></i><b>6.2.1</b> Operador de atribuição ( Assignment operator )</a></li>
-<li class="chapter" data-level="6.2.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#operador-tee"><i class="fa fa-check"></i><b>6.2.2</b> Operador tee</a></li>
-<li class="chapter" data-level="6.2.3" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html#exposition-operator"><i class="fa fa-check"></i><b>6.2.3</b> Exposition operator</a></li>
-</ul></li>
+<li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
 <li class="chapter" data-level="6.3" data-path="6-3-exercícios-6.html"><a href="6-3-exercícios-6.html"><i class="fa fa-check"></i><b>6.3</b> Exercícios</a></li>
-<li class="chapter" data-level="6.4" data-path="6-4-respostas.html"><a href="6-4-respostas.html"><i class="fa fa-check"></i><b>6.4</b> Respostas</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
 <li class="chapter" data-level="7.1" data-path="7-1-trabalhando-com-tibbles.html"><a href="7-1-trabalhando-com-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Trabalhando com tibbles</a></li>
@@ -252,10 +247,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1.4" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>10.1.4</b> Outras funções</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="respostas-1.html"><a href="respostas-1.html"><i class="fa fa-check"></i>Respostas</a></li>
+<li class="chapter" data-level="11" data-path="11-respostas.html"><a href="11-respostas.html"><i class="fa fa-check"></i><b>11</b> Respostas</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-1-pipe-1.html"><a href="11-1-pipe-1.html"><i class="fa fa-check"></i><b>11.1</b> Pipe</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
-<li class="chapter" data-level="10.1.5" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i><b>10.1.5</b> Programação em R</a></li>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i>Programação em R</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
@@ -279,11 +276,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="o-operador-pipe" class="section level2">
 <h2><span class="header-section-number">6.1</span> O operador pipe</h2>
-<p>O operador <code>%&gt;%</code> (<em>pipe</em>) foi uma das grandes revoluções recentes do R, tornando a leitura de códigos mais lógica, fácil e compreensível. Ele foi introduzido por <a href="https://github.com/smbache">Stefan Milton Bache</a> no pacote <code>magrittr</code> e já existem diversos pacotes construidos para facilitar a sua utilizaçăo.</p>
-<p>Para começar a utilizar o <em>pipe</em>, instale e carregue o pacote <code>magrittr</code>.</p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="6-1-o-operador-pipe.html#cb162-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;magrittr&quot;</span>)</span>
-<span id="cb162-2"><a href="6-1-o-operador-pipe.html#cb162-2"></a></span>
-<span id="cb162-3"><a href="6-1-o-operador-pipe.html#cb162-3"></a><span class="kw">library</span>(magrittr)</span></code></pre></div>
 <p>A ideia do operador <code>%&gt;%</code> (<em>pipe</em>) é bem simples: usar o valor resultante da expressão do lado esquerdo como primeiro argumento da função do lado direito.</p>
 <div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="6-1-o-operador-pipe.html#cb163-1"></a><span class="co"># As duas linhas abaixo são equivalentes.</span></span>
 <span id="cb163-2"><a href="6-1-o-operador-pipe.html#cb163-2"></a></span>
@@ -299,29 +291,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb166-2"><a href="6-1-o-operador-pipe.html#cb166-2"></a></span>
 <span id="cb166-3"><a href="6-1-o-operador-pipe.html#cb166-3"></a>x <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sqrt</span>()</span></code></pre></div>
 <pre><code>## [1] 3.162278</code></pre>
-<p>O caminho que o código <code>x %&gt;% sum %&gt;% sqrt</code> seguiu foi enviar o objeto <code>x</code> como argumento da função <code>sum()</code> e, em seguida, enviar a saida da expressão <code>sum(x)</code> como argumento da função <code>sqrt()</code>. Observe que escrevemos o código na mesma ordem das operações. A utilização de parênteses após o nome das funções não é necessário, mas recomendável.</p>
+<p>O caminho que o código <code>x %&gt;% sum %&gt;% sqrt</code> seguiu foi enviar o objeto <code>x</code> como argumento da função <code>sum()</code> e, em seguida, enviar a saida da expressão <code>sum(x)</code> como argumento da função <code>sqrt()</code>. Observe que escrevemos o código na mesma ordem em que as operações são realizadas. A utilização de parênteses após o nome das funções não é necessário, mas recomendável.</p>
 <p>Se você ainda não está convencido com o poder do <em>pipe</em>, fica que vai ter bolo!</p>
 <p>No exemplo abaixo, vamos ilustrar um caso em que temos um grande número de funções aninhadas. Veja como a utilização do <em>pipe</em> transforma um código confuso e difícil de ser lido em algo simples e intuitivo.</p>
 <div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="6-1-o-operador-pipe.html#cb168-1"></a><span class="co"># Receita de bolo sem pipe. Tente entender o que é preciso fazer.</span></span>
 <span id="cb168-2"><a href="6-1-o-operador-pipe.html#cb168-2"></a></span>
-<span id="cb168-3"><a href="6-1-o-operador-pipe.html#cb168-3"></a><span class="kw">esfrie</span>(<span class="kw">asse</span>(<span class="kw">coloque</span>(<span class="kw">bata</span>(<span class="kw">acrescente</span>(<span class="kw">recipiente</span>(<span class="kw">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), <span class="st">&quot;água&quot;</span>, <span class="st">&quot;fermento&quot;</span>, <span class="st">&quot;leite&quot;</span>, <span class="st">&quot;óleo&quot;</span>), <span class="st">&quot;farinha&quot;</span>, até =<span class="st"> &quot;macio&quot;</span>), duraçã<span class="dt">o =</span> <span class="st">&quot;3min&quot;</span>), <span class="dt">lugar =</span> <span class="st">&quot;forma&quot;</span>, <span class="dt">tipo =</span> <span class="st">&quot;grande&quot;</span>, <span class="dt">untada =</span> <span class="ot">TRUE</span>), duraçã<span class="dt">o =</span> <span class="st">&quot;50min&quot;</span>), <span class="st">&quot;geladeira&quot;</span>, <span class="st">&quot;20min&quot;</span>)</span>
-<span id="cb168-4"><a href="6-1-o-operador-pipe.html#cb168-4"></a></span>
-<span id="cb168-5"><a href="6-1-o-operador-pipe.html#cb168-5"></a></span>
-<span id="cb168-6"><a href="6-1-o-operador-pipe.html#cb168-6"></a><span class="co"># Veja como o código acima pode ser reescrito utilizando-se o pipe. Agora realmente se parece com uma receita de bolo.</span></span>
-<span id="cb168-7"><a href="6-1-o-operador-pipe.html#cb168-7"></a></span>
-<span id="cb168-8"><a href="6-1-o-operador-pipe.html#cb168-8"></a><span class="kw">recipiente</span>(<span class="kw">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), <span class="st">&quot;água&quot;</span>, <span class="st">&quot;fermento&quot;</span>, <span class="st">&quot;leite&quot;</span>, <span class="st">&quot;óleo&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb168-9"><a href="6-1-o-operador-pipe.html#cb168-9"></a><span class="st">  </span><span class="kw">acrescente</span>(<span class="st">&quot;farinha&quot;</span>, até =<span class="st"> &quot;macio&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb168-10"><a href="6-1-o-operador-pipe.html#cb168-10"></a><span class="st">  </span><span class="kw">bata</span>(duraçã<span class="dt">o =</span> <span class="st">&quot;3min&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb168-11"><a href="6-1-o-operador-pipe.html#cb168-11"></a><span class="st">  </span><span class="kw">coloque</span>(<span class="dt">lugar =</span> <span class="st">&quot;forma&quot;</span>, <span class="dt">tipo =</span> <span class="st">&quot;grande&quot;</span>, <span class="dt">untada =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
-<span id="cb168-12"><a href="6-1-o-operador-pipe.html#cb168-12"></a><span class="st">  </span><span class="kw">asse</span>(duraçã<span class="dt">o =</span> <span class="st">&quot;50min&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb168-13"><a href="6-1-o-operador-pipe.html#cb168-13"></a><span class="st">  </span><span class="kw">esfrie</span>(<span class="st">&quot;geladeira&quot;</span>, <span class="st">&quot;20min&quot;</span>)</span></code></pre></div>
+<span id="cb168-3"><a href="6-1-o-operador-pipe.html#cb168-3"></a><span class="kw">esfrie</span>(</span>
+<span id="cb168-4"><a href="6-1-o-operador-pipe.html#cb168-4"></a>  <span class="kw">asse</span>(</span>
+<span id="cb168-5"><a href="6-1-o-operador-pipe.html#cb168-5"></a>    <span class="kw">coloque</span>(</span>
+<span id="cb168-6"><a href="6-1-o-operador-pipe.html#cb168-6"></a>      <span class="kw">bata</span>(</span>
+<span id="cb168-7"><a href="6-1-o-operador-pipe.html#cb168-7"></a>        <span class="kw">acrescente</span>(</span>
+<span id="cb168-8"><a href="6-1-o-operador-pipe.html#cb168-8"></a>          <span class="kw">recipiente</span>(</span>
+<span id="cb168-9"><a href="6-1-o-operador-pipe.html#cb168-9"></a>            <span class="kw">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), </span>
+<span id="cb168-10"><a href="6-1-o-operador-pipe.html#cb168-10"></a>            <span class="st">&quot;água&quot;</span>, </span>
+<span id="cb168-11"><a href="6-1-o-operador-pipe.html#cb168-11"></a>            <span class="st">&quot;fermento&quot;</span>, </span>
+<span id="cb168-12"><a href="6-1-o-operador-pipe.html#cb168-12"></a>            <span class="st">&quot;leite&quot;</span>, </span>
+<span id="cb168-13"><a href="6-1-o-operador-pipe.html#cb168-13"></a>            <span class="st">&quot;óleo&quot;</span></span>
+<span id="cb168-14"><a href="6-1-o-operador-pipe.html#cb168-14"></a>          ), </span>
+<span id="cb168-15"><a href="6-1-o-operador-pipe.html#cb168-15"></a>          <span class="st">&quot;farinha&quot;</span>, </span>
+<span id="cb168-16"><a href="6-1-o-operador-pipe.html#cb168-16"></a>          <span class="dt">ate =</span> <span class="st">&quot;macio&quot;</span></span>
+<span id="cb168-17"><a href="6-1-o-operador-pipe.html#cb168-17"></a>        ), </span>
+<span id="cb168-18"><a href="6-1-o-operador-pipe.html#cb168-18"></a>        <span class="dt">duracao =</span> <span class="st">&quot;3min&quot;</span></span>
+<span id="cb168-19"><a href="6-1-o-operador-pipe.html#cb168-19"></a>      ), </span>
+<span id="cb168-20"><a href="6-1-o-operador-pipe.html#cb168-20"></a>      <span class="dt">lugar =</span> <span class="st">&quot;forma&quot;</span>, </span>
+<span id="cb168-21"><a href="6-1-o-operador-pipe.html#cb168-21"></a>      <span class="dt">tipo =</span> <span class="st">&quot;grande&quot;</span>, </span>
+<span id="cb168-22"><a href="6-1-o-operador-pipe.html#cb168-22"></a>      <span class="dt">untada =</span> <span class="ot">TRUE</span></span>
+<span id="cb168-23"><a href="6-1-o-operador-pipe.html#cb168-23"></a>    ), </span>
+<span id="cb168-24"><a href="6-1-o-operador-pipe.html#cb168-24"></a>    <span class="dt">duracao =</span> <span class="st">&quot;50min&quot;</span></span>
+<span id="cb168-25"><a href="6-1-o-operador-pipe.html#cb168-25"></a>  ), </span>
+<span id="cb168-26"><a href="6-1-o-operador-pipe.html#cb168-26"></a>  <span class="dt">lugar =</span> <span class="st">&quot;geladeira&quot;</span>, </span>
+<span id="cb168-27"><a href="6-1-o-operador-pipe.html#cb168-27"></a>  <span class="dt">duracao =</span> <span class="st">&quot;20min&quot;</span></span>
+<span id="cb168-28"><a href="6-1-o-operador-pipe.html#cb168-28"></a>)</span>
+<span id="cb168-29"><a href="6-1-o-operador-pipe.html#cb168-29"></a></span>
+<span id="cb168-30"><a href="6-1-o-operador-pipe.html#cb168-30"></a></span>
+<span id="cb168-31"><a href="6-1-o-operador-pipe.html#cb168-31"></a><span class="co"># Veja como o código acima pode ser reescrito utilizando-se o pipe. Agora realmente se parece com uma receita de bolo.</span></span>
+<span id="cb168-32"><a href="6-1-o-operador-pipe.html#cb168-32"></a></span>
+<span id="cb168-33"><a href="6-1-o-operador-pipe.html#cb168-33"></a><span class="kw">recipiente</span>(<span class="kw">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), <span class="st">&quot;água&quot;</span>, <span class="st">&quot;fermento&quot;</span>, <span class="st">&quot;leite&quot;</span>, <span class="st">&quot;óleo&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb168-34"><a href="6-1-o-operador-pipe.html#cb168-34"></a><span class="st">  </span><span class="kw">acrescente</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dt">ate =</span> <span class="st">&quot;macio&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb168-35"><a href="6-1-o-operador-pipe.html#cb168-35"></a><span class="st">  </span><span class="kw">bata</span>(<span class="dt">duracao =</span> <span class="st">&quot;3min&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb168-36"><a href="6-1-o-operador-pipe.html#cb168-36"></a><span class="st">  </span><span class="kw">coloque</span>(<span class="dt">lugar =</span> <span class="st">&quot;forma&quot;</span>, <span class="dt">tipo =</span> <span class="st">&quot;grande&quot;</span>, <span class="dt">untada =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
+<span id="cb168-37"><a href="6-1-o-operador-pipe.html#cb168-37"></a><span class="st">  </span><span class="kw">asse</span>(<span class="dt">duracao =</span> <span class="st">&quot;50min&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb168-38"><a href="6-1-o-operador-pipe.html#cb168-38"></a><span class="st">  </span><span class="kw">esfrie</span>(<span class="dt">lugar =</span> <span class="st">&quot;geladeira&quot;</span>, <span class="dt">duracao =</span> <span class="st">&quot;20min&quot;</span>)</span></code></pre></div>
 <p>Às vezes, queremos que o resultado do lado esquerdo vá para outro argumento do lado direito que não o primeiro. Para isso, utilizamos um <code>.</code> como marcador.</p>
 <div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="6-1-o-operador-pipe.html#cb169-1"></a><span class="co"># Queremos que o dataset seja recebido pelo segundo argumento (data=) da função &quot;lm&quot;.</span></span>
 <span id="cb169-2"><a href="6-1-o-operador-pipe.html#cb169-2"></a></span>
 <span id="cb169-3"><a href="6-1-o-operador-pipe.html#cb169-3"></a>airquality <span class="op">%&gt;%</span></span>
-<span id="cb169-4"><a href="6-1-o-operador-pipe.html#cb169-4"></a><span class="st">  </span>na.omit <span class="op">%&gt;%</span></span>
+<span id="cb169-4"><a href="6-1-o-operador-pipe.html#cb169-4"></a><span class="st">  </span><span class="kw">na.omit</span>() <span class="op">%&gt;%</span></span>
 <span id="cb169-5"><a href="6-1-o-operador-pipe.html#cb169-5"></a><span class="st">  </span><span class="kw">lm</span>(Ozone <span class="op">~</span><span class="st"> </span>Wind <span class="op">+</span><span class="st"> </span>Temp <span class="op">+</span><span class="st"> </span>Solar.R, <span class="dt">data =</span> .) <span class="op">%&gt;%</span></span>
-<span id="cb169-6"><a href="6-1-o-operador-pipe.html#cb169-6"></a><span class="st">  </span>summary</span></code></pre></div>
+<span id="cb169-6"><a href="6-1-o-operador-pipe.html#cb169-6"></a><span class="st">  </span><span class="kw">summary</span>()</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Ozone ~ Wind + Temp + Solar.R, data = .)
@@ -342,13 +359,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Residual standard error: 21.18 on 107 degrees of freedom
 ## Multiple R-squared:  0.6059, Adjusted R-squared:  0.5948 
 ## F-statistic: 54.83 on 3 and 107 DF,  p-value: &lt; 2.2e-16</code></pre>
-<p>Também é possível definir funções na sua <em>pipeline</em>.</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="6-1-o-operador-pipe.html#cb171-1"></a><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="op">%&gt;%</span></span>
-<span id="cb171-2"><a href="6-1-o-operador-pipe.html#cb171-2"></a><span class="st">  </span>(<span class="cf">function</span>(x){</span>
-<span id="cb171-3"><a href="6-1-o-operador-pipe.html#cb171-3"></a>    <span class="kw">sum</span>(x)</span>
-<span id="cb171-4"><a href="6-1-o-operador-pipe.html#cb171-4"></a>  })</span></code></pre></div>
-<pre><code>## [1] 6</code></pre>
-<p>O <em>pipe</em> é a força da gravidade dentro do <code>tidyverse</code>. Veremos nas próximas seções como as funções de diferentes pacotes interagem perfeitamente graças a esse operador.</p>
+<p>O <em>pipe</em> é a força da gravidade dentro do <code>tidyverse</code>. Veremos nos próximos capítulos como as funções de diferentes pacotes interagem perfeitamente graças a esse operador.</p>
 </div>
 <hr/>
 <footer>
