@@ -6,7 +6,9 @@ knitr::opts_chunk$set(
   fig.align = "center"
 )
 
-source("R/utils.R")
+tabela <- function(tab) {
+  knitr::kable(tab)
+}
 ```
 
 Introduziremos aqui os principais conceitos de programação em R. Indicamos a leitura deste capítulo a quem nunca teve contato com uma linguagem de programação ou a quem gostaria de entender um pouco melhor a estrutura de objetos, funções e classes do R. 
@@ -20,7 +22,7 @@ A linguagem `R` é bem intuitiva. É possível fazer bastante coisa à base da t
 No entanto, a intuição não infalível, e recorrentemente vamos precisar de ajuda para rodar alguma função ou descobrir como fazer alguma tarefa no R. Felizmente, a comunidade R é bem ativa e existem vários lugares para buscar respostas. Nesta seção, vamos apresentar as principais maneiras algumas dessas maneiras.
 
 ```{r r-base-1, fig.cap=Sys.getenv("cap_alisson_horst"), echo=FALSE}
-knitr::include_graphics("assets/img/r-base/code_hero_rstats.png")
+knitr::include_graphics("https://raw.githubusercontent.com/curso-r/livro-material/master/assets/img/r-base/code_hero_rstats.png")
 ```
 
 No R, há quatro principais entidades para se pedir ajuda:
@@ -63,7 +65,7 @@ log("5")
 ```
 
 ```{r r-base-2, echo=FALSE, fig.align='center', out.width=795, out.height=267}
-knitr::include_graphics("assets/img/r-base/ajuda_google.png")
+knitr::include_graphics("https://raw.githubusercontent.com/curso-r/livro-material/master/assets/img/r-base/ajuda_google.png")
 ```
 
 ### Stack Overflow

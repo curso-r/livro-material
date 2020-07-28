@@ -13,7 +13,7 @@ A linguagem `R` é bem intuitiva. É possível fazer bastante coisa à base da t
 No entanto, a intuição não infalível, e recorrentemente vamos precisar de ajuda para rodar alguma função ou descobrir como fazer alguma tarefa no R. Felizmente, a comunidade R é bem ativa e existem vários lugares para buscar respostas. Nesta seção, vamos apresentar as principais maneiras algumas dessas maneiras.
 
 <div class="figure" style="text-align: center">
-<img src="assets/img/r-base/code_hero_rstats.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la." width="1378" />
+<img src="https://raw.githubusercontent.com/curso-r/livro-material/master/assets/img/r-base/code_hero_rstats.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la."  />
 <p class="caption">(\#fig:r-base-1)Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la.</p>
 </div>
 
@@ -59,7 +59,7 @@ log("5")
 ## Error in log("5"): non-numeric argument to mathematical function
 ```
 
-<img src="assets/img/r-base/ajuda_google.png" width="795" height="267" style="display: block; margin: auto;" />
+<img src="https://raw.githubusercontent.com/curso-r/livro-material/master/assets/img/r-base/ajuda_google.png" width="795" height="267" style="display: block; margin: auto;" />
 
 ### Stack Overflow
 
@@ -1505,7 +1505,7 @@ x <- 1
 if (x == 1) {         
   Sys.time()
 }
-## [1] "2020-07-27 19:04:09 -03"
+## [1] "2020-07-28 19:40:03 -03"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se a expressão que estiver dentro dos parênteses `()` retornar `TRUE`. Veja outro exemplo:
