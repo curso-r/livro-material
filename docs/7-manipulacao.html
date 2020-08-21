@@ -31,7 +31,7 @@
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="6-3-exercícios-6.html"/>
-<link rel="next" href="7-1-trabalhando-com-tibbles.html"/>
+<link rel="next" href="7-1-tibbles.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -218,7 +218,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3" data-path="6-3-exercícios-6.html"><a href="6-3-exercícios-6.html"><i class="fa fa-check"></i><b>6.3</b> Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
-<li class="chapter" data-level="7.1" data-path="7-1-trabalhando-com-tibbles.html"><a href="7-1-trabalhando-com-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Trabalhando com tibbles</a></li>
+<li class="chapter" data-level="7.1" data-path="7-1-tibbles.html"><a href="7-1-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Tibbles</a></li>
 <li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#filtrando-linhas"><i class="fa fa-check"></i><b>7.2.1</b> Filtrando linhas</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#selecionando-colunas"><i class="fa fa-check"></i><b>7.2.2</b> Selecionando colunas</a></li>
@@ -276,11 +276,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="manipulacao" class="section level1">
 <h1><span class="header-section-number">Capítulo 7</span> Manipulação</h1>
+<p>Esta seção trata do tema <em>manipulação de dados</em>. Trata-se de uma tarefa dolorosa e demorada, tomando muitas vezes a maior parte do tempo de uma análise de dados. Apesar de negligenciada pela Estatística, essa etapa é essencial para o sucesso da análise.</p>
 <blockquote>
-<p>“(…) The fact that data science exists as a field is a colossal failure of statistics. To me, what I do is what statistics is all about. It is gaining insight from data using modelling and visualization. Data munging and manipulation is hard and statistics has just said that’s not our domain.” - Hadley Wickham</p>
+<p>“(…) The fact that data science exists as a field is a colossal failure of statistics. To me, what I do is what statistics is all about. It is gaining insight from data using modelling and visualization. Data munging and manipulation is hard and statistics has just said that’s not our domain.” — Hadley Wickham</p>
 </blockquote>
-<p>Esta seção trata do tema <em>manipulação de dados</em>. Trata-se de uma tarefa dolorosa e demorada, tomando muitas vezes a maior parte do tempo de uma análise estatística. Essa etapa é essencial em qualquer análise de dados e, apesar de negligenciada pela academia, é decisiva para o sucesso de estudos aplicados.</p>
-<p>Usualmente, o cientista de dados parte de uma base “crua” e a transforma até obter uma base de dados analítica, que, a menos de transformações simples, está preparada para passar por análises estatísticas.</p>
+<p>Usualmente, o cientista de dados parte de uma base “crua” e a transforma até obter uma base de dados analítica, que, a menos de transformações simples, está preparada para gerar tabelas descritivas e gráficos e alimentar modelos.</p>
 <p>A figura abaixo mostra a fase de “disputa” com os dados (<em>data wrangling</em>) para deixá-los no formato analítico.</p>
 <p><img src="assets/img/manipulacao/ciclo-ciencia-de-dados.png" width="479" style="display: block; margin: auto;" /></p>
 <p>Um conceito importante para obtenção de uma base analítica é o <em>data tidying</em>, ou arrumação de dados. Uma base é considerada <em>tidy</em> se</p>
@@ -289,13 +289,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Cada coluna da base representa uma variável.</li>
 </ol>
 <p>A base de dados analítica é estruturada de tal forma que pode ser colocada diretamente em ambientes de modelagem estatística ou de visualização. Nem sempre uma base de dados analítica está no formato <em>tidy</em>, mas usualmente são necessários poucos passos para migrar de uma para outra. A filosofia <em>tidy</em> é a base do <a href="https://www.tidyverse.org/">tidyverse</a>.</p>
-<p>Os principais pacotes encarregados da tarefa de estruturar os dados são o <code>dplyr</code> e o <code>tidyr</code>. Eles serão o tema desse tópico. Instale e carregue os pacotes utilizando:</p>
+<p>Os principais pacotes encarregados da tarefa de estruturar os dados são o <code>dplyr</code> e o <code>tidyr</code>. Eles serão o tema desse capítulo. Instale e carregue os pacotes utilizando:</p>
 <div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="7-manipulacao.html#cb192-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
 <span id="cb192-2"><a href="7-manipulacao.html#cb192-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyr&quot;</span>)</span>
 <span id="cb192-3"><a href="7-manipulacao.html#cb192-3"></a></span>
 <span id="cb192-4"><a href="7-manipulacao.html#cb192-4"></a><span class="kw">library</span>(dplyr)</span>
 <span id="cb192-5"><a href="7-manipulacao.html#cb192-5"></a><span class="kw">library</span>(tidyr)</span></code></pre></div>
 <p>Mas antes de apresentar as principais funções do <code>dplyr</code> e do <code>tidyr</code>, precisamos falar sobre o conceito de <code>tibbles</code>.</p>
+<!--chapter:end:07-manipulacao.Rmd-->
 </div>
 <hr/>
 <footer>
@@ -307,7 +308,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="6-3-exercícios-6.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="7-1-trabalhando-com-tibbles.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="7-1-tibbles.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

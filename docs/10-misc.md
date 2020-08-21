@@ -16,7 +16,18 @@ devtools::install_github("sfirke/janitor") # Versão de desenvolvimento
 
 ```r
 library(tidyverse)
+```
+
+```
+## Warning: package 'tidyverse' was built under R version 4.0.2
+```
+
+```r
 library(janitor)
+```
+
+```
+## Warning: package 'janitor' was built under R version 4.0.2
 ```
 
 ### Arrumando o nome das variáveis
@@ -171,24 +182,20 @@ janitor::get_dupes(base_qualquer, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 15 x 4
-##    nome     sobrenome dupe_count variavel_importante
-##    <chr>    <chr>          <int>               <dbl>
-##  1 Daniel   Damiani            2             -1.53  
-##  2 Daniel   Damiani            2              0.221 
-##  3 Daniel   Falbel             2             -0.745 
-##  4 Daniel   Falbel             2              0.349 
-##  5 Fernando Damiani            2             -0.712 
-##  6 Fernando Damiani            2             -0.0398
-##  7 Fernando Trecenti           3              0.0381
-##  8 Fernando Trecenti           3             -1.97  
-##  9 Fernando Trecenti           3             -1.95  
-## 10 Julio    Corrêa             4              0.427 
-## 11 Julio    Corrêa             4              1.47  
-## 12 Julio    Corrêa             4              1.15  
-## 13 Julio    Corrêa             4              0.289 
-## 14 William  Corrêa             2             -1.83  
-## 15 William  Corrêa             2              0.414
+## # A tibble: 11 x 4
+##    nome    sobrenome dupe_count variavel_importante
+##    <chr>   <chr>          <int>               <dbl>
+##  1 Athos   Trecenti           2               1.44 
+##  2 Athos   Trecenti           2               1.50 
+##  3 Daniel  Corrêa             2               1.54 
+##  4 Daniel  Corrêa             2              -1.24 
+##  5 Daniel  Damiani            3               0.410
+##  6 Daniel  Damiani            3              -0.274
+##  7 Daniel  Damiani            3              -0.529
+##  8 Julio   Falbel             2               1.09 
+##  9 Julio   Falbel             2              -0.543
+## 10 William Damiani            2               1.27 
+## 11 William Damiani            2              -0.532
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.
