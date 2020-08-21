@@ -41,4 +41,41 @@ Observamos pelo código acima que:
 - podemos criar uma coluna a partir de uma função de colunas anteriores (a `coluna3` é uma função da `coluna2`);
 - se passarmos um vetor de tamanho 1 a uma das colunas, esse vetor será reciclado, igualando-se ao número de linha da *tibble* (o `0` na `coluna4` é transformado em `c(0, 0, 0, 0)`).
 
-Mais informações sobre `tibbles` podem ser encontradas [neste caplítulo do R for Data Science](http://r4ds.had.co.nz/tibbles.html).
+Uma outra diferença entre *data frames* e *tibbles* está no *subsetting*. *Tibbles* **nunca fazem correspondência parcial**. Tibbles retornam `NULL` e um aviso quando você tenta selecionar uma coluna que não existe.
+
+```{r}
+# O nome da coluna é disp, mas você pode acessá-la
+# apenas a procurando por "dis", já que não existe
+# nenhuma outra coluna que começa com "dis".
+mtcars$dis
+
+# Em tibbles isso não funciona.
+mtcars_tibble <- as_tibble(mtcars)
+mtcars_tibble$dis
+```
+
+Além de nos possibilitar a criar *tibbles*, o pacote `{tibble}` possui algumas funções úteis para manipularmos esses objetos:
+
+- `add_row()` e `add_column()`: para adicionar linhas e colunas a uma *tibble*;
+
+- `rowid_to_column()`: cria uma coluna com um `id` numérico e sequencial para as linhas, começando de `1`.
+
+```{r}
+mtcars %>% 
+  rowid_to_column() %>% 
+  head(10)
+```
+
+- `has_rownames()`: verifica se um *data frame* possui linhas nomeadas.
+
+- `remove_rownames()`: remove o nome das linhas de um *data frame*.
+
+- `rownames_to_column()`: transforma o nome das linhas em uma coluna.
+
+```{r}
+rownames_to_column(mtcars, var = "modelo_do_carro")
+```
+
+- `column_to_rownames()`: transforma uma coluna em nomes das linhas.
+
+Mais informações sobre `tibbles` podem ser encontradas [neste tutorial do RStudio](https://tibble.tidyverse.org/) e [neste caplítulo do R for Data Science](http://r4ds.had.co.nz/tibbles.html).
