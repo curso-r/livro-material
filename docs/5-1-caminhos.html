@@ -283,7 +283,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Se você está usando um projeto, o diretório de trabalho da sua sessão será, por padrão, a pasta raiz do seu projeto (é a pasta que contém o arquivo com extensão <code>.Rproj</code>). Se você não estiver usando um projeto ou simplesmente não souber qual é o seu diretório de trabalho, você pode descobri-lo usando a seguinte função <code>getwd()</code>. Ela vai devolver uma string com o caminho do seu diretório de trabalho.</p>
 <p>A função <code>setwd()</code> pode ser utilizada para mudar o diretório de trabalho. Como argumento, ela recebe o caminho para o novo diretório.</p>
 <p>Caminhos absolutos são aqueles que tem início na pasta raiz do seu computador/usuário. Por exemplo:</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="5-1-caminhos.html#cb114-1"></a><span class="kw">getwd</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="5-1-caminhos.html#cb120-1"></a><span class="kw">getwd</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;/Users/william/Documents/curso-r/livro-material&quot;</code></pre>
 <p>Esse é o caminho absoluto para a pasta onde esse livro foi produzido.</p>
 <p>Na grande maioria dos casos, caminhos absolutos são uma <strong>má prática</strong>, pois deixam o código irreprodutível. Se você trocar de computador ou passar o script para outra pessoa rodar, o código não vai funcionar, pois o caminho absoluto para o arquivo muito provavelmente será diferente.</p>

@@ -22,10 +22,8 @@ Instale pacotes que não estão na sua biblioteca usando a função `install.pac
 
 
 ```r
-install.packages("magrittr")
+install.packages("tidyverse")
 ```
-
-
 
 E, de agora em diante, não precisa mais instalar. Basta carregar o pacote com `library(magrittr)`.
 
@@ -66,7 +64,7 @@ No entanto, é possível definir *como se faz* ciência de dados. Ou seja, indep
 O "como faz" é definido através do *Ciclo da Ciência de Dados*, descrito na Figura \@ref(fig:04-ciclo). Primeiro, os dados brutos são coletados de fontes públicas, como arquivos Excel, portais de dados abertos ou bases de dados internos da companhia. Em seguida, os dados são arrumados, para mitigar problemas de padronização de nomes, obtenção das variáveis de interesse e exclusão de casos que estão fora do escopo de análise, produzindo o que se define como base de dados analítica. A base analítica é então transformada para produzir as tabelas e gráficos e, quando necessário, são utilizadas como insumo para o ajuste de modelos estatísticos. Finalmente, os resultados obtidos são comunicados através de uma série de ferramentas, como relatórios, dashboards interativos, indicadores ou Application Programming Interfaces (API) para automação. 
 
 <div class="figure" style="text-align: center">
-<img src="assets/img/manipulacao/ciclo-ciencia-de-dados.png" alt="O Ciclo da Ciência de Dados." width="479" />
+<img src="https://raw.githubusercontent.com/curso-r/livro-material/master/assets/img/manipulacao/ciclo-ciencia-de-dados.png" alt="O Ciclo da Ciência de Dados."  />
 <p class="caption">(\#fig:04-ciclo)O Ciclo da Ciência de Dados.</p>
 </div>
 
@@ -74,9 +72,11 @@ O "como faz" é definido através do *Ciclo da Ciência de Dados*, descrito na F
 O `{tidyverse}` é um pacote guarda-chuva que consolida uma série de ferramentas que fazem parte o ciclo da ciência de dados. Fazem parte do `{tidyverse}` os pacotes `{ggplot2}`, `{dplyr}`, `{tidyr}`, `{purrr}`, `{readr}`, entre muitos outros, como é possível observar na Figura \@ref(fig:04-ciclo-pacotes). Veremos as características principais desses pacotes nas próximas Seções.
 
 <div class="figure" style="text-align: center">
-<img src="assets/img/pacotes/ciclo-ciencia-de-dados-pacotes.png" alt="A implementação do Ciclo da Ciência de Dados, através do tidyverse. Pela definição estrita do tidyverse, na imagem não fazem parte do tidyverse os pacotes janitor, data.table e os pacotes descritos nas partes de modelagem, comunicação e automatização. No entanto, a maioria desses pacotes também seguem os princípios tidy e podem ser usados em conjunto com o tidyverse sem grandes dificuldades." width="479" />
+<img src="https://raw.githubusercontent.com/curso-r/livro-material/master/assets/img/pacotes/ciclo-ciencia-de-dados-pacotes.png" alt="A implementação do Ciclo da Ciência de Dados, através do tidyverse. Pela definição estrita do tidyverse, na imagem não fazem parte do tidyverse os pacotes janitor, data.table e os pacotes descritos nas partes de modelagem, comunicação e automatização. No entanto, a maioria desses pacotes também seguem os princípios tidy e podem ser usados em conjunto com o tidyverse sem grandes dificuldades."  />
 <p class="caption">(\#fig:04-ciclo-pacotes)A implementação do Ciclo da Ciência de Dados, através do tidyverse. Pela definição estrita do tidyverse, na imagem não fazem parte do tidyverse os pacotes janitor, data.table e os pacotes descritos nas partes de modelagem, comunicação e automatização. No entanto, a maioria desses pacotes também seguem os princípios tidy e podem ser usados em conjunto com o tidyverse sem grandes dificuldades.</p>
 </div>
+
+<br>
 
 O `{tidyverse}` traz consigo o [*manifesto tidy*](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html). Trata-se de um documento que formaliza uma série de princípios que norteiam o desenvolvimento do tidyverse. Como os pacotes do `{tidyverse}` compartilham os mesmos princípios, podem ser utilizados naturalmente em conjunto.
 
@@ -92,4 +92,55 @@ Os princípios fundamentais do tidyverse são:
 1. Projetado para ser usado por seres humanos.
 
 No texto do [manifesto tidy](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html) cada um dos lemas é descrito de forma detalhada. No [nosso blog](https://www.curso-r.com/blog/2017-02-16-manifesto-tidy/), selecionamos os aspectos que achamos mais importante de cada um deles.
+
+<img src="https://github.com/curso-r/livro-material/blob/master/assets/img/pacotes/tidyverse_celestial.png?raw=true" width="500" height="500" style="display: block; margin: auto;" />
+
+
+```r
+library(tidyverse)
+```
+
+```
+## ── Attaching packages ─────────────────────────────────── tidyverse 1.3.0 ──
+```
+
+```
+## ✓ ggplot2 3.3.0     ✓ purrr   0.3.4
+## ✓ tibble  3.0.1     ✓ dplyr   1.0.0
+## ✓ tidyr   1.0.3     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.5.0
+```
+
+```
+## ── Conflicts ────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+```
+
+Na prática, carregar o  (veja o código acima) é o mesmo que carregar os seguintes pacotes:
+
+- `{tibble}` para *data frames* repaginados; 
+
+- `{readr}` para importarmos bases para o R;
+
+- `{tidyr}` e `{dplyr}` para arrumação e manipulação de dados;
+
+- `{stringr}` para trabalharmos com textos;
+
+- `{forcats}` para trabalharmos com fatores;
+
+- `{ggplot2}` para gráficos;
+
+- `{purrr}` para programação funcional.
+
+Embora o `{tidyverse}` instale diversos outros pacotes, apenas esses são carrregados. Dificilmente fazemos uma análise de dados em que não precisamos usá-los. Falaremos com mais detalhes de todos eles neste livro.
+
+Mensagens de conflito quando carregamos o `{tidyverse}` ou qualquer outro pacote significam que funções anteriormente carregadas foram *mascaradas* por novas funções. No exemplo acima, as funções `filter()` e `lag()` do pacote `stats` foram substituídas na sessão pelas funções `filter()` e `lag()` do pacote `dplyr`. Nesse caso, se quiséssemos usar as funções do pacote `stats` após carregar o `{tidyverse}`, precisaríamos rodar `stats::filter()` e `stats::lag()`.
+
+Se você quiser *descarregar* um pacote, reinicie a sua sessão em `Session > Restart R` ou use a função `detach()` como no exemplo abaixo.
+
+
+```r
+detach("package:tidyverse", unload = TRUE)
+```
 

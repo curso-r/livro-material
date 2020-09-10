@@ -278,25 +278,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.3</span> Exercícios</h2>
 <hr />
 <p><strong>1.</strong> Reescreva a expressão abaixo utilizando o <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="6-3-exercícios-6.html#cb189-1"></a><span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">/</span><span class="dv">3</span>), <span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="6-3-exercícios-6.html#cb195-1"></a><span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">/</span><span class="dv">3</span>), <span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
 <p><strong>Dica</strong>: utilize a função <code>magrittr::divide_by()</code>. Veja o help da função para mais informações.</p>
 <hr />
 <p><strong>2.</strong> Reescreva o código abaixo utilizando o <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="6-3-exercícios-6.html#cb190-1"></a></span>
-<span id="cb190-2"><a href="6-3-exercícios-6.html#cb190-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</span>
-<span id="cb190-3"><a href="6-3-exercícios-6.html#cb190-3"></a></span>
-<span id="cb190-4"><a href="6-3-exercícios-6.html#cb190-4"></a>x.pos &lt;-<span class="st"> </span>x[x<span class="op">&gt;</span><span class="dv">0</span>]</span>
-<span id="cb190-5"><a href="6-3-exercícios-6.html#cb190-5"></a></span>
-<span id="cb190-6"><a href="6-3-exercícios-6.html#cb190-6"></a>media &lt;-<span class="st"> </span><span class="kw">mean</span>(x.pos)</span>
-<span id="cb190-7"><a href="6-3-exercícios-6.html#cb190-7"></a></span>
-<span id="cb190-8"><a href="6-3-exercícios-6.html#cb190-8"></a>saida &lt;-<span class="st"> </span><span class="kw">round</span>(media, <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="6-3-exercícios-6.html#cb196-1"></a></span>
+<span id="cb196-2"><a href="6-3-exercícios-6.html#cb196-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb196-3"><a href="6-3-exercícios-6.html#cb196-3"></a></span>
+<span id="cb196-4"><a href="6-3-exercícios-6.html#cb196-4"></a>x.pos &lt;-<span class="st"> </span>x[x<span class="op">&gt;</span><span class="dv">0</span>]</span>
+<span id="cb196-5"><a href="6-3-exercícios-6.html#cb196-5"></a></span>
+<span id="cb196-6"><a href="6-3-exercícios-6.html#cb196-6"></a>media &lt;-<span class="st"> </span><span class="kw">mean</span>(x.pos)</span>
+<span id="cb196-7"><a href="6-3-exercícios-6.html#cb196-7"></a></span>
+<span id="cb196-8"><a href="6-3-exercícios-6.html#cb196-8"></a>saida &lt;-<span class="st"> </span><span class="kw">round</span>(media, <span class="dv">1</span>)</span></code></pre></div>
 <hr />
 <p><strong>3.</strong> Sem rodar, diga qual a saída do código abaixo. Consulte o help das funções caso precise.</p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="6-3-exercícios-6.html#cb191-1"></a><span class="dv">2</span> <span class="op">%&gt;%</span></span>
-<span id="cb191-2"><a href="6-3-exercícios-6.html#cb191-2"></a><span class="st">  </span><span class="kw">add</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
-<span id="cb191-3"><a href="6-3-exercícios-6.html#cb191-3"></a><span class="st">  </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span></span>
-<span id="cb191-4"><a href="6-3-exercícios-6.html#cb191-4"></a><span class="st">  </span><span class="kw">mean</span>(<span class="dt">na.rm =</span> T) <span class="op">%&gt;%</span></span>
-<span id="cb191-5"><a href="6-3-exercícios-6.html#cb191-5"></a><span class="st">  </span><span class="kw">equals</span>(<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="6-3-exercícios-6.html#cb197-1"></a><span class="dv">2</span> <span class="op">%&gt;%</span></span>
+<span id="cb197-2"><a href="6-3-exercícios-6.html#cb197-2"></a><span class="st">  </span><span class="kw">add</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
+<span id="cb197-3"><a href="6-3-exercícios-6.html#cb197-3"></a><span class="st">  </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span></span>
+<span id="cb197-4"><a href="6-3-exercícios-6.html#cb197-4"></a><span class="st">  </span><span class="kw">mean</span>(<span class="dt">na.rm =</span> T) <span class="op">%&gt;%</span></span>
+<span id="cb197-5"><a href="6-3-exercícios-6.html#cb197-5"></a><span class="st">  </span><span class="kw">equals</span>(<span class="dv">5</span>)</span></code></pre></div>
 <hr />
 <p><strong>4.</strong> Leia o capítulo sobre <em>pipes</em> do <a href="http://r4ds.had.co.nz/pipes.html">R for data science</a>. É curto e vale muito a pena.</p>
 <hr />

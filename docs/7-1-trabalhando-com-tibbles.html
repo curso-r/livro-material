@@ -278,13 +278,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">7.1</span> Trabalhando com tibbles</h2>
 <p>Uma <code>tibble</code> nada mais é do que um <code>data.frame</code>, mas com um método de impressão mais adequado.</p>
 <p>As <code>tibbles</code> são parte do pacote <code>tibble</code>. Assim, para começar a usá-las, instale e carregue o pacote.</p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="7-1-trabalhando-com-tibbles.html#cb193-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tibble&quot;</span>)</span>
-<span id="cb193-2"><a href="7-1-trabalhando-com-tibbles.html#cb193-2"></a><span class="kw">library</span>(tibble)</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="7-1-trabalhando-com-tibbles.html#cb199-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tibble&quot;</span>)</span>
+<span id="cb199-2"><a href="7-1-trabalhando-com-tibbles.html#cb199-2"></a><span class="kw">library</span>(tibble)</span></code></pre></div>
 <p>Mais informações sobre <code>tibbles</code> podem ser encontradas <a href="http://r4ds.had.co.nz/tibbles.html">neste link</a>.</p>
 <p>Nessa seção, vamos trabalhar com uma base de filmes do IMDB. Essa base pode ser baixada <a href="https://github.com/curso-r/site-v2/raw/master/content/material/importacao/data/imdb.rds">clicando aqui</a>.</p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="7-1-trabalhando-com-tibbles.html#cb194-1"></a>imdb &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_rds</span>(<span class="st">&quot;assets/data/imdb.rds&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="7-1-trabalhando-com-tibbles.html#cb200-1"></a>imdb &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_rds</span>(<span class="st">&quot;assets/data/imdb.rds&quot;</span>)</span></code></pre></div>
 <p>Assim, utilizaremos o objeto <code>imdb</code> para acessar os dados.</p>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="7-1-trabalhando-com-tibbles.html#cb195-1"></a>imdb</span></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="7-1-trabalhando-com-tibbles.html#cb201-1"></a>imdb</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 15
 ##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
 ##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;

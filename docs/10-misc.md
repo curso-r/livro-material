@@ -16,7 +16,18 @@ devtools::install_github("sfirke/janitor") # Versão de desenvolvimento
 
 ```r
 library(tidyverse)
+```
+
+```
+## Warning: package 'tidyverse' was built under R version 4.0.2
+```
+
+```r
 library(janitor)
+```
+
+```
+## Warning: package 'janitor' was built under R version 4.0.2
 ```
 
 ### Arrumando o nome das variáveis
@@ -171,24 +182,21 @@ janitor::get_dupes(base_qualquer, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 15 x 4
+## # A tibble: 12 x 4
 ##    nome     sobrenome dupe_count variavel_importante
 ##    <chr>    <chr>          <int>               <dbl>
-##  1 Daniel   Damiani            2             -1.53  
-##  2 Daniel   Damiani            2              0.221 
-##  3 Daniel   Falbel             2             -0.745 
-##  4 Daniel   Falbel             2              0.349 
-##  5 Fernando Damiani            2             -0.712 
-##  6 Fernando Damiani            2             -0.0398
-##  7 Fernando Trecenti           3              0.0381
-##  8 Fernando Trecenti           3             -1.97  
-##  9 Fernando Trecenti           3             -1.95  
-## 10 Julio    Corrêa             4              0.427 
-## 11 Julio    Corrêa             4              1.47  
-## 12 Julio    Corrêa             4              1.15  
-## 13 Julio    Corrêa             4              0.289 
-## 14 William  Corrêa             2             -1.83  
-## 15 William  Corrêa             2              0.414
+##  1 Athos    Amorim             2             -0.946 
+##  2 Athos    Amorim             2              0.105 
+##  3 Daniel   Damiani            2              2.31  
+##  4 Daniel   Damiani            2             -0.103 
+##  5 Fernando Trecenti           2              0.824 
+##  6 Fernando Trecenti           2              1.50  
+##  7 Julio    Damiani            2             -0.336 
+##  8 Julio    Damiani            2             -0.176 
+##  9 Julio    Falbel             2             -0.0209
+## 10 Julio    Falbel             2             -1.30  
+## 11 William  Trecenti           2              0.656 
+## 12 William  Trecenti           2              2.72
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.

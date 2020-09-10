@@ -282,20 +282,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="gather" class="section level3">
 <h3><span class="header-section-number">7.3.1</span> <code>gather()</code></h3>
 <p>A função <code>gather()</code> “empilha” o banco de dados. Ela é utilizada principalmente quando as colunas da base não representam nomes de variáveis, mas sim seus valores.</p>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="7-3-tidyr.html#cb241-1"></a><span class="kw">library</span>(tidyr)</span>
-<span id="cb241-2"><a href="7-3-tidyr.html#cb241-2"></a></span>
-<span id="cb241-3"><a href="7-3-tidyr.html#cb241-3"></a>imdb &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_rds</span>(<span class="st">&quot;assets/data/imdb.rds&quot;</span>)</span>
-<span id="cb241-4"><a href="7-3-tidyr.html#cb241-4"></a></span>
-<span id="cb241-5"><a href="7-3-tidyr.html#cb241-5"></a>imdb_gather &lt;-<span class="st"> </span>imdb <span class="op">%&gt;%</span></span>
-<span id="cb241-6"><a href="7-3-tidyr.html#cb241-6"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">n</span>()) <span class="op">%&gt;%</span></span>
-<span id="cb241-7"><a href="7-3-tidyr.html#cb241-7"></a><span class="st">  </span><span class="kw">gather</span>(</span>
-<span id="cb241-8"><a href="7-3-tidyr.html#cb241-8"></a>    <span class="dt">key =</span> <span class="st">&quot;importancia_ator&quot;</span>,</span>
-<span id="cb241-9"><a href="7-3-tidyr.html#cb241-9"></a>    <span class="dt">value =</span> <span class="st">&quot;nome_ator&quot;</span>,</span>
-<span id="cb241-10"><a href="7-3-tidyr.html#cb241-10"></a>    ator_<span class="dv">1</span>, ator_<span class="dv">2</span>, ator_<span class="dv">3</span></span>
-<span id="cb241-11"><a href="7-3-tidyr.html#cb241-11"></a>  ) <span class="op">%&gt;%</span></span>
-<span id="cb241-12"><a href="7-3-tidyr.html#cb241-12"></a><span class="st">  </span><span class="kw">select</span>(nome_ator, importancia_ator, <span class="kw">everything</span>())</span>
-<span id="cb241-13"><a href="7-3-tidyr.html#cb241-13"></a></span>
-<span id="cb241-14"><a href="7-3-tidyr.html#cb241-14"></a>imdb_gather</span></code></pre></div>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="7-3-tidyr.html#cb247-1"></a><span class="kw">library</span>(tidyr)</span>
+<span id="cb247-2"><a href="7-3-tidyr.html#cb247-2"></a></span>
+<span id="cb247-3"><a href="7-3-tidyr.html#cb247-3"></a>imdb &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_rds</span>(<span class="st">&quot;assets/data/imdb.rds&quot;</span>)</span>
+<span id="cb247-4"><a href="7-3-tidyr.html#cb247-4"></a></span>
+<span id="cb247-5"><a href="7-3-tidyr.html#cb247-5"></a>imdb_gather &lt;-<span class="st"> </span>imdb <span class="op">%&gt;%</span></span>
+<span id="cb247-6"><a href="7-3-tidyr.html#cb247-6"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">n</span>()) <span class="op">%&gt;%</span></span>
+<span id="cb247-7"><a href="7-3-tidyr.html#cb247-7"></a><span class="st">  </span><span class="kw">gather</span>(</span>
+<span id="cb247-8"><a href="7-3-tidyr.html#cb247-8"></a>    <span class="dt">key =</span> <span class="st">&quot;importancia_ator&quot;</span>,</span>
+<span id="cb247-9"><a href="7-3-tidyr.html#cb247-9"></a>    <span class="dt">value =</span> <span class="st">&quot;nome_ator&quot;</span>,</span>
+<span id="cb247-10"><a href="7-3-tidyr.html#cb247-10"></a>    ator_<span class="dv">1</span>, ator_<span class="dv">2</span>, ator_<span class="dv">3</span></span>
+<span id="cb247-11"><a href="7-3-tidyr.html#cb247-11"></a>  ) <span class="op">%&gt;%</span></span>
+<span id="cb247-12"><a href="7-3-tidyr.html#cb247-12"></a><span class="st">  </span><span class="kw">select</span>(nome_ator, importancia_ator, <span class="kw">everything</span>())</span>
+<span id="cb247-13"><a href="7-3-tidyr.html#cb247-13"></a></span>
+<span id="cb247-14"><a href="7-3-tidyr.html#cb247-14"></a>imdb_gather</span></code></pre></div>
 <pre><code>## # A tibble: 11,421 x 15
 ##    nome_ator importancia_ator titulo   ano diretor duracao cor   generos pais 
 ##    &lt;chr&gt;     &lt;chr&gt;            &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;
@@ -317,13 +317,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="spread" class="section level3">
 <h3><span class="header-section-number">7.3.2</span> <code>spread()</code></h3>
 <p>A função <code>spread()</code> é essencialmente o inverso da <code>gather()</code>. Ela espalha uma variável nas colunas.</p>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="7-3-tidyr.html#cb243-1"></a>imdb_spread &lt;-<span class="st"> </span>imdb_gather <span class="op">%&gt;%</span></span>
-<span id="cb243-2"><a href="7-3-tidyr.html#cb243-2"></a><span class="st">  </span><span class="kw">spread</span>(</span>
-<span id="cb243-3"><a href="7-3-tidyr.html#cb243-3"></a>    <span class="dt">key =</span> importancia_ator,</span>
-<span id="cb243-4"><a href="7-3-tidyr.html#cb243-4"></a>    <span class="dt">value =</span> nome_ator</span>
-<span id="cb243-5"><a href="7-3-tidyr.html#cb243-5"></a>  )</span>
-<span id="cb243-6"><a href="7-3-tidyr.html#cb243-6"></a></span>
-<span id="cb243-7"><a href="7-3-tidyr.html#cb243-7"></a>imdb_spread</span></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="7-3-tidyr.html#cb249-1"></a>imdb_spread &lt;-<span class="st"> </span>imdb_gather <span class="op">%&gt;%</span></span>
+<span id="cb249-2"><a href="7-3-tidyr.html#cb249-2"></a><span class="st">  </span><span class="kw">spread</span>(</span>
+<span id="cb249-3"><a href="7-3-tidyr.html#cb249-3"></a>    <span class="dt">key =</span> importancia_ator,</span>
+<span id="cb249-4"><a href="7-3-tidyr.html#cb249-4"></a>    <span class="dt">value =</span> nome_ator</span>
+<span id="cb249-5"><a href="7-3-tidyr.html#cb249-5"></a>  )</span>
+<span id="cb249-6"><a href="7-3-tidyr.html#cb249-6"></a></span>
+<span id="cb249-7"><a href="7-3-tidyr.html#cb249-7"></a>imdb_spread</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 16
 ##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
 ##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
@@ -347,12 +347,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>A função <code>unite()</code> junta duas ou mais colunas usando algum separador (<code>_</code>, por exemplo).</p></li>
 <li><p>A função <code>separate()</code> faz o inverso de <code>unite()</code>: transforma uma coluna em várias usando um separador.</p></li>
 </ul>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="7-3-tidyr.html#cb245-1"></a>imdb <span class="op">%&gt;%</span></span>
-<span id="cb245-2"><a href="7-3-tidyr.html#cb245-2"></a><span class="st">  </span><span class="kw">unite</span>(</span>
-<span id="cb245-3"><a href="7-3-tidyr.html#cb245-3"></a>    <span class="dt">col =</span> <span class="st">&quot;titulo_diretor&quot;</span>,</span>
-<span id="cb245-4"><a href="7-3-tidyr.html#cb245-4"></a>    titulo, diretor,</span>
-<span id="cb245-5"><a href="7-3-tidyr.html#cb245-5"></a>    <span class="dt">sep =</span> <span class="st">&quot; - &quot;</span></span>
-<span id="cb245-6"><a href="7-3-tidyr.html#cb245-6"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="7-3-tidyr.html#cb251-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb251-2"><a href="7-3-tidyr.html#cb251-2"></a><span class="st">  </span><span class="kw">unite</span>(</span>
+<span id="cb251-3"><a href="7-3-tidyr.html#cb251-3"></a>    <span class="dt">col =</span> <span class="st">&quot;titulo_diretor&quot;</span>,</span>
+<span id="cb251-4"><a href="7-3-tidyr.html#cb251-4"></a>    titulo, diretor,</span>
+<span id="cb251-5"><a href="7-3-tidyr.html#cb251-5"></a>    <span class="dt">sep =</span> <span class="st">&quot; - &quot;</span></span>
+<span id="cb251-6"><a href="7-3-tidyr.html#cb251-6"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 14
 ##    titulo_diretor   ano duracao cor   generos pais  classificacao orcamento
 ##    &lt;chr&gt;          &lt;int&gt;   &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
@@ -368,13 +368,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 Pirates of th…  2006     151 Color Action… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="7-3-tidyr.html#cb247-1"></a>imdb <span class="op">%&gt;%</span></span>
-<span id="cb247-2"><a href="7-3-tidyr.html#cb247-2"></a><span class="st">  </span><span class="kw">separate</span>(</span>
-<span id="cb247-3"><a href="7-3-tidyr.html#cb247-3"></a>    <span class="dt">col =</span> generos,</span>
-<span id="cb247-4"><a href="7-3-tidyr.html#cb247-4"></a>    <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;genero_1&quot;</span>, <span class="st">&quot;genero_2&quot;</span>, <span class="st">&quot;genero_3&quot;</span>),</span>
-<span id="cb247-5"><a href="7-3-tidyr.html#cb247-5"></a>    <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">|&quot;</span>,</span>
-<span id="cb247-6"><a href="7-3-tidyr.html#cb247-6"></a>    <span class="dt">extra =</span> <span class="st">&quot;drop&quot;</span></span>
-<span id="cb247-7"><a href="7-3-tidyr.html#cb247-7"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="7-3-tidyr.html#cb253-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb253-2"><a href="7-3-tidyr.html#cb253-2"></a><span class="st">  </span><span class="kw">separate</span>(</span>
+<span id="cb253-3"><a href="7-3-tidyr.html#cb253-3"></a>    <span class="dt">col =</span> generos,</span>
+<span id="cb253-4"><a href="7-3-tidyr.html#cb253-4"></a>    <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;genero_1&quot;</span>, <span class="st">&quot;genero_2&quot;</span>, <span class="st">&quot;genero_3&quot;</span>),</span>
+<span id="cb253-5"><a href="7-3-tidyr.html#cb253-5"></a>    <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">|&quot;</span>,</span>
+<span id="cb253-6"><a href="7-3-tidyr.html#cb253-6"></a>    <span class="dt">extra =</span> <span class="st">&quot;drop&quot;</span></span>
+<span id="cb253-7"><a href="7-3-tidyr.html#cb253-7"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 17
 ##    titulo   ano diretor duracao cor   genero_1 genero_2 genero_3 pais 
 ##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;
