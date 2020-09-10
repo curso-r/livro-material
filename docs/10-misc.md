@@ -182,26 +182,27 @@ janitor::get_dupes(base_qualquer, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 17 x 4
+## # A tibble: 18 x 4
 ##    nome     sobrenome dupe_count variavel_importante
 ##    <chr>    <chr>          <int>               <dbl>
-##  1 Athos    Damiani            3             0.0351 
-##  2 Athos    Damiani            3            -0.458  
-##  3 Athos    Damiani            3            -1.31   
-##  4 Daniel   Corrêa             2             1.97   
-##  5 Daniel   Corrêa             2            -0.0438 
-##  6 Daniel   Damiani            2             0.323  
-##  7 Daniel   Damiani            2            -0.528  
-##  8 Fernando Corrêa             2             0.00145
-##  9 Fernando Corrêa             2             0.341  
-## 10 Fernando Falbel             2            -0.482  
-## 11 Fernando Falbel             2            -0.0921 
-## 12 Julio    Amorim             2             0.0680 
-## 13 Julio    Amorim             2             0.540  
-## 14 Julio    Falbel             2             1.66   
-## 15 Julio    Falbel             2             1.83   
-## 16 William  Falbel             2             0.735  
-## 17 William  Falbel             2            -1.32
+##  1 Daniel   Corrêa             3             -0.442 
+##  2 Daniel   Corrêa             3             -0.286 
+##  3 Daniel   Corrêa             3             -0.511 
+##  4 Daniel   Damiani            2              1.10  
+##  5 Daniel   Damiani            2             -1.01  
+##  6 Fernando Amorim             3             -1.14  
+##  7 Fernando Amorim             3             -1.90  
+##  8 Fernando Amorim             3             -0.0187
+##  9 Julio    Damiani            2              0.910 
+## 10 Julio    Damiani            2              0.408 
+## 11 Julio    Trecenti           3             -1.43  
+## 12 Julio    Trecenti           3              1.47  
+## 13 Julio    Trecenti           3             -0.131 
+## 14 William  Amorim             2              0.648 
+## 15 William  Amorim             2             -0.147 
+## 16 William  Damiani            3              0.0508
+## 17 William  Damiani            3              1.41  
+## 18 William  Damiani            3              0.384
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.

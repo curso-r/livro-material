@@ -277,68 +277,68 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="o-operador-pipe" class="section level2">
 <h2><span class="header-section-number">6.1</span> O operador pipe</h2>
 <p>A ideia do operador <code>%&gt;%</code> (<em>pipe</em>) é bem simples: usar o valor resultante da expressão do lado esquerdo como primeiro argumento da função do lado direito.</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="6-1-o-operador-pipe.html#cb163-1"></a><span class="co"># As duas linhas abaixo são equivalentes.</span></span>
-<span id="cb163-2"><a href="6-1-o-operador-pipe.html#cb163-2"></a></span>
-<span id="cb163-3"><a href="6-1-o-operador-pipe.html#cb163-3"></a><span class="kw">f</span>(x, y)</span>
-<span id="cb163-4"><a href="6-1-o-operador-pipe.html#cb163-4"></a>x <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">f</span>(y)</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="6-1-o-operador-pipe.html#cb168-1"></a><span class="co"># As duas linhas abaixo são equivalentes.</span></span>
+<span id="cb168-2"><a href="6-1-o-operador-pipe.html#cb168-2"></a></span>
+<span id="cb168-3"><a href="6-1-o-operador-pipe.html#cb168-3"></a><span class="kw">f</span>(x, y)</span>
+<span id="cb168-4"><a href="6-1-o-operador-pipe.html#cb168-4"></a>x <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">f</span>(y)</span></code></pre></div>
 <p>Nos casos mais simples, o <em>pipe</em> parece não trazer grandes vantagens. Agora, veja como fica um caso com mais etapas.</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="6-1-o-operador-pipe.html#cb164-1"></a><span class="co"># Vamos calcular a raiz quadrada da soma dos valores de 1 a 4. Primeiro, sem o pipe.</span></span>
-<span id="cb164-2"><a href="6-1-o-operador-pipe.html#cb164-2"></a></span>
-<span id="cb164-3"><a href="6-1-o-operador-pipe.html#cb164-3"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb164-4"><a href="6-1-o-operador-pipe.html#cb164-4"></a><span class="kw">sqrt</span>(<span class="kw">sum</span>(x))</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="6-1-o-operador-pipe.html#cb169-1"></a><span class="co"># Vamos calcular a raiz quadrada da soma dos valores de 1 a 4. Primeiro, sem o pipe.</span></span>
+<span id="cb169-2"><a href="6-1-o-operador-pipe.html#cb169-2"></a></span>
+<span id="cb169-3"><a href="6-1-o-operador-pipe.html#cb169-3"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb169-4"><a href="6-1-o-operador-pipe.html#cb169-4"></a><span class="kw">sqrt</span>(<span class="kw">sum</span>(x))</span></code></pre></div>
 <pre><code>## [1] 3.162278</code></pre>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="6-1-o-operador-pipe.html#cb166-1"></a><span class="co"># Agora com o pipe.</span></span>
-<span id="cb166-2"><a href="6-1-o-operador-pipe.html#cb166-2"></a></span>
-<span id="cb166-3"><a href="6-1-o-operador-pipe.html#cb166-3"></a>x <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sqrt</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="6-1-o-operador-pipe.html#cb171-1"></a><span class="co"># Agora com o pipe.</span></span>
+<span id="cb171-2"><a href="6-1-o-operador-pipe.html#cb171-2"></a></span>
+<span id="cb171-3"><a href="6-1-o-operador-pipe.html#cb171-3"></a>x <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sqrt</span>()</span></code></pre></div>
 <pre><code>## [1] 3.162278</code></pre>
 <p>O caminho que o código <code>x %&gt;% sum %&gt;% sqrt</code> seguiu foi enviar o objeto <code>x</code> como argumento da função <code>sum()</code> e, em seguida, enviar a saida da expressão <code>sum(x)</code> como argumento da função <code>sqrt()</code>. Observe que escrevemos o código na mesma ordem em que as operações são realizadas. A utilização de parênteses após o nome das funções não é necessário, mas recomendável.</p>
 <p>Se você ainda não está convencido com o poder do <em>pipe</em>, fica que vai ter bolo!</p>
 <p>No exemplo abaixo, vamos ilustrar um caso em que temos um grande número de funções aninhadas. Veja como a utilização do <em>pipe</em> transforma um código confuso e difícil de ser lido em algo simples e intuitivo.</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="6-1-o-operador-pipe.html#cb168-1"></a><span class="co"># Receita de bolo sem pipe. Tente entender o que é preciso fazer.</span></span>
-<span id="cb168-2"><a href="6-1-o-operador-pipe.html#cb168-2"></a></span>
-<span id="cb168-3"><a href="6-1-o-operador-pipe.html#cb168-3"></a><span class="kw">esfrie</span>(</span>
-<span id="cb168-4"><a href="6-1-o-operador-pipe.html#cb168-4"></a>  <span class="kw">asse</span>(</span>
-<span id="cb168-5"><a href="6-1-o-operador-pipe.html#cb168-5"></a>    <span class="kw">coloque</span>(</span>
-<span id="cb168-6"><a href="6-1-o-operador-pipe.html#cb168-6"></a>      <span class="kw">bata</span>(</span>
-<span id="cb168-7"><a href="6-1-o-operador-pipe.html#cb168-7"></a>        <span class="kw">acrescente</span>(</span>
-<span id="cb168-8"><a href="6-1-o-operador-pipe.html#cb168-8"></a>          <span class="kw">recipiente</span>(</span>
-<span id="cb168-9"><a href="6-1-o-operador-pipe.html#cb168-9"></a>            <span class="kw">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), </span>
-<span id="cb168-10"><a href="6-1-o-operador-pipe.html#cb168-10"></a>            <span class="st">&quot;água&quot;</span>, </span>
-<span id="cb168-11"><a href="6-1-o-operador-pipe.html#cb168-11"></a>            <span class="st">&quot;fermento&quot;</span>, </span>
-<span id="cb168-12"><a href="6-1-o-operador-pipe.html#cb168-12"></a>            <span class="st">&quot;leite&quot;</span>, </span>
-<span id="cb168-13"><a href="6-1-o-operador-pipe.html#cb168-13"></a>            <span class="st">&quot;óleo&quot;</span></span>
-<span id="cb168-14"><a href="6-1-o-operador-pipe.html#cb168-14"></a>          ), </span>
-<span id="cb168-15"><a href="6-1-o-operador-pipe.html#cb168-15"></a>          <span class="st">&quot;farinha&quot;</span>, </span>
-<span id="cb168-16"><a href="6-1-o-operador-pipe.html#cb168-16"></a>          <span class="dt">ate =</span> <span class="st">&quot;macio&quot;</span></span>
-<span id="cb168-17"><a href="6-1-o-operador-pipe.html#cb168-17"></a>        ), </span>
-<span id="cb168-18"><a href="6-1-o-operador-pipe.html#cb168-18"></a>        <span class="dt">duracao =</span> <span class="st">&quot;3min&quot;</span></span>
-<span id="cb168-19"><a href="6-1-o-operador-pipe.html#cb168-19"></a>      ), </span>
-<span id="cb168-20"><a href="6-1-o-operador-pipe.html#cb168-20"></a>      <span class="dt">lugar =</span> <span class="st">&quot;forma&quot;</span>, </span>
-<span id="cb168-21"><a href="6-1-o-operador-pipe.html#cb168-21"></a>      <span class="dt">tipo =</span> <span class="st">&quot;grande&quot;</span>, </span>
-<span id="cb168-22"><a href="6-1-o-operador-pipe.html#cb168-22"></a>      <span class="dt">untada =</span> <span class="ot">TRUE</span></span>
-<span id="cb168-23"><a href="6-1-o-operador-pipe.html#cb168-23"></a>    ), </span>
-<span id="cb168-24"><a href="6-1-o-operador-pipe.html#cb168-24"></a>    <span class="dt">duracao =</span> <span class="st">&quot;50min&quot;</span></span>
-<span id="cb168-25"><a href="6-1-o-operador-pipe.html#cb168-25"></a>  ), </span>
-<span id="cb168-26"><a href="6-1-o-operador-pipe.html#cb168-26"></a>  <span class="dt">lugar =</span> <span class="st">&quot;geladeira&quot;</span>, </span>
-<span id="cb168-27"><a href="6-1-o-operador-pipe.html#cb168-27"></a>  <span class="dt">duracao =</span> <span class="st">&quot;20min&quot;</span></span>
-<span id="cb168-28"><a href="6-1-o-operador-pipe.html#cb168-28"></a>)</span>
-<span id="cb168-29"><a href="6-1-o-operador-pipe.html#cb168-29"></a></span>
-<span id="cb168-30"><a href="6-1-o-operador-pipe.html#cb168-30"></a></span>
-<span id="cb168-31"><a href="6-1-o-operador-pipe.html#cb168-31"></a><span class="co"># Veja como o código acima pode ser reescrito utilizando-se o pipe. Agora realmente se parece com uma receita de bolo.</span></span>
-<span id="cb168-32"><a href="6-1-o-operador-pipe.html#cb168-32"></a></span>
-<span id="cb168-33"><a href="6-1-o-operador-pipe.html#cb168-33"></a><span class="kw">recipiente</span>(<span class="kw">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), <span class="st">&quot;água&quot;</span>, <span class="st">&quot;fermento&quot;</span>, <span class="st">&quot;leite&quot;</span>, <span class="st">&quot;óleo&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb168-34"><a href="6-1-o-operador-pipe.html#cb168-34"></a><span class="st">  </span><span class="kw">acrescente</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dt">ate =</span> <span class="st">&quot;macio&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb168-35"><a href="6-1-o-operador-pipe.html#cb168-35"></a><span class="st">  </span><span class="kw">bata</span>(<span class="dt">duracao =</span> <span class="st">&quot;3min&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb168-36"><a href="6-1-o-operador-pipe.html#cb168-36"></a><span class="st">  </span><span class="kw">coloque</span>(<span class="dt">lugar =</span> <span class="st">&quot;forma&quot;</span>, <span class="dt">tipo =</span> <span class="st">&quot;grande&quot;</span>, <span class="dt">untada =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
-<span id="cb168-37"><a href="6-1-o-operador-pipe.html#cb168-37"></a><span class="st">  </span><span class="kw">asse</span>(<span class="dt">duracao =</span> <span class="st">&quot;50min&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb168-38"><a href="6-1-o-operador-pipe.html#cb168-38"></a><span class="st">  </span><span class="kw">esfrie</span>(<span class="dt">lugar =</span> <span class="st">&quot;geladeira&quot;</span>, <span class="dt">duracao =</span> <span class="st">&quot;20min&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="6-1-o-operador-pipe.html#cb173-1"></a><span class="co"># Receita de bolo sem pipe. Tente entender o que é preciso fazer.</span></span>
+<span id="cb173-2"><a href="6-1-o-operador-pipe.html#cb173-2"></a></span>
+<span id="cb173-3"><a href="6-1-o-operador-pipe.html#cb173-3"></a><span class="kw">esfrie</span>(</span>
+<span id="cb173-4"><a href="6-1-o-operador-pipe.html#cb173-4"></a>  <span class="kw">asse</span>(</span>
+<span id="cb173-5"><a href="6-1-o-operador-pipe.html#cb173-5"></a>    <span class="kw">coloque</span>(</span>
+<span id="cb173-6"><a href="6-1-o-operador-pipe.html#cb173-6"></a>      <span class="kw">bata</span>(</span>
+<span id="cb173-7"><a href="6-1-o-operador-pipe.html#cb173-7"></a>        <span class="kw">acrescente</span>(</span>
+<span id="cb173-8"><a href="6-1-o-operador-pipe.html#cb173-8"></a>          <span class="kw">recipiente</span>(</span>
+<span id="cb173-9"><a href="6-1-o-operador-pipe.html#cb173-9"></a>            <span class="kw">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), </span>
+<span id="cb173-10"><a href="6-1-o-operador-pipe.html#cb173-10"></a>            <span class="st">&quot;água&quot;</span>, </span>
+<span id="cb173-11"><a href="6-1-o-operador-pipe.html#cb173-11"></a>            <span class="st">&quot;fermento&quot;</span>, </span>
+<span id="cb173-12"><a href="6-1-o-operador-pipe.html#cb173-12"></a>            <span class="st">&quot;leite&quot;</span>, </span>
+<span id="cb173-13"><a href="6-1-o-operador-pipe.html#cb173-13"></a>            <span class="st">&quot;óleo&quot;</span></span>
+<span id="cb173-14"><a href="6-1-o-operador-pipe.html#cb173-14"></a>          ), </span>
+<span id="cb173-15"><a href="6-1-o-operador-pipe.html#cb173-15"></a>          <span class="st">&quot;farinha&quot;</span>, </span>
+<span id="cb173-16"><a href="6-1-o-operador-pipe.html#cb173-16"></a>          <span class="dt">ate =</span> <span class="st">&quot;macio&quot;</span></span>
+<span id="cb173-17"><a href="6-1-o-operador-pipe.html#cb173-17"></a>        ), </span>
+<span id="cb173-18"><a href="6-1-o-operador-pipe.html#cb173-18"></a>        <span class="dt">duracao =</span> <span class="st">&quot;3min&quot;</span></span>
+<span id="cb173-19"><a href="6-1-o-operador-pipe.html#cb173-19"></a>      ), </span>
+<span id="cb173-20"><a href="6-1-o-operador-pipe.html#cb173-20"></a>      <span class="dt">lugar =</span> <span class="st">&quot;forma&quot;</span>, </span>
+<span id="cb173-21"><a href="6-1-o-operador-pipe.html#cb173-21"></a>      <span class="dt">tipo =</span> <span class="st">&quot;grande&quot;</span>, </span>
+<span id="cb173-22"><a href="6-1-o-operador-pipe.html#cb173-22"></a>      <span class="dt">untada =</span> <span class="ot">TRUE</span></span>
+<span id="cb173-23"><a href="6-1-o-operador-pipe.html#cb173-23"></a>    ), </span>
+<span id="cb173-24"><a href="6-1-o-operador-pipe.html#cb173-24"></a>    <span class="dt">duracao =</span> <span class="st">&quot;50min&quot;</span></span>
+<span id="cb173-25"><a href="6-1-o-operador-pipe.html#cb173-25"></a>  ), </span>
+<span id="cb173-26"><a href="6-1-o-operador-pipe.html#cb173-26"></a>  <span class="dt">lugar =</span> <span class="st">&quot;geladeira&quot;</span>, </span>
+<span id="cb173-27"><a href="6-1-o-operador-pipe.html#cb173-27"></a>  <span class="dt">duracao =</span> <span class="st">&quot;20min&quot;</span></span>
+<span id="cb173-28"><a href="6-1-o-operador-pipe.html#cb173-28"></a>)</span>
+<span id="cb173-29"><a href="6-1-o-operador-pipe.html#cb173-29"></a></span>
+<span id="cb173-30"><a href="6-1-o-operador-pipe.html#cb173-30"></a></span>
+<span id="cb173-31"><a href="6-1-o-operador-pipe.html#cb173-31"></a><span class="co"># Veja como o código acima pode ser reescrito utilizando-se o pipe. Agora realmente se parece com uma receita de bolo.</span></span>
+<span id="cb173-32"><a href="6-1-o-operador-pipe.html#cb173-32"></a></span>
+<span id="cb173-33"><a href="6-1-o-operador-pipe.html#cb173-33"></a><span class="kw">recipiente</span>(<span class="kw">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), <span class="st">&quot;água&quot;</span>, <span class="st">&quot;fermento&quot;</span>, <span class="st">&quot;leite&quot;</span>, <span class="st">&quot;óleo&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb173-34"><a href="6-1-o-operador-pipe.html#cb173-34"></a><span class="st">  </span><span class="kw">acrescente</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dt">ate =</span> <span class="st">&quot;macio&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb173-35"><a href="6-1-o-operador-pipe.html#cb173-35"></a><span class="st">  </span><span class="kw">bata</span>(<span class="dt">duracao =</span> <span class="st">&quot;3min&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb173-36"><a href="6-1-o-operador-pipe.html#cb173-36"></a><span class="st">  </span><span class="kw">coloque</span>(<span class="dt">lugar =</span> <span class="st">&quot;forma&quot;</span>, <span class="dt">tipo =</span> <span class="st">&quot;grande&quot;</span>, <span class="dt">untada =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
+<span id="cb173-37"><a href="6-1-o-operador-pipe.html#cb173-37"></a><span class="st">  </span><span class="kw">asse</span>(<span class="dt">duracao =</span> <span class="st">&quot;50min&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb173-38"><a href="6-1-o-operador-pipe.html#cb173-38"></a><span class="st">  </span><span class="kw">esfrie</span>(<span class="dt">lugar =</span> <span class="st">&quot;geladeira&quot;</span>, <span class="dt">duracao =</span> <span class="st">&quot;20min&quot;</span>)</span></code></pre></div>
 <p>Às vezes, queremos que o resultado do lado esquerdo vá para outro argumento do lado direito que não o primeiro. Para isso, utilizamos um <code>.</code> como marcador.</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="6-1-o-operador-pipe.html#cb169-1"></a><span class="co"># Queremos que o dataset seja recebido pelo segundo argumento (data=) da função &quot;lm&quot;.</span></span>
-<span id="cb169-2"><a href="6-1-o-operador-pipe.html#cb169-2"></a></span>
-<span id="cb169-3"><a href="6-1-o-operador-pipe.html#cb169-3"></a>airquality <span class="op">%&gt;%</span></span>
-<span id="cb169-4"><a href="6-1-o-operador-pipe.html#cb169-4"></a><span class="st">  </span><span class="kw">na.omit</span>() <span class="op">%&gt;%</span></span>
-<span id="cb169-5"><a href="6-1-o-operador-pipe.html#cb169-5"></a><span class="st">  </span><span class="kw">lm</span>(Ozone <span class="op">~</span><span class="st"> </span>Wind <span class="op">+</span><span class="st"> </span>Temp <span class="op">+</span><span class="st"> </span>Solar.R, <span class="dt">data =</span> .) <span class="op">%&gt;%</span></span>
-<span id="cb169-6"><a href="6-1-o-operador-pipe.html#cb169-6"></a><span class="st">  </span><span class="kw">summary</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="6-1-o-operador-pipe.html#cb174-1"></a><span class="co"># Queremos que o dataset seja recebido pelo segundo argumento (data=) da função &quot;lm&quot;.</span></span>
+<span id="cb174-2"><a href="6-1-o-operador-pipe.html#cb174-2"></a></span>
+<span id="cb174-3"><a href="6-1-o-operador-pipe.html#cb174-3"></a>airquality <span class="op">%&gt;%</span></span>
+<span id="cb174-4"><a href="6-1-o-operador-pipe.html#cb174-4"></a><span class="st">  </span><span class="kw">na.omit</span>() <span class="op">%&gt;%</span></span>
+<span id="cb174-5"><a href="6-1-o-operador-pipe.html#cb174-5"></a><span class="st">  </span><span class="kw">lm</span>(Ozone <span class="op">~</span><span class="st"> </span>Wind <span class="op">+</span><span class="st"> </span>Temp <span class="op">+</span><span class="st"> </span>Solar.R, <span class="dt">data =</span> .) <span class="op">%&gt;%</span></span>
+<span id="cb174-6"><a href="6-1-o-operador-pipe.html#cb174-6"></a><span class="st">  </span><span class="kw">summary</span>()</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Ozone ~ Wind + Temp + Solar.R, data = .)

@@ -1328,6 +1328,7 @@ Esse argumento diz à função para remover os `NA`s antes de calcular a média.
 Claro que cada função tem os seus próprios argumentos e nem toda função terá o argumento `na.rm=`. Para saber quais são e como usar os argumentos de uma função, basta acessar a sua documentação:
 
 
+
 ```r
 help(mean)
 ```
@@ -1505,7 +1506,7 @@ x <- 1
 if (x == 1) {         
   Sys.time()
 }
-## [1] "2020-08-21 19:40:23 -03"
+## [1] "2020-09-09 22:25:24 -03"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se a expressão que estiver dentro dos parênteses `()` retornar `TRUE`. Veja outro exemplo:

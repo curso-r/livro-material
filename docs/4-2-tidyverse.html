@@ -280,18 +280,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>No entanto, é possível definir <em>como se faz</em> ciência de dados. Ou seja, independentemente da definição do termo, o que temos de fazer na prática em projetos reais é algo bastante conhecido.</p>
 <p>O “como faz” é definido através do <em>Ciclo da Ciência de Dados</em>, descrito na Figura <a href="4-2-tidyverse.html#fig:04-ciclo">4.1</a>. Primeiro, os dados brutos são coletados de fontes públicas, como arquivos Excel, portais de dados abertos ou bases de dados internos da companhia. Em seguida, os dados são arrumados, para mitigar problemas de padronização de nomes, obtenção das variáveis de interesse e exclusão de casos que estão fora do escopo de análise, produzindo o que se define como base de dados analítica. A base analítica é então transformada para produzir as tabelas e gráficos e, quando necessário, são utilizadas como insumo para o ajuste de modelos estatísticos. Finalmente, os resultados obtidos são comunicados através de uma série de ferramentas, como relatórios, dashboards interativos, indicadores ou Application Programming Interfaces (API) para automação.</p>
 <div class="figure" style="text-align: center"><span id="fig:04-ciclo"></span>
-<img src="assets/img/manipulacao/ciclo-ciencia-de-dados.png" alt="O Ciclo da Ciência de Dados." width="479" />
+<img src="https://raw.githubusercontent.com/curso-r/livro-material/master/assets/img/manipulacao/ciclo-ciencia-de-dados.png" alt="O Ciclo da Ciência de Dados."  />
 <p class="caption">
 Figura 4.1: O Ciclo da Ciência de Dados.
 </p>
 </div>
 <p>O <code>{tidyverse}</code> é um pacote guarda-chuva que consolida uma série de ferramentas que fazem parte o ciclo da ciência de dados. Fazem parte do <code>{tidyverse}</code> os pacotes <code>{ggplot2}</code>, <code>{dplyr}</code>, <code>{tidyr}</code>, <code>{purrr}</code>, <code>{readr}</code>, entre muitos outros, como é possível observar na Figura <a href="4-2-tidyverse.html#fig:04-ciclo-pacotes">4.2</a>. Veremos as características principais desses pacotes nas próximas Seções.</p>
 <div class="figure" style="text-align: center"><span id="fig:04-ciclo-pacotes"></span>
-<img src="assets/img/pacotes/ciclo-ciencia-de-dados-pacotes.png" alt="A implementação do Ciclo da Ciência de Dados, através do tidyverse. Pela definição estrita do tidyverse, na imagem não fazem parte do tidyverse os pacotes janitor, data.table e os pacotes descritos nas partes de modelagem, comunicação e automatização. No entanto, a maioria desses pacotes também seguem os princípios tidy e podem ser usados em conjunto com o tidyverse sem grandes dificuldades." width="479" />
+<img src="https://raw.githubusercontent.com/curso-r/livro-material/master/assets/img/pacotes/ciclo-ciencia-de-dados-pacotes.png" alt="A implementação do Ciclo da Ciência de Dados, através do tidyverse. Pela definição estrita do tidyverse, na imagem não fazem parte do tidyverse os pacotes janitor, data.table e os pacotes descritos nas partes de modelagem, comunicação e automatização. No entanto, a maioria desses pacotes também seguem os princípios tidy e podem ser usados em conjunto com o tidyverse sem grandes dificuldades."  />
 <p class="caption">
 Figura 4.2: A implementação do Ciclo da Ciência de Dados, através do tidyverse. Pela definição estrita do tidyverse, na imagem não fazem parte do tidyverse os pacotes janitor, data.table e os pacotes descritos nas partes de modelagem, comunicação e automatização. No entanto, a maioria desses pacotes também seguem os princípios tidy e podem ser usados em conjunto com o tidyverse sem grandes dificuldades.
 </p>
 </div>
+<p><br></p>
 <p>O <code>{tidyverse}</code> traz consigo o <a href="https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html"><em>manifesto tidy</em></a>. Trata-se de um documento que formaliza uma série de princípios que norteiam o desenvolvimento do tidyverse. Como os pacotes do <code>{tidyverse}</code> compartilham os mesmos princípios, podem ser utilizados naturalmente em conjunto.</p>
 <p>Pode-se dizer que existe uma linguagem R antes e outra depois do <code>{tidyverse}</code>. A linguagem mudou muito, a comunidade abraçou uso desses princípios e criou centenas de novos pacotes que conversam uns com os outros dessa forma.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
 <p>Os princípios fundamentais do tidyverse são:</p>
@@ -302,6 +303,30 @@ Figura 4.2: A implementação do Ciclo da Ciência de Dados, através do tidyver
 <li>Projetado para ser usado por seres humanos.</li>
 </ol>
 <p>No texto do <a href="https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html">manifesto tidy</a> cada um dos lemas é descrito de forma detalhada. No <a href="https://www.curso-r.com/blog/2017-02-16-manifesto-tidy/">nosso blog</a>, selecionamos os aspectos que achamos mais importante de cada um deles.</p>
+<p><img src="https://github.com/curso-r/livro-material/blob/master/assets/img/pacotes/tidyverse_celestial.png?raw=true" width="500" height="500" style="display: block; margin: auto;" /></p>
+<p>Na prática, carregar o (veja o código abaixo) é o mesmo que carregar os seguintes pacotes:</p>
+<ul>
+<li><p><code>{tibble}</code> para <em>data frames</em> repaginados;</p></li>
+<li><p><code>{readr}</code> para importarmos bases para o R;</p></li>
+<li><p><code>{tidyr}</code> e <code>{dplyr}</code> para arrumação e manipulação de dados;</p></li>
+<li><p><code>{stringr}</code> para trabalharmos com textos;</p></li>
+<li><p><code>{forcats}</code> para trabalharmos com fatores;</p></li>
+<li><p><code>{ggplot2}</code> para gráficos;</p></li>
+<li><p><code>{purrr}</code> para programação funcional.</p></li>
+</ul>
+<p>Embora o <code>{tidyverse}</code> instale diversos outros pacotes, apenas esses são carrregados. Dificilmente fazemos uma análise de dados em que não precisamos usá-los. Falaremos com mais detalhes de todos eles neste livro.</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="4-2-tidyverse.html#cb114-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching packages ───────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.0     ✓ purrr   0.3.4
+## ✓ tibble  3.0.1     ✓ dplyr   1.0.0
+## ✓ tidyr   1.0.3     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ── Conflicts ──────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<p>Mensagens de conflito quando carregamos o <code>{tidyverse}</code> ou qualquer outro pacote significam que funções anteriormente carregadas foram <em>mascaradas</em> por novas funções. No exemplo acima, as funções <code>filter()</code> e <code>lag()</code> do pacote <code>stats</code> foram substituídas na sessão pelas funções <code>filter()</code> e <code>lag()</code> do pacote <code>dplyr</code>. Nesse caso, se quiséssemos usar as funções do pacote <code>stats</code> após carregar o <code>{tidyverse}</code>, precisaríamos rodar <code>stats::filter()</code> e <code>stats::lag()</code>.</p>
+<p>Se você quiser <em>descarregar</em> um pacote, reinicie a sua sessão em <code>Session &gt; Restart R</code> ou use a função <code>detach()</code> como no exemplo abaixo.</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="4-2-tidyverse.html#cb118-1"></a><span class="kw">detach</span>(<span class="st">&quot;package:tidyverse&quot;</span>, <span class="dt">unload =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 
 </div>
 <!-- </div> -->
