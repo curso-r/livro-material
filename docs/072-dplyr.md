@@ -1,6 +1,5 @@
 ## O pacote dplyr {#dplyr}
 
-
 O `dplyr` é o pacote mais útil para realizar transformação de dados, aliando simplicidade e eficiência de uma forma elegante. Os scripts em R que fazem uso inteligente dos verbos `dplyr` e as facilidades do operador _pipe_ tendem a ficar mais legíveis e organizados sem perder velocidade de execução.
 
 As principais funções do `dplyr` são:
@@ -26,6 +25,62 @@ As principais vantagens de se usar o `dplyr` em detrimento das funções do R ba
 - O pacote `dplyr` utiliza `C` e `C++` por trás da maioria das funções, o que geralmente torna o código mais eficiente.
 - É possível trabalhar com diferentes fontes de dados, como bases relacionais (SQL) e `data.table`.
 
+Para instalar esse pacote...
+
+
+```r
+library(dplyr )
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+
+Neste capítulo, vamos trabalhar com uma base de filmes do IMDB. Essa base pode ser baixada [clicando aqui](https://github.com/curso-r/site-v2/raw/master/content/material/importacao/data/imdb.rds).
+
+
+```r
+imdb <- readr::read_rds("assets/data/imdb.rds")
+```
+
+Assim, utilizaremos o objeto `imdb` para acessar os dados.
+
+
+```r
+imdb
+```
+
+```
+## # A tibble: 3,807 x 15
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
+##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
+##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
+##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
+##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
+##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
+##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
+##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
+##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
+##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
+## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
+## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
+## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
+```
 
 
 Agora, vamos avaliar com mais detalhes as principais funções do pacote `dplyr`.
@@ -35,8 +90,6 @@ Agora, vamos avaliar com mais detalhes as principais funções do pacote `dplyr`
 ### Filtrando linhas
 
 A função `filter()` filtra linhas. Ela é semelhante à função `subset()`, do R base. O código abaixo retorna apenas filmes com nota maior que nova.
-
-
 
 
 

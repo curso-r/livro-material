@@ -1,5 +1,7 @@
 # Pacotes {#pacotes}
 
+A primeira aparição da linguagem de progromação R foi em 1993 e, apesar de lá para cá muita coisa ter sido desenvolvida e atualizada, é muito difícil fazer mudanças na base da linguagem sem quebrar os códigos já existentes. Por essa razão, as maiores inovações são realizadas na forma de pacotes.
+
 Um pacote é um conjunto de funções que têm como objetivo resolver um problema específico. São eles que deixam o R poderoso, capaz de enfrentar qualquer tarefa de análise de dados. Assim, fique bastante à vontade para instalar e atualizar muitos e muitos pacotes ao longo da sua experiência com o R.
 
 O legal é que qualquer pessoa pode fazer um novo pacote e disponibilizar para a comunidade, o que acelera bastante o desenvolvemento da ferramenta. Dificilmente você vai fazer uma análise apenas com as funções básicas do R e dificilmente não vai existir um pacote com as funções que você precisa.

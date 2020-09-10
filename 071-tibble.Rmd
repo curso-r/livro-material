@@ -1,0 +1,81 @@
+## Tibbles
+
+Uma *tibble* é um *data frame* com ajustes que as deixam mais amigáveis a nós cientistas de dados. Elas são parte do pacote `{tibble}`. Assim, para começar a usá-las, instale e carregue o pacote.
+
+```{r, eval = FALSE}
+install.packages("tibble")
+library(tibble)
+```
+
+
+```{r, include=FALSE}
+library(tibble)
+```
+
+Há duas formas de criar uma *tibble*. A primeira é transformar um *data frame* em *tibble* utilizando a função `as_tibble()`.
+
+```{r}
+as_tibble(mtcars)
+```
+
+Veja que, por padrão, apenas as dez primeiras linhas da base são apresentadas. Além disso, colunas que não couberem na largura da tela serão omitidas. Também são apresentadas a dimensão da tabela e as classes de cada coluna. Compare a diferença de impressão com relação a um *data frame*.
+
+```{r}
+mtcars
+```
+
+Veja também que, ao contrário dos *data frames*, *tibbles* não utilizam nome nas linhas. 
+
+A segunda forma de criar uma *tibble* é a partir de vetores individuais, utilizando a função `tibble()`.
+
+```{r}
+tibble(
+  coluna1 = c("a", "b", "c", "d"),
+  coluna2 = 1:4,
+  coluna3 = coluna2 ^ 2,
+  coluna4 = 0
+)
+```
+Observamos pelo código acima que:
+
+- podemos criar uma coluna a partir de uma função de colunas anteriores (a `coluna3` é uma função da `coluna2`);
+- se passarmos um vetor de tamanho 1 a uma das colunas, esse vetor será reciclado, igualando-se ao número de linha da *tibble* (o `0` na `coluna4` é transformado em `c(0, 0, 0, 0)`).
+
+Uma outra diferença entre *data frames* e *tibbles* está no *subsetting*. *Tibbles* **nunca fazem correspondência parcial**. Tibbles retornam `NULL` e um aviso quando você tenta selecionar uma coluna que não existe.
+
+```{r}
+# O nome da coluna é disp, mas você pode acessá-la
+# apenas a procurando por "dis", já que não existe
+# nenhuma outra coluna que começa com "dis".
+mtcars$dis
+
+# Em tibbles isso não funciona.
+mtcars_tibble <- as_tibble(mtcars)
+mtcars_tibble$dis
+```
+
+Além de nos possibilitar a criar *tibbles*, o pacote `{tibble}` possui algumas funções úteis para manipularmos esses objetos:
+
+- `add_row()` e `add_column()`: para adicionar linhas e colunas a uma *tibble*;
+
+- `rowid_to_column()`: cria uma coluna com um `id` numérico e sequencial para as linhas, começando de `1`.
+
+```{r}
+mtcars %>% 
+  rowid_to_column() %>% 
+  head(10)
+```
+
+- `has_rownames()`: verifica se um *data frame* possui linhas nomeadas.
+
+- `remove_rownames()`: remove o nome das linhas de um *data frame*.
+
+- `rownames_to_column()`: transforma o nome das linhas em uma coluna.
+
+```{r}
+rownames_to_column(mtcars, var = "modelo_do_carro")
+```
+
+- `column_to_rownames()`: transforma uma coluna em nomes das linhas.
+
+Mais informações sobre `tibbles` podem ser encontradas [neste tutorial do RStudio](https://tibble.tidyverse.org/) e [neste caplítulo do R for Data Science](http://r4ds.had.co.nz/tibbles.html).

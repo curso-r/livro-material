@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7.1 Trabalhando com tibbles | Ciência de Dados em R</title>
+  <title>7.1 Tibbles | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7.1 Trabalhando com tibbles | Ciência de Dados em R" />
+  <meta property="og:title" content="7.1 Tibbles | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7.1 Trabalhando com tibbles | Ciência de Dados em R" />
+  <meta name="twitter:title" content="7.1 Tibbles | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -218,7 +218,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3" data-path="6-3-exercícios-6.html"><a href="6-3-exercícios-6.html"><i class="fa fa-check"></i><b>6.3</b> Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
-<li class="chapter" data-level="7.1" data-path="7-1-trabalhando-com-tibbles.html"><a href="7-1-trabalhando-com-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Trabalhando com tibbles</a></li>
+<li class="chapter" data-level="7.1" data-path="7-1-tibbles.html"><a href="7-1-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Tibbles</a></li>
 <li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#filtrando-linhas"><i class="fa fa-check"></i><b>7.2.1</b> Filtrando linhas</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#selecionando-colunas"><i class="fa fa-check"></i><b>7.2.2</b> Selecionando colunas</a></li>
@@ -274,33 +274,157 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="trabalhando-com-tibbles" class="section level2">
-<h2><span class="header-section-number">7.1</span> Trabalhando com tibbles</h2>
-<p>Uma <code>tibble</code> nada mais é do que um <code>data.frame</code>, mas com um método de impressão mais adequado.</p>
-<p>As <code>tibbles</code> são parte do pacote <code>tibble</code>. Assim, para começar a usá-las, instale e carregue o pacote.</p>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="7-1-trabalhando-com-tibbles.html#cb199-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tibble&quot;</span>)</span>
-<span id="cb199-2"><a href="7-1-trabalhando-com-tibbles.html#cb199-2"></a><span class="kw">library</span>(tibble)</span></code></pre></div>
-<p>Mais informações sobre <code>tibbles</code> podem ser encontradas <a href="http://r4ds.had.co.nz/tibbles.html">neste link</a>.</p>
-<p>Nessa seção, vamos trabalhar com uma base de filmes do IMDB. Essa base pode ser baixada <a href="https://github.com/curso-r/site-v2/raw/master/content/material/importacao/data/imdb.rds">clicando aqui</a>.</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="7-1-trabalhando-com-tibbles.html#cb200-1"></a>imdb &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_rds</span>(<span class="st">&quot;assets/data/imdb.rds&quot;</span>)</span></code></pre></div>
-<p>Assim, utilizaremos o objeto <code>imdb</code> para acessar os dados.</p>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="7-1-trabalhando-com-tibbles.html#cb201-1"></a>imdb</span></code></pre></div>
-<pre><code>## # A tibble: 3,807 x 15
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
-##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
-##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
-##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
-##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
-##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
-##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
-##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
-## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
-## # … with 3,797 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
-## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
-<p>Veja que, por padrão, apenas as dez primeiras linhas da <code>tibble</code> são impressas na tela. Além disso, as colunas que não couberem na largura do console serão omitidas. Também são apresentadas a dimensão da tabela e as classes de cada coluna.</p>
+<div id="tibbles" class="section level2">
+<h2><span class="header-section-number">7.1</span> Tibbles</h2>
+<p>Uma <em>tibble</em> é um <em>data frame</em> com ajustes que as deixam mais amigáveis a nós cientistas de dados. Elas são parte do pacote <code>{tibble}</code>. Assim, para começar a usá-las, instale e carregue o pacote.</p>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="7-1-tibbles.html#cb198-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tibble&quot;</span>)</span>
+<span id="cb198-2"><a href="7-1-tibbles.html#cb198-2"></a><span class="kw">library</span>(tibble)</span></code></pre></div>
+<p>Há duas formas de criar uma <em>tibble</em>. A primeira é transformar um <em>data frame</em> em <em>tibble</em> utilizando a função <code>as_tibble()</code>.</p>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="7-1-tibbles.html#cb199-1"></a><span class="kw">as_tibble</span>(mtcars)</span></code></pre></div>
+<pre><code>## # A tibble: 32 x 11
+##      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1  21       6  160    110  3.9   2.62  16.5     0     1     4     4
+##  2  21       6  160    110  3.9   2.88  17.0     0     1     4     4
+##  3  22.8     4  108     93  3.85  2.32  18.6     1     1     4     1
+##  4  21.4     6  258    110  3.08  3.22  19.4     1     0     3     1
+##  5  18.7     8  360    175  3.15  3.44  17.0     0     0     3     2
+##  6  18.1     6  225    105  2.76  3.46  20.2     1     0     3     1
+##  7  14.3     8  360    245  3.21  3.57  15.8     0     0     3     4
+##  8  24.4     4  147.    62  3.69  3.19  20       1     0     4     2
+##  9  22.8     4  141.    95  3.92  3.15  22.9     1     0     4     2
+## 10  19.2     6  168.   123  3.92  3.44  18.3     1     0     4     4
+## # … with 22 more rows</code></pre>
+<p>Veja que, por padrão, apenas as dez primeiras linhas da base são apresentadas. Além disso, colunas que não couberem na largura da tela serão omitidas. Também são apresentadas a dimensão da tabela e as classes de cada coluna. Compare a diferença de impressão com relação a um <em>data frame</em>.</p>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="7-1-tibbles.html#cb201-1"></a>mtcars</span></code></pre></div>
+<pre><code>##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+## Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+## Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+## Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+## Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+## Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+## Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
+## Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
+## Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
+## Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+## Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
+## Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+## Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
+## Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
+## Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+## Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
+## Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+## AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
+## Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
+## Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
+## Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
+## Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
+## Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
+## Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
+## Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
+## Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
+## Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></pre>
+<p>Veja também que, ao contrário dos <em>data frames</em>, <em>tibbles</em> não utilizam nome nas linhas.</p>
+<p>A segunda forma de criar uma <em>tibble</em> é a partir de vetores individuais, utilizando a função <code>tibble()</code>.</p>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="7-1-tibbles.html#cb203-1"></a><span class="kw">tibble</span>(</span>
+<span id="cb203-2"><a href="7-1-tibbles.html#cb203-2"></a>  <span class="dt">coluna1 =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>),</span>
+<span id="cb203-3"><a href="7-1-tibbles.html#cb203-3"></a>  <span class="dt">coluna2 =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,</span>
+<span id="cb203-4"><a href="7-1-tibbles.html#cb203-4"></a>  <span class="dt">coluna3 =</span> coluna2 <span class="op">^</span><span class="st"> </span><span class="dv">2</span>,</span>
+<span id="cb203-5"><a href="7-1-tibbles.html#cb203-5"></a>  <span class="dt">coluna4 =</span> <span class="dv">0</span></span>
+<span id="cb203-6"><a href="7-1-tibbles.html#cb203-6"></a>)</span></code></pre></div>
+<pre><code>## # A tibble: 4 x 4
+##   coluna1 coluna2 coluna3 coluna4
+##   &lt;chr&gt;     &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 a             1       1       0
+## 2 b             2       4       0
+## 3 c             3       9       0
+## 4 d             4      16       0</code></pre>
+<p>Observamos pelo código acima que:</p>
+<ul>
+<li>podemos criar uma coluna a partir de uma função de colunas anteriores (a <code>coluna3</code> é uma função da <code>coluna2</code>);</li>
+<li>se passarmos um vetor de tamanho 1 a uma das colunas, esse vetor será reciclado, igualando-se ao número de linha da <em>tibble</em> (o <code>0</code> na <code>coluna4</code> é transformado em <code>c(0, 0, 0, 0)</code>).</li>
+</ul>
+<p>Uma outra diferença entre <em>data frames</em> e <em>tibbles</em> está no <em>subsetting</em>. <em>Tibbles</em> <strong>nunca fazem correspondência parcial</strong>. Tibbles retornam <code>NULL</code> e um aviso quando você tenta selecionar uma coluna que não existe.</p>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="7-1-tibbles.html#cb205-1"></a><span class="co"># O nome da coluna é disp, mas você pode acessá-la</span></span>
+<span id="cb205-2"><a href="7-1-tibbles.html#cb205-2"></a><span class="co"># apenas a procurando por &quot;dis&quot;, já que não existe</span></span>
+<span id="cb205-3"><a href="7-1-tibbles.html#cb205-3"></a><span class="co"># nenhuma outra coluna que começa com &quot;dis&quot;.</span></span>
+<span id="cb205-4"><a href="7-1-tibbles.html#cb205-4"></a>mtcars<span class="op">$</span>dis</span></code></pre></div>
+<pre><code>##  [1] 160.0 160.0 108.0 258.0 360.0 225.0 360.0 146.7 140.8 167.6 167.6 275.8
+## [13] 275.8 275.8 472.0 460.0 440.0  78.7  75.7  71.1 120.1 318.0 304.0 350.0
+## [25] 400.0  79.0 120.3  95.1 351.0 145.0 301.0 121.0</code></pre>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="7-1-tibbles.html#cb207-1"></a><span class="co"># Em tibbles isso não funciona.</span></span>
+<span id="cb207-2"><a href="7-1-tibbles.html#cb207-2"></a>mtcars_tibble &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(mtcars)</span>
+<span id="cb207-3"><a href="7-1-tibbles.html#cb207-3"></a>mtcars_tibble<span class="op">$</span>dis</span></code></pre></div>
+<pre><code>## Warning: Unknown or uninitialised column: `dis`.</code></pre>
+<pre><code>## NULL</code></pre>
+<p>Além de nos possibilitar a criar <em>tibbles</em>, o pacote <code>{tibble}</code> possui algumas funções úteis para manipularmos esses objetos:</p>
+<ul>
+<li><p><code>add_row()</code> e <code>add_column()</code>: para adicionar linhas e colunas a uma <em>tibble</em>;</p></li>
+<li><p><code>rowid_to_column()</code>: cria uma coluna com um <code>id</code> numérico e sequencial para as linhas, começando de <code>1</code>.</p></li>
+</ul>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="7-1-tibbles.html#cb210-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb210-2"><a href="7-1-tibbles.html#cb210-2"></a><span class="st">  </span><span class="kw">rowid_to_column</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb210-3"><a href="7-1-tibbles.html#cb210-3"></a><span class="st">  </span><span class="kw">head</span>(<span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##    rowid  mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## 1      1 21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+## 2      2 21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## 3      3 22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+## 4      4 21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+## 5      5 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+## 6      6 18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+## 7      7 14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+## 8      8 24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+## 9      9 22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+## 10    10 19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4</code></pre>
+<ul>
+<li><p><code>has_rownames()</code>: verifica se um <em>data frame</em> possui linhas nomeadas.</p></li>
+<li><p><code>remove_rownames()</code>: remove o nome das linhas de um <em>data frame</em>.</p></li>
+<li><p><code>rownames_to_column()</code>: transforma o nome das linhas em uma coluna.</p></li>
+</ul>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="7-1-tibbles.html#cb212-1"></a><span class="kw">rownames_to_column</span>(mtcars, <span class="dt">var =</span> <span class="st">&quot;modelo_do_carro&quot;</span>)</span></code></pre></div>
+<pre><code>##        modelo_do_carro  mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## 1            Mazda RX4 21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+## 2        Mazda RX4 Wag 21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## 3           Datsun 710 22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+## 4       Hornet 4 Drive 21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+## 5    Hornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+## 6              Valiant 18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+## 7           Duster 360 14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+## 8            Merc 240D 24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+## 9             Merc 230 22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+## 10            Merc 280 19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+## 11           Merc 280C 17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
+## 12          Merc 450SE 16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
+## 13          Merc 450SL 17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
+## 14         Merc 450SLC 15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+## 15  Cadillac Fleetwood 10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+## 16 Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
+## 17   Chrysler Imperial 14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+## 18            Fiat 128 32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
+## 19         Honda Civic 30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
+## 20      Toyota Corolla 33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+## 21       Toyota Corona 21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
+## 22    Dodge Challenger 15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+## 23         AMC Javelin 15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
+## 24          Camaro Z28 13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
+## 25    Pontiac Firebird 19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
+## 26           Fiat X1-9 27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
+## 27       Porsche 914-2 26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
+## 28        Lotus Europa 30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
+## 29      Ford Pantera L 15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
+## 30        Ferrari Dino 19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
+## 31       Maserati Bora 15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
+## 32          Volvo 142E 21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></pre>
+<ul>
+<li><code>column_to_rownames()</code>: transforma uma coluna em nomes das linhas.</li>
+</ul>
+<p>Mais informações sobre <code>tibbles</code> podem ser encontradas <a href="https://tibble.tidyverse.org/">neste tutorial do RStudio</a> e <a href="http://r4ds.had.co.nz/tibbles.html">neste caplítulo do R for Data Science</a>.</p>
 
 </div>
 <hr/>

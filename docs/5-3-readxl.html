@@ -218,7 +218,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3" data-path="6-3-exercícios-6.html"><a href="6-3-exercícios-6.html"><i class="fa fa-check"></i><b>6.3</b> Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
-<li class="chapter" data-level="7.1" data-path="7-1-trabalhando-com-tibbles.html"><a href="7-1-trabalhando-com-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Trabalhando com tibbles</a></li>
+<li class="chapter" data-level="7.1" data-path="7-1-tibbles.html"><a href="7-1-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Tibbles</a></li>
 <li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#filtrando-linhas"><i class="fa fa-check"></i><b>7.2.1</b> Filtrando linhas</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#selecionando-colunas"><i class="fa fa-check"></i><b>7.2.2</b> Selecionando colunas</a></li>
@@ -277,29 +277,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="readxl" class="section level2">
 <h2><span class="header-section-number">5.3</span> Os pacotes readxl e writexl</h2>
 <p>Para ler planilhas do Excel (arquivos <code>.xlsx</code> ou <code>.xls</code>), basta utilizarmos a função <code>read_excel()</code> do pacote <code>readxl</code>. Instale o pacote antes caso você ainda não o tenha instalado.</p>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="5-3-readxl.html#cb140-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;readxl&quot;</span>)</span>
-<span id="cb140-2"><a href="5-3-readxl.html#cb140-2"></a><span class="kw">library</span>(readxl)</span>
-<span id="cb140-3"><a href="5-3-readxl.html#cb140-3"></a></span>
-<span id="cb140-4"><a href="5-3-readxl.html#cb140-4"></a>imdb_xlsx &lt;-<span class="st"> </span><span class="kw">read_xls</span>(<span class="st">&quot;dados/imdb.xlss&quot;</span>)</span>
-<span id="cb140-5"><a href="5-3-readxl.html#cb140-5"></a>imdb_xlsx &lt;-<span class="st"> </span><span class="kw">read_xlsx</span>(<span class="st">&quot;dados/imdb.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="5-3-readxl.html#cb139-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;readxl&quot;</span>)</span>
+<span id="cb139-2"><a href="5-3-readxl.html#cb139-2"></a><span class="kw">library</span>(readxl)</span>
+<span id="cb139-3"><a href="5-3-readxl.html#cb139-3"></a></span>
+<span id="cb139-4"><a href="5-3-readxl.html#cb139-4"></a>imdb_xlsx &lt;-<span class="st"> </span><span class="kw">read_xls</span>(<span class="st">&quot;dados/imdb.xlss&quot;</span>)</span>
+<span id="cb139-5"><a href="5-3-readxl.html#cb139-5"></a>imdb_xlsx &lt;-<span class="st"> </span><span class="kw">read_xlsx</span>(<span class="st">&quot;dados/imdb.xlsx&quot;</span>)</span></code></pre></div>
 <p>A funçao <code>read_excel()</code> auto detecta a extensão do arquivo.</p>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="5-3-readxl.html#cb141-1"></a><span class="kw">read_excel</span>(<span class="dt">path =</span> <span class="st">&quot;assets/data/imdb.xls&quot;</span>)</span>
-<span id="cb141-2"><a href="5-3-readxl.html#cb141-2"></a><span class="kw">read_excel</span>(<span class="dt">path =</span> <span class="st">&quot;assets/data/imdb.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="5-3-readxl.html#cb140-1"></a><span class="kw">read_excel</span>(<span class="dt">path =</span> <span class="st">&quot;assets/data/imdb.xls&quot;</span>)</span>
+<span id="cb140-2"><a href="5-3-readxl.html#cb140-2"></a><span class="kw">read_excel</span>(<span class="dt">path =</span> <span class="st">&quot;assets/data/imdb.xlsx&quot;</span>)</span></code></pre></div>
 <p>O pacote disponibiliza 5 exemplos de arquivos com formato <code>.xls</code> e <code>.xlsx</code>.</p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="5-3-readxl.html#cb142-1"></a><span class="kw">readxl_example</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="5-3-readxl.html#cb141-1"></a><span class="kw">readxl_example</span>()</span></code></pre></div>
 <pre><code>##  [1] &quot;clippy.xls&quot;    &quot;clippy.xlsx&quot;   &quot;datasets.xls&quot;  &quot;datasets.xlsx&quot;
 ##  [5] &quot;deaths.xls&quot;    &quot;deaths.xlsx&quot;   &quot;geometry.xls&quot;  &quot;geometry.xlsx&quot;
 ##  [9] &quot;type-me.xls&quot;   &quot;type-me.xlsx&quot;</code></pre>
 <p>Vamos pegar o caminho até o arquivo <code>datasets.xlsx</code> usando a função <code>readxl_example()</code>.</p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="5-3-readxl.html#cb144-1"></a>caminho_datasets &lt;-<span class="st"> </span><span class="kw">readxl_example</span>(<span class="st">&quot;datasets.xlsx&quot;</span>)</span>
-<span id="cb144-2"><a href="5-3-readxl.html#cb144-2"></a>caminho_datasets</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="5-3-readxl.html#cb143-1"></a>caminho_datasets &lt;-<span class="st"> </span><span class="kw">readxl_example</span>(<span class="st">&quot;datasets.xlsx&quot;</span>)</span>
+<span id="cb143-2"><a href="5-3-readxl.html#cb143-2"></a>caminho_datasets</span></code></pre></div>
 <pre><code>## [1] &quot;/Library/Frameworks/R.framework/Versions/4.0/Resources/library/readxl/extdata/datasets.xlsx&quot;</code></pre>
 <p>No Excel, um arquivo pode ter várias planilhas. Esse é o caso do arquivo <code>datasets.xlsx</code>. Você pode ver quais planilhas fazem parte do arquivo utilizando a função <code>excel_sheets()</code>.</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="5-3-readxl.html#cb146-1"></a><span class="kw">excel_sheets</span>(caminho_datasets)</span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="5-3-readxl.html#cb145-1"></a><span class="kw">excel_sheets</span>(caminho_datasets)</span></code></pre></div>
 <pre><code>## [1] &quot;iris&quot;     &quot;mtcars&quot;   &quot;chickwts&quot; &quot;quakes&quot;</code></pre>
 <p>Por padrão, as funções de leitura trarão apenas a primeira planilha do arquivo. Para trazer outra planilha, basta utilizarmos o argumento <code>sheet</code>.</p>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="5-3-readxl.html#cb148-1"></a><span class="co"># Pega a primeira planilha</span></span>
-<span id="cb148-2"><a href="5-3-readxl.html#cb148-2"></a><span class="kw">read_excel</span>(caminho_datasets)</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="5-3-readxl.html#cb147-1"></a><span class="co"># Pega a primeira planilha</span></span>
+<span id="cb147-2"><a href="5-3-readxl.html#cb147-2"></a><span class="kw">read_excel</span>(caminho_datasets)</span></code></pre></div>
 <pre><code>## # A tibble: 150 x 5
 ##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  
@@ -314,8 +314,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9          4.4         2.9          1.4         0.2 setosa 
 ## 10          4.9         3.1          1.5         0.1 setosa 
 ## # … with 140 more rows</code></pre>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="5-3-readxl.html#cb150-1"></a><span class="co"># Pega a segunda planilha</span></span>
-<span id="cb150-2"><a href="5-3-readxl.html#cb150-2"></a><span class="kw">read_excel</span>(caminho_datasets, <span class="dt">sheet =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="5-3-readxl.html#cb149-1"></a><span class="co"># Pega a segunda planilha</span></span>
+<span id="cb149-2"><a href="5-3-readxl.html#cb149-2"></a><span class="kw">read_excel</span>(caminho_datasets, <span class="dt">sheet =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 32 x 11
 ##      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
 ##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -330,8 +330,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9  22.8     4  141.    95  3.92  3.15  22.9     1     0     4     2
 ## 10  19.2     6  168.   123  3.92  3.44  18.3     1     0     4     4
 ## # … with 22 more rows</code></pre>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="5-3-readxl.html#cb152-1"></a><span class="co"># Pega a planilha selecionada</span></span>
-<span id="cb152-2"><a href="5-3-readxl.html#cb152-2"></a><span class="kw">read_excel</span>(caminho_datasets, <span class="dt">sheet =</span> <span class="st">&#39;chickwts&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="5-3-readxl.html#cb151-1"></a><span class="co"># Pega a planilha selecionada</span></span>
+<span id="cb151-2"><a href="5-3-readxl.html#cb151-2"></a><span class="kw">read_excel</span>(caminho_datasets, <span class="dt">sheet =</span> <span class="st">&#39;chickwts&#39;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 71 x 2
 ##    weight feed     
 ##     &lt;dbl&gt; &lt;chr&gt;    
@@ -354,10 +354,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>na=</code> indica quais strings devem ser interpretadas como NA.</p></li>
 </ul>
 <p>Também podemos escrever um arquivo Excel (com extensão <code>.xlsx</code>) utilizando a função <code>write_xlsx()</code> do pacote <code>writexl</code>.</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="5-3-readxl.html#cb154-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;writexl&quot;</span>)</span>
-<span id="cb154-2"><a href="5-3-readxl.html#cb154-2"></a><span class="kw">library</span>(writexl)</span>
-<span id="cb154-3"><a href="5-3-readxl.html#cb154-3"></a></span>
-<span id="cb154-4"><a href="5-3-readxl.html#cb154-4"></a><span class="kw">write_excel</span>(mtcars, <span class="st">&quot;imdb.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="5-3-readxl.html#cb153-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;writexl&quot;</span>)</span>
+<span id="cb153-2"><a href="5-3-readxl.html#cb153-2"></a><span class="kw">library</span>(writexl)</span>
+<span id="cb153-3"><a href="5-3-readxl.html#cb153-3"></a></span>
+<span id="cb153-4"><a href="5-3-readxl.html#cb153-4"></a><span class="kw">write_excel</span>(mtcars, <span class="st">&quot;imdb.xlsx&quot;</span>)</span></code></pre></div>
 
 </div>
 <hr/>

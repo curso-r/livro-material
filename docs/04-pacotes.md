@@ -1,5 +1,7 @@
 # Pacotes {#pacotes}
 
+A primeira aparição da linguagem de progromação R foi em 1993 e, apesar de lá para cá muita coisa ter sido desenvolvida e atualizada, é muito difícil fazer mudanças na base da linguagem sem quebrar os códigos já existentes. Por essa razão, as maiores inovações são realizadas na forma de pacotes.
+
 Um pacote é um conjunto de funções que têm como objetivo resolver um problema específico. São eles que deixam o R poderoso, capaz de enfrentar qualquer tarefa de análise de dados. Assim, fique bastante à vontade para instalar e atualizar muitos e muitos pacotes ao longo da sua experiência com o R.
 
 O legal é que qualquer pessoa pode fazer um novo pacote e disponibilizar para a comunidade, o que acelera bastante o desenvolvemento da ferramenta. Dificilmente você vai fazer uma análise apenas com as funções básicas do R e dificilmente não vai existir um pacote com as funções que você precisa.
@@ -95,29 +97,7 @@ No texto do [manifesto tidy](https://cran.r-project.org/web/packages/tidyverse/v
 
 <img src="https://github.com/curso-r/livro-material/blob/master/assets/img/pacotes/tidyverse_celestial.png?raw=true" width="500" height="500" style="display: block; margin: auto;" />
 
-
-```r
-library(tidyverse)
-```
-
-```
-## ── Attaching packages ─────────────────────────────────── tidyverse 1.3.0 ──
-```
-
-```
-## ✓ ggplot2 3.3.0     ✓ purrr   0.3.4
-## ✓ tibble  3.0.1     ✓ dplyr   1.0.0
-## ✓ tidyr   1.0.3     ✓ stringr 1.4.0
-## ✓ readr   1.3.1     ✓ forcats 0.5.0
-```
-
-```
-## ── Conflicts ────────────────────────────────────── tidyverse_conflicts() ──
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()
-```
-
-Na prática, carregar o  (veja o código acima) é o mesmo que carregar os seguintes pacotes:
+Na prática, carregar o  (veja o código abaixo) é o mesmo que carregar os seguintes pacotes:
 
 - `{tibble}` para *data frames* repaginados; 
 
@@ -134,6 +114,28 @@ Na prática, carregar o  (veja o código acima) é o mesmo que carregar os segui
 - `{purrr}` para programação funcional.
 
 Embora o `{tidyverse}` instale diversos outros pacotes, apenas esses são carrregados. Dificilmente fazemos uma análise de dados em que não precisamos usá-los. Falaremos com mais detalhes de todos eles neste livro.
+
+
+```r
+library(tidyverse)
+```
+
+```
+## ── Attaching packages ───────────────────────── tidyverse 1.3.0 ──
+```
+
+```
+## ✓ ggplot2 3.3.0     ✓ purrr   0.3.4
+## ✓ tibble  3.0.1     ✓ dplyr   1.0.0
+## ✓ tidyr   1.0.3     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.5.0
+```
+
+```
+## ── Conflicts ──────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+```
 
 Mensagens de conflito quando carregamos o `{tidyverse}` ou qualquer outro pacote significam que funções anteriormente carregadas foram *mascaradas* por novas funções. No exemplo acima, as funções `filter()` e `lag()` do pacote `stats` foram substituídas na sessão pelas funções `filter()` e `lag()` do pacote `dplyr`. Nesse caso, se quiséssemos usar as funções do pacote `stats` após carregar o `{tidyverse}`, precisaríamos rodar `stats::filter()` e `stats::lag()`.
 

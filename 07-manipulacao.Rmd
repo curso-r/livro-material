@@ -1,10 +1,10 @@
 # Manipulação {#manipulacao}
 
-> "(...) The fact that data science exists as a field is a colossal failure of statistics. To me, what I do is what statistics is all about. It is gaining insight from data using modelling and visualization. Data munging and manipulation is hard and statistics has just said that’s not our domain." - Hadley Wickham
+Esta seção trata do tema *manipulação de dados*. Trata-se de uma tarefa dolorosa e demorada, tomando muitas vezes a maior parte do tempo de uma análise de dados. Apesar de negligenciada pela Estatística, essa etapa é essencial para o sucesso da análise.
 
-Esta seção trata do tema *manipulação de dados*. Trata-se de uma tarefa dolorosa e demorada, tomando muitas vezes a maior parte do tempo de uma análise estatística. Essa etapa é essencial em qualquer análise de dados e, apesar de negligenciada pela academia, é decisiva para o sucesso de estudos aplicados.
+> "(...) The fact that data science exists as a field is a colossal failure of statistics. To me, what I do is what statistics is all about. It is gaining insight from data using modelling and visualization. Data munging and manipulation is hard and statistics has just said that’s not our domain." --- Hadley Wickham
 
-Usualmente, o cientista de dados parte de uma base "crua" e a transforma até obter uma base de dados analítica, que, a menos de transformações simples, está preparada para passar por análises estatísticas.
+Usualmente, o cientista de dados parte de uma base "crua" e a transforma até obter uma base de dados analítica, que, a menos de transformações simples, está preparada para gerar tabelas descritivas e gráficos e alimentar modelos.
 
 A figura abaixo mostra a fase de "disputa" com os dados (*data wrangling*) para deixá-los no formato analítico.
 
@@ -19,7 +19,7 @@ Um conceito importante para obtenção de uma base analítica é o *data tidying
 
 A base de dados analítica é estruturada de tal forma que pode ser colocada diretamente em ambientes de modelagem estatística ou de visualização. Nem sempre uma base de dados analítica está no formato *tidy*, mas usualmente são necessários poucos passos para migrar de uma para outra. A filosofia *tidy* é a base do [tidyverse](https://www.tidyverse.org/).
 
-Os principais pacotes encarregados da tarefa de estruturar os dados são o `dplyr` e o `tidyr`. Eles serão o tema desse tópico. Instale e carregue os pacotes utilizando:
+Os principais pacotes encarregados da tarefa de estruturar os dados são o `dplyr` e o `tidyr`. Eles serão o tema desse capítulo. Instale e carregue os pacotes utilizando:
 
 ```{r, eval=FALSE}
 install.packages("dplyr")
@@ -30,30 +30,3 @@ library(tidyr)
 ```
 
 Mas antes de apresentar as principais funções do `dplyr` e do `tidyr`, precisamos falar sobre o conceito de `tibbles`.
-
-## Trabalhando com tibbles
-
-Uma `tibble` nada mais é do que um `data.frame`, mas com um método de impressão mais adequado. 
-
-As `tibbles` são parte do pacote `tibble`. Assim, para começar a usá-las, instale e carregue o pacote.
-
-```{r, eval = FALSE}
-install.packages("tibble")
-library(tibble)
-```
-
-Mais informações sobre `tibbles` podem ser encontradas [neste link](http://r4ds.had.co.nz/tibbles.html).
-
-Nessa seção, vamos trabalhar com uma base de filmes do IMDB. Essa base pode ser baixada [clicando aqui](https://github.com/curso-r/site-v2/raw/master/content/material/importacao/data/imdb.rds).
-
-```{r}
-imdb <- readr::read_rds("assets/data/imdb.rds")
-```
-
-Assim, utilizaremos o objeto `imdb` para acessar os dados.
-
-```{r}
-imdb
-```
-
-Veja que, por padrão, apenas as dez primeiras linhas da `tibble` são impressas na tela. Além disso, as colunas que não couberem na largura do console serão omitidas. Também são apresentadas a dimensão da tabela e as classes de cada coluna.
