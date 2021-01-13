@@ -127,7 +127,7 @@ Vamos começar com o exemplo mais simples possível:
 
 Nesse caso, o nosso comando foi o código `1 + 1` e a saída foi o valor `2`.
 
-> **Nota: quando compilamos?** Quem vem de linguagens como o C ou Java espera que seja necessário compilar o código em texto para o código das máquinas (geralmente um código binário). No R, isso não é necessário. O R é uma linguagem de programação dinâmica que interpreta o seu código enquanto você o executa.
+> **Quando compilamos?** Quem vem de linguagens como o C ou Java espera que seja necessário compilar o código em texto para o código das máquinas (geralmente um código binário). No R, isso não é necessário. O R é uma linguagem de programação dinâmica que interpreta o seu código enquanto você o executa.
 
 Tente agora jogar no console a expressão: `2 * 2 - (4 + 4) / 2`. 
 
@@ -690,19 +690,19 @@ A seguir, apresentamos uma tabela com os principais operadores lógicos:
 Para finalizar, listamos na tabela abaixo os principais operadores lógicos.
 
 
-Operador    Descrição                                 
-----------  ------------------------------------------
-x < y       x menor que y?                            
-x <= y      x menor ou igual a y?                     
-x > y       x maior que y?                            
-x >= y      x maior ou igual a y?                     
-x == y      x igual a y?                              
-x != y      x diferente de y?                         
-!x          Negativa de x                             
-x | y       x ou y são verdadeiros?                   
-x & y       x e y são verdadeiros?                    
-x %in% y    x percente a y?                           
-xor(x, y)   x ou y são verdadeiros (apenas um deles)? 
+|Operador   |Descrição                                 |
+|:----------|:-----------------------------------------|
+|x < y      |x menor que y?                            |
+|x <= y     |x menor ou igual a y?                     |
+|x > y      |x maior que y?                            |
+|x >= y     |x maior ou igual a y?                     |
+|x == y     |x igual a y?                              |
+|x != y     |x diferente de y?                         |
+|!x         |Negativa de x                             |
+|x &#124; y |x ou y são verdadeiros?                   |
+|x & y      |x e y são verdadeiros?                    |
+|x %in% y   |x percente a y?                           |
+|xor(x, y)  |x ou y são verdadeiros (apenas um deles)? |
 
 Por fim, veja algumas diferenças entre comparações lógicas no SQL e no R:
 
@@ -1506,7 +1506,7 @@ x <- 1
 if (x == 1) {         
   Sys.time()
 }
-## [1] "2020-09-09 22:25:24 -03"
+## [1] "2021-01-13 16:59:59 -03"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se a expressão que estiver dentro dos parênteses `()` retornar `TRUE`. Veja outro exemplo:
@@ -1961,7 +1961,7 @@ O R já vem com funções básicas que fazem gráficos estatísticos de todas as
 
 Nesta seção, mostraremos como construir alguns tipos de gráficos usando as funções base do R, mas o nosso foco em visualização de dados está nas funções do pacote `ggplot2`, apresentadas no Capítulo \@ref(graficos).
 
-#### Gráfico de dispersão e linhas
+#### Gráfico de dispersão e linhas {-}
 
 Para construir um gráfico de dispersão, utilizamos a função `plot()`. Seus principais parâmetros são:
 
@@ -1992,7 +1992,7 @@ plot(x, y, type = "l")
 
 <img src="03-r-base_files/figure-html/r-base-plot-2-1.png" width="672" style="display: block; margin: auto;" />
 
-#### Histograma
+#### Histograma {-}
 
 Para construir histogramas, utilizamos a função `hist()`. Os principais parâmetros são:
 
@@ -2013,7 +2013,7 @@ hist(rnorm(1000), breaks = 6)
 
 <img src="03-r-base_files/figure-html/r-base-plot-4-1.png" width="672" style="display: block; margin: auto;" />
 
-#### Boxplot
+#### Boxplot {-}
 
 Para construir boxplots, utilizamos a função `boxplot()`. Os principais parâmetros são:
 
@@ -2037,7 +2037,7 @@ boxplot(mpg ~ cyl, data = mtcars, col = "purple")
 
 <img src="03-r-base_files/figure-html/r-base-plot-6-1.png" width="672" style="display: block; margin: auto;" />
 
-#### Gráfico de barras
+#### Gráfico de barras {-}
 
 Para construir gráficos de barras, precisamos combinar as funções `table()` e `barplot()`.
 

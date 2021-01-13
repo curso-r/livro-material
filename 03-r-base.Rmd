@@ -132,7 +132,7 @@ Vamos começar com o exemplo mais simples possível:
 
 Nesse caso, o nosso comando foi o código `1 + 1` e a saída foi o valor `2`.
 
-> **Nota: quando compilamos?** Quem vem de linguagens como o C ou Java espera que seja necessário compilar o código em texto para o código das máquinas (geralmente um código binário). No R, isso não é necessário. O R é uma linguagem de programação dinâmica que interpreta o seu código enquanto você o executa.
+> **Quando compilamos?** Quem vem de linguagens como o C ou Java espera que seja necessário compilar o código em texto para o código das máquinas (geralmente um código binário). No R, isso não é necessário. O R é uma linguagem de programação dinâmica que interpreta o seu código enquanto você o executa.
 
 Tente agora jogar no console a expressão: `2 * 2 - (4 + 4) / 2`. 
 
@@ -1504,7 +1504,7 @@ O R já vem com funções básicas que fazem gráficos estatísticos de todas as
 
 Nesta seção, mostraremos como construir alguns tipos de gráficos usando as funções base do R, mas o nosso foco em visualização de dados está nas funções do pacote `ggplot2`, apresentadas no Capítulo \@ref(graficos).
 
-#### Gráfico de dispersão e linhas
+#### Gráfico de dispersão e linhas {-}
 
 Para construir um gráfico de dispersão, utilizamos a função `plot()`. Seus principais parâmetros são:
 
@@ -1529,7 +1529,7 @@ O parâmetro `type = "l"` indica que queremos que os pontos sejam interligados p
 plot(x, y, type = "l")
 ```
 
-#### Histograma
+#### Histograma {-}
 
 Para construir histogramas, utilizamos a função `hist()`. Os principais parâmetros são:
 
@@ -1544,7 +1544,7 @@ hist(rnorm(1000))
 hist(rnorm(1000), breaks = 6)
 ```
 
-#### Boxplot
+#### Boxplot {-}
 
 Para construir boxplots, utilizamos a função `boxplot()`. Os principais parâmetros são:
 
@@ -1562,7 +1562,7 @@ Para mapear duas variáveis ao gráfico, passamos um *data frame* para o argumen
 boxplot(mpg ~ cyl, data = mtcars, col = "purple")
 ```
 
-#### Gráfico de barras
+#### Gráfico de barras {-}
 
 Para construir gráficos de barras, precisamos combinar as funções `table()` e `barplot()`.
 

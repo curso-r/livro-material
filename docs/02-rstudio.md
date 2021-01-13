@@ -123,6 +123,8 @@ O RStudio tem à disposição algumas *folhas de cola*, as **cheatsheets**. Elas
 
 Para acessá-las, basta clicar no menu `Help` e então em `Cheatsheets`.
 
+Outra forma de acessá-las é através do site da [RStudio](https://rstudio.com/resources/cheatsheets/), onde existem muitas opções de **cheatsheets**, incluindo algumas [traduzidas](https://rstudio.com/resources/cheatsheets/#translations) para o Português.
+
 
 <img src="assets/img/rstudio/cheatsheet-rstudio.png" width="700" height="600" style="display: block; margin: auto;" />
 

@@ -1,7 +1,7 @@
 --- 
 title: "Ciência de Dados em R"
 author: "Curso-R"
-date: "Última atualização: 09/09/2020"
+date: "Última atualização: 13/01/2021"
 github-repo: "curso-r/livro-material"
 site: bookdown::bookdown_site
 documentclass: book
@@ -27,7 +27,7 @@ Autores:
 - [Caio Lente](https://lente.dev/)
 - [Daniel Falbel](https://twitter.com/dfalbel)
 - [Fernando Correa](https://twitter.com/Azeloc)
-- [Julio Tricenti](https://twitter.com/jtrecenti)
+- [Julio Trecenti](https://twitter.com/jtrecenti)
 - [Nicole Luduvice](http://linkedin.com/in/nicole-luduvice-9a6379197)
 - [William Amorim](https://twitter.com/Williamorim89)
 

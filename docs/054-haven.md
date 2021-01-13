@@ -62,14 +62,12 @@ x1
 ```
 
 ```
-## <Labelled double>
 ## [1]  1  3 NA  2  2  1 NA  2 NA
-## 
-## Labels:
-##  value label
-##      1  Ruim
-##      2   Bom
-##      3 Otimo
+## attr(,"labels")
+##  Ruim   Bom Otimo 
+##     1     2     3 
+## attr(,"class")
+## [1] "haven_labelled"
 ```
 Existem outras funções `zap_` interessantes no [pacote](https://cran.r-project.org/web/packages/haven/haven.pdf).
 

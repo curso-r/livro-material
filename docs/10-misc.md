@@ -16,18 +16,7 @@ devtools::install_github("sfirke/janitor") # Versão de desenvolvimento
 
 ```r
 library(tidyverse)
-```
-
-```
-## Warning: package 'tidyverse' was built under R version 4.0.2
-```
-
-```r
 library(janitor)
-```
-
-```
-## Warning: package 'janitor' was built under R version 4.0.2
 ```
 
 ### Arrumando o nome das variáveis
@@ -182,27 +171,22 @@ janitor::get_dupes(base_qualquer, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 18 x 4
+## # A tibble: 13 x 4
 ##    nome     sobrenome dupe_count variavel_importante
 ##    <chr>    <chr>          <int>               <dbl>
-##  1 Daniel   Corrêa             3             -0.442 
-##  2 Daniel   Corrêa             3             -0.286 
-##  3 Daniel   Corrêa             3             -0.511 
-##  4 Daniel   Damiani            2              1.10  
-##  5 Daniel   Damiani            2             -1.01  
-##  6 Fernando Amorim             3             -1.14  
-##  7 Fernando Amorim             3             -1.90  
-##  8 Fernando Amorim             3             -0.0187
-##  9 Julio    Damiani            2              0.910 
-## 10 Julio    Damiani            2              0.408 
-## 11 Julio    Trecenti           3             -1.43  
-## 12 Julio    Trecenti           3              1.47  
-## 13 Julio    Trecenti           3             -0.131 
-## 14 William  Amorim             2              0.648 
-## 15 William  Amorim             2             -0.147 
-## 16 William  Damiani            3              0.0508
-## 17 William  Damiani            3              1.41  
-## 18 William  Damiani            3              0.384
+##  1 Athos    Damiani            2              0.246 
+##  2 Athos    Damiani            2              0.0301
+##  3 Fernando Corrêa             2              0.931 
+##  4 Fernando Corrêa             2              1.20  
+##  5 Fernando Damiani            2             -0.913 
+##  6 Fernando Damiani            2              0.614 
+##  7 Julio    Amorim             3             -0.889 
+##  8 Julio    Amorim             3             -0.0797
+##  9 Julio    Amorim             3              1.01  
+## 10 Julio    Falbel             2              0.994 
+## 11 Julio    Falbel             2             -0.622 
+## 12 William  Falbel             2             -0.862 
+## 13 William  Falbel             2             -1.98
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.
