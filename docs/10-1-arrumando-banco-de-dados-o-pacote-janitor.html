@@ -380,24 +380,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb292-8"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb292-8"></a><span class="st">)</span></span>
 <span id="cb292-9"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb292-9"></a></span>
 <span id="cb292-10"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb292-10"></a><span class="st">janitor::get_dupes(base_qualquer, nome, sobrenome)</span></span></code></pre></div>
-<pre><code>## # A tibble: 15 x 4
-##    nome     sobrenome dupe_count variavel_importante
-##    &lt;chr&gt;    &lt;chr&gt;          &lt;int&gt;               &lt;dbl&gt;
-##  1 Athos    Amorim             2               1.07 
-##  2 Athos    Amorim             2               1.32 
-##  3 Athos    Falbel             4               0.855
-##  4 Athos    Falbel             4              -1.23 
-##  5 Athos    Falbel             4              -2.32 
-##  6 Athos    Falbel             4               0.375
-##  7 Daniel   Corrêa             3               0.370
-##  8 Daniel   Corrêa             3               1.42 
-##  9 Daniel   Corrêa             3              -0.769
-## 10 Fernando Corrêa             2              -1.22 
-## 11 Fernando Corrêa             2              -2.30 
-## 12 Fernando Trecenti           2               1.02 
-## 13 Fernando Trecenti           2               0.571
-## 14 William  Trecenti           2              -2.34 
-## 15 William  Trecenti           2               1.28</code></pre>
+<pre><code>## # A tibble: 10 x 4
+##    nome    sobrenome dupe_count variavel_importante
+##    &lt;chr&gt;   &lt;chr&gt;          &lt;int&gt;               &lt;dbl&gt;
+##  1 Athos   Corrêa             2              1.12  
+##  2 Athos   Corrêa             2             -0.848 
+##  3 Athos   Damiani            2              0.0945
+##  4 Athos   Damiani            2              2.15  
+##  5 Daniel  Trecenti           3              0.392 
+##  6 Daniel  Trecenti           3              1.99  
+##  7 Daniel  Trecenti           3              1.07  
+##  8 William Corrêa             3             -1.15  
+##  9 William Corrêa             3              0.720 
+## 10 William Corrêa             3              0.553</code></pre>
 <p>Todas as linhas na <code>tibble</code> resultante representam uma combinação de nome-sobrenome repetida.</p>
 </div>
 <div id="outras-funções" class="section level3">
