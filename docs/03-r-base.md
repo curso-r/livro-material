@@ -28,7 +28,7 @@ A busca por ajuda é feita preferencialmente, mas não necessariamente, na ordem
 
 ### Documentação do R
 
-A documentação do R serve para você aprender a usar uma determinada função. Se você não sabe o que é uma função, não se preocupe. Discutiremos esse tópico na Seção \@ref(funcoes).
+A documentação do R serve para você aprender a usar uma determinada função. Se você não sabe o que é uma função, não se preocupe. Discutiremos esse tópico nas Seções \@ref(objetosFuncoes) e \@ref(maisFuncoes).
 
 Você pode acessar a documentação de uma função^[Bases de dados presentes em pacotes também têm documentação, e geralmente é possível encontrar o significado de cada variável nela. Por exemplo, `help(mtcars)`.] das seguintes maneiras:
 
@@ -200,7 +200,7 @@ Error: unexpected input in "5 % 2"
 **4.** Calcule o número de ouro no R. Dica: o número de ouro é dado pela expressão $\frac{1 + \sqrt{5}}{2}$.
 
 
-## Objetos
+## Objetos e funções {#objetosFuncoes}
 
 O R te permite salvar valores dentro de um **objeto**. Um objeto é simplesmente um nome que guarda um valor. Para criar um objeto, utilizamos o operador `<-`.
 
@@ -252,7 +252,30 @@ B
 ## [1] 3
 ```
 
-O objeto mais importante para o cientista de dados é, claro, a base de dados. No R, uma base de dados é representa por objetos chamados de *data frames*. A seguir, vamos entender o que são esses objetos.
+O objeto mais importante para o cientista de dados é, claro, a base de dados. No R, uma base de dados é representa por objetos chamados de *data frames*. Na próxima seção, vamos entender o que são esses objetos.
+
+Enquanto objetos são *nomes* que guardam *valores*, funções no R são *nomes* que guardam um **código de R**. A ideia é muito simples: sempre que você rodar uma função, o código que ela guarda será executado e um resultado nos será devolvido.
+
+A sintaxe para usar uma função é a seguinte:
+
+
+```r
+nome_da_funcao(arg1, arg2, argn)
+```
+
+Entre parênteses, após o nome da função, temos o que chamamos de *argumentos*. Uma função pode ter qualquer número de argumentos e eles são sempre separados por vírgula.
+
+Basicamente, uma função recebe seus argumentos, executa uma ação sobre ou a partir deles e devolve um resultado. Por exemplo
+
+
+```r
+sum(1, 2)
+## [1] 3
+```
+
+A função `sum()` recebeu os argumentos `1` e `2`, somou os dois valores e devolveu o resultado dessa operação: o valor `3`.
+
+Falaremos mais sobre funções na Seção \@ref(maisFuncoes).
 
 ### Exercícios {-}
 
@@ -848,7 +871,7 @@ O `Inf` (infinito) representa um número muito grande (que o computador não con
 ## [1] -Inf
 ```
 
-O `NULL` (nulo) representa a ausência de um objeto. Ele não tem significado prático para a análise dados. Está mais em sintonia com comportamentos de lógica de programação. Muitas vezes vamos definir um objeto como nulo para dizer ao R que não queremos dar um valor para ele. Muito utilizado em funções (ver Seção \@ref(funcoes)).
+O `NULL` (nulo) representa a ausência de um objeto. Ele não tem significado prático para a análise dados. Está mais em sintonia com comportamentos de lógica de programação. Muitas vezes vamos definir um objeto como nulo para dizer ao R que não queremos dar um valor para ele. Muito utilizado em funções.
 
 Da mesma forma que utilizados `is.na()` para testar se um objeto é `NA`, utilizamos `is.nan()`, `is.infinite()` ou `is.null()` para testar se um objeto é `NaN`, infinito ou nulo.
 
@@ -1288,11 +1311,9 @@ f. `mtcars[ , 1]`
 g. `mtcars[1, 1]`
 h. `mpg$mtcars`
 
-## Funções {#funcoes}
+## Mais sobre funções {#maisFuncoes}
 
-Enquanto objetos são *nomes* que guardam *valores*, funções no R são *nomes* que guardam um **código de R**. A ideia é muito simples: sempre que você rodar uma função, o código que ela guarda será executado e um resultado nos será devolvido.
-
-Funções são tão comuns e intuitivas (provavelmente você já usou funções no Excel), que mesmo sem definir o que elas são, nós já utilizamos funções nas seções anteriores:
+Funções são tão comuns e intuitivas (provavelmente você já usou funções no Excel), que mesmo sem termos abordado o tema com detalhes, nós conseguimos utilizar várias funções nas seções anteriores:
 
 - a função `c()` foi utilizada para criar vetores;
 - a função `class()` foi utilizada para descobrir a classe de um objeto;
@@ -1547,7 +1568,7 @@ x <- 1
 if (x == 1) {         
   Sys.time()
 }
-## [1] "2021-02-04 16:36:56 -03"
+## [1] "2021-02-04 17:19:02 -03"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se a expressão que estiver dentro dos parênteses `()` retornar `TRUE`. Veja outro exemplo:

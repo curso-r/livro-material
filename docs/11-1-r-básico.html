@@ -165,8 +165,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
 <li class="chapter" data-level="" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-3-objetos.html"><a href="3-3-objetos.html"><i class="fa fa-check"></i><b>3.3</b> Objetos</a><ul>
-<li class="chapter" data-level="" data-path="3-3-objetos.html"><a href="3-3-objetos.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
+<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a><ul>
+<li class="chapter" data-level="" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="3-4-data-frames.html"><a href="3-4-data-frames.html"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
 <li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a></li>
@@ -181,8 +181,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
 <li class="chapter" data-level="" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html#exercícios-4"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="3-11-funcoes.html"><a href="3-11-funcoes.html"><i class="fa fa-check"></i><b>3.11</b> Funções</a><ul>
-<li class="chapter" data-level="" data-path="3-11-funcoes.html"><a href="3-11-funcoes.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
+<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a><ul>
+<li class="chapter" data-level="" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
 <li class="chapter" data-level="3.12.1" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
@@ -253,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11" data-path="11-respostas.html"><a href="11-respostas.html"><i class="fa fa-check"></i><b>11</b> Respostas</a><ul>
 <li class="chapter" data-level="11.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html"><i class="fa fa-check"></i><b>11.1</b> R básico</a><ul>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
-<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#objetos-1"><i class="fa fa-check"></i>Objetos</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#objetos"><i class="fa fa-check"></i>Objetos</a></li>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#vetores-1"><i class="fa fa-check"></i>Vetores</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="11-2-pipe-1.html"><a href="11-2-pipe-1.html"><i class="fa fa-check"></i><b>11.2</b> Pipe</a></li>
@@ -296,67 +296,67 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>Não. Um código em R é interpretado linha a linha, isto é, podemos ir rodando nosso código parcialmente, conforme vamos escrevendo.</em></p>
 <hr />
 <p><strong>4.</strong> Calcule o número de ouro no R. Dica: o número de ouro é dado pela expressão <span class="math inline">\(\frac{1 + \sqrt{5}}{2}\)</span>.</p>
-<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="11-1-r-básico.html#cb298-1"></a>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">5</span>))<span class="op">/</span><span class="dv">2</span></span>
-<span id="cb298-2"><a href="11-1-r-básico.html#cb298-2"></a><span class="co">## [1] 1.618034</span></span></code></pre></div>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="11-1-r-básico.html#cb300-1"></a>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">5</span>))<span class="op">/</span><span class="dv">2</span></span>
+<span id="cb300-2"><a href="11-1-r-básico.html#cb300-2"></a><span class="co">## [1] 1.618034</span></span></code></pre></div>
 </div>
-<div id="objetos-1" class="section level3 unnumbered">
+<div id="objetos" class="section level3 unnumbered">
 <h3>Objetos</h3>
 <p><strong>1.</strong> Qual a diferença entre os códigos abaixo?</p>
-<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="11-1-r-básico.html#cb299-1"></a><span class="co"># Código 1</span></span>
-<span id="cb299-2"><a href="11-1-r-básico.html#cb299-2"></a><span class="dv">33</span> <span class="op">/</span><span class="st"> </span><span class="dv">11</span></span>
-<span id="cb299-3"><a href="11-1-r-básico.html#cb299-3"></a></span>
-<span id="cb299-4"><a href="11-1-r-básico.html#cb299-4"></a><span class="co"># Código 2</span></span>
-<span id="cb299-5"><a href="11-1-r-básico.html#cb299-5"></a>divisao &lt;-<span class="st"> </span><span class="dv">33</span> <span class="op">/</span><span class="st"> </span><span class="dv">11</span></span></code></pre></div>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="11-1-r-básico.html#cb301-1"></a><span class="co"># Código 1</span></span>
+<span id="cb301-2"><a href="11-1-r-básico.html#cb301-2"></a><span class="dv">33</span> <span class="op">/</span><span class="st"> </span><span class="dv">11</span></span>
+<span id="cb301-3"><a href="11-1-r-básico.html#cb301-3"></a></span>
+<span id="cb301-4"><a href="11-1-r-básico.html#cb301-4"></a><span class="co"># Código 2</span></span>
+<span id="cb301-5"><a href="11-1-r-básico.html#cb301-5"></a>divisao &lt;-<span class="st"> </span><span class="dv">33</span> <span class="op">/</span><span class="st"> </span><span class="dv">11</span></span></code></pre></div>
 <p><em>O primeiro código calcula a divisão de 33 por 11 e devolve o resultado na tela. O segundo código faz o mesmo cálculo, mas guardo o resultado no objeto <code>divisao</code>, isto é, o resultado não é retornado na tela.</em></p>
 <hr />
 <p><strong>2.</strong> Multiplique a sua idade por meses e salve o resultado em um objeto chamado <code>idade_em_meses</code>. Em seguida, multiplique esse objeto por 30 e salve o resultado em um objeto chamado <code>idade_em_dias</code>.</p>
-<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="11-1-r-básico.html#cb300-1"></a>idade_em_meses &lt;-<span class="st"> </span><span class="dv">31</span> <span class="op">*</span><span class="st"> </span><span class="dv">12</span></span>
-<span id="cb300-2"><a href="11-1-r-básico.html#cb300-2"></a></span>
-<span id="cb300-3"><a href="11-1-r-básico.html#cb300-3"></a>idade_em_dias &lt;-<span class="st"> </span>idade_em_meses <span class="op">*</span><span class="st"> </span><span class="dv">30</span></span></code></pre></div>
+<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="11-1-r-básico.html#cb302-1"></a>idade_em_meses &lt;-<span class="st"> </span><span class="dv">31</span> <span class="op">*</span><span class="st"> </span><span class="dv">12</span></span>
+<span id="cb302-2"><a href="11-1-r-básico.html#cb302-2"></a></span>
+<span id="cb302-3"><a href="11-1-r-básico.html#cb302-3"></a>idade_em_dias &lt;-<span class="st"> </span>idade_em_meses <span class="op">*</span><span class="st"> </span><span class="dv">30</span></span></code></pre></div>
 <hr />
 <p><strong>3.</strong> Por que o nome <code>meu-objeto</code> não pode ser utilizado para criar um objeto? O que significa a mensagem de erro resultante?</p>
-<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="11-1-r-básico.html#cb301-1"></a>meu<span class="op">-</span>objeto &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb301-2"><a href="11-1-r-básico.html#cb301-2"></a><span class="co">## Error in meu - objeto &lt;- 1: object &#39;meu&#39; not found</span></span></code></pre></div>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="11-1-r-básico.html#cb303-1"></a>meu<span class="op">-</span>objeto &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb303-2"><a href="11-1-r-básico.html#cb303-2"></a><span class="co">## Error in meu - objeto &lt;- 1: object &#39;meu&#39; not found</span></span></code></pre></div>
 <p><em>Porque o sinal <code>-</code> é utilizado pelo R como o operador de subtração. O código acima está sendo interpretado como a subtração dos objetos <code>meu</code> e <code>objeto</code>. Como nenhum dos objetos existe na sessão, é devolvido um erro dizendo que o objeto <code>meu</code> (o primeiro deles) não foi encontrado.</em></p>
 <p><em>No entanto, mesmo que os objetos existissem, seria retornado um erro. Neste caso, seria um erro de sintaxe, pois o R não sabe como interpretar a atribuição do valor <code>3</code> à operação <code>meu - objeto</code>. Veja que a mensagem de erro não é muito intuitiva, pois o R entende que <code>-&lt;-</code> é uma função que esquecemos de definir.</em></p>
-<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="11-1-r-básico.html#cb302-1"></a>meu &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb302-2"><a href="11-1-r-básico.html#cb302-2"></a>objeto &lt;-<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb302-3"><a href="11-1-r-básico.html#cb302-3"></a>meu<span class="op">-</span>objeto &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb302-4"><a href="11-1-r-básico.html#cb302-4"></a><span class="co">## Error in meu - objeto &lt;- 1: could not find function &quot;-&lt;-&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="11-1-r-básico.html#cb304-1"></a>meu &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb304-2"><a href="11-1-r-básico.html#cb304-2"></a>objeto &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb304-3"><a href="11-1-r-básico.html#cb304-3"></a>meu<span class="op">-</span>objeto &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb304-4"><a href="11-1-r-básico.html#cb304-4"></a><span class="co">## Error in meu - objeto &lt;- 1: could not find function &quot;-&lt;-&quot;</span></span></code></pre></div>
 </div>
 <div id="vetores-1" class="section level3 unnumbered">
 <h3>Vetores</h3>
 <p><strong>1.</strong> Guarde em um objeto a sequência de números de 0 a 5 e resolva os itens abaixos.</p>
 <p><strong>a.</strong> Use subsetting para fazer o R devolver o primeiro número dessa sequência. Em seguida, faça o R devolver o último número da sequência.</p>
-<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="11-1-r-básico.html#cb303-1"></a>vetor &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">5</span></span>
-<span id="cb303-2"><a href="11-1-r-básico.html#cb303-2"></a></span>
-<span id="cb303-3"><a href="11-1-r-básico.html#cb303-3"></a><span class="co"># Primeiro elemento</span></span>
-<span id="cb303-4"><a href="11-1-r-básico.html#cb303-4"></a>vetor[<span class="dv">1</span>]</span>
-<span id="cb303-5"><a href="11-1-r-básico.html#cb303-5"></a><span class="co">## [1] 0</span></span>
-<span id="cb303-6"><a href="11-1-r-básico.html#cb303-6"></a></span>
-<span id="cb303-7"><a href="11-1-r-básico.html#cb303-7"></a><span class="co"># Último elemento</span></span>
-<span id="cb303-8"><a href="11-1-r-básico.html#cb303-8"></a>vetor[<span class="dv">6</span>]</span>
-<span id="cb303-9"><a href="11-1-r-básico.html#cb303-9"></a><span class="co">## [1] 5</span></span></code></pre></div>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="11-1-r-básico.html#cb305-1"></a>vetor &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">5</span></span>
+<span id="cb305-2"><a href="11-1-r-básico.html#cb305-2"></a></span>
+<span id="cb305-3"><a href="11-1-r-básico.html#cb305-3"></a><span class="co"># Primeiro elemento</span></span>
+<span id="cb305-4"><a href="11-1-r-básico.html#cb305-4"></a>vetor[<span class="dv">1</span>]</span>
+<span id="cb305-5"><a href="11-1-r-básico.html#cb305-5"></a><span class="co">## [1] 0</span></span>
+<span id="cb305-6"><a href="11-1-r-básico.html#cb305-6"></a></span>
+<span id="cb305-7"><a href="11-1-r-básico.html#cb305-7"></a><span class="co"># Último elemento</span></span>
+<span id="cb305-8"><a href="11-1-r-básico.html#cb305-8"></a>vetor[<span class="dv">6</span>]</span>
+<span id="cb305-9"><a href="11-1-r-básico.html#cb305-9"></a><span class="co">## [1] 5</span></span></code></pre></div>
 <p><strong>b.</strong> Multiplique todos os valores do vetor por -1. Guarde o resultado em
 um novo objeto chamado <code>vetor_negativo</code>.</p>
-<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="11-1-r-básico.html#cb304-1"></a>vetor_negativo &lt;-<span class="st"> </span>vetor <span class="op">*</span><span class="st"> </span><span class="dv">-1</span></span>
-<span id="cb304-2"><a href="11-1-r-básico.html#cb304-2"></a>vetor_negativo</span>
-<span id="cb304-3"><a href="11-1-r-básico.html#cb304-3"></a><span class="co">## [1]  0 -1 -2 -3 -4 -5</span></span></code></pre></div>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="11-1-r-básico.html#cb306-1"></a>vetor_negativo &lt;-<span class="st"> </span>vetor <span class="op">*</span><span class="st"> </span><span class="dv">-1</span></span>
+<span id="cb306-2"><a href="11-1-r-básico.html#cb306-2"></a>vetor_negativo</span>
+<span id="cb306-3"><a href="11-1-r-básico.html#cb306-3"></a><span class="co">## [1]  0 -1 -2 -3 -4 -5</span></span></code></pre></div>
 <hr />
 <p><strong>2.</strong> O que é reciclagem? Escreva um código em R que exemplifique esse comportamento.</p>
 <p><em>Reciclagem é a repetição de valores de um vetor para que uma operação com vetores de tamanhos diferentes possa ser realizada. Embora pareça um comportamento estranho, utilizamos a reciclagem o tempo todo dentro do R, muitas vezes sem perceber. No exemplo a seguir, os valores do <code>vetor_menor</code> serão repetidos (reciclados) até o dois vetores terem o mesmo tamanho. Então, o primeiro valor do vetor menor será somado com o promeiro valor do vetor maior, o segundo do menor somado com o segundo do maior e assim por diante.</em></p>
-<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="11-1-r-básico.html#cb305-1"></a><span class="co"># Exemplo</span></span>
-<span id="cb305-2"><a href="11-1-r-básico.html#cb305-2"></a>vetor_menor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)</span>
-<span id="cb305-3"><a href="11-1-r-básico.html#cb305-3"></a>vetor_maior &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb305-4"><a href="11-1-r-básico.html#cb305-4"></a></span>
-<span id="cb305-5"><a href="11-1-r-básico.html#cb305-5"></a>vetor_menor <span class="op">+</span><span class="st"> </span>vetor_maior</span>
-<span id="cb305-6"><a href="11-1-r-básico.html#cb305-6"></a><span class="co">## [1] 2 5 4 7</span></span></code></pre></div>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="11-1-r-básico.html#cb307-1"></a><span class="co"># Exemplo</span></span>
+<span id="cb307-2"><a href="11-1-r-básico.html#cb307-2"></a>vetor_menor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)</span>
+<span id="cb307-3"><a href="11-1-r-básico.html#cb307-3"></a>vetor_maior &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb307-4"><a href="11-1-r-básico.html#cb307-4"></a></span>
+<span id="cb307-5"><a href="11-1-r-básico.html#cb307-5"></a>vetor_menor <span class="op">+</span><span class="st"> </span>vetor_maior</span>
+<span id="cb307-6"><a href="11-1-r-básico.html#cb307-6"></a><span class="co">## [1] 2 5 4 7</span></span></code></pre></div>
 <hr />
 <p><strong>3.</strong> O que é coerção? Escreva um código em R que exemplifique esse comportamento.</p>
 <p><em>Coerção é a homogenização da classe dos valores de um vetor. Se construirmos um vetor com valores de classes diferentes, todos os valores serão reprimidos para a classe mais dominante entre eles. No exemplo abaixo, todos os valores do vetor foram transformados em <code>character</code>, pois <code>character</code> é mais dominante do que as demais classes presentes (<code>numeric</code> e <code>logical</code>).</em></p>
 <p><em>Considerando apenas as principais classes, temos a seguinte ordem de dominância: <code>character &gt; numeric &gt; integer &gt; logical</code></em>.</p>
-<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="11-1-r-básico.html#cb306-1"></a><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">-3</span>, <span class="st">&quot;a&quot;</span>, <span class="ot">TRUE</span>)</span>
-<span id="cb306-2"><a href="11-1-r-básico.html#cb306-2"></a><span class="co">## [1] &quot;1&quot;    &quot;-3&quot;   &quot;a&quot;    &quot;TRUE&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="11-1-r-básico.html#cb308-1"></a><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">-3</span>, <span class="st">&quot;a&quot;</span>, <span class="ot">TRUE</span>)</span>
+<span id="cb308-2"><a href="11-1-r-básico.html#cb308-2"></a><span class="co">## [1] &quot;1&quot;    &quot;-3&quot;   &quot;a&quot;    &quot;TRUE&quot;</span></span></code></pre></div>
 <hr />
 <p><strong>4.</strong> Por que a coerção pode ser um problema na hora de importarmos bases de dados para o R?</p>
 <p><em>Porque as colunas podem acabar sendo importadas com uma classe diferente daquela que estamos esperando e nenhum erro ou warning será devolvido. Por exemplo, se uma coluna da base que deveria ser numérica tiver, por algum descuido, qualquer tipo de caracter não numérico (texto), toda a coluna será importada como texto.</em></p>

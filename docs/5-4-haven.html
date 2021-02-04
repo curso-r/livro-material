@@ -165,8 +165,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
 <li class="chapter" data-level="" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-3-objetos.html"><a href="3-3-objetos.html"><i class="fa fa-check"></i><b>3.3</b> Objetos</a><ul>
-<li class="chapter" data-level="" data-path="3-3-objetos.html"><a href="3-3-objetos.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
+<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a><ul>
+<li class="chapter" data-level="" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="3-4-data-frames.html"><a href="3-4-data-frames.html"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
 <li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a></li>
@@ -181,8 +181,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
 <li class="chapter" data-level="" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html#exercícios-4"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="3-11-funcoes.html"><a href="3-11-funcoes.html"><i class="fa fa-check"></i><b>3.11</b> Funções</a><ul>
-<li class="chapter" data-level="" data-path="3-11-funcoes.html"><a href="3-11-funcoes.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
+<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a><ul>
+<li class="chapter" data-level="" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
 <li class="chapter" data-level="3.12.1" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
@@ -253,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11" data-path="11-respostas.html"><a href="11-respostas.html"><i class="fa fa-check"></i><b>11</b> Respostas</a><ul>
 <li class="chapter" data-level="11.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html"><i class="fa fa-check"></i><b>11.1</b> R básico</a><ul>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
-<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#objetos-1"><i class="fa fa-check"></i>Objetos</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#objetos"><i class="fa fa-check"></i>Objetos</a></li>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#vetores-1"><i class="fa fa-check"></i>Vetores</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="11-2-pipe-1.html"><a href="11-2-pipe-1.html"><i class="fa fa-check"></i><b>11.2</b> Pipe</a></li>
@@ -285,17 +285,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="haven" class="section level2">
 <h2><span class="header-section-number">5.4</span> haven</h2>
 <p>Para ler arquivos gerados por outros softwares, como SPSS, SAS e STATA, você pode usar as funções do pacote <code>haven</code>. Este pacote faz parte do <code>tidyverse</code> e é um wrapper da biblioteca ReadStat, escrita em C.</p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="5-4-haven.html#cb156-1"></a><span class="kw">library</span>(haven)</span>
-<span id="cb156-2"><a href="5-4-haven.html#cb156-2"></a></span>
-<span id="cb156-3"><a href="5-4-haven.html#cb156-3"></a>imdb_sas &lt;-<span class="st"> </span><span class="kw">read_sas</span>(<span class="st">&quot;assets/data/imdb.sas7bdat&quot;</span>)</span>
-<span id="cb156-4"><a href="5-4-haven.html#cb156-4"></a>imdb_spss &lt;-<span class="st"> </span><span class="kw">read_spss</span>(<span class="st">&quot;assets/data/imdb.sav&quot;</span>)</span>
-<span id="cb156-5"><a href="5-4-haven.html#cb156-5"></a>imdb_dta &lt;-<span class="st"> </span><span class="kw">read_dta</span>(<span class="st">&quot;assets/data/imdb.dta&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="5-4-haven.html#cb158-1"></a><span class="kw">library</span>(haven)</span>
+<span id="cb158-2"><a href="5-4-haven.html#cb158-2"></a></span>
+<span id="cb158-3"><a href="5-4-haven.html#cb158-3"></a>imdb_sas &lt;-<span class="st"> </span><span class="kw">read_sas</span>(<span class="st">&quot;assets/data/imdb.sas7bdat&quot;</span>)</span>
+<span id="cb158-4"><a href="5-4-haven.html#cb158-4"></a>imdb_spss &lt;-<span class="st"> </span><span class="kw">read_spss</span>(<span class="st">&quot;assets/data/imdb.sav&quot;</span>)</span>
+<span id="cb158-5"><a href="5-4-haven.html#cb158-5"></a>imdb_dta &lt;-<span class="st"> </span><span class="kw">read_dta</span>(<span class="st">&quot;assets/data/imdb.dta&quot;</span>)</span></code></pre></div>
 <p>É possível salvar ou escrever bases em SAS e STATA com as funções <code>write_sas</code> e <code>write_dta</code>.</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="5-4-haven.html#cb157-1"></a><span class="kw">write_dta</span>(mtcars, <span class="st">&#39;assets/data/mtcars.dta&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="5-4-haven.html#cb159-1"></a><span class="kw">write_dta</span>(mtcars, <span class="st">&#39;assets/data/mtcars.dta&#39;</span>)</span></code></pre></div>
 <p>Quando importamos arquivos gerados pelo SAS SPSS ou STATA para o R, os rótulos de uma variável podem não ser importados de forma correta. O pacote <code>haven</code> tem uma soluçao para este problema.</p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="5-4-haven.html#cb158-1"></a>x &lt;-<span class="st"> </span><span class="kw">labelled</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="kw">c</span>(<span class="dt">Ruim =</span> <span class="dv">1</span>, <span class="dt">Bom =</span> <span class="dv">2</span>, <span class="dt">Otimo =</span> <span class="dv">3</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="5-4-haven.html#cb160-1"></a>x &lt;-<span class="st"> </span><span class="kw">labelled</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="kw">c</span>(<span class="dt">Ruim =</span> <span class="dv">1</span>, <span class="dt">Bom =</span> <span class="dv">2</span>, <span class="dt">Otimo =</span> <span class="dv">3</span>))</span></code></pre></div>
 <p><code>labelled()</code> adiciona rótulos à valores de uma variável. Para verificar quais são estes rótulos, podemos usar a função <code>print_labels()</code>.</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="5-4-haven.html#cb159-1"></a><span class="kw">print_labels</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="5-4-haven.html#cb161-1"></a><span class="kw">print_labels</span>(x)</span></code></pre></div>
 <pre><code>## 
 ## Labels:
 ##  value label
@@ -303,13 +303,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##      2   Bom
 ##      3 Otimo</code></pre>
 <p>Existe uma função similar a <code>labelled()</code>, exclusiva para o SPSS, que além de rotular as variáveis, também defini quais símbolos representam valores faltantes, dado que em SPSS pode haver mais de um tipo de <em>missing</em>.</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="5-4-haven.html#cb161-1"></a>x1 &lt;-<span class="st"> </span><span class="kw">labelled_spss</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">4</span>), <span class="kw">c</span>(<span class="dt">Ruim =</span> <span class="dv">1</span>,<span class="dt">Bom =</span> <span class="dv">2</span>, <span class="dt">Otimo =</span> <span class="dv">3</span>), <span class="dt">na_values =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">4</span>))</span>
-<span id="cb161-2"><a href="5-4-haven.html#cb161-2"></a>    </span>
-<span id="cb161-3"><a href="5-4-haven.html#cb161-3"></a><span class="kw">is.na</span>(x1)</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="5-4-haven.html#cb163-1"></a>x1 &lt;-<span class="st"> </span><span class="kw">labelled_spss</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">4</span>), <span class="kw">c</span>(<span class="dt">Ruim =</span> <span class="dv">1</span>,<span class="dt">Bom =</span> <span class="dv">2</span>, <span class="dt">Otimo =</span> <span class="dv">3</span>), <span class="dt">na_values =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">4</span>))</span>
+<span id="cb163-2"><a href="5-4-haven.html#cb163-2"></a>    </span>
+<span id="cb163-3"><a href="5-4-haven.html#cb163-3"></a><span class="kw">is.na</span>(x1)</span></code></pre></div>
 <pre><code>## [1] FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE</code></pre>
 <p>Agora que já definimos os <em>missings</em> “especiais”, podemos transformá-los no <em>missing</em> padrão do R, representado pelo símbolo <em>NA</em>.</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="5-4-haven.html#cb163-1"></a>x1 &lt;-<span class="st"> </span><span class="kw">zap_missing</span>(x1)</span>
-<span id="cb163-2"><a href="5-4-haven.html#cb163-2"></a>x1</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="5-4-haven.html#cb165-1"></a>x1 &lt;-<span class="st"> </span><span class="kw">zap_missing</span>(x1)</span>
+<span id="cb165-2"><a href="5-4-haven.html#cb165-2"></a>x1</span></code></pre></div>
 <pre><code>## [1]  1  3 NA  2  2  1 NA  2 NA
 ## attr(,&quot;labels&quot;)
 ##  Ruim   Bom Otimo 
@@ -319,11 +319,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Existem outras funções <code>zap_</code> interessantes no <a href="https://cran.r-project.org/web/packages/haven/haven.pdf">pacote</a>.</p>
 <p>Após rotular os valores do vetor, podemos convertê-los, por exemplo, em fator. Para isso, usamos uma função do pacote <code>haven</code>.
 A função base <code>as.factor()</code> também poderia ser usada, mas quando a usamos, os rótulos não são considerados.</p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="5-4-haven.html#cb165-1"></a>x_base &lt;-<span class="st"> </span>base<span class="op">::</span><span class="kw">as.factor</span>(x)</span>
-<span id="cb165-2"><a href="5-4-haven.html#cb165-2"></a><span class="kw">levels</span>(x_base)</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="5-4-haven.html#cb167-1"></a>x_base &lt;-<span class="st"> </span>base<span class="op">::</span><span class="kw">as.factor</span>(x)</span>
+<span id="cb167-2"><a href="5-4-haven.html#cb167-2"></a><span class="kw">levels</span>(x_base)</span></code></pre></div>
 <pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot;</code></pre>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="5-4-haven.html#cb167-1"></a>x_factor &lt;-<span class="st"> </span>haven<span class="op">::</span><span class="kw">as_factor</span>(x)</span>
-<span id="cb167-2"><a href="5-4-haven.html#cb167-2"></a><span class="kw">levels</span>(x_factor)</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="5-4-haven.html#cb169-1"></a>x_factor &lt;-<span class="st"> </span>haven<span class="op">::</span><span class="kw">as_factor</span>(x)</span>
+<span id="cb169-2"><a href="5-4-haven.html#cb169-2"></a><span class="kw">levels</span>(x_factor)</span></code></pre></div>
 <pre><code>## [1] &quot;Ruim&quot;  &quot;Bom&quot;   &quot;Otimo&quot;</code></pre>
 
 </div>

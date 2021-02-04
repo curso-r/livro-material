@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="3-11-funcoes.html"/>
+<link rel="prev" href="3-11-maisFuncoes.html"/>
 <link rel="next" href="3-13-outros-tópicos.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -165,8 +165,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
 <li class="chapter" data-level="" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-3-objetos.html"><a href="3-3-objetos.html"><i class="fa fa-check"></i><b>3.3</b> Objetos</a><ul>
-<li class="chapter" data-level="" data-path="3-3-objetos.html"><a href="3-3-objetos.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
+<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a><ul>
+<li class="chapter" data-level="" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="3-4-data-frames.html"><a href="3-4-data-frames.html"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
 <li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a></li>
@@ -181,8 +181,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
 <li class="chapter" data-level="" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html#exercícios-4"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="3-11-funcoes.html"><a href="3-11-funcoes.html"><i class="fa fa-check"></i><b>3.11</b> Funções</a><ul>
-<li class="chapter" data-level="" data-path="3-11-funcoes.html"><a href="3-11-funcoes.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
+<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a><ul>
+<li class="chapter" data-level="" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
 <li class="chapter" data-level="3.12.1" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
@@ -253,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11" data-path="11-respostas.html"><a href="11-respostas.html"><i class="fa fa-check"></i><b>11</b> Respostas</a><ul>
 <li class="chapter" data-level="11.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html"><i class="fa fa-check"></i><b>11.1</b> R básico</a><ul>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
-<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#objetos-1"><i class="fa fa-check"></i>Objetos</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#objetos"><i class="fa fa-check"></i>Objetos</a></li>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#vetores-1"><i class="fa fa-check"></i>Vetores</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="11-2-pipe-1.html"><a href="11-2-pipe-1.html"><i class="fa fa-check"></i><b>11.2</b> Pipe</a></li>
@@ -290,168 +290,168 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">3.12.1</span> Condicionamento: if e else</h3>
 <p>As estruturas <code>if</code> e <code>else</code> servem para executarmos um código apenas se uma condição (teste lógico) for satisfeita.</p>
 <p>No código abaixo, a função <code>Sys.time()</code>, que retorna a data/hora no momento da execução, só será avlaiada se o objeto <code>x</code> for igual a 1.</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="3-12-controle-de-fluxo.html#cb85-1"></a><span class="co"># Não vai executar a função Sys.time()</span></span>
-<span id="cb85-2"><a href="3-12-controle-de-fluxo.html#cb85-2"></a>x &lt;-<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb85-3"><a href="3-12-controle-de-fluxo.html#cb85-3"></a></span>
-<span id="cb85-4"><a href="3-12-controle-de-fluxo.html#cb85-4"></a><span class="cf">if</span> (x <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) {         </span>
-<span id="cb85-5"><a href="3-12-controle-de-fluxo.html#cb85-5"></a>  <span class="kw">Sys.time</span>()</span>
-<span id="cb85-6"><a href="3-12-controle-de-fluxo.html#cb85-6"></a>}</span>
-<span id="cb85-7"><a href="3-12-controle-de-fluxo.html#cb85-7"></a></span>
-<span id="cb85-8"><a href="3-12-controle-de-fluxo.html#cb85-8"></a><span class="co"># Vai executar a função Sys.time()</span></span>
-<span id="cb85-9"><a href="3-12-controle-de-fluxo.html#cb85-9"></a>x &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb85-10"><a href="3-12-controle-de-fluxo.html#cb85-10"></a></span>
-<span id="cb85-11"><a href="3-12-controle-de-fluxo.html#cb85-11"></a><span class="cf">if</span> (x <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) {         </span>
-<span id="cb85-12"><a href="3-12-controle-de-fluxo.html#cb85-12"></a>  <span class="kw">Sys.time</span>()</span>
-<span id="cb85-13"><a href="3-12-controle-de-fluxo.html#cb85-13"></a>}</span>
-<span id="cb85-14"><a href="3-12-controle-de-fluxo.html#cb85-14"></a><span class="co">## [1] &quot;2021-02-04 16:36:56 -03&quot;</span></span></code></pre></div>
-<p>O R só vai executar o que está na expressão dentro das chaves <code>{}</code> se a expressão que estiver dentro dos parênteses <code>()</code> retornar <code>TRUE</code>. Veja outro exemplo:</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="3-12-controle-de-fluxo.html#cb86-1"></a><span class="co"># Vai fazer  a soma</span></span>
-<span id="cb86-2"><a href="3-12-controle-de-fluxo.html#cb86-2"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">15</span>)</span>
-<span id="cb86-3"><a href="3-12-controle-de-fluxo.html#cb86-3"></a></span>
-<span id="cb86-4"><a href="3-12-controle-de-fluxo.html#cb86-4"></a><span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>) {</span>
-<span id="cb86-5"><a href="3-12-controle-de-fluxo.html#cb86-5"></a>  <span class="kw">sum</span>(x)</span>
-<span id="cb86-6"><a href="3-12-controle-de-fluxo.html#cb86-6"></a>}</span>
-<span id="cb86-7"><a href="3-12-controle-de-fluxo.html#cb86-7"></a><span class="co">## [1] 29</span></span>
-<span id="cb86-8"><a href="3-12-controle-de-fluxo.html#cb86-8"></a></span>
-<span id="cb86-9"><a href="3-12-controle-de-fluxo.html#cb86-9"></a><span class="co"># Não vai fazer a soma</span></span>
-<span id="cb86-10"><a href="3-12-controle-de-fluxo.html#cb86-10"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
-<span id="cb86-11"><a href="3-12-controle-de-fluxo.html#cb86-11"></a></span>
-<span id="cb86-12"><a href="3-12-controle-de-fluxo.html#cb86-12"></a><span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>) {</span>
-<span id="cb86-13"><a href="3-12-controle-de-fluxo.html#cb86-13"></a>  <span class="kw">sum</span>(x)</span>
-<span id="cb86-14"><a href="3-12-controle-de-fluxo.html#cb86-14"></a>}</span></code></pre></div>
-<p>Nesse exemplo, a soma só é executada se a classe do objeto <code>x</code> for numérica, isto é, se <code>x</code> for um vetor de números. Essa verificação poderia ser colocada dentro de uma função para evitarmos que ela retorne um erro.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="3-12-controle-de-fluxo.html#cb87-1"></a>minha_soma &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</span>
-<span id="cb87-2"><a href="3-12-controle-de-fluxo.html#cb87-2"></a>  <span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span> <span class="op">&amp;</span><span class="st"> </span><span class="kw">class</span>(y) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>) {</span>
-<span id="cb87-3"><a href="3-12-controle-de-fluxo.html#cb87-3"></a>     x <span class="op">+</span><span class="st"> </span>y</span>
-<span id="cb87-4"><a href="3-12-controle-de-fluxo.html#cb87-4"></a>  }</span>
-<span id="cb87-5"><a href="3-12-controle-de-fluxo.html#cb87-5"></a>}</span>
-<span id="cb87-6"><a href="3-12-controle-de-fluxo.html#cb87-6"></a></span>
-<span id="cb87-7"><a href="3-12-controle-de-fluxo.html#cb87-7"></a><span class="co"># Retorna a soma</span></span>
-<span id="cb87-8"><a href="3-12-controle-de-fluxo.html#cb87-8"></a><span class="kw">minha_soma</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb87-9"><a href="3-12-controle-de-fluxo.html#cb87-9"></a><span class="co">## [1] 3</span></span>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="3-12-controle-de-fluxo.html#cb87-1"></a><span class="co"># Não vai executar a função Sys.time()</span></span>
+<span id="cb87-2"><a href="3-12-controle-de-fluxo.html#cb87-2"></a>x &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb87-3"><a href="3-12-controle-de-fluxo.html#cb87-3"></a></span>
+<span id="cb87-4"><a href="3-12-controle-de-fluxo.html#cb87-4"></a><span class="cf">if</span> (x <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) {         </span>
+<span id="cb87-5"><a href="3-12-controle-de-fluxo.html#cb87-5"></a>  <span class="kw">Sys.time</span>()</span>
+<span id="cb87-6"><a href="3-12-controle-de-fluxo.html#cb87-6"></a>}</span>
+<span id="cb87-7"><a href="3-12-controle-de-fluxo.html#cb87-7"></a></span>
+<span id="cb87-8"><a href="3-12-controle-de-fluxo.html#cb87-8"></a><span class="co"># Vai executar a função Sys.time()</span></span>
+<span id="cb87-9"><a href="3-12-controle-de-fluxo.html#cb87-9"></a>x &lt;-<span class="st"> </span><span class="dv">1</span></span>
 <span id="cb87-10"><a href="3-12-controle-de-fluxo.html#cb87-10"></a></span>
-<span id="cb87-11"><a href="3-12-controle-de-fluxo.html#cb87-11"></a><span class="co"># Não retorna nada</span></span>
-<span id="cb87-12"><a href="3-12-controle-de-fluxo.html#cb87-12"></a><span class="kw">minha_soma</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>)</span></code></pre></div>
+<span id="cb87-11"><a href="3-12-controle-de-fluxo.html#cb87-11"></a><span class="cf">if</span> (x <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) {         </span>
+<span id="cb87-12"><a href="3-12-controle-de-fluxo.html#cb87-12"></a>  <span class="kw">Sys.time</span>()</span>
+<span id="cb87-13"><a href="3-12-controle-de-fluxo.html#cb87-13"></a>}</span>
+<span id="cb87-14"><a href="3-12-controle-de-fluxo.html#cb87-14"></a><span class="co">## [1] &quot;2021-02-04 17:19:02 -03&quot;</span></span></code></pre></div>
+<p>O R só vai executar o que está na expressão dentro das chaves <code>{}</code> se a expressão que estiver dentro dos parênteses <code>()</code> retornar <code>TRUE</code>. Veja outro exemplo:</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="3-12-controle-de-fluxo.html#cb88-1"></a><span class="co"># Vai fazer  a soma</span></span>
+<span id="cb88-2"><a href="3-12-controle-de-fluxo.html#cb88-2"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">15</span>)</span>
+<span id="cb88-3"><a href="3-12-controle-de-fluxo.html#cb88-3"></a></span>
+<span id="cb88-4"><a href="3-12-controle-de-fluxo.html#cb88-4"></a><span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>) {</span>
+<span id="cb88-5"><a href="3-12-controle-de-fluxo.html#cb88-5"></a>  <span class="kw">sum</span>(x)</span>
+<span id="cb88-6"><a href="3-12-controle-de-fluxo.html#cb88-6"></a>}</span>
+<span id="cb88-7"><a href="3-12-controle-de-fluxo.html#cb88-7"></a><span class="co">## [1] 29</span></span>
+<span id="cb88-8"><a href="3-12-controle-de-fluxo.html#cb88-8"></a></span>
+<span id="cb88-9"><a href="3-12-controle-de-fluxo.html#cb88-9"></a><span class="co"># Não vai fazer a soma</span></span>
+<span id="cb88-10"><a href="3-12-controle-de-fluxo.html#cb88-10"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
+<span id="cb88-11"><a href="3-12-controle-de-fluxo.html#cb88-11"></a></span>
+<span id="cb88-12"><a href="3-12-controle-de-fluxo.html#cb88-12"></a><span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>) {</span>
+<span id="cb88-13"><a href="3-12-controle-de-fluxo.html#cb88-13"></a>  <span class="kw">sum</span>(x)</span>
+<span id="cb88-14"><a href="3-12-controle-de-fluxo.html#cb88-14"></a>}</span></code></pre></div>
+<p>Nesse exemplo, a soma só é executada se a classe do objeto <code>x</code> for numérica, isto é, se <code>x</code> for um vetor de números. Essa verificação poderia ser colocada dentro de uma função para evitarmos que ela retorne um erro.</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="3-12-controle-de-fluxo.html#cb89-1"></a>minha_soma &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</span>
+<span id="cb89-2"><a href="3-12-controle-de-fluxo.html#cb89-2"></a>  <span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span> <span class="op">&amp;</span><span class="st"> </span><span class="kw">class</span>(y) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>) {</span>
+<span id="cb89-3"><a href="3-12-controle-de-fluxo.html#cb89-3"></a>     x <span class="op">+</span><span class="st"> </span>y</span>
+<span id="cb89-4"><a href="3-12-controle-de-fluxo.html#cb89-4"></a>  }</span>
+<span id="cb89-5"><a href="3-12-controle-de-fluxo.html#cb89-5"></a>}</span>
+<span id="cb89-6"><a href="3-12-controle-de-fluxo.html#cb89-6"></a></span>
+<span id="cb89-7"><a href="3-12-controle-de-fluxo.html#cb89-7"></a><span class="co"># Retorna a soma</span></span>
+<span id="cb89-8"><a href="3-12-controle-de-fluxo.html#cb89-8"></a><span class="kw">minha_soma</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb89-9"><a href="3-12-controle-de-fluxo.html#cb89-9"></a><span class="co">## [1] 3</span></span>
+<span id="cb89-10"><a href="3-12-controle-de-fluxo.html#cb89-10"></a></span>
+<span id="cb89-11"><a href="3-12-controle-de-fluxo.html#cb89-11"></a><span class="co"># Não retorna nada</span></span>
+<span id="cb89-12"><a href="3-12-controle-de-fluxo.html#cb89-12"></a><span class="kw">minha_soma</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>)</span></code></pre></div>
 <p>Nesses casos, é muito comum o uso das funções <code>return()</code> e <code>stop()</code> para, respectivamente, retornar um resultado antecipadamente ou para a execução da função e devolver ao usuário uma mensagem de erro personalizada.</p>
 <p>Um exemplo usando <code>return()</code>.</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="3-12-controle-de-fluxo.html#cb88-1"></a><span class="co"># Devolvendo um resultado antecipadamente</span></span>
-<span id="cb88-2"><a href="3-12-controle-de-fluxo.html#cb88-2"></a>minha_soma_NA &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</span>
-<span id="cb88-3"><a href="3-12-controle-de-fluxo.html#cb88-3"></a>  <span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span> <span class="op">&amp;</span><span class="st"> </span><span class="kw">class</span>(y) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>) {</span>
-<span id="cb88-4"><a href="3-12-controle-de-fluxo.html#cb88-4"></a>     soma &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span>y</span>
-<span id="cb88-5"><a href="3-12-controle-de-fluxo.html#cb88-5"></a>     <span class="kw">return</span>(soma)</span>
-<span id="cb88-6"><a href="3-12-controle-de-fluxo.html#cb88-6"></a>  }</span>
-<span id="cb88-7"><a href="3-12-controle-de-fluxo.html#cb88-7"></a>  </span>
-<span id="cb88-8"><a href="3-12-controle-de-fluxo.html#cb88-8"></a>  <span class="ot">NA</span></span>
-<span id="cb88-9"><a href="3-12-controle-de-fluxo.html#cb88-9"></a>}</span>
-<span id="cb88-10"><a href="3-12-controle-de-fluxo.html#cb88-10"></a></span>
-<span id="cb88-11"><a href="3-12-controle-de-fluxo.html#cb88-11"></a><span class="co"># Retorna a soma</span></span>
-<span id="cb88-12"><a href="3-12-controle-de-fluxo.html#cb88-12"></a><span class="kw">minha_soma_NA</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb88-13"><a href="3-12-controle-de-fluxo.html#cb88-13"></a><span class="co">## [1] 3</span></span>
-<span id="cb88-14"><a href="3-12-controle-de-fluxo.html#cb88-14"></a></span>
-<span id="cb88-15"><a href="3-12-controle-de-fluxo.html#cb88-15"></a><span class="co"># Retorna NA</span></span>
-<span id="cb88-16"><a href="3-12-controle-de-fluxo.html#cb88-16"></a><span class="kw">minha_soma_NA</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>)</span>
-<span id="cb88-17"><a href="3-12-controle-de-fluxo.html#cb88-17"></a><span class="co">## [1] NA</span></span>
-<span id="cb88-18"><a href="3-12-controle-de-fluxo.html#cb88-18"></a></span>
-<span id="cb88-19"><a href="3-12-controle-de-fluxo.html#cb88-19"></a><span class="co"># Retorna NA</span></span>
-<span id="cb88-20"><a href="3-12-controle-de-fluxo.html#cb88-20"></a><span class="kw">minha_soma_NA</span>(<span class="dv">1</span>, <span class="st">&quot;b&quot;</span>)</span>
-<span id="cb88-21"><a href="3-12-controle-de-fluxo.html#cb88-21"></a><span class="co">## [1] NA</span></span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="3-12-controle-de-fluxo.html#cb90-1"></a><span class="co"># Devolvendo um resultado antecipadamente</span></span>
+<span id="cb90-2"><a href="3-12-controle-de-fluxo.html#cb90-2"></a>minha_soma_NA &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</span>
+<span id="cb90-3"><a href="3-12-controle-de-fluxo.html#cb90-3"></a>  <span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span> <span class="op">&amp;</span><span class="st"> </span><span class="kw">class</span>(y) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>) {</span>
+<span id="cb90-4"><a href="3-12-controle-de-fluxo.html#cb90-4"></a>     soma &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span>y</span>
+<span id="cb90-5"><a href="3-12-controle-de-fluxo.html#cb90-5"></a>     <span class="kw">return</span>(soma)</span>
+<span id="cb90-6"><a href="3-12-controle-de-fluxo.html#cb90-6"></a>  }</span>
+<span id="cb90-7"><a href="3-12-controle-de-fluxo.html#cb90-7"></a>  </span>
+<span id="cb90-8"><a href="3-12-controle-de-fluxo.html#cb90-8"></a>  <span class="ot">NA</span></span>
+<span id="cb90-9"><a href="3-12-controle-de-fluxo.html#cb90-9"></a>}</span>
+<span id="cb90-10"><a href="3-12-controle-de-fluxo.html#cb90-10"></a></span>
+<span id="cb90-11"><a href="3-12-controle-de-fluxo.html#cb90-11"></a><span class="co"># Retorna a soma</span></span>
+<span id="cb90-12"><a href="3-12-controle-de-fluxo.html#cb90-12"></a><span class="kw">minha_soma_NA</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb90-13"><a href="3-12-controle-de-fluxo.html#cb90-13"></a><span class="co">## [1] 3</span></span>
+<span id="cb90-14"><a href="3-12-controle-de-fluxo.html#cb90-14"></a></span>
+<span id="cb90-15"><a href="3-12-controle-de-fluxo.html#cb90-15"></a><span class="co"># Retorna NA</span></span>
+<span id="cb90-16"><a href="3-12-controle-de-fluxo.html#cb90-16"></a><span class="kw">minha_soma_NA</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>)</span>
+<span id="cb90-17"><a href="3-12-controle-de-fluxo.html#cb90-17"></a><span class="co">## [1] NA</span></span>
+<span id="cb90-18"><a href="3-12-controle-de-fluxo.html#cb90-18"></a></span>
+<span id="cb90-19"><a href="3-12-controle-de-fluxo.html#cb90-19"></a><span class="co"># Retorna NA</span></span>
+<span id="cb90-20"><a href="3-12-controle-de-fluxo.html#cb90-20"></a><span class="kw">minha_soma_NA</span>(<span class="dv">1</span>, <span class="st">&quot;b&quot;</span>)</span>
+<span id="cb90-21"><a href="3-12-controle-de-fluxo.html#cb90-21"></a><span class="co">## [1] NA</span></span></code></pre></div>
 <p>Na função <code>minha_soma_NA()</code>, a soma só é calculada e retornada se <code>x</code> e <code>y</code> forem numéricos. Caso pelo menos um dos dois não seja, o código dentro do <code>if</code> não é executado e o valor retornado é o <code>NA</code>.</p>
 <p>Agora, usando <code>stop()</code>.</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="3-12-controle-de-fluxo.html#cb89-1"></a><span class="co"># Agora, devolvendo um erro</span></span>
-<span id="cb89-2"><a href="3-12-controle-de-fluxo.html#cb89-2"></a>minha_soma_erro &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</span>
-<span id="cb89-3"><a href="3-12-controle-de-fluxo.html#cb89-3"></a>  <span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">!=</span><span class="st"> &quot;numeric&quot;</span> <span class="op">|</span><span class="st"> </span><span class="kw">class</span>(y) <span class="op">!=</span><span class="st"> &quot;numeric&quot;</span>) {</span>
-<span id="cb89-4"><a href="3-12-controle-de-fluxo.html#cb89-4"></a>    <span class="kw">stop</span>(<span class="st">&quot;A classe dos objetos x e y deve ser numérica.&quot;</span>)</span>
-<span id="cb89-5"><a href="3-12-controle-de-fluxo.html#cb89-5"></a>  }</span>
-<span id="cb89-6"><a href="3-12-controle-de-fluxo.html#cb89-6"></a>  </span>
-<span id="cb89-7"><a href="3-12-controle-de-fluxo.html#cb89-7"></a>  x <span class="op">+</span><span class="st"> </span>y</span>
-<span id="cb89-8"><a href="3-12-controle-de-fluxo.html#cb89-8"></a>}</span>
-<span id="cb89-9"><a href="3-12-controle-de-fluxo.html#cb89-9"></a></span>
-<span id="cb89-10"><a href="3-12-controle-de-fluxo.html#cb89-10"></a><span class="co"># Retorna a soma</span></span>
-<span id="cb89-11"><a href="3-12-controle-de-fluxo.html#cb89-11"></a><span class="kw">minha_soma_erro</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb89-12"><a href="3-12-controle-de-fluxo.html#cb89-12"></a><span class="co">## [1] 3</span></span>
-<span id="cb89-13"><a href="3-12-controle-de-fluxo.html#cb89-13"></a></span>
-<span id="cb89-14"><a href="3-12-controle-de-fluxo.html#cb89-14"></a><span class="co"># Retorna erro</span></span>
-<span id="cb89-15"><a href="3-12-controle-de-fluxo.html#cb89-15"></a><span class="kw">minha_soma_erro</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>)</span>
-<span id="cb89-16"><a href="3-12-controle-de-fluxo.html#cb89-16"></a><span class="co">## Error in minha_soma_erro(&quot;a&quot;, &quot;b&quot;): A classe dos objetos x e y deve ser numérica.</span></span>
-<span id="cb89-17"><a href="3-12-controle-de-fluxo.html#cb89-17"></a></span>
-<span id="cb89-18"><a href="3-12-controle-de-fluxo.html#cb89-18"></a><span class="co"># Retorna erro</span></span>
-<span id="cb89-19"><a href="3-12-controle-de-fluxo.html#cb89-19"></a><span class="kw">minha_soma_erro</span>(<span class="dv">1</span>, <span class="st">&quot;b&quot;</span>)</span>
-<span id="cb89-20"><a href="3-12-controle-de-fluxo.html#cb89-20"></a><span class="co">## Error in minha_soma_erro(1, &quot;b&quot;): A classe dos objetos x e y deve ser numérica.</span></span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="3-12-controle-de-fluxo.html#cb91-1"></a><span class="co"># Agora, devolvendo um erro</span></span>
+<span id="cb91-2"><a href="3-12-controle-de-fluxo.html#cb91-2"></a>minha_soma_erro &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</span>
+<span id="cb91-3"><a href="3-12-controle-de-fluxo.html#cb91-3"></a>  <span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">!=</span><span class="st"> &quot;numeric&quot;</span> <span class="op">|</span><span class="st"> </span><span class="kw">class</span>(y) <span class="op">!=</span><span class="st"> &quot;numeric&quot;</span>) {</span>
+<span id="cb91-4"><a href="3-12-controle-de-fluxo.html#cb91-4"></a>    <span class="kw">stop</span>(<span class="st">&quot;A classe dos objetos x e y deve ser numérica.&quot;</span>)</span>
+<span id="cb91-5"><a href="3-12-controle-de-fluxo.html#cb91-5"></a>  }</span>
+<span id="cb91-6"><a href="3-12-controle-de-fluxo.html#cb91-6"></a>  </span>
+<span id="cb91-7"><a href="3-12-controle-de-fluxo.html#cb91-7"></a>  x <span class="op">+</span><span class="st"> </span>y</span>
+<span id="cb91-8"><a href="3-12-controle-de-fluxo.html#cb91-8"></a>}</span>
+<span id="cb91-9"><a href="3-12-controle-de-fluxo.html#cb91-9"></a></span>
+<span id="cb91-10"><a href="3-12-controle-de-fluxo.html#cb91-10"></a><span class="co"># Retorna a soma</span></span>
+<span id="cb91-11"><a href="3-12-controle-de-fluxo.html#cb91-11"></a><span class="kw">minha_soma_erro</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb91-12"><a href="3-12-controle-de-fluxo.html#cb91-12"></a><span class="co">## [1] 3</span></span>
+<span id="cb91-13"><a href="3-12-controle-de-fluxo.html#cb91-13"></a></span>
+<span id="cb91-14"><a href="3-12-controle-de-fluxo.html#cb91-14"></a><span class="co"># Retorna erro</span></span>
+<span id="cb91-15"><a href="3-12-controle-de-fluxo.html#cb91-15"></a><span class="kw">minha_soma_erro</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>)</span>
+<span id="cb91-16"><a href="3-12-controle-de-fluxo.html#cb91-16"></a><span class="co">## Error in minha_soma_erro(&quot;a&quot;, &quot;b&quot;): A classe dos objetos x e y deve ser numérica.</span></span>
+<span id="cb91-17"><a href="3-12-controle-de-fluxo.html#cb91-17"></a></span>
+<span id="cb91-18"><a href="3-12-controle-de-fluxo.html#cb91-18"></a><span class="co"># Retorna erro</span></span>
+<span id="cb91-19"><a href="3-12-controle-de-fluxo.html#cb91-19"></a><span class="kw">minha_soma_erro</span>(<span class="dv">1</span>, <span class="st">&quot;b&quot;</span>)</span>
+<span id="cb91-20"><a href="3-12-controle-de-fluxo.html#cb91-20"></a><span class="co">## Error in minha_soma_erro(1, &quot;b&quot;): A classe dos objetos x e y deve ser numérica.</span></span></code></pre></div>
 <p>Na função <code>minha_soma_erro()</code>, testamos no <code>if</code> se a classe de <code>x</code> <strong>ou</strong> a classe de <code>y</code> é diferente de <code>numeric</code>, isto é, se pelo menos um dos dois não é um número. Se esse teste retornar <code>TRUE</code>, a função para a sua execução e devolve para o usuário a seguinte mensagem de erro: “A classe dos objetos x e y deve ser numérica.”. Se o teste retorna <code>FALSE</code>, a soma é realizada e seu resultado nos é retornado.</p>
 <p>O <code>else</code> funciona como uma extensão do <code>if</code>, dando uma alternativa caso o teste executado seja falso.</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="3-12-controle-de-fluxo.html#cb90-1"></a><span class="co"># Vai fazer  a soma</span></span>
-<span id="cb90-2"><a href="3-12-controle-de-fluxo.html#cb90-2"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">15</span>)</span>
-<span id="cb90-3"><a href="3-12-controle-de-fluxo.html#cb90-3"></a></span>
-<span id="cb90-4"><a href="3-12-controle-de-fluxo.html#cb90-4"></a><span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>) {</span>
-<span id="cb90-5"><a href="3-12-controle-de-fluxo.html#cb90-5"></a>  <span class="kw">sum</span>(x)</span>
-<span id="cb90-6"><a href="3-12-controle-de-fluxo.html#cb90-6"></a>} <span class="cf">else</span> {</span>
-<span id="cb90-7"><a href="3-12-controle-de-fluxo.html#cb90-7"></a>  <span class="ot">NA</span></span>
-<span id="cb90-8"><a href="3-12-controle-de-fluxo.html#cb90-8"></a>}</span>
-<span id="cb90-9"><a href="3-12-controle-de-fluxo.html#cb90-9"></a><span class="co">## [1] 29</span></span>
-<span id="cb90-10"><a href="3-12-controle-de-fluxo.html#cb90-10"></a></span>
-<span id="cb90-11"><a href="3-12-controle-de-fluxo.html#cb90-11"></a><span class="co"># Vai retornar NA</span></span>
-<span id="cb90-12"><a href="3-12-controle-de-fluxo.html#cb90-12"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">10</span>, <span class="st">&quot;15&quot;</span>)</span>
-<span id="cb90-13"><a href="3-12-controle-de-fluxo.html#cb90-13"></a></span>
-<span id="cb90-14"><a href="3-12-controle-de-fluxo.html#cb90-14"></a><span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>) {</span>
-<span id="cb90-15"><a href="3-12-controle-de-fluxo.html#cb90-15"></a>  <span class="kw">sum</span>(x)</span>
-<span id="cb90-16"><a href="3-12-controle-de-fluxo.html#cb90-16"></a>} <span class="cf">else</span> {</span>
-<span id="cb90-17"><a href="3-12-controle-de-fluxo.html#cb90-17"></a>  <span class="ot">NA</span></span>
-<span id="cb90-18"><a href="3-12-controle-de-fluxo.html#cb90-18"></a>}</span>
-<span id="cb90-19"><a href="3-12-controle-de-fluxo.html#cb90-19"></a><span class="co">## [1] NA</span></span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="3-12-controle-de-fluxo.html#cb92-1"></a><span class="co"># Vai fazer  a soma</span></span>
+<span id="cb92-2"><a href="3-12-controle-de-fluxo.html#cb92-2"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">15</span>)</span>
+<span id="cb92-3"><a href="3-12-controle-de-fluxo.html#cb92-3"></a></span>
+<span id="cb92-4"><a href="3-12-controle-de-fluxo.html#cb92-4"></a><span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>) {</span>
+<span id="cb92-5"><a href="3-12-controle-de-fluxo.html#cb92-5"></a>  <span class="kw">sum</span>(x)</span>
+<span id="cb92-6"><a href="3-12-controle-de-fluxo.html#cb92-6"></a>} <span class="cf">else</span> {</span>
+<span id="cb92-7"><a href="3-12-controle-de-fluxo.html#cb92-7"></a>  <span class="ot">NA</span></span>
+<span id="cb92-8"><a href="3-12-controle-de-fluxo.html#cb92-8"></a>}</span>
+<span id="cb92-9"><a href="3-12-controle-de-fluxo.html#cb92-9"></a><span class="co">## [1] 29</span></span>
+<span id="cb92-10"><a href="3-12-controle-de-fluxo.html#cb92-10"></a></span>
+<span id="cb92-11"><a href="3-12-controle-de-fluxo.html#cb92-11"></a><span class="co"># Vai retornar NA</span></span>
+<span id="cb92-12"><a href="3-12-controle-de-fluxo.html#cb92-12"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">10</span>, <span class="st">&quot;15&quot;</span>)</span>
+<span id="cb92-13"><a href="3-12-controle-de-fluxo.html#cb92-13"></a></span>
+<span id="cb92-14"><a href="3-12-controle-de-fluxo.html#cb92-14"></a><span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span>) {</span>
+<span id="cb92-15"><a href="3-12-controle-de-fluxo.html#cb92-15"></a>  <span class="kw">sum</span>(x)</span>
+<span id="cb92-16"><a href="3-12-controle-de-fluxo.html#cb92-16"></a>} <span class="cf">else</span> {</span>
+<span id="cb92-17"><a href="3-12-controle-de-fluxo.html#cb92-17"></a>  <span class="ot">NA</span></span>
+<span id="cb92-18"><a href="3-12-controle-de-fluxo.html#cb92-18"></a>}</span>
+<span id="cb92-19"><a href="3-12-controle-de-fluxo.html#cb92-19"></a><span class="co">## [1] NA</span></span></code></pre></div>
 <p>Também podemos usar o <code>else</code> para encadear vários <code>if</code>s. Teste o código abaixo com valores positivos e negativos para <code>x</code>.</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="3-12-controle-de-fluxo.html#cb91-1"></a>x &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb91-2"><a href="3-12-controle-de-fluxo.html#cb91-2"></a></span>
-<span id="cb91-3"><a href="3-12-controle-de-fluxo.html#cb91-3"></a><span class="cf">if</span>(x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
-<span id="cb91-4"><a href="3-12-controle-de-fluxo.html#cb91-4"></a>  </span>
-<span id="cb91-5"><a href="3-12-controle-de-fluxo.html#cb91-5"></a>  <span class="st">&quot;negativo&quot;</span></span>
-<span id="cb91-6"><a href="3-12-controle-de-fluxo.html#cb91-6"></a>  </span>
-<span id="cb91-7"><a href="3-12-controle-de-fluxo.html#cb91-7"></a>} <span class="cf">else</span> <span class="cf">if</span>(x <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) {</span>
-<span id="cb91-8"><a href="3-12-controle-de-fluxo.html#cb91-8"></a>  </span>
-<span id="cb91-9"><a href="3-12-controle-de-fluxo.html#cb91-9"></a>  <span class="st">&quot;neutro&quot;</span></span>
-<span id="cb91-10"><a href="3-12-controle-de-fluxo.html#cb91-10"></a>  </span>
-<span id="cb91-11"><a href="3-12-controle-de-fluxo.html#cb91-11"></a>} <span class="cf">else</span> <span class="cf">if</span>(x <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
-<span id="cb91-12"><a href="3-12-controle-de-fluxo.html#cb91-12"></a>  </span>
-<span id="cb91-13"><a href="3-12-controle-de-fluxo.html#cb91-13"></a>  <span class="st">&quot;positivo&quot;</span></span>
-<span id="cb91-14"><a href="3-12-controle-de-fluxo.html#cb91-14"></a>}</span>
-<span id="cb91-15"><a href="3-12-controle-de-fluxo.html#cb91-15"></a><span class="co">## [1] &quot;neutro&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="3-12-controle-de-fluxo.html#cb93-1"></a>x &lt;-<span class="st"> </span><span class="dv">0</span></span>
+<span id="cb93-2"><a href="3-12-controle-de-fluxo.html#cb93-2"></a></span>
+<span id="cb93-3"><a href="3-12-controle-de-fluxo.html#cb93-3"></a><span class="cf">if</span>(x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
+<span id="cb93-4"><a href="3-12-controle-de-fluxo.html#cb93-4"></a>  </span>
+<span id="cb93-5"><a href="3-12-controle-de-fluxo.html#cb93-5"></a>  <span class="st">&quot;negativo&quot;</span></span>
+<span id="cb93-6"><a href="3-12-controle-de-fluxo.html#cb93-6"></a>  </span>
+<span id="cb93-7"><a href="3-12-controle-de-fluxo.html#cb93-7"></a>} <span class="cf">else</span> <span class="cf">if</span>(x <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) {</span>
+<span id="cb93-8"><a href="3-12-controle-de-fluxo.html#cb93-8"></a>  </span>
+<span id="cb93-9"><a href="3-12-controle-de-fluxo.html#cb93-9"></a>  <span class="st">&quot;neutro&quot;</span></span>
+<span id="cb93-10"><a href="3-12-controle-de-fluxo.html#cb93-10"></a>  </span>
+<span id="cb93-11"><a href="3-12-controle-de-fluxo.html#cb93-11"></a>} <span class="cf">else</span> <span class="cf">if</span>(x <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
+<span id="cb93-12"><a href="3-12-controle-de-fluxo.html#cb93-12"></a>  </span>
+<span id="cb93-13"><a href="3-12-controle-de-fluxo.html#cb93-13"></a>  <span class="st">&quot;positivo&quot;</span></span>
+<span id="cb93-14"><a href="3-12-controle-de-fluxo.html#cb93-14"></a>}</span>
+<span id="cb93-15"><a href="3-12-controle-de-fluxo.html#cb93-15"></a><span class="co">## [1] &quot;neutro&quot;</span></span></code></pre></div>
 <p>Repare que o <code>if</code> no último <code>else</code> poderia ser omitido.</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="3-12-controle-de-fluxo.html#cb92-1"></a>x &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb92-2"><a href="3-12-controle-de-fluxo.html#cb92-2"></a></span>
-<span id="cb92-3"><a href="3-12-controle-de-fluxo.html#cb92-3"></a><span class="cf">if</span>(x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
-<span id="cb92-4"><a href="3-12-controle-de-fluxo.html#cb92-4"></a>  </span>
-<span id="cb92-5"><a href="3-12-controle-de-fluxo.html#cb92-5"></a>  <span class="st">&quot;negativo&quot;</span></span>
-<span id="cb92-6"><a href="3-12-controle-de-fluxo.html#cb92-6"></a>  </span>
-<span id="cb92-7"><a href="3-12-controle-de-fluxo.html#cb92-7"></a>} <span class="cf">else</span> <span class="cf">if</span>(x <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) {</span>
-<span id="cb92-8"><a href="3-12-controle-de-fluxo.html#cb92-8"></a>  </span>
-<span id="cb92-9"><a href="3-12-controle-de-fluxo.html#cb92-9"></a>  <span class="st">&quot;neutro&quot;</span></span>
-<span id="cb92-10"><a href="3-12-controle-de-fluxo.html#cb92-10"></a>  </span>
-<span id="cb92-11"><a href="3-12-controle-de-fluxo.html#cb92-11"></a>} <span class="cf">else</span> {</span>
-<span id="cb92-12"><a href="3-12-controle-de-fluxo.html#cb92-12"></a>  </span>
-<span id="cb92-13"><a href="3-12-controle-de-fluxo.html#cb92-13"></a>  <span class="st">&quot;positivo&quot;</span></span>
-<span id="cb92-14"><a href="3-12-controle-de-fluxo.html#cb92-14"></a>}</span>
-<span id="cb92-15"><a href="3-12-controle-de-fluxo.html#cb92-15"></a><span class="co">## [1] &quot;neutro&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="3-12-controle-de-fluxo.html#cb94-1"></a>x &lt;-<span class="st"> </span><span class="dv">0</span></span>
+<span id="cb94-2"><a href="3-12-controle-de-fluxo.html#cb94-2"></a></span>
+<span id="cb94-3"><a href="3-12-controle-de-fluxo.html#cb94-3"></a><span class="cf">if</span>(x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
+<span id="cb94-4"><a href="3-12-controle-de-fluxo.html#cb94-4"></a>  </span>
+<span id="cb94-5"><a href="3-12-controle-de-fluxo.html#cb94-5"></a>  <span class="st">&quot;negativo&quot;</span></span>
+<span id="cb94-6"><a href="3-12-controle-de-fluxo.html#cb94-6"></a>  </span>
+<span id="cb94-7"><a href="3-12-controle-de-fluxo.html#cb94-7"></a>} <span class="cf">else</span> <span class="cf">if</span>(x <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) {</span>
+<span id="cb94-8"><a href="3-12-controle-de-fluxo.html#cb94-8"></a>  </span>
+<span id="cb94-9"><a href="3-12-controle-de-fluxo.html#cb94-9"></a>  <span class="st">&quot;neutro&quot;</span></span>
+<span id="cb94-10"><a href="3-12-controle-de-fluxo.html#cb94-10"></a>  </span>
+<span id="cb94-11"><a href="3-12-controle-de-fluxo.html#cb94-11"></a>} <span class="cf">else</span> {</span>
+<span id="cb94-12"><a href="3-12-controle-de-fluxo.html#cb94-12"></a>  </span>
+<span id="cb94-13"><a href="3-12-controle-de-fluxo.html#cb94-13"></a>  <span class="st">&quot;positivo&quot;</span></span>
+<span id="cb94-14"><a href="3-12-controle-de-fluxo.html#cb94-14"></a>}</span>
+<span id="cb94-15"><a href="3-12-controle-de-fluxo.html#cb94-15"></a><span class="co">## [1] &quot;neutro&quot;</span></span></code></pre></div>
 </div>
 <div id="iteradores-for-e-while" class="section level3">
 <h3><span class="header-section-number">3.12.2</span> Iteradores: for e while</h3>
 <p>O <code>for</code> pode ser utilizado para fazer os famosos <em>loopings</em> de programação, isto é, repetir uma mesma tarefa para um conjunto de valores diferentes. Cada repetição é chamada de iteração e o objeto que muda de valor em cada <strong>interação</strong> é chamado de <strong>iterador</strong>.</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="3-12-controle-de-fluxo.html#cb93-1"></a>numero_de_colunas &lt;-<span class="st"> </span><span class="kw">ncol</span>(mtcars)</span>
-<span id="cb93-2"><a href="3-12-controle-de-fluxo.html#cb93-2"></a></span>
-<span id="cb93-3"><a href="3-12-controle-de-fluxo.html#cb93-3"></a><span class="cf">for</span> (coluna <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>numero_de_colunas) {</span>
-<span id="cb93-4"><a href="3-12-controle-de-fluxo.html#cb93-4"></a>  media &lt;-<span class="st"> </span><span class="kw">mean</span>(mtcars[,coluna])</span>
-<span id="cb93-5"><a href="3-12-controle-de-fluxo.html#cb93-5"></a>  </span>
-<span id="cb93-6"><a href="3-12-controle-de-fluxo.html#cb93-6"></a>  <span class="kw">print</span>(media)</span>
-<span id="cb93-7"><a href="3-12-controle-de-fluxo.html#cb93-7"></a>}</span>
-<span id="cb93-8"><a href="3-12-controle-de-fluxo.html#cb93-8"></a><span class="co">## [1] 20.09062</span></span>
-<span id="cb93-9"><a href="3-12-controle-de-fluxo.html#cb93-9"></a><span class="co">## [1] 6.1875</span></span>
-<span id="cb93-10"><a href="3-12-controle-de-fluxo.html#cb93-10"></a><span class="co">## [1] 230.7219</span></span>
-<span id="cb93-11"><a href="3-12-controle-de-fluxo.html#cb93-11"></a><span class="co">## [1] 146.6875</span></span>
-<span id="cb93-12"><a href="3-12-controle-de-fluxo.html#cb93-12"></a><span class="co">## [1] 3.596563</span></span>
-<span id="cb93-13"><a href="3-12-controle-de-fluxo.html#cb93-13"></a><span class="co">## [1] 3.21725</span></span>
-<span id="cb93-14"><a href="3-12-controle-de-fluxo.html#cb93-14"></a><span class="co">## [1] 17.84875</span></span>
-<span id="cb93-15"><a href="3-12-controle-de-fluxo.html#cb93-15"></a><span class="co">## [1] 0.4375</span></span>
-<span id="cb93-16"><a href="3-12-controle-de-fluxo.html#cb93-16"></a><span class="co">## [1] 0.40625</span></span>
-<span id="cb93-17"><a href="3-12-controle-de-fluxo.html#cb93-17"></a><span class="co">## [1] 3.6875</span></span>
-<span id="cb93-18"><a href="3-12-controle-de-fluxo.html#cb93-18"></a><span class="co">## [1] 2.8125</span></span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="3-12-controle-de-fluxo.html#cb95-1"></a>numero_de_colunas &lt;-<span class="st"> </span><span class="kw">ncol</span>(mtcars)</span>
+<span id="cb95-2"><a href="3-12-controle-de-fluxo.html#cb95-2"></a></span>
+<span id="cb95-3"><a href="3-12-controle-de-fluxo.html#cb95-3"></a><span class="cf">for</span> (coluna <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>numero_de_colunas) {</span>
+<span id="cb95-4"><a href="3-12-controle-de-fluxo.html#cb95-4"></a>  media &lt;-<span class="st"> </span><span class="kw">mean</span>(mtcars[,coluna])</span>
+<span id="cb95-5"><a href="3-12-controle-de-fluxo.html#cb95-5"></a>  </span>
+<span id="cb95-6"><a href="3-12-controle-de-fluxo.html#cb95-6"></a>  <span class="kw">print</span>(media)</span>
+<span id="cb95-7"><a href="3-12-controle-de-fluxo.html#cb95-7"></a>}</span>
+<span id="cb95-8"><a href="3-12-controle-de-fluxo.html#cb95-8"></a><span class="co">## [1] 20.09062</span></span>
+<span id="cb95-9"><a href="3-12-controle-de-fluxo.html#cb95-9"></a><span class="co">## [1] 6.1875</span></span>
+<span id="cb95-10"><a href="3-12-controle-de-fluxo.html#cb95-10"></a><span class="co">## [1] 230.7219</span></span>
+<span id="cb95-11"><a href="3-12-controle-de-fluxo.html#cb95-11"></a><span class="co">## [1] 146.6875</span></span>
+<span id="cb95-12"><a href="3-12-controle-de-fluxo.html#cb95-12"></a><span class="co">## [1] 3.596563</span></span>
+<span id="cb95-13"><a href="3-12-controle-de-fluxo.html#cb95-13"></a><span class="co">## [1] 3.21725</span></span>
+<span id="cb95-14"><a href="3-12-controle-de-fluxo.html#cb95-14"></a><span class="co">## [1] 17.84875</span></span>
+<span id="cb95-15"><a href="3-12-controle-de-fluxo.html#cb95-15"></a><span class="co">## [1] 0.4375</span></span>
+<span id="cb95-16"><a href="3-12-controle-de-fluxo.html#cb95-16"></a><span class="co">## [1] 0.40625</span></span>
+<span id="cb95-17"><a href="3-12-controle-de-fluxo.html#cb95-17"></a><span class="co">## [1] 3.6875</span></span>
+<span id="cb95-18"><a href="3-12-controle-de-fluxo.html#cb95-18"></a><span class="co">## [1] 2.8125</span></span></code></pre></div>
 <p>O código acima vai calcular a média de cada coluna do <em>data frame</em> <code>mtcars</code>. Alguns pontos importantes:</p>
 <ul>
 <li><p>No exemplo, temos 11 iterações e o objeto <code>coluna</code> é o iterador.</p></li>
@@ -460,37 +460,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>O código dentro do <code>for</code> não é retornado para o usuário ao fim de cada iteração. Por isso, para ver os resultados no Console, usamos a função <code>print()</code>.</p></li>
 </ul>
 <p>Também podemos salvar as médias em um vetor.</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="3-12-controle-de-fluxo.html#cb94-1"></a>numero_de_colunas &lt;-<span class="st"> </span><span class="kw">ncol</span>(mtcars)</span>
-<span id="cb94-2"><a href="3-12-controle-de-fluxo.html#cb94-2"></a></span>
-<span id="cb94-3"><a href="3-12-controle-de-fluxo.html#cb94-3"></a><span class="co"># Antes, criamos um vetor vazio.</span></span>
-<span id="cb94-4"><a href="3-12-controle-de-fluxo.html#cb94-4"></a>medias &lt;-<span class="st"> </span><span class="kw">c</span>()</span>
-<span id="cb94-5"><a href="3-12-controle-de-fluxo.html#cb94-5"></a></span>
-<span id="cb94-6"><a href="3-12-controle-de-fluxo.html#cb94-6"></a><span class="cf">for</span> (coluna <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>numero_de_colunas) {</span>
-<span id="cb94-7"><a href="3-12-controle-de-fluxo.html#cb94-7"></a>  medias[coluna] &lt;-<span class="st"> </span><span class="kw">mean</span>(mtcars[,coluna])</span>
-<span id="cb94-8"><a href="3-12-controle-de-fluxo.html#cb94-8"></a>}</span>
-<span id="cb94-9"><a href="3-12-controle-de-fluxo.html#cb94-9"></a></span>
-<span id="cb94-10"><a href="3-12-controle-de-fluxo.html#cb94-10"></a>medias</span>
-<span id="cb94-11"><a href="3-12-controle-de-fluxo.html#cb94-11"></a><span class="co">##  [1]  20.090625   6.187500 230.721875 146.687500   3.596563   3.217250</span></span>
-<span id="cb94-12"><a href="3-12-controle-de-fluxo.html#cb94-12"></a><span class="co">##  [7]  17.848750   0.437500   0.406250   3.687500   2.812500</span></span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="3-12-controle-de-fluxo.html#cb96-1"></a>numero_de_colunas &lt;-<span class="st"> </span><span class="kw">ncol</span>(mtcars)</span>
+<span id="cb96-2"><a href="3-12-controle-de-fluxo.html#cb96-2"></a></span>
+<span id="cb96-3"><a href="3-12-controle-de-fluxo.html#cb96-3"></a><span class="co"># Antes, criamos um vetor vazio.</span></span>
+<span id="cb96-4"><a href="3-12-controle-de-fluxo.html#cb96-4"></a>medias &lt;-<span class="st"> </span><span class="kw">c</span>()</span>
+<span id="cb96-5"><a href="3-12-controle-de-fluxo.html#cb96-5"></a></span>
+<span id="cb96-6"><a href="3-12-controle-de-fluxo.html#cb96-6"></a><span class="cf">for</span> (coluna <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>numero_de_colunas) {</span>
+<span id="cb96-7"><a href="3-12-controle-de-fluxo.html#cb96-7"></a>  medias[coluna] &lt;-<span class="st"> </span><span class="kw">mean</span>(mtcars[,coluna])</span>
+<span id="cb96-8"><a href="3-12-controle-de-fluxo.html#cb96-8"></a>}</span>
+<span id="cb96-9"><a href="3-12-controle-de-fluxo.html#cb96-9"></a></span>
+<span id="cb96-10"><a href="3-12-controle-de-fluxo.html#cb96-10"></a>medias</span>
+<span id="cb96-11"><a href="3-12-controle-de-fluxo.html#cb96-11"></a><span class="co">##  [1]  20.090625   6.187500 230.721875 146.687500   3.596563   3.217250</span></span>
+<span id="cb96-12"><a href="3-12-controle-de-fluxo.html#cb96-12"></a><span class="co">##  [7]  17.848750   0.437500   0.406250   3.687500   2.812500</span></span></code></pre></div>
 <p>Assim como o <code>for</code>, o <code>while</code> também é um iterador.</p>
 <p>O código a seguir irá imprimir na tela o valor de <code>i</code> enquanto este objeto for menor que 3. No momento em que a condição dentro das chaves <code>{}</code> não for mais respeitada, o processo será interrompido.</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="3-12-controle-de-fluxo.html#cb95-1"></a>i &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb95-2"><a href="3-12-controle-de-fluxo.html#cb95-2"></a></span>
-<span id="cb95-3"><a href="3-12-controle-de-fluxo.html#cb95-3"></a><span class="cf">while</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">3</span>){</span>
-<span id="cb95-4"><a href="3-12-controle-de-fluxo.html#cb95-4"></a>  <span class="kw">print</span>(i)</span>
-<span id="cb95-5"><a href="3-12-controle-de-fluxo.html#cb95-5"></a>  i &lt;-<span class="st">  </span>i <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
-<span id="cb95-6"><a href="3-12-controle-de-fluxo.html#cb95-6"></a>}</span>
-<span id="cb95-7"><a href="3-12-controle-de-fluxo.html#cb95-7"></a><span class="co">## [1] 1</span></span>
-<span id="cb95-8"><a href="3-12-controle-de-fluxo.html#cb95-8"></a><span class="co">## [1] 2</span></span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="3-12-controle-de-fluxo.html#cb97-1"></a>i &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb97-2"><a href="3-12-controle-de-fluxo.html#cb97-2"></a></span>
+<span id="cb97-3"><a href="3-12-controle-de-fluxo.html#cb97-3"></a><span class="cf">while</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">3</span>){</span>
+<span id="cb97-4"><a href="3-12-controle-de-fluxo.html#cb97-4"></a>  <span class="kw">print</span>(i)</span>
+<span id="cb97-5"><a href="3-12-controle-de-fluxo.html#cb97-5"></a>  i &lt;-<span class="st">  </span>i <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb97-6"><a href="3-12-controle-de-fluxo.html#cb97-6"></a>}</span>
+<span id="cb97-7"><a href="3-12-controle-de-fluxo.html#cb97-7"></a><span class="co">## [1] 1</span></span>
+<span id="cb97-8"><a href="3-12-controle-de-fluxo.html#cb97-8"></a><span class="co">## [1] 2</span></span></code></pre></div>
 <p>É importante que o valor de i seja atualizado em cada interação, caso contrário a função entrará em um loop infinito. Por isso fazemos <code>i &lt;- i + 1</code> após o <code>print</code>.</p>
 </div>
 <div id="exercícios-6" class="section level3 unnumbered">
 <h3>Exercícios</h3>
 <p><strong>1.</strong> Por que o código abaixo retorna erro? Arrume o código para retornar o valor <code>TRUE</code>.</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="3-12-controle-de-fluxo.html#cb96-1"></a>x &lt;-<span class="st"> </span><span class="dv">4</span></span>
-<span id="cb96-2"><a href="3-12-controle-de-fluxo.html#cb96-2"></a><span class="cf">if</span>(<span class="dt">x =</span> <span class="dv">4</span>) {</span>
-<span id="cb96-3"><a href="3-12-controle-de-fluxo.html#cb96-3"></a>  <span class="ot">TRUE</span></span>
-<span id="cb96-4"><a href="3-12-controle-de-fluxo.html#cb96-4"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="3-12-controle-de-fluxo.html#cb98-1"></a>x &lt;-<span class="st"> </span><span class="dv">4</span></span>
+<span id="cb98-2"><a href="3-12-controle-de-fluxo.html#cb98-2"></a><span class="cf">if</span>(<span class="dt">x =</span> <span class="dv">4</span>) {</span>
+<span id="cb98-3"><a href="3-12-controle-de-fluxo.html#cb98-3"></a>  <span class="ot">TRUE</span></span>
+<span id="cb98-4"><a href="3-12-controle-de-fluxo.html#cb98-4"></a>}</span></code></pre></div>
 <p><strong>2.</strong> Usando <code>if</code> e <code>else</code>, escreva um código que retorne a string <code>"número"</code> caso o valor seja da classe <code>numeric</code> ou <code>integer</code>; a string <code>"palavra"</code> caso o valor seja da classe <code>character</code>; e <code>NA</code> caso contrário.</p>
 <p><strong>3.</strong> Usando apenas <code>for</code> e a função <code>length()</code>, construa uma função que calcule a média de um vetor número qualquer. Construa uma condição para a função retornar <code>NULL</code> caso o vetor não seja numérico.</p>
 </div>
@@ -504,7 +504,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="3-11-funcoes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="3-11-maisFuncoes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="3-13-outros-tópicos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

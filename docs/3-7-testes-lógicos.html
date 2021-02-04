@@ -165,8 +165,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
 <li class="chapter" data-level="" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-3-objetos.html"><a href="3-3-objetos.html"><i class="fa fa-check"></i><b>3.3</b> Objetos</a><ul>
-<li class="chapter" data-level="" data-path="3-3-objetos.html"><a href="3-3-objetos.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
+<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a><ul>
+<li class="chapter" data-level="" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="3-4-data-frames.html"><a href="3-4-data-frames.html"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
 <li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a></li>
@@ -181,8 +181,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
 <li class="chapter" data-level="" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html#exercícios-4"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="3-11-funcoes.html"><a href="3-11-funcoes.html"><i class="fa fa-check"></i><b>3.11</b> Funções</a><ul>
-<li class="chapter" data-level="" data-path="3-11-funcoes.html"><a href="3-11-funcoes.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
+<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a><ul>
+<li class="chapter" data-level="" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
 <li class="chapter" data-level="3.12.1" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
@@ -253,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11" data-path="11-respostas.html"><a href="11-respostas.html"><i class="fa fa-check"></i><b>11</b> Respostas</a><ul>
 <li class="chapter" data-level="11.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html"><i class="fa fa-check"></i><b>11.1</b> R básico</a><ul>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
-<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#objetos-1"><i class="fa fa-check"></i>Objetos</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#objetos"><i class="fa fa-check"></i>Objetos</a></li>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#vetores-1"><i class="fa fa-check"></i>Vetores</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="11-2-pipe-1.html"><a href="11-2-pipe-1.html"><i class="fa fa-check"></i><b>11.2</b> Pipe</a></li>
@@ -287,83 +287,83 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Poder fazer qualquer tipo de operação lógica é um dos motivos pelos quais programar nos deixar mais eficientes. Dê bastante atenção a elas, pois usaremos comparações lógicas o tempo todo!</p>
 <p>Uma operação lógica nada mais é do que um teste que retorna <strong>verdadeiro</strong> ou <strong>falso</strong>. No R (e em outras linguagens de programação), esses valores dois valores recebem uma classe especial: <code>logical</code>.</p>
 <p>O verdadeiro no R vai ser representado pelo valor <code>TRUE</code> e o falso pelo valor <code>FALSE</code>. Esses nomes no R são <strong>reservados</strong>, isto é, você não pode chamar nenhum objeto de TRUE ou FALSE.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="3-7-testes-lógicos.html#cb32-1"></a><span class="ot">TRUE</span> &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb32-2"><a href="3-7-testes-lógicos.html#cb32-2"></a><span class="co">## Error in TRUE &lt;- 1 : invalid (do_set) left-hand side to assignment</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="3-7-testes-lógicos.html#cb34-1"></a><span class="ot">TRUE</span> &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb34-2"><a href="3-7-testes-lógicos.html#cb34-2"></a><span class="co">## Error in TRUE &lt;- 1 : invalid (do_set) left-hand side to assignment</span></span></code></pre></div>
 <p>Checando a classe desses valores, vemos que são lógicos<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>. Eles são os únicos possíveis valores dessa classe.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="3-7-testes-lógicos.html#cb33-1"></a><span class="kw">class</span>(<span class="ot">TRUE</span>)</span>
-<span id="cb33-2"><a href="3-7-testes-lógicos.html#cb33-2"></a><span class="co">## [1] &quot;logical&quot;</span></span>
-<span id="cb33-3"><a href="3-7-testes-lógicos.html#cb33-3"></a><span class="kw">class</span>(<span class="ot">FALSE</span>)</span>
-<span id="cb33-4"><a href="3-7-testes-lógicos.html#cb33-4"></a><span class="co">## [1] &quot;logical&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="3-7-testes-lógicos.html#cb35-1"></a><span class="kw">class</span>(<span class="ot">TRUE</span>)</span>
+<span id="cb35-2"><a href="3-7-testes-lógicos.html#cb35-2"></a><span class="co">## [1] &quot;logical&quot;</span></span>
+<span id="cb35-3"><a href="3-7-testes-lógicos.html#cb35-3"></a><span class="kw">class</span>(<span class="ot">FALSE</span>)</span>
+<span id="cb35-4"><a href="3-7-testes-lógicos.html#cb35-4"></a><span class="co">## [1] &quot;logical&quot;</span></span></code></pre></div>
 <p>Agora que conhecemos o <code>TRUE</code> e <code>FALSE</code>, podemos explorar os teste lógicos. Começando pelo mais simples: vamos testar se um valor é igual ao outro. Para isso, usamos o operador <code>==</code>.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="3-7-testes-lógicos.html#cb34-1"></a><span class="co"># Testes com resultado verdadeiro</span></span>
-<span id="cb34-2"><a href="3-7-testes-lógicos.html#cb34-2"></a><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">1</span></span>
-<span id="cb34-3"><a href="3-7-testes-lógicos.html#cb34-3"></a><span class="co">## [1] TRUE</span></span>
-<span id="cb34-4"><a href="3-7-testes-lógicos.html#cb34-4"></a><span class="st">&quot;a&quot;</span> <span class="op">==</span><span class="st"> &quot;a&quot;</span></span>
-<span id="cb34-5"><a href="3-7-testes-lógicos.html#cb34-5"></a><span class="co">## [1] TRUE</span></span>
-<span id="cb34-6"><a href="3-7-testes-lógicos.html#cb34-6"></a></span>
-<span id="cb34-7"><a href="3-7-testes-lógicos.html#cb34-7"></a><span class="co"># Testes com resultado falso</span></span>
-<span id="cb34-8"><a href="3-7-testes-lógicos.html#cb34-8"></a><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">2</span></span>
-<span id="cb34-9"><a href="3-7-testes-lógicos.html#cb34-9"></a><span class="co">## [1] FALSE</span></span>
-<span id="cb34-10"><a href="3-7-testes-lógicos.html#cb34-10"></a><span class="st">&quot;a&quot;</span> <span class="op">==</span><span class="st"> &quot;b&quot;</span></span>
-<span id="cb34-11"><a href="3-7-testes-lógicos.html#cb34-11"></a><span class="co">## [1] FALSE</span></span></code></pre></div>
-<p>Também podemos testar se dois valores são diferentes. Para isso, usamos o operador <code>!=</code>.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="3-7-testes-lógicos.html#cb35-1"></a><span class="co"># Testes com resultado falso</span></span>
-<span id="cb35-2"><a href="3-7-testes-lógicos.html#cb35-2"></a><span class="dv">1</span> <span class="op">!=</span><span class="st"> </span><span class="dv">1</span></span>
-<span id="cb35-3"><a href="3-7-testes-lógicos.html#cb35-3"></a><span class="co">## [1] FALSE</span></span>
-<span id="cb35-4"><a href="3-7-testes-lógicos.html#cb35-4"></a><span class="st">&quot;a&quot;</span> <span class="op">!=</span><span class="st"> &quot;a&quot;</span></span>
-<span id="cb35-5"><a href="3-7-testes-lógicos.html#cb35-5"></a><span class="co">## [1] FALSE</span></span>
-<span id="cb35-6"><a href="3-7-testes-lógicos.html#cb35-6"></a></span>
-<span id="cb35-7"><a href="3-7-testes-lógicos.html#cb35-7"></a><span class="co"># Testes com resultado verdadeiro</span></span>
-<span id="cb35-8"><a href="3-7-testes-lógicos.html#cb35-8"></a><span class="dv">1</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span></span>
-<span id="cb35-9"><a href="3-7-testes-lógicos.html#cb35-9"></a><span class="co">## [1] TRUE</span></span>
-<span id="cb35-10"><a href="3-7-testes-lógicos.html#cb35-10"></a><span class="st">&quot;a&quot;</span> <span class="op">!=</span><span class="st"> &quot;b&quot;</span></span>
-<span id="cb35-11"><a href="3-7-testes-lógicos.html#cb35-11"></a><span class="co">## [1] TRUE</span></span></code></pre></div>
-<p>Para comparar se um valor é maior que outro, temos à disposição 4 operadores:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="3-7-testes-lógicos.html#cb36-1"></a><span class="co"># Maior</span></span>
-<span id="cb36-2"><a href="3-7-testes-lógicos.html#cb36-2"></a><span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span></span>
-<span id="cb36-3"><a href="3-7-testes-lógicos.html#cb36-3"></a><span class="co">## [1] FALSE</span></span>
-<span id="cb36-4"><a href="3-7-testes-lógicos.html#cb36-4"></a><span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span></span>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="3-7-testes-lógicos.html#cb36-1"></a><span class="co"># Testes com resultado verdadeiro</span></span>
+<span id="cb36-2"><a href="3-7-testes-lógicos.html#cb36-2"></a><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb36-3"><a href="3-7-testes-lógicos.html#cb36-3"></a><span class="co">## [1] TRUE</span></span>
+<span id="cb36-4"><a href="3-7-testes-lógicos.html#cb36-4"></a><span class="st">&quot;a&quot;</span> <span class="op">==</span><span class="st"> &quot;a&quot;</span></span>
 <span id="cb36-5"><a href="3-7-testes-lógicos.html#cb36-5"></a><span class="co">## [1] TRUE</span></span>
 <span id="cb36-6"><a href="3-7-testes-lógicos.html#cb36-6"></a></span>
-<span id="cb36-7"><a href="3-7-testes-lógicos.html#cb36-7"></a><span class="co"># Maior ou igual</span></span>
-<span id="cb36-8"><a href="3-7-testes-lógicos.html#cb36-8"></a><span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span></span>
+<span id="cb36-7"><a href="3-7-testes-lógicos.html#cb36-7"></a><span class="co"># Testes com resultado falso</span></span>
+<span id="cb36-8"><a href="3-7-testes-lógicos.html#cb36-8"></a><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">2</span></span>
 <span id="cb36-9"><a href="3-7-testes-lógicos.html#cb36-9"></a><span class="co">## [1] FALSE</span></span>
-<span id="cb36-10"><a href="3-7-testes-lógicos.html#cb36-10"></a><span class="dv">3</span> <span class="op">&gt;=</span><span class="st"> </span><span class="dv">3</span></span>
-<span id="cb36-11"><a href="3-7-testes-lógicos.html#cb36-11"></a><span class="co">## [1] TRUE</span></span>
-<span id="cb36-12"><a href="3-7-testes-lógicos.html#cb36-12"></a></span>
-<span id="cb36-13"><a href="3-7-testes-lógicos.html#cb36-13"></a><span class="co"># Menor </span></span>
-<span id="cb36-14"><a href="3-7-testes-lógicos.html#cb36-14"></a><span class="dv">3</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">3</span></span>
-<span id="cb36-15"><a href="3-7-testes-lógicos.html#cb36-15"></a><span class="co">## [1] FALSE</span></span>
-<span id="cb36-16"><a href="3-7-testes-lógicos.html#cb36-16"></a><span class="dv">3</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">4</span></span>
-<span id="cb36-17"><a href="3-7-testes-lógicos.html#cb36-17"></a><span class="co">## [1] TRUE</span></span>
-<span id="cb36-18"><a href="3-7-testes-lógicos.html#cb36-18"></a></span>
-<span id="cb36-19"><a href="3-7-testes-lógicos.html#cb36-19"></a><span class="co"># Menor ou igual</span></span>
-<span id="cb36-20"><a href="3-7-testes-lógicos.html#cb36-20"></a><span class="dv">3</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span></span>
-<span id="cb36-21"><a href="3-7-testes-lógicos.html#cb36-21"></a><span class="co">## [1] FALSE</span></span>
-<span id="cb36-22"><a href="3-7-testes-lógicos.html#cb36-22"></a><span class="dv">3</span> <span class="op">&lt;=</span><span class="st"> </span><span class="dv">3</span></span>
-<span id="cb36-23"><a href="3-7-testes-lógicos.html#cb36-23"></a><span class="co">## [1] TRUE</span></span></code></pre></div>
+<span id="cb36-10"><a href="3-7-testes-lógicos.html#cb36-10"></a><span class="st">&quot;a&quot;</span> <span class="op">==</span><span class="st"> &quot;b&quot;</span></span>
+<span id="cb36-11"><a href="3-7-testes-lógicos.html#cb36-11"></a><span class="co">## [1] FALSE</span></span></code></pre></div>
+<p>Também podemos testar se dois valores são diferentes. Para isso, usamos o operador <code>!=</code>.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="3-7-testes-lógicos.html#cb37-1"></a><span class="co"># Testes com resultado falso</span></span>
+<span id="cb37-2"><a href="3-7-testes-lógicos.html#cb37-2"></a><span class="dv">1</span> <span class="op">!=</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb37-3"><a href="3-7-testes-lógicos.html#cb37-3"></a><span class="co">## [1] FALSE</span></span>
+<span id="cb37-4"><a href="3-7-testes-lógicos.html#cb37-4"></a><span class="st">&quot;a&quot;</span> <span class="op">!=</span><span class="st"> &quot;a&quot;</span></span>
+<span id="cb37-5"><a href="3-7-testes-lógicos.html#cb37-5"></a><span class="co">## [1] FALSE</span></span>
+<span id="cb37-6"><a href="3-7-testes-lógicos.html#cb37-6"></a></span>
+<span id="cb37-7"><a href="3-7-testes-lógicos.html#cb37-7"></a><span class="co"># Testes com resultado verdadeiro</span></span>
+<span id="cb37-8"><a href="3-7-testes-lógicos.html#cb37-8"></a><span class="dv">1</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb37-9"><a href="3-7-testes-lógicos.html#cb37-9"></a><span class="co">## [1] TRUE</span></span>
+<span id="cb37-10"><a href="3-7-testes-lógicos.html#cb37-10"></a><span class="st">&quot;a&quot;</span> <span class="op">!=</span><span class="st"> &quot;b&quot;</span></span>
+<span id="cb37-11"><a href="3-7-testes-lógicos.html#cb37-11"></a><span class="co">## [1] TRUE</span></span></code></pre></div>
+<p>Para comparar se um valor é maior que outro, temos à disposição 4 operadores:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="3-7-testes-lógicos.html#cb38-1"></a><span class="co"># Maior</span></span>
+<span id="cb38-2"><a href="3-7-testes-lógicos.html#cb38-2"></a><span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span></span>
+<span id="cb38-3"><a href="3-7-testes-lógicos.html#cb38-3"></a><span class="co">## [1] FALSE</span></span>
+<span id="cb38-4"><a href="3-7-testes-lógicos.html#cb38-4"></a><span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb38-5"><a href="3-7-testes-lógicos.html#cb38-5"></a><span class="co">## [1] TRUE</span></span>
+<span id="cb38-6"><a href="3-7-testes-lógicos.html#cb38-6"></a></span>
+<span id="cb38-7"><a href="3-7-testes-lógicos.html#cb38-7"></a><span class="co"># Maior ou igual</span></span>
+<span id="cb38-8"><a href="3-7-testes-lógicos.html#cb38-8"></a><span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span></span>
+<span id="cb38-9"><a href="3-7-testes-lógicos.html#cb38-9"></a><span class="co">## [1] FALSE</span></span>
+<span id="cb38-10"><a href="3-7-testes-lógicos.html#cb38-10"></a><span class="dv">3</span> <span class="op">&gt;=</span><span class="st"> </span><span class="dv">3</span></span>
+<span id="cb38-11"><a href="3-7-testes-lógicos.html#cb38-11"></a><span class="co">## [1] TRUE</span></span>
+<span id="cb38-12"><a href="3-7-testes-lógicos.html#cb38-12"></a></span>
+<span id="cb38-13"><a href="3-7-testes-lógicos.html#cb38-13"></a><span class="co"># Menor </span></span>
+<span id="cb38-14"><a href="3-7-testes-lógicos.html#cb38-14"></a><span class="dv">3</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">3</span></span>
+<span id="cb38-15"><a href="3-7-testes-lógicos.html#cb38-15"></a><span class="co">## [1] FALSE</span></span>
+<span id="cb38-16"><a href="3-7-testes-lógicos.html#cb38-16"></a><span class="dv">3</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">4</span></span>
+<span id="cb38-17"><a href="3-7-testes-lógicos.html#cb38-17"></a><span class="co">## [1] TRUE</span></span>
+<span id="cb38-18"><a href="3-7-testes-lógicos.html#cb38-18"></a></span>
+<span id="cb38-19"><a href="3-7-testes-lógicos.html#cb38-19"></a><span class="co"># Menor ou igual</span></span>
+<span id="cb38-20"><a href="3-7-testes-lógicos.html#cb38-20"></a><span class="dv">3</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb38-21"><a href="3-7-testes-lógicos.html#cb38-21"></a><span class="co">## [1] FALSE</span></span>
+<span id="cb38-22"><a href="3-7-testes-lógicos.html#cb38-22"></a><span class="dv">3</span> <span class="op">&lt;=</span><span class="st"> </span><span class="dv">3</span></span>
+<span id="cb38-23"><a href="3-7-testes-lógicos.html#cb38-23"></a><span class="co">## [1] TRUE</span></span></code></pre></div>
 <p>Um outro operador muito útil é o <code>%in%</code>. Com ele, podemos verificar se um valor está dentro de um conjunto de valores (vetor).</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="3-7-testes-lógicos.html#cb37-1"></a><span class="dv">3</span> <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb37-2"><a href="3-7-testes-lógicos.html#cb37-2"></a><span class="co">## [1] TRUE</span></span>
-<span id="cb37-3"><a href="3-7-testes-lógicos.html#cb37-3"></a><span class="st">&quot;a&quot;</span> <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
-<span id="cb37-4"><a href="3-7-testes-lógicos.html#cb37-4"></a><span class="co">## [1] FALSE</span></span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="3-7-testes-lógicos.html#cb39-1"></a><span class="dv">3</span> <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb39-2"><a href="3-7-testes-lógicos.html#cb39-2"></a><span class="co">## [1] TRUE</span></span>
+<span id="cb39-3"><a href="3-7-testes-lógicos.html#cb39-3"></a><span class="st">&quot;a&quot;</span> <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
+<span id="cb39-4"><a href="3-7-testes-lógicos.html#cb39-4"></a><span class="co">## [1] FALSE</span></span></code></pre></div>
 <p>Nós começamos essa seção dizendo que usaremos testes lógicos o tempo todo. O motivo para isso é que eles fazem parte de uma operação muito comum na manipulação de base de dados: os <strong>filtros</strong>.</p>
 <p>No Excel, por exemplo, quando você filtra uma planilha, o que está sendo feito por trás é um teste lógico.</p>
 <p>Falamos anteriormente que cada coluna das nossas bases de dados será representada dentro do R como um vetor. O comportamento que explica a importância dos testes lógicos na hora de filtrar uma base está ilustrado abaixo:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="3-7-testes-lógicos.html#cb38-1"></a>minha_coluna &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">-1</span>, <span class="dv">5</span>, <span class="dv">20</span>)</span>
-<span id="cb38-2"><a href="3-7-testes-lógicos.html#cb38-2"></a></span>
-<span id="cb38-3"><a href="3-7-testes-lógicos.html#cb38-3"></a>minha_coluna <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span></span>
-<span id="cb38-4"><a href="3-7-testes-lógicos.html#cb38-4"></a><span class="co">## [1] FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE</span></span>
-<span id="cb38-5"><a href="3-7-testes-lógicos.html#cb38-5"></a></span>
-<span id="cb38-6"><a href="3-7-testes-lógicos.html#cb38-6"></a>minha_coluna[minha_coluna <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span>]</span>
-<span id="cb38-7"><a href="3-7-testes-lógicos.html#cb38-7"></a><span class="co">## [1] 10  5 20</span></span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="3-7-testes-lógicos.html#cb40-1"></a>minha_coluna &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">-1</span>, <span class="dv">5</span>, <span class="dv">20</span>)</span>
+<span id="cb40-2"><a href="3-7-testes-lógicos.html#cb40-2"></a></span>
+<span id="cb40-3"><a href="3-7-testes-lógicos.html#cb40-3"></a>minha_coluna <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span></span>
+<span id="cb40-4"><a href="3-7-testes-lógicos.html#cb40-4"></a><span class="co">## [1] FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE</span></span>
+<span id="cb40-5"><a href="3-7-testes-lógicos.html#cb40-5"></a></span>
+<span id="cb40-6"><a href="3-7-testes-lógicos.html#cb40-6"></a>minha_coluna[minha_coluna <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span>]</span>
+<span id="cb40-7"><a href="3-7-testes-lógicos.html#cb40-7"></a><span class="co">## [1] 10  5 20</span></span></code></pre></div>
 <p>Muitas coisas aconteceram aqui, vamos por partes.</p>
 <p>Primeiro, na operação <code>minha_coluna &gt; 3</code> o R fez um excelente uso do comportamento de reciclagem. No fundo, o que ele fez foi transformar (reciclar) o valor <code>3</code> no vetor <code>c(3, 3, 3, 3, 3, 3, 3)</code> e testar se <code>c(1, 3, 0, 10, -1, 5, 20) &gt; c(3, 3, 3, 3, 3, 3, 3)</code>.</p>
 <p>Como os operadores lógicos também são vetorizados (fazem operações elemento a elemento), os testes realizados foram <code>1 &gt; 3</code>, <code>3 &gt; 3</code>, <code>0 &gt; 3</code>, <code>10 &gt; 3</code>, <code>-1 &gt; 3</code>, <code>5 &gt; 3</code> e, finalmente, <code>20 &gt; 3</code>. Cada um desses testes tem o seu próprio resultado. Por isso a saída de <code>minha_coluna &gt; 3</code> é um vetor de verdadeiros e falsos, respectivos a cada um desses 7 testes.</p>
 <p>A segunda operação traz a grande novidade aqui: podemos usar os valores <code>TRUE</code> e <code>FALSE</code> para selecionar elementos de um vetor!</p>
 <p>A regra é muito simples: <strong>retornar</strong> as posições que receberem <code>TRUE</code>, <strong>não retornar</strong> as posições que receberem <code>FALSE</code>. Portanto, a segunda operação é equivalente a:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="3-7-testes-lógicos.html#cb39-1"></a>minha_coluna[<span class="kw">c</span>(<span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>)]</span>
-<span id="cb39-2"><a href="3-7-testes-lógicos.html#cb39-2"></a><span class="co">## [1] 10  5 20</span></span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="3-7-testes-lógicos.html#cb41-1"></a>minha_coluna[<span class="kw">c</span>(<span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>)]</span>
+<span id="cb41-2"><a href="3-7-testes-lógicos.html#cb41-2"></a><span class="co">## [1] 10  5 20</span></span></code></pre></div>
 <p>O vetor lógico filtra o vetor <code>minha_coluna</code>, retornando apenas os valores maiores que 3, já que foi esse o teste lógico que fizemos.</p>
 <p>Essa é a <em>mágica</em> que acontece por trás de filtros no R. Na prática, não precisaremos usar colchetes, não lembraremos da reciclagem e nem veremos a cara dos <code>TRUE</code> e <code>FALSE</code>. Mas conhecer esse processo é muito importante, principalmente para encontrar problemas de código ou de base.</p>
 <p>A seguir, apresentamos uma tabela com os principais operadores lógicos:</p>

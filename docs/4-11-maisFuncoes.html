@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 4 R Básico | Ciência de Dados em R</title>
+  <title>4.11 Mais sobre funções | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 4 R Básico | Ciência de Dados em R" />
+  <meta property="og:title" content="4.11 Mais sobre funções | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 4 R Básico | Ciência de Dados em R" />
+  <meta name="twitter:title" content="4.11 Mais sobre funções | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="3-7-snippets.html"/>
-<link rel="next" href="4-1-pedindo-ajuda.html"/>
+<link rel="prev" href="4-10-mais-sobre-data-frames.html"/>
+<link rel="next" href="4-12-controle-de-fluxo.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -282,10 +282,127 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="r-base" class="section level1">
-<h1><span class="header-section-number">Capítulo 4</span> R Básico</h1>
-<p>Introduziremos aqui os principais conceitos de programação em R. Indicamos a leitura deste capítulo a quem nunca teve contato com uma linguagem de programação ou a quem gostaria de entender um pouco melhor a estrutura de objetos, funções e classes do R.</p>
-<p>Os tópicos discutidos aqui são especialmente importantes para entendermos o que é um <em>data frame</em>, a nossa base de dados dentro do R, e quais operações estão sendo realizadas por trás das cortinas quando estivermos filtrando suas linhas ou modificando suas colunas. Também são importantes para começarmos a criar as nossas próprias funções, o que deixa nossos códigos muito mais organizados, eficientes e <em>compartilháveis</em>.</p>
+<div id="maisFuncoes" class="section level2">
+<h2><span class="header-section-number">4.11</span> Mais sobre funções</h2>
+<p>Funções são tão comuns e intuitivas (provavelmente você já usou funções no Excel), que mesmo sem termos abordado o tema com detalhes, nós conseguimos utilizar várias funções nas seções anteriores:</p>
+<ul>
+<li>a função <code>c()</code> foi utilizada para criar vetores;</li>
+<li>a função <code>class()</code> foi utilizada para descobrir a classe de um objeto;</li>
+<li>a família de funções <code>is.na()</code>, <code>is.nan()</code>, <code>is.infinite()</code> e <code>is.null</code> foram utilizadas para testar se um valor é <code>NA</code>, <code>NaN</code>, infinito ou <code>NULL</code>, respectivamente.</li>
+</ul>
+<p>Diferentemente dos objetos, as funções podem receber <strong>argumentos</strong>. Argumentos são os valores que colocamos dentro dos parênteses e que as funções precisam para funcionar (calcular algum resultado). Por exemplo, a função <code>c()</code> precisa saber quais são os valores que formarão o vetor que ela irá criar.</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="4-11-maisFuncoes.html#cb65-1"></a><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb65-2"><a href="4-11-maisFuncoes.html#cb65-2"></a><span class="co">## [1] 1 3 5</span></span></code></pre></div>
+<p>Nesse caso, os valores <code>1</code>, <code>3</code> e <code>5</code> são os argumentos da função <code>c()</code>. <strong>Os argumentos de uma função são sempre separados por vírgulas</strong>.</p>
+<p>Funções no R têm personalidade. Cada uma pode funcionar de um jeito diferente das demais, mesmo quando fazem tarefas parecidas. Por exemplo, vejamos a função <code>sum()</code>.</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="4-11-maisFuncoes.html#cb66-1"></a><span class="kw">sum</span>(<span class="dv">1</span>, <span class="dv">3</span>)</span>
+<span id="cb66-2"><a href="4-11-maisFuncoes.html#cb66-2"></a><span class="co">## [1] 4</span></span></code></pre></div>
+<p>Como você deve ter percebido, essa função retorna a soma de seus argumentos. Também podemos passar um vetor como argumento, e ela retornará a soma dos elementos do vetor.</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="4-11-maisFuncoes.html#cb67-1"></a><span class="kw">sum</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
+<span id="cb67-2"><a href="4-11-maisFuncoes.html#cb67-2"></a><span class="co">## [1] 4</span></span></code></pre></div>
+<p>Já a função <code>mean()</code>, que calcula a média de um conjunto de valores, exige que você passe valores na forma de um vetor:</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="4-11-maisFuncoes.html#cb68-1"></a><span class="co"># Só vai considerar o primeiro número na média</span></span>
+<span id="cb68-2"><a href="4-11-maisFuncoes.html#cb68-2"></a><span class="kw">mean</span>(<span class="dv">1</span>, <span class="dv">3</span>)</span>
+<span id="cb68-3"><a href="4-11-maisFuncoes.html#cb68-3"></a><span class="co">## [1] 1</span></span>
+<span id="cb68-4"><a href="4-11-maisFuncoes.html#cb68-4"></a></span>
+<span id="cb68-5"><a href="4-11-maisFuncoes.html#cb68-5"></a><span class="co"># Considera todos os valores dentro do vetor na média</span></span>
+<span id="cb68-6"><a href="4-11-maisFuncoes.html#cb68-6"></a><span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
+<span id="cb68-7"><a href="4-11-maisFuncoes.html#cb68-7"></a><span class="co">## [1] 2</span></span></code></pre></div>
+<p>Como cada coluna de um <em>data frame</em> é um vetor, podemos calcular a média de uma coluna fazendo:</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="4-11-maisFuncoes.html#cb69-1"></a><span class="co"># Podemos passar esse vetor para a função mean()</span></span>
+<span id="cb69-2"><a href="4-11-maisFuncoes.html#cb69-2"></a><span class="kw">mean</span>(mtcars<span class="op">$</span>mpg)</span>
+<span id="cb69-3"><a href="4-11-maisFuncoes.html#cb69-3"></a><span class="co">## [1] 20.09062</span></span></code></pre></div>
+<p>Também podemos usar argumentos para modificar o comportamento de uma função. O que acontece se algum elemento do vetor for <code>NA</code>?</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="4-11-maisFuncoes.html#cb70-1"></a><span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="ot">NA</span>))</span>
+<span id="cb70-2"><a href="4-11-maisFuncoes.html#cb70-2"></a><span class="co">## [1] NA</span></span></code></pre></div>
+<p>Como a função não sabe o valor do terceiro elemento do vetor, ela não sabe qual é a média desses 3 elementos e, então, devolve <code>NA</code>. Como é muito comum termos <code>NA</code> nas nossas bases de dados, é muito comum tentarmos calcular a média de uma coluna que tem <code>NA</code> e recebermos <code>NA</code> como resposta.</p>
+<p>Na grande maioria dos casos, queremos saber a média de uma coluna apesar dos <code>NA</code>s. Isto é, queremos retirar os <code>NA</code>s e então calcular a média com os valores que conhecemos. Para isso, podemos utilizar o argumento <code>na.rm = TRUE</code> da função <code>mean()</code>.</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="4-11-maisFuncoes.html#cb71-1"></a><span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="ot">NA</span>), <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb71-2"><a href="4-11-maisFuncoes.html#cb71-2"></a><span class="co">## [1] 2</span></span></code></pre></div>
+<p>Esse argumento diz à função para remover os <code>NA</code>s antes de calcular a média. Assim, a média calculada é: <code>(1 + 3)/2</code>.</p>
+<p>Claro que cada função tem os seus próprios argumentos e nem toda função terá o argumento <code>na.rm=</code>. Para saber quais são e como usar os argumentos de uma função, basta acessar a sua documentação:</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="4-11-maisFuncoes.html#cb72-1"></a><span class="kw">help</span>(mean)</span></code></pre></div>
+<p>Os argumentos das funções também têm nomes, que podemos ou não usar na hora de usar uma função. Veja por exemplo a função <code>seq()</code>.</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="4-11-maisFuncoes.html#cb73-1"></a><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">4</span>, <span class="dt">to =</span> <span class="dv">10</span>, <span class="dt">by =</span> <span class="dv">2</span>)</span>
+<span id="cb73-2"><a href="4-11-maisFuncoes.html#cb73-2"></a><span class="co">## [1]  4  6  8 10</span></span></code></pre></div>
+<p>Entre outros argumentos, ela possui os argumentos <code>from=</code>, <code>to=</code> e <code>by=</code>. O que ela faz é criar uma sequência (vetor) de <code>by</code> em <code>by</code> que começa em <code>from</code> e termina em <code>to</code>. No exemplo, criamos uma função de 2 em 2 que começa em 4 e termina em 10.</p>
+<p>Também poderíamos usar a mesma função sem colocar o nome dos argumentos:</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="4-11-maisFuncoes.html#cb74-1"></a><span class="kw">seq</span>(<span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">2</span>)</span>
+<span id="cb74-2"><a href="4-11-maisFuncoes.html#cb74-2"></a><span class="co">## [1]  4  6  8 10</span></span></code></pre></div>
+<p>Para utilizar a função sem escrever o nome dos argumentos, você precisa colocar os valores na ordem em que os argumentos aparecem. E se você olhar a documentação da função <code>seq()</code>, fazendo <code>help(seq)</code>, verá que a ordem dos argumentos é justamente <code>from=</code>, <code>to=</code> e <code>by=</code>.</p>
+<p>Escrevendo o nome dos argumentos, não há problema em alterar a ordem dos argumentos:</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="4-11-maisFuncoes.html#cb75-1"></a><span class="kw">seq</span>(<span class="dt">by =</span> <span class="dv">2</span>, <span class="dt">to =</span> <span class="dv">10</span>, <span class="dt">from =</span> <span class="dv">4</span>)</span>
+<span id="cb75-2"><a href="4-11-maisFuncoes.html#cb75-2"></a><span class="co">## [1]  4  6  8 10</span></span></code></pre></div>
+<p>Mas se especificar os argumentos, a ordem importa. Veja que o resultado será diferente.</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="4-11-maisFuncoes.html#cb76-1"></a><span class="kw">seq</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">4</span>)</span>
+<span id="cb76-2"><a href="4-11-maisFuncoes.html#cb76-2"></a><span class="co">## [1]  2  6 10</span></span></code></pre></div>
+<p>A seguir, apresentamos algumas funções nativas do R úteis para trabalhar com <em>data frames</em> :</p>
+<ul>
+<li><code>head()</code> - Mostra as primeiras 6 linhas.</li>
+<li><code>tail()</code> - Mostra as últimas 6 linhas.</li>
+<li><code>dim()</code> - Número de linhas e de colunas.</li>
+<li><code>names()</code> - Os nomes das colunas (variáveis).</li>
+<li><code>str()</code> - Estrutura do <em>data frame</em>. Mostra, entre outras coisas, as classes de cada coluna.</li>
+<li><code>cbind()</code> - Acopla duas tabelas lado a lado.</li>
+<li><code>rbind()</code> - Empilha duas tabelas.</li>
+</ul>
+<p>Além de usar funções já prontas, você pode criar a sua própria função. A sintaxe é a seguinte:</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="4-11-maisFuncoes.html#cb77-1"></a>nome_da_funcao &lt;-<span class="st"> </span><span class="cf">function</span>(argumento_<span class="dv">1</span>, argumento_<span class="dv">2</span>) {</span>
+<span id="cb77-2"><a href="4-11-maisFuncoes.html#cb77-2"></a>  </span>
+<span id="cb77-3"><a href="4-11-maisFuncoes.html#cb77-3"></a>  <span class="co"># Código que a função irá executar</span></span>
+<span id="cb77-4"><a href="4-11-maisFuncoes.html#cb77-4"></a>  </span>
+<span id="cb77-5"><a href="4-11-maisFuncoes.html#cb77-5"></a>}</span></code></pre></div>
+<p>Repare que <code>function</code> é um nome reservado no R, isto é, você não pode criar um objeto com esse nome.</p>
+<p>Um exemplo: vamos criar uma função que soma dois números.</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="4-11-maisFuncoes.html#cb78-1"></a>minha_soma &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</span>
+<span id="cb78-2"><a href="4-11-maisFuncoes.html#cb78-2"></a>  soma &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span>y</span>
+<span id="cb78-3"><a href="4-11-maisFuncoes.html#cb78-3"></a>  </span>
+<span id="cb78-4"><a href="4-11-maisFuncoes.html#cb78-4"></a>  soma  <span class="co"># resultado retornado</span></span>
+<span id="cb78-5"><a href="4-11-maisFuncoes.html#cb78-5"></a>}</span></code></pre></div>
+<p>Essa função tem os seguintes componentes:</p>
+<ul>
+<li><code>minha_soma</code>: nome da função</li>
+<li><code>x</code> e <code>y</code>: argumentos da função</li>
+<li><code>soma &lt;- x + y</code>: operação que a função executa</li>
+<li><code>soma</code>: valor retornado pela função</li>
+</ul>
+<p>Após rodarmos o código de criar a função, podemos utilizá-la como qualquer outra função do R.</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="4-11-maisFuncoes.html#cb79-1"></a><span class="kw">minha_soma</span>(<span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb79-2"><a href="4-11-maisFuncoes.html#cb79-2"></a><span class="co">## [1] 4</span></span></code></pre></div>
+<p>O objeto <code>soma</code> só existe <em>dentro da função</em>, isto é, além de ele não ser colocado no seu <em>environment</em>, ele só existirá na memória (RAM) enquanto o R estiver executando a função. Depois disso, ele será apagado. O mesmo vale para os argumentos <code>x</code> e <code>y</code>.</p>
+<p>O valor retornado pela função representa o resultado que receberemos ao utilizá-la. Por padrão, <strong>a função retornará sempre a última linha de código que existir dentro dela</strong>. No nosso exemplo, a função retorna o valor contido no objeto <code>soma</code>, pois é isso que fazemos na última linha de código da função.</p>
+<p>Repare que se atribuirmos o resultado a um objeto, ele não será mostrado no console:</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="4-11-maisFuncoes.html#cb80-1"></a>resultado &lt;-<span class="st"> </span><span class="kw">minha_soma</span>(<span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb80-2"><a href="4-11-maisFuncoes.html#cb80-2"></a></span>
+<span id="cb80-3"><a href="4-11-maisFuncoes.html#cb80-3"></a><span class="co"># Para ver o resultado, rodamos o objeto `resultado`</span></span>
+<span id="cb80-4"><a href="4-11-maisFuncoes.html#cb80-4"></a>resultado</span>
+<span id="cb80-5"><a href="4-11-maisFuncoes.html#cb80-5"></a><span class="co">## [1] 6</span></span></code></pre></div>
+<p>Agora, o que acontece se a última linha da função não devolver um objeto? Veja:</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="4-11-maisFuncoes.html#cb81-1"></a>minha_nova_soma &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</span>
+<span id="cb81-2"><a href="4-11-maisFuncoes.html#cb81-2"></a>  soma &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span>y</span>
+<span id="cb81-3"><a href="4-11-maisFuncoes.html#cb81-3"></a>}</span></code></pre></div>
+<p>A função <code>minha_nova_soma()</code> apenas cria o objeto <code>soma</code>, sem retorná-lo como na função <code>minha_soma()</code>. Se utilizarmos essa nova função, nenhum valor é devolvido no console:</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="4-11-maisFuncoes.html#cb82-1"></a><span class="kw">minha_nova_soma</span>(<span class="dv">1</span>, <span class="dv">1</span>)</span></code></pre></div>
+<p>No entanto, a última linha da função agora é a atribuição <code>soma &lt;- x + y</code> e esse será o “resultado retornado”. Assim, podemos visualizar o resultado da função fazendo:</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="4-11-maisFuncoes.html#cb83-1"></a>resultado &lt;-<span class="st"> </span><span class="kw">minha_nova_soma</span>(<span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb83-2"><a href="4-11-maisFuncoes.html#cb83-2"></a></span>
+<span id="cb83-3"><a href="4-11-maisFuncoes.html#cb83-3"></a>resultado</span>
+<span id="cb83-4"><a href="4-11-maisFuncoes.html#cb83-4"></a><span class="co">## [1] 2</span></span></code></pre></div>
+<p>É como se, por trás das cortinas, o R estivesse fazendo <code>resultado &lt;- soma &lt;- x + y</code>, mas apenas o objeto <code>resultado</code> continua existindo, já que os objetos <code>soma</code>, <code>x</code>e <code>y</code> são descartados após a função ser executada.</p>
+<p>Claro que, na prática, é sempre bom criarmos funções que retornem na tela os seus resultados, para evitar esse passo a mais se quisermos apenas ver o resultado no console. Assim, a função <code>minha_soma()</code> costuma ser preferível com relação à função <code>minha_nova_soma()</code>.</p>
+<div id="exercícios-5" class="section level3 unnumbered">
+<h3>Exercícios</h3>
+<p><strong>1.</strong> Qual dos códigos abaixo devolverá um erro se for avaliado?</p>
+<ol style="list-style-type: lower-alpha">
+<li><code>3 * 5 + 10</code></li>
+<li><code>function &lt;- 10</code></li>
+<li><code>mean(1, 10)</code></li>
+<li><code>(soma &lt;- sum(1, 1))</code></li>
+</ol>
+<p><strong>2.</strong> Crie uma função que receba dois valores (numéricos) e devolva o maior deles.</p>
+<p><strong>3.</strong> Use a função <code>runif()</code> para criar uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive). Caso você não conheça a função <code>runif()</code>, rode <code>help(runif)</code> para ler a sua documentação.</p>
+<p><strong>4.</strong> Rode <code>help(sample)</code> para descobrir o que a função <code>sample()</code> faz. Em seguida, use-a para escrever uma função que devolva uma linha aleatória de um <em>data frame</em>.</p>
+</div>
 </div>
 <hr/>
 <footer>
@@ -296,8 +413,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="3-7-snippets.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="4-1-pedindo-ajuda.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="4-10-mais-sobre-data-frames.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="4-12-controle-de-fluxo.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

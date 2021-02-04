@@ -165,8 +165,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
 <li class="chapter" data-level="" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-3-objetos.html"><a href="3-3-objetos.html"><i class="fa fa-check"></i><b>3.3</b> Objetos</a><ul>
-<li class="chapter" data-level="" data-path="3-3-objetos.html"><a href="3-3-objetos.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
+<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a><ul>
+<li class="chapter" data-level="" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="3-4-data-frames.html"><a href="3-4-data-frames.html"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
 <li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a></li>
@@ -181,8 +181,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
 <li class="chapter" data-level="" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html#exercícios-4"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="3-11-funcoes.html"><a href="3-11-funcoes.html"><i class="fa fa-check"></i><b>3.11</b> Funções</a><ul>
-<li class="chapter" data-level="" data-path="3-11-funcoes.html"><a href="3-11-funcoes.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
+<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a><ul>
+<li class="chapter" data-level="" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
 <li class="chapter" data-level="3.12.1" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
@@ -253,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11" data-path="11-respostas.html"><a href="11-respostas.html"><i class="fa fa-check"></i><b>11</b> Respostas</a><ul>
 <li class="chapter" data-level="11.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html"><i class="fa fa-check"></i><b>11.1</b> R básico</a><ul>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
-<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#objetos-1"><i class="fa fa-check"></i>Objetos</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#objetos"><i class="fa fa-check"></i>Objetos</a></li>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#vetores-1"><i class="fa fa-check"></i>Vetores</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="11-2-pipe-1.html"><a href="11-2-pipe-1.html"><i class="fa fa-check"></i><b>11.2</b> Pipe</a></li>
@@ -285,10 +285,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="tibbles" class="section level2">
 <h2><span class="header-section-number">7.1</span> Tibbles</h2>
 <p>Uma <em>tibble</em> é um <em>data frame</em> com ajustes que as deixam mais amigáveis a nós cientistas de dados. Elas são parte do pacote <code>{tibble}</code>. Assim, para começar a usá-las, instale e carregue o pacote.</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="7-1-tibbles.html#cb200-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tibble&quot;</span>)</span>
-<span id="cb200-2"><a href="7-1-tibbles.html#cb200-2"></a><span class="kw">library</span>(tibble)</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="7-1-tibbles.html#cb202-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tibble&quot;</span>)</span>
+<span id="cb202-2"><a href="7-1-tibbles.html#cb202-2"></a><span class="kw">library</span>(tibble)</span></code></pre></div>
 <p>Há duas formas de criar uma <em>tibble</em>. A primeira é transformar um <em>data frame</em> em <em>tibble</em> utilizando a função <code>as_tibble()</code>.</p>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="7-1-tibbles.html#cb201-1"></a><span class="kw">as_tibble</span>(mtcars)</span></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="7-1-tibbles.html#cb203-1"></a><span class="kw">as_tibble</span>(mtcars)</span></code></pre></div>
 <pre><code>## # A tibble: 32 x 11
 ##      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
 ##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -304,7 +304,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10  19.2     6  168.   123  3.92  3.44  18.3     1     0     4     4
 ## # … with 22 more rows</code></pre>
 <p>Veja que, por padrão, apenas as dez primeiras linhas da base são apresentadas. Além disso, colunas que não couberem na largura da tela serão omitidas. Também são apresentadas a dimensão da tabela e as classes de cada coluna. Compare a diferença de impressão com relação a um <em>data frame</em>.</p>
-<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="7-1-tibbles.html#cb203-1"></a>mtcars</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="7-1-tibbles.html#cb205-1"></a>mtcars</span></code></pre></div>
 <pre><code>##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 ## Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
 ## Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
@@ -340,12 +340,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></pre>
 <p>Veja também que, ao contrário dos <em>data frames</em>, <em>tibbles</em> não utilizam nome nas linhas.</p>
 <p>A segunda forma de criar uma <em>tibble</em> é a partir de vetores individuais, utilizando a função <code>tibble()</code>.</p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="7-1-tibbles.html#cb205-1"></a><span class="kw">tibble</span>(</span>
-<span id="cb205-2"><a href="7-1-tibbles.html#cb205-2"></a>  <span class="dt">coluna1 =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>),</span>
-<span id="cb205-3"><a href="7-1-tibbles.html#cb205-3"></a>  <span class="dt">coluna2 =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,</span>
-<span id="cb205-4"><a href="7-1-tibbles.html#cb205-4"></a>  <span class="dt">coluna3 =</span> coluna2 <span class="op">^</span><span class="st"> </span><span class="dv">2</span>,</span>
-<span id="cb205-5"><a href="7-1-tibbles.html#cb205-5"></a>  <span class="dt">coluna4 =</span> <span class="dv">0</span></span>
-<span id="cb205-6"><a href="7-1-tibbles.html#cb205-6"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="7-1-tibbles.html#cb207-1"></a><span class="kw">tibble</span>(</span>
+<span id="cb207-2"><a href="7-1-tibbles.html#cb207-2"></a>  <span class="dt">coluna1 =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>),</span>
+<span id="cb207-3"><a href="7-1-tibbles.html#cb207-3"></a>  <span class="dt">coluna2 =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,</span>
+<span id="cb207-4"><a href="7-1-tibbles.html#cb207-4"></a>  <span class="dt">coluna3 =</span> coluna2 <span class="op">^</span><span class="st"> </span><span class="dv">2</span>,</span>
+<span id="cb207-5"><a href="7-1-tibbles.html#cb207-5"></a>  <span class="dt">coluna4 =</span> <span class="dv">0</span></span>
+<span id="cb207-6"><a href="7-1-tibbles.html#cb207-6"></a>)</span></code></pre></div>
 <pre><code>## # A tibble: 4 x 4
 ##   coluna1 coluna2 coluna3 coluna4
 ##   &lt;chr&gt;     &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;
@@ -359,16 +359,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>se passarmos um vetor de tamanho 1 a uma das colunas, esse vetor será reciclado, igualando-se ao número de linha da <em>tibble</em> (o <code>0</code> na <code>coluna4</code> é transformado em <code>c(0, 0, 0, 0)</code>).</li>
 </ul>
 <p>Uma outra diferença entre <em>data frames</em> e <em>tibbles</em> está no <em>subsetting</em>. <em>Tibbles</em> <strong>nunca fazem correspondência parcial</strong>. Tibbles retornam <code>NULL</code> e um aviso quando você tenta selecionar uma coluna que não existe.</p>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="7-1-tibbles.html#cb207-1"></a><span class="co"># O nome da coluna é disp, mas você pode acessá-la</span></span>
-<span id="cb207-2"><a href="7-1-tibbles.html#cb207-2"></a><span class="co"># apenas a procurando por &quot;dis&quot;, já que não existe</span></span>
-<span id="cb207-3"><a href="7-1-tibbles.html#cb207-3"></a><span class="co"># nenhuma outra coluna que começa com &quot;dis&quot;.</span></span>
-<span id="cb207-4"><a href="7-1-tibbles.html#cb207-4"></a>mtcars<span class="op">$</span>dis</span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="7-1-tibbles.html#cb209-1"></a><span class="co"># O nome da coluna é disp, mas você pode acessá-la</span></span>
+<span id="cb209-2"><a href="7-1-tibbles.html#cb209-2"></a><span class="co"># apenas a procurando por &quot;dis&quot;, já que não existe</span></span>
+<span id="cb209-3"><a href="7-1-tibbles.html#cb209-3"></a><span class="co"># nenhuma outra coluna que começa com &quot;dis&quot;.</span></span>
+<span id="cb209-4"><a href="7-1-tibbles.html#cb209-4"></a>mtcars<span class="op">$</span>dis</span></code></pre></div>
 <pre><code>##  [1] 160.0 160.0 108.0 258.0 360.0 225.0 360.0 146.7 140.8 167.6 167.6 275.8
 ## [13] 275.8 275.8 472.0 460.0 440.0  78.7  75.7  71.1 120.1 318.0 304.0 350.0
 ## [25] 400.0  79.0 120.3  95.1 351.0 145.0 301.0 121.0</code></pre>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="7-1-tibbles.html#cb209-1"></a><span class="co"># Em tibbles isso não funciona.</span></span>
-<span id="cb209-2"><a href="7-1-tibbles.html#cb209-2"></a>mtcars_tibble &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(mtcars)</span>
-<span id="cb209-3"><a href="7-1-tibbles.html#cb209-3"></a>mtcars_tibble<span class="op">$</span>dis</span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="7-1-tibbles.html#cb211-1"></a><span class="co"># Em tibbles isso não funciona.</span></span>
+<span id="cb211-2"><a href="7-1-tibbles.html#cb211-2"></a>mtcars_tibble &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(mtcars)</span>
+<span id="cb211-3"><a href="7-1-tibbles.html#cb211-3"></a>mtcars_tibble<span class="op">$</span>dis</span></code></pre></div>
 <pre><code>## Warning: Unknown or uninitialised column: `dis`.</code></pre>
 <pre><code>## NULL</code></pre>
 <p>Além de nos possibilitar a criar <em>tibbles</em>, o pacote <code>{tibble}</code> possui algumas funções úteis para manipularmos esses objetos:</p>
@@ -376,9 +376,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>add_row()</code> e <code>add_column()</code>: para adicionar linhas e colunas a uma <em>tibble</em>;</p></li>
 <li><p><code>rowid_to_column()</code>: cria uma coluna com um <code>id</code> numérico e sequencial para as linhas, começando de <code>1</code>.</p></li>
 </ul>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="7-1-tibbles.html#cb212-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb212-2"><a href="7-1-tibbles.html#cb212-2"></a><span class="st">  </span><span class="kw">rowid_to_column</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb212-3"><a href="7-1-tibbles.html#cb212-3"></a><span class="st">  </span><span class="kw">head</span>(<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="7-1-tibbles.html#cb214-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb214-2"><a href="7-1-tibbles.html#cb214-2"></a><span class="st">  </span><span class="kw">rowid_to_column</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb214-3"><a href="7-1-tibbles.html#cb214-3"></a><span class="st">  </span><span class="kw">head</span>(<span class="dv">10</span>)</span></code></pre></div>
 <pre><code>##    rowid  mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 ## 1      1 21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
 ## 2      2 21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
@@ -395,7 +395,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>remove_rownames()</code>: remove o nome das linhas de um <em>data frame</em>.</p></li>
 <li><p><code>rownames_to_column()</code>: transforma o nome das linhas em uma coluna.</p></li>
 </ul>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="7-1-tibbles.html#cb214-1"></a><span class="kw">rownames_to_column</span>(mtcars, <span class="dt">var =</span> <span class="st">&quot;modelo_do_carro&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="7-1-tibbles.html#cb216-1"></a><span class="kw">rownames_to_column</span>(mtcars, <span class="dt">var =</span> <span class="st">&quot;modelo_do_carro&quot;</span>)</span></code></pre></div>
 <pre><code>##        modelo_do_carro  mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 ## 1            Mazda RX4 21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
 ## 2        Mazda RX4 Wag 21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
