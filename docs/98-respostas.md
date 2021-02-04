@@ -150,6 +150,30 @@ c(1, -3, "a", TRUE)
 
 *O caso mais comum desse problema é gerado pelo separador de decimais. Se não especificarmos corretamente qual é o separador de decimais que estamos utilizando na nossa base de dados na hora da importação, qualquer coluna com valores decimais será importada como texto.*
 
+**5.** Use a função `sum()` para somar os valores de 1 a 100.
+
+
+```r
+sum(1:100)
+## [1] 5050
+```
+
+### Testes lógicos
+
+**1.** Escreva um código em R que devolva apenas os valores maiores
+ou iguais a 10 do vetor abaixo:
+
+
+```r
+vetor <- c(4, 8, 15, 16, 23, 42)
+
+# Resposta
+vetor[vetor >= 10]
+## [1] 15 16 23 42
+```
+
+
+
 ## Pipe
 
 --------------------------------------------------------------------------------

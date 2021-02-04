@@ -615,6 +615,8 @@ um novo objeto chamado `vetor_negativo`.
 
 **4.** Por que a coerção pode ser um problema na hora de importarmos bases de dados para o R?
 
+**5.** Use a função `sum()` para somar os valores de 1 a 100.
+
 ## Testes lógicos
 
 Poder fazer qualquer tipo de operação lógica é um dos motivos pelos quais programar nos deixar mais eficientes. Dê bastante atenção a elas, pois usaremos comparações lógicas o tempo todo!
@@ -773,6 +775,19 @@ Por fim, veja algumas diferenças entre comparações lógicas no SQL e no R:
 - **Igualdade**: no SQL é só um sinal de igual: `2 = 1`. No R são dois: `2 == 1`.
 - **Diferença**: no SQL, usamos `<>`. No R usamos `!=`.
 - **Negação**: em vez de usar a palavra `NOT` igual ao SQL, usamos `!` no R. Por exemplo, `id not in ('1', '2', '3')` fica `!(id %in% c(1, 2, 3))`.
+
+
+### Exercícios
+
+**1.** Escreva um código em R que devolva apenas os valores maiores
+ou iguais a 10 do vetor abaixo:
+
+
+```r
+vetor <- c(4, 8, 15, 16, 23, 42)
+```
+
+
 
 ## Valores especiais {#valoresEspeciais}
 
@@ -1568,7 +1583,7 @@ x <- 1
 if (x == 1) {         
   Sys.time()
 }
-## [1] "2021-02-04 17:28:44 -03"
+## [1] "2021-02-04 18:16:09 -03"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se a expressão que estiver dentro dos parênteses `()` retornar `TRUE`. Veja outro exemplo:

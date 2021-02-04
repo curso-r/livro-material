@@ -521,6 +521,8 @@ um novo objeto chamado `vetor_negativo`.
 
 **4.** Por que a coerção pode ser um problema na hora de importarmos bases de dados para o R?
 
+**5.** Use a função `sum()` para somar os valores de 1 a 100.
+
 ## Testes lógicos
 
 Poder fazer qualquer tipo de operação lógica é um dos motivos pelos quais programar nos deixar mais eficientes. Dê bastante atenção a elas, pois usaremos comparações lógicas o tempo todo!
@@ -651,6 +653,18 @@ Por fim, veja algumas diferenças entre comparações lógicas no SQL e no R:
 - **Igualdade**: no SQL é só um sinal de igual: `2 = 1`. No R são dois: `2 == 1`.
 - **Diferença**: no SQL, usamos `<>`. No R usamos `!=`.
 - **Negação**: em vez de usar a palavra `NOT` igual ao SQL, usamos `!` no R. Por exemplo, `id not in ('1', '2', '3')` fica `!(id %in% c(1, 2, 3))`.
+
+
+### Exercícios
+
+**1.** Escreva um código em R que devolva apenas os valores maiores
+ou iguais a 10 do vetor abaixo:
+
+```{r, eval = FALSE}
+vetor <- c(4, 8, 15, 16, 23, 42)
+```
+
+
 
 ## Valores especiais {#valoresEspeciais}
 
@@ -966,7 +980,7 @@ Encerramos aqui a nossa primeira conversa sobre `data frames` para falar de outr
 
 ### Exercícios {-}
 
-**1.** Quais códigos abaixo retornam um vetor com a coluna "mpg"do data frame "mtcars"?
+**1.** Quais códigos abaixo retornam **um vetor** com a coluna `mpg` do data frame `mtcars`?
 
 a. `mtcars$mpg`
 b. `mtcars[ , 3]`
@@ -976,6 +990,12 @@ e. `mtcars.mpg`
 f. `mtcars[ , 1]`
 g. `mtcars[1, 1]`
 h. `mpg$mtcars`
+
+**2.** Para que serve a função `str()`. Dê um exemplo do seu uso.
+
+**3.** Para que serve a função `head()`. Dê um exemplo do seu uso.
+
+**4.** Para que serve a função `nanes()`. Dê um exemplo do seu uso.
 
 ## Mais sobre funções {#maisFuncoes}
 
