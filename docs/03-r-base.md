@@ -193,9 +193,11 @@ Error: unexpected input in "5 % 2"
 
 **1.** Qual a diferença entre o R e o RStudio?
 
-**2.** Precisamos compilar nossos códigos de R?
+**2.** Podemos usar o RStudio sem o R? E o R sem o RStudio?
 
-**3.** Calcule o número de ouro no R. Dica: o número de ouro é dado pela expressão $\frac{1 + \sqrt{5}}{2}$.
+**3.** Precisamos compilar nossos códigos de R?
+
+**4.** Calcule o número de ouro no R. Dica: o número de ouro é dado pela expressão $\frac{1 + \sqrt{5}}{2}$.
 
 
 ## Objetos
@@ -251,6 +253,30 @@ B
 ```
 
 O objeto mais importante para o cientista de dados é, claro, a base de dados. No R, uma base de dados é representa por objetos chamados de *data frames*. A seguir, vamos entender o que são esses objetos.
+
+### Exercícios {-}
+
+**1.** Qual a diferença entre os códigos abaixo?
+
+
+```r
+# Código 1
+33 / 11
+
+# Código 2
+divisao <- 33 / 11
+```
+
+**2.** Multiplique a sua idade por meses e salve o resultado em um objeto chamado `idade_em_meses`. Em seguida, multiplique esse objeto por 30 e salve o resultado em um objeto chamado `idade_em_dias`.
+
+**3.** Por que o nome `meu-objeto` não pode ser utilizado para criar um objeto? O que significa a mensagem de erro resultante?
+
+
+```r
+meu-objeto <- 1
+## Error in meu - objeto <- 1: object 'meu' not found
+```
+
 
 ## Data frames
 
@@ -550,6 +576,21 @@ Neste caso, duas coisas aconteceram:
 1. O R realizou a conta, repetindo cada valor do primeiro vetor até que os dois tenham o mesmo tamanho. No fundo, a operação realizada foi `c(1, 2, 3, 1, 2) + c(10, 20, 30, 40, 50)`.
 
 2. Como essa operação é ainda menos intuitiva e raramente desejada, o R devolveu um aviso dizendo que o comprimento do primeiro vetor maior não é um múltiplo do comprimento do vetor menor.
+
+### Exercícios {-}
+
+**1.** Guarde em um objeto a sequência de números de 0 a 5 e resolva os itens abaixos.
+
+**a.** Use subsetting para fazer o R devolver o primeiro número dessa sequência. Em seguida, faça o R devolver o último número da sequência.
+
+**b.** Multiplique todos os valores do vetor por -1. Guarde o resultado em
+um novo objeto chamado `vetor_negativo`.
+
+**2.** O que é reciclagem? Escreva um código em R que exemplifique esse comportamento.
+
+**3.** O que é coerção? Escreva um código em R que exemplifique esse comportamento.
+
+**4.** Por que a coerção pode ser um problema na hora de importarmos bases de dados para o R?
 
 ## Testes lógicos
 
@@ -1506,7 +1547,7 @@ x <- 1
 if (x == 1) {         
   Sys.time()
 }
-## [1] "2021-01-13 16:59:59 -03"
+## [1] "2021-02-04 16:36:56 -03"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se a expressão que estiver dentro dos parênteses `()` retornar `TRUE`. Veja outro exemplo:

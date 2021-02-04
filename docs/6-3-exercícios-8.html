@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1.1 Instalação do R | Ciência de Dados em R</title>
+  <title>6.3 Exercícios | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1.1 Instalação do R | Ciência de Dados em R" />
+  <meta property="og:title" content="6.3 Exercícios | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1.1 Instalação do R | Ciência de Dados em R" />
+  <meta name="twitter:title" content="6.3 Exercícios | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="1-instalacao.html"/>
-<link rel="next" href="1-2-instalação-do-rstudio.html"/>
+<link rel="prev" href="6-2-outros-operadores.html"/>
+<link rel="next" href="7-manipulacao.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -282,52 +282,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="instalação-do-r" class="section level2">
-<h2><span class="header-section-number">1.1</span> Instalação do R</h2>
-<p>A instalação padrão do R é feita a partir do CRAN, uma rede de servidores espalhada pelo mundo que armazena versões idênticas e atualizadas de códigos e documentações para o R.</p>
-<blockquote>
-<p>Sempre que for instalar algo do CRAN, utilize o servidor (<em>mirror</em>) mais próximo de você.</p>
-</blockquote>
-<div id="no-windows" class="section level3">
-<h3><span class="header-section-number">1.1.1</span> No Windows</h3>
-<p>Para instalar o R no Windows, siga os seguintes passos:</p>
-<ol style="list-style-type: decimal">
-<li><p>Acesse o CRAN: <a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a></p></li>
-<li><p>No menu à esquerda, encontre a opção <strong>Download</strong> e clique em <strong>CRAN</strong>.</p></li>
-<li><p>Escolha a opção de servidor (<em>mirror</em>) mais próxima de você.</p></li>
-<li><p>Clique na opção <strong>base</strong>.</p></li>
-<li><p>Na nova página, clique em **Download R x.x.x for Windows*, sendo x.x.x o número da versão que será baixada. Se você teve algum problema com o download, tente escolher outro servidor no passo 3.</p></li>
-<li><p>Feito o download, clique duas vezes no arquivo baixado e siga as instruções para instalação.</p></li>
-</ol>
-<blockquote>
-<p>Na etapa de escolher a pasta de destino da instalação, se você escolher um local que não esteja dentro da sua pasta de usuário, você precisará de acesso de administrador. Se escolher uma pasta dentro da sua paste de usuário, não precisará.</p>
-</blockquote>
+<div id="exercícios-8" class="section level2">
+<h2><span class="header-section-number">6.3</span> Exercícios</h2>
+<hr />
+<p><strong>1.</strong> Reescreva a expressão abaixo utilizando o <code>%&gt;%</code>.</p>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="6-3-exercícios-8.html#cb196-1"></a><span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">/</span><span class="dv">3</span>), <span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p><strong>Dica</strong>: utilize a função <code>magrittr::divide_by()</code>. Veja o help da função para mais informações.</p>
+<hr />
+<p><strong>2.</strong> Reescreva o código abaixo utilizando o <code>%&gt;%</code>.</p>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="6-3-exercícios-8.html#cb197-1"></a></span>
+<span id="cb197-2"><a href="6-3-exercícios-8.html#cb197-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb197-3"><a href="6-3-exercícios-8.html#cb197-3"></a></span>
+<span id="cb197-4"><a href="6-3-exercícios-8.html#cb197-4"></a>x.pos &lt;-<span class="st"> </span>x[x<span class="op">&gt;</span><span class="dv">0</span>]</span>
+<span id="cb197-5"><a href="6-3-exercícios-8.html#cb197-5"></a></span>
+<span id="cb197-6"><a href="6-3-exercícios-8.html#cb197-6"></a>media &lt;-<span class="st"> </span><span class="kw">mean</span>(x.pos)</span>
+<span id="cb197-7"><a href="6-3-exercícios-8.html#cb197-7"></a></span>
+<span id="cb197-8"><a href="6-3-exercícios-8.html#cb197-8"></a>saida &lt;-<span class="st"> </span><span class="kw">round</span>(media, <span class="dv">1</span>)</span></code></pre></div>
+<hr />
+<p><strong>3.</strong> Sem rodar, diga qual a saída do código abaixo. Consulte o help das funções caso precise.</p>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="6-3-exercícios-8.html#cb198-1"></a><span class="dv">2</span> <span class="op">%&gt;%</span></span>
+<span id="cb198-2"><a href="6-3-exercícios-8.html#cb198-2"></a><span class="st">  </span><span class="kw">add</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
+<span id="cb198-3"><a href="6-3-exercícios-8.html#cb198-3"></a><span class="st">  </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span></span>
+<span id="cb198-4"><a href="6-3-exercícios-8.html#cb198-4"></a><span class="st">  </span><span class="kw">mean</span>(<span class="dt">na.rm =</span> T) <span class="op">%&gt;%</span></span>
+<span id="cb198-5"><a href="6-3-exercícios-8.html#cb198-5"></a><span class="st">  </span><span class="kw">equals</span>(<span class="dv">5</span>)</span></code></pre></div>
+<hr />
+<p><strong>4.</strong> Leia o capítulo sobre <em>pipes</em> do <a href="http://r4ds.had.co.nz/pipes.html">R for data science</a>. É curto e vale muito a pena.</p>
+<hr />
+<p><strong>5.</strong> Pegue algum script que você já tenha programado em R e o reescreva utilizando o operador <em>pipe</em>. Se você não tiver nenhum, não se preocupe. Utilizaremos <strong>bastante</strong> o <em>pipe</em> daqui pra frente.</p>
+
 </div>
-<div id="no-linux" class="section level3">
-<h3><span class="header-section-number">1.1.2</span> No Linux</h3>
-<p>Como a instalação no Linux depende da distribuição utilizada e, em geral, pessoas que utilizam Linux são mais experientes, vamos informar apenas as coordenadas até as instruções/arquivos. Se você tiver alguma dificuldade durante o processo, por favor envie a sua dúvida para a nossa <a href="https://discourse.curso-r.com/">comunidade</a>. Faremos o possível para ajudar.</p>
-<ol style="list-style-type: decimal">
-<li><p>Acesse o CRAN: <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a></p></li>
-<li><p>No menu à esquerda, encontre a opção <strong>Download</strong> e clique em <strong>CRAN</strong>.</p></li>
-<li><p>Escolha a opção de servidor (<em>mirror</em>) mais próxima de você.</p></li>
-<li><p>Clique em <em>Download R for Linux</em>.</p></li>
-<li><p>Clique no link referente à distribuição que você utiliza.</p></li>
-<li><p>Siga as instruções contidas na página para instalar o R. Se você teve algum problema com o download, tente escolher outro servidor no passo 3.</p></li>
-</ol>
-</div>
-<div id="no-mac" class="section level3">
-<h3><span class="header-section-number">1.1.3</span> No Mac</h3>
-<p>Para instalar o R no Mac, siga os seguintes passos:</p>
-<ol style="list-style-type: decimal">
-<li><p>Acesse o CRAN: <a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a></p></li>
-<li><p>No menu à esquerda, encontre a opção <strong>Download</strong> e clique em <strong>CRAN</strong>.</p></li>
-<li><p>Escolha a opção de servidor (<em>mirror</em>) mais próxima de você.</p></li>
-<li><p>Na nova página, clique em **Download R for (Mac) OS X*.</p></li>
-<li><p>Clique na versão do R que você quer baixar (geralmente queremos baixar a mais recente). O objetivo aqui é baixar um arquivo do tipo “R-x.x.x.pkg”, sendo x.x.x o número da versão que vamos instalar. Se você teve algum problema com o download, tente escolher outro servidor no passo 3.</p></li>
-<li><p>Feito o download, clique duas vezes no arquivo baixado e siga as instruções para instalação.</p></li>
-</ol>
-</div>
-</div>
+<!-- </div> -->
 <hr/>
 <footer>
 <a href="https://curso-r.com" target="_blank"><img src="https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width="15%", alt="Curso-R"/></a>
@@ -337,8 +321,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="1-instalacao.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="1-2-instalação-do-rstudio.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="6-2-outros-operadores.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="7-manipulacao.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

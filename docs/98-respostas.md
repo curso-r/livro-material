@@ -4,6 +4,152 @@
 
 Não há apenas uma maneira de resolver os exercícios. Você pode encontrar soluções diferentes das nossas, algumas vezes mais práticas e eficientes, outras vezes menos. Quando estiver fazendo suas análises, tente buscar o equilíbrio entre eficiência e pragmatismo. Economizar 1 hora com a execução do código pode não valer a pena se você demorou 2 horas a mais para programá-lo.
 
+## R básico
+
+### R como calculadora {-}
+
+**1.** Qual a diferença entre o R e o RStudio?
+
+*O R é uma linguagem de programação e um programa que instalamos no nosso computador para interpretar código em linguagem R. O RStudio é um ambiente de desenvolvimento para programação em R, isto é, é um programa que nos ajuda a trabalhar com a linguagem R.*
+
+---
+
+**2.** Podemos usar o RStudio sem o R? E o R sem o RStudio?
+
+*Não podemos usar o RStudio sem o R, pois o programa R é que interpreta os nossos códigos e devolve os resultados. Por outro lado, podemos usar o R sem o RStudio (ou qualquer outro ambiente de desenvolvimento), mas a nossa vida de pessoa programadora se torna muito mais difícil.*
+
+---
+
+**3.** Precisamos compilar nossos códigos de R?
+
+*Não. Um código em R é interpretado linha a linha, isto é, podemos ir rodando nosso código parcialmente, conforme vamos escrevendo.*
+
+---
+
+**4.** Calcule o número de ouro no R. Dica: o número de ouro é dado pela expressão $\frac{1 + \sqrt{5}}{2}$.
+
+
+```r
+(1 + sqrt(5))/2
+## [1] 1.618034
+```
+
+### Objetos {-}
+
+**1.** Qual a diferença entre os códigos abaixo?
+
+
+```r
+# Código 1
+33 / 11
+
+# Código 2
+divisao <- 33 / 11
+```
+
+*O primeiro código calcula a divisão de 33 por 11 e devolve o resultado na tela. O segundo código faz o mesmo cálculo, mas guardo o resultado no objeto `divisao`, isto é, o resultado não é retornado na tela.*
+
+---
+
+**2.** Multiplique a sua idade por meses e salve o resultado em um objeto chamado `idade_em_meses`. Em seguida, multiplique esse objeto por 30 e salve o resultado em um objeto chamado `idade_em_dias`.
+
+
+```r
+idade_em_meses <- 31 * 12
+
+idade_em_dias <- idade_em_meses * 30
+```
+
+
+---
+
+**3.** Por que o nome `meu-objeto` não pode ser utilizado para criar um objeto? O que significa a mensagem de erro resultante?
+
+
+```r
+meu-objeto <- 1
+## Error in meu - objeto <- 1: object 'meu' not found
+```
+
+*Porque o sinal `-` é utilizado pelo R como o operador de subtração. O código acima está sendo interpretado como a subtração dos objetos `meu` e `objeto`. Como nenhum dos objetos existe na sessão, é devolvido um erro dizendo que o objeto `meu` (o primeiro deles) não foi encontrado.*
+
+*No entanto, mesmo que os objetos existissem, seria retornado um erro. Neste caso, seria um erro de sintaxe, pois o R não sabe como interpretar a atribuição do valor ` 3` à operação `meu - objeto`. Veja que a mensagem de erro não é muito intuitiva, pois o R entende que `-<-` é uma função que esquecemos de definir.*
+
+
+```r
+meu <- 1
+objeto <- 2
+meu-objeto <- 1
+## Error in meu - objeto <- 1: could not find function "-<-"
+```
+
+### Vetores {-}
+
+**1.** Guarde em um objeto a sequência de números de 0 a 5 e resolva os itens abaixos.
+
+**a.** Use subsetting para fazer o R devolver o primeiro número dessa sequência. Em seguida, faça o R devolver o último número da sequência.
+
+
+```r
+vetor <- 0:5
+
+# Primeiro elemento
+vetor[1]
+## [1] 0
+
+# Último elemento
+vetor[6]
+## [1] 5
+```
+
+**b.** Multiplique todos os valores do vetor por -1. Guarde o resultado em
+um novo objeto chamado `vetor_negativo`.
+
+
+```r
+vetor_negativo <- vetor * -1
+vetor_negativo
+## [1]  0 -1 -2 -3 -4 -5
+```
+
+---
+
+**2.** O que é reciclagem? Escreva um código em R que exemplifique esse comportamento.
+
+*Reciclagem é a repetição de valores de um vetor para que uma operação com vetores de tamanhos diferentes possa ser realizada. Embora pareça um comportamento estranho, utilizamos a reciclagem o tempo todo dentro do R, muitas vezes sem perceber. No exemplo a seguir, os valores do `vetor_menor` serão repetidos (reciclados) até o dois vetores terem o mesmo tamanho. Então, o primeiro valor do vetor menor será somado com o promeiro valor do vetor maior, o segundo do menor somado com o segundo do maior e assim por diante.*
+
+
+```r
+# Exemplo
+vetor_menor <- c(1, 3)
+vetor_maior <- c(1, 2, 3, 4)
+
+vetor_menor + vetor_maior
+## [1] 2 5 4 7
+```
+
+---
+
+**3.** O que é coerção? Escreva um código em R que exemplifique esse comportamento.
+
+*Coerção é a homogenização da classe dos valores de um vetor. Se construirmos um vetor com valores de classes diferentes, todos os valores serão reprimidos para a classe mais dominante entre eles. No exemplo abaixo, todos os valores do vetor foram transformados em `character`, pois `character` é mais dominante do que as demais classes presentes (`numeric` e `logical`).*
+
+*Considerando apenas as principais classes, temos a seguinte ordem de dominância: `character > numeric > integer > logical`*.
+
+
+```r
+c(1, -3, "a", TRUE)
+## [1] "1"    "-3"   "a"    "TRUE"
+```
+
+---
+
+**4.** Por que a coerção pode ser um problema na hora de importarmos bases de dados para o R?
+
+*Porque as colunas podem acabar sendo importadas com uma classe diferente daquela que estamos esperando e nenhum erro ou warning será devolvido. Por exemplo, se uma coluna da base que deveria ser numérica tiver, por algum descuido, qualquer tipo de caracter não numérico (texto), toda a coluna será importada como texto.*
+
+*O caso mais comum desse problema é gerado pelo separador de decimais. Se não especificarmos corretamente qual é o separador de decimais que estamos utilizando na nossa base de dados na hora da importação, qualquer coluna com valores decimais será importada como texto.*
+
 ## Pipe
 
 --------------------------------------------------------------------------------
@@ -65,20 +211,6 @@ rnorm(100) %>%
 - Então colocamos esse valor em um vetor com os valores 6 e `NA`.
 - Em seguida, tiramos a média desse vetor, desconsiderando o `NA`, obtendo o valor 5.
 - Por fim, testemos se o valor é igual a 5, obtendo o valor `TRUE`.
-
-<!-- ## R básico -->
-
-<!-- **1.** Calcule o número de ouro no R. -->
-
-<!-- Dica: o número de ouro é dado pela expressão $\frac{1 + \sqrt{5}}{2}$. -->
-
-<!-- **Resposta:** -->
-
-<!-- ```{r eval=FALSE} -->
-<!-- (1 + sqrt(5))/2 -->
-<!-- ``` -->
-
-
 
 <!-- -------------------------------------------------------------------------------- -->
 

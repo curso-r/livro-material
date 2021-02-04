@@ -171,22 +171,25 @@ janitor::get_dupes(base_qualquer, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 13 x 4
-##    nome     sobrenome dupe_count variavel_importante
-##    <chr>    <chr>          <int>               <dbl>
-##  1 Athos    Damiani            2              0.246 
-##  2 Athos    Damiani            2              0.0301
-##  3 Fernando Corrêa             2              0.931 
-##  4 Fernando Corrêa             2              1.20  
-##  5 Fernando Damiani            2             -0.913 
-##  6 Fernando Damiani            2              0.614 
-##  7 Julio    Amorim             3             -0.889 
-##  8 Julio    Amorim             3             -0.0797
-##  9 Julio    Amorim             3              1.01  
-## 10 Julio    Falbel             2              0.994 
-## 11 Julio    Falbel             2             -0.622 
-## 12 William  Falbel             2             -0.862 
-## 13 William  Falbel             2             -1.98
+## # A tibble: 16 x 4
+##    nome    sobrenome dupe_count variavel_importante
+##    <chr>   <chr>          <int>               <dbl>
+##  1 Athos   Amorim             2              1.03  
+##  2 Athos   Amorim             2              1.43  
+##  3 Athos   Trecenti           3             -1.01  
+##  4 Athos   Trecenti           3              0.673 
+##  5 Athos   Trecenti           3              0.430 
+##  6 Daniel  Amorim             3              1.08  
+##  7 Daniel  Amorim             3             -0.0254
+##  8 Daniel  Amorim             3              0.0384
+##  9 Daniel  Trecenti           2             -2.25  
+## 10 Daniel  Trecenti           2             -1.09  
+## 11 Julio   Trecenti           2              0.145 
+## 12 Julio   Trecenti           2             -1.35  
+## 13 William Damiani            2             -0.799 
+## 14 William Damiani            2             -0.0253
+## 15 William Trecenti           2             -0.997 
+## 16 William Trecenti           2              0.511
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.
