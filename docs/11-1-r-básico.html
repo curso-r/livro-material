@@ -262,6 +262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#vetores-1"><i class="fa fa-check"></i>Vetores</a></li>
 <li class="chapter" data-level="11.1.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i><b>11.1.1</b> Testes lógicos</a></li>
 <li class="chapter" data-level="11.1.2" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i><b>11.1.2</b> Data frames</a></li>
+<li class="chapter" data-level="11.1.3" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i><b>11.1.3</b> Mais sobre funções</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="11-2-pipe-1.html"><a href="11-2-pipe-1.html"><i class="fa fa-check"></i><b>11.2</b> Pipe</a></li>
 </ul></li>
@@ -630,6 +631,106 @@ ou iguais a 10 do vetor abaixo:</p>
 <span id="cb361-5"><a href="11-1-r-básico.html#cb361-5"></a>desvio_padrao &lt;-<span class="st"> </span><span class="kw">sqrt</span>(variancia)</span>
 <span id="cb361-6"><a href="11-1-r-básico.html#cb361-6"></a>desvio_padrao</span>
 <span id="cb361-7"><a href="11-1-r-básico.html#cb361-7"></a><span class="co">## [1] 32.98788</span></span></code></pre></div>
+</div>
+<div id="mais-sobre-funções" class="section level3">
+<h3><span class="header-section-number">11.1.3</span> Mais sobre funções</h3>
+<p><strong>1.</strong> Qual dos códigos abaixo devolverá um erro se for avaliado?</p>
+<ul>
+<li><strong>a.</strong> <code>3 * 5 + 10</code></li>
+</ul>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="11-1-r-básico.html#cb362-1"></a><span class="dv">3</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">10</span></span>
+<span id="cb362-2"><a href="11-1-r-básico.html#cb362-2"></a><span class="co">## [1] 25</span></span></code></pre></div>
+<p><em>Sem erro.</em></p>
+<ul>
+<li><strong>b.</strong> <code>function &lt;- 10</code></li>
+</ul>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="11-1-r-básico.html#cb363-1"></a><span class="cf">function</span> &lt;-<span class="st"> </span><span class="dv">10</span></span>
+<span id="cb363-2"><a href="11-1-r-básico.html#cb363-2"></a><span class="co">## Error: &lt;text&gt;:1:10: unexpected assignment</span></span>
+<span id="cb363-3"><a href="11-1-r-básico.html#cb363-3"></a><span class="co">## 1: function &lt;-</span></span>
+<span id="cb363-4"><a href="11-1-r-básico.html#cb363-4"></a><span class="co">##              ^</span></span></code></pre></div>
+<p><em>Retorna erro pois <code>function</code> é um nome reservado no R. Não podemos utilizá-lo para nomear outros objetos.</em></p>
+<ul>
+<li><strong>c.</strong> <code>mean(1, 10)</code></li>
+</ul>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="11-1-r-básico.html#cb364-1"></a><span class="kw">mean</span>(<span class="dv">1</span>, <span class="dv">10</span>)</span>
+<span id="cb364-2"><a href="11-1-r-básico.html#cb364-2"></a><span class="co">## [1] 1</span></span></code></pre></div>
+<p><em>Não retorna erro, mas o 10 não é considerado na média. O código correto seria <code>mean(c(1, 10))</code>.</em></p>
+<ul>
+<li><strong>d.</strong> <code>(soma &lt;- sum(1, 1))</code></li>
+</ul>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="11-1-r-básico.html#cb365-1"></a>(soma &lt;-<span class="st"> </span><span class="kw">sum</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb365-2"><a href="11-1-r-básico.html#cb365-2"></a><span class="co">## [1] 2</span></span></code></pre></div>
+<p><em>Não retorna erro. Cercar o código com parênteses força a saída a sempre ser apresentada no Console, além de ser gravada dentro do objeto.</em></p>
+<hr />
+<p><strong>2.</strong> Crie uma função que receba dois valores (numéricos) e devolva o maior deles.</p>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="11-1-r-básico.html#cb366-1"></a>retornar_maior &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</span>
+<span id="cb366-2"><a href="11-1-r-básico.html#cb366-2"></a>  vetor &lt;-<span class="st"> </span><span class="kw">c</span>(x, y)</span>
+<span id="cb366-3"><a href="11-1-r-básico.html#cb366-3"></a>  filtro &lt;-<span class="st"> </span><span class="kw">c</span>(x <span class="op">&gt;</span><span class="st"> </span>y, x <span class="op">&lt;=</span><span class="st"> </span>y)</span>
+<span id="cb366-4"><a href="11-1-r-básico.html#cb366-4"></a>  vetor[filtro]</span>
+<span id="cb366-5"><a href="11-1-r-básico.html#cb366-5"></a>}</span>
+<span id="cb366-6"><a href="11-1-r-básico.html#cb366-6"></a></span>
+<span id="cb366-7"><a href="11-1-r-básico.html#cb366-7"></a><span class="kw">retornar_maior</span>(<span class="dv">10</span>, <span class="dv">20</span>)</span>
+<span id="cb366-8"><a href="11-1-r-básico.html#cb366-8"></a><span class="co">## [1] 20</span></span>
+<span id="cb366-9"><a href="11-1-r-básico.html#cb366-9"></a><span class="kw">retornar_maior</span>(<span class="dv">5</span>, <span class="dv">-5</span>)</span>
+<span id="cb366-10"><a href="11-1-r-básico.html#cb366-10"></a><span class="co">## [1] 5</span></span></code></pre></div>
+<p>*Também poderíamos resolver usando a função <code>max()</code>.</p>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="11-1-r-básico.html#cb367-1"></a>retornar_maior &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</span>
+<span id="cb367-2"><a href="11-1-r-básico.html#cb367-2"></a>  <span class="kw">max</span>(x, y)</span>
+<span id="cb367-3"><a href="11-1-r-básico.html#cb367-3"></a>}</span>
+<span id="cb367-4"><a href="11-1-r-básico.html#cb367-4"></a></span>
+<span id="cb367-5"><a href="11-1-r-básico.html#cb367-5"></a><span class="kw">retornar_maior</span>(<span class="dv">10</span>, <span class="dv">20</span>)</span>
+<span id="cb367-6"><a href="11-1-r-básico.html#cb367-6"></a><span class="co">## [1] 20</span></span>
+<span id="cb367-7"><a href="11-1-r-básico.html#cb367-7"></a><span class="kw">retornar_maior</span>(<span class="dv">5</span>, <span class="dv">-5</span>)</span>
+<span id="cb367-8"><a href="11-1-r-básico.html#cb367-8"></a><span class="co">## [1] 5</span></span></code></pre></div>
+<hr />
+<p><strong>3.</strong> Use a função <code>runif()</code> para criar uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive). Caso você não conheça a função <code>runif()</code>, rode <code>help(runif)</code> para ler a sua documentação.</p>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="11-1-r-básico.html#cb368-1"></a>sortear_numero &lt;-<span class="st"> </span><span class="cf">function</span>() {</span>
+<span id="cb368-2"><a href="11-1-r-básico.html#cb368-2"></a>  numero &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">1</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">10</span>)</span>
+<span id="cb368-3"><a href="11-1-r-básico.html#cb368-3"></a>  </span>
+<span id="cb368-4"><a href="11-1-r-básico.html#cb368-4"></a>  numero_inteiro &lt;-<span class="st"> </span><span class="kw">round</span>(numero)</span>
+<span id="cb368-5"><a href="11-1-r-básico.html#cb368-5"></a>  </span>
+<span id="cb368-6"><a href="11-1-r-básico.html#cb368-6"></a>  <span class="kw">return</span>(numero_inteiro)</span>
+<span id="cb368-7"><a href="11-1-r-básico.html#cb368-7"></a>}</span>
+<span id="cb368-8"><a href="11-1-r-básico.html#cb368-8"></a></span>
+<span id="cb368-9"><a href="11-1-r-básico.html#cb368-9"></a><span class="kw">sortear_numero</span>()</span>
+<span id="cb368-10"><a href="11-1-r-básico.html#cb368-10"></a><span class="co">## [1] 6</span></span></code></pre></div>
+<hr />
+<p><strong>4.</strong> Rode <code>help(sample)</code> para descobrir o que a função <code>sample()</code> faz. Em seguida,</p>
+<ul>
+<li><strong>a.</strong> use-a para escrever uma função que devolva uma linha aleatória de um <em>data frame</em>;</li>
+</ul>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="11-1-r-básico.html#cb369-1"></a>sortear_linha &lt;-<span class="st"> </span><span class="cf">function</span>(data_frame) {</span>
+<span id="cb369-2"><a href="11-1-r-básico.html#cb369-2"></a>  num_linhas &lt;-<span class="st"> </span><span class="kw">nrow</span>(data_frame)</span>
+<span id="cb369-3"><a href="11-1-r-básico.html#cb369-3"></a>  linha_sorteada &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span>num_linhas, <span class="dv">1</span>)</span>
+<span id="cb369-4"><a href="11-1-r-básico.html#cb369-4"></a>  </span>
+<span id="cb369-5"><a href="11-1-r-básico.html#cb369-5"></a>  data_frame[linha_sorteada, ]</span>
+<span id="cb369-6"><a href="11-1-r-básico.html#cb369-6"></a>}</span>
+<span id="cb369-7"><a href="11-1-r-básico.html#cb369-7"></a></span>
+<span id="cb369-8"><a href="11-1-r-básico.html#cb369-8"></a><span class="kw">sortear_linha</span>(mtcars)</span>
+<span id="cb369-9"><a href="11-1-r-básico.html#cb369-9"></a><span class="co">##                 mpg cyl disp hp drat    wt qsec vs am gear carb</span></span>
+<span id="cb369-10"><a href="11-1-r-básico.html#cb369-10"></a><span class="co">## Toyota Corolla 33.9   4 71.1 65 4.22 1.835 19.9  1  1    4    1</span></span></code></pre></div>
+<ul>
+<li><strong>b.</strong> e generalize a função para retornar um número qualquer de linhas, escolhido pelo usuário.</li>
+</ul>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="11-1-r-básico.html#cb370-1"></a>sortear_linha &lt;-<span class="st"> </span><span class="cf">function</span>(data_frame, n) {</span>
+<span id="cb370-2"><a href="11-1-r-básico.html#cb370-2"></a>  num_linhas &lt;-<span class="st"> </span><span class="kw">nrow</span>(data_frame)</span>
+<span id="cb370-3"><a href="11-1-r-básico.html#cb370-3"></a>  linha_sorteada &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span>num_linhas, n)</span>
+<span id="cb370-4"><a href="11-1-r-básico.html#cb370-4"></a>  </span>
+<span id="cb370-5"><a href="11-1-r-básico.html#cb370-5"></a>  data_frame[linha_sorteada, ]</span>
+<span id="cb370-6"><a href="11-1-r-básico.html#cb370-6"></a>}</span>
+<span id="cb370-7"><a href="11-1-r-básico.html#cb370-7"></a></span>
+<span id="cb370-8"><a href="11-1-r-básico.html#cb370-8"></a><span class="kw">sortear_linha</span>(mtcars, <span class="dv">10</span>)</span>
+<span id="cb370-9"><a href="11-1-r-básico.html#cb370-9"></a><span class="co">##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb</span></span>
+<span id="cb370-10"><a href="11-1-r-básico.html#cb370-10"></a><span class="co">## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4</span></span>
+<span id="cb370-11"><a href="11-1-r-básico.html#cb370-11"></a><span class="co">## Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2</span></span>
+<span id="cb370-12"><a href="11-1-r-básico.html#cb370-12"></a><span class="co">## Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4</span></span>
+<span id="cb370-13"><a href="11-1-r-básico.html#cb370-13"></a><span class="co">## Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4</span></span>
+<span id="cb370-14"><a href="11-1-r-básico.html#cb370-14"></a><span class="co">## AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2</span></span>
+<span id="cb370-15"><a href="11-1-r-básico.html#cb370-15"></a><span class="co">## Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4</span></span>
+<span id="cb370-16"><a href="11-1-r-básico.html#cb370-16"></a><span class="co">## Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4</span></span>
+<span id="cb370-17"><a href="11-1-r-básico.html#cb370-17"></a><span class="co">## Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1</span></span>
+<span id="cb370-18"><a href="11-1-r-básico.html#cb370-18"></a><span class="co">## Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3</span></span>
+<span id="cb370-19"><a href="11-1-r-básico.html#cb370-19"></a><span class="co">## Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1</span></span></code></pre></div>
 </div>
 </div>
 <hr/>

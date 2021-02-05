@@ -262,6 +262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#vetores-1"><i class="fa fa-check"></i>Vetores</a></li>
 <li class="chapter" data-level="11.1.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i><b>11.1.1</b> Testes lógicos</a></li>
 <li class="chapter" data-level="11.1.2" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i><b>11.1.2</b> Data frames</a></li>
+<li class="chapter" data-level="11.1.3" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i><b>11.1.3</b> Mais sobre funções</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="11-2-pipe-1.html"><a href="11-2-pipe-1.html"><i class="fa fa-check"></i><b>11.2</b> Pipe</a></li>
 </ul></li>
@@ -387,24 +388,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb297-8"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb297-8"></a><span class="st">)</span></span>
 <span id="cb297-9"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb297-9"></a></span>
 <span id="cb297-10"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb297-10"></a><span class="st">janitor::get_dupes(base_qualquer, nome, sobrenome)</span></span></code></pre></div>
-<pre><code>## # A tibble: 15 x 4
-##    nome    sobrenome dupe_count variavel_importante
-##    &lt;chr&gt;   &lt;chr&gt;          &lt;int&gt;               &lt;dbl&gt;
-##  1 Athos   Amorim             2              -0.807
-##  2 Athos   Amorim             2              -1.30 
-##  3 Athos   Corrêa             2               1.78 
-##  4 Athos   Corrêa             2              -0.384
-##  5 Daniel  Amorim             2               0.177
-##  6 Daniel  Amorim             2              -0.486
-##  7 Daniel  Corrêa             2              -1.78 
-##  8 Daniel  Corrêa             2               1.18 
-##  9 Daniel  Trecenti           2               1.21 
-## 10 Daniel  Trecenti           2              -0.518
-## 11 Julio   Damiani            3               0.824
-## 12 Julio   Damiani            3               1.98 
-## 13 Julio   Damiani            3              -0.598
-## 14 William Trecenti           2              -0.184
-## 15 William Trecenti           2              -0.956</code></pre>
+<pre><code>## # A tibble: 14 x 4
+##    nome     sobrenome dupe_count variavel_importante
+##    &lt;chr&gt;    &lt;chr&gt;          &lt;int&gt;               &lt;dbl&gt;
+##  1 Athos    Trecenti           2             0.0177 
+##  2 Athos    Trecenti           2             1.35   
+##  3 Fernando Falbel             3             0.137  
+##  4 Fernando Falbel             3            -0.00184
+##  5 Fernando Falbel             3             0.0483 
+##  6 Julio    Corrêa             2            -2.12   
+##  7 Julio    Corrêa             2            -0.0502 
+##  8 Julio    Falbel             3            -1.89   
+##  9 Julio    Falbel             3            -0.368  
+## 10 Julio    Falbel             3             1.78   
+## 11 Julio    Trecenti           2             1.39   
+## 12 Julio    Trecenti           2             0.0310 
+## 13 William  Falbel             2             1.39   
+## 14 William  Falbel             2             0.259</code></pre>
 <p>Todas as linhas na <code>tibble</code> resultante representam uma combinação de nome-sobrenome repetida.</p>
 </div>
 <div id="outras-funções" class="section level3">

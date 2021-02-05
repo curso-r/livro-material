@@ -700,6 +700,146 @@ desvio_padrao
 ## [1] 32.98788
 ```
 
+### Mais sobre funções
+
+**1.** Qual dos códigos abaixo devolverá um erro se for avaliado?
+
+- **a.** `3 * 5 + 10`
+
+
+```r
+3 * 5 + 10
+## [1] 25
+```
+
+*Sem erro.*
+
+- **b.** `function <- 10`
+
+
+```r
+function <- 10
+## Error: <text>:1:10: unexpected assignment
+## 1: function <-
+##              ^
+```
+
+*Retorna erro pois `function` é um nome reservado no R. Não podemos utilizá-lo para nomear outros objetos.*
+
+- **c.** `mean(1, 10)`
+
+
+```r
+mean(1, 10)
+## [1] 1
+```
+*Não retorna erro, mas o 10 não é considerado na média. O código correto seria `mean(c(1, 10))`.*
+
+- **d.** `(soma <- sum(1, 1))`
+
+
+```r
+(soma <- sum(1, 1))
+## [1] 2
+```
+*Não retorna erro. Cercar o código com parênteses força a saída a sempre ser apresentada no Console, além de ser gravada dentro do objeto.*
+
+---
+
+**2.** Crie uma função que receba dois valores (numéricos) e devolva o maior deles.
+
+
+```r
+retornar_maior <- function(x, y) {
+  vetor <- c(x, y)
+  filtro <- c(x > y, x <= y)
+  vetor[filtro]
+}
+
+retornar_maior(10, 20)
+## [1] 20
+retornar_maior(5, -5)
+## [1] 5
+```
+
+*Também poderíamos resolver usando a função `max()`.
+
+
+```r
+retornar_maior <- function(x, y) {
+  max(x, y)
+}
+
+retornar_maior(10, 20)
+## [1] 20
+retornar_maior(5, -5)
+## [1] 5
+```
+
+---
+
+**3.** Use a função `runif()` para criar uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive). Caso você não conheça a função `runif()`, rode `help(runif)` para ler a sua documentação.
+
+
+```r
+sortear_numero <- function() {
+  numero <- runif(1, min = 0, max = 10)
+  
+  numero_inteiro <- round(numero)
+  
+  return(numero_inteiro)
+}
+
+sortear_numero()
+## [1] 6
+```
+
+
+---
+
+**4.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, 
+
+- **a.** use-a para escrever uma função que devolva uma linha aleatória de um *data frame*;
+
+
+```r
+sortear_linha <- function(data_frame) {
+  num_linhas <- nrow(data_frame)
+  linha_sorteada <- sample(1:num_linhas, 1)
+  
+  data_frame[linha_sorteada, ]
+}
+
+sortear_linha(mtcars)
+##                 mpg cyl disp hp drat    wt qsec vs am gear carb
+## Toyota Corolla 33.9   4 71.1 65 4.22 1.835 19.9  1  1    4    1
+```
+
+- **b.** e generalize a função para retornar um número qualquer de linhas, escolhido pelo usuário.
+
+
+```r
+sortear_linha <- function(data_frame, n) {
+  num_linhas <- nrow(data_frame)
+  linha_sorteada <- sample(1:num_linhas, n)
+  
+  data_frame[linha_sorteada, ]
+}
+
+sortear_linha(mtcars, 10)
+##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
+## Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+## Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+## Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+## AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
+## Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+## Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
+## Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+## Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+```
+
 
 ## Pipe
 

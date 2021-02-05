@@ -446,25 +446,25 @@ Mas como atribuir mais de um valor a um mesmo objeto? Para isso, precisamos cria
 
 **2.** Guarde em um objeto chamado `cidade` o nome da cidade onde você mora. Em seguida, guarde em um objeto chamado `estado` o nome do estado onde você mora. Usando esses objetos, resolva os itens abaixo:
 
-**a.** Utilize a função `nchar()` para contar o número de caracteres em cada cada string.
+- **a.** Utilize a função `nchar()` para contar o número de caracteres em cada cada string.
 
-**b.** Interprete o resultado do seguinte código:
+- **b.** Interprete o resultado do seguinte código:
 
 
 ```r
 paste(cidade, estado)
 ```
 
-**c.** Interprete o resultado do seguinte código:
+- **c.** Interprete o resultado do seguinte código:
 
 
 ```r
 paste(cidade, estado, sep = " - ")
 ```
 
-**d.** Desafio. Como você reproduziria o mesmo resultado do item (b) sem utilizar o argumento `sep`?
+- **d.** Desafio. Como você reproduziria o mesmo resultado do item (b) sem utilizar o argumento `sep`?
 
-**e.** Qual a diferença entre as funções `paste()` e `paste0()`?
+- **e.** Qual a diferença entre as funções `paste()` e `paste0()`?
 
 ## Vetores
 
@@ -638,16 +638,16 @@ Neste caso, duas coisas aconteceram:
 
 **1.** Guarde em um objeto a sequência de números de 0 a 5 e resolva os itens abaixos.
 
-**a.** Use subsetting para fazer o R devolver o primeiro número dessa sequência. Em seguida, faça o R devolver o último número da sequência.
+- **a.** Use subsetting para fazer o R devolver o primeiro número dessa sequência. Em seguida, faça o R devolver o último número da sequência.
 
-**b.** Multiplique todos os valores do vetor por -1. Guarde o resultado em
+- **b.** Multiplique todos os valores do vetor por -1. Guarde o resultado em
 um novo objeto chamado `vetor_negativo`.
 
 **2.** Crie um vetor com o nome de tres `frutas`, guarde em um objeto chamado frutas e resolva os itens abaixo.
 
-**a.** Utilize a a função `length()` para verificar o tamanho do vetor.
+- **a.** Utilize a a função `length()` para verificar o tamanho do vetor.
 
-**b.** Inspecione a saída de `paste("eu gosto de", frutas)` e responda se o tamanho do vetor mudou.
+- **b.** Inspecione a saída de `paste("eu gosto de", frutas)` e responda se o tamanho do vetor mudou.
 
 **3.** O que é reciclagem? Escreva um código em R que exemplifique esse comportamento.
 
@@ -666,13 +666,13 @@ dolar_subiu <- c(TRUE, TRUE, FALSE, FALSE, TRUE, FALSE, TRUE)
 
 Este vetor tem informação de uma semana (7 dias, começando no domingo) indicando se o dólar subiu (TRUE) ou não subiu (FALSE) no respectivo dia. Interprete o resultado dos códigos abaixo:
 
-**a.** `length(dolar_subiu)`
+- **a.** `length(dolar_subiu)`
 
-**b.** `dolar_subiu[2]`
+- **b.** `dolar_subiu[2]`
 
-**c.** `sum(dolar_subiu)`
+- **c.** `sum(dolar_subiu)`
 
-**d.** `mean(dolar_subiu)`
+- **d.** `mean(dolar_subiu)`
 
 ## Testes lógicos
 
@@ -843,17 +843,17 @@ Por fim, veja algumas diferenças entre comparações lógicas no SQL e no R:
 segredo <- round(runif(1, min = 0, max = 10))
 ```
 
-**a.** Teste se o segredo é maior ou igual a 0.
+- **a.** Teste se o segredo é maior ou igual a 0.
 
-**b.** Teste se o segredo é menor ou igual a 10.
+- **b.** Teste se o segredo é menor ou igual a 10.
 
-**c.** Teste se o segredo é maior que 5.
+- **c.** Teste se o segredo é maior que 5.
 
-**d.** Teste se o segredo é par.
+- **d.** Teste se o segredo é par.
 
-**e.** Teste se `segredo * 5` é maior que a sua idade.
+- **e.** Teste se `segredo * 5` é maior que a sua idade.
 
-**f.** Desafio. Escreva um teste para descobrir o valor do segredo.
+- **f.** Desafio. Escreva um teste para descobrir o valor do segredo.
 
 **2.** Escreva um código em R que devolva apenas os valores maiores
 ou iguais a 10 do vetor abaixo:
@@ -1657,16 +1657,23 @@ Claro que, na prática, é sempre bom criarmos funções que retornem na tela os
 
 **1.** Qual dos códigos abaixo devolverá um erro se for avaliado?
 
-a. `3 * 5 + 10`
-b. `function <- 10`
-c. `mean(1, 10)`
-d. `(soma <- sum(1, 1))`
+- **a.** `3 * 5 + 10`
+
+- **b.** `function <- 10`
+
+- **c.** `mean(1, 10)`
+
+- **d.** `(soma <- sum(1, 1))`
 
 **2.** Crie uma função que receba dois valores (numéricos) e devolva o maior deles. 
 
 **3.** Use a função `runif()` para criar uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive). Caso você não conheça a função `runif()`, rode `help(runif)` para ler a sua documentação.
 
-**4.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, use-a para escrever uma função que devolva uma linha aleatória de um *data frame*.
+**4.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida
+
+- **a.** use-a para escrever uma função que devolva uma linha aleatória de um *data frame*;
+
+- **b.** e generalize a função para retornar um número qualquer de linhas, escolhido pelo usuário.
 
 ## Controle de Fluxo
 
@@ -1695,7 +1702,7 @@ x <- 1
 if (x == 1) {         
   Sys.time()
 }
-## [1] "2021-02-05 13:04:25 -03"
+## [1] "2021-02-05 15:47:56 -03"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se a expressão que estiver dentro dos parênteses `()` retornar `TRUE`. Veja outro exemplo:

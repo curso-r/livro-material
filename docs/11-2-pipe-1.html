@@ -262,6 +262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#vetores-1"><i class="fa fa-check"></i>Vetores</a></li>
 <li class="chapter" data-level="11.1.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i><b>11.1.1</b> Testes lógicos</a></li>
 <li class="chapter" data-level="11.1.2" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i><b>11.1.2</b> Data frames</a></li>
+<li class="chapter" data-level="11.1.3" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i><b>11.1.3</b> Mais sobre funções</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="11-2-pipe-1.html"><a href="11-2-pipe-1.html"><i class="fa fa-check"></i><b>11.2</b> Pipe</a></li>
 </ul></li>
@@ -293,36 +294,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">11.2</span> Pipe</h2>
 <hr />
 <p><strong>1.</strong> Reescreva a expressão abaixo utilizando o <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="11-2-pipe-1.html#cb362-1"></a><span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">/</span><span class="dv">3</span>), <span class="dt">digits =</span> <span class="dv">1</span>)</span>
-<span id="cb362-2"><a href="11-2-pipe-1.html#cb362-2"></a></span>
-<span id="cb362-3"><a href="11-2-pipe-1.html#cb362-3"></a><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> <span class="op">%&gt;%</span></span>
-<span id="cb362-4"><a href="11-2-pipe-1.html#cb362-4"></a><span class="st">  </span>sum <span class="op">%&gt;%</span></span>
-<span id="cb362-5"><a href="11-2-pipe-1.html#cb362-5"></a><span class="st">  </span><span class="kw">divide_by</span>(<span class="dv">3</span>) <span class="op">%&gt;%</span></span>
-<span id="cb362-6"><a href="11-2-pipe-1.html#cb362-6"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="11-2-pipe-1.html#cb371-1"></a><span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">/</span><span class="dv">3</span>), <span class="dt">digits =</span> <span class="dv">1</span>)</span>
+<span id="cb371-2"><a href="11-2-pipe-1.html#cb371-2"></a></span>
+<span id="cb371-3"><a href="11-2-pipe-1.html#cb371-3"></a><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> <span class="op">%&gt;%</span></span>
+<span id="cb371-4"><a href="11-2-pipe-1.html#cb371-4"></a><span class="st">  </span>sum <span class="op">%&gt;%</span></span>
+<span id="cb371-5"><a href="11-2-pipe-1.html#cb371-5"></a><span class="st">  </span><span class="kw">divide_by</span>(<span class="dv">3</span>) <span class="op">%&gt;%</span></span>
+<span id="cb371-6"><a href="11-2-pipe-1.html#cb371-6"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
 <hr />
 <p><strong>2.</strong> Reescreva o código abaixo utilizando o <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="11-2-pipe-1.html#cb363-1"></a><span class="co"># Setamos a semente que gera números aleatórios para deixar o resultado reprodutível</span></span>
-<span id="cb363-2"><a href="11-2-pipe-1.html#cb363-2"></a></span>
-<span id="cb363-3"><a href="11-2-pipe-1.html#cb363-3"></a><span class="kw">set.seed</span>(<span class="dv">137</span>)</span>
-<span id="cb363-4"><a href="11-2-pipe-1.html#cb363-4"></a></span>
-<span id="cb363-5"><a href="11-2-pipe-1.html#cb363-5"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</span>
-<span id="cb363-6"><a href="11-2-pipe-1.html#cb363-6"></a>x.pos &lt;-<span class="st"> </span>x[x<span class="op">&gt;</span><span class="dv">0</span>]</span>
-<span id="cb363-7"><a href="11-2-pipe-1.html#cb363-7"></a>media &lt;-<span class="st"> </span><span class="kw">mean</span>(x.pos)</span>
-<span id="cb363-8"><a href="11-2-pipe-1.html#cb363-8"></a>saida &lt;-<span class="st"> </span><span class="kw">round</span>(media, <span class="dv">2</span>)</span>
-<span id="cb363-9"><a href="11-2-pipe-1.html#cb363-9"></a>saida</span></code></pre></div>
-<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="11-2-pipe-1.html#cb364-1"></a><span class="kw">set.seed</span>(<span class="dv">137</span>)</span>
-<span id="cb364-2"><a href="11-2-pipe-1.html#cb364-2"></a></span>
-<span id="cb364-3"><a href="11-2-pipe-1.html#cb364-3"></a><span class="kw">rnorm</span>(<span class="dv">100</span>) <span class="op">%&gt;%</span></span>
-<span id="cb364-4"><a href="11-2-pipe-1.html#cb364-4"></a><span class="st">  </span>magrittr<span class="op">::</span><span class="kw">extract</span>(. <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">%&gt;%</span></span>
-<span id="cb364-5"><a href="11-2-pipe-1.html#cb364-5"></a><span class="st">  </span>mean <span class="op">%&gt;%</span></span>
-<span id="cb364-6"><a href="11-2-pipe-1.html#cb364-6"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="11-2-pipe-1.html#cb372-1"></a><span class="co"># Setamos a semente que gera números aleatórios para deixar o resultado reprodutível</span></span>
+<span id="cb372-2"><a href="11-2-pipe-1.html#cb372-2"></a></span>
+<span id="cb372-3"><a href="11-2-pipe-1.html#cb372-3"></a><span class="kw">set.seed</span>(<span class="dv">137</span>)</span>
+<span id="cb372-4"><a href="11-2-pipe-1.html#cb372-4"></a></span>
+<span id="cb372-5"><a href="11-2-pipe-1.html#cb372-5"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb372-6"><a href="11-2-pipe-1.html#cb372-6"></a>x.pos &lt;-<span class="st"> </span>x[x<span class="op">&gt;</span><span class="dv">0</span>]</span>
+<span id="cb372-7"><a href="11-2-pipe-1.html#cb372-7"></a>media &lt;-<span class="st"> </span><span class="kw">mean</span>(x.pos)</span>
+<span id="cb372-8"><a href="11-2-pipe-1.html#cb372-8"></a>saida &lt;-<span class="st"> </span><span class="kw">round</span>(media, <span class="dv">2</span>)</span>
+<span id="cb372-9"><a href="11-2-pipe-1.html#cb372-9"></a>saida</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="11-2-pipe-1.html#cb373-1"></a><span class="kw">set.seed</span>(<span class="dv">137</span>)</span>
+<span id="cb373-2"><a href="11-2-pipe-1.html#cb373-2"></a></span>
+<span id="cb373-3"><a href="11-2-pipe-1.html#cb373-3"></a><span class="kw">rnorm</span>(<span class="dv">100</span>) <span class="op">%&gt;%</span></span>
+<span id="cb373-4"><a href="11-2-pipe-1.html#cb373-4"></a><span class="st">  </span>magrittr<span class="op">::</span><span class="kw">extract</span>(. <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">%&gt;%</span></span>
+<span id="cb373-5"><a href="11-2-pipe-1.html#cb373-5"></a><span class="st">  </span>mean <span class="op">%&gt;%</span></span>
+<span id="cb373-6"><a href="11-2-pipe-1.html#cb373-6"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
 <hr />
 <p><strong>3.</strong> Sem rodar, diga qual a saída do código abaixo. Consulte o help das funções caso precise.</p>
-<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="11-2-pipe-1.html#cb365-1"></a><span class="dv">2</span> <span class="op">%&gt;%</span></span>
-<span id="cb365-2"><a href="11-2-pipe-1.html#cb365-2"></a><span class="st">  </span><span class="kw">add</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
-<span id="cb365-3"><a href="11-2-pipe-1.html#cb365-3"></a><span class="st">  </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span></span>
-<span id="cb365-4"><a href="11-2-pipe-1.html#cb365-4"></a><span class="st">  </span><span class="kw">mean</span>(<span class="dt">na.rm =</span> T) <span class="op">%&gt;%</span></span>
-<span id="cb365-5"><a href="11-2-pipe-1.html#cb365-5"></a><span class="st">  </span><span class="kw">equals</span>(<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="11-2-pipe-1.html#cb374-1"></a><span class="dv">2</span> <span class="op">%&gt;%</span></span>
+<span id="cb374-2"><a href="11-2-pipe-1.html#cb374-2"></a><span class="st">  </span><span class="kw">add</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
+<span id="cb374-3"><a href="11-2-pipe-1.html#cb374-3"></a><span class="st">  </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span></span>
+<span id="cb374-4"><a href="11-2-pipe-1.html#cb374-4"></a><span class="st">  </span><span class="kw">mean</span>(<span class="dt">na.rm =</span> T) <span class="op">%&gt;%</span></span>
+<span id="cb374-5"><a href="11-2-pipe-1.html#cb374-5"></a><span class="st">  </span><span class="kw">equals</span>(<span class="dv">5</span>)</span></code></pre></div>
 <ul>
 <li>Primeiro, somamos 2 com 2, gerando o valor 4.</li>
 <li>Então colocamos esse valor em um vetor com os valores 6 e <code>NA</code>.</li>

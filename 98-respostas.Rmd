@@ -556,6 +556,113 @@ desvio_padrao <- sqrt(variancia)
 desvio_padrao
 ```
 
+### Mais sobre funções
+
+**1.** Qual dos códigos abaixo devolverá um erro se for avaliado?
+
+- **a.** `3 * 5 + 10`
+
+```{r}
+3 * 5 + 10
+```
+
+*Sem erro.*
+
+- **b.** `function <- 10`
+
+```{r, error=TRUE}
+function <- 10
+```
+
+*Retorna erro pois `function` é um nome reservado no R. Não podemos utilizá-lo para nomear outros objetos.*
+
+- **c.** `mean(1, 10)`
+
+```{r}
+mean(1, 10)
+```
+*Não retorna erro, mas o 10 não é considerado na média. O código correto seria `mean(c(1, 10))`.*
+
+- **d.** `(soma <- sum(1, 1))`
+
+```{r}
+(soma <- sum(1, 1))
+```
+*Não retorna erro. Cercar o código com parênteses força a saída a sempre ser apresentada no Console, além de ser gravada dentro do objeto.*
+
+---
+
+**2.** Crie uma função que receba dois valores (numéricos) e devolva o maior deles.
+
+```{r}
+retornar_maior <- function(x, y) {
+  vetor <- c(x, y)
+  filtro <- c(x > y, x <= y)
+  vetor[filtro]
+}
+
+retornar_maior(10, 20)
+retornar_maior(5, -5)
+```
+
+*Também poderíamos resolver usando a função `max()`.
+
+```{r}
+retornar_maior <- function(x, y) {
+  max(x, y)
+}
+
+retornar_maior(10, 20)
+retornar_maior(5, -5)
+```
+
+---
+
+**3.** Use a função `runif()` para criar uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive). Caso você não conheça a função `runif()`, rode `help(runif)` para ler a sua documentação.
+
+```{r}
+sortear_numero <- function() {
+  numero <- runif(1, min = 0, max = 10)
+  
+  numero_inteiro <- round(numero)
+  
+  return(numero_inteiro)
+}
+
+sortear_numero()
+```
+
+
+---
+
+**4.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, 
+
+- **a.** use-a para escrever uma função que devolva uma linha aleatória de um *data frame*;
+
+```{r}
+sortear_linha <- function(data_frame) {
+  num_linhas <- nrow(data_frame)
+  linha_sorteada <- sample(1:num_linhas, 1)
+  
+  data_frame[linha_sorteada, ]
+}
+
+sortear_linha(mtcars)
+```
+
+- **b.** e generalize a função para retornar um número qualquer de linhas, escolhido pelo usuário.
+
+```{r}
+sortear_linha <- function(data_frame, n) {
+  num_linhas <- nrow(data_frame)
+  linha_sorteada <- sample(1:num_linhas, n)
+  
+  data_frame[linha_sorteada, ]
+}
+
+sortear_linha(mtcars, 10)
+```
+
 
 ## Pipe
 
