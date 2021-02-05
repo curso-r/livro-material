@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 7 Manipulação | Ciência de Dados em R</title>
+  <title>6.3 Exercícios | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 7 Manipulação | Ciência de Dados em R" />
+  <meta property="og:title" content="6.3 Exercícios | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 7 Manipulação | Ciência de Dados em R" />
+  <meta name="twitter:title" content="6.3 Exercícios | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="6-3-exercícios-10.html"/>
-<link rel="next" href="7-1-tibbles.html"/>
+<link rel="prev" href="6-2-outros-operadores.html"/>
+<link rel="next" href="7-manipulacao.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -289,28 +289,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="manipulacao" class="section level1">
-<h1><span class="header-section-number">Capítulo 7</span> Manipulação</h1>
-<p>Esta seção trata do tema <em>manipulação de dados</em>. Trata-se de uma tarefa dolorosa e demorada, tomando muitas vezes a maior parte do tempo de uma análise de dados. Apesar de negligenciada pela Estatística, essa etapa é essencial para o sucesso da análise.</p>
-<p><em>The fact that data science exists as a field is a colossal failure of statistics. To me, what I do is what statistics is all about. It is gaining insight from data using modelling and visualization. Data munging and manipulation is hard and statistics has just said that’s not our domain.</em> — Hadley Wickham</p>
-<p>Usualmente, o cientista de dados parte de uma base “crua” e a transforma até obter uma base de dados analítica, que, a menos de transformações simples, está preparada para gerar tabelas descritivas e gráficos e alimentar modelos.</p>
-<p>A figura abaixo mostra a fase de “disputa” com os dados (<em>data wrangling</em>) para deixá-los no formato analítico.</p>
-<p><img src="assets/img/manipulacao/ciclo-ciencia-de-dados.png" width="479" style="display: block; margin: auto;" /></p>
-<p>Um conceito importante para obtenção de uma base analítica é o <em>data tidying</em>, ou arrumação de dados. Uma base é considerada <em>tidy</em> se</p>
-<ol style="list-style-type: decimal">
-<li>Cada linha da base representa uma observação.</li>
-<li>Cada coluna da base representa uma variável.</li>
-</ol>
-<p>A base de dados analítica é estruturada de tal forma que pode ser colocada diretamente em ambientes de modelagem estatística ou de visualização. Nem sempre uma base de dados analítica está no formato <em>tidy</em>, mas usualmente são necessários poucos passos para migrar de uma para outra. A filosofia <em>tidy</em> é a base do <a href="https://www.tidyverse.org/">tidyverse</a>.</p>
-<p>Os principais pacotes encarregados da tarefa de estruturar os dados são o <code>dplyr</code> e o <code>tidyr</code>. Eles serão o tema desse capítulo. Instale e carregue os pacotes utilizando:</p>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="7-manipulacao.html#cb206-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
-<span id="cb206-2"><a href="7-manipulacao.html#cb206-2"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyr&quot;</span>)</span>
-<span id="cb206-3"><a href="7-manipulacao.html#cb206-3"></a></span>
-<span id="cb206-4"><a href="7-manipulacao.html#cb206-4"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb206-5"><a href="7-manipulacao.html#cb206-5"></a><span class="kw">library</span>(tidyr)</span></code></pre></div>
-<p>Mas antes de apresentar as principais funções do <code>dplyr</code> e do <code>tidyr</code>, precisamos falar sobre o conceito de <code>tibbles</code>.</p>
-<!--chapter:end:07-manipulacao.Rmd-->
+<div id="exercícios-10" class="section level2">
+<h2><span class="header-section-number">6.3</span> Exercícios</h2>
+<hr />
+<p><strong>1.</strong> Reescreva a expressão abaixo utilizando o <code>%&gt;%</code>.</p>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="6-3-exercícios-10.html#cb203-1"></a><span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">/</span><span class="dv">3</span>), <span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p><strong>Dica</strong>: utilize a função <code>magrittr::divide_by()</code>. Veja o help da função para mais informações.</p>
+<hr />
+<p><strong>2.</strong> Reescreva o código abaixo utilizando o <code>%&gt;%</code>.</p>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="6-3-exercícios-10.html#cb204-1"></a></span>
+<span id="cb204-2"><a href="6-3-exercícios-10.html#cb204-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb204-3"><a href="6-3-exercícios-10.html#cb204-3"></a></span>
+<span id="cb204-4"><a href="6-3-exercícios-10.html#cb204-4"></a>x.pos &lt;-<span class="st"> </span>x[x<span class="op">&gt;</span><span class="dv">0</span>]</span>
+<span id="cb204-5"><a href="6-3-exercícios-10.html#cb204-5"></a></span>
+<span id="cb204-6"><a href="6-3-exercícios-10.html#cb204-6"></a>media &lt;-<span class="st"> </span><span class="kw">mean</span>(x.pos)</span>
+<span id="cb204-7"><a href="6-3-exercícios-10.html#cb204-7"></a></span>
+<span id="cb204-8"><a href="6-3-exercícios-10.html#cb204-8"></a>saida &lt;-<span class="st"> </span><span class="kw">round</span>(media, <span class="dv">1</span>)</span></code></pre></div>
+<hr />
+<p><strong>3.</strong> Sem rodar, diga qual a saída do código abaixo. Consulte o help das funções caso precise.</p>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="6-3-exercícios-10.html#cb205-1"></a><span class="dv">2</span> <span class="op">%&gt;%</span></span>
+<span id="cb205-2"><a href="6-3-exercícios-10.html#cb205-2"></a><span class="st">  </span><span class="kw">add</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
+<span id="cb205-3"><a href="6-3-exercícios-10.html#cb205-3"></a><span class="st">  </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span></span>
+<span id="cb205-4"><a href="6-3-exercícios-10.html#cb205-4"></a><span class="st">  </span><span class="kw">mean</span>(<span class="dt">na.rm =</span> T) <span class="op">%&gt;%</span></span>
+<span id="cb205-5"><a href="6-3-exercícios-10.html#cb205-5"></a><span class="st">  </span><span class="kw">equals</span>(<span class="dv">5</span>)</span></code></pre></div>
+<hr />
+<p><strong>4.</strong> Leia o capítulo sobre <em>pipes</em> do <a href="http://r4ds.had.co.nz/pipes.html">R for data science</a>. É curto e vale muito a pena.</p>
+<hr />
+<p><strong>5.</strong> Pegue algum script que você já tenha programado em R e o reescreva utilizando o operador <em>pipe</em>. Se você não tiver nenhum, não se preocupe. Utilizaremos <strong>bastante</strong> o <em>pipe</em> daqui pra frente.</p>
+
 </div>
+<!-- </div> -->
 <hr/>
 <footer>
 <a href="https://curso-r.com" target="_blank"><img src="https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width="15%", alt="Curso-R"/></a>
@@ -320,8 +328,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="6-3-exercícios-10.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="7-1-tibbles.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="6-2-outros-operadores.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="7-manipulacao.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

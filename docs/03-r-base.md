@@ -199,6 +199,8 @@ Error: unexpected input in "5 % 2"
 
 **4.** Calcule o número de ouro no R. Dica: o número de ouro é dado pela expressão $\frac{1 + \sqrt{5}}{2}$.
 
+**5.** Por que é preferível escrevermos sempre o nosso código no *script* e não no *Console*?
+
 
 ## Objetos e funções {#objetosFuncoes}
 
@@ -369,7 +371,7 @@ Por exemplo, podemos somar dois números, mas não conseguimos somar duas letras
 
 O operador `+` verifica que `"a"` e `"b"` não são números (ou que a classe deles não é numérica) e devolve uma mensagem de erro informando isso.
 
-Observe que para criar texto no R, colocamos os caracteres entre aspas. As aspas servem para diferenciar *nomes* (objetos, funções, pacotes) de *textos* (letras e palavras). Os textos são muito comuns em variáveis categóricas.
+Observe que para criar texto no R, colocamos os caracteres entre aspas. As aspas servem para diferenciar *nomes* (objetos, funções, pacotes) de *textos* (letras e palavras). Os textos são muito comuns em variáveis categóricas e são popularmente chamados de *strings* no contexto de programação.
 
 
 ```r
@@ -406,6 +408,12 @@ As classes mais básicas dentro do R são:
 - *character*
 - *logical*
 
+> Geralmente serão utilizados como sinônimos: 
+>
+>  - texto, string, *character*, caracteres
+>  - número, valor real, *numeric*, *double*
+>  - lógico, *logical*, booleano, valor TRUE/FALSE
+
 Veja alguns exemplos:
 
 
@@ -431,6 +439,32 @@ Um objeto de qualquer uma dessas classes é chamado de **objeto atômico**.
 Esse nome se deve ao fato de essas classes não se misturarem, isto é, para um objeto ter a classe `numeric`, por exemplo, todos os seus valores precisam ser numéricos.
 
 Mas como atribuir mais de um valor a um mesmo objeto? Para isso, precisamos criar **vetores**.
+
+### Exercícios
+
+**1.** Guarde em um objeto chamado `nome` uma *string* contendo o seu nome completo.
+
+**2.** Guarde em um objeto chamado `cidade` o nome da cidade onde você mora. Em seguida, guarde em um objeto chamado `estado` o nome do estado onde você mora. Usando esses objetos, resolva os itens abaixo:
+
+**a.** Utilize a função `nchar()` para contar o número de caracteres em cada cada string.
+
+**b.** Interprete o resultado do seguinte código:
+
+
+```r
+paste(cidade, estado)
+```
+
+**c.** Interprete o resultado do seguinte código:
+
+
+```r
+paste(cidade, estado, sep = " - ")
+```
+
+**d.** Desafio. Como você reproduziria o mesmo resultado do item (b) sem utilizar o argumento `sep`?
+
+**e.** Qual a diferença entre as funções `paste()` e `paste0()`?
 
 ## Vetores
 
@@ -609,13 +643,36 @@ Neste caso, duas coisas aconteceram:
 **b.** Multiplique todos os valores do vetor por -1. Guarde o resultado em
 um novo objeto chamado `vetor_negativo`.
 
-**2.** O que é reciclagem? Escreva um código em R que exemplifique esse comportamento.
+**2.** Crie um vetor com o nome de tres `frutas`, guarde em um objeto chamado frutas e resolva os itens abaixo.
 
-**3.** O que é coerção? Escreva um código em R que exemplifique esse comportamento.
+**a.** Utilize a a função `length()` para verificar o tamanho do vetor.
 
-**4.** Por que a coerção pode ser um problema na hora de importarmos bases de dados para o R?
+**b.** Inspecione a saída de `paste("eu gosto de", frutas)` e responda se o tamanho do vetor mudou.
 
-**5.** Use a função `sum()` para somar os valores de 1 a 100.
+**3.** O que é reciclagem? Escreva um código em R que exemplifique esse comportamento.
+
+**4.** O que é coerção? Escreva um código em R que exemplifique esse comportamento.
+
+**5.** Por que a coerção pode ser um problema na hora de importarmos bases de dados para o R?
+
+**6.** Use a função `sum()` para somar os valores de 1 a 100.
+
+**7.** Considere o vetor booleano a seguir:
+
+
+```r
+dolar_subiu <- c(TRUE, TRUE, FALSE, FALSE, TRUE, FALSE, TRUE)
+```
+
+Este vetor tem informação de uma semana (7 dias, começando no domingo) indicando se o dólar subiu (TRUE) ou não subiu (FALSE) no respectivo dia. Interprete o resultado dos códigos abaixo:
+
+**a.** `length(dolar_subiu)`
+
+**b.** `dolar_subiu[2]`
+
+**c.** `sum(dolar_subiu)`
+
+**d.** `mean(dolar_subiu)`
 
 ## Testes lógicos
 
@@ -779,7 +836,26 @@ Por fim, veja algumas diferenças entre comparações lógicas no SQL e no R:
 
 ### Exercícios
 
-**1.** Escreva um código em R que devolva apenas os valores maiores
+**1** O código abaixo vai guardar no objeto `segredo` um número inteiro entre 0 e 10. Sem olhar qual número foi guardado no objeto, resolva os itens a seguir:
+
+
+```r
+segredo <- round(runif(1, min = 0, max = 10))
+```
+
+**a.** Teste se o segredo é maior ou igual a 0.
+
+**b.** Teste se o segredo é menor ou igual a 10.
+
+**c.** Teste se o segredo é maior que 5.
+
+**d.** Teste se o segredo é par.
+
+**e.** Teste se `segredo * 5` é maior que a sua idade.
+
+**f.** Desafio. Escreva um teste para descobrir o valor do segredo.
+
+**2.** Escreva um código em R que devolva apenas os valores maiores
 ou iguais a 10 do vetor abaixo:
 
 
@@ -1315,16 +1391,52 @@ Encerramos aqui a nossa primeira conversa sobre `data frames` para falar de outr
 
 ### Exercícios {-}
 
-**1.** Quais códigos abaixo retornam um vetor com a coluna "mpg"do data frame "mtcars"?
+**1.** Quais códigos abaixo retornam **um vetor** com a coluna `mpg` do data frame `mtcars`?
 
-a. `mtcars$mpg`
-b. `mtcars[ , 3]`
-c. `mtcars("mpg")`
-d. `mtcars[ , "mpg"]`
-e. `mtcars.mpg`
-f. `mtcars[ , 1]`
-g. `mtcars[1, 1]`
-h. `mpg$mtcars`
+- **a.** `mtcars$mpg`
+
+- **b.** `mtcars[ , 3]`
+
+- **c.** `mtcars("mpg")`
+
+- **d.** `mtcars[ , "mpg"]`
+
+- **e.** `mtcars.mpg`
+
+- **f.** `mtcars[ , 1]`
+
+- **g.** `mtcars[1, 1]`
+
+- **h.** `mpg$mtcars`
+
+**2.** Para que serve a função `str()`. Dê um exemplo do seu uso.
+
+**3.** Para que serve a função `nanes()`. Dê um exemplo do seu uso.
+
+**4.** Use o data frame `airquality` para responder às questões abaixo:
+
+- **a.** Quantas colunas `airquality` tem?
+
+- **b.** Quantas linhas `airquality` tem?
+
+- **c.** O que a função `head()` retorna?
+
+- **d.** Quais são os nomes das colunas?
+
+- **e.** Qual é a classe da coluna `Ozone`?
+
+**5.** Desafio. Calculando desvio-padrão no R. Use o data frame `airquality` para responder às questões abaixo:
+
+- **a.** Tire a média da coluna Ozone e guarde em um objeto.
+
+- **b.** Guarde em um objeto o vetor correspondente à coluna Ozone subtraída da sua própria média (calculada em no item a).
+
+- **c.** Eleve o vetor calculado em (b) ao quadrado. Salve o resultado em um novo objeto.
+
+- **d.** Tire a média do vetor calculado em (c) e salve o resultado em um objeto chamado `variancia`. Em seguida, calcule a raiz quadrada desse valor e salve em um objeto chamado `desvio_padrao`.
+
+- **e.** Compare o valor de `desvio_padrao` com `sd(airquality$Ozone)` e pesquise por que os valores não são iguais. Dica: veja a documentação da função `sd()`.
+
 
 ## Mais sobre funções {#maisFuncoes}
 
@@ -1583,7 +1695,7 @@ x <- 1
 if (x == 1) {         
   Sys.time()
 }
-## [1] "2021-02-04 18:16:09 -03"
+## [1] "2021-02-05 13:04:25 -03"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se a expressão que estiver dentro dos parênteses `()` retornar `TRUE`. Veja outro exemplo:

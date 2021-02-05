@@ -1,7 +1,7 @@
 --- 
 title: "Ciência de Dados em R"
 author: "Curso-R"
-date: "Última atualização: 04/02/2021"
+date: "Última atualização: 05/02/2021"
 github-repo: "curso-r/livro-material"
 site: bookdown::bookdown_site
 documentclass: book
@@ -21,7 +21,7 @@ Este livro está em **construção** e em **revisão aberta**. Fique à vontade 
 
 Todo o conteúdo deste livro é gratuito e aberto.
 
-Autores:
+Autoria:
 
 - [Athos Damiani](https://twitter.com/athos_damiani)
 - [Caio Lente](https://lente.dev/)
