@@ -171,23 +171,24 @@ janitor::get_dupes(base_qualquer, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 14 x 4
+## # A tibble: 15 x 4
 ##    nome     sobrenome dupe_count variavel_importante
 ##    <chr>    <chr>          <int>               <dbl>
-##  1 Athos    Trecenti           2             0.0177 
-##  2 Athos    Trecenti           2             1.35   
-##  3 Fernando Falbel             3             0.137  
-##  4 Fernando Falbel             3            -0.00184
-##  5 Fernando Falbel             3             0.0483 
-##  6 Julio    Corrêa             2            -2.12   
-##  7 Julio    Corrêa             2            -0.0502 
-##  8 Julio    Falbel             3            -1.89   
-##  9 Julio    Falbel             3            -0.368  
-## 10 Julio    Falbel             3             1.78   
-## 11 Julio    Trecenti           2             1.39   
-## 12 Julio    Trecenti           2             0.0310 
-## 13 William  Falbel             2             1.39   
-## 14 William  Falbel             2             0.259
+##  1 Athos    Trecenti           2              0.849 
+##  2 Athos    Trecenti           2             -1.95  
+##  3 Daniel   Corrêa             2              1.82  
+##  4 Daniel   Corrêa             2              0.409 
+##  5 Fernando Amorim             2             -0.340 
+##  6 Fernando Amorim             2             -0.645 
+##  7 Fernando Corrêa             2              0.0585
+##  8 Fernando Corrêa             2              0.463 
+##  9 Fernando Damiani            2             -0.871 
+## 10 Fernando Damiani            2             -1.51  
+## 11 Julio    Amorim             2             -1.14  
+## 12 Julio    Amorim             2              0.553 
+## 13 William  Damiani            3              0.152 
+## 14 William  Damiani            3              0.803 
+## 15 William  Damiani            3              0.117
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.

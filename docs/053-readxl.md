@@ -44,7 +44,7 @@ caminho_datasets
 ```
 
 ```
-## [1] "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/readxl/extdata/datasets.xlsx"
+## [1] "/home/jtrecenti/R/x86_64-pc-linux-gnu-library/4.0/readxl/extdata/datasets.xlsx"
 ```
 
 No Excel, um arquivo pode ter várias planilhas. Esse é o caso do arquivo `datasets.xlsx`. Você pode ver quais planilhas fazem parte do arquivo utilizando a função `excel_sheets()`.

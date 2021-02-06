@@ -29,7 +29,7 @@ Para instalar esse pacote...
 
 
 ```r
-library(dplyr )
+library(dplyr)
 ```
 
 ```
@@ -547,13 +547,9 @@ imdb %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 91 x 2
 ##      ano qtd_filmes
-##    <int>      <int>
+##  * <int>      <int>
 ##  1  1916          1
 ##  2  1920          1
 ##  3  1925          1
@@ -574,13 +570,9 @@ imdb %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 1,813 x 2
 ##    diretor          orcamento_medio
-##    <chr>                      <dbl>
+##  * <chr>                      <dbl>
 ##  1 A. Raven Cruz            1000000
 ##  2 Aaron Hann                   NaN
 ##  3 Aaron Schneider          7500000

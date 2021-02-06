@@ -373,7 +373,7 @@ segredo <= 10
 
 ```r
 segredo > 5
-## [1] FALSE
+## [1] TRUE
 ```
 
 
@@ -385,18 +385,18 @@ segredo > 5
 ```r
 # Resto da divisão por 2
 segredo %% 2
-## [1] 1
+## [1] 0
 
 # Guardando o resultado
 resto <- segredo %% 2
 
 # Teste
 resto == 0
-## [1] FALSE
+## [1] TRUE
 
 # Equivalentemente poderíamos fazer
 segredo %% 2 == 0
-## [1] FALSE
+## [1] TRUE
 ```
 
 
@@ -405,7 +405,7 @@ segredo %% 2 == 0
 
 ```r
 segredo * 5 > 31
-## [1] FALSE
+## [1] TRUE
 ```
 
 **f.** Desafio. Escreva um teste para descobrir o valor do segredo.
@@ -419,7 +419,7 @@ numeros_possiveis
 ##  [1]  0  1  2  3  4  5  6  7  8  9 10
 
 segredo == numeros_possiveis
-##  [1] FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE
 ```
 
 *No código acima, para cada valor de `numero_possiveis`, foi testado se esse valor é igual ao segredo. Em caso afirmativo, um TRUE é devolvido. Veja que há apenas um TRUE no vetor resultante. Essa é posição do nosso segredo dentro do vetor `numeros_possiveis`.*
@@ -430,7 +430,7 @@ segredo == numeros_possiveis
 ```r
 # Eis o valor do segredo
 numeros_possiveis[segredo == numeros_possiveis]
-## [1] 1
+## [1] 8
 ```
 
 *No código acima, foi retornado apenas o número associado ao valor TRUE dado pelo teste `segredo == numeros_possiveis`*.
@@ -791,7 +791,7 @@ sortear_numero <- function() {
 }
 
 sortear_numero()
-## [1] 6
+## [1] 1
 ```
 
 
@@ -811,8 +811,8 @@ sortear_linha <- function(data_frame) {
 }
 
 sortear_linha(mtcars)
-##                 mpg cyl disp hp drat    wt qsec vs am gear carb
-## Toyota Corolla 33.9   4 71.1 65 4.22 1.835 19.9  1  1    4    1
+##               mpg cyl disp  hp drat   wt qsec vs am gear carb
+## Maserati Bora  15   8  301 335 3.54 3.57 14.6  0  1    5    8
 ```
 
 - **b.** e generalize a função para retornar um número qualquer de linhas, escolhido pelo usuário.
@@ -827,17 +827,17 @@ sortear_linha <- function(data_frame, n) {
 }
 
 sortear_linha(mtcars, 10)
-##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
-## Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
-## Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
-## Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
-## AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
-## Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
-## Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
-## Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
-## Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
-## Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+##                    mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Merc 280C         17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
+## Mazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## Merc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+## Maserati Bora     15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
+## Fiat X1-9         27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
+## Ferrari Dino      19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
+## Merc 450SLC       15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+## Porsche 914-2     26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
+## Duster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+## Hornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
 ```
 
 
