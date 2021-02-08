@@ -227,6 +227,10 @@ imdb %>%
   geom_line(aes(x = ano, y = nota_media))
 ```
 
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
 <img src="08-graficos_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 
 
@@ -433,7 +437,13 @@ p1 <- imdb %>%
   summarise(nota_media = mean(nota_imdb, na.rm = TRUE)) %>% 
   ggplot() +
   geom_line(aes(x = ano, y = nota_media))
+```
 
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
+```r
 p2 <- imdb %>% 
   mutate(lucro = receita - orcamento) %>% 
   filter(diretor == "Steven Spielberg") %>% 

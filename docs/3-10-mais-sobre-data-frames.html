@@ -32,7 +32,6 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="3-9-listas.html"/>
 <link rel="next" href="3-11-maisFuncoes.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,23 +49,27 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -86,7 +89,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -136,18 +139,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre</a></li>
-<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a>
-<ul>
+<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a><ul>
+<li class="chapter" data-level="1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
 <li class="chapter" data-level="1.1.3" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
-<ul>
+<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a><ul>
 <li class="chapter" data-level="2.1" data-path="2-1-telas.html"><a href="2-1-telas.html"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
 <li class="chapter" data-level="2.2" data-path="2-2-atalhos.html"><a href="2-2-atalhos.html"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
 <li class="chapter" data-level="2.3" data-path="2-3-projetos.html"><a href="2-3-projetos.html"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
@@ -156,76 +156,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="2-6-addins.html"><a href="2-6-addins.html"><i class="fa fa-check"></i><b>2.6</b> Addins</a></li>
 <li class="chapter" data-level="2.7" data-path="2-7-snippets.html"><a href="2-7-snippets.html"><i class="fa fa-check"></i><b>2.7</b> Snippets</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a>
-<ul>
+<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a><ul>
+<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
 <li class="chapter" data-level="3.1.2" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
 <li class="chapter" data-level="3.1.3" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a>
-<ul>
+<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
 <li class="chapter" data-level="" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a>
-<ul>
+<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a><ul>
 <li class="chapter" data-level="" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="3-4-data-frames.html"><a href="3-4-data-frames.html"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
-<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a>
-<ul>
+<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a><ul>
 <li class="chapter" data-level="3.5.1" data-path="3-5-classes.html"><a href="3-5-classes.html#exercícios-2"><i class="fa fa-check"></i><b>3.5.1</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a>
-<ul>
+<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a><ul>
 <li class="chapter" data-level="" data-path="3-6-vetores.html"><a href="3-6-vetores.html#exercícios-3"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a>
-<ul>
+<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a><ul>
 <li class="chapter" data-level="3.7.1" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html#exercícios-4"><i class="fa fa-check"></i><b>3.7.1</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a>
-<ul>
+<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a><ul>
 <li class="chapter" data-level="" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.9" data-path="3-9-listas.html"><a href="3-9-listas.html"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
-<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a>
-<ul>
+<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
 <li class="chapter" data-level="" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html#exercícios-6"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a>
-<ul>
+<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a><ul>
 <li class="chapter" data-level="" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html#exercícios-7"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a>
-<ul>
+<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
 <li class="chapter" data-level="3.12.1" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
 <li class="chapter" data-level="3.12.2" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#iteradores-for-e-while"><i class="fa fa-check"></i><b>3.12.2</b> Iteradores: for e while</a></li>
 <li class="chapter" data-level="" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#exercícios-8"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a>
-<ul>
+<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a><ul>
 <li class="chapter" data-level="3.13.1" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#matrizes"><i class="fa fa-check"></i><b>3.13.1</b> Matrizes</a></li>
 <li class="chapter" data-level="3.13.2" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#fatores"><i class="fa fa-check"></i><b>3.13.2</b> Fatores</a></li>
 <li class="chapter" data-level="3.13.3" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#gráficos-r-base"><i class="fa fa-check"></i><b>3.13.3</b> Gráficos (R base)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a>
-<ul>
+<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-cran"><i class="fa fa-check"></i><b>4.1.1</b> Via CRAN</a></li>
 <li class="chapter" data-level="4.1.2" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-github"><i class="fa fa-check"></i><b>4.1.2</b> Via Github</a></li>
 <li class="chapter" data-level="4.1.3" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-arquivo-.zip-ou-.tar.gz"><i class="fa fa-check"></i><b>4.1.3</b> Via arquivo .zip ou .tar.gz</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="4-2-tidyverse.html"><a href="4-2-tidyverse.html"><i class="fa fa-check"></i><b>4.2</b> Tidyverse</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a>
-<ul>
+<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a><ul>
 <li class="chapter" data-level="5.1" data-path="5-1-caminhos.html"><a href="5-1-caminhos.html"><i class="fa fa-check"></i><b>5.1</b> Caminhos</a></li>
-<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a>
-<ul>
+<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="5-2-readr.html"><a href="5-2-readr.html#lendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.1</b> Lendo arquivos de texto</a></li>
 <li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.2</b> Locale</a></li>
 <li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.3</b> Parseando valores</a></li>
@@ -235,17 +219,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3" data-path="5-3-readxl.html"><a href="5-3-readxl.html"><i class="fa fa-check"></i><b>5.3</b> Os pacotes readxl e writexl</a></li>
 <li class="chapter" data-level="5.4" data-path="5-4-haven.html"><a href="5-4-haven.html"><i class="fa fa-check"></i><b>5.4</b> haven</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a>
-<ul>
+<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a></li>
 <li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
 <li class="chapter" data-level="6.3" data-path="6-3-exercícios-10.html"><a href="6-3-exercícios-10.html"><i class="fa fa-check"></i><b>6.3</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a>
-<ul>
+<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
 <li class="chapter" data-level="7.1" data-path="7-1-tibbles.html"><a href="7-1-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Tibbles</a></li>
-<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a>
-<ul>
+<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#filtrando-linhas"><i class="fa fa-check"></i><b>7.2.1</b> Filtrando linhas</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#selecionando-colunas"><i class="fa fa-check"></i><b>7.2.2</b> Selecionando colunas</a></li>
 <li class="chapter" data-level="7.2.3" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#ordenando-a-base"><i class="fa fa-check"></i><b>7.2.3</b> Ordenando a base</a></li>
@@ -253,17 +234,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.5" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#summarisando-a-base"><i class="fa fa-check"></i><b>7.2.5</b> Summarisando a base</a></li>
 <li class="chapter" data-level="7.2.6" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#juntando-duas-bases"><i class="fa fa-check"></i><b>7.2.6</b> Juntando duas bases</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a>
-<ul>
+<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#gather"><i class="fa fa-check"></i><b>7.3.1</b> <code>gather()</code></a></li>
 <li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#spread"><i class="fa fa-check"></i><b>7.3.2</b> <code>spread()</code></a></li>
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Gráficos</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a>
-<ul>
+<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Gráficos</a><ul>
+<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a><ul>
 <li class="chapter" data-level="8.1.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#as-camadas-de-um-gráfico"><i class="fa fa-check"></i><b>8.1.1</b> As camadas de um gráfico</a></li>
 <li class="chapter" data-level="8.1.2" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#atributos-estéticos"><i class="fa fa-check"></i><b>8.1.2</b> Atributos estéticos</a></li>
 <li class="chapter" data-level="8.1.3" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#formas-geométricas"><i class="fa fa-check"></i><b>8.1.3</b> Formas geométricas</a></li>
@@ -276,32 +254,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="8-3-extensões-do-ggplot2.html"><a href="8-3-extensões-do-ggplot2.html"><i class="fa fa-check"></i><b>8.3</b> Extensões do ggplot2</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="9-funcionais.html"><a href="9-funcionais.html"><i class="fa fa-check"></i><b>9</b> Funcionais</a></li>
-<li class="chapter" data-level="10" data-path="10-misc.html"><a href="10-misc.html"><i class="fa fa-check"></i><b>10</b> Miscelânea</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>10.1</b> Arrumando banco de dados: o pacote janitor</a>
-<ul>
+<li class="chapter" data-level="10" data-path="10-misc.html"><a href="10-misc.html"><i class="fa fa-check"></i><b>10</b> Miscelânea</a><ul>
+<li class="chapter" data-level="10.1" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>10.1</b> Arrumando banco de dados: o pacote janitor</a><ul>
 <li class="chapter" data-level="10.1.1" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#arrumando-o-nome-das-variáveis"><i class="fa fa-check"></i><b>10.1.1</b> Arrumando o nome das variáveis</a></li>
 <li class="chapter" data-level="10.1.2" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#removendo-linhas-e-colunas-vazias"><i class="fa fa-check"></i><b>10.1.2</b> Removendo linhas e colunas vazias</a></li>
 <li class="chapter" data-level="10.1.3" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#identificando-linhas-duplicadas"><i class="fa fa-check"></i><b>10.1.3</b> Identificando linhas duplicadas</a></li>
 <li class="chapter" data-level="10.1.4" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>10.1.4</b> Outras funções</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="11-respostas.html"><a href="11-respostas.html"><i class="fa fa-check"></i><b>11</b> Respostas</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html"><i class="fa fa-check"></i><b>11.1</b> R básico</a>
-<ul>
+<li class="chapter" data-level="11" data-path="11-respostas.html"><a href="11-respostas.html"><i class="fa fa-check"></i><b>11</b> Respostas</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html"><i class="fa fa-check"></i><b>11.1</b> R básico</a><ul>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#objetos-e-funções"><i class="fa fa-check"></i>Objetos e funções</a></li>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#classes-1"><i class="fa fa-check"></i>Classes</a></li>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#vetores-1"><i class="fa fa-check"></i>Vetores</a></li>
-<li class="chapter" data-level="11.1.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i><b>11.1.1</b> Testes lógicos</a></li>
-<li class="chapter" data-level="11.1.2" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i><b>11.1.2</b> Data frames</a></li>
-<li class="chapter" data-level="11.1.3" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i><b>11.1.3</b> Mais sobre funções</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i>Testes lógicos</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#valores-especiais"><i class="fa fa-check"></i>Valores especiais</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i>Data frames</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i>Mais sobre funções</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#controle-de-fluxo-1"><i class="fa fa-check"></i>Controle de fluxo</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="11-2-pipe-1.html"><a href="11-2-pipe-1.html"><i class="fa fa-check"></i><b>11.2</b> Pipe</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a>
-<ul>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i>Programação em R</a></li>
 </ul></li>
@@ -325,99 +300,99 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="mais-sobre-data-frames" class="section level2" number="3.10">
+<div id="mais-sobre-data-frames" class="section level2">
 <h2><span class="header-section-number">3.10</span> Mais sobre data frames</h2>
 <p>Chegou a hora de usarmos tudo o que aprendemos na seção anterior para exploramos ao máximo o nosso objeto favorito: o <em>data frame</em>.</p>
 <p>Na seção anterior, nós dissemos que <em>data frames</em> são listas. Isso é importante pois todas as propriedades de uma lista valem para um <em>data frame</em>.</p>
 <p>A melhor forma de entender essa equivalência é ver um <em>data frame</em> representado como uma lista.</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="3-10-mais-sobre-data-frames.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.list</span>(mtcars)</span>
-<span id="cb62-2"><a href="3-10-mais-sobre-data-frames.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="do">## $mpg</span></span>
-<span id="cb62-3"><a href="3-10-mais-sobre-data-frames.html#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4</span></span>
-<span id="cb62-4"><a href="3-10-mais-sobre-data-frames.html#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7</span></span>
-<span id="cb62-5"><a href="3-10-mais-sobre-data-frames.html#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [31] 15.0 21.4</span></span>
-<span id="cb62-6"><a href="3-10-mais-sobre-data-frames.html#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb62-7"><a href="3-10-mais-sobre-data-frames.html#cb62-7" aria-hidden="true" tabindex="-1"></a><span class="do">## $cyl</span></span>
-<span id="cb62-8"><a href="3-10-mais-sobre-data-frames.html#cb62-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4</span></span>
-<span id="cb62-9"><a href="3-10-mais-sobre-data-frames.html#cb62-9" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb62-10"><a href="3-10-mais-sobre-data-frames.html#cb62-10" aria-hidden="true" tabindex="-1"></a><span class="do">## $disp</span></span>
-<span id="cb62-11"><a href="3-10-mais-sobre-data-frames.html#cb62-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 160.0 160.0 108.0 258.0 360.0 225.0 360.0 146.7 140.8 167.6 167.6 275.8</span></span>
-<span id="cb62-12"><a href="3-10-mais-sobre-data-frames.html#cb62-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] 275.8 275.8 472.0 460.0 440.0  78.7  75.7  71.1 120.1 318.0 304.0 350.0</span></span>
-<span id="cb62-13"><a href="3-10-mais-sobre-data-frames.html#cb62-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] 400.0  79.0 120.3  95.1 351.0 145.0 301.0 121.0</span></span>
-<span id="cb62-14"><a href="3-10-mais-sobre-data-frames.html#cb62-14" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb62-15"><a href="3-10-mais-sobre-data-frames.html#cb62-15" aria-hidden="true" tabindex="-1"></a><span class="do">## $hp</span></span>
-<span id="cb62-16"><a href="3-10-mais-sobre-data-frames.html#cb62-16" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 110 110  93 110 175 105 245  62  95 123 123 180 180 180 205 215 230  66  52</span></span>
-<span id="cb62-17"><a href="3-10-mais-sobre-data-frames.html#cb62-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [20]  65  97 150 150 245 175  66  91 113 264 175 335 109</span></span>
-<span id="cb62-18"><a href="3-10-mais-sobre-data-frames.html#cb62-18" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb62-19"><a href="3-10-mais-sobre-data-frames.html#cb62-19" aria-hidden="true" tabindex="-1"></a><span class="do">## $drat</span></span>
-<span id="cb62-20"><a href="3-10-mais-sobre-data-frames.html#cb62-20" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 3.90 3.90 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 3.92 3.07 3.07 3.07 2.93</span></span>
-<span id="cb62-21"><a href="3-10-mais-sobre-data-frames.html#cb62-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [16] 3.00 3.23 4.08 4.93 4.22 3.70 2.76 3.15 3.73 3.08 4.08 4.43 3.77 4.22 3.62</span></span>
-<span id="cb62-22"><a href="3-10-mais-sobre-data-frames.html#cb62-22" aria-hidden="true" tabindex="-1"></a><span class="do">## [31] 3.54 4.11</span></span>
-<span id="cb62-23"><a href="3-10-mais-sobre-data-frames.html#cb62-23" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb62-24"><a href="3-10-mais-sobre-data-frames.html#cb62-24" aria-hidden="true" tabindex="-1"></a><span class="do">## $wt</span></span>
-<span id="cb62-25"><a href="3-10-mais-sobre-data-frames.html#cb62-25" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 2.620 2.875 2.320 3.215 3.440 3.460 3.570 3.190 3.150 3.440 3.440 4.070</span></span>
-<span id="cb62-26"><a href="3-10-mais-sobre-data-frames.html#cb62-26" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] 3.730 3.780 5.250 5.424 5.345 2.200 1.615 1.835 2.465 3.520 3.435 3.840</span></span>
-<span id="cb62-27"><a href="3-10-mais-sobre-data-frames.html#cb62-27" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] 3.845 1.935 2.140 1.513 3.170 2.770 3.570 2.780</span></span>
-<span id="cb62-28"><a href="3-10-mais-sobre-data-frames.html#cb62-28" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb62-29"><a href="3-10-mais-sobre-data-frames.html#cb62-29" aria-hidden="true" tabindex="-1"></a><span class="do">## $qsec</span></span>
-<span id="cb62-30"><a href="3-10-mais-sobre-data-frames.html#cb62-30" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 16.46 17.02 18.61 19.44 17.02 20.22 15.84 20.00 22.90 18.30 18.90 17.40</span></span>
-<span id="cb62-31"><a href="3-10-mais-sobre-data-frames.html#cb62-31" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] 17.60 18.00 17.98 17.82 17.42 19.47 18.52 19.90 20.01 16.87 17.30 15.41</span></span>
-<span id="cb62-32"><a href="3-10-mais-sobre-data-frames.html#cb62-32" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] 17.05 18.90 16.70 16.90 14.50 15.50 14.60 18.60</span></span>
-<span id="cb62-33"><a href="3-10-mais-sobre-data-frames.html#cb62-33" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb62-34"><a href="3-10-mais-sobre-data-frames.html#cb62-34" aria-hidden="true" tabindex="-1"></a><span class="do">## $vs</span></span>
-<span id="cb62-35"><a href="3-10-mais-sobre-data-frames.html#cb62-35" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 0 0 1 1 0 1 0 1 1 1 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 0 1 0 0 0 1</span></span>
-<span id="cb62-36"><a href="3-10-mais-sobre-data-frames.html#cb62-36" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb62-37"><a href="3-10-mais-sobre-data-frames.html#cb62-37" aria-hidden="true" tabindex="-1"></a><span class="do">## $am</span></span>
-<span id="cb62-38"><a href="3-10-mais-sobre-data-frames.html#cb62-38" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 1 1 1 1 1 1</span></span>
-<span id="cb62-39"><a href="3-10-mais-sobre-data-frames.html#cb62-39" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb62-40"><a href="3-10-mais-sobre-data-frames.html#cb62-40" aria-hidden="true" tabindex="-1"></a><span class="do">## $gear</span></span>
-<span id="cb62-41"><a href="3-10-mais-sobre-data-frames.html#cb62-41" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 4 4 4 3 3 3 3 4 4 4 4 3 3 3 3 3 3 4 4 4 3 3 3 3 3 4 5 5 5 5 5 4</span></span>
-<span id="cb62-42"><a href="3-10-mais-sobre-data-frames.html#cb62-42" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb62-43"><a href="3-10-mais-sobre-data-frames.html#cb62-43" aria-hidden="true" tabindex="-1"></a><span class="do">## $carb</span></span>
-<span id="cb62-44"><a href="3-10-mais-sobre-data-frames.html#cb62-44" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 4 4 1 1 2 1 4 2 2 4 4 3 3 3 4 4 4 1 2 1 1 2 2 4 2 1 2 2 4 6 8 2</span></span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="3-10-mais-sobre-data-frames.html#cb64-1"></a><span class="kw">as.list</span>(mtcars)</span>
+<span id="cb64-2"><a href="3-10-mais-sobre-data-frames.html#cb64-2"></a><span class="co">## $mpg</span></span>
+<span id="cb64-3"><a href="3-10-mais-sobre-data-frames.html#cb64-3"></a><span class="co">##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4</span></span>
+<span id="cb64-4"><a href="3-10-mais-sobre-data-frames.html#cb64-4"></a><span class="co">## [16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7</span></span>
+<span id="cb64-5"><a href="3-10-mais-sobre-data-frames.html#cb64-5"></a><span class="co">## [31] 15.0 21.4</span></span>
+<span id="cb64-6"><a href="3-10-mais-sobre-data-frames.html#cb64-6"></a><span class="co">## </span></span>
+<span id="cb64-7"><a href="3-10-mais-sobre-data-frames.html#cb64-7"></a><span class="co">## $cyl</span></span>
+<span id="cb64-8"><a href="3-10-mais-sobre-data-frames.html#cb64-8"></a><span class="co">##  [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4</span></span>
+<span id="cb64-9"><a href="3-10-mais-sobre-data-frames.html#cb64-9"></a><span class="co">## </span></span>
+<span id="cb64-10"><a href="3-10-mais-sobre-data-frames.html#cb64-10"></a><span class="co">## $disp</span></span>
+<span id="cb64-11"><a href="3-10-mais-sobre-data-frames.html#cb64-11"></a><span class="co">##  [1] 160.0 160.0 108.0 258.0 360.0 225.0 360.0 146.7 140.8 167.6 167.6 275.8</span></span>
+<span id="cb64-12"><a href="3-10-mais-sobre-data-frames.html#cb64-12"></a><span class="co">## [13] 275.8 275.8 472.0 460.0 440.0  78.7  75.7  71.1 120.1 318.0 304.0 350.0</span></span>
+<span id="cb64-13"><a href="3-10-mais-sobre-data-frames.html#cb64-13"></a><span class="co">## [25] 400.0  79.0 120.3  95.1 351.0 145.0 301.0 121.0</span></span>
+<span id="cb64-14"><a href="3-10-mais-sobre-data-frames.html#cb64-14"></a><span class="co">## </span></span>
+<span id="cb64-15"><a href="3-10-mais-sobre-data-frames.html#cb64-15"></a><span class="co">## $hp</span></span>
+<span id="cb64-16"><a href="3-10-mais-sobre-data-frames.html#cb64-16"></a><span class="co">##  [1] 110 110  93 110 175 105 245  62  95 123 123 180 180 180 205 215 230  66  52</span></span>
+<span id="cb64-17"><a href="3-10-mais-sobre-data-frames.html#cb64-17"></a><span class="co">## [20]  65  97 150 150 245 175  66  91 113 264 175 335 109</span></span>
+<span id="cb64-18"><a href="3-10-mais-sobre-data-frames.html#cb64-18"></a><span class="co">## </span></span>
+<span id="cb64-19"><a href="3-10-mais-sobre-data-frames.html#cb64-19"></a><span class="co">## $drat</span></span>
+<span id="cb64-20"><a href="3-10-mais-sobre-data-frames.html#cb64-20"></a><span class="co">##  [1] 3.90 3.90 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 3.92 3.07 3.07 3.07 2.93</span></span>
+<span id="cb64-21"><a href="3-10-mais-sobre-data-frames.html#cb64-21"></a><span class="co">## [16] 3.00 3.23 4.08 4.93 4.22 3.70 2.76 3.15 3.73 3.08 4.08 4.43 3.77 4.22 3.62</span></span>
+<span id="cb64-22"><a href="3-10-mais-sobre-data-frames.html#cb64-22"></a><span class="co">## [31] 3.54 4.11</span></span>
+<span id="cb64-23"><a href="3-10-mais-sobre-data-frames.html#cb64-23"></a><span class="co">## </span></span>
+<span id="cb64-24"><a href="3-10-mais-sobre-data-frames.html#cb64-24"></a><span class="co">## $wt</span></span>
+<span id="cb64-25"><a href="3-10-mais-sobre-data-frames.html#cb64-25"></a><span class="co">##  [1] 2.620 2.875 2.320 3.215 3.440 3.460 3.570 3.190 3.150 3.440 3.440 4.070</span></span>
+<span id="cb64-26"><a href="3-10-mais-sobre-data-frames.html#cb64-26"></a><span class="co">## [13] 3.730 3.780 5.250 5.424 5.345 2.200 1.615 1.835 2.465 3.520 3.435 3.840</span></span>
+<span id="cb64-27"><a href="3-10-mais-sobre-data-frames.html#cb64-27"></a><span class="co">## [25] 3.845 1.935 2.140 1.513 3.170 2.770 3.570 2.780</span></span>
+<span id="cb64-28"><a href="3-10-mais-sobre-data-frames.html#cb64-28"></a><span class="co">## </span></span>
+<span id="cb64-29"><a href="3-10-mais-sobre-data-frames.html#cb64-29"></a><span class="co">## $qsec</span></span>
+<span id="cb64-30"><a href="3-10-mais-sobre-data-frames.html#cb64-30"></a><span class="co">##  [1] 16.46 17.02 18.61 19.44 17.02 20.22 15.84 20.00 22.90 18.30 18.90 17.40</span></span>
+<span id="cb64-31"><a href="3-10-mais-sobre-data-frames.html#cb64-31"></a><span class="co">## [13] 17.60 18.00 17.98 17.82 17.42 19.47 18.52 19.90 20.01 16.87 17.30 15.41</span></span>
+<span id="cb64-32"><a href="3-10-mais-sobre-data-frames.html#cb64-32"></a><span class="co">## [25] 17.05 18.90 16.70 16.90 14.50 15.50 14.60 18.60</span></span>
+<span id="cb64-33"><a href="3-10-mais-sobre-data-frames.html#cb64-33"></a><span class="co">## </span></span>
+<span id="cb64-34"><a href="3-10-mais-sobre-data-frames.html#cb64-34"></a><span class="co">## $vs</span></span>
+<span id="cb64-35"><a href="3-10-mais-sobre-data-frames.html#cb64-35"></a><span class="co">##  [1] 0 0 1 1 0 1 0 1 1 1 1 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 0 1 0 0 0 1</span></span>
+<span id="cb64-36"><a href="3-10-mais-sobre-data-frames.html#cb64-36"></a><span class="co">## </span></span>
+<span id="cb64-37"><a href="3-10-mais-sobre-data-frames.html#cb64-37"></a><span class="co">## $am</span></span>
+<span id="cb64-38"><a href="3-10-mais-sobre-data-frames.html#cb64-38"></a><span class="co">##  [1] 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 1 1 1 1 1 1</span></span>
+<span id="cb64-39"><a href="3-10-mais-sobre-data-frames.html#cb64-39"></a><span class="co">## </span></span>
+<span id="cb64-40"><a href="3-10-mais-sobre-data-frames.html#cb64-40"></a><span class="co">## $gear</span></span>
+<span id="cb64-41"><a href="3-10-mais-sobre-data-frames.html#cb64-41"></a><span class="co">##  [1] 4 4 4 3 3 3 3 4 4 4 4 3 3 3 3 3 3 4 4 4 3 3 3 3 3 4 5 5 5 5 5 4</span></span>
+<span id="cb64-42"><a href="3-10-mais-sobre-data-frames.html#cb64-42"></a><span class="co">## </span></span>
+<span id="cb64-43"><a href="3-10-mais-sobre-data-frames.html#cb64-43"></a><span class="co">## $carb</span></span>
+<span id="cb64-44"><a href="3-10-mais-sobre-data-frames.html#cb64-44"></a><span class="co">##  [1] 4 4 1 1 2 1 4 2 2 4 4 3 3 3 4 4 4 1 2 1 1 2 2 4 2 1 2 2 4 6 8 2</span></span></code></pre></div>
 <p>O código acima nos permite ver o <em>data frame</em> <code>mtcars</code> representado como uma lista. Veja que cada coluna da base se transforma em um elemento da lista. E o nome de cada coluna vira o nome de cada posição. Isso é interessante, pois podemos usar nos <em>data frames</em> as mesmas operações que aprendemos para listas.</p>
 <p>Por exemplo, podemos usar o operador <code>$</code> para acessar cada elemento da lista, isto é, cada coluna do <em>data frame</em>.</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="3-10-mais-sobre-data-frames.html#cb63-1" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>mpg</span>
-<span id="cb63-2"><a href="3-10-mais-sobre-data-frames.html#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4</span></span>
-<span id="cb63-3"><a href="3-10-mais-sobre-data-frames.html#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7</span></span>
-<span id="cb63-4"><a href="3-10-mais-sobre-data-frames.html#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [31] 15.0 21.4</span></span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="3-10-mais-sobre-data-frames.html#cb65-1"></a>mtcars<span class="op">$</span>mpg</span>
+<span id="cb65-2"><a href="3-10-mais-sobre-data-frames.html#cb65-2"></a><span class="co">##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4</span></span>
+<span id="cb65-3"><a href="3-10-mais-sobre-data-frames.html#cb65-3"></a><span class="co">## [16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7</span></span>
+<span id="cb65-4"><a href="3-10-mais-sobre-data-frames.html#cb65-4"></a><span class="co">## [31] 15.0 21.4</span></span></code></pre></div>
 <p>E assim como cada elemento de uma lista também é uma lista, cada elemento (coluna) de um <em>data frame</em> também é um *data frame.</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="3-10-mais-sobre-data-frames.html#cb64-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">1</span>]</span>
-<span id="cb64-2"><a href="3-10-mais-sobre-data-frames.html#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="do">##                      mpg</span></span>
-<span id="cb64-3"><a href="3-10-mais-sobre-data-frames.html#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Mazda RX4           21.0</span></span>
-<span id="cb64-4"><a href="3-10-mais-sobre-data-frames.html#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Mazda RX4 Wag       21.0</span></span>
-<span id="cb64-5"><a href="3-10-mais-sobre-data-frames.html#cb64-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Datsun 710          22.8</span></span>
-<span id="cb64-6"><a href="3-10-mais-sobre-data-frames.html#cb64-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Hornet 4 Drive      21.4</span></span>
-<span id="cb64-7"><a href="3-10-mais-sobre-data-frames.html#cb64-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Hornet Sportabout   18.7</span></span>
-<span id="cb64-8"><a href="3-10-mais-sobre-data-frames.html#cb64-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Valiant             18.1</span></span>
-<span id="cb64-9"><a href="3-10-mais-sobre-data-frames.html#cb64-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Duster 360          14.3</span></span>
-<span id="cb64-10"><a href="3-10-mais-sobre-data-frames.html#cb64-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Merc 240D           24.4</span></span>
-<span id="cb64-11"><a href="3-10-mais-sobre-data-frames.html#cb64-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Merc 230            22.8</span></span>
-<span id="cb64-12"><a href="3-10-mais-sobre-data-frames.html#cb64-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Merc 280            19.2</span></span>
-<span id="cb64-13"><a href="3-10-mais-sobre-data-frames.html#cb64-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Merc 280C           17.8</span></span>
-<span id="cb64-14"><a href="3-10-mais-sobre-data-frames.html#cb64-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Merc 450SE          16.4</span></span>
-<span id="cb64-15"><a href="3-10-mais-sobre-data-frames.html#cb64-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Merc 450SL          17.3</span></span>
-<span id="cb64-16"><a href="3-10-mais-sobre-data-frames.html#cb64-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Merc 450SLC         15.2</span></span>
-<span id="cb64-17"><a href="3-10-mais-sobre-data-frames.html#cb64-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Cadillac Fleetwood  10.4</span></span>
-<span id="cb64-18"><a href="3-10-mais-sobre-data-frames.html#cb64-18" aria-hidden="true" tabindex="-1"></a><span class="do">## Lincoln Continental 10.4</span></span>
-<span id="cb64-19"><a href="3-10-mais-sobre-data-frames.html#cb64-19" aria-hidden="true" tabindex="-1"></a><span class="do">## Chrysler Imperial   14.7</span></span>
-<span id="cb64-20"><a href="3-10-mais-sobre-data-frames.html#cb64-20" aria-hidden="true" tabindex="-1"></a><span class="do">## Fiat 128            32.4</span></span>
-<span id="cb64-21"><a href="3-10-mais-sobre-data-frames.html#cb64-21" aria-hidden="true" tabindex="-1"></a><span class="do">## Honda Civic         30.4</span></span>
-<span id="cb64-22"><a href="3-10-mais-sobre-data-frames.html#cb64-22" aria-hidden="true" tabindex="-1"></a><span class="do">## Toyota Corolla      33.9</span></span>
-<span id="cb64-23"><a href="3-10-mais-sobre-data-frames.html#cb64-23" aria-hidden="true" tabindex="-1"></a><span class="do">## Toyota Corona       21.5</span></span>
-<span id="cb64-24"><a href="3-10-mais-sobre-data-frames.html#cb64-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Dodge Challenger    15.5</span></span>
-<span id="cb64-25"><a href="3-10-mais-sobre-data-frames.html#cb64-25" aria-hidden="true" tabindex="-1"></a><span class="do">## AMC Javelin         15.2</span></span>
-<span id="cb64-26"><a href="3-10-mais-sobre-data-frames.html#cb64-26" aria-hidden="true" tabindex="-1"></a><span class="do">## Camaro Z28          13.3</span></span>
-<span id="cb64-27"><a href="3-10-mais-sobre-data-frames.html#cb64-27" aria-hidden="true" tabindex="-1"></a><span class="do">## Pontiac Firebird    19.2</span></span>
-<span id="cb64-28"><a href="3-10-mais-sobre-data-frames.html#cb64-28" aria-hidden="true" tabindex="-1"></a><span class="do">## Fiat X1-9           27.3</span></span>
-<span id="cb64-29"><a href="3-10-mais-sobre-data-frames.html#cb64-29" aria-hidden="true" tabindex="-1"></a><span class="do">## Porsche 914-2       26.0</span></span>
-<span id="cb64-30"><a href="3-10-mais-sobre-data-frames.html#cb64-30" aria-hidden="true" tabindex="-1"></a><span class="do">## Lotus Europa        30.4</span></span>
-<span id="cb64-31"><a href="3-10-mais-sobre-data-frames.html#cb64-31" aria-hidden="true" tabindex="-1"></a><span class="do">## Ford Pantera L      15.8</span></span>
-<span id="cb64-32"><a href="3-10-mais-sobre-data-frames.html#cb64-32" aria-hidden="true" tabindex="-1"></a><span class="do">## Ferrari Dino        19.7</span></span>
-<span id="cb64-33"><a href="3-10-mais-sobre-data-frames.html#cb64-33" aria-hidden="true" tabindex="-1"></a><span class="do">## Maserati Bora       15.0</span></span>
-<span id="cb64-34"><a href="3-10-mais-sobre-data-frames.html#cb64-34" aria-hidden="true" tabindex="-1"></a><span class="do">## Volvo 142E          21.4</span></span>
-<span id="cb64-35"><a href="3-10-mais-sobre-data-frames.html#cb64-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-36"><a href="3-10-mais-sobre-data-frames.html#cb64-36" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(mtcars[<span class="dv">1</span>])</span>
-<span id="cb64-37"><a href="3-10-mais-sobre-data-frames.html#cb64-37" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;data.frame&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="3-10-mais-sobre-data-frames.html#cb66-1"></a>mtcars[<span class="dv">1</span>]</span>
+<span id="cb66-2"><a href="3-10-mais-sobre-data-frames.html#cb66-2"></a><span class="co">##                      mpg</span></span>
+<span id="cb66-3"><a href="3-10-mais-sobre-data-frames.html#cb66-3"></a><span class="co">## Mazda RX4           21.0</span></span>
+<span id="cb66-4"><a href="3-10-mais-sobre-data-frames.html#cb66-4"></a><span class="co">## Mazda RX4 Wag       21.0</span></span>
+<span id="cb66-5"><a href="3-10-mais-sobre-data-frames.html#cb66-5"></a><span class="co">## Datsun 710          22.8</span></span>
+<span id="cb66-6"><a href="3-10-mais-sobre-data-frames.html#cb66-6"></a><span class="co">## Hornet 4 Drive      21.4</span></span>
+<span id="cb66-7"><a href="3-10-mais-sobre-data-frames.html#cb66-7"></a><span class="co">## Hornet Sportabout   18.7</span></span>
+<span id="cb66-8"><a href="3-10-mais-sobre-data-frames.html#cb66-8"></a><span class="co">## Valiant             18.1</span></span>
+<span id="cb66-9"><a href="3-10-mais-sobre-data-frames.html#cb66-9"></a><span class="co">## Duster 360          14.3</span></span>
+<span id="cb66-10"><a href="3-10-mais-sobre-data-frames.html#cb66-10"></a><span class="co">## Merc 240D           24.4</span></span>
+<span id="cb66-11"><a href="3-10-mais-sobre-data-frames.html#cb66-11"></a><span class="co">## Merc 230            22.8</span></span>
+<span id="cb66-12"><a href="3-10-mais-sobre-data-frames.html#cb66-12"></a><span class="co">## Merc 280            19.2</span></span>
+<span id="cb66-13"><a href="3-10-mais-sobre-data-frames.html#cb66-13"></a><span class="co">## Merc 280C           17.8</span></span>
+<span id="cb66-14"><a href="3-10-mais-sobre-data-frames.html#cb66-14"></a><span class="co">## Merc 450SE          16.4</span></span>
+<span id="cb66-15"><a href="3-10-mais-sobre-data-frames.html#cb66-15"></a><span class="co">## Merc 450SL          17.3</span></span>
+<span id="cb66-16"><a href="3-10-mais-sobre-data-frames.html#cb66-16"></a><span class="co">## Merc 450SLC         15.2</span></span>
+<span id="cb66-17"><a href="3-10-mais-sobre-data-frames.html#cb66-17"></a><span class="co">## Cadillac Fleetwood  10.4</span></span>
+<span id="cb66-18"><a href="3-10-mais-sobre-data-frames.html#cb66-18"></a><span class="co">## Lincoln Continental 10.4</span></span>
+<span id="cb66-19"><a href="3-10-mais-sobre-data-frames.html#cb66-19"></a><span class="co">## Chrysler Imperial   14.7</span></span>
+<span id="cb66-20"><a href="3-10-mais-sobre-data-frames.html#cb66-20"></a><span class="co">## Fiat 128            32.4</span></span>
+<span id="cb66-21"><a href="3-10-mais-sobre-data-frames.html#cb66-21"></a><span class="co">## Honda Civic         30.4</span></span>
+<span id="cb66-22"><a href="3-10-mais-sobre-data-frames.html#cb66-22"></a><span class="co">## Toyota Corolla      33.9</span></span>
+<span id="cb66-23"><a href="3-10-mais-sobre-data-frames.html#cb66-23"></a><span class="co">## Toyota Corona       21.5</span></span>
+<span id="cb66-24"><a href="3-10-mais-sobre-data-frames.html#cb66-24"></a><span class="co">## Dodge Challenger    15.5</span></span>
+<span id="cb66-25"><a href="3-10-mais-sobre-data-frames.html#cb66-25"></a><span class="co">## AMC Javelin         15.2</span></span>
+<span id="cb66-26"><a href="3-10-mais-sobre-data-frames.html#cb66-26"></a><span class="co">## Camaro Z28          13.3</span></span>
+<span id="cb66-27"><a href="3-10-mais-sobre-data-frames.html#cb66-27"></a><span class="co">## Pontiac Firebird    19.2</span></span>
+<span id="cb66-28"><a href="3-10-mais-sobre-data-frames.html#cb66-28"></a><span class="co">## Fiat X1-9           27.3</span></span>
+<span id="cb66-29"><a href="3-10-mais-sobre-data-frames.html#cb66-29"></a><span class="co">## Porsche 914-2       26.0</span></span>
+<span id="cb66-30"><a href="3-10-mais-sobre-data-frames.html#cb66-30"></a><span class="co">## Lotus Europa        30.4</span></span>
+<span id="cb66-31"><a href="3-10-mais-sobre-data-frames.html#cb66-31"></a><span class="co">## Ford Pantera L      15.8</span></span>
+<span id="cb66-32"><a href="3-10-mais-sobre-data-frames.html#cb66-32"></a><span class="co">## Ferrari Dino        19.7</span></span>
+<span id="cb66-33"><a href="3-10-mais-sobre-data-frames.html#cb66-33"></a><span class="co">## Maserati Bora       15.0</span></span>
+<span id="cb66-34"><a href="3-10-mais-sobre-data-frames.html#cb66-34"></a><span class="co">## Volvo 142E          21.4</span></span>
+<span id="cb66-35"><a href="3-10-mais-sobre-data-frames.html#cb66-35"></a></span>
+<span id="cb66-36"><a href="3-10-mais-sobre-data-frames.html#cb66-36"></a><span class="kw">class</span>(mtcars[<span class="dv">1</span>])</span>
+<span id="cb66-37"><a href="3-10-mais-sobre-data-frames.html#cb66-37"></a><span class="co">## [1] &quot;data.frame&quot;</span></span></code></pre></div>
 <p>Mas se <em>data frames</em> são listas, por que existe a classe <em>data frame</em>? Na verdade, <em>data frames</em> são um tipo especial de listas, que têm as seguintes propriedades:</p>
 <ol style="list-style-type: decimal">
 <li><p>Todos os seus elementos (colunas) precisam ter o mesmo comprimento (número de linhas).</p></li>
@@ -426,106 +401,106 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>As propriedades (1) e (2) se devem ao formato das bases de dados. Elas são retangulares<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> — observamos as mesmas variáveis (colunas) para todas as unidades amostrais (linhas)<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> —, e precisam ter algum nome especificando as colunas.</p>
 <p>Da mesma forma que podemos ver um <em>data frame</em> como uma lista, também podemos fazer o inverso.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="3-10-mais-sobre-data-frames.html#cb65-1" aria-hidden="true" tabindex="-1"></a>dados_cliente <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb65-2"><a href="3-10-mais-sobre-data-frames.html#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">cliente =</span> <span class="fu">c</span>(<span class="st">&quot;Ana Silva&quot;</span>, <span class="st">&quot;Beto Pereira&quot;</span>, <span class="st">&quot;Carla Souza&quot;</span>),</span>
-<span id="cb65-3"><a href="3-10-mais-sobre-data-frames.html#cb65-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">idade =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">23</span>),</span>
-<span id="cb65-4"><a href="3-10-mais-sobre-data-frames.html#cb65-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">estado_civil =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="st">&quot;Solteiro&quot;</span>, <span class="st">&quot;Casada&quot;</span>)</span>
-<span id="cb65-5"><a href="3-10-mais-sobre-data-frames.html#cb65-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb65-6"><a href="3-10-mais-sobre-data-frames.html#cb65-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-7"><a href="3-10-mais-sobre-data-frames.html#cb65-7" aria-hidden="true" tabindex="-1"></a>dados_cliente </span>
-<span id="cb65-8"><a href="3-10-mais-sobre-data-frames.html#cb65-8" aria-hidden="true" tabindex="-1"></a><span class="do">## $cliente</span></span>
-<span id="cb65-9"><a href="3-10-mais-sobre-data-frames.html#cb65-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Ana Silva&quot;    &quot;Beto Pereira&quot; &quot;Carla Souza&quot; </span></span>
-<span id="cb65-10"><a href="3-10-mais-sobre-data-frames.html#cb65-10" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb65-11"><a href="3-10-mais-sobre-data-frames.html#cb65-11" aria-hidden="true" tabindex="-1"></a><span class="do">## $idade</span></span>
-<span id="cb65-12"><a href="3-10-mais-sobre-data-frames.html#cb65-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 25 30 23</span></span>
-<span id="cb65-13"><a href="3-10-mais-sobre-data-frames.html#cb65-13" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb65-14"><a href="3-10-mais-sobre-data-frames.html#cb65-14" aria-hidden="true" tabindex="-1"></a><span class="do">## $estado_civil</span></span>
-<span id="cb65-15"><a href="3-10-mais-sobre-data-frames.html#cb65-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] NA         &quot;Solteiro&quot; &quot;Casada&quot;</span></span>
-<span id="cb65-16"><a href="3-10-mais-sobre-data-frames.html#cb65-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-17"><a href="3-10-mais-sobre-data-frames.html#cb65-17" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(dados_cliente)</span>
-<span id="cb65-18"><a href="3-10-mais-sobre-data-frames.html#cb65-18" aria-hidden="true" tabindex="-1"></a><span class="do">##        cliente idade estado_civil</span></span>
-<span id="cb65-19"><a href="3-10-mais-sobre-data-frames.html#cb65-19" aria-hidden="true" tabindex="-1"></a><span class="do">## 1    Ana Silva    25         &lt;NA&gt;</span></span>
-<span id="cb65-20"><a href="3-10-mais-sobre-data-frames.html#cb65-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 Beto Pereira    30     Solteiro</span></span>
-<span id="cb65-21"><a href="3-10-mais-sobre-data-frames.html#cb65-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 3  Carla Souza    23       Casada</span></span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="3-10-mais-sobre-data-frames.html#cb67-1"></a>dados_cliente &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
+<span id="cb67-2"><a href="3-10-mais-sobre-data-frames.html#cb67-2"></a>  <span class="dt">cliente =</span> <span class="kw">c</span>(<span class="st">&quot;Ana Silva&quot;</span>, <span class="st">&quot;Beto Pereira&quot;</span>, <span class="st">&quot;Carla Souza&quot;</span>),</span>
+<span id="cb67-3"><a href="3-10-mais-sobre-data-frames.html#cb67-3"></a>  <span class="dt">idade =</span> <span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">23</span>),</span>
+<span id="cb67-4"><a href="3-10-mais-sobre-data-frames.html#cb67-4"></a>  <span class="dt">estado_civil =</span> <span class="kw">c</span>(<span class="ot">NA</span>, <span class="st">&quot;Solteiro&quot;</span>, <span class="st">&quot;Casada&quot;</span>)</span>
+<span id="cb67-5"><a href="3-10-mais-sobre-data-frames.html#cb67-5"></a>)</span>
+<span id="cb67-6"><a href="3-10-mais-sobre-data-frames.html#cb67-6"></a></span>
+<span id="cb67-7"><a href="3-10-mais-sobre-data-frames.html#cb67-7"></a>dados_cliente </span>
+<span id="cb67-8"><a href="3-10-mais-sobre-data-frames.html#cb67-8"></a><span class="co">## $cliente</span></span>
+<span id="cb67-9"><a href="3-10-mais-sobre-data-frames.html#cb67-9"></a><span class="co">## [1] &quot;Ana Silva&quot;    &quot;Beto Pereira&quot; &quot;Carla Souza&quot; </span></span>
+<span id="cb67-10"><a href="3-10-mais-sobre-data-frames.html#cb67-10"></a><span class="co">## </span></span>
+<span id="cb67-11"><a href="3-10-mais-sobre-data-frames.html#cb67-11"></a><span class="co">## $idade</span></span>
+<span id="cb67-12"><a href="3-10-mais-sobre-data-frames.html#cb67-12"></a><span class="co">## [1] 25 30 23</span></span>
+<span id="cb67-13"><a href="3-10-mais-sobre-data-frames.html#cb67-13"></a><span class="co">## </span></span>
+<span id="cb67-14"><a href="3-10-mais-sobre-data-frames.html#cb67-14"></a><span class="co">## $estado_civil</span></span>
+<span id="cb67-15"><a href="3-10-mais-sobre-data-frames.html#cb67-15"></a><span class="co">## [1] NA         &quot;Solteiro&quot; &quot;Casada&quot;</span></span>
+<span id="cb67-16"><a href="3-10-mais-sobre-data-frames.html#cb67-16"></a></span>
+<span id="cb67-17"><a href="3-10-mais-sobre-data-frames.html#cb67-17"></a><span class="kw">as.data.frame</span>(dados_cliente)</span>
+<span id="cb67-18"><a href="3-10-mais-sobre-data-frames.html#cb67-18"></a><span class="co">##        cliente idade estado_civil</span></span>
+<span id="cb67-19"><a href="3-10-mais-sobre-data-frames.html#cb67-19"></a><span class="co">## 1    Ana Silva    25         &lt;NA&gt;</span></span>
+<span id="cb67-20"><a href="3-10-mais-sobre-data-frames.html#cb67-20"></a><span class="co">## 2 Beto Pereira    30     Solteiro</span></span>
+<span id="cb67-21"><a href="3-10-mais-sobre-data-frames.html#cb67-21"></a><span class="co">## 3  Carla Souza    23       Casada</span></span></code></pre></div>
 <p>Quando tivermos valores faltantes na nossa base (células vazias no Excel), eles serão representados por <code>NA</code> nos <em>data frames</em>.</p>
 <p>Observe que não conseguimos transformar uma lista em <em>data frame</em> se os elementos da lista não tiverem o mesmo comprimento.</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="3-10-mais-sobre-data-frames.html#cb66-1" aria-hidden="true" tabindex="-1"></a>dados_cliente <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb66-2"><a href="3-10-mais-sobre-data-frames.html#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">cliente =</span> <span class="fu">c</span>(<span class="st">&quot;Ana Silva&quot;</span>, <span class="st">&quot;Beto Pereira&quot;</span>, <span class="st">&quot;Carla Souza&quot;</span>),</span>
-<span id="cb66-3"><a href="3-10-mais-sobre-data-frames.html#cb66-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">idade =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>),</span>
-<span id="cb66-4"><a href="3-10-mais-sobre-data-frames.html#cb66-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">estado_civil =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="st">&quot;Solteiro&quot;</span>, <span class="st">&quot;Casada&quot;</span>)</span>
-<span id="cb66-5"><a href="3-10-mais-sobre-data-frames.html#cb66-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb66-6"><a href="3-10-mais-sobre-data-frames.html#cb66-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-7"><a href="3-10-mais-sobre-data-frames.html#cb66-7" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(dados_cliente)</span>
-<span id="cb66-8"><a href="3-10-mais-sobre-data-frames.html#cb66-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Error in (function (..., row.names = NULL, check.rows = FALSE, check.names = TRUE, : arguments imply differing number of rows: 3, 2</span></span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="3-10-mais-sobre-data-frames.html#cb68-1"></a>dados_cliente &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
+<span id="cb68-2"><a href="3-10-mais-sobre-data-frames.html#cb68-2"></a>  <span class="dt">cliente =</span> <span class="kw">c</span>(<span class="st">&quot;Ana Silva&quot;</span>, <span class="st">&quot;Beto Pereira&quot;</span>, <span class="st">&quot;Carla Souza&quot;</span>),</span>
+<span id="cb68-3"><a href="3-10-mais-sobre-data-frames.html#cb68-3"></a>  <span class="dt">idade =</span> <span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">30</span>),</span>
+<span id="cb68-4"><a href="3-10-mais-sobre-data-frames.html#cb68-4"></a>  <span class="dt">estado_civil =</span> <span class="kw">c</span>(<span class="ot">NA</span>, <span class="st">&quot;Solteiro&quot;</span>, <span class="st">&quot;Casada&quot;</span>)</span>
+<span id="cb68-5"><a href="3-10-mais-sobre-data-frames.html#cb68-5"></a>)</span>
+<span id="cb68-6"><a href="3-10-mais-sobre-data-frames.html#cb68-6"></a></span>
+<span id="cb68-7"><a href="3-10-mais-sobre-data-frames.html#cb68-7"></a><span class="kw">as.data.frame</span>(dados_cliente)</span>
+<span id="cb68-8"><a href="3-10-mais-sobre-data-frames.html#cb68-8"></a><span class="co">## Error in (function (..., row.names = NULL, check.rows = FALSE, check.names = TRUE, : arguments imply differing number of rows: 3, 2</span></span></code></pre></div>
 <p>Transformar uma lista não nomeada em <em>data frame</em> é possível, mas o R cria nomes nada agradáveis para as colunas.</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="3-10-mais-sobre-data-frames.html#cb67-1" aria-hidden="true" tabindex="-1"></a>dados_cliente <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb67-2"><a href="3-10-mais-sobre-data-frames.html#cb67-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">&quot;Ana Silva&quot;</span>, <span class="st">&quot;Beto Pereira&quot;</span>, <span class="st">&quot;Carla Souza&quot;</span>),</span>
-<span id="cb67-3"><a href="3-10-mais-sobre-data-frames.html#cb67-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">23</span>),</span>
-<span id="cb67-4"><a href="3-10-mais-sobre-data-frames.html#cb67-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="cn">NA</span>, <span class="st">&quot;Solteiro&quot;</span>, <span class="st">&quot;Casada&quot;</span>)</span>
-<span id="cb67-5"><a href="3-10-mais-sobre-data-frames.html#cb67-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb67-6"><a href="3-10-mais-sobre-data-frames.html#cb67-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-7"><a href="3-10-mais-sobre-data-frames.html#cb67-7" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(dados_cliente)</span>
-<span id="cb67-8"><a href="3-10-mais-sobre-data-frames.html#cb67-8" aria-hidden="true" tabindex="-1"></a><span class="do">##   c..Ana.Silva....Beto.Pereira....Carla.Souza.. c.25..30..23.</span></span>
-<span id="cb67-9"><a href="3-10-mais-sobre-data-frames.html#cb67-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 1                                     Ana Silva            25</span></span>
-<span id="cb67-10"><a href="3-10-mais-sobre-data-frames.html#cb67-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 2                                  Beto Pereira            30</span></span>
-<span id="cb67-11"><a href="3-10-mais-sobre-data-frames.html#cb67-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 3                                   Carla Souza            23</span></span>
-<span id="cb67-12"><a href="3-10-mais-sobre-data-frames.html#cb67-12" aria-hidden="true" tabindex="-1"></a><span class="do">##   c.NA...Solteiro....Casada..</span></span>
-<span id="cb67-13"><a href="3-10-mais-sobre-data-frames.html#cb67-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 1                        &lt;NA&gt;</span></span>
-<span id="cb67-14"><a href="3-10-mais-sobre-data-frames.html#cb67-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 2                    Solteiro</span></span>
-<span id="cb67-15"><a href="3-10-mais-sobre-data-frames.html#cb67-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 3                      Casada</span></span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="3-10-mais-sobre-data-frames.html#cb69-1"></a>dados_cliente &lt;-<span class="st"> </span><span class="kw">list</span>(</span>
+<span id="cb69-2"><a href="3-10-mais-sobre-data-frames.html#cb69-2"></a>  <span class="kw">c</span>(<span class="st">&quot;Ana Silva&quot;</span>, <span class="st">&quot;Beto Pereira&quot;</span>, <span class="st">&quot;Carla Souza&quot;</span>),</span>
+<span id="cb69-3"><a href="3-10-mais-sobre-data-frames.html#cb69-3"></a>  <span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">23</span>),</span>
+<span id="cb69-4"><a href="3-10-mais-sobre-data-frames.html#cb69-4"></a>  <span class="kw">c</span>(<span class="ot">NA</span>, <span class="st">&quot;Solteiro&quot;</span>, <span class="st">&quot;Casada&quot;</span>)</span>
+<span id="cb69-5"><a href="3-10-mais-sobre-data-frames.html#cb69-5"></a>)</span>
+<span id="cb69-6"><a href="3-10-mais-sobre-data-frames.html#cb69-6"></a></span>
+<span id="cb69-7"><a href="3-10-mais-sobre-data-frames.html#cb69-7"></a><span class="kw">as.data.frame</span>(dados_cliente)</span>
+<span id="cb69-8"><a href="3-10-mais-sobre-data-frames.html#cb69-8"></a><span class="co">##   c..Ana.Silva....Beto.Pereira....Carla.Souza.. c.25..30..23.</span></span>
+<span id="cb69-9"><a href="3-10-mais-sobre-data-frames.html#cb69-9"></a><span class="co">## 1                                     Ana Silva            25</span></span>
+<span id="cb69-10"><a href="3-10-mais-sobre-data-frames.html#cb69-10"></a><span class="co">## 2                                  Beto Pereira            30</span></span>
+<span id="cb69-11"><a href="3-10-mais-sobre-data-frames.html#cb69-11"></a><span class="co">## 3                                   Carla Souza            23</span></span>
+<span id="cb69-12"><a href="3-10-mais-sobre-data-frames.html#cb69-12"></a><span class="co">##   c.NA...Solteiro....Casada..</span></span>
+<span id="cb69-13"><a href="3-10-mais-sobre-data-frames.html#cb69-13"></a><span class="co">## 1                        &lt;NA&gt;</span></span>
+<span id="cb69-14"><a href="3-10-mais-sobre-data-frames.html#cb69-14"></a><span class="co">## 2                    Solteiro</span></span>
+<span id="cb69-15"><a href="3-10-mais-sobre-data-frames.html#cb69-15"></a><span class="co">## 3                      Casada</span></span></code></pre></div>
 <p>A propriedade (3) é atribuída aos <em>data frames</em> para que possamos aproveitar melhor dessa estrutura retangular dentro do R. Na prática, essas duas dimensões representam nada mais que as linhas e as colunas da base. Essa é a maior diferença entre uma lista e um <em>data frame</em>.</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="3-10-mais-sobre-data-frames.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(mtcars)</span>
-<span id="cb68-2"><a href="3-10-mais-sobre-data-frames.html#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;data.frame&quot;</span></span>
-<span id="cb68-3"><a href="3-10-mais-sobre-data-frames.html#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb68-4"><a href="3-10-mais-sobre-data-frames.html#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(mtcars)</span>
-<span id="cb68-5"><a href="3-10-mais-sobre-data-frames.html#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 32 11</span></span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="3-10-mais-sobre-data-frames.html#cb70-1"></a><span class="kw">class</span>(mtcars)</span>
+<span id="cb70-2"><a href="3-10-mais-sobre-data-frames.html#cb70-2"></a><span class="co">## [1] &quot;data.frame&quot;</span></span>
+<span id="cb70-3"><a href="3-10-mais-sobre-data-frames.html#cb70-3"></a></span>
+<span id="cb70-4"><a href="3-10-mais-sobre-data-frames.html#cb70-4"></a><span class="kw">dim</span>(mtcars)</span>
+<span id="cb70-5"><a href="3-10-mais-sobre-data-frames.html#cb70-5"></a><span class="co">## [1] 32 11</span></span></code></pre></div>
 <p>O resultado do código <code>dim(mtcars)</code> nos dá as seguintes informações:</p>
 <ul>
 <li><p>O <em>data frame</em> mtcars tem duas dimensões (como todo <em>data frame</em>).</p></li>
 <li><p>A primeira dimensão tem comprimento 32 e a segunda dimensão tem comprimento 11. Em outras palavras: a base <code>mtcars</code> tem 32 linhas e 11 colunas.</p></li>
 </ul>
 <p>Veja a seguir que listas não têm dimensão.</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="3-10-mais-sobre-data-frames.html#cb69-1" aria-hidden="true" tabindex="-1"></a>mtcars_como_lista <span class="ot">&lt;-</span> <span class="fu">as.list</span>(mtcars)</span>
-<span id="cb69-2"><a href="3-10-mais-sobre-data-frames.html#cb69-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-3"><a href="3-10-mais-sobre-data-frames.html#cb69-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(mtcars_como_lista)</span>
-<span id="cb69-4"><a href="3-10-mais-sobre-data-frames.html#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;list&quot;</span></span>
-<span id="cb69-5"><a href="3-10-mais-sobre-data-frames.html#cb69-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-6"><a href="3-10-mais-sobre-data-frames.html#cb69-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(mtcars_como_lista)</span>
-<span id="cb69-7"><a href="3-10-mais-sobre-data-frames.html#cb69-7" aria-hidden="true" tabindex="-1"></a><span class="do">## NULL</span></span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="3-10-mais-sobre-data-frames.html#cb71-1"></a>mtcars_como_lista &lt;-<span class="st"> </span><span class="kw">as.list</span>(mtcars)</span>
+<span id="cb71-2"><a href="3-10-mais-sobre-data-frames.html#cb71-2"></a></span>
+<span id="cb71-3"><a href="3-10-mais-sobre-data-frames.html#cb71-3"></a><span class="kw">class</span>(mtcars_como_lista)</span>
+<span id="cb71-4"><a href="3-10-mais-sobre-data-frames.html#cb71-4"></a><span class="co">## [1] &quot;list&quot;</span></span>
+<span id="cb71-5"><a href="3-10-mais-sobre-data-frames.html#cb71-5"></a></span>
+<span id="cb71-6"><a href="3-10-mais-sobre-data-frames.html#cb71-6"></a><span class="kw">dim</span>(mtcars_como_lista)</span>
+<span id="cb71-7"><a href="3-10-mais-sobre-data-frames.html#cb71-7"></a><span class="co">## NULL</span></span></code></pre></div>
 <p>Ter duas dimensões significa que devemos usar dois índices para acessar os valores de um <em>data frame</em> (fazer <em>subsetting</em>). Para isso, ainda usamos o colchete, mas agora com dois argumentos: <code>[linha, coluna]</code>.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="3-10-mais-sobre-data-frames.html#cb70-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb70-2"><a href="3-10-mais-sobre-data-frames.html#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 160</span></span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="3-10-mais-sobre-data-frames.html#cb72-1"></a>mtcars[<span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb72-2"><a href="3-10-mais-sobre-data-frames.html#cb72-2"></a><span class="co">## [1] 160</span></span></code></pre></div>
 <p>O código acima está nos devolvendo o valor presente na segunda linha da terceira coluna da base <code>mtcars</code>.</p>
 <p>Também podemos pegar todos as linhas de uma coluna ou todas as colunas de uma linha deixando um dos argumentos vazio:</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="3-10-mais-sobre-data-frames.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Todas as linhas da coluna 1</span></span>
-<span id="cb71-2"><a href="3-10-mais-sobre-data-frames.html#cb71-2" aria-hidden="true" tabindex="-1"></a>mtcars[,<span class="dv">1</span>]</span>
-<span id="cb71-3"><a href="3-10-mais-sobre-data-frames.html#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4</span></span>
-<span id="cb71-4"><a href="3-10-mais-sobre-data-frames.html#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7</span></span>
-<span id="cb71-5"><a href="3-10-mais-sobre-data-frames.html#cb71-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [31] 15.0 21.4</span></span>
-<span id="cb71-6"><a href="3-10-mais-sobre-data-frames.html#cb71-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-7"><a href="3-10-mais-sobre-data-frames.html#cb71-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Todas as colunas da linha 1</span></span>
-<span id="cb71-8"><a href="3-10-mais-sobre-data-frames.html#cb71-8" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">1</span>,]</span>
-<span id="cb71-9"><a href="3-10-mais-sobre-data-frames.html#cb71-9" aria-hidden="true" tabindex="-1"></a><span class="do">##           mpg cyl disp  hp drat   wt  qsec vs am gear carb</span></span>
-<span id="cb71-10"><a href="3-10-mais-sobre-data-frames.html#cb71-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Mazda RX4  21   6  160 110  3.9 2.62 16.46  0  1    4    4</span></span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="3-10-mais-sobre-data-frames.html#cb73-1"></a><span class="co"># Todas as linhas da coluna 1</span></span>
+<span id="cb73-2"><a href="3-10-mais-sobre-data-frames.html#cb73-2"></a>mtcars[,<span class="dv">1</span>]</span>
+<span id="cb73-3"><a href="3-10-mais-sobre-data-frames.html#cb73-3"></a><span class="co">##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4</span></span>
+<span id="cb73-4"><a href="3-10-mais-sobre-data-frames.html#cb73-4"></a><span class="co">## [16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7</span></span>
+<span id="cb73-5"><a href="3-10-mais-sobre-data-frames.html#cb73-5"></a><span class="co">## [31] 15.0 21.4</span></span>
+<span id="cb73-6"><a href="3-10-mais-sobre-data-frames.html#cb73-6"></a></span>
+<span id="cb73-7"><a href="3-10-mais-sobre-data-frames.html#cb73-7"></a><span class="co"># Todas as colunas da linha 1</span></span>
+<span id="cb73-8"><a href="3-10-mais-sobre-data-frames.html#cb73-8"></a>mtcars[<span class="dv">1</span>,]</span>
+<span id="cb73-9"><a href="3-10-mais-sobre-data-frames.html#cb73-9"></a><span class="co">##           mpg cyl disp  hp drat   wt  qsec vs am gear carb</span></span>
+<span id="cb73-10"><a href="3-10-mais-sobre-data-frames.html#cb73-10"></a><span class="co">## Mazda RX4  21   6  160 110  3.9 2.62 16.46  0  1    4    4</span></span></code></pre></div>
 <p>Por fim, lembrando que dento de cada coluna temos um vetor, podemos usar os testes lógicos para filtrar as linhas do nosso <em>data frame</em> conforme alguma regra.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="3-10-mais-sobre-data-frames.html#cb72-1" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>cyl <span class="sc">==</span> <span class="dv">4</span></span>
-<span id="cb72-2"><a href="3-10-mais-sobre-data-frames.html#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE</span></span>
-<span id="cb72-3"><a href="3-10-mais-sobre-data-frames.html#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE</span></span>
-<span id="cb72-4"><a href="3-10-mais-sobre-data-frames.html#cb72-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE</span></span>
-<span id="cb72-5"><a href="3-10-mais-sobre-data-frames.html#cb72-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-6"><a href="3-10-mais-sobre-data-frames.html#cb72-6" aria-hidden="true" tabindex="-1"></a>mtcars[mtcars<span class="sc">$</span>cyl <span class="sc">==</span> <span class="dv">4</span>, ]</span>
-<span id="cb72-7"><a href="3-10-mais-sobre-data-frames.html#cb72-7" aria-hidden="true" tabindex="-1"></a><span class="do">##                 mpg cyl  disp  hp drat    wt  qsec vs am gear carb</span></span>
-<span id="cb72-8"><a href="3-10-mais-sobre-data-frames.html#cb72-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Datsun 710     22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1</span></span>
-<span id="cb72-9"><a href="3-10-mais-sobre-data-frames.html#cb72-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Merc 240D      24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2</span></span>
-<span id="cb72-10"><a href="3-10-mais-sobre-data-frames.html#cb72-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Merc 230       22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2</span></span>
-<span id="cb72-11"><a href="3-10-mais-sobre-data-frames.html#cb72-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Fiat 128       32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1</span></span>
-<span id="cb72-12"><a href="3-10-mais-sobre-data-frames.html#cb72-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Honda Civic    30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2</span></span>
-<span id="cb72-13"><a href="3-10-mais-sobre-data-frames.html#cb72-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Toyota Corolla 33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1</span></span>
-<span id="cb72-14"><a href="3-10-mais-sobre-data-frames.html#cb72-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Toyota Corona  21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1</span></span>
-<span id="cb72-15"><a href="3-10-mais-sobre-data-frames.html#cb72-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Fiat X1-9      27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1</span></span>
-<span id="cb72-16"><a href="3-10-mais-sobre-data-frames.html#cb72-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Porsche 914-2  26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2</span></span>
-<span id="cb72-17"><a href="3-10-mais-sobre-data-frames.html#cb72-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</span></span>
-<span id="cb72-18"><a href="3-10-mais-sobre-data-frames.html#cb72-18" aria-hidden="true" tabindex="-1"></a><span class="do">## Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</span></span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="3-10-mais-sobre-data-frames.html#cb74-1"></a>mtcars<span class="op">$</span>cyl <span class="op">==</span><span class="st"> </span><span class="dv">4</span></span>
+<span id="cb74-2"><a href="3-10-mais-sobre-data-frames.html#cb74-2"></a><span class="co">##  [1] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE</span></span>
+<span id="cb74-3"><a href="3-10-mais-sobre-data-frames.html#cb74-3"></a><span class="co">## [13] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE</span></span>
+<span id="cb74-4"><a href="3-10-mais-sobre-data-frames.html#cb74-4"></a><span class="co">## [25] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE</span></span>
+<span id="cb74-5"><a href="3-10-mais-sobre-data-frames.html#cb74-5"></a></span>
+<span id="cb74-6"><a href="3-10-mais-sobre-data-frames.html#cb74-6"></a>mtcars[mtcars<span class="op">$</span>cyl <span class="op">==</span><span class="st"> </span><span class="dv">4</span>, ]</span>
+<span id="cb74-7"><a href="3-10-mais-sobre-data-frames.html#cb74-7"></a><span class="co">##                 mpg cyl  disp  hp drat    wt  qsec vs am gear carb</span></span>
+<span id="cb74-8"><a href="3-10-mais-sobre-data-frames.html#cb74-8"></a><span class="co">## Datsun 710     22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1</span></span>
+<span id="cb74-9"><a href="3-10-mais-sobre-data-frames.html#cb74-9"></a><span class="co">## Merc 240D      24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2</span></span>
+<span id="cb74-10"><a href="3-10-mais-sobre-data-frames.html#cb74-10"></a><span class="co">## Merc 230       22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2</span></span>
+<span id="cb74-11"><a href="3-10-mais-sobre-data-frames.html#cb74-11"></a><span class="co">## Fiat 128       32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1</span></span>
+<span id="cb74-12"><a href="3-10-mais-sobre-data-frames.html#cb74-12"></a><span class="co">## Honda Civic    30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2</span></span>
+<span id="cb74-13"><a href="3-10-mais-sobre-data-frames.html#cb74-13"></a><span class="co">## Toyota Corolla 33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1</span></span>
+<span id="cb74-14"><a href="3-10-mais-sobre-data-frames.html#cb74-14"></a><span class="co">## Toyota Corona  21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1</span></span>
+<span id="cb74-15"><a href="3-10-mais-sobre-data-frames.html#cb74-15"></a><span class="co">## Fiat X1-9      27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1</span></span>
+<span id="cb74-16"><a href="3-10-mais-sobre-data-frames.html#cb74-16"></a><span class="co">## Porsche 914-2  26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2</span></span>
+<span id="cb74-17"><a href="3-10-mais-sobre-data-frames.html#cb74-17"></a><span class="co">## Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</span></span>
+<span id="cb74-18"><a href="3-10-mais-sobre-data-frames.html#cb74-18"></a><span class="co">## Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</span></span></code></pre></div>
 <p>O código <code>mtcars$cyl == 4</code> nos diz em quais linhas estão os carros com 4 cilindros. Quando usamos o vetor de <code>TRUE</code> e <code>FALSE</code> resultante dentro do <em>subsetting</em> das linhas em <code>mtcars[mtcars$cyl == 4, ]</code>, o R nos devolve todos as colunas dos carros com 4 cilindros. A regra é simples: linha com <code>TRUE</code> é retornada, linha com <code>FALSE</code> não.</p>
 <p>Encerramos aqui a nossa primeira conversa sobre <code>data frames</code> para falar de outra estrutura muito importante dentro do R: as funções.</p>
 <div id="exercícios-6" class="section level3 unnumbered">
@@ -558,6 +533,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><strong>c.</strong> Eleve o vetor calculado em (b) ao quadrado. Salve o resultado em um novo objeto.</p></li>
 <li><p><strong>d.</strong> Tire a média do vetor calculado em (c) e salve o resultado em um objeto chamado <code>variancia</code>. Em seguida, calcule a raiz quadrada desse valor e salve em um objeto chamado <code>desvio_padrao</code>.</p></li>
 <li><p><strong>e.</strong> Compare o valor de <code>desvio_padrao</code> com <code>sd(airquality$Ozone)</code> e pesquise por que os valores não são iguais. Dica: veja a documentação da função <code>sd()</code>.</p></li>
+</ul>
+<p><strong>6.</strong> Use o <em>data frame</em> <code>airquality</code> para responder às questões abaixo.</p>
+<ul>
+<li><p><strong>a.</strong> Conte quantos <code>NAs</code> tem na coluna <code>Solar.R</code>.</p></li>
+<li><p><strong>b.</strong> Filtre a tabela <code>airquality</code>com apenas linhas em que <code>Solar.R</code> é <code>NA</code>.</p></li>
+<li><p><strong>c.</strong> Filtre a tabela <code>airquality</code> com apenas linhas em que <code>Solar.R</code> <strong>não</strong> é <code>NA</code>.</p></li>
+<li><p><strong>d.</strong> Filtre a tabela <code>airquality</code> com apenas linhas em que <code>Solar.R</code> <strong>não</strong> é <code>NA</code> e <code>Month</code> é igual a 5.</p></li>
 </ul>
 </div>
 </div>

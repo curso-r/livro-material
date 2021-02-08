@@ -241,7 +241,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="9-graficos.html"><a href="9-graficos.html"><i class="fa fa-check"></i><b>9</b> Gráficos</a><ul>
-<li class="chapter" data-level="9.1" data-path="9-1-o-pacote-ggplot2.html"><a href="9-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>9.1</b> O pacote ggplot2</a></li>
+<li class="chapter" data-level="9.1" data-path="9-1-o-pacote-ggplot2.html"><a href="9-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>9.1</b> O pacote ggplot2</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="9-1-o-pacote-ggplot2.html"><a href="9-1-o-pacote-ggplot2.html#as-camadas-de-um-gráfico"><i class="fa fa-check"></i><b>9.1.1</b> As camadas de um gráfico</a></li>
+<li class="chapter" data-level="9.1.2" data-path="9-1-o-pacote-ggplot2.html"><a href="9-1-o-pacote-ggplot2.html#atributos-estéticos"><i class="fa fa-check"></i><b>9.1.2</b> Atributos estéticos</a></li>
+<li class="chapter" data-level="9.1.3" data-path="9-1-o-pacote-ggplot2.html"><a href="9-1-o-pacote-ggplot2.html#formas-geométricas"><i class="fa fa-check"></i><b>9.1.3</b> Formas geométricas</a></li>
+<li class="chapter" data-level="9.1.4" data-path="9-1-o-pacote-ggplot2.html"><a href="9-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>9.1.4</b> Juntando gráficos</a></li>
+<li class="chapter" data-level="9.1.5" data-path="9-1-o-pacote-ggplot2.html"><a href="9-1-o-pacote-ggplot2.html#personalizando"><i class="fa fa-check"></i><b>9.1.5</b> Personalizando</a></li>
+<li class="chapter" data-level="9.1.6" data-path="9-1-o-pacote-ggplot2.html"><a href="9-1-o-pacote-ggplot2.html#onde-continuar-estudando"><i class="fa fa-check"></i><b>9.1.6</b> Onde continuar estudando?</a></li>
+<li class="chapter" data-level="9.1.7" data-path="9-1-o-pacote-ggplot2.html"><a href="9-1-o-pacote-ggplot2.html#exercícios-11"><i class="fa fa-check"></i><b>9.1.7</b> Exercícios</a></li>
+</ul></li>
 <li class="chapter" data-level="9.2" data-path="9-2-o-pacote-plotly.html"><a href="9-2-o-pacote-plotly.html"><i class="fa fa-check"></i><b>9.2</b> O pacote plotly</a></li>
 <li class="chapter" data-level="9.3" data-path="9-3-extensões-do-ggplot2.html"><a href="9-3-extensões-do-ggplot2.html"><i class="fa fa-check"></i><b>9.3</b> Extensões do ggplot2</a></li>
 </ul></li>
@@ -260,8 +268,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#objetos-e-funções"><i class="fa fa-check"></i>Objetos e funções</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#classes-1"><i class="fa fa-check"></i>Classes</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#vetores-1"><i class="fa fa-check"></i>Vetores</a></li>
-<li class="chapter" data-level="12.1.1" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i><b>12.1.1</b> Testes lógicos</a></li>
-<li class="chapter" data-level="12.1.2" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i><b>12.1.2</b> Data frames</a></li>
+<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i>Testes lógicos</a></li>
+<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i>Data frames</a></li>
+<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i>Mais sobre funções</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="12-2-pipe-1.html"><a href="12-2-pipe-1.html"><i class="fa fa-check"></i><b>12.2</b> Pipe</a></li>
 </ul></li>
@@ -452,8 +461,8 @@ um novo objeto chamado <code>vetor_negativo</code>.</p>
 <span id="cb27-2"><a href="12-1-r-básico.html#cb27-2"></a><span class="co">## [1] 0.5714286</span></span></code></pre></div>
 <p><em>Verifica a proporção de dias em que o dólar subiu (a média de valores 0 e 1 é igual a proporção de valores 1), no caso, cerca de 57% dos dias.</em></p>
 </div>
-<div id="testes-lógicos-1" class="section level3">
-<h3><span class="header-section-number">12.1.1</span> Testes lógicos</h3>
+<div id="testes-lógicos-1" class="section level3 unnumbered">
+<h3>Testes lógicos</h3>
 <p><strong>1</strong> O código abaixo vai guardar no objeto <code>segredo</code> um número inteiro entre 0 e 10. Sem olhar qual número foi guardado no objeto, resolva os itens a seguir:</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="12-1-r-básico.html#cb28-1"></a>segredo &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">1</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">10</span>))</span></code></pre></div>
 <p><strong>a.</strong> Teste se o segredo é maior ou igual a 0.</p>
@@ -507,8 +516,8 @@ ou iguais a 10 do vetor abaixo:</p>
 <span id="cb36-4"><a href="12-1-r-básico.html#cb36-4"></a>vetor[vetor <span class="op">&gt;=</span><span class="st"> </span><span class="dv">10</span>]</span>
 <span id="cb36-5"><a href="12-1-r-básico.html#cb36-5"></a><span class="co">## [1] 15 16 23 42</span></span></code></pre></div>
 </div>
-<div id="data-frames-1" class="section level3">
-<h3><span class="header-section-number">12.1.2</span> Data frames</h3>
+<div id="data-frames-1" class="section level3 unnumbered">
+<h3>Data frames</h3>
 <p><strong>1.</strong> Quais códigos abaixo retornam <strong>um vetor</strong> com a coluna <code>mpg</code> do data frame <code>mtcars</code>?</p>
 <p><strong>a.</strong> <code>mtcars$mpg</code></p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="12-1-r-básico.html#cb37-1"></a>mtcars<span class="op">$</span>mpg</span>
@@ -630,6 +639,128 @@ ou iguais a 10 do vetor abaixo:</p>
 <span id="cb57-5"><a href="12-1-r-básico.html#cb57-5"></a>desvio_padrao &lt;-<span class="st"> </span><span class="kw">sqrt</span>(variancia)</span>
 <span id="cb57-6"><a href="12-1-r-básico.html#cb57-6"></a>desvio_padrao</span>
 <span id="cb57-7"><a href="12-1-r-básico.html#cb57-7"></a><span class="co">## [1] 32.98788</span></span></code></pre></div>
+</div>
+<div id="mais-sobre-funções" class="section level3 unnumbered">
+<h3>Mais sobre funções</h3>
+<p><strong>1.</strong> Qual dos códigos abaixo devolverá um erro se for avaliado?</p>
+<ul>
+<li><strong>a.</strong> <code>3 * 5 + 10</code></li>
+</ul>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="12-1-r-básico.html#cb58-1"></a><span class="dv">3</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">10</span></span>
+<span id="cb58-2"><a href="12-1-r-básico.html#cb58-2"></a><span class="co">## [1] 25</span></span></code></pre></div>
+<p><em>Sem erro.</em></p>
+<ul>
+<li><strong>b.</strong> <code>function &lt;- 10</code></li>
+</ul>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="12-1-r-básico.html#cb59-1"></a><span class="cf">function</span> &lt;-<span class="st"> </span><span class="dv">10</span></span>
+<span id="cb59-2"><a href="12-1-r-básico.html#cb59-2"></a><span class="co">## Error: &lt;text&gt;:1:10: unexpected assignment</span></span>
+<span id="cb59-3"><a href="12-1-r-básico.html#cb59-3"></a><span class="co">## 1: function &lt;-</span></span>
+<span id="cb59-4"><a href="12-1-r-básico.html#cb59-4"></a><span class="co">##              ^</span></span></code></pre></div>
+<p><em>Retorna erro pois <code>function</code> é um nome reservado no R. Não podemos utilizá-lo para nomear outros objetos.</em></p>
+<ul>
+<li><strong>c.</strong> <code>mean(1, 10)</code></li>
+</ul>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="12-1-r-básico.html#cb60-1"></a><span class="kw">mean</span>(<span class="dv">1</span>, <span class="dv">10</span>)</span>
+<span id="cb60-2"><a href="12-1-r-básico.html#cb60-2"></a><span class="co">## [1] 1</span></span></code></pre></div>
+<p><em>Não retorna erro, mas o 10 não é considerado na média. O código correto seria <code>mean(c(1, 10))</code>.</em></p>
+<ul>
+<li><strong>d.</strong> <code>(soma &lt;- sum(1, 1))</code></li>
+</ul>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="12-1-r-básico.html#cb61-1"></a>(soma &lt;-<span class="st"> </span><span class="kw">sum</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb61-2"><a href="12-1-r-básico.html#cb61-2"></a><span class="co">## [1] 2</span></span></code></pre></div>
+<p><em>Não retorna erro. Cercar o código com parênteses força a saída a sempre ser apresentada no Console, além de ser gravada dentro do objeto.</em></p>
+<hr />
+<p><strong>2.</strong> Crie uma função que receba um número e retorne o quadrado deste número.</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="12-1-r-básico.html#cb62-1"></a>quadrado &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
+<span id="cb62-2"><a href="12-1-r-básico.html#cb62-2"></a>  x <span class="op">^</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb62-3"><a href="12-1-r-básico.html#cb62-3"></a>}</span>
+<span id="cb62-4"><a href="12-1-r-básico.html#cb62-4"></a></span>
+<span id="cb62-5"><a href="12-1-r-básico.html#cb62-5"></a><span class="kw">quadrado</span>(<span class="dv">2</span>)</span>
+<span id="cb62-6"><a href="12-1-r-básico.html#cb62-6"></a><span class="co">## [1] 4</span></span>
+<span id="cb62-7"><a href="12-1-r-básico.html#cb62-7"></a><span class="kw">quadrado</span>(<span class="dv">3</span>)</span>
+<span id="cb62-8"><a href="12-1-r-básico.html#cb62-8"></a><span class="co">## [1] 9</span></span>
+<span id="cb62-9"><a href="12-1-r-básico.html#cb62-9"></a><span class="kw">quadrado</span>(<span class="dv">0</span>)</span>
+<span id="cb62-10"><a href="12-1-r-básico.html#cb62-10"></a><span class="co">## [1] 0</span></span></code></pre></div>
+<hr />
+<p><strong>3.</strong> Crie uma função que receba 2 números e devolva a raiz quadrada da soma desses números.</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="12-1-r-básico.html#cb63-1"></a>raiz_da_soma &lt;-<span class="st"> </span><span class="cf">function</span>(a, b) {</span>
+<span id="cb63-2"><a href="12-1-r-básico.html#cb63-2"></a>  <span class="kw">sqrt</span>(a <span class="op">+</span><span class="st"> </span>b)</span>
+<span id="cb63-3"><a href="12-1-r-básico.html#cb63-3"></a>}</span>
+<span id="cb63-4"><a href="12-1-r-básico.html#cb63-4"></a></span>
+<span id="cb63-5"><a href="12-1-r-básico.html#cb63-5"></a><span class="kw">raiz_da_soma</span>(<span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb63-6"><a href="12-1-r-básico.html#cb63-6"></a><span class="co">## [1] 2</span></span>
+<span id="cb63-7"><a href="12-1-r-básico.html#cb63-7"></a><span class="kw">raiz_da_soma</span>(<span class="dv">1</span>, <span class="dv">4</span>)</span>
+<span id="cb63-8"><a href="12-1-r-básico.html#cb63-8"></a><span class="co">## [1] 2.236068</span></span></code></pre></div>
+<hr />
+<p><strong>4.</strong> Crie uma função que receba dois valores (numéricos) e devolva o maior deles.</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="12-1-r-básico.html#cb64-1"></a>retornar_maior &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</span>
+<span id="cb64-2"><a href="12-1-r-básico.html#cb64-2"></a>  vetor &lt;-<span class="st"> </span><span class="kw">c</span>(x, y)</span>
+<span id="cb64-3"><a href="12-1-r-básico.html#cb64-3"></a>  filtro &lt;-<span class="st"> </span><span class="kw">c</span>(x <span class="op">&gt;</span><span class="st"> </span>y, x <span class="op">&lt;=</span><span class="st"> </span>y)</span>
+<span id="cb64-4"><a href="12-1-r-básico.html#cb64-4"></a>  vetor[filtro]</span>
+<span id="cb64-5"><a href="12-1-r-básico.html#cb64-5"></a>}</span>
+<span id="cb64-6"><a href="12-1-r-básico.html#cb64-6"></a></span>
+<span id="cb64-7"><a href="12-1-r-básico.html#cb64-7"></a><span class="kw">retornar_maior</span>(<span class="dv">10</span>, <span class="dv">20</span>)</span>
+<span id="cb64-8"><a href="12-1-r-básico.html#cb64-8"></a><span class="co">## [1] 20</span></span>
+<span id="cb64-9"><a href="12-1-r-básico.html#cb64-9"></a><span class="kw">retornar_maior</span>(<span class="dv">5</span>, <span class="dv">-5</span>)</span>
+<span id="cb64-10"><a href="12-1-r-básico.html#cb64-10"></a><span class="co">## [1] 5</span></span></code></pre></div>
+<p>*Também poderíamos resolver usando a função <code>max()</code>.</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="12-1-r-básico.html#cb65-1"></a>retornar_maior &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</span>
+<span id="cb65-2"><a href="12-1-r-básico.html#cb65-2"></a>  <span class="kw">max</span>(x, y)</span>
+<span id="cb65-3"><a href="12-1-r-básico.html#cb65-3"></a>}</span>
+<span id="cb65-4"><a href="12-1-r-básico.html#cb65-4"></a></span>
+<span id="cb65-5"><a href="12-1-r-básico.html#cb65-5"></a><span class="kw">retornar_maior</span>(<span class="dv">10</span>, <span class="dv">20</span>)</span>
+<span id="cb65-6"><a href="12-1-r-básico.html#cb65-6"></a><span class="co">## [1] 20</span></span>
+<span id="cb65-7"><a href="12-1-r-básico.html#cb65-7"></a><span class="kw">retornar_maior</span>(<span class="dv">5</span>, <span class="dv">-5</span>)</span>
+<span id="cb65-8"><a href="12-1-r-básico.html#cb65-8"></a><span class="co">## [1] 5</span></span></code></pre></div>
+<hr />
+<p><strong>5.</strong> Use a função <code>runif()</code> para criar uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive). Caso você não conheça a função <code>runif()</code>, rode <code>help(runif)</code> para ler a sua documentação.</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="12-1-r-básico.html#cb66-1"></a>sortear_numero &lt;-<span class="st"> </span><span class="cf">function</span>() {</span>
+<span id="cb66-2"><a href="12-1-r-básico.html#cb66-2"></a>  numero &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">1</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">10</span>)</span>
+<span id="cb66-3"><a href="12-1-r-básico.html#cb66-3"></a>  </span>
+<span id="cb66-4"><a href="12-1-r-básico.html#cb66-4"></a>  numero_inteiro &lt;-<span class="st"> </span><span class="kw">round</span>(numero)</span>
+<span id="cb66-5"><a href="12-1-r-básico.html#cb66-5"></a>  </span>
+<span id="cb66-6"><a href="12-1-r-básico.html#cb66-6"></a>  <span class="kw">return</span>(numero_inteiro)</span>
+<span id="cb66-7"><a href="12-1-r-básico.html#cb66-7"></a>}</span>
+<span id="cb66-8"><a href="12-1-r-básico.html#cb66-8"></a></span>
+<span id="cb66-9"><a href="12-1-r-básico.html#cb66-9"></a><span class="kw">sortear_numero</span>()</span>
+<span id="cb66-10"><a href="12-1-r-básico.html#cb66-10"></a><span class="co">## [1] 9</span></span></code></pre></div>
+<hr />
+<p><strong>6.</strong> Rode <code>help(sample)</code> para descobrir o que a função <code>sample()</code> faz. Em seguida,</p>
+<ul>
+<li><strong>a.</strong> use-a para escrever uma função que devolva uma linha aleatória de um <em>data frame</em>;</li>
+</ul>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="12-1-r-básico.html#cb67-1"></a>sortear_linha &lt;-<span class="st"> </span><span class="cf">function</span>(data_frame) {</span>
+<span id="cb67-2"><a href="12-1-r-básico.html#cb67-2"></a>  num_linhas &lt;-<span class="st"> </span><span class="kw">nrow</span>(data_frame)</span>
+<span id="cb67-3"><a href="12-1-r-básico.html#cb67-3"></a>  linha_sorteada &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span>num_linhas, <span class="dv">1</span>)</span>
+<span id="cb67-4"><a href="12-1-r-básico.html#cb67-4"></a>  </span>
+<span id="cb67-5"><a href="12-1-r-básico.html#cb67-5"></a>  data_frame[linha_sorteada, ]</span>
+<span id="cb67-6"><a href="12-1-r-básico.html#cb67-6"></a>}</span>
+<span id="cb67-7"><a href="12-1-r-básico.html#cb67-7"></a></span>
+<span id="cb67-8"><a href="12-1-r-básico.html#cb67-8"></a><span class="kw">sortear_linha</span>(mtcars)</span>
+<span id="cb67-9"><a href="12-1-r-básico.html#cb67-9"></a><span class="co">##                 mpg cyl disp hp drat    wt qsec vs am gear carb</span></span>
+<span id="cb67-10"><a href="12-1-r-básico.html#cb67-10"></a><span class="co">## Toyota Corolla 33.9   4 71.1 65 4.22 1.835 19.9  1  1    4    1</span></span></code></pre></div>
+<ul>
+<li><strong>b.</strong> e generalize a função para retornar um número qualquer de linhas, escolhido pelo usuário.</li>
+</ul>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="12-1-r-básico.html#cb68-1"></a>sortear_linha &lt;-<span class="st"> </span><span class="cf">function</span>(data_frame, n) {</span>
+<span id="cb68-2"><a href="12-1-r-básico.html#cb68-2"></a>  num_linhas &lt;-<span class="st"> </span><span class="kw">nrow</span>(data_frame)</span>
+<span id="cb68-3"><a href="12-1-r-básico.html#cb68-3"></a>  linha_sorteada &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span>num_linhas, n)</span>
+<span id="cb68-4"><a href="12-1-r-básico.html#cb68-4"></a>  </span>
+<span id="cb68-5"><a href="12-1-r-básico.html#cb68-5"></a>  data_frame[linha_sorteada, ]</span>
+<span id="cb68-6"><a href="12-1-r-básico.html#cb68-6"></a>}</span>
+<span id="cb68-7"><a href="12-1-r-básico.html#cb68-7"></a></span>
+<span id="cb68-8"><a href="12-1-r-básico.html#cb68-8"></a><span class="kw">sortear_linha</span>(mtcars, <span class="dv">10</span>)</span>
+<span id="cb68-9"><a href="12-1-r-básico.html#cb68-9"></a><span class="co">##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb</span></span>
+<span id="cb68-10"><a href="12-1-r-básico.html#cb68-10"></a><span class="co">## Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3</span></span>
+<span id="cb68-11"><a href="12-1-r-básico.html#cb68-11"></a><span class="co">## Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1</span></span>
+<span id="cb68-12"><a href="12-1-r-básico.html#cb68-12"></a><span class="co">## Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4</span></span>
+<span id="cb68-13"><a href="12-1-r-básico.html#cb68-13"></a><span class="co">## Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1</span></span>
+<span id="cb68-14"><a href="12-1-r-básico.html#cb68-14"></a><span class="co">## Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3</span></span>
+<span id="cb68-15"><a href="12-1-r-básico.html#cb68-15"></a><span class="co">## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4</span></span>
+<span id="cb68-16"><a href="12-1-r-básico.html#cb68-16"></a><span class="co">## Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4</span></span>
+<span id="cb68-17"><a href="12-1-r-básico.html#cb68-17"></a><span class="co">## Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</span></span>
+<span id="cb68-18"><a href="12-1-r-básico.html#cb68-18"></a><span class="co">## AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2</span></span>
+<span id="cb68-19"><a href="12-1-r-básico.html#cb68-19"></a><span class="co">## Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4</span></span></code></pre></div>
 </div>
 </div>
 <hr/>

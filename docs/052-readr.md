@@ -38,8 +38,7 @@ imdb_csv <- read_csv(file = "imdb.csv")
 
 
 ```
-## 
-## ── Column specification ────────────────────────────────────────────────────────
+## Parsed with column specification:
 ## cols(
 ##   titulo = col_character(),
 ##   ano = col_double(),

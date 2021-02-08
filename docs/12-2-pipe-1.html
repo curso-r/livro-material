@@ -241,7 +241,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="9-graficos.html"><a href="9-graficos.html"><i class="fa fa-check"></i><b>9</b> Gráficos</a><ul>
-<li class="chapter" data-level="9.1" data-path="9-1-o-pacote-ggplot2.html"><a href="9-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>9.1</b> O pacote ggplot2</a></li>
+<li class="chapter" data-level="9.1" data-path="9-1-o-pacote-ggplot2.html"><a href="9-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>9.1</b> O pacote ggplot2</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="9-1-o-pacote-ggplot2.html"><a href="9-1-o-pacote-ggplot2.html#as-camadas-de-um-gráfico"><i class="fa fa-check"></i><b>9.1.1</b> As camadas de um gráfico</a></li>
+<li class="chapter" data-level="9.1.2" data-path="9-1-o-pacote-ggplot2.html"><a href="9-1-o-pacote-ggplot2.html#atributos-estéticos"><i class="fa fa-check"></i><b>9.1.2</b> Atributos estéticos</a></li>
+<li class="chapter" data-level="9.1.3" data-path="9-1-o-pacote-ggplot2.html"><a href="9-1-o-pacote-ggplot2.html#formas-geométricas"><i class="fa fa-check"></i><b>9.1.3</b> Formas geométricas</a></li>
+<li class="chapter" data-level="9.1.4" data-path="9-1-o-pacote-ggplot2.html"><a href="9-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>9.1.4</b> Juntando gráficos</a></li>
+<li class="chapter" data-level="9.1.5" data-path="9-1-o-pacote-ggplot2.html"><a href="9-1-o-pacote-ggplot2.html#personalizando"><i class="fa fa-check"></i><b>9.1.5</b> Personalizando</a></li>
+<li class="chapter" data-level="9.1.6" data-path="9-1-o-pacote-ggplot2.html"><a href="9-1-o-pacote-ggplot2.html#onde-continuar-estudando"><i class="fa fa-check"></i><b>9.1.6</b> Onde continuar estudando?</a></li>
+<li class="chapter" data-level="9.1.7" data-path="9-1-o-pacote-ggplot2.html"><a href="9-1-o-pacote-ggplot2.html#exercícios-11"><i class="fa fa-check"></i><b>9.1.7</b> Exercícios</a></li>
+</ul></li>
 <li class="chapter" data-level="9.2" data-path="9-2-o-pacote-plotly.html"><a href="9-2-o-pacote-plotly.html"><i class="fa fa-check"></i><b>9.2</b> O pacote plotly</a></li>
 <li class="chapter" data-level="9.3" data-path="9-3-extensões-do-ggplot2.html"><a href="9-3-extensões-do-ggplot2.html"><i class="fa fa-check"></i><b>9.3</b> Extensões do ggplot2</a></li>
 </ul></li>
@@ -260,8 +268,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#objetos-e-funções"><i class="fa fa-check"></i>Objetos e funções</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#classes-1"><i class="fa fa-check"></i>Classes</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#vetores-1"><i class="fa fa-check"></i>Vetores</a></li>
-<li class="chapter" data-level="12.1.1" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i><b>12.1.1</b> Testes lógicos</a></li>
-<li class="chapter" data-level="12.1.2" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i><b>12.1.2</b> Data frames</a></li>
+<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i>Testes lógicos</a></li>
+<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i>Data frames</a></li>
+<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i>Mais sobre funções</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="12-2-pipe-1.html"><a href="12-2-pipe-1.html"><i class="fa fa-check"></i><b>12.2</b> Pipe</a></li>
 </ul></li>
@@ -293,36 +302,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">12.2</span> Pipe</h2>
 <hr />
 <p><strong>1.</strong> Reescreva a expressão abaixo utilizando o <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="12-2-pipe-1.html#cb58-1"></a><span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">/</span><span class="dv">3</span>), <span class="dt">digits =</span> <span class="dv">1</span>)</span>
-<span id="cb58-2"><a href="12-2-pipe-1.html#cb58-2"></a></span>
-<span id="cb58-3"><a href="12-2-pipe-1.html#cb58-3"></a><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> <span class="op">%&gt;%</span></span>
-<span id="cb58-4"><a href="12-2-pipe-1.html#cb58-4"></a><span class="st">  </span>sum <span class="op">%&gt;%</span></span>
-<span id="cb58-5"><a href="12-2-pipe-1.html#cb58-5"></a><span class="st">  </span><span class="kw">divide_by</span>(<span class="dv">3</span>) <span class="op">%&gt;%</span></span>
-<span id="cb58-6"><a href="12-2-pipe-1.html#cb58-6"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="12-2-pipe-1.html#cb69-1"></a><span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">/</span><span class="dv">3</span>), <span class="dt">digits =</span> <span class="dv">1</span>)</span>
+<span id="cb69-2"><a href="12-2-pipe-1.html#cb69-2"></a></span>
+<span id="cb69-3"><a href="12-2-pipe-1.html#cb69-3"></a><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> <span class="op">%&gt;%</span></span>
+<span id="cb69-4"><a href="12-2-pipe-1.html#cb69-4"></a><span class="st">  </span>sum <span class="op">%&gt;%</span></span>
+<span id="cb69-5"><a href="12-2-pipe-1.html#cb69-5"></a><span class="st">  </span><span class="kw">divide_by</span>(<span class="dv">3</span>) <span class="op">%&gt;%</span></span>
+<span id="cb69-6"><a href="12-2-pipe-1.html#cb69-6"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
 <hr />
 <p><strong>2.</strong> Reescreva o código abaixo utilizando o <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="12-2-pipe-1.html#cb59-1"></a><span class="co"># Setamos a semente que gera números aleatórios para deixar o resultado reprodutível</span></span>
-<span id="cb59-2"><a href="12-2-pipe-1.html#cb59-2"></a></span>
-<span id="cb59-3"><a href="12-2-pipe-1.html#cb59-3"></a><span class="kw">set.seed</span>(<span class="dv">137</span>)</span>
-<span id="cb59-4"><a href="12-2-pipe-1.html#cb59-4"></a></span>
-<span id="cb59-5"><a href="12-2-pipe-1.html#cb59-5"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</span>
-<span id="cb59-6"><a href="12-2-pipe-1.html#cb59-6"></a>x.pos &lt;-<span class="st"> </span>x[x<span class="op">&gt;</span><span class="dv">0</span>]</span>
-<span id="cb59-7"><a href="12-2-pipe-1.html#cb59-7"></a>media &lt;-<span class="st"> </span><span class="kw">mean</span>(x.pos)</span>
-<span id="cb59-8"><a href="12-2-pipe-1.html#cb59-8"></a>saida &lt;-<span class="st"> </span><span class="kw">round</span>(media, <span class="dv">2</span>)</span>
-<span id="cb59-9"><a href="12-2-pipe-1.html#cb59-9"></a>saida</span></code></pre></div>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="12-2-pipe-1.html#cb60-1"></a><span class="kw">set.seed</span>(<span class="dv">137</span>)</span>
-<span id="cb60-2"><a href="12-2-pipe-1.html#cb60-2"></a></span>
-<span id="cb60-3"><a href="12-2-pipe-1.html#cb60-3"></a><span class="kw">rnorm</span>(<span class="dv">100</span>) <span class="op">%&gt;%</span></span>
-<span id="cb60-4"><a href="12-2-pipe-1.html#cb60-4"></a><span class="st">  </span>magrittr<span class="op">::</span><span class="kw">extract</span>(. <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">%&gt;%</span></span>
-<span id="cb60-5"><a href="12-2-pipe-1.html#cb60-5"></a><span class="st">  </span>mean <span class="op">%&gt;%</span></span>
-<span id="cb60-6"><a href="12-2-pipe-1.html#cb60-6"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="12-2-pipe-1.html#cb70-1"></a><span class="co"># Setamos a semente que gera números aleatórios para deixar o resultado reprodutível</span></span>
+<span id="cb70-2"><a href="12-2-pipe-1.html#cb70-2"></a></span>
+<span id="cb70-3"><a href="12-2-pipe-1.html#cb70-3"></a><span class="kw">set.seed</span>(<span class="dv">137</span>)</span>
+<span id="cb70-4"><a href="12-2-pipe-1.html#cb70-4"></a></span>
+<span id="cb70-5"><a href="12-2-pipe-1.html#cb70-5"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb70-6"><a href="12-2-pipe-1.html#cb70-6"></a>x.pos &lt;-<span class="st"> </span>x[x<span class="op">&gt;</span><span class="dv">0</span>]</span>
+<span id="cb70-7"><a href="12-2-pipe-1.html#cb70-7"></a>media &lt;-<span class="st"> </span><span class="kw">mean</span>(x.pos)</span>
+<span id="cb70-8"><a href="12-2-pipe-1.html#cb70-8"></a>saida &lt;-<span class="st"> </span><span class="kw">round</span>(media, <span class="dv">2</span>)</span>
+<span id="cb70-9"><a href="12-2-pipe-1.html#cb70-9"></a>saida</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="12-2-pipe-1.html#cb71-1"></a><span class="kw">set.seed</span>(<span class="dv">137</span>)</span>
+<span id="cb71-2"><a href="12-2-pipe-1.html#cb71-2"></a></span>
+<span id="cb71-3"><a href="12-2-pipe-1.html#cb71-3"></a><span class="kw">rnorm</span>(<span class="dv">100</span>) <span class="op">%&gt;%</span></span>
+<span id="cb71-4"><a href="12-2-pipe-1.html#cb71-4"></a><span class="st">  </span>magrittr<span class="op">::</span><span class="kw">extract</span>(. <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">%&gt;%</span></span>
+<span id="cb71-5"><a href="12-2-pipe-1.html#cb71-5"></a><span class="st">  </span>mean <span class="op">%&gt;%</span></span>
+<span id="cb71-6"><a href="12-2-pipe-1.html#cb71-6"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
 <hr />
 <p><strong>3.</strong> Sem rodar, diga qual a saída do código abaixo. Consulte o help das funções caso precise.</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="12-2-pipe-1.html#cb61-1"></a><span class="dv">2</span> <span class="op">%&gt;%</span></span>
-<span id="cb61-2"><a href="12-2-pipe-1.html#cb61-2"></a><span class="st">  </span><span class="kw">add</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
-<span id="cb61-3"><a href="12-2-pipe-1.html#cb61-3"></a><span class="st">  </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span></span>
-<span id="cb61-4"><a href="12-2-pipe-1.html#cb61-4"></a><span class="st">  </span><span class="kw">mean</span>(<span class="dt">na.rm =</span> T) <span class="op">%&gt;%</span></span>
-<span id="cb61-5"><a href="12-2-pipe-1.html#cb61-5"></a><span class="st">  </span><span class="kw">equals</span>(<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="12-2-pipe-1.html#cb72-1"></a><span class="dv">2</span> <span class="op">%&gt;%</span></span>
+<span id="cb72-2"><a href="12-2-pipe-1.html#cb72-2"></a><span class="st">  </span><span class="kw">add</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
+<span id="cb72-3"><a href="12-2-pipe-1.html#cb72-3"></a><span class="st">  </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span></span>
+<span id="cb72-4"><a href="12-2-pipe-1.html#cb72-4"></a><span class="st">  </span><span class="kw">mean</span>(<span class="dt">na.rm =</span> T) <span class="op">%&gt;%</span></span>
+<span id="cb72-5"><a href="12-2-pipe-1.html#cb72-5"></a><span class="st">  </span><span class="kw">equals</span>(<span class="dv">5</span>)</span></code></pre></div>
 <ul>
 <li>Primeiro, somamos 2 com 2, gerando o valor 4.</li>
 <li>Então colocamos esse valor em um vetor com os valores 6 e <code>NA</code>.</li>

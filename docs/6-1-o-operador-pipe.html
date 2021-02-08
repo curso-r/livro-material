@@ -32,7 +32,6 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="6-pipe.html"/>
 <link rel="next" href="6-2-outros-operadores.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,23 +49,27 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -86,7 +89,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -136,18 +139,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre</a></li>
-<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a>
-<ul>
+<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a><ul>
+<li class="chapter" data-level="1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
 <li class="chapter" data-level="1.1.3" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
-<ul>
+<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a><ul>
 <li class="chapter" data-level="2.1" data-path="2-1-telas.html"><a href="2-1-telas.html"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
 <li class="chapter" data-level="2.2" data-path="2-2-atalhos.html"><a href="2-2-atalhos.html"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
 <li class="chapter" data-level="2.3" data-path="2-3-projetos.html"><a href="2-3-projetos.html"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
@@ -156,76 +156,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="2-6-addins.html"><a href="2-6-addins.html"><i class="fa fa-check"></i><b>2.6</b> Addins</a></li>
 <li class="chapter" data-level="2.7" data-path="2-7-snippets.html"><a href="2-7-snippets.html"><i class="fa fa-check"></i><b>2.7</b> Snippets</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a>
-<ul>
+<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a><ul>
+<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
 <li class="chapter" data-level="3.1.2" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
 <li class="chapter" data-level="3.1.3" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a>
-<ul>
+<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
 <li class="chapter" data-level="" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a>
-<ul>
+<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a><ul>
 <li class="chapter" data-level="" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="3-4-data-frames.html"><a href="3-4-data-frames.html"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
-<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a>
-<ul>
+<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a><ul>
 <li class="chapter" data-level="3.5.1" data-path="3-5-classes.html"><a href="3-5-classes.html#exercícios-2"><i class="fa fa-check"></i><b>3.5.1</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a>
-<ul>
+<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a><ul>
 <li class="chapter" data-level="" data-path="3-6-vetores.html"><a href="3-6-vetores.html#exercícios-3"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a>
-<ul>
+<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a><ul>
 <li class="chapter" data-level="3.7.1" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html#exercícios-4"><i class="fa fa-check"></i><b>3.7.1</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a>
-<ul>
+<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a><ul>
 <li class="chapter" data-level="" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.9" data-path="3-9-listas.html"><a href="3-9-listas.html"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
-<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a>
-<ul>
+<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
 <li class="chapter" data-level="" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html#exercícios-6"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a>
-<ul>
+<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a><ul>
 <li class="chapter" data-level="" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html#exercícios-7"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a>
-<ul>
+<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
 <li class="chapter" data-level="3.12.1" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
 <li class="chapter" data-level="3.12.2" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#iteradores-for-e-while"><i class="fa fa-check"></i><b>3.12.2</b> Iteradores: for e while</a></li>
 <li class="chapter" data-level="" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#exercícios-8"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a>
-<ul>
+<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a><ul>
 <li class="chapter" data-level="3.13.1" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#matrizes"><i class="fa fa-check"></i><b>3.13.1</b> Matrizes</a></li>
 <li class="chapter" data-level="3.13.2" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#fatores"><i class="fa fa-check"></i><b>3.13.2</b> Fatores</a></li>
 <li class="chapter" data-level="3.13.3" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#gráficos-r-base"><i class="fa fa-check"></i><b>3.13.3</b> Gráficos (R base)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a>
-<ul>
+<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-cran"><i class="fa fa-check"></i><b>4.1.1</b> Via CRAN</a></li>
 <li class="chapter" data-level="4.1.2" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-github"><i class="fa fa-check"></i><b>4.1.2</b> Via Github</a></li>
 <li class="chapter" data-level="4.1.3" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-arquivo-.zip-ou-.tar.gz"><i class="fa fa-check"></i><b>4.1.3</b> Via arquivo .zip ou .tar.gz</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="4-2-tidyverse.html"><a href="4-2-tidyverse.html"><i class="fa fa-check"></i><b>4.2</b> Tidyverse</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a>
-<ul>
+<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a><ul>
 <li class="chapter" data-level="5.1" data-path="5-1-caminhos.html"><a href="5-1-caminhos.html"><i class="fa fa-check"></i><b>5.1</b> Caminhos</a></li>
-<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a>
-<ul>
+<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="5-2-readr.html"><a href="5-2-readr.html#lendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.1</b> Lendo arquivos de texto</a></li>
 <li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.2</b> Locale</a></li>
 <li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.3</b> Parseando valores</a></li>
@@ -235,17 +219,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3" data-path="5-3-readxl.html"><a href="5-3-readxl.html"><i class="fa fa-check"></i><b>5.3</b> Os pacotes readxl e writexl</a></li>
 <li class="chapter" data-level="5.4" data-path="5-4-haven.html"><a href="5-4-haven.html"><i class="fa fa-check"></i><b>5.4</b> haven</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a>
-<ul>
+<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a></li>
 <li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
 <li class="chapter" data-level="6.3" data-path="6-3-exercícios-10.html"><a href="6-3-exercícios-10.html"><i class="fa fa-check"></i><b>6.3</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a>
-<ul>
+<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
 <li class="chapter" data-level="7.1" data-path="7-1-tibbles.html"><a href="7-1-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Tibbles</a></li>
-<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a>
-<ul>
+<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#filtrando-linhas"><i class="fa fa-check"></i><b>7.2.1</b> Filtrando linhas</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#selecionando-colunas"><i class="fa fa-check"></i><b>7.2.2</b> Selecionando colunas</a></li>
 <li class="chapter" data-level="7.2.3" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#ordenando-a-base"><i class="fa fa-check"></i><b>7.2.3</b> Ordenando a base</a></li>
@@ -253,17 +234,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.5" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#summarisando-a-base"><i class="fa fa-check"></i><b>7.2.5</b> Summarisando a base</a></li>
 <li class="chapter" data-level="7.2.6" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#juntando-duas-bases"><i class="fa fa-check"></i><b>7.2.6</b> Juntando duas bases</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a>
-<ul>
+<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#gather"><i class="fa fa-check"></i><b>7.3.1</b> <code>gather()</code></a></li>
 <li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#spread"><i class="fa fa-check"></i><b>7.3.2</b> <code>spread()</code></a></li>
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Gráficos</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a>
-<ul>
+<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Gráficos</a><ul>
+<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a><ul>
 <li class="chapter" data-level="8.1.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#as-camadas-de-um-gráfico"><i class="fa fa-check"></i><b>8.1.1</b> As camadas de um gráfico</a></li>
 <li class="chapter" data-level="8.1.2" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#atributos-estéticos"><i class="fa fa-check"></i><b>8.1.2</b> Atributos estéticos</a></li>
 <li class="chapter" data-level="8.1.3" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#formas-geométricas"><i class="fa fa-check"></i><b>8.1.3</b> Formas geométricas</a></li>
@@ -276,32 +254,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="8-3-extensões-do-ggplot2.html"><a href="8-3-extensões-do-ggplot2.html"><i class="fa fa-check"></i><b>8.3</b> Extensões do ggplot2</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="9-funcionais.html"><a href="9-funcionais.html"><i class="fa fa-check"></i><b>9</b> Funcionais</a></li>
-<li class="chapter" data-level="10" data-path="10-misc.html"><a href="10-misc.html"><i class="fa fa-check"></i><b>10</b> Miscelânea</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>10.1</b> Arrumando banco de dados: o pacote janitor</a>
-<ul>
+<li class="chapter" data-level="10" data-path="10-misc.html"><a href="10-misc.html"><i class="fa fa-check"></i><b>10</b> Miscelânea</a><ul>
+<li class="chapter" data-level="10.1" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>10.1</b> Arrumando banco de dados: o pacote janitor</a><ul>
 <li class="chapter" data-level="10.1.1" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#arrumando-o-nome-das-variáveis"><i class="fa fa-check"></i><b>10.1.1</b> Arrumando o nome das variáveis</a></li>
 <li class="chapter" data-level="10.1.2" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#removendo-linhas-e-colunas-vazias"><i class="fa fa-check"></i><b>10.1.2</b> Removendo linhas e colunas vazias</a></li>
 <li class="chapter" data-level="10.1.3" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#identificando-linhas-duplicadas"><i class="fa fa-check"></i><b>10.1.3</b> Identificando linhas duplicadas</a></li>
 <li class="chapter" data-level="10.1.4" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>10.1.4</b> Outras funções</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="11-respostas.html"><a href="11-respostas.html"><i class="fa fa-check"></i><b>11</b> Respostas</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html"><i class="fa fa-check"></i><b>11.1</b> R básico</a>
-<ul>
+<li class="chapter" data-level="11" data-path="11-respostas.html"><a href="11-respostas.html"><i class="fa fa-check"></i><b>11</b> Respostas</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html"><i class="fa fa-check"></i><b>11.1</b> R básico</a><ul>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#objetos-e-funções"><i class="fa fa-check"></i>Objetos e funções</a></li>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#classes-1"><i class="fa fa-check"></i>Classes</a></li>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#vetores-1"><i class="fa fa-check"></i>Vetores</a></li>
-<li class="chapter" data-level="11.1.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i><b>11.1.1</b> Testes lógicos</a></li>
-<li class="chapter" data-level="11.1.2" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i><b>11.1.2</b> Data frames</a></li>
-<li class="chapter" data-level="11.1.3" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i><b>11.1.3</b> Mais sobre funções</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i>Testes lógicos</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#valores-especiais"><i class="fa fa-check"></i>Valores especiais</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i>Data frames</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i>Mais sobre funções</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#controle-de-fluxo-1"><i class="fa fa-check"></i>Controle de fluxo</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="11-2-pipe-1.html"><a href="11-2-pipe-1.html"><i class="fa fa-check"></i><b>11.2</b> Pipe</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a>
-<ul>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i>Programação em R</a></li>
 </ul></li>
@@ -325,71 +300,71 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="o-operador-pipe" class="section level2" number="6.1">
+<div id="o-operador-pipe" class="section level2">
 <h2><span class="header-section-number">6.1</span> O operador pipe</h2>
 <p>A ideia do operador <code>%&gt;%</code> (<em>pipe</em>) é bem simples: usar o valor resultante da expressão do lado esquerdo como primeiro argumento da função do lado direito.</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="6-1-o-operador-pipe.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="co"># As duas linhas abaixo são equivalentes.</span></span>
-<span id="cb177-2"><a href="6-1-o-operador-pipe.html#cb177-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb177-3"><a href="6-1-o-operador-pipe.html#cb177-3" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(x, y)</span>
-<span id="cb177-4"><a href="6-1-o-operador-pipe.html#cb177-4" aria-hidden="true" tabindex="-1"></a>x <span class="sc">%&gt;%</span> <span class="fu">f</span>(y)</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="6-1-o-operador-pipe.html#cb180-1"></a><span class="co"># As duas linhas abaixo são equivalentes.</span></span>
+<span id="cb180-2"><a href="6-1-o-operador-pipe.html#cb180-2"></a></span>
+<span id="cb180-3"><a href="6-1-o-operador-pipe.html#cb180-3"></a><span class="kw">f</span>(x, y)</span>
+<span id="cb180-4"><a href="6-1-o-operador-pipe.html#cb180-4"></a>x <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">f</span>(y)</span></code></pre></div>
 <p>Nos casos mais simples, o <em>pipe</em> parece não trazer grandes vantagens. Agora, veja como fica um caso com mais etapas.</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="6-1-o-operador-pipe.html#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vamos calcular a raiz quadrada da soma dos valores de 1 a 4. Primeiro, sem o pipe.</span></span>
-<span id="cb178-2"><a href="6-1-o-operador-pipe.html#cb178-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb178-3"><a href="6-1-o-operador-pipe.html#cb178-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb178-4"><a href="6-1-o-operador-pipe.html#cb178-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">sum</span>(x))</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="6-1-o-operador-pipe.html#cb181-1"></a><span class="co"># Vamos calcular a raiz quadrada da soma dos valores de 1 a 4. Primeiro, sem o pipe.</span></span>
+<span id="cb181-2"><a href="6-1-o-operador-pipe.html#cb181-2"></a></span>
+<span id="cb181-3"><a href="6-1-o-operador-pipe.html#cb181-3"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb181-4"><a href="6-1-o-operador-pipe.html#cb181-4"></a><span class="kw">sqrt</span>(<span class="kw">sum</span>(x))</span></code></pre></div>
 <pre><code>## [1] 3.162278</code></pre>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="6-1-o-operador-pipe.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Agora com o pipe.</span></span>
-<span id="cb180-2"><a href="6-1-o-operador-pipe.html#cb180-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-3"><a href="6-1-o-operador-pipe.html#cb180-3" aria-hidden="true" tabindex="-1"></a>x <span class="sc">%&gt;%</span> <span class="fu">sum</span>() <span class="sc">%&gt;%</span> <span class="fu">sqrt</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="6-1-o-operador-pipe.html#cb183-1"></a><span class="co"># Agora com o pipe.</span></span>
+<span id="cb183-2"><a href="6-1-o-operador-pipe.html#cb183-2"></a></span>
+<span id="cb183-3"><a href="6-1-o-operador-pipe.html#cb183-3"></a>x <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sqrt</span>()</span></code></pre></div>
 <pre><code>## [1] 3.162278</code></pre>
 <p>O caminho que o código <code>x %&gt;% sum %&gt;% sqrt</code> seguiu foi enviar o objeto <code>x</code> como argumento da função <code>sum()</code> e, em seguida, enviar a saida da expressão <code>sum(x)</code> como argumento da função <code>sqrt()</code>. Observe que escrevemos o código na mesma ordem em que as operações são realizadas. A utilização de parênteses após o nome das funções não é necessário, mas recomendável.</p>
 <p>Se você ainda não está convencido com o poder do <em>pipe</em>, fica que vai ter bolo!</p>
 <p>No exemplo abaixo, vamos ilustrar um caso em que temos um grande número de funções aninhadas. Veja como a utilização do <em>pipe</em> transforma um código confuso e difícil de ser lido em algo simples e intuitivo.</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="6-1-o-operador-pipe.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Receita de bolo sem pipe. Tente entender o que é preciso fazer.</span></span>
-<span id="cb182-2"><a href="6-1-o-operador-pipe.html#cb182-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb182-3"><a href="6-1-o-operador-pipe.html#cb182-3" aria-hidden="true" tabindex="-1"></a><span class="fu">esfrie</span>(</span>
-<span id="cb182-4"><a href="6-1-o-operador-pipe.html#cb182-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">asse</span>(</span>
-<span id="cb182-5"><a href="6-1-o-operador-pipe.html#cb182-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coloque</span>(</span>
-<span id="cb182-6"><a href="6-1-o-operador-pipe.html#cb182-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">bata</span>(</span>
-<span id="cb182-7"><a href="6-1-o-operador-pipe.html#cb182-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">acrescente</span>(</span>
-<span id="cb182-8"><a href="6-1-o-operador-pipe.html#cb182-8" aria-hidden="true" tabindex="-1"></a>          <span class="fu">recipiente</span>(</span>
-<span id="cb182-9"><a href="6-1-o-operador-pipe.html#cb182-9" aria-hidden="true" tabindex="-1"></a>            <span class="fu">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), </span>
-<span id="cb182-10"><a href="6-1-o-operador-pipe.html#cb182-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;água&quot;</span>, </span>
-<span id="cb182-11"><a href="6-1-o-operador-pipe.html#cb182-11" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;fermento&quot;</span>, </span>
-<span id="cb182-12"><a href="6-1-o-operador-pipe.html#cb182-12" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;leite&quot;</span>, </span>
-<span id="cb182-13"><a href="6-1-o-operador-pipe.html#cb182-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;óleo&quot;</span></span>
-<span id="cb182-14"><a href="6-1-o-operador-pipe.html#cb182-14" aria-hidden="true" tabindex="-1"></a>          ), </span>
-<span id="cb182-15"><a href="6-1-o-operador-pipe.html#cb182-15" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;farinha&quot;</span>, </span>
-<span id="cb182-16"><a href="6-1-o-operador-pipe.html#cb182-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">ate =</span> <span class="st">&quot;macio&quot;</span></span>
-<span id="cb182-17"><a href="6-1-o-operador-pipe.html#cb182-17" aria-hidden="true" tabindex="-1"></a>        ), </span>
-<span id="cb182-18"><a href="6-1-o-operador-pipe.html#cb182-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">duracao =</span> <span class="st">&quot;3min&quot;</span></span>
-<span id="cb182-19"><a href="6-1-o-operador-pipe.html#cb182-19" aria-hidden="true" tabindex="-1"></a>      ), </span>
-<span id="cb182-20"><a href="6-1-o-operador-pipe.html#cb182-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">lugar =</span> <span class="st">&quot;forma&quot;</span>, </span>
-<span id="cb182-21"><a href="6-1-o-operador-pipe.html#cb182-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">tipo =</span> <span class="st">&quot;grande&quot;</span>, </span>
-<span id="cb182-22"><a href="6-1-o-operador-pipe.html#cb182-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">untada =</span> <span class="cn">TRUE</span></span>
-<span id="cb182-23"><a href="6-1-o-operador-pipe.html#cb182-23" aria-hidden="true" tabindex="-1"></a>    ), </span>
-<span id="cb182-24"><a href="6-1-o-operador-pipe.html#cb182-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">duracao =</span> <span class="st">&quot;50min&quot;</span></span>
-<span id="cb182-25"><a href="6-1-o-operador-pipe.html#cb182-25" aria-hidden="true" tabindex="-1"></a>  ), </span>
-<span id="cb182-26"><a href="6-1-o-operador-pipe.html#cb182-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">lugar =</span> <span class="st">&quot;geladeira&quot;</span>, </span>
-<span id="cb182-27"><a href="6-1-o-operador-pipe.html#cb182-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">duracao =</span> <span class="st">&quot;20min&quot;</span></span>
-<span id="cb182-28"><a href="6-1-o-operador-pipe.html#cb182-28" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb182-29"><a href="6-1-o-operador-pipe.html#cb182-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb182-30"><a href="6-1-o-operador-pipe.html#cb182-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb182-31"><a href="6-1-o-operador-pipe.html#cb182-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Veja como o código acima pode ser reescrito utilizando-se o pipe. Agora realmente se parece com uma receita de bolo.</span></span>
-<span id="cb182-32"><a href="6-1-o-operador-pipe.html#cb182-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb182-33"><a href="6-1-o-operador-pipe.html#cb182-33" aria-hidden="true" tabindex="-1"></a><span class="fu">recipiente</span>(<span class="fu">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), <span class="st">&quot;água&quot;</span>, <span class="st">&quot;fermento&quot;</span>, <span class="st">&quot;leite&quot;</span>, <span class="st">&quot;óleo&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb182-34"><a href="6-1-o-operador-pipe.html#cb182-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">acrescente</span>(<span class="st">&quot;farinha&quot;</span>, <span class="at">ate =</span> <span class="st">&quot;macio&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb182-35"><a href="6-1-o-operador-pipe.html#cb182-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bata</span>(<span class="at">duracao =</span> <span class="st">&quot;3min&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb182-36"><a href="6-1-o-operador-pipe.html#cb182-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coloque</span>(<span class="at">lugar =</span> <span class="st">&quot;forma&quot;</span>, <span class="at">tipo =</span> <span class="st">&quot;grande&quot;</span>, <span class="at">untada =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb182-37"><a href="6-1-o-operador-pipe.html#cb182-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">asse</span>(<span class="at">duracao =</span> <span class="st">&quot;50min&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb182-38"><a href="6-1-o-operador-pipe.html#cb182-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">esfrie</span>(<span class="at">lugar =</span> <span class="st">&quot;geladeira&quot;</span>, <span class="at">duracao =</span> <span class="st">&quot;20min&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="6-1-o-operador-pipe.html#cb185-1"></a><span class="co"># Receita de bolo sem pipe. Tente entender o que é preciso fazer.</span></span>
+<span id="cb185-2"><a href="6-1-o-operador-pipe.html#cb185-2"></a></span>
+<span id="cb185-3"><a href="6-1-o-operador-pipe.html#cb185-3"></a><span class="kw">esfrie</span>(</span>
+<span id="cb185-4"><a href="6-1-o-operador-pipe.html#cb185-4"></a>  <span class="kw">asse</span>(</span>
+<span id="cb185-5"><a href="6-1-o-operador-pipe.html#cb185-5"></a>    <span class="kw">coloque</span>(</span>
+<span id="cb185-6"><a href="6-1-o-operador-pipe.html#cb185-6"></a>      <span class="kw">bata</span>(</span>
+<span id="cb185-7"><a href="6-1-o-operador-pipe.html#cb185-7"></a>        <span class="kw">acrescente</span>(</span>
+<span id="cb185-8"><a href="6-1-o-operador-pipe.html#cb185-8"></a>          <span class="kw">recipiente</span>(</span>
+<span id="cb185-9"><a href="6-1-o-operador-pipe.html#cb185-9"></a>            <span class="kw">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), </span>
+<span id="cb185-10"><a href="6-1-o-operador-pipe.html#cb185-10"></a>            <span class="st">&quot;água&quot;</span>, </span>
+<span id="cb185-11"><a href="6-1-o-operador-pipe.html#cb185-11"></a>            <span class="st">&quot;fermento&quot;</span>, </span>
+<span id="cb185-12"><a href="6-1-o-operador-pipe.html#cb185-12"></a>            <span class="st">&quot;leite&quot;</span>, </span>
+<span id="cb185-13"><a href="6-1-o-operador-pipe.html#cb185-13"></a>            <span class="st">&quot;óleo&quot;</span></span>
+<span id="cb185-14"><a href="6-1-o-operador-pipe.html#cb185-14"></a>          ), </span>
+<span id="cb185-15"><a href="6-1-o-operador-pipe.html#cb185-15"></a>          <span class="st">&quot;farinha&quot;</span>, </span>
+<span id="cb185-16"><a href="6-1-o-operador-pipe.html#cb185-16"></a>          <span class="dt">ate =</span> <span class="st">&quot;macio&quot;</span></span>
+<span id="cb185-17"><a href="6-1-o-operador-pipe.html#cb185-17"></a>        ), </span>
+<span id="cb185-18"><a href="6-1-o-operador-pipe.html#cb185-18"></a>        <span class="dt">duracao =</span> <span class="st">&quot;3min&quot;</span></span>
+<span id="cb185-19"><a href="6-1-o-operador-pipe.html#cb185-19"></a>      ), </span>
+<span id="cb185-20"><a href="6-1-o-operador-pipe.html#cb185-20"></a>      <span class="dt">lugar =</span> <span class="st">&quot;forma&quot;</span>, </span>
+<span id="cb185-21"><a href="6-1-o-operador-pipe.html#cb185-21"></a>      <span class="dt">tipo =</span> <span class="st">&quot;grande&quot;</span>, </span>
+<span id="cb185-22"><a href="6-1-o-operador-pipe.html#cb185-22"></a>      <span class="dt">untada =</span> <span class="ot">TRUE</span></span>
+<span id="cb185-23"><a href="6-1-o-operador-pipe.html#cb185-23"></a>    ), </span>
+<span id="cb185-24"><a href="6-1-o-operador-pipe.html#cb185-24"></a>    <span class="dt">duracao =</span> <span class="st">&quot;50min&quot;</span></span>
+<span id="cb185-25"><a href="6-1-o-operador-pipe.html#cb185-25"></a>  ), </span>
+<span id="cb185-26"><a href="6-1-o-operador-pipe.html#cb185-26"></a>  <span class="dt">lugar =</span> <span class="st">&quot;geladeira&quot;</span>, </span>
+<span id="cb185-27"><a href="6-1-o-operador-pipe.html#cb185-27"></a>  <span class="dt">duracao =</span> <span class="st">&quot;20min&quot;</span></span>
+<span id="cb185-28"><a href="6-1-o-operador-pipe.html#cb185-28"></a>)</span>
+<span id="cb185-29"><a href="6-1-o-operador-pipe.html#cb185-29"></a></span>
+<span id="cb185-30"><a href="6-1-o-operador-pipe.html#cb185-30"></a></span>
+<span id="cb185-31"><a href="6-1-o-operador-pipe.html#cb185-31"></a><span class="co"># Veja como o código acima pode ser reescrito utilizando-se o pipe. Agora realmente se parece com uma receita de bolo.</span></span>
+<span id="cb185-32"><a href="6-1-o-operador-pipe.html#cb185-32"></a></span>
+<span id="cb185-33"><a href="6-1-o-operador-pipe.html#cb185-33"></a><span class="kw">recipiente</span>(<span class="kw">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), <span class="st">&quot;água&quot;</span>, <span class="st">&quot;fermento&quot;</span>, <span class="st">&quot;leite&quot;</span>, <span class="st">&quot;óleo&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb185-34"><a href="6-1-o-operador-pipe.html#cb185-34"></a><span class="st">  </span><span class="kw">acrescente</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dt">ate =</span> <span class="st">&quot;macio&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb185-35"><a href="6-1-o-operador-pipe.html#cb185-35"></a><span class="st">  </span><span class="kw">bata</span>(<span class="dt">duracao =</span> <span class="st">&quot;3min&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb185-36"><a href="6-1-o-operador-pipe.html#cb185-36"></a><span class="st">  </span><span class="kw">coloque</span>(<span class="dt">lugar =</span> <span class="st">&quot;forma&quot;</span>, <span class="dt">tipo =</span> <span class="st">&quot;grande&quot;</span>, <span class="dt">untada =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
+<span id="cb185-37"><a href="6-1-o-operador-pipe.html#cb185-37"></a><span class="st">  </span><span class="kw">asse</span>(<span class="dt">duracao =</span> <span class="st">&quot;50min&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb185-38"><a href="6-1-o-operador-pipe.html#cb185-38"></a><span class="st">  </span><span class="kw">esfrie</span>(<span class="dt">lugar =</span> <span class="st">&quot;geladeira&quot;</span>, <span class="dt">duracao =</span> <span class="st">&quot;20min&quot;</span>)</span></code></pre></div>
 <p>Às vezes, queremos que o resultado do lado esquerdo vá para outro argumento do lado direito que não o primeiro. Para isso, utilizamos um <code>.</code> como marcador.</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="6-1-o-operador-pipe.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Queremos que o dataset seja recebido pelo segundo argumento (data=) da função &quot;lm&quot;.</span></span>
-<span id="cb183-2"><a href="6-1-o-operador-pipe.html#cb183-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb183-3"><a href="6-1-o-operador-pipe.html#cb183-3" aria-hidden="true" tabindex="-1"></a>airquality <span class="sc">%&gt;%</span></span>
-<span id="cb183-4"><a href="6-1-o-operador-pipe.html#cb183-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb183-5"><a href="6-1-o-operador-pipe.html#cb183-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lm</span>(Ozone <span class="sc">~</span> Wind <span class="sc">+</span> Temp <span class="sc">+</span> Solar.R, <span class="at">data =</span> .) <span class="sc">%&gt;%</span></span>
-<span id="cb183-6"><a href="6-1-o-operador-pipe.html#cb183-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="6-1-o-operador-pipe.html#cb186-1"></a><span class="co"># Queremos que o dataset seja recebido pelo segundo argumento (data=) da função &quot;lm&quot;.</span></span>
+<span id="cb186-2"><a href="6-1-o-operador-pipe.html#cb186-2"></a></span>
+<span id="cb186-3"><a href="6-1-o-operador-pipe.html#cb186-3"></a>airquality <span class="op">%&gt;%</span></span>
+<span id="cb186-4"><a href="6-1-o-operador-pipe.html#cb186-4"></a><span class="st">  </span><span class="kw">na.omit</span>() <span class="op">%&gt;%</span></span>
+<span id="cb186-5"><a href="6-1-o-operador-pipe.html#cb186-5"></a><span class="st">  </span><span class="kw">lm</span>(Ozone <span class="op">~</span><span class="st"> </span>Wind <span class="op">+</span><span class="st"> </span>Temp <span class="op">+</span><span class="st"> </span>Solar.R, <span class="dt">data =</span> .) <span class="op">%&gt;%</span></span>
+<span id="cb186-6"><a href="6-1-o-operador-pipe.html#cb186-6"></a><span class="st">  </span><span class="kw">summary</span>()</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Ozone ~ Wind + Temp + Solar.R, data = .)

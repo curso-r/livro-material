@@ -32,7 +32,6 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="3-2-r-como-calculadora.html"/>
 <link rel="next" href="3-4-data-frames.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,23 +49,27 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -86,7 +89,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -136,18 +139,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre</a></li>
-<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a>
-<ul>
+<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a><ul>
+<li class="chapter" data-level="1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
 <li class="chapter" data-level="1.1.3" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
-<ul>
+<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a><ul>
 <li class="chapter" data-level="2.1" data-path="2-1-telas.html"><a href="2-1-telas.html"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
 <li class="chapter" data-level="2.2" data-path="2-2-atalhos.html"><a href="2-2-atalhos.html"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
 <li class="chapter" data-level="2.3" data-path="2-3-projetos.html"><a href="2-3-projetos.html"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
@@ -156,76 +156,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="2-6-addins.html"><a href="2-6-addins.html"><i class="fa fa-check"></i><b>2.6</b> Addins</a></li>
 <li class="chapter" data-level="2.7" data-path="2-7-snippets.html"><a href="2-7-snippets.html"><i class="fa fa-check"></i><b>2.7</b> Snippets</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a>
-<ul>
+<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a><ul>
+<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
 <li class="chapter" data-level="3.1.2" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
 <li class="chapter" data-level="3.1.3" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a>
-<ul>
+<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
 <li class="chapter" data-level="" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a>
-<ul>
+<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a><ul>
 <li class="chapter" data-level="" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="3-4-data-frames.html"><a href="3-4-data-frames.html"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
-<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a>
-<ul>
+<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a><ul>
 <li class="chapter" data-level="3.5.1" data-path="3-5-classes.html"><a href="3-5-classes.html#exercícios-2"><i class="fa fa-check"></i><b>3.5.1</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a>
-<ul>
+<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a><ul>
 <li class="chapter" data-level="" data-path="3-6-vetores.html"><a href="3-6-vetores.html#exercícios-3"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a>
-<ul>
+<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a><ul>
 <li class="chapter" data-level="3.7.1" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html#exercícios-4"><i class="fa fa-check"></i><b>3.7.1</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a>
-<ul>
+<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a><ul>
 <li class="chapter" data-level="" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.9" data-path="3-9-listas.html"><a href="3-9-listas.html"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
-<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a>
-<ul>
+<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
 <li class="chapter" data-level="" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html#exercícios-6"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a>
-<ul>
+<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a><ul>
 <li class="chapter" data-level="" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html#exercícios-7"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a>
-<ul>
+<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
 <li class="chapter" data-level="3.12.1" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
 <li class="chapter" data-level="3.12.2" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#iteradores-for-e-while"><i class="fa fa-check"></i><b>3.12.2</b> Iteradores: for e while</a></li>
 <li class="chapter" data-level="" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#exercícios-8"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a>
-<ul>
+<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a><ul>
 <li class="chapter" data-level="3.13.1" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#matrizes"><i class="fa fa-check"></i><b>3.13.1</b> Matrizes</a></li>
 <li class="chapter" data-level="3.13.2" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#fatores"><i class="fa fa-check"></i><b>3.13.2</b> Fatores</a></li>
 <li class="chapter" data-level="3.13.3" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#gráficos-r-base"><i class="fa fa-check"></i><b>3.13.3</b> Gráficos (R base)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a>
-<ul>
+<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-cran"><i class="fa fa-check"></i><b>4.1.1</b> Via CRAN</a></li>
 <li class="chapter" data-level="4.1.2" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-github"><i class="fa fa-check"></i><b>4.1.2</b> Via Github</a></li>
 <li class="chapter" data-level="4.1.3" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-arquivo-.zip-ou-.tar.gz"><i class="fa fa-check"></i><b>4.1.3</b> Via arquivo .zip ou .tar.gz</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="4-2-tidyverse.html"><a href="4-2-tidyverse.html"><i class="fa fa-check"></i><b>4.2</b> Tidyverse</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a>
-<ul>
+<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a><ul>
 <li class="chapter" data-level="5.1" data-path="5-1-caminhos.html"><a href="5-1-caminhos.html"><i class="fa fa-check"></i><b>5.1</b> Caminhos</a></li>
-<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a>
-<ul>
+<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="5-2-readr.html"><a href="5-2-readr.html#lendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.1</b> Lendo arquivos de texto</a></li>
 <li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.2</b> Locale</a></li>
 <li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.3</b> Parseando valores</a></li>
@@ -235,17 +219,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3" data-path="5-3-readxl.html"><a href="5-3-readxl.html"><i class="fa fa-check"></i><b>5.3</b> Os pacotes readxl e writexl</a></li>
 <li class="chapter" data-level="5.4" data-path="5-4-haven.html"><a href="5-4-haven.html"><i class="fa fa-check"></i><b>5.4</b> haven</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a>
-<ul>
+<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a></li>
 <li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
 <li class="chapter" data-level="6.3" data-path="6-3-exercícios-10.html"><a href="6-3-exercícios-10.html"><i class="fa fa-check"></i><b>6.3</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a>
-<ul>
+<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
 <li class="chapter" data-level="7.1" data-path="7-1-tibbles.html"><a href="7-1-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Tibbles</a></li>
-<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a>
-<ul>
+<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#filtrando-linhas"><i class="fa fa-check"></i><b>7.2.1</b> Filtrando linhas</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#selecionando-colunas"><i class="fa fa-check"></i><b>7.2.2</b> Selecionando colunas</a></li>
 <li class="chapter" data-level="7.2.3" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#ordenando-a-base"><i class="fa fa-check"></i><b>7.2.3</b> Ordenando a base</a></li>
@@ -253,17 +234,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.5" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#summarisando-a-base"><i class="fa fa-check"></i><b>7.2.5</b> Summarisando a base</a></li>
 <li class="chapter" data-level="7.2.6" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#juntando-duas-bases"><i class="fa fa-check"></i><b>7.2.6</b> Juntando duas bases</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a>
-<ul>
+<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#gather"><i class="fa fa-check"></i><b>7.3.1</b> <code>gather()</code></a></li>
 <li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#spread"><i class="fa fa-check"></i><b>7.3.2</b> <code>spread()</code></a></li>
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Gráficos</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a>
-<ul>
+<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Gráficos</a><ul>
+<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a><ul>
 <li class="chapter" data-level="8.1.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#as-camadas-de-um-gráfico"><i class="fa fa-check"></i><b>8.1.1</b> As camadas de um gráfico</a></li>
 <li class="chapter" data-level="8.1.2" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#atributos-estéticos"><i class="fa fa-check"></i><b>8.1.2</b> Atributos estéticos</a></li>
 <li class="chapter" data-level="8.1.3" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#formas-geométricas"><i class="fa fa-check"></i><b>8.1.3</b> Formas geométricas</a></li>
@@ -276,32 +254,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="8-3-extensões-do-ggplot2.html"><a href="8-3-extensões-do-ggplot2.html"><i class="fa fa-check"></i><b>8.3</b> Extensões do ggplot2</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="9-funcionais.html"><a href="9-funcionais.html"><i class="fa fa-check"></i><b>9</b> Funcionais</a></li>
-<li class="chapter" data-level="10" data-path="10-misc.html"><a href="10-misc.html"><i class="fa fa-check"></i><b>10</b> Miscelânea</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>10.1</b> Arrumando banco de dados: o pacote janitor</a>
-<ul>
+<li class="chapter" data-level="10" data-path="10-misc.html"><a href="10-misc.html"><i class="fa fa-check"></i><b>10</b> Miscelânea</a><ul>
+<li class="chapter" data-level="10.1" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>10.1</b> Arrumando banco de dados: o pacote janitor</a><ul>
 <li class="chapter" data-level="10.1.1" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#arrumando-o-nome-das-variáveis"><i class="fa fa-check"></i><b>10.1.1</b> Arrumando o nome das variáveis</a></li>
 <li class="chapter" data-level="10.1.2" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#removendo-linhas-e-colunas-vazias"><i class="fa fa-check"></i><b>10.1.2</b> Removendo linhas e colunas vazias</a></li>
 <li class="chapter" data-level="10.1.3" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#identificando-linhas-duplicadas"><i class="fa fa-check"></i><b>10.1.3</b> Identificando linhas duplicadas</a></li>
 <li class="chapter" data-level="10.1.4" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>10.1.4</b> Outras funções</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="11-respostas.html"><a href="11-respostas.html"><i class="fa fa-check"></i><b>11</b> Respostas</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html"><i class="fa fa-check"></i><b>11.1</b> R básico</a>
-<ul>
+<li class="chapter" data-level="11" data-path="11-respostas.html"><a href="11-respostas.html"><i class="fa fa-check"></i><b>11</b> Respostas</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html"><i class="fa fa-check"></i><b>11.1</b> R básico</a><ul>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#objetos-e-funções"><i class="fa fa-check"></i>Objetos e funções</a></li>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#classes-1"><i class="fa fa-check"></i>Classes</a></li>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#vetores-1"><i class="fa fa-check"></i>Vetores</a></li>
-<li class="chapter" data-level="11.1.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i><b>11.1.1</b> Testes lógicos</a></li>
-<li class="chapter" data-level="11.1.2" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i><b>11.1.2</b> Data frames</a></li>
-<li class="chapter" data-level="11.1.3" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i><b>11.1.3</b> Mais sobre funções</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i>Testes lógicos</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#valores-especiais"><i class="fa fa-check"></i>Valores especiais</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i>Data frames</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i>Mais sobre funções</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#controle-de-fluxo-1"><i class="fa fa-check"></i>Controle de fluxo</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="11-2-pipe-1.html"><a href="11-2-pipe-1.html"><i class="fa fa-check"></i><b>11.2</b> Pipe</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a>
-<ul>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i>Programação em R</a></li>
 </ul></li>
@@ -325,61 +300,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="objetosFuncoes" class="section level2" number="3.3">
+<div id="objetosFuncoes" class="section level2">
 <h2><span class="header-section-number">3.3</span> Objetos e funções</h2>
 <p>O R te permite salvar valores dentro de um <strong>objeto</strong>. Um objeto é simplesmente um nome que guarda um valor. Para criar um objeto, utilizamos o operador <code>&lt;-</code>.</p>
 <p>No exemplo abaixo, salvamos o valor <code>1</code> em <code>a</code>. Sempre que avaliarmos o objeto <code>a</code>, o R vai devolver o valor 1.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="3-3-objetosFuncoes.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Salvando `1` em `a`</span></span>
-<span id="cb10-2"><a href="3-3-objetosFuncoes.html#cb10-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb10-3"><a href="3-3-objetosFuncoes.html#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="3-3-objetosFuncoes.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Avaliando o objeto `a`</span></span>
-<span id="cb10-5"><a href="3-3-objetosFuncoes.html#cb10-5" aria-hidden="true" tabindex="-1"></a>a</span>
-<span id="cb10-6"><a href="3-3-objetosFuncoes.html#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="3-3-objetosFuncoes.html#cb10-1"></a><span class="co"># Salvando `1` em `a`</span></span>
+<span id="cb10-2"><a href="3-3-objetosFuncoes.html#cb10-2"></a>a &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb10-3"><a href="3-3-objetosFuncoes.html#cb10-3"></a></span>
+<span id="cb10-4"><a href="3-3-objetosFuncoes.html#cb10-4"></a><span class="co"># Avaliando o objeto `a`</span></span>
+<span id="cb10-5"><a href="3-3-objetosFuncoes.html#cb10-5"></a>a</span>
+<span id="cb10-6"><a href="3-3-objetosFuncoes.html#cb10-6"></a><span class="co">## [1] 1</span></span></code></pre></div>
 <p>Existem algumas regras para dar nomes aos objetos. A mais importante é: o nome deve começar com uma letra<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. O nome pode conter números, mas não pode começar com números. Você pode usar pontos <code>.</code> e underlines <code>_</code> para separar palavras.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="3-3-objetosFuncoes.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Permitido</span></span>
-<span id="cb11-2"><a href="3-3-objetosFuncoes.html#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="3-3-objetosFuncoes.html#cb11-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb11-4"><a href="3-3-objetosFuncoes.html#cb11-4" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb11-5"><a href="3-3-objetosFuncoes.html#cb11-5" aria-hidden="true" tabindex="-1"></a>objeto <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb11-6"><a href="3-3-objetosFuncoes.html#cb11-6" aria-hidden="true" tabindex="-1"></a>meu_objeto <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb11-7"><a href="3-3-objetosFuncoes.html#cb11-7" aria-hidden="true" tabindex="-1"></a>meu.objeto <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb11-8"><a href="3-3-objetosFuncoes.html#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="3-3-objetosFuncoes.html#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Não permitido</span></span>
-<span id="cb11-10"><a href="3-3-objetosFuncoes.html#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-11"><a href="3-3-objetosFuncoes.html#cb11-11" aria-hidden="true" tabindex="-1"></a>1x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb11-12"><a href="3-3-objetosFuncoes.html#cb11-12" aria-hidden="true" tabindex="-1"></a>_objeto <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb11-13"><a href="3-3-objetosFuncoes.html#cb11-13" aria-hidden="true" tabindex="-1"></a>meu<span class="sc">-</span>objeto <span class="ot">&lt;-</span> <span class="dv">3</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="3-3-objetosFuncoes.html#cb11-1"></a><span class="co"># Permitido</span></span>
+<span id="cb11-2"><a href="3-3-objetosFuncoes.html#cb11-2"></a></span>
+<span id="cb11-3"><a href="3-3-objetosFuncoes.html#cb11-3"></a>x &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb11-4"><a href="3-3-objetosFuncoes.html#cb11-4"></a>x1 &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb11-5"><a href="3-3-objetosFuncoes.html#cb11-5"></a>objeto &lt;-<span class="st"> </span><span class="dv">3</span></span>
+<span id="cb11-6"><a href="3-3-objetosFuncoes.html#cb11-6"></a>meu_objeto &lt;-<span class="st"> </span><span class="dv">4</span></span>
+<span id="cb11-7"><a href="3-3-objetosFuncoes.html#cb11-7"></a>meu.objeto &lt;-<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb11-8"><a href="3-3-objetosFuncoes.html#cb11-8"></a></span>
+<span id="cb11-9"><a href="3-3-objetosFuncoes.html#cb11-9"></a><span class="co"># Não permitido</span></span>
+<span id="cb11-10"><a href="3-3-objetosFuncoes.html#cb11-10"></a></span>
+<span id="cb11-11"><a href="3-3-objetosFuncoes.html#cb11-11"></a>1x &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb11-12"><a href="3-3-objetosFuncoes.html#cb11-12"></a>_objeto &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb11-13"><a href="3-3-objetosFuncoes.html#cb11-13"></a>meu<span class="op">-</span>objeto &lt;-<span class="st"> </span><span class="dv">3</span></span></code></pre></div>
 <p><strong>Atenção!</strong></p>
 <p>O R <strong>diferencia letras maiúsculas e minúsculas</strong>, isto é, <code>b</code> é considerado um objeto diferente de <code>B</code>. Rode o exemplo abaixo e observe que dois objetos diferentes são criados no <strong>Environment</strong>.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="3-3-objetosFuncoes.html#cb12-1" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb12-2"><a href="3-3-objetosFuncoes.html#cb12-2" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb12-3"><a href="3-3-objetosFuncoes.html#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="3-3-objetosFuncoes.html#cb12-4" aria-hidden="true" tabindex="-1"></a>b</span>
-<span id="cb12-5"><a href="3-3-objetosFuncoes.html#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2</span></span>
-<span id="cb12-6"><a href="3-3-objetosFuncoes.html#cb12-6" aria-hidden="true" tabindex="-1"></a>B</span>
-<span id="cb12-7"><a href="3-3-objetosFuncoes.html#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 3</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="3-3-objetosFuncoes.html#cb12-1"></a>b &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb12-2"><a href="3-3-objetosFuncoes.html#cb12-2"></a>B &lt;-<span class="st"> </span><span class="dv">3</span></span>
+<span id="cb12-3"><a href="3-3-objetosFuncoes.html#cb12-3"></a></span>
+<span id="cb12-4"><a href="3-3-objetosFuncoes.html#cb12-4"></a>b</span>
+<span id="cb12-5"><a href="3-3-objetosFuncoes.html#cb12-5"></a><span class="co">## [1] 2</span></span>
+<span id="cb12-6"><a href="3-3-objetosFuncoes.html#cb12-6"></a>B</span>
+<span id="cb12-7"><a href="3-3-objetosFuncoes.html#cb12-7"></a><span class="co">## [1] 3</span></span></code></pre></div>
 <p>O objeto mais importante para o cientista de dados é, claro, a base de dados. No R, uma base de dados é representa por objetos chamados de <em>data frames</em>. Na próxima seção, vamos entender o que são esses objetos.</p>
 <p>Enquanto objetos são <em>nomes</em> que guardam <em>valores</em>, funções no R são <em>nomes</em> que guardam um <strong>código de R</strong>. A ideia é muito simples: sempre que você rodar uma função, o código que ela guarda será executado e um resultado nos será devolvido.</p>
 <p>A sintaxe para usar uma função é a seguinte:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="3-3-objetosFuncoes.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nome_da_funcao</span>(arg1, arg2, argn)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="3-3-objetosFuncoes.html#cb13-1"></a><span class="kw">nome_da_funcao</span>(arg1, arg2, argn)</span></code></pre></div>
 <p>Entre parênteses, após o nome da função, temos o que chamamos de <em>argumentos</em>. Uma função pode ter qualquer número de argumentos e eles são sempre separados por vírgula.</p>
 <p>Basicamente, uma função recebe seus argumentos, executa uma ação sobre ou a partir deles e devolve um resultado. Por exemplo</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="3-3-objetosFuncoes.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb14-2"><a href="3-3-objetosFuncoes.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 3</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="3-3-objetosFuncoes.html#cb14-1"></a><span class="kw">sum</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb14-2"><a href="3-3-objetosFuncoes.html#cb14-2"></a><span class="co">## [1] 3</span></span></code></pre></div>
 <p>A função <code>sum()</code> recebeu os argumentos <code>1</code> e <code>2</code>, somou os dois valores e devolveu o resultado dessa operação: o valor <code>3</code>.</p>
 <p>Falaremos mais sobre funções na Seção <a href="3-11-maisFuncoes.html#maisFuncoes">3.11</a>.</p>
 <div id="exercícios-1" class="section level3 unnumbered">
 <h3>Exercícios</h3>
 <p><strong>1.</strong> Qual a diferença entre os códigos abaixo?</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="3-3-objetosFuncoes.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Código 1</span></span>
-<span id="cb15-2"><a href="3-3-objetosFuncoes.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="dv">33</span> <span class="sc">/</span> <span class="dv">11</span></span>
-<span id="cb15-3"><a href="3-3-objetosFuncoes.html#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="3-3-objetosFuncoes.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Código 2</span></span>
-<span id="cb15-5"><a href="3-3-objetosFuncoes.html#cb15-5" aria-hidden="true" tabindex="-1"></a>divisao <span class="ot">&lt;-</span> <span class="dv">33</span> <span class="sc">/</span> <span class="dv">11</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="3-3-objetosFuncoes.html#cb15-1"></a><span class="co"># Código 1</span></span>
+<span id="cb15-2"><a href="3-3-objetosFuncoes.html#cb15-2"></a><span class="dv">33</span> <span class="op">/</span><span class="st"> </span><span class="dv">11</span></span>
+<span id="cb15-3"><a href="3-3-objetosFuncoes.html#cb15-3"></a></span>
+<span id="cb15-4"><a href="3-3-objetosFuncoes.html#cb15-4"></a><span class="co"># Código 2</span></span>
+<span id="cb15-5"><a href="3-3-objetosFuncoes.html#cb15-5"></a>divisao &lt;-<span class="st"> </span><span class="dv">33</span> <span class="op">/</span><span class="st"> </span><span class="dv">11</span></span></code></pre></div>
 <p><strong>2.</strong> Multiplique a sua idade por meses e salve o resultado em um objeto chamado <code>idade_em_meses</code>. Em seguida, multiplique esse objeto por 30 e salve o resultado em um objeto chamado <code>idade_em_dias</code>.</p>
 <p><strong>3.</strong> Por que o nome <code>meu-objeto</code> não pode ser utilizado para criar um objeto? O que significa a mensagem de erro resultante?</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="3-3-objetosFuncoes.html#cb16-1" aria-hidden="true" tabindex="-1"></a>meu<span class="sc">-</span>objeto <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb16-2"><a href="3-3-objetosFuncoes.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Error in meu - objeto &lt;- 1: object &#39;meu&#39; not found</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="3-3-objetosFuncoes.html#cb16-1"></a>meu<span class="op">-</span>objeto &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb16-2"><a href="3-3-objetosFuncoes.html#cb16-2"></a><span class="co">## Error in meu - objeto &lt;- 1: object &#39;meu&#39; not found</span></span></code></pre></div>
 </div>
 </div>
 <div class="footnotes">

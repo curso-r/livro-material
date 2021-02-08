@@ -32,7 +32,6 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="7-2-dplyr.html"/>
 <link rel="next" href="8-graficos.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,23 +49,27 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -86,7 +89,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -136,18 +139,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre</a></li>
-<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a>
-<ul>
+<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a><ul>
+<li class="chapter" data-level="1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
 <li class="chapter" data-level="1.1.3" data-path="1-1-instalação-do-r.html"><a href="1-1-instalação-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalação-do-rstudio.html"><a href="1-2-instalação-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
-<ul>
+<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a><ul>
 <li class="chapter" data-level="2.1" data-path="2-1-telas.html"><a href="2-1-telas.html"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
 <li class="chapter" data-level="2.2" data-path="2-2-atalhos.html"><a href="2-2-atalhos.html"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
 <li class="chapter" data-level="2.3" data-path="2-3-projetos.html"><a href="2-3-projetos.html"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
@@ -156,76 +156,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="2-6-addins.html"><a href="2-6-addins.html"><i class="fa fa-check"></i><b>2.6</b> Addins</a></li>
 <li class="chapter" data-level="2.7" data-path="2-7-snippets.html"><a href="2-7-snippets.html"><i class="fa fa-check"></i><b>2.7</b> Snippets</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a>
-<ul>
+<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a><ul>
+<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
 <li class="chapter" data-level="3.1.2" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
 <li class="chapter" data-level="3.1.3" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a>
-<ul>
+<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
 <li class="chapter" data-level="" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a>
-<ul>
+<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a><ul>
 <li class="chapter" data-level="" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="3-4-data-frames.html"><a href="3-4-data-frames.html"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
-<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a>
-<ul>
+<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a><ul>
 <li class="chapter" data-level="3.5.1" data-path="3-5-classes.html"><a href="3-5-classes.html#exercícios-2"><i class="fa fa-check"></i><b>3.5.1</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a>
-<ul>
+<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a><ul>
 <li class="chapter" data-level="" data-path="3-6-vetores.html"><a href="3-6-vetores.html#exercícios-3"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a>
-<ul>
+<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a><ul>
 <li class="chapter" data-level="3.7.1" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html#exercícios-4"><i class="fa fa-check"></i><b>3.7.1</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a>
-<ul>
+<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a><ul>
 <li class="chapter" data-level="" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.9" data-path="3-9-listas.html"><a href="3-9-listas.html"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
-<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a>
-<ul>
+<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
 <li class="chapter" data-level="" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html#exercícios-6"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a>
-<ul>
+<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a><ul>
 <li class="chapter" data-level="" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html#exercícios-7"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a>
-<ul>
+<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
 <li class="chapter" data-level="3.12.1" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
 <li class="chapter" data-level="3.12.2" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#iteradores-for-e-while"><i class="fa fa-check"></i><b>3.12.2</b> Iteradores: for e while</a></li>
 <li class="chapter" data-level="" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#exercícios-8"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a>
-<ul>
+<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a><ul>
 <li class="chapter" data-level="3.13.1" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#matrizes"><i class="fa fa-check"></i><b>3.13.1</b> Matrizes</a></li>
 <li class="chapter" data-level="3.13.2" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#fatores"><i class="fa fa-check"></i><b>3.13.2</b> Fatores</a></li>
 <li class="chapter" data-level="3.13.3" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#gráficos-r-base"><i class="fa fa-check"></i><b>3.13.3</b> Gráficos (R base)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a>
-<ul>
+<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-cran"><i class="fa fa-check"></i><b>4.1.1</b> Via CRAN</a></li>
 <li class="chapter" data-level="4.1.2" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-github"><i class="fa fa-check"></i><b>4.1.2</b> Via Github</a></li>
 <li class="chapter" data-level="4.1.3" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-arquivo-.zip-ou-.tar.gz"><i class="fa fa-check"></i><b>4.1.3</b> Via arquivo .zip ou .tar.gz</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="4-2-tidyverse.html"><a href="4-2-tidyverse.html"><i class="fa fa-check"></i><b>4.2</b> Tidyverse</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a>
-<ul>
+<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a><ul>
 <li class="chapter" data-level="5.1" data-path="5-1-caminhos.html"><a href="5-1-caminhos.html"><i class="fa fa-check"></i><b>5.1</b> Caminhos</a></li>
-<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a>
-<ul>
+<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="5-2-readr.html"><a href="5-2-readr.html#lendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.1</b> Lendo arquivos de texto</a></li>
 <li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.2</b> Locale</a></li>
 <li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.3</b> Parseando valores</a></li>
@@ -235,17 +219,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3" data-path="5-3-readxl.html"><a href="5-3-readxl.html"><i class="fa fa-check"></i><b>5.3</b> Os pacotes readxl e writexl</a></li>
 <li class="chapter" data-level="5.4" data-path="5-4-haven.html"><a href="5-4-haven.html"><i class="fa fa-check"></i><b>5.4</b> haven</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a>
-<ul>
+<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a></li>
 <li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
 <li class="chapter" data-level="6.3" data-path="6-3-exercícios-10.html"><a href="6-3-exercícios-10.html"><i class="fa fa-check"></i><b>6.3</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a>
-<ul>
+<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
 <li class="chapter" data-level="7.1" data-path="7-1-tibbles.html"><a href="7-1-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Tibbles</a></li>
-<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a>
-<ul>
+<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#filtrando-linhas"><i class="fa fa-check"></i><b>7.2.1</b> Filtrando linhas</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#selecionando-colunas"><i class="fa fa-check"></i><b>7.2.2</b> Selecionando colunas</a></li>
 <li class="chapter" data-level="7.2.3" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#ordenando-a-base"><i class="fa fa-check"></i><b>7.2.3</b> Ordenando a base</a></li>
@@ -253,17 +234,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.5" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#summarisando-a-base"><i class="fa fa-check"></i><b>7.2.5</b> Summarisando a base</a></li>
 <li class="chapter" data-level="7.2.6" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#juntando-duas-bases"><i class="fa fa-check"></i><b>7.2.6</b> Juntando duas bases</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a>
-<ul>
+<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#gather"><i class="fa fa-check"></i><b>7.3.1</b> <code>gather()</code></a></li>
 <li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#spread"><i class="fa fa-check"></i><b>7.3.2</b> <code>spread()</code></a></li>
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Gráficos</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a>
-<ul>
+<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Gráficos</a><ul>
+<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a><ul>
 <li class="chapter" data-level="8.1.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#as-camadas-de-um-gráfico"><i class="fa fa-check"></i><b>8.1.1</b> As camadas de um gráfico</a></li>
 <li class="chapter" data-level="8.1.2" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#atributos-estéticos"><i class="fa fa-check"></i><b>8.1.2</b> Atributos estéticos</a></li>
 <li class="chapter" data-level="8.1.3" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#formas-geométricas"><i class="fa fa-check"></i><b>8.1.3</b> Formas geométricas</a></li>
@@ -276,32 +254,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="8-3-extensões-do-ggplot2.html"><a href="8-3-extensões-do-ggplot2.html"><i class="fa fa-check"></i><b>8.3</b> Extensões do ggplot2</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="9-funcionais.html"><a href="9-funcionais.html"><i class="fa fa-check"></i><b>9</b> Funcionais</a></li>
-<li class="chapter" data-level="10" data-path="10-misc.html"><a href="10-misc.html"><i class="fa fa-check"></i><b>10</b> Miscelânea</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>10.1</b> Arrumando banco de dados: o pacote janitor</a>
-<ul>
+<li class="chapter" data-level="10" data-path="10-misc.html"><a href="10-misc.html"><i class="fa fa-check"></i><b>10</b> Miscelânea</a><ul>
+<li class="chapter" data-level="10.1" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>10.1</b> Arrumando banco de dados: o pacote janitor</a><ul>
 <li class="chapter" data-level="10.1.1" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#arrumando-o-nome-das-variáveis"><i class="fa fa-check"></i><b>10.1.1</b> Arrumando o nome das variáveis</a></li>
 <li class="chapter" data-level="10.1.2" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#removendo-linhas-e-colunas-vazias"><i class="fa fa-check"></i><b>10.1.2</b> Removendo linhas e colunas vazias</a></li>
 <li class="chapter" data-level="10.1.3" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#identificando-linhas-duplicadas"><i class="fa fa-check"></i><b>10.1.3</b> Identificando linhas duplicadas</a></li>
 <li class="chapter" data-level="10.1.4" data-path="10-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="10-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>10.1.4</b> Outras funções</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="11-respostas.html"><a href="11-respostas.html"><i class="fa fa-check"></i><b>11</b> Respostas</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html"><i class="fa fa-check"></i><b>11.1</b> R básico</a>
-<ul>
+<li class="chapter" data-level="11" data-path="11-respostas.html"><a href="11-respostas.html"><i class="fa fa-check"></i><b>11</b> Respostas</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html"><i class="fa fa-check"></i><b>11.1</b> R básico</a><ul>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#objetos-e-funções"><i class="fa fa-check"></i>Objetos e funções</a></li>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#classes-1"><i class="fa fa-check"></i>Classes</a></li>
 <li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#vetores-1"><i class="fa fa-check"></i>Vetores</a></li>
-<li class="chapter" data-level="11.1.1" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i><b>11.1.1</b> Testes lógicos</a></li>
-<li class="chapter" data-level="11.1.2" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i><b>11.1.2</b> Data frames</a></li>
-<li class="chapter" data-level="11.1.3" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i><b>11.1.3</b> Mais sobre funções</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i>Testes lógicos</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#valores-especiais"><i class="fa fa-check"></i>Valores especiais</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i>Data frames</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i>Mais sobre funções</a></li>
+<li class="chapter" data-level="" data-path="11-1-r-básico.html"><a href="11-1-r-básico.html#controle-de-fluxo-1"><i class="fa fa-check"></i>Controle de fluxo</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="11-2-pipe-1.html"><a href="11-2-pipe-1.html"><i class="fa fa-check"></i><b>11.2</b> Pipe</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a>
-<ul>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i>Programação em R</a></li>
 </ul></li>
@@ -325,28 +300,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tidyr" class="section level2" number="7.3">
+<div id="tidyr" class="section level2">
 <h2><span class="header-section-number">7.3</span> O pacote tidyr</h2>
 <p>O pacote <code>tidyr</code> dispõe de funções úteis para deixar os seus dados no formato que você precisa para a análise. Na maioria das vezes, utilizamos para deixá-los <em>tidy</em>. Outras, precisamos “bagunçá-los” um pouco para poder aplicar alguma função específica.</p>
 <p>As principais funções deste pacote são a <code>gather()</code> e a <code>spread()</code></p>
 <hr />
-<div id="gather" class="section level3" number="7.3.1">
+<div id="gather" class="section level3">
 <h3><span class="header-section-number">7.3.1</span> <code>gather()</code></h3>
 <p>A função <code>gather()</code> “empilha” o banco de dados. Ela é utilizada principalmente quando as colunas da base não representam nomes de variáveis, mas sim seus valores.</p>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="7-3-tidyr.html#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb272-2"><a href="7-3-tidyr.html#cb272-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb272-3"><a href="7-3-tidyr.html#cb272-3" aria-hidden="true" tabindex="-1"></a>imdb <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_rds</span>(<span class="st">&quot;assets/data/imdb.rds&quot;</span>)</span>
-<span id="cb272-4"><a href="7-3-tidyr.html#cb272-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb272-5"><a href="7-3-tidyr.html#cb272-5" aria-hidden="true" tabindex="-1"></a>imdb_gather <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span></span>
-<span id="cb272-6"><a href="7-3-tidyr.html#cb272-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb272-7"><a href="7-3-tidyr.html#cb272-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(</span>
-<span id="cb272-8"><a href="7-3-tidyr.html#cb272-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">key =</span> <span class="st">&quot;importancia_ator&quot;</span>,</span>
-<span id="cb272-9"><a href="7-3-tidyr.html#cb272-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="st">&quot;nome_ator&quot;</span>,</span>
-<span id="cb272-10"><a href="7-3-tidyr.html#cb272-10" aria-hidden="true" tabindex="-1"></a>    ator_1, ator_2, ator_3</span>
-<span id="cb272-11"><a href="7-3-tidyr.html#cb272-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb272-12"><a href="7-3-tidyr.html#cb272-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(nome_ator, importancia_ator, <span class="fu">everything</span>())</span>
-<span id="cb272-13"><a href="7-3-tidyr.html#cb272-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb272-14"><a href="7-3-tidyr.html#cb272-14" aria-hidden="true" tabindex="-1"></a>imdb_gather</span></code></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="7-3-tidyr.html#cb277-1"></a><span class="kw">library</span>(tidyr)</span>
+<span id="cb277-2"><a href="7-3-tidyr.html#cb277-2"></a></span>
+<span id="cb277-3"><a href="7-3-tidyr.html#cb277-3"></a>imdb &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_rds</span>(<span class="st">&quot;assets/data/imdb.rds&quot;</span>)</span>
+<span id="cb277-4"><a href="7-3-tidyr.html#cb277-4"></a></span>
+<span id="cb277-5"><a href="7-3-tidyr.html#cb277-5"></a>imdb_gather &lt;-<span class="st"> </span>imdb <span class="op">%&gt;%</span></span>
+<span id="cb277-6"><a href="7-3-tidyr.html#cb277-6"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="kw">n</span>()) <span class="op">%&gt;%</span></span>
+<span id="cb277-7"><a href="7-3-tidyr.html#cb277-7"></a><span class="st">  </span><span class="kw">gather</span>(</span>
+<span id="cb277-8"><a href="7-3-tidyr.html#cb277-8"></a>    <span class="dt">key =</span> <span class="st">&quot;importancia_ator&quot;</span>,</span>
+<span id="cb277-9"><a href="7-3-tidyr.html#cb277-9"></a>    <span class="dt">value =</span> <span class="st">&quot;nome_ator&quot;</span>,</span>
+<span id="cb277-10"><a href="7-3-tidyr.html#cb277-10"></a>    ator_<span class="dv">1</span>, ator_<span class="dv">2</span>, ator_<span class="dv">3</span></span>
+<span id="cb277-11"><a href="7-3-tidyr.html#cb277-11"></a>  ) <span class="op">%&gt;%</span></span>
+<span id="cb277-12"><a href="7-3-tidyr.html#cb277-12"></a><span class="st">  </span><span class="kw">select</span>(nome_ator, importancia_ator, <span class="kw">everything</span>())</span>
+<span id="cb277-13"><a href="7-3-tidyr.html#cb277-13"></a></span>
+<span id="cb277-14"><a href="7-3-tidyr.html#cb277-14"></a>imdb_gather</span></code></pre></div>
 <pre><code>## # A tibble: 11,421 x 15
 ##    nome_ator importancia_ator titulo   ano diretor duracao cor   generos pais 
 ##    &lt;chr&gt;     &lt;chr&gt;            &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;
@@ -365,16 +340,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   id &lt;int&gt;</code></pre>
 <hr />
 </div>
-<div id="spread" class="section level3" number="7.3.2">
+<div id="spread" class="section level3">
 <h3><span class="header-section-number">7.3.2</span> <code>spread()</code></h3>
 <p>A função <code>spread()</code> é essencialmente o inverso da <code>gather()</code>. Ela espalha uma variável nas colunas.</p>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="7-3-tidyr.html#cb274-1" aria-hidden="true" tabindex="-1"></a>imdb_spread <span class="ot">&lt;-</span> imdb_gather <span class="sc">%&gt;%</span></span>
-<span id="cb274-2"><a href="7-3-tidyr.html#cb274-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread</span>(</span>
-<span id="cb274-3"><a href="7-3-tidyr.html#cb274-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">key =</span> importancia_ator,</span>
-<span id="cb274-4"><a href="7-3-tidyr.html#cb274-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> nome_ator</span>
-<span id="cb274-5"><a href="7-3-tidyr.html#cb274-5" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb274-6"><a href="7-3-tidyr.html#cb274-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb274-7"><a href="7-3-tidyr.html#cb274-7" aria-hidden="true" tabindex="-1"></a>imdb_spread</span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="7-3-tidyr.html#cb279-1"></a>imdb_spread &lt;-<span class="st"> </span>imdb_gather <span class="op">%&gt;%</span></span>
+<span id="cb279-2"><a href="7-3-tidyr.html#cb279-2"></a><span class="st">  </span><span class="kw">spread</span>(</span>
+<span id="cb279-3"><a href="7-3-tidyr.html#cb279-3"></a>    <span class="dt">key =</span> importancia_ator,</span>
+<span id="cb279-4"><a href="7-3-tidyr.html#cb279-4"></a>    <span class="dt">value =</span> nome_ator</span>
+<span id="cb279-5"><a href="7-3-tidyr.html#cb279-5"></a>  )</span>
+<span id="cb279-6"><a href="7-3-tidyr.html#cb279-6"></a></span>
+<span id="cb279-7"><a href="7-3-tidyr.html#cb279-7"></a>imdb_spread</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 16
 ##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
 ##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
@@ -392,18 +367,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   likes_facebook &lt;int&gt;, id &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <hr />
 </div>
-<div id="outras-funções-do-tidyr" class="section level3" number="7.3.3">
+<div id="outras-funções-do-tidyr" class="section level3">
 <h3><span class="header-section-number">7.3.3</span> Outras funções do <code>tidyr</code></h3>
 <ul>
 <li><p>A função <code>unite()</code> junta duas ou mais colunas usando algum separador (<code>_</code>, por exemplo).</p></li>
 <li><p>A função <code>separate()</code> faz o inverso de <code>unite()</code>: transforma uma coluna em várias usando um separador.</p></li>
 </ul>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="7-3-tidyr.html#cb276-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span></span>
-<span id="cb276-2"><a href="7-3-tidyr.html#cb276-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(</span>
-<span id="cb276-3"><a href="7-3-tidyr.html#cb276-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="st">&quot;titulo_diretor&quot;</span>,</span>
-<span id="cb276-4"><a href="7-3-tidyr.html#cb276-4" aria-hidden="true" tabindex="-1"></a>    titulo, diretor,</span>
-<span id="cb276-5"><a href="7-3-tidyr.html#cb276-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep =</span> <span class="st">&quot; - &quot;</span></span>
-<span id="cb276-6"><a href="7-3-tidyr.html#cb276-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="7-3-tidyr.html#cb281-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb281-2"><a href="7-3-tidyr.html#cb281-2"></a><span class="st">  </span><span class="kw">unite</span>(</span>
+<span id="cb281-3"><a href="7-3-tidyr.html#cb281-3"></a>    <span class="dt">col =</span> <span class="st">&quot;titulo_diretor&quot;</span>,</span>
+<span id="cb281-4"><a href="7-3-tidyr.html#cb281-4"></a>    titulo, diretor,</span>
+<span id="cb281-5"><a href="7-3-tidyr.html#cb281-5"></a>    <span class="dt">sep =</span> <span class="st">&quot; - &quot;</span></span>
+<span id="cb281-6"><a href="7-3-tidyr.html#cb281-6"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 14
 ##    titulo_diretor   ano duracao cor   generos pais  classificacao orcamento
 ##    &lt;chr&gt;          &lt;int&gt;   &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
@@ -419,13 +394,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 Pirates of th…  2006     151 Color Action… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="7-3-tidyr.html#cb278-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span></span>
-<span id="cb278-2"><a href="7-3-tidyr.html#cb278-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(</span>
-<span id="cb278-3"><a href="7-3-tidyr.html#cb278-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> generos,</span>
-<span id="cb278-4"><a href="7-3-tidyr.html#cb278-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;genero_1&quot;</span>, <span class="st">&quot;genero_2&quot;</span>, <span class="st">&quot;genero_3&quot;</span>),</span>
-<span id="cb278-5"><a href="7-3-tidyr.html#cb278-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">|&quot;</span>,</span>
-<span id="cb278-6"><a href="7-3-tidyr.html#cb278-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">extra =</span> <span class="st">&quot;drop&quot;</span></span>
-<span id="cb278-7"><a href="7-3-tidyr.html#cb278-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="7-3-tidyr.html#cb283-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb283-2"><a href="7-3-tidyr.html#cb283-2"></a><span class="st">  </span><span class="kw">separate</span>(</span>
+<span id="cb283-3"><a href="7-3-tidyr.html#cb283-3"></a>    <span class="dt">col =</span> generos,</span>
+<span id="cb283-4"><a href="7-3-tidyr.html#cb283-4"></a>    <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;genero_1&quot;</span>, <span class="st">&quot;genero_2&quot;</span>, <span class="st">&quot;genero_3&quot;</span>),</span>
+<span id="cb283-5"><a href="7-3-tidyr.html#cb283-5"></a>    <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">|&quot;</span>,</span>
+<span id="cb283-6"><a href="7-3-tidyr.html#cb283-6"></a>    <span class="dt">extra =</span> <span class="st">&quot;drop&quot;</span></span>
+<span id="cb283-7"><a href="7-3-tidyr.html#cb283-7"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 17
 ##    titulo   ano diretor duracao cor   genero_1 genero_2 genero_3 pais 
 ##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;

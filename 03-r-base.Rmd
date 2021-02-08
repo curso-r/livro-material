@@ -736,7 +736,17 @@ ou iguais a 10 do vetor abaixo:
 vetor <- c(4, 8, 15, 16, 23, 42)
 ```
 
+**3.** Use o vetor numeross abaixo para responder as questoes seguintes.
 
+```{r, eval = FALSE}
+numeros <- -4:2
+```
+
+- **a.** Escreva um código que devolva apenas valores positivos do vetor `numeros`.
+
+- **b.** Escreva um código que devolta apenas os valores pares do vetor `numeros`.
+
+- **c.** Filtre o vetor para que retorne apenas aqueles valores que, quando elevados a 2, são menores do que 4.
 
 ## Valores especiais {#valoresEspeciais}
 
@@ -833,6 +843,13 @@ is.null(objeto_nulo)
 ### Exercícios {-}
 
 **1.** Quais as diferenças entre `NaN`, `NULL`, `NA` e `Inf`? Digite expressões que retornem cada um desses valores.
+
+**2.** Escreva um código que conte o número de `NAs` do vetor `b`.
+
+```{r, eval = FALSE}
+b <- c(1, 0, NA, NA, NA, NA, 7, NA, NA, NA, NA, NA, 2, NA, NA, 10, 1, 1, NA)
+```
+
 
 ## Listas
 
@@ -1098,6 +1115,15 @@ Encerramos aqui a nossa primeira conversa sobre `data frames` para falar de outr
 
 - **e.** Compare o valor de `desvio_padrao` com `sd(airquality$Ozone)` e pesquise por que os valores não são iguais. Dica: veja a documentação da função `sd()`.
 
+**6.** Use o *data frame* `airquality` para responder às questões abaixo.
+
+- **a.** Conte quantos `NAs` tem na coluna `Solar.R`.
+
+- **b.** Filtre a tabela `airquality `com apenas linhas em que `Solar.R` é `NA`.
+
+- **c.** Filtre a tabela `airquality` com apenas linhas em que `Solar.R` **não** é `NA`.
+
+- **d.** Filtre a tabela `airquality` com apenas linhas em que `Solar.R` **não** é `NA` e `Month` é igual a 5.
 
 ## Mais sobre funções {#maisFuncoes}
 
@@ -1292,15 +1318,19 @@ Claro que, na prática, é sempre bom criarmos funções que retornem na tela os
 
 - **d.** `(soma <- sum(1, 1))`
 
-**2.** Crie uma função que receba dois valores (numéricos) e devolva o maior deles. 
+**2.** Crie uma função que receba um número e retorne o quadrado deste número.
 
-**3.** Use a função `runif()` para criar uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive). Caso você não conheça a função `runif()`, rode `help(runif)` para ler a sua documentação.
+**3.** Crie uma função que receba 2 números e devolva a raiz quadrada da soma desses números.
 
-**4.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida
+**4.** Crie uma função que receba dois valores (numéricos) e devolva o maior deles. 
+
+**5.** Use a função `runif()` para criar uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive). Caso você não conheça a função `runif()`, rode `help(runif)` para ler a sua documentação.
+
+**6.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida
 
 - **a.** use-a para escrever uma função que devolva uma linha aleatória de um *data frame*;
 
-- **b.** e generalize a função para retornar um número qualquer de linhas, escolhido pelo usuário.
+- **b.** generalize a função para retornar um número qualquer de linhas, escolhido pelo usuário.
 
 ## Controle de Fluxo
 
@@ -1547,6 +1577,16 @@ if(x = 4) {
 **2.** Usando `if` e `else`, escreva um código que retorne a string `"número"` caso o valor seja da classe `numeric` ou `integer`; a string `"palavra"` caso o valor seja da classe `character`; e `NA` caso contrário.
 
 **3.** Usando apenas `for` e a função `length()`, construa uma função que calcule a média de um vetor número qualquer. Construa uma condição para a função retornar `NULL` caso o vetor não seja numérico.
+
+**4.** Utilize o vetor `a` para resolver as questões a seguir:
+
+```{r}
+a <- c(10, 3, 5, -1, 3, -4, 8, 9, -10)
+```
+
+- **a.** Utilize o `for` para imprimir as médias acumuladas do vetor `a`, isto é, primeiro vamos imprimir 10, depois a média entre 10 e 3, depois a média entre 10, 3 e 5 e assim por diante.
+
+- **b.** Adapte o laço que você fez no item anterior para ignorar os valores negativos, isto é, em caso de valor negativo, o laço não deve calcular a média e não imprimir nada.
 
 ## Outros tópicos
 

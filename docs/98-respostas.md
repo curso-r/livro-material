@@ -341,9 +341,9 @@ mean(dolar_subiu)
 ```
 *Verifica a proporção de dias em que o dólar subiu (a média de valores 0 e 1 é igual a proporção de valores 1), no caso, cerca de 57% dos dias.*
 
-### Testes lógicos
+### Testes lógicos {-}
 
-**1** O código abaixo vai guardar no objeto `segredo` um número inteiro entre 0 e 10. Sem olhar qual número foi guardado no objeto, resolva os itens a seguir:
+**1.** O código abaixo vai guardar no objeto `segredo` um número inteiro entre 0 e 10. Sem olhar qual número foi guardado no objeto, resolva os itens a seguir:
 
 
 ```r
@@ -405,7 +405,7 @@ segredo %% 2 == 0
 
 ```r
 segredo * 5 > 31
-## [1] TRUE
+## [1] FALSE
 ```
 
 **f.** Desafio. Escreva um teste para descobrir o valor do segredo.
@@ -419,7 +419,7 @@ numeros_possiveis
 ##  [1]  0  1  2  3  4  5  6  7  8  9 10
 
 segredo == numeros_possiveis
-##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE
+##  [1] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE
 ```
 
 *No código acima, para cada valor de `numero_possiveis`, foi testado se esse valor é igual ao segredo. Em caso afirmativo, um TRUE é devolvido. Veja que há apenas um TRUE no vetor resultante. Essa é posição do nosso segredo dentro do vetor `numeros_possiveis`.*
@@ -430,7 +430,7 @@ segredo == numeros_possiveis
 ```r
 # Eis o valor do segredo
 numeros_possiveis[segredo == numeros_possiveis]
-## [1] 8
+## [1] 6
 ```
 
 *No código acima, foi retornado apenas o número associado ao valor TRUE dado pelo teste `segredo == numeros_possiveis`*.
@@ -449,7 +449,113 @@ vetor[vetor >= 10]
 ## [1] 15 16 23 42
 ```
 
-### Data frames
+---
+
+**3.** Use o vetor numeross abaixo para responder as questoes seguintes.
+
+
+```r
+numeros <- -4:2
+```
+
+**a.** Escreva um código que devolva apenas valores positivos do vetor `numeros`.
+
+
+```r
+numeros[numeros > 0]
+## [1] 1 2
+```
+
+
+**b.** Escreva um código que devolta apenas os valores pares do vetor `numeros`.
+
+
+```r
+# Resto da divisão por 2
+numeros %% 2
+## [1] 0 1 0 1 0 1 0
+
+# Quais números são pares?
+numeros %% 2 == 0
+## [1]  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE
+
+# Usando para filtrar o vetor
+numeros[numeros %% 2 == 0]
+## [1] -4 -2  0  2
+```
+
+**c.** Filtre o vetor para que retorne apenas aqueles valores que, quando elevados a 2, são menores do que 4.
+
+
+```r
+# Quadrado dos valores do vetor
+numeros^2
+## [1] 16  9  4  1  0  1  4
+
+# Aqueles menores que 4
+numeros^2 < 4
+## [1] FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE
+
+# Usando para filtrar
+numeros[numeros^2 < 4]
+## [1] -1  0  1
+```
+
+### Valores especiais {-}
+
+**1.** Quais as diferenças entre `NaN`, `NULL`, `NA` e `Inf`? Digite expressões que retornem cada um desses valores.
+
+- *O `NaN` representa uma indefinição matemática. Todo `NaN` é um `NA`, mas o contrário não é verdade.*
+
+
+```r
+0/0
+## [1] NaN
+```
+
+
+- *O `NA` representa o nosso desconhecimento acerca de um valor. Esse valor existe, mas nós não o conhecemos. Na Estatística, ele é conhecido como valor omisso ou valor faltante.*
+
+
+```r
+sum(c(1, NA))
+## [1] NA
+```
+
+- *O `NULL` é um valor especial para o R, isto é, ao contrário do NA, ele não tem um significado prático para a análise de dados, mas sim computacional. Ele representa a ausência de um vetor e é útil na construção da lógica de programação de alguns códigos.*
+
+
+```r
+mtcars$coluna_que_nao_existe
+## NULL
+```
+
+- *O `Inf` representa um número muito grande (que o computador não consegue representar) ou um limite matemático.*
+
+
+```r
+2^2000
+## [1] Inf
+```
+
+---
+
+**2.** Escreva um código que conte o número de `NAs` do vetor `b`.
+
+
+```r
+b <- c(1, 0, NA, NA, NA, NA, 7, NA, NA, NA, NA, NA, 2, NA, NA, 10, 1, 1, NA)
+```
+
+
+```r
+sum(is.na(b))
+## [1] 12
+```
+
+
+
+### Data frames {-}
 
 **1.** Quais códigos abaixo retornam **um vetor** com a coluna `mpg` do data frame `mtcars`?
 
@@ -700,11 +806,75 @@ desvio_padrao
 ## [1] 32.98788
 ```
 
-### Mais sobre funções
+---
+
+**6.** Use o *data frame* `airquality` para responder às questões abaixo.
+
+**a.** Conte quantos `NAs` tem na coluna `Solar.R`.
+
+
+```r
+sum(is.na(airquality$Solar.R))
+## [1] 7
+```
+
+**b.** Filtre a tabela `airquality `com apenas linhas em que `Solar.R` é `NA`.
+
+
+```r
+tab <- airquality[is.na(airquality$Solar.R),]
+
+# Imprimindo apenas as primeiras linhas para facilitar a leitura
+head(tab)
+##    Ozone Solar.R Wind Temp Month Day
+## 5     NA      NA 14.3   56     5   5
+## 6     28      NA 14.9   66     5   6
+## 11     7      NA  6.9   74     5  11
+## 27    NA      NA  8.0   57     5  27
+## 96    78      NA  6.9   86     8   4
+## 97    35      NA  7.4   85     8   5
+```
+
+**c.** Filtre a tabela `airquality` com apenas linhas em que `Solar.R` **não** é `NA`.
+
+
+```r
+tab <- airquality[!is.na(airquality$Solar.R),]
+
+# Imprimindo apenas as primeiras linhas para facilitar a leitura
+head(tab)
+##   Ozone Solar.R Wind Temp Month Day
+## 1    41     190  7.4   67     5   1
+## 2    36     118  8.0   72     5   2
+## 3    12     149 12.6   74     5   3
+## 4    18     313 11.5   62     5   4
+## 7    23     299  8.6   65     5   7
+## 8    19      99 13.8   59     5   8
+```
+
+
+**d.** Filtre a tabela `airquality` com apenas linhas em que `Solar.R` **não** é `NA` e `Month` é igual a 5.
+
+
+```r
+tab <- airquality[!is.na(airquality$Solar.R) & airquality$Month > 5,]
+
+# Imprimindo apenas as primeiras linhas para facilitar a leitura
+head(tab)
+##    Ozone Solar.R Wind Temp Month Day
+## 32    NA     286  8.6   78     6   1
+## 33    NA     287  9.7   74     6   2
+## 34    NA     242 16.1   67     6   3
+## 35    NA     186  9.2   84     6   4
+## 36    NA     220  8.6   85     6   5
+## 37    NA     264 14.3   79     6   6
+```
+
+### Mais sobre funções {-}
 
 **1.** Qual dos códigos abaixo devolverá um erro se for avaliado?
 
-- **a.** `3 * 5 + 10`
+**a.** `3 * 5 + 10`
 
 
 ```r
@@ -714,7 +884,7 @@ desvio_padrao
 
 *Sem erro.*
 
-- **b.** `function <- 10`
+**b.** `function <- 10`
 
 
 ```r
@@ -726,7 +896,7 @@ function <- 10
 
 *Retorna erro pois `function` é um nome reservado no R. Não podemos utilizá-lo para nomear outros objetos.*
 
-- **c.** `mean(1, 10)`
+**c.** `mean(1, 10)`
 
 
 ```r
@@ -735,7 +905,7 @@ mean(1, 10)
 ```
 *Não retorna erro, mas o 10 não é considerado na média. O código correto seria `mean(c(1, 10))`.*
 
-- **d.** `(soma <- sum(1, 1))`
+**d.** `(soma <- sum(1, 1))`
 
 
 ```r
@@ -746,7 +916,42 @@ mean(1, 10)
 
 ---
 
-**2.** Crie uma função que receba dois valores (numéricos) e devolva o maior deles.
+**2.** Crie uma função que receba um número e retorne o quadrado deste número.
+
+
+```r
+quadrado <- function(x) {
+  x ^ 2
+}
+
+quadrado(2)
+## [1] 4
+quadrado(3)
+## [1] 9
+quadrado(0)
+## [1] 0
+```
+
+
+---
+
+**3.** Crie uma função que receba 2 números e devolva a raiz quadrada da soma desses números.
+
+
+```r
+raiz_da_soma <- function(a, b) {
+  sqrt(a + b)
+}
+
+raiz_da_soma(2, 2)
+## [1] 2
+raiz_da_soma(1, 4)
+## [1] 2.236068
+```
+
+---
+
+**4.** Crie uma função que receba dois valores (numéricos) e devolva o maior deles.
 
 
 ```r
@@ -778,7 +983,7 @@ retornar_maior(5, -5)
 
 ---
 
-**3.** Use a função `runif()` para criar uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive). Caso você não conheça a função `runif()`, rode `help(runif)` para ler a sua documentação.
+**5.** Use a função `runif()` para criar uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive). Caso você não conheça a função `runif()`, rode `help(runif)` para ler a sua documentação.
 
 
 ```r
@@ -791,15 +996,15 @@ sortear_numero <- function() {
 }
 
 sortear_numero()
-## [1] 1
+## [1] 9
 ```
 
 
 ---
 
-**4.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, 
+**6.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida: 
 
-- **a.** use-a para escrever uma função que devolva uma linha aleatória de um *data frame*;
+**a.** Use a função `sample()` para escrever uma função que devolva uma linha aleatória de um *data frame*.
 
 
 ```r
@@ -811,11 +1016,11 @@ sortear_linha <- function(data_frame) {
 }
 
 sortear_linha(mtcars)
-##               mpg cyl disp  hp drat   wt qsec vs am gear carb
-## Maserati Bora  15   8  301 335 3.54 3.57 14.6  0  1    5    8
+##             mpg cyl  disp  hp drat   wt qsec vs am gear carb
+## Merc 450SL 17.3   8 275.8 180 3.07 3.73 17.6  0  0    3    3
 ```
 
-- **b.** e generalize a função para retornar um número qualquer de linhas, escolhido pelo usuário.
+**b.** Generalize a função para retornar um número qualquer de linhas, escolhido pelo usuário.
 
 
 ```r
@@ -827,17 +1032,155 @@ sortear_linha <- function(data_frame, n) {
 }
 
 sortear_linha(mtcars, 10)
-##                    mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-## Merc 280C         17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
-## Mazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
-## Merc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
-## Maserati Bora     15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
-## Fiat X1-9         27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
-## Ferrari Dino      19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
-## Merc 450SLC       15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
-## Porsche 914-2     26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
-## Duster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
-## Hornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+##                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Merc 280           19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+## Dodge Challenger   15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+## Lotus Europa       30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
+## Mazda RX4 Wag      21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## Camaro Z28         13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
+## Merc 450SLC        15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+## Merc 280C          17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
+## Merc 450SL         17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
+## Cadillac Fleetwood 10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+## Ferrari Dino       19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
+```
+
+### Controle de fluxo {-}
+
+**1.** Por que o código abaixo retorna erro? Arrume o código para retornar o valor `TRUE`.
+
+
+```r
+x <- 4
+if(x = 4) {
+  TRUE
+}
+```
+
+**Porque a expressão dentro do `if` deve retornar um valor lógico (TRUE ou FALSE) e o código `x = 4` é uma atribuição (equivalente a `x <- 4`). O correto seria utilizar `==` em vez de `=`.*
+
+
+```r
+x <- 4
+if(x == 4) {
+  TRUE
+}
+## [1] TRUE
+```
+
+---
+
+**2.** Usando `if` e `else`, escreva um código que retorne a string `"número"` caso um valor `x` seja da classe `numeric` ou `integer`; a string `"palavra"` caso seja da classe `character`; e `NA` caso contrário.
+
+
+```r
+x <- 10
+
+if (class(x) == "numeric" | class(x) == "integer") {
+  "número"
+} else if (class(x) == "character") {
+  "palavra"
+} else {
+  NA
+}
+## [1] "número"
+```
+**Uma solução mais simples seria utilizar as funções `is.numeric()` e `is.character()`.**
+
+
+```r
+x <- "qualquer texto"
+
+if (is.numeric(x)) {
+  "número"
+} else if (is.character(x)) {
+  "palavra"
+} else {
+  NA
+}
+## [1] "palavra"
+```
+
+---
+
+**3.** Usando apenas `for` e a função `length()`, construa uma função que calcule a média de um vetor numérico qualquer. Construa uma condição para a função retornar `NULL` caso o vetor não seja numérico.
+
+
+```r
+minha_media <- function(vetor) {
+
+  soma <- 0
+  
+  for (i in 1:length(vetor)) {
+    soma <- soma + vetor[i]
+  }
+  
+  media <- soma / length(vetor)  
+  
+  return(media)
+  
+}
+
+minha_media(c(1, 2))
+## [1] 1.5
+minha_media(0:10)
+## [1] 5
+minha_media(c(2, 2))
+## [1] 2
+```
+
+---
+
+**4.** Utilize o vetor `a` para resolver as questões a seguir:
+
+
+```r
+a <- c(10, 3, 5, -1, 3, -4, 8, 9, -10)
+```
+
+**a.** Utilize o `for` para imprimir as médias acumuladas do vetor `a`, isto é, primeiro vamos imprimir 10, depois a média entre 10 e 3, depois a média entre 10, 3 e 5 e assim por diante.
+
+
+```r
+soma <- 0
+
+for(i in 1:length(a)) {
+  soma <- soma + a[i]
+  
+  print(soma / i)
+}
+## [1] 10
+## [1] 6.5
+## [1] 6
+## [1] 4.25
+## [1] 4
+## [1] 2.666667
+## [1] 3.428571
+## [1] 4.125
+## [1] 2.555556
+```
+
+
+**b.** Adapte o laço que você fez no item anterior para ignorar os valores negativos, isto é, em caso de valor negativo, o laço não deve calcular a média e não imprimir nada.
+
+
+```r
+soma <- 0
+divisor <- 0
+
+for(i in 1:length(a)) {
+  if (a[i] >= 0) {
+    soma <- soma + a[i]
+    divisor <- divisor + 1
+    print(soma / divisor)
+  }
+}
+## [1] 10
+## [1] 6.5
+## [1] 6
+## [1] 5.25
+## [1] 5.8
+## [1] 6.333333
 ```
 
 

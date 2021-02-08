@@ -171,24 +171,25 @@ janitor::get_dupes(base_qualquer, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 15 x 4
+## # A tibble: 16 x 4
 ##    nome     sobrenome dupe_count variavel_importante
 ##    <chr>    <chr>          <int>               <dbl>
-##  1 Athos    Trecenti           2              0.849 
-##  2 Athos    Trecenti           2             -1.95  
-##  3 Daniel   Corrêa             2              1.82  
-##  4 Daniel   Corrêa             2              0.409 
-##  5 Fernando Amorim             2             -0.340 
-##  6 Fernando Amorim             2             -0.645 
-##  7 Fernando Corrêa             2              0.0585
-##  8 Fernando Corrêa             2              0.463 
-##  9 Fernando Damiani            2             -0.871 
-## 10 Fernando Damiani            2             -1.51  
-## 11 Julio    Amorim             2             -1.14  
-## 12 Julio    Amorim             2              0.553 
-## 13 William  Damiani            3              0.152 
-## 14 William  Damiani            3              0.803 
-## 15 William  Damiani            3              0.117
+##  1 Athos    Amorim             2              1.18  
+##  2 Athos    Amorim             2              0.258 
+##  3 Athos    Corrêa             2              0.187 
+##  4 Athos    Corrêa             2              0.289 
+##  5 Athos    Trecenti           2              0.533 
+##  6 Athos    Trecenti           2              0.0923
+##  7 Fernando Damiani            2             -0.0475
+##  8 Fernando Damiani            2             -1.05  
+##  9 Julio    Falbel             2             -0.888 
+## 10 Julio    Falbel             2             -0.708 
+## 11 William  Amorim             2              0.380 
+## 12 William  Amorim             2              1.28  
+## 13 William  Damiani            2             -1.08  
+## 14 William  Damiani            2              0.373 
+## 15 William  Trecenti           2             -1.42  
+## 16 William  Trecenti           2             -1.23
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.
