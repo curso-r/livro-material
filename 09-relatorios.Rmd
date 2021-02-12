@@ -36,11 +36,13 @@ Para começar a utilizar RMarkdown e criar os produtos citados acima, confira o 
 
 ## Markdown
 
-Se você é uma pessoa que utiliza R, sabe das possibilidades de utilizar R Markdown (e os pacotes que expandem mais ainda as possibilidades) e gostaria de começar a utilizá-lo, é importante conhecer Markdown. Por quê? O R Markdown utiliza a linguagem de marcação [Markdown](https://www.markdownguide.org/). Os arquivos markdown podem ser abertos por qualquer software que suporte este formato aberto. Além disso, independente da plataforma de trabalho, pode-se migrar para um arquivo de texto sem perder a formatação.
+Se você é uma pessoa que utiliza R, sabe das possibilidades de utilizar R Markdown (e os pacotes que expandem mais ainda as possibilidades) e gostaria de começar a utilizá-lo, é importante conhecer Markdown. Por quê? O R Markdown utiliza a linguagem de marcação [Markdown](https://www.markdownguide.org/). 
 
-O Markdown também é usado em outros lugares, como no [GitHub](https://github.com/) e no [Fórum da Curso-R](https://discourse.curso-r.com).
+Os arquivos markdown podem ser abertos por qualquer software que suporte este formato aberto. Além disso, independente da plataforma de trabalho, pode-se migrar para um arquivo de texto sem perder a formatação. O Markdown também é usado em outros lugares, como no [GitHub](https://github.com/) e no [Fórum da Curso-R](https://discourse.curso-r.com).
 
 Uma referência interessante para ter sempre em mãos é a Folha de cola (*Cheatsheet*) do [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+
+Nas seções seguintes, descreveremos como podemos marcar os nossos textos e códigos usando `markdown`, e você poderá usar isso tanto em arquivos `.Rmd`, quanto em outros lugares que também utilizam essa marcação (como no [Fórum da Curso-R](https://discourse.curso-r.com)!).
 
 
 ### Ênfase
@@ -149,7 +151,7 @@ O resultado será:
 > - Banana
 > - Uva
 
-Você também pode adicionar sub-itens na lista indicando a hierarquia através da identação no Markdown:
+Você também pode adicionar sub-itens na lista indicando a hierarquia através da identação no Markdown (dica: utilize a tecla `tab` do teclado):
 
 >
 > - Frutas
@@ -157,16 +159,6 @@ Você também pode adicionar sub-itens na lista indicando a hierarquia através 
 >   - Banana
 >   - Uva
 
-
-### Links
-
-- Você pode criar um link utilizando esta estrutura: `[texto](http://url-da-pagina.com)`.
-
-Por exemplo:
-
-|  Como é escrito no código |  Como aparece no relatório |
-|--:|--:|
-|`Você pode consultar mais [materiais sobre R nesta página](https://curso-r.com/material/).`| Você pode consultar mais [materiais sobre R nesta página](https://curso-r.com/material/).| 
 
 
 
@@ -196,13 +188,8 @@ Também é possível adicionar a equação na mesma linha que o texto, envolvend
 
 É possível __marcar textos para que fiquem formatados como códigos__, usando a crase: `
 
-Mas atenção: o texto será formatado como código, e o mesmo não é executado!
+Mas atenção: o texto será __formatado como código__, porém não será executado!
 
->
->```
-> `mean(pinguins$massa_corporal, na.rm = TRUE)`
-> ```
->   `mean(pinguins$massa_corporal, na.rm = TRUE)`
 
 |  Como é escrito no código |  Como aparece no relatório |
 |--:|--:|
@@ -215,10 +202,13 @@ __Exemplo:__
 
 __Como é escrito no código:__
 
-
-```{r, echo=FALSE, fig.align='default'}
-knitr::include_graphics("https://beatrizmilz.github.io/slidesR/markdown/images/markdowncode.PNG")
+````md
 ```
+library(dados)
+mean(pinguins$massa_corporal, na.rm = TRUE)
+```
+````
+
 
 __Como aparece no relatório:__
 
@@ -228,11 +218,27 @@ library(dados)
 mean(pinguins$massa_corporal, na.rm = TRUE)
 ```
 
+### Links
+
+- Você pode criar um link utilizando esta estrutura:
+
+`[texto](http://url-da-pagina.com)`.
+
+Por exemplo:
+
+|  Como é escrito no código |  Como aparece no relatório |
+|--:|--:|
+|`Você pode consultar mais [materiais sobre R nesta página](https://curso-r.com/material/).`| Você pode consultar mais [materiais sobre R nesta página](https://curso-r.com/material/).| 
+
 
 
 ### Imagens
 
-- Você pode incluir um arquivo de imagem utilizando esta estrutura: `![descricao da imagem](http://url-da-imagem.com)`. Não se esqueça: a descrição da imagem é importante para
+Você pode incluir uma imagem utilizando esta estrutura: 
+
+`![descricao da imagem](http://url-da-imagem.com)`.
+
+Não se esqueça: a descrição da imagem é importante para
 acessibilidade do conteúdo através de leitores de tela!
 
 
@@ -245,7 +251,7 @@ acessibilidade do conteúdo através de leitores de tela!
 
 As tabelas em Markdown têm uma estrutura definida, como mostra o exemplo abaixo.
 
-É possível usar [ferramentas online para gerar tabelas em Markdown](https://www.tablesgenerator.com/markdown_tables).
+É possível usar ferramentas online para gerar tabelas em Markdown, como por exemplo o [Tables Generator](https://www.tablesgenerator.com/markdown_tables).
 
 __Em Markdown:__
 ```{}
@@ -265,6 +271,11 @@ __Resultado:__
 > |  1|  2|  3|
 > |  2|  3|  4|
 
+### Recapitulando
+
+Nesta seção, aprendemos que o Markdown é uma linguagem de marcação, usada para marcar textos. Podemos usar o Markdown para formatar textos e adicionar elementos no nossos relatórios.
+
+Porém existem elementos (como código, imagens, tabelas, entre outros) que podemos também adiconar nos relatórios utilizando R. É isso que veremos na seção seguinte!
 
 <!-- ## Adicionando elementos no seu relatório -->
 
