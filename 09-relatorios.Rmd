@@ -34,8 +34,8 @@ Para começar a utilizar RMarkdown e criar os produtos citados acima, confira o 
   
 
 
-## Markdown
-
+## Markdown {#markdown}
+ 
 Se você é uma pessoa que utiliza R, sabe das possibilidades de utilizar R Markdown (e os pacotes que expandem mais ainda as possibilidades) e gostaria de começar a utilizá-lo, é importante conhecer Markdown. Por quê? O R Markdown utiliza a linguagem de marcação [Markdown](https://www.markdownguide.org/). 
 
 Os arquivos markdown podem ser abertos por qualquer software que suporte este formato aberto. Além disso, independente da plataforma de trabalho, pode-se migrar para um arquivo de texto sem perder a formatação. O Markdown também é usado em outros lugares, como no [GitHub](https://github.com/) e no [Fórum da Curso-R](https://discourse.curso-r.com).
@@ -285,9 +285,6 @@ Nesta seção, utilizaremos como exemplos alguns códigos envolvendo a base de d
 knitr::include_graphics("https://github.com/allisonhorst/palmerpenguins/blob/master/man/figures/lter_penguins.png?raw=true")
 ```
 
-
-
-
 Caso não tenha o pacote [dados](https://cienciadedatos.github.io/dados/) instalado, é possível instalar com o seguinte código:
 
 ```{r eval=FALSE, include=TRUE}
@@ -315,86 +312,153 @@ Com RMarkdown, podemos adicionar códigos nos nossos relatórios que geram os re
 
 Caso você queira que o código seja executado como código R, existem duas possibilidades:
 
--   **código em linha** (ou '**inline code**' em Inglês), quando o resultado aparece junto ao texto;
 
--   '**chunks de código**' ou **campos de código** (chunks em Inglês), quando o código é executado em um campo de código em R.
+-   **chunks de código** ou **campos de código** ( _chunks_ em Inglês), quando o código é executado em um campo de código em R.
 
-#### Inline code  
 
-**Exemplo:**
-
-```{r, echo=FALSE, fig.align='default', out.width="100%"}
-knitr::include_graphics("https://raw.githubusercontent.com/beatrizmilz/slidesR/master/docs/markdown/images/r_inline_code2.PNG")
-```
-
-**Resultado:**
-
-> A média da massa corporal dos pinguins é `r round(mean(dados::pinguins$massa_corporal, na.rm = TRUE)/ 1000, 1)` kg.
+-   **código em linha** (ou '*inline code*' em Inglês), quando o resultado aparece junto ao texto;
 
 #### Campos de código (chunks)  
 
 É possível adicionar campos de código utilizando a seguinte sintaxe:
 
-```{r,  echo=FALSE, fig.align='default'}
-knitr::include_graphics("https://raw.githubusercontent.com/beatrizmilz/slidesR/master/docs/markdown/images/campo-de-codigo.PNG")
+````md
+```{r}`r ''`
+codigo em R aqui
 ```
+````
+
+
 
 Um exemplo de campo de código é o campo abaixo, onde é possível executar o código e visualizar o resultado.
 
-```{r exemplo-chunk}
-1 + 1
+**Exemplo:**
+
+````md
+```{r}`r ''`
+# calcula a média
+media_massa_g <-
+  mean(pinguins$massa_corporal, na.rm = TRUE) 
+
+# converte de gramas para kilogramas
+media_massa_kg_completo <-
+  media_massa_g / 1000 
+
+# arredonda o valor para ter uma casa decimal
+media_massa_kg <- round(media_massa_kg_completo, 1)
+
+# exibe o resultado
+media_massa_kg 
+```
+````
+
+**Resultado:**
+
+```{r echo=TRUE}
+# calcula a média
+media_massa_g <-
+  mean(pinguins$massa_corporal, na.rm = TRUE) 
+
+# converte de gramas para kilogramas
+media_massa_kg_completo <-
+  media_massa_g / 1000 
+
+# arredonda o valor para ter uma casa decimal
+media_massa_kg <- round(media_massa_kg_completo, 1)
+
+# exibe o resultado
+media_massa_kg 
+```
+
+Veja que no resultado obtivemos o código em R e também o resultado deste código. Dependendo do público alvo do relatório, não queremos mostrar códigos. É possível escondê-los (e fazer muito mais!) alterando as opções de chunks (ou _chunk options_ em Inglês). Veremos mais sobre isso posteriormente!
+
+#### Inline code  
+
+Para que um resultado de código apareça ao longo do texto, é possivel usar a seguinte estrutura: `` `r ` `` .
+
+**Exemplo:**
+
+````md
+A média da massa corporal dos pinguins é `r knitr::inline_expr('media_massa_kg') ` kg.
+
+````
+
+
+
+**Resultado:**
+
+> A média da massa corporal dos pinguins é `r media_massa_kg` kg.
+
+
+
+### Adicionar imagens usando R 
+
+Na seção anterior (sobre [Markdown](#markdown)), mostramos como é possóvel adicionar uma imagem em um relatório utilizando Markdown.
+
+Porém, quando utilizamos arquivos RMarkdown também podemos adicionar imagens usando código em R, com a função `include_graphics` do pacote `knitr`.
+
+Usando o  `knitr` é possível personalizar de forma mais intuitiva como a imagem aparecerá no arquivo final: você pode adicionar uma imagem utilizando como primeiro argumento a url da imagem ou o caminho onde ela está no projeto. Além disso, com as opções de chunks (ou _chunk options_ em Inglês), poderemos personalizar diversos atributos da imagem, como: legenda, tamanho, alinhamento, entre outros.
+
+Veja o exemplo abaixo:
+
+```{r echo=TRUE, out.width='30%', fig.align='center'}
+knitr::include_graphics("https://cienciadedatos.github.io/dados/reference/figures/dados-hex.png")
+```
+
+### Adicionar tabelas usando R 
+
+Na seção anterior (sobre [Markdown](#markdown)), foi apresentado como adicionar uma tabela utilizando Markdown.
+
+Porém quando utilizamos arquivos R Markdown também é possível adicionar tabelas que resultam de códigos em R. 
+
+Existem algumas funções diferentes para fazer isso. Para apresentar alguns exemplos, primeiramente vamos salvar uma versão  da base pinguins:
+
+```{r message=FALSE, warning=FALSE}
+media_massa <- pinguins %>% # usamos a base de pinguins
+  # agrupamos por especies e ilhas
+  dplyr::group_by(especies, ilha) %>%  
+  # calculamos a média da massa corporal 
+  dplyr::summarise(media_massa = mean(massa_corporal, na.rm = TRUE)) %>% 
+  # criamos uma nova coluna, com a massa em kg, e arredondada com 2 casas decimais
+  dplyr::mutate(media_massa_kg = round(media_massa / 1000, 2)) %>%  
+  # removemos a coluna da massa em gramas
+  dplyr::select(-media_massa)
+
+# Apresentamos o resultado da tabela:
+media_massa
 ```
 
 
-**Teste escrevendo códigos diferentes também!**
+Acima, a tabela é apresentada como ela é escrita no console do R. Porém essa forma não é elegante de ser apresentada em um relatório! Podemos utilizar funções de diferentes pacotes para que as tabelas fiquem formatadas de uma forma mais atraente:
 
-
-### Adicionar imagens usando R (em arquivos .Rmd)
-
-Neste tutorial foi apresentado como adicionar uma imagem utilizando Markdown.
-Porém, quando utilizamos arquivos RMarkdown também é possível adicionar imagens usando código em R, com a função `include_graphics` do pacote `knitr`.
-Usando o  `knitr` é possível personalizar de forma mais intuitiva como a imagem aparecerá no arquivo final: você pode adicionar uma imagem utilizando como primeiro argumento a url da imagem ou o caminho onde ela está no projeto.
-
-Veja o exemplo abaixo (clique em `Run Code` para executar o código e ver o resultado):
-
-```{r exemplo-knitr, echo=TRUE, out.width='50%'}
-knitr::include_graphics("https://beatrizmilz.github.io/slidesR/introR/img/Hex/1dados-hex.png")
-```
-
-### Adicionar tabelas usando R (em arquivos .Rmd)
-
-Neste tutorial foi apresentado como adicionar uma tabela utilizando Markdown.
-Porém quando utilizamos arquivos R Markdown também é possível adicionar tabelas usando código em R. Existem algumas funções diferentes para fazer isso, veja os exemplos abaixo (clique em `Run Code` para executar o código e ver o resultado):
-
-
-
-- Adicione uma tabela utilizando o pacote `knitr`: função `kable()`
+- Utilizando o pacote `knitr`: função `kable()`
 
 ```{r exemplo-kable}
-pinguins %>%
-  head() %>%
+media_massa %>%
   knitr::kable()
 ```
 
 
--  Adicione uma tabela utilizando o pacote `DT`: função `datatable()`
+
+-  Utilizando o pacote `DT`: função `datatable()`
 
 ```{r exemplo-DT}
-pinguins %>%
-  head() %>%
+media_massa %>%
   DT::datatable()
 ```
 
-- Dependendo da forma que você gerar o arquivo R Markdown, bastará utilizar o nome da base para que ela seja apresentada de uma forma agradável:
-
-```{r exemplo-rmd}
-dados::pinguins
-```
 
 
-Obs: Existem outros pacotes que permitem adicionar tabelas bonitas nos arquivos R Markdown, como por exemplo: [reactable](https://glin.github.io/reactable/index.html), [flextable](https://davidgohel.github.io/flextable/articles/overview.html) e [kableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) !
 
+Os exemplos anteriores são as formas mais simples de apresentar as tabelas, porém cada pacote possibilita diferentes personalizações (por exemplo, alterar o nome das colunas, etc). Existem outros pacotes que permitem adicionar tabela nos relatórios em RMarkdown, como por exemplo:
 
+  - [reactable](https://glin.github.io/reactable/index.html) 
+  
+  - [flextable](https://davidgohel.github.io/flextable/articles/overview.html)
+  
+  - [kableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) 
+  
+  <!-- Quais mais? -->
 
 ## Dicas para o RStudio
 
