@@ -1,1 +1,0 @@
-# Funcionais {#funcionais}

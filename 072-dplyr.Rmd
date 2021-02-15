@@ -4,9 +4,9 @@ O `dplyr` é o pacote mais útil para realizar transformação de dados, aliando
 
 As principais funções do `dplyr` são:
 
-- `filter()` - filtra linhas
 - `select()` - seleciona colunas
 - `arrange()` - ordena a base
+- `filter()` - filtra linhas
 - `mutate()` - cria/modifica colunas
 - `group_by()` - agrupa a base
 - `summarise()` - sumariza a base
@@ -14,98 +14,79 @@ As principais funções do `dplyr` são:
 Todas essas funções seguem as mesmas características:
 
 - O _input_  é sempre uma `tibble` e o _output_  é sempre um `tibble`.
-- Colocamos o `tibble` no primeiro argumento e o que queremos fazer nos outros argumentos.
+- Colocamos a `tibble` no primeiro argumento e o que queremos fazer nos outros argumentos.
 - A utilização é facilitada com o emprego do operador `%>%`.
-- O pacote faz uso extensivo de NSE (*non standard evaluation*).
 
 As principais vantagens de se usar o `dplyr` em detrimento das funções do R base são:
 
 - Manipular dados se torna uma tarefa muito mais simples.
 - O código fica mais intuitivo de ser escrito e mais simples de ser lido.
-- O pacote `dplyr` utiliza `C` e `C++` por trás da maioria das funções, o que geralmente torna o código mais eficiente.
+- O pacote `dplyr` utiliza `C` e `C++` por trás da maioria das funções, o que geralmente torna o código mais rápido.
 - É possível trabalhar com diferentes fontes de dados, como bases relacionais (SQL) e `data.table`.
 
-Para instalar esse pacote...
+Se você ainda não tiver o `dplyr` instalado, rode o código abaixo.
 
-```{r}
+```{r, eval = FALSE}
+install.packages("dplyr")
 library(dplyr)
 ```
 
-
 Neste capítulo, vamos trabalhar com uma base de filmes do IMDB. Essa base pode ser baixada [clicando aqui](https://github.com/curso-r/site-v2/raw/master/content/material/importacao/data/imdb.rds).
-
-```{r}
-imdb <- readr::read_rds("assets/data/imdb.rds")
-```
 
 Assim, utilizaremos o objeto `imdb` para acessar os dados.
 
-```{r}
+```{r, include=FALSE}
+library(dplyr)
+imdb <- readr::read_rds("assets/data/imdb.rds")
+```
+
+
+```{r, eval = FALSE}
+imdb <- readr::read_rds("imdb.rds")
+imdb
+```
+
+```{r, echo = FALSE}
 imdb
 ```
 
 
 Agora, vamos avaliar com mais detalhes as principais funções do pacote `dplyr`.
 
------------------------------------------------------
-
-### Filtrando linhas
-
-A função `filter()` filtra linhas. Ela é semelhante à função `subset()`, do R base. O código abaixo retorna apenas filmes com nota maior que nova.
-
-
-```{r}
-imdb %>%
-  filter(nota_imdb > 9)
-```
-
-Para fazer várias condições, use os operadores lógicos `&` e `|` ou separe filtros entre vírgulas.
-
-```{r}
-imdb %>%
-  filter(ano > 2010 & nota_imdb > 8.5)
-
-imdb %>%
-  filter(receita > orcamento | nota_imdb > 9)
-```
-
-O operador `%in%` é muito útil na hora de criar filtros. O resultado das operações com `%in%` é um vetor lógico o tamanho do vetor do elemento da esquerda, identificando quais elementos da esquerda batem com algum elemento da direita.
-
-```{r}
-letters %in% c("a", "e", "z")
-
-imdb %>%
-  filter(diretor %in% c("Steven Spielberg", "Quentin Tarantino"))
-```
-
-Também podemos usar funções que retornam valores lógicos, como a `str_detect()`, do pacote `stringr`. Esse pacote possui funções para a manipulação de strings, e será abordado com mais detalhes quando falarmos sobre `stringr`.
-
-```{r}
-library(stringr)
-
-imdb %>%
-  filter(str_detect(generos, "Action"))
-```
-
------------------------------------------------------
-
 ### Selecionando colunas
 
-A função `select()` seleciona colunas (variáveis). É possível utilizar nomes, índices, intervalos de variáveis ou utilizar as funções `starts_with(x)`, `contains(x)`, `matches(x)`, `one_of(x)` para selecionar as variáveis.
+Para selecionar colunas, utilizamos a função `select()`.
+
+O primeiro argumento da função é a base de dados e os demais argumentos são os nomes das colunas que você gostaria de selecionar. Repare que você não precisa colocar o nome da coluna entre aspas.
 
 ```{r}
-imdb %>%
-  select(titulo, ano, orcamento)
-
-imdb %>%
-  select(starts_with("ator"))
+select(imdb, titulo)
 ```
 
-O operador `:` pode ser usado para selecionar intervalos de colunas.
+
+Você também pode selecionar várias colunas.
 
 ```{r}
-imdb %>%
-  select(titulo, ator_1:ator_3)
+select(imdb, titulo, ano, orcamento)
+```
+
+O operador `:` é muito útil para selecionar colunas consecutivas.
+
+```{r}
+select(imdb, titulo:cor)
+```
+
+
+O `dplyr` possui o conjunto de funções auxiliares muito úteis para seleção de colunas. As principais são:
+
+- `starts_with()`: para colunas que começam com um texto padrão
+- `ends_with()`: para colunas que terminam com um texto padrão
+- `contains()`: para colunas que contêm um texto padrão
+
+Selecionamos a seguir todas as colunas que começam com o texto "ator".
+
+```{r}
+select(imdb, starts_with("ator"))
 ```
 
 Para retirar colunas da base, base acrescentar um `-` antes da seleção.
@@ -118,89 +99,244 @@ imdb %>%
   select(-starts_with("ator"))
 ```
 
------------------------------------------------------
+#### Exercícios {-}
 
 ### Ordenando a base
 
-A função `arrange()` ordena a base segundo uma ou mais colunas. O argumento `desc=` pode ser utilizado para gerar uma ordem decrescente.
+Para ordenar linhas, utilizamos a função `arrange()`. O primeiro argumento é a base de dados. Os demais argumentos são as colunas pelas quais queremos ordenar as linhas. No exemplo a seguir, ordenamos as linhas da base por ordem crescente de orçamento.
+
+```{r}
+arrange(imdb, orcamento)
+```
+
+Também podemos ordenar de forma decrescente usando a função `desc()`.
+
+```{r}
+arrange(imdb, desc(orcamento))
+```
+
+
+E claro, ordenar segundo duas ou mais colunas.
+
+```{r}
+arrange(imdb, desc(ano), desc(orcamento))
+```
+
+#### Exercícios {-}
+
+### O pipe em ação
+
+Na grande maioria dos casos, vamos aplicar mais de uma função de manipulação em uma base para obtermos a tabela que desejamos. Poderíamos, por exemplo, querer uma tabela apenas com o título e ano dos filmes, ordenada de forma crescente de lançamento. Para fazer isso, poderíamos aninhar as funções
+
+```{r}
+arrange(select(imdb, titulo, ano), ano)
+```
+
+ou criar um objeto intermediário 
+
+```{r}
+tab_titulo_ano <- select(imdb, titulo, ano)
+
+arrange(tab_titulo_ano, ano)
+```
+
+Os dois códigos funcionam e levam ao mesmo resultado, mas não são muito boas.
+
+A primeira alternativa é ruim de escrever, já que precisamos escrever primeiro a função que roda por último, e de ler, pois é difícil identificar qual argumento pertence a qual função.
+
+A segunda alternativa é ruim pois exige a criação de objetos auxiliares. Se quiséssimos aplicar 10 operações na base, precisaríamos criar 9 objetos intermediários.
+
+A solução para aplicar diversas operações de manipulação em uma base de dados é aplicar o operador pipe: `%>%`.
+
+```{r}
+imdb %>% 
+  select(titulo, ano) %>% 
+  arrange(ano)
+```
+
+O que está sendo feito no código com pipe? Da primeira para a segunda linha, estamos aplicando a função `select()` à base imdb. Da segunda para a terceira, estamos aplicando a função `arrange()` à base resultante da função `select()`.
+
+O resultado desse código é identico às tentativas sem pipe, com a vantagem de termos escrito o código na ordem em que as funções são aplicadas, de termos um código muito mais legível e de não precisarmos utilizar objetos intermediários.
+
+### Filtrando linhas
+
+Para filtrar valores de uma coluna da base, utilizamos a função `filter()`.
+
+```{r}
+imdb %>% filter(nota_imdb > 9)
+```
+
+
+Podemos selecionar apenas as colunas título e nota para visualizarmos as notas:
+
+```{r}
+imdb %>% 
+  filter(nota_imdb > 9) %>% 
+  select(titulo, nota_imdb)
+```
+
+Podemos estender o filtro para duas ou mais colunas. Para isso, separamos cada operação por uma vírgula.
+
+```{r}
+imdb %>% filter(ano > 2010, nota_imdb > 8.5)
+```
+
+Também podemos fazer operações com as colunas da base dentro da função filter. O código abaixo devolve uma tabela apenas com os filmes que lucraram.
+
+```{r}
+imdb %>% filter(receita - orcamento > 0)
+```
+
+Naturalmente, podemos filtrar colunas categóricas. O exemplo abaixo retorna uma tabela apenas com os filmes com a Angelina Jolie Pitt ou o Brad Pitt no papel principal.
 
 ```{r}
 imdb %>%
-  arrange(orcamento) %>%
-  select(orcamento, everything())
-
-imdb %>%
-  arrange(desc(orcamento)) %>%
-  select(orcamento, everything())
-
-imdb %>%
-  arrange(desc(ano), titulo) %>%
-  select(titulo, ano, everything())
+  filter(ator_1 %in% c('Angelina Jolie Pitt', "Brad Pitt"))
 ```
 
------------------------------------------------------
-
-### Criando e modificando colunas
-
-A função `mutate()` cria ou modifica colunas. Ela é equivalente à função `transform()`, mas aceita várias novas colunas iterativamente. Novas variáveis devem ter o mesmo número de linhas da base original (ou comprimento 1).
+Para filtrar textos sem correspondência exata, podemos utilizar a função auxiliar `str_detect()` do pacote `{stringr}`. Ela serve para verificar se cada string de um vetor contém um determinado padrão de texto.
 
 ```{r}
-# A coluna "duracao" é sobrescrita
-imdb %>%
-  mutate(duracao = duracao/60) %>%
-  select(duracao)
+library(stringr)
 
-# Criamos uma nova coluna na base
-imdb %>%
-  mutate(duracao_horas = duracao/60) %>%
-  select(duracao, duracao_horas)
-
-# Podemos fazer diversas operações em um mesmo mutate.
-imdb %>%
-  mutate(
-    lucro = receita - orcamento,
-    resultado = ifelse(lucro < 0, "prejuizo", "lucro")
-  ) %>%
-  select(lucro, resultado)
+str_detect(
+  string = c("a", "aa","abc", "bc", "A", NA), 
+  pattern = "a"
+)
 ```
 
------------------------------------------------------
+Podemos utilizá-la para filtrar apenas os filmes que contêm o gênero ação.
+
+```{r}
+# A coluna gêneros apresenta todos os gêneros dos filmes concatenados
+imdb$generos[1:6]
+
+# Podemos detectar se o gênero Action aparece na string
+str_detect(
+  string = imdb$generos[1:6],
+  pattern = "Action"
+)
+
+# Aplicamos essa lógica dentro da função filter, para a coluna completa
+imdb %>% filter(str_detect(generos, "Action"))
+```
+
+#### Exercícios {-}
+
+### Modificando e criando novas colunas
+
+Para modificar uma coluna existente ou criar uma nova coluna, utilizamos a função `mutate()`. O código abaixo divide os valores da coluna duração por 60, mudando a unidade de medida dessa variável de minutos para horas.
+
+```{r}
+imdb %>% mutate(duracao = duracao/60)
+```
+
+Também poderíamos ter criado essa variável em uma nova coluna. Repare que a nova coluna `duracao_horas` é colocada no final da tabela.
+
+```{r}
+imdb %>% mutate(duracao_horas = duracao/60)
+```
+
+Podemos fazer qualquer operação com uma ou mais colunas. A única regra é que o resultado da operação retorne um vetor com comprimento igual ao número de linhas da base (ou com comprimento 1 para distribuir um mesmo valor em todas as linhas). Você também pode criar/modificar quantas colunas quiser dentro de um mesmo `mutate`.
+
+```{r}
+imdb %>% 
+  mutate(lucro = receita - orcamento, pais = "Estados Unidos") %>% 
+  select(titulo, lucro, pais)
+```
+
+#### Exercícios {-}
 
 ### Summarisando a base
 
-A função `summarise()` sumariza a base. Ela aplica uma função às variáveis, retornando um vetor de tamanho `1`. Ela é utilizada em conjunto da função `group_by()`. A função `n()` costuma ser bastante utilizada com a função summarise().
-```{r include=FALSE}
-remove(list = conflicts(detail = T)$.GlobalEnv)
-library(dplyr)
-```
+Sumarização é a técnica de se resumir um conjunto de dados utilizando alguma métrica de interesse. A média, a mediana, a variância, a frequência, a proporção, por exemplo, são tipos de sumarização que trazem diferentes informações sobre uma variável. 
+
+Para sumarizar uma coluna da base, utilizamos a função `summarize()`. O código abaixo resume a coluna orçamento pela sua média.
 
 ```{r}
-imdb %>%
-  summarise(media_orcamento = mean(orcamento, na.rm = TRUE))
-
-imdb %>%
-  summarise(
-    media_orcamento = mean(orcamento, na.rm = TRUE),
-    mediana_orcamento = median(orcamento, na.rm = TRUE),
-    qtd = n(),
-    qtd_diretores = n_distinct(diretor)
-  )
-
-imdb %>%
-  group_by(ano) %>%
-  summarise(qtd_filmes = n())
-
-imdb %>%
-  group_by(diretor) %>%
-  summarise(orcamento_medio = mean(orcamento, na.rm = TRUE))
+imdb %>% summarize(media_orcamento = mean(orcamento, na.rm = TRUE))
 ```
+
+Repare que a saída da função continua sendo uma tibble.
+
+Podemos calcular diversas sumarizações diferentes em um mesmo `summarize`. Cada sumarização será uma coluna da nova base.
+
+```{r}
+imdb %>% summarise(
+  media_orcamento = mean(orcamento, na.rm = TRUE),
+  mediana_orcamento = median(orcamento, na.rm = TRUE),
+  variancia_orcamento = var(orcamento, na.rm = TRUE)
+)
+```
+
+E também sumarizar diversas colunas.
+
+```{r}
+imdb %>% summarize(
+  media_orcamento = mean(orcamento, na.rm = TRUE),
+  media_receita = mean(receita, na.rm = TRUE),
+  media_lucro = mean(receita - orcamento, na.rm = TRUE)
+)
+```
+
+Muitas vezes queremos sumarizar uma coluna agrupada pelas categorias de uma segunda coluna. Para isso, além do `summarize`, utilizamos também a função `group_by()`.
+
+O código a seguir calcula a receita média dos filmes para cada categoria da coluna "cor".
+
+```{r}
+imdb %>% 
+  group_by(cor) %>% 
+  summarise(receita_media = mean(receita, na.rm = TRUE))
+```
+
+A única alteração que a função `group_by()` faz na base é a marcação de que a base está agrupada.
+
+```{r}
+imdb %>% group_by(cor)
+```
+
+#### Exercícios {-}
 
 ### Juntando duas bases
 
-Para juntar duas tabelas de dados, podemos utilizar a família de funções `_join()` do `dplyr`. Essas funções geralmente recebem três argumentos: uma base esquerda (`x=`), uma base direita (`y=`) e uma chave `by=`. As principais funções `_join()` são:
+Podemos juntar duas tabelas a partir de uma (coluna) chave utilizando a função `left_join()`. Como exempo, vamos inicialmente calcular o lucro médio dos filmes de cada diretor e salvar no objeto `tab_lucro_diretor`.
 
-- `left_join(x, y)`: retorna todas as linhas da base `x` e todas as colunas das bases `x` e `y`. Linhas de `x` sem correspondentes em `y` receberão `NA` na nova base.
+```{r}
+tab_lucro_diretor <- imdb %>%
+  group_by(diretor) %>% 
+  summarise(lucro_medio = mean(receita - orcamento, na.rm = TRUE))
+
+tab_lucro_diretor
+```
+
+E se quisermos colocar essa informação na base original? Basta usar a função `left_join()` utilizando a coluna `diretor` como chave. Observe que a coluna `lucro_medio` aparece agora no fim da tabela.
+
+```{r}
+imdb_com_lucro_medio <- left_join(imdb, tab_lucro_diretor, by = "diretor")
+
+imdb_com_lucro_medio
+```
+
+Na tabela `imdb_com_lucro_medio`, como na tabela `imdb`, cada linha continua a representar um filme diferente, mas agora temos também a informação do lucro médio do diretor de cada filme. 
+
+A primeira linha, por exemplo, traz as informações do filme Avatar. O valor do `lucro_medio` nessa linha representa o lucro médio de todos os filmes do James Cameron, que é o diretor de Avatar. Com essa informação, podemos calcular o quanto o lucro do Avatar se afasta do lucro médio do James Cameron.
+
+```{r}
+imdb_com_lucro_medio %>% 
+  mutate(
+    lucro = receita - orcamento,
+    lucro_relativo = (lucro - lucro_medio)/lucro_medio,
+    lucro_relativo = scales::percent(lucro_relativo)
+  ) %>% 
+  select(titulo, diretor, lucro, lucro_medio, lucro_relativo)
+```
+
+Observamos então que o Avatar obteve um lucro aproximadamente 169% maior que a média dos filmes do James Cameron.
+
+Além da função `left_join()`, também são muito utilizadas as funções `right_join()` e `full_join()`.
+
 - `right_join()`: retorna todas as linhas da base `y` e todas as colunas das bases `x` e `y`. Linhas de `y` sem correspondentes em `x` receberão `NA` na nova base.
+
 - `full_join()`: retorna todas as linhas e colunas de `x`e `y`. Valores sem correspondência entre as bases receberão `NA` na nova base.
 
 A figura a seguir esquematiza as operações dessas funções:
@@ -209,10 +345,4 @@ A figura a seguir esquematiza as operações dessas funções:
 knitr::include_graphics('assets/img/manipulacao/joins.png')
 ```
 
-A figura a seguir mostra o que acontece quando temos chaves duplicadas em um `left_join()`. A ideia é equivalante para as outras funções.
-
-```{r left-join, echo=FALSE, fig.align='center'}
-knitr::include_graphics('assets/img/manipulacao/left-join.png')
-```
-
-
+#### Exercícios {-}

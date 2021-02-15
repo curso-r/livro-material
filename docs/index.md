@@ -6,8 +6,6 @@ github-repo: "curso-r/livro-material"
 site: bookdown::bookdown_site
 documentclass: book
 cover-image: "assets/img/logo.png"
-# bibliography: [assets/book.bib, packages.bib]
-biblio-style: apalike
 link-citations: yes
 favicon: "assets/img/favicon.ico"
 description: "Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R."
