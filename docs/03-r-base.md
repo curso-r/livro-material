@@ -834,7 +834,7 @@ Por fim, veja algumas diferenças entre comparações lógicas no SQL e no R:
 - **Negação**: em vez de usar a palavra `NOT` igual ao SQL, usamos `!` no R. Por exemplo, `id not in ('1', '2', '3')` fica `!(id %in% c(1, 2, 3))`.
 
 
-### Exercícios
+### Exercícios {-}
 
 **1** O código abaixo vai guardar no objeto `segredo` um número inteiro entre 0 e 10. Sem olhar qual número foi guardado no objeto, resolva os itens a seguir:
 
@@ -1734,7 +1734,7 @@ x <- 1
 if (x == 1) {         
   Sys.time()
 }
-## [1] "2021-02-08 17:20:46 -03"
+## [1] "2021-02-15 17:36:09 -03"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se a expressão que estiver dentro dos parênteses `()` retornar `TRUE`. Veja outro exemplo:
