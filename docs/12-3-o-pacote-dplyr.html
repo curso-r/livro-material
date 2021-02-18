@@ -361,6 +361,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb507-17"><a href="12-3-o-pacote-dplyr.html#cb507-17"></a><span class="co">## $ ator_2         &lt;chr&gt; &quot;Joel David Moore&quot;, &quot;Orlando Bloom&quot;, &quot;Christian Bale&quot;,…</span></span>
 <span id="cb507-18"><a href="12-3-o-pacote-dplyr.html#cb507-18"></a><span class="co">## $ ator_3         &lt;chr&gt; &quot;Wes Studi&quot;, &quot;Jack Davenport&quot;, &quot;Joseph Gordon-Levitt&quot;,…</span></span></code></pre></div>
 <p><em>A função <code>glimpse()</code> traz um resumo da base, contendo o número de linhas, colunas, o nome e tipo das colunas e as primeiras observações de cada coluna.</em></p>
+<hr />
 <p><strong>2.</strong> Crie uma tabela com apenas as colunas <code>titulo</code>, <code>diretor</code>, e <code>orcamento.</code> Salve em um objeto chamado <code>imdb_simples</code>.</p>
 <div class="sourceCode" id="cb508"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb508-1"><a href="12-3-o-pacote-dplyr.html#cb508-1"></a>imdb_simples &lt;-<span class="st"> </span><span class="kw">select</span>(imdb, titulo, diretor, orcamento)</span>
 <span id="cb508-2"><a href="12-3-o-pacote-dplyr.html#cb508-2"></a>imdb_simples</span>
@@ -378,6 +379,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb508-14"><a href="12-3-o-pacote-dplyr.html#cb508-14"></a><span class="co">##  9 Superman Returns                            Bryan Singer      209000000</span></span>
 <span id="cb508-15"><a href="12-3-o-pacote-dplyr.html#cb508-15"></a><span class="co">## 10 Pirates of the Caribbean: Dead Man&#39;s Chest  Gore Verbinski    225000000</span></span>
 <span id="cb508-16"><a href="12-3-o-pacote-dplyr.html#cb508-16"></a><span class="co">## # … with 3,797 more rows</span></span></code></pre></div>
+<hr />
 <p><strong>3.</strong> Selecione apenas as colunas <code>ator_1</code>, <code>ator_2</code> e <code>ator_3</code> usando o ajudante <code>contains()</code>.</p>
 <div class="sourceCode" id="cb509"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb509-1"><a href="12-3-o-pacote-dplyr.html#cb509-1"></a><span class="kw">select</span>(imdb, <span class="kw">contains</span>(<span class="st">&quot;ator&quot;</span>))</span>
 <span id="cb509-2"><a href="12-3-o-pacote-dplyr.html#cb509-2"></a><span class="co">## # A tibble: 3,807 x 3</span></span>
@@ -394,6 +396,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb509-13"><a href="12-3-o-pacote-dplyr.html#cb509-13"></a><span class="co">##  9 Kevin Spacey    Marlon Brando     Frank Langella      </span></span>
 <span id="cb509-14"><a href="12-3-o-pacote-dplyr.html#cb509-14"></a><span class="co">## 10 Johnny Depp     Orlando Bloom     Jack Davenport      </span></span>
 <span id="cb509-15"><a href="12-3-o-pacote-dplyr.html#cb509-15"></a><span class="co">## # … with 3,797 more rows</span></span></code></pre></div>
+<hr />
 <p><strong>4.</strong> Usando a função <code>select()</code> (e seus ajudantes), escreva códigos que retornem a base IMDB sem as colunas <code>ator_1</code>, <code>ator_2</code> e <code>ator_3.</code> Escreva todas as soluções diferentes que você conseguir pensar.</p>
 <div class="sourceCode" id="cb510"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb510-1"><a href="12-3-o-pacote-dplyr.html#cb510-1"></a><span class="kw">select</span>(imdb, <span class="op">-</span><span class="kw">starts_with</span>(<span class="st">&quot;ator&quot;</span>))</span>
 <span id="cb510-2"><a href="12-3-o-pacote-dplyr.html#cb510-2"></a></span>
@@ -409,6 +412,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">12.3.2</span> Ordenando a base</h3>
 <p><strong>1.</strong> Ordene os filmes em ordem crescente de <code>ano</code> e decrescente de <code>receita</code> e salve em um objeto chamado <code>filmes_ordenados</code>.</p>
 <div class="sourceCode" id="cb511"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb511-1"><a href="12-3-o-pacote-dplyr.html#cb511-1"></a>filmes_ordenados &lt;-<span class="st"> </span><span class="kw">arrange</span>(imdb, ano, <span class="kw">desc</span>(receita))</span></code></pre></div>
+<hr />
 <p><strong>2.</strong> Selecione apenas as colunas <code>titulo</code> e <code>orcamento</code> e então ordene de forma decrescente pelo <code>orcamento</code>.</p>
 <div class="sourceCode" id="cb512"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb512-1"><a href="12-3-o-pacote-dplyr.html#cb512-1"></a><span class="co"># Aninhando as funções</span></span>
 <span id="cb512-2"><a href="12-3-o-pacote-dplyr.html#cb512-2"></a><span class="kw">arrange</span>(<span class="kw">select</span>(imdb, titulo, orcamento), <span class="kw">desc</span>(orcamento))</span>
@@ -447,9 +451,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb513-19"><a href="12-3-o-pacote-dplyr.html#cb513-19"></a><span class="co">## 10 Space…  2000 Clint …     130 Blac… Action… USA   A partir de …  65000000</span></span>
 <span id="cb513-20"><a href="12-3-o-pacote-dplyr.html#cb513-20"></a><span class="co">## # … with 139 more rows, and 6 more variables: receita &lt;dbl&gt;, nota_imdb &lt;dbl&gt;,</span></span>
 <span id="cb513-21"><a href="12-3-o-pacote-dplyr.html#cb513-21"></a><span class="co">## #   likes_facebook &lt;dbl&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</span></span></code></pre></div>
+<hr />
 <p><strong>2.</strong> Crie um objeto chamado <code>curtos_legais</code> com filmes de 90 minutos ou menos de duração e nota no imdb maior do que 8.5.</p>
 <div class="sourceCode" id="cb514"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb514-1"><a href="12-3-o-pacote-dplyr.html#cb514-1"></a>curtos_legais &lt;-<span class="st"> </span>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb514-2"><a href="12-3-o-pacote-dplyr.html#cb514-2"></a><span class="st">  </span><span class="kw">filter</span>(duracao <span class="op">&lt;=</span><span class="st"> </span><span class="dv">90</span>, nota_imdb <span class="op">&gt;</span><span class="st"> </span><span class="fl">8.5</span>)</span></code></pre></div>
+<hr />
 <p><strong>3.</strong> Retorne tabelas (<code>tibbles</code>) apenas com:</p>
 <p><strong>a.</strong> filmes coloridos anteriores a 1950;</p>
 <div class="sourceCode" id="cb515"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb515-1"><a href="12-3-o-pacote-dplyr.html#cb515-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
@@ -593,6 +599,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb521-20"><a href="12-3-o-pacote-dplyr.html#cb521-20"></a><span class="co">## # … with 1,302 more rows, and 7 more variables: receita &lt;dbl&gt;, nota_imdb &lt;dbl&gt;,</span></span>
 <span id="cb521-21"><a href="12-3-o-pacote-dplyr.html#cb521-21"></a><span class="co">## #   likes_facebook &lt;dbl&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;,</span></span>
 <span id="cb521-22"><a href="12-3-o-pacote-dplyr.html#cb521-22"></a><span class="co">## #   prejuizo &lt;dbl&gt;</span></span></code></pre></div>
+<hr />
 <p><strong>2.</strong> Fazendo apenas uma chamada da função mutate(), crie as seguintes colunas novas na base <code>imdb</code>:</p>
 <p><strong>a.</strong> <code>lucro = receita - orcamento</code></p>
 <p><strong>b.</strong> <code>lucro_medio</code></p>
@@ -622,6 +629,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb522-22"><a href="12-3-o-pacote-dplyr.html#cb522-22"></a><span class="co">## #   nota_imdb &lt;dbl&gt;, likes_facebook &lt;dbl&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;,</span></span>
 <span id="cb522-23"><a href="12-3-o-pacote-dplyr.html#cb522-23"></a><span class="co">## #   ator_3 &lt;chr&gt;, lucro &lt;dbl&gt;, lucro_medio &lt;dbl&gt;, lucro_relativo &lt;dbl&gt;,</span></span>
 <span id="cb522-24"><a href="12-3-o-pacote-dplyr.html#cb522-24"></a><span class="co">## #   houve_lucro &lt;chr&gt;</span></span></code></pre></div>
+<hr />
 <p><strong>3.</strong> Crie uma nova coluna que classifique o filme em <code>"recente"</code> (posterior a 2000) e <code>"antigo"</code> (de 2000 para trás).</p>
 <div class="sourceCode" id="cb523"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb523-1"><a href="12-3-o-pacote-dplyr.html#cb523-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb523-2"><a href="12-3-o-pacote-dplyr.html#cb523-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">antigo_ou_recente =</span> <span class="kw">ifelse</span>(ano <span class="op">&gt;</span><span class="st"> </span><span class="dv">2000</span>, <span class="st">&quot;recente&quot;</span>, <span class="st">&quot;antigo&quot;</span>))</span>
@@ -656,6 +664,7 @@ da base.</p>
 <span id="cb524-7"><a href="12-3-o-pacote-dplyr.html#cb524-7"></a><span class="co">##   duracao_media duracao_mediana</span></span>
 <span id="cb524-8"><a href="12-3-o-pacote-dplyr.html#cb524-8"></a><span class="co">##           &lt;dbl&gt;           &lt;dbl&gt;</span></span>
 <span id="cb524-9"><a href="12-3-o-pacote-dplyr.html#cb524-9"></a><span class="co">## 1          106.             103</span></span></code></pre></div>
+<hr />
 <p><strong>2.</strong> Calcule o lucro médio dos filmes com duração
 menor que 60 minutos.</p>
 <div class="sourceCode" id="cb525"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb525-1"><a href="12-3-o-pacote-dplyr.html#cb525-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
@@ -666,6 +675,7 @@ menor que 60 minutos.</p>
 <span id="cb525-6"><a href="12-3-o-pacote-dplyr.html#cb525-6"></a><span class="co">##   lucro_medio</span></span>
 <span id="cb525-7"><a href="12-3-o-pacote-dplyr.html#cb525-7"></a><span class="co">##         &lt;dbl&gt;</span></span>
 <span id="cb525-8"><a href="12-3-o-pacote-dplyr.html#cb525-8"></a><span class="co">## 1     632454.</span></span></code></pre></div>
+<hr />
 <p><strong>3.</strong> Apresente na mesma tabela o lucro médio dos filmes com duracao menor que 60 minutos e o lucro médio dos filmes com duracao maior ou igual a 60 minutos.</p>
 <div class="sourceCode" id="cb526"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb526-1"><a href="12-3-o-pacote-dplyr.html#cb526-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb526-2"><a href="12-3-o-pacote-dplyr.html#cb526-2"></a><span class="st">  </span><span class="kw">mutate</span>(</span>
@@ -683,6 +693,7 @@ menor que 60 minutos.</p>
 <span id="cb526-14"><a href="12-3-o-pacote-dplyr.html#cb526-14"></a><span class="co">##   &lt;chr&gt;                &lt;dbl&gt;</span></span>
 <span id="cb526-15"><a href="12-3-o-pacote-dplyr.html#cb526-15"></a><span class="co">## 1 60 ou mais min   17274472.</span></span>
 <span id="cb526-16"><a href="12-3-o-pacote-dplyr.html#cb526-16"></a><span class="co">## 2 menor 60 min       632454.</span></span></code></pre></div>
+<hr />
 <p><strong>4.</strong> Retorne tabelas (<code>tibbles</code>) apenas com:</p>
 <p><strong>a.</strong> a nota IMDB média dos filmes por tipo de classificacao;</p>
 <div class="sourceCode" id="cb527"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb527-1"><a href="12-3-o-pacote-dplyr.html#cb527-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>

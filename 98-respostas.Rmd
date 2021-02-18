@@ -1001,6 +1001,8 @@ glimpse(imdb)
 
 *A função `glimpse()` traz um resumo da base, contendo o número de linhas, colunas, o nome e tipo das colunas e as primeiras observações de cada coluna.*
 
+---
+
 **2.** Crie uma tabela com apenas as colunas `titulo`, `diretor`, e `orcamento.` Salve em um objeto chamado `imdb_simples`.
 
 ```{r}
@@ -1008,12 +1010,15 @@ imdb_simples <- select(imdb, titulo, diretor, orcamento)
 imdb_simples
 ```
 
+---
 
 **3.** Selecione apenas as colunas `ator_1`, `ator_2` e `ator_3` usando o ajudante `contains()`.
 
 ```{r}
 select(imdb, contains("ator"))
 ```
+
+---
 
 **4.** Usando a função `select()` (e seus ajudantes), escreva códigos que retornem a base IMDB sem as colunas `ator_1`, `ator_2` e `ator_3.` Escreva todas as soluções diferentes que você conseguir pensar. 
 
@@ -1037,6 +1042,7 @@ select(imdb, -contains("ator"))
 filmes_ordenados <- arrange(imdb, ano, desc(receita))
 ```
 
+---
 
 **2.** Selecione apenas as colunas `titulo` e `orcamento` e então ordene de forma decrescente pelo `orcamento`.
 
@@ -1068,12 +1074,16 @@ unique(imdb$cor)
 imdb %>% filter(cor == "Black and White")
 ```
 
+---
+
 **2.** Crie um objeto chamado `curtos_legais` com filmes de 90 minutos ou menos de duração e nota no imdb maior do que 8.5.
 
 ```{r}
 curtos_legais <- imdb %>% 
   filter(duracao <= 90, nota_imdb > 8.5)
 ```
+
+---
 
 **3.** Retorne tabelas (`tibbles`) apenas com:
 
@@ -1141,6 +1151,7 @@ imdb_prejuizo %>%
   arrange(prejuizo)
 ```
 
+---
 
 **2.** Fazendo apenas uma chamada da função mutate(), crie as seguintes colunas novas na base `imdb`:
 
@@ -1162,6 +1173,7 @@ imdb %>%
   )
 ```
 
+---
 
 **3.** Crie uma nova coluna que classifique o filme em `"recente"` (posterior a 2000) e `"antigo"` (de 2000 para trás).
 
@@ -1185,6 +1197,7 @@ imdb %>%
   )
 ```
 
+---
 
 **2.** Calcule o lucro médio dos filmes com duração
 menor que 60 minutos.
@@ -1195,6 +1208,8 @@ imdb %>%
   mutate(lucro = receita - orcamento) %>% 
   summarise(lucro_medio = mean(lucro, na.rm = TRUE))
 ```
+
+---
 
 **3.** Apresente na mesma tabela o lucro médio dos filmes com duracao menor que 60 minutos e o lucro médio dos filmes com duracao maior ou igual a 60 minutos.
 
@@ -1210,6 +1225,8 @@ imdb %>%
     lucro_medio = mean(lucro, na.rm = TRUE)
   )
 ```
+
+---
 
 **4.** Retorne tabelas (`tibbles`) apenas com:
 
