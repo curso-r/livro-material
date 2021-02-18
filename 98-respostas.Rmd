@@ -981,250 +981,304 @@ rnorm(100) %>%
 - Em seguida, tiramos a média desse vetor, desconsiderando o `NA`, obtendo o valor 5.
 - Por fim, testemos se o valor é igual a 5, obtendo o valor `TRUE`.
 
-<!-- -------------------------------------------------------------------------------- -->
+## O pacote dplyr
 
-<!-- **2.** Qual o resultado da divisão de 1 por 0 no R? E de -1 por 0? -->
+```{r, include=FALSE}
+imdb <- readr::read_csv("assets/data/imdb.csv")
+library(dplyr)
+```
 
-<!-- **Resposta:** -->
 
-<!-- Infinito e -Infinito. -->
+### Selecionando colunas
 
-<!-- ```{r} -->
-<!-- 1/0 -->
-<!-- -1/0 -->
-<!-- ``` -->
+Utilize a base `imdb` nos exercícios a seguir.
 
-<!-- -------------------------------------------------------------------------------- -->
+**1.** Teste aplicar a função `glimpse()` do pacote `{dplyr}` à base `imdb`. O que ela faz?
 
-<!-- **3.** Quais as diferenças entre `NaN`, `NULL`, `NA` e `Inf`? Digite expressões que retornam cada um desses resultados. -->
+```{r}
+glimpse(imdb)
+```
 
-<!-- **Resposta:** -->
+*A função `glimpse()` traz um resumo da base, contendo o número de linhas, colunas, o nome e tipo das colunas e as primeiras observações de cada coluna.*
 
-<!-- ```{r} -->
-<!-- # NaN é o resultado de uma operação matemática inválida.  -->
-<!-- # Significa Not A Number. -->
+**2.** Crie uma tabela com apenas as colunas `titulo`, `diretor`, e `orcamento.` Salve em um objeto chamado `imdb_simples`.
 
-<!-- 0/0 -->
-<!-- ``` -->
+```{r}
+imdb_simples <- select(imdb, titulo, diretor, orcamento)
+imdb_simples
+```
 
 
-<!-- ```{r eval=FALSE} -->
-<!-- # NULL é o vazio do R. É como se o objeto não existisse. -->
+**3.** Selecione apenas as colunas `ator_1`, `ator_2` e `ator_3` usando o ajudante `contains()`.
 
-<!-- NULL -->
-<!-- a = NULL -->
-<!-- ``` -->
+```{r}
+select(imdb, contains("ator"))
+```
 
+**4.** Usando a função `select()` (e seus ajudantes), escreva códigos que retornem a base IMDB sem as colunas `ator_1`, `ator_2` e `ator_3.` Escreva todas as soluções diferentes que você conseguir pensar. 
 
-<!-- ```{r } -->
-<!-- # veja que um vetor, mesmo sem elementos não é NULL -->
+```{r, eval = FALSE}
+select(imdb, -starts_with("ator"))
 
-<!-- is.null(integer(length = 0))  -->
+select(imdb, -ator_1, -ator_2, -ator_3)
 
-<!-- # NA é uma constante lógica do R. Siginifica Not Availlable.  -->
-<!-- # NA pode ser convertido para quase todos os tipos de vetores do R.  -->
-<!-- # É usado principalmente para indicar valores faltantes. -->
+select(imdb, -(ator_1:ator_3))
 
-<!-- NA -->
-<!-- as.numeric(c("1", "2", "a")) -->
+select(imdb, titulo:likes_facebook)
 
-<!-- # Inf é significa infinito. É o resultado de operações matemáticas  -->
-<!-- # cujo limite é infinito. -->
+select(imdb, -contains("ator"))
+```
 
-<!-- 1/0 -->
-<!-- 1/Inf -->
-<!-- ``` -->
+### Ordenando a base
 
-<!-- -------------------------------------------------------------------------------- -->
+**1.** Ordene os filmes em ordem crescente de `ano` e decrescente de `receita` e salve em um objeto chamado `filmes_ordenados`.
 
-<!-- **4.** Sem rodar o código, calcule o que a expressão `5 + 3 * 10 %/% 3 == 15` vai resultar no R. Em seguida, apenas utilizando parênteses, faço a expressão retornar o valore contrário (i.e., se originariamente for `TRUE`, faça retornar `FALSE`). -->
+```{r}
+filmes_ordenados <- arrange(imdb, ano, desc(receita))
+```
 
-<!-- **Resposta:** -->
 
-<!-- O resultado da parte esquerda é 14, por isso a expressão retornará `FALSE`. Para fazê-la retornar `TRUE`, basta colocar parênteses em volta de `3 * 10`. -->
+**2.** Selecione apenas as colunas `titulo` e `orcamento` e então ordene de forma decrescente pelo `orcamento`.
 
-<!-- ```{r} -->
-<!-- 5 + (3 * 10) %/% 3 == 15 -->
-<!-- ``` -->
+```{r, eval = FALSE}
+# Aninhando as funções
+arrange(select(imdb, titulo, orcamento), desc(orcamento))
 
-<!-- -------------------------------------------------------------------------------- -->
+# Criando objeto intermediário
+imdb_aux <- select(imdb, titulo, orcamento)
+arrange(imdb_aux, desc(orcamento))
 
-<!-- **5.** Por que o código abaixo retorna erro? Arrume o código para retornar o valor `TRUE`. -->
+# Pipe s2
+imdb %>% 
+  select(titulo, orcamento) %>% 
+  arrange(desc(orcamento))
+```
 
-<!-- ```{r, eval = FALSE} -->
-<!-- x <- 4 -->
-<!-- if(x = 4) { -->
-<!--   TRUE -->
-<!-- } -->
-<!-- ``` -->
+### Filtrando linhas
 
-<!-- **Resposta:** -->
+Utilize a base `imdb` nos exercícios a seguir.
 
-<!-- A expressão `x = 4` está tentando atribuir o valor 4 ao objeto `x` dentro do if, o que não é permitido pois o controlador `if` só aceita valores lógicos. Para corrigir o código e fazê-lo retornar `TRUE`, basta trocar `=` por `==`. -->
+**1.** Crie um objeto chamado `filmes_pb` apenas com filmes preto e branco.
 
-<!-- ```{r} -->
-<!-- x <- 4 -->
-<!-- if(x == 4) { -->
-<!--   TRUE -->
-<!-- } -->
-<!-- ``` -->
+```{r}
+# Vendo categorias da variável cor
+unique(imdb$cor)
 
-<!-- -------------------------------------------------------------------------------- -->
+# Filtrando
+imdb %>% filter(cor == "Black and White")
+```
 
-<!-- **6.** Usando `if` e `else`, escreva um código que retorne a string "número" caso o objeto `x` seja da classe `numeric` ou `integer`; a string "palavra" caso o objeto seja da classe `character`; e `NULL` caso contrário. -->
+**2.** Crie um objeto chamado `curtos_legais` com filmes de 90 minutos ou menos de duração e nota no imdb maior do que 8.5.
 
-<!-- **Resposta:** -->
+```{r}
+curtos_legais <- imdb %>% 
+  filter(duracao <= 90, nota_imdb > 8.5)
+```
 
-<!-- ```{r} -->
-<!-- x <- 1 -->
-<!-- # x <- 1L -->
-<!-- # x <- "1" -->
+**3.** Retorne tabelas (`tibbles`) apenas com:
 
-<!-- if(is.numeric(x)) { -->
-<!--   "número" -->
-<!-- } else if(is.character(x)) { -->
-<!--   "palavra" -->
-<!-- } else {  -->
-<!--   NULL -->
-<!-- } -->
+**a.** filmes coloridos anteriores a 1950;
 
-<!-- ``` -->
+```{r}
+imdb %>% 
+  filter(cor == "Color", ano < 1950)
+```
 
-<!-- Note que a função `is.numeric()` retorna `TRUE` para as classes `integer` e `numeric`. -->
 
-<!-- -------------------------------------------------------------------------------- -->
+**b.** filmes do "Woody Allen" ou do "Wes Anderson";
 
-<!-- **7.** Use o `for` para retornar o valor mínimo do seguinte vetor: `vetor <- c(4, 2, 1, 5, 3)`. Modifique o seu código para receber vetores de qualquer tamanho. -->
+```{r}
+imdb %>% 
+  filter(diretor == "Woody Allen" | diretor == "Wes Anderson")
+```
 
-<!-- **Resposta:** -->
 
-<!-- ```{r} -->
+**c.** filmes do "Steven Spielberg" ordenados de forma decrescente por ano, mostrando apenas as colunas `titulo` e `ano`;
 
-<!-- vetor <- c(4, 2, 1, 5, 3) -->
-<!-- minimo <- Inf -->
+```{r}
+imdb %>% 
+  filter(diretor == "Steven Spielberg") %>% 
+  arrange(desc(ano)) %>% 
+  select(titulo, ano)
+```
 
-<!-- for(i in 1:5) { -->
 
-<!--   if(minimo > vetor[i]) { -->
-<!--     minimo <- vetor[i] -->
-<!--   } -->
+**d.**  filmes que tenham "Action" **ou** "Comedy" entre os seus gêneros;
 
-<!-- } -->
+```{r}
+library(stringr)
 
-<!-- minimo -->
+# Solução 1
+imdb %>% 
+  filter(str_detect(generos, "Action") | str_detect(generos, "Comedy"))
+```
 
-<!-- # Para qualquer vetor -->
+**e.** filmes que tenham "Action" **e** "Comedy" entre os seus gêneros e tenha `nota_imdb` maior que 8;
 
-<!-- for(i in 1:length(vetor)) { -->
+```{r}
+imdb %>% 
+  filter(str_detect(generos, "Action"), str_detect(generos, "Comedy"))
+```
 
-<!--   if(minimo > vetor[i]) { -->
-<!--     minimo <- vetor[i] -->
-<!--   } -->
 
-<!-- } -->
+**f.** filmes que não possuem informação tanto de receita quanto de orçamento (isto é, possuem `NA` em ambas as colunas).
 
-<!-- minimo -->
+```{r}
+imdb %>% 
+  filter(is.na(orcamento), is.na(receita))
+```
 
-<!-- ``` -->
+### Modificando e criando novas colunas
 
-<!-- **Lembrete**: o R já possui a função `min()` para calcular o mínimo de um conjunto de valores. -->
+**1.** Crie uma coluna chamada `prejuizo` (`orcamento - receita`) e salve a nova tabela em um objeto chamado `imdb_prejuizo`. Em seguida, filtre apenas os filmes que deram prejuízo e ordene a tabela por ordem crescente de prejuízo.
 
-<!-- -------------------------------------------------------------------------------- -->
+```{r}
+imdb_prejuizo <- imdb %>% 
+  mutate(prejuizo = orcamento - receita)
 
-<!-- **8.** Usando apenas `for` e a função `length()`, construa uma função que calcule a média de um vetor número qualquer. Construa uma condição para a função retornar `NULL` caso o vetor não seja numérico. -->
+imdb_prejuizo %>% 
+  filter(prejuizo > 0) %>% 
+  arrange(prejuizo)
+```
 
-<!-- **Resposta:** -->
 
-<!-- ```{r} -->
-<!-- media <- function(x) { -->
+**2.** Fazendo apenas uma chamada da função mutate(), crie as seguintes colunas novas na base `imdb`:
 
-<!--   i <- 1 -->
-<!--   tamanho <- length(x) -->
-<!--   soma <- 0 -->
+**a.** `lucro = receita - orcamento`
 
-<!--   for(i in 1:tamanho){ -->
-<!--     soma <- soma + x[i] -->
-<!--   } -->
+**b.** `lucro_medio`
 
-<!--   return(soma/tamanho) -->
-<!-- } -->
+**c.** `lucro_relativo = (lucro - lucro_medio)/lucro_medio`
 
-<!-- media(1:3) -->
-<!-- ``` -->
+**d.** `houve_lucro = ifelse(lucro > 0, "sim", "não")`
 
-<!-- -------------------------------------------------------------------------------- -->
+```{r}
+imdb %>% 
+  mutate(
+    lucro = receita - orcamento,
+    lucro_medio = mean(lucro, na.rm = TRUE),
+    lucro_relativo = (lucro - lucro_medio) / lucro_medio,
+    houve_lucro = ifelse(lucro > 0, "sim", "não")
+  )
+```
 
-<!-- **9.** Rode `help(runif)` para descobrir o que a função `runif()` faz. Em seguida, use-a para escrever uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive). -->
 
-<!-- **Resposta:** -->
+**3.** Crie uma nova coluna que classifique o filme em `"recente"` (posterior a 2000) e `"antigo"` (de 2000 para trás).
 
-<!-- A função `runif()` gera números reais aleatórios entre um valor mínimo e um valor máximo. -->
+```{r}
+imdb %>% 
+  mutate(antigo_ou_recente = ifelse(ano > 2000, "recente", "antigo"))
+```
 
-<!-- ```{r} -->
-<!-- alea <- function() { -->
+### Summarisando a base
 
-<!--   x <- runif(n = 1, min = 0, max = 10) -->
-<!--   x <- round(x) -->
+Utilize a base `imdb` nos exercícios a seguir.
 
-<!--   return(x) -->
-<!-- } -->
+**1.** Calcule a duração média e mediana dos filmes
+da base.
 
-<!-- alea() -->
-<!-- ``` -->
+```{r}
+imdb %>% 
+  summarise(
+    duracao_media = mean(duracao, na.rm = TRUE),
+    duracao_mediana = median(duracao, na.rm = TRUE)
+  )
+```
 
-<!-- Veja que construímos uma função sem argumentos. Podemos generalizá-la incluindo os argumentos da função `runif()`. -->
 
-<!-- ```{r} -->
-<!-- alea <- function(n, min, max) { -->
+**2.** Calcule o lucro médio dos filmes com duração
+menor que 60 minutos.
 
-<!--   x <- runif(n = n, min = min, max = max) -->
-<!--   x <- round(x) -->
+```{r}
+imdb %>% 
+  filter(duracao < 60) %>% 
+  mutate(lucro = receita - orcamento) %>% 
+  summarise(lucro_medio = mean(lucro, na.rm = TRUE))
+```
 
-<!--   return(x) -->
-<!-- } -->
+**3.** Apresente na mesma tabela o lucro médio dos filmes com duracao menor que 60 minutos e o lucro médio dos filmes com duracao maior ou igual a 60 minutos.
 
-<!-- alea(2, 2, 5) -->
-<!-- alea(5, 100, 105) -->
-<!-- ``` -->
+```{r}
+imdb %>% 
+  mutate(
+    lucro = receita - orcamento,
+    duracao_cat = ifelse(duracao < 60, "menor 60 min", "60 ou mais min")
+  ) %>% 
+  filter(!is.na(lucro)) %>% 
+  group_by(duracao_cat) %>% 
+  summarise(
+    lucro_medio = mean(lucro, na.rm = TRUE)
+  )
+```
 
-<!-- Observe que não há problema em usar os mesmos nomes para os argumentos. Isso se deve aos *environments*.  -->
+**4.** Retorne tabelas (`tibbles`) apenas com:
 
-<!-- -------------------------------------------------------------------------------- -->
+**a.** a nota IMDB média dos filmes por tipo de classificacao;
 
-<!-- **10.** Rode `help(sample)` para descobrir o que a função `sample()` faz. Em seguida, use-a para escrever uma função que escolha uma linha aleatoriamente de uma matriz e devolva os seus valores. -->
+```{r}
+imdb %>% 
+  group_by(classificacao) %>% 
+  summarise(nota_media = mean(nota_imdb, na.rm = TRUE))
+```
 
-<!-- **Resposta:** -->
+**b.** a receita média e mediana dos filmes por ano;
 
-<!-- ```{r} -->
-<!-- matriz <- matrix(runif(20), nrow = 5, ncol = 4) -->
+```{r}
+imdb %>% 
+  group_by(ano) %>% 
+  summarise(
+    receita_media = mean(receita, na.rm = TRUE),
+    receita_mediana = median(receita, na.rm = TRUE)
+  )
+```
 
-<!-- linha_alea <- function(matriz) { -->
+**c.** apenas o nome dos diretores com mais de 10 filmes.
 
-<!--   x <- 1:nrow(matriz) -->
+```{r}
+imdb %>% 
+  filter(!is.na(diretor)) %>% 
+  group_by(diretor) %>% 
+  summarise(num_filmes = n()) %>% 
+  filter(num_filmes > 10) %>% 
+  select(diretor)
+```
 
-<!--   linha <- sample(x, size = 1) -->
+*Também podemos usar a função `count()`.*
 
-<!--   return(matriz[linha,]) -->
-<!-- } -->
+```{r}
+imdb %>% 
+  filter(!is.na(diretor)) %>% 
+  count(diretor, name = "num_filmes") %>% 
+  filter(num_filmes > 10) %>% 
+  select(diretor)
+```
 
-<!-- matriz -->
-<!-- linha_alea(matriz) -->
-<!-- ``` -->
 
-<!-- -------------------------------------------------------------------------------- -->
+### Juntando duas bases
 
-<!-- <!-- **11.** Rode `help(paste)` e `help(names)` para descobrir o que as funções `paste()` e `names()` fazem. Em seguida, use-as para escrever um código para gerar a fórmula `mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb` a partir do data frame `mtcars`. --> -->
+**1.** Utilize a base `imdb` para resolver os itens a seguir.
 
-<!-- <!-- **Resposta:** --> -->
+**a.** Salve em um novo objeto uma tabela com a
+nota média dos filmes de cada diretor. Essa tabela
+deve conter duas colunas (`diretor` e `nota_imdb_media`)
+e cada linha deve ser um diretor diferente.
 
-<!-- <!-- ```{r} --> -->
-<!-- <!-- variaveis <- names(mtcars) --> -->
+```{r}
+nota_diretores <- imdb %>% 
+  group_by(diretor) %>% 
+  summarise(nota_imdb_media = mean(nota_imdb))
 
-<!-- <!-- esq <- "mpg ~ " --> -->
-<!-- <!-- dir <- paste(variaveis[-1], collapse = " + ") --> -->
+nota_diretores
+```
 
-<!-- <!-- formula <- paste0(esq, dir) --> -->
-<!-- <!-- as.formula(formula) --> -->
-<!-- <!-- ``` --> -->
 
-<!-- <!-- Observe que a função `paste0()` é equivalente à função `paste()` com o argumento `sep = ""`. --> -->
+**b.** Use o `left_join()` para trazer a coluna
+`nota_imdb_media` da tabela do item anterior
+para a tabela `imdb` original.
+
+```{r}
+imdb %>% 
+  left_join(nota_diretores, by = "diretor") %>% 
+  select(nota_imdb_media, everything())
+```
+

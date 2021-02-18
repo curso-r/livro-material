@@ -303,6 +303,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#controle-de-fluxo-1"><i class="fa fa-check"></i>Controle de fluxo</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="12-2-pipe-1.html"><a href="12-2-pipe-1.html"><i class="fa fa-check"></i><b>12.2</b> Pipe</a></li>
+<li class="chapter" data-level="12.3" data-path="12-3-o-pacote-dplyr.html"><a href="12-3-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>12.3</b> O pacote dplyr</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="12-3-o-pacote-dplyr.html"><a href="12-3-o-pacote-dplyr.html#selecionando-colunas-1"><i class="fa fa-check"></i><b>12.3.1</b> Selecionando colunas</a></li>
+<li class="chapter" data-level="12.3.2" data-path="12-3-o-pacote-dplyr.html"><a href="12-3-o-pacote-dplyr.html#ordenando-a-base-1"><i class="fa fa-check"></i><b>12.3.2</b> Ordenando a base</a></li>
+<li class="chapter" data-level="12.3.3" data-path="12-3-o-pacote-dplyr.html"><a href="12-3-o-pacote-dplyr.html#filtrando-linhas-1"><i class="fa fa-check"></i><b>12.3.3</b> Filtrando linhas</a></li>
+<li class="chapter" data-level="12.3.4" data-path="12-3-o-pacote-dplyr.html"><a href="12-3-o-pacote-dplyr.html#modificando-e-criando-novas-colunas-1"><i class="fa fa-check"></i><b>12.3.4</b> Modificando e criando novas colunas</a></li>
+<li class="chapter" data-level="12.3.5" data-path="12-3-o-pacote-dplyr.html"><a href="12-3-o-pacote-dplyr.html#summarisando-a-base-1"><i class="fa fa-check"></i><b>12.3.5</b> Summarisando a base</a></li>
+<li class="chapter" data-level="12.3.6" data-path="12-3-o-pacote-dplyr.html"><a href="12-3-o-pacote-dplyr.html#juntando-duas-bases-1"><i class="fa fa-check"></i><b>12.3.6</b> Juntando duas bases</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
@@ -426,26 +434,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb405-8"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb405-8"></a><span class="st">)</span></span>
 <span id="cb405-9"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb405-9"></a></span>
 <span id="cb405-10"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb405-10"></a><span class="st">janitor::get_dupes(base_qualquer, nome, sobrenome)</span></span></code></pre></div>
-<pre><code>## # A tibble: 17 x 4
+<pre><code>## # A tibble: 15 x 4
 ##    nome     sobrenome dupe_count variavel_importante
 ##    &lt;chr&gt;    &lt;chr&gt;          &lt;int&gt;               &lt;dbl&gt;
-##  1 Athos    Corrêa             2            -1.11   
-##  2 Athos    Corrêa             2            -0.364  
-##  3 Daniel   Trecenti           2             0.531  
-##  4 Daniel   Trecenti           2            -0.530  
-##  5 Fernando Amorim             2             0.526  
-##  6 Fernando Amorim             2            -0.00272
-##  7 Fernando Corrêa             2             0.968  
-##  8 Fernando Corrêa             2            -1.56   
-##  9 Fernando Falbel             3            -1.76   
-## 10 Fernando Falbel             3            -0.284  
-## 11 Fernando Falbel             3            -0.155  
-## 12 Julio    Amorim             2            -0.0504 
-## 13 Julio    Amorim             2             0.915  
-## 14 William  Amorim             2            -0.849  
-## 15 William  Amorim             2             1.43   
-## 16 William  Damiani            2            -0.00703
-## 17 William  Damiani            2            -1.12</code></pre>
+##  1 Athos    Trecenti           3              0.691 
+##  2 Athos    Trecenti           3             -0.542 
+##  3 Athos    Trecenti           3              0.841 
+##  4 Daniel   Trecenti           2              0.349 
+##  5 Daniel   Trecenti           2              0.357 
+##  6 Fernando Trecenti           4              0.0305
+##  7 Fernando Trecenti           4              0.0191
+##  8 Fernando Trecenti           4             -0.221 
+##  9 Fernando Trecenti           4              1.35  
+## 10 Julio    Falbel             2              0.444 
+## 11 Julio    Falbel             2             -1.78  
+## 12 Julio    Trecenti           2             -0.820 
+## 13 Julio    Trecenti           2             -0.0894
+## 14 William  Corrêa             2              0.0874
+## 15 William  Corrêa             2              0.129</code></pre>
 <p>Todas as linhas na <code>tibble</code> resultante representam uma combinação de nome-sobrenome repetida.</p>
 </div>
 <div id="outras-funções" class="section level3">

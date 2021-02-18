@@ -171,26 +171,24 @@ janitor::get_dupes(base_qualquer, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 17 x 4
+## # A tibble: 15 x 4
 ##    nome     sobrenome dupe_count variavel_importante
 ##    <chr>    <chr>          <int>               <dbl>
-##  1 Athos    Corrêa             2            -1.11   
-##  2 Athos    Corrêa             2            -0.364  
-##  3 Daniel   Trecenti           2             0.531  
-##  4 Daniel   Trecenti           2            -0.530  
-##  5 Fernando Amorim             2             0.526  
-##  6 Fernando Amorim             2            -0.00272
-##  7 Fernando Corrêa             2             0.968  
-##  8 Fernando Corrêa             2            -1.56   
-##  9 Fernando Falbel             3            -1.76   
-## 10 Fernando Falbel             3            -0.284  
-## 11 Fernando Falbel             3            -0.155  
-## 12 Julio    Amorim             2            -0.0504 
-## 13 Julio    Amorim             2             0.915  
-## 14 William  Amorim             2            -0.849  
-## 15 William  Amorim             2             1.43   
-## 16 William  Damiani            2            -0.00703
-## 17 William  Damiani            2            -1.12
+##  1 Athos    Trecenti           3              0.691 
+##  2 Athos    Trecenti           3             -0.542 
+##  3 Athos    Trecenti           3              0.841 
+##  4 Daniel   Trecenti           2              0.349 
+##  5 Daniel   Trecenti           2              0.357 
+##  6 Fernando Trecenti           4              0.0305
+##  7 Fernando Trecenti           4              0.0191
+##  8 Fernando Trecenti           4             -0.221 
+##  9 Fernando Trecenti           4              1.35  
+## 10 Julio    Falbel             2              0.444 
+## 11 Julio    Falbel             2             -1.78  
+## 12 Julio    Trecenti           2             -0.820 
+## 13 Julio    Trecenti           2             -0.0894
+## 14 William  Corrêa             2              0.0874
+## 15 William  Corrêa             2              0.129
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.

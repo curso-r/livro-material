@@ -303,6 +303,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#controle-de-fluxo-1"><i class="fa fa-check"></i>Controle de fluxo</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="12-2-pipe-1.html"><a href="12-2-pipe-1.html"><i class="fa fa-check"></i><b>12.2</b> Pipe</a></li>
+<li class="chapter" data-level="12.3" data-path="12-3-o-pacote-dplyr.html"><a href="12-3-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>12.3</b> O pacote dplyr</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="12-3-o-pacote-dplyr.html"><a href="12-3-o-pacote-dplyr.html#selecionando-colunas-1"><i class="fa fa-check"></i><b>12.3.1</b> Selecionando colunas</a></li>
+<li class="chapter" data-level="12.3.2" data-path="12-3-o-pacote-dplyr.html"><a href="12-3-o-pacote-dplyr.html#ordenando-a-base-1"><i class="fa fa-check"></i><b>12.3.2</b> Ordenando a base</a></li>
+<li class="chapter" data-level="12.3.3" data-path="12-3-o-pacote-dplyr.html"><a href="12-3-o-pacote-dplyr.html#filtrando-linhas-1"><i class="fa fa-check"></i><b>12.3.3</b> Filtrando linhas</a></li>
+<li class="chapter" data-level="12.3.4" data-path="12-3-o-pacote-dplyr.html"><a href="12-3-o-pacote-dplyr.html#modificando-e-criando-novas-colunas-1"><i class="fa fa-check"></i><b>12.3.4</b> Modificando e criando novas colunas</a></li>
+<li class="chapter" data-level="12.3.5" data-path="12-3-o-pacote-dplyr.html"><a href="12-3-o-pacote-dplyr.html#summarisando-a-base-1"><i class="fa fa-check"></i><b>12.3.5</b> Summarisando a base</a></li>
+<li class="chapter" data-level="12.3.6" data-path="12-3-o-pacote-dplyr.html"><a href="12-3-o-pacote-dplyr.html#juntando-duas-bases-1"><i class="fa fa-check"></i><b>12.3.6</b> Juntando duas bases</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
@@ -488,8 +496,8 @@ Para adicionar esses resultados nos relatórios, não é muito prático adiciona
 </ul>
 <div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="9-2-r-markdown.html#cb389-1"></a>media_massa <span class="op">%&gt;%</span></span>
 <span id="cb389-2"><a href="9-2-r-markdown.html#cb389-2"></a><span class="st">  </span>DT<span class="op">::</span><span class="kw">datatable</span>()</span></code></pre></div>
-<div id="htmlwidget-65deef55970bb07cfb91" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-65deef55970bb07cfb91">{"x":{"filter":"none","data":[["1","2","3","4","5"],["Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-barbicha","Pinguim-gentoo"],["Biscoe","Dream","Torgersen","Dream","Biscoe"],[3.71,3.69,3.71,3.73,5.08]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>especies<\/th>\n      <th>ilha<\/th>\n      <th>media_massa_kg<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-07a67aca83b129c28007" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-07a67aca83b129c28007">{"x":{"filter":"none","data":[["1","2","3","4","5"],["Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-barbicha","Pinguim-gentoo"],["Biscoe","Dream","Torgersen","Dream","Biscoe"],[3.71,3.69,3.71,3.73,5.08]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>especies<\/th>\n      <th>ilha<\/th>\n      <th>media_massa_kg<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p>Os exemplos anteriores são as formas mais simples de apresentar as tabelas, porém cada pacote possibilita diferentes personalizações (por exemplo, alterar o nome das colunas, etc). Existem outros pacotes que permitem adicionar tabela nos relatórios em RMarkdown, como por exemplo:</p>
 <ul>
 <li><p><a href="https://glin.github.io/reactable/index.html">reactable</a></p></li>
