@@ -226,6 +226,16 @@ imdb %>%
 
 #### Exercícios {-}
 
+Utilize a base `imdb` nos exercícios a seguir.
+
+**1.** Teste aplicar a função `glimpse()` do pacote `{dplyr}` à base `imdb`. O que ela faz?
+
+**2.** Crie uma tabela com apenas as colunas `titulo`, `diretor`, e `orcamento.` Salve em um objeto chamado `imdb_simples`.
+
+**3.** Selecione apenas as colunas `ator_1`, `ator_2` e `ator_3` usando o ajudante `contains()`.
+
+**4.** Usando a função `select()` (e seus ajudantes), escreva códigos que retornem a base IMDB sem as colunas `ator_1`, `ator_2` e `ator_3.` Escreva todas as soluções diferentes que você conseguir pensar. 
+
 ### Ordenando a base
 
 Para ordenar linhas, utilizamos a função `arrange()`. O primeiro argumento é a base de dados. Os demais argumentos são as colunas pelas quais queremos ordenar as linhas. No exemplo a seguir, ordenamos as linhas da base por ordem crescente de orçamento.
@@ -305,6 +315,12 @@ arrange(imdb, desc(ano), desc(orcamento))
 ```
 
 #### Exercícios {-}
+
+Utilize a base `imdb` nos exercícios a seguir.
+
+**1.** Ordene os filmes em ordem crescente de `ano` e decrescente de `receita` e salve em um objeto chamado `filmes_ordenados`.
+
+**2.** Selecione apenas as colunas `titulo` e `orcamento` e então ordene de forma decrescente pelo `orcamento.`
 
 ### O pipe em ação
 
@@ -574,6 +590,27 @@ imdb %>% filter(str_detect(generos, "Action"))
 
 #### Exercícios {-}
 
+Utilize a base `imdb` nos exercícios a seguir.
+
+**1.** Crie um objeto chamado `filmes_pb` apenas com filmes preto e branco.
+
+**2.** Crie um objeto chamado `curtos_legais` com filmes de 90 minutos ou menos de duração e nota no imdb maior do que 8.5.
+
+**3.** Retorne tabelas (`tibbles`) apenas com:
+
+- **a.** filmes coloridos anteriores a 1950;
+
+- **b.** filmes do "Woody Allen" ou do "Wes Anderson";
+
+- **c.** filmes do "Steven Spielberg" ordenados de forma decrescente por ano, mostrando apenas as colunas `titulo` e `ano`;
+
+- **d.**  filmes que tenham "Action" **ou** "Comedy" entre os seus gêneros;
+
+- **e.** filmes que tenham "Action" **e** "Comedy" entre os seus gêneros e tenha `nota_imdb` maior que 8;
+
+- **f.** filmes que não possuem informação tanto de receita quanto de orçamento (isto é, possuem `NA` em ambas as colunas).
+
+
 ### Modificando e criando novas colunas
 
 Para modificar uma coluna existente ou criar uma nova coluna, utilizamos a função `mutate()`. O código abaixo divide os valores da coluna duração por 60, mudando a unidade de medida dessa variável de minutos para horas.
@@ -654,6 +691,22 @@ imdb %>%
 ```
 
 #### Exercícios {-}
+
+Utilize a base `imdb` nos exercícios a seguir.
+
+**1.** Crie uma coluna chamada `prejuizo` (`orcamento - receita`) e salve a nova tabela em um objeto chamado `imdb_prejuizo`. Em seguida, filtre apenas os filmes que deram prejuízo e ordene a tabela por ordem crescente de prejuízo.
+
+**2.** Fazendo apenas uma chamada da função mutate(), crie as seguintes colunas novas na base `imdb`:
+
+- **a.** `lucro = receita - despesa`
+
+- **b.** `lucro_medio`
+
+- **c.** `lucro_relativo = (lucro - lucro_medio)/lucro_medio`
+
+- **d.** `houve_lucro = ifelse(lucro > 0, "sim", "não")`
+
+**3.** Crie uma nova coluna que classifique o filme em `"recente"` (posterior a 2000) e `"antigo"` (de 2000 para trás).
 
 ### Summarisando a base
 
@@ -762,6 +815,27 @@ imdb %>% group_by(cor)
 ```
 
 #### Exercícios {-}
+
+Utilize a base `imdb` nos exercícios a seguir.
+
+**1.** Calcule a duração média e mediana dos filmes
+da base.
+
+**2.** Calcule o lucro médio dos filmes com duração
+menor que 60 minutos.
+
+**3.** Apresente na mesma tabela o lucro médio
+dos filmes com duracao menor que 60 minutos
+e o lucro médio dos filmes com duracao maior
+ou igual a 60 minutos.
+
+**4.** Retorne tabelas (`tibbles`) apenas com:
+
+- **a.** a nota IMDB média dos filmes por tipo de classificacao;
+
+- **b.** a receita média e mediana dos filmes por ano;
+
+- **c.** apenas o nome dos diretores com mais de 10 filmes.
 
 ### Juntando duas bases
 
@@ -872,3 +946,17 @@ A figura a seguir esquematiza as operações dessas funções:
 <img src="assets/img/manipulacao/joins.png" width="355" style="display: block; margin: auto;" />
 
 #### Exercícios {-}
+
+**1.** Utilize a base `imdb` para resolver os itens a seguir.
+
+**a.** Salve em um novo objeto uma tabela com a
+nota média dos filmes de cada diretor. Essa tabela
+deve conter duas colunas (`diretor` e `nota_imdb_media`)
+e cada linha deve ser um diretor diferente.
+
+**b.** Use o `left_join()` para trazer a coluna
+`nota_imdb_media` da tabela do item anterior
+para a tabela `imdb` original.
+
+
+

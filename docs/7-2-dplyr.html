@@ -486,6 +486,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   likes_facebook &lt;int&gt;</code></pre>
 <div id="exercícios-11" class="section level4 unnumbered">
 <h4>Exercícios</h4>
+<p>Utilize a base <code>imdb</code> nos exercícios a seguir.</p>
+<p><strong>1.</strong> Teste aplicar a função <code>glimpse()</code> do pacote <code>{dplyr}</code> à base <code>imdb</code>. O que ela faz?</p>
+<p><strong>2.</strong> Crie uma tabela com apenas as colunas <code>titulo</code>, <code>diretor</code>, e <code>orcamento.</code> Salve em um objeto chamado <code>imdb_simples</code>.</p>
+<p><strong>3.</strong> Selecione apenas as colunas <code>ator_1</code>, <code>ator_2</code> e <code>ator_3</code> usando o ajudante <code>contains()</code>.</p>
+<p><strong>4.</strong> Usando a função <code>select()</code> (e seus ajudantes), escreva códigos que retornem a base IMDB sem as colunas <code>ator_1</code>, <code>ator_2</code> e <code>ator_3.</code> Escreva todas as soluções diferentes que você conseguir pensar.</p>
 </div>
 </div>
 <div id="ordenando-a-base" class="section level3">
@@ -543,6 +548,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <div id="exercícios-12" class="section level4 unnumbered">
 <h4>Exercícios</h4>
+<p>Utilize a base <code>imdb</code> nos exercícios a seguir.</p>
+<p><strong>1.</strong> Ordene os filmes em ordem crescente de <code>ano</code> e decrescente de <code>receita</code> e salve em um objeto chamado <code>filmes_ordenados</code>.</p>
+<p><strong>2.</strong> Selecione apenas as colunas <code>titulo</code> e <code>orcamento</code> e então ordene de forma decrescente pelo <code>orcamento.</code></p>
 </div>
 </div>
 <div id="o-pipe-em-ação" class="section level3">
@@ -716,6 +724,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <div id="exercícios-13" class="section level4 unnumbered">
 <h4>Exercícios</h4>
+<p>Utilize a base <code>imdb</code> nos exercícios a seguir.</p>
+<p><strong>1.</strong> Crie um objeto chamado <code>filmes_pb</code> apenas com filmes preto e branco.</p>
+<p><strong>2.</strong> Crie um objeto chamado <code>curtos_legais</code> com filmes de 90 minutos ou menos de duração e nota no imdb maior do que 8.5.</p>
+<p><strong>3.</strong> Retorne tabelas (<code>tibbles</code>) apenas com:</p>
+<ul>
+<li><p><strong>a.</strong> filmes coloridos anteriores a 1950;</p></li>
+<li><p><strong>b.</strong> filmes do “Woody Allen” ou do “Wes Anderson”;</p></li>
+<li><p><strong>c.</strong> filmes do “Steven Spielberg” ordenados de forma decrescente por ano, mostrando apenas as colunas <code>titulo</code> e <code>ano</code>;</p></li>
+<li><p><strong>d.</strong> filmes que tenham “Action” <strong>ou</strong> “Comedy” entre os seus gêneros;</p></li>
+<li><p><strong>e.</strong> filmes que tenham “Action” <strong>e</strong> “Comedy” entre os seus gêneros e tenha <code>nota_imdb</code> maior que 8;</p></li>
+<li><p><strong>f.</strong> filmes que não possuem informação tanto de receita quanto de orçamento (isto é, possuem <code>NA</code> em ambas as colunas).</p></li>
+</ul>
 </div>
 </div>
 <div id="modificando-e-criando-novas-colunas" class="section level3">
@@ -775,6 +795,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 3,797 more rows</code></pre>
 <div id="exercícios-14" class="section level4 unnumbered">
 <h4>Exercícios</h4>
+<p>Utilize a base <code>imdb</code> nos exercícios a seguir.</p>
+<p><strong>1.</strong> Crie uma coluna chamada <code>prejuizo</code> (<code>orcamento - receita</code>) e salve a nova tabela em um objeto chamado <code>imdb_prejuizo</code>. Em seguida, filtre apenas os filmes que deram prejuízo e ordene a tabela por ordem crescente de prejuízo.</p>
+<p><strong>2.</strong> Fazendo apenas uma chamada da função mutate(), crie as seguintes colunas novas na base <code>imdb</code>:</p>
+<ul>
+<li><p><strong>a.</strong> <code>lucro = receita - despesa</code></p></li>
+<li><p><strong>b.</strong> <code>lucro_medio</code></p></li>
+<li><p><strong>c.</strong> <code>lucro_relativo = (lucro - lucro_medio)/lucro_medio</code></p></li>
+<li><p><strong>d.</strong> <code>houve_lucro = ifelse(lucro &gt; 0, "sim", "não")</code></p></li>
+</ul>
+<p><strong>3.</strong> Crie uma nova coluna que classifique o filme em <code>"recente"</code> (posterior a 2000) e <code>"antigo"</code> (de 2000 para trás).</p>
 </div>
 </div>
 <div id="summarisando-a-base" class="section level3">
@@ -839,6 +869,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <div id="exercícios-15" class="section level4 unnumbered">
 <h4>Exercícios</h4>
+<p>Utilize a base <code>imdb</code> nos exercícios a seguir.</p>
+<p><strong>1.</strong> Calcule a duração média e mediana dos filmes
+da base.</p>
+<p><strong>2.</strong> Calcule o lucro médio dos filmes com duração
+menor que 60 minutos.</p>
+<p><strong>3.</strong> Apresente na mesma tabela o lucro médio
+dos filmes com duracao menor que 60 minutos
+e o lucro médio dos filmes com duracao maior
+ou igual a 60 minutos.</p>
+<p><strong>4.</strong> Retorne tabelas (<code>tibbles</code>) apenas com:</p>
+<ul>
+<li><p><strong>a.</strong> a nota IMDB média dos filmes por tipo de classificacao;</p></li>
+<li><p><strong>b.</strong> a receita média e mediana dos filmes por ano;</p></li>
+<li><p><strong>c.</strong> apenas o nome dos diretores com mais de 10 filmes.</p></li>
+</ul>
 </div>
 </div>
 <div id="juntando-duas-bases" class="section level3">
@@ -916,6 +961,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="assets/img/manipulacao/joins.png" width="355" style="display: block; margin: auto;" /></p>
 <div id="exercícios-16" class="section level4 unnumbered">
 <h4>Exercícios</h4>
+<p><strong>1.</strong> Utilize a base <code>imdb</code> para resolver os itens a seguir.</p>
+<p><strong>a.</strong> Salve em um novo objeto uma tabela com a
+nota média dos filmes de cada diretor. Essa tabela
+deve conter duas colunas (<code>diretor</code> e <code>nota_imdb_media</code>)
+e cada linha deve ser um diretor diferente.</p>
+<p><strong>b.</strong> Use o <code>left_join()</code> para trazer a coluna
+<code>nota_imdb_media</code> da tabela do item anterior
+para a tabela <code>imdb</code> original.</p>
 
 </div>
 </div>
