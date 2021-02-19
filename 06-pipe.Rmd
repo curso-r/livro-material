@@ -103,6 +103,41 @@ airquality %>%
 
 O *pipe* é a força da gravidade dentro do `tidyverse`. Veremos nos próximos capítulos como as funções de diferentes pacotes interagem perfeitamente graças a esse operador.
 
+### Exercícios {-}
+
+**1.** Reescreva a expressão abaixo utilizando o `%>%`.
+
+```{r, collapse = TRUE, eval = FALSE}
+round(mean(sum(1:10)/3), digits = 1)
+```
+
+**Dica**: utilize a função `magrittr::divide_by()`. Veja o help da função para mais informações.
+
+**2.** Reescreva o código abaixo utilizando o `%>%`.
+
+```{r, collapse = TRUE, eval = FALSE}
+
+x <- rnorm(100)
+
+x.pos <- x[x>0]
+
+media <- mean(x.pos)
+
+saida <- round(media, 1)
+
+```
+
+**3.** Sem rodar, diga qual a saída do código abaixo. Consulte o help das funções caso precise.
+
+```{r, collapse = TRUE, eval = FALSE}
+2 %>%
+  add(2) %>%
+  c(6, NA) %>%
+  mean(na.rm = T) %>%
+  equals(5)
+```
+
+
 ## Outros operadores
 
 O pacote `{magrittr}` possui outros operadores, que, embora sejam menos utilizados, também são úteis. São eles:
@@ -187,50 +222,4 @@ mtcars %$% mpg
 
 Para mais informações sobre o `pipe` e outras funções do pacote `{magrittr}`, visite a página [Ceci n'est pas un pipe](http://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html).
 
-## Exercícios
 
---------------------------------------------------------------------------------
-
-**1.** Reescreva a expressão abaixo utilizando o `%>%`.
-
-```{r, collapse = TRUE, eval = FALSE}
-round(mean(sum(1:10)/3), digits = 1)
-```
-
-**Dica**: utilize a função `magrittr::divide_by()`. Veja o help da função para mais informações.
-
---------------------------------------------------------------------------------
-
-**2.** Reescreva o código abaixo utilizando o `%>%`.
-
-```{r, collapse = TRUE, eval = FALSE}
-
-x <- rnorm(100)
-
-x.pos <- x[x>0]
-
-media <- mean(x.pos)
-
-saida <- round(media, 1)
-
-```
-
---------------------------------------------------------------------------------
-
-**3.** Sem rodar, diga qual a saída do código abaixo. Consulte o help das funções caso precise.
-
-```{r, collapse = TRUE, eval = FALSE}
-2 %>%
-  add(2) %>%
-  c(6, NA) %>%
-  mean(na.rm = T) %>%
-  equals(5)
-```
-
---------------------------------------------------------------------------------
-
-**4.** Leia o capítulo sobre *pipes* do [R for data science](http://r4ds.had.co.nz/pipes.html). É curto e vale muito a pena.
-
---------------------------------------------------------------------------------
-
-**5.** Pegue algum script que você já tenha programado em R e o reescreva utilizando o operador *pipe*. Se você não tiver nenhum, não se preocupe. Utilizaremos **bastante** o *pipe* daqui pra frente.
