@@ -34,7 +34,7 @@ Vamos mostrar na próxima seção como importar as extensões mais comuns: `.csv
 
 ### Lendo arquivos de texto
 
-Como exemplo, utilizaremos uma base de filmes do IMDB, gravada em diversos formatos. O download dos arquivos pode ser realizado a partir [deste repositório](https://github.com/curso-r/livro-material/raw/master/assets/data/imdb.zip).
+Como exemplo, utilizaremos uma base de filmes do IMDB, gravada em diversos formatos. O download dos arquivos pode ser realizado [clicando aqui](https://github.com/curso-r/livro-material/raw/master/assets/data/imdb.zip).
 
 Primeiro, vamos ler a base em formato `.csv`.
 
@@ -220,19 +220,22 @@ Para ler um arquivo `.rds` de volta para o R, utilizamos a função `read_rds()`
 imdb_rds <- read_rds(path = "imdb.rds")
 ```
 
-#### Exercícios {-}
+### Exercícios {-}
 
-1. Qual a diferença entre as funções `read_csv()` e `read_csv2()`?
+**1.** Qual a diferença entre as funções `read_csv()` e `read_csv2()`?
 
-2. Leia o arquivo `imdb.csv` utilizando a função `read_delim()`.
+**2.** Leia o arquivo `imdb.csv` utilizando a função `read_delim()`.
 
-3. Escreva a base mtcars em um arquivo `mtcars.csv` que não contenha o nome das colunas.
+**3.** Escreva a base mtcars em um arquivo `mtcars.csv` que não contenha o nome das colunas.
 
-4. Use a função `write_rds()` para salvar em arquivos
+**4.** Use a função `write_rds()` para salvar em arquivos
 
-  a) Um número.
-  b) Um vetor de strings.
-  c) Uma lista com valores númericos, textuais e lógicos.
-  d) As 3 primeiras colunas da base `mtcars`.
+- **a)** Um número.
 
-5. Utilize a função `read_rds()` para importar de volta para o R os arquivos criados no exercício 4.
+- **b)** Um vetor de strings.
+
+- **c)** Uma lista com valores númericos, textuais e lógicos.
+
+- **d)** As 3 primeiras colunas da base `mtcars`.
+
+**5.** Utilize a função `read_rds()` para importar de volta para o R os arquivos criados no exercício 4.
