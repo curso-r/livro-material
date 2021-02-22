@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 8 Gráficos | Ciência de Dados em R</title>
+  <title>Capítulo 8 Visualização | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 8 Gráficos | Ciência de Dados em R" />
+  <meta property="og:title" content="Capítulo 8 Visualização | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 8 Gráficos | Ciência de Dados em R" />
+  <meta name="twitter:title" content="Capítulo 8 Visualização | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -251,7 +251,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Gráficos</a><ul>
+<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a><ul>
 <li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a><ul>
 <li class="chapter" data-level="8.1.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#as-camadas-de-um-gráfico"><i class="fa fa-check"></i><b>8.1.1</b> As camadas de um gráfico</a></li>
 <li class="chapter" data-level="8.1.2" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#atributos-estéticos"><i class="fa fa-check"></i><b>8.1.2</b> Atributos estéticos</a></li>
@@ -261,8 +261,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.6" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#onde-continuar-estudando"><i class="fa fa-check"></i><b>8.1.6</b> Onde continuar estudando?</a></li>
 <li class="chapter" data-level="8.1.7" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-17"><i class="fa fa-check"></i><b>8.1.7</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="8-2-o-pacote-plotly.html"><a href="8-2-o-pacote-plotly.html"><i class="fa fa-check"></i><b>8.2</b> O pacote plotly</a></li>
-<li class="chapter" data-level="8.3" data-path="8-3-extensões-do-ggplot2.html"><a href="8-3-extensões-do-ggplot2.html"><i class="fa fa-check"></i><b>8.3</b> Extensões do ggplot2</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="9-relatorios.html"><a href="9-relatorios.html"><i class="fa fa-check"></i><b>9</b> Relatórios</a><ul>
 <li class="chapter" data-level="9.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html"><i class="fa fa-check"></i><b>9.1</b> Markdown</a><ul>
@@ -342,11 +340,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="graficos" class="section level1">
-<h1><span class="header-section-number">Capítulo 8</span> Gráficos</h1>
-<p>Agora que já temos em mãos as ferramentas para importar, arrumar e transformar os nossos dados, é hora de começarmos a extrair informações deles. Seguindo o nosso bom e velho ciclo da ciência de dados, o próximo passo é a construção de <em>visualizações</em>.</p>
-<p>A visualização dos dados é uma etapa importantíssima da análise estatística, pois é a partir dela que criamos a intuição necessária para escolher o teste ou modelo mais adequado para o nosso problema.</p>
-<p>Visualizações podem ser uma simples medida resumo (frequência, média, variância, mínimo, máximo, …), um conjunto dessas medidas organizadas em uma tabela ou a representação (de uma parte) dos dados em um gráfico. Nesse tópico, focaremos na construção de gráficos, uma tarefa que, apesar de nem sempre ser conceitualmente ou tecnicamente trivial, é muito facilitada pelas ferramentas disponíveis no R.</p>
+<h1><span class="header-section-number">Capítulo 8</span> Visualização</h1>
+<p>Agora que já temos em mãos as ferramentas para importar, arrumar, transformar e sumarizar os nossos dados, podemos dar um passo adiante no ciclo da Ciência de Dados: a construção de <em>visualizações</em>.</p>
+<p>A visualização dos dados é uma etapa importantíssima da análise estatística, pois é a partir dela que criamos a intuição necessária para escolher o teste ou modelo mais adequado para o nosso problema. Muitas vezes, um problema de análise de dados pode ser resolvido apenas com visualizações. Além disso, elas são o principal combustível da etapa de Comunicação da análise.</p>
+<p>Visualizações podem ser uma simples medida resumo (frequência, média, variância, mínimo, máximo etc), um conjunto dessas medidas organizadas em uma tabela ou a representação (de uma parte) dos dados em um gráfico. Neste capítulo, mostraremos como construir gráficos e tabelas e bem formatadas dentro do R. Começaremos com a construção dos gráficoe e, em seguida, falaremos sobre a formação de tabelas<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>.</p>
 <p>Mas, antes de mais nada, o que é um gráfico estatístico?</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="10">
+<li id="fn10"><p>Em geral, boa parte do trabalho necessário para a construção de uma tabela descritiva pode ser feito com as funções dos pacotes <code>{dplyr}</code> e <code>{tidyr}</code>, vistas no capítulo anterior.<a href="8-graficos.html#fnref10" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 <hr/>
 <footer>

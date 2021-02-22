@@ -171,23 +171,25 @@ janitor::get_dupes(base_qualquer, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 14 x 4
+## # A tibble: 16 x 4
 ##    nome     sobrenome dupe_count variavel_importante
 ##    <chr>    <chr>          <int>               <dbl>
-##  1 Athos    Falbel             2              0.0242
-##  2 Athos    Falbel             2             -2.56  
-##  3 Daniel   Corrêa             2             -0.148 
-##  4 Daniel   Corrêa             2              1.70  
-##  5 Daniel   Trecenti           2              1.20  
-##  6 Daniel   Trecenti           2             -0.881 
-##  7 Fernando Damiani            2             -0.168 
-##  8 Fernando Damiani            2             -0.242 
-##  9 Julio    Trecenti           4              1.55  
-## 10 Julio    Trecenti           4              0.567 
-## 11 Julio    Trecenti           4              1.02  
-## 12 Julio    Trecenti           4             -0.663 
-## 13 William  Amorim             2              1.28  
-## 14 William  Amorim             2              1.05
+##  1 Athos    Damiani            2            0.670   
+##  2 Athos    Damiani            2           -0.325   
+##  3 Athos    Trecenti           2           -0.318   
+##  4 Athos    Trecenti           2            1.47    
+##  5 Daniel   Amorim             2            0.397   
+##  6 Daniel   Amorim             2            0.849   
+##  7 Daniel   Trecenti           4           -1.41    
+##  8 Daniel   Trecenti           4            0.877   
+##  9 Daniel   Trecenti           4            2.68    
+## 10 Daniel   Trecenti           4            0.294   
+## 11 Fernando Amorim             2           -0.000114
+## 12 Fernando Amorim             2           -0.417   
+## 13 Fernando Falbel             2            0.735   
+## 14 Fernando Falbel             2            1.52    
+## 15 Julio    Corrêa             2           -0.220   
+## 16 Julio    Corrêa             2            2.23
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.

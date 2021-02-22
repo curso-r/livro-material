@@ -1,10 +1,10 @@
-# Gráficos {#graficos}
+# Visualização {#graficos}
 
-Agora que já temos em mãos as ferramentas para importar, arrumar e transformar os nossos dados, é hora de começarmos a extrair informações deles. Seguindo o nosso bom e velho ciclo da ciência de dados, o próximo passo é a construção de *visualizações*.
+Agora que já temos em mãos as ferramentas para importar, arrumar, transformar e sumarizar os nossos dados, podemos dar um passo adiante no ciclo da Ciência de Dados: a construção de *visualizações*.
 
-A visualização dos dados é uma etapa importantíssima da análise estatística, pois é a partir dela que criamos a intuição necessária para escolher o teste ou modelo mais adequado para o nosso problema.
+A visualização dos dados é uma etapa importantíssima da análise estatística, pois é a partir dela que criamos a intuição necessária para escolher o teste ou modelo mais adequado para o nosso problema. Muitas vezes, um problema de análise de dados pode ser resolvido apenas com visualizações. Além disso, elas são o principal combustível da etapa de Comunicação da análise.
 
-Visualizações podem ser uma simples medida resumo (frequência, média, variância, mínimo, máximo, ...), um conjunto dessas medidas organizadas em uma tabela ou a representação (de uma parte) dos dados em um gráfico. Nesse tópico, focaremos na construção de gráficos, uma tarefa que, apesar de nem sempre ser conceitualmente ou tecnicamente trivial, é muito facilitada pelas ferramentas disponíveis no R.
+Visualizações podem ser uma simples medida resumo (frequência, média, variância, mínimo, máximo etc), um conjunto dessas medidas organizadas em uma tabela ou a representação (de uma parte) dos dados em um gráfico. Neste capítulo, mostraremos como construir gráficos e tabelas e bem formatadas dentro do R. Começaremos com a construção dos gráficoe e, em seguida, falaremos sobre a formação de tabelas^[Em geral, boa parte do trabalho necessário para a construção de uma tabela descritiva pode ser feito com as funções dos pacotes `{dplyr}` e `{tidyr}`, vistas no capítulo anterior.].
 
 Mas, antes de mais nada, o que é um gráfico estatístico?
 
@@ -757,8 +757,3 @@ estéticas se comportam diferente para variáveis categóricas vs contínuas?
 **4.** Utilizando o `mtcars`, faça um gráfico de dispersão de `mpg` por `qsec`.
 
 **5.** Utilizando o `mtcars`, o que acontece se você fizer um gráfico de dispersão de `vs` por `mpg`? Por que o gráfico não é útil?
-
-
-## O pacote plotly
-
-## Extensões do ggplot2

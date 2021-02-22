@@ -251,7 +251,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Gráficos</a><ul>
+<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a><ul>
 <li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a><ul>
 <li class="chapter" data-level="8.1.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#as-camadas-de-um-gráfico"><i class="fa fa-check"></i><b>8.1.1</b> As camadas de um gráfico</a></li>
 <li class="chapter" data-level="8.1.2" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#atributos-estéticos"><i class="fa fa-check"></i><b>8.1.2</b> Atributos estéticos</a></li>
@@ -261,8 +261,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.6" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#onde-continuar-estudando"><i class="fa fa-check"></i><b>8.1.6</b> Onde continuar estudando?</a></li>
 <li class="chapter" data-level="8.1.7" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-17"><i class="fa fa-check"></i><b>8.1.7</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="8-2-o-pacote-plotly.html"><a href="8-2-o-pacote-plotly.html"><i class="fa fa-check"></i><b>8.2</b> O pacote plotly</a></li>
-<li class="chapter" data-level="8.3" data-path="8-3-extensões-do-ggplot2.html"><a href="8-3-extensões-do-ggplot2.html"><i class="fa fa-check"></i><b>8.3</b> Extensões do ggplot2</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="9-relatorios.html"><a href="9-relatorios.html"><i class="fa fa-check"></i><b>9</b> Relatórios</a><ul>
 <li class="chapter" data-level="9.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html"><i class="fa fa-check"></i><b>9.1</b> Markdown</a><ul>
@@ -439,23 +437,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb405-8"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb405-8"></a><span class="st">)</span></span>
 <span id="cb405-9"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb405-9"></a></span>
 <span id="cb405-10"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb405-10"></a><span class="st">janitor::get_dupes(base_qualquer, nome, sobrenome)</span></span></code></pre></div>
-<pre><code>## # A tibble: 14 x 4
+<pre><code>## # A tibble: 16 x 4
 ##    nome     sobrenome dupe_count variavel_importante
 ##    &lt;chr&gt;    &lt;chr&gt;          &lt;int&gt;               &lt;dbl&gt;
-##  1 Athos    Falbel             2              0.0242
-##  2 Athos    Falbel             2             -2.56  
-##  3 Daniel   Corrêa             2             -0.148 
-##  4 Daniel   Corrêa             2              1.70  
-##  5 Daniel   Trecenti           2              1.20  
-##  6 Daniel   Trecenti           2             -0.881 
-##  7 Fernando Damiani            2             -0.168 
-##  8 Fernando Damiani            2             -0.242 
-##  9 Julio    Trecenti           4              1.55  
-## 10 Julio    Trecenti           4              0.567 
-## 11 Julio    Trecenti           4              1.02  
-## 12 Julio    Trecenti           4             -0.663 
-## 13 William  Amorim             2              1.28  
-## 14 William  Amorim             2              1.05</code></pre>
+##  1 Athos    Damiani            2            0.670   
+##  2 Athos    Damiani            2           -0.325   
+##  3 Athos    Trecenti           2           -0.318   
+##  4 Athos    Trecenti           2            1.47    
+##  5 Daniel   Amorim             2            0.397   
+##  6 Daniel   Amorim             2            0.849   
+##  7 Daniel   Trecenti           4           -1.41    
+##  8 Daniel   Trecenti           4            0.877   
+##  9 Daniel   Trecenti           4            2.68    
+## 10 Daniel   Trecenti           4            0.294   
+## 11 Fernando Amorim             2           -0.000114
+## 12 Fernando Amorim             2           -0.417   
+## 13 Fernando Falbel             2            0.735   
+## 14 Fernando Falbel             2            1.52    
+## 15 Julio    Corrêa             2           -0.220   
+## 16 Julio    Corrêa             2            2.23</code></pre>
 <p>Todas as linhas na <code>tibble</code> resultante representam uma combinação de nome-sobrenome repetida.</p>
 </div>
 <div id="outras-funções" class="section level3">

@@ -251,7 +251,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Gráficos</a><ul>
+<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a><ul>
 <li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a><ul>
 <li class="chapter" data-level="8.1.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#as-camadas-de-um-gráfico"><i class="fa fa-check"></i><b>8.1.1</b> As camadas de um gráfico</a></li>
 <li class="chapter" data-level="8.1.2" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#atributos-estéticos"><i class="fa fa-check"></i><b>8.1.2</b> Atributos estéticos</a></li>
@@ -261,8 +261,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.6" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#onde-continuar-estudando"><i class="fa fa-check"></i><b>8.1.6</b> Onde continuar estudando?</a></li>
 <li class="chapter" data-level="8.1.7" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-17"><i class="fa fa-check"></i><b>8.1.7</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="8-2-o-pacote-plotly.html"><a href="8-2-o-pacote-plotly.html"><i class="fa fa-check"></i><b>8.2</b> O pacote plotly</a></li>
-<li class="chapter" data-level="8.3" data-path="8-3-extensões-do-ggplot2.html"><a href="8-3-extensões-do-ggplot2.html"><i class="fa fa-check"></i><b>8.3</b> Extensões do ggplot2</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="9-relatorios.html"><a href="9-relatorios.html"><i class="fa fa-check"></i><b>9</b> Relatórios</a><ul>
 <li class="chapter" data-level="9.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html"><i class="fa fa-check"></i><b>9.1</b> Markdown</a><ul>
@@ -521,18 +519,18 @@ um novo objeto chamado <code>vetor_negativo</code>.</p>
 <p><em>Precisamos verificar se o resto da divisão por 2 é igual a zero.</em></p>
 <div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="12-1-r-básico.html#cb444-1"></a><span class="co"># Resto da divisão por 2</span></span>
 <span id="cb444-2"><a href="12-1-r-básico.html#cb444-2"></a>segredo <span class="op">%%</span><span class="st"> </span><span class="dv">2</span></span>
-<span id="cb444-3"><a href="12-1-r-básico.html#cb444-3"></a><span class="co">## [1] 0</span></span>
+<span id="cb444-3"><a href="12-1-r-básico.html#cb444-3"></a><span class="co">## [1] 1</span></span>
 <span id="cb444-4"><a href="12-1-r-básico.html#cb444-4"></a></span>
 <span id="cb444-5"><a href="12-1-r-básico.html#cb444-5"></a><span class="co"># Guardando o resultado</span></span>
 <span id="cb444-6"><a href="12-1-r-básico.html#cb444-6"></a>resto &lt;-<span class="st"> </span>segredo <span class="op">%%</span><span class="st"> </span><span class="dv">2</span></span>
 <span id="cb444-7"><a href="12-1-r-básico.html#cb444-7"></a></span>
 <span id="cb444-8"><a href="12-1-r-básico.html#cb444-8"></a><span class="co"># Teste</span></span>
 <span id="cb444-9"><a href="12-1-r-básico.html#cb444-9"></a>resto <span class="op">==</span><span class="st"> </span><span class="dv">0</span></span>
-<span id="cb444-10"><a href="12-1-r-básico.html#cb444-10"></a><span class="co">## [1] TRUE</span></span>
+<span id="cb444-10"><a href="12-1-r-básico.html#cb444-10"></a><span class="co">## [1] FALSE</span></span>
 <span id="cb444-11"><a href="12-1-r-básico.html#cb444-11"></a></span>
 <span id="cb444-12"><a href="12-1-r-básico.html#cb444-12"></a><span class="co"># Equivalentemente poderíamos fazer</span></span>
 <span id="cb444-13"><a href="12-1-r-básico.html#cb444-13"></a>segredo <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span></span>
-<span id="cb444-14"><a href="12-1-r-básico.html#cb444-14"></a><span class="co">## [1] TRUE</span></span></code></pre></div>
+<span id="cb444-14"><a href="12-1-r-básico.html#cb444-14"></a><span class="co">## [1] FALSE</span></span></code></pre></div>
 <p><strong>e.</strong> Teste se <code>segredo * 5</code> é maior que a sua idade.</p>
 <div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="12-1-r-básico.html#cb445-1"></a>segredo <span class="op">*</span><span class="st"> </span><span class="dv">5</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">31</span></span>
 <span id="cb445-2"><a href="12-1-r-básico.html#cb445-2"></a><span class="co">## [1] FALSE</span></span></code></pre></div>
@@ -543,12 +541,12 @@ um novo objeto chamado <code>vetor_negativo</code>.</p>
 <span id="cb446-3"><a href="12-1-r-básico.html#cb446-3"></a><span class="co">##  [1]  0  1  2  3  4  5  6  7  8  9 10</span></span>
 <span id="cb446-4"><a href="12-1-r-básico.html#cb446-4"></a></span>
 <span id="cb446-5"><a href="12-1-r-básico.html#cb446-5"></a>segredo <span class="op">==</span><span class="st"> </span>numeros_possiveis</span>
-<span id="cb446-6"><a href="12-1-r-básico.html#cb446-6"></a><span class="co">##  [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</span></span></code></pre></div>
+<span id="cb446-6"><a href="12-1-r-básico.html#cb446-6"></a><span class="co">##  [1] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE</span></span></code></pre></div>
 <p><em>No código acima, para cada valor de <code>numero_possiveis</code>, foi testado se esse valor é igual ao segredo. Em caso afirmativo, um TRUE é devolvido. Veja que há apenas um TRUE no vetor resultante. Essa é posição do nosso segredo dentro do vetor <code>numeros_possiveis</code>.</em></p>
 <p><em>Podemos usar esse vetor de TRUE/FALSE para recuperar o valor do segredo fazendo subsetting.</em></p>
 <div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="12-1-r-básico.html#cb447-1"></a><span class="co"># Eis o valor do segredo</span></span>
 <span id="cb447-2"><a href="12-1-r-básico.html#cb447-2"></a>numeros_possiveis[segredo <span class="op">==</span><span class="st"> </span>numeros_possiveis]</span>
-<span id="cb447-3"><a href="12-1-r-básico.html#cb447-3"></a><span class="co">## [1] 4</span></span></code></pre></div>
+<span id="cb447-3"><a href="12-1-r-básico.html#cb447-3"></a><span class="co">## [1] 5</span></span></code></pre></div>
 <p><em>No código acima, foi retornado apenas o número associado ao valor TRUE dado pelo teste <code>segredo == numeros_possiveis</code></em>.</p>
 <hr />
 <p><strong>2.</strong> Escreva um código em R que devolva apenas os valores maiores
@@ -858,7 +856,7 @@ ou iguais a 10 do vetor abaixo:</p>
 <span id="cb492-7"><a href="12-1-r-básico.html#cb492-7"></a>}</span>
 <span id="cb492-8"><a href="12-1-r-básico.html#cb492-8"></a></span>
 <span id="cb492-9"><a href="12-1-r-básico.html#cb492-9"></a><span class="kw">sortear_numero</span>()</span>
-<span id="cb492-10"><a href="12-1-r-básico.html#cb492-10"></a><span class="co">## [1] 6</span></span></code></pre></div>
+<span id="cb492-10"><a href="12-1-r-básico.html#cb492-10"></a><span class="co">## [1] 2</span></span></code></pre></div>
 <hr />
 <p><strong>6.</strong> Rode <code>help(sample)</code> para descobrir o que a função <code>sample()</code> faz. Em seguida:</p>
 <p><strong>a.</strong> Use a função <code>sample()</code> para escrever uma função que devolva uma linha aleatória de um <em>data frame</em>.</p>
@@ -870,8 +868,8 @@ ou iguais a 10 do vetor abaixo:</p>
 <span id="cb493-6"><a href="12-1-r-básico.html#cb493-6"></a>}</span>
 <span id="cb493-7"><a href="12-1-r-básico.html#cb493-7"></a></span>
 <span id="cb493-8"><a href="12-1-r-básico.html#cb493-8"></a><span class="kw">sortear_linha</span>(mtcars)</span>
-<span id="cb493-9"><a href="12-1-r-básico.html#cb493-9"></a><span class="co">##          mpg cyl disp  hp drat   wt  qsec vs am gear carb</span></span>
-<span id="cb493-10"><a href="12-1-r-básico.html#cb493-10"></a><span class="co">## Valiant 18.1   6  225 105 2.76 3.46 20.22  1  0    3    1</span></span></code></pre></div>
+<span id="cb493-9"><a href="12-1-r-básico.html#cb493-9"></a><span class="co">##             mpg cyl disp  hp drat   wt  qsec vs am gear carb</span></span>
+<span id="cb493-10"><a href="12-1-r-básico.html#cb493-10"></a><span class="co">## Duster 360 14.3   8  360 245 3.21 3.57 15.84  0  0    3    4</span></span></code></pre></div>
 <p><strong>b.</strong> Generalize a função para retornar um número qualquer de linhas, escolhido pelo usuário.</p>
 <div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="12-1-r-básico.html#cb494-1"></a>sortear_linha &lt;-<span class="st"> </span><span class="cf">function</span>(data_frame, n) {</span>
 <span id="cb494-2"><a href="12-1-r-básico.html#cb494-2"></a>  num_linhas &lt;-<span class="st"> </span><span class="kw">nrow</span>(data_frame)</span>
@@ -881,17 +879,17 @@ ou iguais a 10 do vetor abaixo:</p>
 <span id="cb494-6"><a href="12-1-r-básico.html#cb494-6"></a>}</span>
 <span id="cb494-7"><a href="12-1-r-básico.html#cb494-7"></a></span>
 <span id="cb494-8"><a href="12-1-r-básico.html#cb494-8"></a><span class="kw">sortear_linha</span>(mtcars, <span class="dv">10</span>)</span>
-<span id="cb494-9"><a href="12-1-r-básico.html#cb494-9"></a><span class="co">##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb</span></span>
-<span id="cb494-10"><a href="12-1-r-básico.html#cb494-10"></a><span class="co">## Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1</span></span>
-<span id="cb494-11"><a href="12-1-r-básico.html#cb494-11"></a><span class="co">## Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1</span></span>
-<span id="cb494-12"><a href="12-1-r-básico.html#cb494-12"></a><span class="co">## Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1</span></span>
-<span id="cb494-13"><a href="12-1-r-básico.html#cb494-13"></a><span class="co">## Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2</span></span>
-<span id="cb494-14"><a href="12-1-r-básico.html#cb494-14"></a><span class="co">## Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4</span></span>
-<span id="cb494-15"><a href="12-1-r-básico.html#cb494-15"></a><span class="co">## Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3</span></span>
-<span id="cb494-16"><a href="12-1-r-básico.html#cb494-16"></a><span class="co">## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4</span></span>
-<span id="cb494-17"><a href="12-1-r-básico.html#cb494-17"></a><span class="co">## Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3</span></span>
-<span id="cb494-18"><a href="12-1-r-básico.html#cb494-18"></a><span class="co">## Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</span></span>
-<span id="cb494-19"><a href="12-1-r-básico.html#cb494-19"></a><span class="co">## Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1</span></span></code></pre></div>
+<span id="cb494-9"><a href="12-1-r-básico.html#cb494-9"></a><span class="co">##                   mpg cyl  disp  hp drat    wt  qsec vs am gear carb</span></span>
+<span id="cb494-10"><a href="12-1-r-básico.html#cb494-10"></a><span class="co">## Hornet 4 Drive   21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1</span></span>
+<span id="cb494-11"><a href="12-1-r-básico.html#cb494-11"></a><span class="co">## Maserati Bora    15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8</span></span>
+<span id="cb494-12"><a href="12-1-r-básico.html#cb494-12"></a><span class="co">## Datsun 710       22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1</span></span>
+<span id="cb494-13"><a href="12-1-r-básico.html#cb494-13"></a><span class="co">## Valiant          18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1</span></span>
+<span id="cb494-14"><a href="12-1-r-básico.html#cb494-14"></a><span class="co">## AMC Javelin      15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2</span></span>
+<span id="cb494-15"><a href="12-1-r-básico.html#cb494-15"></a><span class="co">## Dodge Challenger 15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2</span></span>
+<span id="cb494-16"><a href="12-1-r-básico.html#cb494-16"></a><span class="co">## Merc 230         22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2</span></span>
+<span id="cb494-17"><a href="12-1-r-básico.html#cb494-17"></a><span class="co">## Ford Pantera L   15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4</span></span>
+<span id="cb494-18"><a href="12-1-r-básico.html#cb494-18"></a><span class="co">## Toyota Corona    21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1</span></span>
+<span id="cb494-19"><a href="12-1-r-básico.html#cb494-19"></a><span class="co">## Fiat X1-9        27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1</span></span></code></pre></div>
 </div>
 <div id="controle-de-fluxo-1" class="section level3 unnumbered">
 <h3>Controle de fluxo</h3>
