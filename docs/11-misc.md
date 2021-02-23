@@ -171,23 +171,25 @@ janitor::get_dupes(base_qualquer, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 14 x 4
+## # A tibble: 16 x 4
 ##    nome     sobrenome dupe_count variavel_importante
 ##    <chr>    <chr>          <int>               <dbl>
-##  1 Athos    Falbel             2              0.0242
-##  2 Athos    Falbel             2             -2.56  
-##  3 Daniel   Corrêa             2             -0.148 
-##  4 Daniel   Corrêa             2              1.70  
-##  5 Daniel   Trecenti           2              1.20  
-##  6 Daniel   Trecenti           2             -0.881 
-##  7 Fernando Damiani            2             -0.168 
-##  8 Fernando Damiani            2             -0.242 
-##  9 Julio    Trecenti           4              1.55  
-## 10 Julio    Trecenti           4              0.567 
-## 11 Julio    Trecenti           4              1.02  
-## 12 Julio    Trecenti           4             -0.663 
-## 13 William  Amorim             2              1.28  
-## 14 William  Amorim             2              1.05
+##  1 Athos    Falbel             2              0.591 
+##  2 Athos    Falbel             2             -2.09  
+##  3 Athos    Trecenti           3             -0.778 
+##  4 Athos    Trecenti           3             -2.42  
+##  5 Athos    Trecenti           3             -0.251 
+##  6 Fernando Trecenti           2              1.22  
+##  7 Fernando Trecenti           2              0.312 
+##  8 Julio    Damiani            2              0.0506
+##  9 Julio    Damiani            2             -0.0675
+## 10 William  Amorim             5             -0.747 
+## 11 William  Amorim             5              0.633 
+## 12 William  Amorim             5             -0.423 
+## 13 William  Amorim             5              0.309 
+## 14 William  Amorim             5             -0.597 
+## 15 William  Damiani            2             -0.106 
+## 16 William  Damiani            2              1.40
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.

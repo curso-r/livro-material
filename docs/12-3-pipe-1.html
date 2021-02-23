@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6.3 Exercícios | Ciência de Dados em R</title>
+  <title>12.3 Pipe | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6.3 Exercícios | Ciência de Dados em R" />
+  <meta property="og:title" content="12.3 Pipe | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6.3 Exercícios | Ciência de Dados em R" />
+  <meta name="twitter:title" content="12.3 Pipe | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="6-2-outros-operadores.html"/>
-<link rel="next" href="7-manipulacao.html"/>
+<link rel="prev" href="12-2-importação.html"/>
+<link rel="next" href="12-4-o-pacote-dplyr.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -229,9 +229,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4" data-path="5-4-haven.html"><a href="5-4-haven.html"><i class="fa fa-check"></i><b>5.4</b> haven</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
-<li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a></li>
+<li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a><ul>
+<li class="chapter" data-level="" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html#exercícios-10"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
 <li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
-<li class="chapter" data-level="6.3" data-path="6-3-exercícios-10.html"><a href="6-3-exercícios-10.html"><i class="fa fa-check"></i><b>6.3</b> Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
 <li class="chapter" data-level="7.1" data-path="7-1-tibbles.html"><a href="7-1-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Tibbles</a></li>
@@ -249,19 +250,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#spread"><i class="fa fa-check"></i><b>7.3.2</b> <code>spread()</code></a></li>
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
 </ul></li>
+<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a></li>
+<li class="chapter" data-level="7.5" data-path="7-5-forcats.html"><a href="7-5-forcats.html"><i class="fa fa-check"></i><b>7.5</b> O pacote forcats</a></li>
+<li class="chapter" data-level="7.6" data-path="7-6-o-pacote-lubridate.html"><a href="7-6-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.6</b> O pacote lubridate</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Gráficos</a><ul>
+<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a><ul>
 <li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#as-camadas-de-um-gráfico"><i class="fa fa-check"></i><b>8.1.1</b> As camadas de um gráfico</a></li>
-<li class="chapter" data-level="8.1.2" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#atributos-estéticos"><i class="fa fa-check"></i><b>8.1.2</b> Atributos estéticos</a></li>
-<li class="chapter" data-level="8.1.3" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#formas-geométricas"><i class="fa fa-check"></i><b>8.1.3</b> Formas geométricas</a></li>
-<li class="chapter" data-level="8.1.4" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>8.1.4</b> Juntando gráficos</a></li>
-<li class="chapter" data-level="8.1.5" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#personalizando"><i class="fa fa-check"></i><b>8.1.5</b> Personalizando</a></li>
-<li class="chapter" data-level="8.1.6" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#onde-continuar-estudando"><i class="fa fa-check"></i><b>8.1.6</b> Onde continuar estudando?</a></li>
-<li class="chapter" data-level="8.1.7" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-17"><i class="fa fa-check"></i><b>8.1.7</b> Exercícios</a></li>
+<li class="chapter" data-level="8.1.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-pontos-dispersão"><i class="fa fa-check"></i><b>8.1.1</b> Gráficos de pontos (dispersão)</a></li>
+<li class="chapter" data-level="8.1.2" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-linhas"><i class="fa fa-check"></i><b>8.1.2</b> Gráficos de linhas</a></li>
+<li class="chapter" data-level="8.1.3" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-barras"><i class="fa fa-check"></i><b>8.1.3</b> Gráficos de barras</a></li>
+<li class="chapter" data-level="8.1.4" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#histogramas-e-boxplots"><i class="fa fa-check"></i><b>8.1.4</b> Histogramas e boxplots</a></li>
+<li class="chapter" data-level="8.1.5" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#títulos-e-labels"><i class="fa fa-check"></i><b>8.1.5</b> Títulos e <em>labels</em></a></li>
+<li class="chapter" data-level="8.1.6" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#escalas"><i class="fa fa-check"></i><b>8.1.6</b> Escalas</a></li>
+<li class="chapter" data-level="8.1.7" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#temas"><i class="fa fa-check"></i><b>8.1.7</b> Temas</a></li>
+<li class="chapter" data-level="8.1.8" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>8.1.8</b> Juntando gráficos</a></li>
+<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-17"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="8-2-o-pacote-plotly.html"><a href="8-2-o-pacote-plotly.html"><i class="fa fa-check"></i><b>8.2</b> O pacote plotly</a></li>
-<li class="chapter" data-level="8.3" data-path="8-3-extensões-do-ggplot2.html"><a href="8-3-extensões-do-ggplot2.html"><i class="fa fa-check"></i><b>8.3</b> Extensões do ggplot2</a></li>
+<li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#ggpridges"><i class="fa fa-check"></i><b>8.2.1</b> ggpridges</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="9-relatorios.html"><a href="9-relatorios.html"><i class="fa fa-check"></i><b>9</b> Relatórios</a><ul>
 <li class="chapter" data-level="9.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html"><i class="fa fa-check"></i><b>9.1</b> Markdown</a><ul>
@@ -303,17 +310,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i>Mais sobre funções</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#controle-de-fluxo-1"><i class="fa fa-check"></i>Controle de fluxo</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="12-2-pipe-1.html"><a href="12-2-pipe-1.html"><i class="fa fa-check"></i><b>12.2</b> Pipe</a></li>
-<li class="chapter" data-level="12.3" data-path="12-3-importação.html"><a href="12-3-importação.html"><i class="fa fa-check"></i><b>12.3</b> Importação</a><ul>
-<li class="chapter" data-level="" data-path="12-3-importação.html"><a href="12-3-importação.html#o-pacote-readr"><i class="fa fa-check"></i>O pacote readr</a></li>
+<li class="chapter" data-level="12.2" data-path="12-2-importação.html"><a href="12-2-importação.html"><i class="fa fa-check"></i><b>12.2</b> Importação</a><ul>
+<li class="chapter" data-level="" data-path="12-2-importação.html"><a href="12-2-importação.html#o-pacote-readr"><i class="fa fa-check"></i>O pacote readr</a></li>
 </ul></li>
+<li class="chapter" data-level="12.3" data-path="12-3-pipe-1.html"><a href="12-3-pipe-1.html"><i class="fa fa-check"></i><b>12.3</b> Pipe</a></li>
 <li class="chapter" data-level="12.4" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>12.4</b> O pacote dplyr</a><ul>
-<li class="chapter" data-level="12.4.1" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#selecionando-colunas-1"><i class="fa fa-check"></i><b>12.4.1</b> Selecionando colunas</a></li>
-<li class="chapter" data-level="12.4.2" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#ordenando-a-base-1"><i class="fa fa-check"></i><b>12.4.2</b> Ordenando a base</a></li>
-<li class="chapter" data-level="12.4.3" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#filtrando-linhas-1"><i class="fa fa-check"></i><b>12.4.3</b> Filtrando linhas</a></li>
-<li class="chapter" data-level="12.4.4" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#modificando-e-criando-novas-colunas-1"><i class="fa fa-check"></i><b>12.4.4</b> Modificando e criando novas colunas</a></li>
-<li class="chapter" data-level="12.4.5" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#summarisando-a-base-1"><i class="fa fa-check"></i><b>12.4.5</b> Summarisando a base</a></li>
-<li class="chapter" data-level="12.4.6" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#juntando-duas-bases-1"><i class="fa fa-check"></i><b>12.4.6</b> Juntando duas bases</a></li>
+<li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#selecionando-colunas-1"><i class="fa fa-check"></i>Selecionando colunas</a></li>
+<li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#ordenando-a-base-1"><i class="fa fa-check"></i>Ordenando a base</a></li>
+<li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#filtrando-linhas-1"><i class="fa fa-check"></i>Filtrando linhas</a></li>
+<li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#modificando-e-criando-novas-colunas-1"><i class="fa fa-check"></i>Modificando e criando novas colunas</a></li>
+<li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#summarisando-a-base-1"><i class="fa fa-check"></i>Summarisando a base</a></li>
+<li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#juntando-duas-bases-1"><i class="fa fa-check"></i>Juntando duas bases</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
@@ -340,36 +347,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="exercícios-10" class="section level2">
-<h2><span class="header-section-number">6.3</span> Exercícios</h2>
+<div id="pipe-1" class="section level2">
+<h2><span class="header-section-number">12.3</span> Pipe</h2>
 <hr />
 <p><strong>1.</strong> Reescreva a expressão abaixo utilizando o <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="6-3-exercícios-10.html#cb206-1"></a><span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">/</span><span class="dv">3</span>), <span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
-<p><strong>Dica</strong>: utilize a função <code>magrittr::divide_by()</code>. Veja o help da função para mais informações.</p>
+<div class="sourceCode" id="cb640"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb640-1"><a href="12-3-pipe-1.html#cb640-1"></a><span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)<span class="op">/</span><span class="dv">3</span>), <span class="dt">digits =</span> <span class="dv">1</span>)</span>
+<span id="cb640-2"><a href="12-3-pipe-1.html#cb640-2"></a></span>
+<span id="cb640-3"><a href="12-3-pipe-1.html#cb640-3"></a><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> <span class="op">%&gt;%</span></span>
+<span id="cb640-4"><a href="12-3-pipe-1.html#cb640-4"></a><span class="st">  </span>sum <span class="op">%&gt;%</span></span>
+<span id="cb640-5"><a href="12-3-pipe-1.html#cb640-5"></a><span class="st">  </span><span class="kw">divide_by</span>(<span class="dv">3</span>) <span class="op">%&gt;%</span></span>
+<span id="cb640-6"><a href="12-3-pipe-1.html#cb640-6"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
 <hr />
 <p><strong>2.</strong> Reescreva o código abaixo utilizando o <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="6-3-exercícios-10.html#cb207-1"></a></span>
-<span id="cb207-2"><a href="6-3-exercícios-10.html#cb207-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</span>
-<span id="cb207-3"><a href="6-3-exercícios-10.html#cb207-3"></a></span>
-<span id="cb207-4"><a href="6-3-exercícios-10.html#cb207-4"></a>x.pos &lt;-<span class="st"> </span>x[x<span class="op">&gt;</span><span class="dv">0</span>]</span>
-<span id="cb207-5"><a href="6-3-exercícios-10.html#cb207-5"></a></span>
-<span id="cb207-6"><a href="6-3-exercícios-10.html#cb207-6"></a>media &lt;-<span class="st"> </span><span class="kw">mean</span>(x.pos)</span>
-<span id="cb207-7"><a href="6-3-exercícios-10.html#cb207-7"></a></span>
-<span id="cb207-8"><a href="6-3-exercícios-10.html#cb207-8"></a>saida &lt;-<span class="st"> </span><span class="kw">round</span>(media, <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb641"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb641-1"><a href="12-3-pipe-1.html#cb641-1"></a><span class="co"># Setamos a semente que gera números aleatórios para deixar o resultado reprodutível</span></span>
+<span id="cb641-2"><a href="12-3-pipe-1.html#cb641-2"></a></span>
+<span id="cb641-3"><a href="12-3-pipe-1.html#cb641-3"></a><span class="kw">set.seed</span>(<span class="dv">137</span>)</span>
+<span id="cb641-4"><a href="12-3-pipe-1.html#cb641-4"></a></span>
+<span id="cb641-5"><a href="12-3-pipe-1.html#cb641-5"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb641-6"><a href="12-3-pipe-1.html#cb641-6"></a>x.pos &lt;-<span class="st"> </span>x[x<span class="op">&gt;</span><span class="dv">0</span>]</span>
+<span id="cb641-7"><a href="12-3-pipe-1.html#cb641-7"></a>media &lt;-<span class="st"> </span><span class="kw">mean</span>(x.pos)</span>
+<span id="cb641-8"><a href="12-3-pipe-1.html#cb641-8"></a>saida &lt;-<span class="st"> </span><span class="kw">round</span>(media, <span class="dv">2</span>)</span>
+<span id="cb641-9"><a href="12-3-pipe-1.html#cb641-9"></a>saida</span></code></pre></div>
+<div class="sourceCode" id="cb642"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb642-1"><a href="12-3-pipe-1.html#cb642-1"></a><span class="kw">set.seed</span>(<span class="dv">137</span>)</span>
+<span id="cb642-2"><a href="12-3-pipe-1.html#cb642-2"></a></span>
+<span id="cb642-3"><a href="12-3-pipe-1.html#cb642-3"></a><span class="kw">rnorm</span>(<span class="dv">100</span>) <span class="op">%&gt;%</span></span>
+<span id="cb642-4"><a href="12-3-pipe-1.html#cb642-4"></a><span class="st">  </span>magrittr<span class="op">::</span><span class="kw">extract</span>(. <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">%&gt;%</span></span>
+<span id="cb642-5"><a href="12-3-pipe-1.html#cb642-5"></a><span class="st">  </span>mean <span class="op">%&gt;%</span></span>
+<span id="cb642-6"><a href="12-3-pipe-1.html#cb642-6"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
 <hr />
 <p><strong>3.</strong> Sem rodar, diga qual a saída do código abaixo. Consulte o help das funções caso precise.</p>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="6-3-exercícios-10.html#cb208-1"></a><span class="dv">2</span> <span class="op">%&gt;%</span></span>
-<span id="cb208-2"><a href="6-3-exercícios-10.html#cb208-2"></a><span class="st">  </span><span class="kw">add</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
-<span id="cb208-3"><a href="6-3-exercícios-10.html#cb208-3"></a><span class="st">  </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span></span>
-<span id="cb208-4"><a href="6-3-exercícios-10.html#cb208-4"></a><span class="st">  </span><span class="kw">mean</span>(<span class="dt">na.rm =</span> T) <span class="op">%&gt;%</span></span>
-<span id="cb208-5"><a href="6-3-exercícios-10.html#cb208-5"></a><span class="st">  </span><span class="kw">equals</span>(<span class="dv">5</span>)</span></code></pre></div>
-<hr />
-<p><strong>4.</strong> Leia o capítulo sobre <em>pipes</em> do <a href="http://r4ds.had.co.nz/pipes.html">R for data science</a>. É curto e vale muito a pena.</p>
-<hr />
-<p><strong>5.</strong> Pegue algum script que você já tenha programado em R e o reescreva utilizando o operador <em>pipe</em>. Se você não tiver nenhum, não se preocupe. Utilizaremos <strong>bastante</strong> o <em>pipe</em> daqui pra frente.</p>
+<div class="sourceCode" id="cb643"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb643-1"><a href="12-3-pipe-1.html#cb643-1"></a><span class="dv">2</span> <span class="op">%&gt;%</span></span>
+<span id="cb643-2"><a href="12-3-pipe-1.html#cb643-2"></a><span class="st">  </span><span class="kw">add</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
+<span id="cb643-3"><a href="12-3-pipe-1.html#cb643-3"></a><span class="st">  </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span></span>
+<span id="cb643-4"><a href="12-3-pipe-1.html#cb643-4"></a><span class="st">  </span><span class="kw">mean</span>(<span class="dt">na.rm =</span> T) <span class="op">%&gt;%</span></span>
+<span id="cb643-5"><a href="12-3-pipe-1.html#cb643-5"></a><span class="st">  </span><span class="kw">equals</span>(<span class="dv">5</span>)</span></code></pre></div>
+<ul>
+<li><em>Primeiro, somamos 2 com 2, gerando o valor 4.</em></li>
+<li><em>Então colocamos esse valor em um vetor com os valores 6 e <code>NA</code>.</em></li>
+<li><em>Em seguida, tiramos a média desse vetor, desconsiderando o <code>NA</code>, obtendo o valor 5.</em></li>
+<li><em>Por fim, testemos se o valor é igual a 5, obtendo o valor <code>TRUE</code>.</em></li>
+</ul>
 
 </div>
-<!-- </div> -->
 <hr/>
 <footer>
 <a href="https://curso-r.com" target="_blank"><img src="https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width="15%", alt="Curso-R"/></a>
@@ -379,8 +398,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="6-2-outros-operadores.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="7-manipulacao.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="12-2-importação.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="12-4-o-pacote-dplyr.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
