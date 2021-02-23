@@ -100,14 +100,14 @@ Para ver como um ggplot realmente é construído por camadas, veja o que acontec
 
 ```{r}
 ggplot(imdb) +
-  geom_abline(intercept = 0, slope = 1, color = "red")
+  geom_abline(intercept = 0, slope = 1, color = "red") +
   geom_point(mapping = aes(x = orcamento, y = receita)) 
 ```
 
 Além da posição nos eixos x e y, podemos mapear a cor dos pontos a uma variável.
 
 ```{r}
-library(dplyr)
+library(dplyr, warn.conflicts = FALSE)
 
 imdb %>%
   mutate(lucro = receita - orcamento) %>% 
@@ -119,11 +119,11 @@ O gráfico acima tem a cor dos pontos definida pelo valor da variável lucro. Co
 
 Veja que criamos a coluna `lucro` utilizando a função `mutate()` antes de iniciarmos a construção do gráfico. O fluxo `base %>% manipulação %>% ggplot` é muito comum no dia-a-dia.
 
-> Por trás de um grande gráfico sempre existe uma grande tabela.
+> **Lembre-se**: por trás de um grande gráfico sempre existe uma grande tabela.
 
 Poderíamos também classificar os filmes entre aqueles que lucraram ou não. Neste caso, como a coluna `lucrou` é textual, uma cor é atribuída a cada categoria.
 
-```{r gglucro}
+```{r}
 imdb %>%
    mutate(
     lucro = receita - orcamento,
@@ -152,34 +152,220 @@ ggplot(imdb) +
 
 ### Gráficos de linhas
 
+Utilizamos o `geom_line` para fazer gráficos de linhas. Assim como nos gráficos de pontos, precisamos definir as posições `x` e `y`. O gráfico abaixo representa a evolução da nota média dos filmes ao longo dos anos.
+
+```{r}
+imdb %>% 
+  group_by(ano) %>% 
+  summarise(nota_media = mean(nota_imdb, na.rm = TRUE)) %>% 
+  ggplot() +
+  geom_line(aes(x = ano, y = nota_media))
+```
+
+Gráficos de linha são muito utilizados para representar **séries temporais**, isto é, observações medidas repetidamente em intervalos equidistantes^[Em geral consideramos intervalos equidistantes, mas também existem séries definidas em intervalos não equidistantes de tempo.] de tempo. O gráfico anterior apresenta a série da nota IMDB média ao longo dos anos.
+
+Podemos colocar pontos e retas no mesmo gráfico. Basta acrescentar os dois `geoms`. O gráfico abaixo mostra a nota média anual dos filmes do Robert De Niro.
+
+```{r}
+imdb %>% 
+  filter(ator_1 == "Robert De Niro") %>% 
+  group_by(ano) %>% 
+  summarise(nota_media = mean(nota_imdb, na.rm = TRUE)) %>% 
+  ggplot() +
+  geom_line(aes(x = ano, y = nota_media)) +
+  geom_point(aes(x = ano, y = nota_media))
+```
+
+Quando precisamos usar o mesmo `aes()` em vários `geoms`, podemos defini-lo dentro da função `ggplot()`. Esse `aes()` será então distribuído para todo `geom` do gráfico. O código anterior pode ser reescrito da seguinte forma.
+
+```{r}
+imdb %>% 
+  filter(ator_1 == "Robert De Niro") %>% 
+  group_by(ano) %>% 
+  summarise(nota_media = mean(nota_imdb, na.rm = TRUE)) %>% 
+  ggplot(aes(x = ano, y = nota_media)) +
+  geom_line() +
+  geom_point()
+```
+
+Se algum `geom` necessitar de um atributo que os outros não precisam, esse atributo pode ser especificado normalmente dentro dele. Abaixo, utilizamos o `geom_label` para colocar as notas médias no gráfico. Além do `x` e `y`, o `geom_label` também precisa do texto que será escrito no gráfico.
+
+```{r}
+imdb %>% 
+  filter(ator_1 == "Robert De Niro") %>% 
+  group_by(ano) %>% 
+  summarise(nota_media = mean(nota_imdb, na.rm = TRUE)) %>% 
+  mutate(nota_media = round(nota_media, 1)) %>% 
+  ggplot(aes(x = ano, y = nota_media)) +
+  geom_line() +
+  geom_label(aes(label = nota_media))
+```
 
 
+### Gráficos de barras
 
-------------------------
+Para construir gráficos de barras, utilizamos o `geom_col`. A seguir, construímos um gráfico de barras do número de filmes dos 10 diretores que mais aparecem na nossa base do IMDB.
 
+```{r}
+imdb %>% 
+  count(diretor) %>%
+  top_n(10, n) %>%
+  ggplot() +
+  geom_col(aes(x = diretor, y = n))
+```
 
+Gráficos de barras também precisam dos atributos `x` e `y`, sendo que o atributo `y` representará a altura de cada barra.
 
-### Formas geométricas
+No gráfico anterior, vemos que o `NA` é considerado uma "categoria" de diretor e entra no gráfico. Podemos retirar os `NAs` dessa coluna previamente utilizando a função `filter()`.
 
-Os *geoms* definem qual forma geométrica será utilizada para a visualização das observações. Como já vimos, a função `geom_point()` gera gráficos de dispersão
-transformando pares $(x,y)$ em pontos. Veja a seguir outros *geoms* bastante utilizados:
+A seguir, além de retirar os `NAs`, atribuímos a coluna `diretor` à cor das colunas. Repare que, nesse caso, não utilizamos o atributo `color` e sim `fill`. A regra é a seguinte: o atributo `color` colore objetos sem área (pontos, linhas, contornos), o atributo `fill` preenche objetos com cor (barras, áreas, polígonos em geral).
 
-- `geom_line` - para linhas definidas por pares (x,y).
-- `geom_abline` - para retas definidas por um intercepto e uma inclinação.
-- `geom_hline` - para retas horizontais.
-- `geom_bar` - para barras.
-- `geom_histogram` - para histogramas.
-- `geom_boxplot` - para boxplots.
-- `geom_density` - para densidades.
-- `geom_area` - para áreas.
+```{r}
+imdb %>% 
+  count(diretor) %>%
+  filter(!is.na(diretor)) %>% 
+  top_n(10, n) %>%
+  ggplot() +
+  geom_col(
+    aes(x = diretor, y = n, fill = diretor),
+    show.legend = FALSE
+  )
+```
 
-Veja a seguir como é fácil gerar diversos gráficos diferentes utilizando a mesma estrutura do gráfico de dispersão acima:
+Para consertar as labels do eixo `x`, a melhor prática é invertermos os eixos do gráfico, construindo barras horizontais.
 
-#### Linhas
+```{r}
+imdb %>% 
+  count(diretor) %>%
+  filter(!is.na(diretor)) %>% 
+  top_n(10, n) %>%
+  ggplot() +
+  geom_col(
+    aes(y = diretor, x = n, fill = diretor),
+    show.legend = FALSE
+  )
+```
+
+Para ordenar as colunas, precisamos mudar a ordem dos níveis do *fator* `diretor`. Para isso, utilizamos a função `fct_reorder()` do pacote `forcats`. A nova ordem será estabelecida pela coluna `n` (quantidade de filmes).
+
+Fatores dentro do R são números inteiros (1, 2, 3, ...) que possuem uma representação textual (Ver Seção \@ref(forcats)). Variáveis categóricas são transformadas em fatores pelo ggplot pois todo eixo cartesiano é numérico. Assim, os textos de uma variável categórica são, internamente, números inteiros.
+
+Por padrão, os inteiros são atribuídos a cada categoria de uma variável pela ordem alfabética (repare na ordem dos diretores nos gráficos anteriores). Assim, se transformássemos o vetor `c("banana", "uva", "melancia")` em um fator, a atribuição de inteiros seria: "banana" vira 1, "melancia" vira 2 e "uva" vira 3. Embora sejam inteiros internamente, sempre que chamássemos esse novo vetor, ainda sim veríamos os textos "banana", "uva" e "melancia".
+
+```{r}
+imdb %>% 
+  count(diretor) %>%
+  filter(!is.na(diretor)) %>% 
+  top_n(10, n) %>%
+  mutate(diretor = forcats::fct_reorder(diretor, n)) %>% 
+  ggplot() +
+  geom_col(
+    aes(y = diretor, x = n, fill = diretor),
+    show.legend = FALSE
+  ) 
+```
+
+Por fim, podemos colocar uma label com o número de filmes de cada diretor dentro de cada barra.
+
+```{r}
+imdb %>% 
+  count(diretor) %>%
+  filter(!is.na(diretor)) %>% 
+  top_n(10, n) %>%
+  mutate(diretor = forcats::fct_reorder(diretor, n)) %>% 
+  ggplot() +
+  geom_col(aes(x = diretor, y = n, fill = diretor), show.legend = FALSE) +
+  geom_label(aes(x = diretor, y = n/2, label = n)) +
+  coord_flip()
+```
+
+### Histogramas e boxplots
+
+Para construir histogramas, usamos o `geom_histogram`. Esse `geom` só precisa do atributo `x` (o eixo y é construído automaticamente). Histogramas são úteis para avaliarmos a distribuição de uma variável.
+
+A seguir, construímos o histograma do lucro dos filmes do diretor Steven Spielberg.
+O primeiro *warning* nos diz que o eixo x foi dividido em 30 intervalos para a construção do histograma.
 
 ```{r}
 imdb %>% 
   filter(diretor == "Steven Spielberg") %>%
+  mutate(lucro = receita - orcamento) %>% 
+  ggplot() +
+  geom_histogram(aes(x = lucro))
+```
+
+Para definir o tamanho de cada intervalo, podemos utilizar o argumento `bindwidth`.
+
+```{r}
+imdb %>% 
+  filter(diretor == "Steven Spielberg") %>%
+  mutate(lucro = receita - orcamento) %>% 
+  ggplot() +
+  geom_histogram(
+    aes(x = lucro), 
+    binwidth = 100000000,
+    color = "white"
+  )
+```
+
+Boxplots também são úteis para estudarmos a distribuição de uma variável, principalmente quando queremos comparar várias distribuições. 
+
+Para construir um boxplot no ggplot, utilizamos a função `geom_boxplot`. Ele precisa dos atributos `x` e `y`, sendo que ao atributo `x` devemos mapear uma variável categórica.
+
+A seguir, construímos boxplots do lucro dos filmes dos diretores que fizeram mais de 15 filmes.
+
+```{r}
+imdb %>% 
+  filter(!is.na(diretor)) %>%
+  group_by(diretor) %>% 
+  filter(n() >= 15) %>% 
+  mutate(lucro = receita - orcamento) %>% 
+  ggplot() +
+  geom_boxplot(aes(x = diretor, y = lucro))
+```
+
+Também podemos reordenar a ordem dos boxplots utilizando a função `forcats::fct_reorder`. Neste caso, os diretores são ordenados pela mediana do lucro^[A mediana é usada por padrão pela função `fct_reorder()`. É possível trocar a função utilizada por meio do argumento `.fun`.].
+
+```{r}
+imdb %>% 
+  filter(!is.na(diretor)) %>%
+  group_by(diretor) %>% 
+  filter(n() >= 15) %>% 
+  ungroup() %>% 
+  mutate(
+    lucro = receita - orcamento,
+    diretor = forcats::fct_reorder(diretor, lucro, na.rm = TRUE)
+  ) %>% 
+  ggplot() +
+  geom_boxplot(aes(x = diretor, y = lucro))
+```
+
+### Títulos e *labels*
+
+Os títulos e *labels* do gráfico também são considerados camadas e são criados ou modificados pela função `labs()`. O exemplo a seguir coloca um título e um subtítulo no gráfico, além de modificar os *labels* do eixo x e y e da legenda.
+
+```{r}
+imdb %>%
+  mutate(lucro = receita - orcamento) %>% 
+  ggplot() +
+  geom_point(mapping = aes(x = orcamento, y = receita, color = lucro)) +
+  labs(
+    x = "Orçamento ($)",
+    y = "Receita ($)",
+    color = "Lucro ($)",
+    title = "Gráfico de dispersão",
+    subtitle = "Receita vs Orçamento"
+  )
+```
+
+### Escalas
+
+O pacote `{ggplot2}` possui uma família de funções `scale_` para modificarmos propriedades referentes às escalas do gráfico. Como podemos ter escalas de números, categorias, cores, datas, entre outras, temos uma função específica para cada tipo de escala.
+
+Considere o gráfico a seguir.
+
+```{r}
+imdb %>% 
   group_by(ano) %>% 
   summarise(nota_media = mean(nota_imdb, na.rm = TRUE)) %>% 
   ggplot() +
@@ -187,69 +373,162 @@ imdb %>%
 ```
 
 
-#### Histograma
-
-```{r}
-ggplot(imdb) + 
-  geom_histogram(aes(x = orcamento), color = "black", fill = "white")
-```
-
-Enquanto o gráfico e dispersão demandam o mapeamento das posições x e y, o histograma requer apenas a posição x, já que, pela definição do gráfico, o eixo mostra a frequência de cada classe.
-
-#### Boxplot
+Vamos redefinir as quebras dos eixos `x` e `y`.
 
 ```{r}
 imdb %>% 
-  filter(diretor %in% c("Steven Spielberg", "Quentin Tarantino", "Woody Allen")) %>%
-ggplot() + 
-  geom_boxplot(aes(x = diretor, y = receita))
-```
-
-Repare que o boxplot pede uma variável categórica no eixo x.
-
-#### Gráfico de barras
-
-Há duas formas de fazer um gráfico de barras. A primeira é utilizando a função `geom_bar()`, quando queremos que a função conte a frequência de cada categoria.
-
-```{r}
-imdb %>% 
-  filter(ano > 1990) %>% 
+  group_by(ano) %>% 
+  summarise(nota_media = mean(nota_imdb, na.rm = TRUE)) %>% 
   ggplot() +
-  geom_bar(aes(x = ano), color = "black", fill = "light blue")
+  geom_line(aes(x = ano, y = nota_media)) +
+  scale_x_continuous(breaks = seq(1916, 2016, 10)) +
+  scale_y_continuous(breaks = seq(0, 10, 2))
 ```
 
-Ou a função `geom_col()`, quando já temos essas contagens.
+Como as escalas dos eixos x e y são numéricas, utilizamos nesse caso as funções `scale_x_continuous()` e `scale_y_continuous()`. Veja que, mesmo definindo as quebras entre 0 e 10, o limite do eixo y não é alterado. Para alterá-lo, usamos a função `coord_cartesian()`.
 
 ```{r}
 imdb %>% 
-  count(diretor) %>% 
+  group_by(ano) %>% 
+  summarise(nota_media = mean(nota_imdb, na.rm = TRUE)) %>% 
+  ggplot() +
+  geom_line(aes(x = ano, y = nota_media)) +
+  scale_x_continuous(breaks = seq(1916, 2016, 10)) +
+  scale_y_continuous(breaks = seq(0, 10, 2)) +
+  coord_cartesian(ylim = c(0, 10))
+```
+
+Para mudarmos as escalas de cores, usamos as funções do tipo: `scale_color_` e `scale_fill_`. 
+
+Para escolher manualmente as cores de um gráfico, utilize as funções 
+`scale_color_manual()` e `scale_fill_manual()`. A seguir substituímos as cores padrão do gráfico por um outro conjunto de cores.
+
+```{r}
+imdb %>% 
+  count(diretor) %>%
   filter(!is.na(diretor)) %>% 
-  dplyr::top_n(5, n) %>%
+  top_n(5, n) %>%
   ggplot() +
-  geom_bar(
-    aes(x = diretor, y = n), 
-    stat = "identity", 
-    color = "red", 
-    fill = "pink"
+  geom_col(
+    aes(x = diretor, y = n, fill = diretor),
+    show.legend = FALSE
+  ) +
+  coord_flip() +
+  scale_fill_manual(values = c("red", "blue", "green", "pink", "purple", "black"))
+```
+
+Também podemos usar códigos hexadecimais.
+
+```{r}
+imdb %>% 
+  count(diretor) %>%
+  filter(!is.na(diretor)) %>% 
+  top_n(5, n) %>%
+  ggplot() +
+  geom_col(
+    aes(x = diretor, y = n, fill = diretor),
+    show.legend = FALSE
+  ) +
+  coord_flip() +
+  scale_fill_manual(
+    values = c("#ff4500", "#268b07", "#ff7400", "#0befff", "#a4bdba", "#b1f91a")
   )
 ```
 
+Para trocar as cores de um gradiente, utilize as funções `scale_color_gradient()` e `scale_fill_gradient()`.
+
+```{r}
+imdb %>% 
+  mutate(lucro = receita - orcamento) %>% 
+  ggplot() +
+  geom_point(aes(x = orcamento, y = receita, color = lucro)) +
+  scale_color_gradient(low = "red", high = "green")
+```
+
+Para trocar o nome das categorias de uma legenda de cores, utilize as funções `scale_color_discrete()` e `scale_fill_discrete()`.
+
+```{r}
+imdb %>% 
+  filter(!is.na(cor)) %>% 
+  group_by(ano, cor) %>% 
+  summarise(num_filmes = n()) %>% 
+  ggplot() +
+  geom_line(aes(x = ano, y = num_filmes, color = cor)) +
+  scale_color_discrete(labels = c("Preto e branco", "Colorido"))
+```
+
+
+### Temas
+
+Os gráficos que vimos até agora usam o tema padrão do ggplot2. Existem outros temas prontos para utilizarmos presentes na família de funções `theme_`.
+
+##### theme_minimal() {-}
+
+```{r}
+imdb %>% 
+  ggplot() +
+  geom_point(mapping = aes(x = orcamento, y = receita)) +
+  theme_minimal() 
+```
+
+##### theme_bw() {-}
+
+```{r}
+imdb %>% 
+  ggplot() +
+  geom_point(mapping = aes(x = orcamento, y = receita)) +
+  theme_bw()
+```
+
+##### theme_classic() {-}
+
+```{r}
+imdb %>% 
+  ggplot() +
+  geom_point(mapping = aes(x = orcamento, y = receita)) +
+  theme_classic()
+```
+
+##### theme_dark() {-}
+
+```{r}
+imdb %>% 
+  ggplot() +
+  geom_point(mapping = aes(x = orcamento, y = receita)) +
+  theme_dark()
+```
+
+Você também pode criar o seu próprio tema utilizando a função `theme()`. Nesse caso, para trocar os elementos estéticos do gráfico precisamos usar as funções `element_text()` para textos, `element_line()` para linhas, `element_rect()` para áreas e `element_blank()` para remover elementos.
+
+No exemplo a seguir, fizemos as seguintes modificações no tema padrão:
+
+- Alinhamos o título no centro do gráfico.
+- Alinhamos o subtítulo no centro do gráfico.
+- Pintamos o título dos eixos de roxo.
+- Preenchemos o fundo do gráfico de preto.
+- Removemos o grid do gráfico.
+
+```{r}
+imdb %>% 
+  ggplot() +
+  geom_point(mapping = aes(x = orcamento, y = receita), color = "white") +
+  labs(title = "Gráfico de dispersão", subtitle = "Receita vs Orçamento") +
+  theme(
+    plot.title = element_text(hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5),
+    axis.title = element_text(color = "purple"),
+    panel.background = element_rect(fill = "black"),
+    panel.grid = element_blank()
+  )
+```
 
 ### Juntando gráficos
 
 No ggplot, temos várias formas de juntar gráficos. Vamos apresentar a seguir as principais.
 
-#### Vários geoms no mesmo gráfico
+#### Vários geoms no mesmo gráfico {-}
 
-Podemos acrescentar vários geoms em um mesmo gráfico, apenas adicionando novas camadas. No código abaixo, construímos o gráfico de dispersão da receita pelo orçamento dos filmes, acrescentando também uma reta de tendência aos pontos.
-
-```{r}
-ggplot(imdb) +
-  geom_point(aes(x = orcamento, y = receita)) +
-  geom_smooth(aes(x = orcamento, y = receita), se = FALSE, method = "lm")
-```
-
-Quando estamos usando mais de um geom, podemos economizar código especificando o `aes()` diretamente na função `ggplot()`. O mapeamento então é distribuído para todos os geoms do gráfico.
+Como vimos anteriormente, podemos acrescentar vários `geoms` em um mesmo gráfico, apenas adicionando novas camadas. No código a seguir, construímos o gráfico de dispersão da receita pelo orçamento dos filmes, acrescentando também uma reta de tendência linear aos pontos.
 
 ```{r}
 ggplot(imdb, aes(x = orcamento, y = receita)) +
@@ -257,16 +536,8 @@ ggplot(imdb, aes(x = orcamento, y = receita)) +
   geom_smooth(se = FALSE, method = "lm")
 ```
 
-Mas você ainda pode usar o `aes()` dentro dos geoms para especificar mapeamentos específicos.
 
-```{r}
-ggplot(imdb, aes(x = orcamento, y = receita)) +
-  geom_point(aes(color = ano)) +
-  geom_smooth(color = "black", se = FALSE, method = "lm")
-```
-
-
-#### Replicando um gráfico para cada categoria de uma variável
+#### Replicando um gráfico para cada categoria de uma variável {-}
 
 Uma funcionalidade muito útil do `ggplot2` é a possibilidade de usar `facets` para replicar um gráfico para cada categoria de uma variável.
 
@@ -288,15 +559,13 @@ imdb %>%
   facet_wrap(~classificacao, ncol = 2)
 ```
 
-**Exercício relâmpago!** Pesquise o que faz a função `facet_grid()`.
+#### Juntando gráficos diferentes {-}
 
-#### Juntando gráficos diferentes
-
-Diversos outros pacotes trazem ferramentas super úteis para trabalharmos com o `ggplot2`. Um deles é o pacote `patchwork`. Após carregá-lo, podemos juntar dois gráficos com um simples `+`.
+Diversos outros pacotes trazem ferramentas super úteis para trabalharmos com o `ggplot2`. Um deles é o pacote `{patchwork}`. Após carregá-lo, podemos juntar dois gráficos em uma mesma figura com um simples `+`.
 
 ```{r}
 # Instale antes de carregar
-# devtools::install_github("thomasp85/patchwork")
+# install.packages("patchwork")
 
 library(patchwork)
 
@@ -321,207 +590,61 @@ p2 <- imdb %>%
 p1 + p2
 ```
 
-
-### Personalizando
-
-Como exemplo de personalização de um gráfico com o `ggplot2`, vamos partir de um simples boxplot e fazer diversas alterações no seu visual. 
-
-O gráfico inicial é construído da seguinte forma:
-
-```{r}
-imdb %>% 
-  filter(diretor %in% c("Steven Spielberg", "Quentin Tarantino", "Woody Allen")) %>%
-  ggplot() + 
-  geom_boxplot(aes(x = diretor, y = receita, fill = diretor))
-```
-
-#### Removendo totalmente a legenda
-
-Existem diversas maneiras para remover a legenda de um gráfico no `ggplot2`. A forma mais simples é usar o argumento `show.legend = FALSE` dentro do geom.
-
-```{r}
-imdb %>% 
-  filter(diretor %in% c("Steven Spielberg", "Quentin Tarantino", "Woody Allen")) %>%
-  ggplot() + 
-  geom_boxplot(aes(x = diretor, y = receita, fill = diretor), show.legend = FALSE)
-```
-
-#### Mexendo na escala
-
-Para mudar qualquer aspecto estético da escala, usamos a família de funções `scale_()`. No caso, vamos deixar a escala do eixo y no formato de dólares.
-
-```{r}
-imdb %>% 
-  filter(diretor %in% c("Steven Spielberg", "Quentin Tarantino", "Woody Allen")) %>%
-  ggplot() + 
-  geom_boxplot(aes(x = diretor, y = receita, fill = diretor), show.legend = FALSE) +
-  scale_y_continuous(labels = scales::dollar)
-```
-
-Repare que para cada tipo de atributo, existe uma função `scale_()` correspondente.
-
-#### Alterando a ordem das categorias
-
-Para alterar a ordem que as categorias de uma variável aparecem no gráfico, podemos utilizar o argumento `breaks=` da função `scale_()`.
-
-```{r}
-imdb %>% 
-  filter(diretor %in% c("Steven Spielberg", "Quentin Tarantino", "Woody Allen")) %>%
-  ggplot() + 
-  geom_boxplot(aes(x = diretor, y = receita, fill = diretor), show.legend = FALSE) +
-  scale_y_continuous(labels = scales::dollar) +
-  scale_x_discrete(
-    limits = c("Woody Allen", "Quentin Tarantino", "Steven Spielberg")
-  )
-```
-
-Também é possível fazer isso usando as funções do pacote `forcats`, apresentado com detalhes [aqui](https://www.curso-r.com/material/forcats/).
-
-#### Escolhendo cores manualmente
-
-O pacote`ggplot2` utiliza uma palheta de cores padrão. Se você quiser especificar as suas próprias cores, faça isso utilizando a função `scale_()`.
-
-```{r}
-imdb %>% 
-  filter(diretor %in% c("Steven Spielberg", "Quentin Tarantino", "Woody Allen")) %>%
-  ggplot() + 
-  geom_boxplot(aes(x = diretor, y = receita, fill = diretor), show.legend = FALSE) +
-  scale_y_continuous(labels = scales::dollar) +
-  scale_x_discrete(
-    limits = c("Woody Allen", "Quentin Tarantino", "Steven Spielberg")
-  ) +
-  scale_fill_manual(values = c("#999999", "#E69F00", "#56B4E9"))
-```
-
-#### Modificando o visual do gráfico
-
-Podemos mudar aspectos visuais do gráfico, como fontes, cores e estilos dos textos, grids, marcações, cor do fundo etc, a partir da função `theme()`. No exemplo abaixo, eliminamos o texto e as marcações do eixo $x$.
-
-```{r}
-imdb %>% 
-  filter(diretor %in% c("Steven Spielberg", "Quentin Tarantino", "Woody Allen")) %>%
-  ggplot() + 
-  geom_boxplot(aes(x = diretor, y = receita, fill = diretor)) +
-  scale_y_continuous(labels = scales::dollar) +
-  scale_x_discrete(
-    limits = c("Woody Allen", "Quentin Tarantino", "Steven Spielberg")
-  ) +
-  scale_fill_manual(values = c("#999999", "#E69F00", "#56B4E9")) +
-  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank())
-```
-
-#### Modificando a posição da legenda
-
-É possível controlar a posição da legenda facilmente escolhendo uma das posições:  `left`, `right`, `top` e `bottom`.
-
-```{r}
-imdb %>% 
-  filter(diretor %in% c("Steven Spielberg", "Quentin Tarantino", "Woody Allen")) %>%
-  ggplot() + 
-  geom_boxplot(aes(x = diretor, y = receita, fill = diretor)) +
-  scale_y_continuous(labels = scales::dollar) +
-  scale_x_discrete(
-    limits = c("Woody Allen", "Quentin Tarantino", "Steven Spielberg")
-  ) +
-  scale_fill_manual(values = c("#999999", "#E69F00", "#56B4E9")) +
-  theme(
-    axis.text.x = element_blank(), 
-    axis.ticks.x = element_blank(),
-    legend.position = "bottom"
-  )
-```
-
-Existem alguns temas já prontos disponíveis no `ggplot2`. Veja alguns exemplos.
-
-```{r}
-imdb %>% 
-  filter(diretor %in% c("Steven Spielberg", "Quentin Tarantino", "Woody Allen")) %>%
-  ggplot() + 
-  geom_boxplot(aes(x = diretor, y = receita, fill = diretor), show.legend = FALSE) +
-  scale_y_continuous(labels = scales::dollar) +
-  scale_x_discrete(
-    limits = c("Woody Allen", "Quentin Tarantino", "Steven Spielberg")
-  ) +
-  scale_fill_manual(values = c("#999999", "#E69F00", "#56B4E9")) +
-  theme_bw()
-
-imdb %>% 
-  filter(diretor %in% c("Steven Spielberg", "Quentin Tarantino", "Woody Allen")) %>%
-  ggplot() + 
-  geom_boxplot(aes(x = diretor, y = receita, fill = diretor), show.legend = FALSE) +
-  scale_y_continuous(labels = scales::dollar) +
-  scale_x_discrete(
-    limits = c("Woody Allen", "Quentin Tarantino", "Steven Spielberg")
-  ) +
-  scale_fill_manual(values = c("#999999", "#E69F00", "#56B4E9")) +
-  theme_minimal()
-
-imdb %>% 
-  filter(diretor %in% c("Steven Spielberg", "Quentin Tarantino", "Woody Allen")) %>%
-  ggplot() + 
-  geom_boxplot(aes(x = diretor, y = receita, fill = diretor), show.legend = FALSE) +
-  scale_y_continuous(labels = scales::dollar) +
-  scale_x_discrete(
-    limits = c("Woody Allen", "Quentin Tarantino", "Steven Spielberg")
-  ) +
-  scale_fill_manual(values = c("#999999", "#E69F00", "#56B4E9")) +
-  theme_dark()
-```
-
-#### Acrescentando título
-
-Para acrescentar um título ao seu gráfico, utilize a função `ggtitle()`.
-
-```{r}
-imdb %>% 
-  filter(diretor %in% c("Steven Spielberg", "Quentin Tarantino", "Woody Allen")) %>%
-  ggplot() + 
-  geom_boxplot(aes(x = diretor, y = receita, fill = diretor), show.legend = FALSE) +
-  scale_y_continuous(labels = scales::dollar) +
-  scale_x_discrete(
-    limits = c("Woody Allen", "Quentin Tarantino", "Steven Spielberg")
-  ) +
-  scale_fill_manual(values = c("#999999", "#E69F00", "#56B4E9")) +
-  theme_minimal() +
-  ggtitle("Meu boxplot bonitão")
-```
-
-### Onde continuar estudando?
-
-O pacote `ggplot2` tem incontáveis funcionalidades, principalmente na hora de personalizar o seu gráfico. Abordamos aqui apenas algumas poucas delas. Para continuar aprendendo, sugerimos as seguintes referências:
-
-- O [capítulo de visualizações do R4DS](https://r4ds.had.co.nz/data-visualisation.html) é um ótimo material para fixar os conceitos básicos.
-
-- O [capítulo de gráficos do livro R Cookbook](http://www.cookbook-r.com/Graphs/) é um bom material de consulta para relembrar velhos truques e descobrir novas formas de personalizar seu gráfico.
-
-- O site [ggplot2 extensions](https://exts.ggplot2.tidyverse.org/) tem uma galeria com diversos pacotes que deixam o ggplot2 bem mais poderoso, indo de novos geoms até animações.
-
-```{r}
-library(ggridges)
-
-imdb %>%
-  filter(ano > 2005) %>% 
-  mutate(ano = as.factor(ano)) %>% 
-  ggplot(aes(y = ano, x = receita, fill = ano)) +
-  geom_density_ridges(na.rm = TRUE, show.legend = FALSE)
-```
-
-
 ### Exercícios
 
-**1.** O que tem de errado no código abaixo? Por que os pontos não ficaram azuis?
+**1.** O que acontece quando rodamos o código `ggplot(data = mtcars)`?
+
+**2.** O que tem de errado no código abaixo? Por que os pontos não ficaram azuis?
 
 ```{r}
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy, color = "blue"))
 ```
 
-**2.** Mapeie uma variável contínua para uma cor, tamanho e forma. Como essas formas
-estéticas se comportam diferente para variáveis categóricas vs contínuas?
-
-**3.** O que acontece se você rodar `ggplot(data = mtcars)`?
-
+**3.** Mapeie uma variável contínua para a cor, o tamanho e a forma de um gráfico de pontos. Como esses atributos estéticos se comportam diferente para variáveis categóricas vs contínuas?
 
 **4.** Utilizando o `mtcars`, faça um gráfico de dispersão de `mpg` por `qsec`.
 
 **5.** Utilizando o `mtcars`, o que acontece se você fizer um gráfico de dispersão de `vs` por `mpg`? Por que o gráfico não é útil?
+
+Para resolver os exercícios a seguir, utilize a base `imdb`.
+
+**6.** Crie um gráfico de dispersão da nota do imdb pelo orçamento.
+
+**7.** Faça um gráfico de linhas do orçamento médio dos filmes ao longo dos anos.
+
+**8.** Transforme o gráfico do exercício anterior em um gráfico de barras.
+
+**9.** Descubra quais são os 5 atores que mais aparecem na coluna ator_1 e faça um boxplot do lucro dos filmes desses atores.
+
+**10.** Com base no código abaixo, resolva os itens a seguir.
+
+```{r}
+diretores <- c(
+  "Steven Spielberg", 
+  "Quentin Tarantino", 
+  "Christopher Nolan",
+  "Martin Scorsese"
+)
+
+imdb %>% 
+  filter(diretor %in% diretores) %>% 
+  group_by(ano, diretor) %>% 
+  summarise(nota_media = mean(nota_imdb, na.rm = TRUE)) %>% 
+  ggplot(aes(x = ano, y = nota_media)) +
+  geom_point() +
+  geom_line() +
+  facet_wrap(vars(diretor))
+```
+
+- **a.** Analisando o gráfico gerado, descreva o que a função `facet_wrap()` faz.
+
+- **.b** Utilize os argumentos nrow e `ncol` da função `facet_wrap()` para colocar os quatro gráficos em uma única coluna.
+
+**11.** Resovla os itens a seguir para fazer um gráfico de barras da frequência de filmes com nota maior que 8 ao longo dos anos.
+
+- **a.** Crie uma nova coluna na base IMDB indicando se a nota de um filme é maior que 8 ou não.
+
+- **b.** b. Utilizando a coluna criada em (a) crie uma tabela com o número anual de filmes com nota maior 8.
+
+- **c.** Utilize a tabela criada em (b) para fazer um gráfico de barras do número de filmes com nota maior que 8 ao longo dos anos.
