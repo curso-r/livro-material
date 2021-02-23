@@ -2,30 +2,30 @@
 
 Agora que já temos em mãos as ferramentas para importar, arrumar, transformar e sumarizar os nossos dados, podemos dar um passo adiante no ciclo da Ciência de Dados: a construção de *visualizações*.
 
-A visualização dos dados é uma etapa importantíssima da análise estatística, pois é a partir dela que criamos a intuição necessária para escolher o teste ou modelo mais adequado para o nosso problema. Muitas vezes, um problema de análise de dados pode ser resolvido apenas com visualizações. Além disso, elas são o principal combustível da etapa de Comunicação da análise.
+Visualizar os dados é uma etapa importantíssima da análise estatística, pois é a partir dela que criamos boa parte da intuição necessária para escolher o teste ou modelo mais adequado para o nosso problema. Muitas vezes, um problema de análise de dados pode ser resolvido apenas com visualizações. Além disso, elas são o principal combustível da etapa de Comunicação da análise.
 
-Visualizações podem ser uma simples medida resumo (frequência, média, variância, mínimo, máximo etc), um conjunto dessas medidas organizadas em uma tabela ou a representação (de uma parte) dos dados em um gráfico. Neste capítulo, mostraremos como construir gráficos e tabelas e bem formatadas dentro do R. Começaremos com a construção dos gráficoe e, em seguida, falaremos sobre a formação de tabelas^[Em geral, boa parte do trabalho necessário para a construção de uma tabela descritiva pode ser feito com as funções dos pacotes `{dplyr}` e `{tidyr}`, vistas no capítulo anterior.].
+Visualizações podem ser uma simples medida resumo (frequência, média, variância, mínimo, máximo etc), um conjunto dessas medidas organizadas em uma tabela ou a representação (de uma parte) dos dados em um gráfico. Neste capítulo, mostraremos como construir gráficos e tabelas bem formatadas dentro do R. Começaremos com a construção de gráficos e, em seguida, falaremos sobre a formatação de tabelas^[Em geral, boa parte do trabalho necessário para a construção de uma tabela descritiva pode ser feito com as funções dos pacotes `{dplyr}` e `{tidyr}`, vistas no capítulo anterior.].
 
 Mas, antes de mais nada, o que é um gráfico estatístico?
 
 ## O pacote ggplot2
 
-A construção de gráficos no R foi revolucionada com a criação do pacote `ggplot2`, fruto da tese de doutorado de [Hadley Wickham](https://github.com/hadley). Essa revolução teve base na filosofia adotada por Hadley ao definir o que deveria ser um gráfico estatístico.
+A construção de gráficos no R foi revolucionada com a criação do pacote `ggplot2`, fruto da tese de doutorado do [Hadley Wickham](https://github.com/hadley). Essa revolução teve base na filosofia que Hadley adotou para responder a pergunta "O que é um gráfico estatístico?".
 
-Mas será que podemos definir formalmente o que é um gráfico estatístico? Graças ao estatístico norte-americano Leland Wilkinson, a resposta é sim.
+Em 2005, o estatístico norte-americano Leland Wilkinson publicou o livro [*The Grammar of graphics*](http://www.springer.com/statistics/computational+statistics/book/978-0-387-24544-7) (*A gramática dos gráficos*, em português), uma fonte de princípios fundamentais para a construção de gráficos estatísticos. No livro, ele defende que um gráfico é o mapeamento dos dados em atributos estéticos (posição, cor, forma, tamanho) de formas geométricas (pontos, linhas, barras, caixas).
 
-Em 2005, Leland publicou o livro [*The Grammar of graphics*](http://www.springer.com/statistics/computational+statistics/book/978-0-387-24544-7), uma fonte de princípios fundamentais para a construção de gráficos estatísticos. No livro, ele defende que um gráfico é o mapeamento dos dados a partir de atributos estéticos (posição, cor, forma, tamanho) de objetos geométricos (pontos, linhas, barras, caixas).
+A partir dessa definição, Hadley escreveu [A Layered Grammar of Graphics](http://vita.had.co.nz/papers/layered-grammar.html) (*Uma gramática em camada dos gráficos*), acrescentando que os elementos de um gráfico (dados, sistema de coordenadas, rótulos, anotações, entre outros) são as suas camadas e que a construção de um gráfico se dá pela sobreposição dessas camadas.
 
-A partir dessa definição, Hadley escreveu [A Layered Grammar of Graphics](http://vita.had.co.nz/papers/layered-grammar.html), sugerindo que os principais aspectos de um gráfico (dados, sistema de coordenadas, rótulos e anotações) podiam ser divididos em camadas, construídas uma a uma na elaboração do gráfico. Essa é a essência do `ggplot2`.
+Essa é a essência do `ggplot2`: construir um gráfico camada por camada.
 
-Além de uma filosofia bem fundamentada, o `ggplot2` ainda traz outras vantagens em relação aos gráficos do r base:
+Além de uma filosofia bem fundamentada, o `ggplot2` ainda traz outras vantagens em relação aos gráficos do R base:
 
 - gráficos naturalmente mais bonitos;
-- muito mais fácil deixar o gráfico do jeito que você quer;
-- a estrutura padronizada das funções deixa o aprendizado muito mais intuitivo; e
-- é possível criar uma imensa gama de gráficos com poucas linhas de código.
+- fácil personalização (mais simples deixar o gráfico do jeito que você quer);
+- a estrutura padronizada das funções deixa o aprendizado muito mais intuitivo;
+- a diferença no código entre tipos diferentes de gráficos é muito pequena.
 
-Para discutir os principais aspectos da construção de gráficos com o `ggplot2`, vamos continuar utilizando a base de filmes do IMDB apresentada na [seção de manipulação](https://www.curso-r.com/material/manipulacao/). Você pode baixá-la [clicando aqui](https://github.com/curso-r/site-v2/raw/master/content/material/importacao/data/imdb.rds).
+Para discutir os principais aspectos da construção de gráficos com o `ggplot2`, vamos continuar utilizando a base de filmes do IMDB. Você pode baixá-la [clicando aqui](https://github.com/curso-r/livro-material/raw/master/assets/data/imdb.rds).
 
 Na próxima seção, vamos conhecer as principais funções do `ggplot2` e começar a construir nossos primeiros gráficos. Não se esqueça de instalar e carregar o pacote antes de rodar os exemplos.
 
@@ -37,9 +37,11 @@ library(ggplot2)
 
 
 
-### As camadas de um gráfico
+### Gráficos de pontos (dispersão)
 
-No `ggplot2`, os gráficos são construídos camada por camada, sendo a primeira delas dada pela função `ggplot()` (repare que não tem o "2"). Essa função recebe um data frame e cria a camada base do gráfico. Se rodarmos apenas a função `ggplot()`, obteremos um painel em branco.
+No `ggplot2`, os gráficos são construídos camada por camada, sendo a primeira delas dada pela função `ggplot()` (repare que não tem o "2"). Essa função recebe um *data frame* e cria a camada base do gráfico, o nosso *canvas*, onde acrescentaremos todos os outros elementos (camadas). 
+
+Se rodarmos apenas a função `ggplot()`, obteremos um painel em branco.
 
 
 ```r
@@ -49,14 +51,14 @@ ggplot(data = imdb)
 
 <img src="08-graficos_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
-Apesar de termos passados os dados para a função, precisamos especificar como as observações serão mapeadas nos aspectos visuais do gráfico e quais formas geométricas serão utilizadas para isso. Cada camada do gráfico representará um tipo de mapeamento ou personalização. 
+Apesar de termos passado os dados para a função, precisamos especificar como as observações serão mapeadas nos aspectos visuais do gráfico e quais formas geométricas serão utilizadas para isso.
 
 O código abaixo constrói um gráfico de dispersão entre as variáveis orçamento e receita.
 
 
 ```r
 ggplot(imdb) +
-  geom_point(aes(x = orcamento, y = receita))
+  geom_point(mapping = aes(x = orcamento, y = receita))
 ```
 
 ```
@@ -67,14 +69,25 @@ ggplot(imdb) +
 
 Observe que:
 
-- como vimos, a primeira camada é dada pela função `ggplot()` e recebe um data frame;
-- a segunda camada é dada pela função `geom_point()`, especificando a forma **geom**étrica utilizada no mapeamento das observações;
+- a primeira camada é dada pela função `ggplot()` e recebe a nossa base `imdb`;
+- a segunda camada é dada pela função `geom_point()`, especificando a forma **geom**étrica utilizada no mapeamento das observações (pontos);
 - as camadas são unidas com um `+`;
-- o mapeamento na função `geom_point()` recebe a função `aes()`, responsável por descrever como as variáveis serão mapeadas nos aspectos visuais da forma geométrica escolhida, no caso, pontos.
+- o mapeamento na função `geom_point()` recebe a função `aes()`, responsável por descrever como as variáveis serão mapeadas nos aspectos visuais dos pontos (a forma geométrica escolhida);
+- neste caso, os aspectos visuais mapeados são a posição do ponto no eixo x e a posição do ponto no eixo y;
+- o `Warning` nos avisa sobre a exclusão das observações que possuem `NA` na variável receita e/ou orçamento;
+- todas essas funções são do pacote `{ggplot2}`.
 
-A combinação da função `ggplot()` e de uma ou mais funções `geom_()` definirá o tipo de gráfico gerado.
+A combinação da função `ggplot()` e de uma ou mais funções `geom_()` definirá o tipo de gráfico gerado. 
 
-**Atenção!** As camadas dos gráficos são empilhadas utilizando-se o sinal `+`. Como a estrutura é muito parecida com uma pipe line, é comum trocarmos o `+` por um `%>%` no meio do código, resultando em erro.
+O primeiro argumento de qualquer função `geom` é o `mapping`. Esse argumento serve para mapear os dados nos atributos estéticos da forma geométrica escolhida. Ele sempre receberá a função `aes()`, cujos argumentos vão sempre depender da forma geométrica que estamos utilizando. No caso de um gráfico de dispersão, precisamos definir a posição dos pontos nos eixos x e y. No exemplo, a posição do ponto no eixo x foi dada pela coluna `orcamento` e a posição do ponto no eixo y pela coluna `receita`.
+
+> **Atenção!** As camadas dos gráficos são empilhadas utilizando-se o sinal `+`. Como a estrutura é muito parecida com a do *pipe*, é comum trocarmos o `+` por um `%>%` no meio do código, resultando em erro.
+
+
+
+
+------------------------
+
 
 Podemos acrescentar uma terceira camada ao gráfico, gerando a reta `y = x` para visualizarmos os filmes não se pagaram.
 
