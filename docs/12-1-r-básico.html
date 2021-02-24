@@ -322,6 +322,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#summarisando-a-base-1"><i class="fa fa-check"></i>Summarisando a base</a></li>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#juntando-duas-bases-1"><i class="fa fa-check"></i>Juntando duas bases</a></li>
 </ul></li>
+<li class="chapter" data-level="12.5" data-path="12-5-o-pacote-ggplot2-1.html"><a href="12-5-o-pacote-ggplot2-1.html"><i class="fa fa-check"></i><b>12.5</b> O pacote ggplot2</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
@@ -525,16 +526,16 @@ um novo objeto chamado <code>vetor_negativo</code>.</p>
 <p><em>Precisamos verificar se o resto da divisão por 2 é igual a zero.</em></p>
 <div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb491-1"><a href="12-1-r-básico.html#cb491-1"></a><span class="co"># Resto da divisão por 2</span></span>
 <span id="cb491-2"><a href="12-1-r-básico.html#cb491-2"></a>segredo <span class="op">%%</span><span class="st"> </span><span class="dv">2</span></span></code></pre></div>
-<pre><code>## [1] 0</code></pre>
+<pre><code>## [1] 1</code></pre>
 <div class="sourceCode" id="cb493"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb493-1"><a href="12-1-r-básico.html#cb493-1"></a><span class="co"># Guardando o resultado</span></span>
 <span id="cb493-2"><a href="12-1-r-básico.html#cb493-2"></a>resto &lt;-<span class="st"> </span>segredo <span class="op">%%</span><span class="st"> </span><span class="dv">2</span></span>
 <span id="cb493-3"><a href="12-1-r-básico.html#cb493-3"></a></span>
 <span id="cb493-4"><a href="12-1-r-básico.html#cb493-4"></a><span class="co"># Teste</span></span>
 <span id="cb493-5"><a href="12-1-r-básico.html#cb493-5"></a>resto <span class="op">==</span><span class="st"> </span><span class="dv">0</span></span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
+<pre><code>## [1] FALSE</code></pre>
 <div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="12-1-r-básico.html#cb495-1"></a><span class="co"># Equivalentemente poderíamos fazer</span></span>
 <span id="cb495-2"><a href="12-1-r-básico.html#cb495-2"></a>segredo <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span></span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
+<pre><code>## [1] FALSE</code></pre>
 <p><strong>e.</strong> Teste se <code>segredo * 5</code> é maior que a sua idade.</p>
 <div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb497-1"><a href="12-1-r-básico.html#cb497-1"></a>segredo <span class="op">*</span><span class="st"> </span><span class="dv">5</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">31</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
@@ -544,12 +545,12 @@ um novo objeto chamado <code>vetor_negativo</code>.</p>
 <span id="cb499-2"><a href="12-1-r-básico.html#cb499-2"></a>numeros_possiveis</span></code></pre></div>
 <pre><code>##  [1]  0  1  2  3  4  5  6  7  8  9 10</code></pre>
 <div class="sourceCode" id="cb501"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb501-1"><a href="12-1-r-básico.html#cb501-1"></a>segredo <span class="op">==</span><span class="st"> </span>numeros_possiveis</span></code></pre></div>
-<pre><code>##  [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<pre><code>##  [1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <p><em>No código acima, para cada valor de <code>numero_possiveis</code>, foi testado se esse valor é igual ao segredo. Em caso afirmativo, um TRUE é devolvido. Veja que há apenas um TRUE no vetor resultante. Essa é posição do nosso segredo dentro do vetor <code>numeros_possiveis</code>.</em></p>
 <p><em>Podemos usar esse vetor de TRUE/FALSE para recuperar o valor do segredo fazendo subsetting.</em></p>
 <div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="12-1-r-básico.html#cb503-1"></a><span class="co"># Eis o valor do segredo</span></span>
 <span id="cb503-2"><a href="12-1-r-básico.html#cb503-2"></a>numeros_possiveis[segredo <span class="op">==</span><span class="st"> </span>numeros_possiveis]</span></code></pre></div>
-<pre><code>## [1] 4</code></pre>
+<pre><code>## [1] 3</code></pre>
 <p><em>No código acima, foi retornado apenas o número associado ao valor TRUE dado pelo teste <code>segredo == numeros_possiveis</code></em>.</p>
 <hr />
 <p><strong>2.</strong> Escreva um código em R que devolva apenas os valores maiores
@@ -854,7 +855,7 @@ ou iguais a 10 do vetor abaixo:</p>
 <span id="cb609-7"><a href="12-1-r-básico.html#cb609-7"></a>}</span>
 <span id="cb609-8"><a href="12-1-r-básico.html#cb609-8"></a></span>
 <span id="cb609-9"><a href="12-1-r-básico.html#cb609-9"></a><span class="kw">sortear_numero</span>()</span></code></pre></div>
-<pre><code>## [1] 4</code></pre>
+<pre><code>## [1] 8</code></pre>
 <hr />
 <p><strong>6.</strong> Rode <code>help(sample)</code> para descobrir o que a função <code>sample()</code> faz. Em seguida:</p>
 <p><strong>a.</strong> Use a função <code>sample()</code> para escrever uma função que devolva uma linha aleatória de um <em>data frame</em>.</p>
@@ -866,8 +867,8 @@ ou iguais a 10 do vetor abaixo:</p>
 <span id="cb611-6"><a href="12-1-r-básico.html#cb611-6"></a>}</span>
 <span id="cb611-7"><a href="12-1-r-básico.html#cb611-7"></a></span>
 <span id="cb611-8"><a href="12-1-r-básico.html#cb611-8"></a><span class="kw">sortear_linha</span>(mtcars)</span></code></pre></div>
-<pre><code>##             mpg cyl disp hp drat   wt  qsec vs am gear carb
-## Datsun 710 22.8   4  108 93 3.85 2.32 18.61  1  1    4    1</code></pre>
+<pre><code>##                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Pontiac Firebird 19.2   8  400 175 3.08 3.845 17.05  0  0    3    2</code></pre>
 <p><strong>b.</strong> Generalize a função para retornar um número qualquer de linhas, escolhido pelo usuário.</p>
 <div class="sourceCode" id="cb613"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb613-1"><a href="12-1-r-básico.html#cb613-1"></a>sortear_linha &lt;-<span class="st"> </span><span class="cf">function</span>(data_frame, n) {</span>
 <span id="cb613-2"><a href="12-1-r-básico.html#cb613-2"></a>  num_linhas &lt;-<span class="st"> </span><span class="kw">nrow</span>(data_frame)</span>
@@ -877,17 +878,17 @@ ou iguais a 10 do vetor abaixo:</p>
 <span id="cb613-6"><a href="12-1-r-básico.html#cb613-6"></a>}</span>
 <span id="cb613-7"><a href="12-1-r-básico.html#cb613-7"></a></span>
 <span id="cb613-8"><a href="12-1-r-básico.html#cb613-8"></a><span class="kw">sortear_linha</span>(mtcars, <span class="dv">10</span>)</span></code></pre></div>
-<pre><code>##                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-## Duster 360         14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
-## Cadillac Fleetwood 10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
-## Chrysler Imperial  14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
-## Fiat 128           32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
-## Maserati Bora      15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
-## Volvo 142E         21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2
-## Ford Pantera L     15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
-## Toyota Corona      21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
-## Toyota Corolla     33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
-## Merc 450SE         16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3</code></pre>
+<pre><code>##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
+## Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+## Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+## Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2
+## Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
+## Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+## Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
+## Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+## Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2</code></pre>
 </div>
 <div id="controle-de-fluxo-1" class="section level3 unnumbered">
 <h3>Controle de fluxo</h3>

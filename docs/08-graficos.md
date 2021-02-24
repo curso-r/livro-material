@@ -909,7 +909,7 @@ imdb %>%
 
 <img src="08-graficos_files/figure-html/unnamed-chunk-43-1.png" width="672" style="display: block; margin: auto;" />
 
-- **a.** Analisando o gráfico gerado, descreva o que a função facet_wrap() faz.
+- **a.** Analisando o gráfico gerado, descreva o que a função `facet_wrap()` faz.
 
 - **.b** Utilize os argumentos nrow e `ncol` da função `facet_wrap()` para colocar os quatro gráficos em uma única coluna.
 
