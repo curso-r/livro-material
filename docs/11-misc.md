@@ -171,23 +171,24 @@ janitor::get_dupes(base_qualquer, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 14 x 4
-##    nome    sobrenome dupe_count variavel_importante
-##    <chr>   <chr>          <int>               <dbl>
-##  1 Daniel  Corrêa             2             -0.745 
-##  2 Daniel  Corrêa             2              0.434 
-##  3 Daniel  Damiani            2              0.806 
-##  4 Daniel  Damiani            2             -0.184 
-##  5 William Amorim             2             -0.0507
-##  6 William Amorim             2             -1.51  
-##  7 William Corrêa             2              1.42  
-##  8 William Corrêa             2             -1.09  
-##  9 William Falbel             4             -0.194 
-## 10 William Falbel             4              2.68  
-## 11 William Falbel             4              0.708 
-## 12 William Falbel             4             -0.344 
-## 13 William Trecenti           2              0.303 
-## 14 William Trecenti           2             -0.0756
+## # A tibble: 15 x 4
+##    nome     sobrenome dupe_count variavel_importante
+##    <chr>    <chr>          <int>               <dbl>
+##  1 Athos    Amorim             2              -1.35 
+##  2 Athos    Amorim             2              -1.33 
+##  3 Daniel   Falbel             3               0.863
+##  4 Daniel   Falbel             3              -0.262
+##  5 Daniel   Falbel             3               2.10 
+##  6 Fernando Amorim             2              -2.32 
+##  7 Fernando Amorim             2               0.109
+##  8 Fernando Damiani            2              -0.616
+##  9 Fernando Damiani            2              -0.452
+## 10 Julio    Corrêa             2              -0.649
+## 11 Julio    Corrêa             2              -1.13 
+## 12 Julio    Trecenti           2               1.08 
+## 13 Julio    Trecenti           2              -1.41 
+## 14 William  Damiani            2              -0.190
+## 15 William  Damiani            2              -0.353
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.
