@@ -2,7 +2,7 @@
 
 Nesta seção, abordaremos como instalar o R e o RStudio no Linux e no Windows. Também discutiremos sobre a instalação de pacotes no R.
 
-## Instalação do R
+## Instalação do R {#instalacao-do-r}
 
 A instalação padrão do R é feita a partir do CRAN, uma rede de servidores espalhada pelo mundo que armazena versões idênticas e atualizadas de códigos e documentações para o R. 
 
@@ -60,7 +60,7 @@ Para instalar o R no Mac, siga os seguintes passos:
 
 
 
-## Instalação do RStudio
+## Instalação do RStudio {#instalacao-do-rstudio}
 
 Agora vamos instalar a versão *open source* do RStudio, a IDE que utilizaremos para escrever e executar códigos em R. 
 
@@ -87,7 +87,7 @@ Para instalar o RStudio no Windows, siga os seguintes passos:
 **Observação**: se você excluir a pasta que extraímos, o RStudio irá parar de funcionar.
 
 
-## Instalação de softwares adicionais
+## Instalação de softwares adicionais {#instalacao-adicionais}
 
 ### LaTeX
 
