@@ -89,6 +89,8 @@ Para instalar o RStudio no Windows, siga os seguintes passos:
 
 ## Instalação de softwares adicionais {#instalacao-adicionais}
 
+Os softwares descritos anteriormente são suficientes para realizar as tarefas básicas em R. Porém, principalmente quando tratamos de [relatórios com R](#relatorios), alguns softwares adicionais podem ser necessários em casos específicos! A seguir citamos alguns destes softwares, em quais casos eles são necessários e/ou úteis, e instruções sobre como instalá-los.
+
 ### LaTeX
 
 O $\LaTeX$ é um software para renderização de documentos PDF e também uma linguagem de programação. É bastante usada na academia para produção de artigos científicos. 
@@ -97,9 +99,18 @@ No R, o LaTeX aparece quando queremos gerar relatórios e apresentações em PDF
 
 [^pandoc]: O Pandoc já vem dentro do próprio RStudio, então não é necessário instalar este *software*.
 
-#### No Windows
+A recomendação das pessoas que desenvolvem o RMarkdown é a utilização do [`tinytex`](https://yihui.org/tinytex/), uma distribuição leve do LaTeX. 
 
-(em construção)
+```r
+install.packages('tinytex')
+tinytex::install_tinytex()  # instalar o TinyTeX
+```
+
+Também é possível instalar outros programas que possibilitam o uso do LaTex. A seguir estão apresentadas algumas opções!
+
+<!-- #### No Windows -->
+
+<!-- (em construção) -->
 
 #### No Linux
 
@@ -109,9 +120,8 @@ No linux, a forma mais direta de garantir que temos o LaTeX na máquina com toda
 
 > **Importante**: o texlive-full é uma fora "bruta" de instalar tudo do LaTeX, e pode ocupar mais do que 5GB do seu disco! Então tome cuidado e procure alternativas, como as descritas [neste site](https://linuxconfig.org/how-to-install-latex-on-ubuntu-18-04-bionic-beaver-linux).
 
-#### No Mac
-
-(em construção)
+<!-- #### No Mac -->
+<!-- (em construção) -->
 
 ### Office
 
@@ -126,11 +136,11 @@ Além disso, por conta das particularidades desses tipos de documentos, muitas v
 - `{flextable}`, para geração de tabelas.
 - `{svglite}`, para renderizar gráficos em SVG.
 
-> Uma dica adicional: É possível gerar gráficos *editáveis* nos documentos Office! Dessa forma, você pode gerar o relatório bruto e depois editar manualmente. Para isso, siga o tutorial deste [vídeo do YouTube](https://www.youtube.com/watch?v=Yprmq8AUf8g). Referência: [link](http://www.sthda.com/english/wiki/saving-high-resolution-ggplots-how-to-preserve-semi-transparency) (Thanks to @AugustoCL_)
+> Uma dica adicional: É possível gerar gráficos *editáveis* nos documentos Office! Dessa forma, você pode gerar o relatório bruto e depois editar manualmente. Para isso, siga o tutorial deste [vídeo do YouTube](https://www.youtube.com/watch?v=Yprmq8AUf8g). Referência: [link](http://www.sthda.com/english/wiki/saving-high-resolution-ggplots-how-to-preserve-semi-transparency).
 
 #### No Windows
 
-(em construção)
+O LibreOffice pode ser instalado através [deste link](https://pt-br.libreoffice.org/baixe-ja/libreoffice-novo/), escolhendo o sistema operacional "Windows" e clicando em "Baixar" e executando o arquivo baixado.
 
 #### No Linux
 
@@ -140,13 +150,13 @@ No linux, a forma mais fácil de abrir documentos provenientes do Office é util
 
 > O LibreOffice possui algumas limitações quando comparado ao software da Microsoft. Por exemplo, as tabelas que saem bonitas no Office podem ficar desformatadas no LibreOffice.
 
-> o LibreOffice 7.1 nao está ainda no aptitude. Se quiser instalar essa versão, é possível baixar o arquivo `.deb` no [site da ferramenta](https://www.libreoffice.org). (Thanks to @pouchewar)
+> o LibreOffice 7.1 não está ainda no aptitude. Se quiser instalar essa versão, é possível baixar o arquivo `.deb` no [site da ferramenta](https://www.libreoffice.org).
 
 #### No Mac
 
 O sistema operaciona MacOS disponibiliza o [iWork](https://www.apple.com/br/iwork/), que é composto pelas ferramentas Numbers, Pages e Keynote.  Esses programas possibilitam abrir arquivos provenientes do Office.
 
-Outra opção é a utilização do LibreOffice, que pode ser instalado no Mac através [deste link](https://pt-br.libreoffice.org/baixe-ja/libreoffice-novo/), escolhendo o sistema operacional "MacOS" e clicando em "Baixar". 
+Outra opção é a utilização do LibreOffice, que pode ser instalado através [deste link](https://pt-br.libreoffice.org/baixe-ja/libreoffice-novo/), escolhendo o sistema operacional "MacOS" e clicando em "Baixar". 
 
 ### Pagedown e Chrome
 
@@ -154,7 +164,7 @@ O `{pagedown}` é uma alternativa recente para produzir arquivos em HTML utiliza
 
 O `{pagedown}`, portanto, apresenta o melhor de dois mundos: a praticidade da extensão HTML e a portabilidade de arquivos PDF. Dessa forma, é possível gerar documentos PDF com formatos agradáveis sem depender do LaTeX.
 
-No entanto, para gerar documentos PDF, é preciso utilizar um navegador. O navegador recomendado pelo `{pagedown}` é o Chrome, tanto que o pacote já vem com a função `pagedown::chrome_print()`, que pode ser utilizada para transformar um arquivo HTML ou RMarkdown em PDF.
+No entanto, para gerar documentos PDF, é preciso utilizar um navegador. O navegador recomendado pelo `{pagedown}` é o [Chrome](https://www.google.com/intl/pt-BR/chrome/), tanto que o pacote já vem com a função `pagedown::chrome_print()`, que pode ser utilizada para transformar um arquivo HTML ou RMarkdown em PDF.
 
 > Se você já tiver o Chrome instalado na sua máquina, provavelmente tudo funcionará sem problemas. Se não tiver e não quiser instalar, é possível instalar somente o [headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome).
 
@@ -166,13 +176,15 @@ Os HTML widgets são formas de ligar bibliotecas do JavaScript com pacotes do R.
 
 No entanto, é comum utilizar HTML widgets em relatórios estáticos. Para isso, o R precisa de uma estratégia para tirar fotos estáticas dos widgets. Isso é realizado através do pacote `{webshot}`.
 
-Você pode instalar o `{webshot}` rodando
+Você pode instalar o `{webshot}` executando o código abaixo:
 
-    install.packages("webshot")
-
+```r
+install.packages("webshot")
+```
+    
 Para que o `{webshot}` funcione, no entanto, também é necessário ter o PhantomJS instalado na máquina. O PhantomJS é basicamente um navegador que roda totalmente no plano de fundo, possibilitando a captura de tela.
 
-Para instalar o PhantomJS, rode
+Para instalar o PhantomJS, execute o código abaixo:
 
 ```r
 webshot::install_phantomjs()
@@ -182,10 +194,16 @@ webshot::install_phantomjs()
 
 Para criar blogs utilizando o pacote `{blogdown}`, também é necessário instalar o Hugo, programa que renderiza sites estáticos.
 
-Felizmente, essa tarefa é bem tranquila pois o `{blogdown}` já vem com um helper para isso. Basta rodar
+Felizmente, essa tarefa é bem tranquila pois o `{blogdown}` já vem com um helper para isso. Basta executar o código abaixo e reiniciar a sua sessão do R para que o Hugo seja instalado:
 
 ```r
 blogdown::install_hugo()
 ```
 
-e reiniciar sua sessão que está tudo certo!
+### Rtools
+
+<!-- Adicionar explicação sobre o rtools. O que é? Quando é necessário? -->
+
+
+O rtools é apenas necessário para computadores que utilizem o sistema operacional Winddows. Para instalá-lo, clique [neste link](https://cran.r-project.org/bin/windows/Rtools/) e faça o download do arquivo instalador referente à sua versão do Windows (32 ou 64 bits). Abra o arquivo baixado para realizar a instalação. 
+
