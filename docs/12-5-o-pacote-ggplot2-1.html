@@ -257,7 +257,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#spread"><i class="fa fa-check"></i><b>7.3.2</b> <code>spread()</code></a></li>
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a></li>
+<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#introdução"><i class="fa fa-check"></i><b>7.4.1</b> Introdução</a></li>
+<li class="chapter" data-level="7.4.2" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-básicas"><i class="fa fa-check"></i><b>7.4.2</b> Funções básicas</a></li>
+<li class="chapter" data-level="7.4.3" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#expressões-regulares"><i class="fa fa-check"></i><b>7.4.3</b> Expressões Regulares</a></li>
+<li class="chapter" data-level="7.4.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-que-utilizam-regex"><i class="fa fa-check"></i><b>7.4.4</b> Funções que utilizam regex</a></li>
+<li class="chapter" data-level="7.4.5" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#exercícios-17"><i class="fa fa-check"></i><b>7.4.5</b> Exercícios</a></li>
+</ul></li>
 <li class="chapter" data-level="7.5" data-path="7-5-forcats.html"><a href="7-5-forcats.html"><i class="fa fa-check"></i><b>7.5</b> O pacote forcats</a></li>
 <li class="chapter" data-level="7.6" data-path="7-6-o-pacote-lubridate.html"><a href="7-6-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.6</b> O pacote lubridate</a></li>
 </ul></li>
@@ -271,7 +277,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.6" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#escalas"><i class="fa fa-check"></i><b>8.1.6</b> Escalas</a></li>
 <li class="chapter" data-level="8.1.7" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#temas"><i class="fa fa-check"></i><b>8.1.7</b> Temas</a></li>
 <li class="chapter" data-level="8.1.8" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>8.1.8</b> Juntando gráficos</a></li>
-<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-17"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
+<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-18"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a><ul>
 <li class="chapter" data-level="8.2.1" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#gghighlight"><i class="fa fa-check"></i><b>8.2.1</b> gghighlight</a></li>
@@ -362,154 +368,154 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>A função <code>ggplot()</code> cria o nosso canvas, um quadro em branco onde vamos colocar todas as outras camadas do gráfico. Dentro do R, isso corresponde a uma lista com as informações necessárias para a criação do gráfico. Cada camada adicionada ao ggplot adiciona mais informações nessa lista. No exemplo acima, como passamos a base <code>mtcars</code> para a função <code>ggplot()</code>, a base mtcars é guardada dentro dessa lista, e será utilizada quando mapearmos variáveis ao gráfico.</em></p>
 <hr />
 <p><strong>2.</strong> O que tem de errado no código abaixo? Por que os pontos não ficaram azuis?</p>
-<div class="sourceCode" id="cb709"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb709-1"><a href="12-5-o-pacote-ggplot2-1.html#cb709-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb709-2"><a href="12-5-o-pacote-ggplot2-1.html#cb709-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb741"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb741-1"><a href="12-5-o-pacote-ggplot2-1.html#cb741-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb741-2"><a href="12-5-o-pacote-ggplot2-1.html#cb741-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>))</span></code></pre></div>
 <p><img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><em>Quando queremos definir o valor de um atributo estético, fazemos isso fora da função <code>aes()</code>. Usamos a função <code>aes()</code> apenas para mapear variáveis aos atributos estéticos do gráfico. O correto seria:</em></p>
-<div class="sourceCode" id="cb710"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb710-1"><a href="12-5-o-pacote-ggplot2-1.html#cb710-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb710-2"><a href="12-5-o-pacote-ggplot2-1.html#cb710-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy), <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb742"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb742-1"><a href="12-5-o-pacote-ggplot2-1.html#cb742-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb742-2"><a href="12-5-o-pacote-ggplot2-1.html#cb742-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy), <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
 <p><img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
 <hr />
 <p><strong>3.</strong> Mapeie uma variável contínua para a cor, o tamanho e a forma de um gráfico de pontos. Como esses atributos estéticos se comportam diferente para variáveis categóricas vs contínuas?</p>
-<div class="sourceCode" id="cb711"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb711-1"><a href="12-5-o-pacote-ggplot2-1.html#cb711-1"></a><span class="co"># Cor (var continua)</span></span>
-<span id="cb711-2"><a href="12-5-o-pacote-ggplot2-1.html#cb711-2"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb711-3"><a href="12-5-o-pacote-ggplot2-1.html#cb711-3"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb711-4"><a href="12-5-o-pacote-ggplot2-1.html#cb711-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> wt, <span class="dt">color =</span> carb))</span></code></pre></div>
+<div class="sourceCode" id="cb743"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb743-1"><a href="12-5-o-pacote-ggplot2-1.html#cb743-1"></a><span class="co"># Cor (var continua)</span></span>
+<span id="cb743-2"><a href="12-5-o-pacote-ggplot2-1.html#cb743-2"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb743-3"><a href="12-5-o-pacote-ggplot2-1.html#cb743-3"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb743-4"><a href="12-5-o-pacote-ggplot2-1.html#cb743-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> wt, <span class="dt">color =</span> carb))</span></code></pre></div>
 <p><img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb712"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb712-1"><a href="12-5-o-pacote-ggplot2-1.html#cb712-1"></a><span class="co"># Cor (var discreta)</span></span>
-<span id="cb712-2"><a href="12-5-o-pacote-ggplot2-1.html#cb712-2"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb712-3"><a href="12-5-o-pacote-ggplot2-1.html#cb712-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">carb =</span> <span class="kw">as.character</span>(carb)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb712-4"><a href="12-5-o-pacote-ggplot2-1.html#cb712-4"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb712-5"><a href="12-5-o-pacote-ggplot2-1.html#cb712-5"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> wt, <span class="dt">color =</span> carb))</span></code></pre></div>
+<div class="sourceCode" id="cb744"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb744-1"><a href="12-5-o-pacote-ggplot2-1.html#cb744-1"></a><span class="co"># Cor (var discreta)</span></span>
+<span id="cb744-2"><a href="12-5-o-pacote-ggplot2-1.html#cb744-2"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb744-3"><a href="12-5-o-pacote-ggplot2-1.html#cb744-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">carb =</span> <span class="kw">as.character</span>(carb)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb744-4"><a href="12-5-o-pacote-ggplot2-1.html#cb744-4"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb744-5"><a href="12-5-o-pacote-ggplot2-1.html#cb744-5"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> wt, <span class="dt">color =</span> carb))</span></code></pre></div>
 <p><img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-4-2.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb713"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb713-1"><a href="12-5-o-pacote-ggplot2-1.html#cb713-1"></a><span class="co"># Tamanho (var continua)</span></span>
-<span id="cb713-2"><a href="12-5-o-pacote-ggplot2-1.html#cb713-2"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb713-3"><a href="12-5-o-pacote-ggplot2-1.html#cb713-3"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb713-4"><a href="12-5-o-pacote-ggplot2-1.html#cb713-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> wt, <span class="dt">size =</span> carb))</span></code></pre></div>
+<div class="sourceCode" id="cb745"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb745-1"><a href="12-5-o-pacote-ggplot2-1.html#cb745-1"></a><span class="co"># Tamanho (var continua)</span></span>
+<span id="cb745-2"><a href="12-5-o-pacote-ggplot2-1.html#cb745-2"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb745-3"><a href="12-5-o-pacote-ggplot2-1.html#cb745-3"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb745-4"><a href="12-5-o-pacote-ggplot2-1.html#cb745-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> wt, <span class="dt">size =</span> carb))</span></code></pre></div>
 <p><img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb714"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb714-1"><a href="12-5-o-pacote-ggplot2-1.html#cb714-1"></a><span class="co"># Tamanho (var discreta)</span></span>
-<span id="cb714-2"><a href="12-5-o-pacote-ggplot2-1.html#cb714-2"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb714-3"><a href="12-5-o-pacote-ggplot2-1.html#cb714-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">carb =</span> <span class="kw">as.character</span>(carb)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb714-4"><a href="12-5-o-pacote-ggplot2-1.html#cb714-4"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb714-5"><a href="12-5-o-pacote-ggplot2-1.html#cb714-5"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> wt, <span class="dt">size =</span> carb))</span></code></pre></div>
+<div class="sourceCode" id="cb746"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb746-1"><a href="12-5-o-pacote-ggplot2-1.html#cb746-1"></a><span class="co"># Tamanho (var discreta)</span></span>
+<span id="cb746-2"><a href="12-5-o-pacote-ggplot2-1.html#cb746-2"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb746-3"><a href="12-5-o-pacote-ggplot2-1.html#cb746-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">carb =</span> <span class="kw">as.character</span>(carb)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb746-4"><a href="12-5-o-pacote-ggplot2-1.html#cb746-4"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb746-5"><a href="12-5-o-pacote-ggplot2-1.html#cb746-5"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> wt, <span class="dt">size =</span> carb))</span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
 <p><img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-5-2.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb716"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb716-1"><a href="12-5-o-pacote-ggplot2-1.html#cb716-1"></a><span class="co"># Forma (var continua)</span></span>
-<span id="cb716-2"><a href="12-5-o-pacote-ggplot2-1.html#cb716-2"></a><span class="co"># Não pode ser utilizada com variável contínua</span></span>
-<span id="cb716-3"><a href="12-5-o-pacote-ggplot2-1.html#cb716-3"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb716-4"><a href="12-5-o-pacote-ggplot2-1.html#cb716-4"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb716-5"><a href="12-5-o-pacote-ggplot2-1.html#cb716-5"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> wt, <span class="dt">shape =</span> carb))</span></code></pre></div>
+<div class="sourceCode" id="cb748"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb748-1"><a href="12-5-o-pacote-ggplot2-1.html#cb748-1"></a><span class="co"># Forma (var continua)</span></span>
+<span id="cb748-2"><a href="12-5-o-pacote-ggplot2-1.html#cb748-2"></a><span class="co"># Não pode ser utilizada com variável contínua</span></span>
+<span id="cb748-3"><a href="12-5-o-pacote-ggplot2-1.html#cb748-3"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb748-4"><a href="12-5-o-pacote-ggplot2-1.html#cb748-4"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb748-5"><a href="12-5-o-pacote-ggplot2-1.html#cb748-5"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> wt, <span class="dt">shape =</span> carb))</span></code></pre></div>
 <pre><code>## Error: A continuous variable can not be mapped to shape</code></pre>
 <p><img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb718"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb718-1"><a href="12-5-o-pacote-ggplot2-1.html#cb718-1"></a><span class="co"># Forma (var discreta)</span></span>
-<span id="cb718-2"><a href="12-5-o-pacote-ggplot2-1.html#cb718-2"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb718-3"><a href="12-5-o-pacote-ggplot2-1.html#cb718-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">carb =</span> <span class="kw">as.character</span>(carb)) <span class="op">%&gt;%</span></span>
-<span id="cb718-4"><a href="12-5-o-pacote-ggplot2-1.html#cb718-4"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb718-5"><a href="12-5-o-pacote-ggplot2-1.html#cb718-5"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> wt, <span class="dt">shape =</span> carb))</span></code></pre></div>
+<div class="sourceCode" id="cb750"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb750-1"><a href="12-5-o-pacote-ggplot2-1.html#cb750-1"></a><span class="co"># Forma (var discreta)</span></span>
+<span id="cb750-2"><a href="12-5-o-pacote-ggplot2-1.html#cb750-2"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb750-3"><a href="12-5-o-pacote-ggplot2-1.html#cb750-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">carb =</span> <span class="kw">as.character</span>(carb)) <span class="op">%&gt;%</span></span>
+<span id="cb750-4"><a href="12-5-o-pacote-ggplot2-1.html#cb750-4"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb750-5"><a href="12-5-o-pacote-ggplot2-1.html#cb750-5"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> wt, <span class="dt">shape =</span> carb))</span></code></pre></div>
 <p><img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
 <hr />
 <p><strong>4.</strong> Utilizando o <code>mtcars</code>, faça um gráfico de dispersão de <code>mpg</code> por <code>qsec</code>.</p>
-<div class="sourceCode" id="cb719"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb719-1"><a href="12-5-o-pacote-ggplot2-1.html#cb719-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb719-2"><a href="12-5-o-pacote-ggplot2-1.html#cb719-2"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb719-3"><a href="12-5-o-pacote-ggplot2-1.html#cb719-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> qsec))</span></code></pre></div>
+<div class="sourceCode" id="cb751"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb751-1"><a href="12-5-o-pacote-ggplot2-1.html#cb751-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb751-2"><a href="12-5-o-pacote-ggplot2-1.html#cb751-2"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb751-3"><a href="12-5-o-pacote-ggplot2-1.html#cb751-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> qsec))</span></code></pre></div>
 <p><img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
 <hr />
 <p><strong>5.</strong> Utilizando o <code>mtcars</code>, o que acontece se você fizer um gráfico de dispersão de <code>vs</code> por <code>mpg</code>? Qual gráfico seria melhor para representar esses dados?</p>
-<div class="sourceCode" id="cb720"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb720-1"><a href="12-5-o-pacote-ggplot2-1.html#cb720-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb720-2"><a href="12-5-o-pacote-ggplot2-1.html#cb720-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> vs)) <span class="op">+</span></span>
-<span id="cb720-3"><a href="12-5-o-pacote-ggplot2-1.html#cb720-3"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb752"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb752-1"><a href="12-5-o-pacote-ggplot2-1.html#cb752-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb752-2"><a href="12-5-o-pacote-ggplot2-1.html#cb752-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> vs)) <span class="op">+</span></span>
+<span id="cb752-3"><a href="12-5-o-pacote-ggplot2-1.html#cb752-3"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
 <p><img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><em>Como os pontos ficam sobrepostos, um boxplot seria mais interessante nesse caso pois nos dá uma visão melhor da distribuição da variável <code>mpg</code> para cada categoria da variável <code>vs</code>.</em></p>
-<div class="sourceCode" id="cb721"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb721-1"><a href="12-5-o-pacote-ggplot2-1.html#cb721-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb721-2"><a href="12-5-o-pacote-ggplot2-1.html#cb721-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">vs =</span> <span class="kw">as.character</span>(vs)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb721-3"><a href="12-5-o-pacote-ggplot2-1.html#cb721-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> vs)) <span class="op">+</span></span>
-<span id="cb721-4"><a href="12-5-o-pacote-ggplot2-1.html#cb721-4"></a><span class="st">  </span><span class="kw">geom_boxplot</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb753"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb753-1"><a href="12-5-o-pacote-ggplot2-1.html#cb753-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb753-2"><a href="12-5-o-pacote-ggplot2-1.html#cb753-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">vs =</span> <span class="kw">as.character</span>(vs)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb753-3"><a href="12-5-o-pacote-ggplot2-1.html#cb753-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> vs)) <span class="op">+</span></span>
+<span id="cb753-4"><a href="12-5-o-pacote-ggplot2-1.html#cb753-4"></a><span class="st">  </span><span class="kw">geom_boxplot</span>()</span></code></pre></div>
 <p><img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
 <hr />
 <p>Para resolver os exercícios a seguir, utilize a base <code>imdb</code>.</p>
 <p><strong>6.</strong> Crie um gráfico de dispersão da nota do imdb pelo orçamento.</p>
-<div class="sourceCode" id="cb722"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb722-1"><a href="12-5-o-pacote-ggplot2-1.html#cb722-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb722-2"><a href="12-5-o-pacote-ggplot2-1.html#cb722-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">y =</span> nota_imdb, <span class="dt">x =</span> orcamento)) <span class="op">+</span></span>
-<span id="cb722-3"><a href="12-5-o-pacote-ggplot2-1.html#cb722-3"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb754"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb754-1"><a href="12-5-o-pacote-ggplot2-1.html#cb754-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb754-2"><a href="12-5-o-pacote-ggplot2-1.html#cb754-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">y =</span> nota_imdb, <span class="dt">x =</span> orcamento)) <span class="op">+</span></span>
+<span id="cb754-3"><a href="12-5-o-pacote-ggplot2-1.html#cb754-3"></a><span class="st">  </span><span class="kw">geom_point</span>()</span></code></pre></div>
 <pre><code>## Warning: Removed 298 rows containing missing values (geom_point).</code></pre>
 <p><img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
 <hr />
 <p><strong>7.</strong> Faça um gráfico de linhas do orçamento médio dos filmes ao longo dos anos.</p>
-<div class="sourceCode" id="cb724"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb724-1"><a href="12-5-o-pacote-ggplot2-1.html#cb724-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb724-2"><a href="12-5-o-pacote-ggplot2-1.html#cb724-2"></a><span class="st">  </span><span class="kw">group_by</span>(ano) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb724-3"><a href="12-5-o-pacote-ggplot2-1.html#cb724-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">orcamento_medio =</span> <span class="kw">mean</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb724-4"><a href="12-5-o-pacote-ggplot2-1.html#cb724-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ano, <span class="dt">y =</span> orcamento_medio)) <span class="op">+</span></span>
-<span id="cb724-5"><a href="12-5-o-pacote-ggplot2-1.html#cb724-5"></a><span class="st">  </span><span class="kw">geom_line</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb756"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb756-1"><a href="12-5-o-pacote-ggplot2-1.html#cb756-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb756-2"><a href="12-5-o-pacote-ggplot2-1.html#cb756-2"></a><span class="st">  </span><span class="kw">group_by</span>(ano) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb756-3"><a href="12-5-o-pacote-ggplot2-1.html#cb756-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">orcamento_medio =</span> <span class="kw">mean</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb756-4"><a href="12-5-o-pacote-ggplot2-1.html#cb756-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ano, <span class="dt">y =</span> orcamento_medio)) <span class="op">+</span></span>
+<span id="cb756-5"><a href="12-5-o-pacote-ggplot2-1.html#cb756-5"></a><span class="st">  </span><span class="kw">geom_line</span>()</span></code></pre></div>
 <pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <pre><code>## Warning: Removed 1 row(s) containing missing values (geom_path).</code></pre>
 <p><img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
 <hr />
 <p><strong>8.</strong> Transforme o gráfico do exercício anterior em um gráfico de barras.</p>
-<div class="sourceCode" id="cb727"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb727-1"><a href="12-5-o-pacote-ggplot2-1.html#cb727-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb727-2"><a href="12-5-o-pacote-ggplot2-1.html#cb727-2"></a><span class="st">  </span><span class="kw">group_by</span>(ano) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb727-3"><a href="12-5-o-pacote-ggplot2-1.html#cb727-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">orcamento_medio =</span> <span class="kw">mean</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb727-4"><a href="12-5-o-pacote-ggplot2-1.html#cb727-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ano, <span class="dt">y =</span> orcamento_medio)) <span class="op">+</span></span>
-<span id="cb727-5"><a href="12-5-o-pacote-ggplot2-1.html#cb727-5"></a><span class="st">  </span><span class="kw">geom_col</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb759"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb759-1"><a href="12-5-o-pacote-ggplot2-1.html#cb759-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb759-2"><a href="12-5-o-pacote-ggplot2-1.html#cb759-2"></a><span class="st">  </span><span class="kw">group_by</span>(ano) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb759-3"><a href="12-5-o-pacote-ggplot2-1.html#cb759-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">orcamento_medio =</span> <span class="kw">mean</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb759-4"><a href="12-5-o-pacote-ggplot2-1.html#cb759-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ano, <span class="dt">y =</span> orcamento_medio)) <span class="op">+</span></span>
+<span id="cb759-5"><a href="12-5-o-pacote-ggplot2-1.html#cb759-5"></a><span class="st">  </span><span class="kw">geom_col</span>()</span></code></pre></div>
 <pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <pre><code>## Warning: Removed 1 rows containing missing values (position_stack).</code></pre>
 <p><img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
 <hr />
 <p><strong>9.</strong> Descubra quais são os 5 atores que mais aparecem na coluna ator_1 e faça um boxplot do lucro dos filmes desses atores.</p>
-<div class="sourceCode" id="cb730"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb730-1"><a href="12-5-o-pacote-ggplot2-1.html#cb730-1"></a>atores &lt;-<span class="st"> </span>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb730-2"><a href="12-5-o-pacote-ggplot2-1.html#cb730-2"></a><span class="st">  </span><span class="kw">count</span>(ator_<span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb730-3"><a href="12-5-o-pacote-ggplot2-1.html#cb730-3"></a><span class="st">  </span><span class="kw">top_n</span>(<span class="dv">5</span>, n) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb730-4"><a href="12-5-o-pacote-ggplot2-1.html#cb730-4"></a><span class="st">  </span><span class="kw">pull</span>(ator_<span class="dv">1</span>)</span>
-<span id="cb730-5"><a href="12-5-o-pacote-ggplot2-1.html#cb730-5"></a></span>
-<span id="cb730-6"><a href="12-5-o-pacote-ggplot2-1.html#cb730-6"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb730-7"><a href="12-5-o-pacote-ggplot2-1.html#cb730-7"></a><span class="st">  </span><span class="kw">filter</span>(ator_<span class="dv">1</span> <span class="op">%in%</span><span class="st"> </span>atores) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb730-8"><a href="12-5-o-pacote-ggplot2-1.html#cb730-8"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">lucro =</span> receita <span class="op">-</span><span class="st"> </span>orcamento) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb730-9"><a href="12-5-o-pacote-ggplot2-1.html#cb730-9"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ator_<span class="dv">1</span>, <span class="dt">y =</span> lucro)) <span class="op">+</span></span>
-<span id="cb730-10"><a href="12-5-o-pacote-ggplot2-1.html#cb730-10"></a><span class="st">  </span><span class="kw">geom_boxplot</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb762"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb762-1"><a href="12-5-o-pacote-ggplot2-1.html#cb762-1"></a>atores &lt;-<span class="st"> </span>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb762-2"><a href="12-5-o-pacote-ggplot2-1.html#cb762-2"></a><span class="st">  </span><span class="kw">count</span>(ator_<span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb762-3"><a href="12-5-o-pacote-ggplot2-1.html#cb762-3"></a><span class="st">  </span><span class="kw">top_n</span>(<span class="dv">5</span>, n) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb762-4"><a href="12-5-o-pacote-ggplot2-1.html#cb762-4"></a><span class="st">  </span><span class="kw">pull</span>(ator_<span class="dv">1</span>)</span>
+<span id="cb762-5"><a href="12-5-o-pacote-ggplot2-1.html#cb762-5"></a></span>
+<span id="cb762-6"><a href="12-5-o-pacote-ggplot2-1.html#cb762-6"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb762-7"><a href="12-5-o-pacote-ggplot2-1.html#cb762-7"></a><span class="st">  </span><span class="kw">filter</span>(ator_<span class="dv">1</span> <span class="op">%in%</span><span class="st"> </span>atores) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb762-8"><a href="12-5-o-pacote-ggplot2-1.html#cb762-8"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">lucro =</span> receita <span class="op">-</span><span class="st"> </span>orcamento) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb762-9"><a href="12-5-o-pacote-ggplot2-1.html#cb762-9"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ator_<span class="dv">1</span>, <span class="dt">y =</span> lucro)) <span class="op">+</span></span>
+<span id="cb762-10"><a href="12-5-o-pacote-ggplot2-1.html#cb762-10"></a><span class="st">  </span><span class="kw">geom_boxplot</span>()</span></code></pre></div>
 <pre><code>## Warning: Removed 6 rows containing non-finite values (stat_boxplot).</code></pre>
 <p><img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
 <hr />
 <p><strong>10.</strong> Com base no código abaixo, resolva os itens a seguir.</p>
-<div class="sourceCode" id="cb732"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb732-1"><a href="12-5-o-pacote-ggplot2-1.html#cb732-1"></a>diretores &lt;-<span class="st"> </span><span class="kw">c</span>(</span>
-<span id="cb732-2"><a href="12-5-o-pacote-ggplot2-1.html#cb732-2"></a>  <span class="st">&quot;Steven Spielberg&quot;</span>, </span>
-<span id="cb732-3"><a href="12-5-o-pacote-ggplot2-1.html#cb732-3"></a>  <span class="st">&quot;Quentin Tarantino&quot;</span>, </span>
-<span id="cb732-4"><a href="12-5-o-pacote-ggplot2-1.html#cb732-4"></a>  <span class="st">&quot;Christopher Nolan&quot;</span>,</span>
-<span id="cb732-5"><a href="12-5-o-pacote-ggplot2-1.html#cb732-5"></a>  <span class="st">&quot;Martin Scorsese&quot;</span></span>
-<span id="cb732-6"><a href="12-5-o-pacote-ggplot2-1.html#cb732-6"></a>)</span>
-<span id="cb732-7"><a href="12-5-o-pacote-ggplot2-1.html#cb732-7"></a></span>
-<span id="cb732-8"><a href="12-5-o-pacote-ggplot2-1.html#cb732-8"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb732-9"><a href="12-5-o-pacote-ggplot2-1.html#cb732-9"></a><span class="st">  </span><span class="kw">filter</span>(diretor <span class="op">%in%</span><span class="st"> </span>diretores) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb732-10"><a href="12-5-o-pacote-ggplot2-1.html#cb732-10"></a><span class="st">  </span><span class="kw">group_by</span>(ano, diretor) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb732-11"><a href="12-5-o-pacote-ggplot2-1.html#cb732-11"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">nota_media =</span> <span class="kw">mean</span>(nota_imdb, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb732-12"><a href="12-5-o-pacote-ggplot2-1.html#cb732-12"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ano, <span class="dt">y =</span> nota_media)) <span class="op">+</span></span>
-<span id="cb732-13"><a href="12-5-o-pacote-ggplot2-1.html#cb732-13"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
-<span id="cb732-14"><a href="12-5-o-pacote-ggplot2-1.html#cb732-14"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb732-15"><a href="12-5-o-pacote-ggplot2-1.html#cb732-15"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(diretor))</span></code></pre></div>
+<div class="sourceCode" id="cb764"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb764-1"><a href="12-5-o-pacote-ggplot2-1.html#cb764-1"></a>diretores &lt;-<span class="st"> </span><span class="kw">c</span>(</span>
+<span id="cb764-2"><a href="12-5-o-pacote-ggplot2-1.html#cb764-2"></a>  <span class="st">&quot;Steven Spielberg&quot;</span>, </span>
+<span id="cb764-3"><a href="12-5-o-pacote-ggplot2-1.html#cb764-3"></a>  <span class="st">&quot;Quentin Tarantino&quot;</span>, </span>
+<span id="cb764-4"><a href="12-5-o-pacote-ggplot2-1.html#cb764-4"></a>  <span class="st">&quot;Christopher Nolan&quot;</span>,</span>
+<span id="cb764-5"><a href="12-5-o-pacote-ggplot2-1.html#cb764-5"></a>  <span class="st">&quot;Martin Scorsese&quot;</span></span>
+<span id="cb764-6"><a href="12-5-o-pacote-ggplot2-1.html#cb764-6"></a>)</span>
+<span id="cb764-7"><a href="12-5-o-pacote-ggplot2-1.html#cb764-7"></a></span>
+<span id="cb764-8"><a href="12-5-o-pacote-ggplot2-1.html#cb764-8"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb764-9"><a href="12-5-o-pacote-ggplot2-1.html#cb764-9"></a><span class="st">  </span><span class="kw">filter</span>(diretor <span class="op">%in%</span><span class="st"> </span>diretores) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb764-10"><a href="12-5-o-pacote-ggplot2-1.html#cb764-10"></a><span class="st">  </span><span class="kw">group_by</span>(ano, diretor) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb764-11"><a href="12-5-o-pacote-ggplot2-1.html#cb764-11"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">nota_media =</span> <span class="kw">mean</span>(nota_imdb, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb764-12"><a href="12-5-o-pacote-ggplot2-1.html#cb764-12"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ano, <span class="dt">y =</span> nota_media)) <span class="op">+</span></span>
+<span id="cb764-13"><a href="12-5-o-pacote-ggplot2-1.html#cb764-13"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb764-14"><a href="12-5-o-pacote-ggplot2-1.html#cb764-14"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb764-15"><a href="12-5-o-pacote-ggplot2-1.html#cb764-15"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(diretor))</span></code></pre></div>
 <pre><code>## `summarise()` regrouping output by &#39;ano&#39; (override with `.groups` argument)</code></pre>
 <p><img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><strong>a.</strong> Analisando o gráfico gerado, descreva o que a função <code>facet_wrap()</code> faz.</p>
 <p><em>A função <code>facet_wrap()</code> replica o gráfico especificado para cada categoria de uma coluna.</em></p>
 <p><strong>.b</strong> Utilize os argumentos nrow e <code>ncol</code> da função <code>facet_wrap()</code> para colocar os quatro gráficos em uma única coluna.</p>
-<div class="sourceCode" id="cb734"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb734-1"><a href="12-5-o-pacote-ggplot2-1.html#cb734-1"></a>imdb <span class="op">%&gt;%</span></span>
-<span id="cb734-2"><a href="12-5-o-pacote-ggplot2-1.html#cb734-2"></a><span class="st">  </span><span class="kw">filter</span>(diretor <span class="op">%in%</span><span class="st"> </span>diretores) <span class="op">%&gt;%</span></span>
-<span id="cb734-3"><a href="12-5-o-pacote-ggplot2-1.html#cb734-3"></a><span class="st">  </span><span class="kw">group_by</span>(ano, diretor) <span class="op">%&gt;%</span></span>
-<span id="cb734-4"><a href="12-5-o-pacote-ggplot2-1.html#cb734-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">nota_media =</span> <span class="kw">mean</span>(nota_imdb, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb734-5"><a href="12-5-o-pacote-ggplot2-1.html#cb734-5"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ano, <span class="dt">y =</span> nota_media)) <span class="op">+</span></span>
-<span id="cb734-6"><a href="12-5-o-pacote-ggplot2-1.html#cb734-6"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
-<span id="cb734-7"><a href="12-5-o-pacote-ggplot2-1.html#cb734-7"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb734-8"><a href="12-5-o-pacote-ggplot2-1.html#cb734-8"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(diretor), <span class="dt">ncol =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb766"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb766-1"><a href="12-5-o-pacote-ggplot2-1.html#cb766-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb766-2"><a href="12-5-o-pacote-ggplot2-1.html#cb766-2"></a><span class="st">  </span><span class="kw">filter</span>(diretor <span class="op">%in%</span><span class="st"> </span>diretores) <span class="op">%&gt;%</span></span>
+<span id="cb766-3"><a href="12-5-o-pacote-ggplot2-1.html#cb766-3"></a><span class="st">  </span><span class="kw">group_by</span>(ano, diretor) <span class="op">%&gt;%</span></span>
+<span id="cb766-4"><a href="12-5-o-pacote-ggplot2-1.html#cb766-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">nota_media =</span> <span class="kw">mean</span>(nota_imdb, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb766-5"><a href="12-5-o-pacote-ggplot2-1.html#cb766-5"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ano, <span class="dt">y =</span> nota_media)) <span class="op">+</span></span>
+<span id="cb766-6"><a href="12-5-o-pacote-ggplot2-1.html#cb766-6"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb766-7"><a href="12-5-o-pacote-ggplot2-1.html#cb766-7"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb766-8"><a href="12-5-o-pacote-ggplot2-1.html#cb766-8"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(diretor), <span class="dt">ncol =</span> <span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## `summarise()` regrouping output by &#39;ano&#39; (override with `.groups` argument)</code></pre>
 <p><img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
 <hr />
 <p><strong>11.</strong> Resovla os itens a seguir para fazer um gráfico de barras da frequência de filmes com nota maior que 8 ao longo dos anos.</p>
 <p><strong>a.</strong> Crie uma nova coluna na base IMDB indicando se a nota de um filme é maior que 8 ou não.</p>
-<div class="sourceCode" id="cb736"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb736-1"><a href="12-5-o-pacote-ggplot2-1.html#cb736-1"></a>imdb_notas_<span class="dv">8</span> &lt;-<span class="st"> </span>imdb <span class="op">%&gt;%</span></span>
-<span id="cb736-2"><a href="12-5-o-pacote-ggplot2-1.html#cb736-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">nota_maior_que_8 =</span> <span class="kw">ifelse</span>(nota_imdb <span class="op">&gt;</span><span class="st"> </span><span class="dv">8</span>, <span class="st">&quot;Nota maior que 8&quot;</span>, <span class="st">&quot;Nota menor que 8&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb768"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb768-1"><a href="12-5-o-pacote-ggplot2-1.html#cb768-1"></a>imdb_notas_<span class="dv">8</span> &lt;-<span class="st"> </span>imdb <span class="op">%&gt;%</span></span>
+<span id="cb768-2"><a href="12-5-o-pacote-ggplot2-1.html#cb768-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">nota_maior_que_8 =</span> <span class="kw">ifelse</span>(nota_imdb <span class="op">&gt;</span><span class="st"> </span><span class="dv">8</span>, <span class="st">&quot;Nota maior que 8&quot;</span>, <span class="st">&quot;Nota menor que 8&quot;</span>))</span></code></pre></div>
 <p><strong>b.</strong> b. Utilizando a coluna criada em (a) crie uma tabela com o número anual de filmes com nota maior 8.</p>
-<div class="sourceCode" id="cb737"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb737-1"><a href="12-5-o-pacote-ggplot2-1.html#cb737-1"></a>tabela &lt;-<span class="st"> </span>imdb_notas_<span class="dv">8</span> <span class="op">%&gt;%</span></span>
-<span id="cb737-2"><a href="12-5-o-pacote-ggplot2-1.html#cb737-2"></a><span class="st">  </span><span class="kw">filter</span>(nota_maior_que_<span class="dv">8</span> <span class="op">==</span><span class="st"> &quot;Nota maior que 8&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb737-3"><a href="12-5-o-pacote-ggplot2-1.html#cb737-3"></a><span class="st">  </span><span class="kw">count</span>(ano)</span>
-<span id="cb737-4"><a href="12-5-o-pacote-ggplot2-1.html#cb737-4"></a></span>
-<span id="cb737-5"><a href="12-5-o-pacote-ggplot2-1.html#cb737-5"></a>tabela</span></code></pre></div>
+<div class="sourceCode" id="cb769"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb769-1"><a href="12-5-o-pacote-ggplot2-1.html#cb769-1"></a>tabela &lt;-<span class="st"> </span>imdb_notas_<span class="dv">8</span> <span class="op">%&gt;%</span></span>
+<span id="cb769-2"><a href="12-5-o-pacote-ggplot2-1.html#cb769-2"></a><span class="st">  </span><span class="kw">filter</span>(nota_maior_que_<span class="dv">8</span> <span class="op">==</span><span class="st"> &quot;Nota maior que 8&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb769-3"><a href="12-5-o-pacote-ggplot2-1.html#cb769-3"></a><span class="st">  </span><span class="kw">count</span>(ano)</span>
+<span id="cb769-4"><a href="12-5-o-pacote-ggplot2-1.html#cb769-4"></a></span>
+<span id="cb769-5"><a href="12-5-o-pacote-ggplot2-1.html#cb769-5"></a>tabela</span></code></pre></div>
 <pre><code>## # A tibble: 65 x 2
 ##      ano     n
 ##    &lt;dbl&gt; &lt;int&gt;
@@ -525,9 +531,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10  1957     1
 ## # … with 55 more rows</code></pre>
 <p><strong>c.</strong> Utilize a tabela criada em (b) para fazer um gráfico de barras do número de filmes com nota maior que 8 ao longo dos anos.</p>
-<div class="sourceCode" id="cb739"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb739-1"><a href="12-5-o-pacote-ggplot2-1.html#cb739-1"></a>tabela <span class="op">%&gt;%</span></span>
-<span id="cb739-2"><a href="12-5-o-pacote-ggplot2-1.html#cb739-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ano, <span class="dt">y =</span> n)) <span class="op">+</span></span>
-<span id="cb739-3"><a href="12-5-o-pacote-ggplot2-1.html#cb739-3"></a><span class="st">  </span><span class="kw">geom_col</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb771"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb771-1"><a href="12-5-o-pacote-ggplot2-1.html#cb771-1"></a>tabela <span class="op">%&gt;%</span></span>
+<span id="cb771-2"><a href="12-5-o-pacote-ggplot2-1.html#cb771-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ano, <span class="dt">y =</span> n)) <span class="op">+</span></span>
+<span id="cb771-3"><a href="12-5-o-pacote-ggplot2-1.html#cb771-3"></a><span class="st">  </span><span class="kw">geom_col</span>()</span></code></pre></div>
 <pre><code>## Warning: Removed 1 rows containing missing values (position_stack).</code></pre>
 <p><img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" /></p>
 

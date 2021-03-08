@@ -257,7 +257,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#spread"><i class="fa fa-check"></i><b>7.3.2</b> <code>spread()</code></a></li>
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a></li>
+<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#introdução"><i class="fa fa-check"></i><b>7.4.1</b> Introdução</a></li>
+<li class="chapter" data-level="7.4.2" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-básicas"><i class="fa fa-check"></i><b>7.4.2</b> Funções básicas</a></li>
+<li class="chapter" data-level="7.4.3" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#expressões-regulares"><i class="fa fa-check"></i><b>7.4.3</b> Expressões Regulares</a></li>
+<li class="chapter" data-level="7.4.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-que-utilizam-regex"><i class="fa fa-check"></i><b>7.4.4</b> Funções que utilizam regex</a></li>
+<li class="chapter" data-level="7.4.5" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#exercícios-17"><i class="fa fa-check"></i><b>7.4.5</b> Exercícios</a></li>
+</ul></li>
 <li class="chapter" data-level="7.5" data-path="7-5-forcats.html"><a href="7-5-forcats.html"><i class="fa fa-check"></i><b>7.5</b> O pacote forcats</a></li>
 <li class="chapter" data-level="7.6" data-path="7-6-o-pacote-lubridate.html"><a href="7-6-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.6</b> O pacote lubridate</a></li>
 </ul></li>
@@ -271,7 +277,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.6" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#escalas"><i class="fa fa-check"></i><b>8.1.6</b> Escalas</a></li>
 <li class="chapter" data-level="8.1.7" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#temas"><i class="fa fa-check"></i><b>8.1.7</b> Temas</a></li>
 <li class="chapter" data-level="8.1.8" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>8.1.8</b> Juntando gráficos</a></li>
-<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-17"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
+<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-18"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a><ul>
 <li class="chapter" data-level="8.2.1" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#gghighlight"><i class="fa fa-check"></i><b>8.2.1</b> gghighlight</a></li>
@@ -358,7 +364,373 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="o-pacote-stringr" class="section level2">
 <h2><span class="header-section-number">7.4</span> O pacote stringr</h2>
+<div id="introdução" class="section level3">
+<h3><span class="header-section-number">7.4.1</span> Introdução</h3>
+<p>Variáveis de texto são muito comuns nos bancos de dados e, geralmente, dão bastante trabalho para serem manipuladas. É muito comum encontrarmos colunas com categorias não padronizadas, como, por exemplo, uma variável <code>Estado</code> com “SP”, “sp”, “Sao Paulo”, “São Paulo” etc, todas indicando o mesmo estado.</p>
+<p>O R possui várias funções para manipular textos (ou <em>strings</em>). No entanto, as funções do <code>base</code> não possuem uma interface consistente e cada uma tem a sua forma de passar os parâmetros, dificultando a programação durante a análise.</p>
+<p>Pensando nisso, Hadley Wickham deu aquela força para a comunidade R e criou o pacote <code>stringr</code>, que possui uma sintaxe consistente, permitindo o usuário manipular textos com muito mais facilidade.</p>
+<div id="vantagens-do-stringr-em-relação-às-funções-do-r-base" class="section level5 unnumbered">
+<h5>Vantagens do stringr em relação às funções do R base</h5>
+<ul>
+<li><p>Sintaxe unificada, o que auxilia na memorização das funções e leitura do código.</p></li>
+<li><p>Todas as funções são vetorizadas.</p></li>
+<li><p>Construído sobre a <a href="http://site.icu-project.org/">biblioteca ICU</a>, implementada em <code>C</code> e <code>C++</code>, uma garantia de resultados mais rápidos.</p></li>
+</ul>
+</div>
+<div id="regras-básicas-do-pacote" class="section level5 unnumbered">
+<h5>Regras básicas do pacote</h5>
+<ul>
+<li><p>As funções de manipulação de texto começam com <code>str_</code>. Caso esqueça o nome de uma função, basta digitar <code>stringr::str_</code> e apertar <code>TAB</code> para ver quais são as opções.</p></li>
+<li><p>O primeiro argumento da função é sempre uma <em>string</em> ou um vetor de <em>strings</em>.</p></li>
+</ul>
+</div>
+<div id="curiosidade" class="section level5 unnumbered">
+<h5>Curiosidade</h5>
+<p>Inicialmente, o <code>stringr</code> era um <em>wrapper</em> de funções do <code>base</code>. Depois disso, surgiu um novo pacote <code>stringi</code>, com sintaxe similar ao <code>stringr</code>, mas funcionando como <em>wrapper</em> da biblioteca ICU. Wickham gostou tanto do pacote <code>stringi</code> que decidiu reescrever o <code>stringr</code> como um <em>wrapper</em> do <code>stringi</code>.</p>
+<p>Veja <a href="https://github.com/tidyverse/stringr/blob/master/NEWS.md">essa página</a> para detalhes.</p>
+</div>
+<div id="começando-a-usar" class="section level5 unnumbered">
+<h5>Começando a usar</h5>
+<p>Todas as funções do <code>stringr</code> começam com o prefixo <code>str_</code>. Isso ajuda na hora de encontrar a função que você está procurando. No RStudio, digite <code>str_</code> e aperte <strong>TAB</strong> para visualizar a lista de funções com esse prefixo. Você pode verificar o que cada função faz até encontrar a que atende às suas necessidades.</p>
+<p><img src="assets/img/manipulacao/str_tab.png" width="360" style="display: block; margin: auto;" /></p>
+<p>Na próxima seção, vamos apresentar as funções mais simples do <code>{stringr}</code>. Em seguida, vamos falar um pouco de expressões regulares (regex) e então veremos funções mais avançadas do pacote, que utilizam regex para identificar padrões.</p>
+<p>Antes de mais nada, instale e carregue o pacote <code>stringr</code>.</p>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="7-4-o-pacote-stringr.html#cb309-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;stringr&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="7-4-o-pacote-stringr.html#cb310-1"></a><span class="kw">library</span>(stringr)</span></code></pre></div>
+</div>
+</div>
+<div id="funções-básicas" class="section level3">
+<h3><span class="header-section-number">7.4.2</span> Funções básicas</h3>
+<p>A seguir, apresentamos as funções mais simples do <code>{stringr}</code>, que não utilizam o conceito de expressões regulares.</p>
+<div id="str_length" class="section level5 unnumbered">
+<h5>str_length</h5>
+<p>A função mais simples do <code>stringr()</code> é a função <code>str_length()</code>. Esta função recebe como argumento um vetor de <em>strings</em> e retorna o número de caracteres de cada <em>string</em>. Repare que o espaço <code>" "</code> é considerado um caracter.</p>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="7-4-o-pacote-stringr.html#cb311-1"></a><span class="kw">str_length</span>(<span class="st">&quot;São Paulo&quot;</span>)</span>
+<span id="cb311-2"><a href="7-4-o-pacote-stringr.html#cb311-2"></a><span class="co">## [1] 9</span></span>
+<span id="cb311-3"><a href="7-4-o-pacote-stringr.html#cb311-3"></a><span class="kw">str_length</span>(<span class="kw">c</span>(<span class="st">&quot;São Paulo&quot;</span>, <span class="st">&quot;Rio de Janeiro&quot;</span>, </span>
+<span id="cb311-4"><a href="7-4-o-pacote-stringr.html#cb311-4"></a>             <span class="st">&quot;Rio Grande do Norte&quot;</span>, <span class="st">&quot;Acre&quot;</span>))</span>
+<span id="cb311-5"><a href="7-4-o-pacote-stringr.html#cb311-5"></a><span class="co">## [1]  9 14 19  4</span></span></code></pre></div>
+<p>Note que <code>str_length()</code> é diferente de <code>length()</code>. O primeiro retorna o número de caracteres e o segundo retorna o comprimento do objeto. Isso fica mais claro no seguinte exemplo:</p>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="7-4-o-pacote-stringr.html#cb312-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;São Paulo&quot;</span>, <span class="st">&quot;Rio de Janeiro&quot;</span>, </span>
+<span id="cb312-2"><a href="7-4-o-pacote-stringr.html#cb312-2"></a>       <span class="st">&quot;Rio Grande do Norte&quot;</span>, <span class="st">&quot;Acre&quot;</span>)</span>
+<span id="cb312-3"><a href="7-4-o-pacote-stringr.html#cb312-3"></a></span>
+<span id="cb312-4"><a href="7-4-o-pacote-stringr.html#cb312-4"></a><span class="kw">str_length</span>(s)</span>
+<span id="cb312-5"><a href="7-4-o-pacote-stringr.html#cb312-5"></a><span class="co">## [1]  9 14 19  4</span></span>
+<span id="cb312-6"><a href="7-4-o-pacote-stringr.html#cb312-6"></a><span class="kw">length</span>(s)</span>
+<span id="cb312-7"><a href="7-4-o-pacote-stringr.html#cb312-7"></a><span class="co">## [1] 4</span></span></code></pre></div>
+<p>A função <code>str_length()</code> retornou um vetor com o número de caracteres de cada elemento do vetor <code>s</code>, enquanto <code>length()</code> retornou o comprimento do vetor <code>s</code>.</p>
+</div>
+<div id="str_to_upper-str_to_lower-str_to_title" class="section level5 unnumbered">
+<h5>str_to_upper, str_to_lower, str_to_title</h5>
+<p>Essas funções servem para modificar a caixa das letras. Veja alguns exemplos:</p>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="7-4-o-pacote-stringr.html#cb313-1"></a>s &lt;-<span class="st"> &quot;Somos a curso-r&quot;</span></span>
+<span id="cb313-2"><a href="7-4-o-pacote-stringr.html#cb313-2"></a><span class="kw">str_to_lower</span>(s)</span>
+<span id="cb313-3"><a href="7-4-o-pacote-stringr.html#cb313-3"></a><span class="co">## [1] &quot;somos a curso-r&quot;</span></span>
+<span id="cb313-4"><a href="7-4-o-pacote-stringr.html#cb313-4"></a><span class="kw">str_to_upper</span>(s)</span>
+<span id="cb313-5"><a href="7-4-o-pacote-stringr.html#cb313-5"></a><span class="co">## [1] &quot;SOMOS A CURSO-R&quot;</span></span>
+<span id="cb313-6"><a href="7-4-o-pacote-stringr.html#cb313-6"></a><span class="kw">str_to_title</span>(s)</span>
+<span id="cb313-7"><a href="7-4-o-pacote-stringr.html#cb313-7"></a><span class="co">## [1] &quot;Somos A Curso-R&quot;</span></span></code></pre></div>
+</div>
+<div id="str_trim" class="section level5 unnumbered">
+<h5>str_trim</h5>
+<p>É muito comum encontrar textos que vêm com espaços a mais, principalmente de dados
+provenientes de formulários em que cada usuário escreve da forma que prefere. Isso é um problema pois cria categorias diferentes para valores que deveriam ser iguais. Espaços antes e após o texto são especialmente chatos, pois pode ser difícil detectá-los.</p>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="7-4-o-pacote-stringr.html#cb314-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot; M&quot;</span>, <span class="st">&quot; F &quot;</span>, <span class="st">&quot;M&quot;</span>)</span>
+<span id="cb314-2"><a href="7-4-o-pacote-stringr.html#cb314-2"></a><span class="kw">as.factor</span>(s)</span>
+<span id="cb314-3"><a href="7-4-o-pacote-stringr.html#cb314-3"></a><span class="co">## [1] M   F   F    M   F  M  </span></span>
+<span id="cb314-4"><a href="7-4-o-pacote-stringr.html#cb314-4"></a><span class="co">## Levels:  F   M F M</span></span></code></pre></div>
+<p>A função <code>str_trim()</code> ajuda removendo os espaços excedentes antes e depois da string.</p>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="7-4-o-pacote-stringr.html#cb315-1"></a>string_aparada &lt;-<span class="st"> </span><span class="kw">str_trim</span>(s)</span>
+<span id="cb315-2"><a href="7-4-o-pacote-stringr.html#cb315-2"></a><span class="kw">as.factor</span>(string_aparada)</span>
+<span id="cb315-3"><a href="7-4-o-pacote-stringr.html#cb315-3"></a><span class="co">## [1] M F F M F M</span></span>
+<span id="cb315-4"><a href="7-4-o-pacote-stringr.html#cb315-4"></a><span class="co">## Levels: F M</span></span></code></pre></div>
+</div>
+<div id="str_sub" class="section level5 unnumbered">
+<h5>str_sub</h5>
+<p>Não é raro você precisar obter uma parte fixa de uma <em>string</em>, como, por exemplo, manipular textos da forma:</p>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="7-4-o-pacote-stringr.html#cb316-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;01-Feminino&quot;</span>, <span class="st">&quot;02-Masculino&quot;</span>, <span class="st">&quot;03-Indefinido&quot;</span>)</span></code></pre></div>
+<p>Você pode querer apenas a parte final da string. Neste caso, pode usar a função <code>str_sub()</code>.</p>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="7-4-o-pacote-stringr.html#cb317-1"></a><span class="co"># pegar do quarto até o último caractere</span></span>
+<span id="cb317-2"><a href="7-4-o-pacote-stringr.html#cb317-2"></a><span class="kw">str_sub</span>(s, <span class="dt">start =</span> <span class="dv">4</span>) </span>
+<span id="cb317-3"><a href="7-4-o-pacote-stringr.html#cb317-3"></a><span class="co">## [1] &quot;Feminino&quot;   &quot;Masculino&quot;  &quot;Indefinido&quot;</span></span></code></pre></div>
+<p>Também é possível obter apenas os números.</p>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="7-4-o-pacote-stringr.html#cb318-1"></a><span class="co"># pegar apenas os dois primeiros caracteres</span></span>
+<span id="cb318-2"><a href="7-4-o-pacote-stringr.html#cb318-2"></a><span class="kw">str_sub</span>(s, <span class="dt">end =</span> <span class="dv">2</span>) </span>
+<span id="cb318-3"><a href="7-4-o-pacote-stringr.html#cb318-3"></a><span class="co">## [1] &quot;01&quot; &quot;02&quot; &quot;03&quot;</span></span></code></pre></div>
+<p>Em outros casos você precisa obter os últimos 2 caracteres.</p>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="7-4-o-pacote-stringr.html#cb319-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Feminino-01&quot;</span>, <span class="st">&quot;Masculino-02&quot;</span>, <span class="st">&quot;Indefinido-03&quot;</span>)</span>
+<span id="cb319-2"><a href="7-4-o-pacote-stringr.html#cb319-2"></a><span class="kw">str_sub</span>(s, <span class="dt">end =</span> <span class="dv">-4</span>)</span>
+<span id="cb319-3"><a href="7-4-o-pacote-stringr.html#cb319-3"></a><span class="co">## [1] &quot;Feminino&quot;   &quot;Masculino&quot;  &quot;Indefinido&quot;</span></span>
+<span id="cb319-4"><a href="7-4-o-pacote-stringr.html#cb319-4"></a><span class="kw">str_sub</span>(s, <span class="dt">start =</span> <span class="dv">-2</span>)</span>
+<span id="cb319-5"><a href="7-4-o-pacote-stringr.html#cb319-5"></a><span class="co">## [1] &quot;01&quot; &quot;02&quot; &quot;03&quot;</span></span></code></pre></div>
+<p>É possível usar os argumentos <code>start</code> e <code>end</code> conjuntamente.</p>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="7-4-o-pacote-stringr.html#cb320-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;__SP__&quot;</span>, <span class="st">&quot;__MG__&quot;</span>, <span class="st">&quot;__RJ__&quot;</span>)</span>
+<span id="cb320-2"><a href="7-4-o-pacote-stringr.html#cb320-2"></a><span class="kw">str_sub</span>(s, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb320-3"><a href="7-4-o-pacote-stringr.html#cb320-3"></a><span class="co">## [1] &quot;SP&quot; &quot;MG&quot; &quot;RJ&quot;</span></span></code></pre></div>
+</div>
+<div id="str_c" class="section level5 unnumbered">
+<h5>str_c</h5>
+<p>Análoga à função <code>paste0()</code> do R base, concatena <em>strings</em> em uma única string.</p>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="7-4-o-pacote-stringr.html#cb321-1"></a>string1 &lt;-<span class="st"> &quot;O valor p é: &quot;</span></span>
+<span id="cb321-2"><a href="7-4-o-pacote-stringr.html#cb321-2"></a>string2 &lt;-<span class="st"> </span><span class="fl">0.03</span></span>
+<span id="cb321-3"><a href="7-4-o-pacote-stringr.html#cb321-3"></a></span>
+<span id="cb321-4"><a href="7-4-o-pacote-stringr.html#cb321-4"></a><span class="kw">str_c</span>(string1, string2) </span>
+<span id="cb321-5"><a href="7-4-o-pacote-stringr.html#cb321-5"></a><span class="co">## [1] &quot;O valor p é: 0.03&quot;</span></span></code></pre></div>
+<p>Pode misturar objetos com strings definidas diretamente na função.</p>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="7-4-o-pacote-stringr.html#cb322-1"></a>string1 &lt;-<span class="st"> &quot;Brigadeiro&quot;</span></span>
+<span id="cb322-2"><a href="7-4-o-pacote-stringr.html#cb322-2"></a>string2 &lt;-<span class="st"> &quot;bom&quot;</span></span>
+<span id="cb322-3"><a href="7-4-o-pacote-stringr.html#cb322-3"></a>string3 &lt;-<span class="st"> &quot;melhor&quot;</span></span>
+<span id="cb322-4"><a href="7-4-o-pacote-stringr.html#cb322-4"></a></span>
+<span id="cb322-5"><a href="7-4-o-pacote-stringr.html#cb322-5"></a><span class="kw">str_c</span>(string1, <span class="st">&quot; é a prova de que não existe nada tão &quot;</span>, string2,</span>
+<span id="cb322-6"><a href="7-4-o-pacote-stringr.html#cb322-6"></a>      <span class="st">&quot; que não pode ficar &quot;</span>, string3, <span class="st">&quot;.&quot;</span>)</span>
+<span id="cb322-7"><a href="7-4-o-pacote-stringr.html#cb322-7"></a><span class="co">## [1] &quot;Brigadeiro é a prova de que não existe nada tão bom que não pode ficar melhor.&quot;</span></span></code></pre></div>
+<p>A função é vetorizada.</p>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="7-4-o-pacote-stringr.html#cb323-1"></a>string1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Brigadeiro&quot;</span>, <span class="st">&quot;A política brasileira&quot;</span>)</span>
+<span id="cb323-2"><a href="7-4-o-pacote-stringr.html#cb323-2"></a>string2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;bom&quot;</span>, <span class="st">&quot;ruim&quot;</span>)</span>
+<span id="cb323-3"><a href="7-4-o-pacote-stringr.html#cb323-3"></a>string3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;melhor&quot;</span>, <span class="st">&quot;pior&quot;</span>)</span>
+<span id="cb323-4"><a href="7-4-o-pacote-stringr.html#cb323-4"></a></span>
+<span id="cb323-5"><a href="7-4-o-pacote-stringr.html#cb323-5"></a><span class="kw">str_c</span>(string1, <span class="st">&quot; é a prova de que não existe nada tão &quot;</span>, string2,</span>
+<span id="cb323-6"><a href="7-4-o-pacote-stringr.html#cb323-6"></a>      <span class="st">&quot; que não pode ficar &quot;</span>, string3, <span class="st">&quot;.&quot;</span>)</span>
+<span id="cb323-7"><a href="7-4-o-pacote-stringr.html#cb323-7"></a><span class="co">## [1] &quot;Brigadeiro é a prova de que não existe nada tão bom que não pode ficar melhor.&quot;          </span></span>
+<span id="cb323-8"><a href="7-4-o-pacote-stringr.html#cb323-8"></a><span class="co">## [2] &quot;A política brasileira é a prova de que não existe nada tão ruim que não pode ficar pior.&quot;</span></span></code></pre></div>
+<p>Essas são as funções mais simples do pacote <code>stringr</code> e não exigem nenhum conhecimento de <strong>expressões regulares</strong>. Note que nenhuma delas possui o parâmetro <code>pattern</code>. Você verá como especificar esse parâmetro nas próximas seções.</p>
+</div>
+</div>
+<div id="expressões-regulares" class="section level3">
+<h3><span class="header-section-number">7.4.3</span> Expressões Regulares</h3>
+<p>Trabalhar com textos exige um certo conhecimento de <a href="https://pt.wikipedia.org/wiki/Express%C3%A3o_regular">expressões regulares</a>. As expressões regulares — ou simplesmente <strong>regex</strong> — permitem identificar conjuntos de caracteres, palavras e outros padrões por meio de uma sintaxe concisa.</p>
+<p>O <code>stringr</code> utiliza regex da forma descrita <a href="http://www.gagolewski.com/software/stringi/manual/?manpage=stringi-search-regex">neste documento</a>. A própria <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html">definição</a> de regex do R é um ótimo manual.</p>
+<p>Vamos estudar expressões regulares por meio de exemplos e da função <code>str_detect()</code>. Ela retorna <code>TRUE</code> se uma <em>string</em> atende a uma expressão regular e <code>FALSE</code> caso contrário. Por exemplo:</p>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="7-4-o-pacote-stringr.html#cb324-1"></a><span class="kw">str_detect</span>(<span class="st">&quot;sao paulo&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;paulo$&quot;</span>)</span>
+<span id="cb324-2"><a href="7-4-o-pacote-stringr.html#cb324-2"></a><span class="co">## [1] TRUE</span></span>
+<span id="cb324-3"><a href="7-4-o-pacote-stringr.html#cb324-3"></a><span class="kw">str_detect</span>(<span class="st">&quot;sao paulo sp&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;paulo$&quot;</span>)</span>
+<span id="cb324-4"><a href="7-4-o-pacote-stringr.html#cb324-4"></a><span class="co">## [1] FALSE</span></span></code></pre></div>
+<p>A regex/pattern “paulo$” indica que o texto deve ser terminado em “paulo”. Existem diversos caracteres auxiliares que vão auxiliar na manipulação dos textos, assim como o “$”.</p>
+<blockquote>
+<p><strong>Importante</strong>: o valor passado para o argumento <code>pattern</code> de qualquer função do pacote <code>stringr</code> será entendido como uma regex.</p>
+</blockquote>
+<p>A tabela abaixo mostra a aplicação de cinco regex em seis <em>strings</em> distintas.</p>
+<ul>
+<li><p>‘^ban’ reconhece apenas o que começa exatamente com “ban”.</p></li>
+<li><p>‘b ?an’ reconhece tudo que tenha “ban”, com ou sem espaço entre o “b” e o “a”.</p></li>
+<li><p>‘ban’ reconhece tudo que tenha “ban”, apenas minúsculo.</p></li>
+<li><p>BAN’ reconhece tudo que tenha “BAN”, apenas maiúsculo.</p></li>
+<li><p>‘ban$’ reconhece apenas o que termina exatamente em “ban”</p></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">strings</th>
+<th align="left">^ban</th>
+<th align="left">b ?an</th>
+<th align="left">ban</th>
+<th align="left">BAN</th>
+<th align="left">ban$</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">abandonado</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">ban</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="left">banana</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">BANANA</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">ele levou ban</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="left">pranab anderson</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+</tr>
+</tbody>
+</table>
+<div id="quantificadores" class="section level5 unnumbered">
+<h5>Quantificadores</h5>
+<p>Os caracteres <code>+</code>, <code>*</code> e <code>{x,y}</code> indicam quantas vezes um padrão se repete:</p>
+<ul>
+<li><p><code>ey+</code> significa <code>e</code> e depois <code>y</code> “<strong>uma vez</strong> ou mais”. Por exemplo, reconhece <code>hey</code>, <code>heyy</code>, <code>a eyyy</code>, mas não reconhece <code>e</code>, <code>y</code> nem <code>yy</code>.</p></li>
+<li><p><code>ey*</code> significa “<strong>nenhuma vez</strong> ou mais”. Por exemplo, reconhece <code>hey</code>, <code>heyy</code>, <code>a eyyy</code> e <code>e</code>, mas não reconhece <code>y</code> nem <code>yy</code>.</p></li>
+<li><p><code>ey{3}</code> significa “exatamente três vezes”. Por exemplo, reconhece <code>eyyy</code> e <code>eyyyy</code>, mas não reconhece <code>eyy</code>.</p></li>
+<li><p><code>ey{1,3}</code> significa “entre uma e três vezes”.</p></li>
+</ul>
+<p>Para aplicar um quantificador a um conjunto de caracteres, use parênteses. Por exemplo, <code>(ey )+</code> reconhece <code>ey ey</code>.</p>
+</div>
+<div id="conjuntos" class="section level5 unnumbered">
+<h5>Conjuntos</h5>
+<p>Colocando caracteres dentro de <code>[]</code>, reconhecemos quaisquer caracteres desse conjunto. Alguns exemplos práticos:</p>
+<ul>
+<li><p><code>[Cc]asa</code> para reconhecer “casa” em maiúsculo ou minúsculo.</p></li>
+<li><p><code>[0-9]</code> para reconhecer somente números. O mesmo vale para letras <code>[a-z]</code>, <code>[A-Z]</code>, <code>[a-zA-Z]</code> etc.</p></li>
+<li><p>O símbolo <code>^</code> dentro do colchete significa negação. Por exemplo, <code>[^0-9]</code> significa pegar tudo o que não é número.</p></li>
+<li><p>O símbolo <code>.</code> fora do colchete indica “qualquer caractere”, mas dentro do colchete é apenas ponto.</p></li>
+<li><p>Use <code>[[:space:]]+</code> para reconhecer espaços e <code>[[:punct:]]+</code> para reconhecer pontuações.</p></li>
+</ul>
+</div>
+<div id="miscelânea" class="section level5 unnumbered">
+<h5>Miscelânea</h5>
+<ul>
+<li><p>Use <code>abjutils::rm_accent()</code> para retirar os acentos de um texto.</p></li>
+<li><p>Use <code>|</code> para opções. Por exemplo, <code>desfavor|desprov</code> reconhece tanto “desfavorável” quanto “desprovido”.</p></li>
+<li><p>O código <code>\n</code> pula linha, <code>\f</code> é final da página, <code>\t</code> é tab. Use <code>\</code> para transformar caracteres especiais em literais.</p></li>
+</ul>
+<p>A lista de possibilidades com expressões regulares é extensa.
+Um bom lugar para testar o funcionamento das regex é o <a href="https://regex101.com/">regex101</a>.</p>
+</div>
+</div>
+<div id="funções-que-utilizam-regex" class="section level3">
+<h3><span class="header-section-number">7.4.4</span> Funções que utilizam regex</h3>
+<p>Agora que já vimos as funções básicas do <code>stringr</code> e aprendemos um pouco de regex, vamos às funções mais avançadas. Basicamente, essas funções buscarão <code>patterns</code> em um vetor de <em>strings</em> e farão alguma coisa quando encontrá-lo.</p>
+<p>Como já vimos na sessão sobre regex, a função mais simples que possui o argumento <code>pattern=</code> é a <code>str_detect()</code>.</p>
+<div id="str_detect" class="section level5 unnumbered">
+<h5>str_detect()</h5>
+<p>Retorna <code>TRUE</code> se a regex é compatível com a string e <code>FALSE</code> caso contrário.</p>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="7-4-o-pacote-stringr.html#cb325-1"></a><span class="kw">library</span>(stringr)</span>
+<span id="cb325-2"><a href="7-4-o-pacote-stringr.html#cb325-2"></a><span class="kw">str_detect</span>(<span class="st">&quot;sao paulo&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;paulo$&quot;</span>)</span>
+<span id="cb325-3"><a href="7-4-o-pacote-stringr.html#cb325-3"></a><span class="co">## [1] TRUE</span></span>
+<span id="cb325-4"><a href="7-4-o-pacote-stringr.html#cb325-4"></a><span class="kw">str_detect</span>(<span class="st">&quot;sao paulo sp&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;paulo$&quot;</span>)</span>
+<span id="cb325-5"><a href="7-4-o-pacote-stringr.html#cb325-5"></a><span class="co">## [1] FALSE</span></span></code></pre></div>
+</div>
+<div id="str_replace-e-str_replace_all" class="section level5 unnumbered">
+<h5>str_replace() e str_replace_all()</h5>
+<p>Substituem um padrão (ou todos) encontrado para um outro padrão.</p>
+<p>Substituindo apenas a primeira ocorrência.</p>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="7-4-o-pacote-stringr.html#cb326-1"></a>cidades &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;S. José do Rio Preto&quot;</span>, <span class="st">&quot;São Paulo&quot;</span>, <span class="st">&quot;S. José dos Campos&quot;</span>, <span class="st">&quot;São Roque&quot;</span>, <span class="st">&quot;S. S. da Grama&quot;</span>)</span>
+<span id="cb326-2"><a href="7-4-o-pacote-stringr.html#cb326-2"></a></span>
+<span id="cb326-3"><a href="7-4-o-pacote-stringr.html#cb326-3"></a><span class="kw">str_replace</span>(cidades, <span class="st">&quot;S[.]&quot;</span>, <span class="st">&quot;São&quot;</span>)</span>
+<span id="cb326-4"><a href="7-4-o-pacote-stringr.html#cb326-4"></a><span class="co">## [1] &quot;São José do Rio Preto&quot; &quot;São Paulo&quot;             &quot;São José dos Campos&quot;  </span></span>
+<span id="cb326-5"><a href="7-4-o-pacote-stringr.html#cb326-5"></a><span class="co">## [4] &quot;São Roque&quot;             &quot;São S. da Grama&quot;</span></span></code></pre></div>
+<p>Veja que no exemplo anterior precisamos colocar o <code>.</code> entre colchetes. Se não tivéssemos colocado, ele seria interpretado como uma regex e o padrão procurado seria <em>“S” seguido de qualquer caracter</em>:</p>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="7-4-o-pacote-stringr.html#cb327-1"></a>cidades &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;S. José do Rio Preto&quot;</span>, <span class="st">&quot;São Paulo&quot;</span>, <span class="st">&quot;S. José dos Campos&quot;</span>, <span class="st">&quot;São Roque&quot;</span>, <span class="st">&quot;S. S. da Grama&quot;</span>)</span>
+<span id="cb327-2"><a href="7-4-o-pacote-stringr.html#cb327-2"></a></span>
+<span id="cb327-3"><a href="7-4-o-pacote-stringr.html#cb327-3"></a><span class="kw">str_replace</span>(cidades, <span class="st">&quot;S.&quot;</span>, <span class="st">&quot;São&quot;</span>)</span>
+<span id="cb327-4"><a href="7-4-o-pacote-stringr.html#cb327-4"></a><span class="co">## [1] &quot;São José do Rio Preto&quot; &quot;Sãoo Paulo&quot;            &quot;São José dos Campos&quot;  </span></span>
+<span id="cb327-5"><a href="7-4-o-pacote-stringr.html#cb327-5"></a><span class="co">## [4] &quot;Sãoo Roque&quot;            &quot;São S. da Grama&quot;</span></span></code></pre></div>
+<p>Nesses casos, podemos usar a função <code>fixed()</code> para indicar que o padrão procurado não é uma regex:</p>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="7-4-o-pacote-stringr.html#cb328-1"></a>cidades &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;S. José do Rio Preto&quot;</span>, <span class="st">&quot;São Paulo&quot;</span>, <span class="st">&quot;S. José dos Campos&quot;</span>, <span class="st">&quot;São Roque&quot;</span>, <span class="st">&quot;S. S. da Grama&quot;</span>)</span>
+<span id="cb328-2"><a href="7-4-o-pacote-stringr.html#cb328-2"></a></span>
+<span id="cb328-3"><a href="7-4-o-pacote-stringr.html#cb328-3"></a><span class="kw">str_replace</span>(cidades, <span class="kw">fixed</span>(<span class="st">&quot;S.&quot;</span>), <span class="st">&quot;São&quot;</span>)</span>
+<span id="cb328-4"><a href="7-4-o-pacote-stringr.html#cb328-4"></a><span class="co">## [1] &quot;São José do Rio Preto&quot; &quot;São Paulo&quot;             &quot;São José dos Campos&quot;  </span></span>
+<span id="cb328-5"><a href="7-4-o-pacote-stringr.html#cb328-5"></a><span class="co">## [4] &quot;São Roque&quot;             &quot;São S. da Grama&quot;</span></span></code></pre></div>
+<p>A função <code>str_replace()</code> substitui apenas a primeira ocorrência encontrada. No exemplo anterior, apenas o primeiro “S.” era substituído por “São”. Se quisermos substituir todas as ocorrências de um padrão dentro de uma string, utilizamos a função <code>str_replace_all()</code>.</p>
+<p>No exemplo abaixo, substituímos todas as ocorrências de <code>.</code> e <code>-</code> por um espaço.</p>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="7-4-o-pacote-stringr.html#cb329-1"></a>cpf &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;303.030.111-33&quot;</span>, <span class="st">&quot;102-177-011-20&quot;</span>, <span class="st">&quot;987.220.199.00&quot;</span>)</span>
+<span id="cb329-2"><a href="7-4-o-pacote-stringr.html#cb329-2"></a></span>
+<span id="cb329-3"><a href="7-4-o-pacote-stringr.html#cb329-3"></a><span class="kw">str_replace_all</span>(cpf, <span class="st">&quot;[.-]&quot;</span>, <span class="st">&quot; &quot;</span>)</span>
+<span id="cb329-4"><a href="7-4-o-pacote-stringr.html#cb329-4"></a><span class="co">## [1] &quot;303 030 111 33&quot; &quot;102 177 011 20&quot; &quot;987 220 199 00&quot;</span></span></code></pre></div>
+</div>
+<div id="str_extract-e-str_extract_all" class="section level5 unnumbered">
+<h5>str_extract() e str_extract_all()</h5>
+<p>As funções <code>str_extract()</code> e <code>str_extract_all()</code> extraem padrões de uma <em>string</em>. No exemplo abaixo, pegamos apenas os sobrenomes de cada integrante do grupo.</p>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="7-4-o-pacote-stringr.html#cb330-1"></a>r_core_group &lt;-<span class="st"> </span><span class="kw">c</span>(</span>
+<span id="cb330-2"><a href="7-4-o-pacote-stringr.html#cb330-2"></a>  <span class="st">&#39;Douglas Bates&#39;</span>, <span class="st">&#39;John Chambers&#39;</span>, <span class="st">&#39;Peter Dalgaard&#39;</span>,</span>
+<span id="cb330-3"><a href="7-4-o-pacote-stringr.html#cb330-3"></a>  <span class="st">&#39;Robert Gentleman&#39;</span>, <span class="st">&#39;Kurt Hornik&#39;</span>, <span class="st">&#39;Ross Ihaka&#39;</span>, <span class="st">&#39;Tomas Kalibera&#39;</span>,</span>
+<span id="cb330-4"><a href="7-4-o-pacote-stringr.html#cb330-4"></a>  <span class="st">&#39;Michael Lawrence&#39;</span>, <span class="st">&#39;Friedrich Leisch&#39;</span>, <span class="st">&#39;Uwe Ligges&#39;</span>, <span class="st">&#39;...&#39;</span></span>
+<span id="cb330-5"><a href="7-4-o-pacote-stringr.html#cb330-5"></a>)</span>
+<span id="cb330-6"><a href="7-4-o-pacote-stringr.html#cb330-6"></a></span>
+<span id="cb330-7"><a href="7-4-o-pacote-stringr.html#cb330-7"></a>sobrenomes &lt;-<span class="st"> </span><span class="kw">str_extract</span>(r_core_group, <span class="st">&#39;[:alpha:]+$&#39;</span>)</span>
+<span id="cb330-8"><a href="7-4-o-pacote-stringr.html#cb330-8"></a>sobrenomes</span>
+<span id="cb330-9"><a href="7-4-o-pacote-stringr.html#cb330-9"></a><span class="co">##  [1] &quot;Bates&quot;     &quot;Chambers&quot;  &quot;Dalgaard&quot;  &quot;Gentleman&quot; &quot;Hornik&quot;    &quot;Ihaka&quot;    </span></span>
+<span id="cb330-10"><a href="7-4-o-pacote-stringr.html#cb330-10"></a><span class="co">##  [7] &quot;Kalibera&quot;  &quot;Lawrence&quot;  &quot;Leisch&quot;    &quot;Ligges&quot;    NA</span></span></code></pre></div>
+</div>
+<div id="str_split-e-str_split_fixed" class="section level5 unnumbered">
+<h5>str_split() e str_split_fixed()</h5>
+<p>Essas funções separam uma <em>string</em> em várias de acordo com um separador.</p>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="7-4-o-pacote-stringr.html#cb331-1"></a>texto &lt;-<span class="st"> &#39;Durante um longo período de tempo o &quot;R&quot; foi escrito &quot;P&quot; como no alfabeto cirílico. O seu nome no alfabeto fenício era &quot;rech&quot;. Seu significado era o de uma cabeça, representada pela adaptação do hieróglifo egípcio de uma cabeça. Transformou-se no &quot;rô&quot; dos gregos. Os romanos modificaram o rô acrescentando um pequeno traço para diferenciá-lo do no nosso P.&#39;</span></span>
+<span id="cb331-2"><a href="7-4-o-pacote-stringr.html#cb331-2"></a></span>
+<span id="cb331-3"><a href="7-4-o-pacote-stringr.html#cb331-3"></a><span class="kw">str_split</span>(texto, <span class="kw">fixed</span>(<span class="st">&#39;.&#39;</span>))</span>
+<span id="cb331-4"><a href="7-4-o-pacote-stringr.html#cb331-4"></a><span class="co">## [[1]]</span></span>
+<span id="cb331-5"><a href="7-4-o-pacote-stringr.html#cb331-5"></a><span class="co">## [1] &quot;Durante um longo período de tempo o \&quot;R\&quot; foi escrito \&quot;P\&quot; como no alfabeto cirílico&quot;                </span></span>
+<span id="cb331-6"><a href="7-4-o-pacote-stringr.html#cb331-6"></a><span class="co">## [2] &quot; O seu nome no alfabeto fenício era \&quot;rech\&quot;&quot;                                                         </span></span>
+<span id="cb331-7"><a href="7-4-o-pacote-stringr.html#cb331-7"></a><span class="co">## [3] &quot; Seu significado era o de uma cabeça, representada pela adaptação do hieróglifo egípcio de uma cabeça&quot;</span></span>
+<span id="cb331-8"><a href="7-4-o-pacote-stringr.html#cb331-8"></a><span class="co">## [4] &quot; Transformou-se no \&quot;rô\&quot; dos gregos&quot;                                                                 </span></span>
+<span id="cb331-9"><a href="7-4-o-pacote-stringr.html#cb331-9"></a><span class="co">## [5] &quot; Os romanos modificaram o rô acrescentando um pequeno traço para diferenciá-lo do no nosso P&quot;         </span></span>
+<span id="cb331-10"><a href="7-4-o-pacote-stringr.html#cb331-10"></a><span class="co">## [6] &quot;&quot;</span></span></code></pre></div>
+<p>O <code>str_split_fixed</code> faz o mesmo que <code>str_split()</code>, mas separa apenas <code>n</code> vezes.</p>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="7-4-o-pacote-stringr.html#cb332-1"></a><span class="kw">str_split_fixed</span>(texto, <span class="kw">fixed</span>(<span class="st">&#39;.&#39;</span>), <span class="dv">3</span>)</span>
+<span id="cb332-2"><a href="7-4-o-pacote-stringr.html#cb332-2"></a><span class="co">##      [,1]                                                                                   </span></span>
+<span id="cb332-3"><a href="7-4-o-pacote-stringr.html#cb332-3"></a><span class="co">## [1,] &quot;Durante um longo período de tempo o \&quot;R\&quot; foi escrito \&quot;P\&quot; como no alfabeto cirílico&quot;</span></span>
+<span id="cb332-4"><a href="7-4-o-pacote-stringr.html#cb332-4"></a><span class="co">##      [,2]                                          </span></span>
+<span id="cb332-5"><a href="7-4-o-pacote-stringr.html#cb332-5"></a><span class="co">## [1,] &quot; O seu nome no alfabeto fenício era \&quot;rech\&quot;&quot;</span></span>
+<span id="cb332-6"><a href="7-4-o-pacote-stringr.html#cb332-6"></a><span class="co">##      [,3]                                                                                                                                                                                                                                      </span></span>
+<span id="cb332-7"><a href="7-4-o-pacote-stringr.html#cb332-7"></a><span class="co">## [1,] &quot; Seu significado era o de uma cabeça, representada pela adaptação do hieróglifo egípcio de uma cabeça. Transformou-se no \&quot;rô\&quot; dos gregos. Os romanos modificaram o rô acrescentando um pequeno traço para diferenciá-lo do no nosso P.&quot;</span></span></code></pre></div>
+</div>
+<div id="str_subset" class="section level5 unnumbered">
+<h5>str_subset()</h5>
+<p>A função <code>str_subset()</code> retorna somente as strings compatíveis com a regex.</p>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="7-4-o-pacote-stringr.html#cb333-1"></a>frases &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;a roupa do rei&#39;</span>, <span class="st">&#39;de roma&#39;</span>, <span class="st">&#39;o rato roeu&#39;</span>)</span>
+<span id="cb333-2"><a href="7-4-o-pacote-stringr.html#cb333-2"></a><span class="kw">str_subset</span>(frases, <span class="st">&#39;d[eo]&#39;</span>)</span>
+<span id="cb333-3"><a href="7-4-o-pacote-stringr.html#cb333-3"></a><span class="co">## [1] &quot;a roupa do rei&quot; &quot;de roma&quot;</span></span></code></pre></div>
+<p>É o mesmo que fazer subset usando a função <code>str_detect</code>.</p>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="7-4-o-pacote-stringr.html#cb334-1"></a>frases[<span class="kw">str_detect</span>(frases, <span class="st">&quot;d[eo]&quot;</span>)]</span>
+<span id="cb334-2"><a href="7-4-o-pacote-stringr.html#cb334-2"></a><span class="co">## [1] &quot;a roupa do rei&quot; &quot;de roma&quot;</span></span></code></pre></div>
+</div>
+</div>
+<div id="exercícios-17" class="section level3">
+<h3><span class="header-section-number">7.4.5</span> Exercícios</h3>
+<p><strong>1.</strong> O CPF é um número de 11 dígitos, por exemplo: 54491651884. No entanto para facilitar a visualização costumamos mostrá-lo com separadores a cada 3 casas: 544.916.518-84. Crie uma função que transforma um número de 11 dígitos em uma string com as separações, como um CPF.</p>
+<p><strong>2.</strong> Transforme o vetor de <em>strings</em> abaixo em <code>"01 - Alto" "02 - Médio" "03 - Baixo"</code>.</p>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="7-4-o-pacote-stringr.html#cb335-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Alto&#39;</span>, <span class="st">&#39;Médio&#39;</span>, <span class="st">&#39;Baixo&#39;</span>)</span></code></pre></div>
+<p><strong>3.</strong> Crie uma regex que capture múltiplas versões da palavra ‘casa’. Ela deve funcionar com as palavras ‘Casa’, ‘CASA’, ‘CaSa’, ‘CAsa’. Teste-a usando a função <code>str_detect()</code>.</p>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="7-4-o-pacote-stringr.html#cb336-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Casa&#39;</span>, <span class="st">&#39;CASA&#39;</span>, <span class="st">&#39;CaSa&#39;</span>, <span class="st">&#39;CAsa&#39;</span>)</span></code></pre></div>
+<p><strong>4.</strong> Imagine que a seguinte <em>string</em> é a parte final de uma URL.</p>
+<ul>
+<li><code>/ac/rio-branco/xpto-xyz-1-0-1fds2396-5</code></li>
+</ul>
+<p>Transforme-a em “AC - Rio Branco” utilizando funções do pacote <code>{stringr}</code>.</p>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="7-4-o-pacote-stringr.html#cb337-1"></a>url &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;/ac/rio-branco/xpto-xyz-1-0-1fds2396-5&#39;</span>)</span></code></pre></div>
+<p><strong>5.</strong> Crie uma função que retorna <code>TRUE</code> quando a string é um <a href="https://pt.wikipedia.org/wiki/Pal%C3%ADndromo">palíndromo</a> e <code>FALSO</code> caso não seja.</p>
+<p><strong>6.</strong> De acordo com as regras da língua portuguesa, antes de “p” ou “b” devemos usar a letra “m”. Em outras palavras, com outras consoantes, usamos a letra “N”. Suponha que você tem o seguinte texto com erros gramaticais:</p>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="7-4-o-pacote-stringr.html#cb338-1"></a>texto &lt;-<span class="st"> &#39;Nós chamamos os bonbeiros quando começou o incêmdio.&#39;</span></span></code></pre></div>
+<p>Crie uma função para corrigi-lo.</p>
+<p><strong>7.</strong> Considere o seguinte texto</p>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="7-4-o-pacote-stringr.html#cb339-1"></a>txt &lt;-<span class="st"> &quot;A função mais importante para leitura de dados no `lubridate` é a `ymd`. Essa função serve para ler qualquer data de uma `string` no formato `YYYY-MM-DD`. Essa função é útil pois funciona com qualquer separador entre os elementos da data e também porque temos uma função para cada formato (`mdy`, `dmy`, `dym`, `myd`, `ydm`).&quot;</span></span></code></pre></div>
+<p>Extraia todas as combinações da função <code>ymd</code>, sem repetições.</p>
+<p><strong>8.</strong> Considere as frases abaixo</p>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="7-4-o-pacote-stringr.html#cb340-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(</span>
+<span id="cb340-2"><a href="7-4-o-pacote-stringr.html#cb340-2"></a>  <span class="st">&#39;O produto é muito bom.&#39;</span>,</span>
+<span id="cb340-3"><a href="7-4-o-pacote-stringr.html#cb340-3"></a>  <span class="st">&#39;O produto não é bom.&#39;</span>,</span>
+<span id="cb340-4"><a href="7-4-o-pacote-stringr.html#cb340-4"></a>  <span class="st">&#39;O produto não é muito bom.&#39;</span>,</span>
+<span id="cb340-5"><a href="7-4-o-pacote-stringr.html#cb340-5"></a>  <span class="st">&#39;O produto não é ruim.&#39;</span>,</span>
+<span id="cb340-6"><a href="7-4-o-pacote-stringr.html#cb340-6"></a>  <span class="st">&#39;O produto não é não bom.&#39;</span></span>
+<span id="cb340-7"><a href="7-4-o-pacote-stringr.html#cb340-7"></a>)</span></code></pre></div>
+<p>Crie uma regra para identificar se o texto refere-se a um feedback positivo ou negativo sobre o produto (considere “não bom = ruim” e “não ruim = bom”). Retorne um vetor lógico que vale <code>TRUE</code> se o feedback é positivo e <code>FALSE</code> caso contrário.</p>
 
+</div>
 </div>
 <hr/>
 <footer>

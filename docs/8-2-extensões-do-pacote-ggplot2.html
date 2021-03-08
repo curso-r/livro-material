@@ -257,7 +257,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#spread"><i class="fa fa-check"></i><b>7.3.2</b> <code>spread()</code></a></li>
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a></li>
+<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#introdução"><i class="fa fa-check"></i><b>7.4.1</b> Introdução</a></li>
+<li class="chapter" data-level="7.4.2" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-básicas"><i class="fa fa-check"></i><b>7.4.2</b> Funções básicas</a></li>
+<li class="chapter" data-level="7.4.3" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#expressões-regulares"><i class="fa fa-check"></i><b>7.4.3</b> Expressões Regulares</a></li>
+<li class="chapter" data-level="7.4.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-que-utilizam-regex"><i class="fa fa-check"></i><b>7.4.4</b> Funções que utilizam regex</a></li>
+<li class="chapter" data-level="7.4.5" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#exercícios-17"><i class="fa fa-check"></i><b>7.4.5</b> Exercícios</a></li>
+</ul></li>
 <li class="chapter" data-level="7.5" data-path="7-5-forcats.html"><a href="7-5-forcats.html"><i class="fa fa-check"></i><b>7.5</b> O pacote forcats</a></li>
 <li class="chapter" data-level="7.6" data-path="7-6-o-pacote-lubridate.html"><a href="7-6-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.6</b> O pacote lubridate</a></li>
 </ul></li>
@@ -271,7 +277,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.6" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#escalas"><i class="fa fa-check"></i><b>8.1.6</b> Escalas</a></li>
 <li class="chapter" data-level="8.1.7" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#temas"><i class="fa fa-check"></i><b>8.1.7</b> Temas</a></li>
 <li class="chapter" data-level="8.1.8" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>8.1.8</b> Juntando gráficos</a></li>
-<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-17"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
+<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-18"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a><ul>
 <li class="chapter" data-level="8.2.1" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#gghighlight"><i class="fa fa-check"></i><b>8.2.1</b> gghighlight</a></li>
@@ -367,36 +373,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="realçando-pontos" class="section level4 unnumbered">
 <h4>Realçando pontos</h4>
 <p>Muitas vezes temos um gráfico de dispersão em que queremos realçar alguns pontos de acordo com alguma característica. Por exemplo, abaixo estamos realçando os pontos que possuem <code>carat &gt; 4</code>, além disso colocamos uma label em cada um.</p>
-<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb390-1"></a>diamonds <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb390-2"><a href="8-2-extensões-do-pacote-ggplot2.html#cb390-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">y =</span> price)) <span class="op">+</span></span>
-<span id="cb390-3"><a href="8-2-extensões-do-pacote-ggplot2.html#cb390-3"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
-<span id="cb390-4"><a href="8-2-extensões-do-pacote-ggplot2.html#cb390-4"></a><span class="st">  </span>gghighlight<span class="op">::</span><span class="kw">gghighlight</span>(carat <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>, <span class="dt">label_key =</span> carat)</span></code></pre></div>
+<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb422-1"></a>diamonds <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb422-2"><a href="8-2-extensões-do-pacote-ggplot2.html#cb422-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">y =</span> price)) <span class="op">+</span></span>
+<span id="cb422-3"><a href="8-2-extensões-do-pacote-ggplot2.html#cb422-3"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb422-4"><a href="8-2-extensões-do-pacote-ggplot2.html#cb422-4"></a><span class="st">  </span>gghighlight<span class="op">::</span><span class="kw">gghighlight</span>(carat <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>, <span class="dt">label_key =</span> carat)</span></code></pre></div>
 <p><img src="082-extensoes-ggplot2_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Também é possível configurar a cor dos pontos que serão realçados e dos que não serão, bem como o estilo das labels.</p>
-<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb391-1"></a>diamonds <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb391-2"><a href="8-2-extensões-do-pacote-ggplot2.html#cb391-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">y =</span> price)) <span class="op">+</span></span>
-<span id="cb391-3"><a href="8-2-extensões-do-pacote-ggplot2.html#cb391-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
-<span id="cb391-4"><a href="8-2-extensões-do-pacote-ggplot2.html#cb391-4"></a><span class="st">  </span>gghighlight<span class="op">::</span><span class="kw">gghighlight</span>(</span>
-<span id="cb391-5"><a href="8-2-extensões-do-pacote-ggplot2.html#cb391-5"></a>    carat <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>, </span>
-<span id="cb391-6"><a href="8-2-extensões-do-pacote-ggplot2.html#cb391-6"></a>    <span class="dt">label_key =</span> carat,</span>
-<span id="cb391-7"><a href="8-2-extensões-do-pacote-ggplot2.html#cb391-7"></a>    <span class="dt">unhighlighted_params =</span> <span class="kw">list</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
-<span id="cb391-8"><a href="8-2-extensões-do-pacote-ggplot2.html#cb391-8"></a>    <span class="dt">label_params =</span> <span class="kw">list</span>(<span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">fill =</span> <span class="st">&quot;grey&quot;</span>)</span>
-<span id="cb391-9"><a href="8-2-extensões-do-pacote-ggplot2.html#cb391-9"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb423-1"></a>diamonds <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb423-2"><a href="8-2-extensões-do-pacote-ggplot2.html#cb423-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">y =</span> price)) <span class="op">+</span></span>
+<span id="cb423-3"><a href="8-2-extensões-do-pacote-ggplot2.html#cb423-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
+<span id="cb423-4"><a href="8-2-extensões-do-pacote-ggplot2.html#cb423-4"></a><span class="st">  </span>gghighlight<span class="op">::</span><span class="kw">gghighlight</span>(</span>
+<span id="cb423-5"><a href="8-2-extensões-do-pacote-ggplot2.html#cb423-5"></a>    carat <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>, </span>
+<span id="cb423-6"><a href="8-2-extensões-do-pacote-ggplot2.html#cb423-6"></a>    <span class="dt">label_key =</span> carat,</span>
+<span id="cb423-7"><a href="8-2-extensões-do-pacote-ggplot2.html#cb423-7"></a>    <span class="dt">unhighlighted_params =</span> <span class="kw">list</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb423-8"><a href="8-2-extensões-do-pacote-ggplot2.html#cb423-8"></a>    <span class="dt">label_params =</span> <span class="kw">list</span>(<span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">fill =</span> <span class="st">&quot;grey&quot;</span>)</span>
+<span id="cb423-9"><a href="8-2-extensões-do-pacote-ggplot2.html#cb423-9"></a>  )</span></code></pre></div>
 <p><img src="082-extensoes-ggplot2_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 <div id="realçando-linhas" class="section level4 unnumbered">
 <h4>Realçando linhas</h4>
 <p>Com o <code>{gghighlight}</code> também é possível realçar linhas em um gráfico que possui varias linhas. Isso é interessante quando você quer ver como uma série temporal se compara com relação à um conjunto de outras séries.</p>
 <p>No gráfico a seguir mostramos o número de downloads de cada um dos pacotes do tidyverse no ano de 2019. Uma das séries se destaca por mudar de padrão no meio do ano. Usamos o <code>{gghighlight}</code> para destacá-la no gráfico.</p>
-<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb392-1"></a>tab &lt;-<span class="st"> </span>cranlogs<span class="op">::</span><span class="kw">cran_downloads</span>(</span>
-<span id="cb392-2"><a href="8-2-extensões-do-pacote-ggplot2.html#cb392-2"></a>  <span class="dt">packages =</span> tidyverse<span class="op">::</span><span class="kw">tidyverse_deps</span>()<span class="op">$</span>package,</span>
-<span id="cb392-3"><a href="8-2-extensões-do-pacote-ggplot2.html#cb392-3"></a>  <span class="dt">from =</span> <span class="st">&quot;2019-01-01&quot;</span>, <span class="dt">to =</span> <span class="st">&quot;2019-12-31&quot;</span></span>
-<span id="cb392-4"><a href="8-2-extensões-do-pacote-ggplot2.html#cb392-4"></a>)</span>
-<span id="cb392-5"><a href="8-2-extensões-do-pacote-ggplot2.html#cb392-5"></a></span>
-<span id="cb392-6"><a href="8-2-extensões-do-pacote-ggplot2.html#cb392-6"></a>tab <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb392-7"><a href="8-2-extensões-do-pacote-ggplot2.html#cb392-7"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> count, <span class="dt">group =</span> package)) <span class="op">+</span></span>
-<span id="cb392-8"><a href="8-2-extensões-do-pacote-ggplot2.html#cb392-8"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb392-9"><a href="8-2-extensões-do-pacote-ggplot2.html#cb392-9"></a><span class="st">  </span>gghighlight<span class="op">::</span><span class="kw">gghighlight</span>(<span class="kw">max</span>(count) <span class="op">&gt;</span><span class="st"> </span><span class="dv">100000</span>, <span class="dt">label_key =</span> package)</span></code></pre></div>
+<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb424-1"></a>tab &lt;-<span class="st"> </span>cranlogs<span class="op">::</span><span class="kw">cran_downloads</span>(</span>
+<span id="cb424-2"><a href="8-2-extensões-do-pacote-ggplot2.html#cb424-2"></a>  <span class="dt">packages =</span> tidyverse<span class="op">::</span><span class="kw">tidyverse_deps</span>()<span class="op">$</span>package,</span>
+<span id="cb424-3"><a href="8-2-extensões-do-pacote-ggplot2.html#cb424-3"></a>  <span class="dt">from =</span> <span class="st">&quot;2019-01-01&quot;</span>, <span class="dt">to =</span> <span class="st">&quot;2019-12-31&quot;</span></span>
+<span id="cb424-4"><a href="8-2-extensões-do-pacote-ggplot2.html#cb424-4"></a>)</span>
+<span id="cb424-5"><a href="8-2-extensões-do-pacote-ggplot2.html#cb424-5"></a></span>
+<span id="cb424-6"><a href="8-2-extensões-do-pacote-ggplot2.html#cb424-6"></a>tab <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb424-7"><a href="8-2-extensões-do-pacote-ggplot2.html#cb424-7"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> count, <span class="dt">group =</span> package)) <span class="op">+</span></span>
+<span id="cb424-8"><a href="8-2-extensões-do-pacote-ggplot2.html#cb424-8"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb424-9"><a href="8-2-extensões-do-pacote-ggplot2.html#cb424-9"></a><span class="st">  </span>gghighlight<span class="op">::</span><span class="kw">gghighlight</span>(<span class="kw">max</span>(count) <span class="op">&gt;</span><span class="st"> </span><span class="dv">100000</span>, <span class="dt">label_key =</span> package)</span></code></pre></div>
 <p><img src="082-extensoes-ggplot2_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Para mais informações sobre o <code>{gghighlight}</code>, recomendamos a leitura da <a href="https://yutannihilation.github.io/gghighlight/index.html">excelente documentação oficial</a>.</p>
 </div>
@@ -405,14 +411,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">8.2.2</span> ggridges</h3>
 <p>A extensão <code>{ggridges}</code> é uma ótima alternativa para histogramas e boxplots, quando queremos comparar a distribuição de uma variável A em vários níveis de uma variável B.</p>
 <p>Primeiro, instale o pacote.</p>
-<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb393-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;ggridges&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb425-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;ggridges&quot;</span>)</span></code></pre></div>
 <p>No gráfico abaixo, comparamos a distribuição da receita dos filmes em cada um dos anos de 2005 a 2016. Para isso, utilizamos o novo <code>geom_density_ridges()</code>, disponibilizado pelo pacote <code>{ggridges}</code>.</p>
-<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb394-1"></a><span class="kw">library</span>(ggridges)</span>
-<span id="cb394-2"><a href="8-2-extensões-do-pacote-ggplot2.html#cb394-2"></a>imdb <span class="op">%&gt;%</span></span>
-<span id="cb394-3"><a href="8-2-extensões-do-pacote-ggplot2.html#cb394-3"></a><span class="st">  </span><span class="kw">filter</span>(ano <span class="op">&gt;</span><span class="st"> </span><span class="dv">2005</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb394-4"><a href="8-2-extensões-do-pacote-ggplot2.html#cb394-4"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">ano =</span> <span class="kw">as.factor</span>(ano)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb394-5"><a href="8-2-extensões-do-pacote-ggplot2.html#cb394-5"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">y =</span> ano, <span class="dt">x =</span> receita, <span class="dt">fill =</span> ano)) <span class="op">+</span></span>
-<span id="cb394-6"><a href="8-2-extensões-do-pacote-ggplot2.html#cb394-6"></a><span class="st">  </span><span class="kw">geom_density_ridges</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb426-1"></a><span class="kw">library</span>(ggridges)</span>
+<span id="cb426-2"><a href="8-2-extensões-do-pacote-ggplot2.html#cb426-2"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb426-3"><a href="8-2-extensões-do-pacote-ggplot2.html#cb426-3"></a><span class="st">  </span><span class="kw">filter</span>(ano <span class="op">&gt;</span><span class="st"> </span><span class="dv">2005</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb426-4"><a href="8-2-extensões-do-pacote-ggplot2.html#cb426-4"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">ano =</span> <span class="kw">as.factor</span>(ano)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb426-5"><a href="8-2-extensões-do-pacote-ggplot2.html#cb426-5"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">y =</span> ano, <span class="dt">x =</span> receita, <span class="dt">fill =</span> ano)) <span class="op">+</span></span>
+<span id="cb426-6"><a href="8-2-extensões-do-pacote-ggplot2.html#cb426-6"></a><span class="st">  </span><span class="kw">geom_density_ridges</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 <pre><code>## Picking joint bandwidth of 17300000</code></pre>
 <p><img src="082-extensoes-ggplot2_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>Você pode baixar a base IMDB utilizada <a href="https://github.com/curso-r/livro-material/raw/master/assets/data/imdb.rds">clicando aqui</a>.</p>

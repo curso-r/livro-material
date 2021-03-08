@@ -144,11 +144,13 @@ No linux, a forma mais fácil de abrir documentos provenientes do Office é util
 
 #### No Mac
 
-(em construção)
+O sistema operaciona MacOS disponibiliza o [iWork](https://www.apple.com/br/iwork/), que é composto pelas ferramentas Numbers, Pages e Keynote.  Esses programas possibilitam abrir arquivos provenientes do Office.
+
+Outra opção é a utilização do LibreOffice, que pode ser instalado no Mac através [deste link](https://pt-br.libreoffice.org/baixe-ja/libreoffice-novo/), escolhendo o sistema operacional "MacOS" e clicando em "Baixar". 
 
 ### Pagedown e Chrome
 
-O `{pagedown}` é uma alternativa recente para produzir arquivos em HTML utilizando o [`paged.js`](), uma biblioteca em JavaScript que torna um arquivo HTML muito parecido com um PDF. Com a ajuda do Chrome, é possível, inclusive, exportar o arquivo para PDF.
+O `{pagedown}` é uma alternativa recente para produzir arquivos em HTML utilizando o [`paged.js`](https://www.pagedjs.org/), uma biblioteca em JavaScript que torna um arquivo HTML muito parecido com um PDF. Com a ajuda do Chrome, é possível, inclusive, exportar o arquivo para PDF.
 
 O `{pagedown}`, portanto, apresenta o melhor de dois mundos: a praticidade da extensão HTML e a portabilidade de arquivos PDF. Dessa forma, é possível gerar documentos PDF com formatos agradáveis sem depender do LaTeX.
 
