@@ -108,9 +108,69 @@ tinytex::install_tinytex()  # instalar o TinyTeX
 
 Caso você encontre algum problema para instalar o TinyTex, também é possível instalar outros editores de LaTex. A seguir estão apresentadas algumas opções!
 
-<!-- #### No Windows -->
+#### No Windows
 
-<!-- (em construção) -->
+Uma distribuição de LaTex que apresenta versão para Windows é o MiKTeX. 
+
+1. Para instalá-lo, primeiramente faça o download do arquivo `.exe` [através deste link](https://MiKTeX.org/download#win), escolhendo a versão de instalação para Windows. 
+
+2. Abra o arquivo baixado. Uma janela irá abrir, e a primeira etapa de instalação é a "Copying Conditions". Nesta etapa você deve selecionar a opção **"I accept the MiKTeX copying conditions"** e clicar em **"Avançar"**.
+
+```{r echo=FALSE, out.width="80%", fig.align='center'}
+knitr::include_graphics("img/instalacao/miktex_windows/win_miktex1.png")
+```
+
+3. A próxima etapa da instalação, chamada de "Installation Scope",  você deve escolher em qual usuário o software deve ser instalado. Selecione a primeira opção (**"Install MiKTeX only for me.**") para que o MiKTeX seja instalado apenas no seu usuário atual no computador. Essa é a opção recomendada. Então clique em **"Avançar"**. 
+
+```{r echo=FALSE, out.width="80%", fig.align='center'}
+knitr::include_graphics("img/instalacao/miktex_windows/win_miktex2.png")
+```
+
+4. Na etapa "Installation Directory", escolha o diretório em que o MiKTeX será instalado. Caso tenha dúvidas sobre isso, não altere nada e utilize o caminho padrão de instalação. Então clique em **"Avançar"**. 
+
+```{r echo=FALSE, out.width="80%", fig.align='center'}
+knitr::include_graphics("img/instalacao/miktex_windows/win_miktex3.png")
+```
+
+5. Na etapa "Settings", utilize as configurações padrão e clique em **"Avançar"**. 
+
+```{r echo=FALSE, out.width="80%", fig.align='center'}
+knitr::include_graphics("img/instalacao/miktex_windows/win_miktex4.png")
+```
+
+6. Na etapa "Review", é apresentado as configurações escolhidas anteriormente. Clique em **Start** para que a instalação seja começada. 
+
+```{r echo=FALSE, out.width="80%", fig.align='center'}
+knitr::include_graphics("img/instalacao/miktex_windows/win_miktex5.png")
+```
+
+7. O processo de instalação será realizado, e pode demorar alguns minutos. Duas barras verdes aparecerão para demonstrar a porcentagem da instalação já realizada. Quando essa etapa terminar, as barras ficarão cinza e o você deverá clicar no botão **Start**.
+
+```{r echo=FALSE, out.width="80%", fig.align='center'}
+knitr::include_graphics("img/instalacao/miktex_windows/win_miktex6.png")
+```
+
+
+8. Na etapa "Update Check", apresentará a opção de buscar por atualizações. Mantenha o botão **"Check for updates now"** selecionado, e clique no botão **Start**.
+
+```{r echo=FALSE, out.width="80%", fig.align='center'}
+knitr::include_graphics("img/instalacao/miktex_windows/win_miktex7.png")
+```
+
+9. A próxima janela mostrará uma mensagem dizendo que a instalação foi completa. Clique no botão **Close** para fechar essa janela.
+
+```{r echo=FALSE, out.width="80%", fig.align='center'}
+knitr::include_graphics("img/instalacao/miktex_windows/win_miktex8.png")
+```
+
+10. Abra o MiKTeX console através do menu Iniciar do Windows. No menu lateral, escolha a opção "Updates". Clique em **"Check for updates"**, e o MiKTeX buscará informações sobre as possíveis atualizações necessárias. Então clique em **"Update now"**, para que as atualizações sejam baixadas e instaladas. Essa etapa também pode demorar um pouco! 
+
+
+```{r echo=FALSE, out.width="80%", fig.align='center'}
+knitr::include_graphics("img/instalacao/miktex_windows/win_miktex9.png")
+```
+
+11. Após instalar as atualizações, o MiKTeX avisará que ele precisa ser fechado. Abra-o novamente. Após este processo, o MiKTex estará pronto para uso.
 
 #### No Linux
 
@@ -122,35 +182,35 @@ No linux, a forma mais direta de garantir que temos o LaTeX na máquina com toda
 
 #### No Mac
  
-Um editor de LaTex que apresenta versão para Mac é o MikTex. Para instalá-lo, primeiramente faça o download do arquivo `.dmg` [através deste link](https://miktex.org/download#mac). [Este tutorial](https://miktex.org/howto/install-miktex-mac) apresenta todos os passos de instalação no Mac, porém abaixo também vamos descrever os passos:
+Uma distribuição de LaTex que apresenta versão para Mac é o MikTex. Para instalá-lo, primeiramente faça o download do arquivo `.dmg` [através deste link](https://miktex.org/download#mac). [Este tutorial](https://miktex.org/howto/install-miktex-mac) apresenta todos os passos de instalação no Mac, porém abaixo também vamos descrever os passos:
 
-1. Faça o download do arquivo `.dmg` [através deste link](https://miktex.org/download#mac)
+1. Faça o download do arquivo `.dmg` [através deste link](https://miktex.org/download#mac), escolhendo a versão de instalação para Mac.
 
 2. Abra o arquivo baixado. Uma janela irá abrir, e você deve arrastar o ícone "MiKTeX Console" para a pasta "Applications" (como mostrado na animação abaixo, sendo necessário arrastar apenas uma vez). 
 
 ```{r echo=FALSE, out.width="50%", fig.align='center'}
-knitr::include_graphics("img/gif_miktex.gif")
+knitr::include_graphics("img/instalacao/miktex_mac/gif_miktex.gif")
 ```
 
 
-3. No Launchpad (menu de arquivos instalados), procure o ícone do "MiKTeX Console" e abra-o. Você também pode usar a pesquisa do Mac (utilizando o atalho Command + Barra de espaço), pesquisando por MiKTeX para abrir o editor.
+3. No Launchpad (menu de arquivos instalados), procure o ícone do "MiKTeX Console" e abra-o. Você também pode usar a pesquisa do Mac (utilizando o atalho Command + Barra de espaço), pesquisando por MiKTeX para abrir o software.
 
 4. Ao abrir pela primeira vez, o MiKTeX solicitará que você selecione uma opção para que a instalação seja completada. Selecione **"Finish private setup"**, e isso fará com que o MiKTeX esteja disponível apenas no seu usuário do computador. Após selecionar essa opcão, ele terminará a configuração, e aparecerá uma mensagem dizendo que o MiKTex será reiniciado. Espere até que ele reinicie. Ao final, aparecerá uma mensagem dizendo que é necessário fazer atualizações no MiKTeX.
 
 
 ```{r echo=FALSE, out.width="80%", fig.align='center'}
-knitr::include_graphics("img/miktex-instalacao-1.gif")
+knitr::include_graphics("img/instalacao/miktex_mac/miktex-instalacao-1.gif")
 ```
 
 5. No menu lateral, escolha a opção "Updates". Clique em **"Check for updates"**, e o MiKTex buscará informações sobre as possíveis atualizações necessárias. Então clique em **"Update now"**, para que as atualizações sejam baixadas e instaladas. 
 
 
 ```{r echo=FALSE, out.width="80%", fig.align='center'}
-knitr::include_graphics("img/miktex-instalacao-2.gif")
+knitr::include_graphics("img/instalacao/miktex_mac/miktex-instalacao-2.gif")
 ```
 
 
-6. Após instalar e atualizar, o editor MiKTeX está pronto para uso!
+6. Após instalar e atualizar, o MiKTeX está pronto para uso!
 
 
 ### Office
@@ -192,7 +252,7 @@ Outra opção é a utilização do LibreOffice.
 2. Após baixar o arquivo, abra-o. Uma janela irá abrir (como na imagem a seguir).  Você deve arrastar o ícone "LibreOffice" para a pasta "Applications" (como mostrado na animação abaixo, sendo necessário arrastar apenas uma vez). 
 
 ```{r echo=FALSE, out.width="50%", fig.align='center'}
-knitr::include_graphics("img/gif_libreoffice.gif")
+knitr::include_graphics("img/instalacao/gif_libreoffice.gif")
 ```
 
 3. O LibreOffice será instalado e você poderá utilizá-lo abrindo através do Launchpad (menu de arquivos instalados), ou também  utilizando a pesquisa do Mac (utilizando o atalho Command + Barra de espaço), pesquisando por LibreOffice para abrir o software.
