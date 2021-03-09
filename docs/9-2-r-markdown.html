@@ -280,7 +280,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#spread"><i class="fa fa-check"></i><b>7.3.2</b> <code>spread()</code></a></li>
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a></li>
+<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#introdução"><i class="fa fa-check"></i><b>7.4.1</b> Introdução</a></li>
+<li class="chapter" data-level="7.4.2" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-básicas"><i class="fa fa-check"></i><b>7.4.2</b> Funções básicas</a></li>
+<li class="chapter" data-level="7.4.3" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#expressões-regulares"><i class="fa fa-check"></i><b>7.4.3</b> Expressões Regulares</a></li>
+<li class="chapter" data-level="7.4.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-que-utilizam-regex"><i class="fa fa-check"></i><b>7.4.4</b> Funções que utilizam regex</a></li>
+<li class="chapter" data-level="7.4.5" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#exercícios-17"><i class="fa fa-check"></i><b>7.4.5</b> Exercícios</a></li>
+</ul></li>
 <li class="chapter" data-level="7.5" data-path="7-5-forcats.html"><a href="7-5-forcats.html"><i class="fa fa-check"></i><b>7.5</b> O pacote forcats</a></li>
 <li class="chapter" data-level="7.6" data-path="7-6-o-pacote-lubridate.html"><a href="7-6-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.6</b> O pacote lubridate</a></li>
 </ul></li>
@@ -296,7 +303,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.6" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#escalas"><i class="fa fa-check"></i><b>8.1.6</b> Escalas</a></li>
 <li class="chapter" data-level="8.1.7" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#temas"><i class="fa fa-check"></i><b>8.1.7</b> Temas</a></li>
 <li class="chapter" data-level="8.1.8" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>8.1.8</b> Juntando gráficos</a></li>
-<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-17"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
+<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-18"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a>
 <ul>
@@ -403,11 +410,11 @@ Figura 9.1: Conheça os Pinguins do dataset PalmerPenguins! Ilustração por <a 
 </p>
 </div>
 <p>Caso não tenha o pacote <a href="https://cienciadedatos.github.io/dados/">dados</a> instalado, é possível instalar com o seguinte código:</p>
-<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="9-2-r-markdown.html#cb390-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;remotes&quot;</span>)</span>
-<span id="cb390-2"><a href="9-2-r-markdown.html#cb390-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;cienciadedatos/dados&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="9-2-r-markdown.html#cb422-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;remotes&quot;</span>)</span>
+<span id="cb422-2"><a href="9-2-r-markdown.html#cb422-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;cienciadedatos/dados&quot;</span>)</span></code></pre></div>
 <p>Agora carregue os pacotes necessários:</p>
-<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="9-2-r-markdown.html#cb391-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dados)  <span class="co"># Pacote com bases de dados em Português</span></span>
-<span id="cb391-2"><a href="9-2-r-markdown.html#cb391-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)  <span class="co"># Pacote para utilizar o Pipe %&gt;%</span></span></code></pre></div>
+<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="9-2-r-markdown.html#cb423-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dados)  <span class="co"># Pacote com bases de dados em Português</span></span>
+<span id="cb423-2"><a href="9-2-r-markdown.html#cb423-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)  <span class="co"># Pacote para utilizar o Pipe %&gt;%</span></span></code></pre></div>
 <div id="códigos-em-r" class="section level3" number="9.2.1">
 <h3><span class="header-section-number">9.2.1</span> Códigos em R</h3>
 <p>Ao analisar dados, escrevemos códigos que calculam estatísticas descritivas, geram gráficos e tabelas, entre outros.
@@ -422,40 +429,40 @@ Para adicionar esses resultados nos relatórios, não é muito prático adiciona
 <div id="campos-de-código-chunks" class="section level4 unnumbered">
 <h4>Campos de código (chunks)</h4>
 <p>É possível adicionar campos de código utilizando a seguinte sintaxe:</p>
-<div class="sourceCode" id="cb392"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb392-1"><a href="9-2-r-markdown.html#cb392-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb392-2"><a href="9-2-r-markdown.html#cb392-2" aria-hidden="true" tabindex="-1"></a><span class="in">codigo em R aqui</span></span>
-<span id="cb392-3"><a href="9-2-r-markdown.html#cb392-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb424"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb424-1"><a href="9-2-r-markdown.html#cb424-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb424-2"><a href="9-2-r-markdown.html#cb424-2" aria-hidden="true" tabindex="-1"></a><span class="in">codigo em R aqui</span></span>
+<span id="cb424-3"><a href="9-2-r-markdown.html#cb424-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <p>Um exemplo de campo de código é o campo abaixo, onde é possível executar o código e visualizar o resultado.</p>
 <p><strong>Exemplo:</strong></p>
-<div class="sourceCode" id="cb393"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb393-1"><a href="9-2-r-markdown.html#cb393-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb393-2"><a href="9-2-r-markdown.html#cb393-2" aria-hidden="true" tabindex="-1"></a><span class="in"># calcula a média</span></span>
-<span id="cb393-3"><a href="9-2-r-markdown.html#cb393-3" aria-hidden="true" tabindex="-1"></a><span class="in">media_massa_g &lt;-</span></span>
-<span id="cb393-4"><a href="9-2-r-markdown.html#cb393-4" aria-hidden="true" tabindex="-1"></a><span class="in">  mean(pinguins$massa_corporal, na.rm = TRUE) </span></span>
-<span id="cb393-5"><a href="9-2-r-markdown.html#cb393-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb393-6"><a href="9-2-r-markdown.html#cb393-6" aria-hidden="true" tabindex="-1"></a><span class="in"># converte de gramas para kilogramas</span></span>
-<span id="cb393-7"><a href="9-2-r-markdown.html#cb393-7" aria-hidden="true" tabindex="-1"></a><span class="in">media_massa_kg_completo &lt;-</span></span>
-<span id="cb393-8"><a href="9-2-r-markdown.html#cb393-8" aria-hidden="true" tabindex="-1"></a><span class="in">  media_massa_g / 1000 </span></span>
-<span id="cb393-9"><a href="9-2-r-markdown.html#cb393-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb393-10"><a href="9-2-r-markdown.html#cb393-10" aria-hidden="true" tabindex="-1"></a><span class="in"># arredonda o valor para ter uma casa decimal</span></span>
-<span id="cb393-11"><a href="9-2-r-markdown.html#cb393-11" aria-hidden="true" tabindex="-1"></a><span class="in">media_massa_kg &lt;- round(media_massa_kg_completo, 1)</span></span>
-<span id="cb393-12"><a href="9-2-r-markdown.html#cb393-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb393-13"><a href="9-2-r-markdown.html#cb393-13" aria-hidden="true" tabindex="-1"></a><span class="in"># exibe o resultado</span></span>
-<span id="cb393-14"><a href="9-2-r-markdown.html#cb393-14" aria-hidden="true" tabindex="-1"></a><span class="in">media_massa_kg </span></span>
-<span id="cb393-15"><a href="9-2-r-markdown.html#cb393-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb425"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb425-1"><a href="9-2-r-markdown.html#cb425-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb425-2"><a href="9-2-r-markdown.html#cb425-2" aria-hidden="true" tabindex="-1"></a><span class="in"># calcula a média</span></span>
+<span id="cb425-3"><a href="9-2-r-markdown.html#cb425-3" aria-hidden="true" tabindex="-1"></a><span class="in">media_massa_g &lt;-</span></span>
+<span id="cb425-4"><a href="9-2-r-markdown.html#cb425-4" aria-hidden="true" tabindex="-1"></a><span class="in">  mean(pinguins$massa_corporal, na.rm = TRUE) </span></span>
+<span id="cb425-5"><a href="9-2-r-markdown.html#cb425-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb425-6"><a href="9-2-r-markdown.html#cb425-6" aria-hidden="true" tabindex="-1"></a><span class="in"># converte de gramas para kilogramas</span></span>
+<span id="cb425-7"><a href="9-2-r-markdown.html#cb425-7" aria-hidden="true" tabindex="-1"></a><span class="in">media_massa_kg_completo &lt;-</span></span>
+<span id="cb425-8"><a href="9-2-r-markdown.html#cb425-8" aria-hidden="true" tabindex="-1"></a><span class="in">  media_massa_g / 1000 </span></span>
+<span id="cb425-9"><a href="9-2-r-markdown.html#cb425-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb425-10"><a href="9-2-r-markdown.html#cb425-10" aria-hidden="true" tabindex="-1"></a><span class="in"># arredonda o valor para ter uma casa decimal</span></span>
+<span id="cb425-11"><a href="9-2-r-markdown.html#cb425-11" aria-hidden="true" tabindex="-1"></a><span class="in">media_massa_kg &lt;- round(media_massa_kg_completo, 1)</span></span>
+<span id="cb425-12"><a href="9-2-r-markdown.html#cb425-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb425-13"><a href="9-2-r-markdown.html#cb425-13" aria-hidden="true" tabindex="-1"></a><span class="in"># exibe o resultado</span></span>
+<span id="cb425-14"><a href="9-2-r-markdown.html#cb425-14" aria-hidden="true" tabindex="-1"></a><span class="in">media_massa_kg </span></span>
+<span id="cb425-15"><a href="9-2-r-markdown.html#cb425-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <p><strong>Resultado:</strong></p>
-<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="9-2-r-markdown.html#cb394-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calcula a média</span></span>
-<span id="cb394-2"><a href="9-2-r-markdown.html#cb394-2" aria-hidden="true" tabindex="-1"></a>media_massa_g <span class="ot">&lt;-</span></span>
-<span id="cb394-3"><a href="9-2-r-markdown.html#cb394-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(pinguins<span class="sc">$</span>massa_corporal, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) </span>
-<span id="cb394-4"><a href="9-2-r-markdown.html#cb394-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb394-5"><a href="9-2-r-markdown.html#cb394-5" aria-hidden="true" tabindex="-1"></a><span class="co"># converte de gramas para kilogramas</span></span>
-<span id="cb394-6"><a href="9-2-r-markdown.html#cb394-6" aria-hidden="true" tabindex="-1"></a>media_massa_kg_completo <span class="ot">&lt;-</span></span>
-<span id="cb394-7"><a href="9-2-r-markdown.html#cb394-7" aria-hidden="true" tabindex="-1"></a>  media_massa_g <span class="sc">/</span> <span class="dv">1000</span> </span>
-<span id="cb394-8"><a href="9-2-r-markdown.html#cb394-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb394-9"><a href="9-2-r-markdown.html#cb394-9" aria-hidden="true" tabindex="-1"></a><span class="co"># arredonda o valor para ter uma casa decimal</span></span>
-<span id="cb394-10"><a href="9-2-r-markdown.html#cb394-10" aria-hidden="true" tabindex="-1"></a>media_massa_kg <span class="ot">&lt;-</span> <span class="fu">round</span>(media_massa_kg_completo, <span class="dv">1</span>)</span>
-<span id="cb394-11"><a href="9-2-r-markdown.html#cb394-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb394-12"><a href="9-2-r-markdown.html#cb394-12" aria-hidden="true" tabindex="-1"></a><span class="co"># exibe o resultado</span></span>
-<span id="cb394-13"><a href="9-2-r-markdown.html#cb394-13" aria-hidden="true" tabindex="-1"></a>media_massa_kg </span></code></pre></div>
+<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="9-2-r-markdown.html#cb426-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calcula a média</span></span>
+<span id="cb426-2"><a href="9-2-r-markdown.html#cb426-2" aria-hidden="true" tabindex="-1"></a>media_massa_g <span class="ot">&lt;-</span></span>
+<span id="cb426-3"><a href="9-2-r-markdown.html#cb426-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(pinguins<span class="sc">$</span>massa_corporal, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb426-4"><a href="9-2-r-markdown.html#cb426-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb426-5"><a href="9-2-r-markdown.html#cb426-5" aria-hidden="true" tabindex="-1"></a><span class="co"># converte de gramas para kilogramas</span></span>
+<span id="cb426-6"><a href="9-2-r-markdown.html#cb426-6" aria-hidden="true" tabindex="-1"></a>media_massa_kg_completo <span class="ot">&lt;-</span></span>
+<span id="cb426-7"><a href="9-2-r-markdown.html#cb426-7" aria-hidden="true" tabindex="-1"></a>  media_massa_g <span class="sc">/</span> <span class="dv">1000</span> </span>
+<span id="cb426-8"><a href="9-2-r-markdown.html#cb426-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb426-9"><a href="9-2-r-markdown.html#cb426-9" aria-hidden="true" tabindex="-1"></a><span class="co"># arredonda o valor para ter uma casa decimal</span></span>
+<span id="cb426-10"><a href="9-2-r-markdown.html#cb426-10" aria-hidden="true" tabindex="-1"></a>media_massa_kg <span class="ot">&lt;-</span> <span class="fu">round</span>(media_massa_kg_completo, <span class="dv">1</span>)</span>
+<span id="cb426-11"><a href="9-2-r-markdown.html#cb426-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb426-12"><a href="9-2-r-markdown.html#cb426-12" aria-hidden="true" tabindex="-1"></a><span class="co"># exibe o resultado</span></span>
+<span id="cb426-13"><a href="9-2-r-markdown.html#cb426-13" aria-hidden="true" tabindex="-1"></a>media_massa_kg </span></code></pre></div>
 <pre><code>## [1] 4.2</code></pre>
 <p>Veja que no resultado obtivemos o código em R e também o resultado deste código. Dependendo do público alvo do relatório, não queremos mostrar códigos. É possível escondê-los (e fazer muito mais!) alterando as opções de chunks (ou <em>chunk options</em> em Inglês). Veremos mais sobre isso posteriormente!</p>
 </div>
@@ -463,7 +470,7 @@ Para adicionar esses resultados nos relatórios, não é muito prático adiciona
 <h4>Inline code</h4>
 <p>Para que um resultado de código apareça ao longo do texto, é possivel usar a seguinte estrutura: <code>`r `</code> .</p>
 <p><strong>Exemplo:</strong></p>
-<div class="sourceCode" id="cb396"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb396-1"><a href="9-2-r-markdown.html#cb396-1" aria-hidden="true" tabindex="-1"></a>A média da massa corporal dos pinguins é <span class="in">`r media_massa_kg`</span> kg.</span></code></pre></div>
+<div class="sourceCode" id="cb428"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb428-1"><a href="9-2-r-markdown.html#cb428-1" aria-hidden="true" tabindex="-1"></a>A média da massa corporal dos pinguins é <span class="in">`r media_massa_kg`</span> kg.</span></code></pre></div>
 <p><strong>Resultado:</strong></p>
 <blockquote>
 <p>A média da massa corporal dos pinguins é 4.2 kg.</p>
@@ -476,7 +483,7 @@ Para adicionar esses resultados nos relatórios, não é muito prático adiciona
 <p>Porém, quando utilizamos arquivos RMarkdown também podemos adicionar imagens usando código em R, com a função <code>include_graphics</code> do pacote <code>knitr</code>.</p>
 <p>Usando o <code>knitr</code> é possível personalizar de forma mais intuitiva como a imagem aparecerá no arquivo final: você pode adicionar uma imagem utilizando como primeiro argumento a url da imagem ou o caminho onde ela está no projeto. Além disso, com as opções de chunks (ou <em>chunk options</em> em Inglês), poderemos personalizar diversos atributos da imagem, como: legenda, tamanho, alinhamento, entre outros.</p>
 <p>Veja o exemplo abaixo:</p>
-<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="9-2-r-markdown.html#cb397-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://cienciadedatos.github.io/dados/reference/figures/dados-hex.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb429"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb429-1"><a href="9-2-r-markdown.html#cb429-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;https://cienciadedatos.github.io/dados/reference/figures/dados-hex.png&quot;</span>)</span></code></pre></div>
 <p><img src="https://cienciadedatos.github.io/dados/reference/figures/dados-hex.png" width="30%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="tabelas-1" class="section level3" number="9.2.3">
@@ -484,18 +491,18 @@ Para adicionar esses resultados nos relatórios, não é muito prático adiciona
 <p>Na seção anterior (sobre <a href="9-1-markdown.html#markdown">Markdown</a>), foi apresentado como adicionar uma tabela utilizando Markdown.</p>
 <p>Porém quando utilizamos arquivos R Markdown também é possível adicionar tabelas que resultam de códigos em R.</p>
 <p>Existem algumas funções diferentes para fazer isso. Para apresentar alguns exemplos, primeiramente vamos salvar uma versão da base pinguins:</p>
-<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="9-2-r-markdown.html#cb398-1" aria-hidden="true" tabindex="-1"></a>media_massa <span class="ot">&lt;-</span> pinguins <span class="sc">%&gt;%</span> <span class="co"># usamos a base de pinguins</span></span>
-<span id="cb398-2"><a href="9-2-r-markdown.html#cb398-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># agrupamos por especies e ilhas</span></span>
-<span id="cb398-3"><a href="9-2-r-markdown.html#cb398-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(especies, ilha) <span class="sc">%&gt;%</span>  </span>
-<span id="cb398-4"><a href="9-2-r-markdown.html#cb398-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculamos a média da massa corporal </span></span>
-<span id="cb398-5"><a href="9-2-r-markdown.html#cb398-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">media_massa =</span> <span class="fu">mean</span>(massa_corporal, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb398-6"><a href="9-2-r-markdown.html#cb398-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># criamos uma nova coluna, com a massa em kg, e arredondada com 2 casas decimais</span></span>
-<span id="cb398-7"><a href="9-2-r-markdown.html#cb398-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">media_massa_kg =</span> <span class="fu">round</span>(media_massa <span class="sc">/</span> <span class="dv">1000</span>, <span class="dv">2</span>)) <span class="sc">%&gt;%</span>  </span>
-<span id="cb398-8"><a href="9-2-r-markdown.html#cb398-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># removemos a coluna da massa em gramas</span></span>
-<span id="cb398-9"><a href="9-2-r-markdown.html#cb398-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>media_massa)</span>
-<span id="cb398-10"><a href="9-2-r-markdown.html#cb398-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb398-11"><a href="9-2-r-markdown.html#cb398-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Apresentamos o resultado da tabela:</span></span>
-<span id="cb398-12"><a href="9-2-r-markdown.html#cb398-12" aria-hidden="true" tabindex="-1"></a>media_massa</span></code></pre></div>
+<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="9-2-r-markdown.html#cb430-1" aria-hidden="true" tabindex="-1"></a>media_massa <span class="ot">&lt;-</span> pinguins <span class="sc">%&gt;%</span> <span class="co"># usamos a base de pinguins</span></span>
+<span id="cb430-2"><a href="9-2-r-markdown.html#cb430-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># agrupamos por especies e ilhas</span></span>
+<span id="cb430-3"><a href="9-2-r-markdown.html#cb430-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(especies, ilha) <span class="sc">%&gt;%</span>  </span>
+<span id="cb430-4"><a href="9-2-r-markdown.html#cb430-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculamos a média da massa corporal </span></span>
+<span id="cb430-5"><a href="9-2-r-markdown.html#cb430-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">media_massa =</span> <span class="fu">mean</span>(massa_corporal, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb430-6"><a href="9-2-r-markdown.html#cb430-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># criamos uma nova coluna, com a massa em kg, e arredondada com 2 casas decimais</span></span>
+<span id="cb430-7"><a href="9-2-r-markdown.html#cb430-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">media_massa_kg =</span> <span class="fu">round</span>(media_massa <span class="sc">/</span> <span class="dv">1000</span>, <span class="dv">2</span>)) <span class="sc">%&gt;%</span>  </span>
+<span id="cb430-8"><a href="9-2-r-markdown.html#cb430-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># removemos a coluna da massa em gramas</span></span>
+<span id="cb430-9"><a href="9-2-r-markdown.html#cb430-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>media_massa)</span>
+<span id="cb430-10"><a href="9-2-r-markdown.html#cb430-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb430-11"><a href="9-2-r-markdown.html#cb430-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Apresentamos o resultado da tabela:</span></span>
+<span id="cb430-12"><a href="9-2-r-markdown.html#cb430-12" aria-hidden="true" tabindex="-1"></a>media_massa</span></code></pre></div>
 <pre><code>## # A tibble: 5 x 3
 ## # Groups:   especies [3]
 ##   especies            ilha      media_massa_kg
@@ -509,8 +516,8 @@ Para adicionar esses resultados nos relatórios, não é muito prático adiciona
 <ul>
 <li>Utilizando o pacote <code>knitr</code>: função <code>kable()</code></li>
 </ul>
-<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="9-2-r-markdown.html#cb400-1" aria-hidden="true" tabindex="-1"></a>media_massa <span class="sc">%&gt;%</span></span>
-<span id="cb400-2"><a href="9-2-r-markdown.html#cb400-2" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="9-2-r-markdown.html#cb432-1" aria-hidden="true" tabindex="-1"></a>media_massa <span class="sc">%&gt;%</span></span>
+<span id="cb432-2"><a href="9-2-r-markdown.html#cb432-2" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -550,10 +557,10 @@ Para adicionar esses resultados nos relatórios, não é muito prático adiciona
 <ul>
 <li>Utilizando o pacote <code>DT</code>: função <code>datatable()</code></li>
 </ul>
-<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="9-2-r-markdown.html#cb401-1" aria-hidden="true" tabindex="-1"></a>media_massa <span class="sc">%&gt;%</span></span>
-<span id="cb401-2"><a href="9-2-r-markdown.html#cb401-2" aria-hidden="true" tabindex="-1"></a>  DT<span class="sc">::</span><span class="fu">datatable</span>()</span></code></pre></div>
-<div id="htmlwidget-874dbba5bfc31df59b36" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-874dbba5bfc31df59b36">{"x":{"filter":"none","data":[["1","2","3","4","5"],["Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-barbicha","Pinguim-gentoo"],["Biscoe","Dream","Torgersen","Dream","Biscoe"],[3.71,3.69,3.71,3.73,5.08]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>especies<\/th>\n      <th>ilha<\/th>\n      <th>media_massa_kg<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="9-2-r-markdown.html#cb433-1" aria-hidden="true" tabindex="-1"></a>media_massa <span class="sc">%&gt;%</span></span>
+<span id="cb433-2"><a href="9-2-r-markdown.html#cb433-2" aria-hidden="true" tabindex="-1"></a>  DT<span class="sc">::</span><span class="fu">datatable</span>()</span></code></pre></div>
+<div id="htmlwidget-2b0f7db4ee79c2f085f9" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2b0f7db4ee79c2f085f9">{"x":{"filter":"none","data":[["1","2","3","4","5"],["Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-barbicha","Pinguim-gentoo"],["Biscoe","Dream","Torgersen","Dream","Biscoe"],[3.71,3.69,3.71,3.73,5.08]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>especies<\/th>\n      <th>ilha<\/th>\n      <th>media_massa_kg<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p>Os exemplos anteriores são as formas mais simples de apresentar as tabelas, porém cada pacote possibilita diferentes personalizações (por exemplo, alterar o nome das colunas, etc). Existem outros pacotes que permitem adicionar tabela nos relatórios em RMarkdown, como por exemplo:</p>
 <ul>
 <li><p><a href="https://glin.github.io/reactable/index.html">reactable</a></p></li>

@@ -280,7 +280,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#spread"><i class="fa fa-check"></i><b>7.3.2</b> <code>spread()</code></a></li>
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a></li>
+<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#introdução"><i class="fa fa-check"></i><b>7.4.1</b> Introdução</a></li>
+<li class="chapter" data-level="7.4.2" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-básicas"><i class="fa fa-check"></i><b>7.4.2</b> Funções básicas</a></li>
+<li class="chapter" data-level="7.4.3" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#expressões-regulares"><i class="fa fa-check"></i><b>7.4.3</b> Expressões Regulares</a></li>
+<li class="chapter" data-level="7.4.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-que-utilizam-regex"><i class="fa fa-check"></i><b>7.4.4</b> Funções que utilizam regex</a></li>
+<li class="chapter" data-level="7.4.5" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#exercícios-17"><i class="fa fa-check"></i><b>7.4.5</b> Exercícios</a></li>
+</ul></li>
 <li class="chapter" data-level="7.5" data-path="7-5-forcats.html"><a href="7-5-forcats.html"><i class="fa fa-check"></i><b>7.5</b> O pacote forcats</a></li>
 <li class="chapter" data-level="7.6" data-path="7-6-o-pacote-lubridate.html"><a href="7-6-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.6</b> O pacote lubridate</a></li>
 </ul></li>
@@ -296,7 +303,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.6" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#escalas"><i class="fa fa-check"></i><b>8.1.6</b> Escalas</a></li>
 <li class="chapter" data-level="8.1.7" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#temas"><i class="fa fa-check"></i><b>8.1.7</b> Temas</a></li>
 <li class="chapter" data-level="8.1.8" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>8.1.8</b> Juntando gráficos</a></li>
-<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-17"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
+<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-18"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a>
 <ul>
@@ -398,7 +405,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3>Selecionando colunas</h3>
 <p>Utilize a base <code>imdb</code> nos exercícios a seguir.</p>
 <p><strong>1.</strong> Teste aplicar a função <code>glimpse()</code> do pacote <code>{dplyr}</code> à base <code>imdb</code>. O que ela faz?</p>
-<div class="sourceCode" id="cb643"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb643-1"><a href="12-4-o-pacote-dplyr.html#cb643-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(imdb)</span></code></pre></div>
+<div class="sourceCode" id="cb675"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb675-1"><a href="12-4-o-pacote-dplyr.html#cb675-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(imdb)</span></code></pre></div>
 <pre><code>## Rows: 3,807
 ## Columns: 15
 ## $ titulo         &lt;chr&gt; &quot;Avatar &quot;, &quot;Pirates of the Caribbean: At World&#39;s End &quot;,…
@@ -419,8 +426,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>A função <code>glimpse()</code> traz um resumo da base, contendo o número de linhas, colunas, o nome e tipo das colunas e as primeiras observações de cada coluna.</em></p>
 <hr />
 <p><strong>2.</strong> Crie uma tabela com apenas as colunas <code>titulo</code>, <code>diretor</code>, e <code>orcamento.</code> Salve em um objeto chamado <code>imdb_simples</code>.</p>
-<div class="sourceCode" id="cb645"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb645-1"><a href="12-4-o-pacote-dplyr.html#cb645-1" aria-hidden="true" tabindex="-1"></a>imdb_simples <span class="ot">&lt;-</span> <span class="fu">select</span>(imdb, titulo, diretor, orcamento)</span>
-<span id="cb645-2"><a href="12-4-o-pacote-dplyr.html#cb645-2" aria-hidden="true" tabindex="-1"></a>imdb_simples</span></code></pre></div>
+<div class="sourceCode" id="cb677"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb677-1"><a href="12-4-o-pacote-dplyr.html#cb677-1" aria-hidden="true" tabindex="-1"></a>imdb_simples <span class="ot">&lt;-</span> <span class="fu">select</span>(imdb, titulo, diretor, orcamento)</span>
+<span id="cb677-2"><a href="12-4-o-pacote-dplyr.html#cb677-2" aria-hidden="true" tabindex="-1"></a>imdb_simples</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 3
 ##    titulo                                      diretor           orcamento
 ##    &lt;chr&gt;                                       &lt;chr&gt;                 &lt;dbl&gt;
@@ -437,7 +444,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 3,797 more rows</code></pre>
 <hr />
 <p><strong>3.</strong> Selecione apenas as colunas <code>ator_1</code>, <code>ator_2</code> e <code>ator_3</code> usando o ajudante <code>contains()</code>.</p>
-<div class="sourceCode" id="cb647"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb647-1"><a href="12-4-o-pacote-dplyr.html#cb647-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(imdb, <span class="fu">contains</span>(<span class="st">&quot;ator&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb679"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb679-1"><a href="12-4-o-pacote-dplyr.html#cb679-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(imdb, <span class="fu">contains</span>(<span class="st">&quot;ator&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 3
 ##    ator_1          ator_2            ator_3              
 ##    &lt;chr&gt;           &lt;chr&gt;             &lt;chr&gt;               
@@ -454,43 +461,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 3,797 more rows</code></pre>
 <hr />
 <p><strong>4.</strong> Usando a função <code>select()</code> (e seus ajudantes), escreva códigos que retornem a base IMDB sem as colunas <code>ator_1</code>, <code>ator_2</code> e <code>ator_3.</code> Escreva todas as soluções diferentes que você conseguir pensar.</p>
-<div class="sourceCode" id="cb649"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb649-1"><a href="12-4-o-pacote-dplyr.html#cb649-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(imdb, <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;ator&quot;</span>))</span>
-<span id="cb649-2"><a href="12-4-o-pacote-dplyr.html#cb649-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb649-3"><a href="12-4-o-pacote-dplyr.html#cb649-3" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(imdb, <span class="sc">-</span>ator_1, <span class="sc">-</span>ator_2, <span class="sc">-</span>ator_3)</span>
-<span id="cb649-4"><a href="12-4-o-pacote-dplyr.html#cb649-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb649-5"><a href="12-4-o-pacote-dplyr.html#cb649-5" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(imdb, <span class="sc">-</span>(ator_1<span class="sc">:</span>ator_3))</span>
-<span id="cb649-6"><a href="12-4-o-pacote-dplyr.html#cb649-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb649-7"><a href="12-4-o-pacote-dplyr.html#cb649-7" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(imdb, titulo<span class="sc">:</span>likes_facebook)</span>
-<span id="cb649-8"><a href="12-4-o-pacote-dplyr.html#cb649-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb649-9"><a href="12-4-o-pacote-dplyr.html#cb649-9" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(imdb, <span class="sc">-</span><span class="fu">contains</span>(<span class="st">&quot;ator&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb681"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb681-1"><a href="12-4-o-pacote-dplyr.html#cb681-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(imdb, <span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;ator&quot;</span>))</span>
+<span id="cb681-2"><a href="12-4-o-pacote-dplyr.html#cb681-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb681-3"><a href="12-4-o-pacote-dplyr.html#cb681-3" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(imdb, <span class="sc">-</span>ator_1, <span class="sc">-</span>ator_2, <span class="sc">-</span>ator_3)</span>
+<span id="cb681-4"><a href="12-4-o-pacote-dplyr.html#cb681-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb681-5"><a href="12-4-o-pacote-dplyr.html#cb681-5" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(imdb, <span class="sc">-</span>(ator_1<span class="sc">:</span>ator_3))</span>
+<span id="cb681-6"><a href="12-4-o-pacote-dplyr.html#cb681-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb681-7"><a href="12-4-o-pacote-dplyr.html#cb681-7" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(imdb, titulo<span class="sc">:</span>likes_facebook)</span>
+<span id="cb681-8"><a href="12-4-o-pacote-dplyr.html#cb681-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb681-9"><a href="12-4-o-pacote-dplyr.html#cb681-9" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(imdb, <span class="sc">-</span><span class="fu">contains</span>(<span class="st">&quot;ator&quot;</span>))</span></code></pre></div>
 </div>
 <div id="ordenando-a-base-1" class="section level3 unnumbered">
 <h3>Ordenando a base</h3>
 <p><strong>1.</strong> Ordene os filmes em ordem crescente de <code>ano</code> e decrescente de <code>receita</code> e salve em um objeto chamado <code>filmes_ordenados</code>.</p>
-<div class="sourceCode" id="cb650"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb650-1"><a href="12-4-o-pacote-dplyr.html#cb650-1" aria-hidden="true" tabindex="-1"></a>filmes_ordenados <span class="ot">&lt;-</span> <span class="fu">arrange</span>(imdb, ano, <span class="fu">desc</span>(receita))</span></code></pre></div>
+<div class="sourceCode" id="cb682"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb682-1"><a href="12-4-o-pacote-dplyr.html#cb682-1" aria-hidden="true" tabindex="-1"></a>filmes_ordenados <span class="ot">&lt;-</span> <span class="fu">arrange</span>(imdb, ano, <span class="fu">desc</span>(receita))</span></code></pre></div>
 <hr />
 <p><strong>2.</strong> Selecione apenas as colunas <code>titulo</code> e <code>orcamento</code> e então ordene de forma decrescente pelo <code>orcamento</code>.</p>
-<div class="sourceCode" id="cb651"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb651-1"><a href="12-4-o-pacote-dplyr.html#cb651-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aninhando as funções</span></span>
-<span id="cb651-2"><a href="12-4-o-pacote-dplyr.html#cb651-2" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(<span class="fu">select</span>(imdb, titulo, orcamento), <span class="fu">desc</span>(orcamento))</span>
-<span id="cb651-3"><a href="12-4-o-pacote-dplyr.html#cb651-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb651-4"><a href="12-4-o-pacote-dplyr.html#cb651-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando objeto intermediário</span></span>
-<span id="cb651-5"><a href="12-4-o-pacote-dplyr.html#cb651-5" aria-hidden="true" tabindex="-1"></a>imdb_aux <span class="ot">&lt;-</span> <span class="fu">select</span>(imdb, titulo, orcamento)</span>
-<span id="cb651-6"><a href="12-4-o-pacote-dplyr.html#cb651-6" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(imdb_aux, <span class="fu">desc</span>(orcamento))</span>
-<span id="cb651-7"><a href="12-4-o-pacote-dplyr.html#cb651-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb651-8"><a href="12-4-o-pacote-dplyr.html#cb651-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Pipe s2</span></span>
-<span id="cb651-9"><a href="12-4-o-pacote-dplyr.html#cb651-9" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb651-10"><a href="12-4-o-pacote-dplyr.html#cb651-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(titulo, orcamento) <span class="sc">%&gt;%</span> </span>
-<span id="cb651-11"><a href="12-4-o-pacote-dplyr.html#cb651-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(orcamento))</span></code></pre></div>
+<div class="sourceCode" id="cb683"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb683-1"><a href="12-4-o-pacote-dplyr.html#cb683-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aninhando as funções</span></span>
+<span id="cb683-2"><a href="12-4-o-pacote-dplyr.html#cb683-2" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(<span class="fu">select</span>(imdb, titulo, orcamento), <span class="fu">desc</span>(orcamento))</span>
+<span id="cb683-3"><a href="12-4-o-pacote-dplyr.html#cb683-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb683-4"><a href="12-4-o-pacote-dplyr.html#cb683-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando objeto intermediário</span></span>
+<span id="cb683-5"><a href="12-4-o-pacote-dplyr.html#cb683-5" aria-hidden="true" tabindex="-1"></a>imdb_aux <span class="ot">&lt;-</span> <span class="fu">select</span>(imdb, titulo, orcamento)</span>
+<span id="cb683-6"><a href="12-4-o-pacote-dplyr.html#cb683-6" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(imdb_aux, <span class="fu">desc</span>(orcamento))</span>
+<span id="cb683-7"><a href="12-4-o-pacote-dplyr.html#cb683-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb683-8"><a href="12-4-o-pacote-dplyr.html#cb683-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Pipe s2</span></span>
+<span id="cb683-9"><a href="12-4-o-pacote-dplyr.html#cb683-9" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb683-10"><a href="12-4-o-pacote-dplyr.html#cb683-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(titulo, orcamento) <span class="sc">%&gt;%</span> </span>
+<span id="cb683-11"><a href="12-4-o-pacote-dplyr.html#cb683-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(orcamento))</span></code></pre></div>
 </div>
 <div id="filtrando-linhas-1" class="section level3 unnumbered">
 <h3>Filtrando linhas</h3>
 <p>Utilize a base <code>imdb</code> nos exercícios a seguir.</p>
 <p><strong>1.</strong> Crie um objeto chamado <code>filmes_pb</code> apenas com filmes preto e branco.</p>
-<div class="sourceCode" id="cb652"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb652-1"><a href="12-4-o-pacote-dplyr.html#cb652-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vendo categorias da variável cor</span></span>
-<span id="cb652-2"><a href="12-4-o-pacote-dplyr.html#cb652-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(imdb<span class="sc">$</span>cor)</span></code></pre></div>
+<div class="sourceCode" id="cb684"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb684-1"><a href="12-4-o-pacote-dplyr.html#cb684-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vendo categorias da variável cor</span></span>
+<span id="cb684-2"><a href="12-4-o-pacote-dplyr.html#cb684-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(imdb<span class="sc">$</span>cor)</span></code></pre></div>
 <pre><code>## [1] &quot;Color&quot;           &quot;Black and White&quot; NA</code></pre>
-<div class="sourceCode" id="cb654"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb654-1"><a href="12-4-o-pacote-dplyr.html#cb654-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrando</span></span>
-<span id="cb654-2"><a href="12-4-o-pacote-dplyr.html#cb654-2" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> <span class="fu">filter</span>(cor <span class="sc">==</span> <span class="st">&quot;Black and White&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb686"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb686-1"><a href="12-4-o-pacote-dplyr.html#cb686-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrando</span></span>
+<span id="cb686-2"><a href="12-4-o-pacote-dplyr.html#cb686-2" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> <span class="fu">filter</span>(cor <span class="sc">==</span> <span class="st">&quot;Black and White&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 149 x 15
 ##    titulo     ano diretor  duracao cor    generos  pais  classificacao orcamento
 ##    &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;
@@ -508,13 +515,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   likes_facebook &lt;dbl&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <hr />
 <p><strong>2.</strong> Crie um objeto chamado <code>curtos_legais</code> com filmes de 90 minutos ou menos de duração e nota no imdb maior do que 8.5.</p>
-<div class="sourceCode" id="cb656"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb656-1"><a href="12-4-o-pacote-dplyr.html#cb656-1" aria-hidden="true" tabindex="-1"></a>curtos_legais <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb656-2"><a href="12-4-o-pacote-dplyr.html#cb656-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(duracao <span class="sc">&lt;=</span> <span class="dv">90</span>, nota_imdb <span class="sc">&gt;</span> <span class="fl">8.5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb688"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb688-1"><a href="12-4-o-pacote-dplyr.html#cb688-1" aria-hidden="true" tabindex="-1"></a>curtos_legais <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb688-2"><a href="12-4-o-pacote-dplyr.html#cb688-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(duracao <span class="sc">&lt;=</span> <span class="dv">90</span>, nota_imdb <span class="sc">&gt;</span> <span class="fl">8.5</span>)</span></code></pre></div>
 <hr />
 <p><strong>3.</strong> Retorne tabelas (<code>tibbles</code>) apenas com:</p>
 <p><strong>a.</strong> filmes coloridos anteriores a 1950;</p>
-<div class="sourceCode" id="cb657"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb657-1"><a href="12-4-o-pacote-dplyr.html#cb657-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb657-2"><a href="12-4-o-pacote-dplyr.html#cb657-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(cor <span class="sc">==</span> <span class="st">&quot;Color&quot;</span>, ano <span class="sc">&lt;</span> <span class="dv">1950</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb689"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb689-1"><a href="12-4-o-pacote-dplyr.html#cb689-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb689-2"><a href="12-4-o-pacote-dplyr.html#cb689-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(cor <span class="sc">==</span> <span class="st">&quot;Color&quot;</span>, ano <span class="sc">&lt;</span> <span class="dv">1950</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 14 x 15
 ##    titulo      ano diretor duracao cor   generos   pais  classificacao orcamento
 ##    &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;
@@ -535,8 +542,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 6 more variables: receita &lt;dbl&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;dbl&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <p><strong>b.</strong> filmes do “Woody Allen” ou do “Wes Anderson”;</p>
-<div class="sourceCode" id="cb659"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb659-1"><a href="12-4-o-pacote-dplyr.html#cb659-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb659-2"><a href="12-4-o-pacote-dplyr.html#cb659-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(diretor <span class="sc">==</span> <span class="st">&quot;Woody Allen&quot;</span> <span class="sc">|</span> diretor <span class="sc">==</span> <span class="st">&quot;Wes Anderson&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb691"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb691-1"><a href="12-4-o-pacote-dplyr.html#cb691-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb691-2"><a href="12-4-o-pacote-dplyr.html#cb691-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(diretor <span class="sc">==</span> <span class="st">&quot;Woody Allen&quot;</span> <span class="sc">|</span> diretor <span class="sc">==</span> <span class="st">&quot;Wes Anderson&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 25 x 15
 ##    titulo      ano diretor duracao cor   generos   pais  classificacao orcamento
 ##    &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;
@@ -553,10 +560,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 15 more rows, and 6 more variables: receita &lt;dbl&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;dbl&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <p><strong>c.</strong> filmes do “Steven Spielberg” ordenados de forma decrescente por ano, mostrando apenas as colunas <code>titulo</code> e <code>ano</code>;</p>
-<div class="sourceCode" id="cb661"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb661-1"><a href="12-4-o-pacote-dplyr.html#cb661-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb661-2"><a href="12-4-o-pacote-dplyr.html#cb661-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(diretor <span class="sc">==</span> <span class="st">&quot;Steven Spielberg&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb661-3"><a href="12-4-o-pacote-dplyr.html#cb661-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(ano)) <span class="sc">%&gt;%</span> </span>
-<span id="cb661-4"><a href="12-4-o-pacote-dplyr.html#cb661-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(titulo, ano)</span></code></pre></div>
+<div class="sourceCode" id="cb693"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb693-1"><a href="12-4-o-pacote-dplyr.html#cb693-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb693-2"><a href="12-4-o-pacote-dplyr.html#cb693-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(diretor <span class="sc">==</span> <span class="st">&quot;Steven Spielberg&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb693-3"><a href="12-4-o-pacote-dplyr.html#cb693-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(ano)) <span class="sc">%&gt;%</span> </span>
+<span id="cb693-4"><a href="12-4-o-pacote-dplyr.html#cb693-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(titulo, ano)</span></code></pre></div>
 <pre><code>## # A tibble: 24 x 2
 ##    titulo                                                ano
 ##    &lt;chr&gt;                                               &lt;dbl&gt;
@@ -572,11 +579,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 A.I. Artificial Intelligence                         2001
 ## # … with 14 more rows</code></pre>
 <p><strong>d.</strong> filmes que tenham “Action” <strong>ou</strong> “Comedy” entre os seus gêneros;</p>
-<div class="sourceCode" id="cb663"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb663-1"><a href="12-4-o-pacote-dplyr.html#cb663-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb663-2"><a href="12-4-o-pacote-dplyr.html#cb663-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb663-3"><a href="12-4-o-pacote-dplyr.html#cb663-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Solução 1</span></span>
-<span id="cb663-4"><a href="12-4-o-pacote-dplyr.html#cb663-4" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb663-5"><a href="12-4-o-pacote-dplyr.html#cb663-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(generos, <span class="st">&quot;Action&quot;</span>) <span class="sc">|</span> <span class="fu">str_detect</span>(generos, <span class="st">&quot;Comedy&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb695"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb695-1"><a href="12-4-o-pacote-dplyr.html#cb695-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb695-2"><a href="12-4-o-pacote-dplyr.html#cb695-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb695-3"><a href="12-4-o-pacote-dplyr.html#cb695-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Solução 1</span></span>
+<span id="cb695-4"><a href="12-4-o-pacote-dplyr.html#cb695-4" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb695-5"><a href="12-4-o-pacote-dplyr.html#cb695-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(generos, <span class="st">&quot;Action&quot;</span>) <span class="sc">|</span> <span class="fu">str_detect</span>(generos, <span class="st">&quot;Comedy&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 2,187 x 15
 ##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
 ##    &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;
@@ -593,8 +600,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 2,177 more rows, and 6 more variables: receita &lt;dbl&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;dbl&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <p><strong>e.</strong> filmes que tenham “Action” <strong>e</strong> “Comedy” entre os seus gêneros e tenha <code>nota_imdb</code> maior que 8;</p>
-<div class="sourceCode" id="cb665"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb665-1"><a href="12-4-o-pacote-dplyr.html#cb665-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb665-2"><a href="12-4-o-pacote-dplyr.html#cb665-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(generos, <span class="st">&quot;Action&quot;</span>), <span class="fu">str_detect</span>(generos, <span class="st">&quot;Comedy&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb697"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb697-1"><a href="12-4-o-pacote-dplyr.html#cb697-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb697-2"><a href="12-4-o-pacote-dplyr.html#cb697-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(generos, <span class="st">&quot;Action&quot;</span>), <span class="fu">str_detect</span>(generos, <span class="st">&quot;Comedy&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 203 x 15
 ##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
 ##    &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;
@@ -611,8 +618,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 193 more rows, and 6 more variables: receita &lt;dbl&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;dbl&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <p><strong>f.</strong> filmes que não possuem informação tanto de receita quanto de orçamento (isto é, possuem <code>NA</code> em ambas as colunas).</p>
-<div class="sourceCode" id="cb667"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb667-1"><a href="12-4-o-pacote-dplyr.html#cb667-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb667-2"><a href="12-4-o-pacote-dplyr.html#cb667-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(orcamento), <span class="fu">is.na</span>(receita))</span></code></pre></div>
+<div class="sourceCode" id="cb699"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb699-1"><a href="12-4-o-pacote-dplyr.html#cb699-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb699-2"><a href="12-4-o-pacote-dplyr.html#cb699-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(orcamento), <span class="fu">is.na</span>(receita))</span></code></pre></div>
 <pre><code>## # A tibble: 137 x 15
 ##    titulo    ano diretor  duracao cor    generos   pais  classificacao orcamento
 ##    &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;
@@ -632,12 +639,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="modificando-e-criando-novas-colunas-1" class="section level3 unnumbered">
 <h3>Modificando e criando novas colunas</h3>
 <p><strong>1.</strong> Crie uma coluna chamada <code>prejuizo</code> (<code>orcamento - receita</code>) e salve a nova tabela em um objeto chamado <code>imdb_prejuizo</code>. Em seguida, filtre apenas os filmes que deram prejuízo e ordene a tabela por ordem crescente de prejuízo.</p>
-<div class="sourceCode" id="cb669"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb669-1"><a href="12-4-o-pacote-dplyr.html#cb669-1" aria-hidden="true" tabindex="-1"></a>imdb_prejuizo <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb669-2"><a href="12-4-o-pacote-dplyr.html#cb669-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prejuizo =</span> orcamento <span class="sc">-</span> receita)</span>
-<span id="cb669-3"><a href="12-4-o-pacote-dplyr.html#cb669-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb669-4"><a href="12-4-o-pacote-dplyr.html#cb669-4" aria-hidden="true" tabindex="-1"></a>imdb_prejuizo <span class="sc">%&gt;%</span> </span>
-<span id="cb669-5"><a href="12-4-o-pacote-dplyr.html#cb669-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(prejuizo <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb669-6"><a href="12-4-o-pacote-dplyr.html#cb669-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(prejuizo)</span></code></pre></div>
+<div class="sourceCode" id="cb701"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb701-1"><a href="12-4-o-pacote-dplyr.html#cb701-1" aria-hidden="true" tabindex="-1"></a>imdb_prejuizo <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb701-2"><a href="12-4-o-pacote-dplyr.html#cb701-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prejuizo =</span> orcamento <span class="sc">-</span> receita)</span>
+<span id="cb701-3"><a href="12-4-o-pacote-dplyr.html#cb701-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb701-4"><a href="12-4-o-pacote-dplyr.html#cb701-4" aria-hidden="true" tabindex="-1"></a>imdb_prejuizo <span class="sc">%&gt;%</span> </span>
+<span id="cb701-5"><a href="12-4-o-pacote-dplyr.html#cb701-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(prejuizo <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb701-6"><a href="12-4-o-pacote-dplyr.html#cb701-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(prejuizo)</span></code></pre></div>
 <pre><code>## # A tibble: 1,312 x 16
 ##    titulo     ano diretor   duracao cor   generos  pais  classificacao orcamento
 ##    &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;
@@ -660,13 +667,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>b.</strong> <code>lucro_medio</code></p>
 <p><strong>c.</strong> <code>lucro_relativo = (lucro - lucro_medio)/lucro_medio</code></p>
 <p><strong>d.</strong> <code>houve_lucro = ifelse(lucro &gt; 0, "sim", "não")</code></p>
-<div class="sourceCode" id="cb671"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb671-1"><a href="12-4-o-pacote-dplyr.html#cb671-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb671-2"><a href="12-4-o-pacote-dplyr.html#cb671-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb671-3"><a href="12-4-o-pacote-dplyr.html#cb671-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro =</span> receita <span class="sc">-</span> orcamento,</span>
-<span id="cb671-4"><a href="12-4-o-pacote-dplyr.html#cb671-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro_medio =</span> <span class="fu">mean</span>(lucro, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb671-5"><a href="12-4-o-pacote-dplyr.html#cb671-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro_relativo =</span> (lucro <span class="sc">-</span> lucro_medio) <span class="sc">/</span> lucro_medio,</span>
-<span id="cb671-6"><a href="12-4-o-pacote-dplyr.html#cb671-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">houve_lucro =</span> <span class="fu">ifelse</span>(lucro <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">&quot;sim&quot;</span>, <span class="st">&quot;não&quot;</span>)</span>
-<span id="cb671-7"><a href="12-4-o-pacote-dplyr.html#cb671-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb703"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb703-1"><a href="12-4-o-pacote-dplyr.html#cb703-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb703-2"><a href="12-4-o-pacote-dplyr.html#cb703-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb703-3"><a href="12-4-o-pacote-dplyr.html#cb703-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro =</span> receita <span class="sc">-</span> orcamento,</span>
+<span id="cb703-4"><a href="12-4-o-pacote-dplyr.html#cb703-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro_medio =</span> <span class="fu">mean</span>(lucro, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb703-5"><a href="12-4-o-pacote-dplyr.html#cb703-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro_relativo =</span> (lucro <span class="sc">-</span> lucro_medio) <span class="sc">/</span> lucro_medio,</span>
+<span id="cb703-6"><a href="12-4-o-pacote-dplyr.html#cb703-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">houve_lucro =</span> <span class="fu">ifelse</span>(lucro <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">&quot;sim&quot;</span>, <span class="st">&quot;não&quot;</span>)</span>
+<span id="cb703-7"><a href="12-4-o-pacote-dplyr.html#cb703-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 19
 ##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
 ##    &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;
@@ -686,8 +693,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   houve_lucro &lt;chr&gt;</code></pre>
 <hr />
 <p><strong>3.</strong> Crie uma nova coluna que classifique o filme em <code>"recente"</code> (posterior a 2000) e <code>"antigo"</code> (de 2000 para trás).</p>
-<div class="sourceCode" id="cb673"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb673-1"><a href="12-4-o-pacote-dplyr.html#cb673-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb673-2"><a href="12-4-o-pacote-dplyr.html#cb673-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">antigo_ou_recente =</span> <span class="fu">ifelse</span>(ano <span class="sc">&gt;</span> <span class="dv">2000</span>, <span class="st">&quot;recente&quot;</span>, <span class="st">&quot;antigo&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb705"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb705-1"><a href="12-4-o-pacote-dplyr.html#cb705-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb705-2"><a href="12-4-o-pacote-dplyr.html#cb705-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">antigo_ou_recente =</span> <span class="fu">ifelse</span>(ano <span class="sc">&gt;</span> <span class="dv">2000</span>, <span class="st">&quot;recente&quot;</span>, <span class="st">&quot;antigo&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 16
 ##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
 ##    &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;
@@ -710,11 +717,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Utilize a base <code>imdb</code> nos exercícios a seguir.</p>
 <p><strong>1.</strong> Calcule a duração média e mediana dos filmes
 da base.</p>
-<div class="sourceCode" id="cb675"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb675-1"><a href="12-4-o-pacote-dplyr.html#cb675-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb675-2"><a href="12-4-o-pacote-dplyr.html#cb675-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb675-3"><a href="12-4-o-pacote-dplyr.html#cb675-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">duracao_media =</span> <span class="fu">mean</span>(duracao, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb675-4"><a href="12-4-o-pacote-dplyr.html#cb675-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">duracao_mediana =</span> <span class="fu">median</span>(duracao, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb675-5"><a href="12-4-o-pacote-dplyr.html#cb675-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb707"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb707-1"><a href="12-4-o-pacote-dplyr.html#cb707-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb707-2"><a href="12-4-o-pacote-dplyr.html#cb707-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb707-3"><a href="12-4-o-pacote-dplyr.html#cb707-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">duracao_media =</span> <span class="fu">mean</span>(duracao, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb707-4"><a href="12-4-o-pacote-dplyr.html#cb707-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">duracao_mediana =</span> <span class="fu">median</span>(duracao, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb707-5"><a href="12-4-o-pacote-dplyr.html#cb707-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 2
 ##   duracao_media duracao_mediana
 ##           &lt;dbl&gt;           &lt;dbl&gt;
@@ -722,26 +729,26 @@ da base.</p>
 <hr />
 <p><strong>2.</strong> Calcule o lucro médio dos filmes com duração
 menor que 60 minutos.</p>
-<div class="sourceCode" id="cb677"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb677-1"><a href="12-4-o-pacote-dplyr.html#cb677-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb677-2"><a href="12-4-o-pacote-dplyr.html#cb677-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(duracao <span class="sc">&lt;</span> <span class="dv">60</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb677-3"><a href="12-4-o-pacote-dplyr.html#cb677-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lucro =</span> receita <span class="sc">-</span> orcamento) <span class="sc">%&gt;%</span> </span>
-<span id="cb677-4"><a href="12-4-o-pacote-dplyr.html#cb677-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">lucro_medio =</span> <span class="fu">mean</span>(lucro, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb709"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb709-1"><a href="12-4-o-pacote-dplyr.html#cb709-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb709-2"><a href="12-4-o-pacote-dplyr.html#cb709-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(duracao <span class="sc">&lt;</span> <span class="dv">60</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb709-3"><a href="12-4-o-pacote-dplyr.html#cb709-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lucro =</span> receita <span class="sc">-</span> orcamento) <span class="sc">%&gt;%</span> </span>
+<span id="cb709-4"><a href="12-4-o-pacote-dplyr.html#cb709-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">lucro_medio =</span> <span class="fu">mean</span>(lucro, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##   lucro_medio
 ##         &lt;dbl&gt;
 ## 1     632454.</code></pre>
 <hr />
 <p><strong>3.</strong> Apresente na mesma tabela o lucro médio dos filmes com duracao menor que 60 minutos e o lucro médio dos filmes com duracao maior ou igual a 60 minutos.</p>
-<div class="sourceCode" id="cb679"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb679-1"><a href="12-4-o-pacote-dplyr.html#cb679-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb679-2"><a href="12-4-o-pacote-dplyr.html#cb679-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb679-3"><a href="12-4-o-pacote-dplyr.html#cb679-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro =</span> receita <span class="sc">-</span> orcamento,</span>
-<span id="cb679-4"><a href="12-4-o-pacote-dplyr.html#cb679-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">duracao_cat =</span> <span class="fu">ifelse</span>(duracao <span class="sc">&lt;</span> <span class="dv">60</span>, <span class="st">&quot;menor 60 min&quot;</span>, <span class="st">&quot;60 ou mais min&quot;</span>)</span>
-<span id="cb679-5"><a href="12-4-o-pacote-dplyr.html#cb679-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb679-6"><a href="12-4-o-pacote-dplyr.html#cb679-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(lucro)) <span class="sc">%&gt;%</span> </span>
-<span id="cb679-7"><a href="12-4-o-pacote-dplyr.html#cb679-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(duracao_cat) <span class="sc">%&gt;%</span> </span>
-<span id="cb679-8"><a href="12-4-o-pacote-dplyr.html#cb679-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb679-9"><a href="12-4-o-pacote-dplyr.html#cb679-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro_medio =</span> <span class="fu">mean</span>(lucro, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb679-10"><a href="12-4-o-pacote-dplyr.html#cb679-10" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb711"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb711-1"><a href="12-4-o-pacote-dplyr.html#cb711-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb711-2"><a href="12-4-o-pacote-dplyr.html#cb711-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb711-3"><a href="12-4-o-pacote-dplyr.html#cb711-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro =</span> receita <span class="sc">-</span> orcamento,</span>
+<span id="cb711-4"><a href="12-4-o-pacote-dplyr.html#cb711-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">duracao_cat =</span> <span class="fu">ifelse</span>(duracao <span class="sc">&lt;</span> <span class="dv">60</span>, <span class="st">&quot;menor 60 min&quot;</span>, <span class="st">&quot;60 ou mais min&quot;</span>)</span>
+<span id="cb711-5"><a href="12-4-o-pacote-dplyr.html#cb711-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb711-6"><a href="12-4-o-pacote-dplyr.html#cb711-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(lucro)) <span class="sc">%&gt;%</span> </span>
+<span id="cb711-7"><a href="12-4-o-pacote-dplyr.html#cb711-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(duracao_cat) <span class="sc">%&gt;%</span> </span>
+<span id="cb711-8"><a href="12-4-o-pacote-dplyr.html#cb711-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb711-9"><a href="12-4-o-pacote-dplyr.html#cb711-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro_medio =</span> <span class="fu">mean</span>(lucro, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb711-10"><a href="12-4-o-pacote-dplyr.html#cb711-10" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 2
 ##   duracao_cat    lucro_medio
 ##   &lt;chr&gt;                &lt;dbl&gt;
@@ -750,9 +757,9 @@ menor que 60 minutos.</p>
 <hr />
 <p><strong>4.</strong> Retorne tabelas (<code>tibbles</code>) apenas com:</p>
 <p><strong>a.</strong> a nota IMDB média dos filmes por tipo de classificacao;</p>
-<div class="sourceCode" id="cb681"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb681-1"><a href="12-4-o-pacote-dplyr.html#cb681-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb681-2"><a href="12-4-o-pacote-dplyr.html#cb681-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(classificacao) <span class="sc">%&gt;%</span> </span>
-<span id="cb681-3"><a href="12-4-o-pacote-dplyr.html#cb681-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb713"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb713-1"><a href="12-4-o-pacote-dplyr.html#cb713-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb713-2"><a href="12-4-o-pacote-dplyr.html#cb713-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(classificacao) <span class="sc">%&gt;%</span> </span>
+<span id="cb713-3"><a href="12-4-o-pacote-dplyr.html#cb713-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 4 x 2
 ##   classificacao       nota_media
 ##   &lt;chr&gt;                    &lt;dbl&gt;
@@ -761,12 +768,12 @@ menor que 60 minutos.</p>
 ## 3 Livre                     6.26
 ## 4 Outros                    6.65</code></pre>
 <p><strong>b.</strong> a receita média e mediana dos filmes por ano;</p>
-<div class="sourceCode" id="cb683"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb683-1"><a href="12-4-o-pacote-dplyr.html#cb683-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb683-2"><a href="12-4-o-pacote-dplyr.html#cb683-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
-<span id="cb683-3"><a href="12-4-o-pacote-dplyr.html#cb683-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb683-4"><a href="12-4-o-pacote-dplyr.html#cb683-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">receita_media =</span> <span class="fu">mean</span>(receita, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb683-5"><a href="12-4-o-pacote-dplyr.html#cb683-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">receita_mediana =</span> <span class="fu">median</span>(receita, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb683-6"><a href="12-4-o-pacote-dplyr.html#cb683-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb715"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb715-1"><a href="12-4-o-pacote-dplyr.html#cb715-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb715-2"><a href="12-4-o-pacote-dplyr.html#cb715-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
+<span id="cb715-3"><a href="12-4-o-pacote-dplyr.html#cb715-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb715-4"><a href="12-4-o-pacote-dplyr.html#cb715-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">receita_media =</span> <span class="fu">mean</span>(receita, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb715-5"><a href="12-4-o-pacote-dplyr.html#cb715-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">receita_mediana =</span> <span class="fu">median</span>(receita, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb715-6"><a href="12-4-o-pacote-dplyr.html#cb715-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 91 x 3
 ##      ano receita_media receita_mediana
 ##    &lt;dbl&gt;         &lt;dbl&gt;           &lt;dbl&gt;
@@ -782,12 +789,12 @@ menor que 60 minutos.</p>
 ## 10  1936        163245          163245
 ## # … with 81 more rows</code></pre>
 <p><strong>c.</strong> apenas o nome dos diretores com mais de 10 filmes.</p>
-<div class="sourceCode" id="cb685"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb685-1"><a href="12-4-o-pacote-dplyr.html#cb685-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb685-2"><a href="12-4-o-pacote-dplyr.html#cb685-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span> </span>
-<span id="cb685-3"><a href="12-4-o-pacote-dplyr.html#cb685-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(diretor) <span class="sc">%&gt;%</span> </span>
-<span id="cb685-4"><a href="12-4-o-pacote-dplyr.html#cb685-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_filmes =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb685-5"><a href="12-4-o-pacote-dplyr.html#cb685-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(num_filmes <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb685-6"><a href="12-4-o-pacote-dplyr.html#cb685-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(diretor)</span></code></pre></div>
+<div class="sourceCode" id="cb717"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb717-1"><a href="12-4-o-pacote-dplyr.html#cb717-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb717-2"><a href="12-4-o-pacote-dplyr.html#cb717-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span> </span>
+<span id="cb717-3"><a href="12-4-o-pacote-dplyr.html#cb717-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(diretor) <span class="sc">%&gt;%</span> </span>
+<span id="cb717-4"><a href="12-4-o-pacote-dplyr.html#cb717-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_filmes =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb717-5"><a href="12-4-o-pacote-dplyr.html#cb717-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(num_filmes <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb717-6"><a href="12-4-o-pacote-dplyr.html#cb717-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(diretor)</span></code></pre></div>
 <pre><code>## # A tibble: 22 x 1
 ##    diretor             
 ##    &lt;chr&gt;               
@@ -803,11 +810,11 @@ menor que 60 minutos.</p>
 ## 10 Rob Cohen           
 ## # … with 12 more rows</code></pre>
 <p><em>Também podemos usar a função <code>count()</code>.</em></p>
-<div class="sourceCode" id="cb687"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb687-1"><a href="12-4-o-pacote-dplyr.html#cb687-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb687-2"><a href="12-4-o-pacote-dplyr.html#cb687-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span> </span>
-<span id="cb687-3"><a href="12-4-o-pacote-dplyr.html#cb687-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(diretor, <span class="at">name =</span> <span class="st">&quot;num_filmes&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb687-4"><a href="12-4-o-pacote-dplyr.html#cb687-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(num_filmes <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb687-5"><a href="12-4-o-pacote-dplyr.html#cb687-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(diretor)</span></code></pre></div>
+<div class="sourceCode" id="cb719"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb719-1"><a href="12-4-o-pacote-dplyr.html#cb719-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb719-2"><a href="12-4-o-pacote-dplyr.html#cb719-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span> </span>
+<span id="cb719-3"><a href="12-4-o-pacote-dplyr.html#cb719-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(diretor, <span class="at">name =</span> <span class="st">&quot;num_filmes&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb719-4"><a href="12-4-o-pacote-dplyr.html#cb719-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(num_filmes <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb719-5"><a href="12-4-o-pacote-dplyr.html#cb719-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(diretor)</span></code></pre></div>
 <pre><code>## # A tibble: 22 x 1
 ##    diretor             
 ##    &lt;chr&gt;               
@@ -830,11 +837,11 @@ menor que 60 minutos.</p>
 nota média dos filmes de cada diretor. Essa tabela
 deve conter duas colunas (<code>diretor</code> e <code>nota_imdb_media</code>)
 e cada linha deve ser um diretor diferente.</p>
-<div class="sourceCode" id="cb689"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb689-1"><a href="12-4-o-pacote-dplyr.html#cb689-1" aria-hidden="true" tabindex="-1"></a>nota_diretores <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb689-2"><a href="12-4-o-pacote-dplyr.html#cb689-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(diretor) <span class="sc">%&gt;%</span> </span>
-<span id="cb689-3"><a href="12-4-o-pacote-dplyr.html#cb689-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_imdb_media =</span> <span class="fu">mean</span>(nota_imdb))</span>
-<span id="cb689-4"><a href="12-4-o-pacote-dplyr.html#cb689-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb689-5"><a href="12-4-o-pacote-dplyr.html#cb689-5" aria-hidden="true" tabindex="-1"></a>nota_diretores</span></code></pre></div>
+<div class="sourceCode" id="cb721"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb721-1"><a href="12-4-o-pacote-dplyr.html#cb721-1" aria-hidden="true" tabindex="-1"></a>nota_diretores <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb721-2"><a href="12-4-o-pacote-dplyr.html#cb721-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(diretor) <span class="sc">%&gt;%</span> </span>
+<span id="cb721-3"><a href="12-4-o-pacote-dplyr.html#cb721-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_imdb_media =</span> <span class="fu">mean</span>(nota_imdb))</span>
+<span id="cb721-4"><a href="12-4-o-pacote-dplyr.html#cb721-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb721-5"><a href="12-4-o-pacote-dplyr.html#cb721-5" aria-hidden="true" tabindex="-1"></a>nota_diretores</span></code></pre></div>
 <pre><code>## # A tibble: 1,813 x 2
 ##    diretor          nota_imdb_media
 ##    &lt;chr&gt;                      &lt;dbl&gt;
@@ -852,9 +859,9 @@ e cada linha deve ser um diretor diferente.</p>
 <p><strong>b.</strong> Use o <code>left_join()</code> para trazer a coluna
 <code>nota_imdb_media</code> da tabela do item anterior
 para a tabela <code>imdb</code> original.</p>
-<div class="sourceCode" id="cb691"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb691-1"><a href="12-4-o-pacote-dplyr.html#cb691-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb691-2"><a href="12-4-o-pacote-dplyr.html#cb691-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(nota_diretores, <span class="at">by =</span> <span class="st">&quot;diretor&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb691-3"><a href="12-4-o-pacote-dplyr.html#cb691-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(nota_imdb_media, <span class="fu">everything</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb723"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb723-1"><a href="12-4-o-pacote-dplyr.html#cb723-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb723-2"><a href="12-4-o-pacote-dplyr.html#cb723-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(nota_diretores, <span class="at">by =</span> <span class="st">&quot;diretor&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb723-3"><a href="12-4-o-pacote-dplyr.html#cb723-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(nota_imdb_media, <span class="fu">everything</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 16
 ##    nota_imdb_media titulo        ano diretor   duracao cor   generos       pais 
 ##              &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;

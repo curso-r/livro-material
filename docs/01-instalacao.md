@@ -223,6 +223,7 @@ No linux, a forma mais fácil de abrir documentos provenientes do Office é util
 O sistema operaciona MacOS disponibiliza o [iWork](https://www.apple.com/br/iwork/), que é composto pelas ferramentas Numbers, Pages e Keynote.  Esses programas possibilitam abrir arquivos provenientes do Office.
 
 Outra opção é a utilização do LibreOffice. 
+
 1. Primeiro, faça o download do arquivo `.dmg` de instalação, através [deste link](https://pt-br.libreoffice.org/baixe-ja/libreoffice-novo/), escolhendo o sistema operacional "MacOS" e clicando em "Baixar". 
 
 2. Após baixar o arquivo, abra-o. Uma janela irá abrir (como na imagem a seguir).  Você deve arrastar o ícone "LibreOffice" para a pasta "Applications" (como mostrado na animação abaixo, sendo necessário arrastar apenas uma vez). 

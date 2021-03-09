@@ -280,7 +280,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#spread"><i class="fa fa-check"></i><b>7.3.2</b> <code>spread()</code></a></li>
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a></li>
+<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#introdução"><i class="fa fa-check"></i><b>7.4.1</b> Introdução</a></li>
+<li class="chapter" data-level="7.4.2" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-básicas"><i class="fa fa-check"></i><b>7.4.2</b> Funções básicas</a></li>
+<li class="chapter" data-level="7.4.3" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#expressões-regulares"><i class="fa fa-check"></i><b>7.4.3</b> Expressões Regulares</a></li>
+<li class="chapter" data-level="7.4.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-que-utilizam-regex"><i class="fa fa-check"></i><b>7.4.4</b> Funções que utilizam regex</a></li>
+<li class="chapter" data-level="7.4.5" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#exercícios-17"><i class="fa fa-check"></i><b>7.4.5</b> Exercícios</a></li>
+</ul></li>
 <li class="chapter" data-level="7.5" data-path="7-5-forcats.html"><a href="7-5-forcats.html"><i class="fa fa-check"></i><b>7.5</b> O pacote forcats</a></li>
 <li class="chapter" data-level="7.6" data-path="7-6-o-pacote-lubridate.html"><a href="7-6-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.6</b> O pacote lubridate</a></li>
 </ul></li>
@@ -296,7 +303,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.6" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#escalas"><i class="fa fa-check"></i><b>8.1.6</b> Escalas</a></li>
 <li class="chapter" data-level="8.1.7" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#temas"><i class="fa fa-check"></i><b>8.1.7</b> Temas</a></li>
 <li class="chapter" data-level="8.1.8" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>8.1.8</b> Juntando gráficos</a></li>
-<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-17"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
+<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-18"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a>
 <ul>
@@ -407,19 +414,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Para discutir os principais aspectos da construção de gráficos com o <code>ggplot2</code>, vamos continuar utilizando a base de filmes do IMDB. Você pode baixá-la <a href="https://github.com/curso-r/livro-material/raw/master/assets/data/imdb.rds">clicando aqui</a>.</p>
 <p>Na próxima seção, vamos conhecer as principais funções do <code>ggplot2</code> e começar a construir nossos primeiros gráficos. Não se esqueça de instalar e carregar o pacote antes de rodar os exemplos.</p>
-<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="8-1-o-pacote-ggplot2.html#cb308-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
-<span id="cb308-2"><a href="8-1-o-pacote-ggplot2.html#cb308-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="8-1-o-pacote-ggplot2.html#cb340-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb340-2"><a href="8-1-o-pacote-ggplot2.html#cb340-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
 <div id="gráficos-de-pontos-dispersão" class="section level3" number="8.1.1">
 <h3><span class="header-section-number">8.1.1</span> Gráficos de pontos (dispersão)</h3>
 <p>No <code>ggplot2</code>, os gráficos são construídos camada por camada, sendo a primeira delas dada pela função <code>ggplot()</code> (repare que não tem o “2”). Essa função recebe um <em>data frame</em> e cria a camada base do gráfico, o nosso <em>canvas</em>, onde acrescentaremos todos os outros elementos (camadas).</p>
 <p>Se rodarmos apenas a função <code>ggplot()</code>, obteremos um painel em branco.</p>
-<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="8-1-o-pacote-ggplot2.html#cb309-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_rds</span>(<span class="st">&quot;assets/data/imdb.rds&quot;</span>)</span>
-<span id="cb309-2"><a href="8-1-o-pacote-ggplot2.html#cb309-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> imdb)</span></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="8-1-o-pacote-ggplot2.html#cb341-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_rds</span>(<span class="st">&quot;assets/data/imdb.rds&quot;</span>)</span>
+<span id="cb341-2"><a href="8-1-o-pacote-ggplot2.html#cb341-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> imdb)</span></code></pre></div>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Apesar de termos passado os dados para a função, precisamos especificar como as observações serão mapeadas nos aspectos visuais do gráfico e quais formas geométricas serão utilizadas para isso.</p>
 <p>O código abaixo constrói um gráfico de dispersão entre as variáveis orçamento e receita.</p>
-<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="8-1-o-pacote-ggplot2.html#cb310-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(imdb) <span class="sc">+</span></span>
-<span id="cb310-2"><a href="8-1-o-pacote-ggplot2.html#cb310-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita))</span></code></pre></div>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="8-1-o-pacote-ggplot2.html#cb342-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(imdb) <span class="sc">+</span></span>
+<span id="cb342-2"><a href="8-1-o-pacote-ggplot2.html#cb342-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita))</span></code></pre></div>
 <pre><code>## Warning: Removed 733 rows containing missing values (geom_point).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Observe que:</p>
@@ -438,27 +445,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Atenção!</strong> As camadas dos gráficos são empilhadas utilizando-se o sinal <code>+</code>. Como a estrutura é muito parecida com a do <em>pipe</em>, é comum trocarmos o <code>+</code> por um <code>%&gt;%</code> no meio do código, resultando em erro.</p>
 </blockquote>
 <p>Podemos acrescentar uma terceira camada ao gráfico, desenhando a reta <code>y = x</code> para visualizarmos os filmes não se pagaram.</p>
-<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="8-1-o-pacote-ggplot2.html#cb312-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(imdb) <span class="sc">+</span></span>
-<span id="cb312-2"><a href="8-1-o-pacote-ggplot2.html#cb312-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) <span class="sc">+</span></span>
-<span id="cb312-3"><a href="8-1-o-pacote-ggplot2.html#cb312-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="8-1-o-pacote-ggplot2.html#cb344-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(imdb) <span class="sc">+</span></span>
+<span id="cb344-2"><a href="8-1-o-pacote-ggplot2.html#cb344-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) <span class="sc">+</span></span>
+<span id="cb344-3"><a href="8-1-o-pacote-ggplot2.html#cb344-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 733 rows containing missing values (geom_point).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Os pontos abaixo da reta representam os filmes com orçamento maior que a receita, isto é, aqueles que deram prejuízo.</p>
 <p>A reta x = y foi acrescentada ao gráfico pela função <code>geom_abline()</code>. Esse <code>geom</code> pode ser utilizado para desenhar qualquer reta do tipo <code>y = a + b * x</code>, sendo <code>a</code> o intercepto (<em>intercept</em>) da reta e <code>b</code> o seu coeficiente angular (<em>slope</em>).</p>
 <p>Neste caso, como não estamos mapeando colunas da base a essa reta (isto é, essa reta não depende dos dados), não precisamos utilizar o argumento <code>mapping</code> da função <code>geom_abline()</code>, tampouco a função <code>aes()</code>.</p>
 <p>Para ver como um ggplot realmente é construído por camadas, veja o que acontece quando colocamos a camada da reta antes da camada dos pontos:</p>
-<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="8-1-o-pacote-ggplot2.html#cb314-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(imdb) <span class="sc">+</span></span>
-<span id="cb314-2"><a href="8-1-o-pacote-ggplot2.html#cb314-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
-<span id="cb314-3"><a href="8-1-o-pacote-ggplot2.html#cb314-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) </span></code></pre></div>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="8-1-o-pacote-ggplot2.html#cb346-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(imdb) <span class="sc">+</span></span>
+<span id="cb346-2"><a href="8-1-o-pacote-ggplot2.html#cb346-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb346-3"><a href="8-1-o-pacote-ggplot2.html#cb346-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) </span></code></pre></div>
 <pre><code>## Warning: Removed 733 rows containing missing values (geom_point).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Além da posição nos eixos x e y, podemos mapear a cor dos pontos a uma variável.</p>
-<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="8-1-o-pacote-ggplot2.html#cb316-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr, <span class="at">warn.conflicts =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb316-2"><a href="8-1-o-pacote-ggplot2.html#cb316-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb316-3"><a href="8-1-o-pacote-ggplot2.html#cb316-3" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span></span>
-<span id="cb316-4"><a href="8-1-o-pacote-ggplot2.html#cb316-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lucro =</span> receita <span class="sc">-</span> orcamento) <span class="sc">%&gt;%</span> </span>
-<span id="cb316-5"><a href="8-1-o-pacote-ggplot2.html#cb316-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb316-6"><a href="8-1-o-pacote-ggplot2.html#cb316-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita, <span class="at">color =</span> lucro))</span></code></pre></div>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="8-1-o-pacote-ggplot2.html#cb348-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr, <span class="at">warn.conflicts =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb348-2"><a href="8-1-o-pacote-ggplot2.html#cb348-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb348-3"><a href="8-1-o-pacote-ggplot2.html#cb348-3" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span></span>
+<span id="cb348-4"><a href="8-1-o-pacote-ggplot2.html#cb348-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lucro =</span> receita <span class="sc">-</span> orcamento) <span class="sc">%&gt;%</span> </span>
+<span id="cb348-5"><a href="8-1-o-pacote-ggplot2.html#cb348-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb348-6"><a href="8-1-o-pacote-ggplot2.html#cb348-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita, <span class="at">color =</span> lucro))</span></code></pre></div>
 <pre><code>## Warning: Removed 733 rows containing missing values (geom_point).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>O gráfico acima tem a cor dos pontos definida pelo valor da variável lucro. Como a coluna <code>lucro</code> é numérica, um degradê é criado para a cor dos pontos. O azul é a cor padrão nesses casos (veremos mais adiante como escolher a cor).</p>
@@ -467,124 +474,124 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Lembre-se</strong>: por trás de um grande gráfico sempre existe uma grande tabela.</p>
 </blockquote>
 <p>Poderíamos também classificar os filmes entre aqueles que lucraram ou não. Neste caso, como a coluna <code>lucrou</code> é textual, uma cor é atribuída a cada categoria.</p>
-<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="8-1-o-pacote-ggplot2.html#cb318-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span></span>
-<span id="cb318-2"><a href="8-1-o-pacote-ggplot2.html#cb318-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(</span>
-<span id="cb318-3"><a href="8-1-o-pacote-ggplot2.html#cb318-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro =</span> receita <span class="sc">-</span> orcamento,</span>
-<span id="cb318-4"><a href="8-1-o-pacote-ggplot2.html#cb318-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro =</span> <span class="fu">ifelse</span>(lucro <span class="sc">&lt;=</span> <span class="dv">0</span>, <span class="st">&quot;Não&quot;</span>, <span class="st">&quot;Sim&quot;</span>)</span>
-<span id="cb318-5"><a href="8-1-o-pacote-ggplot2.html#cb318-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb318-6"><a href="8-1-o-pacote-ggplot2.html#cb318-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(lucro)) <span class="sc">%&gt;%</span> </span>
-<span id="cb318-7"><a href="8-1-o-pacote-ggplot2.html#cb318-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb318-8"><a href="8-1-o-pacote-ggplot2.html#cb318-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita, <span class="at">color =</span> lucro))</span></code></pre></div>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="8-1-o-pacote-ggplot2.html#cb350-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span></span>
+<span id="cb350-2"><a href="8-1-o-pacote-ggplot2.html#cb350-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(</span>
+<span id="cb350-3"><a href="8-1-o-pacote-ggplot2.html#cb350-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro =</span> receita <span class="sc">-</span> orcamento,</span>
+<span id="cb350-4"><a href="8-1-o-pacote-ggplot2.html#cb350-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro =</span> <span class="fu">ifelse</span>(lucro <span class="sc">&lt;=</span> <span class="dv">0</span>, <span class="st">&quot;Não&quot;</span>, <span class="st">&quot;Sim&quot;</span>)</span>
+<span id="cb350-5"><a href="8-1-o-pacote-ggplot2.html#cb350-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb350-6"><a href="8-1-o-pacote-ggplot2.html#cb350-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(lucro)) <span class="sc">%&gt;%</span> </span>
+<span id="cb350-7"><a href="8-1-o-pacote-ggplot2.html#cb350-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb350-8"><a href="8-1-o-pacote-ggplot2.html#cb350-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita, <span class="at">color =</span> lucro))</span></code></pre></div>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Um erro comum na hora de definir atributos estéticos de um gráfico é definir valores para atributos estéticos dentro da função <code>aes()</code>. Repare o que acontece quando tentamos definir diretamente a cor dos pontos dentro dessa função.</p>
-<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="8-1-o-pacote-ggplot2.html#cb319-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(imdb) <span class="sc">+</span></span>
-<span id="cb319-2"><a href="8-1-o-pacote-ggplot2.html#cb319-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="8-1-o-pacote-ggplot2.html#cb351-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(imdb) <span class="sc">+</span></span>
+<span id="cb351-2"><a href="8-1-o-pacote-ggplot2.html#cb351-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>))</span></code></pre></div>
 <pre><code>## Warning: Removed 733 rows containing missing values (geom_point).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Estranho, não? O que aconteceu foi o seguinte: a função <code>aes()</code> espera uma coluna para ser mapeada a cada atributo, então o valor <code>blue</code> é tratado como uma nova variável/coluna que tem essa string para todas as observações. Assim, todos pontos têm a mesma cor (vermelha, padrão do ggplot) pois pertencem todos à essa “categoria <em>blue</em>”.</p>
 <p>No caso, o que gostaríamos é de ter pintado todos os pontos de azul. A forma certa de fazer isso é colocando o atributo <code>color=</code> fora da função <code>aes()</code>:</p>
-<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="8-1-o-pacote-ggplot2.html#cb321-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(imdb) <span class="sc">+</span></span>
-<span id="cb321-2"><a href="8-1-o-pacote-ggplot2.html#cb321-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita), <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="8-1-o-pacote-ggplot2.html#cb353-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(imdb) <span class="sc">+</span></span>
+<span id="cb353-2"><a href="8-1-o-pacote-ggplot2.html#cb353-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita), <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 733 rows containing missing values (geom_point).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="gráficos-de-linhas" class="section level3" number="8.1.2">
 <h3><span class="header-section-number">8.1.2</span> Gráficos de linhas</h3>
 <p>Utilizamos o <code>geom_line</code> para fazer gráficos de linhas. Assim como nos gráficos de pontos, precisamos definir as posições <code>x</code> e <code>y</code>. O gráfico abaixo representa a evolução da nota média dos filmes ao longo dos anos.</p>
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="8-1-o-pacote-ggplot2.html#cb323-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb323-2"><a href="8-1-o-pacote-ggplot2.html#cb323-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
-<span id="cb323-3"><a href="8-1-o-pacote-ggplot2.html#cb323-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb323-4"><a href="8-1-o-pacote-ggplot2.html#cb323-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb323-5"><a href="8-1-o-pacote-ggplot2.html#cb323-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media))</span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="8-1-o-pacote-ggplot2.html#cb355-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb355-2"><a href="8-1-o-pacote-ggplot2.html#cb355-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
+<span id="cb355-3"><a href="8-1-o-pacote-ggplot2.html#cb355-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb355-4"><a href="8-1-o-pacote-ggplot2.html#cb355-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb355-5"><a href="8-1-o-pacote-ggplot2.html#cb355-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media))</span></code></pre></div>
 <pre><code>## Warning: Removed 1 row(s) containing missing values (geom_path).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Gráficos de linha são muito utilizados para representar <strong>séries temporais</strong>, isto é, observações medidas repetidamente em intervalos equidistantes<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> de tempo. O gráfico anterior apresenta a série da nota IMDB média ao longo dos anos.</p>
 <p>Podemos colocar pontos e retas no mesmo gráfico. Basta acrescentar os dois <code>geoms</code>. O gráfico abaixo mostra a nota média anual dos filmes do Robert De Niro.</p>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="8-1-o-pacote-ggplot2.html#cb325-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb325-2"><a href="8-1-o-pacote-ggplot2.html#cb325-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ator_1 <span class="sc">==</span> <span class="st">&quot;Robert De Niro&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb325-3"><a href="8-1-o-pacote-ggplot2.html#cb325-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
-<span id="cb325-4"><a href="8-1-o-pacote-ggplot2.html#cb325-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb325-5"><a href="8-1-o-pacote-ggplot2.html#cb325-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb325-6"><a href="8-1-o-pacote-ggplot2.html#cb325-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media)) <span class="sc">+</span></span>
-<span id="cb325-7"><a href="8-1-o-pacote-ggplot2.html#cb325-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media))</span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="8-1-o-pacote-ggplot2.html#cb357-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb357-2"><a href="8-1-o-pacote-ggplot2.html#cb357-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ator_1 <span class="sc">==</span> <span class="st">&quot;Robert De Niro&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb357-3"><a href="8-1-o-pacote-ggplot2.html#cb357-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
+<span id="cb357-4"><a href="8-1-o-pacote-ggplot2.html#cb357-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb357-5"><a href="8-1-o-pacote-ggplot2.html#cb357-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb357-6"><a href="8-1-o-pacote-ggplot2.html#cb357-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media)) <span class="sc">+</span></span>
+<span id="cb357-7"><a href="8-1-o-pacote-ggplot2.html#cb357-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media))</span></code></pre></div>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Quando precisamos usar o mesmo <code>aes()</code> em vários <code>geoms</code>, podemos defini-lo dentro da função <code>ggplot()</code>. Esse <code>aes()</code> será então distribuído para todo <code>geom</code> do gráfico. O código anterior pode ser reescrito da seguinte forma.</p>
-<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="8-1-o-pacote-ggplot2.html#cb326-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb326-2"><a href="8-1-o-pacote-ggplot2.html#cb326-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ator_1 <span class="sc">==</span> <span class="st">&quot;Robert De Niro&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb326-3"><a href="8-1-o-pacote-ggplot2.html#cb326-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
-<span id="cb326-4"><a href="8-1-o-pacote-ggplot2.html#cb326-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb326-5"><a href="8-1-o-pacote-ggplot2.html#cb326-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media)) <span class="sc">+</span></span>
-<span id="cb326-6"><a href="8-1-o-pacote-ggplot2.html#cb326-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb326-7"><a href="8-1-o-pacote-ggplot2.html#cb326-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="8-1-o-pacote-ggplot2.html#cb358-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb358-2"><a href="8-1-o-pacote-ggplot2.html#cb358-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ator_1 <span class="sc">==</span> <span class="st">&quot;Robert De Niro&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb358-3"><a href="8-1-o-pacote-ggplot2.html#cb358-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
+<span id="cb358-4"><a href="8-1-o-pacote-ggplot2.html#cb358-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb358-5"><a href="8-1-o-pacote-ggplot2.html#cb358-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media)) <span class="sc">+</span></span>
+<span id="cb358-6"><a href="8-1-o-pacote-ggplot2.html#cb358-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb358-7"><a href="8-1-o-pacote-ggplot2.html#cb358-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Se algum <code>geom</code> necessitar de um atributo que os outros não precisam, esse atributo pode ser especificado normalmente dentro dele. Abaixo, utilizamos o <code>geom_label</code> para colocar as notas médias no gráfico. Além do <code>x</code> e <code>y</code>, o <code>geom_label</code> também precisa do texto que será escrito no gráfico.</p>
-<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="8-1-o-pacote-ggplot2.html#cb327-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb327-2"><a href="8-1-o-pacote-ggplot2.html#cb327-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ator_1 <span class="sc">==</span> <span class="st">&quot;Robert De Niro&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb327-3"><a href="8-1-o-pacote-ggplot2.html#cb327-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
-<span id="cb327-4"><a href="8-1-o-pacote-ggplot2.html#cb327-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb327-5"><a href="8-1-o-pacote-ggplot2.html#cb327-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">nota_media =</span> <span class="fu">round</span>(nota_media, <span class="dv">1</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb327-6"><a href="8-1-o-pacote-ggplot2.html#cb327-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media)) <span class="sc">+</span></span>
-<span id="cb327-7"><a href="8-1-o-pacote-ggplot2.html#cb327-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb327-8"><a href="8-1-o-pacote-ggplot2.html#cb327-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> nota_media))</span></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="8-1-o-pacote-ggplot2.html#cb359-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb359-2"><a href="8-1-o-pacote-ggplot2.html#cb359-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ator_1 <span class="sc">==</span> <span class="st">&quot;Robert De Niro&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb359-3"><a href="8-1-o-pacote-ggplot2.html#cb359-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
+<span id="cb359-4"><a href="8-1-o-pacote-ggplot2.html#cb359-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb359-5"><a href="8-1-o-pacote-ggplot2.html#cb359-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">nota_media =</span> <span class="fu">round</span>(nota_media, <span class="dv">1</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb359-6"><a href="8-1-o-pacote-ggplot2.html#cb359-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media)) <span class="sc">+</span></span>
+<span id="cb359-7"><a href="8-1-o-pacote-ggplot2.html#cb359-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb359-8"><a href="8-1-o-pacote-ggplot2.html#cb359-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> nota_media))</span></code></pre></div>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="gráficos-de-barras" class="section level3" number="8.1.3">
 <h3><span class="header-section-number">8.1.3</span> Gráficos de barras</h3>
 <p>Para construir gráficos de barras, utilizamos o <code>geom_col</code>. A seguir, construímos um gráfico de barras do número de filmes dos 10 diretores que mais aparecem na nossa base do IMDB.</p>
-<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="8-1-o-pacote-ggplot2.html#cb328-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb328-2"><a href="8-1-o-pacote-ggplot2.html#cb328-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(diretor) <span class="sc">%&gt;%</span></span>
-<span id="cb328-3"><a href="8-1-o-pacote-ggplot2.html#cb328-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>, n) <span class="sc">%&gt;%</span></span>
-<span id="cb328-4"><a href="8-1-o-pacote-ggplot2.html#cb328-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb328-5"><a href="8-1-o-pacote-ggplot2.html#cb328-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> diretor, <span class="at">y =</span> n))</span></code></pre></div>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="8-1-o-pacote-ggplot2.html#cb360-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb360-2"><a href="8-1-o-pacote-ggplot2.html#cb360-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(diretor) <span class="sc">%&gt;%</span></span>
+<span id="cb360-3"><a href="8-1-o-pacote-ggplot2.html#cb360-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>, n) <span class="sc">%&gt;%</span></span>
+<span id="cb360-4"><a href="8-1-o-pacote-ggplot2.html#cb360-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb360-5"><a href="8-1-o-pacote-ggplot2.html#cb360-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> diretor, <span class="at">y =</span> n))</span></code></pre></div>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Gráficos de barras também precisam dos atributos <code>x</code> e <code>y</code>, sendo que o atributo <code>y</code> representará a altura de cada barra.</p>
 <p>No gráfico anterior, vemos que o <code>NA</code> é considerado uma “categoria” de diretor e entra no gráfico. Podemos retirar os <code>NAs</code> dessa coluna previamente utilizando a função <code>filter()</code>.</p>
 <p>A seguir, além de retirar os <code>NAs</code>, atribuímos a coluna <code>diretor</code> à cor das colunas. Repare que, nesse caso, não utilizamos o atributo <code>color</code> e sim <code>fill</code>. A regra é a seguinte: o atributo <code>color</code> colore objetos sem área (pontos, linhas, contornos), o atributo <code>fill</code> preenche objetos com cor (barras, áreas, polígonos em geral).</p>
-<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="8-1-o-pacote-ggplot2.html#cb329-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb329-2"><a href="8-1-o-pacote-ggplot2.html#cb329-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(diretor) <span class="sc">%&gt;%</span></span>
-<span id="cb329-3"><a href="8-1-o-pacote-ggplot2.html#cb329-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span> </span>
-<span id="cb329-4"><a href="8-1-o-pacote-ggplot2.html#cb329-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>, n) <span class="sc">%&gt;%</span></span>
-<span id="cb329-5"><a href="8-1-o-pacote-ggplot2.html#cb329-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb329-6"><a href="8-1-o-pacote-ggplot2.html#cb329-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(</span>
-<span id="cb329-7"><a href="8-1-o-pacote-ggplot2.html#cb329-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> diretor, <span class="at">y =</span> n, <span class="at">fill =</span> diretor),</span>
-<span id="cb329-8"><a href="8-1-o-pacote-ggplot2.html#cb329-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span></span>
-<span id="cb329-9"><a href="8-1-o-pacote-ggplot2.html#cb329-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="8-1-o-pacote-ggplot2.html#cb361-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb361-2"><a href="8-1-o-pacote-ggplot2.html#cb361-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(diretor) <span class="sc">%&gt;%</span></span>
+<span id="cb361-3"><a href="8-1-o-pacote-ggplot2.html#cb361-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span> </span>
+<span id="cb361-4"><a href="8-1-o-pacote-ggplot2.html#cb361-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>, n) <span class="sc">%&gt;%</span></span>
+<span id="cb361-5"><a href="8-1-o-pacote-ggplot2.html#cb361-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb361-6"><a href="8-1-o-pacote-ggplot2.html#cb361-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(</span>
+<span id="cb361-7"><a href="8-1-o-pacote-ggplot2.html#cb361-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> diretor, <span class="at">y =</span> n, <span class="at">fill =</span> diretor),</span>
+<span id="cb361-8"><a href="8-1-o-pacote-ggplot2.html#cb361-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span></span>
+<span id="cb361-9"><a href="8-1-o-pacote-ggplot2.html#cb361-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Para consertar as labels do eixo <code>x</code>, a melhor prática é invertermos os eixos do gráfico, construindo barras horizontais.</p>
-<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="8-1-o-pacote-ggplot2.html#cb330-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb330-2"><a href="8-1-o-pacote-ggplot2.html#cb330-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(diretor) <span class="sc">%&gt;%</span></span>
-<span id="cb330-3"><a href="8-1-o-pacote-ggplot2.html#cb330-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span> </span>
-<span id="cb330-4"><a href="8-1-o-pacote-ggplot2.html#cb330-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>, n) <span class="sc">%&gt;%</span></span>
-<span id="cb330-5"><a href="8-1-o-pacote-ggplot2.html#cb330-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb330-6"><a href="8-1-o-pacote-ggplot2.html#cb330-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(</span>
-<span id="cb330-7"><a href="8-1-o-pacote-ggplot2.html#cb330-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> diretor, <span class="at">x =</span> n, <span class="at">fill =</span> diretor),</span>
-<span id="cb330-8"><a href="8-1-o-pacote-ggplot2.html#cb330-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span></span>
-<span id="cb330-9"><a href="8-1-o-pacote-ggplot2.html#cb330-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="8-1-o-pacote-ggplot2.html#cb362-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb362-2"><a href="8-1-o-pacote-ggplot2.html#cb362-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(diretor) <span class="sc">%&gt;%</span></span>
+<span id="cb362-3"><a href="8-1-o-pacote-ggplot2.html#cb362-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span> </span>
+<span id="cb362-4"><a href="8-1-o-pacote-ggplot2.html#cb362-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>, n) <span class="sc">%&gt;%</span></span>
+<span id="cb362-5"><a href="8-1-o-pacote-ggplot2.html#cb362-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb362-6"><a href="8-1-o-pacote-ggplot2.html#cb362-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(</span>
+<span id="cb362-7"><a href="8-1-o-pacote-ggplot2.html#cb362-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> diretor, <span class="at">x =</span> n, <span class="at">fill =</span> diretor),</span>
+<span id="cb362-8"><a href="8-1-o-pacote-ggplot2.html#cb362-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span></span>
+<span id="cb362-9"><a href="8-1-o-pacote-ggplot2.html#cb362-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Para ordenar as colunas, precisamos mudar a ordem dos níveis do <em>fator</em> <code>diretor</code>. Para isso, utilizamos a função <code>fct_reorder()</code> do pacote <code>forcats</code>. A nova ordem será estabelecida pela coluna <code>n</code> (quantidade de filmes).</p>
 <p>Fatores dentro do R são números inteiros (1, 2, 3, …) que possuem uma representação textual (Ver Seção <a href="7-5-forcats.html#forcats">7.5</a>). Variáveis categóricas são transformadas em fatores pelo ggplot pois todo eixo cartesiano é numérico. Assim, os textos de uma variável categórica são, internamente, números inteiros.</p>
 <p>Por padrão, os inteiros são atribuídos a cada categoria de uma variável pela ordem alfabética (repare na ordem dos diretores nos gráficos anteriores). Assim, se transformássemos o vetor <code>c("banana", "uva", "melancia")</code> em um fator, a atribuição de inteiros seria: “banana” vira 1, “melancia” vira 2 e “uva” vira 3. Embora sejam inteiros internamente, sempre que chamássemos esse novo vetor, ainda sim veríamos os textos “banana”, “uva” e “melancia”.</p>
-<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="8-1-o-pacote-ggplot2.html#cb331-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb331-2"><a href="8-1-o-pacote-ggplot2.html#cb331-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(diretor) <span class="sc">%&gt;%</span></span>
-<span id="cb331-3"><a href="8-1-o-pacote-ggplot2.html#cb331-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span> </span>
-<span id="cb331-4"><a href="8-1-o-pacote-ggplot2.html#cb331-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>, n) <span class="sc">%&gt;%</span></span>
-<span id="cb331-5"><a href="8-1-o-pacote-ggplot2.html#cb331-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">diretor =</span> forcats<span class="sc">::</span><span class="fu">fct_reorder</span>(diretor, n)) <span class="sc">%&gt;%</span> </span>
-<span id="cb331-6"><a href="8-1-o-pacote-ggplot2.html#cb331-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb331-7"><a href="8-1-o-pacote-ggplot2.html#cb331-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(</span>
-<span id="cb331-8"><a href="8-1-o-pacote-ggplot2.html#cb331-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> diretor, <span class="at">x =</span> n, <span class="at">fill =</span> diretor),</span>
-<span id="cb331-9"><a href="8-1-o-pacote-ggplot2.html#cb331-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span></span>
-<span id="cb331-10"><a href="8-1-o-pacote-ggplot2.html#cb331-10" aria-hidden="true" tabindex="-1"></a>  ) </span></code></pre></div>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="8-1-o-pacote-ggplot2.html#cb363-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb363-2"><a href="8-1-o-pacote-ggplot2.html#cb363-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(diretor) <span class="sc">%&gt;%</span></span>
+<span id="cb363-3"><a href="8-1-o-pacote-ggplot2.html#cb363-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span> </span>
+<span id="cb363-4"><a href="8-1-o-pacote-ggplot2.html#cb363-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>, n) <span class="sc">%&gt;%</span></span>
+<span id="cb363-5"><a href="8-1-o-pacote-ggplot2.html#cb363-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">diretor =</span> forcats<span class="sc">::</span><span class="fu">fct_reorder</span>(diretor, n)) <span class="sc">%&gt;%</span> </span>
+<span id="cb363-6"><a href="8-1-o-pacote-ggplot2.html#cb363-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb363-7"><a href="8-1-o-pacote-ggplot2.html#cb363-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(</span>
+<span id="cb363-8"><a href="8-1-o-pacote-ggplot2.html#cb363-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> diretor, <span class="at">x =</span> n, <span class="at">fill =</span> diretor),</span>
+<span id="cb363-9"><a href="8-1-o-pacote-ggplot2.html#cb363-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span></span>
+<span id="cb363-10"><a href="8-1-o-pacote-ggplot2.html#cb363-10" aria-hidden="true" tabindex="-1"></a>  ) </span></code></pre></div>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Por fim, podemos colocar uma label com o número de filmes de cada diretor dentro de cada barra.</p>
-<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="8-1-o-pacote-ggplot2.html#cb332-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb332-2"><a href="8-1-o-pacote-ggplot2.html#cb332-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(diretor) <span class="sc">%&gt;%</span></span>
-<span id="cb332-3"><a href="8-1-o-pacote-ggplot2.html#cb332-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span> </span>
-<span id="cb332-4"><a href="8-1-o-pacote-ggplot2.html#cb332-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>, n) <span class="sc">%&gt;%</span></span>
-<span id="cb332-5"><a href="8-1-o-pacote-ggplot2.html#cb332-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">diretor =</span> forcats<span class="sc">::</span><span class="fu">fct_reorder</span>(diretor, n)) <span class="sc">%&gt;%</span> </span>
-<span id="cb332-6"><a href="8-1-o-pacote-ggplot2.html#cb332-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb332-7"><a href="8-1-o-pacote-ggplot2.html#cb332-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> diretor, <span class="at">y =</span> n, <span class="at">fill =</span> diretor), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb332-8"><a href="8-1-o-pacote-ggplot2.html#cb332-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x =</span> diretor, <span class="at">y =</span> n<span class="sc">/</span><span class="dv">2</span>, <span class="at">label =</span> n)) <span class="sc">+</span></span>
-<span id="cb332-9"><a href="8-1-o-pacote-ggplot2.html#cb332-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="8-1-o-pacote-ggplot2.html#cb364-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb364-2"><a href="8-1-o-pacote-ggplot2.html#cb364-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(diretor) <span class="sc">%&gt;%</span></span>
+<span id="cb364-3"><a href="8-1-o-pacote-ggplot2.html#cb364-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span> </span>
+<span id="cb364-4"><a href="8-1-o-pacote-ggplot2.html#cb364-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>, n) <span class="sc">%&gt;%</span></span>
+<span id="cb364-5"><a href="8-1-o-pacote-ggplot2.html#cb364-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">diretor =</span> forcats<span class="sc">::</span><span class="fu">fct_reorder</span>(diretor, n)) <span class="sc">%&gt;%</span> </span>
+<span id="cb364-6"><a href="8-1-o-pacote-ggplot2.html#cb364-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb364-7"><a href="8-1-o-pacote-ggplot2.html#cb364-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> diretor, <span class="at">y =</span> n, <span class="at">fill =</span> diretor), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb364-8"><a href="8-1-o-pacote-ggplot2.html#cb364-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x =</span> diretor, <span class="at">y =</span> n<span class="sc">/</span><span class="dv">2</span>, <span class="at">label =</span> n)) <span class="sc">+</span></span>
+<span id="cb364-9"><a href="8-1-o-pacote-ggplot2.html#cb364-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-20-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="histogramas-e-boxplots" class="section level3" number="8.1.4">
@@ -592,67 +599,67 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Para construir histogramas, usamos o <code>geom_histogram</code>. Esse <code>geom</code> só precisa do atributo <code>x</code> (o eixo y é construído automaticamente). Histogramas são úteis para avaliarmos a distribuição de uma variável.</p>
 <p>A seguir, construímos o histograma do lucro dos filmes do diretor Steven Spielberg.
 O primeiro <em>warning</em> nos diz que o eixo x foi dividido em 30 intervalos para a construção do histograma.</p>
-<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="8-1-o-pacote-ggplot2.html#cb333-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb333-2"><a href="8-1-o-pacote-ggplot2.html#cb333-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(diretor <span class="sc">==</span> <span class="st">&quot;Steven Spielberg&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb333-3"><a href="8-1-o-pacote-ggplot2.html#cb333-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lucro =</span> receita <span class="sc">-</span> orcamento) <span class="sc">%&gt;%</span> </span>
-<span id="cb333-4"><a href="8-1-o-pacote-ggplot2.html#cb333-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb333-5"><a href="8-1-o-pacote-ggplot2.html#cb333-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> lucro))</span></code></pre></div>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="8-1-o-pacote-ggplot2.html#cb365-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb365-2"><a href="8-1-o-pacote-ggplot2.html#cb365-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(diretor <span class="sc">==</span> <span class="st">&quot;Steven Spielberg&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb365-3"><a href="8-1-o-pacote-ggplot2.html#cb365-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lucro =</span> receita <span class="sc">-</span> orcamento) <span class="sc">%&gt;%</span> </span>
+<span id="cb365-4"><a href="8-1-o-pacote-ggplot2.html#cb365-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb365-5"><a href="8-1-o-pacote-ggplot2.html#cb365-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> lucro))</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <pre><code>## Warning: Removed 1 rows containing non-finite values (stat_bin).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-21-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Para definir o tamanho de cada intervalo, podemos utilizar o argumento <code>bindwidth</code>.</p>
-<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="8-1-o-pacote-ggplot2.html#cb336-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb336-2"><a href="8-1-o-pacote-ggplot2.html#cb336-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(diretor <span class="sc">==</span> <span class="st">&quot;Steven Spielberg&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb336-3"><a href="8-1-o-pacote-ggplot2.html#cb336-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lucro =</span> receita <span class="sc">-</span> orcamento) <span class="sc">%&gt;%</span> </span>
-<span id="cb336-4"><a href="8-1-o-pacote-ggplot2.html#cb336-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb336-5"><a href="8-1-o-pacote-ggplot2.html#cb336-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
-<span id="cb336-6"><a href="8-1-o-pacote-ggplot2.html#cb336-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> lucro), </span>
-<span id="cb336-7"><a href="8-1-o-pacote-ggplot2.html#cb336-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">binwidth =</span> <span class="dv">100000000</span>,</span>
-<span id="cb336-8"><a href="8-1-o-pacote-ggplot2.html#cb336-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;white&quot;</span></span>
-<span id="cb336-9"><a href="8-1-o-pacote-ggplot2.html#cb336-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="8-1-o-pacote-ggplot2.html#cb368-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb368-2"><a href="8-1-o-pacote-ggplot2.html#cb368-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(diretor <span class="sc">==</span> <span class="st">&quot;Steven Spielberg&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb368-3"><a href="8-1-o-pacote-ggplot2.html#cb368-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lucro =</span> receita <span class="sc">-</span> orcamento) <span class="sc">%&gt;%</span> </span>
+<span id="cb368-4"><a href="8-1-o-pacote-ggplot2.html#cb368-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb368-5"><a href="8-1-o-pacote-ggplot2.html#cb368-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb368-6"><a href="8-1-o-pacote-ggplot2.html#cb368-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> lucro), </span>
+<span id="cb368-7"><a href="8-1-o-pacote-ggplot2.html#cb368-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">binwidth =</span> <span class="dv">100000000</span>,</span>
+<span id="cb368-8"><a href="8-1-o-pacote-ggplot2.html#cb368-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;white&quot;</span></span>
+<span id="cb368-9"><a href="8-1-o-pacote-ggplot2.html#cb368-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## Warning: Removed 1 rows containing non-finite values (stat_bin).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-22-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Boxplots também são úteis para estudarmos a distribuição de uma variável, principalmente quando queremos comparar várias distribuições.</p>
 <p>Para construir um boxplot no ggplot, utilizamos a função <code>geom_boxplot</code>. Ele precisa dos atributos <code>x</code> e <code>y</code>, sendo que ao atributo <code>x</code> devemos mapear uma variável categórica.</p>
 <p>A seguir, construímos boxplots do lucro dos filmes dos diretores que fizeram mais de 15 filmes.</p>
-<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="8-1-o-pacote-ggplot2.html#cb338-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb338-2"><a href="8-1-o-pacote-ggplot2.html#cb338-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span></span>
-<span id="cb338-3"><a href="8-1-o-pacote-ggplot2.html#cb338-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(diretor) <span class="sc">%&gt;%</span> </span>
-<span id="cb338-4"><a href="8-1-o-pacote-ggplot2.html#cb338-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">n</span>() <span class="sc">&gt;=</span> <span class="dv">15</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb338-5"><a href="8-1-o-pacote-ggplot2.html#cb338-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lucro =</span> receita <span class="sc">-</span> orcamento) <span class="sc">%&gt;%</span> </span>
-<span id="cb338-6"><a href="8-1-o-pacote-ggplot2.html#cb338-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb338-7"><a href="8-1-o-pacote-ggplot2.html#cb338-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> diretor, <span class="at">y =</span> lucro))</span></code></pre></div>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="8-1-o-pacote-ggplot2.html#cb370-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb370-2"><a href="8-1-o-pacote-ggplot2.html#cb370-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span></span>
+<span id="cb370-3"><a href="8-1-o-pacote-ggplot2.html#cb370-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(diretor) <span class="sc">%&gt;%</span> </span>
+<span id="cb370-4"><a href="8-1-o-pacote-ggplot2.html#cb370-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">n</span>() <span class="sc">&gt;=</span> <span class="dv">15</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb370-5"><a href="8-1-o-pacote-ggplot2.html#cb370-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lucro =</span> receita <span class="sc">-</span> orcamento) <span class="sc">%&gt;%</span> </span>
+<span id="cb370-6"><a href="8-1-o-pacote-ggplot2.html#cb370-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb370-7"><a href="8-1-o-pacote-ggplot2.html#cb370-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> diretor, <span class="at">y =</span> lucro))</span></code></pre></div>
 <pre><code>## Warning: Removed 10 rows containing non-finite values (stat_boxplot).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-23-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Também podemos reordenar a ordem dos boxplots utilizando a função <code>forcats::fct_reorder</code>. Neste caso, os diretores são ordenados pela mediana do lucro<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>.</p>
-<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="8-1-o-pacote-ggplot2.html#cb340-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb340-2"><a href="8-1-o-pacote-ggplot2.html#cb340-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span></span>
-<span id="cb340-3"><a href="8-1-o-pacote-ggplot2.html#cb340-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(diretor) <span class="sc">%&gt;%</span> </span>
-<span id="cb340-4"><a href="8-1-o-pacote-ggplot2.html#cb340-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">n</span>() <span class="sc">&gt;=</span> <span class="dv">15</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb340-5"><a href="8-1-o-pacote-ggplot2.html#cb340-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb340-6"><a href="8-1-o-pacote-ggplot2.html#cb340-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb340-7"><a href="8-1-o-pacote-ggplot2.html#cb340-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro =</span> receita <span class="sc">-</span> orcamento,</span>
-<span id="cb340-8"><a href="8-1-o-pacote-ggplot2.html#cb340-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">diretor =</span> forcats<span class="sc">::</span><span class="fu">fct_reorder</span>(diretor, lucro, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb340-9"><a href="8-1-o-pacote-ggplot2.html#cb340-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb340-10"><a href="8-1-o-pacote-ggplot2.html#cb340-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb340-11"><a href="8-1-o-pacote-ggplot2.html#cb340-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> diretor, <span class="at">y =</span> lucro))</span></code></pre></div>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="8-1-o-pacote-ggplot2.html#cb372-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb372-2"><a href="8-1-o-pacote-ggplot2.html#cb372-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span></span>
+<span id="cb372-3"><a href="8-1-o-pacote-ggplot2.html#cb372-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(diretor) <span class="sc">%&gt;%</span> </span>
+<span id="cb372-4"><a href="8-1-o-pacote-ggplot2.html#cb372-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">n</span>() <span class="sc">&gt;=</span> <span class="dv">15</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb372-5"><a href="8-1-o-pacote-ggplot2.html#cb372-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb372-6"><a href="8-1-o-pacote-ggplot2.html#cb372-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb372-7"><a href="8-1-o-pacote-ggplot2.html#cb372-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro =</span> receita <span class="sc">-</span> orcamento,</span>
+<span id="cb372-8"><a href="8-1-o-pacote-ggplot2.html#cb372-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">diretor =</span> forcats<span class="sc">::</span><span class="fu">fct_reorder</span>(diretor, lucro, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb372-9"><a href="8-1-o-pacote-ggplot2.html#cb372-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb372-10"><a href="8-1-o-pacote-ggplot2.html#cb372-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb372-11"><a href="8-1-o-pacote-ggplot2.html#cb372-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> diretor, <span class="at">y =</span> lucro))</span></code></pre></div>
 <pre><code>## Warning: Removed 10 rows containing non-finite values (stat_boxplot).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-24-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="títulos-e-labels" class="section level3" number="8.1.5">
 <h3><span class="header-section-number">8.1.5</span> Títulos e <em>labels</em></h3>
 <p>Os títulos e <em>labels</em> do gráfico também são considerados camadas e são criados ou modificados pela função <code>labs()</code>. O exemplo a seguir coloca um título e um subtítulo no gráfico, além de modificar os <em>labels</em> do eixo x e y e da legenda.</p>
-<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="8-1-o-pacote-ggplot2.html#cb342-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span></span>
-<span id="cb342-2"><a href="8-1-o-pacote-ggplot2.html#cb342-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lucro =</span> receita <span class="sc">-</span> orcamento) <span class="sc">%&gt;%</span> </span>
-<span id="cb342-3"><a href="8-1-o-pacote-ggplot2.html#cb342-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb342-4"><a href="8-1-o-pacote-ggplot2.html#cb342-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita, <span class="at">color =</span> lucro)) <span class="sc">+</span></span>
-<span id="cb342-5"><a href="8-1-o-pacote-ggplot2.html#cb342-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb342-6"><a href="8-1-o-pacote-ggplot2.html#cb342-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Orçamento ($)&quot;</span>,</span>
-<span id="cb342-7"><a href="8-1-o-pacote-ggplot2.html#cb342-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Receita ($)&quot;</span>,</span>
-<span id="cb342-8"><a href="8-1-o-pacote-ggplot2.html#cb342-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;Lucro ($)&quot;</span>,</span>
-<span id="cb342-9"><a href="8-1-o-pacote-ggplot2.html#cb342-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Gráfico de dispersão&quot;</span>,</span>
-<span id="cb342-10"><a href="8-1-o-pacote-ggplot2.html#cb342-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Receita vs Orçamento&quot;</span></span>
-<span id="cb342-11"><a href="8-1-o-pacote-ggplot2.html#cb342-11" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="8-1-o-pacote-ggplot2.html#cb374-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span></span>
+<span id="cb374-2"><a href="8-1-o-pacote-ggplot2.html#cb374-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lucro =</span> receita <span class="sc">-</span> orcamento) <span class="sc">%&gt;%</span> </span>
+<span id="cb374-3"><a href="8-1-o-pacote-ggplot2.html#cb374-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb374-4"><a href="8-1-o-pacote-ggplot2.html#cb374-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita, <span class="at">color =</span> lucro)) <span class="sc">+</span></span>
+<span id="cb374-5"><a href="8-1-o-pacote-ggplot2.html#cb374-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb374-6"><a href="8-1-o-pacote-ggplot2.html#cb374-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Orçamento ($)&quot;</span>,</span>
+<span id="cb374-7"><a href="8-1-o-pacote-ggplot2.html#cb374-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Receita ($)&quot;</span>,</span>
+<span id="cb374-8"><a href="8-1-o-pacote-ggplot2.html#cb374-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;Lucro ($)&quot;</span>,</span>
+<span id="cb374-9"><a href="8-1-o-pacote-ggplot2.html#cb374-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Gráfico de dispersão&quot;</span>,</span>
+<span id="cb374-10"><a href="8-1-o-pacote-ggplot2.html#cb374-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Receita vs Orçamento&quot;</span></span>
+<span id="cb374-11"><a href="8-1-o-pacote-ggplot2.html#cb374-11" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## Warning: Removed 733 rows containing missing values (geom_point).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-25-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
@@ -660,80 +667,80 @@ O primeiro <em>warning</em> nos diz que o eixo x foi dividido em 30 intervalos p
 <h3><span class="header-section-number">8.1.6</span> Escalas</h3>
 <p>O pacote <code>{ggplot2}</code> possui uma família de funções <code>scale_</code> para modificarmos propriedades referentes às escalas do gráfico. Como podemos ter escalas de números, categorias, cores, datas, entre outras, temos uma função específica para cada tipo de escala.</p>
 <p>Considere o gráfico a seguir.</p>
-<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="8-1-o-pacote-ggplot2.html#cb344-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb344-2"><a href="8-1-o-pacote-ggplot2.html#cb344-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
-<span id="cb344-3"><a href="8-1-o-pacote-ggplot2.html#cb344-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb344-4"><a href="8-1-o-pacote-ggplot2.html#cb344-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb344-5"><a href="8-1-o-pacote-ggplot2.html#cb344-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media))</span></code></pre></div>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="8-1-o-pacote-ggplot2.html#cb376-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb376-2"><a href="8-1-o-pacote-ggplot2.html#cb376-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
+<span id="cb376-3"><a href="8-1-o-pacote-ggplot2.html#cb376-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb376-4"><a href="8-1-o-pacote-ggplot2.html#cb376-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb376-5"><a href="8-1-o-pacote-ggplot2.html#cb376-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media))</span></code></pre></div>
 <pre><code>## Warning: Removed 1 row(s) containing missing values (geom_path).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-26-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Vamos redefinir as quebras dos eixos <code>x</code> e <code>y</code>.</p>
-<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="8-1-o-pacote-ggplot2.html#cb346-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb346-2"><a href="8-1-o-pacote-ggplot2.html#cb346-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
-<span id="cb346-3"><a href="8-1-o-pacote-ggplot2.html#cb346-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb346-4"><a href="8-1-o-pacote-ggplot2.html#cb346-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb346-5"><a href="8-1-o-pacote-ggplot2.html#cb346-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media)) <span class="sc">+</span></span>
-<span id="cb346-6"><a href="8-1-o-pacote-ggplot2.html#cb346-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1916</span>, <span class="dv">2016</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb346-7"><a href="8-1-o-pacote-ggplot2.html#cb346-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="8-1-o-pacote-ggplot2.html#cb378-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb378-2"><a href="8-1-o-pacote-ggplot2.html#cb378-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
+<span id="cb378-3"><a href="8-1-o-pacote-ggplot2.html#cb378-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb378-4"><a href="8-1-o-pacote-ggplot2.html#cb378-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb378-5"><a href="8-1-o-pacote-ggplot2.html#cb378-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media)) <span class="sc">+</span></span>
+<span id="cb378-6"><a href="8-1-o-pacote-ggplot2.html#cb378-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1916</span>, <span class="dv">2016</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb378-7"><a href="8-1-o-pacote-ggplot2.html#cb378-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>))</span></code></pre></div>
 <pre><code>## Warning: Removed 1 row(s) containing missing values (geom_path).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-27-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Como as escalas dos eixos x e y são numéricas, utilizamos nesse caso as funções <code>scale_x_continuous()</code> e <code>scale_y_continuous()</code>. Veja que, mesmo definindo as quebras entre 0 e 10, o limite do eixo y não é alterado. Para alterá-lo, usamos a função <code>coord_cartesian()</code>.</p>
-<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="8-1-o-pacote-ggplot2.html#cb348-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb348-2"><a href="8-1-o-pacote-ggplot2.html#cb348-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
-<span id="cb348-3"><a href="8-1-o-pacote-ggplot2.html#cb348-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb348-4"><a href="8-1-o-pacote-ggplot2.html#cb348-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb348-5"><a href="8-1-o-pacote-ggplot2.html#cb348-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media)) <span class="sc">+</span></span>
-<span id="cb348-6"><a href="8-1-o-pacote-ggplot2.html#cb348-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1916</span>, <span class="dv">2016</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb348-7"><a href="8-1-o-pacote-ggplot2.html#cb348-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>)) <span class="sc">+</span></span>
-<span id="cb348-8"><a href="8-1-o-pacote-ggplot2.html#cb348-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">10</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="8-1-o-pacote-ggplot2.html#cb380-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb380-2"><a href="8-1-o-pacote-ggplot2.html#cb380-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
+<span id="cb380-3"><a href="8-1-o-pacote-ggplot2.html#cb380-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb380-4"><a href="8-1-o-pacote-ggplot2.html#cb380-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb380-5"><a href="8-1-o-pacote-ggplot2.html#cb380-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media)) <span class="sc">+</span></span>
+<span id="cb380-6"><a href="8-1-o-pacote-ggplot2.html#cb380-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1916</span>, <span class="dv">2016</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb380-7"><a href="8-1-o-pacote-ggplot2.html#cb380-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb380-8"><a href="8-1-o-pacote-ggplot2.html#cb380-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">10</span>))</span></code></pre></div>
 <pre><code>## Warning: Removed 1 row(s) containing missing values (geom_path).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-28-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Para mudarmos as escalas de cores, usamos as funções do tipo: <code>scale_color_</code> e <code>scale_fill_</code>.</p>
 <p>Para escolher manualmente as cores de um gráfico, utilize as funções
 <code>scale_color_manual()</code> e <code>scale_fill_manual()</code>. A seguir substituímos as cores padrão do gráfico por um outro conjunto de cores.</p>
-<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="8-1-o-pacote-ggplot2.html#cb350-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb350-2"><a href="8-1-o-pacote-ggplot2.html#cb350-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(diretor) <span class="sc">%&gt;%</span></span>
-<span id="cb350-3"><a href="8-1-o-pacote-ggplot2.html#cb350-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span> </span>
-<span id="cb350-4"><a href="8-1-o-pacote-ggplot2.html#cb350-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">5</span>, n) <span class="sc">%&gt;%</span></span>
-<span id="cb350-5"><a href="8-1-o-pacote-ggplot2.html#cb350-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb350-6"><a href="8-1-o-pacote-ggplot2.html#cb350-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(</span>
-<span id="cb350-7"><a href="8-1-o-pacote-ggplot2.html#cb350-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> diretor, <span class="at">y =</span> n, <span class="at">fill =</span> diretor),</span>
-<span id="cb350-8"><a href="8-1-o-pacote-ggplot2.html#cb350-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span></span>
-<span id="cb350-9"><a href="8-1-o-pacote-ggplot2.html#cb350-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb350-10"><a href="8-1-o-pacote-ggplot2.html#cb350-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb350-11"><a href="8-1-o-pacote-ggplot2.html#cb350-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;pink&quot;</span>, <span class="st">&quot;purple&quot;</span>, <span class="st">&quot;black&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="8-1-o-pacote-ggplot2.html#cb382-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb382-2"><a href="8-1-o-pacote-ggplot2.html#cb382-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(diretor) <span class="sc">%&gt;%</span></span>
+<span id="cb382-3"><a href="8-1-o-pacote-ggplot2.html#cb382-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span> </span>
+<span id="cb382-4"><a href="8-1-o-pacote-ggplot2.html#cb382-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">5</span>, n) <span class="sc">%&gt;%</span></span>
+<span id="cb382-5"><a href="8-1-o-pacote-ggplot2.html#cb382-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb382-6"><a href="8-1-o-pacote-ggplot2.html#cb382-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(</span>
+<span id="cb382-7"><a href="8-1-o-pacote-ggplot2.html#cb382-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> diretor, <span class="at">y =</span> n, <span class="at">fill =</span> diretor),</span>
+<span id="cb382-8"><a href="8-1-o-pacote-ggplot2.html#cb382-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span></span>
+<span id="cb382-9"><a href="8-1-o-pacote-ggplot2.html#cb382-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb382-10"><a href="8-1-o-pacote-ggplot2.html#cb382-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb382-11"><a href="8-1-o-pacote-ggplot2.html#cb382-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;pink&quot;</span>, <span class="st">&quot;purple&quot;</span>, <span class="st">&quot;black&quot;</span>))</span></code></pre></div>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-29-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Também podemos usar códigos hexadecimais.</p>
-<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="8-1-o-pacote-ggplot2.html#cb351-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb351-2"><a href="8-1-o-pacote-ggplot2.html#cb351-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(diretor) <span class="sc">%&gt;%</span></span>
-<span id="cb351-3"><a href="8-1-o-pacote-ggplot2.html#cb351-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span> </span>
-<span id="cb351-4"><a href="8-1-o-pacote-ggplot2.html#cb351-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">5</span>, n) <span class="sc">%&gt;%</span></span>
-<span id="cb351-5"><a href="8-1-o-pacote-ggplot2.html#cb351-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb351-6"><a href="8-1-o-pacote-ggplot2.html#cb351-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(</span>
-<span id="cb351-7"><a href="8-1-o-pacote-ggplot2.html#cb351-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> diretor, <span class="at">y =</span> n, <span class="at">fill =</span> diretor),</span>
-<span id="cb351-8"><a href="8-1-o-pacote-ggplot2.html#cb351-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span></span>
-<span id="cb351-9"><a href="8-1-o-pacote-ggplot2.html#cb351-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb351-10"><a href="8-1-o-pacote-ggplot2.html#cb351-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb351-11"><a href="8-1-o-pacote-ggplot2.html#cb351-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb351-12"><a href="8-1-o-pacote-ggplot2.html#cb351-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#ff4500&quot;</span>, <span class="st">&quot;#268b07&quot;</span>, <span class="st">&quot;#ff7400&quot;</span>, <span class="st">&quot;#0befff&quot;</span>, <span class="st">&quot;#a4bdba&quot;</span>, <span class="st">&quot;#b1f91a&quot;</span>)</span>
-<span id="cb351-13"><a href="8-1-o-pacote-ggplot2.html#cb351-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="8-1-o-pacote-ggplot2.html#cb383-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb383-2"><a href="8-1-o-pacote-ggplot2.html#cb383-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(diretor) <span class="sc">%&gt;%</span></span>
+<span id="cb383-3"><a href="8-1-o-pacote-ggplot2.html#cb383-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(diretor)) <span class="sc">%&gt;%</span> </span>
+<span id="cb383-4"><a href="8-1-o-pacote-ggplot2.html#cb383-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">5</span>, n) <span class="sc">%&gt;%</span></span>
+<span id="cb383-5"><a href="8-1-o-pacote-ggplot2.html#cb383-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb383-6"><a href="8-1-o-pacote-ggplot2.html#cb383-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(</span>
+<span id="cb383-7"><a href="8-1-o-pacote-ggplot2.html#cb383-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> diretor, <span class="at">y =</span> n, <span class="at">fill =</span> diretor),</span>
+<span id="cb383-8"><a href="8-1-o-pacote-ggplot2.html#cb383-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span></span>
+<span id="cb383-9"><a href="8-1-o-pacote-ggplot2.html#cb383-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb383-10"><a href="8-1-o-pacote-ggplot2.html#cb383-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb383-11"><a href="8-1-o-pacote-ggplot2.html#cb383-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb383-12"><a href="8-1-o-pacote-ggplot2.html#cb383-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#ff4500&quot;</span>, <span class="st">&quot;#268b07&quot;</span>, <span class="st">&quot;#ff7400&quot;</span>, <span class="st">&quot;#0befff&quot;</span>, <span class="st">&quot;#a4bdba&quot;</span>, <span class="st">&quot;#b1f91a&quot;</span>)</span>
+<span id="cb383-13"><a href="8-1-o-pacote-ggplot2.html#cb383-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-30-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Para trocar as cores de um gradiente, utilize as funções <code>scale_color_gradient()</code> e <code>scale_fill_gradient()</code>.</p>
-<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="8-1-o-pacote-ggplot2.html#cb352-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb352-2"><a href="8-1-o-pacote-ggplot2.html#cb352-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lucro =</span> receita <span class="sc">-</span> orcamento) <span class="sc">%&gt;%</span> </span>
-<span id="cb352-3"><a href="8-1-o-pacote-ggplot2.html#cb352-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb352-4"><a href="8-1-o-pacote-ggplot2.html#cb352-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita, <span class="at">color =</span> lucro)) <span class="sc">+</span></span>
-<span id="cb352-5"><a href="8-1-o-pacote-ggplot2.html#cb352-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">&quot;red&quot;</span>, <span class="at">high =</span> <span class="st">&quot;green&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="8-1-o-pacote-ggplot2.html#cb384-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb384-2"><a href="8-1-o-pacote-ggplot2.html#cb384-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lucro =</span> receita <span class="sc">-</span> orcamento) <span class="sc">%&gt;%</span> </span>
+<span id="cb384-3"><a href="8-1-o-pacote-ggplot2.html#cb384-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb384-4"><a href="8-1-o-pacote-ggplot2.html#cb384-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita, <span class="at">color =</span> lucro)) <span class="sc">+</span></span>
+<span id="cb384-5"><a href="8-1-o-pacote-ggplot2.html#cb384-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">&quot;red&quot;</span>, <span class="at">high =</span> <span class="st">&quot;green&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 733 rows containing missing values (geom_point).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-31-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Para trocar o nome das categorias de uma legenda de cores, utilize as funções <code>scale_color_discrete()</code> e <code>scale_fill_discrete()</code>.</p>
-<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="8-1-o-pacote-ggplot2.html#cb354-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb354-2"><a href="8-1-o-pacote-ggplot2.html#cb354-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(cor)) <span class="sc">%&gt;%</span> </span>
-<span id="cb354-3"><a href="8-1-o-pacote-ggplot2.html#cb354-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano, cor) <span class="sc">%&gt;%</span> </span>
-<span id="cb354-4"><a href="8-1-o-pacote-ggplot2.html#cb354-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_filmes =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb354-5"><a href="8-1-o-pacote-ggplot2.html#cb354-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb354-6"><a href="8-1-o-pacote-ggplot2.html#cb354-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> num_filmes, <span class="at">color =</span> cor)) <span class="sc">+</span></span>
-<span id="cb354-7"><a href="8-1-o-pacote-ggplot2.html#cb354-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Preto e branco&quot;</span>, <span class="st">&quot;Colorido&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="8-1-o-pacote-ggplot2.html#cb386-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb386-2"><a href="8-1-o-pacote-ggplot2.html#cb386-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(cor)) <span class="sc">%&gt;%</span> </span>
+<span id="cb386-3"><a href="8-1-o-pacote-ggplot2.html#cb386-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano, cor) <span class="sc">%&gt;%</span> </span>
+<span id="cb386-4"><a href="8-1-o-pacote-ggplot2.html#cb386-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_filmes =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb386-5"><a href="8-1-o-pacote-ggplot2.html#cb386-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb386-6"><a href="8-1-o-pacote-ggplot2.html#cb386-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> num_filmes, <span class="at">color =</span> cor)) <span class="sc">+</span></span>
+<span id="cb386-7"><a href="8-1-o-pacote-ggplot2.html#cb386-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Preto e branco&quot;</span>, <span class="st">&quot;Colorido&quot;</span>))</span></code></pre></div>
 <pre><code>## `summarise()` has grouped output by &#39;ano&#39;. You can override using the `.groups` argument.</code></pre>
 <pre><code>## Warning: Removed 2 row(s) containing missing values (geom_path).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-32-1.png" width="672" style="display: block; margin: auto;" /></p>
@@ -743,37 +750,37 @@ O primeiro <em>warning</em> nos diz que o eixo x foi dividido em 30 intervalos p
 <p>Os gráficos que vimos até agora usam o tema padrão do ggplot2. Existem outros temas prontos para utilizarmos presentes na família de funções <code>theme_</code>.</p>
 <div id="theme_minimal" class="section level5 unnumbered">
 <h5>theme_minimal()</h5>
-<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="8-1-o-pacote-ggplot2.html#cb357-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb357-2"><a href="8-1-o-pacote-ggplot2.html#cb357-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb357-3"><a href="8-1-o-pacote-ggplot2.html#cb357-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) <span class="sc">+</span></span>
-<span id="cb357-4"><a href="8-1-o-pacote-ggplot2.html#cb357-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="8-1-o-pacote-ggplot2.html#cb389-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb389-2"><a href="8-1-o-pacote-ggplot2.html#cb389-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb389-3"><a href="8-1-o-pacote-ggplot2.html#cb389-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) <span class="sc">+</span></span>
+<span id="cb389-4"><a href="8-1-o-pacote-ggplot2.html#cb389-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() </span></code></pre></div>
 <pre><code>## Warning: Removed 733 rows containing missing values (geom_point).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-33-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="theme_bw" class="section level5 unnumbered">
 <h5>theme_bw()</h5>
-<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="8-1-o-pacote-ggplot2.html#cb359-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb359-2"><a href="8-1-o-pacote-ggplot2.html#cb359-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb359-3"><a href="8-1-o-pacote-ggplot2.html#cb359-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) <span class="sc">+</span></span>
-<span id="cb359-4"><a href="8-1-o-pacote-ggplot2.html#cb359-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="8-1-o-pacote-ggplot2.html#cb391-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb391-2"><a href="8-1-o-pacote-ggplot2.html#cb391-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb391-3"><a href="8-1-o-pacote-ggplot2.html#cb391-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) <span class="sc">+</span></span>
+<span id="cb391-4"><a href="8-1-o-pacote-ggplot2.html#cb391-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
 <pre><code>## Warning: Removed 733 rows containing missing values (geom_point).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-34-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="theme_classic" class="section level5 unnumbered">
 <h5>theme_classic()</h5>
-<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="8-1-o-pacote-ggplot2.html#cb361-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb361-2"><a href="8-1-o-pacote-ggplot2.html#cb361-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb361-3"><a href="8-1-o-pacote-ggplot2.html#cb361-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) <span class="sc">+</span></span>
-<span id="cb361-4"><a href="8-1-o-pacote-ggplot2.html#cb361-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="8-1-o-pacote-ggplot2.html#cb393-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb393-2"><a href="8-1-o-pacote-ggplot2.html#cb393-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb393-3"><a href="8-1-o-pacote-ggplot2.html#cb393-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) <span class="sc">+</span></span>
+<span id="cb393-4"><a href="8-1-o-pacote-ggplot2.html#cb393-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
 <pre><code>## Warning: Removed 733 rows containing missing values (geom_point).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-35-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="theme_dark" class="section level5 unnumbered">
 <h5>theme_dark()</h5>
-<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="8-1-o-pacote-ggplot2.html#cb363-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb363-2"><a href="8-1-o-pacote-ggplot2.html#cb363-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb363-3"><a href="8-1-o-pacote-ggplot2.html#cb363-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) <span class="sc">+</span></span>
-<span id="cb363-4"><a href="8-1-o-pacote-ggplot2.html#cb363-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_dark</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="8-1-o-pacote-ggplot2.html#cb395-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb395-2"><a href="8-1-o-pacote-ggplot2.html#cb395-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb395-3"><a href="8-1-o-pacote-ggplot2.html#cb395-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) <span class="sc">+</span></span>
+<span id="cb395-4"><a href="8-1-o-pacote-ggplot2.html#cb395-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_dark</span>()</span></code></pre></div>
 <pre><code>## Warning: Removed 733 rows containing missing values (geom_point).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-36-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Você também pode criar o seu próprio tema utilizando a função <code>theme()</code>. Nesse caso, para trocar os elementos estéticos do gráfico precisamos usar as funções <code>element_text()</code> para textos, <code>element_line()</code> para linhas, <code>element_rect()</code> para áreas e <code>element_blank()</code> para remover elementos.</p>
@@ -785,17 +792,17 @@ O primeiro <em>warning</em> nos diz que o eixo x foi dividido em 30 intervalos p
 <li>Preenchemos o fundo do gráfico de preto.</li>
 <li>Removemos o grid do gráfico.</li>
 </ul>
-<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="8-1-o-pacote-ggplot2.html#cb365-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb365-2"><a href="8-1-o-pacote-ggplot2.html#cb365-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb365-3"><a href="8-1-o-pacote-ggplot2.html#cb365-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
-<span id="cb365-4"><a href="8-1-o-pacote-ggplot2.html#cb365-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Gráfico de dispersão&quot;</span>, <span class="at">subtitle =</span> <span class="st">&quot;Receita vs Orçamento&quot;</span>) <span class="sc">+</span></span>
-<span id="cb365-5"><a href="8-1-o-pacote-ggplot2.html#cb365-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb365-6"><a href="8-1-o-pacote-ggplot2.html#cb365-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb365-7"><a href="8-1-o-pacote-ggplot2.html#cb365-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb365-8"><a href="8-1-o-pacote-ggplot2.html#cb365-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;purple&quot;</span>),</span>
-<span id="cb365-9"><a href="8-1-o-pacote-ggplot2.html#cb365-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&quot;black&quot;</span>),</span>
-<span id="cb365-10"><a href="8-1-o-pacote-ggplot2.html#cb365-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb365-11"><a href="8-1-o-pacote-ggplot2.html#cb365-11" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="8-1-o-pacote-ggplot2.html#cb397-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb397-2"><a href="8-1-o-pacote-ggplot2.html#cb397-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb397-3"><a href="8-1-o-pacote-ggplot2.html#cb397-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb397-4"><a href="8-1-o-pacote-ggplot2.html#cb397-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Gráfico de dispersão&quot;</span>, <span class="at">subtitle =</span> <span class="st">&quot;Receita vs Orçamento&quot;</span>) <span class="sc">+</span></span>
+<span id="cb397-5"><a href="8-1-o-pacote-ggplot2.html#cb397-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb397-6"><a href="8-1-o-pacote-ggplot2.html#cb397-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb397-7"><a href="8-1-o-pacote-ggplot2.html#cb397-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb397-8"><a href="8-1-o-pacote-ggplot2.html#cb397-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">&quot;purple&quot;</span>),</span>
+<span id="cb397-9"><a href="8-1-o-pacote-ggplot2.html#cb397-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb397-10"><a href="8-1-o-pacote-ggplot2.html#cb397-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb397-11"><a href="8-1-o-pacote-ggplot2.html#cb397-11" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## Warning: Removed 733 rows containing missing values (geom_point).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-37-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
@@ -806,9 +813,9 @@ O primeiro <em>warning</em> nos diz que o eixo x foi dividido em 30 intervalos p
 <div id="vários-geoms-no-mesmo-gráfico" class="section level4 unnumbered">
 <h4>Vários geoms no mesmo gráfico</h4>
 <p>Como vimos anteriormente, podemos acrescentar vários <code>geoms</code> em um mesmo gráfico, apenas adicionando novas camadas. No código a seguir, construímos o gráfico de dispersão da receita pelo orçamento dos filmes, acrescentando também uma reta de tendência linear aos pontos.</p>
-<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="8-1-o-pacote-ggplot2.html#cb367-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(imdb, <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) <span class="sc">+</span></span>
-<span id="cb367-2"><a href="8-1-o-pacote-ggplot2.html#cb367-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb367-3"><a href="8-1-o-pacote-ggplot2.html#cb367-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="8-1-o-pacote-ggplot2.html#cb399-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(imdb, <span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) <span class="sc">+</span></span>
+<span id="cb399-2"><a href="8-1-o-pacote-ggplot2.html#cb399-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb399-3"><a href="8-1-o-pacote-ggplot2.html#cb399-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <pre><code>## Warning: Removed 733 rows containing non-finite values (stat_smooth).</code></pre>
 <pre><code>## Warning: Removed 733 rows containing missing values (geom_point).</code></pre>
@@ -817,59 +824,59 @@ O primeiro <em>warning</em> nos diz que o eixo x foi dividido em 30 intervalos p
 <div id="replicando-um-gráfico-para-cada-categoria-de-uma-variável" class="section level4 unnumbered">
 <h4>Replicando um gráfico para cada categoria de uma variável</h4>
 <p>Uma funcionalidade muito útil do <code>ggplot2</code> é a possibilidade de usar <code>facets</code> para replicar um gráfico para cada categoria de uma variável.</p>
-<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="8-1-o-pacote-ggplot2.html#cb371-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span></span>
-<span id="cb371-2"><a href="8-1-o-pacote-ggplot2.html#cb371-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(classificacao <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Livre&quot;</span>, <span class="st">&quot;A partir de 13 anos&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb371-3"><a href="8-1-o-pacote-ggplot2.html#cb371-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb371-4"><a href="8-1-o-pacote-ggplot2.html#cb371-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> nota_imdb)) <span class="sc">+</span></span>
-<span id="cb371-5"><a href="8-1-o-pacote-ggplot2.html#cb371-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>classificacao, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="8-1-o-pacote-ggplot2.html#cb403-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span></span>
+<span id="cb403-2"><a href="8-1-o-pacote-ggplot2.html#cb403-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(classificacao <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Livre&quot;</span>, <span class="st">&quot;A partir de 13 anos&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb403-3"><a href="8-1-o-pacote-ggplot2.html#cb403-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb403-4"><a href="8-1-o-pacote-ggplot2.html#cb403-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> nota_imdb)) <span class="sc">+</span></span>
+<span id="cb403-5"><a href="8-1-o-pacote-ggplot2.html#cb403-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>classificacao, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 85 rows containing missing values (geom_point).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-39-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Repare que usamos uma fórmula para dizer à função qual variável vamos utilizar para quebrar o gráfico. Podemos especificar se queremos os gráficos lado a lado ou um embaixo do outro pelos argumentos <code>nrow=</code> e <code>ncol=</code>.</p>
-<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="8-1-o-pacote-ggplot2.html#cb373-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span></span>
-<span id="cb373-2"><a href="8-1-o-pacote-ggplot2.html#cb373-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(classificacao <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Livre&quot;</span>, <span class="st">&quot;A partir de 13 anos&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb373-3"><a href="8-1-o-pacote-ggplot2.html#cb373-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb373-4"><a href="8-1-o-pacote-ggplot2.html#cb373-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> nota_imdb)) <span class="sc">+</span></span>
-<span id="cb373-5"><a href="8-1-o-pacote-ggplot2.html#cb373-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>classificacao, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="8-1-o-pacote-ggplot2.html#cb405-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span></span>
+<span id="cb405-2"><a href="8-1-o-pacote-ggplot2.html#cb405-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(classificacao <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Livre&quot;</span>, <span class="st">&quot;A partir de 13 anos&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb405-3"><a href="8-1-o-pacote-ggplot2.html#cb405-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb405-4"><a href="8-1-o-pacote-ggplot2.html#cb405-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> nota_imdb)) <span class="sc">+</span></span>
+<span id="cb405-5"><a href="8-1-o-pacote-ggplot2.html#cb405-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>classificacao, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 85 rows containing missing values (geom_point).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-40-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="juntando-gráficos-diferentes" class="section level4 unnumbered">
 <h4>Juntando gráficos diferentes</h4>
 <p>Diversos outros pacotes trazem ferramentas super úteis para trabalharmos com o <code>ggplot2</code>. Um deles é o pacote <code>{patchwork}</code>. Após carregá-lo, podemos juntar dois gráficos em uma mesma figura com um simples <code>+</code>.</p>
-<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="8-1-o-pacote-ggplot2.html#cb375-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instale antes de carregar</span></span>
-<span id="cb375-2"><a href="8-1-o-pacote-ggplot2.html#cb375-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;patchwork&quot;)</span></span>
-<span id="cb375-3"><a href="8-1-o-pacote-ggplot2.html#cb375-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb375-4"><a href="8-1-o-pacote-ggplot2.html#cb375-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb375-5"><a href="8-1-o-pacote-ggplot2.html#cb375-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb375-6"><a href="8-1-o-pacote-ggplot2.html#cb375-6" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb375-7"><a href="8-1-o-pacote-ggplot2.html#cb375-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(diretor <span class="sc">==</span> <span class="st">&quot;Steven Spielberg&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb375-8"><a href="8-1-o-pacote-ggplot2.html#cb375-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
-<span id="cb375-9"><a href="8-1-o-pacote-ggplot2.html#cb375-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb375-10"><a href="8-1-o-pacote-ggplot2.html#cb375-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb375-11"><a href="8-1-o-pacote-ggplot2.html#cb375-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media))</span>
-<span id="cb375-12"><a href="8-1-o-pacote-ggplot2.html#cb375-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb375-13"><a href="8-1-o-pacote-ggplot2.html#cb375-13" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb375-14"><a href="8-1-o-pacote-ggplot2.html#cb375-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lucro =</span> receita <span class="sc">-</span> orcamento) <span class="sc">%&gt;%</span> </span>
-<span id="cb375-15"><a href="8-1-o-pacote-ggplot2.html#cb375-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(diretor <span class="sc">==</span> <span class="st">&quot;Steven Spielberg&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb375-16"><a href="8-1-o-pacote-ggplot2.html#cb375-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb375-17"><a href="8-1-o-pacote-ggplot2.html#cb375-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
-<span id="cb375-18"><a href="8-1-o-pacote-ggplot2.html#cb375-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> lucro),</span>
-<span id="cb375-19"><a href="8-1-o-pacote-ggplot2.html#cb375-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;lightblue&quot;</span>, </span>
-<span id="cb375-20"><a href="8-1-o-pacote-ggplot2.html#cb375-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;darkblue&quot;</span>, </span>
-<span id="cb375-21"><a href="8-1-o-pacote-ggplot2.html#cb375-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">binwidth =</span> <span class="dv">100000000</span></span>
-<span id="cb375-22"><a href="8-1-o-pacote-ggplot2.html#cb375-22" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb375-23"><a href="8-1-o-pacote-ggplot2.html#cb375-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb375-24"><a href="8-1-o-pacote-ggplot2.html#cb375-24" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> p2</span></code></pre></div>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="8-1-o-pacote-ggplot2.html#cb407-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instale antes de carregar</span></span>
+<span id="cb407-2"><a href="8-1-o-pacote-ggplot2.html#cb407-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;patchwork&quot;)</span></span>
+<span id="cb407-3"><a href="8-1-o-pacote-ggplot2.html#cb407-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb407-4"><a href="8-1-o-pacote-ggplot2.html#cb407-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb407-5"><a href="8-1-o-pacote-ggplot2.html#cb407-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb407-6"><a href="8-1-o-pacote-ggplot2.html#cb407-6" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb407-7"><a href="8-1-o-pacote-ggplot2.html#cb407-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(diretor <span class="sc">==</span> <span class="st">&quot;Steven Spielberg&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb407-8"><a href="8-1-o-pacote-ggplot2.html#cb407-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
+<span id="cb407-9"><a href="8-1-o-pacote-ggplot2.html#cb407-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb407-10"><a href="8-1-o-pacote-ggplot2.html#cb407-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb407-11"><a href="8-1-o-pacote-ggplot2.html#cb407-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media))</span>
+<span id="cb407-12"><a href="8-1-o-pacote-ggplot2.html#cb407-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb407-13"><a href="8-1-o-pacote-ggplot2.html#cb407-13" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb407-14"><a href="8-1-o-pacote-ggplot2.html#cb407-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lucro =</span> receita <span class="sc">-</span> orcamento) <span class="sc">%&gt;%</span> </span>
+<span id="cb407-15"><a href="8-1-o-pacote-ggplot2.html#cb407-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(diretor <span class="sc">==</span> <span class="st">&quot;Steven Spielberg&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb407-16"><a href="8-1-o-pacote-ggplot2.html#cb407-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb407-17"><a href="8-1-o-pacote-ggplot2.html#cb407-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb407-18"><a href="8-1-o-pacote-ggplot2.html#cb407-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> lucro),</span>
+<span id="cb407-19"><a href="8-1-o-pacote-ggplot2.html#cb407-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;lightblue&quot;</span>, </span>
+<span id="cb407-20"><a href="8-1-o-pacote-ggplot2.html#cb407-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;darkblue&quot;</span>, </span>
+<span id="cb407-21"><a href="8-1-o-pacote-ggplot2.html#cb407-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">binwidth =</span> <span class="dv">100000000</span></span>
+<span id="cb407-22"><a href="8-1-o-pacote-ggplot2.html#cb407-22" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb407-23"><a href="8-1-o-pacote-ggplot2.html#cb407-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb407-24"><a href="8-1-o-pacote-ggplot2.html#cb407-24" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> p2</span></code></pre></div>
 <pre><code>## Warning: Removed 1 rows containing non-finite values (stat_bin).</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-41-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="exercícios-17" class="section level3" number="8.1.9">
+<div id="exercícios-18" class="section level3" number="8.1.9">
 <h3><span class="header-section-number">8.1.9</span> Exercícios</h3>
 <p><strong>1.</strong> O que acontece quando rodamos o código <code>ggplot(data = mtcars)</code>?</p>
 <p><strong>2.</strong> O que tem de errado no código abaixo? Por que os pontos não ficaram azuis?</p>
-<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="8-1-o-pacote-ggplot2.html#cb377-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
-<span id="cb377-2"><a href="8-1-o-pacote-ggplot2.html#cb377-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="8-1-o-pacote-ggplot2.html#cb409-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb409-2"><a href="8-1-o-pacote-ggplot2.html#cb409-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>))</span></code></pre></div>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-42-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><strong>3.</strong> Mapeie uma variável contínua para a cor, o tamanho e a forma de um gráfico de pontos. Como esses atributos estéticos se comportam diferente para variáveis categóricas vs contínuas?</p>
 <p><strong>4.</strong> Utilizando o <code>mtcars</code>, faça um gráfico de dispersão de <code>mpg</code> por <code>qsec</code>.</p>
@@ -880,21 +887,21 @@ O primeiro <em>warning</em> nos diz que o eixo x foi dividido em 30 intervalos p
 <p><strong>8.</strong> Transforme o gráfico do exercício anterior em um gráfico de barras.</p>
 <p><strong>9.</strong> Descubra quais são os 5 atores que mais aparecem na coluna ator_1 e faça um boxplot do lucro dos filmes desses atores.</p>
 <p><strong>10.</strong> Com base no código abaixo, resolva os itens a seguir.</p>
-<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="8-1-o-pacote-ggplot2.html#cb378-1" aria-hidden="true" tabindex="-1"></a>diretores <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb378-2"><a href="8-1-o-pacote-ggplot2.html#cb378-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Steven Spielberg&quot;</span>, </span>
-<span id="cb378-3"><a href="8-1-o-pacote-ggplot2.html#cb378-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Quentin Tarantino&quot;</span>, </span>
-<span id="cb378-4"><a href="8-1-o-pacote-ggplot2.html#cb378-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Christopher Nolan&quot;</span>,</span>
-<span id="cb378-5"><a href="8-1-o-pacote-ggplot2.html#cb378-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Martin Scorsese&quot;</span></span>
-<span id="cb378-6"><a href="8-1-o-pacote-ggplot2.html#cb378-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb378-7"><a href="8-1-o-pacote-ggplot2.html#cb378-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb378-8"><a href="8-1-o-pacote-ggplot2.html#cb378-8" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb378-9"><a href="8-1-o-pacote-ggplot2.html#cb378-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(diretor <span class="sc">%in%</span> diretores) <span class="sc">%&gt;%</span> </span>
-<span id="cb378-10"><a href="8-1-o-pacote-ggplot2.html#cb378-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano, diretor) <span class="sc">%&gt;%</span> </span>
-<span id="cb378-11"><a href="8-1-o-pacote-ggplot2.html#cb378-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb378-12"><a href="8-1-o-pacote-ggplot2.html#cb378-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media)) <span class="sc">+</span></span>
-<span id="cb378-13"><a href="8-1-o-pacote-ggplot2.html#cb378-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb378-14"><a href="8-1-o-pacote-ggplot2.html#cb378-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb378-15"><a href="8-1-o-pacote-ggplot2.html#cb378-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(diretor))</span></code></pre></div>
+<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="8-1-o-pacote-ggplot2.html#cb410-1" aria-hidden="true" tabindex="-1"></a>diretores <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb410-2"><a href="8-1-o-pacote-ggplot2.html#cb410-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Steven Spielberg&quot;</span>, </span>
+<span id="cb410-3"><a href="8-1-o-pacote-ggplot2.html#cb410-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Quentin Tarantino&quot;</span>, </span>
+<span id="cb410-4"><a href="8-1-o-pacote-ggplot2.html#cb410-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Christopher Nolan&quot;</span>,</span>
+<span id="cb410-5"><a href="8-1-o-pacote-ggplot2.html#cb410-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Martin Scorsese&quot;</span></span>
+<span id="cb410-6"><a href="8-1-o-pacote-ggplot2.html#cb410-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb410-7"><a href="8-1-o-pacote-ggplot2.html#cb410-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb410-8"><a href="8-1-o-pacote-ggplot2.html#cb410-8" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb410-9"><a href="8-1-o-pacote-ggplot2.html#cb410-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(diretor <span class="sc">%in%</span> diretores) <span class="sc">%&gt;%</span> </span>
+<span id="cb410-10"><a href="8-1-o-pacote-ggplot2.html#cb410-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano, diretor) <span class="sc">%&gt;%</span> </span>
+<span id="cb410-11"><a href="8-1-o-pacote-ggplot2.html#cb410-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nota_media =</span> <span class="fu">mean</span>(nota_imdb, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb410-12"><a href="8-1-o-pacote-ggplot2.html#cb410-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> ano, <span class="at">y =</span> nota_media)) <span class="sc">+</span></span>
+<span id="cb410-13"><a href="8-1-o-pacote-ggplot2.html#cb410-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb410-14"><a href="8-1-o-pacote-ggplot2.html#cb410-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb410-15"><a href="8-1-o-pacote-ggplot2.html#cb410-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(diretor))</span></code></pre></div>
 <pre><code>## `summarise()` has grouped output by &#39;ano&#39;. You can override using the `.groups` argument.</code></pre>
 <p><img src="08-graficos_files/figure-html/unnamed-chunk-43-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>

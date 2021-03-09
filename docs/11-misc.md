@@ -171,27 +171,21 @@ janitor::get_dupes(base_qualquer, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 18 x 4
+## # A tibble: 12 x 4
 ##    nome     sobrenome dupe_count variavel_importante
 ##    <chr>    <chr>          <int>               <dbl>
-##  1 Athos    Damiani            2              -0.451
-##  2 Athos    Damiani            2              -0.266
-##  3 Daniel   Corrêa             2              -1.72 
-##  4 Daniel   Corrêa             2              -1.17 
-##  5 Daniel   Damiani            2               0.512
-##  6 Daniel   Damiani            2               0.439
-##  7 Daniel   Falbel             2              -1.05 
-##  8 Daniel   Falbel             2              -1.37 
-##  9 Fernando Corrêa             4              -2.12 
-## 10 Fernando Corrêa             4              -0.699
-## 11 Fernando Corrêa             4              -0.621
-## 12 Fernando Corrêa             4              -0.409
-## 13 Fernando Trecenti           2              -2.25 
-## 14 Fernando Trecenti           2              -0.185
-## 15 Julio    Amorim             2              -2.03 
-## 16 Julio    Amorim             2              -0.331
-## 17 Julio    Damiani            2              -0.295
-## 18 Julio    Damiani            2               0.480
+##  1 Athos    Amorim             2              0.581 
+##  2 Athos    Amorim             2             -1.19  
+##  3 Athos    Corrêa             2             -0.0787
+##  4 Athos    Corrêa             2              0.466 
+##  5 Athos    Trecenti           2              0.714 
+##  6 Athos    Trecenti           2              0.120 
+##  7 Fernando Corrêa             2             -0.687 
+##  8 Fernando Corrêa             2             -0.317 
+##  9 William  Amorim             2              0.430 
+## 10 William  Amorim             2              2.04  
+## 11 William  Damiani            2              1.09  
+## 12 William  Damiani            2             -0.0447
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.

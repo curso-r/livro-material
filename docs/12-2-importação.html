@@ -280,7 +280,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#spread"><i class="fa fa-check"></i><b>7.3.2</b> <code>spread()</code></a></li>
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a></li>
+<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#introdução"><i class="fa fa-check"></i><b>7.4.1</b> Introdução</a></li>
+<li class="chapter" data-level="7.4.2" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-básicas"><i class="fa fa-check"></i><b>7.4.2</b> Funções básicas</a></li>
+<li class="chapter" data-level="7.4.3" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#expressões-regulares"><i class="fa fa-check"></i><b>7.4.3</b> Expressões Regulares</a></li>
+<li class="chapter" data-level="7.4.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-que-utilizam-regex"><i class="fa fa-check"></i><b>7.4.4</b> Funções que utilizam regex</a></li>
+<li class="chapter" data-level="7.4.5" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#exercícios-17"><i class="fa fa-check"></i><b>7.4.5</b> Exercícios</a></li>
+</ul></li>
 <li class="chapter" data-level="7.5" data-path="7-5-forcats.html"><a href="7-5-forcats.html"><i class="fa fa-check"></i><b>7.5</b> O pacote forcats</a></li>
 <li class="chapter" data-level="7.6" data-path="7-6-o-pacote-lubridate.html"><a href="7-6-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.6</b> O pacote lubridate</a></li>
 </ul></li>
@@ -296,7 +303,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.6" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#escalas"><i class="fa fa-check"></i><b>8.1.6</b> Escalas</a></li>
 <li class="chapter" data-level="8.1.7" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#temas"><i class="fa fa-check"></i><b>8.1.7</b> Temas</a></li>
 <li class="chapter" data-level="8.1.8" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>8.1.8</b> Juntando gráficos</a></li>
-<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-17"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
+<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-18"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a>
 <ul>
@@ -400,31 +407,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>A função <code>read_csv() lê arquivos CSV separados por vírgula (padrão norte-americano). A função</code>read_csv2()` lê arquivos CSV separados por ponto-e-vírgula (padrão brasileiro, já que usamos a vírgula como seperador de decimais).</em></p>
 <hr />
 <p><strong>2.</strong> Leia o arquivo <code>imdb.csv</code> utilizando a função <code>read_delim()</code>.</p>
-<div class="sourceCode" id="cb632"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb632-1"><a href="12-2-importação.html#cb632-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb632-2"><a href="12-2-importação.html#cb632-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb632-3"><a href="12-2-importação.html#cb632-3" aria-hidden="true" tabindex="-1"></a><span class="fu">read_delim</span>(<span class="st">&quot;imdb.csv&quot;</span>, <span class="at">delim =</span> <span class="st">&quot;,&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb664"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb664-1"><a href="12-2-importação.html#cb664-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb664-2"><a href="12-2-importação.html#cb664-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb664-3"><a href="12-2-importação.html#cb664-3" aria-hidden="true" tabindex="-1"></a><span class="fu">read_delim</span>(<span class="st">&quot;imdb.csv&quot;</span>, <span class="at">delim =</span> <span class="st">&quot;,&quot;</span>)</span></code></pre></div>
 <hr />
 <p><strong>3.</strong> Escreva a base mtcars em um arquivo <code>mtcars.csv</code> que não contenha o nome das colunas.</p>
-<div class="sourceCode" id="cb633"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb633-1"><a href="12-2-importação.html#cb633-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(mtcars, <span class="st">&quot;mtcars.csv&quot;</span>, <span class="at">col_names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb665"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb665-1"><a href="12-2-importação.html#cb665-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(mtcars, <span class="st">&quot;mtcars.csv&quot;</span>, <span class="at">col_names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <hr />
 <p><strong>4.</strong> Use a função <code>write_rds()</code> para salvar em arquivos</p>
 <p><strong>a)</strong> Um número.</p>
-<div class="sourceCode" id="cb634"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb634-1"><a href="12-2-importação.html#cb634-1" aria-hidden="true" tabindex="-1"></a>numero <span class="ot">&lt;-</span> <span class="dv">29</span></span>
-<span id="cb634-2"><a href="12-2-importação.html#cb634-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_rds</span>(numero, <span class="st">&quot;numero.rds&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb666"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb666-1"><a href="12-2-importação.html#cb666-1" aria-hidden="true" tabindex="-1"></a>numero <span class="ot">&lt;-</span> <span class="dv">29</span></span>
+<span id="cb666-2"><a href="12-2-importação.html#cb666-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_rds</span>(numero, <span class="st">&quot;numero.rds&quot;</span>)</span></code></pre></div>
 <p><strong>b)</strong> Um vetor de strings.</p>
-<div class="sourceCode" id="cb635"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb635-1"><a href="12-2-importação.html#cb635-1" aria-hidden="true" tabindex="-1"></a>estados <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;SP&quot;</span>, <span class="st">&quot;RN&quot;</span>, <span class="st">&quot;AC&quot;</span>, <span class="st">&quot;MG&quot;</span>)</span>
-<span id="cb635-2"><a href="12-2-importação.html#cb635-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_rds</span>(estados, <span class="st">&quot;estados.rds&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb667"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb667-1"><a href="12-2-importação.html#cb667-1" aria-hidden="true" tabindex="-1"></a>estados <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;SP&quot;</span>, <span class="st">&quot;RN&quot;</span>, <span class="st">&quot;AC&quot;</span>, <span class="st">&quot;MG&quot;</span>)</span>
+<span id="cb667-2"><a href="12-2-importação.html#cb667-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_rds</span>(estados, <span class="st">&quot;estados.rds&quot;</span>)</span></code></pre></div>
 <p><strong>c)</strong> Uma lista com valores númericos, textuais e lógicos.</p>
-<div class="sourceCode" id="cb636"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb636-1"><a href="12-2-importação.html#cb636-1" aria-hidden="true" tabindex="-1"></a>lista <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">numero =</span> <span class="dv">1</span>, <span class="at">texto =</span> <span class="fu">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>), <span class="at">logico =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb636-2"><a href="12-2-importação.html#cb636-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_rds</span>(lista, <span class="st">&quot;lista.rds&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb668"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb668-1"><a href="12-2-importação.html#cb668-1" aria-hidden="true" tabindex="-1"></a>lista <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">numero =</span> <span class="dv">1</span>, <span class="at">texto =</span> <span class="fu">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>, <span class="st">&quot;F&quot;</span>), <span class="at">logico =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb668-2"><a href="12-2-importação.html#cb668-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_rds</span>(lista, <span class="st">&quot;lista.rds&quot;</span>)</span></code></pre></div>
 <p><strong>d)</strong> As 3 primeiras colunas da base <code>mtcars</code>.</p>
-<div class="sourceCode" id="cb637"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb637-1"><a href="12-2-importação.html#cb637-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_rds</span>(mtcars[,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="st">&quot;mtcars_3_colunas.rds&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb669"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb669-1"><a href="12-2-importação.html#cb669-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_rds</span>(mtcars[,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="st">&quot;mtcars_3_colunas.rds&quot;</span>)</span></code></pre></div>
 <hr />
 <p><strong>5.</strong> Utilize a função <code>read_rds()</code> para importar de volta para o R os arquivos criados no exercício 4.</p>
-<div class="sourceCode" id="cb638"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb638-1"><a href="12-2-importação.html#cb638-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_rds</span>(<span class="st">&quot;numero.rds&quot;</span>)</span>
-<span id="cb638-2"><a href="12-2-importação.html#cb638-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_rds</span>(<span class="st">&quot;estados.rds&quot;</span>)</span>
-<span id="cb638-3"><a href="12-2-importação.html#cb638-3" aria-hidden="true" tabindex="-1"></a><span class="fu">read_rds</span>(<span class="st">&quot;lista.rds&quot;</span>)</span>
-<span id="cb638-4"><a href="12-2-importação.html#cb638-4" aria-hidden="true" tabindex="-1"></a><span class="fu">read_rds</span>(<span class="st">&quot;mtcars_3_colunas.rds&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb670"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb670-1"><a href="12-2-importação.html#cb670-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_rds</span>(<span class="st">&quot;numero.rds&quot;</span>)</span>
+<span id="cb670-2"><a href="12-2-importação.html#cb670-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_rds</span>(<span class="st">&quot;estados.rds&quot;</span>)</span>
+<span id="cb670-3"><a href="12-2-importação.html#cb670-3" aria-hidden="true" tabindex="-1"></a><span class="fu">read_rds</span>(<span class="st">&quot;lista.rds&quot;</span>)</span>
+<span id="cb670-4"><a href="12-2-importação.html#cb670-4" aria-hidden="true" tabindex="-1"></a><span class="fu">read_rds</span>(<span class="st">&quot;mtcars_3_colunas.rds&quot;</span>)</span></code></pre></div>
 
 </div>
 </div>
