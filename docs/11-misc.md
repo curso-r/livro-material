@@ -136,12 +136,12 @@ dados %>% tibble::as_tibble()
 
 ```
 ## # A tibble: 4 x 19
-##   id    sexo  nascimento          idade inclusao            cor    peso altura
-##   <chr> <chr> <dttm>              <dbl> <dttm>              <chr> <dbl>  <dbl>
-## 1 1     F     1964-01-31 00:00:00    41 2006-02-17 00:00:00 bran…    75   1.63
-## 2 2     M     1959-01-28 00:00:00    45 2005-11-29 00:00:00 negra    71   1.7 
-## 3 4     M     1957-09-13 00:00:00    50 2008-02-13 00:00:00 NT       80   1.64
-## 4 5     F     1938-02-06 00:00:00    71 2009-06-25 00:00:00 parda    56   1.51
+##   id    sexo  nascimento          idade inclusao            cor     peso altura
+##   <chr> <chr> <dttm>              <dbl> <dttm>              <chr>  <dbl>  <dbl>
+## 1 1     F     1964-01-31 00:00:00    41 2006-02-17 00:00:00 branca    75   1.63
+## 2 2     M     1959-01-28 00:00:00    45 2005-11-29 00:00:00 negra     71   1.7 
+## 3 4     M     1957-09-13 00:00:00    50 2008-02-13 00:00:00 NT        80   1.64
+## 4 5     F     1938-02-06 00:00:00    71 2009-06-25 00:00:00 parda     56   1.51
 ## # … with 11 more variables: cintura <chr>, imc <dbl>,
 ## #   superficie_corporal <chr>, tabagismo <chr>, cg_tabag_cig_dia <dbl>,
 ## #   alcool_dose_semana <dbl>, drogas_ilicitas <chr>, cafeina_dia <dbl>,
@@ -171,26 +171,21 @@ janitor::get_dupes(base_qualquer, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 17 x 4
-##    nome    sobrenome dupe_count variavel_importante
-##    <chr>   <chr>          <int>               <dbl>
-##  1 Athos   Amorim             2             -0.197 
-##  2 Athos   Amorim             2              1.76  
-##  3 Daniel  Amorim             5             -0.678 
-##  4 Daniel  Amorim             5             -2.85  
-##  5 Daniel  Amorim             5             -0.847 
-##  6 Daniel  Amorim             5              0.655 
-##  7 Daniel  Amorim             5              1.50  
-##  8 Daniel  Corrêa             2              0.370 
-##  9 Daniel  Corrêa             2             -0.0376
-## 10 Julio   Corrêa             2              0.979 
-## 11 Julio   Corrêa             2              0.164 
-## 12 William Corrêa             2              0.540 
-## 13 William Corrêa             2             -1.38  
-## 14 William Falbel             2              0.360 
-## 15 William Falbel             2              0.253 
-## 16 William Trecenti           2             -0.908 
-## 17 William Trecenti           2              0.684
+## # A tibble: 12 x 4
+##    nome     sobrenome dupe_count variavel_importante
+##    <chr>    <chr>          <int>               <dbl>
+##  1 Athos    Amorim             2              0.581 
+##  2 Athos    Amorim             2             -1.19  
+##  3 Athos    Corrêa             2             -0.0787
+##  4 Athos    Corrêa             2              0.466 
+##  5 Athos    Trecenti           2              0.714 
+##  6 Athos    Trecenti           2              0.120 
+##  7 Fernando Corrêa             2             -0.687 
+##  8 Fernando Corrêa             2             -0.317 
+##  9 William  Amorim             2              0.430 
+## 10 William  Amorim             2              2.04  
+## 11 William  Damiani            2              1.09  
+## 12 William  Damiani            2             -0.0447
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.

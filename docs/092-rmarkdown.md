@@ -203,8 +203,10 @@ media_massa %>%
   DT::datatable()
 ```
 
-<!--html_preserve--><div id="htmlwidget-e0050be4e56e78d1cde5" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e0050be4e56e78d1cde5">{"x":{"filter":"none","data":[["1","2","3","4","5"],["Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-barbicha","Pinguim-gentoo"],["Biscoe","Dream","Torgersen","Dream","Biscoe"],[3.71,3.69,3.71,3.73,5.08]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>especies<\/th>\n      <th>ilha<\/th>\n      <th>media_massa_kg<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+```{=html}
+<div id="htmlwidget-2b0f7db4ee79c2f085f9" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2b0f7db4ee79c2f085f9">{"x":{"filter":"none","data":[["1","2","3","4","5"],["Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-barbicha","Pinguim-gentoo"],["Biscoe","Dream","Torgersen","Dream","Biscoe"],[3.71,3.69,3.71,3.73,5.08]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>especies<\/th>\n      <th>ilha<\/th>\n      <th>media_massa_kg<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+```
 
 
 

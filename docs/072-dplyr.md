@@ -48,18 +48,18 @@ imdb
 
 ```
 ## # A tibble: 3,807 x 15
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
-##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
-##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
-##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
-##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
-##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
-##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
-## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
+##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
+##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
+##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
+##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
+##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
+##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
+##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
+##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
+##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
+##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
+##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
+## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -185,18 +185,18 @@ imdb %>%
 
 ```
 ## # A tibble: 3,807 x 13
-##    titulo duracao cor   generos pais  classificacao orcamento receita nota_imdb
-##    <chr>    <int> <chr> <chr>   <chr> <chr>             <int>   <int>     <dbl>
-##  1 Avata…     178 Color Action… USA   A partir de … 237000000  7.61e8       7.9
-##  2 Pirat…     169 Color Action… USA   A partir de … 300000000  3.09e8       7.1
-##  3 The D…     164 Color Action… USA   A partir de … 250000000  4.48e8       8.5
-##  4 John …     132 Color Action… USA   A partir de … 263700000  7.31e7       6.6
-##  5 Spide…     156 Color Action… USA   A partir de … 258000000  3.37e8       6.2
-##  6 Tangl…     100 Color Advent… USA   Livre         260000000  2.01e8       7.8
-##  7 Aveng…     141 Color Action… USA   A partir de … 250000000  4.59e8       7.5
-##  8 Batma…     183 Color Action… USA   A partir de … 250000000  3.30e8       6.9
-##  9 Super…     169 Color Action… USA   A partir de … 209000000  2.00e8       6.1
-## 10 Pirat…     151 Color Action… USA   A partir de … 225000000  4.23e8       7.3
+##    titulo  duracao cor   generos pais  classificacao orcamento receita nota_imdb
+##    <chr>     <int> <chr> <chr>   <chr> <chr>             <int>   <int>     <dbl>
+##  1 Avatar      178 Color Action… USA   A partir de … 237000000  7.61e8       7.9
+##  2 Pirate…     169 Color Action… USA   A partir de … 300000000  3.09e8       7.1
+##  3 The Da…     164 Color Action… USA   A partir de … 250000000  4.48e8       8.5
+##  4 John C…     132 Color Action… USA   A partir de … 263700000  7.31e7       6.6
+##  5 Spider…     156 Color Action… USA   A partir de … 258000000  3.37e8       6.2
+##  6 Tangle…     100 Color Advent… USA   Livre         260000000  2.01e8       7.8
+##  7 Avenge…     141 Color Action… USA   A partir de … 250000000  4.59e8       7.5
+##  8 Batman…     183 Color Action… USA   A partir de … 250000000  3.30e8       6.9
+##  9 Superm…     169 Color Action… USA   A partir de … 209000000  2.00e8       6.1
+## 10 Pirate…     151 Color Action… USA   A partir de … 225000000  4.23e8       7.3
 ## # … with 3,797 more rows, and 4 more variables: likes_facebook <int>,
 ## #   ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -208,18 +208,18 @@ imdb %>%
 
 ```
 ## # A tibble: 3,807 x 12
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
-##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
-##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
-##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
-##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
-##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
-##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
-## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
+##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
+##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
+##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
+##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
+##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
+##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
+##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
+##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
+##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
+##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
+##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
+## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 3 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>
 ```
@@ -247,18 +247,18 @@ arrange(imdb, orcamento)
 
 ```
 ## # A tibble: 3,807 x 15
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Tarna…  2003 Jonath…      88 Color Biogra… USA   Outros              218
-##  2 My Da…  2004 Jon Gu…      90 Color Docume… USA   Livre              1100
-##  3 A Pla…  2013 Benjam…      76 Color Drama|… USA   Outros             1400
-##  4 The M…  2005 Anthon…      84 Color Crime|… USA   A partir de …      3250
-##  5 Prime…  2004 Shane …      77 Color Drama|… USA   A partir de …      7000
-##  6 El Ma…  1992 Robert…      81 Color Action… USA   A partir de …      7000
-##  7 Newly…  2011 Edward…      95 Color Comedy… USA   Outros             9000
-##  8 Pink …  1972 John W…     108 Color Comedy… USA   A partir de …     10000
-##  9 The T…  2007 Jane C…       7 Color Romanc… USA   Outros            13000
-## 10 Paran…  2007 Oren P…      84 Color Horror  USA   A partir de …     15000
+##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
+##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
+##  1 Tarnati…  2003 Jonatha…      88 Color Biograph… USA   Outros              218
+##  2 My Date…  2004 Jon Gunn      90 Color Document… USA   Livre              1100
+##  3 A Plagu…  2013 Benjami…      76 Color Drama|Ho… USA   Outros             1400
+##  4 The Mon…  2005 Anthony…      84 Color Crime|Dr… USA   A partir de …      3250
+##  5 Primer    2004 Shane C…      77 Color Drama|Sc… USA   A partir de …      7000
+##  6 El Mari…  1992 Robert …      81 Color Action|C… USA   A partir de …      7000
+##  7 Newlywe…  2011 Edward …      95 Color Comedy|D… USA   Outros             9000
+##  8 Pink Fl…  1972 John Wa…     108 Color Comedy|C… USA   A partir de …     10000
+##  9 The Tou…  2007 Jane Cl…       7 Color Romance|… USA   Outros            13000
+## 10 Paranor…  2007 Oren Pe…      84 Color Horror    USA   A partir de …     15000
 ## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -272,18 +272,18 @@ arrange(imdb, desc(orcamento))
 
 ```
 ## # A tibble: 3,807 x 15
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
-##  2 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
-##  3 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
-##  4 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  6 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
-##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
-##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  9 Pirat…  2011 Rob Ma…     136 Color Action… USA   A partir de … 250000000
-## 10 Capta…  2016 Anthon…     147 Color Action… USA   A partir de … 250000000
+##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
+##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
+##  1 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
+##  2 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
+##  3 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
+##  4 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
+##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
+##  6 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
+##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
+##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
+##  9 Pirates…  2011 Rob Mar…     136 Color Action|A… USA   A partir de … 250000000
+## 10 Captain…  2016 Anthony…     147 Color Action|A… USA   A partir de … 250000000
 ## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -298,18 +298,18 @@ arrange(imdb, desc(ano), desc(orcamento))
 
 ```
 ## # A tibble: 3,807 x 15
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  2 Capta…  2016 Anthon…     147 Color Action… USA   A partir de … 250000000
-##  3 Star …  2016 Justin…     122 Color Action… USA   A partir de … 185000000
-##  4 The L…  2016 David …     110 Color Action… USA   A partir de … 180000000
-##  5 The L…  2016 David …     110 Color Action… USA   A partir de … 180000000
-##  6 X-Men…  2016 Bryan …     144 Color Action… USA   A partir de … 178000000
-##  7 Suici…  2016 David …     123 Color Action… USA   A partir de … 175000000
-##  8 Alice…  2016 James …     113 Color Advent… USA   Livre         170000000
-##  9 Indep…  2016 Roland…     120 Color Action… USA   A partir de … 165000000
-## 10 Warcr…  2016 Duncan…     123 Color Action… USA   A partir de … 160000000
+##    titulo      ano diretor  duracao cor   generos  pais  classificacao orcamento
+##    <chr>     <int> <chr>      <int> <chr> <chr>    <chr> <chr>             <int>
+##  1 Batman v…  2016 Zack Sn…     183 Color Action|… USA   A partir de … 250000000
+##  2 Captain …  2016 Anthony…     147 Color Action|… USA   A partir de … 250000000
+##  3 Star Tre…  2016 Justin …     122 Color Action|… USA   A partir de … 185000000
+##  4 The Lege…  2016 David Y…     110 Color Action|… USA   A partir de … 180000000
+##  5 The Lege…  2016 David Y…     110 Color Action|… USA   A partir de … 180000000
+##  6 X-Men: A…  2016 Bryan S…     144 Color Action|… USA   A partir de … 178000000
+##  7 Suicide …  2016 David A…     123 Color Action|… USA   A partir de … 175000000
+##  8 Alice Th…  2016 James B…     113 Color Adventu… USA   Livre         170000000
+##  9 Independ…  2016 Roland …     120 Color Action|… USA   A partir de … 165000000
+## 10 Warcraft   2016 Duncan …     123 Color Action|… USA   A partir de … 160000000
 ## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -421,11 +421,11 @@ imdb %>% filter(nota_imdb > 9)
 
 ```
 ## # A tibble: 3 x 15
-##   titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##   <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-## 1 The S…  1994 Frank …     142 Color Crime|… USA   A partir de …  25000000
-## 2 The G…  1972 Franci…     175 Color Crime|… USA   A partir de …   6000000
-## 3 Kickb…  2016 John S…      90 <NA>  Action  USA   Outros         17000000
+##   titulo      ano diretor   duracao cor   generos  pais  classificacao orcamento
+##   <chr>     <int> <chr>       <int> <chr> <chr>    <chr> <chr>             <int>
+## 1 The Shaw…  1994 Frank Da…     142 Color Crime|D… USA   A partir de …  25000000
+## 2 The Godf…  1972 Francis …     175 Color Crime|D… USA   A partir de …   6000000
+## 3 Kickboxe…  2016 John Sto…      90 <NA>  Action   USA   Outros         17000000
 ## # … with 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -458,13 +458,13 @@ imdb %>% filter(ano > 2010, nota_imdb > 8.5)
 
 ```
 ## # A tibble: 5 x 15
-##   titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##   <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-## 1 Inter…  2014 Christ…     169 Color Advent… USA   A partir de … 165000000
-## 2 Runni…  2015 Mike M…      88 Color Family  USA   Outros          5000000
-## 3 A Beg…  2016 Mitche…      87 Color Comedy… USA   Outros               NA
-## 4 Kickb…  2016 John S…      90 <NA>  Action  USA   Outros         17000000
-## 5 Butte…  2014 Cary B…      78 Color Docume… USA   Outros           180000
+##   titulo      ano diretor   duracao cor   generos  pais  classificacao orcamento
+##   <chr>     <int> <chr>       <int> <chr> <chr>    <chr> <chr>             <int>
+## 1 Interste…  2014 Christop…     169 Color Adventu… USA   A partir de … 165000000
+## 2 Running …  2015 Mike May…      88 Color Family   USA   Outros          5000000
+## 3 A Beginn…  2016 Mitchell…      87 Color Comedy|… USA   Outros               NA
+## 4 Kickboxe…  2016 John Sto…      90 <NA>  Action   USA   Outros         17000000
+## 5 Butterfl…  2014 Cary Bell      78 Color Documen… USA   Outros           180000
 ## # … with 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -478,18 +478,18 @@ imdb %>% filter(receita - orcamento > 0)
 
 ```
 ## # A tibble: 1,761 x 15
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
-##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
-##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
-##  4 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  5 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
-##  6 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  7 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
-##  8 Man o…  2013 Zack S…     143 Color Action… USA   A partir de … 225000000
-##  9 The A…  2012 Joss W…     173 Color Action… USA   A partir de … 220000000
-## 10 The A…  2012 Marc W…     153 Color Action… USA   A partir de … 230000000
+##    titulo      ano diretor  duracao cor   generos  pais  classificacao orcamento
+##    <chr>     <int> <chr>      <int> <chr> <chr>    <chr> <chr>             <int>
+##  1 Avatar     2009 James C…     178 Color Action|… USA   A partir de … 237000000
+##  2 Pirates …  2007 Gore Ve…     169 Color Action|… USA   A partir de … 300000000
+##  3 The Dark…  2012 Christo…     164 Color Action|… USA   A partir de … 250000000
+##  4 Spider-M…  2007 Sam Rai…     156 Color Action|… USA   A partir de … 258000000
+##  5 Avengers…  2015 Joss Wh…     141 Color Action|… USA   A partir de … 250000000
+##  6 Batman v…  2016 Zack Sn…     183 Color Action|… USA   A partir de … 250000000
+##  7 Pirates …  2006 Gore Ve…     151 Color Action|… USA   A partir de … 225000000
+##  8 Man of S…  2013 Zack Sn…     143 Color Action|… USA   A partir de … 225000000
+##  9 The Aven…  2012 Joss Wh…     173 Color Action|… USA   A partir de … 220000000
+## 10 The Amaz…  2012 Marc We…     153 Color Action|… USA   A partir de … 230000000
 ## # … with 1,751 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -504,18 +504,18 @@ imdb %>%
 
 ```
 ## # A tibble: 29 x 15
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Malef…  2014 Robert…      97 Color Action… USA   Livre         180000000
-##  2 The C…  2008 David …     166 Color Drama|… USA   A partir de … 150000000
-##  3 Kung …  2011 Jennif…      90 Color Action… USA   Livre         150000000
-##  4 Troy    2004 Wolfga…     196 Color Advent… USA   A partir de … 175000000
-##  5 Kung …  2008 Mark O…      92 Color Action… USA   Livre         130000000
-##  6 Salt    2010 Philli…     101 Color Action… USA   A partir de … 110000000
-##  7 Ocean…  2004 Steven…     125 Color Crime|… USA   A partir de … 110000000
-##  8 Mr. &…  2005 Doug L…     126 Color Action… USA   A partir de … 120000000
-##  9 Lara …  2001 Simon …     100 Color Action… USA   A partir de … 115000000
-## 10 Ocean…  2001 Steven…     116 Color Crime|… USA   A partir de …  85000000
+##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
+##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
+##  1 Malefic…  2014 Robert …      97 Color Action|A… USA   Livre         180000000
+##  2 The Cur…  2008 David F…     166 Color Drama|Fa… USA   A partir de … 150000000
+##  3 Kung Fu…  2011 Jennife…      90 Color Action|A… USA   Livre         150000000
+##  4 Troy      2004 Wolfgan…     196 Color Adventure USA   A partir de … 175000000
+##  5 Kung Fu…  2008 Mark Os…      92 Color Action|A… USA   Livre         130000000
+##  6 Salt      2010 Phillip…     101 Color Action|C… USA   A partir de … 110000000
+##  7 Ocean's…  2004 Steven …     125 Color Crime|Th… USA   A partir de … 110000000
+##  8 Mr. & M…  2005 Doug Li…     126 Color Action|C… USA   A partir de … 120000000
+##  9 Lara Cr…  2001 Simon W…     100 Color Action|A… USA   A partir de … 115000000
+## 10 Ocean's…  2001 Steven …     116 Color Crime|Th… USA   A partir de …  85000000
 ## # … with 19 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -572,18 +572,18 @@ imdb %>% filter(str_detect(generos, "Action"))
 
 ```
 ## # A tibble: 861 x 15
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
-##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
-##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
-##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
-##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  6 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
-##  7 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  8 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
-##  9 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
-## 10 The L…  2013 Gore V…     150 Color Action… USA   A partir de … 215000000
+##    titulo      ano diretor  duracao cor   generos  pais  classificacao orcamento
+##    <chr>     <int> <chr>      <int> <chr> <chr>    <chr> <chr>             <int>
+##  1 Avatar     2009 James C…     178 Color Action|… USA   A partir de … 237000000
+##  2 Pirates …  2007 Gore Ve…     169 Color Action|… USA   A partir de … 300000000
+##  3 The Dark…  2012 Christo…     164 Color Action|… USA   A partir de … 250000000
+##  4 John Car…  2012 Andrew …     132 Color Action|… USA   A partir de … 263700000
+##  5 Spider-M…  2007 Sam Rai…     156 Color Action|… USA   A partir de … 258000000
+##  6 Avengers…  2015 Joss Wh…     141 Color Action|… USA   A partir de … 250000000
+##  7 Batman v…  2016 Zack Sn…     183 Color Action|… USA   A partir de … 250000000
+##  8 Superman…  2006 Bryan S…     169 Color Action|… USA   A partir de … 209000000
+##  9 Pirates …  2006 Gore Ve…     151 Color Action|… USA   A partir de … 225000000
+## 10 The Lone…  2013 Gore Ve…     150 Color Action|… USA   A partir de … 215000000
 ## # … with 851 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -622,18 +622,18 @@ imdb %>% mutate(duracao = duracao/60)
 
 ```
 ## # A tibble: 3,807 x 15
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <dbl> <chr> <chr>   <chr> <chr>             <int>
-##  1 Avata…  2009 James …    2.97 Color Action… USA   A partir de … 237000000
-##  2 Pirat…  2007 Gore V…    2.82 Color Action… USA   A partir de … 300000000
-##  3 The D…  2012 Christ…    2.73 Color Action… USA   A partir de … 250000000
-##  4 John …  2012 Andrew…    2.2  Color Action… USA   A partir de … 263700000
-##  5 Spide…  2007 Sam Ra…    2.6  Color Action… USA   A partir de … 258000000
-##  6 Tangl…  2010 Nathan…    1.67 Color Advent… USA   Livre         260000000
-##  7 Aveng…  2015 Joss W…    2.35 Color Action… USA   A partir de … 250000000
-##  8 Batma…  2016 Zack S…    3.05 Color Action… USA   A partir de … 250000000
-##  9 Super…  2006 Bryan …    2.82 Color Action… USA   A partir de … 209000000
-## 10 Pirat…  2006 Gore V…    2.52 Color Action… USA   A partir de … 225000000
+##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
+##    <chr>    <int> <chr>      <dbl> <chr> <chr>     <chr> <chr>             <int>
+##  1 Avatar    2009 James C…    2.97 Color Action|A… USA   A partir de … 237000000
+##  2 Pirates…  2007 Gore Ve…    2.82 Color Action|A… USA   A partir de … 300000000
+##  3 The Dar…  2012 Christo…    2.73 Color Action|T… USA   A partir de … 250000000
+##  4 John Ca…  2012 Andrew …    2.2  Color Action|A… USA   A partir de … 263700000
+##  5 Spider-…  2007 Sam Rai…    2.6  Color Action|A… USA   A partir de … 258000000
+##  6 Tangled   2010 Nathan …    1.67 Color Adventur… USA   Livre         260000000
+##  7 Avenger…  2015 Joss Wh…    2.35 Color Action|A… USA   A partir de … 250000000
+##  8 Batman …  2016 Zack Sn…    3.05 Color Action|A… USA   A partir de … 250000000
+##  9 Superma…  2006 Bryan S…    2.82 Color Action|A… USA   A partir de … 209000000
+## 10 Pirates…  2006 Gore Ve…    2.52 Color Action|A… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -647,18 +647,18 @@ imdb %>% mutate(duracao_horas = duracao/60)
 
 ```
 ## # A tibble: 3,807 x 16
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
-##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
-##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
-##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
-##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
-##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
-##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
-## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
+##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
+##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
+##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
+##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
+##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
+##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
+##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
+##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
+##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
+##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
+##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
+## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 7 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>,
 ## #   duracao_horas <dbl>
@@ -776,10 +776,6 @@ imdb %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 3 x 2
 ##   cor             receita_media
 ##   <chr>                   <dbl>
@@ -798,18 +794,18 @@ imdb %>% group_by(cor)
 ```
 ## # A tibble: 3,807 x 15
 ## # Groups:   cor [3]
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
-##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
-##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
-##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
-##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
-##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
-##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
-## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
+##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
+##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
+##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
+##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
+##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
+##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
+##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
+##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
+##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
+##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
+##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
+## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -841,13 +837,7 @@ Podemos juntar duas tabelas a partir de uma (coluna) chave utilizando a função
 tab_lucro_diretor <- imdb %>%
   group_by(diretor) %>% 
   summarise(lucro_medio = mean(receita - orcamento, na.rm = TRUE))
-```
 
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```r
 tab_lucro_diretor
 ```
 
@@ -879,18 +869,18 @@ imdb_com_lucro_medio
 
 ```
 ## # A tibble: 3,807 x 16
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
-##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
-##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
-##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
-##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
-##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
-##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
-## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
+##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
+##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
+##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
+##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
+##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
+##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
+##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
+##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
+##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
+##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
+##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
+## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 7 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>,
 ## #   lucro_medio <dbl>
