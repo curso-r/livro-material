@@ -136,12 +136,12 @@ dados %>% tibble::as_tibble()
 
 ```
 ## # A tibble: 4 x 19
-##   id    sexo  nascimento          idade inclusao            cor    peso altura
-##   <chr> <chr> <dttm>              <dbl> <dttm>              <chr> <dbl>  <dbl>
-## 1 1     F     1964-01-31 00:00:00    41 2006-02-17 00:00:00 bran…    75   1.63
-## 2 2     M     1959-01-28 00:00:00    45 2005-11-29 00:00:00 negra    71   1.7 
-## 3 4     M     1957-09-13 00:00:00    50 2008-02-13 00:00:00 NT       80   1.64
-## 4 5     F     1938-02-06 00:00:00    71 2009-06-25 00:00:00 parda    56   1.51
+##   id    sexo  nascimento          idade inclusao            cor     peso altura
+##   <chr> <chr> <dttm>              <dbl> <dttm>              <chr>  <dbl>  <dbl>
+## 1 1     F     1964-01-31 00:00:00    41 2006-02-17 00:00:00 branca    75   1.63
+## 2 2     M     1959-01-28 00:00:00    45 2005-11-29 00:00:00 negra     71   1.7 
+## 3 4     M     1957-09-13 00:00:00    50 2008-02-13 00:00:00 NT        80   1.64
+## 4 5     F     1938-02-06 00:00:00    71 2009-06-25 00:00:00 parda     56   1.51
 ## # … with 11 more variables: cintura <chr>, imc <dbl>,
 ## #   superficie_corporal <chr>, tabagismo <chr>, cg_tabag_cig_dia <dbl>,
 ## #   alcool_dose_semana <dbl>, drogas_ilicitas <chr>, cafeina_dia <dbl>,
@@ -171,24 +171,27 @@ janitor::get_dupes(base_qualquer, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 15 x 4
+## # A tibble: 18 x 4
 ##    nome     sobrenome dupe_count variavel_importante
 ##    <chr>    <chr>          <int>               <dbl>
-##  1 Athos    Amorim             2              -1.35 
-##  2 Athos    Amorim             2              -1.33 
-##  3 Daniel   Falbel             3               0.863
-##  4 Daniel   Falbel             3              -0.262
-##  5 Daniel   Falbel             3               2.10 
-##  6 Fernando Amorim             2              -2.32 
-##  7 Fernando Amorim             2               0.109
-##  8 Fernando Damiani            2              -0.616
-##  9 Fernando Damiani            2              -0.452
-## 10 Julio    Corrêa             2              -0.649
-## 11 Julio    Corrêa             2              -1.13 
-## 12 Julio    Trecenti           2               1.08 
-## 13 Julio    Trecenti           2              -1.41 
-## 14 William  Damiani            2              -0.190
-## 15 William  Damiani            2              -0.353
+##  1 Athos    Damiani            2              -0.451
+##  2 Athos    Damiani            2              -0.266
+##  3 Daniel   Corrêa             2              -1.72 
+##  4 Daniel   Corrêa             2              -1.17 
+##  5 Daniel   Damiani            2               0.512
+##  6 Daniel   Damiani            2               0.439
+##  7 Daniel   Falbel             2              -1.05 
+##  8 Daniel   Falbel             2              -1.37 
+##  9 Fernando Corrêa             4              -2.12 
+## 10 Fernando Corrêa             4              -0.699
+## 11 Fernando Corrêa             4              -0.621
+## 12 Fernando Corrêa             4              -0.409
+## 13 Fernando Trecenti           2              -2.25 
+## 14 Fernando Trecenti           2              -0.185
+## 15 Julio    Amorim             2              -2.03 
+## 16 Julio    Amorim             2              -0.331
+## 17 Julio    Damiani            2              -0.295
+## 18 Julio    Damiani            2               0.480
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.

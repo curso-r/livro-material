@@ -110,7 +110,7 @@ Caso você encontre algum problema para instalar o TinyTex, também é possível
 
 #### No Windows
 
-Uma distribuição de LaTex que apresenta versão para Windows é o MiKTeX. 
+Uma distribuição de LaTeX que apresenta versão para Windows é o MiKTeX. 
 
 1. Para instalá-lo, primeiramente faça o download do arquivo `.exe` [através deste link](https://MiKTeX.org/download#win), escolhendo a versão de instalação para Windows. 
 
@@ -182,7 +182,7 @@ No linux, a forma mais direta de garantir que temos o LaTeX na máquina com toda
 
 #### No Mac
  
-Uma distribuição de LaTex que apresenta versão para Mac é o MikTex. Para instalá-lo, primeiramente faça o download do arquivo `.dmg` [através deste link](https://miktex.org/download#mac). [Este tutorial](https://miktex.org/howto/install-miktex-mac) apresenta todos os passos de instalação no Mac, porém abaixo também vamos descrever os passos:
+Uma distribuição de LaTeX que apresenta versão para Mac é o MikTex. Para instalá-lo, primeiramente faça o download do arquivo `.dmg` [através deste link](https://miktex.org/download#mac). [Este tutorial](https://miktex.org/howto/install-miktex-mac) apresenta todos os passos de instalação no Mac, porém abaixo também vamos descrever os passos:
 
 1. Faça o download do arquivo `.dmg` [através deste link](https://miktex.org/download#mac), escolhendo a versão de instalação para Mac.
 
@@ -257,7 +257,6 @@ knitr::include_graphics("img/instalacao/gif_libreoffice.gif")
 
 3. O LibreOffice será instalado e você poderá utilizá-lo abrindo através do Launchpad (menu de arquivos instalados), ou também  utilizando a pesquisa do Mac (utilizando o atalho Command + Barra de espaço), pesquisando por LibreOffice para abrir o software.
 
-
 ### Pagedown e Chrome
 
 O `{pagedown}` é uma alternativa recente para produzir arquivos em HTML utilizando o [`paged.js`](https://www.pagedjs.org/), uma biblioteca em JavaScript que torna um arquivo HTML muito parecido com um PDF. Com a ajuda do Chrome, é possível, inclusive, exportar o arquivo para PDF.
@@ -305,4 +304,10 @@ blogdown::install_hugo()
 <!-- Adicionar explicação sobre o rtools. O que é? Quando é necessário? -->
 
 Em algumas situações, é solicitado a instalação do software Rtools. Este software é apenas necessário para computadores que utilizem o sistema operacional Windows. Para instalá-lo, clique [neste link](https://cran.r-project.org/bin/windows/Rtools/) e faça o download do arquivo instalador referente à sua versão do Windows (32 ou 64 bits). Abra o arquivo baixado para realizar a instalação. 
+
+No linux, caso seja necessário, você também pode instalar o pacote `r-base-dev`, que faz as vezes do Rtools. Por exemplo, no Ubuntu:
+
+```
+sudo apt install r-base-dev
+```
 

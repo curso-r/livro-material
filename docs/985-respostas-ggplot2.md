@@ -179,10 +179,6 @@ imdb %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## Warning: Removed 1 row(s) containing missing values (geom_path).
 ```
 
@@ -199,10 +195,6 @@ imdb %>%
   summarise(orcamento_medio = mean(orcamento, na.rm = TRUE)) %>% 
   ggplot(aes(x = ano, y = orcamento_medio)) +
   geom_col()
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
@@ -261,7 +253,7 @@ imdb %>%
 ```
 
 ```
-## `summarise()` regrouping output by 'ano' (override with `.groups` argument)
+## `summarise()` has grouped output by 'ano'. You can override using the `.groups` argument.
 ```
 
 <img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" />
@@ -285,7 +277,7 @@ imdb %>%
 ```
 
 ```
-## `summarise()` regrouping output by 'ano' (override with `.groups` argument)
+## `summarise()` has grouped output by 'ano'. You can override using the `.groups` argument.
 ```
 
 <img src="985-respostas-ggplot2_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" />
@@ -317,7 +309,7 @@ tabela
 ```
 ## # A tibble: 65 x 2
 ##      ano     n
-##    <dbl> <int>
+##  * <dbl> <int>
 ##  1  1925     1
 ##  2  1934     1
 ##  3  1936     1
