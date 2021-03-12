@@ -206,6 +206,10 @@ imdb %>%
 ```
 
 ```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
+```
 ## Warning: Removed 1 row(s) containing missing values (geom_path).
 ```
 
@@ -226,6 +230,10 @@ imdb %>%
   geom_point(aes(x = ano, y = nota_media))
 ```
 
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
 <img src="08-graficos_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" />
 
 Quando precisamos usar o mesmo `aes()` em vários `geoms`, podemos defini-lo dentro da função `ggplot()`. Esse `aes()` será então distribuído para todo `geom` do gráfico. O código anterior pode ser reescrito da seguinte forma.
@@ -239,6 +247,10 @@ imdb %>%
   ggplot(aes(x = ano, y = nota_media)) +
   geom_line() +
   geom_point()
+```
+
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 <img src="08-graficos_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" />
@@ -255,6 +267,10 @@ imdb %>%
   ggplot(aes(x = ano, y = nota_media)) +
   geom_line() +
   geom_label(aes(label = nota_media))
+```
+
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 <img src="08-graficos_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" />
@@ -486,6 +502,10 @@ imdb %>%
 ```
 
 ```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
+```
 ## Warning: Removed 1 row(s) containing missing values (geom_path).
 ```
 
@@ -506,6 +526,10 @@ imdb %>%
 ```
 
 ```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
+```
 ## Warning: Removed 1 row(s) containing missing values (geom_path).
 ```
 
@@ -523,6 +547,10 @@ imdb %>%
   scale_x_continuous(breaks = seq(1916, 2016, 10)) +
   scale_y_continuous(breaks = seq(0, 10, 2)) +
   coord_cartesian(ylim = c(0, 10))
+```
+
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
@@ -605,7 +633,7 @@ imdb %>%
 ```
 
 ```
-## `summarise()` has grouped output by 'ano'. You can override using the `.groups` argument.
+## `summarise()` regrouping output by 'ano' (override with `.groups` argument)
 ```
 
 ```
@@ -797,7 +825,13 @@ p1 <- imdb %>%
   summarise(nota_media = mean(nota_imdb, na.rm = TRUE)) %>% 
   ggplot() +
   geom_line(aes(x = ano, y = nota_media))
+```
 
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
+```r
 p2 <- imdb %>% 
   mutate(lucro = receita - orcamento) %>% 
   filter(diretor == "Steven Spielberg") %>% 
@@ -870,7 +904,7 @@ imdb %>%
 ```
 
 ```
-## `summarise()` has grouped output by 'ano'. You can override using the `.groups` argument.
+## `summarise()` regrouping output by 'ano' (override with `.groups` argument)
 ```
 
 <img src="08-graficos_files/figure-html/unnamed-chunk-43-1.png" width="672" style="display: block; margin: auto;" />

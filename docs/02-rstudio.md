@@ -117,6 +117,16 @@ project/
 
 ## Git e versionamento
 
+O RStudio possui funcionalidades para quem trabalha com o programa *Git* para versionar arquivos.
+
+<img src="assets/img/rstudio/git-menu.png" width="70%" style="display: block; margin: auto;" />
+
+Além disso, quando você inicia o Git na pasta raiz de um projeto, o RStudio criará uma nova abinha chamada *Git*, onde você pode confirir os arquivos modificados que estão à espera de um *commit*.
+
+<img src="assets/img/rstudio/git-aba.png" width="60%" style="display: block; margin: auto;" />
+
+Para saber mais sobre Git e versionamento de arquivos, leia esse excelente capítulo do [Zen do R](https://curso-r.github.io/zen-do-r/git-github.html).
+
 ## Cheatsheets
 
 O RStudio tem à disposição algumas *folhas de cola*, as **cheatsheets**. Elas trazem um resumão de como utilizar diversos pacotes e até o próprio RStudio.

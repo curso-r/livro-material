@@ -20,7 +20,7 @@ getwd()
 ```
 
 ```
-## [1] "/home/jtrecenti/Documents/livro-material"
+## [1] "/Users/william/Documents/curso-r/livro-material"
 ```
 
 Esse é o caminho absoluto para a pasta onde esse livro foi produzido.
