@@ -1,7 +1,7 @@
 --- 
 title: "Ciência de Dados em R"
 author: "Curso-R"
-date: "Última atualização: 08/03/2021"
+date: "Última atualização: 09/03/2021"
 github-repo: "curso-r/livro-material"
 site: bookdown::bookdown_site
 documentclass: book
@@ -79,3 +79,5 @@ Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartil
 #### Agradecimentos {-}
 
 - [Haydee Svab](https://www.linkedin.com/in/hsvab) - Revisão do conteúdo inicial sobre [Markdown](#markdown).
+
+- Sugestões feitas durante transmissões na Twitch: [@AugustoCL_](https://www.twitch.tv/AugustoCL_/about) e [@pouchewar](https://www.twitch.tv/pouchewar/about) .
