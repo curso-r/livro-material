@@ -130,6 +130,35 @@ Outra forma de acessá-las é através do site da [RStudio](https://rstudio.com/
 
 ## Addins
 
+Addins são cápsulas de código R que podem ser executados interativamente a partir do menu `Addins`.
+
+<img src="assets/img/rstudio/botao_addins.png" width="70%" style="display: block; margin: auto;" />
+
+Eles servem para fazer diversos tipos de tarefas, como identar seu código, ajudar nas tarefas de copiar e colar, insirir códigos no seu script e muito mais.
+
+Os addins são criados pelos pacotes que instalamos, então cada pacote vai nos disponibizar addins que facilitam algum tipo de tarefa.
+
+Veja [aqui](https://rstudio.github.io/rstudioaddins/demo/demo-reformat.gif) um exemplo de um addin que formata um código e [aqui](https://rstudio.github.io/rstudioaddins/demo/demo-subset.gif) um addin que filtra uma base.
+
+O pacote `{CursoR}` da Curso-R, por exemplo, tem um addin que auxilia quem faz nossos cursos a atualizar o material de cada aula.
+
+<img src="assets/img/rstudio/addins.png" width="40%" style="display: block; margin: auto;" />
+
 
 ## Snippets
 
+Snippets são atalhos que podemos criar para gerar pedaços rotineiros de código.
+
+O RStudio já vem com vários snippets criados. Você pode visualizar os snippts existentes ou criar novos acessando `Tools > Global Options... > Code > Editting > Snippets > Edit snippets`. 
+
+No arquivo de texto aberto, basta seguir o padrão dos snippets já existentes para criar novos. Você também pode editar os snippets padrão do RStudio.
+
+<img src="assets/img/rstudio/snippets.png" width="70%" style="display: block; margin: auto;" />
+
+Cada snippet terá um *nome*, que deverá ser utilizado no script para ativar o código guardado por trás. 
+
+<img src="assets/img/rstudio/snippet_for.png" width="60%" style="display: block; margin: auto;" />
+
+Basta escrever o nome, apertar a teclar `TAB` e *voilà*.
+
+<img src="assets/img/rstudio/snippet_for_resultado.png" width="40%" style="display: block; margin: auto;" />

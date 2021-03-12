@@ -364,6 +364,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="addins" class="section level2">
 <h2><span class="header-section-number">2.6</span> Addins</h2>
+<p>Addins são cápsulas de código R que podem ser executados interativamente a partir do menu <code>Addins</code>.</p>
+<p><img src="assets/img/rstudio/botao_addins.png" width="70%" style="display: block; margin: auto;" /></p>
+<p>Eles servem para fazer diversos tipos de tarefas, como identar seu código, ajudar nas tarefas de copiar e colar, insirir códigos no seu script e muito mais.</p>
+<p>Os addins são criados pelos pacotes que instalamos, então cada pacote vai nos disponibizar addins que facilitam algum tipo de tarefa.</p>
+<p>Veja <a href="https://rstudio.github.io/rstudioaddins/demo/demo-reformat.gif">aqui</a> um exemplo de um addin que formata um código e <a href="https://rstudio.github.io/rstudioaddins/demo/demo-subset.gif">aqui</a> um addin que filtra uma base.</p>
+<p>O pacote <code>{CursoR}</code> da Curso-R, por exemplo, tem um addin que auxilia quem faz nossos cursos a atualizar o material de cada aula.</p>
+<p><img src="assets/img/rstudio/addins.png" width="40%" style="display: block; margin: auto;" /></p>
 </div>
 <hr/>
 <footer>
@@ -425,20 +432,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

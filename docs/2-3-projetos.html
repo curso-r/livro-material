@@ -382,32 +382,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Nesse menu, além de podermos criar novos projetos ou abrir projetos já existentes, também temos um acesso rápido a projetos abertos recentemente. Basta clicar em qualquer um deles para trocar de projeto, isto é, deixar de trabalhar em uma análise e começar a trabalhar em outra.</p>
 <p>A seguir, apresentamos algumas estruturas de organização de projetos no RStudio.</p>
 <p><strong>Estrutura 1</strong>. Por extensão de arquivo.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="2-3-projetos.html#cb6-1"></a><span class="ex">nome_do_projeto/</span></span>
-<span id="cb6-2"><a href="2-3-projetos.html#cb6-2"></a>  <span class="ex">-</span> .Rprofile   <span class="co"># códigos para rodar assim que abrir o projeto</span></span>
-<span id="cb6-3"><a href="2-3-projetos.html#cb6-3"></a>  <span class="ex">-</span> R/          <span class="co"># Código R, organizado com a-carrega.R, b-prepara bd.R, c-vis.R, d-modela, ...</span></span>
-<span id="cb6-4"><a href="2-3-projetos.html#cb6-4"></a>  <span class="ex">-</span> RData/      <span class="co"># Dados em formato .RData</span></span>
-<span id="cb6-5"><a href="2-3-projetos.html#cb6-5"></a>  <span class="ex">-</span> csv/        <span class="co"># Dados em .csv</span></span>
-<span id="cb6-6"><a href="2-3-projetos.html#cb6-6"></a>  <span class="ex">-</span> png/        <span class="co"># gráficos em PNG</span></span>
-<span id="cb6-7"><a href="2-3-projetos.html#cb6-7"></a>  <span class="ex">-</span> nome_do_projeto.Rproj</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="2-3-projetos.html#cb1-1"></a><span class="ex">nome_do_projeto/</span></span>
+<span id="cb1-2"><a href="2-3-projetos.html#cb1-2"></a>  <span class="ex">-</span> .Rprofile   <span class="co"># códigos para rodar assim que abrir o projeto</span></span>
+<span id="cb1-3"><a href="2-3-projetos.html#cb1-3"></a>  <span class="ex">-</span> R/          <span class="co"># Código R, organizado com a-carrega.R, b-prepara bd.R, c-vis.R, d-modela, ...</span></span>
+<span id="cb1-4"><a href="2-3-projetos.html#cb1-4"></a>  <span class="ex">-</span> RData/      <span class="co"># Dados em formato .RData</span></span>
+<span id="cb1-5"><a href="2-3-projetos.html#cb1-5"></a>  <span class="ex">-</span> csv/        <span class="co"># Dados em .csv</span></span>
+<span id="cb1-6"><a href="2-3-projetos.html#cb1-6"></a>  <span class="ex">-</span> png/        <span class="co"># gráficos em PNG</span></span>
+<span id="cb1-7"><a href="2-3-projetos.html#cb1-7"></a>  <span class="ex">-</span> nome_do_projeto.Rproj</span></code></pre></div>
 <p><strong>Estrutura 2</strong>. Típico projeto de análise estatística.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="2-3-projetos.html#cb7-1"></a><span class="ex">project/</span></span>
-<span id="cb7-2"><a href="2-3-projetos.html#cb7-2"></a>  <span class="ex">-</span> README.Rmd   <span class="co"># Descrição do pacote</span></span>
-<span id="cb7-3"><a href="2-3-projetos.html#cb7-3"></a>  <span class="ex">-</span> set-up.R     <span class="co"># Pacotes etc</span></span>
-<span id="cb7-4"><a href="2-3-projetos.html#cb7-4"></a>  <span class="ex">-</span> R/           <span class="co"># Código R, organizado com 0-load.R, 1-tidy.R, 2-vis.R, ...</span></span>
-<span id="cb7-5"><a href="2-3-projetos.html#cb7-5"></a>  <span class="ex">-</span> data/        <span class="co"># Dados (estruturados ou não)</span></span>
-<span id="cb7-6"><a href="2-3-projetos.html#cb7-6"></a>  <span class="ex">-</span> figures/     <span class="co"># gráficos (pode ficar dentro de output/)</span></span>
-<span id="cb7-7"><a href="2-3-projetos.html#cb7-7"></a>  <span class="ex">-</span> output/      <span class="co"># Relatórios em .Rmd, .tex etc</span></span>
-<span id="cb7-8"><a href="2-3-projetos.html#cb7-8"></a>  <span class="ex">-</span> project.Rproj</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="2-3-projetos.html#cb2-1"></a><span class="ex">project/</span></span>
+<span id="cb2-2"><a href="2-3-projetos.html#cb2-2"></a>  <span class="ex">-</span> README.Rmd   <span class="co"># Descrição do pacote</span></span>
+<span id="cb2-3"><a href="2-3-projetos.html#cb2-3"></a>  <span class="ex">-</span> set-up.R     <span class="co"># Pacotes etc</span></span>
+<span id="cb2-4"><a href="2-3-projetos.html#cb2-4"></a>  <span class="ex">-</span> R/           <span class="co"># Código R, organizado com 0-load.R, 1-tidy.R, 2-vis.R, ...</span></span>
+<span id="cb2-5"><a href="2-3-projetos.html#cb2-5"></a>  <span class="ex">-</span> data/        <span class="co"># Dados (estruturados ou não)</span></span>
+<span id="cb2-6"><a href="2-3-projetos.html#cb2-6"></a>  <span class="ex">-</span> figures/     <span class="co"># gráficos (pode ficar dentro de output/)</span></span>
+<span id="cb2-7"><a href="2-3-projetos.html#cb2-7"></a>  <span class="ex">-</span> output/      <span class="co"># Relatórios em .Rmd, .tex etc</span></span>
+<span id="cb2-8"><a href="2-3-projetos.html#cb2-8"></a>  <span class="ex">-</span> project.Rproj</span></code></pre></div>
 <p><strong>Estrutura 3</strong>. Pacote do R.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="2-3-projetos.html#cb8-1"></a><span class="ex">project/</span></span>
-<span id="cb8-2"><a href="2-3-projetos.html#cb8-2"></a>  <span class="ex">-</span> README.md    <span class="co"># Descrição do pacote</span></span>
-<span id="cb8-3"><a href="2-3-projetos.html#cb8-3"></a>  <span class="ex">-</span> DESCRIPTION  <span class="co"># Metadados estruturados do pacote e dependências</span></span>
-<span id="cb8-4"><a href="2-3-projetos.html#cb8-4"></a>  <span class="ex">-</span> NAMESPACE    <span class="co"># importações e exportações do pacote</span></span>
-<span id="cb8-5"><a href="2-3-projetos.html#cb8-5"></a>  <span class="ex">-</span> vignettes/   <span class="co"># Relatórios em .Rmd</span></span>
-<span id="cb8-6"><a href="2-3-projetos.html#cb8-6"></a>  <span class="ex">-</span> R/           <span class="co"># Funções do R</span></span>
-<span id="cb8-7"><a href="2-3-projetos.html#cb8-7"></a>  <span class="ex">-</span> data/        <span class="co"># Dados estruturados (tidy data)</span></span>
-<span id="cb8-8"><a href="2-3-projetos.html#cb8-8"></a>  <span class="ex">-</span> data-raw/    <span class="co"># Dados não estruturados e arqs 0-load.R, 1-tidy.R, 2-vis.R, ...</span></span>
-<span id="cb8-9"><a href="2-3-projetos.html#cb8-9"></a>  <span class="ex">-</span> project.Rproj</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="2-3-projetos.html#cb3-1"></a><span class="ex">project/</span></span>
+<span id="cb3-2"><a href="2-3-projetos.html#cb3-2"></a>  <span class="ex">-</span> README.md    <span class="co"># Descrição do pacote</span></span>
+<span id="cb3-3"><a href="2-3-projetos.html#cb3-3"></a>  <span class="ex">-</span> DESCRIPTION  <span class="co"># Metadados estruturados do pacote e dependências</span></span>
+<span id="cb3-4"><a href="2-3-projetos.html#cb3-4"></a>  <span class="ex">-</span> NAMESPACE    <span class="co"># importações e exportações do pacote</span></span>
+<span id="cb3-5"><a href="2-3-projetos.html#cb3-5"></a>  <span class="ex">-</span> vignettes/   <span class="co"># Relatórios em .Rmd</span></span>
+<span id="cb3-6"><a href="2-3-projetos.html#cb3-6"></a>  <span class="ex">-</span> R/           <span class="co"># Funções do R</span></span>
+<span id="cb3-7"><a href="2-3-projetos.html#cb3-7"></a>  <span class="ex">-</span> data/        <span class="co"># Dados estruturados (tidy data)</span></span>
+<span id="cb3-8"><a href="2-3-projetos.html#cb3-8"></a>  <span class="ex">-</span> data-raw/    <span class="co"># Dados não estruturados e arqs 0-load.R, 1-tidy.R, 2-vis.R, ...</span></span>
+<span id="cb3-9"><a href="2-3-projetos.html#cb3-9"></a>  <span class="ex">-</span> project.Rproj</span></code></pre></div>
 </div>
 <hr/>
 <footer>
@@ -469,20 +469,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

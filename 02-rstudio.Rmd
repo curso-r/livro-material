@@ -122,6 +122,8 @@ project/
 
 ## Git e versionamento
 
+O RStudio possui funcionalidades para quem trabalha com o programa *Git* para versionar arquivos.
+
 ## Cheatsheets
 
 O RStudio tem à disposição algumas *folhas de cola*, as **cheatsheets**. Elas trazem um resumão de como utilizar diversos pacotes e até o próprio RStudio.
@@ -137,6 +139,45 @@ knitr::include_graphics(rep("assets/img/rstudio/cheatsheet-rstudio.png"))
 
 ## Addins
 
+Addins são cápsulas de código R que podem ser executados interativamente a partir do menu `Addins`.
+
+```{r addins-botao, echo=FALSE, fig.align='center', out.width="70%"}
+knitr::include_graphics(rep("assets/img/rstudio/botao_addins.png"))
+```
+
+Eles servem para fazer diversos tipos de tarefas, como identar seu código, ajudar nas tarefas de copiar e colar, insirir códigos no seu script e muito mais.
+
+Os addins são criados pelos pacotes que instalamos, então cada pacote vai nos disponibizar addins que facilitam algum tipo de tarefa.
+
+Veja [aqui](https://rstudio.github.io/rstudioaddins/demo/demo-reformat.gif) um exemplo de um addin que formata um código e [aqui](https://rstudio.github.io/rstudioaddins/demo/demo-subset.gif) um addin que filtra uma base.
+
+O pacote `{CursoR}` da Curso-R, por exemplo, tem um addin que auxilia quem faz nossos cursos a atualizar o material de cada aula.
+
+```{r addins-menu, echo=FALSE, fig.align='center', out.width="40%"}
+knitr::include_graphics(rep("assets/img/rstudio/addins.png"))
+```
+
 
 ## Snippets
 
+Snippets são atalhos que podemos criar para gerar pedaços rotineiros de código.
+
+O RStudio já vem com vários snippets criados. Você pode visualizar os snippts existentes ou criar novos acessando `Tools > Global Options... > Code > Editting > Snippets > Edit snippets`. 
+
+No arquivo de texto aberto, basta seguir o padrão dos snippets já existentes para criar novos. Você também pode editar os snippets padrão do RStudio.
+
+```{r snippets, echo=FALSE, fig.align='center', out.width="70%"}
+knitr::include_graphics(rep("assets/img/rstudio/snippets.png"))
+```
+
+Cada snippet terá um *nome*, que deverá ser utilizado no script para ativar o código guardado por trás. 
+
+```{r snippets-for, echo=FALSE, fig.align='center', out.width="60%"}
+knitr::include_graphics(rep("assets/img/rstudio/snippet_for.png"))
+```
+
+Basta escrever o nome, apertar a teclar `TAB` e *voilà*.
+
+```{r snippets-for-resultado, echo=FALSE, fig.align='center', out.width="40%"}
+knitr::include_graphics(rep("assets/img/rstudio/snippet_for_resultado.png"))
+```
