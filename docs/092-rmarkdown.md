@@ -203,11 +203,10 @@ media_massa %>%
   DT::datatable()
 ```
 
-<!--html_preserve--><div id="htmlwidget-229a27e407b49fe6bd06" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-229a27e407b49fe6bd06">{"x":{"filter":"none","data":[["1","2","3","4","5"],["Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-barbicha","Pinguim-gentoo"],["Biscoe","Dream","Torgersen","Dream","Biscoe"],[3.71,3.69,3.71,3.73,5.08]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>especies<\/th>\n      <th>ilha<\/th>\n      <th>media_massa_kg<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-
-
+```{=html}
+<div id="htmlwidget-e37f256f49f83d7246b1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e37f256f49f83d7246b1">{"x":{"filter":"none","data":[["1","2","3","4","5"],["Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-barbicha","Pinguim-gentoo"],["Biscoe","Dream","Torgersen","Dream","Biscoe"],[3.71,3.69,3.71,3.73,5.08]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>especies<\/th>\n      <th>ilha<\/th>\n      <th>media_massa_kg<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+```
 
 Os exemplos anteriores são as formas mais simples de apresentar as tabelas, porém cada pacote possibilita diferentes personalizações (por exemplo, alterar o nome das colunas, etc). Existem outros pacotes que permitem adicionar tabela nos relatórios em RMarkdown, como por exemplo:
 
@@ -229,3 +228,19 @@ Veja mais [neste post no blog da RStudio](https://blog.rstudio.com/2020/09/30/rs
 <img src="https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/images/visualmode-demo.gif" alt="Demonstração do RStudio versão 1.4" width="80%" />
 <p class="caption">(\#fig:unnamed-chunk-6)Demonstração do RStudio versão 1.4</p>
 </div>
+
+### Exercícios {- #exercicios-rmd}
+
+**1.** Leia o [guia de referência do RMarkdown](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) até o final.
+
+**2.** Qual o propósito do YAML do documento?
+
+**3.** Quais são as opções e resultados do parâmetro `results=`?
+
+````md
+```{r results='markup'}
+knitr::kable(head(cars))
+```
+````
+
+
