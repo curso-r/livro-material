@@ -167,9 +167,6 @@ media_massa %>%
   DT::datatable()
 ```
 
-
-
-
 Os exemplos anteriores são as formas mais simples de apresentar as tabelas, porém cada pacote possibilita diferentes personalizações (por exemplo, alterar o nome das colunas, etc). Existem outros pacotes que permitem adicionar tabela nos relatórios em RMarkdown, como por exemplo:
 
   - [reactable](https://glin.github.io/reactable/index.html) 
@@ -189,3 +186,19 @@ Veja mais [neste post no blog da RStudio](https://blog.rstudio.com/2020/09/30/rs
 ```{r, echo=FALSE, out.width="80%", fig.cap="Demonstração do RStudio versão 1.4", fig.align='center'}
 knitr::include_graphics("https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/images/visualmode-demo.gif")
 ```
+
+### Exercícios {- #exercicios-rmd}
+
+**1.** Leia o [guia de referência do RMarkdown](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) até o final.
+
+**2.** Qual o propósito do YAML do documento?
+
+**3.** Quais são as opções e resultados do parâmetro `results=`?
+
+````md
+```{r results='markup'}`r ''`
+knitr::kable(head(cars))
+```
+````
+
+

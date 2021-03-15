@@ -66,8 +66,6 @@ Os títulos funcionam como uma hierarquia, e para criar um título é necessári
 Você pode fazer uma lista ordenada usando somente números. Você pode repetir o número quantas vezes quiser:
 
 
-
-
 Como é escrito no código: 
 
 > `1. Maçã`
@@ -82,9 +80,6 @@ Como aparece no relatório:
 > 1. Maçã
 > 1. Banana
 > 1. Uva
-
-
-
 
 
 #### Listas não ordenadas {-}
@@ -122,10 +117,6 @@ Você também pode adicionar sub-itens na lista indicando a hierarquia através 
 >   - Maçã
 >   - Banana
 >   - Uva
-
-
-
-
 
 ### Equações
 
@@ -194,8 +185,6 @@ Por exemplo:
 |--:|--:|
 |`Você pode consultar mais [materiais sobre R nesta página](https://curso-r.com/material/).`| Você pode consultar mais [materiais sobre R nesta página](https://curso-r.com/material/).| 
 
-
-
 ### Imagens
 
 Você pode incluir uma imagem utilizando esta estrutura: 
@@ -240,3 +229,21 @@ __Resultado:__
 Nesta seção, aprendemos que o Markdown é uma linguagem de marcação, usada para marcar textos. Podemos usar o Markdown para formatar textos e adicionar elementos no nossos relatórios.
 
 Porém existem elementos (como código, imagens, tabelas, entre outros) que podemos também adiconar nos relatórios utilizando R. É isso que veremos na seção seguinte!
+
+### Exercícios {- #exercicios-md}
+
+**1.** Leia a primeira página o [guia de referência do RMarkdown](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+
+**2.** Liste abaixo outros lugares que utilizam o Markdown como base (Dica: outras linguagens de programação, fóruns, aplicativos de mensagem, etc)
+
+**3.** Qual é o output se você criar uma lista ordenada começando no 2? Por exemplo: 
+
+    2. primeiro item
+
+    2. segundo item
+
+    2. terceiro item
+    
+**4.** O que são os _sabores_ de Markdown (Markdown flavor)?
+
+**5.** Experimente o pandoc no [site de demonstração da ferramenta](https://pandoc.org/try/).
