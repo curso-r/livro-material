@@ -266,13 +266,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4.5" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#exercícios-17"><i class="fa fa-check"></i><b>7.4.5</b> Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="7.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.5</b> O pacote lubridate</a><ul>
-<li class="chapter" data-level="7.5.1" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#a-classe-date"><i class="fa fa-check"></i><b>7.5.1</b> A classe “date”</a></li>
+<li class="chapter" data-level="7.5.1" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#a-classe-date"><i class="fa fa-check"></i><b>7.5.1</b> A classe <code>date</code></a></li>
 <li class="chapter" data-level="7.5.2" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#funções-úteis"><i class="fa fa-check"></i><b>7.5.2</b> Funções úteis</a></li>
 <li class="chapter" data-level="7.5.3" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#fusos-horários"><i class="fa fa-check"></i><b>7.5.3</b> Fusos horários</a></li>
 <li class="chapter" data-level="7.5.4" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#operações-com-datas"><i class="fa fa-check"></i><b>7.5.4</b> Operações com datas</a></li>
 <li class="chapter" data-level="7.5.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#exercícios-18"><i class="fa fa-check"></i><b>7.5.5</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="7-6-forcats.html"><a href="7-6-forcats.html"><i class="fa fa-check"></i><b>7.6</b> O pacote forcats</a></li>
+<li class="chapter" data-level="7.6" data-path="7-6-forcats.html"><a href="7-6-forcats.html"><i class="fa fa-check"></i><b>7.6</b> O pacote forcats</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="7-6-forcats.html"><a href="7-6-forcats.html#o-que-são-fatores"><i class="fa fa-check"></i><b>7.6.1</b> O que são fatores?</a></li>
+<li class="chapter" data-level="7.6.2" data-path="7-6-forcats.html"><a href="7-6-forcats.html#modificando-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.2</b> Modificando níveis de um fator</a></li>
+<li class="chapter" data-level="7.6.3" data-path="7-6-forcats.html"><a href="7-6-forcats.html#mudando-a-ordem-dos-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.3</b> Mudando a ordem dos níveis de um fator</a></li>
+<li class="chapter" data-level="7.6.4" data-path="7-6-forcats.html"><a href="7-6-forcats.html#colapsando-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.4</b> Colapsando níveis de um fator</a></li>
+<li class="chapter" data-level="7.6.5" data-path="7-6-forcats.html"><a href="7-6-forcats.html#outras-funções-úteis"><i class="fa fa-check"></i><b>7.6.5</b> Outras funções úteis</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a><ul>
 <li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a><ul>
@@ -375,44 +381,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="o-pacote-stringr-1" class="section level2">
 <h2><span class="header-section-number">12.5</span> O pacote stringr</h2>
-<div class="sourceCode" id="cb760"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb760-1"><a href="12-5-o-pacote-stringr-1.html#cb760-1"></a><span class="kw">library</span>(stringr)</span>
-<span id="cb760-2"><a href="12-5-o-pacote-stringr-1.html#cb760-2"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb760-3"><a href="12-5-o-pacote-stringr-1.html#cb760-3"></a><span class="kw">library</span>(glue)</span></code></pre></div>
+<div class="sourceCode" id="cb788"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb788-1"><a href="12-5-o-pacote-stringr-1.html#cb788-1"></a><span class="kw">library</span>(stringr)</span>
+<span id="cb788-2"><a href="12-5-o-pacote-stringr-1.html#cb788-2"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb788-3"><a href="12-5-o-pacote-stringr-1.html#cb788-3"></a><span class="kw">library</span>(glue)</span></code></pre></div>
 <p><strong>1.</strong> O CPF é um número de 11 dígitos, por exemplo: 54491651884. No entanto para facilitar a visualização costumamos mostrá-lo com separadores a cada 3 casas: 544.916.518-84. Crie uma função que transforma um número de 11 dígitos em uma string com as separações, como um CPF.</p>
-<div class="sourceCode" id="cb761"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb761-1"><a href="12-5-o-pacote-stringr-1.html#cb761-1"></a><span class="co"># Sem regex</span></span>
-<span id="cb761-2"><a href="12-5-o-pacote-stringr-1.html#cb761-2"></a>formata_CPF &lt;-<span class="st"> </span><span class="cf">function</span>(num) {</span>
-<span id="cb761-3"><a href="12-5-o-pacote-stringr-1.html#cb761-3"></a>  </span>
-<span id="cb761-4"><a href="12-5-o-pacote-stringr-1.html#cb761-4"></a>  <span class="cf">if</span>(<span class="kw">str_count</span>(num) <span class="op">!=</span><span class="st"> </span><span class="dv">11</span>) {</span>
-<span id="cb761-5"><a href="12-5-o-pacote-stringr-1.html#cb761-5"></a>    <span class="kw">stop</span>(<span class="st">&quot;Número inválido!&quot;</span>)</span>
-<span id="cb761-6"><a href="12-5-o-pacote-stringr-1.html#cb761-6"></a>  }</span>
-<span id="cb761-7"><a href="12-5-o-pacote-stringr-1.html#cb761-7"></a>  </span>
-<span id="cb761-8"><a href="12-5-o-pacote-stringr-1.html#cb761-8"></a>  <span class="co"># Concatemos cada parte do número, interpolando</span></span>
-<span id="cb761-9"><a href="12-5-o-pacote-stringr-1.html#cb761-9"></a>  <span class="co"># com os pontos e o traço.</span></span>
-<span id="cb761-10"><a href="12-5-o-pacote-stringr-1.html#cb761-10"></a>  </span>
-<span id="cb761-11"><a href="12-5-o-pacote-stringr-1.html#cb761-11"></a>  s &lt;-<span class="st"> </span><span class="kw">str_c</span>(</span>
-<span id="cb761-12"><a href="12-5-o-pacote-stringr-1.html#cb761-12"></a>    <span class="kw">str_sub</span>(num, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">3</span>),</span>
-<span id="cb761-13"><a href="12-5-o-pacote-stringr-1.html#cb761-13"></a>    <span class="st">&quot;.&quot;</span>,</span>
-<span id="cb761-14"><a href="12-5-o-pacote-stringr-1.html#cb761-14"></a>    <span class="kw">str_sub</span>(num, <span class="dt">start =</span> <span class="dv">4</span>, <span class="dt">end =</span> <span class="dv">6</span>),</span>
-<span id="cb761-15"><a href="12-5-o-pacote-stringr-1.html#cb761-15"></a>    <span class="st">&quot;.&quot;</span>,</span>
-<span id="cb761-16"><a href="12-5-o-pacote-stringr-1.html#cb761-16"></a>    <span class="kw">str_sub</span>(num, <span class="dt">start =</span> <span class="dv">7</span>, <span class="dt">end =</span> <span class="dv">9</span>),</span>
-<span id="cb761-17"><a href="12-5-o-pacote-stringr-1.html#cb761-17"></a>    <span class="st">&quot;-&quot;</span>,</span>
-<span id="cb761-18"><a href="12-5-o-pacote-stringr-1.html#cb761-18"></a>    <span class="kw">str_sub</span>(num, <span class="dt">start =</span> <span class="dv">10</span>, <span class="dt">end =</span> <span class="dv">11</span>)</span>
-<span id="cb761-19"><a href="12-5-o-pacote-stringr-1.html#cb761-19"></a>  )</span>
-<span id="cb761-20"><a href="12-5-o-pacote-stringr-1.html#cb761-20"></a>  </span>
-<span id="cb761-21"><a href="12-5-o-pacote-stringr-1.html#cb761-21"></a>}</span>
-<span id="cb761-22"><a href="12-5-o-pacote-stringr-1.html#cb761-22"></a><span class="co"># Com regex</span></span>
-<span id="cb761-23"><a href="12-5-o-pacote-stringr-1.html#cb761-23"></a>formata_CPF &lt;-<span class="st"> </span><span class="cf">function</span>(num) {</span>
-<span id="cb761-24"><a href="12-5-o-pacote-stringr-1.html#cb761-24"></a>  </span>
-<span id="cb761-25"><a href="12-5-o-pacote-stringr-1.html#cb761-25"></a>  <span class="cf">if</span>(<span class="kw">str_count</span>(num) <span class="op">!=</span><span class="st"> </span><span class="dv">11</span>) {</span>
-<span id="cb761-26"><a href="12-5-o-pacote-stringr-1.html#cb761-26"></a>    <span class="kw">stop</span>(<span class="st">&quot;Número inválido!&quot;</span>)</span>
-<span id="cb761-27"><a href="12-5-o-pacote-stringr-1.html#cb761-27"></a>  }</span>
-<span id="cb761-28"><a href="12-5-o-pacote-stringr-1.html#cb761-28"></a>  </span>
-<span id="cb761-29"><a href="12-5-o-pacote-stringr-1.html#cb761-29"></a>  <span class="kw">str_replace</span>(</span>
-<span id="cb761-30"><a href="12-5-o-pacote-stringr-1.html#cb761-30"></a>    <span class="dt">string =</span> num, </span>
-<span id="cb761-31"><a href="12-5-o-pacote-stringr-1.html#cb761-31"></a>    <span class="dt">pattern =</span> <span class="st">&quot;([0-9]{3})([0-9]{3})([0-9]{3})&quot;</span>, </span>
-<span id="cb761-32"><a href="12-5-o-pacote-stringr-1.html#cb761-32"></a>    <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">1.</span><span class="ch">\\</span><span class="st">2.</span><span class="ch">\\</span><span class="st">3-&quot;</span></span>
-<span id="cb761-33"><a href="12-5-o-pacote-stringr-1.html#cb761-33"></a>  )</span>
-<span id="cb761-34"><a href="12-5-o-pacote-stringr-1.html#cb761-34"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb789"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb789-1"><a href="12-5-o-pacote-stringr-1.html#cb789-1"></a><span class="co"># Sem regex</span></span>
+<span id="cb789-2"><a href="12-5-o-pacote-stringr-1.html#cb789-2"></a>formata_CPF &lt;-<span class="st"> </span><span class="cf">function</span>(num) {</span>
+<span id="cb789-3"><a href="12-5-o-pacote-stringr-1.html#cb789-3"></a>  </span>
+<span id="cb789-4"><a href="12-5-o-pacote-stringr-1.html#cb789-4"></a>  <span class="cf">if</span>(<span class="kw">str_count</span>(num) <span class="op">!=</span><span class="st"> </span><span class="dv">11</span>) {</span>
+<span id="cb789-5"><a href="12-5-o-pacote-stringr-1.html#cb789-5"></a>    <span class="kw">stop</span>(<span class="st">&quot;Número inválido!&quot;</span>)</span>
+<span id="cb789-6"><a href="12-5-o-pacote-stringr-1.html#cb789-6"></a>  }</span>
+<span id="cb789-7"><a href="12-5-o-pacote-stringr-1.html#cb789-7"></a>  </span>
+<span id="cb789-8"><a href="12-5-o-pacote-stringr-1.html#cb789-8"></a>  <span class="co"># Concatemos cada parte do número, interpolando</span></span>
+<span id="cb789-9"><a href="12-5-o-pacote-stringr-1.html#cb789-9"></a>  <span class="co"># com os pontos e o traço.</span></span>
+<span id="cb789-10"><a href="12-5-o-pacote-stringr-1.html#cb789-10"></a>  </span>
+<span id="cb789-11"><a href="12-5-o-pacote-stringr-1.html#cb789-11"></a>  s &lt;-<span class="st"> </span><span class="kw">str_c</span>(</span>
+<span id="cb789-12"><a href="12-5-o-pacote-stringr-1.html#cb789-12"></a>    <span class="kw">str_sub</span>(num, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">3</span>),</span>
+<span id="cb789-13"><a href="12-5-o-pacote-stringr-1.html#cb789-13"></a>    <span class="st">&quot;.&quot;</span>,</span>
+<span id="cb789-14"><a href="12-5-o-pacote-stringr-1.html#cb789-14"></a>    <span class="kw">str_sub</span>(num, <span class="dt">start =</span> <span class="dv">4</span>, <span class="dt">end =</span> <span class="dv">6</span>),</span>
+<span id="cb789-15"><a href="12-5-o-pacote-stringr-1.html#cb789-15"></a>    <span class="st">&quot;.&quot;</span>,</span>
+<span id="cb789-16"><a href="12-5-o-pacote-stringr-1.html#cb789-16"></a>    <span class="kw">str_sub</span>(num, <span class="dt">start =</span> <span class="dv">7</span>, <span class="dt">end =</span> <span class="dv">9</span>),</span>
+<span id="cb789-17"><a href="12-5-o-pacote-stringr-1.html#cb789-17"></a>    <span class="st">&quot;-&quot;</span>,</span>
+<span id="cb789-18"><a href="12-5-o-pacote-stringr-1.html#cb789-18"></a>    <span class="kw">str_sub</span>(num, <span class="dt">start =</span> <span class="dv">10</span>, <span class="dt">end =</span> <span class="dv">11</span>)</span>
+<span id="cb789-19"><a href="12-5-o-pacote-stringr-1.html#cb789-19"></a>  )</span>
+<span id="cb789-20"><a href="12-5-o-pacote-stringr-1.html#cb789-20"></a>  </span>
+<span id="cb789-21"><a href="12-5-o-pacote-stringr-1.html#cb789-21"></a>}</span>
+<span id="cb789-22"><a href="12-5-o-pacote-stringr-1.html#cb789-22"></a><span class="co"># Com regex</span></span>
+<span id="cb789-23"><a href="12-5-o-pacote-stringr-1.html#cb789-23"></a>formata_CPF &lt;-<span class="st"> </span><span class="cf">function</span>(num) {</span>
+<span id="cb789-24"><a href="12-5-o-pacote-stringr-1.html#cb789-24"></a>  </span>
+<span id="cb789-25"><a href="12-5-o-pacote-stringr-1.html#cb789-25"></a>  <span class="cf">if</span>(<span class="kw">str_count</span>(num) <span class="op">!=</span><span class="st"> </span><span class="dv">11</span>) {</span>
+<span id="cb789-26"><a href="12-5-o-pacote-stringr-1.html#cb789-26"></a>    <span class="kw">stop</span>(<span class="st">&quot;Número inválido!&quot;</span>)</span>
+<span id="cb789-27"><a href="12-5-o-pacote-stringr-1.html#cb789-27"></a>  }</span>
+<span id="cb789-28"><a href="12-5-o-pacote-stringr-1.html#cb789-28"></a>  </span>
+<span id="cb789-29"><a href="12-5-o-pacote-stringr-1.html#cb789-29"></a>  <span class="kw">str_replace</span>(</span>
+<span id="cb789-30"><a href="12-5-o-pacote-stringr-1.html#cb789-30"></a>    <span class="dt">string =</span> num, </span>
+<span id="cb789-31"><a href="12-5-o-pacote-stringr-1.html#cb789-31"></a>    <span class="dt">pattern =</span> <span class="st">&quot;([0-9]{3})([0-9]{3})([0-9]{3})&quot;</span>, </span>
+<span id="cb789-32"><a href="12-5-o-pacote-stringr-1.html#cb789-32"></a>    <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">1.</span><span class="ch">\\</span><span class="st">2.</span><span class="ch">\\</span><span class="st">3-&quot;</span></span>
+<span id="cb789-33"><a href="12-5-o-pacote-stringr-1.html#cb789-33"></a>  )</span>
+<span id="cb789-34"><a href="12-5-o-pacote-stringr-1.html#cb789-34"></a>}</span></code></pre></div>
 <p>A função <code>str_replace()</code> faz o seguinte:</p>
 <ul>
 <li>O <code>pattern=</code> procurará um padrão de 9 números:
@@ -433,134 +439,134 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <hr />
 <p><strong>2.</strong> Transforme o vetor de <em>strings</em> abaixo em <code>"01 - Alto" "02 - Médio" "03 - Baixo"</code>.</p>
-<div class="sourceCode" id="cb762"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb762-1"><a href="12-5-o-pacote-stringr-1.html#cb762-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Alto&#39;</span>, <span class="st">&#39;Médio&#39;</span>, <span class="st">&#39;Baixo&#39;</span>)</span>
-<span id="cb762-2"><a href="12-5-o-pacote-stringr-1.html#cb762-2"></a><span class="co"># Usando str_c()</span></span>
-<span id="cb762-3"><a href="12-5-o-pacote-stringr-1.html#cb762-3"></a><span class="kw">str_c</span>(<span class="st">&quot;0&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(s), <span class="st">&quot; - &quot;</span>, s, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb762-4"><a href="12-5-o-pacote-stringr-1.html#cb762-4"></a><span class="co">## [1] &quot;01 - Alto&quot;  &quot;02 - Médio&quot; &quot;03 - Baixo&quot;</span></span>
-<span id="cb762-5"><a href="12-5-o-pacote-stringr-1.html#cb762-5"></a></span>
-<span id="cb762-6"><a href="12-5-o-pacote-stringr-1.html#cb762-6"></a><span class="co"># Usando o pacote glue</span></span>
-<span id="cb762-7"><a href="12-5-o-pacote-stringr-1.html#cb762-7"></a><span class="kw">glue</span>(<span class="st">&quot;0{1:length(s)} - {s}&quot;</span>)</span>
-<span id="cb762-8"><a href="12-5-o-pacote-stringr-1.html#cb762-8"></a><span class="co">## 01 - Alto</span></span>
-<span id="cb762-9"><a href="12-5-o-pacote-stringr-1.html#cb762-9"></a><span class="co">## 02 - Médio</span></span>
-<span id="cb762-10"><a href="12-5-o-pacote-stringr-1.html#cb762-10"></a><span class="co">## 03 - Baixo</span></span></code></pre></div>
+<div class="sourceCode" id="cb790"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb790-1"><a href="12-5-o-pacote-stringr-1.html#cb790-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Alto&#39;</span>, <span class="st">&#39;Médio&#39;</span>, <span class="st">&#39;Baixo&#39;</span>)</span>
+<span id="cb790-2"><a href="12-5-o-pacote-stringr-1.html#cb790-2"></a><span class="co"># Usando str_c()</span></span>
+<span id="cb790-3"><a href="12-5-o-pacote-stringr-1.html#cb790-3"></a><span class="kw">str_c</span>(<span class="st">&quot;0&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(s), <span class="st">&quot; - &quot;</span>, s, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb790-4"><a href="12-5-o-pacote-stringr-1.html#cb790-4"></a><span class="co">## [1] &quot;01 - Alto&quot;  &quot;02 - Médio&quot; &quot;03 - Baixo&quot;</span></span>
+<span id="cb790-5"><a href="12-5-o-pacote-stringr-1.html#cb790-5"></a></span>
+<span id="cb790-6"><a href="12-5-o-pacote-stringr-1.html#cb790-6"></a><span class="co"># Usando o pacote glue</span></span>
+<span id="cb790-7"><a href="12-5-o-pacote-stringr-1.html#cb790-7"></a><span class="kw">glue</span>(<span class="st">&quot;0{1:length(s)} - {s}&quot;</span>)</span>
+<span id="cb790-8"><a href="12-5-o-pacote-stringr-1.html#cb790-8"></a><span class="co">## 01 - Alto</span></span>
+<span id="cb790-9"><a href="12-5-o-pacote-stringr-1.html#cb790-9"></a><span class="co">## 02 - Médio</span></span>
+<span id="cb790-10"><a href="12-5-o-pacote-stringr-1.html#cb790-10"></a><span class="co">## 03 - Baixo</span></span></code></pre></div>
 <p>Para mais informações sobre o pacote <code>glue</code>, confira <a href="http://curso-r.com/blog/2017/04/17/2017-04-08-glue/">este post</a>.</p>
 <hr />
 <p><strong>3.</strong> Crie uma regex que capture múltiplas versões da palavra ‘casa’. Ela deve funcionar com as palavras ‘Casa’, ‘CASA’, ‘CaSa’, ‘CAsa’. Teste-a usando a função <code>str_detect()</code>.</p>
-<div class="sourceCode" id="cb763"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb763-1"><a href="12-5-o-pacote-stringr-1.html#cb763-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Casa&#39;</span>, <span class="st">&#39;CASA&#39;</span>, <span class="st">&#39;CaSa&#39;</span>, <span class="st">&#39;CAsa&#39;</span>)</span>
-<span id="cb763-2"><a href="12-5-o-pacote-stringr-1.html#cb763-2"></a><span class="kw">str_detect</span>(s, <span class="st">&quot;[CcAaSsAa]&quot;</span>)</span>
-<span id="cb763-3"><a href="12-5-o-pacote-stringr-1.html#cb763-3"></a><span class="co">## [1] TRUE TRUE TRUE TRUE</span></span>
-<span id="cb763-4"><a href="12-5-o-pacote-stringr-1.html#cb763-4"></a><span class="kw">str_detect</span>(s, <span class="st">&quot;[Cc][Aa][Ss][Aa]&quot;</span>)</span>
-<span id="cb763-5"><a href="12-5-o-pacote-stringr-1.html#cb763-5"></a><span class="co">## [1] TRUE TRUE TRUE TRUE</span></span></code></pre></div>
+<div class="sourceCode" id="cb791"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb791-1"><a href="12-5-o-pacote-stringr-1.html#cb791-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Casa&#39;</span>, <span class="st">&#39;CASA&#39;</span>, <span class="st">&#39;CaSa&#39;</span>, <span class="st">&#39;CAsa&#39;</span>)</span>
+<span id="cb791-2"><a href="12-5-o-pacote-stringr-1.html#cb791-2"></a><span class="kw">str_detect</span>(s, <span class="st">&quot;[CcAaSsAa]&quot;</span>)</span>
+<span id="cb791-3"><a href="12-5-o-pacote-stringr-1.html#cb791-3"></a><span class="co">## [1] TRUE TRUE TRUE TRUE</span></span>
+<span id="cb791-4"><a href="12-5-o-pacote-stringr-1.html#cb791-4"></a><span class="kw">str_detect</span>(s, <span class="st">&quot;[Cc][Aa][Ss][Aa]&quot;</span>)</span>
+<span id="cb791-5"><a href="12-5-o-pacote-stringr-1.html#cb791-5"></a><span class="co">## [1] TRUE TRUE TRUE TRUE</span></span></code></pre></div>
 <hr />
 <p><strong>4.</strong> Imagine que a seguinte <em>string</em> é a parte final de uma URL.</p>
 <ul>
 <li><code>/ac/rio-branco/xpto-xyz-1-0-1fds2396-5</code></li>
 </ul>
 <p>Transforme-a em “AC - Rio Branco” utilizando a função <code>str_split()</code>.</p>
-<div class="sourceCode" id="cb764"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb764-1"><a href="12-5-o-pacote-stringr-1.html#cb764-1"></a>url &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;/ac/rio-branco/xpto-xyz-1-0-1fds2396-5&#39;</span>)</span>
-<span id="cb764-2"><a href="12-5-o-pacote-stringr-1.html#cb764-2"></a>UF &lt;-<span class="st"> </span>url <span class="op">%&gt;%</span></span>
-<span id="cb764-3"><a href="12-5-o-pacote-stringr-1.html#cb764-3"></a><span class="st">  </span><span class="kw">str_split</span>(<span class="st">&quot;[/]&quot;</span>, <span class="dt">simplify =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb764-4"><a href="12-5-o-pacote-stringr-1.html#cb764-4"></a><span class="st">  </span>.[<span class="dv">1</span>,<span class="dv">2</span>] <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb764-5"><a href="12-5-o-pacote-stringr-1.html#cb764-5"></a><span class="st">  </span><span class="kw">str_to_upper</span>()</span>
-<span id="cb764-6"><a href="12-5-o-pacote-stringr-1.html#cb764-6"></a>cidade &lt;-<span class="st"> </span>url <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb764-7"><a href="12-5-o-pacote-stringr-1.html#cb764-7"></a><span class="st">  </span><span class="kw">str_split</span>(<span class="st">&quot;[/]&quot;</span>, <span class="dt">simplify =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb764-8"><a href="12-5-o-pacote-stringr-1.html#cb764-8"></a><span class="st">  </span>.[<span class="dv">1</span>,<span class="dv">3</span>] <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb764-9"><a href="12-5-o-pacote-stringr-1.html#cb764-9"></a><span class="st">  </span><span class="kw">str_replace</span>(<span class="st">&quot;-&quot;</span>, <span class="st">&quot; &quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb764-10"><a href="12-5-o-pacote-stringr-1.html#cb764-10"></a><span class="st">  </span><span class="kw">str_to_title</span>()</span>
-<span id="cb764-11"><a href="12-5-o-pacote-stringr-1.html#cb764-11"></a><span class="kw">str_c</span>(UF, <span class="st">&quot; - &quot;</span>, cidade)</span>
-<span id="cb764-12"><a href="12-5-o-pacote-stringr-1.html#cb764-12"></a><span class="co">## [1] &quot;AC - Rio Branco&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb792"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb792-1"><a href="12-5-o-pacote-stringr-1.html#cb792-1"></a>url &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;/ac/rio-branco/xpto-xyz-1-0-1fds2396-5&#39;</span>)</span>
+<span id="cb792-2"><a href="12-5-o-pacote-stringr-1.html#cb792-2"></a>UF &lt;-<span class="st"> </span>url <span class="op">%&gt;%</span></span>
+<span id="cb792-3"><a href="12-5-o-pacote-stringr-1.html#cb792-3"></a><span class="st">  </span><span class="kw">str_split</span>(<span class="st">&quot;[/]&quot;</span>, <span class="dt">simplify =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb792-4"><a href="12-5-o-pacote-stringr-1.html#cb792-4"></a><span class="st">  </span>.[<span class="dv">1</span>,<span class="dv">2</span>] <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb792-5"><a href="12-5-o-pacote-stringr-1.html#cb792-5"></a><span class="st">  </span><span class="kw">str_to_upper</span>()</span>
+<span id="cb792-6"><a href="12-5-o-pacote-stringr-1.html#cb792-6"></a>cidade &lt;-<span class="st"> </span>url <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb792-7"><a href="12-5-o-pacote-stringr-1.html#cb792-7"></a><span class="st">  </span><span class="kw">str_split</span>(<span class="st">&quot;[/]&quot;</span>, <span class="dt">simplify =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb792-8"><a href="12-5-o-pacote-stringr-1.html#cb792-8"></a><span class="st">  </span>.[<span class="dv">1</span>,<span class="dv">3</span>] <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb792-9"><a href="12-5-o-pacote-stringr-1.html#cb792-9"></a><span class="st">  </span><span class="kw">str_replace</span>(<span class="st">&quot;-&quot;</span>, <span class="st">&quot; &quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb792-10"><a href="12-5-o-pacote-stringr-1.html#cb792-10"></a><span class="st">  </span><span class="kw">str_to_title</span>()</span>
+<span id="cb792-11"><a href="12-5-o-pacote-stringr-1.html#cb792-11"></a><span class="kw">str_c</span>(UF, <span class="st">&quot; - &quot;</span>, cidade)</span>
+<span id="cb792-12"><a href="12-5-o-pacote-stringr-1.html#cb792-12"></a><span class="co">## [1] &quot;AC - Rio Branco&quot;</span></span></code></pre></div>
 <hr />
 <p><strong>5.</strong> Crie uma função que retorna <code>TRUE</code> quando a string é um <a href="https://pt.wikipedia.org/wiki/Pal%C3%ADndromo">palíndromo</a> e <code>FALSO</code> caso não seja.</p>
-<div class="sourceCode" id="cb765"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb765-1"><a href="12-5-o-pacote-stringr-1.html#cb765-1"></a><span class="co"># Solução 1: usando a função rev() para inverter uma string fragmentada</span></span>
-<span id="cb765-2"><a href="12-5-o-pacote-stringr-1.html#cb765-2"></a>testa_palindromo &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
-<span id="cb765-3"><a href="12-5-o-pacote-stringr-1.html#cb765-3"></a>  </span>
-<span id="cb765-4"><a href="12-5-o-pacote-stringr-1.html#cb765-4"></a>  s <span class="op">%&gt;%</span></span>
-<span id="cb765-5"><a href="12-5-o-pacote-stringr-1.html#cb765-5"></a><span class="st">    </span><span class="kw">str_split</span>(<span class="st">&quot;&quot;</span>, <span class="dt">simplify =</span> T) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb765-6"><a href="12-5-o-pacote-stringr-1.html#cb765-6"></a><span class="st">    </span>rev <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb765-7"><a href="12-5-o-pacote-stringr-1.html#cb765-7"></a><span class="st">    </span><span class="kw">str_c</span>(<span class="dt">collapse =</span> <span class="st">&quot;&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb765-8"><a href="12-5-o-pacote-stringr-1.html#cb765-8"></a><span class="st">    </span><span class="kw">str_detect</span>(s)</span>
-<span id="cb765-9"><a href="12-5-o-pacote-stringr-1.html#cb765-9"></a>  </span>
-<span id="cb765-10"><a href="12-5-o-pacote-stringr-1.html#cb765-10"></a>}</span>
-<span id="cb765-11"><a href="12-5-o-pacote-stringr-1.html#cb765-11"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;ana&quot;</span>)</span>
-<span id="cb765-12"><a href="12-5-o-pacote-stringr-1.html#cb765-12"></a><span class="co">## [1] TRUE</span></span>
-<span id="cb765-13"><a href="12-5-o-pacote-stringr-1.html#cb765-13"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;bananas&quot;</span>)</span>
-<span id="cb765-14"><a href="12-5-o-pacote-stringr-1.html#cb765-14"></a><span class="co">## [1] FALSE</span></span>
-<span id="cb765-15"><a href="12-5-o-pacote-stringr-1.html#cb765-15"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;socorrammesubinoonibusemmarrocos&quot;</span>)</span>
-<span id="cb765-16"><a href="12-5-o-pacote-stringr-1.html#cb765-16"></a><span class="co">## [1] TRUE</span></span>
-<span id="cb765-17"><a href="12-5-o-pacote-stringr-1.html#cb765-17"></a></span>
-<span id="cb765-18"><a href="12-5-o-pacote-stringr-1.html#cb765-18"></a><span class="co"># Solução 2: usando a função str_reverse() do pacote stringi,</span></span>
-<span id="cb765-19"><a href="12-5-o-pacote-stringr-1.html#cb765-19"></a><span class="co"># que já inverte a string diretamente.</span></span>
-<span id="cb765-20"><a href="12-5-o-pacote-stringr-1.html#cb765-20"></a>testa_palindromo &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
-<span id="cb765-21"><a href="12-5-o-pacote-stringr-1.html#cb765-21"></a>  </span>
-<span id="cb765-22"><a href="12-5-o-pacote-stringr-1.html#cb765-22"></a>  s <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb765-23"><a href="12-5-o-pacote-stringr-1.html#cb765-23"></a><span class="st">    </span>stringi<span class="op">::</span><span class="kw">stri_reverse</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb765-24"><a href="12-5-o-pacote-stringr-1.html#cb765-24"></a><span class="st">    </span><span class="kw">str_detect</span>(s)</span>
-<span id="cb765-25"><a href="12-5-o-pacote-stringr-1.html#cb765-25"></a>  </span>
-<span id="cb765-26"><a href="12-5-o-pacote-stringr-1.html#cb765-26"></a>}</span>
-<span id="cb765-27"><a href="12-5-o-pacote-stringr-1.html#cb765-27"></a></span>
-<span id="cb765-28"><a href="12-5-o-pacote-stringr-1.html#cb765-28"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;ana&quot;</span>)</span>
-<span id="cb765-29"><a href="12-5-o-pacote-stringr-1.html#cb765-29"></a><span class="co">## [1] TRUE</span></span>
-<span id="cb765-30"><a href="12-5-o-pacote-stringr-1.html#cb765-30"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;bananas&quot;</span>)</span>
-<span id="cb765-31"><a href="12-5-o-pacote-stringr-1.html#cb765-31"></a><span class="co">## [1] FALSE</span></span>
-<span id="cb765-32"><a href="12-5-o-pacote-stringr-1.html#cb765-32"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;socorrammesubinoonibusemmarrocos&quot;</span>)</span>
-<span id="cb765-33"><a href="12-5-o-pacote-stringr-1.html#cb765-33"></a><span class="co">## [1] TRUE</span></span></code></pre></div>
+<div class="sourceCode" id="cb793"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb793-1"><a href="12-5-o-pacote-stringr-1.html#cb793-1"></a><span class="co"># Solução 1: usando a função rev() para inverter uma string fragmentada</span></span>
+<span id="cb793-2"><a href="12-5-o-pacote-stringr-1.html#cb793-2"></a>testa_palindromo &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
+<span id="cb793-3"><a href="12-5-o-pacote-stringr-1.html#cb793-3"></a>  </span>
+<span id="cb793-4"><a href="12-5-o-pacote-stringr-1.html#cb793-4"></a>  s <span class="op">%&gt;%</span></span>
+<span id="cb793-5"><a href="12-5-o-pacote-stringr-1.html#cb793-5"></a><span class="st">    </span><span class="kw">str_split</span>(<span class="st">&quot;&quot;</span>, <span class="dt">simplify =</span> T) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb793-6"><a href="12-5-o-pacote-stringr-1.html#cb793-6"></a><span class="st">    </span>rev <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb793-7"><a href="12-5-o-pacote-stringr-1.html#cb793-7"></a><span class="st">    </span><span class="kw">str_c</span>(<span class="dt">collapse =</span> <span class="st">&quot;&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb793-8"><a href="12-5-o-pacote-stringr-1.html#cb793-8"></a><span class="st">    </span><span class="kw">str_detect</span>(s)</span>
+<span id="cb793-9"><a href="12-5-o-pacote-stringr-1.html#cb793-9"></a>  </span>
+<span id="cb793-10"><a href="12-5-o-pacote-stringr-1.html#cb793-10"></a>}</span>
+<span id="cb793-11"><a href="12-5-o-pacote-stringr-1.html#cb793-11"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;ana&quot;</span>)</span>
+<span id="cb793-12"><a href="12-5-o-pacote-stringr-1.html#cb793-12"></a><span class="co">## [1] TRUE</span></span>
+<span id="cb793-13"><a href="12-5-o-pacote-stringr-1.html#cb793-13"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;bananas&quot;</span>)</span>
+<span id="cb793-14"><a href="12-5-o-pacote-stringr-1.html#cb793-14"></a><span class="co">## [1] FALSE</span></span>
+<span id="cb793-15"><a href="12-5-o-pacote-stringr-1.html#cb793-15"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;socorrammesubinoonibusemmarrocos&quot;</span>)</span>
+<span id="cb793-16"><a href="12-5-o-pacote-stringr-1.html#cb793-16"></a><span class="co">## [1] TRUE</span></span>
+<span id="cb793-17"><a href="12-5-o-pacote-stringr-1.html#cb793-17"></a></span>
+<span id="cb793-18"><a href="12-5-o-pacote-stringr-1.html#cb793-18"></a><span class="co"># Solução 2: usando a função str_reverse() do pacote stringi,</span></span>
+<span id="cb793-19"><a href="12-5-o-pacote-stringr-1.html#cb793-19"></a><span class="co"># que já inverte a string diretamente.</span></span>
+<span id="cb793-20"><a href="12-5-o-pacote-stringr-1.html#cb793-20"></a>testa_palindromo &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
+<span id="cb793-21"><a href="12-5-o-pacote-stringr-1.html#cb793-21"></a>  </span>
+<span id="cb793-22"><a href="12-5-o-pacote-stringr-1.html#cb793-22"></a>  s <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb793-23"><a href="12-5-o-pacote-stringr-1.html#cb793-23"></a><span class="st">    </span>stringi<span class="op">::</span><span class="kw">stri_reverse</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb793-24"><a href="12-5-o-pacote-stringr-1.html#cb793-24"></a><span class="st">    </span><span class="kw">str_detect</span>(s)</span>
+<span id="cb793-25"><a href="12-5-o-pacote-stringr-1.html#cb793-25"></a>  </span>
+<span id="cb793-26"><a href="12-5-o-pacote-stringr-1.html#cb793-26"></a>}</span>
+<span id="cb793-27"><a href="12-5-o-pacote-stringr-1.html#cb793-27"></a></span>
+<span id="cb793-28"><a href="12-5-o-pacote-stringr-1.html#cb793-28"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;ana&quot;</span>)</span>
+<span id="cb793-29"><a href="12-5-o-pacote-stringr-1.html#cb793-29"></a><span class="co">## [1] TRUE</span></span>
+<span id="cb793-30"><a href="12-5-o-pacote-stringr-1.html#cb793-30"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;bananas&quot;</span>)</span>
+<span id="cb793-31"><a href="12-5-o-pacote-stringr-1.html#cb793-31"></a><span class="co">## [1] FALSE</span></span>
+<span id="cb793-32"><a href="12-5-o-pacote-stringr-1.html#cb793-32"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;socorrammesubinoonibusemmarrocos&quot;</span>)</span>
+<span id="cb793-33"><a href="12-5-o-pacote-stringr-1.html#cb793-33"></a><span class="co">## [1] TRUE</span></span></code></pre></div>
 <hr />
 <p><strong>6.</strong> De acordo com as regras da língua portuguesa, antes de “p” ou “b” devemos usar a letra “m”. Em outras palavras, com outras consoantes, usamos a letra “N”. Suponha que você tem o seguinte texto com erros gramaticais:</p>
-<div class="sourceCode" id="cb766"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb766-1"><a href="12-5-o-pacote-stringr-1.html#cb766-1"></a>s &lt;-<span class="st"> &#39;Nós chamamos os bonbeiros quando começou o incêmdio.&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb794"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb794-1"><a href="12-5-o-pacote-stringr-1.html#cb794-1"></a>s &lt;-<span class="st"> &#39;Nós chamamos os bonbeiros quando começou o incêmdio.&#39;</span></span></code></pre></div>
 <p>Crie uma função para corrigi-lo.</p>
-<div class="sourceCode" id="cb767"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb767-1"><a href="12-5-o-pacote-stringr-1.html#cb767-1"></a><span class="co"># Função que funciona para o exemplo</span></span>
-<span id="cb767-2"><a href="12-5-o-pacote-stringr-1.html#cb767-2"></a>corrige_mn &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
-<span id="cb767-3"><a href="12-5-o-pacote-stringr-1.html#cb767-3"></a>  </span>
-<span id="cb767-4"><a href="12-5-o-pacote-stringr-1.html#cb767-4"></a>  s <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb767-5"><a href="12-5-o-pacote-stringr-1.html#cb767-5"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;nb&quot;</span>, <span class="st">&quot;mb&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb767-6"><a href="12-5-o-pacote-stringr-1.html#cb767-6"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;md&quot;</span>, <span class="st">&quot;nd&quot;</span>)</span>
-<span id="cb767-7"><a href="12-5-o-pacote-stringr-1.html#cb767-7"></a>  </span>
-<span id="cb767-8"><a href="12-5-o-pacote-stringr-1.html#cb767-8"></a>}</span>
-<span id="cb767-9"><a href="12-5-o-pacote-stringr-1.html#cb767-9"></a><span class="kw">corrige_mn</span>(s)</span>
-<span id="cb767-10"><a href="12-5-o-pacote-stringr-1.html#cb767-10"></a><span class="co">## [1] &quot;Nós chamamos os bombeiros quando começou o incêndio.&quot;</span></span>
-<span id="cb767-11"><a href="12-5-o-pacote-stringr-1.html#cb767-11"></a></span>
-<span id="cb767-12"><a href="12-5-o-pacote-stringr-1.html#cb767-12"></a><span class="co"># Função que funciona no caso geral</span></span>
-<span id="cb767-13"><a href="12-5-o-pacote-stringr-1.html#cb767-13"></a>corrige_mn &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
-<span id="cb767-14"><a href="12-5-o-pacote-stringr-1.html#cb767-14"></a>  </span>
-<span id="cb767-15"><a href="12-5-o-pacote-stringr-1.html#cb767-15"></a>  s <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb767-16"><a href="12-5-o-pacote-stringr-1.html#cb767-16"></a><span class="st">    </span><span class="kw">str_replace_all</span>(<span class="st">&quot;m([^aeioubp[[:space:]]+])&quot;</span>, <span class="st">&quot;n</span><span class="ch">\\</span><span class="st">1&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span></span>
-<span id="cb767-17"><a href="12-5-o-pacote-stringr-1.html#cb767-17"></a><span class="st">    </span><span class="kw">str_replace_all</span>(<span class="st">&quot;n([pb])&quot;</span>, <span class="st">&quot;m</span><span class="ch">\\</span><span class="st">1&quot;</span>)</span>
-<span id="cb767-18"><a href="12-5-o-pacote-stringr-1.html#cb767-18"></a>  </span>
-<span id="cb767-19"><a href="12-5-o-pacote-stringr-1.html#cb767-19"></a>}</span>
-<span id="cb767-20"><a href="12-5-o-pacote-stringr-1.html#cb767-20"></a><span class="kw">corrige_mn</span>(s)</span>
-<span id="cb767-21"><a href="12-5-o-pacote-stringr-1.html#cb767-21"></a><span class="co">## [1] &quot;Nós chamamos os bombeiros quando começou o incêndio.&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb795"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb795-1"><a href="12-5-o-pacote-stringr-1.html#cb795-1"></a><span class="co"># Função que funciona para o exemplo</span></span>
+<span id="cb795-2"><a href="12-5-o-pacote-stringr-1.html#cb795-2"></a>corrige_mn &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
+<span id="cb795-3"><a href="12-5-o-pacote-stringr-1.html#cb795-3"></a>  </span>
+<span id="cb795-4"><a href="12-5-o-pacote-stringr-1.html#cb795-4"></a>  s <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb795-5"><a href="12-5-o-pacote-stringr-1.html#cb795-5"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;nb&quot;</span>, <span class="st">&quot;mb&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb795-6"><a href="12-5-o-pacote-stringr-1.html#cb795-6"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;md&quot;</span>, <span class="st">&quot;nd&quot;</span>)</span>
+<span id="cb795-7"><a href="12-5-o-pacote-stringr-1.html#cb795-7"></a>  </span>
+<span id="cb795-8"><a href="12-5-o-pacote-stringr-1.html#cb795-8"></a>}</span>
+<span id="cb795-9"><a href="12-5-o-pacote-stringr-1.html#cb795-9"></a><span class="kw">corrige_mn</span>(s)</span>
+<span id="cb795-10"><a href="12-5-o-pacote-stringr-1.html#cb795-10"></a><span class="co">## [1] &quot;Nós chamamos os bombeiros quando começou o incêndio.&quot;</span></span>
+<span id="cb795-11"><a href="12-5-o-pacote-stringr-1.html#cb795-11"></a></span>
+<span id="cb795-12"><a href="12-5-o-pacote-stringr-1.html#cb795-12"></a><span class="co"># Função que funciona no caso geral</span></span>
+<span id="cb795-13"><a href="12-5-o-pacote-stringr-1.html#cb795-13"></a>corrige_mn &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
+<span id="cb795-14"><a href="12-5-o-pacote-stringr-1.html#cb795-14"></a>  </span>
+<span id="cb795-15"><a href="12-5-o-pacote-stringr-1.html#cb795-15"></a>  s <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb795-16"><a href="12-5-o-pacote-stringr-1.html#cb795-16"></a><span class="st">    </span><span class="kw">str_replace_all</span>(<span class="st">&quot;m([^aeioubp[[:space:]]+])&quot;</span>, <span class="st">&quot;n</span><span class="ch">\\</span><span class="st">1&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span></span>
+<span id="cb795-17"><a href="12-5-o-pacote-stringr-1.html#cb795-17"></a><span class="st">    </span><span class="kw">str_replace_all</span>(<span class="st">&quot;n([pb])&quot;</span>, <span class="st">&quot;m</span><span class="ch">\\</span><span class="st">1&quot;</span>)</span>
+<span id="cb795-18"><a href="12-5-o-pacote-stringr-1.html#cb795-18"></a>  </span>
+<span id="cb795-19"><a href="12-5-o-pacote-stringr-1.html#cb795-19"></a>}</span>
+<span id="cb795-20"><a href="12-5-o-pacote-stringr-1.html#cb795-20"></a><span class="kw">corrige_mn</span>(s)</span>
+<span id="cb795-21"><a href="12-5-o-pacote-stringr-1.html#cb795-21"></a><span class="co">## [1] &quot;Nós chamamos os bombeiros quando começou o incêndio.&quot;</span></span></code></pre></div>
 <p>O padrão <code>[^aeioubp[[:space:]]+]</code> significa “tudo menos vogais, b, p ou espaços”. O <code>\\1</code> devolve o padrão encontrado pelo primeiro parêntese do argumento <code>patern=</code>.</p>
 <hr />
 <p><strong>7.</strong> Considere o seguinte texto</p>
-<div class="sourceCode" id="cb768"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb768-1"><a href="12-5-o-pacote-stringr-1.html#cb768-1"></a>s &lt;-<span class="st"> &quot;A função mais importante para leitura de dados no `lubridate` é a `ymd`. Essa função serve para ler qualquer data de uma `string` no formato `YYYY-MM-DD`. Essa função é útil pois funciona com qualquer separador entre os elementos da data e também porque temos uma função para cada formato (`ymd`, `mdy`, `dmy`, `dym`, `myd`, `ydm`).&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb796"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb796-1"><a href="12-5-o-pacote-stringr-1.html#cb796-1"></a>s &lt;-<span class="st"> &quot;A função mais importante para leitura de dados no `lubridate` é a `ymd`. Essa função serve para ler qualquer data de uma `string` no formato `YYYY-MM-DD`. Essa função é útil pois funciona com qualquer separador entre os elementos da data e também porque temos uma função para cada formato (`ymd`, `mdy`, `dmy`, `dym`, `myd`, `ydm`).&quot;</span></span></code></pre></div>
 <p>Extraia todas as combinações da função <code>ymd</code>, sem repetições.</p>
-<div class="sourceCode" id="cb769"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb769-1"><a href="12-5-o-pacote-stringr-1.html#cb769-1"></a><span class="kw">str_extract_all</span>(s, <span class="st">&quot;[ymd]{3}&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb769-2"><a href="12-5-o-pacote-stringr-1.html#cb769-2"></a><span class="st">  </span><span class="kw">unlist</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb769-3"><a href="12-5-o-pacote-stringr-1.html#cb769-3"></a><span class="st">  </span>unique</span>
-<span id="cb769-4"><a href="12-5-o-pacote-stringr-1.html#cb769-4"></a><span class="co">## [1] &quot;ymd&quot; &quot;mdy&quot; &quot;dmy&quot; &quot;dym&quot; &quot;myd&quot; &quot;ydm&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb797"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb797-1"><a href="12-5-o-pacote-stringr-1.html#cb797-1"></a><span class="kw">str_extract_all</span>(s, <span class="st">&quot;[ymd]{3}&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb797-2"><a href="12-5-o-pacote-stringr-1.html#cb797-2"></a><span class="st">  </span><span class="kw">unlist</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb797-3"><a href="12-5-o-pacote-stringr-1.html#cb797-3"></a><span class="st">  </span>unique</span>
+<span id="cb797-4"><a href="12-5-o-pacote-stringr-1.html#cb797-4"></a><span class="co">## [1] &quot;ymd&quot; &quot;mdy&quot; &quot;dmy&quot; &quot;dym&quot; &quot;myd&quot; &quot;ydm&quot;</span></span></code></pre></div>
 <hr />
 <p><strong>8.</strong> Considere as frases abaixo</p>
-<div class="sourceCode" id="cb770"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb770-1"><a href="12-5-o-pacote-stringr-1.html#cb770-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(</span>
-<span id="cb770-2"><a href="12-5-o-pacote-stringr-1.html#cb770-2"></a>  <span class="st">&#39;O produto é bom.&#39;</span>,</span>
-<span id="cb770-3"><a href="12-5-o-pacote-stringr-1.html#cb770-3"></a>  <span class="st">&#39;O produto não é bom.&#39;</span>,</span>
-<span id="cb770-4"><a href="12-5-o-pacote-stringr-1.html#cb770-4"></a>  <span class="st">&#39;O produto não é muito bom.&#39;</span>,</span>
-<span id="cb770-5"><a href="12-5-o-pacote-stringr-1.html#cb770-5"></a>  <span class="st">&#39;O produto é muito bom&#39;</span>,</span>
-<span id="cb770-6"><a href="12-5-o-pacote-stringr-1.html#cb770-6"></a>  <span class="st">&#39;O produto não é ruim.&#39;</span>,</span>
-<span id="cb770-7"><a href="12-5-o-pacote-stringr-1.html#cb770-7"></a>  <span class="st">&#39;O produto não é não ruim.&#39;</span>,</span>
-<span id="cb770-8"><a href="12-5-o-pacote-stringr-1.html#cb770-8"></a>  <span class="st">&#39;O produto não é não bom.&#39;</span></span>
-<span id="cb770-9"><a href="12-5-o-pacote-stringr-1.html#cb770-9"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb798"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb798-1"><a href="12-5-o-pacote-stringr-1.html#cb798-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(</span>
+<span id="cb798-2"><a href="12-5-o-pacote-stringr-1.html#cb798-2"></a>  <span class="st">&#39;O produto é bom.&#39;</span>,</span>
+<span id="cb798-3"><a href="12-5-o-pacote-stringr-1.html#cb798-3"></a>  <span class="st">&#39;O produto não é bom.&#39;</span>,</span>
+<span id="cb798-4"><a href="12-5-o-pacote-stringr-1.html#cb798-4"></a>  <span class="st">&#39;O produto não é muito bom.&#39;</span>,</span>
+<span id="cb798-5"><a href="12-5-o-pacote-stringr-1.html#cb798-5"></a>  <span class="st">&#39;O produto é muito bom&#39;</span>,</span>
+<span id="cb798-6"><a href="12-5-o-pacote-stringr-1.html#cb798-6"></a>  <span class="st">&#39;O produto não é ruim.&#39;</span>,</span>
+<span id="cb798-7"><a href="12-5-o-pacote-stringr-1.html#cb798-7"></a>  <span class="st">&#39;O produto não é não ruim.&#39;</span>,</span>
+<span id="cb798-8"><a href="12-5-o-pacote-stringr-1.html#cb798-8"></a>  <span class="st">&#39;O produto não é não bom.&#39;</span></span>
+<span id="cb798-9"><a href="12-5-o-pacote-stringr-1.html#cb798-9"></a>)</span></code></pre></div>
 <p>Crie uma regra para identificar se o texto refere-se a um feedback positivo ou negativo sobre o produto (considere não bom = ruim e não ruim = bom). Retorne um vetor lógico que vale <code>TRUE</code> se o feedback for positivo e <code>FALSE</code> caso contrário.</p>
-<div class="sourceCode" id="cb771"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb771-1"><a href="12-5-o-pacote-stringr-1.html#cb771-1"></a>feedback &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
-<span id="cb771-2"><a href="12-5-o-pacote-stringr-1.html#cb771-2"></a>  </span>
-<span id="cb771-3"><a href="12-5-o-pacote-stringr-1.html#cb771-3"></a>  s <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb771-4"><a href="12-5-o-pacote-stringr-1.html#cb771-4"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;não bom&quot;</span>, <span class="st">&quot;ruim&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb771-5"><a href="12-5-o-pacote-stringr-1.html#cb771-5"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;não ruim&quot;</span>, <span class="st">&quot;bom&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb771-6"><a href="12-5-o-pacote-stringr-1.html#cb771-6"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;muito &quot;</span>, <span class="st">&quot;&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb771-7"><a href="12-5-o-pacote-stringr-1.html#cb771-7"></a><span class="st">    </span><span class="kw">str_detect</span>(<span class="st">&quot;(.*) produto é bom|(.*) não é ruim&quot;</span>)</span>
-<span id="cb771-8"><a href="12-5-o-pacote-stringr-1.html#cb771-8"></a>  </span>
-<span id="cb771-9"><a href="12-5-o-pacote-stringr-1.html#cb771-9"></a>}</span>
-<span id="cb771-10"><a href="12-5-o-pacote-stringr-1.html#cb771-10"></a><span class="kw">feedback</span>(s)</span>
-<span id="cb771-11"><a href="12-5-o-pacote-stringr-1.html#cb771-11"></a><span class="co">## [1]  TRUE FALSE FALSE  TRUE  TRUE FALSE  TRUE</span></span></code></pre></div>
+<div class="sourceCode" id="cb799"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb799-1"><a href="12-5-o-pacote-stringr-1.html#cb799-1"></a>feedback &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
+<span id="cb799-2"><a href="12-5-o-pacote-stringr-1.html#cb799-2"></a>  </span>
+<span id="cb799-3"><a href="12-5-o-pacote-stringr-1.html#cb799-3"></a>  s <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb799-4"><a href="12-5-o-pacote-stringr-1.html#cb799-4"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;não bom&quot;</span>, <span class="st">&quot;ruim&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb799-5"><a href="12-5-o-pacote-stringr-1.html#cb799-5"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;não ruim&quot;</span>, <span class="st">&quot;bom&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb799-6"><a href="12-5-o-pacote-stringr-1.html#cb799-6"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;muito &quot;</span>, <span class="st">&quot;&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb799-7"><a href="12-5-o-pacote-stringr-1.html#cb799-7"></a><span class="st">    </span><span class="kw">str_detect</span>(<span class="st">&quot;(.*) produto é bom|(.*) não é ruim&quot;</span>)</span>
+<span id="cb799-8"><a href="12-5-o-pacote-stringr-1.html#cb799-8"></a>  </span>
+<span id="cb799-9"><a href="12-5-o-pacote-stringr-1.html#cb799-9"></a>}</span>
+<span id="cb799-10"><a href="12-5-o-pacote-stringr-1.html#cb799-10"></a><span class="kw">feedback</span>(s)</span>
+<span id="cb799-11"><a href="12-5-o-pacote-stringr-1.html#cb799-11"></a><span class="co">## [1]  TRUE FALSE FALSE  TRUE  TRUE FALSE  TRUE</span></span></code></pre></div>
 
 </div>
 <hr/>

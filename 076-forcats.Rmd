@@ -1,7 +1,11 @@
 ## O pacote forcats {#forcats}
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(collapse = TRUE, out.width="75%")
+knitr::opts_chunk$set(
+  collapse = TRUE, 
+  out.width="75%",
+  fig.align = "center"
+)
 ```
 
 Se você utiliza R antes do surgimento do `tidyverse`, provavelmente já escreveu a expressão `stringsAsFactors = F` quando importava dados usando as funções `read.csv` ou `read.table`. É muito frustrante quando uma coluna de `strings` é lida como um fator, pois fatores não podem ser manipulados do mesmo jeito que manipulamos vetores de `strings`.
@@ -14,7 +18,7 @@ As principais funções do `forcats` servem para alterar a **ordem** e modificar
 
 Se você não tem o pacote `{forcats}`, instalado rode o código abaixo antes de utilizá-lo:
 
-```{r}
+```{r, eval = FALSE}
 install.packages("forcats")
 ```
 
@@ -28,7 +32,7 @@ library(dplyr)
 
 ### O que são fatores?
 
-Como vimos na Seção \@ref{fatores}, fatores são uma classe de objetos no R criada para representar as variáveis categóricas numericamente.
+Como vimos na Seção \@ref(fatores), fatores são uma classe de objetos no R criada para representar as variáveis categóricas numericamente.
 
 Eles são necessários pois muitas vezes precisamos representar variáveis categóricas como números. Quando estamos fazendo um gráfico, por exemplo, só podemos mapear variáveis numéricas em seus eixos, pois o plano cartesiano é formado por duas retas de números reais.
 
@@ -38,7 +42,7 @@ Mas como a manipulação de fatores é diferente da manipulação de números e 
 
 Nos exemplos a seguir, vamos utilizar a base `starwars` (do pacote `{dplyr}`) para aprendermos a fazer as principais operações com fatores utilizando o pacote `{forcats}`.
 
-### Modificando níveis de um fator {-}
+### Modificando níveis de um fator
 
 Vamos trabalhar primeiro com a coluna `sex`, que diz qual é o sexo de cada personagem. As possibilidades são:
 
@@ -91,7 +95,7 @@ starwars %>%
 
 Como as colunas no gráfico respeitam a ordem dos níveis do fator, não importa a ordem que as linhas aparecem na tabela, o gráfico sempre será gerado com as colunas na mesma ordem. Assim, se quiséssemos alterar a ordem das barras do gráfico anterior, precisamos mudar a ordem dos níveis do fator `sex`.
 
-### Mudando a ordem dos níveis de um fator {-}
+### Mudando a ordem dos níveis de um fator
 
 Para mudar a ordem dos níveis de um fator, podemos utilizar a função `lvls_reorder()`. Basta passarmos qual a nova ordem dos fatores, com relação à ordem anterior. No exemplo abaixo definimos que, na nova ordem,
 
@@ -168,13 +172,17 @@ Agora sim! Com esse código, as colunas estarão sendo ordenadas pela frequênci
 
 Se olharmos a documentação da função `fct_reorder()` vamos descobrir que esse exemplo é apenas um caso particular de como podemos utilizá-la. No contexto geral, ela ordena os níveis de um fator segundo **uma função** dos valores de uma segunda variável.
 
+Se em vez de construirmos um gráfico de barras da frequência da variável `sex`, construíssemos boxplots da altura para cada sexo diferente, teríamos o gráfico a seguir.
+
 ```{r}
 starwars %>% 
   filter(!is.na(sex)) %>% 
   ggplot() +
   geom_boxplot(aes(x = sex, y = height))
 ```
+Se quiséssemos ordenar cada boxplot (pela mediana, por exemplo), continuamos podendo usar a função `fct_reorder()`. Veja que ela possui o argumento `.fun`, que indica qual função será utilizada na variável secundária para determinar a ordem dos níveis.
 
+No exemplo abaixo, utilizamos `.fun = median`, o que significa que, para cada nível da variável `sex`, vamos calcular a mediana da variável `height` e ordenaremos os níveis de `sex` conforme a ordem dessas medianas. Assim, o primeiro nível será o sexo com menor altura mediana, o segundo nível será o sexo com a segunda menor algura media e assim por diante. Se quiséssemos ordenar de forma decrescente, bastaria utilizar o argumento `.desc = TRUE`.
 
 ```{r}
 starwars %>% 
@@ -186,6 +194,8 @@ starwars %>%
 ggplot() +
   geom_boxplot(aes(x = sex, y = height))
 ```
+Também poderíamos ordenar pelo máximo, utilizando `.fun = max`. Neste argumento, podemos usar qualquer função sumarizadora: `min()`, `mean()`, `median()`, `max()`, `sd()`, `var()` etc.
+
 ```{r}
 starwars %>% 
   filter(!is.na(sex)) %>% 
@@ -197,5 +207,122 @@ ggplot() +
   geom_boxplot(aes(x = sex, y = height))
 ```
 
-### Colapsando níveis de um fator {-}
+### Colapsando níveis de um fator
+
+Imagine que quermos fazer um gráfico de barras com a frequência de personagens por espécie.
+
+```{r}
+starwars %>% 
+  ggplot(aes(x = species)) +
+  geom_bar()
+```
+
+O gráfico resultante é horrível, pois temos muitas espécies diferentes. Uma solução seria agrupar as espécies menos frequentes, criando uma nova categoria (*outras*, por exemplo).
+
+Para isso, podemos usar a função `fct_lump()`. Vamos fazer isso primeiro com o vetor de espécies.
+
+```{r}
+fator_especies <- as.factor(starwars$species)
+fator_especies
+```
+
+Temos 37 espécies diferentes na base. Podemos deixar apenas as 3 mais frequentes da seguinte forma:
+
+```{r}
+fct_lump(fator_especies, n = 3)
+```
+
+O fator resultante possui 4 níveis: `Droid`, `Gungan`, `Human` e `Other`. Os 3 primeiros níveis são os mais frequentes, enquanto o nível `Other` foi atribuído a todos os outros 34 níveis que existiam anteiormente.
+
+Poderíamos definir o nome do nível `Others` usando o argumento `other_level`.
+
+```{r}
+fct_lump(fator_especies, n = 3, other_level = "Outras espécies")
+```
+
+
+Também podemos transformar em `Outras` os níveis cuja frequência relativa é menor que um determinado limite, por exemplo, 2%. No exemplo abaixo, apenas espécies que representam mais de 2% dos personagem na base são mantidas. As demais foram transformadas em `Outras`.
+
+```{r}
+fct_lump(fator_especies, p = 0.02, other_level = "Outras")
+```
+
+Com isso, já conseguimos fazer um gráfico de barras mais agradável.
+
+```{r}
+starwars %>% 
+  filter(!is.na(species)) %>% 
+  mutate(species = fct_lump(species, n = 2)) %>% 
+  ggplot(aes(x = species)) +
+  geom_bar()
+
+
+starwars %>% 
+  filter(!is.na(species)) %>% 
+  mutate(
+    species = fct_lump(species, p = 0.02),
+    species = fct_infreq(species) # Ordena pela frequência de cada nível
+  ) %>% 
+  ggplot(aes(x = species)) +
+  geom_bar()
+```
+
+Também é possível colapsar níveis criando manualmente os grupos. Para isso, utilizamos a função `fct_collapse()`. No exemplo a seguir, reclassificamos os níveis da variável `eye_color`. Os níveis não listados são reclassificados como  `"outros"`.
+
+```{r}
+fator_cor_olhos <- as.factor(starwars$eye_color)
+
+fct_collapse(
+  fator_cor_olhos,
+  preto = "black",
+  castanho = c("brown", "hazel"),
+  azul_verde = c("blue", "green"),
+  exotico = c("pink", "red", "white"),
+  colorido = c("red, blue", "green, yellow"),
+  other_level = "outros"
+)
+```
+
+### Outras funções úteis
+
+A seguir, listamos outras funções úteis do pacote `{forcats}`, apresentando exemplos simples de como usá-las.
+
+```{r}
+fator <- factor(c("a", "b", "a", "c", "c", "a"))
+fator
+```
+
+#### `fct_c()` {-}
+
+Junta dois fatores (e seus níveis).
+
+```{r}
+fator2 <- factor(c("d", "e"))
+fct_c(fator, fator2)
+```
+
+
+#### `fct_count()` {-}
+
+Devolve a frequência dos níveis de um vetor.
+
+```{r}
+fct_count(fator)
+```
+
+#### `fct_expand()` {-}
+
+Acrescenta níveis a um fator
+
+```{r}
+fct_expand(fator, c("d", "e"))
+```
+
+#### `fct_rev()` {-}
+
+Inverte os níveis de um fator.
+
+```{r}
+fct_rev(fator)
+```
 

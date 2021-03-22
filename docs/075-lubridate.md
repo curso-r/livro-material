@@ -24,7 +24,7 @@ Neste seção, falaremos sobre:
 - trabalhar com fusos horários; e
 - operações aritméticas com datas.
 
-### A classe "date"
+### A classe `date`
 
 Datas no R são tratadas como um tipo especial de objeto, com classe `date`. Há várias formas de criar objetos dessa classe com o pacote `{lubridate}`:
 

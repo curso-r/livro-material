@@ -1734,7 +1734,7 @@ x <- 1
 if (x == 1) {         
   Sys.time()
 }
-## [1] "2021-03-22 12:05:17 -03"
+## [1] "2021-03-22 16:43:39 -03"
 ```
 
 O R só vai executar o que está na expressão dentro das chaves `{}` se a expressão que estiver dentro dos parênteses `()` retornar `TRUE`. Veja outro exemplo:
@@ -2098,7 +2098,7 @@ solve(n2)
 ## [3,]  0.0  0.0  0.5
 ```
 
-### Fatores
+### Fatores {#fatores}
 
 Fatores são uma classe de objetos no R criada para representar as variáveis categóricas numericamente. Essa classe possui um atributo especial: os `levels`. *Levels* são nada mais do que as categorias possíveis de uma variável categórica.
 
