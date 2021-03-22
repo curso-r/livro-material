@@ -1,6 +1,7 @@
 ```{r, include=FALSE}
 knitr::opts_chunk$set(
-  collapse = TRUE
+  collapse = TRUE,
+  fig.align = "center"
 )
 ```
 
@@ -9,6 +10,9 @@ knitr::opts_chunk$set(
 ```{r, message = FALSE, warning = FALSE}
 library(dplyr)
 library(lubridate)
+library(ggplot2)
+
+lakers <- tibble::as_tibble(lakers)
 ```
 
 
@@ -114,16 +118,41 @@ Repare que não precisarímos filtrar por `etype == "shot"`, já que o único ev
 **6.** Construa boxplots do tempo entre pontos consecutivos para cada períodos. Considere toda a base de dados e apenas pontos do Lakers.
 
 ```{r}
-
+lakers %>% 
+  filter(points > 0, team == "LAL") %>% 
+    dplyr::mutate(
+      time = hms(paste0("00:", time)),
+      tempo_segundos = 60 * minute(time) + second(time),
+      dif = tempo_segundos - lead(tempo_segundos),
+      period = as.character(period)
+    ) %>% 
+  filter(dif >= 0) %>% 
+  ggplot(aes(x = period, y = dif)) +
+  geom_boxplot()
 ```
-
 
 ---
 
 **7.** Qual foi o dia e mês do jogo que o Lakers demorou mais tempo para fazer uma cesta? Quanto tempo foi?
 
 ```{r}
+cesta_demorada <- lakers %>% 
+  filter(points > 0, team == "LAL", period == 1) %>% 
+    dplyr::mutate(
+      time = hms(paste0("00:", time)),
+      time = 60 * minute(time) + second(time),
+      date = ymd(date),
+      dia = day(date),
+      mes = month(date),
+    ) %>% 
+  group_by(date) %>% 
+  filter(time == max(time)) %>%
+  ungroup() %>% 
+  slice_min(time)
 
+cesta_demorada %>% 
+  select(date, opponent, dia, mes)
+
+tempo_seg <- 12*60 - cesta_demorada$time
+seconds_to_period(tempo_seg)
 ```
-
-

@@ -171,27 +171,21 @@ janitor::get_dupes(base_qualquer, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 18 x 4
+## # A tibble: 12 x 4
 ##    nome     sobrenome dupe_count variavel_importante
 ##    <chr>    <chr>          <int>               <dbl>
-##  1 Athos    Amorim             2              1.29  
-##  2 Athos    Amorim             2              0.156 
-##  3 Athos    Damiani            2              2.13  
-##  4 Athos    Damiani            2             -1.22  
-##  5 Athos    Trecenti           2             -1.19  
-##  6 Athos    Trecenti           2              0.0603
-##  7 Daniel   Falbel             2             -0.834 
-##  8 Daniel   Falbel             2             -0.304 
-##  9 Fernando Amorim             3             -0.590 
-## 10 Fernando Amorim             3              0.796 
-## 11 Fernando Amorim             3              2.26  
-## 12 Julio    Falbel             3             -0.622 
-## 13 Julio    Falbel             3              0.373 
-## 14 Julio    Falbel             3              0.978 
-## 15 William  Corrêa             2              1.27  
-## 16 William  Corrêa             2              0.742 
-## 17 William  Falbel             2             -1.29  
-## 18 William  Falbel             2             -0.295
+##  1 Athos    Amorim             2             -1.59  
+##  2 Athos    Amorim             2              0.174 
+##  3 Daniel   Trecenti           2              0.0776
+##  4 Daniel   Trecenti           2              0.926 
+##  5 Fernando Corrêa             3              2.47  
+##  6 Fernando Corrêa             3             -0.687 
+##  7 Fernando Corrêa             3             -0.758 
+##  8 Julio    Corrêa             2             -0.227 
+##  9 Julio    Corrêa             2              1.33  
+## 10 Julio    Damiani            3              0.180 
+## 11 Julio    Damiani            3              0.464 
+## 12 Julio    Damiani            3             -1.46
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.

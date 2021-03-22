@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>12.5 O pacote stringr | Ciência de Dados em R</title>
+  <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="12.5 O pacote stringr | Ciência de Dados em R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="assets/img/logo.png" />
+  <meta property="og:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
+  <meta name="github-repo" content="curso-r/livro-material" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="12.5 O pacote stringr | Ciência de Dados em R" />
+  
+  <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
+  <meta name="twitter:image" content="assets/img/logo.png" />
+
+<meta name="author" content="Curso-R" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="12-4-o-pacote-dplyr.html"/>
+<link rel="next" href="12-6-o-pacote-lubridate-1.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.16/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<script async defer src="https://hypothes.is/embed.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="assets/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html"><img src = "https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width = 80%></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre</a></li>
+<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a><ul>
+<li class="chapter" data-level="1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
+<li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
+<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
+<li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
+<li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
+<li class="chapter" data-level="1.3.4" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#renderizando-html-widgets"><i class="fa fa-check"></i><b>1.3.4</b> Renderizando HTML widgets</a></li>
+<li class="chapter" data-level="1.3.5" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#blogdown"><i class="fa fa-check"></i><b>1.3.5</b> Blogdown</a></li>
+<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#rtools"><i class="fa fa-check"></i><b>1.3.6</b> Rtools</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a><ul>
+<li class="chapter" data-level="2.1" data-path="2-1-telas.html"><a href="2-1-telas.html"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
+<li class="chapter" data-level="2.2" data-path="2-2-atalhos.html"><a href="2-2-atalhos.html"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
+<li class="chapter" data-level="2.3" data-path="2-3-projetos.html"><a href="2-3-projetos.html"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
+<li class="chapter" data-level="2.4" data-path="2-4-git-e-versionamento.html"><a href="2-4-git-e-versionamento.html"><i class="fa fa-check"></i><b>2.4</b> Git e versionamento</a></li>
+<li class="chapter" data-level="2.5" data-path="2-5-cheatsheets.html"><a href="2-5-cheatsheets.html"><i class="fa fa-check"></i><b>2.5</b> Cheatsheets</a></li>
+<li class="chapter" data-level="2.6" data-path="2-6-addins.html"><a href="2-6-addins.html"><i class="fa fa-check"></i><b>2.6</b> Addins</a></li>
+<li class="chapter" data-level="2.7" data-path="2-7-snippets.html"><a href="2-7-snippets.html"><i class="fa fa-check"></i><b>2.7</b> Snippets</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a><ul>
+<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
+<li class="chapter" data-level="3.1.2" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
+<li class="chapter" data-level="3.1.3" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
+<li class="chapter" data-level="" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a><ul>
+<li class="chapter" data-level="" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="3-4-data-frames.html"><a href="3-4-data-frames.html"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
+<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="3-5-classes.html"><a href="3-5-classes.html#exercícios-2"><i class="fa fa-check"></i><b>3.5.1</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a><ul>
+<li class="chapter" data-level="" data-path="3-6-vetores.html"><a href="3-6-vetores.html#exercícios-3"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a><ul>
+<li class="chapter" data-level="" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html#exercícios-4"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a><ul>
+<li class="chapter" data-level="" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="3-9-listas.html"><a href="3-9-listas.html"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
+<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
+<li class="chapter" data-level="" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html#exercícios-6"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a><ul>
+<li class="chapter" data-level="" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html#exercícios-7"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
+<li class="chapter" data-level="3.12.1" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
+<li class="chapter" data-level="3.12.2" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#iteradores-for-e-while"><i class="fa fa-check"></i><b>3.12.2</b> Iteradores: for e while</a></li>
+<li class="chapter" data-level="" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#exercícios-8"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a><ul>
+<li class="chapter" data-level="3.13.1" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#matrizes"><i class="fa fa-check"></i><b>3.13.1</b> Matrizes</a></li>
+<li class="chapter" data-level="3.13.2" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#fatores"><i class="fa fa-check"></i><b>3.13.2</b> Fatores</a></li>
+<li class="chapter" data-level="3.13.3" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#gráficos-r-base"><i class="fa fa-check"></i><b>3.13.3</b> Gráficos (R base)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-cran"><i class="fa fa-check"></i><b>4.1.1</b> Via CRAN</a></li>
+<li class="chapter" data-level="4.1.2" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-github"><i class="fa fa-check"></i><b>4.1.2</b> Via Github</a></li>
+<li class="chapter" data-level="4.1.3" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-arquivo-.zip-ou-.tar.gz"><i class="fa fa-check"></i><b>4.1.3</b> Via arquivo .zip ou .tar.gz</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="4-2-tidyverse.html"><a href="4-2-tidyverse.html"><i class="fa fa-check"></i><b>4.2</b> Tidyverse</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a><ul>
+<li class="chapter" data-level="5.1" data-path="5-1-caminhos.html"><a href="5-1-caminhos.html"><i class="fa fa-check"></i><b>5.1</b> Caminhos</a></li>
+<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="5-2-readr.html"><a href="5-2-readr.html#lendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.1</b> Lendo arquivos de texto</a></li>
+<li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.2</b> Locale</a></li>
+<li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.3</b> Parseando valores</a></li>
+<li class="chapter" data-level="5.2.4" data-path="5-2-readr.html"><a href="5-2-readr.html#escrevendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.4</b> Escrevendo arquivos de texto</a></li>
+<li class="chapter" data-level="5.2.5" data-path="5-2-readr.html"><a href="5-2-readr.html#arquivos-.rds"><i class="fa fa-check"></i><b>5.2.5</b> Arquivos .rds</a></li>
+<li class="chapter" data-level="" data-path="5-2-readr.html"><a href="5-2-readr.html#exercícios-9"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="5-3-readxl.html"><a href="5-3-readxl.html"><i class="fa fa-check"></i><b>5.3</b> Os pacotes readxl e writexl</a></li>
+<li class="chapter" data-level="5.4" data-path="5-4-haven.html"><a href="5-4-haven.html"><i class="fa fa-check"></i><b>5.4</b> haven</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
+<li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a><ul>
+<li class="chapter" data-level="" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html#exercícios-10"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
+<li class="chapter" data-level="7.1" data-path="7-1-tibbles.html"><a href="7-1-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Tibbles</a></li>
+<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#selecionando-colunas"><i class="fa fa-check"></i><b>7.2.1</b> Selecionando colunas</a></li>
+<li class="chapter" data-level="7.2.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#ordenando-a-base"><i class="fa fa-check"></i><b>7.2.2</b> Ordenando a base</a></li>
+<li class="chapter" data-level="7.2.3" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#o-pipe-em-ação"><i class="fa fa-check"></i><b>7.2.3</b> O pipe em ação</a></li>
+<li class="chapter" data-level="7.2.4" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#filtrando-linhas"><i class="fa fa-check"></i><b>7.2.4</b> Filtrando linhas</a></li>
+<li class="chapter" data-level="7.2.5" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#modificando-e-criando-novas-colunas"><i class="fa fa-check"></i><b>7.2.5</b> Modificando e criando novas colunas</a></li>
+<li class="chapter" data-level="7.2.6" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#summarisando-a-base"><i class="fa fa-check"></i><b>7.2.6</b> Summarisando a base</a></li>
+<li class="chapter" data-level="7.2.7" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#juntando-duas-bases"><i class="fa fa-check"></i><b>7.2.7</b> Juntando duas bases</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#gather"><i class="fa fa-check"></i><b>7.3.1</b> <code>gather()</code></a></li>
+<li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#spread"><i class="fa fa-check"></i><b>7.3.2</b> <code>spread()</code></a></li>
+<li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#introdução"><i class="fa fa-check"></i><b>7.4.1</b> Introdução</a></li>
+<li class="chapter" data-level="7.4.2" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-básicas"><i class="fa fa-check"></i><b>7.4.2</b> Funções básicas</a></li>
+<li class="chapter" data-level="7.4.3" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#expressões-regulares"><i class="fa fa-check"></i><b>7.4.3</b> Expressões Regulares</a></li>
+<li class="chapter" data-level="7.4.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-que-utilizam-regex"><i class="fa fa-check"></i><b>7.4.4</b> Funções que utilizam regex</a></li>
+<li class="chapter" data-level="7.4.5" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#exercícios-17"><i class="fa fa-check"></i><b>7.4.5</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.5</b> O pacote lubridate</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#a-classe-date"><i class="fa fa-check"></i><b>7.5.1</b> A classe “date”</a></li>
+<li class="chapter" data-level="7.5.2" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#funções-úteis"><i class="fa fa-check"></i><b>7.5.2</b> Funções úteis</a></li>
+<li class="chapter" data-level="7.5.3" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#fusos-horários"><i class="fa fa-check"></i><b>7.5.3</b> Fusos horários</a></li>
+<li class="chapter" data-level="7.5.4" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#operações-com-datas"><i class="fa fa-check"></i><b>7.5.4</b> Operações com datas</a></li>
+<li class="chapter" data-level="7.5.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#exercícios-18"><i class="fa fa-check"></i><b>7.5.5</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="7-6-forcats.html"><a href="7-6-forcats.html"><i class="fa fa-check"></i><b>7.6</b> O pacote forcats</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a><ul>
+<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-pontos-dispersão"><i class="fa fa-check"></i><b>8.1.1</b> Gráficos de pontos (dispersão)</a></li>
+<li class="chapter" data-level="8.1.2" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-linhas"><i class="fa fa-check"></i><b>8.1.2</b> Gráficos de linhas</a></li>
+<li class="chapter" data-level="8.1.3" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-barras"><i class="fa fa-check"></i><b>8.1.3</b> Gráficos de barras</a></li>
+<li class="chapter" data-level="8.1.4" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#histogramas-e-boxplots"><i class="fa fa-check"></i><b>8.1.4</b> Histogramas e boxplots</a></li>
+<li class="chapter" data-level="8.1.5" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#títulos-e-labels"><i class="fa fa-check"></i><b>8.1.5</b> Títulos e <em>labels</em></a></li>
+<li class="chapter" data-level="8.1.6" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#escalas"><i class="fa fa-check"></i><b>8.1.6</b> Escalas</a></li>
+<li class="chapter" data-level="8.1.7" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#temas"><i class="fa fa-check"></i><b>8.1.7</b> Temas</a></li>
+<li class="chapter" data-level="8.1.8" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>8.1.8</b> Juntando gráficos</a></li>
+<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-19"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#gghighlight"><i class="fa fa-check"></i><b>8.2.1</b> gghighlight</a></li>
+<li class="chapter" data-level="8.2.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#ggridges"><i class="fa fa-check"></i><b>8.2.2</b> ggridges</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="9-relatorios.html"><a href="9-relatorios.html"><i class="fa fa-check"></i><b>9</b> Relatórios</a><ul>
+<li class="chapter" data-level="9.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html"><i class="fa fa-check"></i><b>9.1</b> Markdown</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html#ênfase"><i class="fa fa-check"></i><b>9.1.1</b> Ênfase</a></li>
+<li class="chapter" data-level="9.1.2" data-path="9-1-markdown.html"><a href="9-1-markdown.html#títulos"><i class="fa fa-check"></i><b>9.1.2</b> Títulos</a></li>
+<li class="chapter" data-level="9.1.3" data-path="9-1-markdown.html"><a href="9-1-markdown.html#listas-1"><i class="fa fa-check"></i><b>9.1.3</b> Listas</a></li>
+<li class="chapter" data-level="9.1.4" data-path="9-1-markdown.html"><a href="9-1-markdown.html#equações"><i class="fa fa-check"></i><b>9.1.4</b> Equações</a></li>
+<li class="chapter" data-level="9.1.5" data-path="9-1-markdown.html"><a href="9-1-markdown.html#código"><i class="fa fa-check"></i><b>9.1.5</b> Código</a></li>
+<li class="chapter" data-level="9.1.6" data-path="9-1-markdown.html"><a href="9-1-markdown.html#links"><i class="fa fa-check"></i><b>9.1.6</b> Links</a></li>
+<li class="chapter" data-level="9.1.7" data-path="9-1-markdown.html"><a href="9-1-markdown.html#imagens"><i class="fa fa-check"></i><b>9.1.7</b> Imagens</a></li>
+<li class="chapter" data-level="9.1.8" data-path="9-1-markdown.html"><a href="9-1-markdown.html#tabelas"><i class="fa fa-check"></i><b>9.1.8</b> Tabelas</a></li>
+<li class="chapter" data-level="9.1.9" data-path="9-1-markdown.html"><a href="9-1-markdown.html#recapitulando"><i class="fa fa-check"></i><b>9.1.9</b> Recapitulando</a></li>
+<li class="chapter" data-level="" data-path="9-1-markdown.html"><a href="9-1-markdown.html#exercicios-md"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#códigos-em-r"><i class="fa fa-check"></i><b>9.2.1</b> Códigos em R</a></li>
+<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#imagens-1"><i class="fa fa-check"></i><b>9.2.2</b> Imagens</a></li>
+<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#tabelas-1"><i class="fa fa-check"></i><b>9.2.3</b> Tabelas</a></li>
+<li class="chapter" data-level="9.2.4" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#dicas-para-o-rstudio"><i class="fa fa-check"></i><b>9.2.4</b> Dicas para o RStudio</a></li>
+<li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="10-funcionais.html"><a href="10-funcionais.html"><i class="fa fa-check"></i><b>10</b> Funcionais</a></li>
+<li class="chapter" data-level="11" data-path="11-misc.html"><a href="11-misc.html"><i class="fa fa-check"></i><b>11</b> Miscelânea</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>11.1</b> Arrumando banco de dados: o pacote janitor</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#arrumando-o-nome-das-variáveis"><i class="fa fa-check"></i><b>11.1.1</b> Arrumando o nome das variáveis</a></li>
+<li class="chapter" data-level="11.1.2" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#removendo-linhas-e-colunas-vazias"><i class="fa fa-check"></i><b>11.1.2</b> Removendo linhas e colunas vazias</a></li>
+<li class="chapter" data-level="11.1.3" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#identificando-linhas-duplicadas"><i class="fa fa-check"></i><b>11.1.3</b> Identificando linhas duplicadas</a></li>
+<li class="chapter" data-level="11.1.4" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>11.1.4</b> Outras funções</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="12-respostas.html"><a href="12-respostas.html"><i class="fa fa-check"></i><b>12</b> Respostas</a><ul>
+<li class="chapter" data-level="12.1" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html"><i class="fa fa-check"></i><b>12.1</b> R básico</a><ul>
+<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
+<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#objetos-e-funções"><i class="fa fa-check"></i>Objetos e funções</a></li>
+<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#classes-1"><i class="fa fa-check"></i>Classes</a></li>
+<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#vetores-1"><i class="fa fa-check"></i>Vetores</a></li>
+<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i>Testes lógicos</a></li>
+<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#valores-especiais"><i class="fa fa-check"></i>Valores especiais</a></li>
+<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i>Data frames</a></li>
+<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i>Mais sobre funções</a></li>
+<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#controle-de-fluxo-1"><i class="fa fa-check"></i>Controle de fluxo</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="12-2-importação.html"><a href="12-2-importação.html"><i class="fa fa-check"></i><b>12.2</b> Importação</a><ul>
+<li class="chapter" data-level="" data-path="12-2-importação.html"><a href="12-2-importação.html#o-pacote-readr"><i class="fa fa-check"></i>O pacote readr</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="12-3-pipe-1.html"><a href="12-3-pipe-1.html"><i class="fa fa-check"></i><b>12.3</b> Pipe</a></li>
+<li class="chapter" data-level="12.4" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>12.4</b> O pacote dplyr</a><ul>
+<li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#selecionando-colunas-1"><i class="fa fa-check"></i>Selecionando colunas</a></li>
+<li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#ordenando-a-base-1"><i class="fa fa-check"></i>Ordenando a base</a></li>
+<li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#filtrando-linhas-1"><i class="fa fa-check"></i>Filtrando linhas</a></li>
+<li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#modificando-e-criando-novas-colunas-1"><i class="fa fa-check"></i>Modificando e criando novas colunas</a></li>
+<li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#summarisando-a-base-1"><i class="fa fa-check"></i>Summarisando a base</a></li>
+<li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#juntando-duas-bases-1"><i class="fa fa-check"></i>Juntando duas bases</a></li>
+</ul></li>
+<li class="chapter" data-level="12.5" data-path="12-5-o-pacote-stringr-1.html"><a href="12-5-o-pacote-stringr-1.html"><i class="fa fa-check"></i><b>12.5</b> O pacote stringr</a></li>
+<li class="chapter" data-level="12.6" data-path="12-6-o-pacote-lubridate-1.html"><a href="12-6-o-pacote-lubridate-1.html"><i class="fa fa-check"></i><b>12.6</b> O pacote lubridate</a></li>
+<li class="chapter" data-level="12.7" data-path="12-7-o-pacote-ggplot2-1.html"><a href="12-7-o-pacote-ggplot2-1.html"><i class="fa fa-check"></i><b>12.7</b> O pacote ggplot2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i>Programação em R</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Ciência de Dados em R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="o-pacote-stringr-1" class="section level2">
+<h2><span class="header-section-number">12.5</span> O pacote stringr</h2>
+<div class="sourceCode" id="cb760"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb760-1"><a href="12-5-o-pacote-stringr-1.html#cb760-1"></a><span class="kw">library</span>(stringr)</span>
+<span id="cb760-2"><a href="12-5-o-pacote-stringr-1.html#cb760-2"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb760-3"><a href="12-5-o-pacote-stringr-1.html#cb760-3"></a><span class="kw">library</span>(glue)</span></code></pre></div>
+<p><strong>1.</strong> O CPF é um número de 11 dígitos, por exemplo: 54491651884. No entanto para facilitar a visualização costumamos mostrá-lo com separadores a cada 3 casas: 544.916.518-84. Crie uma função que transforma um número de 11 dígitos em uma string com as separações, como um CPF.</p>
+<div class="sourceCode" id="cb761"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb761-1"><a href="12-5-o-pacote-stringr-1.html#cb761-1"></a><span class="co"># Sem regex</span></span>
+<span id="cb761-2"><a href="12-5-o-pacote-stringr-1.html#cb761-2"></a>formata_CPF &lt;-<span class="st"> </span><span class="cf">function</span>(num) {</span>
+<span id="cb761-3"><a href="12-5-o-pacote-stringr-1.html#cb761-3"></a>  </span>
+<span id="cb761-4"><a href="12-5-o-pacote-stringr-1.html#cb761-4"></a>  <span class="cf">if</span>(<span class="kw">str_count</span>(num) <span class="op">!=</span><span class="st"> </span><span class="dv">11</span>) {</span>
+<span id="cb761-5"><a href="12-5-o-pacote-stringr-1.html#cb761-5"></a>    <span class="kw">stop</span>(<span class="st">&quot;Número inválido!&quot;</span>)</span>
+<span id="cb761-6"><a href="12-5-o-pacote-stringr-1.html#cb761-6"></a>  }</span>
+<span id="cb761-7"><a href="12-5-o-pacote-stringr-1.html#cb761-7"></a>  </span>
+<span id="cb761-8"><a href="12-5-o-pacote-stringr-1.html#cb761-8"></a>  <span class="co"># Concatemos cada parte do número, interpolando</span></span>
+<span id="cb761-9"><a href="12-5-o-pacote-stringr-1.html#cb761-9"></a>  <span class="co"># com os pontos e o traço.</span></span>
+<span id="cb761-10"><a href="12-5-o-pacote-stringr-1.html#cb761-10"></a>  </span>
+<span id="cb761-11"><a href="12-5-o-pacote-stringr-1.html#cb761-11"></a>  s &lt;-<span class="st"> </span><span class="kw">str_c</span>(</span>
+<span id="cb761-12"><a href="12-5-o-pacote-stringr-1.html#cb761-12"></a>    <span class="kw">str_sub</span>(num, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">3</span>),</span>
+<span id="cb761-13"><a href="12-5-o-pacote-stringr-1.html#cb761-13"></a>    <span class="st">&quot;.&quot;</span>,</span>
+<span id="cb761-14"><a href="12-5-o-pacote-stringr-1.html#cb761-14"></a>    <span class="kw">str_sub</span>(num, <span class="dt">start =</span> <span class="dv">4</span>, <span class="dt">end =</span> <span class="dv">6</span>),</span>
+<span id="cb761-15"><a href="12-5-o-pacote-stringr-1.html#cb761-15"></a>    <span class="st">&quot;.&quot;</span>,</span>
+<span id="cb761-16"><a href="12-5-o-pacote-stringr-1.html#cb761-16"></a>    <span class="kw">str_sub</span>(num, <span class="dt">start =</span> <span class="dv">7</span>, <span class="dt">end =</span> <span class="dv">9</span>),</span>
+<span id="cb761-17"><a href="12-5-o-pacote-stringr-1.html#cb761-17"></a>    <span class="st">&quot;-&quot;</span>,</span>
+<span id="cb761-18"><a href="12-5-o-pacote-stringr-1.html#cb761-18"></a>    <span class="kw">str_sub</span>(num, <span class="dt">start =</span> <span class="dv">10</span>, <span class="dt">end =</span> <span class="dv">11</span>)</span>
+<span id="cb761-19"><a href="12-5-o-pacote-stringr-1.html#cb761-19"></a>  )</span>
+<span id="cb761-20"><a href="12-5-o-pacote-stringr-1.html#cb761-20"></a>  </span>
+<span id="cb761-21"><a href="12-5-o-pacote-stringr-1.html#cb761-21"></a>}</span>
+<span id="cb761-22"><a href="12-5-o-pacote-stringr-1.html#cb761-22"></a><span class="co"># Com regex</span></span>
+<span id="cb761-23"><a href="12-5-o-pacote-stringr-1.html#cb761-23"></a>formata_CPF &lt;-<span class="st"> </span><span class="cf">function</span>(num) {</span>
+<span id="cb761-24"><a href="12-5-o-pacote-stringr-1.html#cb761-24"></a>  </span>
+<span id="cb761-25"><a href="12-5-o-pacote-stringr-1.html#cb761-25"></a>  <span class="cf">if</span>(<span class="kw">str_count</span>(num) <span class="op">!=</span><span class="st"> </span><span class="dv">11</span>) {</span>
+<span id="cb761-26"><a href="12-5-o-pacote-stringr-1.html#cb761-26"></a>    <span class="kw">stop</span>(<span class="st">&quot;Número inválido!&quot;</span>)</span>
+<span id="cb761-27"><a href="12-5-o-pacote-stringr-1.html#cb761-27"></a>  }</span>
+<span id="cb761-28"><a href="12-5-o-pacote-stringr-1.html#cb761-28"></a>  </span>
+<span id="cb761-29"><a href="12-5-o-pacote-stringr-1.html#cb761-29"></a>  <span class="kw">str_replace</span>(</span>
+<span id="cb761-30"><a href="12-5-o-pacote-stringr-1.html#cb761-30"></a>    <span class="dt">string =</span> num, </span>
+<span id="cb761-31"><a href="12-5-o-pacote-stringr-1.html#cb761-31"></a>    <span class="dt">pattern =</span> <span class="st">&quot;([0-9]{3})([0-9]{3})([0-9]{3})&quot;</span>, </span>
+<span id="cb761-32"><a href="12-5-o-pacote-stringr-1.html#cb761-32"></a>    <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">1.</span><span class="ch">\\</span><span class="st">2.</span><span class="ch">\\</span><span class="st">3-&quot;</span></span>
+<span id="cb761-33"><a href="12-5-o-pacote-stringr-1.html#cb761-33"></a>  )</span>
+<span id="cb761-34"><a href="12-5-o-pacote-stringr-1.html#cb761-34"></a>}</span></code></pre></div>
+<p>A função <code>str_replace()</code> faz o seguinte:</p>
+<ul>
+<li>O <code>pattern=</code> procurará um padrão de 9 números:
+<ul>
+<li>O primeiro <code>([0-9]{3})</code> pega os três primeiros números.</li>
+<li>O segundo <code>([0-9]{3})</code> pega os três próximos números (quarto ao sexto).</li>
+<li>O terceiro <code>([0-9]{3})</code> pega os três números seguintes (sétimo ao nono).</li>
+</ul></li>
+<li>O <code>replacement=</code> substituirá esses 9 números pela <em>string</em> formada por:
+<ul>
+<li><code>\\1</code>, a expressão dada pelo primeiro parêntese do <code>pattern=</code>, isto é, os três primeiros números.</li>
+<li><code>.</code>, o primeiro ponto.</li>
+<li><code>\\2</code>, a expressão dada pelo segundo parêntese do <code>pattern=</code>, isto é, os três próximos números (quarto ao sexto).</li>
+<li><code>.</code>, o segundo ponto.</li>
+<li><code>\\3</code>, a expressão dada pelo terceiro parêntese do <code>pattern=</code>, isto é, os três números seguintes (sétimo ao nono).</li>
+<li><code>-</code>, o traço.</li>
+</ul></li>
+</ul>
+<hr />
+<p><strong>2.</strong> Transforme o vetor de <em>strings</em> abaixo em <code>"01 - Alto" "02 - Médio" "03 - Baixo"</code>.</p>
+<div class="sourceCode" id="cb762"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb762-1"><a href="12-5-o-pacote-stringr-1.html#cb762-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Alto&#39;</span>, <span class="st">&#39;Médio&#39;</span>, <span class="st">&#39;Baixo&#39;</span>)</span>
+<span id="cb762-2"><a href="12-5-o-pacote-stringr-1.html#cb762-2"></a><span class="co"># Usando str_c()</span></span>
+<span id="cb762-3"><a href="12-5-o-pacote-stringr-1.html#cb762-3"></a><span class="kw">str_c</span>(<span class="st">&quot;0&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(s), <span class="st">&quot; - &quot;</span>, s, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb762-4"><a href="12-5-o-pacote-stringr-1.html#cb762-4"></a><span class="co">## [1] &quot;01 - Alto&quot;  &quot;02 - Médio&quot; &quot;03 - Baixo&quot;</span></span>
+<span id="cb762-5"><a href="12-5-o-pacote-stringr-1.html#cb762-5"></a></span>
+<span id="cb762-6"><a href="12-5-o-pacote-stringr-1.html#cb762-6"></a><span class="co"># Usando o pacote glue</span></span>
+<span id="cb762-7"><a href="12-5-o-pacote-stringr-1.html#cb762-7"></a><span class="kw">glue</span>(<span class="st">&quot;0{1:length(s)} - {s}&quot;</span>)</span>
+<span id="cb762-8"><a href="12-5-o-pacote-stringr-1.html#cb762-8"></a><span class="co">## 01 - Alto</span></span>
+<span id="cb762-9"><a href="12-5-o-pacote-stringr-1.html#cb762-9"></a><span class="co">## 02 - Médio</span></span>
+<span id="cb762-10"><a href="12-5-o-pacote-stringr-1.html#cb762-10"></a><span class="co">## 03 - Baixo</span></span></code></pre></div>
+<p>Para mais informações sobre o pacote <code>glue</code>, confira <a href="http://curso-r.com/blog/2017/04/17/2017-04-08-glue/">este post</a>.</p>
+<hr />
+<p><strong>3.</strong> Crie uma regex que capture múltiplas versões da palavra ‘casa’. Ela deve funcionar com as palavras ‘Casa’, ‘CASA’, ‘CaSa’, ‘CAsa’. Teste-a usando a função <code>str_detect()</code>.</p>
+<div class="sourceCode" id="cb763"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb763-1"><a href="12-5-o-pacote-stringr-1.html#cb763-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Casa&#39;</span>, <span class="st">&#39;CASA&#39;</span>, <span class="st">&#39;CaSa&#39;</span>, <span class="st">&#39;CAsa&#39;</span>)</span>
+<span id="cb763-2"><a href="12-5-o-pacote-stringr-1.html#cb763-2"></a><span class="kw">str_detect</span>(s, <span class="st">&quot;[CcAaSsAa]&quot;</span>)</span>
+<span id="cb763-3"><a href="12-5-o-pacote-stringr-1.html#cb763-3"></a><span class="co">## [1] TRUE TRUE TRUE TRUE</span></span>
+<span id="cb763-4"><a href="12-5-o-pacote-stringr-1.html#cb763-4"></a><span class="kw">str_detect</span>(s, <span class="st">&quot;[Cc][Aa][Ss][Aa]&quot;</span>)</span>
+<span id="cb763-5"><a href="12-5-o-pacote-stringr-1.html#cb763-5"></a><span class="co">## [1] TRUE TRUE TRUE TRUE</span></span></code></pre></div>
+<hr />
+<p><strong>4.</strong> Imagine que a seguinte <em>string</em> é a parte final de uma URL.</p>
+<ul>
+<li><code>/ac/rio-branco/xpto-xyz-1-0-1fds2396-5</code></li>
+</ul>
+<p>Transforme-a em “AC - Rio Branco” utilizando a função <code>str_split()</code>.</p>
+<div class="sourceCode" id="cb764"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb764-1"><a href="12-5-o-pacote-stringr-1.html#cb764-1"></a>url &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;/ac/rio-branco/xpto-xyz-1-0-1fds2396-5&#39;</span>)</span>
+<span id="cb764-2"><a href="12-5-o-pacote-stringr-1.html#cb764-2"></a>UF &lt;-<span class="st"> </span>url <span class="op">%&gt;%</span></span>
+<span id="cb764-3"><a href="12-5-o-pacote-stringr-1.html#cb764-3"></a><span class="st">  </span><span class="kw">str_split</span>(<span class="st">&quot;[/]&quot;</span>, <span class="dt">simplify =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb764-4"><a href="12-5-o-pacote-stringr-1.html#cb764-4"></a><span class="st">  </span>.[<span class="dv">1</span>,<span class="dv">2</span>] <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb764-5"><a href="12-5-o-pacote-stringr-1.html#cb764-5"></a><span class="st">  </span><span class="kw">str_to_upper</span>()</span>
+<span id="cb764-6"><a href="12-5-o-pacote-stringr-1.html#cb764-6"></a>cidade &lt;-<span class="st"> </span>url <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb764-7"><a href="12-5-o-pacote-stringr-1.html#cb764-7"></a><span class="st">  </span><span class="kw">str_split</span>(<span class="st">&quot;[/]&quot;</span>, <span class="dt">simplify =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb764-8"><a href="12-5-o-pacote-stringr-1.html#cb764-8"></a><span class="st">  </span>.[<span class="dv">1</span>,<span class="dv">3</span>] <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb764-9"><a href="12-5-o-pacote-stringr-1.html#cb764-9"></a><span class="st">  </span><span class="kw">str_replace</span>(<span class="st">&quot;-&quot;</span>, <span class="st">&quot; &quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb764-10"><a href="12-5-o-pacote-stringr-1.html#cb764-10"></a><span class="st">  </span><span class="kw">str_to_title</span>()</span>
+<span id="cb764-11"><a href="12-5-o-pacote-stringr-1.html#cb764-11"></a><span class="kw">str_c</span>(UF, <span class="st">&quot; - &quot;</span>, cidade)</span>
+<span id="cb764-12"><a href="12-5-o-pacote-stringr-1.html#cb764-12"></a><span class="co">## [1] &quot;AC - Rio Branco&quot;</span></span></code></pre></div>
+<hr />
+<p><strong>5.</strong> Crie uma função que retorna <code>TRUE</code> quando a string é um <a href="https://pt.wikipedia.org/wiki/Pal%C3%ADndromo">palíndromo</a> e <code>FALSO</code> caso não seja.</p>
+<div class="sourceCode" id="cb765"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb765-1"><a href="12-5-o-pacote-stringr-1.html#cb765-1"></a><span class="co"># Solução 1: usando a função rev() para inverter uma string fragmentada</span></span>
+<span id="cb765-2"><a href="12-5-o-pacote-stringr-1.html#cb765-2"></a>testa_palindromo &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
+<span id="cb765-3"><a href="12-5-o-pacote-stringr-1.html#cb765-3"></a>  </span>
+<span id="cb765-4"><a href="12-5-o-pacote-stringr-1.html#cb765-4"></a>  s <span class="op">%&gt;%</span></span>
+<span id="cb765-5"><a href="12-5-o-pacote-stringr-1.html#cb765-5"></a><span class="st">    </span><span class="kw">str_split</span>(<span class="st">&quot;&quot;</span>, <span class="dt">simplify =</span> T) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb765-6"><a href="12-5-o-pacote-stringr-1.html#cb765-6"></a><span class="st">    </span>rev <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb765-7"><a href="12-5-o-pacote-stringr-1.html#cb765-7"></a><span class="st">    </span><span class="kw">str_c</span>(<span class="dt">collapse =</span> <span class="st">&quot;&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb765-8"><a href="12-5-o-pacote-stringr-1.html#cb765-8"></a><span class="st">    </span><span class="kw">str_detect</span>(s)</span>
+<span id="cb765-9"><a href="12-5-o-pacote-stringr-1.html#cb765-9"></a>  </span>
+<span id="cb765-10"><a href="12-5-o-pacote-stringr-1.html#cb765-10"></a>}</span>
+<span id="cb765-11"><a href="12-5-o-pacote-stringr-1.html#cb765-11"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;ana&quot;</span>)</span>
+<span id="cb765-12"><a href="12-5-o-pacote-stringr-1.html#cb765-12"></a><span class="co">## [1] TRUE</span></span>
+<span id="cb765-13"><a href="12-5-o-pacote-stringr-1.html#cb765-13"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;bananas&quot;</span>)</span>
+<span id="cb765-14"><a href="12-5-o-pacote-stringr-1.html#cb765-14"></a><span class="co">## [1] FALSE</span></span>
+<span id="cb765-15"><a href="12-5-o-pacote-stringr-1.html#cb765-15"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;socorrammesubinoonibusemmarrocos&quot;</span>)</span>
+<span id="cb765-16"><a href="12-5-o-pacote-stringr-1.html#cb765-16"></a><span class="co">## [1] TRUE</span></span>
+<span id="cb765-17"><a href="12-5-o-pacote-stringr-1.html#cb765-17"></a></span>
+<span id="cb765-18"><a href="12-5-o-pacote-stringr-1.html#cb765-18"></a><span class="co"># Solução 2: usando a função str_reverse() do pacote stringi,</span></span>
+<span id="cb765-19"><a href="12-5-o-pacote-stringr-1.html#cb765-19"></a><span class="co"># que já inverte a string diretamente.</span></span>
+<span id="cb765-20"><a href="12-5-o-pacote-stringr-1.html#cb765-20"></a>testa_palindromo &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
+<span id="cb765-21"><a href="12-5-o-pacote-stringr-1.html#cb765-21"></a>  </span>
+<span id="cb765-22"><a href="12-5-o-pacote-stringr-1.html#cb765-22"></a>  s <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb765-23"><a href="12-5-o-pacote-stringr-1.html#cb765-23"></a><span class="st">    </span>stringi<span class="op">::</span><span class="kw">stri_reverse</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb765-24"><a href="12-5-o-pacote-stringr-1.html#cb765-24"></a><span class="st">    </span><span class="kw">str_detect</span>(s)</span>
+<span id="cb765-25"><a href="12-5-o-pacote-stringr-1.html#cb765-25"></a>  </span>
+<span id="cb765-26"><a href="12-5-o-pacote-stringr-1.html#cb765-26"></a>}</span>
+<span id="cb765-27"><a href="12-5-o-pacote-stringr-1.html#cb765-27"></a></span>
+<span id="cb765-28"><a href="12-5-o-pacote-stringr-1.html#cb765-28"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;ana&quot;</span>)</span>
+<span id="cb765-29"><a href="12-5-o-pacote-stringr-1.html#cb765-29"></a><span class="co">## [1] TRUE</span></span>
+<span id="cb765-30"><a href="12-5-o-pacote-stringr-1.html#cb765-30"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;bananas&quot;</span>)</span>
+<span id="cb765-31"><a href="12-5-o-pacote-stringr-1.html#cb765-31"></a><span class="co">## [1] FALSE</span></span>
+<span id="cb765-32"><a href="12-5-o-pacote-stringr-1.html#cb765-32"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;socorrammesubinoonibusemmarrocos&quot;</span>)</span>
+<span id="cb765-33"><a href="12-5-o-pacote-stringr-1.html#cb765-33"></a><span class="co">## [1] TRUE</span></span></code></pre></div>
+<hr />
+<p><strong>6.</strong> De acordo com as regras da língua portuguesa, antes de “p” ou “b” devemos usar a letra “m”. Em outras palavras, com outras consoantes, usamos a letra “N”. Suponha que você tem o seguinte texto com erros gramaticais:</p>
+<div class="sourceCode" id="cb766"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb766-1"><a href="12-5-o-pacote-stringr-1.html#cb766-1"></a>s &lt;-<span class="st"> &#39;Nós chamamos os bonbeiros quando começou o incêmdio.&#39;</span></span></code></pre></div>
+<p>Crie uma função para corrigi-lo.</p>
+<div class="sourceCode" id="cb767"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb767-1"><a href="12-5-o-pacote-stringr-1.html#cb767-1"></a><span class="co"># Função que funciona para o exemplo</span></span>
+<span id="cb767-2"><a href="12-5-o-pacote-stringr-1.html#cb767-2"></a>corrige_mn &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
+<span id="cb767-3"><a href="12-5-o-pacote-stringr-1.html#cb767-3"></a>  </span>
+<span id="cb767-4"><a href="12-5-o-pacote-stringr-1.html#cb767-4"></a>  s <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb767-5"><a href="12-5-o-pacote-stringr-1.html#cb767-5"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;nb&quot;</span>, <span class="st">&quot;mb&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb767-6"><a href="12-5-o-pacote-stringr-1.html#cb767-6"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;md&quot;</span>, <span class="st">&quot;nd&quot;</span>)</span>
+<span id="cb767-7"><a href="12-5-o-pacote-stringr-1.html#cb767-7"></a>  </span>
+<span id="cb767-8"><a href="12-5-o-pacote-stringr-1.html#cb767-8"></a>}</span>
+<span id="cb767-9"><a href="12-5-o-pacote-stringr-1.html#cb767-9"></a><span class="kw">corrige_mn</span>(s)</span>
+<span id="cb767-10"><a href="12-5-o-pacote-stringr-1.html#cb767-10"></a><span class="co">## [1] &quot;Nós chamamos os bombeiros quando começou o incêndio.&quot;</span></span>
+<span id="cb767-11"><a href="12-5-o-pacote-stringr-1.html#cb767-11"></a></span>
+<span id="cb767-12"><a href="12-5-o-pacote-stringr-1.html#cb767-12"></a><span class="co"># Função que funciona no caso geral</span></span>
+<span id="cb767-13"><a href="12-5-o-pacote-stringr-1.html#cb767-13"></a>corrige_mn &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
+<span id="cb767-14"><a href="12-5-o-pacote-stringr-1.html#cb767-14"></a>  </span>
+<span id="cb767-15"><a href="12-5-o-pacote-stringr-1.html#cb767-15"></a>  s <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb767-16"><a href="12-5-o-pacote-stringr-1.html#cb767-16"></a><span class="st">    </span><span class="kw">str_replace_all</span>(<span class="st">&quot;m([^aeioubp[[:space:]]+])&quot;</span>, <span class="st">&quot;n</span><span class="ch">\\</span><span class="st">1&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span></span>
+<span id="cb767-17"><a href="12-5-o-pacote-stringr-1.html#cb767-17"></a><span class="st">    </span><span class="kw">str_replace_all</span>(<span class="st">&quot;n([pb])&quot;</span>, <span class="st">&quot;m</span><span class="ch">\\</span><span class="st">1&quot;</span>)</span>
+<span id="cb767-18"><a href="12-5-o-pacote-stringr-1.html#cb767-18"></a>  </span>
+<span id="cb767-19"><a href="12-5-o-pacote-stringr-1.html#cb767-19"></a>}</span>
+<span id="cb767-20"><a href="12-5-o-pacote-stringr-1.html#cb767-20"></a><span class="kw">corrige_mn</span>(s)</span>
+<span id="cb767-21"><a href="12-5-o-pacote-stringr-1.html#cb767-21"></a><span class="co">## [1] &quot;Nós chamamos os bombeiros quando começou o incêndio.&quot;</span></span></code></pre></div>
+<p>O padrão <code>[^aeioubp[[:space:]]+]</code> significa “tudo menos vogais, b, p ou espaços”. O <code>\\1</code> devolve o padrão encontrado pelo primeiro parêntese do argumento <code>patern=</code>.</p>
+<hr />
+<p><strong>7.</strong> Considere o seguinte texto</p>
+<div class="sourceCode" id="cb768"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb768-1"><a href="12-5-o-pacote-stringr-1.html#cb768-1"></a>s &lt;-<span class="st"> &quot;A função mais importante para leitura de dados no `lubridate` é a `ymd`. Essa função serve para ler qualquer data de uma `string` no formato `YYYY-MM-DD`. Essa função é útil pois funciona com qualquer separador entre os elementos da data e também porque temos uma função para cada formato (`ymd`, `mdy`, `dmy`, `dym`, `myd`, `ydm`).&quot;</span></span></code></pre></div>
+<p>Extraia todas as combinações da função <code>ymd</code>, sem repetições.</p>
+<div class="sourceCode" id="cb769"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb769-1"><a href="12-5-o-pacote-stringr-1.html#cb769-1"></a><span class="kw">str_extract_all</span>(s, <span class="st">&quot;[ymd]{3}&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb769-2"><a href="12-5-o-pacote-stringr-1.html#cb769-2"></a><span class="st">  </span><span class="kw">unlist</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb769-3"><a href="12-5-o-pacote-stringr-1.html#cb769-3"></a><span class="st">  </span>unique</span>
+<span id="cb769-4"><a href="12-5-o-pacote-stringr-1.html#cb769-4"></a><span class="co">## [1] &quot;ymd&quot; &quot;mdy&quot; &quot;dmy&quot; &quot;dym&quot; &quot;myd&quot; &quot;ydm&quot;</span></span></code></pre></div>
+<hr />
+<p><strong>8.</strong> Considere as frases abaixo</p>
+<div class="sourceCode" id="cb770"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb770-1"><a href="12-5-o-pacote-stringr-1.html#cb770-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(</span>
+<span id="cb770-2"><a href="12-5-o-pacote-stringr-1.html#cb770-2"></a>  <span class="st">&#39;O produto é bom.&#39;</span>,</span>
+<span id="cb770-3"><a href="12-5-o-pacote-stringr-1.html#cb770-3"></a>  <span class="st">&#39;O produto não é bom.&#39;</span>,</span>
+<span id="cb770-4"><a href="12-5-o-pacote-stringr-1.html#cb770-4"></a>  <span class="st">&#39;O produto não é muito bom.&#39;</span>,</span>
+<span id="cb770-5"><a href="12-5-o-pacote-stringr-1.html#cb770-5"></a>  <span class="st">&#39;O produto é muito bom&#39;</span>,</span>
+<span id="cb770-6"><a href="12-5-o-pacote-stringr-1.html#cb770-6"></a>  <span class="st">&#39;O produto não é ruim.&#39;</span>,</span>
+<span id="cb770-7"><a href="12-5-o-pacote-stringr-1.html#cb770-7"></a>  <span class="st">&#39;O produto não é não ruim.&#39;</span>,</span>
+<span id="cb770-8"><a href="12-5-o-pacote-stringr-1.html#cb770-8"></a>  <span class="st">&#39;O produto não é não bom.&#39;</span></span>
+<span id="cb770-9"><a href="12-5-o-pacote-stringr-1.html#cb770-9"></a>)</span></code></pre></div>
+<p>Crie uma regra para identificar se o texto refere-se a um feedback positivo ou negativo sobre o produto (considere não bom = ruim e não ruim = bom). Retorne um vetor lógico que vale <code>TRUE</code> se o feedback for positivo e <code>FALSE</code> caso contrário.</p>
+<div class="sourceCode" id="cb771"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb771-1"><a href="12-5-o-pacote-stringr-1.html#cb771-1"></a>feedback &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
+<span id="cb771-2"><a href="12-5-o-pacote-stringr-1.html#cb771-2"></a>  </span>
+<span id="cb771-3"><a href="12-5-o-pacote-stringr-1.html#cb771-3"></a>  s <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb771-4"><a href="12-5-o-pacote-stringr-1.html#cb771-4"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;não bom&quot;</span>, <span class="st">&quot;ruim&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb771-5"><a href="12-5-o-pacote-stringr-1.html#cb771-5"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;não ruim&quot;</span>, <span class="st">&quot;bom&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb771-6"><a href="12-5-o-pacote-stringr-1.html#cb771-6"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;muito &quot;</span>, <span class="st">&quot;&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb771-7"><a href="12-5-o-pacote-stringr-1.html#cb771-7"></a><span class="st">    </span><span class="kw">str_detect</span>(<span class="st">&quot;(.*) produto é bom|(.*) não é ruim&quot;</span>)</span>
+<span id="cb771-8"><a href="12-5-o-pacote-stringr-1.html#cb771-8"></a>  </span>
+<span id="cb771-9"><a href="12-5-o-pacote-stringr-1.html#cb771-9"></a>}</span>
+<span id="cb771-10"><a href="12-5-o-pacote-stringr-1.html#cb771-10"></a><span class="kw">feedback</span>(s)</span>
+<span id="cb771-11"><a href="12-5-o-pacote-stringr-1.html#cb771-11"></a><span class="co">## [1]  TRUE FALSE FALSE  TRUE  TRUE FALSE  TRUE</span></span></code></pre></div>
+
+</div>
+<hr/>
+<footer>
+<a href="https://curso-r.com" target="_blank"><img src="https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width="15%", alt="Curso-R"/></a>
+</footer>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="12-4-o-pacote-dplyr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="12-6-o-pacote-lubridate-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["livro-curso-r.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -467,7 +467,7 @@ segredo > 5
 ```
 
 ```
-## [1] FALSE
+## [1] TRUE
 ```
 
 
@@ -482,7 +482,7 @@ segredo %% 2
 ```
 
 ```
-## [1] 0
+## [1] 1
 ```
 
 ```r
@@ -494,7 +494,7 @@ resto == 0
 ```
 
 ```
-## [1] TRUE
+## [1] FALSE
 ```
 
 ```r
@@ -503,7 +503,7 @@ segredo %% 2 == 0
 ```
 
 ```
-## [1] TRUE
+## [1] FALSE
 ```
 
 
@@ -515,7 +515,7 @@ segredo * 5 > 31
 ```
 
 ```
-## [1] FALSE
+## [1] TRUE
 ```
 
 **f.** Desafio. Escreva um teste para descobrir o valor do segredo.
@@ -537,7 +537,7 @@ segredo == numeros_possiveis
 ```
 
 ```
-##  [1] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE
 ```
 
 *No código acima, para cada valor de `numero_possiveis`, foi testado se esse valor é igual ao segredo. Em caso afirmativo, um TRUE é devolvido. Veja que há apenas um TRUE no vetor resultante. Essa é posição do nosso segredo dentro do vetor `numeros_possiveis`.*
@@ -551,7 +551,7 @@ numeros_possiveis[segredo == numeros_possiveis]
 ```
 
 ```
-## [1] 2
+## [1] 9
 ```
 
 *No código acima, foi retornado apenas o número associado ao valor TRUE dado pelo teste `segredo == numeros_possiveis`*.
@@ -1295,7 +1295,7 @@ sortear_numero()
 ```
 
 ```
-## [1] 5
+## [1] 8
 ```
 
 
@@ -1318,8 +1318,8 @@ sortear_linha(mtcars)
 ```
 
 ```
-##                   mpg cyl disp  hp drat   wt  qsec vs am gear carb
-## Dodge Challenger 15.5   8  318 150 2.76 3.52 16.87  0  0    3    2
+##              mpg cyl disp hp drat    wt  qsec vs am gear carb
+## Honda Civic 30.4   4 75.7 52 4.93 1.615 18.52  1  1    4    2
 ```
 
 **b.** Generalize a função para retornar um número qualquer de linhas, escolhido pelo usuário.
@@ -1337,17 +1337,17 @@ sortear_linha(mtcars, 10)
 ```
 
 ```
-##                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-## Maserati Bora      15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
-## Toyota Corolla     33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
-## Pontiac Firebird   19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
-## Cadillac Fleetwood 10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
-## Mazda RX4 Wag      21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
-## Merc 450SLC        15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
-## Volvo 142E         21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2
-## Camaro Z28         13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
-## Merc 450SL         17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
-## Chrysler Imperial  14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+##                mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4 Wag 21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## Merc 280      19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+## Merc 450SLC   15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+## Volvo 142E    21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2
+## Camaro Z28    13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
+## Mazda RX4     21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+## Datsun 710    22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+## Merc 230      22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+## Merc 450SL    17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
+## Merc 280C     17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
 ```
 
 ### Controle de fluxo {-}

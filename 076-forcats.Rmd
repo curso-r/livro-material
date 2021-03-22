@@ -1,1 +1,201 @@
 ## O pacote forcats {#forcats}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, out.width="75%")
+```
+
+Se você utiliza R antes do surgimento do `tidyverse`, provavelmente já escreveu a expressão `stringsAsFactors = F` quando importava dados usando as funções `read.csv` ou `read.table`. É muito frustrante quando uma coluna de `strings` é lida como um fator, pois fatores não podem ser manipulados do mesmo jeito que manipulamos vetores de `strings`.
+
+Felizmente, depois de aprender a usar o `readr` você não terá mais esse problema, pois as funções do pacote não lê colunas de caracteres como fatores por padrão. Mas isso não significa que fatores são inúteis. Eles representam uma forma muito prática de lidar com variáveis categorizadas, tanto para fins de modelagem quanto para fins de visualização. 
+
+Grande parte da frustração associada ao uso de fatores no R existe por conta da falta de algumas ferramentas úteis no pacote `base`. Para resolver esse o problema, Hadley Wickham ajudou a comunidade R (de novo) desenvolvendo o pacote `forcats`(**for** **cat**egorial variable**s**), que implementa algumas dessas ferramentas.
+
+As principais funções do `forcats` servem para alterar a **ordem** e modificar os **níveis** de um fator. Para exemplificar a utilidade dessas funções, nesta seção vamos utilizá-las em situações corriqueiras.
+
+Se você não tem o pacote `{forcats}`, instalado rode o código abaixo antes de utilizá-lo:
+
+```{r}
+install.packages("forcats")
+```
+
+Nos exemplos a seguir, utilizarmos os seguintes pacotes:
+
+```{r message=FALSE}
+library(forcats)
+library(ggplot2)
+library(dplyr)
+```
+
+### O que são fatores?
+
+Como vimos na Seção \@ref{fatores}, fatores são uma classe de objetos no R criada para representar as variáveis categóricas numericamente.
+
+Eles são necessários pois muitas vezes precisamos representar variáveis categóricas como números. Quando estamos fazendo um gráfico, por exemplo, só podemos mapear variáveis numéricas em seus eixos, pois o plano cartesiano é formado por duas retas de números reais.
+
+O que fazemos então quando plotamos uma variável categórica? Nós a transformamos em fatores.
+
+Mas como a manipulação de fatores é diferente da manipulação de números e strings (graças aos famosos *levels*), tarefas que parecem simples, como ordenar as barras de um gráfico de barras, acabam se tornando grandes desafios quando não sabemos lidar com essa classe de valores.
+
+Nos exemplos a seguir, vamos utilizar a base `starwars` (do pacote `{dplyr}`) para aprendermos a fazer as principais operações com fatores utilizando o pacote `{forcats}`.
+
+### Modificando níveis de um fator {-}
+
+Vamos trabalhar primeiro com a coluna `sex`, que diz qual é o sexo de cada personagem. As possibilidades são:
+
+```{r}
+starwars %>% 
+  pull(sex) %>% 
+  unique()
+```
+
+Veja que se transformarmos a coluna em fator, esses serão os *levels* da variável, não importa se o sub-conjunto que estivermos observando possua ou não todas as categorias.
+
+```{r}
+starwars %>% 
+  mutate(sex = as.factor(sex)) %>% 
+  pull(sex) %>% 
+  head()
+```
+
+Vamos criar um objeto com os 16 primeiros valores da coluna `sex` já transformados em fator.
+
+```{r}
+fator_sex <- starwars %>% 
+  pull(sex) %>% 
+  as.factor() %>% 
+  head(16)
+fator_sex
+```
+
+Para mudar os níveis de um fator, podemos utilizar a função `lvls_revalue()`. Veja que, ao mudarmos os níveis de um fator, o *label* de cada valor também muda. Os novos valores precisam ser passados conforme a ordem dos níveis antigos.
+
+```{r}
+lvls_revalue(
+  fator_sex, 
+  new_levels = c("Fêmea", "Hermafrodita", "Macho", "Nenhum")
+)
+```
+
+Essa função é uma boa alternativa para mudar o nome das categorias de uma variável antes de construir um gráfico.
+
+```{r}
+starwars %>% 
+  filter(!is.na(sex)) %>% 
+  count(sex) %>% 
+  mutate(
+    sex = lvls_revalue(sex, c("Fêmea", "Hermafrodita", "Macho", "Nenhum"))
+  ) %>% 
+  ggplot() +
+  geom_col(aes(x = sex, y = n)) 
+```
+
+Como as colunas no gráfico respeitam a ordem dos níveis do fator, não importa a ordem que as linhas aparecem na tabela, o gráfico sempre será gerado com as colunas na mesma ordem. Assim, se quiséssemos alterar a ordem das barras do gráfico anterior, precisamos mudar a ordem dos níveis do fator `sex`.
+
+### Mudando a ordem dos níveis de um fator {-}
+
+Para mudar a ordem dos níveis de um fator, podemos utilizar a função `lvls_reorder()`. Basta passarmos qual a nova ordem dos fatores, com relação à ordem anterior. No exemplo abaixo definimos que, na nova ordem,
+
+- a primeira posição terá o nível que estava na terceira posição na ordem antiga;
+
+- a segunda posição terá o nível que estava na primeira posição na ordem antiga;
+
+
+- a terceira posição terá o nível que estava na quarta posição na ordem antiga;
+
+
+- a quarta posição terá o nível que estava na segunda posição na ordem antiga.
+
+```{r}
+lvls_reorder(fator_sex, c(3, 1, 4, 2))
+```
+
+Assim, poderíamos usar essa nova ordem para ordenar as colunas do nosso gráfico.
+
+```{r}
+starwars %>% 
+  filter(!is.na(sex)) %>% 
+  count(sex) %>% 
+  mutate(
+    sex = lvls_revalue(sex, c("Fêmea", "Hermafrodita", "Macho", "Nenhum")),
+    sex = lvls_reorder(sex, c(3, 1, 4, 2))
+  ) %>% 
+  ggplot() +
+  geom_col(aes(x = sex, y = n)) 
+```
+
+Repare que precisamos passar a nova ordem na mão, o que pode deixar de funcionar se a nossa base mudar (recebemos mais linhas ou fizermos um filtro anteriormente).
+
+Anterior ao `mutate()` temos a seguinte tabela:
+
+```{r}
+starwars %>% 
+  filter(!is.na(sex)) %>% 
+  count(sex) 
+```
+
+O que queremos é que os níveis da coluna `sex` sejam ordenados segundo os valores da coluna `n`, isto é, quem tiver o maior valor de `n` deve ser o primeiro nível, o segundo maior valor de `n` seja o segundo nível e assim por diante.
+
+Podemos melhorar esse código utilizando a função `fct_reorder()`. Com ela, em vez de definirmos na mão a ordem dos níveis do fator, podemos ordená-lo segundo valores de uma segunda variável.
+
+```{r}
+starwars %>% 
+  filter(!is.na(sex)) %>% 
+  count(sex) %>% 
+  mutate(
+    sex = lvls_revalue(sex, c("Fêmea", "Hermafrodita", "Macho", "Nenhum")),
+    sex = fct_reorder(sex, n)
+  ) %>% 
+  ggplot() +
+  geom_col(aes(x = sex, y = n)) 
+```
+
+É quase o que queríamos! O problema é que os níveis estão sendo ordenados de forma crescente e gostaríamos de ordenar na ordem decrescente. Para isso, basta utilizarmos o parâmetro `.desc`.
+
+```{r}
+starwars %>% 
+  filter(!is.na(sex)) %>% 
+  count(sex) %>% 
+  mutate(
+    sex = lvls_revalue(sex, c("Fêmea", "Hermafrodita", "Macho", "Nenhum")),
+    sex = fct_reorder(sex, n, .desc = TRUE)
+  ) %>% 
+  ggplot() +
+  geom_col(aes(x = sex, y = n)) 
+```
+
+
+Agora sim! Com esse código, as colunas estarão sendo ordenadas pela frequência, independentemente dos valores de `n` e `sex` que chegarem no `mutate()`.
+
+Se olharmos a documentação da função `fct_reorder()` vamos descobrir que esse exemplo é apenas um caso particular de como podemos utilizá-la. No contexto geral, ela ordena os níveis de um fator segundo **uma função** dos valores de uma segunda variável.
+
+```{r}
+starwars %>% 
+  filter(!is.na(sex)) %>% 
+  ggplot() +
+  geom_boxplot(aes(x = sex, y = height))
+```
+
+
+```{r}
+starwars %>% 
+  filter(!is.na(sex)) %>% 
+  mutate(
+    sex = lvls_revalue(sex, c("Fêmea", "Hermafrodita", "Macho", "Nenhum")),
+    sex = fct_reorder(sex, height, .fun = median, na.rm = TRUE)
+  ) %>% 
+ggplot() +
+  geom_boxplot(aes(x = sex, y = height))
+```
+```{r}
+starwars %>% 
+  filter(!is.na(sex)) %>% 
+  mutate(
+    sex = lvls_revalue(sex, c("Fêmea", "Hermafrodita", "Macho", "Nenhum")),
+    sex = fct_reorder(sex, height, .fun = max, na.rm = TRUE)
+  ) %>% 
+ggplot() +
+  geom_boxplot(aes(x = sex, y = height))
+```
+
+### Colapsando níveis de um fator {-}
+
