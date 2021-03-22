@@ -1,0 +1,110 @@
+## O pacote stringr
+
+**1.** Crie uma nova coluna no data.frame com as datas no formato dia-mês-ano.
+
+
+```r
+lakers %>% 
+  mutate(date = ymd(date))
+```
+
+Repare que `as_date()` não funciona neste caso.
+
+
+```r
+lakers %>%
+  mutate(date = as_date(date))
+```
+
+Para entender porque a função devolveu um dia do ano 56949, rode os códigos abaixo.
+
+
+```r
+as_date(0)
+as_date(-3:3)
+as_date(20081027:20081029)
+```
+
+---
+
+**2.** Crie uma coluna que junte as informações de data e hora (colunas `date` e `time`) em objetos da classe `date`.
+
+
+```r
+lakers %>% 
+  mutate(date_time = paste0(date, " 00:", time) %>% ymd_hms) %>% 
+  select(date_time)
+```
+
+---
+
+**3.** Crie as colunas `dia`, `mes` e `ano` com as respectivas informações sobre a data do jogo.
+
+
+```r
+lakers %>%
+  mutate(date = ymd(date),
+         dia = day(date),
+         mes = month(date),
+         ano = year(date)) %>% 
+  select(date, dia, mes, ano)
+```
+
+---
+
+**4.** Em média, quanto tempo o Lakers demora para arremessar a primeira bola no primeiro período?
+
+**Dicas**: arremessos são representados pela categoria `shot` da coluna `etype` e cada período tem 12 minutos.
+
+
+
+```r
+lakers %>% 
+  dplyr::filter(etype == "shot", period == 1, team == "LAL") %>% 
+  dplyr::mutate(time = hms(paste0("00:", time)),
+                cronometro = 12*60 - minute(time)*60 - second(time)) %>% 
+  dplyr::group_by(date) %>% 
+  dplyr::filter(cronometro == min(cronometro)) %>% 
+  dplyr::ungroup() %>% 
+  dplyr::summarise(media = mean(cronometro))
+```
+
+O que foi feito:
+
+- Primeiro filtramos a base para arremessos, `etype == "shot"`, do primeiro período, `period == `, que fossem do Lakers, `team == "LAL"`. 
+
+- Em seguida, mudamos a classe da coluna `time`, de `character` para `period`, e criamos a coluna `cronometro`, que contém o tempo passado (em segundos) até o instante do evento.
+
+- Então agrupamos a base pelo dia e a filtramos apenas para o primeiro evento de cada dia, isto é, o evento que tem o menor valor na coluna `cronometro`. Assim, a coluna `cronometro` da base resultante terá o tempo do primeiro arremesso de cada jogo.
+
+- Por fim, desagrupamos a base e calculamos a média da coluna `cronometro`.
+
+---
+
+**5.** Em média, quanto tempo demora para sair a primeira cesta de três pontos em cada um dos quatro períodos? Considere toda a base, e cestas de ambos os times.
+
+
+```r
+lakers %>% 
+  dplyr::filter(etype == "shot", period %in% 1:4, points == "3") %>% 
+  dplyr::mutate(time = hms(paste0("00:", time)),
+                cronometro = 12*60 - minute(time)*60 - second(time)) %>% 
+  dplyr::group_by(date, period) %>% 
+  dplyr::filter(cronometro == min(cronometro)) %>% 
+  dplyr::ungroup() %>%
+  dplyr::group_by(period) %>% 
+  dplyr::summarise(media = mean(cronometro))
+```
+
+A resolução desse exercício é análoga ao anterior, só mudamos o filtro inicial e o agrupamento. Se você ficou com dúvidas, consulte o passo a passo na resolução do exercício 4.
+
+Repare que não precisarímos filtrar por `etype == "shot"`, já que o único evento que gera 3 pontos é a cesta de 3 pontos.
+
+---
+
+**6.** Construa boxplots do tempo entre pontos consecultivos para cada períodos. Considere toda a base de dados e apenas pontos do Lakers.
+
+---
+
+**7.** Qual foi o dia e mês do jogo que o Lakers demorou mais tempo para fazer uma cesta? Quanto tempo foi?
+
