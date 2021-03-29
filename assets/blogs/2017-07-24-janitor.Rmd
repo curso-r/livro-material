@@ -1,11 +1,12 @@
 ## Arrumando banco de dados: o pacote janitor
 
-Vamos falar do pacote `janitor`, que traz algumas funções para dar aquele trato nas BDs.
+O pacote [`janitor`](https://garthtarr.github.io/meatR/janitor.html) disponibiliza algumas funções para limpar bases de dados.
 
-Antes de mais nada, instale e carregue o pacote:
+Primeiramente, instale e carregue o pacote:
 
 ```{r, eval = FALSE}
-install.packages("janitor")
+install.packages("janitor") # Instale a versão do CRAN, OU:
+
 devtools::install_github("sfirke/janitor") # Versão de desenvolvimento
 ```
 
@@ -16,92 +17,129 @@ library(janitor)
 
 ### Arrumando o nome das variáveis
 
-Assim como no post passado, utilizaremos a base com informações de pacientes com arritmia cardíaca, cujas variáveis selecionadas foram:
+Utilizaremos a base com informações de pacientes com arritmia cardíaca. O código para obter essa base de exemplo está descrito abaixo:
 
-```{r, include=FALSE}
-dados <- readxl::read_excel("../data/dados_nomes_variaveis.xlsx") %>% 
-  tibble::rowid_to_column("ID") %>% 
-  dplyr::select(ID, everything())
+```{r eval=FALSE, include=FALSE}
+# A base original foi alterada por essa aqui, 
+# para fins de reprodutibilidade:
+# url <- "https://github.com/curso-r/livro-material/raw/master/assets/data/dados_nomes_variaveis.xlsx"
+# destfile <- "dados_nomes_variaveis.xlsx"
+# curl::curl_download(url, destfile)
+# dados_nomes_variaveis <- readxl::read_excel(destfile)
+# dados_brutos <- dados_nomes_variaveis %>% 
+#   tibble::rowid_to_column("ID") %>% 
+#   dplyr::select(ID, everything())
+# 
+# dados_brutos[3,] <- NA
+# dados_brutos[3,1] <- 3
+# 
+# dados_brutos %>% writexl::write_xlsx(path = "../data/dados_nomes_variaveis_livro.xlsx")
+
 ```
 
-
-```{r}
-dados %>% names()
+```{r include=FALSE}
+dados_brutos <- readxl::read_excel("../data/dados_nomes_variaveis_livro.xlsx")
 ```
 
-Os nomes têm letras maiúsculas, acentos, parênteses, pontos e barras, o que atrapalha na hora da programação. Para resolver esse problema, usamos a função `clean_names()`.
+```{r eval=FALSE, include=TRUE}
+# URL da base para baixar
+url <- "https://github.com/curso-r/livro-material/raw/master/assets/data/dados_nomes_variaveis_livro.xlsx"
 
-```{r}
-dados %>% 
-  janitor::clean_names() %>% 
-  names()
+# Arquivo de destino onde a base deverá ser salva
+destfile <- "dados_nomes_variaveis_livro.xlsx"
+
+# Fazer o download da base
+curl::curl_download(url, destfile)
+
+# Importar a base 
+dados_brutos <- readxl::read_excel(destfile)
 ```
 
-Veja que a função removeu os parênteses, pontos e barras e substituiu os espaços por `_`. No entanto, ela não remove os acentos. Assim, podemos adicionar mais uma linha ao pipeline para chegar onde queremos.
-
+As variáveis presentes na base são:
 ```{r}
-dados %>%
-  janitor::clean_names() %>% 
-  names() %>% 
-  abjutils::rm_accent()
+dados_brutos %>% names() # Ver o nome das variáveis
 ```
 
-E para substituir na base.
+Os nomes das variáveis contém letras maiúsculas, acentos, parênteses, pontos e barras, o que atrapalha na hora da programação. Para resolver esse problema, usamos a função `clean_names()`.
 
 ```{r}
-nomes <- dados %>%
-  janitor::clean_names() %>% 
-  names() %>% 
-  abjutils::rm_accent()
+dados_brutos %>% 
+  janitor::clean_names() %>% # Limpar os nomes das variáveis
+  names() # Ver o nome das variáveis
+```
 
-names(dados) <- nomes
+Veja que a função removeu os parênteses, pontos e barras e substituiu os espaços por `_`. 
+
+
+E para substituir na base, precisamos atribuir o resultado em um novo objeto:
+
+```{r}
+dados <- dados_brutos %>% 
+  janitor::clean_names() # Limpar os nomes das variáveis
 ```
 
 ### Removendo linhas e colunas vazias
 
-```{r, include = FALSE}
-dados[3,] <- NA
-dados[3,1] <- 3
-```
 
-Esse banco de dados também tinha outro problema: linhas vazias. Na verdade, elas não eram completamente vazias, pois havia algumas informações de identificação do paciente, mas nenhuma outra variável tinha sido computada.
+Esse banco de dados também contém outro problema: linhas vazias. Na verdade, elas não eram completamente vazias, pois havia algumas informações de identificação da(o) paciente, mas nenhuma outra variável tinha sido computada.
 
 ```{r}
-dados[3,]
+dados %>% 
+  dplyr::slice(3) %>% # Apresentar apenas a linha 3
+  knitr::kable()
 ```
 
-Essa foi a solução que eu pensei para resolver o problema utilizando a função `remove_empty()`.
+Para resolver o problema, é possível utilizar a função `remove_empty()`.
 
-```{r}
-dados <- dados %>% 
-  as.data.frame %>% 
+```{r message=FALSE, warning=FALSE}
+dados_sem_linhas_vazias <- dados %>% 
+  as.data.frame() %>% 
   dplyr::select(-id) %>% 
   janitor::remove_empty() %>% 
-  tibble::rownames_to_column("id") %>% 
-  dplyr::select(id, everything())
+  tibble::rowid_to_column("id") %>% 
+  dplyr::select(id, everything()) %>%
+  tibble::as_tibble()
 
-dados %>% tibble::as_tibble()
+dados_sem_linhas_vazias %>% knitr::kable()
 ```
 
-Eu precisei converter para `data.frame` primeiro porque não é possível definir os nomes das linhas de uma `tibble`. Se a linha estivesse completamente vazia, bastaria usar diretamente a função `remove_empty_rows()`.
+Foi necessário converter para `data.frame` primeiro porque não é possível definir os nomes das linhas de uma `tibble`. Se a linha estivesse completamente vazia, bastaria usar diretamente a função `remove_empty_rows()`.
 
 Equivalentemente para colunas, existe a função `remove_empty_cols()`.
+
+Outra forma de realizar este mesmo procedimento é utilizando a função `drop_na()` do pacote `tidyr`:
+
+```{r}
+dados_sem_linhas_vazias <- dados %>% 
+  tidyr::drop_na(-id) %>%
+  dplyr::select(-id) %>% 
+  tibble::rowid_to_column("id") %>% 
+  dplyr::relocate(id, .before = sexo)
+
+dados_sem_linhas_vazias %>% knitr::kable()
+```
+
+
 
 ### Identificando linhas duplicadas
 
 O pacote `janitor` possui uma função para identificar entradas duplicadas numa base de dados: `get_dupes()`. Vamos criar uma base genérica para testá-la.
 
 ```{r}
+# Criar a base de exemplo
 p_nome <- c("Athos", "Daniel", "Fernando", "Julio", "William")
 sobrenome <- c("Damiani", "Falbel", "Corrêa", "Trecenti", "Amorim")
 
-base_qualquer <- tibble::tibble(
+base_exemplo <- tibble::tibble(
   nome = sample(p_nome, 25, replace = TRUE),
   sobrenome = sample(sobrenome, 25, replace = TRUE),
   variavel_importante = rnorm(25)
 )
+# Dar uma espiada na base de exemplo
+dplyr::glimpse(base_exemplo)
 
-janitor::get_dupes(base_qualquer, nome, sobrenome)
+# Ver as duplicatas com a função get_dupes()
+janitor::get_dupes(base_exemplo, nome, sobrenome)
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.
@@ -115,15 +153,23 @@ Por fim, o `janitor` também tem funções equivalentes à `table()` para produz
 
 
 ```{r}
+# Fazer uma tabela de frequência
 mtcars %>% janitor::tabyl(cyl)
 
+# Fazer uma tabela de frequência com valores totais,
+# e porcentagem
 mtcars %>% 
   janitor::tabyl(cyl) %>% 
   janitor::adorn_totals()
 
+# Fazer uma tabela de frequência com duas variáveis,
+# e valores totais
 mtcars %>% 
   janitor::tabyl(cyl, am) %>% 
   janitor::adorn_totals(where = "col")
 ```
 
-É isso! Espero que essas dicas e o pacote `janitor` ajudem a agilizar as suas análises :)
+Esperamos que essas dicas e o pacote `janitor` ajudem a agilizar as suas análises!
+
+
+<!-- Criar outro exemplo para usar o abjutils::rm_accent() -->
