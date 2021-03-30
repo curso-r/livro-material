@@ -19,18 +19,18 @@ lakers <- tibble::as_tibble(lakers)
 lakers %>% 
   mutate(date = ymd(date))
 ## # A tibble: 34,624 x 13
-##    date       opponent game_type time  period etype team  player result points
-##    <date>     <chr>    <chr>     <chr>  <int> <chr> <chr> <chr>  <chr>   <int>
-##  1 2008-10-28 POR      home      12:00      1 jump… OFF   ""     ""          0
-##  2 2008-10-28 POR      home      11:39      1 shot  LAL   "Pau … "miss…      0
-##  3 2008-10-28 POR      home      11:37      1 rebo… LAL   "Vlad… ""          0
-##  4 2008-10-28 POR      home      11:25      1 shot  LAL   "Dere… "miss…      0
-##  5 2008-10-28 POR      home      11:23      1 rebo… LAL   "Pau … ""          0
-##  6 2008-10-28 POR      home      11:22      1 shot  LAL   "Pau … "made"      2
-##  7 2008-10-28 POR      home      11:22      1 foul  POR   "Greg… ""          0
-##  8 2008-10-28 POR      home      11:22      1 free… LAL   "Pau … "made"      1
-##  9 2008-10-28 POR      home      11:00      1 foul  LAL   "Vlad… ""          0
-## 10 2008-10-28 POR      home      10:53      1 shot  POR   "LaMa… "made"      2
+##    date       opponent game_type time  period etype  team  player  result points
+##    <date>     <chr>    <chr>     <chr>  <int> <chr>  <chr> <chr>   <chr>   <int>
+##  1 2008-10-28 POR      home      12:00      1 jump … OFF   ""      ""          0
+##  2 2008-10-28 POR      home      11:39      1 shot   LAL   "Pau G… "miss…      0
+##  3 2008-10-28 POR      home      11:37      1 rebou… LAL   "Vladi… ""          0
+##  4 2008-10-28 POR      home      11:25      1 shot   LAL   "Derek… "miss…      0
+##  5 2008-10-28 POR      home      11:23      1 rebou… LAL   "Pau G… ""          0
+##  6 2008-10-28 POR      home      11:22      1 shot   LAL   "Pau G… "made"      2
+##  7 2008-10-28 POR      home      11:22      1 foul   POR   "Greg … ""          0
+##  8 2008-10-28 POR      home      11:22      1 free … LAL   "Pau G… "made"      1
+##  9 2008-10-28 POR      home      11:00      1 foul   LAL   "Vladi… ""          0
+## 10 2008-10-28 POR      home      10:53      1 shot   POR   "LaMar… "made"      2
 ## # … with 34,614 more rows, and 3 more variables: type <chr>, x <int>, y <int>
 ```
 
@@ -41,18 +41,18 @@ Repare que `as_date()` não funciona neste caso.
 lakers %>%
   mutate(date = as_date(date))
 ## # A tibble: 34,624 x 13
-##    date       opponent game_type time  period etype team  player result points
-##    <date>     <chr>    <chr>     <chr>  <int> <chr> <chr> <chr>  <chr>   <int>
-##  1 56949-12-27 POR      home      12:00      1 jump… OFF   ""     ""          0
-##  2 56949-12-27 POR      home      11:39      1 shot  LAL   "Pau … "miss…      0
-##  3 56949-12-27 POR      home      11:37      1 rebo… LAL   "Vlad… ""          0
-##  4 56949-12-27 POR      home      11:25      1 shot  LAL   "Dere… "miss…      0
-##  5 56949-12-27 POR      home      11:23      1 rebo… LAL   "Pau … ""          0
-##  6 56949-12-27 POR      home      11:22      1 shot  LAL   "Pau … "made"      2
-##  7 56949-12-27 POR      home      11:22      1 foul  POR   "Greg… ""          0
-##  8 56949-12-27 POR      home      11:22      1 free… LAL   "Pau … "made"      1
-##  9 56949-12-27 POR      home      11:00      1 foul  LAL   "Vlad… ""          0
-## 10 56949-12-27 POR      home      10:53      1 shot  POR   "LaMa… "made"      2
+##    date       opponent game_type time  period etype  team  player  result points
+##    <date>     <chr>    <chr>     <chr>  <int> <chr>  <chr> <chr>   <chr>   <int>
+##  1 56949-12-27 POR      home      12:00      1 jump … OFF   ""      ""          0
+##  2 56949-12-27 POR      home      11:39      1 shot   LAL   "Pau G… "miss…      0
+##  3 56949-12-27 POR      home      11:37      1 rebou… LAL   "Vladi… ""          0
+##  4 56949-12-27 POR      home      11:25      1 shot   LAL   "Derek… "miss…      0
+##  5 56949-12-27 POR      home      11:23      1 rebou… LAL   "Pau G… ""          0
+##  6 56949-12-27 POR      home      11:22      1 shot   LAL   "Pau G… "made"      2
+##  7 56949-12-27 POR      home      11:22      1 foul   POR   "Greg … ""          0
+##  8 56949-12-27 POR      home      11:22      1 free … LAL   "Pau G… "made"      1
+##  9 56949-12-27 POR      home      11:00      1 foul   LAL   "Vladi… ""          0
+## 10 56949-12-27 POR      home      10:53      1 shot   POR   "LaMar… "made"      2
 ## # … with 34,614 more rows, and 3 more variables: type <chr>, x <int>, y <int>
 ```
 
@@ -174,7 +174,6 @@ lakers %>%
   dplyr::ungroup() %>%
   dplyr::group_by(period) %>% 
   dplyr::summarise(media = mean(cronometro))
-## `summarise()` ungrouping output (override with `.groups` argument)
 ## # A tibble: 4 x 2
 ##   period media
 ##    <int> <dbl>
