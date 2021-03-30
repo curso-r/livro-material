@@ -25,6 +25,10 @@ library(lubridate)
 library(magrittr)
 library(tibble)
 library(dplyr)
+
+# https://github.com/tidyverse/lubridate/issues/928
+if (grepl("darwin", R.version$os))
+  Sys.setenv("TZDIR" = "/Library/Frameworks/R.framework/Resources/share/zoneinfo/")
 ```
 
 Neste seção, falaremos sobre:

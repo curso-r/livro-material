@@ -3,13 +3,14 @@
 
 ## Arrumando banco de dados: o pacote janitor
 
-Vamos falar do pacote `janitor`, que traz algumas funções para dar aquele trato nas BDs.
+O pacote [`janitor`](https://garthtarr.github.io/meatR/janitor.html) disponibiliza algumas funções para limpar bases de dados.
 
-Antes de mais nada, instale e carregue o pacote:
+Primeiramente, instale e carregue o pacote:
 
 
 ```r
-install.packages("janitor")
+install.packages("janitor") # Instale a versão do CRAN, OU:
+
 devtools::install_github("sfirke/janitor") # Versão de desenvolvimento
 ```
 
@@ -21,14 +22,31 @@ library(janitor)
 
 ### Arrumando o nome das variáveis
 
-Assim como no post passado, utilizaremos a base com informações de pacientes com arritmia cardíaca, cujas variáveis selecionadas foram:
+Utilizaremos a base com informações de pacientes com arritmia cardíaca. O código para obter essa base de exemplo está descrito abaixo:
+
 
 
 
 
 
 ```r
-dados %>% names()
+# URL da base para baixar
+url <- "https://github.com/curso-r/livro-material/raw/master/assets/data/dados_nomes_variaveis_livro.xlsx"
+
+# Arquivo de destino onde a base deverá ser salva
+destfile <- "dados_nomes_variaveis_livro.xlsx"
+
+# Fazer o download da base
+curl::curl_download(url, destfile)
+
+# Importar a base 
+dados_brutos <- readxl::read_excel(destfile)
+```
+
+As variáveis presentes na base são:
+
+```r
+dados_brutos %>% names() # Ver o nome das variáveis
 ```
 
 ```
@@ -41,13 +59,13 @@ dados %>% names()
 ## [19] "ativ. Fisica"
 ```
 
-Os nomes têm letras maiúsculas, acentos, parênteses, pontos e barras, o que atrapalha na hora da programação. Para resolver esse problema, usamos a função `clean_names()`.
+Os nomes das variáveis contém letras maiúsculas, acentos, parênteses, pontos e barras, o que atrapalha na hora da programação. Para resolver esse problema, usamos a função `clean_names()`.
 
 
 ```r
-dados %>% 
-  janitor::clean_names() %>% 
-  names()
+dados_brutos %>% 
+  janitor::clean_names() %>% # Limpar os nomes das variáveis
+  names() # Ver o nome das variáveis
 ```
 
 ```
@@ -60,97 +78,86 @@ dados %>%
 ## [19] "ativ_fisica"
 ```
 
-Veja que a função removeu os parênteses, pontos e barras e substituiu os espaços por `_`. No entanto, ela não remove os acentos. Assim, podemos adicionar mais uma linha ao pipeline para chegar onde queremos.
+Veja que a função removeu os parênteses, pontos e barras e substituiu os espaços por `_`. 
+
+
+E para substituir na base, precisamos atribuir o resultado em um novo objeto:
 
 
 ```r
-dados %>%
-  janitor::clean_names() %>% 
-  names() %>% 
-  abjutils::rm_accent()
-```
-
-```
-##  [1] "id"                  "sexo"                "nascimento"         
-##  [4] "idade"               "inclusao"            "cor"                
-##  [7] "peso"                "altura"              "cintura"            
-## [10] "imc"                 "superficie_corporal" "tabagismo"          
-## [13] "cg_tabag_cig_dia"    "alcool_dose_semana"  "drogas_ilicitas"    
-## [16] "cafeina_dia"         "refrig_dia"          "sedentario"         
-## [19] "ativ_fisica"
-```
-
-E para substituir na base.
-
-
-```r
-nomes <- dados %>%
-  janitor::clean_names() %>% 
-  names() %>% 
-  abjutils::rm_accent()
-
-names(dados) <- nomes
+dados <- dados_brutos %>% 
+  janitor::clean_names() # Limpar os nomes das variáveis
 ```
 
 ### Removendo linhas e colunas vazias
 
 
-
-Esse banco de dados também tinha outro problema: linhas vazias. Na verdade, elas não eram completamente vazias, pois havia algumas informações de identificação do paciente, mas nenhuma outra variável tinha sido computada.
-
-
-```r
-dados[3,]
-```
-
-```
-## # A tibble: 1 x 19
-##      id sexo  nascimento          idade inclusao            cor    peso altura
-##   <int> <chr> <dttm>              <dbl> <dttm>              <chr> <dbl>  <dbl>
-## 1     3 <NA>  NA                     NA NA                  <NA>     NA     NA
-## # … with 11 more variables: cintura <chr>, imc <dbl>,
-## #   superficie_corporal <chr>, tabagismo <chr>, cg_tabag_cig_dia <dbl>,
-## #   alcool_dose_semana <dbl>, drogas_ilicitas <chr>, cafeina_dia <dbl>,
-## #   refrig_dia <dbl>, sedentario <chr>, ativ_fisica <chr>
-```
-
-Essa foi a solução que eu pensei para resolver o problema utilizando a função `remove_empty()`.
+Esse banco de dados também contém outro problema: linhas vazias. Na verdade, elas não eram completamente vazias, pois havia algumas informações de identificação da(o) paciente, mas nenhuma outra variável tinha sido computada.
 
 
 ```r
-dados <- dados %>% 
-  as.data.frame %>% 
+dados %>% 
+  dplyr::slice(3) %>% # Apresentar apenas a linha 3
+  knitr::kable()
+```
+
+
+
+| id|sexo |nascimento | idade|inclusao |cor | peso| altura|cintura | imc|superficie_corporal |tabagismo | cg_tabag_cig_dia| alcool_dose_semana|drogas_ilicitas | cafeina_dia| refrig_dia|sedentario |ativ_fisica |
+|--:|:----|:----------|-----:|:--------|:---|----:|------:|:-------|---:|:-------------------|:---------|----------------:|------------------:|:---------------|-----------:|----------:|:----------|:-----------|
+|  3|NA   |NA         |    NA|NA       |NA  |   NA|     NA|NA      |  NA|NA                  |NA        |               NA|                 NA|NA              |          NA|         NA|NA         |NA          |
+
+Para resolver o problema, é possível utilizar a função `remove_empty()`.
+
+
+```r
+dados_sem_linhas_vazias <- dados %>% 
+  as.data.frame() %>% 
   dplyr::select(-id) %>% 
   janitor::remove_empty() %>% 
-  tibble::rownames_to_column("id") %>% 
-  dplyr::select(id, everything())
+  tibble::rowid_to_column("id") %>% 
+  dplyr::select(id, everything()) %>%
+  tibble::as_tibble()
+
+dados_sem_linhas_vazias %>% knitr::kable()
 ```
 
-```
-## value for "which" not specified, defaulting to c("rows", "cols")
-```
 
-```r
-dados %>% tibble::as_tibble()
-```
 
-```
-## # A tibble: 4 x 19
-##   id    sexo  nascimento          idade inclusao            cor    peso altura
-##   <chr> <chr> <dttm>              <dbl> <dttm>              <chr> <dbl>  <dbl>
-## 1 1     F     1964-01-31 00:00:00    41 2006-02-17 00:00:00 bran…    75   1.63
-## 2 2     M     1959-01-28 00:00:00    45 2005-11-29 00:00:00 negra    71   1.7 
-## 3 4     M     1957-09-13 00:00:00    50 2008-02-13 00:00:00 NT       80   1.64
-## 4 5     F     1938-02-06 00:00:00    71 2009-06-25 00:00:00 parda    56   1.51
-## # … with 11 more variables: cintura <chr>, imc <dbl>,
-## #   superficie_corporal <chr>, tabagismo <chr>, cg_tabag_cig_dia <dbl>,
-## #   alcool_dose_semana <dbl>, drogas_ilicitas <chr>, cafeina_dia <dbl>,
-## #   refrig_dia <dbl>, sedentario <chr>, ativ_fisica <chr>
-```
+| id|sexo |nascimento | idade|inclusao   |cor    | peso| altura|cintura |      imc|superficie_corporal |tabagismo | cg_tabag_cig_dia| alcool_dose_semana|drogas_ilicitas | cafeina_dia| refrig_dia|sedentario |ativ_fisica  |
+|--:|:----|:----------|-----:|:----------|:------|----:|------:|:-------|--------:|:-------------------|:---------|----------------:|------------------:|:---------------|-----------:|----------:|:----------|:------------|
+|  1|F    |1964-01-31 |    41|2006-02-17 |branca |   75|   1.63|98      | 28.22839|1.81                |N         |                0|                  0|N               |         100|          0|S          |N            |
+|  2|M    |1959-01-28 |    45|2005-11-29 |negra  |   71|   1.70|NT      | 24.57000|1.83                |N         |                0|                 35|N               |          50|        300|N          |insuficiente |
+|  3|M    |1957-09-13 |    50|2008-02-13 |NT     |   80|   1.64|NT      | 29.74420|1.87                |N         |                0|                  0|N               |         500|          0|S          |N            |
+|  4|F    |1938-02-06 |    71|2009-06-25 |parda  |   56|   1.51|96      | 24.56033|1,51                |N         |                0|                  0|N               |          50|          0|S          |N            |
 
-Eu precisei converter para `data.frame` primeiro porque não é possível definir os nomes das linhas de uma `tibble`. Se a linha estivesse completamente vazia, bastaria usar diretamente a função `remove_empty_rows()`.
+Foi necessário converter para `data.frame` primeiro porque não é possível definir os nomes das linhas de uma `tibble`. Se a linha estivesse completamente vazia, bastaria usar diretamente a função `remove_empty_rows()`.
 
 Equivalentemente para colunas, existe a função `remove_empty_cols()`.
+
+Outra forma de realizar este mesmo procedimento é utilizando a função `drop_na()` do pacote `tidyr`:
+
+
+```r
+dados_sem_linhas_vazias <- dados %>% 
+  tidyr::drop_na(-id) %>%
+  dplyr::select(-id) %>% 
+  tibble::rowid_to_column("id") %>% 
+  dplyr::relocate(id, .before = sexo)
+
+dados_sem_linhas_vazias %>% knitr::kable()
+```
+
+
+
+| id|sexo |nascimento | idade|inclusao   |cor    | peso| altura|cintura |      imc|superficie_corporal |tabagismo | cg_tabag_cig_dia| alcool_dose_semana|drogas_ilicitas | cafeina_dia| refrig_dia|sedentario |ativ_fisica  |
+|--:|:----|:----------|-----:|:----------|:------|----:|------:|:-------|--------:|:-------------------|:---------|----------------:|------------------:|:---------------|-----------:|----------:|:----------|:------------|
+|  1|F    |1964-01-31 |    41|2006-02-17 |branca |   75|   1.63|98      | 28.22839|1.81                |N         |                0|                  0|N               |         100|          0|S          |N            |
+|  2|M    |1959-01-28 |    45|2005-11-29 |negra  |   71|   1.70|NT      | 24.57000|1.83                |N         |                0|                 35|N               |          50|        300|N          |insuficiente |
+|  3|M    |1957-09-13 |    50|2008-02-13 |NT     |   80|   1.64|NT      | 29.74420|1.87                |N         |                0|                  0|N               |         500|          0|S          |N            |
+|  4|F    |1938-02-06 |    71|2009-06-25 |parda  |   56|   1.51|96      | 24.56033|1,51                |N         |                0|                  0|N               |          50|          0|S          |N            |
+
+
 
 ### Identificando linhas duplicadas
 
@@ -158,38 +165,53 @@ O pacote `janitor` possui uma função para identificar entradas duplicadas numa
 
 
 ```r
+# Criar a base de exemplo
 p_nome <- c("Athos", "Daniel", "Fernando", "Julio", "William")
 sobrenome <- c("Damiani", "Falbel", "Corrêa", "Trecenti", "Amorim")
 
-base_qualquer <- tibble::tibble(
+base_exemplo <- tibble::tibble(
   nome = sample(p_nome, 25, replace = TRUE),
   sobrenome = sample(sobrenome, 25, replace = TRUE),
   variavel_importante = rnorm(25)
 )
-
-janitor::get_dupes(base_qualquer, nome, sobrenome)
+# Dar uma espiada na base de exemplo
+dplyr::glimpse(base_exemplo)
 ```
 
 ```
-## # A tibble: 16 x 4
-##    nome     sobrenome dupe_count variavel_importante
-##    <chr>    <chr>          <int>               <dbl>
-##  1 Daniel   Damiani            2              0.349 
-##  2 Daniel   Damiani            2             -0.308 
-##  3 Fernando Amorim             2             -0.665 
-##  4 Fernando Amorim             2             -0.931 
-##  5 Fernando Damiani            2              1.06  
-##  6 Fernando Damiani            2              1.44  
-##  7 Julio    Falbel             3              1.42  
-##  8 Julio    Falbel             3             -0.0509
-##  9 Julio    Falbel             3              1.88  
-## 10 William  Amorim             2             -1.75  
-## 11 William  Amorim             2              0.526 
-## 12 William  Corrêa             3             -0.203 
-## 13 William  Corrêa             3              1.73  
-## 14 William  Corrêa             3              0.429 
-## 15 William  Trecenti           2             -0.564 
-## 16 William  Trecenti           2              0.0857
+## Rows: 25
+## Columns: 3
+## $ nome                <chr> "Julio", "William", "Athos", "Julio", "William", "…
+## $ sobrenome           <chr> "Corrêa", "Amorim", "Corrêa", "Amorim", "Damiani",…
+## $ variavel_importante <dbl> 0.08095011, 0.66944460, -0.12963907, 1.94892395, 0…
+```
+
+```r
+# Ver as duplicatas com a função get_dupes()
+janitor::get_dupes(base_exemplo, nome, sobrenome)
+```
+
+```
+## # A tibble: 17 x 4
+##    nome    sobrenome dupe_count variavel_importante
+##    <chr>   <chr>          <int>               <dbl>
+##  1 Athos   Corrêa             3             -0.130 
+##  2 Athos   Corrêa             3              0.462 
+##  3 Athos   Corrêa             3              0.530 
+##  4 Athos   Falbel             2             -0.980 
+##  5 Athos   Falbel             2             -0.545 
+##  6 Daniel  Trecenti           3             -1.57  
+##  7 Daniel  Trecenti           3             -0.840 
+##  8 Daniel  Trecenti           3              0.515 
+##  9 Julio   Amorim             2              1.95  
+## 10 Julio   Amorim             2              0.384 
+## 11 Julio   Corrêa             2              0.0810
+## 12 Julio   Corrêa             2             -0.0896
+## 13 William Amorim             2              0.669 
+## 14 William Amorim             2              2.06  
+## 15 William Corrêa             3              1.78  
+## 16 William Corrêa             3             -0.477 
+## 17 William Corrêa             3             -0.337
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.
@@ -204,6 +226,7 @@ Por fim, o `janitor` também tem funções equivalentes à `table()` para produz
 
 
 ```r
+# Fazer uma tabela de frequência
 mtcars %>% janitor::tabyl(cyl)
 ```
 
@@ -215,6 +238,8 @@ mtcars %>% janitor::tabyl(cyl)
 ```
 
 ```r
+# Fazer uma tabela de frequência com valores totais,
+# e porcentagem
 mtcars %>% 
   janitor::tabyl(cyl) %>% 
   janitor::adorn_totals()
@@ -229,6 +254,8 @@ mtcars %>%
 ```
 
 ```r
+# Fazer uma tabela de frequência com duas variáveis,
+# e valores totais
 mtcars %>% 
   janitor::tabyl(cyl, am) %>% 
   janitor::adorn_totals(where = "col")
@@ -241,4 +268,7 @@ mtcars %>%
 ##    8 12 2    14
 ```
 
-É isso! Espero que essas dicas e o pacote `janitor` ajudem a agilizar as suas análises :)
+Esperamos que essas dicas e o pacote `janitor` ajudem a agilizar as suas análises!
+
+
+<!-- Criar outro exemplo para usar o abjutils::rm_accent() -->
