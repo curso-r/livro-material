@@ -104,7 +104,7 @@ Repare que a função `date()` do R base retorna a data e horário no momento da
 
 ```r
 base::date()
-## [1] "Tue Mar 30 15:40:06 2021"
+## [1] "Mon Mar 22 11:34:07 2021"
 ```
 
 ### Funções úteis
@@ -162,11 +162,9 @@ Também existem funções para extrair a data no instante da execução.
 ```r
 # Data e horário do dia em que essa página foi editada pela última vez.
 today() 
-## Warning in with_tz(Sys.time(), tzone): Unrecognized time zone ''
-## [1] "2021-03-30"
+## [1] "2021-03-22"
 now()
-## Warning in with_tz(Sys.time(), tzone): Unrecognized time zone ''
-## [1] "2021-03-30 15:40:06 -03"
+## [1] "2021-03-22 11:34:07 -03"
 ```
 
 ### Fusos horários

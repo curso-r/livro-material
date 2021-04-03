@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7.2 O pacote dplyr | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="generator" content="bookdown 0.21.7 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7.2 O pacote dplyr | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="/assets/img/logo.png" />
+  <meta property="og:image" content="assets/img/logo.png" />
   <meta property="og:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="github-repo" content="curso-r/livro-material" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="7.2 O pacote dplyr | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="twitter:image" content="/assets/img/logo.png" />
+  <meta name="twitter:image" content="assets/img/logo.png" />
 
 <meta name="author" content="Curso-R" />
 
@@ -32,7 +32,6 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="7-1-tibbles.html"/>
 <link rel="next" href="7-3-tidyr.html"/>
-<script src="libs/header-attrs-2.7.4/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,11 +49,12 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.15/datatables.js"></script>
+<script src="libs/datatables-binding-0.16/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -75,18 +75,18 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -106,7 +106,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -139,7 +139,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-
 <link rel="stylesheet" href="assets/style.css" type="text/css" />
 </head>
 
@@ -157,17 +156,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre</a></li>
-<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a>
-<ul>
+<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a><ul>
+<li class="chapter" data-level="1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
 <li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
-<li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a>
-<ul>
+<li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a><ul>
 <li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
 <li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
 <li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
@@ -176,8 +172,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#rtools"><i class="fa fa-check"></i><b>1.3.6</b> Rtools</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
-<ul>
+<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a><ul>
 <li class="chapter" data-level="2.1" data-path="2-1-telas.html"><a href="2-1-telas.html"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
 <li class="chapter" data-level="2.2" data-path="2-2-atalhos.html"><a href="2-2-atalhos.html"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
 <li class="chapter" data-level="2.3" data-path="2-3-projetos.html"><a href="2-3-projetos.html"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
@@ -186,76 +181,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="2-6-addins.html"><a href="2-6-addins.html"><i class="fa fa-check"></i><b>2.6</b> Addins</a></li>
 <li class="chapter" data-level="2.7" data-path="2-7-snippets.html"><a href="2-7-snippets.html"><i class="fa fa-check"></i><b>2.7</b> Snippets</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a>
-<ul>
+<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a><ul>
+<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
 <li class="chapter" data-level="3.1.2" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
 <li class="chapter" data-level="3.1.3" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a>
-<ul>
+<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
 <li class="chapter" data-level="" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a>
-<ul>
+<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a><ul>
 <li class="chapter" data-level="" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="3-4-data-frames.html"><a href="3-4-data-frames.html"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
-<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a>
-<ul>
+<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a><ul>
 <li class="chapter" data-level="3.5.1" data-path="3-5-classes.html"><a href="3-5-classes.html#exercícios-2"><i class="fa fa-check"></i><b>3.5.1</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a>
-<ul>
+<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a><ul>
 <li class="chapter" data-level="" data-path="3-6-vetores.html"><a href="3-6-vetores.html#exercícios-3"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a>
-<ul>
+<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a><ul>
 <li class="chapter" data-level="" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html#exercícios-4"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a>
-<ul>
+<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a><ul>
 <li class="chapter" data-level="" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.9" data-path="3-9-listas.html"><a href="3-9-listas.html"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
-<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a>
-<ul>
+<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
 <li class="chapter" data-level="" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html#exercícios-6"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a>
-<ul>
+<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a><ul>
 <li class="chapter" data-level="" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html#exercícios-7"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a>
-<ul>
+<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
 <li class="chapter" data-level="3.12.1" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
 <li class="chapter" data-level="3.12.2" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#iteradores-for-e-while"><i class="fa fa-check"></i><b>3.12.2</b> Iteradores: for e while</a></li>
 <li class="chapter" data-level="" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#exercícios-8"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a>
-<ul>
+<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a><ul>
 <li class="chapter" data-level="3.13.1" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#matrizes"><i class="fa fa-check"></i><b>3.13.1</b> Matrizes</a></li>
 <li class="chapter" data-level="3.13.2" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#fatores"><i class="fa fa-check"></i><b>3.13.2</b> Fatores</a></li>
 <li class="chapter" data-level="3.13.3" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#gráficos-r-base"><i class="fa fa-check"></i><b>3.13.3</b> Gráficos (R base)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a>
-<ul>
+<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-cran"><i class="fa fa-check"></i><b>4.1.1</b> Via CRAN</a></li>
 <li class="chapter" data-level="4.1.2" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-github"><i class="fa fa-check"></i><b>4.1.2</b> Via Github</a></li>
 <li class="chapter" data-level="4.1.3" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-arquivo-.zip-ou-.tar.gz"><i class="fa fa-check"></i><b>4.1.3</b> Via arquivo .zip ou .tar.gz</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="4-2-tidyverse.html"><a href="4-2-tidyverse.html"><i class="fa fa-check"></i><b>4.2</b> Tidyverse</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a>
-<ul>
+<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a><ul>
 <li class="chapter" data-level="5.1" data-path="5-1-caminhos.html"><a href="5-1-caminhos.html"><i class="fa fa-check"></i><b>5.1</b> Caminhos</a></li>
-<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a>
-<ul>
+<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="5-2-readr.html"><a href="5-2-readr.html#lendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.1</b> Lendo arquivos de texto</a></li>
 <li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.2</b> Locale</a></li>
 <li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.3</b> Parseando valores</a></li>
@@ -266,19 +245,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3" data-path="5-3-readxl.html"><a href="5-3-readxl.html"><i class="fa fa-check"></i><b>5.3</b> Os pacotes readxl e writexl</a></li>
 <li class="chapter" data-level="5.4" data-path="5-4-haven.html"><a href="5-4-haven.html"><i class="fa fa-check"></i><b>5.4</b> haven</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a>
-<ul>
+<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
+<li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a><ul>
 <li class="chapter" data-level="" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html#exercícios-10"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a>
-<ul>
+<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
 <li class="chapter" data-level="7.1" data-path="7-1-tibbles.html"><a href="7-1-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Tibbles</a></li>
-<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a>
-<ul>
+<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#selecionando-colunas"><i class="fa fa-check"></i><b>7.2.1</b> Selecionando colunas</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#ordenando-a-base"><i class="fa fa-check"></i><b>7.2.2</b> Ordenando a base</a></li>
 <li class="chapter" data-level="7.2.3" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#o-pipe-em-ação"><i class="fa fa-check"></i><b>7.2.3</b> O pipe em ação</a></li>
@@ -286,31 +261,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.5" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#modificando-e-criando-novas-colunas"><i class="fa fa-check"></i><b>7.2.5</b> Modificando e criando novas colunas</a></li>
 <li class="chapter" data-level="7.2.6" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#summarisando-a-base"><i class="fa fa-check"></i><b>7.2.6</b> Summarisando a base</a></li>
 <li class="chapter" data-level="7.2.7" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#juntando-duas-bases"><i class="fa fa-check"></i><b>7.2.7</b> Juntando duas bases</a></li>
+<li class="chapter" data-level="7.2.8" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#dplyr-1.0"><i class="fa fa-check"></i><b>7.2.8</b> dplyr 1.0</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a>
-<ul>
-<li class="chapter" data-level="7.3.1" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#gather"><i class="fa fa-check"></i><b>7.3.1</b> <code>gather()</code></a></li>
-<li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#spread"><i class="fa fa-check"></i><b>7.3.2</b> <code>spread()</code></a></li>
-<li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#outras-funções-do-tidyr"><i class="fa fa-check"></i><b>7.3.3</b> Outras funções do <code>tidyr</code></a></li>
+<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#separate-e-unite"><i class="fa fa-check"></i><b>7.3.1</b> <code>separate()</code> e <code>unite()</code></a></li>
+<li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#pivotagem"><i class="fa fa-check"></i><b>7.3.2</b> Pivotagem</a></li>
+<li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#list-columns"><i class="fa fa-check"></i><b>7.3.3</b> <em>List columns</em></a></li>
+<li class="chapter" data-level="7.3.4" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#exercícios-18"><i class="fa fa-check"></i><b>7.3.4</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a>
-<ul>
+<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a><ul>
 <li class="chapter" data-level="7.4.1" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#introdução"><i class="fa fa-check"></i><b>7.4.1</b> Introdução</a></li>
 <li class="chapter" data-level="7.4.2" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-básicas"><i class="fa fa-check"></i><b>7.4.2</b> Funções básicas</a></li>
 <li class="chapter" data-level="7.4.3" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#expressões-regulares"><i class="fa fa-check"></i><b>7.4.3</b> Expressões Regulares</a></li>
 <li class="chapter" data-level="7.4.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-que-utilizam-regex"><i class="fa fa-check"></i><b>7.4.4</b> Funções que utilizam regex</a></li>
-<li class="chapter" data-level="7.4.5" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#exercícios-17"><i class="fa fa-check"></i><b>7.4.5</b> Exercícios</a></li>
+<li class="chapter" data-level="7.4.5" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#exercícios-19"><i class="fa fa-check"></i><b>7.4.5</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.5</b> O pacote lubridate</a>
-<ul>
+<li class="chapter" data-level="7.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.5</b> O pacote lubridate</a><ul>
 <li class="chapter" data-level="7.5.1" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#a-classe-date"><i class="fa fa-check"></i><b>7.5.1</b> A classe <code>date</code></a></li>
 <li class="chapter" data-level="7.5.2" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#funções-úteis"><i class="fa fa-check"></i><b>7.5.2</b> Funções úteis</a></li>
 <li class="chapter" data-level="7.5.3" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#fusos-horários"><i class="fa fa-check"></i><b>7.5.3</b> Fusos horários</a></li>
 <li class="chapter" data-level="7.5.4" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#operações-com-datas"><i class="fa fa-check"></i><b>7.5.4</b> Operações com datas</a></li>
-<li class="chapter" data-level="7.5.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#exercícios-18"><i class="fa fa-check"></i><b>7.5.5</b> Exercícios</a></li>
+<li class="chapter" data-level="7.5.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#exercícios-20"><i class="fa fa-check"></i><b>7.5.5</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="7-6-forcats.html"><a href="7-6-forcats.html"><i class="fa fa-check"></i><b>7.6</b> O pacote forcats</a>
-<ul>
+<li class="chapter" data-level="7.6" data-path="7-6-forcats.html"><a href="7-6-forcats.html"><i class="fa fa-check"></i><b>7.6</b> O pacote forcats</a><ul>
 <li class="chapter" data-level="7.6.1" data-path="7-6-forcats.html"><a href="7-6-forcats.html#o-que-são-fatores"><i class="fa fa-check"></i><b>7.6.1</b> O que são fatores?</a></li>
 <li class="chapter" data-level="7.6.2" data-path="7-6-forcats.html"><a href="7-6-forcats.html#modificando-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.2</b> Modificando níveis de um fator</a></li>
 <li class="chapter" data-level="7.6.3" data-path="7-6-forcats.html"><a href="7-6-forcats.html#mudando-a-ordem-dos-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.3</b> Mudando a ordem dos níveis de um fator</a></li>
@@ -318,10 +291,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.6.5" data-path="7-6-forcats.html"><a href="7-6-forcats.html#outras-funções-úteis"><i class="fa fa-check"></i><b>7.6.5</b> Outras funções úteis</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a>
-<ul>
+<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a><ul>
+<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a><ul>
 <li class="chapter" data-level="8.1.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-pontos-dispersão"><i class="fa fa-check"></i><b>8.1.1</b> Gráficos de pontos (dispersão)</a></li>
 <li class="chapter" data-level="8.1.2" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-linhas"><i class="fa fa-check"></i><b>8.1.2</b> Gráficos de linhas</a></li>
 <li class="chapter" data-level="8.1.3" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-barras"><i class="fa fa-check"></i><b>8.1.3</b> Gráficos de barras</a></li>
@@ -330,18 +301,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.6" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#escalas"><i class="fa fa-check"></i><b>8.1.6</b> Escalas</a></li>
 <li class="chapter" data-level="8.1.7" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#temas"><i class="fa fa-check"></i><b>8.1.7</b> Temas</a></li>
 <li class="chapter" data-level="8.1.8" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>8.1.8</b> Juntando gráficos</a></li>
-<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-19"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
+<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-21"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a>
-<ul>
+<li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a><ul>
 <li class="chapter" data-level="8.2.1" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#gghighlight"><i class="fa fa-check"></i><b>8.2.1</b> gghighlight</a></li>
 <li class="chapter" data-level="8.2.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#ggridges"><i class="fa fa-check"></i><b>8.2.2</b> ggridges</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="9-relatorios.html"><a href="9-relatorios.html"><i class="fa fa-check"></i><b>9</b> Relatórios</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html"><i class="fa fa-check"></i><b>9.1</b> Markdown</a>
-<ul>
+<li class="chapter" data-level="9" data-path="9-relatorios.html"><a href="9-relatorios.html"><i class="fa fa-check"></i><b>9</b> Relatórios</a><ul>
+<li class="chapter" data-level="9.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html"><i class="fa fa-check"></i><b>9.1</b> Markdown</a><ul>
 <li class="chapter" data-level="9.1.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html#ênfase"><i class="fa fa-check"></i><b>9.1.1</b> Ênfase</a></li>
 <li class="chapter" data-level="9.1.2" data-path="9-1-markdown.html"><a href="9-1-markdown.html#títulos"><i class="fa fa-check"></i><b>9.1.2</b> Títulos</a></li>
 <li class="chapter" data-level="9.1.3" data-path="9-1-markdown.html"><a href="9-1-markdown.html#listas-1"><i class="fa fa-check"></i><b>9.1.3</b> Listas</a></li>
@@ -353,8 +321,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1.9" data-path="9-1-markdown.html"><a href="9-1-markdown.html#recapitulando"><i class="fa fa-check"></i><b>9.1.9</b> Recapitulando</a></li>
 <li class="chapter" data-level="" data-path="9-1-markdown.html"><a href="9-1-markdown.html#exercicios-md"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a>
-<ul>
+<li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a><ul>
 <li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#códigos-em-r"><i class="fa fa-check"></i><b>9.2.1</b> Códigos em R</a></li>
 <li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#imagens-1"><i class="fa fa-check"></i><b>9.2.2</b> Imagens</a></li>
 <li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#tabelas-1"><i class="fa fa-check"></i><b>9.2.3</b> Tabelas</a></li>
@@ -363,20 +330,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="10-funcionais.html"><a href="10-funcionais.html"><i class="fa fa-check"></i><b>10</b> Funcionais</a></li>
-<li class="chapter" data-level="11" data-path="11-misc.html"><a href="11-misc.html"><i class="fa fa-check"></i><b>11</b> Miscelânea</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>11.1</b> Arrumando banco de dados: o pacote janitor</a>
-<ul>
+<li class="chapter" data-level="11" data-path="11-misc.html"><a href="11-misc.html"><i class="fa fa-check"></i><b>11</b> Miscelânea</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>11.1</b> Arrumando banco de dados: o pacote janitor</a><ul>
 <li class="chapter" data-level="11.1.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#arrumando-o-nome-das-variáveis"><i class="fa fa-check"></i><b>11.1.1</b> Arrumando o nome das variáveis</a></li>
 <li class="chapter" data-level="11.1.2" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#removendo-linhas-e-colunas-vazias"><i class="fa fa-check"></i><b>11.1.2</b> Removendo linhas e colunas vazias</a></li>
 <li class="chapter" data-level="11.1.3" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#identificando-linhas-duplicadas"><i class="fa fa-check"></i><b>11.1.3</b> Identificando linhas duplicadas</a></li>
 <li class="chapter" data-level="11.1.4" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>11.1.4</b> Outras funções</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="12-respostas.html"><a href="12-respostas.html"><i class="fa fa-check"></i><b>12</b> Respostas</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html"><i class="fa fa-check"></i><b>12.1</b> R básico</a>
-<ul>
+<li class="chapter" data-level="12" data-path="12-respostas.html"><a href="12-respostas.html"><i class="fa fa-check"></i><b>12</b> Respostas</a><ul>
+<li class="chapter" data-level="12.1" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html"><i class="fa fa-check"></i><b>12.1</b> R básico</a><ul>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#objetos-e-funções"><i class="fa fa-check"></i>Objetos e funções</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#classes-1"><i class="fa fa-check"></i>Classes</a></li>
@@ -387,13 +350,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i>Mais sobre funções</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#controle-de-fluxo-1"><i class="fa fa-check"></i>Controle de fluxo</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="12-2-importação.html"><a href="12-2-importação.html"><i class="fa fa-check"></i><b>12.2</b> Importação</a>
-<ul>
+<li class="chapter" data-level="12.2" data-path="12-2-importação.html"><a href="12-2-importação.html"><i class="fa fa-check"></i><b>12.2</b> Importação</a><ul>
 <li class="chapter" data-level="" data-path="12-2-importação.html"><a href="12-2-importação.html#o-pacote-readr"><i class="fa fa-check"></i>O pacote readr</a></li>
 </ul></li>
 <li class="chapter" data-level="12.3" data-path="12-3-pipe-1.html"><a href="12-3-pipe-1.html"><i class="fa fa-check"></i><b>12.3</b> Pipe</a></li>
-<li class="chapter" data-level="12.4" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>12.4</b> O pacote dplyr</a>
-<ul>
+<li class="chapter" data-level="12.4" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>12.4</b> O pacote dplyr</a><ul>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#selecionando-colunas-1"><i class="fa fa-check"></i>Selecionando colunas</a></li>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#ordenando-a-base-1"><i class="fa fa-check"></i>Ordenando a base</a></li>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#filtrando-linhas-1"><i class="fa fa-check"></i>Filtrando linhas</a></li>
@@ -405,8 +366,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.6" data-path="12-6-o-pacote-lubridate-1.html"><a href="12-6-o-pacote-lubridate-1.html"><i class="fa fa-check"></i><b>12.6</b> O pacote lubridate</a></li>
 <li class="chapter" data-level="12.7" data-path="12-7-o-pacote-ggplot2-1.html"><a href="12-7-o-pacote-ggplot2-1.html"><i class="fa fa-check"></i><b>12.7</b> O pacote ggplot2</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a>
-<ul>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i>Programação em R</a></li>
 </ul></li>
@@ -430,7 +390,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="dplyr" class="section level2" number="7.2">
+<div id="dplyr" class="section level2">
 <h2><span class="header-section-number">7.2</span> O pacote dplyr</h2>
 <p>O <code>dplyr</code> é o pacote mais útil para realizar transformação de dados, aliando simplicidade e eficiência de uma forma elegante. Os scripts em R que fazem uso inteligente dos verbos <code>dplyr</code> e as facilidades do operador <em>pipe</em> tendem a ficar mais legíveis e organizados sem perder velocidade de execução.</p>
 <p>As principais funções do <code>dplyr</code> são:</p>
@@ -456,33 +416,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>É possível trabalhar com diferentes fontes de dados, como bases relacionais (SQL) e <code>data.table</code>.</li>
 </ul>
 <p>Se você ainda não tiver o <code>dplyr</code> instalado, rode o código abaixo.</p>
-<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="7-2-dplyr.html#cb233-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
-<span id="cb233-2"><a href="7-2-dplyr.html#cb233-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="7-2-dplyr.html#cb233-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
+<span id="cb233-2"><a href="7-2-dplyr.html#cb233-2"></a><span class="kw">library</span>(dplyr)</span></code></pre></div>
 <p>Neste capítulo, vamos trabalhar com uma base de filmes do IMDB. Essa base pode ser baixada <a href="https://github.com/curso-r/livro-material/raw/master/assets/data/imdb.rds">clicando aqui</a>.</p>
 <p>Assim, utilizaremos o objeto <code>imdb</code> para acessar os dados.</p>
-<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="7-2-dplyr.html#cb234-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_rds</span>(<span class="st">&quot;imdb.rds&quot;</span>)</span>
-<span id="cb234-2"><a href="7-2-dplyr.html#cb234-2" aria-hidden="true" tabindex="-1"></a>imdb</span></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="7-2-dplyr.html#cb234-1"></a>imdb &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_rds</span>(<span class="st">&quot;imdb.rds&quot;</span>)</span>
+<span id="cb234-2"><a href="7-2-dplyr.html#cb234-2"></a>imdb</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 15
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
-##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
-##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
-##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
-##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
-##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
-##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
-##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
-##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
-##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
-## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
+##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
+##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
+##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
+##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
+##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
+##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
+##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
+##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
+##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
+## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <p>Agora, vamos avaliar com mais detalhes as principais funções do pacote <code>dplyr</code>.</p>
-<div id="selecionando-colunas" class="section level3" number="7.2.1">
+<div id="selecionando-colunas" class="section level3">
 <h3><span class="header-section-number">7.2.1</span> Selecionando colunas</h3>
 <p>Para selecionar colunas, utilizamos a função <code>select()</code>.</p>
 <p>O primeiro argumento da função é a base de dados e os demais argumentos são os nomes das colunas que você gostaria de selecionar. Repare que você não precisa colocar o nome da coluna entre aspas.</p>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="7-2-dplyr.html#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(imdb, titulo)</span></code></pre></div>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="7-2-dplyr.html#cb236-1"></a><span class="kw">select</span>(imdb, titulo)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 1
 ##    titulo                                     
 ##    &lt;chr&gt;                                      
@@ -498,7 +458,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 Pirates of the Caribbean: Dead Man&#39;s Chest 
 ## # … with 3,797 more rows</code></pre>
 <p>Você também pode selecionar várias colunas.</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="7-2-dplyr.html#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(imdb, titulo, ano, orcamento)</span></code></pre></div>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="7-2-dplyr.html#cb238-1"></a><span class="kw">select</span>(imdb, titulo, ano, orcamento)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 3
 ##    titulo                                        ano orcamento
 ##    &lt;chr&gt;                                       &lt;int&gt;     &lt;int&gt;
@@ -514,7 +474,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 Pirates of the Caribbean: Dead Man&#39;s Chest   2006 225000000
 ## # … with 3,797 more rows</code></pre>
 <p>O operador <code>:</code> é muito útil para selecionar colunas consecutivas.</p>
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="7-2-dplyr.html#cb240-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(imdb, titulo<span class="sc">:</span>cor)</span></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="7-2-dplyr.html#cb240-1"></a><span class="kw">select</span>(imdb, titulo<span class="op">:</span>cor)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 5
 ##    titulo                                     ano diretor          duracao cor  
 ##    &lt;chr&gt;                                    &lt;int&gt; &lt;chr&gt;              &lt;int&gt; &lt;chr&gt;
@@ -536,7 +496,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>contains()</code>: para colunas que contêm um texto padrão</li>
 </ul>
 <p>Selecionamos a seguir todas as colunas que começam com o texto “ator”.</p>
-<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="7-2-dplyr.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(imdb, <span class="fu">starts_with</span>(<span class="st">&quot;ator&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="7-2-dplyr.html#cb242-1"></a><span class="kw">select</span>(imdb, <span class="kw">starts_with</span>(<span class="st">&quot;ator&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 3
 ##    ator_1          ator_2            ator_3              
 ##    &lt;chr&gt;           &lt;chr&gt;             &lt;chr&gt;               
@@ -552,38 +512,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 Johnny Depp     Orlando Bloom     Jack Davenport      
 ## # … with 3,797 more rows</code></pre>
 <p>Para retirar colunas da base, base acrescentar um <code>-</code> antes da seleção.</p>
-<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="7-2-dplyr.html#cb244-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span></span>
-<span id="cb244-2"><a href="7-2-dplyr.html#cb244-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>ano, <span class="sc">-</span> diretor)</span></code></pre></div>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="7-2-dplyr.html#cb244-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb244-2"><a href="7-2-dplyr.html#cb244-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>ano, <span class="op">-</span><span class="st"> </span>diretor)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 13
-##    titulo  duracao cor   generos pais  classificacao orcamento receita nota_imdb
-##    &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;   &lt;int&gt;     &lt;dbl&gt;
-##  1 Avatar      178 Color Action… USA   A partir de … 237000000  7.61e8       7.9
-##  2 Pirate…     169 Color Action… USA   A partir de … 300000000  3.09e8       7.1
-##  3 The Da…     164 Color Action… USA   A partir de … 250000000  4.48e8       8.5
-##  4 John C…     132 Color Action… USA   A partir de … 263700000  7.31e7       6.6
-##  5 Spider…     156 Color Action… USA   A partir de … 258000000  3.37e8       6.2
-##  6 Tangle…     100 Color Advent… USA   Livre         260000000  2.01e8       7.8
-##  7 Avenge…     141 Color Action… USA   A partir de … 250000000  4.59e8       7.5
-##  8 Batman…     183 Color Action… USA   A partir de … 250000000  3.30e8       6.9
-##  9 Superm…     169 Color Action… USA   A partir de … 209000000  2.00e8       6.1
-## 10 Pirate…     151 Color Action… USA   A partir de … 225000000  4.23e8       7.3
+##    titulo duracao cor   generos pais  classificacao orcamento receita nota_imdb
+##    &lt;chr&gt;    &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;   &lt;int&gt;     &lt;dbl&gt;
+##  1 Avata…     178 Color Action… USA   A partir de … 237000000  7.61e8       7.9
+##  2 Pirat…     169 Color Action… USA   A partir de … 300000000  3.09e8       7.1
+##  3 The D…     164 Color Action… USA   A partir de … 250000000  4.48e8       8.5
+##  4 John …     132 Color Action… USA   A partir de … 263700000  7.31e7       6.6
+##  5 Spide…     156 Color Action… USA   A partir de … 258000000  3.37e8       6.2
+##  6 Tangl…     100 Color Advent… USA   Livre         260000000  2.01e8       7.8
+##  7 Aveng…     141 Color Action… USA   A partir de … 250000000  4.59e8       7.5
+##  8 Batma…     183 Color Action… USA   A partir de … 250000000  3.30e8       6.9
+##  9 Super…     169 Color Action… USA   A partir de … 209000000  2.00e8       6.1
+## 10 Pirat…     151 Color Action… USA   A partir de … 225000000  4.23e8       7.3
 ## # … with 3,797 more rows, and 4 more variables: likes_facebook &lt;int&gt;,
 ## #   ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
-<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="7-2-dplyr.html#cb246-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span></span>
-<span id="cb246-2"><a href="7-2-dplyr.html#cb246-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">starts_with</span>(<span class="st">&quot;ator&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="7-2-dplyr.html#cb246-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb246-2"><a href="7-2-dplyr.html#cb246-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">starts_with</span>(<span class="st">&quot;ator&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 12
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
-##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
-##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
-##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
-##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
-##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
-##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
-##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
-##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
-##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
-## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
+##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
+##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
+##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
+##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
+##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
+##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
+##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
+##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
+##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
+## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 3 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;</code></pre>
 <div id="exercícios-11" class="section level4 unnumbered">
@@ -595,57 +555,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>4.</strong> Usando a função <code>select()</code> (e seus ajudantes), escreva códigos que retornem a base IMDB sem as colunas <code>ator_1</code>, <code>ator_2</code> e <code>ator_3.</code> Escreva todas as soluções diferentes que você conseguir pensar.</p>
 </div>
 </div>
-<div id="ordenando-a-base" class="section level3" number="7.2.2">
+<div id="ordenando-a-base" class="section level3">
 <h3><span class="header-section-number">7.2.2</span> Ordenando a base</h3>
 <p>Para ordenar linhas, utilizamos a função <code>arrange()</code>. O primeiro argumento é a base de dados. Os demais argumentos são as colunas pelas quais queremos ordenar as linhas. No exemplo a seguir, ordenamos as linhas da base por ordem crescente de orçamento.</p>
-<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="7-2-dplyr.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(imdb, orcamento)</span></code></pre></div>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="7-2-dplyr.html#cb248-1"></a><span class="kw">arrange</span>(imdb, orcamento)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 15
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
-##  1 Tarnati…  2003 Jonatha…      88 Color Biograph… USA   Outros              218
-##  2 My Date…  2004 Jon Gunn      90 Color Document… USA   Livre              1100
-##  3 A Plagu…  2013 Benjami…      76 Color Drama|Ho… USA   Outros             1400
-##  4 The Mon…  2005 Anthony…      84 Color Crime|Dr… USA   A partir de …      3250
-##  5 Primer    2004 Shane C…      77 Color Drama|Sc… USA   A partir de …      7000
-##  6 El Mari…  1992 Robert …      81 Color Action|C… USA   A partir de …      7000
-##  7 Newlywe…  2011 Edward …      95 Color Comedy|D… USA   Outros             9000
-##  8 Pink Fl…  1972 John Wa…     108 Color Comedy|C… USA   A partir de …     10000
-##  9 The Tou…  2007 Jane Cl…       7 Color Romance|… USA   Outros            13000
-## 10 Paranor…  2007 Oren Pe…      84 Color Horror    USA   A partir de …     15000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
+##  1 Tarna…  2003 Jonath…      88 Color Biogra… USA   Outros              218
+##  2 My Da…  2004 Jon Gu…      90 Color Docume… USA   Livre              1100
+##  3 A Pla…  2013 Benjam…      76 Color Drama|… USA   Outros             1400
+##  4 The M…  2005 Anthon…      84 Color Crime|… USA   A partir de …      3250
+##  5 Prime…  2004 Shane …      77 Color Drama|… USA   A partir de …      7000
+##  6 El Ma…  1992 Robert…      81 Color Action… USA   A partir de …      7000
+##  7 Newly…  2011 Edward…      95 Color Comedy… USA   Outros             9000
+##  8 Pink …  1972 John W…     108 Color Comedy… USA   A partir de …     10000
+##  9 The T…  2007 Jane C…       7 Color Romanc… USA   Outros            13000
+## 10 Paran…  2007 Oren P…      84 Color Horror  USA   A partir de …     15000
 ## # … with 3,797 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <p>Também podemos ordenar de forma decrescente usando a função <code>desc()</code>.</p>
-<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="7-2-dplyr.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(imdb, <span class="fu">desc</span>(orcamento))</span></code></pre></div>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="7-2-dplyr.html#cb250-1"></a><span class="kw">arrange</span>(imdb, <span class="kw">desc</span>(orcamento))</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 15
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
-##  1 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
-##  2 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
-##  3 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
-##  4 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
-##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
-##  6 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
-##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
-##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
-##  9 Pirates…  2011 Rob Mar…     136 Color Action|A… USA   A partir de … 250000000
-## 10 Captain…  2016 Anthony…     147 Color Action|A… USA   A partir de … 250000000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
+##  1 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
+##  2 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
+##  3 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
+##  4 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
+##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
+##  6 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
+##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
+##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
+##  9 Pirat…  2011 Rob Ma…     136 Color Action… USA   A partir de … 250000000
+## 10 Capta…  2016 Anthon…     147 Color Action… USA   A partir de … 250000000
 ## # … with 3,797 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <p>E claro, ordenar segundo duas ou mais colunas.</p>
-<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="7-2-dplyr.html#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(imdb, <span class="fu">desc</span>(ano), <span class="fu">desc</span>(orcamento))</span></code></pre></div>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="7-2-dplyr.html#cb252-1"></a><span class="kw">arrange</span>(imdb, <span class="kw">desc</span>(ano), <span class="kw">desc</span>(orcamento))</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 15
-##    titulo      ano diretor  duracao cor   generos  pais  classificacao orcamento
-##    &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
-##  1 Batman v…  2016 Zack Sn…     183 Color Action|… USA   A partir de … 250000000
-##  2 Captain …  2016 Anthony…     147 Color Action|… USA   A partir de … 250000000
-##  3 Star Tre…  2016 Justin …     122 Color Action|… USA   A partir de … 185000000
-##  4 The Lege…  2016 David Y…     110 Color Action|… USA   A partir de … 180000000
-##  5 The Lege…  2016 David Y…     110 Color Action|… USA   A partir de … 180000000
-##  6 X-Men: A…  2016 Bryan S…     144 Color Action|… USA   A partir de … 178000000
-##  7 Suicide …  2016 David A…     123 Color Action|… USA   A partir de … 175000000
-##  8 Alice Th…  2016 James B…     113 Color Adventu… USA   Livre         170000000
-##  9 Independ…  2016 Roland …     120 Color Action|… USA   A partir de … 165000000
-## 10 Warcraft   2016 Duncan …     123 Color Action|… USA   A partir de … 160000000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
+##  1 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
+##  2 Capta…  2016 Anthon…     147 Color Action… USA   A partir de … 250000000
+##  3 Star …  2016 Justin…     122 Color Action… USA   A partir de … 185000000
+##  4 The L…  2016 David …     110 Color Action… USA   A partir de … 180000000
+##  5 The L…  2016 David …     110 Color Action… USA   A partir de … 180000000
+##  6 X-Men…  2016 Bryan …     144 Color Action… USA   A partir de … 178000000
+##  7 Suici…  2016 David …     123 Color Action… USA   A partir de … 175000000
+##  8 Alice…  2016 James …     113 Color Advent… USA   Livre         170000000
+##  9 Indep…  2016 Roland…     120 Color Action… USA   A partir de … 165000000
+## 10 Warcr…  2016 Duncan…     123 Color Action… USA   A partir de … 160000000
 ## # … with 3,797 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <div id="exercícios-12" class="section level4 unnumbered">
@@ -655,10 +615,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>2.</strong> Selecione apenas as colunas <code>titulo</code> e <code>orcamento</code> e então ordene de forma decrescente pelo <code>orcamento.</code></p>
 </div>
 </div>
-<div id="o-pipe-em-ação" class="section level3" number="7.2.3">
+<div id="o-pipe-em-ação" class="section level3">
 <h3><span class="header-section-number">7.2.3</span> O pipe em ação</h3>
 <p>Na grande maioria dos casos, vamos aplicar mais de uma função de manipulação em uma base para obtermos a tabela que desejamos. Poderíamos, por exemplo, querer uma tabela apenas com o título e ano dos filmes, ordenada de forma crescente de lançamento. Para fazer isso, poderíamos aninhar as funções</p>
-<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="7-2-dplyr.html#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(<span class="fu">select</span>(imdb, titulo, ano), ano)</span></code></pre></div>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="7-2-dplyr.html#cb254-1"></a><span class="kw">arrange</span>(<span class="kw">select</span>(imdb, titulo, ano), ano)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 2
 ##    titulo                                              ano
 ##    &lt;chr&gt;                                             &lt;int&gt;
@@ -674,9 +634,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 Top Hat                                            1935
 ## # … with 3,797 more rows</code></pre>
 <p>ou criar um objeto intermediário</p>
-<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="7-2-dplyr.html#cb256-1" aria-hidden="true" tabindex="-1"></a>tab_titulo_ano <span class="ot">&lt;-</span> <span class="fu">select</span>(imdb, titulo, ano)</span>
-<span id="cb256-2"><a href="7-2-dplyr.html#cb256-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb256-3"><a href="7-2-dplyr.html#cb256-3" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(tab_titulo_ano, ano)</span></code></pre></div>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="7-2-dplyr.html#cb256-1"></a>tab_titulo_ano &lt;-<span class="st"> </span><span class="kw">select</span>(imdb, titulo, ano)</span>
+<span id="cb256-2"><a href="7-2-dplyr.html#cb256-2"></a></span>
+<span id="cb256-3"><a href="7-2-dplyr.html#cb256-3"></a><span class="kw">arrange</span>(tab_titulo_ano, ano)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 2
 ##    titulo                                              ano
 ##    &lt;chr&gt;                                             &lt;int&gt;
@@ -695,9 +655,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A primeira alternativa é ruim de escrever, já que precisamos escrever primeiro a função que roda por último, e de ler, pois é difícil identificar qual argumento pertence a qual função.</p>
 <p>A segunda alternativa é ruim pois exige a criação de objetos auxiliares. Se quiséssimos aplicar 10 operações na base, precisaríamos criar 9 objetos intermediários.</p>
 <p>A solução para aplicar diversas operações de manipulação em uma base de dados é aplicar o operador pipe: <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="7-2-dplyr.html#cb258-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb258-2"><a href="7-2-dplyr.html#cb258-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(titulo, ano) <span class="sc">%&gt;%</span> </span>
-<span id="cb258-3"><a href="7-2-dplyr.html#cb258-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(ano)</span></code></pre></div>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="7-2-dplyr.html#cb258-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb258-2"><a href="7-2-dplyr.html#cb258-2"></a><span class="st">  </span><span class="kw">select</span>(titulo, ano) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb258-3"><a href="7-2-dplyr.html#cb258-3"></a><span class="st">  </span><span class="kw">arrange</span>(ano)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 2
 ##    titulo                                              ano
 ##    &lt;chr&gt;                                             &lt;int&gt;
@@ -715,22 +675,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>O que está sendo feito no código com pipe? Da primeira para a segunda linha, estamos aplicando a função <code>select()</code> à base imdb. Da segunda para a terceira, estamos aplicando a função <code>arrange()</code> à base resultante da função <code>select()</code>.</p>
 <p>O resultado desse código é identico às tentativas sem pipe, com a vantagem de termos escrito o código na ordem em que as funções são aplicadas, de termos um código muito mais legível e de não precisarmos utilizar objetos intermediários.</p>
 </div>
-<div id="filtrando-linhas" class="section level3" number="7.2.4">
+<div id="filtrando-linhas" class="section level3">
 <h3><span class="header-section-number">7.2.4</span> Filtrando linhas</h3>
 <p>Para filtrar valores de uma coluna da base, utilizamos a função <code>filter()</code>.</p>
-<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="7-2-dplyr.html#cb260-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> <span class="fu">filter</span>(nota_imdb <span class="sc">&gt;</span> <span class="dv">9</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="7-2-dplyr.html#cb260-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(nota_imdb <span class="op">&gt;</span><span class="st"> </span><span class="dv">9</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 3 x 15
-##   titulo      ano diretor   duracao cor   generos  pais  classificacao orcamento
-##   &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;       &lt;int&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
-## 1 The Shaw…  1994 Frank Da…     142 Color Crime|D… USA   A partir de …  25000000
-## 2 The Godf…  1972 Francis …     175 Color Crime|D… USA   A partir de …   6000000
-## 3 Kickboxe…  2016 John Sto…      90 &lt;NA&gt;  Action   USA   Outros         17000000
+##   titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##   &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
+## 1 The S…  1994 Frank …     142 Color Crime|… USA   A partir de …  25000000
+## 2 The G…  1972 Franci…     175 Color Crime|… USA   A partir de …   6000000
+## 3 Kickb…  2016 John S…      90 &lt;NA&gt;  Action  USA   Outros         17000000
 ## # … with 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <p>Podemos selecionar apenas as colunas título e nota para visualizarmos as notas:</p>
-<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="7-2-dplyr.html#cb262-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb262-2"><a href="7-2-dplyr.html#cb262-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(nota_imdb <span class="sc">&gt;</span> <span class="dv">9</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb262-3"><a href="7-2-dplyr.html#cb262-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(titulo, nota_imdb)</span></code></pre></div>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="7-2-dplyr.html#cb262-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb262-2"><a href="7-2-dplyr.html#cb262-2"></a><span class="st">  </span><span class="kw">filter</span>(nota_imdb <span class="op">&gt;</span><span class="st"> </span><span class="dv">9</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb262-3"><a href="7-2-dplyr.html#cb262-3"></a><span class="st">  </span><span class="kw">select</span>(titulo, nota_imdb)</span></code></pre></div>
 <pre><code>## # A tibble: 3 x 2
 ##   titulo                    nota_imdb
 ##   &lt;chr&gt;                         &lt;dbl&gt;
@@ -738,90 +698,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 2 The Godfather                   9.2
 ## 3 Kickboxer: Vengeance            9.1</code></pre>
 <p>Podemos estender o filtro para duas ou mais colunas. Para isso, separamos cada operação por uma vírgula.</p>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="7-2-dplyr.html#cb264-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ano <span class="sc">&gt;</span> <span class="dv">2010</span>, nota_imdb <span class="sc">&gt;</span> <span class="fl">8.5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="7-2-dplyr.html#cb264-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(ano <span class="op">&gt;</span><span class="st"> </span><span class="dv">2010</span>, nota_imdb <span class="op">&gt;</span><span class="st"> </span><span class="fl">8.5</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 5 x 15
-##   titulo      ano diretor   duracao cor   generos  pais  classificacao orcamento
-##   &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;       &lt;int&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
-## 1 Interste…  2014 Christop…     169 Color Adventu… USA   A partir de … 165000000
-## 2 Running …  2015 Mike May…      88 Color Family   USA   Outros          5000000
-## 3 A Beginn…  2016 Mitchell…      87 Color Comedy|… USA   Outros               NA
-## 4 Kickboxe…  2016 John Sto…      90 &lt;NA&gt;  Action   USA   Outros         17000000
-## 5 Butterfl…  2014 Cary Bell      78 Color Documen… USA   Outros           180000
+##   titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##   &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
+## 1 Inter…  2014 Christ…     169 Color Advent… USA   A partir de … 165000000
+## 2 Runni…  2015 Mike M…      88 Color Family  USA   Outros          5000000
+## 3 A Beg…  2016 Mitche…      87 Color Comedy… USA   Outros               NA
+## 4 Kickb…  2016 John S…      90 &lt;NA&gt;  Action  USA   Outros         17000000
+## 5 Butte…  2014 Cary B…      78 Color Docume… USA   Outros           180000
 ## # … with 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <p>Também podemos fazer operações com as colunas da base dentro da função filter. O código abaixo devolve uma tabela apenas com os filmes que lucraram.</p>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="7-2-dplyr.html#cb266-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> <span class="fu">filter</span>(receita <span class="sc">-</span> orcamento <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="7-2-dplyr.html#cb266-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(receita <span class="op">-</span><span class="st"> </span>orcamento <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 1,761 x 15
-##    titulo      ano diretor  duracao cor   generos  pais  classificacao orcamento
-##    &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
-##  1 Avatar     2009 James C…     178 Color Action|… USA   A partir de … 237000000
-##  2 Pirates …  2007 Gore Ve…     169 Color Action|… USA   A partir de … 300000000
-##  3 The Dark…  2012 Christo…     164 Color Action|… USA   A partir de … 250000000
-##  4 Spider-M…  2007 Sam Rai…     156 Color Action|… USA   A partir de … 258000000
-##  5 Avengers…  2015 Joss Wh…     141 Color Action|… USA   A partir de … 250000000
-##  6 Batman v…  2016 Zack Sn…     183 Color Action|… USA   A partir de … 250000000
-##  7 Pirates …  2006 Gore Ve…     151 Color Action|… USA   A partir de … 225000000
-##  8 Man of S…  2013 Zack Sn…     143 Color Action|… USA   A partir de … 225000000
-##  9 The Aven…  2012 Joss Wh…     173 Color Action|… USA   A partir de … 220000000
-## 10 The Amaz…  2012 Marc We…     153 Color Action|… USA   A partir de … 230000000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
+##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
+##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
+##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
+##  4 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
+##  5 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
+##  6 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
+##  7 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
+##  8 Man o…  2013 Zack S…     143 Color Action… USA   A partir de … 225000000
+##  9 The A…  2012 Joss W…     173 Color Action… USA   A partir de … 220000000
+## 10 The A…  2012 Marc W…     153 Color Action… USA   A partir de … 230000000
 ## # … with 1,751 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <p>Naturalmente, podemos filtrar colunas categóricas. O exemplo abaixo retorna uma tabela apenas com os filmes com a Angelina Jolie Pitt ou o Brad Pitt no papel principal.</p>
-<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="7-2-dplyr.html#cb268-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span></span>
-<span id="cb268-2"><a href="7-2-dplyr.html#cb268-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ator_1 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&#39;Angelina Jolie Pitt&#39;</span>, <span class="st">&quot;Brad Pitt&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="7-2-dplyr.html#cb268-1"></a>imdb <span class="op">%&gt;%</span></span>
+<span id="cb268-2"><a href="7-2-dplyr.html#cb268-2"></a><span class="st">  </span><span class="kw">filter</span>(ator_<span class="dv">1</span> <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Angelina Jolie Pitt&#39;</span>, <span class="st">&quot;Brad Pitt&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 29 x 15
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
-##  1 Malefic…  2014 Robert …      97 Color Action|A… USA   Livre         180000000
-##  2 The Cur…  2008 David F…     166 Color Drama|Fa… USA   A partir de … 150000000
-##  3 Kung Fu…  2011 Jennife…      90 Color Action|A… USA   Livre         150000000
-##  4 Troy      2004 Wolfgan…     196 Color Adventure USA   A partir de … 175000000
-##  5 Kung Fu…  2008 Mark Os…      92 Color Action|A… USA   Livre         130000000
-##  6 Salt      2010 Phillip…     101 Color Action|C… USA   A partir de … 110000000
-##  7 Ocean&#39;s…  2004 Steven …     125 Color Crime|Th… USA   A partir de … 110000000
-##  8 Mr. &amp; M…  2005 Doug Li…     126 Color Action|C… USA   A partir de … 120000000
-##  9 Lara Cr…  2001 Simon W…     100 Color Action|A… USA   A partir de … 115000000
-## 10 Ocean&#39;s…  2001 Steven …     116 Color Crime|Th… USA   A partir de …  85000000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
+##  1 Malef…  2014 Robert…      97 Color Action… USA   Livre         180000000
+##  2 The C…  2008 David …     166 Color Drama|… USA   A partir de … 150000000
+##  3 Kung …  2011 Jennif…      90 Color Action… USA   Livre         150000000
+##  4 Troy    2004 Wolfga…     196 Color Advent… USA   A partir de … 175000000
+##  5 Kung …  2008 Mark O…      92 Color Action… USA   Livre         130000000
+##  6 Salt    2010 Philli…     101 Color Action… USA   A partir de … 110000000
+##  7 Ocean…  2004 Steven…     125 Color Crime|… USA   A partir de … 110000000
+##  8 Mr. &amp;…  2005 Doug L…     126 Color Action… USA   A partir de … 120000000
+##  9 Lara …  2001 Simon …     100 Color Action… USA   A partir de … 115000000
+## 10 Ocean…  2001 Steven…     116 Color Crime|… USA   A partir de …  85000000
 ## # … with 19 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <p>Para filtrar textos sem correspondência exata, podemos utilizar a função auxiliar <code>str_detect()</code> do pacote <code>{stringr}</code>. Ela serve para verificar se cada string de um vetor contém um determinado padrão de texto.</p>
-<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="7-2-dplyr.html#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb270-2"><a href="7-2-dplyr.html#cb270-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb270-3"><a href="7-2-dplyr.html#cb270-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str_detect</span>(</span>
-<span id="cb270-4"><a href="7-2-dplyr.html#cb270-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">string =</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;aa&quot;</span>,<span class="st">&quot;abc&quot;</span>, <span class="st">&quot;bc&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="cn">NA</span>), </span>
-<span id="cb270-5"><a href="7-2-dplyr.html#cb270-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;a&quot;</span></span>
-<span id="cb270-6"><a href="7-2-dplyr.html#cb270-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="7-2-dplyr.html#cb270-1"></a><span class="kw">library</span>(stringr)</span>
+<span id="cb270-2"><a href="7-2-dplyr.html#cb270-2"></a></span>
+<span id="cb270-3"><a href="7-2-dplyr.html#cb270-3"></a><span class="kw">str_detect</span>(</span>
+<span id="cb270-4"><a href="7-2-dplyr.html#cb270-4"></a>  <span class="dt">string =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;aa&quot;</span>,<span class="st">&quot;abc&quot;</span>, <span class="st">&quot;bc&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="ot">NA</span>), </span>
+<span id="cb270-5"><a href="7-2-dplyr.html#cb270-5"></a>  <span class="dt">pattern =</span> <span class="st">&quot;a&quot;</span></span>
+<span id="cb270-6"><a href="7-2-dplyr.html#cb270-6"></a>)</span></code></pre></div>
 <pre><code>## [1]  TRUE  TRUE  TRUE FALSE FALSE    NA</code></pre>
 <p>Podemos utilizá-la para filtrar apenas os filmes que contêm o gênero ação.</p>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="7-2-dplyr.html#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A coluna gêneros apresenta todos os gêneros dos filmes concatenados</span></span>
-<span id="cb272-2"><a href="7-2-dplyr.html#cb272-2" aria-hidden="true" tabindex="-1"></a>imdb<span class="sc">$</span>generos[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="7-2-dplyr.html#cb272-1"></a><span class="co"># A coluna gêneros apresenta todos os gêneros dos filmes concatenados</span></span>
+<span id="cb272-2"><a href="7-2-dplyr.html#cb272-2"></a>imdb<span class="op">$</span>generos[<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;Action|Adventure|Fantasy|Sci-Fi&quot;                          
 ## [2] &quot;Action|Adventure|Fantasy&quot;                                 
 ## [3] &quot;Action|Thriller&quot;                                          
 ## [4] &quot;Action|Adventure|Sci-Fi&quot;                                  
 ## [5] &quot;Action|Adventure|Romance&quot;                                 
 ## [6] &quot;Adventure|Animation|Comedy|Family|Fantasy|Musical|Romance&quot;</code></pre>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="7-2-dplyr.html#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Podemos detectar se o gênero Action aparece na string</span></span>
-<span id="cb274-2"><a href="7-2-dplyr.html#cb274-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_detect</span>(</span>
-<span id="cb274-3"><a href="7-2-dplyr.html#cb274-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">string =</span> imdb<span class="sc">$</span>generos[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>],</span>
-<span id="cb274-4"><a href="7-2-dplyr.html#cb274-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;Action&quot;</span></span>
-<span id="cb274-5"><a href="7-2-dplyr.html#cb274-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="7-2-dplyr.html#cb274-1"></a><span class="co"># Podemos detectar se o gênero Action aparece na string</span></span>
+<span id="cb274-2"><a href="7-2-dplyr.html#cb274-2"></a><span class="kw">str_detect</span>(</span>
+<span id="cb274-3"><a href="7-2-dplyr.html#cb274-3"></a>  <span class="dt">string =</span> imdb<span class="op">$</span>generos[<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>],</span>
+<span id="cb274-4"><a href="7-2-dplyr.html#cb274-4"></a>  <span class="dt">pattern =</span> <span class="st">&quot;Action&quot;</span></span>
+<span id="cb274-5"><a href="7-2-dplyr.html#cb274-5"></a>)</span></code></pre></div>
 <pre><code>## [1]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE</code></pre>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="7-2-dplyr.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicamos essa lógica dentro da função filter, para a coluna completa</span></span>
-<span id="cb276-2"><a href="7-2-dplyr.html#cb276-2" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(generos, <span class="st">&quot;Action&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="7-2-dplyr.html#cb276-1"></a><span class="co"># Aplicamos essa lógica dentro da função filter, para a coluna completa</span></span>
+<span id="cb276-2"><a href="7-2-dplyr.html#cb276-2"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(generos, <span class="st">&quot;Action&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 861 x 15
-##    titulo      ano diretor  duracao cor   generos  pais  classificacao orcamento
-##    &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
-##  1 Avatar     2009 James C…     178 Color Action|… USA   A partir de … 237000000
-##  2 Pirates …  2007 Gore Ve…     169 Color Action|… USA   A partir de … 300000000
-##  3 The Dark…  2012 Christo…     164 Color Action|… USA   A partir de … 250000000
-##  4 John Car…  2012 Andrew …     132 Color Action|… USA   A partir de … 263700000
-##  5 Spider-M…  2007 Sam Rai…     156 Color Action|… USA   A partir de … 258000000
-##  6 Avengers…  2015 Joss Wh…     141 Color Action|… USA   A partir de … 250000000
-##  7 Batman v…  2016 Zack Sn…     183 Color Action|… USA   A partir de … 250000000
-##  8 Superman…  2006 Bryan S…     169 Color Action|… USA   A partir de … 209000000
-##  9 Pirates …  2006 Gore Ve…     151 Color Action|… USA   A partir de … 225000000
-## 10 The Lone…  2013 Gore Ve…     150 Color Action|… USA   A partir de … 215000000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
+##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
+##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
+##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
+##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
+##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
+##  6 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
+##  7 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
+##  8 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
+##  9 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
+## 10 The L…  2013 Gore V…     150 Color Action… USA   A partir de … 215000000
 ## # … with 851 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <div id="exercícios-13" class="section level4 unnumbered">
@@ -840,47 +800,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 </div>
-<div id="modificando-e-criando-novas-colunas" class="section level3" number="7.2.5">
+<div id="modificando-e-criando-novas-colunas" class="section level3">
 <h3><span class="header-section-number">7.2.5</span> Modificando e criando novas colunas</h3>
 <p>Para modificar uma coluna existente ou criar uma nova coluna, utilizamos a função <code>mutate()</code>. O código abaixo divide os valores da coluna duração por 60, mudando a unidade de medida dessa variável de minutos para horas.</p>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="7-2-dplyr.html#cb278-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">duracao =</span> duracao<span class="sc">/</span><span class="dv">60</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="7-2-dplyr.html#cb278-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">duracao =</span> duracao<span class="op">/</span><span class="dv">60</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 15
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
-##  1 Avatar    2009 James C…    2.97 Color Action|A… USA   A partir de … 237000000
-##  2 Pirates…  2007 Gore Ve…    2.82 Color Action|A… USA   A partir de … 300000000
-##  3 The Dar…  2012 Christo…    2.73 Color Action|T… USA   A partir de … 250000000
-##  4 John Ca…  2012 Andrew …    2.2  Color Action|A… USA   A partir de … 263700000
-##  5 Spider-…  2007 Sam Rai…    2.6  Color Action|A… USA   A partir de … 258000000
-##  6 Tangled   2010 Nathan …    1.67 Color Adventur… USA   Livre         260000000
-##  7 Avenger…  2015 Joss Wh…    2.35 Color Action|A… USA   A partir de … 250000000
-##  8 Batman …  2016 Zack Sn…    3.05 Color Action|A… USA   A partir de … 250000000
-##  9 Superma…  2006 Bryan S…    2.82 Color Action|A… USA   A partir de … 209000000
-## 10 Pirates…  2006 Gore Ve…    2.52 Color Action|A… USA   A partir de … 225000000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
+##  1 Avata…  2009 James …    2.97 Color Action… USA   A partir de … 237000000
+##  2 Pirat…  2007 Gore V…    2.82 Color Action… USA   A partir de … 300000000
+##  3 The D…  2012 Christ…    2.73 Color Action… USA   A partir de … 250000000
+##  4 John …  2012 Andrew…    2.2  Color Action… USA   A partir de … 263700000
+##  5 Spide…  2007 Sam Ra…    2.6  Color Action… USA   A partir de … 258000000
+##  6 Tangl…  2010 Nathan…    1.67 Color Advent… USA   Livre         260000000
+##  7 Aveng…  2015 Joss W…    2.35 Color Action… USA   A partir de … 250000000
+##  8 Batma…  2016 Zack S…    3.05 Color Action… USA   A partir de … 250000000
+##  9 Super…  2006 Bryan …    2.82 Color Action… USA   A partir de … 209000000
+## 10 Pirat…  2006 Gore V…    2.52 Color Action… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <p>Também poderíamos ter criado essa variável em uma nova coluna. Repare que a nova coluna <code>duracao_horas</code> é colocada no final da tabela.</p>
-<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="7-2-dplyr.html#cb280-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">duracao_horas =</span> duracao<span class="sc">/</span><span class="dv">60</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="7-2-dplyr.html#cb280-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">duracao_horas =</span> duracao<span class="op">/</span><span class="dv">60</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 16
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
-##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
-##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
-##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
-##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
-##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
-##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
-##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
-##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
-##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
-## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
+##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
+##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
+##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
+##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
+##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
+##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
+##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
+##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
+##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
+## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 7 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;,
 ## #   duracao_horas &lt;dbl&gt;</code></pre>
 <p>Podemos fazer qualquer operação com uma ou mais colunas. A única regra é que o resultado da operação retorne um vetor com comprimento igual ao número de linhas da base (ou com comprimento 1 para distribuir um mesmo valor em todas as linhas). Você também pode criar/modificar quantas colunas quiser dentro de um mesmo <code>mutate</code>.</p>
-<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="7-2-dplyr.html#cb282-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb282-2"><a href="7-2-dplyr.html#cb282-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lucro =</span> receita <span class="sc">-</span> orcamento, <span class="at">pais =</span> <span class="st">&quot;Estados Unidos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb282-3"><a href="7-2-dplyr.html#cb282-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(titulo, lucro, pais)</span></code></pre></div>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="7-2-dplyr.html#cb282-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb282-2"><a href="7-2-dplyr.html#cb282-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">lucro =</span> receita <span class="op">-</span><span class="st"> </span>orcamento, <span class="dt">pais =</span> <span class="st">&quot;Estados Unidos&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb282-3"><a href="7-2-dplyr.html#cb282-3"></a><span class="st">  </span><span class="kw">select</span>(titulo, lucro, pais)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 3
 ##    titulo                                           lucro pais          
 ##    &lt;chr&gt;                                            &lt;int&gt; &lt;chr&gt;         
@@ -909,41 +869,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>3.</strong> Crie uma nova coluna que classifique o filme em <code>"recente"</code> (posterior a 2000) e <code>"antigo"</code> (de 2000 para trás).</p>
 </div>
 </div>
-<div id="summarisando-a-base" class="section level3" number="7.2.6">
+<div id="summarisando-a-base" class="section level3">
 <h3><span class="header-section-number">7.2.6</span> Summarisando a base</h3>
 <p>Sumarização é a técnica de se resumir um conjunto de dados utilizando alguma métrica de interesse. A média, a mediana, a variância, a frequência, a proporção, por exemplo, são tipos de sumarização que trazem diferentes informações sobre uma variável.</p>
 <p>Para sumarizar uma coluna da base, utilizamos a função <code>summarize()</code>. O código abaixo resume a coluna orçamento pela sua média.</p>
-<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="7-2-dplyr.html#cb284-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">media_orcamento =</span> <span class="fu">mean</span>(orcamento, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="7-2-dplyr.html#cb284-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="dt">media_orcamento =</span> <span class="kw">mean</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##   media_orcamento
 ##             &lt;dbl&gt;
 ## 1       35755986.</code></pre>
 <p>Repare que a saída da função continua sendo uma tibble.</p>
 <p>Podemos calcular diversas sumarizações diferentes em um mesmo <code>summarize</code>. Cada sumarização será uma coluna da nova base.</p>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="7-2-dplyr.html#cb286-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(</span>
-<span id="cb286-2"><a href="7-2-dplyr.html#cb286-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">media_orcamento =</span> <span class="fu">mean</span>(orcamento, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb286-3"><a href="7-2-dplyr.html#cb286-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">mediana_orcamento =</span> <span class="fu">median</span>(orcamento, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb286-4"><a href="7-2-dplyr.html#cb286-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">variancia_orcamento =</span> <span class="fu">var</span>(orcamento, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb286-5"><a href="7-2-dplyr.html#cb286-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="7-2-dplyr.html#cb286-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(</span>
+<span id="cb286-2"><a href="7-2-dplyr.html#cb286-2"></a>  <span class="dt">media_orcamento =</span> <span class="kw">mean</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb286-3"><a href="7-2-dplyr.html#cb286-3"></a>  <span class="dt">mediana_orcamento =</span> <span class="kw">median</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb286-4"><a href="7-2-dplyr.html#cb286-4"></a>  <span class="dt">variancia_orcamento =</span> <span class="kw">var</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb286-5"><a href="7-2-dplyr.html#cb286-5"></a>)</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 3
 ##   media_orcamento mediana_orcamento variancia_orcamento
 ##             &lt;dbl&gt;             &lt;int&gt;               &lt;dbl&gt;
 ## 1       35755986.          20000000   1822337181441743.</code></pre>
 <p>E também sumarizar diversas colunas.</p>
-<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="7-2-dplyr.html#cb288-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(</span>
-<span id="cb288-2"><a href="7-2-dplyr.html#cb288-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">media_orcamento =</span> <span class="fu">mean</span>(orcamento, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb288-3"><a href="7-2-dplyr.html#cb288-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">media_receita =</span> <span class="fu">mean</span>(receita, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb288-4"><a href="7-2-dplyr.html#cb288-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">media_lucro =</span> <span class="fu">mean</span>(receita <span class="sc">-</span> orcamento, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb288-5"><a href="7-2-dplyr.html#cb288-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="7-2-dplyr.html#cb288-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(</span>
+<span id="cb288-2"><a href="7-2-dplyr.html#cb288-2"></a>  <span class="dt">media_orcamento =</span> <span class="kw">mean</span>(orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb288-3"><a href="7-2-dplyr.html#cb288-3"></a>  <span class="dt">media_receita =</span> <span class="kw">mean</span>(receita, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb288-4"><a href="7-2-dplyr.html#cb288-4"></a>  <span class="dt">media_lucro =</span> <span class="kw">mean</span>(receita <span class="op">-</span><span class="st"> </span>orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb288-5"><a href="7-2-dplyr.html#cb288-5"></a>)</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 3
 ##   media_orcamento media_receita media_lucro
 ##             &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt;
 ## 1       35755986.     55214607.   17258230.</code></pre>
 <p>Muitas vezes queremos sumarizar uma coluna agrupada pelas categorias de uma segunda coluna. Para isso, além do <code>summarize</code>, utilizamos também a função <code>group_by()</code>.</p>
 <p>O código a seguir calcula a receita média dos filmes para cada categoria da coluna “cor”.</p>
-<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="7-2-dplyr.html#cb290-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb290-2"><a href="7-2-dplyr.html#cb290-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cor) <span class="sc">%&gt;%</span> </span>
-<span id="cb290-3"><a href="7-2-dplyr.html#cb290-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">receita_media =</span> <span class="fu">mean</span>(receita, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="7-2-dplyr.html#cb290-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb290-2"><a href="7-2-dplyr.html#cb290-2"></a><span class="st">  </span><span class="kw">group_by</span>(cor) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb290-3"><a href="7-2-dplyr.html#cb290-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">receita_media =</span> <span class="kw">mean</span>(receita, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <pre><code>## # A tibble: 3 x 2
 ##   cor             receita_media
 ##   &lt;chr&gt;                   &lt;dbl&gt;
@@ -951,21 +912,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 2 Color               55765813.
 ## 3 &lt;NA&gt;                80014842</code></pre>
 <p>A única alteração que a função <code>group_by()</code> faz na base é a marcação de que a base está agrupada.</p>
-<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="7-2-dplyr.html#cb292-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(cor)</span></code></pre></div>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="7-2-dplyr.html#cb293-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(cor)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 15
 ## # Groups:   cor [3]
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
-##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
-##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
-##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
-##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
-##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
-##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
-##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
-##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
-##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
-## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
+##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
+##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
+##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
+##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
+##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
+##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
+##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
+##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
+##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
+## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <div id="exercícios-15" class="section level4 unnumbered">
@@ -982,14 +943,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 </div>
-<div id="juntando-duas-bases" class="section level3" number="7.2.7">
+<div id="juntando-duas-bases" class="section level3">
 <h3><span class="header-section-number">7.2.7</span> Juntando duas bases</h3>
 <p>Podemos juntar duas tabelas a partir de uma (coluna) chave utilizando a função <code>left_join()</code>. Como exempo, vamos inicialmente calcular o lucro médio dos filmes de cada diretor e salvar no objeto <code>tab_lucro_diretor</code>.</p>
-<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="7-2-dplyr.html#cb294-1" aria-hidden="true" tabindex="-1"></a>tab_lucro_diretor <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span></span>
-<span id="cb294-2"><a href="7-2-dplyr.html#cb294-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(diretor) <span class="sc">%&gt;%</span> </span>
-<span id="cb294-3"><a href="7-2-dplyr.html#cb294-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">lucro_medio =</span> <span class="fu">mean</span>(receita <span class="sc">-</span> orcamento, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb294-4"><a href="7-2-dplyr.html#cb294-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb294-5"><a href="7-2-dplyr.html#cb294-5" aria-hidden="true" tabindex="-1"></a>tab_lucro_diretor</span></code></pre></div>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="7-2-dplyr.html#cb295-1"></a>tab_lucro_diretor &lt;-<span class="st"> </span>imdb <span class="op">%&gt;%</span></span>
+<span id="cb295-2"><a href="7-2-dplyr.html#cb295-2"></a><span class="st">  </span><span class="kw">group_by</span>(diretor) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb295-3"><a href="7-2-dplyr.html#cb295-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">lucro_medio =</span> <span class="kw">mean</span>(receita <span class="op">-</span><span class="st"> </span>orcamento, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="7-2-dplyr.html#cb297-1"></a>tab_lucro_diretor</span></code></pre></div>
 <pre><code>## # A tibble: 1,813 x 2
 ##    diretor          lucro_medio
 ##    &lt;chr&gt;                  &lt;dbl&gt;
@@ -1005,34 +966,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 Adam Marcus         13435068
 ## # … with 1,803 more rows</code></pre>
 <p>E se quisermos colocar essa informação na base original? Basta usar a função <code>left_join()</code> utilizando a coluna <code>diretor</code> como chave. Observe que a coluna <code>lucro_medio</code> aparece agora no fim da tabela.</p>
-<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="7-2-dplyr.html#cb296-1" aria-hidden="true" tabindex="-1"></a>imdb_com_lucro_medio <span class="ot">&lt;-</span> <span class="fu">left_join</span>(imdb, tab_lucro_diretor, <span class="at">by =</span> <span class="st">&quot;diretor&quot;</span>)</span>
-<span id="cb296-2"><a href="7-2-dplyr.html#cb296-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb296-3"><a href="7-2-dplyr.html#cb296-3" aria-hidden="true" tabindex="-1"></a>imdb_com_lucro_medio</span></code></pre></div>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="7-2-dplyr.html#cb299-1"></a>imdb_com_lucro_medio &lt;-<span class="st"> </span><span class="kw">left_join</span>(imdb, tab_lucro_diretor, <span class="dt">by =</span> <span class="st">&quot;diretor&quot;</span>)</span>
+<span id="cb299-2"><a href="7-2-dplyr.html#cb299-2"></a></span>
+<span id="cb299-3"><a href="7-2-dplyr.html#cb299-3"></a>imdb_com_lucro_medio</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 16
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
-##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
-##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
-##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
-##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
-##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
-##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
-##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
-##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
-##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
-## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;
+##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
+##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
+##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
+##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
+##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
+##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
+##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
+##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
+##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
+## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 7 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;,
 ## #   lucro_medio &lt;dbl&gt;</code></pre>
 <p>Na tabela <code>imdb_com_lucro_medio</code>, como na tabela <code>imdb</code>, cada linha continua a representar um filme diferente, mas agora temos também a informação do lucro médio do diretor de cada filme.</p>
 <p>A primeira linha, por exemplo, traz as informações do filme Avatar. O valor do <code>lucro_medio</code> nessa linha representa o lucro médio de todos os filmes do James Cameron, que é o diretor de Avatar. Com essa informação, podemos calcular o quanto o lucro do Avatar se afasta do lucro médio do James Cameron.</p>
-<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="7-2-dplyr.html#cb298-1" aria-hidden="true" tabindex="-1"></a>imdb_com_lucro_medio <span class="sc">%&gt;%</span> </span>
-<span id="cb298-2"><a href="7-2-dplyr.html#cb298-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb298-3"><a href="7-2-dplyr.html#cb298-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro =</span> receita <span class="sc">-</span> orcamento,</span>
-<span id="cb298-4"><a href="7-2-dplyr.html#cb298-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro_relativo =</span> (lucro <span class="sc">-</span> lucro_medio)<span class="sc">/</span>lucro_medio,</span>
-<span id="cb298-5"><a href="7-2-dplyr.html#cb298-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">lucro_relativo =</span> scales<span class="sc">::</span><span class="fu">percent</span>(lucro_relativo)</span>
-<span id="cb298-6"><a href="7-2-dplyr.html#cb298-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb298-7"><a href="7-2-dplyr.html#cb298-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(titulo, diretor, lucro, lucro_medio, lucro_relativo)</span></code></pre></div>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="7-2-dplyr.html#cb301-1"></a>imdb_com_lucro_medio <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb301-2"><a href="7-2-dplyr.html#cb301-2"></a><span class="st">  </span><span class="kw">mutate</span>(</span>
+<span id="cb301-3"><a href="7-2-dplyr.html#cb301-3"></a>    <span class="dt">lucro =</span> receita <span class="op">-</span><span class="st"> </span>orcamento,</span>
+<span id="cb301-4"><a href="7-2-dplyr.html#cb301-4"></a>    <span class="dt">lucro_relativo =</span> (lucro <span class="op">-</span><span class="st"> </span>lucro_medio)<span class="op">/</span>lucro_medio,</span>
+<span id="cb301-5"><a href="7-2-dplyr.html#cb301-5"></a>    <span class="dt">lucro_relativo =</span> scales<span class="op">::</span><span class="kw">percent</span>(lucro_relativo)</span>
+<span id="cb301-6"><a href="7-2-dplyr.html#cb301-6"></a>  ) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb301-7"><a href="7-2-dplyr.html#cb301-7"></a><span class="st">  </span><span class="kw">select</span>(titulo, diretor, lucro, lucro_medio, lucro_relativo)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 5
 ##    titulo                      diretor          lucro lucro_medio lucro_relativo
 ##    &lt;chr&gt;                       &lt;chr&gt;            &lt;int&gt;       &lt;dbl&gt; &lt;chr&gt;         
@@ -1065,6 +1026,515 @@ e cada linha deve ser um diretor diferente.</p>
 <p><strong>b.</strong> Use o <code>left_join()</code> para trazer a coluna
 <code>nota_imdb_media</code> da tabela do item anterior
 para a tabela <code>imdb</code> original.</p>
+</div>
+</div>
+<div id="dplyr-1.0" class="section level3">
+<h3><span class="header-section-number">7.2.8</span> dplyr 1.0</h3>
+<p>A versão 1.0 do pacote <code>dplyr</code> foi oficialmente lançada em junho de 2020 e contou com diversas novidades. Vamos falar das principais mudanças:</p>
+<ul>
+<li><p>A nova função <code>across()</code>, que facilita aplicar uma mesma operação em várias colunas.</p></li>
+<li><p>A repaginada função <code>rowwise()</code>, para fazer operações por linha.</p></li>
+<li><p>Novas funcionalidades das funções <code>select()</code> e <code>rename()</code> e a nova função <code>relocate()</code>.</p></li>
+</ul>
+<p>Para trabalhar essas funções, vamos utilizar a base <code>casas</code> do pacote <code>dados</code>. Para instalar esse pacote, rode os códigos abaixo:</p>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="7-2-dplyr.html#cb303-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;remotes&quot;</span>)</span>
+<span id="cb303-2"><a href="7-2-dplyr.html#cb303-2"></a>remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;cienciadedatos/dados&quot;</span>)</span></code></pre></div>
+<p>Para trazer os dados para o nosso <em>environment</em>, podemos rodar:</p>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="7-2-dplyr.html#cb304-1"></a>casas &lt;-<span class="st"> </span>dados<span class="op">::</span>casas</span></code></pre></div>
+<p>A base <code>casas</code> possui dados de venda de casas na cidade de Ames, nos Estados Unidos. São 2930 linhas e 77 colunas, sendo que cada linha corresponde a uma casa vendida e cada coluna a uma característica da casa ou da venda. Essa versão é uma tradução da base original, que pode ser encontrada no pacote <code>AmesHousing</code>:</p>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="7-2-dplyr.html#cb305-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;AmesHousing&quot;</span>)</span>
+<span id="cb305-2"><a href="7-2-dplyr.html#cb305-2"></a><span class="kw">data</span>(ames_raw, <span class="dt">package =</span> <span class="st">&quot;AmesHousing&quot;</span>)</span></code></pre></div>
+<div id="a-função-across" class="section level4 unnumbered">
+<h4>A função <code>across()</code></h4>
+<p>A função <code>across()</code> substitui a família de verbos <code>_all()</code>, <code>_if</code> e <code>_at()</code>. A ideia é facilitar a aplicação de uma operação a diversas colunas da base. Para sumarizar a base para mais de uma variável, antigamente poderíamos fazer:</p>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="7-2-dplyr.html#cb306-1"></a>casas <span class="op">%&gt;%</span></span>
+<span id="cb306-2"><a href="7-2-dplyr.html#cb306-2"></a><span class="st">  </span><span class="kw">group_by</span>(geral_qualidade) <span class="op">%&gt;%</span></span>
+<span id="cb306-3"><a href="7-2-dplyr.html#cb306-3"></a><span class="st">  </span><span class="kw">summarise</span>(</span>
+<span id="cb306-4"><a href="7-2-dplyr.html#cb306-4"></a>    <span class="dt">lote_area_media =</span> <span class="kw">mean</span>(lote_area, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb306-5"><a href="7-2-dplyr.html#cb306-5"></a>    <span class="dt">venda_valor_medio =</span> <span class="kw">mean</span>(venda_valor, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb306-6"><a href="7-2-dplyr.html#cb306-6"></a>  )</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 10 x 3
+##    geral_qualidade lote_area_media venda_valor_medio
+##    &lt;chr&gt;                     &lt;dbl&gt;             &lt;dbl&gt;
+##  1 abaixo da média           8464.           106485.
+##  2 acima da média            9788.           162130.
+##  3 boa                      10309.           205026.
+##  4 excelente                12777.           368337.
+##  5 média                     9995.           134753.
+##  6 muito boa                10618.           270914.
+##  7 Muito excelente          18071.           450217.
+##  8 muito ruim               15214.            48725 
+##  9 regular                   9439.            83186.
+## 10 ruim                      9326.            52325.</code></pre>
+<p>Ou então utilizar a função <code>summarise_at()</code>:</p>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="7-2-dplyr.html#cb309-1"></a>casas <span class="op">%&gt;%</span></span>
+<span id="cb309-2"><a href="7-2-dplyr.html#cb309-2"></a><span class="st">  </span><span class="kw">group_by</span>(geral_qualidade) <span class="op">%&gt;%</span></span>
+<span id="cb309-3"><a href="7-2-dplyr.html#cb309-3"></a><span class="st">  </span><span class="kw">summarise_at</span>(</span>
+<span id="cb309-4"><a href="7-2-dplyr.html#cb309-4"></a>    <span class="dt">.vars =</span> <span class="kw">vars</span>(lote_area, venda_valor),</span>
+<span id="cb309-5"><a href="7-2-dplyr.html#cb309-5"></a>    <span class="kw">list</span>(mean),</span>
+<span id="cb309-6"><a href="7-2-dplyr.html#cb309-6"></a>    <span class="dt">na.rm =</span> <span class="ot">TRUE</span></span>
+<span id="cb309-7"><a href="7-2-dplyr.html#cb309-7"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 10 x 3
+##    geral_qualidade lote_area venda_valor
+##    &lt;chr&gt;               &lt;dbl&gt;       &lt;dbl&gt;
+##  1 abaixo da média     8464.     106485.
+##  2 acima da média      9788.     162130.
+##  3 boa                10309.     205026.
+##  4 excelente          12777.     368337.
+##  5 média               9995.     134753.
+##  6 muito boa          10618.     270914.
+##  7 Muito excelente    18071.     450217.
+##  8 muito ruim         15214.      48725 
+##  9 regular             9439.      83186.
+## 10 ruim                9326.      52325.</code></pre>
+<p>Com a nova função <code>across()</code>, fazemos:</p>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="7-2-dplyr.html#cb311-1"></a>casas <span class="op">%&gt;%</span></span>
+<span id="cb311-2"><a href="7-2-dplyr.html#cb311-2"></a><span class="st">  </span><span class="kw">group_by</span>(geral_qualidade) <span class="op">%&gt;%</span></span>
+<span id="cb311-3"><a href="7-2-dplyr.html#cb311-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">across</span>(</span>
+<span id="cb311-4"><a href="7-2-dplyr.html#cb311-4"></a>    <span class="dt">.cols =</span> <span class="kw">c</span>(lote_area, venda_valor),</span>
+<span id="cb311-5"><a href="7-2-dplyr.html#cb311-5"></a>    <span class="dt">.fns =</span> mean, </span>
+<span id="cb311-6"><a href="7-2-dplyr.html#cb311-6"></a>    <span class="dt">na.rm =</span> <span class="ot">TRUE</span></span>
+<span id="cb311-7"><a href="7-2-dplyr.html#cb311-7"></a>  ))</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 10 x 3
+##    geral_qualidade lote_area venda_valor
+##    &lt;chr&gt;               &lt;dbl&gt;       &lt;dbl&gt;
+##  1 abaixo da média     8464.     106485.
+##  2 acima da média      9788.     162130.
+##  3 boa                10309.     205026.
+##  4 excelente          12777.     368337.
+##  5 média               9995.     134753.
+##  6 muito boa          10618.     270914.
+##  7 Muito excelente    18071.     450217.
+##  8 muito ruim         15214.      48725 
+##  9 regular             9439.      83186.
+## 10 ruim                9326.      52325.</code></pre>
+<p>A sintaxe é parecida com a função <code>summarise_at()</code>, mas agora não precisamos mais usar a função <code>vars()</code> e nem usar <code>list(nome_da_funcao)</code>para definir a função aplicada nas colunas.</p>
+<p>Usando <code>across()</code>, podemos facilmente aplicar uma função em todas as colunas da nossa base. Abaixo, calculamos o número de valores distintos para todas as variáveis da base <code>casas</code>. O padrão do parâmetro <code>.cols</code> é <code>everithing()</code>, que representa “todas as colunas”.</p>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="7-2-dplyr.html#cb314-1"></a>casas <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb314-2"><a href="7-2-dplyr.html#cb314-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="dt">.fns =</span> n_distinct))</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 82
+##   ordem   pid moradia_classe moradia_zoneame… lote_fachada lote_area rua_tipo
+##   &lt;int&gt; &lt;int&gt;          &lt;int&gt;            &lt;int&gt;        &lt;int&gt;     &lt;int&gt;    &lt;int&gt;
+## 1  2930  2930             16                7          129      1960        2
+## # … with 75 more variables: beco_tipo &lt;int&gt;, lote_formato &lt;int&gt;,
+## #   terreno_contorno &lt;int&gt;, utilidades &lt;int&gt;, lote_config &lt;int&gt;,
+## #   terreno_declive &lt;int&gt;, vizinhanca &lt;int&gt;, condicao_1 &lt;int&gt;,
+## #   condicao_2 &lt;int&gt;, moradia_tipo &lt;int&gt;, moradia_estilo &lt;int&gt;,
+## #   geral_qualidade &lt;int&gt;, geral_condicao &lt;int&gt;, construcao_ano &lt;int&gt;,
+## #   remodelacao_ano &lt;int&gt;, telhado_estilo &lt;int&gt;, telhado_material &lt;int&gt;,
+## #   exterior_cobertura_1 &lt;int&gt;, exterior_cobertura_2 &lt;int&gt;,
+## #   alvenaria_tipo &lt;int&gt;, alvenaria_area &lt;int&gt;, exterior_qualidade &lt;int&gt;,
+## #   exterior_condicao &lt;int&gt;, fundacao_tipo &lt;int&gt;, porao_qualidade &lt;int&gt;,
+## #   porao_condicao &lt;int&gt;, porao_exposicao &lt;int&gt;, porao_acabamento_1 &lt;int&gt;,
+## #   porao_area_com_acabamento_1 &lt;int&gt;, porao_acabamento_2 &lt;int&gt;,
+## #   porao_area_com_acabamento_2 &lt;int&gt;, porao_area_sem_acabamento &lt;int&gt;,
+## #   porao_area_total &lt;int&gt;, porao_num_banheiros &lt;int&gt;,
+## #   porao_num_banheiros_lavabos &lt;int&gt;, aquecimento_tipo &lt;int&gt;,
+## #   aquecimento_qualidade_condicao &lt;int&gt;, ar_condicionado_central &lt;int&gt;,
+## #   sistema_eletrico_tipo &lt;int&gt;, primeiro_andar_area &lt;int&gt;,
+## #   segundo_andar_area &lt;int&gt;, acabamento_baixa_qualidade_area &lt;int&gt;,
+## #   acima_solo_area &lt;int&gt;, acima_solo_num_banheiros &lt;int&gt;,
+## #   acima_solo_num_lavabos &lt;int&gt;, acima_solo_num_quartos &lt;int&gt;,
+## #   acima_solo_num_cozinhas &lt;int&gt;, cozinha_qualidade &lt;int&gt;,
+## #   acima_solo_num_comodos &lt;int&gt;, funcional &lt;int&gt;, total_num_lareiras &lt;int&gt;,
+## #   lareira_qualidade &lt;int&gt;, garagem_tipo &lt;int&gt;, garagem_ano_construcao &lt;int&gt;,
+## #   garagem_acabamento &lt;int&gt;, garagem_capacidade_carros &lt;int&gt;,
+## #   garagem_area &lt;int&gt;, garagem_qualidade &lt;int&gt;, garagem_condicao &lt;int&gt;,
+## #   entrada_veiculo_pavimentada &lt;int&gt;, deck_madeira_area &lt;int&gt;,
+## #   varanda_aberta_area &lt;int&gt;, varanda_fechada_area &lt;int&gt;,
+## #   varanda_3ssn_area &lt;int&gt;, varanda_com_tela_area &lt;int&gt;, piscina_area &lt;int&gt;,
+## #   piscina_qualidade &lt;int&gt;, cerca_qualidade &lt;int&gt;,
+## #   funcionalidades_diversas &lt;int&gt;, funcionalidades_valor &lt;int&gt;,
+## #   venda_mes &lt;int&gt;, venda_ano &lt;int&gt;, venda_tipo &lt;int&gt;, venda_condicao &lt;int&gt;,
+## #   venda_valor &lt;int&gt;</code></pre>
+<p>Para fazer essa mesma operação, antes utilizaríamos a função <code>summarise_all()</code>.</p>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="7-2-dplyr.html#cb316-1"></a>casas <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb316-2"><a href="7-2-dplyr.html#cb316-2"></a><span class="st">  </span><span class="kw">summarise_all</span>(<span class="dt">.funs =</span> <span class="op">~</span><span class="kw">n_distinct</span>(.x))</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 82
+##   ordem   pid moradia_classe moradia_zoneame… lote_fachada lote_area rua_tipo
+##   &lt;int&gt; &lt;int&gt;          &lt;int&gt;            &lt;int&gt;        &lt;int&gt;     &lt;int&gt;    &lt;int&gt;
+## 1  2930  2930             16                7          129      1960        2
+## # … with 75 more variables: beco_tipo &lt;int&gt;, lote_formato &lt;int&gt;,
+## #   terreno_contorno &lt;int&gt;, utilidades &lt;int&gt;, lote_config &lt;int&gt;,
+## #   terreno_declive &lt;int&gt;, vizinhanca &lt;int&gt;, condicao_1 &lt;int&gt;,
+## #   condicao_2 &lt;int&gt;, moradia_tipo &lt;int&gt;, moradia_estilo &lt;int&gt;,
+## #   geral_qualidade &lt;int&gt;, geral_condicao &lt;int&gt;, construcao_ano &lt;int&gt;,
+## #   remodelacao_ano &lt;int&gt;, telhado_estilo &lt;int&gt;, telhado_material &lt;int&gt;,
+## #   exterior_cobertura_1 &lt;int&gt;, exterior_cobertura_2 &lt;int&gt;,
+## #   alvenaria_tipo &lt;int&gt;, alvenaria_area &lt;int&gt;, exterior_qualidade &lt;int&gt;,
+## #   exterior_condicao &lt;int&gt;, fundacao_tipo &lt;int&gt;, porao_qualidade &lt;int&gt;,
+## #   porao_condicao &lt;int&gt;, porao_exposicao &lt;int&gt;, porao_acabamento_1 &lt;int&gt;,
+## #   porao_area_com_acabamento_1 &lt;int&gt;, porao_acabamento_2 &lt;int&gt;,
+## #   porao_area_com_acabamento_2 &lt;int&gt;, porao_area_sem_acabamento &lt;int&gt;,
+## #   porao_area_total &lt;int&gt;, porao_num_banheiros &lt;int&gt;,
+## #   porao_num_banheiros_lavabos &lt;int&gt;, aquecimento_tipo &lt;int&gt;,
+## #   aquecimento_qualidade_condicao &lt;int&gt;, ar_condicionado_central &lt;int&gt;,
+## #   sistema_eletrico_tipo &lt;int&gt;, primeiro_andar_area &lt;int&gt;,
+## #   segundo_andar_area &lt;int&gt;, acabamento_baixa_qualidade_area &lt;int&gt;,
+## #   acima_solo_area &lt;int&gt;, acima_solo_num_banheiros &lt;int&gt;,
+## #   acima_solo_num_lavabos &lt;int&gt;, acima_solo_num_quartos &lt;int&gt;,
+## #   acima_solo_num_cozinhas &lt;int&gt;, cozinha_qualidade &lt;int&gt;,
+## #   acima_solo_num_comodos &lt;int&gt;, funcional &lt;int&gt;, total_num_lareiras &lt;int&gt;,
+## #   lareira_qualidade &lt;int&gt;, garagem_tipo &lt;int&gt;, garagem_ano_construcao &lt;int&gt;,
+## #   garagem_acabamento &lt;int&gt;, garagem_capacidade_carros &lt;int&gt;,
+## #   garagem_area &lt;int&gt;, garagem_qualidade &lt;int&gt;, garagem_condicao &lt;int&gt;,
+## #   entrada_veiculo_pavimentada &lt;int&gt;, deck_madeira_area &lt;int&gt;,
+## #   varanda_aberta_area &lt;int&gt;, varanda_fechada_area &lt;int&gt;,
+## #   varanda_3ssn_area &lt;int&gt;, varanda_com_tela_area &lt;int&gt;, piscina_area &lt;int&gt;,
+## #   piscina_qualidade &lt;int&gt;, cerca_qualidade &lt;int&gt;,
+## #   funcionalidades_diversas &lt;int&gt;, funcionalidades_valor &lt;int&gt;,
+## #   venda_mes &lt;int&gt;, venda_ano &lt;int&gt;, venda_tipo &lt;int&gt;, venda_condicao &lt;int&gt;,
+## #   venda_valor &lt;int&gt;</code></pre>
+<p>Se quisermos selecionar as colunas a serem modificadas a partir de um teste lógico, utilizamos o ajudante <code>where()</code>.</p>
+<p>No exemplo abaixo, calculamos o número de valores distintos das colunas de categóricas.</p>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="7-2-dplyr.html#cb318-1"></a>casas <span class="op">%&gt;%</span></span>
+<span id="cb318-2"><a href="7-2-dplyr.html#cb318-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="kw">where</span>(is.character), n_distinct))</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 47
+##     pid moradia_classe moradia_zoneame… rua_tipo beco_tipo lote_formato
+##   &lt;int&gt;          &lt;int&gt;            &lt;int&gt;    &lt;int&gt;     &lt;int&gt;        &lt;int&gt;
+## 1  2930             16                7        2         3            4
+## # … with 41 more variables: terreno_contorno &lt;int&gt;, utilidades &lt;int&gt;,
+## #   lote_config &lt;int&gt;, terreno_declive &lt;int&gt;, vizinhanca &lt;int&gt;,
+## #   condicao_1 &lt;int&gt;, condicao_2 &lt;int&gt;, moradia_tipo &lt;int&gt;,
+## #   moradia_estilo &lt;int&gt;, geral_qualidade &lt;int&gt;, geral_condicao &lt;int&gt;,
+## #   telhado_estilo &lt;int&gt;, telhado_material &lt;int&gt;, exterior_cobertura_1 &lt;int&gt;,
+## #   exterior_cobertura_2 &lt;int&gt;, alvenaria_tipo &lt;int&gt;, exterior_qualidade &lt;int&gt;,
+## #   exterior_condicao &lt;int&gt;, fundacao_tipo &lt;int&gt;, porao_qualidade &lt;int&gt;,
+## #   porao_condicao &lt;int&gt;, porao_exposicao &lt;int&gt;, porao_acabamento_1 &lt;int&gt;,
+## #   porao_acabamento_2 &lt;int&gt;, aquecimento_tipo &lt;int&gt;,
+## #   aquecimento_qualidade_condicao &lt;int&gt;, ar_condicionado_central &lt;int&gt;,
+## #   sistema_eletrico_tipo &lt;int&gt;, cozinha_qualidade &lt;int&gt;, funcional &lt;int&gt;,
+## #   lareira_qualidade &lt;int&gt;, garagem_tipo &lt;int&gt;, garagem_acabamento &lt;int&gt;,
+## #   garagem_qualidade &lt;int&gt;, garagem_condicao &lt;int&gt;,
+## #   entrada_veiculo_pavimentada &lt;int&gt;, piscina_qualidade &lt;int&gt;,
+## #   cerca_qualidade &lt;int&gt;, funcionalidades_diversas &lt;int&gt;, venda_tipo &lt;int&gt;,
+## #   venda_condicao &lt;int&gt;</code></pre>
+<p>Todas as colunas da base resultante eram colunas com classe <code>character</code> na base <code>casas</code>.</p>
+<p>Anteriormente, utilizávamos a função <code>summarise_if()</code>.</p>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="7-2-dplyr.html#cb320-1"></a>casas <span class="op">%&gt;%</span></span>
+<span id="cb320-2"><a href="7-2-dplyr.html#cb320-2"></a><span class="st">  </span><span class="kw">summarise_if</span>(is.character, n_distinct)</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 47
+##     pid moradia_classe moradia_zoneame… rua_tipo beco_tipo lote_formato
+##   &lt;int&gt;          &lt;int&gt;            &lt;int&gt;    &lt;int&gt;     &lt;int&gt;        &lt;int&gt;
+## 1  2930             16                7        2         3            4
+## # … with 41 more variables: terreno_contorno &lt;int&gt;, utilidades &lt;int&gt;,
+## #   lote_config &lt;int&gt;, terreno_declive &lt;int&gt;, vizinhanca &lt;int&gt;,
+## #   condicao_1 &lt;int&gt;, condicao_2 &lt;int&gt;, moradia_tipo &lt;int&gt;,
+## #   moradia_estilo &lt;int&gt;, geral_qualidade &lt;int&gt;, geral_condicao &lt;int&gt;,
+## #   telhado_estilo &lt;int&gt;, telhado_material &lt;int&gt;, exterior_cobertura_1 &lt;int&gt;,
+## #   exterior_cobertura_2 &lt;int&gt;, alvenaria_tipo &lt;int&gt;, exterior_qualidade &lt;int&gt;,
+## #   exterior_condicao &lt;int&gt;, fundacao_tipo &lt;int&gt;, porao_qualidade &lt;int&gt;,
+## #   porao_condicao &lt;int&gt;, porao_exposicao &lt;int&gt;, porao_acabamento_1 &lt;int&gt;,
+## #   porao_acabamento_2 &lt;int&gt;, aquecimento_tipo &lt;int&gt;,
+## #   aquecimento_qualidade_condicao &lt;int&gt;, ar_condicionado_central &lt;int&gt;,
+## #   sistema_eletrico_tipo &lt;int&gt;, cozinha_qualidade &lt;int&gt;, funcional &lt;int&gt;,
+## #   lareira_qualidade &lt;int&gt;, garagem_tipo &lt;int&gt;, garagem_acabamento &lt;int&gt;,
+## #   garagem_qualidade &lt;int&gt;, garagem_condicao &lt;int&gt;,
+## #   entrada_veiculo_pavimentada &lt;int&gt;, piscina_qualidade &lt;int&gt;,
+## #   cerca_qualidade &lt;int&gt;, funcionalidades_diversas &lt;int&gt;, venda_tipo &lt;int&gt;,
+## #   venda_condicao &lt;int&gt;</code></pre>
+<p>Com o <code>across()</code>, podemos combinar os efeitos de um <code>summarise_if()</code> e um <code>summarise_at()</code> em um único <code>summarise()</code>. A seguir, calculamos as áreas médias, garantindo que pegamos apenas variáveis numéricas.</p>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="7-2-dplyr.html#cb322-1"></a>casas <span class="op">%&gt;%</span></span>
+<span id="cb322-2"><a href="7-2-dplyr.html#cb322-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">across</span>(<span class="kw">where</span>(is.numeric) <span class="op">&amp;</span><span class="st"> </span><span class="kw">contains</span>(<span class="st">&quot;_area&quot;</span>), mean, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 17
+##   lote_area alvenaria_area porao_area_com_… porao_area_com_… porao_area_sem_…
+##       &lt;dbl&gt;          &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+## 1    10148.           102.             443.             49.7             559.
+## # … with 12 more variables: porao_area_total &lt;dbl&gt;, primeiro_andar_area &lt;dbl&gt;,
+## #   segundo_andar_area &lt;dbl&gt;, acabamento_baixa_qualidade_area &lt;dbl&gt;,
+## #   acima_solo_area &lt;dbl&gt;, garagem_area &lt;dbl&gt;, deck_madeira_area &lt;dbl&gt;,
+## #   varanda_aberta_area &lt;dbl&gt;, varanda_fechada_area &lt;dbl&gt;,
+## #   varanda_3ssn_area &lt;dbl&gt;, varanda_com_tela_area &lt;dbl&gt;, piscina_area &lt;dbl&gt;</code></pre>
+<p>Além disso, com a função <code>across()</code>, podemos fazer sumarizações complexas que não seria possível utilizando apenas as funções <code>summarise()</code>, <code>summarise_if()</code> e <code>summarise_at()</code>. No exemplo a seguir, calculamos a média das áreas, o número de <code>NAs</code> de variáveis categóricas e o número de casas para cada tipo de fundação. Tudo em um mesmo <code>summarise()</code>!</p>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="7-2-dplyr.html#cb324-1"></a>casas <span class="op">%&gt;%</span></span>
+<span id="cb324-2"><a href="7-2-dplyr.html#cb324-2"></a><span class="st">  </span><span class="kw">group_by</span>(fundacao_tipo) <span class="op">%&gt;%</span></span>
+<span id="cb324-3"><a href="7-2-dplyr.html#cb324-3"></a><span class="st">  </span><span class="kw">summarise</span>(</span>
+<span id="cb324-4"><a href="7-2-dplyr.html#cb324-4"></a>    <span class="kw">across</span>(<span class="kw">where</span>(is.numeric) <span class="op">&amp;</span><span class="st"> </span><span class="kw">contains</span>(<span class="st">&quot;area&quot;</span>), mean, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb324-5"><a href="7-2-dplyr.html#cb324-5"></a>    <span class="kw">across</span>(<span class="kw">where</span>(is.character), <span class="op">~</span><span class="kw">sum</span>(<span class="kw">is.na</span>(.x))),</span>
+<span id="cb324-6"><a href="7-2-dplyr.html#cb324-6"></a>    <span class="dt">n_obs =</span> <span class="kw">n</span>(),</span>
+<span id="cb324-7"><a href="7-2-dplyr.html#cb324-7"></a>  ) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb324-8"><a href="7-2-dplyr.html#cb324-8"></a><span class="st">  </span><span class="kw">select</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, n_obs)</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 6 x 5
+##   fundacao_tipo       lote_area alvenaria_area porao_area_com_acabamento_1 n_obs
+##   &lt;chr&gt;                   &lt;dbl&gt;          &lt;dbl&gt;                       &lt;dbl&gt; &lt;int&gt;
+## 1 bloco de concreto      10616.           85.0                       468.   1244
+## 2 concreto derrramado    10054.          144.                        506.   1310
+## 3 laje                   10250.           35.2                         0      49
+## 4 madeira                 9838.           16                         812.      5
+## 5 pedra                   8659.            0                          43.9    11
+## 6 tijolo e telha          8712.           10.2                       151.    311</code></pre>
+<p>Embora a nova sintaxe, usando <code>across()</code>, não seja muito diferente do que fazíamos antes, realizar sumarizações complexas não é a única vantagem desse novo <em>framework</em>.</p>
+<p>O <code>across()</code> pode ser utilizado em todos os verbos do <code>{dplyr}</code> (com exceção do <code>select()</code> e <code>rename()</code>, já que ele não trás vantagens com relação ao que já podia ser feito) e isso unifica o modo de fazermos essas operações no <code>dplyr</code>. Em vez de termos uma família de funções para cada verbo, temos agora apenas o próprio verbo e a função <code>across()</code>.</p>
+<p>Vamos ver um exemplo para o <code>mutate()</code> e para o <code>filter()</code>.</p>
+<p>O código abaixo transforma todas as variáveis que possuem “area” no nome, passando os valores de pés quadrados para metros quadrados.</p>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="7-2-dplyr.html#cb327-1"></a>casas <span class="op">%&gt;%</span></span>
+<span id="cb327-2"><a href="7-2-dplyr.html#cb327-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="kw">across</span>(</span>
+<span id="cb327-3"><a href="7-2-dplyr.html#cb327-3"></a>    <span class="kw">contains</span>(<span class="st">&quot;area&quot;</span>),</span>
+<span id="cb327-4"><a href="7-2-dplyr.html#cb327-4"></a>    <span class="op">~</span><span class="st"> </span>.x <span class="op">/</span><span class="st"> </span><span class="fl">10.764</span></span>
+<span id="cb327-5"><a href="7-2-dplyr.html#cb327-5"></a>  ))</span></code></pre></div>
+<p>Já o código a seguir filtra apenas as casas que possuem varanda aberta, cerca e lareira (o <code>NA</code> nessa base significa que a casa não possui tal característica).</p>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="7-2-dplyr.html#cb328-1"></a>casas <span class="op">%&gt;%</span></span>
+<span id="cb328-2"><a href="7-2-dplyr.html#cb328-2"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">across</span>(</span>
+<span id="cb328-3"><a href="7-2-dplyr.html#cb328-3"></a>    <span class="kw">c</span>(varanda_aberta_area, cerca_qualidade, lareira_qualidade),</span>
+<span id="cb328-4"><a href="7-2-dplyr.html#cb328-4"></a>    <span class="op">~!</span><span class="kw">is.na</span>(.x)</span>
+<span id="cb328-5"><a href="7-2-dplyr.html#cb328-5"></a>  )) </span></code></pre></div>
+<p>Não precisamos do <code>across()</code> na hora de selecionar colunas. A função <code>select()</code> já usa naturalmente o mecanismo de seleção de colunas que o <code>across()</code> proporciona.</p>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="7-2-dplyr.html#cb329-1"></a>casas <span class="op">%&gt;%</span></span>
+<span id="cb329-2"><a href="7-2-dplyr.html#cb329-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="kw">where</span>(is.numeric))</span></code></pre></div>
+<pre><code>## # A tibble: 2,930 x 35
+##    ordem lote_fachada lote_area construcao_ano remodelacao_ano alvenaria_area
+##    &lt;int&gt;        &lt;int&gt;     &lt;int&gt;          &lt;int&gt;           &lt;int&gt;          &lt;int&gt;
+##  1     1          141     31770           1960            1960            112
+##  2     2           80     11622           1961            1961              0
+##  3     3           81     14267           1958            1958            108
+##  4     4           93     11160           1968            1968              0
+##  5     5           74     13830           1997            1998              0
+##  6     6           78      9978           1998            1998             20
+##  7     7           41      4920           2001            2001              0
+##  8     8           43      5005           1992            1992              0
+##  9     9           39      5389           1995            1996              0
+## 10    10           60      7500           1999            1999              0
+## # … with 2,920 more rows, and 29 more variables:
+## #   porao_area_com_acabamento_1 &lt;int&gt;, porao_area_com_acabamento_2 &lt;int&gt;,
+## #   porao_area_sem_acabamento &lt;int&gt;, porao_area_total &lt;int&gt;,
+## #   porao_num_banheiros &lt;int&gt;, porao_num_banheiros_lavabos &lt;int&gt;,
+## #   primeiro_andar_area &lt;int&gt;, segundo_andar_area &lt;int&gt;,
+## #   acabamento_baixa_qualidade_area &lt;int&gt;, acima_solo_area &lt;int&gt;,
+## #   acima_solo_num_banheiros &lt;int&gt;, acima_solo_num_lavabos &lt;int&gt;,
+## #   acima_solo_num_quartos &lt;int&gt;, acima_solo_num_cozinhas &lt;int&gt;,
+## #   acima_solo_num_comodos &lt;int&gt;, total_num_lareiras &lt;int&gt;,
+## #   garagem_ano_construcao &lt;int&gt;, garagem_capacidade_carros &lt;int&gt;,
+## #   garagem_area &lt;int&gt;, deck_madeira_area &lt;int&gt;, varanda_aberta_area &lt;int&gt;,
+## #   varanda_fechada_area &lt;int&gt;, varanda_3ssn_area &lt;int&gt;,
+## #   varanda_com_tela_area &lt;int&gt;, piscina_area &lt;int&gt;,
+## #   funcionalidades_valor &lt;int&gt;, venda_mes &lt;int&gt;, venda_ano &lt;int&gt;,
+## #   venda_valor &lt;int&gt;</code></pre>
+<p>O mesmo vale para o <code>rename()</code>. Se quisermos renomer várias colunas, a partir de uma função, utilizamos o <code>rename_with()</code>.</p>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="7-2-dplyr.html#cb331-1"></a>casas <span class="op">%&gt;%</span></span>
+<span id="cb331-2"><a href="7-2-dplyr.html#cb331-2"></a><span class="st">  </span><span class="kw">rename_with</span>(toupper, <span class="kw">contains</span>(<span class="st">&quot;venda&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 2,930 x 82
+##    ordem pid   moradia_classe moradia_zoneame… lote_fachada lote_area rua_tipo
+##    &lt;int&gt; &lt;chr&gt; &lt;chr&gt;          &lt;chr&gt;                   &lt;int&gt;     &lt;int&gt; &lt;chr&gt;   
+##  1     1 0526… 020            Residencial bai…          141     31770 pavimen…
+##  2     2 0526… 020            Residencial alt…           80     11622 pavimen…
+##  3     3 0526… 020            Residencial bai…           81     14267 pavimen…
+##  4     4 0526… 020            Residencial bai…           93     11160 pavimen…
+##  5     5 0527… 060            Residencial bai…           74     13830 pavimen…
+##  6     6 0527… 060            Residencial bai…           78      9978 pavimen…
+##  7     7 0527… desenvolvimen… Residencial bai…           41      4920 pavimen…
+##  8     8 0527… desenvolvimen… Residencial bai…           43      5005 pavimen…
+##  9     9 0527… desenvolvimen… Residencial bai…           39      5389 pavimen…
+## 10    10 0527… 060            Residencial bai…           60      7500 pavimen…
+## # … with 2,920 more rows, and 75 more variables: beco_tipo &lt;chr&gt;,
+## #   lote_formato &lt;chr&gt;, terreno_contorno &lt;chr&gt;, utilidades &lt;chr&gt;,
+## #   lote_config &lt;chr&gt;, terreno_declive &lt;chr&gt;, vizinhanca &lt;chr&gt;,
+## #   condicao_1 &lt;chr&gt;, condicao_2 &lt;chr&gt;, moradia_tipo &lt;chr&gt;,
+## #   moradia_estilo &lt;chr&gt;, geral_qualidade &lt;chr&gt;, geral_condicao &lt;chr&gt;,
+## #   construcao_ano &lt;int&gt;, remodelacao_ano &lt;int&gt;, telhado_estilo &lt;chr&gt;,
+## #   telhado_material &lt;chr&gt;, exterior_cobertura_1 &lt;chr&gt;,
+## #   exterior_cobertura_2 &lt;chr&gt;, alvenaria_tipo &lt;chr&gt;, alvenaria_area &lt;int&gt;,
+## #   exterior_qualidade &lt;chr&gt;, exterior_condicao &lt;chr&gt;, fundacao_tipo &lt;chr&gt;,
+## #   porao_qualidade &lt;chr&gt;, porao_condicao &lt;chr&gt;, porao_exposicao &lt;chr&gt;,
+## #   porao_acabamento_1 &lt;chr&gt;, porao_area_com_acabamento_1 &lt;int&gt;,
+## #   porao_acabamento_2 &lt;chr&gt;, porao_area_com_acabamento_2 &lt;int&gt;,
+## #   porao_area_sem_acabamento &lt;int&gt;, porao_area_total &lt;int&gt;,
+## #   porao_num_banheiros &lt;int&gt;, porao_num_banheiros_lavabos &lt;int&gt;,
+## #   aquecimento_tipo &lt;chr&gt;, aquecimento_qualidade_condicao &lt;chr&gt;,
+## #   ar_condicionado_central &lt;chr&gt;, sistema_eletrico_tipo &lt;chr&gt;,
+## #   primeiro_andar_area &lt;int&gt;, segundo_andar_area &lt;int&gt;,
+## #   acabamento_baixa_qualidade_area &lt;int&gt;, acima_solo_area &lt;int&gt;,
+## #   acima_solo_num_banheiros &lt;int&gt;, acima_solo_num_lavabos &lt;int&gt;,
+## #   acima_solo_num_quartos &lt;int&gt;, acima_solo_num_cozinhas &lt;int&gt;,
+## #   cozinha_qualidade &lt;chr&gt;, acima_solo_num_comodos &lt;int&gt;, funcional &lt;chr&gt;,
+## #   total_num_lareiras &lt;int&gt;, lareira_qualidade &lt;chr&gt;, garagem_tipo &lt;chr&gt;,
+## #   garagem_ano_construcao &lt;int&gt;, garagem_acabamento &lt;chr&gt;,
+## #   garagem_capacidade_carros &lt;int&gt;, garagem_area &lt;int&gt;,
+## #   garagem_qualidade &lt;chr&gt;, garagem_condicao &lt;chr&gt;,
+## #   entrada_veiculo_pavimentada &lt;chr&gt;, deck_madeira_area &lt;int&gt;,
+## #   varanda_aberta_area &lt;int&gt;, varanda_fechada_area &lt;int&gt;,
+## #   varanda_3ssn_area &lt;int&gt;, varanda_com_tela_area &lt;int&gt;, piscina_area &lt;int&gt;,
+## #   piscina_qualidade &lt;chr&gt;, cerca_qualidade &lt;chr&gt;,
+## #   funcionalidades_diversas &lt;chr&gt;, funcionalidades_valor &lt;int&gt;,
+## #   VENDA_MES &lt;int&gt;, VENDA_ANO &lt;int&gt;, VENDA_TIPO &lt;chr&gt;, VENDA_CONDICAO &lt;chr&gt;,
+## #   VENDA_VALOR &lt;int&gt;</code></pre>
+</div>
+<div id="a-função-relocate" class="section level4 unnumbered">
+<h4>A função <code>relocate()</code></h4>
+<p>O <code>{dplyr}</code> possui agora uma função própria para reorganizar colunas: <code>relocate()</code>. Por padrão, ela coloca uma ou mais colunas no começo da base.</p>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="7-2-dplyr.html#cb333-1"></a>casas <span class="op">%&gt;%</span></span>
+<span id="cb333-2"><a href="7-2-dplyr.html#cb333-2"></a><span class="st">  </span><span class="kw">relocate</span>(venda_valor, venda_tipo)</span></code></pre></div>
+<pre><code>## # A tibble: 2,930 x 82
+##    venda_valor venda_tipo ordem pid   moradia_classe moradia_zoneame…
+##          &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt; &lt;chr&gt;          &lt;chr&gt;           
+##  1      215000 &quot;WD &quot;          1 0526… 020            Residencial bai…
+##  2      105000 &quot;WD &quot;          2 0526… 020            Residencial alt…
+##  3      172000 &quot;WD &quot;          3 0526… 020            Residencial bai…
+##  4      244000 &quot;WD &quot;          4 0526… 020            Residencial bai…
+##  5      189900 &quot;WD &quot;          5 0527… 060            Residencial bai…
+##  6      195500 &quot;WD &quot;          6 0527… 060            Residencial bai…
+##  7      213500 &quot;WD &quot;          7 0527… desenvolvimen… Residencial bai…
+##  8      191500 &quot;WD &quot;          8 0527… desenvolvimen… Residencial bai…
+##  9      236500 &quot;WD &quot;          9 0527… desenvolvimen… Residencial bai…
+## 10      189000 &quot;WD &quot;         10 0527… 060            Residencial bai…
+## # … with 2,920 more rows, and 76 more variables: lote_fachada &lt;int&gt;,
+## #   lote_area &lt;int&gt;, rua_tipo &lt;chr&gt;, beco_tipo &lt;chr&gt;, lote_formato &lt;chr&gt;,
+## #   terreno_contorno &lt;chr&gt;, utilidades &lt;chr&gt;, lote_config &lt;chr&gt;,
+## #   terreno_declive &lt;chr&gt;, vizinhanca &lt;chr&gt;, condicao_1 &lt;chr&gt;,
+## #   condicao_2 &lt;chr&gt;, moradia_tipo &lt;chr&gt;, moradia_estilo &lt;chr&gt;,
+## #   geral_qualidade &lt;chr&gt;, geral_condicao &lt;chr&gt;, construcao_ano &lt;int&gt;,
+## #   remodelacao_ano &lt;int&gt;, telhado_estilo &lt;chr&gt;, telhado_material &lt;chr&gt;,
+## #   exterior_cobertura_1 &lt;chr&gt;, exterior_cobertura_2 &lt;chr&gt;,
+## #   alvenaria_tipo &lt;chr&gt;, alvenaria_area &lt;int&gt;, exterior_qualidade &lt;chr&gt;,
+## #   exterior_condicao &lt;chr&gt;, fundacao_tipo &lt;chr&gt;, porao_qualidade &lt;chr&gt;,
+## #   porao_condicao &lt;chr&gt;, porao_exposicao &lt;chr&gt;, porao_acabamento_1 &lt;chr&gt;,
+## #   porao_area_com_acabamento_1 &lt;int&gt;, porao_acabamento_2 &lt;chr&gt;,
+## #   porao_area_com_acabamento_2 &lt;int&gt;, porao_area_sem_acabamento &lt;int&gt;,
+## #   porao_area_total &lt;int&gt;, porao_num_banheiros &lt;int&gt;,
+## #   porao_num_banheiros_lavabos &lt;int&gt;, aquecimento_tipo &lt;chr&gt;,
+## #   aquecimento_qualidade_condicao &lt;chr&gt;, ar_condicionado_central &lt;chr&gt;,
+## #   sistema_eletrico_tipo &lt;chr&gt;, primeiro_andar_area &lt;int&gt;,
+## #   segundo_andar_area &lt;int&gt;, acabamento_baixa_qualidade_area &lt;int&gt;,
+## #   acima_solo_area &lt;int&gt;, acima_solo_num_banheiros &lt;int&gt;,
+## #   acima_solo_num_lavabos &lt;int&gt;, acima_solo_num_quartos &lt;int&gt;,
+## #   acima_solo_num_cozinhas &lt;int&gt;, cozinha_qualidade &lt;chr&gt;,
+## #   acima_solo_num_comodos &lt;int&gt;, funcional &lt;chr&gt;, total_num_lareiras &lt;int&gt;,
+## #   lareira_qualidade &lt;chr&gt;, garagem_tipo &lt;chr&gt;, garagem_ano_construcao &lt;int&gt;,
+## #   garagem_acabamento &lt;chr&gt;, garagem_capacidade_carros &lt;int&gt;,
+## #   garagem_area &lt;int&gt;, garagem_qualidade &lt;chr&gt;, garagem_condicao &lt;chr&gt;,
+## #   entrada_veiculo_pavimentada &lt;chr&gt;, deck_madeira_area &lt;int&gt;,
+## #   varanda_aberta_area &lt;int&gt;, varanda_fechada_area &lt;int&gt;,
+## #   varanda_3ssn_area &lt;int&gt;, varanda_com_tela_area &lt;int&gt;, piscina_area &lt;int&gt;,
+## #   piscina_qualidade &lt;chr&gt;, cerca_qualidade &lt;chr&gt;,
+## #   funcionalidades_diversas &lt;chr&gt;, funcionalidades_valor &lt;int&gt;,
+## #   venda_mes &lt;int&gt;, venda_ano &lt;int&gt;, venda_condicao &lt;chr&gt;</code></pre>
+<p>Podemos usar os argumentos <code>.after</code> e <code>.before</code> para fazer mudanças mais complexas.</p>
+<p>O código baixo coloca a coluna <code>venda_ano</code> depois da coluna <code>construcao_ano</code>.</p>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="7-2-dplyr.html#cb335-1"></a>casas <span class="op">%&gt;%</span></span>
+<span id="cb335-2"><a href="7-2-dplyr.html#cb335-2"></a><span class="st">  </span><span class="kw">relocate</span>(venda_ano, <span class="dt">.after =</span> construcao_ano)</span></code></pre></div>
+<p>O código baixo coloca a coluna <code>venda_ano</code> antes da coluna <code>construcao_ano</code>.</p>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="7-2-dplyr.html#cb336-1"></a>casas <span class="op">%&gt;%</span></span>
+<span id="cb336-2"><a href="7-2-dplyr.html#cb336-2"></a><span class="st">  </span><span class="kw">relocate</span>(venda_ano, <span class="dt">.before =</span> construcao_ano)</span></code></pre></div>
+</div>
+<div id="a-função-rowwise" class="section level4 unnumbered">
+<h4>A função <code>rowwise()</code></h4>
+<p>Por fim, vamos discutir operações feitas por linha. Tome como exemplo a tabela abaixo. Ela apresenta as notas de alunos em quatro provas.</p>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="7-2-dplyr.html#cb337-1"></a>tab_notas &lt;-<span class="st"> </span><span class="kw">tibble</span>(</span>
+<span id="cb337-2"><a href="7-2-dplyr.html#cb337-2"></a>  <span class="dt">student_id =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,</span>
+<span id="cb337-3"><a href="7-2-dplyr.html#cb337-3"></a>  <span class="dt">prova1 =</span> <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">5</span>),</span>
+<span id="cb337-4"><a href="7-2-dplyr.html#cb337-4"></a>  <span class="dt">prova2 =</span> <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">5</span>),</span>
+<span id="cb337-5"><a href="7-2-dplyr.html#cb337-5"></a>  <span class="dt">prova3 =</span> <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">5</span>),</span>
+<span id="cb337-6"><a href="7-2-dplyr.html#cb337-6"></a>  <span class="dt">prova4 =</span> <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">5</span>)</span>
+<span id="cb337-7"><a href="7-2-dplyr.html#cb337-7"></a>)</span>
+<span id="cb337-8"><a href="7-2-dplyr.html#cb337-8"></a></span>
+<span id="cb337-9"><a href="7-2-dplyr.html#cb337-9"></a>tab_notas</span></code></pre></div>
+<pre><code>## # A tibble: 5 x 5
+##   student_id prova1 prova2 prova3 prova4
+##        &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;
+## 1          1      6      1      2      3
+## 2          2      5      5      5      5
+## 3          3      9      7      3      1
+## 4          4      2      3      4      6
+## 5          5     10      6      1      0</code></pre>
+<p>Se quisermos gerar uma coluna com a nota média de cada aluno nas quatro provas, não poderíamos usar o <code>mutate()</code> diretamente.</p>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="7-2-dplyr.html#cb339-1"></a>tab_notas <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">media =</span> <span class="kw">mean</span>(<span class="kw">c</span>(prova1, prova2, prova3, prova4)))</span></code></pre></div>
+<pre><code>## # A tibble: 5 x 6
+##   student_id prova1 prova2 prova3 prova4 media
+##        &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt; &lt;dbl&gt;
+## 1          1      6      1      2      3   4.2
+## 2          2      5      5      5      5   4.2
+## 3          3      9      7      3      1   4.2
+## 4          4      2      3      4      6   4.2
+## 5          5     10      6      1      0   4.2</code></pre>
+<p>Neste caso, todas as colunas estão sendo empilhadas e gerando uma única média, passada a todas as linhas da coluna <code>media</code>.</p>
+<p>Para fazermos a conta para cada aluno, podemos agrupar por aluno. Agora sim a média é calculada apenas nas notas de cada estudante.</p>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="7-2-dplyr.html#cb341-1"></a>tab_notas <span class="op">%&gt;%</span></span>
+<span id="cb341-2"><a href="7-2-dplyr.html#cb341-2"></a><span class="st">  </span><span class="kw">group_by</span>(student_id) <span class="op">%&gt;%</span></span>
+<span id="cb341-3"><a href="7-2-dplyr.html#cb341-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">media =</span> <span class="kw">mean</span>(<span class="kw">c</span>(prova1, prova2, prova3, prova4)))</span></code></pre></div>
+<pre><code>## # A tibble: 5 x 6
+## # Groups:   student_id [5]
+##   student_id prova1 prova2 prova3 prova4 media
+##        &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt; &lt;dbl&gt;
+## 1          1      6      1      2      3  3   
+## 2          2      5      5      5      5  5   
+## 3          3      9      7      3      1  5   
+## 4          4      2      3      4      6  3.75
+## 5          5     10      6      1      0  4.25</code></pre>
+<p>Também podemos nos aproveitar da sintaxe do <code>across()</code> neste caso. Para isso, precisamos substutir a função <code>c()</code> pela função <code>c_across()</code>.</p>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="7-2-dplyr.html#cb343-1"></a>tab_notas <span class="op">%&gt;%</span></span>
+<span id="cb343-2"><a href="7-2-dplyr.html#cb343-2"></a><span class="st">  </span><span class="kw">group_by</span>(student_id) <span class="op">%&gt;%</span></span>
+<span id="cb343-3"><a href="7-2-dplyr.html#cb343-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">media =</span> <span class="kw">mean</span>(<span class="kw">c_across</span>(<span class="kw">starts_with</span>(<span class="st">&quot;prova&quot;</span>))))</span></code></pre></div>
+<pre><code>## # A tibble: 5 x 6
+## # Groups:   student_id [5]
+##   student_id prova1 prova2 prova3 prova4 media
+##        &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt; &lt;dbl&gt;
+## 1          1      6      1      2      3  3   
+## 2          2      5      5      5      5  5   
+## 3          3      9      7      3      1  5   
+## 4          4      2      3      4      6  3.75
+## 5          5     10      6      1      0  4.25</code></pre>
+<p>Equivalentemente ao <code>group_by()</code>, neste caso, podemos usar a função <code>rowwise()</code>.</p>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="7-2-dplyr.html#cb345-1"></a>tab_notas <span class="op">%&gt;%</span></span>
+<span id="cb345-2"><a href="7-2-dplyr.html#cb345-2"></a><span class="st">  </span><span class="kw">rowwise</span>(student_id) <span class="op">%&gt;%</span></span>
+<span id="cb345-3"><a href="7-2-dplyr.html#cb345-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">media =</span> <span class="kw">mean</span>(<span class="kw">c_across</span>(<span class="kw">starts_with</span>(<span class="st">&quot;prova&quot;</span>))))</span></code></pre></div>
+<pre><code>## # A tibble: 5 x 6
+## # Rowwise:  student_id
+##   student_id prova1 prova2 prova3 prova4 media
+##        &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt; &lt;dbl&gt;
+## 1          1      6      1      2      3  3   
+## 2          2      5      5      5      5  5   
+## 3          3      9      7      3      1  5   
+## 4          4      2      3      4      6  3.75
+## 5          5     10      6      1      0  4.25</code></pre>
+<p>Ela é muito útil quando queremos fazer operação por linhas, mas não temos uma coluna de identificação. Por padrão, se não indicarmos nenhuma coluna, cada linha será um “grupo”.</p>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="7-2-dplyr.html#cb347-1"></a>tab_notas <span class="op">%&gt;%</span></span>
+<span id="cb347-2"><a href="7-2-dplyr.html#cb347-2"></a><span class="st">  </span><span class="kw">rowwise</span>() <span class="op">%&gt;%</span></span>
+<span id="cb347-3"><a href="7-2-dplyr.html#cb347-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">media =</span> <span class="kw">mean</span>(<span class="kw">c_across</span>(<span class="kw">starts_with</span>(<span class="st">&quot;prova&quot;</span>))))</span></code></pre></div>
+<pre><code>## # A tibble: 5 x 6
+## # Rowwise: 
+##   student_id prova1 prova2 prova3 prova4 media
+##        &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt; &lt;dbl&gt;
+## 1          1      6      1      2      3  3   
+## 2          2      5      5      5      5  5   
+## 3          3      9      7      3      1  5   
+## 4          4      2      3      4      6  3.75
+## 5          5     10      6      1      0  4.25</code></pre>
+<p>Veja que <code>student_id</code> não é passada para a função <code>rowwise()</code>. Não precisaríamos dessa coluna na base para reproduzir a geração da columa <code>media</code> neste caso.</p>
+</div>
+<div id="exercícios-17" class="section level4 unnumbered">
+<h4>Exercícios</h4>
+<p><strong>1.</strong> Reescreva os códigos abaixo utilizando as funções <code>across()</code> e <code>where()</code>.</p>
+<p><strong>a.</strong></p>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="7-2-dplyr.html#cb349-1"></a>casas <span class="op">%&gt;%</span></span>
+<span id="cb349-2"><a href="7-2-dplyr.html#cb349-2"></a><span class="st">  </span><span class="kw">group_by</span>(geral_qualidade) <span class="op">%&gt;%</span></span>
+<span id="cb349-3"><a href="7-2-dplyr.html#cb349-3"></a><span class="st">  </span><span class="kw">summarise</span>(</span>
+<span id="cb349-4"><a href="7-2-dplyr.html#cb349-4"></a>    <span class="dt">acima_solo_area_media =</span> <span class="kw">mean</span>(acima_solo_area, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb349-5"><a href="7-2-dplyr.html#cb349-5"></a>    <span class="dt">garagem_area_media =</span> <span class="kw">mean</span>(garagem_area, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),</span>
+<span id="cb349-6"><a href="7-2-dplyr.html#cb349-6"></a>    <span class="dt">valor_venda_medio =</span> <span class="kw">mean</span>(venda_valor, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb349-7"><a href="7-2-dplyr.html#cb349-7"></a>  )</span></code></pre></div>
+<p><strong>b.</strong></p>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="7-2-dplyr.html#cb350-1"></a>casas <span class="op">%&gt;%</span></span>
+<span id="cb350-2"><a href="7-2-dplyr.html#cb350-2"></a><span class="st">  </span><span class="kw">filter_at</span>(</span>
+<span id="cb350-3"><a href="7-2-dplyr.html#cb350-3"></a>    <span class="kw">vars</span>(porao_qualidade, varanda_fechada_area, cerca_qualidade),</span>
+<span id="cb350-4"><a href="7-2-dplyr.html#cb350-4"></a>    <span class="op">~!</span><span class="kw">is.na</span>(.x)</span>
+<span id="cb350-5"><a href="7-2-dplyr.html#cb350-5"></a>  )</span></code></pre></div>
+<p><strong>c.</strong></p>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="7-2-dplyr.html#cb351-1"></a>casas <span class="op">%&gt;%</span></span>
+<span id="cb351-2"><a href="7-2-dplyr.html#cb351-2"></a><span class="st">  </span><span class="kw">mutate_if</span>(is.character, <span class="op">~</span>tidyr<span class="op">::</span><span class="kw">replace_na</span>(.x, <span class="dt">replace =</span> <span class="st">&quot;Não possui&quot;</span>))</span></code></pre></div>
+<p><strong>2.</strong> Utilizando a base <code>casas</code>, resolva os itens a seguir.</p>
+<p><strong>a.</strong> Usando o case_when() crie um código para categorizar a variável venda_valor da seguinte maneira</p>
+<p><strong>b.</strong> Utilize o código feito na letra (a) para agrupar a base ames pela variável venda_valor categorizada e calcular todas as áreas médias para cada uma dessas categorias.</p>
+<p><strong>3.</strong> Escreva um código que receba a base ames e retorne uma tabela com apenas</p>
+<p><strong>a.</strong> as colunas referentes à garagem da casa.</p>
+<p><strong>b.</strong> as colunas referentes a variáveis de qualidade.</p>
+<p><strong>c.</strong> colunas numéricas que representam áreas da casa e do terreno.</p>
+<p><strong>d.</strong> colunas numéricas.</p>
+<p><strong>e.</strong> colunas referentes à piscina, porão e o valor de venda.</p>
+<p><strong>4.</strong> Usando a função rename_with(), troque todos os "_" dos nomes das colunas por um espaço " ".</p>
+<p><strong>5.</strong> Escreva um código para colocar todas as colunas relativas a venda no começo da tabela ames.</p>
+<p><strong>6.</strong> 5. Escreva um código para colocar todas as colunas numéricas da base ames no começo da tabela e todas as colunas categóricas no final.</p>
 
 </div>
 </div>

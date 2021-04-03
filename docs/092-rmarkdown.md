@@ -203,10 +203,8 @@ media_massa %>%
   DT::datatable()
 ```
 
-```{=html}
-<div id="htmlwidget-85257020350fe5aef895" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-85257020350fe5aef895">{"x":{"filter":"none","data":[["1","2","3","4","5"],["Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-barbicha","Pinguim-gentoo"],["Biscoe","Dream","Torgersen","Dream","Biscoe"],[3.71,3.69,3.71,3.73,5.08]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>especies<\/th>\n      <th>ilha<\/th>\n      <th>media_massa_kg<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-```
+<!--html_preserve--><div id="htmlwidget-f2e4cd18e084387a72aa" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f2e4cd18e084387a72aa">{"x":{"filter":"none","data":[["1","2","3","4","5"],["Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-barbicha","Pinguim-gentoo"],["Biscoe","Dream","Torgersen","Dream","Biscoe"],[3.71,3.69,3.71,3.73,5.08]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>especies<\/th>\n      <th>ilha<\/th>\n      <th>media_massa_kg<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 Os exemplos anteriores são as formas mais simples de apresentar as tabelas, porém cada pacote possibilita diferentes personalizações (por exemplo, alterar o nome das colunas, etc). Existem outros pacotes que permitem adicionar tabela nos relatórios em RMarkdown, como por exemplo:
 

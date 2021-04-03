@@ -17,21 +17,21 @@ glimpse(imdb)
 ```
 ## Rows: 3,807
 ## Columns: 15
-## $ titulo         <chr> "Avatar ", "Pirates of the Caribbean: At World's End ",…
-## $ ano            <dbl> 2009, 2007, 2012, 2012, 2007, 2010, 2015, 2016, 2006, 2…
-## $ diretor        <chr> "James Cameron", "Gore Verbinski", "Christopher Nolan",…
-## $ duracao        <dbl> 178, 169, 164, 132, 156, 100, 141, 183, 169, 151, 150, …
-## $ cor            <chr> "Color", "Color", "Color", "Color", "Color", "Color", "…
-## $ generos        <chr> "Action|Adventure|Fantasy|Sci-Fi", "Action|Adventure|Fa…
-## $ pais           <chr> "USA", "USA", "USA", "USA", "USA", "USA", "USA", "USA",…
-## $ classificacao  <chr> "A partir de 13 anos", "A partir de 13 anos", "A partir…
-## $ orcamento      <dbl> 237000000, 300000000, 250000000, 263700000, 258000000, …
-## $ receita        <dbl> 760505847, 309404152, 448130642, 73058679, 336530303, 2…
-## $ nota_imdb      <dbl> 7.9, 7.1, 8.5, 6.6, 6.2, 7.8, 7.5, 6.9, 6.1, 7.3, 6.5, …
-## $ likes_facebook <dbl> 33000, 0, 164000, 24000, 0, 29000, 118000, 197000, 0, 5…
-## $ ator_1         <chr> "CCH Pounder", "Johnny Depp", "Tom Hardy", "Daryl Sabar…
-## $ ator_2         <chr> "Joel David Moore", "Orlando Bloom", "Christian Bale", …
-## $ ator_3         <chr> "Wes Studi", "Jack Davenport", "Joseph Gordon-Levitt", …
+## $ titulo         <chr> "Avatar ", "Pirates of the Caribbean: At World's End "…
+## $ ano            <dbl> 2009, 2007, 2012, 2012, 2007, 2010, 2015, 2016, 2006, …
+## $ diretor        <chr> "James Cameron", "Gore Verbinski", "Christopher Nolan"…
+## $ duracao        <dbl> 178, 169, 164, 132, 156, 100, 141, 183, 169, 151, 150,…
+## $ cor            <chr> "Color", "Color", "Color", "Color", "Color", "Color", …
+## $ generos        <chr> "Action|Adventure|Fantasy|Sci-Fi", "Action|Adventure|F…
+## $ pais           <chr> "USA", "USA", "USA", "USA", "USA", "USA", "USA", "USA"…
+## $ classificacao  <chr> "A partir de 13 anos", "A partir de 13 anos", "A parti…
+## $ orcamento      <dbl> 237000000, 300000000, 250000000, 263700000, 258000000,…
+## $ receita        <dbl> 760505847, 309404152, 448130642, 73058679, 336530303, …
+## $ nota_imdb      <dbl> 7.9, 7.1, 8.5, 6.6, 6.2, 7.8, 7.5, 6.9, 6.1, 7.3, 6.5,…
+## $ likes_facebook <dbl> 33000, 0, 164000, 24000, 0, 29000, 118000, 197000, 0, …
+## $ ator_1         <chr> "CCH Pounder", "Johnny Depp", "Tom Hardy", "Daryl Saba…
+## $ ator_2         <chr> "Joel David Moore", "Orlando Bloom", "Christian Bale",…
+## $ ator_3         <chr> "Wes Studi", "Jack Davenport", "Joseph Gordon-Levitt",…
 ```
 
 *A função `glimpse()` traz um resumo da base, contendo o número de linhas, colunas, o nome e tipo das colunas e as primeiras observações de cada coluna.*
@@ -157,18 +157,18 @@ imdb %>% filter(cor == "Black and White")
 
 ```
 ## # A tibble: 149 x 15
-##    titulo     ano diretor  duracao cor    generos  pais  classificacao orcamento
-##    <chr>    <dbl> <chr>      <dbl> <chr>  <chr>    <chr> <chr>             <dbl>
-##  1 Pearl H…  2001 Michael…     184 Black… Action|… USA   A partir de … 140000000
-##  2 The Avi…  2004 Martin …     170 Black… Biograp… USA   A partir de … 110000000
-##  3 Ali       2001 Michael…     165 Black… Biograp… USA   A partir de … 107000000
-##  4 Eragon    2006 Stefen …     104 Black… Action|… USA   Livre         100000000
-##  5 Seabisc…  2003 Gary Ro…     140 Black… Drama|H… USA   A partir de …  87000000
-##  6 Bewitch…    NA <NA>          25 Black… Comedy|… USA   Outros               NA
-##  7 Nine      2009 Rob Mar…     118 Black… Drama|M… USA   A partir de …  80000000
-##  8 The Lea…  2003 Stephen…     110 Black… Action|… USA   A partir de …  78000000
-##  9 War Hor…  2011 Steven …     146 Black… Drama|W… USA   A partir de …  66000000
-## 10 Space C…  2000 Clint E…     130 Black… Action|… USA   A partir de …  65000000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    <chr>  <dbl> <chr>     <dbl> <chr> <chr>   <chr> <chr>             <dbl>
+##  1 Pearl…  2001 Michae…     184 Blac… Action… USA   A partir de … 140000000
+##  2 The A…  2004 Martin…     170 Blac… Biogra… USA   A partir de … 110000000
+##  3 Ali     2001 Michae…     165 Blac… Biogra… USA   A partir de … 107000000
+##  4 Erago…  2006 Stefen…     104 Blac… Action… USA   Livre         100000000
+##  5 Seabi…  2003 Gary R…     140 Blac… Drama|… USA   A partir de …  87000000
+##  6 Bewit…    NA <NA>         25 Blac… Comedy… USA   Outros               NA
+##  7 Nine    2009 Rob Ma…     118 Blac… Drama|… USA   A partir de …  80000000
+##  8 The L…  2003 Stephe…     110 Blac… Action… USA   A partir de …  78000000
+##  9 War H…  2011 Steven…     146 Blac… Drama|… USA   A partir de …  66000000
+## 10 Space…  2000 Clint …     130 Blac… Action… USA   A partir de …  65000000
 ## # … with 139 more rows, and 6 more variables: receita <dbl>, nota_imdb <dbl>,
 ## #   likes_facebook <dbl>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -197,22 +197,22 @@ imdb %>%
 
 ```
 ## # A tibble: 14 x 15
-##    titulo      ano diretor duracao cor   generos   pais  classificacao orcamento
-##    <chr>     <dbl> <chr>     <dbl> <chr> <chr>     <chr> <chr>             <dbl>
-##  1 Pinocchi…  1940 Norman…      88 Color Animatio… USA   Outros          2600000
-##  2 Duel in …  1946 King V…     144 Color Drama|Ro… USA   Outros          8000000
-##  3 Tycoon     1947 Richar…      95 Color Adventur… USA   Outros          3209000
-##  4 State Fa…  1945 Walter…     100 Color Musical|… USA   Outros               NA
-##  5 Gone wit…  1939 Victor…     226 Color Drama|Hi… USA   Outros          3977000
-##  6 The Pira…  1948 Vincen…     102 Color Adventur… USA   Outros          3700000
-##  7 It's a W…  1946 Frank …     118 Color Drama|Fa… USA   Livre           3180000
-##  8 Bathing …  1944 George…     101 Color Comedy|M… USA   Outros          2361000
-##  9 Fantasia   1940 James …     120 Color Animatio… USA   Outros          2280000
-## 10 She Wore…  1949 John F…     103 Color Western   USA   Outros          1600000
-## 11 Spellbou…  1945 Alfred…      95 Color Film-Noi… USA   Outros          1696377
-## 12 Snow Whi…  1937 Willia…      83 Color Animatio… USA   Outros          2000000
-## 13 Casablan…  1942 Michae…      82 Color Drama|Ro… USA   Livre            950000
-## 14 Bambi      1942 James …      70 Color Animatio… USA   Outros               NA
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    <chr>  <dbl> <chr>     <dbl> <chr> <chr>   <chr> <chr>             <dbl>
+##  1 Pinoc…  1940 Norman…      88 Color Animat… USA   Outros          2600000
+##  2 Duel …  1946 King V…     144 Color Drama|… USA   Outros          8000000
+##  3 Tycoo…  1947 Richar…      95 Color Advent… USA   Outros          3209000
+##  4 State…  1945 Walter…     100 Color Musica… USA   Outros               NA
+##  5 Gone …  1939 Victor…     226 Color Drama|… USA   Outros          3977000
+##  6 The P…  1948 Vincen…     102 Color Advent… USA   Outros          3700000
+##  7 It's …  1946 Frank …     118 Color Drama|… USA   Livre           3180000
+##  8 Bathi…  1944 George…     101 Color Comedy… USA   Outros          2361000
+##  9 Fanta…  1940 James …     120 Color Animat… USA   Outros          2280000
+## 10 She W…  1949 John F…     103 Color Western USA   Outros          1600000
+## 11 Spell…  1945 Alfred…      95 Color Film-N… USA   Outros          1696377
+## 12 Snow …  1937 Willia…      83 Color Animat… USA   Outros          2000000
+## 13 Casab…  1942 Michae…      82 Color Drama|… USA   Livre            950000
+## 14 Bambi   1942 James …      70 Color Animat… USA   Outros               NA
 ## # … with 6 more variables: receita <dbl>, nota_imdb <dbl>,
 ## #   likes_facebook <dbl>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -228,18 +228,18 @@ imdb %>%
 
 ```
 ## # A tibble: 25 x 15
-##    titulo      ano diretor duracao cor   generos   pais  classificacao orcamento
-##    <chr>     <dbl> <chr>     <dbl> <chr> <chr>     <chr> <chr>             <dbl>
-##  1 The Life…  2004 Wes An…     119 Color Adventur… USA   A partir de …  50000000
-##  2 Fantasti…  2009 Wes An…      87 Color Adventur… USA   Livre          40000000
-##  3 The Gran…  2014 Wes An…      99 Color Adventur… USA   A partir de …  25000000
-##  4 The Roya…  2001 Wes An…     110 Color Comedy|D… USA   A partir de …  21000000
-##  5 The Curs…  2001 Woody …     103 Color Comedy|C… USA   A partir de …  26000000
-##  6 To Rome …  2012 Woody …     112 Color Comedy|R… USA   A partir de …  17000000
-##  7 Bullets …  1994 Woody …      98 Color Comedy|C… USA   A partir de …  20000000
-##  8 Deconstr…  1997 Woody …      96 Color Comedy    USA   A partir de …  20000000
-##  9 Everyone…  1996 Woody …     101 Color Comedy|M… USA   A partir de …  20000000
-## 10 Blue Jas…  2013 Woody …      98 Color Drama     USA   A partir de …  18000000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    <chr>  <dbl> <chr>     <dbl> <chr> <chr>   <chr> <chr>             <dbl>
+##  1 The L…  2004 Wes An…     119 Color Advent… USA   A partir de …  50000000
+##  2 Fanta…  2009 Wes An…      87 Color Advent… USA   Livre          40000000
+##  3 The G…  2014 Wes An…      99 Color Advent… USA   A partir de …  25000000
+##  4 The R…  2001 Wes An…     110 Color Comedy… USA   A partir de …  21000000
+##  5 The C…  2001 Woody …     103 Color Comedy… USA   A partir de …  26000000
+##  6 To Ro…  2012 Woody …     112 Color Comedy… USA   A partir de …  17000000
+##  7 Bulle…  1994 Woody …      98 Color Comedy… USA   A partir de …  20000000
+##  8 Decon…  1997 Woody …      96 Color Comedy  USA   A partir de …  20000000
+##  9 Every…  1996 Woody …     101 Color Comedy… USA   A partir de …  20000000
+## 10 Blue …  2013 Woody …      98 Color Drama   USA   A partir de …  18000000
 ## # … with 15 more rows, and 6 more variables: receita <dbl>, nota_imdb <dbl>,
 ## #   likes_facebook <dbl>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -286,18 +286,18 @@ imdb %>%
 
 ```
 ## # A tibble: 2,187 x 15
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    <chr>    <dbl> <chr>      <dbl> <chr> <chr>     <chr> <chr>             <dbl>
-##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
-##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
-##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
-##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
-##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
-##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
-##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
-##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
-##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
-## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    <chr>  <dbl> <chr>     <dbl> <chr> <chr>   <chr> <chr>             <dbl>
+##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
+##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
+##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
+##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
+##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
+##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
+##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
+##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
+##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
+## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
 ## # … with 2,177 more rows, and 6 more variables: receita <dbl>, nota_imdb <dbl>,
 ## #   likes_facebook <dbl>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -312,18 +312,18 @@ imdb %>%
 
 ```
 ## # A tibble: 203 x 15
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    <chr>    <dbl> <chr>      <dbl> <chr> <chr>     <chr> <chr>             <dbl>
-##  1 Men in …  2012 Barry S…     106 Color Action|A… USA   A partir de … 225000000
-##  2 Rush Ho…  2007 Brett R…      91 Color Action|C… USA   A partir de … 140000000
-##  3 Monster…  2009 Rob Let…      94 Color Action|A… USA   Livre         175000000
-##  4 Wild Wi…  1999 Barry S…     106 Color Action|C… USA   A partir de … 170000000
-##  5 Suicide…  2016 David A…     123 Color Action|A… USA   A partir de … 175000000
-##  6 Big Her…  2014 Don Hall     102 Color Action|A… USA   Livre         165000000
-##  7 Madagas…  2008 Eric Da…      89 Color Action|A… USA   Livre         150000000
-##  8 G-Force   2009 Hoyt Ye…      88 Color Action|A… USA   Livre         150000000
-##  9 Kung Fu…  2011 Jennife…      90 Color Action|A… USA   Livre         150000000
-## 10 Mars Ne…  2011 Simon W…      88 Color Action|A… USA   Livre         150000000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    <chr>  <dbl> <chr>     <dbl> <chr> <chr>   <chr> <chr>             <dbl>
+##  1 Men i…  2012 Barry …     106 Color Action… USA   A partir de … 225000000
+##  2 Rush …  2007 Brett …      91 Color Action… USA   A partir de … 140000000
+##  3 Monst…  2009 Rob Le…      94 Color Action… USA   Livre         175000000
+##  4 Wild …  1999 Barry …     106 Color Action… USA   A partir de … 170000000
+##  5 Suici…  2016 David …     123 Color Action… USA   A partir de … 175000000
+##  6 Big H…  2014 Don Ha…     102 Color Action… USA   Livre         165000000
+##  7 Madag…  2008 Eric D…      89 Color Action… USA   Livre         150000000
+##  8 G-For…  2009 Hoyt Y…      88 Color Action… USA   Livre         150000000
+##  9 Kung …  2011 Jennif…      90 Color Action… USA   Livre         150000000
+## 10 Mars …  2011 Simon …      88 Color Action… USA   Livre         150000000
 ## # … with 193 more rows, and 6 more variables: receita <dbl>, nota_imdb <dbl>,
 ## #   likes_facebook <dbl>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -339,18 +339,18 @@ imdb %>%
 
 ```
 ## # A tibble: 137 x 15
-##    titulo    ano diretor  duracao cor    generos   pais  classificacao orcamento
-##    <chr>   <dbl> <chr>      <dbl> <chr>  <chr>     <chr> <chr>             <dbl>
-##  1 The A-…    NA <NA>          60 Color  Action|A… USA   Outros               NA
-##  2 Ben-Hu…  2016 Timur B…     141 Color  Adventur… USA   A partir de …        NA
-##  3 Hannib…    NA <NA>          44 Color  Crime|Dr… USA   Outros               NA
-##  4 All Th…  1979 Bob Fos…     123 Color  Comedy|D… USA   A partir de …        NA
-##  5 Darede…    NA <NA>          54 <NA>   Action|A… USA   Outros               NA
-##  6 Bewitc…    NA <NA>          25 Black… Comedy|F… USA   Outros               NA
-##  7 Consta…    NA <NA>          43 Color  Drama|Fa… USA   Outros               NA
-##  8 Life       NA <NA>          45 Color  Crime|Dr… USA   Outros               NA
-##  9 Sleepy…    NA <NA>          45 Color  Adventur… USA   Outros               NA
-## 10 Last M…    NA <NA>          30 Color  Comedy    USA   Outros               NA
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    <chr>  <dbl> <chr>     <dbl> <chr> <chr>   <chr> <chr>             <dbl>
+##  1 The A…    NA <NA>         60 Color Action… USA   Outros               NA
+##  2 Ben-H…  2016 Timur …     141 Color Advent… USA   A partir de …        NA
+##  3 Hanni…    NA <NA>         44 Color Crime|… USA   Outros               NA
+##  4 All T…  1979 Bob Fo…     123 Color Comedy… USA   A partir de …        NA
+##  5 Dared…    NA <NA>         54 <NA>  Action… USA   Outros               NA
+##  6 Bewit…    NA <NA>         25 Blac… Comedy… USA   Outros               NA
+##  7 Const…    NA <NA>         43 Color Drama|… USA   Outros               NA
+##  8 Life      NA <NA>         45 Color Crime|… USA   Outros               NA
+##  9 Sleep…    NA <NA>         45 Color Advent… USA   Outros               NA
+## 10 Last …    NA <NA>         30 Color Comedy  USA   Outros               NA
 ## # … with 127 more rows, and 6 more variables: receita <dbl>, nota_imdb <dbl>,
 ## #   likes_facebook <dbl>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -371,18 +371,18 @@ imdb_prejuizo %>%
 
 ```
 ## # A tibble: 1,312 x 16
-##    titulo     ano diretor   duracao cor   generos  pais  classificacao orcamento
-##    <chr>    <dbl> <chr>       <dbl> <chr> <chr>    <chr> <chr>             <dbl>
-##  1 The Hor…  2009 Michel O…      93 Color Documen… USA   Outros           160000
-##  2 Newlywe…  2011 Edward B…      95 Color Comedy|… USA   Outros             9000
-##  3 Shortbu…  2006 John Cam…     101 Color Comedy|… USA   Outros          2000000
-##  4 Slam      1998 Marc Lev…     100 Color Drama    USA   A partir de …   1000000
-##  5 Pink Na…  1971 James Bi…      65 Color Drama|F… USA   Outros            27000
-##  6 The FP    2011 Brandon …      82 Color Comedy   USA   A partir de …     60000
-##  7 Assault…  2005 Jean-Fra…     109 Color Action|… USA   A partir de …  20000000
-##  8 The Bus…  2002 Sherman …     103 Color Drama|M… USA   Outros           200000
-##  9 Latter …  2003 C. Jay C…     107 Color Comedy|… USA   A partir de …    850000
-## 10 Happy C…  2014 Joe Swan…      82 Color Comedy|… USA   A partir de …     70000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    <chr>  <dbl> <chr>     <dbl> <chr> <chr>   <chr> <chr>             <dbl>
+##  1 The H…  2009 Michel…      93 Color Docume… USA   Outros           160000
+##  2 Newly…  2011 Edward…      95 Color Comedy… USA   Outros             9000
+##  3 Short…  2006 John C…     101 Color Comedy… USA   Outros          2000000
+##  4 Slam    1998 Marc L…     100 Color Drama   USA   A partir de …   1000000
+##  5 Pink …  1971 James …      65 Color Drama|… USA   Outros            27000
+##  6 The F…  2011 Brando…      82 Color Comedy  USA   A partir de …     60000
+##  7 Assau…  2005 Jean-F…     109 Color Action… USA   A partir de …  20000000
+##  8 The B…  2002 Sherma…     103 Color Drama|… USA   Outros           200000
+##  9 Latte…  2003 C. Jay…     107 Color Comedy… USA   A partir de …    850000
+## 10 Happy…  2014 Joe Sw…      82 Color Comedy… USA   A partir de …     70000
 ## # … with 1,302 more rows, and 7 more variables: receita <dbl>, nota_imdb <dbl>,
 ## #   likes_facebook <dbl>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>,
 ## #   prejuizo <dbl>
@@ -413,18 +413,18 @@ imdb %>%
 
 ```
 ## # A tibble: 3,807 x 19
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    <chr>    <dbl> <chr>      <dbl> <chr> <chr>     <chr> <chr>             <dbl>
-##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
-##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
-##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
-##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
-##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
-##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
-##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
-##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
-##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
-## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    <chr>  <dbl> <chr>     <dbl> <chr> <chr>   <chr> <chr>             <dbl>
+##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
+##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
+##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
+##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
+##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
+##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
+##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
+##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
+##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
+## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 10 more variables: receita <dbl>,
 ## #   nota_imdb <dbl>, likes_facebook <dbl>, ator_1 <chr>, ator_2 <chr>,
 ## #   ator_3 <chr>, lucro <dbl>, lucro_medio <dbl>, lucro_relativo <dbl>,
@@ -443,18 +443,18 @@ imdb %>%
 
 ```
 ## # A tibble: 3,807 x 16
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    <chr>    <dbl> <chr>      <dbl> <chr> <chr>     <chr> <chr>             <dbl>
-##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
-##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
-##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
-##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
-##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
-##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
-##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
-##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
-##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
-## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
+##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
+##    <chr>  <dbl> <chr>     <dbl> <chr> <chr>   <chr> <chr>             <dbl>
+##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
+##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
+##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
+##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
+##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
+##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
+##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
+##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
+##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
+## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 7 more variables: receita <dbl>, nota_imdb <dbl>,
 ## #   likes_facebook <dbl>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>,
 ## #   antigo_ou_recente <chr>
@@ -522,6 +522,10 @@ imdb %>%
 ```
 
 ```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
+```
 ## # A tibble: 2 x 2
 ##   duracao_cat    lucro_medio
 ##   <chr>                <dbl>
@@ -540,6 +544,10 @@ imdb %>%
 imdb %>% 
   group_by(classificacao) %>% 
   summarise(nota_media = mean(nota_imdb, na.rm = TRUE))
+```
+
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
@@ -562,6 +570,10 @@ imdb %>%
     receita_media = mean(receita, na.rm = TRUE),
     receita_mediana = median(receita, na.rm = TRUE)
   )
+```
+
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
@@ -591,6 +603,10 @@ imdb %>%
   summarise(num_filmes = n()) %>% 
   filter(num_filmes > 10) %>% 
   select(diretor)
+```
+
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
@@ -653,7 +669,13 @@ e cada linha deve ser um diretor diferente.
 nota_diretores <- imdb %>% 
   group_by(diretor) %>% 
   summarise(nota_imdb_media = mean(nota_imdb))
+```
 
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
+```r
 nota_diretores
 ```
 
@@ -688,18 +710,18 @@ imdb %>%
 
 ```
 ## # A tibble: 3,807 x 16
-##    nota_imdb_media titulo        ano diretor   duracao cor   generos       pais 
-##              <dbl> <chr>       <dbl> <chr>       <dbl> <chr> <chr>         <chr>
-##  1            7.88 Avatar       2009 James Ca…     178 Color Action|Adven… USA  
-##  2            6.99 Pirates of…  2007 Gore Ver…     169 Color Action|Adven… USA  
-##  3            8.43 The Dark K…  2012 Christop…     164 Color Action|Thril… USA  
-##  4            7.73 John Carte…  2012 Andrew S…     132 Color Action|Adven… USA  
-##  5            6.9  Spider-Man…  2007 Sam Raimi     156 Color Action|Adven… USA  
-##  6            7.8  Tangled      2010 Nathan G…     100 Color Adventure|An… USA  
-##  7            7.92 Avengers: …  2015 Joss Whe…     141 Color Action|Adven… USA  
-##  8            7.18 Batman v S…  2016 Zack Sny…     183 Color Action|Adven… USA  
-##  9            7.26 Superman R…  2006 Bryan Si…     169 Color Action|Adven… USA  
-## 10            6.99 Pirates of…  2006 Gore Ver…     151 Color Action|Adven… USA  
+##    nota_imdb_media titulo   ano diretor duracao cor   generos pais 
+##              <dbl> <chr>  <dbl> <chr>     <dbl> <chr> <chr>   <chr>
+##  1            7.88 Avata…  2009 James …     178 Color Action… USA  
+##  2            6.99 Pirat…  2007 Gore V…     169 Color Action… USA  
+##  3            8.43 The D…  2012 Christ…     164 Color Action… USA  
+##  4            7.73 John …  2012 Andrew…     132 Color Action… USA  
+##  5            6.9  Spide…  2007 Sam Ra…     156 Color Action… USA  
+##  6            7.8  Tangl…  2010 Nathan…     100 Color Advent… USA  
+##  7            7.92 Aveng…  2015 Joss W…     141 Color Action… USA  
+##  8            7.18 Batma…  2016 Zack S…     183 Color Action… USA  
+##  9            7.26 Super…  2006 Bryan …     169 Color Action… USA  
+## 10            6.99 Pirat…  2006 Gore V…     151 Color Action… USA  
 ## # … with 3,797 more rows, and 8 more variables: classificacao <chr>,
 ## #   orcamento <dbl>, receita <dbl>, nota_imdb <dbl>, likes_facebook <dbl>,
 ## #   ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
