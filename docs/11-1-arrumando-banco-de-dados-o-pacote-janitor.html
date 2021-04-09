@@ -814,28 +814,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb582-11"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-11"></a><span class="st">dplyr::glimpse(base_exemplo)</span></span></code></pre></div>
 <pre><code>## Rows: 25
 ## Columns: 3
-## $ nome                &lt;chr&gt; &quot;William&quot;, &quot;Athos&quot;, &quot;Fernando&quot;, &quot;Daniel&quot;, &quot;Fernan…
-## $ sobrenome           &lt;chr&gt; &quot;Damiani&quot;, &quot;Amorim&quot;, &quot;Amorim&quot;, &quot;Trecenti&quot;, &quot;Corrê…
-## $ variavel_importante &lt;dbl&gt; 0.5768618, 1.0227295, 1.7803607, -1.2702668, -2.4…</code></pre>
+## $ nome                &lt;chr&gt; &quot;Daniel&quot;, &quot;William&quot;, &quot;Julio&quot;, &quot;Fernando&quot;, &quot;Willia…
+## $ sobrenome           &lt;chr&gt; &quot;Trecenti&quot;, &quot;Falbel&quot;, &quot;Damiani&quot;, &quot;Trecenti&quot;, &quot;Amo…
+## $ variavel_importante &lt;dbl&gt; 0.94021652, -1.29673167, 0.66204404, -1.48492312,…</code></pre>
 <div class="sourceCode" id="cb584"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb584-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb584-1"></a><span class="co"># Ver as duplicatas com a função get_dupes()</span></span>
 <span id="cb584-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb584-2"></a>janitor<span class="op">::</span><span class="kw">get_dupes</span>(base_exemplo, nome, sobrenome)</span></code></pre></div>
-<pre><code>## # A tibble: 14 x 4
+<pre><code>## # A tibble: 16 x 4
 ##    nome     sobrenome dupe_count variavel_importante
 ##    &lt;chr&gt;    &lt;chr&gt;          &lt;int&gt;               &lt;dbl&gt;
-##  1 Athos    Amorim             3               1.02 
-##  2 Athos    Amorim             3               0.150
-##  3 Athos    Amorim             3              -0.266
-##  4 Athos    Falbel             2              -1.50 
-##  5 Athos    Falbel             2              -0.401
-##  6 Fernando Amorim             2               1.78 
-##  7 Fernando Amorim             2               0.254
-##  8 Fernando Corrêa             3              -2.41 
-##  9 Fernando Corrêa             3               0.792
-## 10 Fernando Corrêa             3               1.44 
-## 11 William  Damiani            2               0.577
-## 12 William  Damiani            2               1.79 
-## 13 William  Trecenti           2               0.866
-## 14 William  Trecenti           2               1.62</code></pre>
+##  1 Athos    Corrêa             3              0.737 
+##  2 Athos    Corrêa             3              0.180 
+##  3 Athos    Corrêa             3             -0.0230
+##  4 Daniel   Amorim             2             -0.513 
+##  5 Daniel   Amorim             2              2.89  
+##  6 Daniel   Falbel             2             -0.946 
+##  7 Daniel   Falbel             2             -0.864 
+##  8 Daniel   Trecenti           2              0.940 
+##  9 Daniel   Trecenti           2             -1.23  
+## 10 Fernando Falbel             2              0.427 
+## 11 Fernando Falbel             2              0.746 
+## 12 Fernando Trecenti           2             -1.48  
+## 13 Fernando Trecenti           2              0.813 
+## 14 Julio    Damiani            3              0.662 
+## 15 Julio    Damiani            3              0.289 
+## 16 Julio    Damiani            3             -0.962</code></pre>
 <p>Todas as linhas na <code>tibble</code> resultante representam uma combinação de nome-sobrenome repetida.</p>
 </div>
 <div id="outras-funções" class="section level3">

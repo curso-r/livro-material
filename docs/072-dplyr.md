@@ -1513,11 +1513,11 @@ tab_notas
 ## # A tibble: 5 x 5
 ##   student_id prova1 prova2 prova3 prova4
 ##        <int>  <int>  <int>  <int>  <int>
-## 1          1      6      1      2      3
-## 2          2      5      5      5      5
-## 3          3      9      7      3      1
-## 4          4      2      3      4      6
-## 5          5     10      6      1      0
+## 1          1     10      3      0      0
+## 2          2      7      7      1      7
+## 3          3      5      1      3      2
+## 4          4      9      8      4      3
+## 5          5      1      5      9      8
 ```
 
 Se quisermos gerar uma coluna com a nota média de cada aluno nas quatro provas, não poderíamos usar o `mutate()` diretamente.
@@ -1531,11 +1531,11 @@ tab_notas %>% mutate(media = mean(c(prova1, prova2, prova3, prova4)))
 ## # A tibble: 5 x 6
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      6      1      2      3   4.2
-## 2          2      5      5      5      5   4.2
-## 3          3      9      7      3      1   4.2
-## 4          4      2      3      4      6   4.2
-## 5          5     10      6      1      0   4.2
+## 1          1     10      3      0      0  4.65
+## 2          2      7      7      1      7  4.65
+## 3          3      5      1      3      2  4.65
+## 4          4      9      8      4      3  4.65
+## 5          5      1      5      9      8  4.65
 ```
 
 Neste caso, todas as colunas estão sendo empilhadas e gerando uma única média, passada a todas as linhas da coluna `media`.
@@ -1554,11 +1554,11 @@ tab_notas %>%
 ## # Groups:   student_id [5]
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      6      1      2      3  3   
-## 2          2      5      5      5      5  5   
-## 3          3      9      7      3      1  5   
-## 4          4      2      3      4      6  3.75
-## 5          5     10      6      1      0  4.25
+## 1          1     10      3      0      0  3.25
+## 2          2      7      7      1      7  5.5 
+## 3          3      5      1      3      2  2.75
+## 4          4      9      8      4      3  6   
+## 5          5      1      5      9      8  5.75
 ```
 
 Também podemos nos aproveitar da sintaxe do `across()` neste caso. Para isso, precisamos substutir a função `c()` pela função `c_across()`.
@@ -1575,11 +1575,11 @@ tab_notas %>%
 ## # Groups:   student_id [5]
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      6      1      2      3  3   
-## 2          2      5      5      5      5  5   
-## 3          3      9      7      3      1  5   
-## 4          4      2      3      4      6  3.75
-## 5          5     10      6      1      0  4.25
+## 1          1     10      3      0      0  3.25
+## 2          2      7      7      1      7  5.5 
+## 3          3      5      1      3      2  2.75
+## 4          4      9      8      4      3  6   
+## 5          5      1      5      9      8  5.75
 ```
 
 Equivalentemente ao `group_by()`, neste caso, podemos usar a função `rowwise()`.
@@ -1596,11 +1596,11 @@ tab_notas %>%
 ## # Rowwise:  student_id
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      6      1      2      3  3   
-## 2          2      5      5      5      5  5   
-## 3          3      9      7      3      1  5   
-## 4          4      2      3      4      6  3.75
-## 5          5     10      6      1      0  4.25
+## 1          1     10      3      0      0  3.25
+## 2          2      7      7      1      7  5.5 
+## 3          3      5      1      3      2  2.75
+## 4          4      9      8      4      3  6   
+## 5          5      1      5      9      8  5.75
 ```
 
 Ela é muito útil quando queremos fazer operação por linhas, mas não temos uma coluna de identificação. Por padrão, se não indicarmos nenhuma coluna, cada linha será um "grupo".
@@ -1617,11 +1617,11 @@ tab_notas %>%
 ## # Rowwise: 
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      6      1      2      3  3   
-## 2          2      5      5      5      5  5   
-## 3          3      9      7      3      1  5   
-## 4          4      2      3      4      6  3.75
-## 5          5     10      6      1      0  4.25
+## 1          1     10      3      0      0  3.25
+## 2          2      7      7      1      7  5.5 
+## 3          3      5      1      3      2  2.75
+## 4          4      9      8      4      3  6   
+## 5          5      1      5      9      8  5.75
 ```
 
 Veja que `student_id` não é passada para a função `rowwise()`. Não precisaríamos dessa coluna na base para reproduzir a geração da columa `media` neste caso.
@@ -1664,23 +1664,30 @@ casas %>%
 
 **2.** Utilizando a base `casas`, resolva os itens a seguir.
 
-**a.** Usando o case_when() crie um código para categorizar a variável venda_valor da seguinte maneira
+- **a.** Usando o `case_when()` crie um código para categorizar a variável venda_valor da seguinte maneira:
 
-**b.** Utilize o código feito na letra (a) para agrupar a base ames pela variável venda_valor categorizada e calcular todas as áreas médias para cada uma dessas categorias.
+  - **barata**: \$0 a \$129.500  
+  - **preço mediano**: \$129.500 a \$180.796
+  - **cara**: \$ 180.796 a \$213.500
+  - **muito cara**: maior que \$213.500
+
+<div style = "height: 10px;"></div>
+
+- **b.** Utilize o código feito na letra (a) para agrupar a base ames pela variável venda_valor categorizada e calcular todas as áreas médias para cada uma dessas categorias.
 
 **3.** Escreva um código que receba a base ames e retorne uma tabela com apenas
 
-**a.** as colunas referentes à garagem da casa.
+- **a.** as colunas referentes à garagem da casa.
 
-**b.** as colunas referentes a variáveis de qualidade.
+- **b.** as colunas referentes a variáveis de qualidade.
 
-**c.** colunas numéricas que representam áreas da casa e do terreno.
+- **c.** colunas numéricas que representam áreas da casa e do terreno.
 
-**d.** colunas numéricas.
+- **d.** colunas numéricas.
 
-**e.** colunas referentes à piscina, porão e o valor de venda.
+- **e.** colunas referentes à piscina, porão e o valor de venda.
 
-**4.** Usando a função rename_with(), troque todos os "_" dos nomes das colunas por um espaço " ".
+**4.** Usando a função `rename_with()`, troque todos os `"_"` dos nomes das colunas por um espaço `" "`.
 
 **5.** Escreva um código para colocar todas as colunas relativas a venda no começo da tabela ames.
 

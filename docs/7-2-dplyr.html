@@ -1433,21 +1433,21 @@ para a tabela <code>imdb</code> original.</p>
 <pre><code>## # A tibble: 5 x 5
 ##   student_id prova1 prova2 prova3 prova4
 ##        &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;
-## 1          1      6      1      2      3
-## 2          2      5      5      5      5
-## 3          3      9      7      3      1
-## 4          4      2      3      4      6
-## 5          5     10      6      1      0</code></pre>
+## 1          1     10      3      0      0
+## 2          2      7      7      1      7
+## 3          3      5      1      3      2
+## 4          4      9      8      4      3
+## 5          5      1      5      9      8</code></pre>
 <p>Se quisermos gerar uma coluna com a nota média de cada aluno nas quatro provas, não poderíamos usar o <code>mutate()</code> diretamente.</p>
 <div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="7-2-dplyr.html#cb339-1"></a>tab_notas <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">media =</span> <span class="kw">mean</span>(<span class="kw">c</span>(prova1, prova2, prova3, prova4)))</span></code></pre></div>
 <pre><code>## # A tibble: 5 x 6
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt; &lt;dbl&gt;
-## 1          1      6      1      2      3   4.2
-## 2          2      5      5      5      5   4.2
-## 3          3      9      7      3      1   4.2
-## 4          4      2      3      4      6   4.2
-## 5          5     10      6      1      0   4.2</code></pre>
+## 1          1     10      3      0      0  4.65
+## 2          2      7      7      1      7  4.65
+## 3          3      5      1      3      2  4.65
+## 4          4      9      8      4      3  4.65
+## 5          5      1      5      9      8  4.65</code></pre>
 <p>Neste caso, todas as colunas estão sendo empilhadas e gerando uma única média, passada a todas as linhas da coluna <code>media</code>.</p>
 <p>Para fazermos a conta para cada aluno, podemos agrupar por aluno. Agora sim a média é calculada apenas nas notas de cada estudante.</p>
 <div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="7-2-dplyr.html#cb341-1"></a>tab_notas <span class="op">%&gt;%</span></span>
@@ -1457,11 +1457,11 @@ para a tabela <code>imdb</code> original.</p>
 ## # Groups:   student_id [5]
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt; &lt;dbl&gt;
-## 1          1      6      1      2      3  3   
-## 2          2      5      5      5      5  5   
-## 3          3      9      7      3      1  5   
-## 4          4      2      3      4      6  3.75
-## 5          5     10      6      1      0  4.25</code></pre>
+## 1          1     10      3      0      0  3.25
+## 2          2      7      7      1      7  5.5 
+## 3          3      5      1      3      2  2.75
+## 4          4      9      8      4      3  6   
+## 5          5      1      5      9      8  5.75</code></pre>
 <p>Também podemos nos aproveitar da sintaxe do <code>across()</code> neste caso. Para isso, precisamos substutir a função <code>c()</code> pela função <code>c_across()</code>.</p>
 <div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="7-2-dplyr.html#cb343-1"></a>tab_notas <span class="op">%&gt;%</span></span>
 <span id="cb343-2"><a href="7-2-dplyr.html#cb343-2"></a><span class="st">  </span><span class="kw">group_by</span>(student_id) <span class="op">%&gt;%</span></span>
@@ -1470,11 +1470,11 @@ para a tabela <code>imdb</code> original.</p>
 ## # Groups:   student_id [5]
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt; &lt;dbl&gt;
-## 1          1      6      1      2      3  3   
-## 2          2      5      5      5      5  5   
-## 3          3      9      7      3      1  5   
-## 4          4      2      3      4      6  3.75
-## 5          5     10      6      1      0  4.25</code></pre>
+## 1          1     10      3      0      0  3.25
+## 2          2      7      7      1      7  5.5 
+## 3          3      5      1      3      2  2.75
+## 4          4      9      8      4      3  6   
+## 5          5      1      5      9      8  5.75</code></pre>
 <p>Equivalentemente ao <code>group_by()</code>, neste caso, podemos usar a função <code>rowwise()</code>.</p>
 <div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="7-2-dplyr.html#cb345-1"></a>tab_notas <span class="op">%&gt;%</span></span>
 <span id="cb345-2"><a href="7-2-dplyr.html#cb345-2"></a><span class="st">  </span><span class="kw">rowwise</span>(student_id) <span class="op">%&gt;%</span></span>
@@ -1483,11 +1483,11 @@ para a tabela <code>imdb</code> original.</p>
 ## # Rowwise:  student_id
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt; &lt;dbl&gt;
-## 1          1      6      1      2      3  3   
-## 2          2      5      5      5      5  5   
-## 3          3      9      7      3      1  5   
-## 4          4      2      3      4      6  3.75
-## 5          5     10      6      1      0  4.25</code></pre>
+## 1          1     10      3      0      0  3.25
+## 2          2      7      7      1      7  5.5 
+## 3          3      5      1      3      2  2.75
+## 4          4      9      8      4      3  6   
+## 5          5      1      5      9      8  5.75</code></pre>
 <p>Ela é muito útil quando queremos fazer operação por linhas, mas não temos uma coluna de identificação. Por padrão, se não indicarmos nenhuma coluna, cada linha será um “grupo”.</p>
 <div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="7-2-dplyr.html#cb347-1"></a>tab_notas <span class="op">%&gt;%</span></span>
 <span id="cb347-2"><a href="7-2-dplyr.html#cb347-2"></a><span class="st">  </span><span class="kw">rowwise</span>() <span class="op">%&gt;%</span></span>
@@ -1496,11 +1496,11 @@ para a tabela <code>imdb</code> original.</p>
 ## # Rowwise: 
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt; &lt;dbl&gt;
-## 1          1      6      1      2      3  3   
-## 2          2      5      5      5      5  5   
-## 3          3      9      7      3      1  5   
-## 4          4      2      3      4      6  3.75
-## 5          5     10      6      1      0  4.25</code></pre>
+## 1          1     10      3      0      0  3.25
+## 2          2      7      7      1      7  5.5 
+## 3          3      5      1      3      2  2.75
+## 4          4      9      8      4      3  6   
+## 5          5      1      5      9      8  5.75</code></pre>
 <p>Veja que <code>student_id</code> não é passada para a função <code>rowwise()</code>. Não precisaríamos dessa coluna na base para reproduzir a geração da columa <code>media</code> neste caso.</p>
 </div>
 <div id="exercícios-17" class="section level4 unnumbered">
@@ -1524,15 +1524,31 @@ para a tabela <code>imdb</code> original.</p>
 <div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="7-2-dplyr.html#cb351-1"></a>casas <span class="op">%&gt;%</span></span>
 <span id="cb351-2"><a href="7-2-dplyr.html#cb351-2"></a><span class="st">  </span><span class="kw">mutate_if</span>(is.character, <span class="op">~</span>tidyr<span class="op">::</span><span class="kw">replace_na</span>(.x, <span class="dt">replace =</span> <span class="st">&quot;Não possui&quot;</span>))</span></code></pre></div>
 <p><strong>2.</strong> Utilizando a base <code>casas</code>, resolva os itens a seguir.</p>
-<p><strong>a.</strong> Usando o case_when() crie um código para categorizar a variável venda_valor da seguinte maneira</p>
-<p><strong>b.</strong> Utilize o código feito na letra (a) para agrupar a base ames pela variável venda_valor categorizada e calcular todas as áreas médias para cada uma dessas categorias.</p>
+<ul>
+<li><p><strong>a.</strong> Usando o <code>case_when()</code> crie um código para categorizar a variável venda_valor da seguinte maneira:</p>
+<ul>
+<li><strong>barata</strong>: $0 a $129.500<br />
+</li>
+<li><strong>preço mediano</strong>: $129.500 a $180.796</li>
+<li><strong>cara</strong>: $ 180.796 a $213.500</li>
+<li><strong>muito cara</strong>: maior que $213.500</li>
+</ul></li>
+</ul>
+<div style="height: 10px;">
+
+</div>
+<ul>
+<li><strong>b.</strong> Utilize o código feito na letra (a) para agrupar a base ames pela variável venda_valor categorizada e calcular todas as áreas médias para cada uma dessas categorias.</li>
+</ul>
 <p><strong>3.</strong> Escreva um código que receba a base ames e retorne uma tabela com apenas</p>
-<p><strong>a.</strong> as colunas referentes à garagem da casa.</p>
-<p><strong>b.</strong> as colunas referentes a variáveis de qualidade.</p>
-<p><strong>c.</strong> colunas numéricas que representam áreas da casa e do terreno.</p>
-<p><strong>d.</strong> colunas numéricas.</p>
-<p><strong>e.</strong> colunas referentes à piscina, porão e o valor de venda.</p>
-<p><strong>4.</strong> Usando a função rename_with(), troque todos os "_" dos nomes das colunas por um espaço " ".</p>
+<ul>
+<li><p><strong>a.</strong> as colunas referentes à garagem da casa.</p></li>
+<li><p><strong>b.</strong> as colunas referentes a variáveis de qualidade.</p></li>
+<li><p><strong>c.</strong> colunas numéricas que representam áreas da casa e do terreno.</p></li>
+<li><p><strong>d.</strong> colunas numéricas.</p></li>
+<li><p><strong>e.</strong> colunas referentes à piscina, porão e o valor de venda.</p></li>
+</ul>
+<p><strong>4.</strong> Usando a função <code>rename_with()</code>, troque todos os <code>"_"</code> dos nomes das colunas por um espaço <code>" "</code>.</p>
 <p><strong>5.</strong> Escreva um código para colocar todas as colunas relativas a venda no começo da tabela ames.</p>
 <p><strong>6.</strong> 5. Escreva um código para colocar todas as colunas numéricas da base ames no começo da tabela e todas as colunas categóricas no final.</p>
 

@@ -181,9 +181,9 @@ dplyr::glimpse(base_exemplo)
 ```
 ## Rows: 25
 ## Columns: 3
-## $ nome                <chr> "William", "Athos", "Fernando", "Daniel", "Fernan…
-## $ sobrenome           <chr> "Damiani", "Amorim", "Amorim", "Trecenti", "Corrê…
-## $ variavel_importante <dbl> 0.5768618, 1.0227295, 1.7803607, -1.2702668, -2.4…
+## $ nome                <chr> "Daniel", "William", "Julio", "Fernando", "Willia…
+## $ sobrenome           <chr> "Trecenti", "Falbel", "Damiani", "Trecenti", "Amo…
+## $ variavel_importante <dbl> 0.94021652, -1.29673167, 0.66204404, -1.48492312,…
 ```
 
 ```r
@@ -192,23 +192,25 @@ janitor::get_dupes(base_exemplo, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 14 x 4
+## # A tibble: 16 x 4
 ##    nome     sobrenome dupe_count variavel_importante
 ##    <chr>    <chr>          <int>               <dbl>
-##  1 Athos    Amorim             3               1.02 
-##  2 Athos    Amorim             3               0.150
-##  3 Athos    Amorim             3              -0.266
-##  4 Athos    Falbel             2              -1.50 
-##  5 Athos    Falbel             2              -0.401
-##  6 Fernando Amorim             2               1.78 
-##  7 Fernando Amorim             2               0.254
-##  8 Fernando Corrêa             3              -2.41 
-##  9 Fernando Corrêa             3               0.792
-## 10 Fernando Corrêa             3               1.44 
-## 11 William  Damiani            2               0.577
-## 12 William  Damiani            2               1.79 
-## 13 William  Trecenti           2               0.866
-## 14 William  Trecenti           2               1.62
+##  1 Athos    Corrêa             3              0.737 
+##  2 Athos    Corrêa             3              0.180 
+##  3 Athos    Corrêa             3             -0.0230
+##  4 Daniel   Amorim             2             -0.513 
+##  5 Daniel   Amorim             2              2.89  
+##  6 Daniel   Falbel             2             -0.946 
+##  7 Daniel   Falbel             2             -0.864 
+##  8 Daniel   Trecenti           2              0.940 
+##  9 Daniel   Trecenti           2             -1.23  
+## 10 Fernando Falbel             2              0.427 
+## 11 Fernando Falbel             2              0.746 
+## 12 Fernando Trecenti           2             -1.48  
+## 13 Fernando Trecenti           2              0.813 
+## 14 Julio    Damiani            3              0.662 
+## 15 Julio    Damiani            3              0.289 
+## 16 Julio    Damiani            3             -0.962
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.
