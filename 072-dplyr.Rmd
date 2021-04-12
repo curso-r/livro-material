@@ -675,6 +675,14 @@ Veja que `student_id` não é passada para a função `rowwise()`. Não precisar
 
 #### Exercícios {-}
 
+A base `casas` abaixo pode ser encontrada a partir do código abaixo:
+
+```{r, eval = FALSE}
+remotes::install_github("cienciadedatos/dados")
+dados::casas
+```
+
+
 **1.** Reescreva os códigos abaixo utilizando as funções `across()` e `where()`.
 
 **a.** 
@@ -717,9 +725,9 @@ casas %>%
 
 <div style = "height: 10px;"></div>
 
-- **b.** Utilize o código feito na letra (a) para agrupar a base ames pela variável venda_valor categorizada e calcular todas as áreas médias para cada uma dessas categorias.
+- **b.** Utilize o código feito na letra (a) para agrupar a base `casas` pela variável venda_valor categorizada e calcular todas as áreas médias para cada uma dessas categorias.
 
-**3.** Escreva um código que receba a base ames e retorne uma tabela com apenas
+**3.** Escreva um código que receba a base `casas` e retorne uma tabela com apenas
 
 - **a.** as colunas referentes à garagem da casa.
 
@@ -733,8 +741,8 @@ casas %>%
 
 **4.** Usando a função `rename_with()`, troque todos os `"_"` dos nomes das colunas por um espaço `" "`.
 
-**5.** Escreva um código para colocar todas as colunas relativas a venda no começo da tabela ames.
+**5.** Escreva um código para colocar todas as colunas relativas a venda no começo da base `casas`.
 
-**6.** 5. Escreva um código para colocar todas as colunas numéricas da base ames no começo da tabela e todas as colunas categóricas no final.
+**6.** 5. Escreva um código para colocar todas as colunas numéricas da base `casas` no começo da tabela e todas as colunas categóricas no final.
 
 

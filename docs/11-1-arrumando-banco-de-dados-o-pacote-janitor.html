@@ -394,27 +394,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">11.1</span> Arrumando banco de dados: o pacote janitor</h2>
 <p>O pacote <a href="https://garthtarr.github.io/meatR/janitor.html"><code>janitor</code></a> disponibiliza algumas funções para limpar bases de dados.</p>
 <p>Primeiramente, instale e carregue o pacote:</p>
-<div class="sourceCode" id="cb571"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb571-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb571-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;janitor&quot;</span>) <span class="co"># Instale a versão do CRAN, OU:</span></span>
-<span id="cb571-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb571-2"></a></span>
-<span id="cb571-3"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb571-3"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;sfirke/janitor&quot;</span>) <span class="co"># Versão de desenvolvimento</span></span></code></pre></div>
-<div class="sourceCode" id="cb572"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb572-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb572-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb572-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb572-2"></a><span class="kw">library</span>(janitor)</span></code></pre></div>
+<div class="sourceCode" id="cb572"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb572-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb572-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;janitor&quot;</span>) <span class="co"># Instale a versão do CRAN, OU:</span></span>
+<span id="cb572-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb572-2"></a></span>
+<span id="cb572-3"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb572-3"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;sfirke/janitor&quot;</span>) <span class="co"># Versão de desenvolvimento</span></span></code></pre></div>
+<div class="sourceCode" id="cb573"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb573-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb573-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb573-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb573-2"></a><span class="kw">library</span>(janitor)</span></code></pre></div>
 <div id="arrumando-o-nome-das-variáveis" class="section level3">
 <h3><span class="header-section-number">11.1.1</span> Arrumando o nome das variáveis</h3>
 <p>Utilizaremos a base com informações de pacientes com arritmia cardíaca. O código para obter essa base de exemplo está descrito abaixo:</p>
-<div class="sourceCode" id="cb573"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb573-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb573-1"></a><span class="co"># URL da base para baixar</span></span>
-<span id="cb573-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb573-2"></a>url &lt;-<span class="st"> &quot;https://github.com/curso-r/livro-material/raw/master/assets/data/dados_nomes_variaveis_livro.xlsx&quot;</span></span>
-<span id="cb573-3"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb573-3"></a></span>
-<span id="cb573-4"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb573-4"></a><span class="co"># Arquivo de destino onde a base deverá ser salva</span></span>
-<span id="cb573-5"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb573-5"></a>destfile &lt;-<span class="st"> &quot;dados_nomes_variaveis_livro.xlsx&quot;</span></span>
-<span id="cb573-6"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb573-6"></a></span>
-<span id="cb573-7"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb573-7"></a><span class="co"># Fazer o download da base</span></span>
-<span id="cb573-8"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb573-8"></a>curl<span class="op">::</span><span class="kw">curl_download</span>(url, destfile)</span>
-<span id="cb573-9"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb573-9"></a></span>
-<span id="cb573-10"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb573-10"></a><span class="co"># Importar a base </span></span>
-<span id="cb573-11"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb573-11"></a>dados_brutos &lt;-<span class="st"> </span>readxl<span class="op">::</span><span class="kw">read_excel</span>(destfile)</span></code></pre></div>
+<div class="sourceCode" id="cb574"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb574-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb574-1"></a><span class="co"># URL da base para baixar</span></span>
+<span id="cb574-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb574-2"></a>url &lt;-<span class="st"> &quot;https://github.com/curso-r/livro-material/raw/master/assets/data/dados_nomes_variaveis_livro.xlsx&quot;</span></span>
+<span id="cb574-3"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb574-3"></a></span>
+<span id="cb574-4"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb574-4"></a><span class="co"># Arquivo de destino onde a base deverá ser salva</span></span>
+<span id="cb574-5"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb574-5"></a>destfile &lt;-<span class="st"> &quot;dados_nomes_variaveis_livro.xlsx&quot;</span></span>
+<span id="cb574-6"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb574-6"></a></span>
+<span id="cb574-7"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb574-7"></a><span class="co"># Fazer o download da base</span></span>
+<span id="cb574-8"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb574-8"></a>curl<span class="op">::</span><span class="kw">curl_download</span>(url, destfile)</span>
+<span id="cb574-9"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb574-9"></a></span>
+<span id="cb574-10"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb574-10"></a><span class="co"># Importar a base </span></span>
+<span id="cb574-11"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb574-11"></a>dados_brutos &lt;-<span class="st"> </span>readxl<span class="op">::</span><span class="kw">read_excel</span>(destfile)</span></code></pre></div>
 <p>As variáveis presentes na base são:</p>
-<div class="sourceCode" id="cb574"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb574-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb574-1"></a>dados_brutos <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">names</span>() <span class="co"># Ver o nome das variáveis</span></span></code></pre></div>
+<div class="sourceCode" id="cb575"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb575-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb575-1"></a>dados_brutos <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">names</span>() <span class="co"># Ver o nome das variáveis</span></span></code></pre></div>
 <pre><code>##  [1] &quot;ID&quot;                   &quot;Sexo&quot;                 &quot;Nascimento&quot;          
 ##  [4] &quot;Idade&quot;                &quot;Inclusão&quot;             &quot;Cor&quot;                 
 ##  [7] &quot;Peso&quot;                 &quot;Altura&quot;               &quot;cintura&quot;             
@@ -423,9 +423,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [16] &quot;Cafeína/dia&quot;          &quot;Refrig/dia&quot;           &quot;Sedentario&quot;          
 ## [19] &quot;ativ. Fisica&quot;</code></pre>
 <p>Os nomes das variáveis contém letras maiúsculas, acentos, parênteses, pontos e barras, o que atrapalha na hora da programação. Para resolver esse problema, usamos a função <code>clean_names()</code>.</p>
-<div class="sourceCode" id="cb576"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb576-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb576-1"></a>dados_brutos <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb576-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb576-2"></a><span class="st">  </span>janitor<span class="op">::</span><span class="kw">clean_names</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># Limpar os nomes das variáveis</span></span>
-<span id="cb576-3"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb576-3"></a><span class="st">  </span><span class="kw">names</span>() <span class="co"># Ver o nome das variáveis</span></span></code></pre></div>
+<div class="sourceCode" id="cb577"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb577-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb577-1"></a>dados_brutos <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb577-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb577-2"></a><span class="st">  </span>janitor<span class="op">::</span><span class="kw">clean_names</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># Limpar os nomes das variáveis</span></span>
+<span id="cb577-3"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb577-3"></a><span class="st">  </span><span class="kw">names</span>() <span class="co"># Ver o nome das variáveis</span></span></code></pre></div>
 <pre><code>##  [1] &quot;id&quot;                  &quot;sexo&quot;                &quot;nascimento&quot;         
 ##  [4] &quot;idade&quot;               &quot;inclusao&quot;            &quot;cor&quot;                
 ##  [7] &quot;peso&quot;                &quot;altura&quot;              &quot;cintura&quot;            
@@ -435,15 +435,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [19] &quot;ativ_fisica&quot;</code></pre>
 <p>Veja que a função removeu os parênteses, pontos e barras e substituiu os espaços por <code>_</code>.</p>
 <p>E para substituir na base, precisamos atribuir o resultado em um novo objeto:</p>
-<div class="sourceCode" id="cb578"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb578-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb578-1"></a>dados &lt;-<span class="st"> </span>dados_brutos <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb578-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb578-2"></a><span class="st">  </span>janitor<span class="op">::</span><span class="kw">clean_names</span>() <span class="co"># Limpar os nomes das variáveis</span></span></code></pre></div>
+<div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb579-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb579-1"></a>dados &lt;-<span class="st"> </span>dados_brutos <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb579-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb579-2"></a><span class="st">  </span>janitor<span class="op">::</span><span class="kw">clean_names</span>() <span class="co"># Limpar os nomes das variáveis</span></span></code></pre></div>
 </div>
 <div id="removendo-linhas-e-colunas-vazias" class="section level3">
 <h3><span class="header-section-number">11.1.2</span> Removendo linhas e colunas vazias</h3>
 <p>Esse banco de dados também contém outro problema: linhas vazias. Na verdade, elas não eram completamente vazias, pois havia algumas informações de identificação da(o) paciente, mas nenhuma outra variável tinha sido computada.</p>
-<div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb579-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb579-1"></a>dados <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb579-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb579-2"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">slice</span>(<span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># Apresentar apenas a linha 3</span></span>
-<span id="cb579-3"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb579-3"></a><span class="st">  </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb580"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb580-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb580-1"></a>dados <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb580-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb580-2"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">slice</span>(<span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># Apresentar apenas a linha 3</span></span>
+<span id="cb580-3"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb580-3"></a><span class="st">  </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
 <table style="width:100%;">
 <colgroup>
 <col width="1%" />
@@ -514,15 +514,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>Para resolver o problema, é possível utilizar a função <code>remove_empty()</code>.</p>
-<div class="sourceCode" id="cb580"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb580-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb580-1"></a>dados_sem_linhas_vazias &lt;-<span class="st"> </span>dados <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb580-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb580-2"></a><span class="st">  </span><span class="kw">as.data.frame</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb580-3"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb580-3"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>id) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb580-4"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb580-4"></a><span class="st">  </span>janitor<span class="op">::</span><span class="kw">remove_empty</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb580-5"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb580-5"></a><span class="st">  </span>tibble<span class="op">::</span><span class="kw">rowid_to_column</span>(<span class="st">&quot;id&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb580-6"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb580-6"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(id, <span class="kw">everything</span>()) <span class="op">%&gt;%</span></span>
-<span id="cb580-7"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb580-7"></a><span class="st">  </span>tibble<span class="op">::</span><span class="kw">as_tibble</span>()</span>
-<span id="cb580-8"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb580-8"></a></span>
-<span id="cb580-9"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb580-9"></a>dados_sem_linhas_vazias <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb581"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb581-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb581-1"></a>dados_sem_linhas_vazias &lt;-<span class="st"> </span>dados <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb581-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb581-2"></a><span class="st">  </span><span class="kw">as.data.frame</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb581-3"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb581-3"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>id) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb581-4"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb581-4"></a><span class="st">  </span>janitor<span class="op">::</span><span class="kw">remove_empty</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb581-5"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb581-5"></a><span class="st">  </span>tibble<span class="op">::</span><span class="kw">rowid_to_column</span>(<span class="st">&quot;id&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb581-6"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb581-6"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(id, <span class="kw">everything</span>()) <span class="op">%&gt;%</span></span>
+<span id="cb581-7"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb581-7"></a><span class="st">  </span>tibble<span class="op">::</span><span class="kw">as_tibble</span>()</span>
+<span id="cb581-8"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb581-8"></a></span>
+<span id="cb581-9"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb581-9"></a>dados_sem_linhas_vazias <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
 <table>
 <colgroup>
 <col width="1%" />
@@ -658,13 +658,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Foi necessário converter para <code>data.frame</code> primeiro porque não é possível definir os nomes das linhas de uma <code>tibble</code>. Se a linha estivesse completamente vazia, bastaria usar diretamente a função <code>remove_empty_rows()</code>.</p>
 <p>Equivalentemente para colunas, existe a função <code>remove_empty_cols()</code>.</p>
 <p>Outra forma de realizar este mesmo procedimento é utilizando a função <code>drop_na()</code> do pacote <code>tidyr</code>:</p>
-<div class="sourceCode" id="cb581"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb581-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb581-1"></a>dados_sem_linhas_vazias &lt;-<span class="st"> </span>dados <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb581-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb581-2"></a><span class="st">  </span>tidyr<span class="op">::</span><span class="kw">drop_na</span>(<span class="op">-</span>id) <span class="op">%&gt;%</span></span>
-<span id="cb581-3"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb581-3"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>id) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb581-4"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb581-4"></a><span class="st">  </span>tibble<span class="op">::</span><span class="kw">rowid_to_column</span>(<span class="st">&quot;id&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb581-5"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb581-5"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">relocate</span>(id, <span class="dt">.before =</span> sexo)</span>
-<span id="cb581-6"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb581-6"></a></span>
-<span id="cb581-7"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb581-7"></a>dados_sem_linhas_vazias <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb582"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb582-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-1"></a>dados_sem_linhas_vazias &lt;-<span class="st"> </span>dados <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb582-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-2"></a><span class="st">  </span>tidyr<span class="op">::</span><span class="kw">drop_na</span>(<span class="op">-</span>id) <span class="op">%&gt;%</span></span>
+<span id="cb582-3"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-3"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>id) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb582-4"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-4"></a><span class="st">  </span>tibble<span class="op">::</span><span class="kw">rowid_to_column</span>(<span class="st">&quot;id&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb582-5"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-5"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">relocate</span>(id, <span class="dt">.before =</span> sexo)</span>
+<span id="cb582-6"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-6"></a></span>
+<span id="cb582-7"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-7"></a>dados_sem_linhas_vazias <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
 <table>
 <colgroup>
 <col width="1%" />
@@ -801,43 +801,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="identificando-linhas-duplicadas" class="section level3">
 <h3><span class="header-section-number">11.1.3</span> Identificando linhas duplicadas</h3>
 <p>O pacote <code>janitor</code> possui uma função para identificar entradas duplicadas numa base de dados: <code>get_dupes()</code>. Vamos criar uma base genérica para testá-la.</p>
-<div class="sourceCode" id="cb582"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb582-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-1"></a><span class="co"># Criar a base de exemplo</span></span>
-<span id="cb582-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-2"></a>p_nome &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Athos&quot;</span>, <span class="st">&quot;Daniel&quot;</span>, <span class="st">&quot;Fernando&quot;</span>, <span class="st">&quot;Julio&quot;</span>, <span class="st">&quot;William&quot;</span>)</span>
-<span id="cb582-3"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-3"></a>sobrenome &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Damiani&quot;</span>, <span class="st">&quot;Falbel&quot;</span>, <span class="st">&quot;Corrêa&quot;, &quot;</span>Trecenti<span class="st">&quot;, &quot;</span>Amorim<span class="st">&quot;)</span></span>
-<span id="cb582-4"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-4"></a></span>
-<span id="cb582-5"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-5"></a><span class="st">base_exemplo &lt;- tibble::tibble(</span></span>
-<span id="cb582-6"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-6"></a><span class="st">  nome = sample(p_nome, 25, replace = TRUE),</span></span>
-<span id="cb582-7"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-7"></a><span class="st">  sobrenome = sample(sobrenome, 25, replace = TRUE),</span></span>
-<span id="cb582-8"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-8"></a><span class="st">  variavel_importante = rnorm(25)</span></span>
-<span id="cb582-9"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-9"></a><span class="st">)</span></span>
-<span id="cb582-10"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-10"></a><span class="st"># Dar uma espiada na base de exemplo</span></span>
-<span id="cb582-11"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb582-11"></a><span class="st">dplyr::glimpse(base_exemplo)</span></span></code></pre></div>
+<div class="sourceCode" id="cb583"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb583-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb583-1"></a><span class="co"># Criar a base de exemplo</span></span>
+<span id="cb583-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb583-2"></a>p_nome &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Athos&quot;</span>, <span class="st">&quot;Daniel&quot;</span>, <span class="st">&quot;Fernando&quot;</span>, <span class="st">&quot;Julio&quot;</span>, <span class="st">&quot;William&quot;</span>)</span>
+<span id="cb583-3"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb583-3"></a>sobrenome &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Damiani&quot;</span>, <span class="st">&quot;Falbel&quot;</span>, <span class="st">&quot;Corrêa&quot;, &quot;</span>Trecenti<span class="st">&quot;, &quot;</span>Amorim<span class="st">&quot;)</span></span>
+<span id="cb583-4"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb583-4"></a></span>
+<span id="cb583-5"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb583-5"></a><span class="st">base_exemplo &lt;- tibble::tibble(</span></span>
+<span id="cb583-6"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb583-6"></a><span class="st">  nome = sample(p_nome, 25, replace = TRUE),</span></span>
+<span id="cb583-7"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb583-7"></a><span class="st">  sobrenome = sample(sobrenome, 25, replace = TRUE),</span></span>
+<span id="cb583-8"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb583-8"></a><span class="st">  variavel_importante = rnorm(25)</span></span>
+<span id="cb583-9"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb583-9"></a><span class="st">)</span></span>
+<span id="cb583-10"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb583-10"></a><span class="st"># Dar uma espiada na base de exemplo</span></span>
+<span id="cb583-11"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb583-11"></a><span class="st">dplyr::glimpse(base_exemplo)</span></span></code></pre></div>
 <pre><code>## Rows: 25
 ## Columns: 3
-## $ nome                &lt;chr&gt; &quot;Daniel&quot;, &quot;William&quot;, &quot;Julio&quot;, &quot;Fernando&quot;, &quot;Willia…
-## $ sobrenome           &lt;chr&gt; &quot;Trecenti&quot;, &quot;Falbel&quot;, &quot;Damiani&quot;, &quot;Trecenti&quot;, &quot;Amo…
-## $ variavel_importante &lt;dbl&gt; 0.94021652, -1.29673167, 0.66204404, -1.48492312,…</code></pre>
-<div class="sourceCode" id="cb584"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb584-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb584-1"></a><span class="co"># Ver as duplicatas com a função get_dupes()</span></span>
-<span id="cb584-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb584-2"></a>janitor<span class="op">::</span><span class="kw">get_dupes</span>(base_exemplo, nome, sobrenome)</span></code></pre></div>
-<pre><code>## # A tibble: 16 x 4
+## $ nome                &lt;chr&gt; &quot;Athos&quot;, &quot;William&quot;, &quot;Athos&quot;, &quot;Fernando&quot;, &quot;Julio&quot;,…
+## $ sobrenome           &lt;chr&gt; &quot;Corrêa&quot;, &quot;Trecenti&quot;, &quot;Trecenti&quot;, &quot;Amorim&quot;, &quot;Corr…
+## $ variavel_importante &lt;dbl&gt; 0.64495859, 0.40873918, -1.66796425, -0.19470732,…</code></pre>
+<div class="sourceCode" id="cb585"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb585-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb585-1"></a><span class="co"># Ver as duplicatas com a função get_dupes()</span></span>
+<span id="cb585-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb585-2"></a>janitor<span class="op">::</span><span class="kw">get_dupes</span>(base_exemplo, nome, sobrenome)</span></code></pre></div>
+<pre><code>## # A tibble: 18 x 4
 ##    nome     sobrenome dupe_count variavel_importante
 ##    &lt;chr&gt;    &lt;chr&gt;          &lt;int&gt;               &lt;dbl&gt;
-##  1 Athos    Corrêa             3              0.737 
-##  2 Athos    Corrêa             3              0.180 
-##  3 Athos    Corrêa             3             -0.0230
-##  4 Daniel   Amorim             2             -0.513 
-##  5 Daniel   Amorim             2              2.89  
-##  6 Daniel   Falbel             2             -0.946 
-##  7 Daniel   Falbel             2             -0.864 
-##  8 Daniel   Trecenti           2              0.940 
-##  9 Daniel   Trecenti           2             -1.23  
-## 10 Fernando Falbel             2              0.427 
-## 11 Fernando Falbel             2              0.746 
-## 12 Fernando Trecenti           2             -1.48  
-## 13 Fernando Trecenti           2              0.813 
-## 14 Julio    Damiani            3              0.662 
-## 15 Julio    Damiani            3              0.289 
-## 16 Julio    Damiani            3             -0.962</code></pre>
+##  1 Athos    Corrêa             2              0.645 
+##  2 Athos    Corrêa             2             -1.39  
+##  3 Daniel   Damiani            3             -0.794 
+##  4 Daniel   Damiani            3              0.580 
+##  5 Daniel   Damiani            3             -0.640 
+##  6 Daniel   Trecenti           4              1.36  
+##  7 Daniel   Trecenti           4              0.139 
+##  8 Daniel   Trecenti           4              0.386 
+##  9 Daniel   Trecenti           4             -0.207 
+## 10 Fernando Damiani            2             -0.0491
+## 11 Fernando Damiani            2             -1.73  
+## 12 Julio    Corrêa             2             -0.282 
+## 13 Julio    Corrêa             2              0.310 
+## 14 Julio    Damiani            2              1.01  
+## 15 Julio    Damiani            2             -1.17  
+## 16 William  Trecenti           3              0.409 
+## 17 William  Trecenti           3              0.653 
+## 18 William  Trecenti           3             -0.145</code></pre>
 <p>Todas as linhas na <code>tibble</code> resultante representam uma combinação de nome-sobrenome repetida.</p>
 </div>
 <div id="outras-funções" class="section level3">
@@ -847,27 +849,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>tabyl()</code> - similar a <code>table()</code>, mas pipe-ável e com mais recursos.</li>
 <li><code>adorn_totals()</code> - acrescenta o total das linhas ou colunas.</li>
 </ul>
-<div class="sourceCode" id="cb586"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb586-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb586-1"></a><span class="co"># Fazer uma tabela de frequência</span></span>
-<span id="cb586-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb586-2"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span>janitor<span class="op">::</span><span class="kw">tabyl</span>(cyl)</span></code></pre></div>
+<div class="sourceCode" id="cb587"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb587-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb587-1"></a><span class="co"># Fazer uma tabela de frequência</span></span>
+<span id="cb587-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb587-2"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span>janitor<span class="op">::</span><span class="kw">tabyl</span>(cyl)</span></code></pre></div>
 <pre><code>##  cyl  n percent
 ##    4 11 0.34375
 ##    6  7 0.21875
 ##    8 14 0.43750</code></pre>
-<div class="sourceCode" id="cb588"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb588-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb588-1"></a><span class="co"># Fazer uma tabela de frequência com valores totais,</span></span>
-<span id="cb588-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb588-2"></a><span class="co"># e porcentagem</span></span>
-<span id="cb588-3"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb588-3"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb588-4"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb588-4"></a><span class="st">  </span>janitor<span class="op">::</span><span class="kw">tabyl</span>(cyl) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb588-5"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb588-5"></a><span class="st">  </span>janitor<span class="op">::</span><span class="kw">adorn_totals</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb589"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb589-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb589-1"></a><span class="co"># Fazer uma tabela de frequência com valores totais,</span></span>
+<span id="cb589-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb589-2"></a><span class="co"># e porcentagem</span></span>
+<span id="cb589-3"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb589-3"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb589-4"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb589-4"></a><span class="st">  </span>janitor<span class="op">::</span><span class="kw">tabyl</span>(cyl) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb589-5"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb589-5"></a><span class="st">  </span>janitor<span class="op">::</span><span class="kw">adorn_totals</span>()</span></code></pre></div>
 <pre><code>##    cyl  n percent
 ##      4 11 0.34375
 ##      6  7 0.21875
 ##      8 14 0.43750
 ##  Total 32 1.00000</code></pre>
-<div class="sourceCode" id="cb590"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb590-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb590-1"></a><span class="co"># Fazer uma tabela de frequência com duas variáveis,</span></span>
-<span id="cb590-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb590-2"></a><span class="co"># e valores totais</span></span>
-<span id="cb590-3"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb590-3"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb590-4"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb590-4"></a><span class="st">  </span>janitor<span class="op">::</span><span class="kw">tabyl</span>(cyl, am) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb590-5"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb590-5"></a><span class="st">  </span>janitor<span class="op">::</span><span class="kw">adorn_totals</span>(<span class="dt">where =</span> <span class="st">&quot;col&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb591"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb591-1"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb591-1"></a><span class="co"># Fazer uma tabela de frequência com duas variáveis,</span></span>
+<span id="cb591-2"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb591-2"></a><span class="co"># e valores totais</span></span>
+<span id="cb591-3"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb591-3"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb591-4"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb591-4"></a><span class="st">  </span>janitor<span class="op">::</span><span class="kw">tabyl</span>(cyl, am) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb591-5"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb591-5"></a><span class="st">  </span>janitor<span class="op">::</span><span class="kw">adorn_totals</span>(<span class="dt">where =</span> <span class="st">&quot;col&quot;</span>)</span></code></pre></div>
 <pre><code>##  cyl  0 1 Total
 ##    4  3 8    11
 ##    6  4 3     7

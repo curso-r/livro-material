@@ -1,7 +1,7 @@
 --- 
 title: "Ciência de Dados em R"
 author: "Curso-R"
-date: "Última atualização: 09/04/2021"
+date: "Última atualização: 12/04/2021"
 github-repo: "curso-r/livro-material"
 site: bookdown::bookdown_site
 documentclass: book

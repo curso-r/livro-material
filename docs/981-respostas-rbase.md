@@ -537,7 +537,7 @@ segredo == numeros_possiveis
 ```
 
 ```
-##  [1] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE
+##  [1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
 ```
 
 *No código acima, para cada valor de `numero_possiveis`, foi testado se esse valor é igual ao segredo. Em caso afirmativo, um TRUE é devolvido. Veja que há apenas um TRUE no vetor resultante. Essa é posição do nosso segredo dentro do vetor `numeros_possiveis`.*
@@ -551,7 +551,7 @@ numeros_possiveis[segredo == numeros_possiveis]
 ```
 
 ```
-## [1] 5
+## [1] 3
 ```
 
 *No código acima, foi retornado apenas o número associado ao valor TRUE dado pelo teste `segredo == numeros_possiveis`*.
@@ -1295,7 +1295,7 @@ sortear_numero()
 ```
 
 ```
-## [1] 4
+## [1] 7
 ```
 
 
@@ -1318,8 +1318,8 @@ sortear_linha(mtcars)
 ```
 
 ```
-##             mpg cyl  disp  hp drat   wt qsec vs am gear carb
-## Merc 450SE 16.4   8 275.8 180 3.07 4.07 17.4  0  0    3    3
+##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Chrysler Imperial 14.7   8  440 230 3.23 5.345 17.42  0  0    3    4
 ```
 
 **b.** Generalize a função para retornar um número qualquer de linhas, escolhido pelo usuário.
@@ -1338,16 +1338,16 @@ sortear_linha(mtcars, 10)
 
 ```
 ##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-## Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
-## Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
 ## Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
-## Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
-## Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
-## Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
-## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
 ## Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
-## Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
-## Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
+## Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+## Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
+## Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
+## Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+## Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
+## Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
 ```
 
 ### Controle de fluxo {-}

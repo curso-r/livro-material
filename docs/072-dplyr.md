@@ -1513,11 +1513,11 @@ tab_notas
 ## # A tibble: 5 x 5
 ##   student_id prova1 prova2 prova3 prova4
 ##        <int>  <int>  <int>  <int>  <int>
-## 1          1     10      3      0      0
-## 2          2      7      7      1      7
-## 3          3      5      1      3      2
-## 4          4      9      8      4      3
-## 5          5      1      5      9      8
+## 1          1      2      5      2      0
+## 2          2      8      6      5      7
+## 3          3      0      3     10      1
+## 4          4      5      8      0      8
+## 5          5      7      4      8      9
 ```
 
 Se quisermos gerar uma coluna com a nota média de cada aluno nas quatro provas, não poderíamos usar o `mutate()` diretamente.
@@ -1531,11 +1531,11 @@ tab_notas %>% mutate(media = mean(c(prova1, prova2, prova3, prova4)))
 ## # A tibble: 5 x 6
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1     10      3      0      0  4.65
-## 2          2      7      7      1      7  4.65
-## 3          3      5      1      3      2  4.65
-## 4          4      9      8      4      3  4.65
-## 5          5      1      5      9      8  4.65
+## 1          1      2      5      2      0   4.9
+## 2          2      8      6      5      7   4.9
+## 3          3      0      3     10      1   4.9
+## 4          4      5      8      0      8   4.9
+## 5          5      7      4      8      9   4.9
 ```
 
 Neste caso, todas as colunas estão sendo empilhadas e gerando uma única média, passada a todas as linhas da coluna `media`.
@@ -1554,11 +1554,11 @@ tab_notas %>%
 ## # Groups:   student_id [5]
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1     10      3      0      0  3.25
-## 2          2      7      7      1      7  5.5 
-## 3          3      5      1      3      2  2.75
-## 4          4      9      8      4      3  6   
-## 5          5      1      5      9      8  5.75
+## 1          1      2      5      2      0  2.25
+## 2          2      8      6      5      7  6.5 
+## 3          3      0      3     10      1  3.5 
+## 4          4      5      8      0      8  5.25
+## 5          5      7      4      8      9  7
 ```
 
 Também podemos nos aproveitar da sintaxe do `across()` neste caso. Para isso, precisamos substutir a função `c()` pela função `c_across()`.
@@ -1575,11 +1575,11 @@ tab_notas %>%
 ## # Groups:   student_id [5]
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1     10      3      0      0  3.25
-## 2          2      7      7      1      7  5.5 
-## 3          3      5      1      3      2  2.75
-## 4          4      9      8      4      3  6   
-## 5          5      1      5      9      8  5.75
+## 1          1      2      5      2      0  2.25
+## 2          2      8      6      5      7  6.5 
+## 3          3      0      3     10      1  3.5 
+## 4          4      5      8      0      8  5.25
+## 5          5      7      4      8      9  7
 ```
 
 Equivalentemente ao `group_by()`, neste caso, podemos usar a função `rowwise()`.
@@ -1596,11 +1596,11 @@ tab_notas %>%
 ## # Rowwise:  student_id
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1     10      3      0      0  3.25
-## 2          2      7      7      1      7  5.5 
-## 3          3      5      1      3      2  2.75
-## 4          4      9      8      4      3  6   
-## 5          5      1      5      9      8  5.75
+## 1          1      2      5      2      0  2.25
+## 2          2      8      6      5      7  6.5 
+## 3          3      0      3     10      1  3.5 
+## 4          4      5      8      0      8  5.25
+## 5          5      7      4      8      9  7
 ```
 
 Ela é muito útil quando queremos fazer operação por linhas, mas não temos uma coluna de identificação. Por padrão, se não indicarmos nenhuma coluna, cada linha será um "grupo".
@@ -1617,16 +1617,25 @@ tab_notas %>%
 ## # Rowwise: 
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1     10      3      0      0  3.25
-## 2          2      7      7      1      7  5.5 
-## 3          3      5      1      3      2  2.75
-## 4          4      9      8      4      3  6   
-## 5          5      1      5      9      8  5.75
+## 1          1      2      5      2      0  2.25
+## 2          2      8      6      5      7  6.5 
+## 3          3      0      3     10      1  3.5 
+## 4          4      5      8      0      8  5.25
+## 5          5      7      4      8      9  7
 ```
 
 Veja que `student_id` não é passada para a função `rowwise()`. Não precisaríamos dessa coluna na base para reproduzir a geração da columa `media` neste caso.
 
 #### Exercícios {-}
+
+A base `casas` abaixo pode ser encontrada a partir do código abaixo:
+
+
+```r
+remotes::install_github("cienciadedatos/dados")
+dados::casas
+```
+
 
 **1.** Reescreva os códigos abaixo utilizando as funções `across()` e `where()`.
 
@@ -1673,9 +1682,9 @@ casas %>%
 
 <div style = "height: 10px;"></div>
 
-- **b.** Utilize o código feito na letra (a) para agrupar a base ames pela variável venda_valor categorizada e calcular todas as áreas médias para cada uma dessas categorias.
+- **b.** Utilize o código feito na letra (a) para agrupar a base `casas` pela variável venda_valor categorizada e calcular todas as áreas médias para cada uma dessas categorias.
 
-**3.** Escreva um código que receba a base ames e retorne uma tabela com apenas
+**3.** Escreva um código que receba a base `casas` e retorne uma tabela com apenas
 
 - **a.** as colunas referentes à garagem da casa.
 
@@ -1689,8 +1698,8 @@ casas %>%
 
 **4.** Usando a função `rename_with()`, troque todos os `"_"` dos nomes das colunas por um espaço `" "`.
 
-**5.** Escreva um código para colocar todas as colunas relativas a venda no começo da tabela ames.
+**5.** Escreva um código para colocar todas as colunas relativas a venda no começo da base `casas`.
 
-**6.** 5. Escreva um código para colocar todas as colunas numéricas da base ames no começo da tabela e todas as colunas categóricas no final.
+**6.** 5. Escreva um código para colocar todas as colunas numéricas da base `casas` no começo da tabela e todas as colunas categóricas no final.
 
 
