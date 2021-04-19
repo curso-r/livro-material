@@ -413,3 +413,19 @@ s_soma_um <- safely(soma_um, 0)
 obj <- c(10, 11, "a", 13, 14, 15)
 s_soma_um(obj)
 ```
+
+
+## Exercícios
+
+A base `imdb` nos exercícios abaixo pode ser baixada [clicando aqui](https://github.com/curso-r/livro-material/raw/master/assets/data/imdb.rds).
+
+**1.** Utilize a função `map()` para calcular a média de cada coluna da base `mtcars`.
+
+**2.** Use a função `map()` para testar se cada elemento do vetor `letters` é uma vogal ou não. Dica: você precisará criar uma função para testar se é uma letra é vogal. Faça o resultado ser (a) uma lista de `TRUE/FALSE` e (b) um vetor de `TRUE/FALSE`.
+
+**3** Faça uma função que divida um número por 2 se ele for par ou multiplique ele por 2 caso seja ímpar. Utilize uma função `map` para aplicar essa função ao vetor `1:100`. O resultado do código deve ser um vetor numérico.
+
+**4.** Use a função `map()` para criar gráficos de dispersão da receita vs orçamento para os filmes da base `imdb`. Os filmes de cada ano deverão compor um gráfico diferente. Faça o resultado ser (a) uma lista de gráficos e (b) uma nova coluna na base `imdb` (utilizando a função `tidyr::nest()`).
+
+**5.** Utilize a função `walk` para salvar cada ano da base `imdb` em um arquivo `.rds` diferente, isto é, o arquivo `imdb_2001.rds`, por exemplo, deve conter apenas filmes do ano de 2001.
+

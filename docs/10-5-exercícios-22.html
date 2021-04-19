@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3.6 Vetores | Ciência de Dados em R</title>
+  <title>10.5 Exercícios | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3.6 Vetores | Ciência de Dados em R" />
+  <meta property="og:title" content="10.5 Exercícios | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3.6 Vetores | Ciência de Dados em R" />
+  <meta name="twitter:title" content="10.5 Exercícios | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="3-5-classes.html"/>
-<link rel="next" href="3-7-testes-lógicos.html"/>
+<link rel="prev" href="10-4-miscelânea-1.html"/>
+<link rel="next" href="11-misc.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -452,132 +452,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="vetores" class="section level2" number="3.6">
-<h2><span class="header-section-number">3.6</span> Vetores</h2>
-<p>Vetores são estruturas muito importantes dentro R. Em especial, pensando em análise de dados, precisamos estudá-los pois cada coluna de um <em>data frame</em> será representada como um vetor.</p>
-<p>Vetores no R são apenas <strong>conjuntos indexados de valores</strong>. Para criá-los, basta colocar os valores separados por vírgulas dentro de um <code>c()</code>.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="3-6-vetores.html#cb31-1" aria-hidden="true" tabindex="-1"></a>vetor1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="sc">-</span><span class="dv">10</span>)</span>
-<span id="cb31-2"><a href="3-6-vetores.html#cb31-2" aria-hidden="true" tabindex="-1"></a>vetor2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
-<span id="cb31-3"><a href="3-6-vetores.html#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-4"><a href="3-6-vetores.html#cb31-4" aria-hidden="true" tabindex="-1"></a>vetor1</span>
-<span id="cb31-5"><a href="3-6-vetores.html#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]   1   5   3 -10</span></span>
-<span id="cb31-6"><a href="3-6-vetores.html#cb31-6" aria-hidden="true" tabindex="-1"></a>vetor2</span>
-<span id="cb31-7"><a href="3-6-vetores.html#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</span></span></code></pre></div>
-<p>Os objetos <code>vetor1</code> e <code>vetor2</code> são vetores.</p>
-<p>Uma maneira fácil de criar um vetor com uma sequência de números é utilizar o operador <code>:</code>.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="3-6-vetores.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vetor de 1 a 10</span></span>
-<span id="cb32-2"><a href="3-6-vetores.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb32-3"><a href="3-6-vetores.html#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1]  1  2  3  4  5  6  7  8  9 10</span></span>
-<span id="cb32-4"><a href="3-6-vetores.html#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-5"><a href="3-6-vetores.html#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Vetor de 10 a 1</span></span>
-<span id="cb32-6"><a href="3-6-vetores.html#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span><span class="sc">:</span><span class="dv">1</span></span>
-<span id="cb32-7"><a href="3-6-vetores.html#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 10  9  8  7  6  5  4  3  2  1</span></span>
-<span id="cb32-8"><a href="3-6-vetores.html#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-9"><a href="3-6-vetores.html#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Vetor de -3 a 3</span></span>
-<span id="cb32-10"><a href="3-6-vetores.html#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">3</span><span class="sc">:</span><span class="dv">3</span></span>
-<span id="cb32-11"><a href="3-6-vetores.html#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] -3 -2 -1  0  1  2  3</span></span></code></pre></div>
-<p>Quando dizemos que vetores são conjuntos <em>indexados</em>, isso quer dizer que cada valor dentro de um vetor tem uma <strong>posição</strong>. Essa posição é dada pela ordem em que os elementos foram colocados no momento em que o vetor foi criado. Isso nos permite acessar individualmente cada valor de um vetor.</p>
-<p>Para isso, colocamos o índice do valor que queremos acessar dentro de colchetes <code>[]</code>.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="3-6-vetores.html#cb33-1" aria-hidden="true" tabindex="-1"></a>vetor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>)</span>
-<span id="cb33-2"><a href="3-6-vetores.html#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-3"><a href="3-6-vetores.html#cb33-3" aria-hidden="true" tabindex="-1"></a>vetor[<span class="dv">1</span>]</span>
-<span id="cb33-4"><a href="3-6-vetores.html#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;a&quot;</span></span>
-<span id="cb33-5"><a href="3-6-vetores.html#cb33-5" aria-hidden="true" tabindex="-1"></a>vetor[<span class="dv">2</span>]</span>
-<span id="cb33-6"><a href="3-6-vetores.html#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;b&quot;</span></span>
-<span id="cb33-7"><a href="3-6-vetores.html#cb33-7" aria-hidden="true" tabindex="-1"></a>vetor[<span class="dv">3</span>]</span>
-<span id="cb33-8"><a href="3-6-vetores.html#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;c&quot;</span></span>
-<span id="cb33-9"><a href="3-6-vetores.html#cb33-9" aria-hidden="true" tabindex="-1"></a>vetor[<span class="dv">4</span>]</span>
-<span id="cb33-10"><a href="3-6-vetores.html#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;d&quot;</span></span></code></pre></div>
-<p>Você também pode colocar um conjunto de índices dentro dos colchetes, para pegar os valores contidos nessas posições:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="3-6-vetores.html#cb34-1" aria-hidden="true" tabindex="-1"></a>vetor[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)]</span>
-<span id="cb34-2"><a href="3-6-vetores.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;b&quot; &quot;c&quot;</span></span>
-<span id="cb34-3"><a href="3-6-vetores.html#cb34-3" aria-hidden="true" tabindex="-1"></a>vetor[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>)]</span>
-<span id="cb34-4"><a href="3-6-vetores.html#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;a&quot; &quot;b&quot; &quot;d&quot;</span></span></code></pre></div>
-<p>Essa operação é conhecida como <em>subsetting</em>, pois estamos pegando subconjuntos de valores de um vetor.</p>
-<p>Se você tentar acessar uma posição do vetor que não existe, ele retornará <code>NA</code>, indicando que esse valor não existe. Discutiremos o que são <code>NA</code>’s na Seção <a href="3-8-valoresEspeciais.html#valoresEspeciais">3.8</a>.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="3-6-vetores.html#cb35-1" aria-hidden="true" tabindex="-1"></a>vetor[<span class="dv">5</span>]</span>
-<span id="cb35-2"><a href="3-6-vetores.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] NA</span></span></code></pre></div>
-<p>Um vetor só pode guardar um tipo de objeto e ele terá sempre a mesma classe dos objetos que guarda. Para saber a classe de um vetor, rodamos <code>class(nome-do-vetor)</code>.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="3-6-vetores.html#cb36-1" aria-hidden="true" tabindex="-1"></a>vetor1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="sc">-</span><span class="dv">10</span>)</span>
-<span id="cb36-2"><a href="3-6-vetores.html#cb36-2" aria-hidden="true" tabindex="-1"></a>vetor2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
-<span id="cb36-3"><a href="3-6-vetores.html#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-4"><a href="3-6-vetores.html#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(vetor1)</span>
-<span id="cb36-5"><a href="3-6-vetores.html#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;numeric&quot;</span></span>
-<span id="cb36-6"><a href="3-6-vetores.html#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(vetor2)</span>
-<span id="cb36-7"><a href="3-6-vetores.html#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;character&quot;</span></span></code></pre></div>
-<p>Se tentarmos misturar duas classes, o R vai apresentar o comportamento conhecido como <strong>coerção</strong>.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="3-6-vetores.html#cb37-1" aria-hidden="true" tabindex="-1"></a>vetor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">&quot;a&quot;</span>)</span>
-<span id="cb37-2"><a href="3-6-vetores.html#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-3"><a href="3-6-vetores.html#cb37-3" aria-hidden="true" tabindex="-1"></a>vetor</span>
-<span id="cb37-4"><a href="3-6-vetores.html#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;1&quot; &quot;2&quot; &quot;a&quot;</span></span>
-<span id="cb37-5"><a href="3-6-vetores.html#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(vetor)</span>
-<span id="cb37-6"><a href="3-6-vetores.html#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;character&quot;</span></span></code></pre></div>
-<p>Veja que todos os elementos do vetor se transformaram em texto. Agora temos um vetor com o texto <code>"1"</code>, o texto <code>"2"</code> e o texto <code>"a"</code>. Como um vetor só pode ter uma classe de objeto dentro dele, classes mais fracas serão sempre reprimidas pelas classes mais fortes. Como regra de bolso: caracteres serão sempre a classe mais forte. Então, sempre que você misturar números e texto em um vetor, os números virarão texto.</p>
-<p>Falaremos bastante de coerção nas próximas seções e capítulos, trazendo exemplos de quando ela ajuda e de quando ela atrapalha.</p>
-<p>De forma bastante intuitiva, você pode fazer operações com vetores.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="3-6-vetores.html#cb38-1" aria-hidden="true" tabindex="-1"></a>vetor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">20</span>, <span class="sc">-</span><span class="dv">3</span>)</span>
-<span id="cb38-2"><a href="3-6-vetores.html#cb38-2" aria-hidden="true" tabindex="-1"></a>vetor <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb38-3"><a href="3-6-vetores.html#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  1  6 21 -2</span></span></code></pre></div>
-<p>Ao rodarmos <code>vetor1 + 1</code>, o R subtrai <code>1</code> de cada um dos elementos do vetor. O mesmo acontece com qualquer outra operação aritmética.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="3-6-vetores.html#cb39-1" aria-hidden="true" tabindex="-1"></a>vetor <span class="sc">-</span> <span class="dv">1</span></span>
-<span id="cb39-2"><a href="3-6-vetores.html#cb39-2" aria-hidden="true" tabindex="-1"></a>vetor <span class="sc">/</span> <span class="dv">2</span></span>
-<span id="cb39-3"><a href="3-6-vetores.html#cb39-3" aria-hidden="true" tabindex="-1"></a>vetor <span class="sc">*</span> <span class="dv">10</span></span></code></pre></div>
-<p>Você também pode fazer operações que envolvem mais de um vetor:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="3-6-vetores.html#cb40-1" aria-hidden="true" tabindex="-1"></a>vetor1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb40-2"><a href="3-6-vetores.html#cb40-2" aria-hidden="true" tabindex="-1"></a>vetor2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>)</span>
-<span id="cb40-3"><a href="3-6-vetores.html#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-4"><a href="3-6-vetores.html#cb40-4" aria-hidden="true" tabindex="-1"></a>vetor1  <span class="sc">+</span> vetor2</span>
-<span id="cb40-5"><a href="3-6-vetores.html#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 11 22 33</span></span></code></pre></div>
-<p>Neste caso, o R irá alinhar os dois vetores e somar elemento a elemento. Esse tipo de comportamento é chamado de <strong>vetorização</strong>. Isso pode ficar um pouco confuso quando os dois vetores não possuem o mesmo tamanho. Tente adivinhar qual será a saída do código a seguir:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="3-6-vetores.html#cb41-1" aria-hidden="true" tabindex="-1"></a>vetor1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb41-2"><a href="3-6-vetores.html#cb41-2" aria-hidden="true" tabindex="-1"></a>vetor2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>)</span>
-<span id="cb41-3"><a href="3-6-vetores.html#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-4"><a href="3-6-vetores.html#cb41-4" aria-hidden="true" tabindex="-1"></a>vetor1 <span class="sc">+</span> vetor2</span>
-<span id="cb41-5"><a href="3-6-vetores.html#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 11 22 31 42</span></span></code></pre></div>
-<p>Embora estejamos somando dois vetores de tamanho diferentes, o R não devolve um erro (o que parecia ser a resposta mais intuitiva). O R alinhou os dois vetores e, como eles não possuíam o mesmo tamanho, o primeiro foi repetido para ficar do mesmo tamanho do segundo. É como se o primeiro vetor fosse na verdade <code>c(1, 2, 1, 2)</code>. Esse comportamento é chamado de <strong>reciclagem</strong>.</p>
-<p>Embora contra-intuitiva, a reciclagem é muito útil no R graças a um caso particular muito importante. Quando somamos <code>vetor + 1</code> no nosso primeiro exemplo, o que o R está fazendo por trás é transformando o <code>1</code> em <code>c(1, 1, 1, 1)</code> e realizando a soma vetorizada <code>c(0, 5, 20, -3) + c(1, 1, 1, 1)</code>. Isso porque o número <code>1</code> nada mais é do que um vetor de tamanho 1, isto é, <code>1</code> é igual a <code>c(1)</code>.</p>
-<p>Usaremos esse comportamento no R o tempo todo e é muito importante a reciclagem para termos certeza de que o R está fazendo exatamente aquilo que gostaríamos que ele fizesse.</p>
-<p>Um outro caso interessante de reciclagem é quando o comprimento dos vetores não são múltiplos um do outro.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="3-6-vetores.html#cb42-1" aria-hidden="true" tabindex="-1"></a>vetor1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb42-2"><a href="3-6-vetores.html#cb42-2" aria-hidden="true" tabindex="-1"></a>vetor2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>)</span>
-<span id="cb42-3"><a href="3-6-vetores.html#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-4"><a href="3-6-vetores.html#cb42-4" aria-hidden="true" tabindex="-1"></a>vetor1 <span class="sc">+</span> vetor2</span>
-<span id="cb42-5"><a href="3-6-vetores.html#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Warning in vetor1 + vetor2: longer object length is not a multiple of shorter</span></span>
-<span id="cb42-6"><a href="3-6-vetores.html#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="do">## object length</span></span>
-<span id="cb42-7"><a href="3-6-vetores.html#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 11 22 33 41 52</span></span></code></pre></div>
-<p>Neste caso, duas coisas aconteceram:</p>
-<ol style="list-style-type: decimal">
-<li><p>O R realizou a conta, repetindo cada valor do primeiro vetor até que os dois tenham o mesmo tamanho. No fundo, a operação realizada foi <code>c(1, 2, 3, 1, 2) + c(10, 20, 30, 40, 50)</code>.</p></li>
-<li><p>Como essa operação é ainda menos intuitiva e raramente desejada, o R devolveu um aviso dizendo que o comprimento do primeiro vetor maior não é um múltiplo do comprimento do vetor menor.</p></li>
-</ol>
-<div id="exercícios-3" class="section level3 unnumbered">
-<h3>Exercícios</h3>
-<p><strong>1.</strong> Guarde em um objeto a sequência de números de 0 a 5 e resolva os itens abaixos.</p>
-<ul>
-<li><p><strong>a.</strong> Use subsetting para fazer o R devolver o primeiro número dessa sequência. Em seguida, faça o R devolver o último número da sequência.</p></li>
-<li><p><strong>b.</strong> Multiplique todos os valores do vetor por -1. Guarde o resultado em
-um novo objeto chamado <code>vetor_negativo</code>.</p></li>
-</ul>
-<p><strong>2.</strong> Crie um vetor com o nome de tres <code>frutas</code>, guarde em um objeto chamado frutas e resolva os itens abaixo.</p>
-<ul>
-<li><p><strong>a.</strong> Utilize a a função <code>length()</code> para verificar o tamanho do vetor.</p></li>
-<li><p><strong>b.</strong> Inspecione a saída de <code>paste("eu gosto de", frutas)</code> e responda se o tamanho do vetor mudou.</p></li>
-</ul>
-<p><strong>3.</strong> O que é reciclagem? Escreva um código em R que exemplifique esse comportamento.</p>
-<p><strong>4.</strong> O que é coerção? Escreva um código em R que exemplifique esse comportamento.</p>
-<p><strong>5.</strong> Por que a coerção pode ser um problema na hora de importarmos bases de dados para o R?</p>
-<p><strong>6.</strong> Use a função <code>sum()</code> para somar os valores de 1 a 100.</p>
-<p><strong>7.</strong> Considere o vetor booleano a seguir:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="3-6-vetores.html#cb43-1" aria-hidden="true" tabindex="-1"></a>dolar_subiu <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span></code></pre></div>
-<p>Este vetor tem informação de uma semana (7 dias, começando no domingo) indicando se o dólar subiu (TRUE) ou não subiu (FALSE) no respectivo dia. Interprete o resultado dos códigos abaixo:</p>
-<ul>
-<li><p><strong>a.</strong> <code>length(dolar_subiu)</code></p></li>
-<li><p><strong>b.</strong> <code>dolar_subiu[2]</code></p></li>
-<li><p><strong>c.</strong> <code>sum(dolar_subiu)</code></p></li>
-<li><p><strong>d.</strong> <code>mean(dolar_subiu)</code></p></li>
-</ul>
+<div id="exercícios-22" class="section level2" number="10.5">
+<h2><span class="header-section-number">10.5</span> Exercícios</h2>
+<p>A base <code>imdb</code> nos exercícios abaixo pode ser baixada <a href="https://github.com/curso-r/livro-material/raw/master/assets/data/imdb.rds">clicando aqui</a>.</p>
+<p><strong>1.</strong> Utilize a função <code>map()</code> para calcular a média de cada coluna da base <code>mtcars</code>.</p>
+<p><strong>2.</strong> Use a função <code>map()</code> para testar se cada elemento do vetor <code>letters</code> é uma vogal ou não. Dica: você precisará criar uma função para testar se é uma letra é vogal. Faça o resultado ser (a) uma lista de <code>TRUE/FALSE</code> e (b) um vetor de <code>TRUE/FALSE</code>.</p>
+<p><strong>3</strong> Faça uma função que divida um número por 2 se ele for par ou multiplique ele por 2 caso seja ímpar. Utilize uma função <code>map</code> para aplicar essa função ao vetor <code>1:100</code>. O resultado do código deve ser um vetor numérico.</p>
+<p><strong>4.</strong> Use a função <code>map()</code> para criar gráficos de dispersão da receita vs orçamento para os filmes da base <code>imdb</code>. Os filmes de cada ano deverão compor um gráfico diferente. Faça o resultado ser (a) uma lista de gráficos e (b) uma nova coluna na base <code>imdb</code> (utilizando a função <code>tidyr::nest()</code>).</p>
+<p><strong>5.</strong> Utilize a função <code>walk</code> para salvar cada ano da base <code>imdb</code> em um arquivo <code>.rds</code> diferente, isto é, o arquivo <code>imdb_2001.rds</code>, por exemplo, deve conter apenas filmes do ano de 2001.</p>
+
 </div>
-</div>
+<!-- </div> -->
 <hr/>
 <footer>
 <a href="https://curso-r.com" target="_blank"><img src="https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width="15%", alt="Curso-R"/></a>
@@ -587,8 +472,8 @@ um novo objeto chamado <code>vetor_negativo</code>.</p></li>
           </div>
         </div>
       </div>
-<a href="3-5-classes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="3-7-testes-lógicos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="10-4-miscelânea-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="11-misc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
