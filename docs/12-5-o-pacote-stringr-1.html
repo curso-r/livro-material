@@ -32,6 +32,7 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="12-4-o-pacote-dplyr.html"/>
 <link rel="next" href="12-6-o-pacote-lubridate-1.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,7 +50,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
@@ -75,18 +75,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -106,7 +106,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -156,14 +156,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre</a></li>
-<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a><ul>
-<li class="chapter" data-level="1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
+<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
 <li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
-<li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a><ul>
+<li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
 <li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
 <li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
@@ -172,7 +175,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#rtools"><i class="fa fa-check"></i><b>1.3.6</b> Rtools</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a><ul>
+<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="2-1-telas.html"><a href="2-1-telas.html"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
 <li class="chapter" data-level="2.2" data-path="2-2-atalhos.html"><a href="2-2-atalhos.html"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
 <li class="chapter" data-level="2.3" data-path="2-3-projetos.html"><a href="2-3-projetos.html"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
@@ -181,60 +185,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="2-6-addins.html"><a href="2-6-addins.html"><i class="fa fa-check"></i><b>2.6</b> Addins</a></li>
 <li class="chapter" data-level="2.7" data-path="2-7-snippets.html"><a href="2-7-snippets.html"><i class="fa fa-check"></i><b>2.7</b> Snippets</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a><ul>
-<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a><ul>
+<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
 <li class="chapter" data-level="3.1.2" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
 <li class="chapter" data-level="3.1.3" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
+<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a><ul>
+<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="3-4-data-frames.html"><a href="3-4-data-frames.html"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
-<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a><ul>
+<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a>
+<ul>
 <li class="chapter" data-level="3.5.1" data-path="3-5-classes.html"><a href="3-5-classes.html#exercícios-2"><i class="fa fa-check"></i><b>3.5.1</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a><ul>
+<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-6-vetores.html"><a href="3-6-vetores.html#exercícios-3"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a><ul>
+<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html#exercícios-4"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a><ul>
+<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.9" data-path="3-9-listas.html"><a href="3-9-listas.html"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
-<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
+<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html#exercícios-6"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a><ul>
+<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html#exercícios-7"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
+<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a>
+<ul>
 <li class="chapter" data-level="3.12.1" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
 <li class="chapter" data-level="3.12.2" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#iteradores-for-e-while"><i class="fa fa-check"></i><b>3.12.2</b> Iteradores: for e while</a></li>
 <li class="chapter" data-level="" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#exercícios-8"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a><ul>
+<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a>
+<ul>
 <li class="chapter" data-level="3.13.1" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#matrizes"><i class="fa fa-check"></i><b>3.13.1</b> Matrizes</a></li>
 <li class="chapter" data-level="3.13.2" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#fatores"><i class="fa fa-check"></i><b>3.13.2</b> Fatores</a></li>
 <li class="chapter" data-level="3.13.3" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#gráficos-r-base"><i class="fa fa-check"></i><b>3.13.3</b> Gráficos (R base)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a><ul>
-<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a><ul>
+<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-cran"><i class="fa fa-check"></i><b>4.1.1</b> Via CRAN</a></li>
 <li class="chapter" data-level="4.1.2" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-github"><i class="fa fa-check"></i><b>4.1.2</b> Via Github</a></li>
 <li class="chapter" data-level="4.1.3" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-arquivo-.zip-ou-.tar.gz"><i class="fa fa-check"></i><b>4.1.3</b> Via arquivo .zip ou .tar.gz</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="4-2-tidyverse.html"><a href="4-2-tidyverse.html"><i class="fa fa-check"></i><b>4.2</b> Tidyverse</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a><ul>
+<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="5-1-caminhos.html"><a href="5-1-caminhos.html"><i class="fa fa-check"></i><b>5.1</b> Caminhos</a></li>
-<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a><ul>
+<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="5-2-readr.html"><a href="5-2-readr.html#lendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.1</b> Lendo arquivos de texto</a></li>
 <li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.2</b> Locale</a></li>
 <li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.3</b> Parseando valores</a></li>
@@ -245,15 +265,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3" data-path="5-3-readxl.html"><a href="5-3-readxl.html"><i class="fa fa-check"></i><b>5.3</b> Os pacotes readxl e writexl</a></li>
 <li class="chapter" data-level="5.4" data-path="5-4-haven.html"><a href="5-4-haven.html"><i class="fa fa-check"></i><b>5.4</b> haven</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
-<li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a><ul>
+<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a>
+<ul>
 <li class="chapter" data-level="" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html#exercícios-10"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
+<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="7-1-tibbles.html"><a href="7-1-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Tibbles</a></li>
-<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a><ul>
+<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#selecionando-colunas"><i class="fa fa-check"></i><b>7.2.1</b> Selecionando colunas</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#ordenando-a-base"><i class="fa fa-check"></i><b>7.2.2</b> Ordenando a base</a></li>
 <li class="chapter" data-level="7.2.3" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#o-pipe-em-ação"><i class="fa fa-check"></i><b>7.2.3</b> O pipe em ação</a></li>
@@ -263,27 +287,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.7" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#juntando-duas-bases"><i class="fa fa-check"></i><b>7.2.7</b> Juntando duas bases</a></li>
 <li class="chapter" data-level="7.2.8" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#dplyr-1.0"><i class="fa fa-check"></i><b>7.2.8</b> dplyr 1.0</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a><ul>
+<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#separate-e-unite"><i class="fa fa-check"></i><b>7.3.1</b> <code>separate()</code> e <code>unite()</code></a></li>
 <li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#pivotagem"><i class="fa fa-check"></i><b>7.3.2</b> Pivotagem</a></li>
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#list-columns"><i class="fa fa-check"></i><b>7.3.3</b> <em>List columns</em></a></li>
 <li class="chapter" data-level="7.3.4" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#exercícios-18"><i class="fa fa-check"></i><b>7.3.4</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a><ul>
+<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a>
+<ul>
 <li class="chapter" data-level="7.4.1" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#introdução"><i class="fa fa-check"></i><b>7.4.1</b> Introdução</a></li>
 <li class="chapter" data-level="7.4.2" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-básicas"><i class="fa fa-check"></i><b>7.4.2</b> Funções básicas</a></li>
 <li class="chapter" data-level="7.4.3" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#expressões-regulares"><i class="fa fa-check"></i><b>7.4.3</b> Expressões Regulares</a></li>
 <li class="chapter" data-level="7.4.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-que-utilizam-regex"><i class="fa fa-check"></i><b>7.4.4</b> Funções que utilizam regex</a></li>
 <li class="chapter" data-level="7.4.5" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#exercícios-19"><i class="fa fa-check"></i><b>7.4.5</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.5</b> O pacote lubridate</a><ul>
+<li class="chapter" data-level="7.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.5</b> O pacote lubridate</a>
+<ul>
 <li class="chapter" data-level="7.5.1" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#a-classe-date"><i class="fa fa-check"></i><b>7.5.1</b> A classe <code>date</code></a></li>
 <li class="chapter" data-level="7.5.2" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#funções-úteis"><i class="fa fa-check"></i><b>7.5.2</b> Funções úteis</a></li>
 <li class="chapter" data-level="7.5.3" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#fusos-horários"><i class="fa fa-check"></i><b>7.5.3</b> Fusos horários</a></li>
 <li class="chapter" data-level="7.5.4" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#operações-com-datas"><i class="fa fa-check"></i><b>7.5.4</b> Operações com datas</a></li>
 <li class="chapter" data-level="7.5.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#exercícios-20"><i class="fa fa-check"></i><b>7.5.5</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="7-6-forcats.html"><a href="7-6-forcats.html"><i class="fa fa-check"></i><b>7.6</b> O pacote forcats</a><ul>
+<li class="chapter" data-level="7.6" data-path="7-6-forcats.html"><a href="7-6-forcats.html"><i class="fa fa-check"></i><b>7.6</b> O pacote forcats</a>
+<ul>
 <li class="chapter" data-level="7.6.1" data-path="7-6-forcats.html"><a href="7-6-forcats.html#o-que-são-fatores"><i class="fa fa-check"></i><b>7.6.1</b> O que são fatores?</a></li>
 <li class="chapter" data-level="7.6.2" data-path="7-6-forcats.html"><a href="7-6-forcats.html#modificando-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.2</b> Modificando níveis de um fator</a></li>
 <li class="chapter" data-level="7.6.3" data-path="7-6-forcats.html"><a href="7-6-forcats.html#mudando-a-ordem-dos-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.3</b> Mudando a ordem dos níveis de um fator</a></li>
@@ -291,8 +319,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.6.5" data-path="7-6-forcats.html"><a href="7-6-forcats.html#outras-funções-úteis"><i class="fa fa-check"></i><b>7.6.5</b> Outras funções úteis</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a><ul>
-<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a><ul>
+<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-pontos-dispersão"><i class="fa fa-check"></i><b>8.1.1</b> Gráficos de pontos (dispersão)</a></li>
 <li class="chapter" data-level="8.1.2" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-linhas"><i class="fa fa-check"></i><b>8.1.2</b> Gráficos de linhas</a></li>
 <li class="chapter" data-level="8.1.3" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-barras"><i class="fa fa-check"></i><b>8.1.3</b> Gráficos de barras</a></li>
@@ -303,13 +333,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.8" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>8.1.8</b> Juntando gráficos</a></li>
 <li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-21"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a><ul>
+<li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a>
+<ul>
 <li class="chapter" data-level="8.2.1" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#gghighlight"><i class="fa fa-check"></i><b>8.2.1</b> gghighlight</a></li>
 <li class="chapter" data-level="8.2.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#ggridges"><i class="fa fa-check"></i><b>8.2.2</b> ggridges</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="9-relatorios.html"><a href="9-relatorios.html"><i class="fa fa-check"></i><b>9</b> Relatórios</a><ul>
-<li class="chapter" data-level="9.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html"><i class="fa fa-check"></i><b>9.1</b> Markdown</a><ul>
+<li class="chapter" data-level="9" data-path="9-relatorios.html"><a href="9-relatorios.html"><i class="fa fa-check"></i><b>9</b> Relatórios</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html"><i class="fa fa-check"></i><b>9.1</b> Markdown</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html#ênfase"><i class="fa fa-check"></i><b>9.1.1</b> Ênfase</a></li>
 <li class="chapter" data-level="9.1.2" data-path="9-1-markdown.html"><a href="9-1-markdown.html#títulos"><i class="fa fa-check"></i><b>9.1.2</b> Títulos</a></li>
 <li class="chapter" data-level="9.1.3" data-path="9-1-markdown.html"><a href="9-1-markdown.html#listas-1"><i class="fa fa-check"></i><b>9.1.3</b> Listas</a></li>
@@ -321,7 +354,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1.9" data-path="9-1-markdown.html"><a href="9-1-markdown.html#recapitulando"><i class="fa fa-check"></i><b>9.1.9</b> Recapitulando</a></li>
 <li class="chapter" data-level="" data-path="9-1-markdown.html"><a href="9-1-markdown.html#exercicios-md"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a><ul>
+<li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a>
+<ul>
 <li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#códigos-em-r"><i class="fa fa-check"></i><b>9.2.1</b> Códigos em R</a></li>
 <li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#imagens-1"><i class="fa fa-check"></i><b>9.2.2</b> Imagens</a></li>
 <li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#tabelas-1"><i class="fa fa-check"></i><b>9.2.3</b> Tabelas</a></li>
@@ -329,17 +363,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="10-funcionais.html"><a href="10-funcionais.html"><i class="fa fa-check"></i><b>10</b> Funcionais</a></li>
-<li class="chapter" data-level="11" data-path="11-misc.html"><a href="11-misc.html"><i class="fa fa-check"></i><b>11</b> Miscelânea</a><ul>
-<li class="chapter" data-level="11.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>11.1</b> Arrumando banco de dados: o pacote janitor</a><ul>
+<li class="chapter" data-level="10" data-path="10-funcionais.html"><a href="10-funcionais.html"><i class="fa fa-check"></i><b>10</b> Programação funcional (purrr)</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="10-1-iterações-básicas.html"><a href="10-1-iterações-básicas.html"><i class="fa fa-check"></i><b>10.1</b> Iterações básicas</a></li>
+<li class="chapter" data-level="10.2" data-path="10-2-iterações-intermediárias.html"><a href="10-2-iterações-intermediárias.html"><i class="fa fa-check"></i><b>10.2</b> Iterações intermediárias</a></li>
+<li class="chapter" data-level="10.3" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html"><i class="fa fa-check"></i><b>10.3</b> Iterações avançadas</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#iterações-com-condicionais"><i class="fa fa-check"></i><b>10.3.1</b> Iterações com condicionais</a></li>
+<li class="chapter" data-level="10.3.2" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#iterações-com-tabelas-e-funções"><i class="fa fa-check"></i><b>10.3.2</b> Iterações com tabelas e funções</a></li>
+<li class="chapter" data-level="10.3.3" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#redução-e-acúmulo"><i class="fa fa-check"></i><b>10.3.3</b> Redução e acúmulo</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html"><i class="fa fa-check"></i><b>10.4</b> Miscelânea</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#manter-e-descartar"><i class="fa fa-check"></i><b>10.4.1</b> Manter e descartar</a></li>
+<li class="chapter" data-level="10.4.2" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#a-família-is"><i class="fa fa-check"></i><b>10.4.2</b> A família <code>is</code></a></li>
+<li class="chapter" data-level="10.4.3" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#andar-e-modificar"><i class="fa fa-check"></i><b>10.4.3</b> Andar e modificar</a></li>
+<li class="chapter" data-level="10.4.4" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#transposição-e-indexação-profunda"><i class="fa fa-check"></i><b>10.4.4</b> Transposição e indexação profunda</a></li>
+<li class="chapter" data-level="10.4.5" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#aplicação-parcial"><i class="fa fa-check"></i><b>10.4.5</b> Aplicação parcial</a></li>
+<li class="chapter" data-level="10.4.6" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#execução-segura"><i class="fa fa-check"></i><b>10.4.6</b> Execução segura</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="11-misc.html"><a href="11-misc.html"><i class="fa fa-check"></i><b>11</b> Miscelânea</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>11.1</b> Arrumando banco de dados: o pacote janitor</a>
+<ul>
 <li class="chapter" data-level="11.1.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#arrumando-o-nome-das-variáveis"><i class="fa fa-check"></i><b>11.1.1</b> Arrumando o nome das variáveis</a></li>
 <li class="chapter" data-level="11.1.2" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#removendo-linhas-e-colunas-vazias"><i class="fa fa-check"></i><b>11.1.2</b> Removendo linhas e colunas vazias</a></li>
 <li class="chapter" data-level="11.1.3" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#identificando-linhas-duplicadas"><i class="fa fa-check"></i><b>11.1.3</b> Identificando linhas duplicadas</a></li>
 <li class="chapter" data-level="11.1.4" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>11.1.4</b> Outras funções</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="12-respostas.html"><a href="12-respostas.html"><i class="fa fa-check"></i><b>12</b> Respostas</a><ul>
-<li class="chapter" data-level="12.1" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html"><i class="fa fa-check"></i><b>12.1</b> R básico</a><ul>
+<li class="chapter" data-level="12" data-path="12-respostas.html"><a href="12-respostas.html"><i class="fa fa-check"></i><b>12</b> Respostas</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html"><i class="fa fa-check"></i><b>12.1</b> R básico</a>
+<ul>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#objetos-e-funções"><i class="fa fa-check"></i>Objetos e funções</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#classes-1"><i class="fa fa-check"></i>Classes</a></li>
@@ -350,11 +407,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i>Mais sobre funções</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#controle-de-fluxo-1"><i class="fa fa-check"></i>Controle de fluxo</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="12-2-importação.html"><a href="12-2-importação.html"><i class="fa fa-check"></i><b>12.2</b> Importação</a><ul>
+<li class="chapter" data-level="12.2" data-path="12-2-importação.html"><a href="12-2-importação.html"><i class="fa fa-check"></i><b>12.2</b> Importação</a>
+<ul>
 <li class="chapter" data-level="" data-path="12-2-importação.html"><a href="12-2-importação.html#o-pacote-readr"><i class="fa fa-check"></i>O pacote readr</a></li>
 </ul></li>
 <li class="chapter" data-level="12.3" data-path="12-3-pipe-1.html"><a href="12-3-pipe-1.html"><i class="fa fa-check"></i><b>12.3</b> Pipe</a></li>
-<li class="chapter" data-level="12.4" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>12.4</b> O pacote dplyr</a><ul>
+<li class="chapter" data-level="12.4" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>12.4</b> O pacote dplyr</a>
+<ul>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#selecionando-colunas-1"><i class="fa fa-check"></i>Selecionando colunas</a></li>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#ordenando-a-base-1"><i class="fa fa-check"></i>Ordenando a base</a></li>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#filtrando-linhas-1"><i class="fa fa-check"></i>Filtrando linhas</a></li>
@@ -366,7 +425,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.6" data-path="12-6-o-pacote-lubridate-1.html"><a href="12-6-o-pacote-lubridate-1.html"><i class="fa fa-check"></i><b>12.6</b> O pacote lubridate</a></li>
 <li class="chapter" data-level="12.7" data-path="12-7-o-pacote-ggplot2-1.html"><a href="12-7-o-pacote-ggplot2-1.html"><i class="fa fa-check"></i><b>12.7</b> O pacote ggplot2</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a>
+<ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i>Programação em R</a></li>
 </ul></li>
@@ -390,46 +450,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="o-pacote-stringr-1" class="section level2">
+<div id="o-pacote-stringr-1" class="section level2" number="12.5">
 <h2><span class="header-section-number">12.5</span> O pacote stringr</h2>
-<div class="sourceCode" id="cb867"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb867-1"><a href="12-5-o-pacote-stringr-1.html#cb867-1"></a><span class="kw">library</span>(stringr)</span>
-<span id="cb867-2"><a href="12-5-o-pacote-stringr-1.html#cb867-2"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb867-3"><a href="12-5-o-pacote-stringr-1.html#cb867-3"></a><span class="kw">library</span>(glue)</span></code></pre></div>
+<div class="sourceCode" id="cb934"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb934-1"><a href="12-5-o-pacote-stringr-1.html#cb934-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb934-2"><a href="12-5-o-pacote-stringr-1.html#cb934-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb934-3"><a href="12-5-o-pacote-stringr-1.html#cb934-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glue)</span></code></pre></div>
 <p><strong>1.</strong> O CPF é um número de 11 dígitos, por exemplo: 54491651884. No entanto para facilitar a visualização costumamos mostrá-lo com separadores a cada 3 casas: 544.916.518-84. Crie uma função que transforma um número de 11 dígitos em uma string com as separações, como um CPF.</p>
-<div class="sourceCode" id="cb868"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb868-1"><a href="12-5-o-pacote-stringr-1.html#cb868-1"></a><span class="co"># Sem regex</span></span>
-<span id="cb868-2"><a href="12-5-o-pacote-stringr-1.html#cb868-2"></a>formata_CPF &lt;-<span class="st"> </span><span class="cf">function</span>(num) {</span>
-<span id="cb868-3"><a href="12-5-o-pacote-stringr-1.html#cb868-3"></a>  </span>
-<span id="cb868-4"><a href="12-5-o-pacote-stringr-1.html#cb868-4"></a>  <span class="cf">if</span>(<span class="kw">str_count</span>(num) <span class="op">!=</span><span class="st"> </span><span class="dv">11</span>) {</span>
-<span id="cb868-5"><a href="12-5-o-pacote-stringr-1.html#cb868-5"></a>    <span class="kw">stop</span>(<span class="st">&quot;Número inválido!&quot;</span>)</span>
-<span id="cb868-6"><a href="12-5-o-pacote-stringr-1.html#cb868-6"></a>  }</span>
-<span id="cb868-7"><a href="12-5-o-pacote-stringr-1.html#cb868-7"></a>  </span>
-<span id="cb868-8"><a href="12-5-o-pacote-stringr-1.html#cb868-8"></a>  <span class="co"># Concatemos cada parte do número, interpolando</span></span>
-<span id="cb868-9"><a href="12-5-o-pacote-stringr-1.html#cb868-9"></a>  <span class="co"># com os pontos e o traço.</span></span>
-<span id="cb868-10"><a href="12-5-o-pacote-stringr-1.html#cb868-10"></a>  </span>
-<span id="cb868-11"><a href="12-5-o-pacote-stringr-1.html#cb868-11"></a>  s &lt;-<span class="st"> </span><span class="kw">str_c</span>(</span>
-<span id="cb868-12"><a href="12-5-o-pacote-stringr-1.html#cb868-12"></a>    <span class="kw">str_sub</span>(num, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">3</span>),</span>
-<span id="cb868-13"><a href="12-5-o-pacote-stringr-1.html#cb868-13"></a>    <span class="st">&quot;.&quot;</span>,</span>
-<span id="cb868-14"><a href="12-5-o-pacote-stringr-1.html#cb868-14"></a>    <span class="kw">str_sub</span>(num, <span class="dt">start =</span> <span class="dv">4</span>, <span class="dt">end =</span> <span class="dv">6</span>),</span>
-<span id="cb868-15"><a href="12-5-o-pacote-stringr-1.html#cb868-15"></a>    <span class="st">&quot;.&quot;</span>,</span>
-<span id="cb868-16"><a href="12-5-o-pacote-stringr-1.html#cb868-16"></a>    <span class="kw">str_sub</span>(num, <span class="dt">start =</span> <span class="dv">7</span>, <span class="dt">end =</span> <span class="dv">9</span>),</span>
-<span id="cb868-17"><a href="12-5-o-pacote-stringr-1.html#cb868-17"></a>    <span class="st">&quot;-&quot;</span>,</span>
-<span id="cb868-18"><a href="12-5-o-pacote-stringr-1.html#cb868-18"></a>    <span class="kw">str_sub</span>(num, <span class="dt">start =</span> <span class="dv">10</span>, <span class="dt">end =</span> <span class="dv">11</span>)</span>
-<span id="cb868-19"><a href="12-5-o-pacote-stringr-1.html#cb868-19"></a>  )</span>
-<span id="cb868-20"><a href="12-5-o-pacote-stringr-1.html#cb868-20"></a>  </span>
-<span id="cb868-21"><a href="12-5-o-pacote-stringr-1.html#cb868-21"></a>}</span>
-<span id="cb868-22"><a href="12-5-o-pacote-stringr-1.html#cb868-22"></a><span class="co"># Com regex</span></span>
-<span id="cb868-23"><a href="12-5-o-pacote-stringr-1.html#cb868-23"></a>formata_CPF &lt;-<span class="st"> </span><span class="cf">function</span>(num) {</span>
-<span id="cb868-24"><a href="12-5-o-pacote-stringr-1.html#cb868-24"></a>  </span>
-<span id="cb868-25"><a href="12-5-o-pacote-stringr-1.html#cb868-25"></a>  <span class="cf">if</span>(<span class="kw">str_count</span>(num) <span class="op">!=</span><span class="st"> </span><span class="dv">11</span>) {</span>
-<span id="cb868-26"><a href="12-5-o-pacote-stringr-1.html#cb868-26"></a>    <span class="kw">stop</span>(<span class="st">&quot;Número inválido!&quot;</span>)</span>
-<span id="cb868-27"><a href="12-5-o-pacote-stringr-1.html#cb868-27"></a>  }</span>
-<span id="cb868-28"><a href="12-5-o-pacote-stringr-1.html#cb868-28"></a>  </span>
-<span id="cb868-29"><a href="12-5-o-pacote-stringr-1.html#cb868-29"></a>  <span class="kw">str_replace</span>(</span>
-<span id="cb868-30"><a href="12-5-o-pacote-stringr-1.html#cb868-30"></a>    <span class="dt">string =</span> num, </span>
-<span id="cb868-31"><a href="12-5-o-pacote-stringr-1.html#cb868-31"></a>    <span class="dt">pattern =</span> <span class="st">&quot;([0-9]{3})([0-9]{3})([0-9]{3})&quot;</span>, </span>
-<span id="cb868-32"><a href="12-5-o-pacote-stringr-1.html#cb868-32"></a>    <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">1.</span><span class="ch">\\</span><span class="st">2.</span><span class="ch">\\</span><span class="st">3-&quot;</span></span>
-<span id="cb868-33"><a href="12-5-o-pacote-stringr-1.html#cb868-33"></a>  )</span>
-<span id="cb868-34"><a href="12-5-o-pacote-stringr-1.html#cb868-34"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb935"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb935-1"><a href="12-5-o-pacote-stringr-1.html#cb935-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sem regex</span></span>
+<span id="cb935-2"><a href="12-5-o-pacote-stringr-1.html#cb935-2" aria-hidden="true" tabindex="-1"></a>formata_CPF <span class="ot">&lt;-</span> <span class="cf">function</span>(num) {</span>
+<span id="cb935-3"><a href="12-5-o-pacote-stringr-1.html#cb935-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb935-4"><a href="12-5-o-pacote-stringr-1.html#cb935-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_count</span>(num) <span class="sc">!=</span> <span class="dv">11</span>) {</span>
+<span id="cb935-5"><a href="12-5-o-pacote-stringr-1.html#cb935-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">&quot;Número inválido!&quot;</span>)</span>
+<span id="cb935-6"><a href="12-5-o-pacote-stringr-1.html#cb935-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb935-7"><a href="12-5-o-pacote-stringr-1.html#cb935-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb935-8"><a href="12-5-o-pacote-stringr-1.html#cb935-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Concatemos cada parte do número, interpolando</span></span>
+<span id="cb935-9"><a href="12-5-o-pacote-stringr-1.html#cb935-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># com os pontos e o traço.</span></span>
+<span id="cb935-10"><a href="12-5-o-pacote-stringr-1.html#cb935-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb935-11"><a href="12-5-o-pacote-stringr-1.html#cb935-11" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">str_c</span>(</span>
+<span id="cb935-12"><a href="12-5-o-pacote-stringr-1.html#cb935-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_sub</span>(num, <span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">3</span>),</span>
+<span id="cb935-13"><a href="12-5-o-pacote-stringr-1.html#cb935-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;.&quot;</span>,</span>
+<span id="cb935-14"><a href="12-5-o-pacote-stringr-1.html#cb935-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_sub</span>(num, <span class="at">start =</span> <span class="dv">4</span>, <span class="at">end =</span> <span class="dv">6</span>),</span>
+<span id="cb935-15"><a href="12-5-o-pacote-stringr-1.html#cb935-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;.&quot;</span>,</span>
+<span id="cb935-16"><a href="12-5-o-pacote-stringr-1.html#cb935-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_sub</span>(num, <span class="at">start =</span> <span class="dv">7</span>, <span class="at">end =</span> <span class="dv">9</span>),</span>
+<span id="cb935-17"><a href="12-5-o-pacote-stringr-1.html#cb935-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;-&quot;</span>,</span>
+<span id="cb935-18"><a href="12-5-o-pacote-stringr-1.html#cb935-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_sub</span>(num, <span class="at">start =</span> <span class="dv">10</span>, <span class="at">end =</span> <span class="dv">11</span>)</span>
+<span id="cb935-19"><a href="12-5-o-pacote-stringr-1.html#cb935-19" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb935-20"><a href="12-5-o-pacote-stringr-1.html#cb935-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb935-21"><a href="12-5-o-pacote-stringr-1.html#cb935-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb935-22"><a href="12-5-o-pacote-stringr-1.html#cb935-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Com regex</span></span>
+<span id="cb935-23"><a href="12-5-o-pacote-stringr-1.html#cb935-23" aria-hidden="true" tabindex="-1"></a>formata_CPF <span class="ot">&lt;-</span> <span class="cf">function</span>(num) {</span>
+<span id="cb935-24"><a href="12-5-o-pacote-stringr-1.html#cb935-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb935-25"><a href="12-5-o-pacote-stringr-1.html#cb935-25" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_count</span>(num) <span class="sc">!=</span> <span class="dv">11</span>) {</span>
+<span id="cb935-26"><a href="12-5-o-pacote-stringr-1.html#cb935-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">&quot;Número inválido!&quot;</span>)</span>
+<span id="cb935-27"><a href="12-5-o-pacote-stringr-1.html#cb935-27" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb935-28"><a href="12-5-o-pacote-stringr-1.html#cb935-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb935-29"><a href="12-5-o-pacote-stringr-1.html#cb935-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_replace</span>(</span>
+<span id="cb935-30"><a href="12-5-o-pacote-stringr-1.html#cb935-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">string =</span> num, </span>
+<span id="cb935-31"><a href="12-5-o-pacote-stringr-1.html#cb935-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">pattern =</span> <span class="st">&quot;([0-9]{3})([0-9]{3})([0-9]{3})&quot;</span>, </span>
+<span id="cb935-32"><a href="12-5-o-pacote-stringr-1.html#cb935-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">replacement =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">1.</span><span class="sc">\\</span><span class="st">2.</span><span class="sc">\\</span><span class="st">3-&quot;</span></span>
+<span id="cb935-33"><a href="12-5-o-pacote-stringr-1.html#cb935-33" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb935-34"><a href="12-5-o-pacote-stringr-1.html#cb935-34" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>A função <code>str_replace()</code> faz o seguinte:</p>
 <ul>
 <li>O <code>pattern=</code> procurará um padrão de 9 números:
@@ -450,134 +510,134 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <hr />
 <p><strong>2.</strong> Transforme o vetor de <em>strings</em> abaixo em <code>"01 - Alto" "02 - Médio" "03 - Baixo"</code>.</p>
-<div class="sourceCode" id="cb869"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb869-1"><a href="12-5-o-pacote-stringr-1.html#cb869-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Alto&#39;</span>, <span class="st">&#39;Médio&#39;</span>, <span class="st">&#39;Baixo&#39;</span>)</span>
-<span id="cb869-2"><a href="12-5-o-pacote-stringr-1.html#cb869-2"></a><span class="co"># Usando str_c()</span></span>
-<span id="cb869-3"><a href="12-5-o-pacote-stringr-1.html#cb869-3"></a><span class="kw">str_c</span>(<span class="st">&quot;0&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(s), <span class="st">&quot; - &quot;</span>, s, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb869-4"><a href="12-5-o-pacote-stringr-1.html#cb869-4"></a><span class="co">## [1] &quot;01 - Alto&quot;  &quot;02 - Médio&quot; &quot;03 - Baixo&quot;</span></span>
-<span id="cb869-5"><a href="12-5-o-pacote-stringr-1.html#cb869-5"></a></span>
-<span id="cb869-6"><a href="12-5-o-pacote-stringr-1.html#cb869-6"></a><span class="co"># Usando o pacote glue</span></span>
-<span id="cb869-7"><a href="12-5-o-pacote-stringr-1.html#cb869-7"></a><span class="kw">glue</span>(<span class="st">&quot;0{1:length(s)} - {s}&quot;</span>)</span>
-<span id="cb869-8"><a href="12-5-o-pacote-stringr-1.html#cb869-8"></a><span class="co">## 01 - Alto</span></span>
-<span id="cb869-9"><a href="12-5-o-pacote-stringr-1.html#cb869-9"></a><span class="co">## 02 - Médio</span></span>
-<span id="cb869-10"><a href="12-5-o-pacote-stringr-1.html#cb869-10"></a><span class="co">## 03 - Baixo</span></span></code></pre></div>
+<div class="sourceCode" id="cb936"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb936-1"><a href="12-5-o-pacote-stringr-1.html#cb936-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;Alto&#39;</span>, <span class="st">&#39;Médio&#39;</span>, <span class="st">&#39;Baixo&#39;</span>)</span>
+<span id="cb936-2"><a href="12-5-o-pacote-stringr-1.html#cb936-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando str_c()</span></span>
+<span id="cb936-3"><a href="12-5-o-pacote-stringr-1.html#cb936-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str_c</span>(<span class="st">&quot;0&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(s), <span class="st">&quot; - &quot;</span>, s, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb936-4"><a href="12-5-o-pacote-stringr-1.html#cb936-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;01 - Alto&quot;  &quot;02 - Médio&quot; &quot;03 - Baixo&quot;</span></span>
+<span id="cb936-5"><a href="12-5-o-pacote-stringr-1.html#cb936-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb936-6"><a href="12-5-o-pacote-stringr-1.html#cb936-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando o pacote glue</span></span>
+<span id="cb936-7"><a href="12-5-o-pacote-stringr-1.html#cb936-7" aria-hidden="true" tabindex="-1"></a><span class="fu">glue</span>(<span class="st">&quot;0{1:length(s)} - {s}&quot;</span>)</span>
+<span id="cb936-8"><a href="12-5-o-pacote-stringr-1.html#cb936-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 01 - Alto</span></span>
+<span id="cb936-9"><a href="12-5-o-pacote-stringr-1.html#cb936-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 02 - Médio</span></span>
+<span id="cb936-10"><a href="12-5-o-pacote-stringr-1.html#cb936-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 03 - Baixo</span></span></code></pre></div>
 <p>Para mais informações sobre o pacote <code>glue</code>, confira <a href="http://curso-r.com/blog/2017/04/17/2017-04-08-glue/">este post</a>.</p>
 <hr />
 <p><strong>3.</strong> Crie uma regex que capture múltiplas versões da palavra ‘casa’. Ela deve funcionar com as palavras ‘Casa’, ‘CASA’, ‘CaSa’, ‘CAsa’. Teste-a usando a função <code>str_detect()</code>.</p>
-<div class="sourceCode" id="cb870"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb870-1"><a href="12-5-o-pacote-stringr-1.html#cb870-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Casa&#39;</span>, <span class="st">&#39;CASA&#39;</span>, <span class="st">&#39;CaSa&#39;</span>, <span class="st">&#39;CAsa&#39;</span>)</span>
-<span id="cb870-2"><a href="12-5-o-pacote-stringr-1.html#cb870-2"></a><span class="kw">str_detect</span>(s, <span class="st">&quot;[CcAaSsAa]&quot;</span>)</span>
-<span id="cb870-3"><a href="12-5-o-pacote-stringr-1.html#cb870-3"></a><span class="co">## [1] TRUE TRUE TRUE TRUE</span></span>
-<span id="cb870-4"><a href="12-5-o-pacote-stringr-1.html#cb870-4"></a><span class="kw">str_detect</span>(s, <span class="st">&quot;[Cc][Aa][Ss][Aa]&quot;</span>)</span>
-<span id="cb870-5"><a href="12-5-o-pacote-stringr-1.html#cb870-5"></a><span class="co">## [1] TRUE TRUE TRUE TRUE</span></span></code></pre></div>
+<div class="sourceCode" id="cb937"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb937-1"><a href="12-5-o-pacote-stringr-1.html#cb937-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;Casa&#39;</span>, <span class="st">&#39;CASA&#39;</span>, <span class="st">&#39;CaSa&#39;</span>, <span class="st">&#39;CAsa&#39;</span>)</span>
+<span id="cb937-2"><a href="12-5-o-pacote-stringr-1.html#cb937-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_detect</span>(s, <span class="st">&quot;[CcAaSsAa]&quot;</span>)</span>
+<span id="cb937-3"><a href="12-5-o-pacote-stringr-1.html#cb937-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE TRUE TRUE TRUE</span></span>
+<span id="cb937-4"><a href="12-5-o-pacote-stringr-1.html#cb937-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str_detect</span>(s, <span class="st">&quot;[Cc][Aa][Ss][Aa]&quot;</span>)</span>
+<span id="cb937-5"><a href="12-5-o-pacote-stringr-1.html#cb937-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE TRUE TRUE TRUE</span></span></code></pre></div>
 <hr />
 <p><strong>4.</strong> Imagine que a seguinte <em>string</em> é a parte final de uma URL.</p>
 <ul>
 <li><code>/ac/rio-branco/xpto-xyz-1-0-1fds2396-5</code></li>
 </ul>
 <p>Transforme-a em “AC - Rio Branco” utilizando a função <code>str_split()</code>.</p>
-<div class="sourceCode" id="cb871"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb871-1"><a href="12-5-o-pacote-stringr-1.html#cb871-1"></a>url &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;/ac/rio-branco/xpto-xyz-1-0-1fds2396-5&#39;</span>)</span>
-<span id="cb871-2"><a href="12-5-o-pacote-stringr-1.html#cb871-2"></a>UF &lt;-<span class="st"> </span>url <span class="op">%&gt;%</span></span>
-<span id="cb871-3"><a href="12-5-o-pacote-stringr-1.html#cb871-3"></a><span class="st">  </span><span class="kw">str_split</span>(<span class="st">&quot;[/]&quot;</span>, <span class="dt">simplify =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb871-4"><a href="12-5-o-pacote-stringr-1.html#cb871-4"></a><span class="st">  </span>.[<span class="dv">1</span>,<span class="dv">2</span>] <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb871-5"><a href="12-5-o-pacote-stringr-1.html#cb871-5"></a><span class="st">  </span><span class="kw">str_to_upper</span>()</span>
-<span id="cb871-6"><a href="12-5-o-pacote-stringr-1.html#cb871-6"></a>cidade &lt;-<span class="st"> </span>url <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb871-7"><a href="12-5-o-pacote-stringr-1.html#cb871-7"></a><span class="st">  </span><span class="kw">str_split</span>(<span class="st">&quot;[/]&quot;</span>, <span class="dt">simplify =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb871-8"><a href="12-5-o-pacote-stringr-1.html#cb871-8"></a><span class="st">  </span>.[<span class="dv">1</span>,<span class="dv">3</span>] <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb871-9"><a href="12-5-o-pacote-stringr-1.html#cb871-9"></a><span class="st">  </span><span class="kw">str_replace</span>(<span class="st">&quot;-&quot;</span>, <span class="st">&quot; &quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb871-10"><a href="12-5-o-pacote-stringr-1.html#cb871-10"></a><span class="st">  </span><span class="kw">str_to_title</span>()</span>
-<span id="cb871-11"><a href="12-5-o-pacote-stringr-1.html#cb871-11"></a><span class="kw">str_c</span>(UF, <span class="st">&quot; - &quot;</span>, cidade)</span>
-<span id="cb871-12"><a href="12-5-o-pacote-stringr-1.html#cb871-12"></a><span class="co">## [1] &quot;AC - Rio Branco&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb938"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb938-1"><a href="12-5-o-pacote-stringr-1.html#cb938-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;/ac/rio-branco/xpto-xyz-1-0-1fds2396-5&#39;</span>)</span>
+<span id="cb938-2"><a href="12-5-o-pacote-stringr-1.html#cb938-2" aria-hidden="true" tabindex="-1"></a>UF <span class="ot">&lt;-</span> url <span class="sc">%&gt;%</span></span>
+<span id="cb938-3"><a href="12-5-o-pacote-stringr-1.html#cb938-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_split</span>(<span class="st">&quot;[/]&quot;</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb938-4"><a href="12-5-o-pacote-stringr-1.html#cb938-4" aria-hidden="true" tabindex="-1"></a>  .[<span class="dv">1</span>,<span class="dv">2</span>] <span class="sc">%&gt;%</span> </span>
+<span id="cb938-5"><a href="12-5-o-pacote-stringr-1.html#cb938-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_to_upper</span>()</span>
+<span id="cb938-6"><a href="12-5-o-pacote-stringr-1.html#cb938-6" aria-hidden="true" tabindex="-1"></a>cidade <span class="ot">&lt;-</span> url <span class="sc">%&gt;%</span> </span>
+<span id="cb938-7"><a href="12-5-o-pacote-stringr-1.html#cb938-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_split</span>(<span class="st">&quot;[/]&quot;</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb938-8"><a href="12-5-o-pacote-stringr-1.html#cb938-8" aria-hidden="true" tabindex="-1"></a>  .[<span class="dv">1</span>,<span class="dv">3</span>] <span class="sc">%&gt;%</span> </span>
+<span id="cb938-9"><a href="12-5-o-pacote-stringr-1.html#cb938-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_replace</span>(<span class="st">&quot;-&quot;</span>, <span class="st">&quot; &quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb938-10"><a href="12-5-o-pacote-stringr-1.html#cb938-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_to_title</span>()</span>
+<span id="cb938-11"><a href="12-5-o-pacote-stringr-1.html#cb938-11" aria-hidden="true" tabindex="-1"></a><span class="fu">str_c</span>(UF, <span class="st">&quot; - &quot;</span>, cidade)</span>
+<span id="cb938-12"><a href="12-5-o-pacote-stringr-1.html#cb938-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;AC - Rio Branco&quot;</span></span></code></pre></div>
 <hr />
 <p><strong>5.</strong> Crie uma função que retorna <code>TRUE</code> quando a string é um <a href="https://pt.wikipedia.org/wiki/Pal%C3%ADndromo">palíndromo</a> e <code>FALSO</code> caso não seja.</p>
-<div class="sourceCode" id="cb872"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb872-1"><a href="12-5-o-pacote-stringr-1.html#cb872-1"></a><span class="co"># Solução 1: usando a função rev() para inverter uma string fragmentada</span></span>
-<span id="cb872-2"><a href="12-5-o-pacote-stringr-1.html#cb872-2"></a>testa_palindromo &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
-<span id="cb872-3"><a href="12-5-o-pacote-stringr-1.html#cb872-3"></a>  </span>
-<span id="cb872-4"><a href="12-5-o-pacote-stringr-1.html#cb872-4"></a>  s <span class="op">%&gt;%</span></span>
-<span id="cb872-5"><a href="12-5-o-pacote-stringr-1.html#cb872-5"></a><span class="st">    </span><span class="kw">str_split</span>(<span class="st">&quot;&quot;</span>, <span class="dt">simplify =</span> T) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb872-6"><a href="12-5-o-pacote-stringr-1.html#cb872-6"></a><span class="st">    </span>rev <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb872-7"><a href="12-5-o-pacote-stringr-1.html#cb872-7"></a><span class="st">    </span><span class="kw">str_c</span>(<span class="dt">collapse =</span> <span class="st">&quot;&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb872-8"><a href="12-5-o-pacote-stringr-1.html#cb872-8"></a><span class="st">    </span><span class="kw">str_detect</span>(s)</span>
-<span id="cb872-9"><a href="12-5-o-pacote-stringr-1.html#cb872-9"></a>  </span>
-<span id="cb872-10"><a href="12-5-o-pacote-stringr-1.html#cb872-10"></a>}</span>
-<span id="cb872-11"><a href="12-5-o-pacote-stringr-1.html#cb872-11"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;ana&quot;</span>)</span>
-<span id="cb872-12"><a href="12-5-o-pacote-stringr-1.html#cb872-12"></a><span class="co">## [1] TRUE</span></span>
-<span id="cb872-13"><a href="12-5-o-pacote-stringr-1.html#cb872-13"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;bananas&quot;</span>)</span>
-<span id="cb872-14"><a href="12-5-o-pacote-stringr-1.html#cb872-14"></a><span class="co">## [1] FALSE</span></span>
-<span id="cb872-15"><a href="12-5-o-pacote-stringr-1.html#cb872-15"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;socorrammesubinoonibusemmarrocos&quot;</span>)</span>
-<span id="cb872-16"><a href="12-5-o-pacote-stringr-1.html#cb872-16"></a><span class="co">## [1] TRUE</span></span>
-<span id="cb872-17"><a href="12-5-o-pacote-stringr-1.html#cb872-17"></a></span>
-<span id="cb872-18"><a href="12-5-o-pacote-stringr-1.html#cb872-18"></a><span class="co"># Solução 2: usando a função str_reverse() do pacote stringi,</span></span>
-<span id="cb872-19"><a href="12-5-o-pacote-stringr-1.html#cb872-19"></a><span class="co"># que já inverte a string diretamente.</span></span>
-<span id="cb872-20"><a href="12-5-o-pacote-stringr-1.html#cb872-20"></a>testa_palindromo &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
-<span id="cb872-21"><a href="12-5-o-pacote-stringr-1.html#cb872-21"></a>  </span>
-<span id="cb872-22"><a href="12-5-o-pacote-stringr-1.html#cb872-22"></a>  s <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb872-23"><a href="12-5-o-pacote-stringr-1.html#cb872-23"></a><span class="st">    </span>stringi<span class="op">::</span><span class="kw">stri_reverse</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb872-24"><a href="12-5-o-pacote-stringr-1.html#cb872-24"></a><span class="st">    </span><span class="kw">str_detect</span>(s)</span>
-<span id="cb872-25"><a href="12-5-o-pacote-stringr-1.html#cb872-25"></a>  </span>
-<span id="cb872-26"><a href="12-5-o-pacote-stringr-1.html#cb872-26"></a>}</span>
-<span id="cb872-27"><a href="12-5-o-pacote-stringr-1.html#cb872-27"></a></span>
-<span id="cb872-28"><a href="12-5-o-pacote-stringr-1.html#cb872-28"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;ana&quot;</span>)</span>
-<span id="cb872-29"><a href="12-5-o-pacote-stringr-1.html#cb872-29"></a><span class="co">## [1] TRUE</span></span>
-<span id="cb872-30"><a href="12-5-o-pacote-stringr-1.html#cb872-30"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;bananas&quot;</span>)</span>
-<span id="cb872-31"><a href="12-5-o-pacote-stringr-1.html#cb872-31"></a><span class="co">## [1] FALSE</span></span>
-<span id="cb872-32"><a href="12-5-o-pacote-stringr-1.html#cb872-32"></a><span class="kw">testa_palindromo</span>(<span class="st">&quot;socorrammesubinoonibusemmarrocos&quot;</span>)</span>
-<span id="cb872-33"><a href="12-5-o-pacote-stringr-1.html#cb872-33"></a><span class="co">## [1] TRUE</span></span></code></pre></div>
+<div class="sourceCode" id="cb939"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb939-1"><a href="12-5-o-pacote-stringr-1.html#cb939-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solução 1: usando a função rev() para inverter uma string fragmentada</span></span>
+<span id="cb939-2"><a href="12-5-o-pacote-stringr-1.html#cb939-2" aria-hidden="true" tabindex="-1"></a>testa_palindromo <span class="ot">&lt;-</span> <span class="cf">function</span>(s) {</span>
+<span id="cb939-3"><a href="12-5-o-pacote-stringr-1.html#cb939-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb939-4"><a href="12-5-o-pacote-stringr-1.html#cb939-4" aria-hidden="true" tabindex="-1"></a>  s <span class="sc">%&gt;%</span></span>
+<span id="cb939-5"><a href="12-5-o-pacote-stringr-1.html#cb939-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_split</span>(<span class="st">&quot;&quot;</span>, <span class="at">simplify =</span> T) <span class="sc">%&gt;%</span> </span>
+<span id="cb939-6"><a href="12-5-o-pacote-stringr-1.html#cb939-6" aria-hidden="true" tabindex="-1"></a>    rev <span class="sc">%&gt;%</span> </span>
+<span id="cb939-7"><a href="12-5-o-pacote-stringr-1.html#cb939-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_c</span>(<span class="at">collapse =</span> <span class="st">&quot;&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb939-8"><a href="12-5-o-pacote-stringr-1.html#cb939-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(s)</span>
+<span id="cb939-9"><a href="12-5-o-pacote-stringr-1.html#cb939-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb939-10"><a href="12-5-o-pacote-stringr-1.html#cb939-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb939-11"><a href="12-5-o-pacote-stringr-1.html#cb939-11" aria-hidden="true" tabindex="-1"></a><span class="fu">testa_palindromo</span>(<span class="st">&quot;ana&quot;</span>)</span>
+<span id="cb939-12"><a href="12-5-o-pacote-stringr-1.html#cb939-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
+<span id="cb939-13"><a href="12-5-o-pacote-stringr-1.html#cb939-13" aria-hidden="true" tabindex="-1"></a><span class="fu">testa_palindromo</span>(<span class="st">&quot;bananas&quot;</span>)</span>
+<span id="cb939-14"><a href="12-5-o-pacote-stringr-1.html#cb939-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb939-15"><a href="12-5-o-pacote-stringr-1.html#cb939-15" aria-hidden="true" tabindex="-1"></a><span class="fu">testa_palindromo</span>(<span class="st">&quot;socorrammesubinoonibusemmarrocos&quot;</span>)</span>
+<span id="cb939-16"><a href="12-5-o-pacote-stringr-1.html#cb939-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
+<span id="cb939-17"><a href="12-5-o-pacote-stringr-1.html#cb939-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb939-18"><a href="12-5-o-pacote-stringr-1.html#cb939-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Solução 2: usando a função str_reverse() do pacote stringi,</span></span>
+<span id="cb939-19"><a href="12-5-o-pacote-stringr-1.html#cb939-19" aria-hidden="true" tabindex="-1"></a><span class="co"># que já inverte a string diretamente.</span></span>
+<span id="cb939-20"><a href="12-5-o-pacote-stringr-1.html#cb939-20" aria-hidden="true" tabindex="-1"></a>testa_palindromo <span class="ot">&lt;-</span> <span class="cf">function</span>(s) {</span>
+<span id="cb939-21"><a href="12-5-o-pacote-stringr-1.html#cb939-21" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb939-22"><a href="12-5-o-pacote-stringr-1.html#cb939-22" aria-hidden="true" tabindex="-1"></a>  s <span class="sc">%&gt;%</span> </span>
+<span id="cb939-23"><a href="12-5-o-pacote-stringr-1.html#cb939-23" aria-hidden="true" tabindex="-1"></a>    stringi<span class="sc">::</span><span class="fu">stri_reverse</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb939-24"><a href="12-5-o-pacote-stringr-1.html#cb939-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(s)</span>
+<span id="cb939-25"><a href="12-5-o-pacote-stringr-1.html#cb939-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb939-26"><a href="12-5-o-pacote-stringr-1.html#cb939-26" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb939-27"><a href="12-5-o-pacote-stringr-1.html#cb939-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb939-28"><a href="12-5-o-pacote-stringr-1.html#cb939-28" aria-hidden="true" tabindex="-1"></a><span class="fu">testa_palindromo</span>(<span class="st">&quot;ana&quot;</span>)</span>
+<span id="cb939-29"><a href="12-5-o-pacote-stringr-1.html#cb939-29" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
+<span id="cb939-30"><a href="12-5-o-pacote-stringr-1.html#cb939-30" aria-hidden="true" tabindex="-1"></a><span class="fu">testa_palindromo</span>(<span class="st">&quot;bananas&quot;</span>)</span>
+<span id="cb939-31"><a href="12-5-o-pacote-stringr-1.html#cb939-31" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb939-32"><a href="12-5-o-pacote-stringr-1.html#cb939-32" aria-hidden="true" tabindex="-1"></a><span class="fu">testa_palindromo</span>(<span class="st">&quot;socorrammesubinoonibusemmarrocos&quot;</span>)</span>
+<span id="cb939-33"><a href="12-5-o-pacote-stringr-1.html#cb939-33" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span></code></pre></div>
 <hr />
 <p><strong>6.</strong> De acordo com as regras da língua portuguesa, antes de “p” ou “b” devemos usar a letra “m”. Em outras palavras, com outras consoantes, usamos a letra “N”. Suponha que você tem o seguinte texto com erros gramaticais:</p>
-<div class="sourceCode" id="cb873"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb873-1"><a href="12-5-o-pacote-stringr-1.html#cb873-1"></a>s &lt;-<span class="st"> &#39;Nós chamamos os bonbeiros quando começou o incêmdio.&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb940"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb940-1"><a href="12-5-o-pacote-stringr-1.html#cb940-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="st">&#39;Nós chamamos os bonbeiros quando começou o incêmdio.&#39;</span></span></code></pre></div>
 <p>Crie uma função para corrigi-lo.</p>
-<div class="sourceCode" id="cb874"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb874-1"><a href="12-5-o-pacote-stringr-1.html#cb874-1"></a><span class="co"># Função que funciona para o exemplo</span></span>
-<span id="cb874-2"><a href="12-5-o-pacote-stringr-1.html#cb874-2"></a>corrige_mn &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
-<span id="cb874-3"><a href="12-5-o-pacote-stringr-1.html#cb874-3"></a>  </span>
-<span id="cb874-4"><a href="12-5-o-pacote-stringr-1.html#cb874-4"></a>  s <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb874-5"><a href="12-5-o-pacote-stringr-1.html#cb874-5"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;nb&quot;</span>, <span class="st">&quot;mb&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb874-6"><a href="12-5-o-pacote-stringr-1.html#cb874-6"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;md&quot;</span>, <span class="st">&quot;nd&quot;</span>)</span>
-<span id="cb874-7"><a href="12-5-o-pacote-stringr-1.html#cb874-7"></a>  </span>
-<span id="cb874-8"><a href="12-5-o-pacote-stringr-1.html#cb874-8"></a>}</span>
-<span id="cb874-9"><a href="12-5-o-pacote-stringr-1.html#cb874-9"></a><span class="kw">corrige_mn</span>(s)</span>
-<span id="cb874-10"><a href="12-5-o-pacote-stringr-1.html#cb874-10"></a><span class="co">## [1] &quot;Nós chamamos os bombeiros quando começou o incêndio.&quot;</span></span>
-<span id="cb874-11"><a href="12-5-o-pacote-stringr-1.html#cb874-11"></a></span>
-<span id="cb874-12"><a href="12-5-o-pacote-stringr-1.html#cb874-12"></a><span class="co"># Função que funciona no caso geral</span></span>
-<span id="cb874-13"><a href="12-5-o-pacote-stringr-1.html#cb874-13"></a>corrige_mn &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
-<span id="cb874-14"><a href="12-5-o-pacote-stringr-1.html#cb874-14"></a>  </span>
-<span id="cb874-15"><a href="12-5-o-pacote-stringr-1.html#cb874-15"></a>  s <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb874-16"><a href="12-5-o-pacote-stringr-1.html#cb874-16"></a><span class="st">    </span><span class="kw">str_replace_all</span>(<span class="st">&quot;m([^aeioubp[[:space:]]+])&quot;</span>, <span class="st">&quot;n</span><span class="ch">\\</span><span class="st">1&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span></span>
-<span id="cb874-17"><a href="12-5-o-pacote-stringr-1.html#cb874-17"></a><span class="st">    </span><span class="kw">str_replace_all</span>(<span class="st">&quot;n([pb])&quot;</span>, <span class="st">&quot;m</span><span class="ch">\\</span><span class="st">1&quot;</span>)</span>
-<span id="cb874-18"><a href="12-5-o-pacote-stringr-1.html#cb874-18"></a>  </span>
-<span id="cb874-19"><a href="12-5-o-pacote-stringr-1.html#cb874-19"></a>}</span>
-<span id="cb874-20"><a href="12-5-o-pacote-stringr-1.html#cb874-20"></a><span class="kw">corrige_mn</span>(s)</span>
-<span id="cb874-21"><a href="12-5-o-pacote-stringr-1.html#cb874-21"></a><span class="co">## [1] &quot;Nós chamamos os bombeiros quando começou o incêndio.&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb941"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb941-1"><a href="12-5-o-pacote-stringr-1.html#cb941-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Função que funciona para o exemplo</span></span>
+<span id="cb941-2"><a href="12-5-o-pacote-stringr-1.html#cb941-2" aria-hidden="true" tabindex="-1"></a>corrige_mn <span class="ot">&lt;-</span> <span class="cf">function</span>(s) {</span>
+<span id="cb941-3"><a href="12-5-o-pacote-stringr-1.html#cb941-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb941-4"><a href="12-5-o-pacote-stringr-1.html#cb941-4" aria-hidden="true" tabindex="-1"></a>  s <span class="sc">%&gt;%</span> </span>
+<span id="cb941-5"><a href="12-5-o-pacote-stringr-1.html#cb941-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_replace</span>(<span class="st">&quot;nb&quot;</span>, <span class="st">&quot;mb&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb941-6"><a href="12-5-o-pacote-stringr-1.html#cb941-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_replace</span>(<span class="st">&quot;md&quot;</span>, <span class="st">&quot;nd&quot;</span>)</span>
+<span id="cb941-7"><a href="12-5-o-pacote-stringr-1.html#cb941-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb941-8"><a href="12-5-o-pacote-stringr-1.html#cb941-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb941-9"><a href="12-5-o-pacote-stringr-1.html#cb941-9" aria-hidden="true" tabindex="-1"></a><span class="fu">corrige_mn</span>(s)</span>
+<span id="cb941-10"><a href="12-5-o-pacote-stringr-1.html#cb941-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Nós chamamos os bombeiros quando começou o incêndio.&quot;</span></span>
+<span id="cb941-11"><a href="12-5-o-pacote-stringr-1.html#cb941-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb941-12"><a href="12-5-o-pacote-stringr-1.html#cb941-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Função que funciona no caso geral</span></span>
+<span id="cb941-13"><a href="12-5-o-pacote-stringr-1.html#cb941-13" aria-hidden="true" tabindex="-1"></a>corrige_mn <span class="ot">&lt;-</span> <span class="cf">function</span>(s) {</span>
+<span id="cb941-14"><a href="12-5-o-pacote-stringr-1.html#cb941-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb941-15"><a href="12-5-o-pacote-stringr-1.html#cb941-15" aria-hidden="true" tabindex="-1"></a>  s <span class="sc">%&gt;%</span> </span>
+<span id="cb941-16"><a href="12-5-o-pacote-stringr-1.html#cb941-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_replace_all</span>(<span class="st">&quot;m([^aeioubp[[:space:]]+])&quot;</span>, <span class="st">&quot;n</span><span class="sc">\\</span><span class="st">1&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb941-17"><a href="12-5-o-pacote-stringr-1.html#cb941-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_replace_all</span>(<span class="st">&quot;n([pb])&quot;</span>, <span class="st">&quot;m</span><span class="sc">\\</span><span class="st">1&quot;</span>)</span>
+<span id="cb941-18"><a href="12-5-o-pacote-stringr-1.html#cb941-18" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb941-19"><a href="12-5-o-pacote-stringr-1.html#cb941-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb941-20"><a href="12-5-o-pacote-stringr-1.html#cb941-20" aria-hidden="true" tabindex="-1"></a><span class="fu">corrige_mn</span>(s)</span>
+<span id="cb941-21"><a href="12-5-o-pacote-stringr-1.html#cb941-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Nós chamamos os bombeiros quando começou o incêndio.&quot;</span></span></code></pre></div>
 <p>O padrão <code>[^aeioubp[[:space:]]+]</code> significa “tudo menos vogais, b, p ou espaços”. O <code>\\1</code> devolve o padrão encontrado pelo primeiro parêntese do argumento <code>patern=</code>.</p>
 <hr />
 <p><strong>7.</strong> Considere o seguinte texto</p>
-<div class="sourceCode" id="cb875"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb875-1"><a href="12-5-o-pacote-stringr-1.html#cb875-1"></a>s &lt;-<span class="st"> &quot;A função mais importante para leitura de dados no `lubridate` é a `ymd`. Essa função serve para ler qualquer data de uma `string` no formato `YYYY-MM-DD`. Essa função é útil pois funciona com qualquer separador entre os elementos da data e também porque temos uma função para cada formato (`ymd`, `mdy`, `dmy`, `dym`, `myd`, `ydm`).&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb942"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb942-1"><a href="12-5-o-pacote-stringr-1.html#cb942-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="st">&quot;A função mais importante para leitura de dados no `lubridate` é a `ymd`. Essa função serve para ler qualquer data de uma `string` no formato `YYYY-MM-DD`. Essa função é útil pois funciona com qualquer separador entre os elementos da data e também porque temos uma função para cada formato (`ymd`, `mdy`, `dmy`, `dym`, `myd`, `ydm`).&quot;</span></span></code></pre></div>
 <p>Extraia todas as combinações da função <code>ymd</code>, sem repetições.</p>
-<div class="sourceCode" id="cb876"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb876-1"><a href="12-5-o-pacote-stringr-1.html#cb876-1"></a><span class="kw">str_extract_all</span>(s, <span class="st">&quot;[ymd]{3}&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb876-2"><a href="12-5-o-pacote-stringr-1.html#cb876-2"></a><span class="st">  </span><span class="kw">unlist</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb876-3"><a href="12-5-o-pacote-stringr-1.html#cb876-3"></a><span class="st">  </span>unique</span>
-<span id="cb876-4"><a href="12-5-o-pacote-stringr-1.html#cb876-4"></a><span class="co">## [1] &quot;ymd&quot; &quot;mdy&quot; &quot;dmy&quot; &quot;dym&quot; &quot;myd&quot; &quot;ydm&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb943"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb943-1"><a href="12-5-o-pacote-stringr-1.html#cb943-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_extract_all</span>(s, <span class="st">&quot;[ymd]{3}&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb943-2"><a href="12-5-o-pacote-stringr-1.html#cb943-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unlist</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb943-3"><a href="12-5-o-pacote-stringr-1.html#cb943-3" aria-hidden="true" tabindex="-1"></a>  unique</span>
+<span id="cb943-4"><a href="12-5-o-pacote-stringr-1.html#cb943-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;ymd&quot; &quot;mdy&quot; &quot;dmy&quot; &quot;dym&quot; &quot;myd&quot; &quot;ydm&quot;</span></span></code></pre></div>
 <hr />
 <p><strong>8.</strong> Considere as frases abaixo</p>
-<div class="sourceCode" id="cb877"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb877-1"><a href="12-5-o-pacote-stringr-1.html#cb877-1"></a>s &lt;-<span class="st"> </span><span class="kw">c</span>(</span>
-<span id="cb877-2"><a href="12-5-o-pacote-stringr-1.html#cb877-2"></a>  <span class="st">&#39;O produto é bom.&#39;</span>,</span>
-<span id="cb877-3"><a href="12-5-o-pacote-stringr-1.html#cb877-3"></a>  <span class="st">&#39;O produto não é bom.&#39;</span>,</span>
-<span id="cb877-4"><a href="12-5-o-pacote-stringr-1.html#cb877-4"></a>  <span class="st">&#39;O produto não é muito bom.&#39;</span>,</span>
-<span id="cb877-5"><a href="12-5-o-pacote-stringr-1.html#cb877-5"></a>  <span class="st">&#39;O produto é muito bom&#39;</span>,</span>
-<span id="cb877-6"><a href="12-5-o-pacote-stringr-1.html#cb877-6"></a>  <span class="st">&#39;O produto não é ruim.&#39;</span>,</span>
-<span id="cb877-7"><a href="12-5-o-pacote-stringr-1.html#cb877-7"></a>  <span class="st">&#39;O produto não é não ruim.&#39;</span>,</span>
-<span id="cb877-8"><a href="12-5-o-pacote-stringr-1.html#cb877-8"></a>  <span class="st">&#39;O produto não é não bom.&#39;</span></span>
-<span id="cb877-9"><a href="12-5-o-pacote-stringr-1.html#cb877-9"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb944"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb944-1"><a href="12-5-o-pacote-stringr-1.html#cb944-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb944-2"><a href="12-5-o-pacote-stringr-1.html#cb944-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;O produto é bom.&#39;</span>,</span>
+<span id="cb944-3"><a href="12-5-o-pacote-stringr-1.html#cb944-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;O produto não é bom.&#39;</span>,</span>
+<span id="cb944-4"><a href="12-5-o-pacote-stringr-1.html#cb944-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;O produto não é muito bom.&#39;</span>,</span>
+<span id="cb944-5"><a href="12-5-o-pacote-stringr-1.html#cb944-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;O produto é muito bom&#39;</span>,</span>
+<span id="cb944-6"><a href="12-5-o-pacote-stringr-1.html#cb944-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;O produto não é ruim.&#39;</span>,</span>
+<span id="cb944-7"><a href="12-5-o-pacote-stringr-1.html#cb944-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;O produto não é não ruim.&#39;</span>,</span>
+<span id="cb944-8"><a href="12-5-o-pacote-stringr-1.html#cb944-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;O produto não é não bom.&#39;</span></span>
+<span id="cb944-9"><a href="12-5-o-pacote-stringr-1.html#cb944-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>Crie uma regra para identificar se o texto refere-se a um feedback positivo ou negativo sobre o produto (considere não bom = ruim e não ruim = bom). Retorne um vetor lógico que vale <code>TRUE</code> se o feedback for positivo e <code>FALSE</code> caso contrário.</p>
-<div class="sourceCode" id="cb878"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb878-1"><a href="12-5-o-pacote-stringr-1.html#cb878-1"></a>feedback &lt;-<span class="st"> </span><span class="cf">function</span>(s) {</span>
-<span id="cb878-2"><a href="12-5-o-pacote-stringr-1.html#cb878-2"></a>  </span>
-<span id="cb878-3"><a href="12-5-o-pacote-stringr-1.html#cb878-3"></a>  s <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb878-4"><a href="12-5-o-pacote-stringr-1.html#cb878-4"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;não bom&quot;</span>, <span class="st">&quot;ruim&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb878-5"><a href="12-5-o-pacote-stringr-1.html#cb878-5"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;não ruim&quot;</span>, <span class="st">&quot;bom&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb878-6"><a href="12-5-o-pacote-stringr-1.html#cb878-6"></a><span class="st">    </span><span class="kw">str_replace</span>(<span class="st">&quot;muito &quot;</span>, <span class="st">&quot;&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb878-7"><a href="12-5-o-pacote-stringr-1.html#cb878-7"></a><span class="st">    </span><span class="kw">str_detect</span>(<span class="st">&quot;(.*) produto é bom|(.*) não é ruim&quot;</span>)</span>
-<span id="cb878-8"><a href="12-5-o-pacote-stringr-1.html#cb878-8"></a>  </span>
-<span id="cb878-9"><a href="12-5-o-pacote-stringr-1.html#cb878-9"></a>}</span>
-<span id="cb878-10"><a href="12-5-o-pacote-stringr-1.html#cb878-10"></a><span class="kw">feedback</span>(s)</span>
-<span id="cb878-11"><a href="12-5-o-pacote-stringr-1.html#cb878-11"></a><span class="co">## [1]  TRUE FALSE FALSE  TRUE  TRUE FALSE  TRUE</span></span></code></pre></div>
+<div class="sourceCode" id="cb945"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb945-1"><a href="12-5-o-pacote-stringr-1.html#cb945-1" aria-hidden="true" tabindex="-1"></a>feedback <span class="ot">&lt;-</span> <span class="cf">function</span>(s) {</span>
+<span id="cb945-2"><a href="12-5-o-pacote-stringr-1.html#cb945-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb945-3"><a href="12-5-o-pacote-stringr-1.html#cb945-3" aria-hidden="true" tabindex="-1"></a>  s <span class="sc">%&gt;%</span> </span>
+<span id="cb945-4"><a href="12-5-o-pacote-stringr-1.html#cb945-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_replace</span>(<span class="st">&quot;não bom&quot;</span>, <span class="st">&quot;ruim&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb945-5"><a href="12-5-o-pacote-stringr-1.html#cb945-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_replace</span>(<span class="st">&quot;não ruim&quot;</span>, <span class="st">&quot;bom&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb945-6"><a href="12-5-o-pacote-stringr-1.html#cb945-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_replace</span>(<span class="st">&quot;muito &quot;</span>, <span class="st">&quot;&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb945-7"><a href="12-5-o-pacote-stringr-1.html#cb945-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(<span class="st">&quot;(.*) produto é bom|(.*) não é ruim&quot;</span>)</span>
+<span id="cb945-8"><a href="12-5-o-pacote-stringr-1.html#cb945-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb945-9"><a href="12-5-o-pacote-stringr-1.html#cb945-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb945-10"><a href="12-5-o-pacote-stringr-1.html#cb945-10" aria-hidden="true" tabindex="-1"></a><span class="fu">feedback</span>(s)</span>
+<span id="cb945-11"><a href="12-5-o-pacote-stringr-1.html#cb945-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  TRUE FALSE FALSE  TRUE  TRUE FALSE  TRUE</span></span></code></pre></div>
 
 </div>
 <hr/>

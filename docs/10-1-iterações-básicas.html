@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Ciência de Dados em R</title>
+  <title>10.1 Iterações básicas | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Ciência de Dados em R" />
+  <meta property="og:title" content="10.1 Iterações básicas | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Ciência de Dados em R" />
+  <meta name="twitter:title" content="10.1 Iterações básicas | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-
-<link rel="next" href="1-instalacao.html"/>
+<link rel="prev" href="10-funcionais.html"/>
+<link rel="next" href="10-2-iterações-intermediárias.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -450,76 +450,80 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Ciência de Dados em R</h1>
-<p class="author"><em>Curso-R</em></p>
-<p class="date"><em>Última atualização: 19/04/2021</em></p>
-</div>
-<div id="sobre" class="section level1 unnumbered">
-<h1>Sobre</h1>
-<p>Este livro está em <strong>construção</strong> e em <strong>revisão aberta</strong>. Fique à vontade para corrigir qualquer tipo de erro que encontrar no nosso material.</p>
-<p>Todo o conteúdo deste livro é gratuito e aberto.</p>
-<p>Autoria:</p>
-<ul>
-<li><a href="https://twitter.com/athos_damiani">Athos Damiani</a></li>
-<li><a href="https://twitter.com/BeaMilz">Beatriz Milz</a></li>
-<li><a href="https://lente.dev/">Caio Lente</a></li>
-<li><a href="https://twitter.com/dfalbel">Daniel Falbel</a></li>
-<li><a href="https://twitter.com/Azeloc">Fernando Correa</a></li>
-<li><a href="https://twitter.com/jtrecenti">Julio Trecenti</a></li>
-<li><a href="http://linkedin.com/in/nicole-luduvice-9a6379197">Nicole Luduvice</a></li>
-<li><a href="https://wamorim.com">William Amorim</a></li>
-</ul>
-<div id="a-curso-r" class="section level4 unnumbered">
-<h4>A Curso-R</h4>
-<p>A Curso-R é o braço de Educação da R6 Consultoria, uma empresa de treinamentos e consultoria em Ciência de Dados e linguagem de programação R. Surgimos em 2015, com cursos de introdução ao R no Programa de Cursos de Verão do Instituto de Matemática e Estatística da Universidade de São Paulo (IME-USP).</p>
-<ul>
-<li><p>Conheça os nossos cursos: <a href="https://www.curso-r.com/cursos/" class="uri">https://www.curso-r.com/cursos/</a></p></li>
-<li><p>Conheça o nosso blog: <a href="https://www.curso-r.com/blog/" class="uri">https://www.curso-r.com/blog/</a></p></li>
-<li><p>Conheça o restante do nosso material: <a href="https://www.curso-r.com/material/" class="uri">https://www.curso-r.com/material/</a></p></li>
-<li><p>Saiba mais sobre a Curso-R: <a href="https://www.curso-r.com/sobre/" class="uri">https://www.curso-r.com/sobre/</a></p></li>
-</ul>
-</div>
-<div id="o-r-e-o-rstudio" class="section level4 unnumbered">
-<h4>O R e o RStudio</h4>
-<p>O R é uma linguagem de programação <em>open source</em> para análise de dados que fornece uma grande variedade de ferramentas estatísticas e gráficas.</p>
-<p>O RStudio é o ambiente de desenvolvimento mais utilizado para programação em R. Ele possui diversas ferramentas que facilitam a utilização do R para se fazer análise de dados.</p>
-</div>
-<div id="este-livro" class="section level4 unnumbered">
-<h4>Este livro</h4>
-<p>Este livro tem como objetivo guiar o leitor por todas as etapas de uma análise de dados, utilizando o R como ferramenta. Nele, você encontrará ferramentas para importar, arrumar, manipular, visualizar e modelar bases de dados. E também ferramentas para comunicar e automatizar resultados.</p>
-<div class="figure" style="text-align: center"><span id="fig:allison-env"></span>
-<img src="assets/img/environmental-data-science-r4ds-general.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la." width="2400" />
-<p class="caption">
-Figura 0.1: Arte por Allison Horst (<span class="citation">@allison_horst</span>). Veja nas Referências onde encontrá-la.
-</p>
-</div>
-</div>
-<div id="comunidade" class="section level4 unnumbered">
-<h4>Comunidade</h4>
-<p>Seja bem-vinda(o) ao #rstats.</p>
-<p>Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e participe dos grupos e comunidades de programadores.</p>
-<ul>
-<li><p>Comunidade RLadies: <a href="https://benubah.github.io/r-community-explorer/rladies.html" class="uri">https://benubah.github.io/r-community-explorer/rladies.html</a></p></li>
-<li><p>Fórum de dúvidas da Curso-R: <a href="https://discourse.curso-r.com/" class="uri">https://discourse.curso-r.com/</a></p></li>
-<li><p>Grupo de divulgação da Curso-R no Telegram: <a href="https://t.me/r6cursor" class="uri">https://t.me/r6cursor</a></p></li>
-<li><p>Grupo R Brasil no Telegram: <a href="https://t.me/rbrasiloficial" class="uri">https://t.me/rbrasiloficial</a></p></li>
-</ul>
-<div class="figure" style="text-align: center"><span id="fig:allison-twitter"></span>
-<img src="assets/img/welcome_to_rstats_twitter.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la." width="1004" />
-<p class="caption">
-Figura 0.2: Arte por Allison Horst (<span class="citation">@allison_horst</span>). Veja nas Referências onde encontrá-la.
-</p>
-</div>
-</div>
-<div id="agradecimentos" class="section level4 unnumbered">
-<h4>Agradecimentos</h4>
-<ul>
-<li><p><a href="https://www.linkedin.com/in/hsvab">Haydee Svab</a> - Revisão do conteúdo inicial sobre <a href="9-1-markdown.html#markdown">Markdown</a>.</p></li>
-<li><p>Sugestões feitas durante transmissões na Twitch: <span class="citation">[@AugustoCL_]</span>(<a href="https://www.twitch.tv/AugustoCL_/about" class="uri">https://www.twitch.tv/AugustoCL_/about</a>) e <span class="citation">[@pouchewar]</span>(<a href="https://www.twitch.tv/pouchewar/about" class="uri">https://www.twitch.tv/pouchewar/about</a>) .</p></li>
-</ul>
-
-</div>
+<div id="iterações-básicas" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> Iterações básicas</h2>
+<p>A primeira família de funções do <code>purrr</code> que veremos também é a mais útil e
+extensível. As funções <code>map()</code> são quase como substitutas para laços <code>for</code>,
+elas abstraem a iteração em apenas uma linha. Veja esse exemplo de laço usando
+<code>for</code>:</p>
+<div class="sourceCode" id="cb573"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb573-1"><a href="10-1-iterações-básicas.html#cb573-1" aria-hidden="true" tabindex="-1"></a>soma_um <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { x <span class="sc">+</span> <span class="dv">1</span> }</span>
+<span id="cb573-2"><a href="10-1-iterações-básicas.html#cb573-2" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb573-3"><a href="10-1-iterações-básicas.html#cb573-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(obj)) {</span>
+<span id="cb573-4"><a href="10-1-iterações-básicas.html#cb573-4" aria-hidden="true" tabindex="-1"></a>  obj[i] <span class="ot">&lt;-</span> <span class="fu">soma_um</span>(obj[i])</span>
+<span id="cb573-5"><a href="10-1-iterações-básicas.html#cb573-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb573-6"><a href="10-1-iterações-básicas.html#cb573-6" aria-hidden="true" tabindex="-1"></a>obj</span></code></pre></div>
+<pre><code>## [1] 11 12 13 14 15 16</code></pre>
+<p>O que de fato estamos tentando fazer com o laço acima? Temos um vetor (<code>obj</code>) e
+queremos aplicar uma função (<code>soma_um()</code>) em cada elemento dele. A função <code>map()</code>
+remove a necessidade de declaramos um objeto iterador auxiliar (<code>i</code>) e
+simplesmente aplica a função desejada em cada elemento do objeto dado.</p>
+<div class="sourceCode" id="cb575"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb575-1"><a href="10-1-iterações-básicas.html#cb575-1" aria-hidden="true" tabindex="-1"></a>soma_um <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { x <span class="sc">+</span> <span class="dv">1</span> }</span>
+<span id="cb575-2"><a href="10-1-iterações-básicas.html#cb575-2" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb575-3"><a href="10-1-iterações-básicas.html#cb575-3" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="fu">map</span>(obj, soma_um)</span>
+<span id="cb575-4"><a href="10-1-iterações-básicas.html#cb575-4" aria-hidden="true" tabindex="-1"></a>obj</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] 11
+## 
+## [[2]]
+## [1] 12
+## 
+## [[3]]
+## [1] 13
+## 
+## [[4]]
+## [1] 14
+## 
+## [[5]]
+## [1] 15
+## 
+## [[6]]
+## [1] 16</code></pre>
+<p>Como você deve ter percebido, o resultado da execução acima não é exatamente
+igual ao que tivemos com o laço. Isso acontece porque a <code>map()</code> tenta ser
+extremamente genérica, retornando por padrão uma lista com um elemento para
+cada saída.</p>
+<p>Se quisermos “achatar” o resultado, devemos informar qual será o seu tipo. Isso
+é super simples e pode ser feito com as irmãs da <code>map()</code>: <code>map_chr()</code> (para
+strings), <code>map_dbl()</code> (para números reais), <code>map_int()</code> (para números inteiros) e
+<code>map_lgl()</code> (para booleanos).</p>
+<div class="sourceCode" id="cb577"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb577-1"><a href="10-1-iterações-básicas.html#cb577-1" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb577-2"><a href="10-1-iterações-básicas.html#cb577-2" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(obj, soma_um)</span></code></pre></div>
+<pre><code>## [1] 11 12 13 14 15 16</code></pre>
+<blockquote>
+<p>O <code>purrr</code> também nos fornece outra ferramenta interessante para
+achatar listas: a família <code>flatten()</code>. No fundo, <code>map_chr()</code>
+é quase um atalho para <code>map() %&gt;% flatten_chr()</code>!</p>
+</blockquote>
+<p>Algo bastante útil da família <code>map()</code> é a possibilidade de passar argumentos
+fixos para a função que será aplicada. A primeira forma de fazer isso envolve
+fórmulas:</p>
+<div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb579-1"><a href="10-1-iterações-básicas.html#cb579-1" aria-hidden="true" tabindex="-1"></a>soma_n <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">n =</span> <span class="dv">1</span>) { x <span class="sc">+</span> n }</span>
+<span id="cb579-2"><a href="10-1-iterações-básicas.html#cb579-2" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb579-3"><a href="10-1-iterações-básicas.html#cb579-3" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(obj, <span class="sc">~</span><span class="fu">soma_n</span>(.x, <span class="dv">2</span>))</span></code></pre></div>
+<pre><code>## [1] 12 13 14 15 16 17</code></pre>
+<p>Como vemos no exemplo acima, para utilizar fórmulas precisamos colocar um til
+(<code>~</code>) antes da função que será chamada. Feito isso, podemos utilizar o
+placeholder <code>.x</code> para indicar onde deve ser colocado cada elemento de <code>obj</code>.</p>
+<p>A outra forma de passar argumentos para a função é através das reticências da
+<code>map()</code>. Desta maneira precisamos apenas dar o nome do argumento e seu valor
+logo após a função <code>soma_n()</code>.</p>
+<div class="sourceCode" id="cb581"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb581-1"><a href="10-1-iterações-básicas.html#cb581-1" aria-hidden="true" tabindex="-1"></a>soma_n <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">n =</span> <span class="dv">1</span>) { x <span class="sc">+</span> n }</span>
+<span id="cb581-2"><a href="10-1-iterações-básicas.html#cb581-2" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb581-3"><a href="10-1-iterações-básicas.html#cb581-3" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(obj, soma_n, <span class="at">n =</span> <span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 12 13 14 15 16 17</code></pre>
+<p>Usando fórmulas temos uma maior flexibilidade (podemos, por exemplo, declarar
+funções anônimas como <code>~.x+2</code>), enquanto com as reticências temos maior
+legibilidade.</p>
 </div>
 <hr/>
 <footer>
@@ -530,8 +534,8 @@ Figura 0.2: Arte por Allison Horst (<span class="citation">@allison_horst</span>
           </div>
         </div>
       </div>
-
-<a href="1-instalacao.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="10-funcionais.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="10-2-iterações-intermediárias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -32,6 +32,7 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="3-5-classes.html"/>
 <link rel="next" href="3-7-testes-lógicos.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,7 +50,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
@@ -75,18 +75,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -106,7 +106,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -156,14 +156,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre</a></li>
-<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a><ul>
-<li class="chapter" data-level="1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
+<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
 <li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
-<li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a><ul>
+<li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
 <li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
 <li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
@@ -172,7 +175,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#rtools"><i class="fa fa-check"></i><b>1.3.6</b> Rtools</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a><ul>
+<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="2-1-telas.html"><a href="2-1-telas.html"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
 <li class="chapter" data-level="2.2" data-path="2-2-atalhos.html"><a href="2-2-atalhos.html"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
 <li class="chapter" data-level="2.3" data-path="2-3-projetos.html"><a href="2-3-projetos.html"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
@@ -181,60 +185,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="2-6-addins.html"><a href="2-6-addins.html"><i class="fa fa-check"></i><b>2.6</b> Addins</a></li>
 <li class="chapter" data-level="2.7" data-path="2-7-snippets.html"><a href="2-7-snippets.html"><i class="fa fa-check"></i><b>2.7</b> Snippets</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a><ul>
-<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a><ul>
+<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
 <li class="chapter" data-level="3.1.2" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
 <li class="chapter" data-level="3.1.3" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
+<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a><ul>
+<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="3-4-data-frames.html"><a href="3-4-data-frames.html"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
-<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a><ul>
+<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a>
+<ul>
 <li class="chapter" data-level="3.5.1" data-path="3-5-classes.html"><a href="3-5-classes.html#exercícios-2"><i class="fa fa-check"></i><b>3.5.1</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a><ul>
+<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-6-vetores.html"><a href="3-6-vetores.html#exercícios-3"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a><ul>
+<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html#exercícios-4"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a><ul>
+<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.9" data-path="3-9-listas.html"><a href="3-9-listas.html"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
-<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
+<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html#exercícios-6"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a><ul>
+<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html#exercícios-7"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
+<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a>
+<ul>
 <li class="chapter" data-level="3.12.1" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
 <li class="chapter" data-level="3.12.2" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#iteradores-for-e-while"><i class="fa fa-check"></i><b>3.12.2</b> Iteradores: for e while</a></li>
 <li class="chapter" data-level="" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#exercícios-8"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a><ul>
+<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a>
+<ul>
 <li class="chapter" data-level="3.13.1" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#matrizes"><i class="fa fa-check"></i><b>3.13.1</b> Matrizes</a></li>
 <li class="chapter" data-level="3.13.2" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#fatores"><i class="fa fa-check"></i><b>3.13.2</b> Fatores</a></li>
 <li class="chapter" data-level="3.13.3" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#gráficos-r-base"><i class="fa fa-check"></i><b>3.13.3</b> Gráficos (R base)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a><ul>
-<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a><ul>
+<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-cran"><i class="fa fa-check"></i><b>4.1.1</b> Via CRAN</a></li>
 <li class="chapter" data-level="4.1.2" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-github"><i class="fa fa-check"></i><b>4.1.2</b> Via Github</a></li>
 <li class="chapter" data-level="4.1.3" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-arquivo-.zip-ou-.tar.gz"><i class="fa fa-check"></i><b>4.1.3</b> Via arquivo .zip ou .tar.gz</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="4-2-tidyverse.html"><a href="4-2-tidyverse.html"><i class="fa fa-check"></i><b>4.2</b> Tidyverse</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a><ul>
+<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="5-1-caminhos.html"><a href="5-1-caminhos.html"><i class="fa fa-check"></i><b>5.1</b> Caminhos</a></li>
-<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a><ul>
+<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="5-2-readr.html"><a href="5-2-readr.html#lendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.1</b> Lendo arquivos de texto</a></li>
 <li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.2</b> Locale</a></li>
 <li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.3</b> Parseando valores</a></li>
@@ -245,15 +265,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3" data-path="5-3-readxl.html"><a href="5-3-readxl.html"><i class="fa fa-check"></i><b>5.3</b> Os pacotes readxl e writexl</a></li>
 <li class="chapter" data-level="5.4" data-path="5-4-haven.html"><a href="5-4-haven.html"><i class="fa fa-check"></i><b>5.4</b> haven</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
-<li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a><ul>
+<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a>
+<ul>
 <li class="chapter" data-level="" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html#exercícios-10"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
+<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="7-1-tibbles.html"><a href="7-1-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Tibbles</a></li>
-<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a><ul>
+<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#selecionando-colunas"><i class="fa fa-check"></i><b>7.2.1</b> Selecionando colunas</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#ordenando-a-base"><i class="fa fa-check"></i><b>7.2.2</b> Ordenando a base</a></li>
 <li class="chapter" data-level="7.2.3" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#o-pipe-em-ação"><i class="fa fa-check"></i><b>7.2.3</b> O pipe em ação</a></li>
@@ -263,27 +287,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.7" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#juntando-duas-bases"><i class="fa fa-check"></i><b>7.2.7</b> Juntando duas bases</a></li>
 <li class="chapter" data-level="7.2.8" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#dplyr-1.0"><i class="fa fa-check"></i><b>7.2.8</b> dplyr 1.0</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a><ul>
+<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#separate-e-unite"><i class="fa fa-check"></i><b>7.3.1</b> <code>separate()</code> e <code>unite()</code></a></li>
 <li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#pivotagem"><i class="fa fa-check"></i><b>7.3.2</b> Pivotagem</a></li>
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#list-columns"><i class="fa fa-check"></i><b>7.3.3</b> <em>List columns</em></a></li>
 <li class="chapter" data-level="7.3.4" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#exercícios-18"><i class="fa fa-check"></i><b>7.3.4</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a><ul>
+<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a>
+<ul>
 <li class="chapter" data-level="7.4.1" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#introdução"><i class="fa fa-check"></i><b>7.4.1</b> Introdução</a></li>
 <li class="chapter" data-level="7.4.2" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-básicas"><i class="fa fa-check"></i><b>7.4.2</b> Funções básicas</a></li>
 <li class="chapter" data-level="7.4.3" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#expressões-regulares"><i class="fa fa-check"></i><b>7.4.3</b> Expressões Regulares</a></li>
 <li class="chapter" data-level="7.4.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-que-utilizam-regex"><i class="fa fa-check"></i><b>7.4.4</b> Funções que utilizam regex</a></li>
 <li class="chapter" data-level="7.4.5" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#exercícios-19"><i class="fa fa-check"></i><b>7.4.5</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.5</b> O pacote lubridate</a><ul>
+<li class="chapter" data-level="7.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.5</b> O pacote lubridate</a>
+<ul>
 <li class="chapter" data-level="7.5.1" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#a-classe-date"><i class="fa fa-check"></i><b>7.5.1</b> A classe <code>date</code></a></li>
 <li class="chapter" data-level="7.5.2" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#funções-úteis"><i class="fa fa-check"></i><b>7.5.2</b> Funções úteis</a></li>
 <li class="chapter" data-level="7.5.3" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#fusos-horários"><i class="fa fa-check"></i><b>7.5.3</b> Fusos horários</a></li>
 <li class="chapter" data-level="7.5.4" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#operações-com-datas"><i class="fa fa-check"></i><b>7.5.4</b> Operações com datas</a></li>
 <li class="chapter" data-level="7.5.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#exercícios-20"><i class="fa fa-check"></i><b>7.5.5</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="7-6-forcats.html"><a href="7-6-forcats.html"><i class="fa fa-check"></i><b>7.6</b> O pacote forcats</a><ul>
+<li class="chapter" data-level="7.6" data-path="7-6-forcats.html"><a href="7-6-forcats.html"><i class="fa fa-check"></i><b>7.6</b> O pacote forcats</a>
+<ul>
 <li class="chapter" data-level="7.6.1" data-path="7-6-forcats.html"><a href="7-6-forcats.html#o-que-são-fatores"><i class="fa fa-check"></i><b>7.6.1</b> O que são fatores?</a></li>
 <li class="chapter" data-level="7.6.2" data-path="7-6-forcats.html"><a href="7-6-forcats.html#modificando-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.2</b> Modificando níveis de um fator</a></li>
 <li class="chapter" data-level="7.6.3" data-path="7-6-forcats.html"><a href="7-6-forcats.html#mudando-a-ordem-dos-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.3</b> Mudando a ordem dos níveis de um fator</a></li>
@@ -291,8 +319,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.6.5" data-path="7-6-forcats.html"><a href="7-6-forcats.html#outras-funções-úteis"><i class="fa fa-check"></i><b>7.6.5</b> Outras funções úteis</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a><ul>
-<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a><ul>
+<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-pontos-dispersão"><i class="fa fa-check"></i><b>8.1.1</b> Gráficos de pontos (dispersão)</a></li>
 <li class="chapter" data-level="8.1.2" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-linhas"><i class="fa fa-check"></i><b>8.1.2</b> Gráficos de linhas</a></li>
 <li class="chapter" data-level="8.1.3" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-barras"><i class="fa fa-check"></i><b>8.1.3</b> Gráficos de barras</a></li>
@@ -303,13 +333,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.8" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>8.1.8</b> Juntando gráficos</a></li>
 <li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-21"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a><ul>
+<li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a>
+<ul>
 <li class="chapter" data-level="8.2.1" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#gghighlight"><i class="fa fa-check"></i><b>8.2.1</b> gghighlight</a></li>
 <li class="chapter" data-level="8.2.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#ggridges"><i class="fa fa-check"></i><b>8.2.2</b> ggridges</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="9-relatorios.html"><a href="9-relatorios.html"><i class="fa fa-check"></i><b>9</b> Relatórios</a><ul>
-<li class="chapter" data-level="9.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html"><i class="fa fa-check"></i><b>9.1</b> Markdown</a><ul>
+<li class="chapter" data-level="9" data-path="9-relatorios.html"><a href="9-relatorios.html"><i class="fa fa-check"></i><b>9</b> Relatórios</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html"><i class="fa fa-check"></i><b>9.1</b> Markdown</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html#ênfase"><i class="fa fa-check"></i><b>9.1.1</b> Ênfase</a></li>
 <li class="chapter" data-level="9.1.2" data-path="9-1-markdown.html"><a href="9-1-markdown.html#títulos"><i class="fa fa-check"></i><b>9.1.2</b> Títulos</a></li>
 <li class="chapter" data-level="9.1.3" data-path="9-1-markdown.html"><a href="9-1-markdown.html#listas-1"><i class="fa fa-check"></i><b>9.1.3</b> Listas</a></li>
@@ -321,7 +354,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1.9" data-path="9-1-markdown.html"><a href="9-1-markdown.html#recapitulando"><i class="fa fa-check"></i><b>9.1.9</b> Recapitulando</a></li>
 <li class="chapter" data-level="" data-path="9-1-markdown.html"><a href="9-1-markdown.html#exercicios-md"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a><ul>
+<li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a>
+<ul>
 <li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#códigos-em-r"><i class="fa fa-check"></i><b>9.2.1</b> Códigos em R</a></li>
 <li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#imagens-1"><i class="fa fa-check"></i><b>9.2.2</b> Imagens</a></li>
 <li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#tabelas-1"><i class="fa fa-check"></i><b>9.2.3</b> Tabelas</a></li>
@@ -329,17 +363,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="10-funcionais.html"><a href="10-funcionais.html"><i class="fa fa-check"></i><b>10</b> Funcionais</a></li>
-<li class="chapter" data-level="11" data-path="11-misc.html"><a href="11-misc.html"><i class="fa fa-check"></i><b>11</b> Miscelânea</a><ul>
-<li class="chapter" data-level="11.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>11.1</b> Arrumando banco de dados: o pacote janitor</a><ul>
+<li class="chapter" data-level="10" data-path="10-funcionais.html"><a href="10-funcionais.html"><i class="fa fa-check"></i><b>10</b> Programação funcional (purrr)</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="10-1-iterações-básicas.html"><a href="10-1-iterações-básicas.html"><i class="fa fa-check"></i><b>10.1</b> Iterações básicas</a></li>
+<li class="chapter" data-level="10.2" data-path="10-2-iterações-intermediárias.html"><a href="10-2-iterações-intermediárias.html"><i class="fa fa-check"></i><b>10.2</b> Iterações intermediárias</a></li>
+<li class="chapter" data-level="10.3" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html"><i class="fa fa-check"></i><b>10.3</b> Iterações avançadas</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#iterações-com-condicionais"><i class="fa fa-check"></i><b>10.3.1</b> Iterações com condicionais</a></li>
+<li class="chapter" data-level="10.3.2" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#iterações-com-tabelas-e-funções"><i class="fa fa-check"></i><b>10.3.2</b> Iterações com tabelas e funções</a></li>
+<li class="chapter" data-level="10.3.3" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#redução-e-acúmulo"><i class="fa fa-check"></i><b>10.3.3</b> Redução e acúmulo</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html"><i class="fa fa-check"></i><b>10.4</b> Miscelânea</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#manter-e-descartar"><i class="fa fa-check"></i><b>10.4.1</b> Manter e descartar</a></li>
+<li class="chapter" data-level="10.4.2" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#a-família-is"><i class="fa fa-check"></i><b>10.4.2</b> A família <code>is</code></a></li>
+<li class="chapter" data-level="10.4.3" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#andar-e-modificar"><i class="fa fa-check"></i><b>10.4.3</b> Andar e modificar</a></li>
+<li class="chapter" data-level="10.4.4" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#transposição-e-indexação-profunda"><i class="fa fa-check"></i><b>10.4.4</b> Transposição e indexação profunda</a></li>
+<li class="chapter" data-level="10.4.5" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#aplicação-parcial"><i class="fa fa-check"></i><b>10.4.5</b> Aplicação parcial</a></li>
+<li class="chapter" data-level="10.4.6" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#execução-segura"><i class="fa fa-check"></i><b>10.4.6</b> Execução segura</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="11-misc.html"><a href="11-misc.html"><i class="fa fa-check"></i><b>11</b> Miscelânea</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>11.1</b> Arrumando banco de dados: o pacote janitor</a>
+<ul>
 <li class="chapter" data-level="11.1.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#arrumando-o-nome-das-variáveis"><i class="fa fa-check"></i><b>11.1.1</b> Arrumando o nome das variáveis</a></li>
 <li class="chapter" data-level="11.1.2" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#removendo-linhas-e-colunas-vazias"><i class="fa fa-check"></i><b>11.1.2</b> Removendo linhas e colunas vazias</a></li>
 <li class="chapter" data-level="11.1.3" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#identificando-linhas-duplicadas"><i class="fa fa-check"></i><b>11.1.3</b> Identificando linhas duplicadas</a></li>
 <li class="chapter" data-level="11.1.4" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>11.1.4</b> Outras funções</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="12-respostas.html"><a href="12-respostas.html"><i class="fa fa-check"></i><b>12</b> Respostas</a><ul>
-<li class="chapter" data-level="12.1" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html"><i class="fa fa-check"></i><b>12.1</b> R básico</a><ul>
+<li class="chapter" data-level="12" data-path="12-respostas.html"><a href="12-respostas.html"><i class="fa fa-check"></i><b>12</b> Respostas</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html"><i class="fa fa-check"></i><b>12.1</b> R básico</a>
+<ul>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#objetos-e-funções"><i class="fa fa-check"></i>Objetos e funções</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#classes-1"><i class="fa fa-check"></i>Classes</a></li>
@@ -350,11 +407,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i>Mais sobre funções</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#controle-de-fluxo-1"><i class="fa fa-check"></i>Controle de fluxo</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="12-2-importação.html"><a href="12-2-importação.html"><i class="fa fa-check"></i><b>12.2</b> Importação</a><ul>
+<li class="chapter" data-level="12.2" data-path="12-2-importação.html"><a href="12-2-importação.html"><i class="fa fa-check"></i><b>12.2</b> Importação</a>
+<ul>
 <li class="chapter" data-level="" data-path="12-2-importação.html"><a href="12-2-importação.html#o-pacote-readr"><i class="fa fa-check"></i>O pacote readr</a></li>
 </ul></li>
 <li class="chapter" data-level="12.3" data-path="12-3-pipe-1.html"><a href="12-3-pipe-1.html"><i class="fa fa-check"></i><b>12.3</b> Pipe</a></li>
-<li class="chapter" data-level="12.4" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>12.4</b> O pacote dplyr</a><ul>
+<li class="chapter" data-level="12.4" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>12.4</b> O pacote dplyr</a>
+<ul>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#selecionando-colunas-1"><i class="fa fa-check"></i>Selecionando colunas</a></li>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#ordenando-a-base-1"><i class="fa fa-check"></i>Ordenando a base</a></li>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#filtrando-linhas-1"><i class="fa fa-check"></i>Filtrando linhas</a></li>
@@ -366,7 +425,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.6" data-path="12-6-o-pacote-lubridate-1.html"><a href="12-6-o-pacote-lubridate-1.html"><i class="fa fa-check"></i><b>12.6</b> O pacote lubridate</a></li>
 <li class="chapter" data-level="12.7" data-path="12-7-o-pacote-ggplot2-1.html"><a href="12-7-o-pacote-ggplot2-1.html"><i class="fa fa-check"></i><b>12.7</b> O pacote ggplot2</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a>
+<ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i>Programação em R</a></li>
 </ul></li>
@@ -390,99 +450,99 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="vetores" class="section level2">
+<div id="vetores" class="section level2" number="3.6">
 <h2><span class="header-section-number">3.6</span> Vetores</h2>
 <p>Vetores são estruturas muito importantes dentro R. Em especial, pensando em análise de dados, precisamos estudá-los pois cada coluna de um <em>data frame</em> será representada como um vetor.</p>
 <p>Vetores no R são apenas <strong>conjuntos indexados de valores</strong>. Para criá-los, basta colocar os valores separados por vírgulas dentro de um <code>c()</code>.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="3-6-vetores.html#cb31-1"></a>vetor1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">-10</span>)</span>
-<span id="cb31-2"><a href="3-6-vetores.html#cb31-2"></a>vetor2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
-<span id="cb31-3"><a href="3-6-vetores.html#cb31-3"></a></span>
-<span id="cb31-4"><a href="3-6-vetores.html#cb31-4"></a>vetor1</span>
-<span id="cb31-5"><a href="3-6-vetores.html#cb31-5"></a><span class="co">## [1]   1   5   3 -10</span></span>
-<span id="cb31-6"><a href="3-6-vetores.html#cb31-6"></a>vetor2</span>
-<span id="cb31-7"><a href="3-6-vetores.html#cb31-7"></a><span class="co">## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="3-6-vetores.html#cb31-1" aria-hidden="true" tabindex="-1"></a>vetor1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="sc">-</span><span class="dv">10</span>)</span>
+<span id="cb31-2"><a href="3-6-vetores.html#cb31-2" aria-hidden="true" tabindex="-1"></a>vetor2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
+<span id="cb31-3"><a href="3-6-vetores.html#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="3-6-vetores.html#cb31-4" aria-hidden="true" tabindex="-1"></a>vetor1</span>
+<span id="cb31-5"><a href="3-6-vetores.html#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]   1   5   3 -10</span></span>
+<span id="cb31-6"><a href="3-6-vetores.html#cb31-6" aria-hidden="true" tabindex="-1"></a>vetor2</span>
+<span id="cb31-7"><a href="3-6-vetores.html#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</span></span></code></pre></div>
 <p>Os objetos <code>vetor1</code> e <code>vetor2</code> são vetores.</p>
 <p>Uma maneira fácil de criar um vetor com uma sequência de números é utilizar o operador <code>:</code>.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="3-6-vetores.html#cb32-1"></a><span class="co"># Vetor de 1 a 10</span></span>
-<span id="cb32-2"><a href="3-6-vetores.html#cb32-2"></a><span class="dv">1</span><span class="op">:</span><span class="dv">10</span></span>
-<span id="cb32-3"><a href="3-6-vetores.html#cb32-3"></a><span class="co">##  [1]  1  2  3  4  5  6  7  8  9 10</span></span>
-<span id="cb32-4"><a href="3-6-vetores.html#cb32-4"></a></span>
-<span id="cb32-5"><a href="3-6-vetores.html#cb32-5"></a><span class="co"># Vetor de 10 a 1</span></span>
-<span id="cb32-6"><a href="3-6-vetores.html#cb32-6"></a><span class="dv">10</span><span class="op">:</span><span class="dv">1</span></span>
-<span id="cb32-7"><a href="3-6-vetores.html#cb32-7"></a><span class="co">##  [1] 10  9  8  7  6  5  4  3  2  1</span></span>
-<span id="cb32-8"><a href="3-6-vetores.html#cb32-8"></a></span>
-<span id="cb32-9"><a href="3-6-vetores.html#cb32-9"></a><span class="co"># Vetor de -3 a 3</span></span>
-<span id="cb32-10"><a href="3-6-vetores.html#cb32-10"></a><span class="dv">-3</span><span class="op">:</span><span class="dv">3</span></span>
-<span id="cb32-11"><a href="3-6-vetores.html#cb32-11"></a><span class="co">## [1] -3 -2 -1  0  1  2  3</span></span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="3-6-vetores.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vetor de 1 a 10</span></span>
+<span id="cb32-2"><a href="3-6-vetores.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb32-3"><a href="3-6-vetores.html#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1]  1  2  3  4  5  6  7  8  9 10</span></span>
+<span id="cb32-4"><a href="3-6-vetores.html#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="3-6-vetores.html#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Vetor de 10 a 1</span></span>
+<span id="cb32-6"><a href="3-6-vetores.html#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span><span class="sc">:</span><span class="dv">1</span></span>
+<span id="cb32-7"><a href="3-6-vetores.html#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 10  9  8  7  6  5  4  3  2  1</span></span>
+<span id="cb32-8"><a href="3-6-vetores.html#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="3-6-vetores.html#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Vetor de -3 a 3</span></span>
+<span id="cb32-10"><a href="3-6-vetores.html#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">3</span><span class="sc">:</span><span class="dv">3</span></span>
+<span id="cb32-11"><a href="3-6-vetores.html#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] -3 -2 -1  0  1  2  3</span></span></code></pre></div>
 <p>Quando dizemos que vetores são conjuntos <em>indexados</em>, isso quer dizer que cada valor dentro de um vetor tem uma <strong>posição</strong>. Essa posição é dada pela ordem em que os elementos foram colocados no momento em que o vetor foi criado. Isso nos permite acessar individualmente cada valor de um vetor.</p>
 <p>Para isso, colocamos o índice do valor que queremos acessar dentro de colchetes <code>[]</code>.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="3-6-vetores.html#cb33-1"></a>vetor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>)</span>
-<span id="cb33-2"><a href="3-6-vetores.html#cb33-2"></a></span>
-<span id="cb33-3"><a href="3-6-vetores.html#cb33-3"></a>vetor[<span class="dv">1</span>]</span>
-<span id="cb33-4"><a href="3-6-vetores.html#cb33-4"></a><span class="co">## [1] &quot;a&quot;</span></span>
-<span id="cb33-5"><a href="3-6-vetores.html#cb33-5"></a>vetor[<span class="dv">2</span>]</span>
-<span id="cb33-6"><a href="3-6-vetores.html#cb33-6"></a><span class="co">## [1] &quot;b&quot;</span></span>
-<span id="cb33-7"><a href="3-6-vetores.html#cb33-7"></a>vetor[<span class="dv">3</span>]</span>
-<span id="cb33-8"><a href="3-6-vetores.html#cb33-8"></a><span class="co">## [1] &quot;c&quot;</span></span>
-<span id="cb33-9"><a href="3-6-vetores.html#cb33-9"></a>vetor[<span class="dv">4</span>]</span>
-<span id="cb33-10"><a href="3-6-vetores.html#cb33-10"></a><span class="co">## [1] &quot;d&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="3-6-vetores.html#cb33-1" aria-hidden="true" tabindex="-1"></a>vetor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>)</span>
+<span id="cb33-2"><a href="3-6-vetores.html#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="3-6-vetores.html#cb33-3" aria-hidden="true" tabindex="-1"></a>vetor[<span class="dv">1</span>]</span>
+<span id="cb33-4"><a href="3-6-vetores.html#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;a&quot;</span></span>
+<span id="cb33-5"><a href="3-6-vetores.html#cb33-5" aria-hidden="true" tabindex="-1"></a>vetor[<span class="dv">2</span>]</span>
+<span id="cb33-6"><a href="3-6-vetores.html#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;b&quot;</span></span>
+<span id="cb33-7"><a href="3-6-vetores.html#cb33-7" aria-hidden="true" tabindex="-1"></a>vetor[<span class="dv">3</span>]</span>
+<span id="cb33-8"><a href="3-6-vetores.html#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;c&quot;</span></span>
+<span id="cb33-9"><a href="3-6-vetores.html#cb33-9" aria-hidden="true" tabindex="-1"></a>vetor[<span class="dv">4</span>]</span>
+<span id="cb33-10"><a href="3-6-vetores.html#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;d&quot;</span></span></code></pre></div>
 <p>Você também pode colocar um conjunto de índices dentro dos colchetes, para pegar os valores contidos nessas posições:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="3-6-vetores.html#cb34-1"></a>vetor[<span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)]</span>
-<span id="cb34-2"><a href="3-6-vetores.html#cb34-2"></a><span class="co">## [1] &quot;b&quot; &quot;c&quot;</span></span>
-<span id="cb34-3"><a href="3-6-vetores.html#cb34-3"></a>vetor[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>)]</span>
-<span id="cb34-4"><a href="3-6-vetores.html#cb34-4"></a><span class="co">## [1] &quot;a&quot; &quot;b&quot; &quot;d&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="3-6-vetores.html#cb34-1" aria-hidden="true" tabindex="-1"></a>vetor[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)]</span>
+<span id="cb34-2"><a href="3-6-vetores.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;b&quot; &quot;c&quot;</span></span>
+<span id="cb34-3"><a href="3-6-vetores.html#cb34-3" aria-hidden="true" tabindex="-1"></a>vetor[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>)]</span>
+<span id="cb34-4"><a href="3-6-vetores.html#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;a&quot; &quot;b&quot; &quot;d&quot;</span></span></code></pre></div>
 <p>Essa operação é conhecida como <em>subsetting</em>, pois estamos pegando subconjuntos de valores de um vetor.</p>
 <p>Se você tentar acessar uma posição do vetor que não existe, ele retornará <code>NA</code>, indicando que esse valor não existe. Discutiremos o que são <code>NA</code>’s na Seção <a href="3-8-valoresEspeciais.html#valoresEspeciais">3.8</a>.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="3-6-vetores.html#cb35-1"></a>vetor[<span class="dv">5</span>]</span>
-<span id="cb35-2"><a href="3-6-vetores.html#cb35-2"></a><span class="co">## [1] NA</span></span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="3-6-vetores.html#cb35-1" aria-hidden="true" tabindex="-1"></a>vetor[<span class="dv">5</span>]</span>
+<span id="cb35-2"><a href="3-6-vetores.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] NA</span></span></code></pre></div>
 <p>Um vetor só pode guardar um tipo de objeto e ele terá sempre a mesma classe dos objetos que guarda. Para saber a classe de um vetor, rodamos <code>class(nome-do-vetor)</code>.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="3-6-vetores.html#cb36-1"></a>vetor1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">-10</span>)</span>
-<span id="cb36-2"><a href="3-6-vetores.html#cb36-2"></a>vetor2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
-<span id="cb36-3"><a href="3-6-vetores.html#cb36-3"></a></span>
-<span id="cb36-4"><a href="3-6-vetores.html#cb36-4"></a><span class="kw">class</span>(vetor1)</span>
-<span id="cb36-5"><a href="3-6-vetores.html#cb36-5"></a><span class="co">## [1] &quot;numeric&quot;</span></span>
-<span id="cb36-6"><a href="3-6-vetores.html#cb36-6"></a><span class="kw">class</span>(vetor2)</span>
-<span id="cb36-7"><a href="3-6-vetores.html#cb36-7"></a><span class="co">## [1] &quot;character&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="3-6-vetores.html#cb36-1" aria-hidden="true" tabindex="-1"></a>vetor1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="sc">-</span><span class="dv">10</span>)</span>
+<span id="cb36-2"><a href="3-6-vetores.html#cb36-2" aria-hidden="true" tabindex="-1"></a>vetor2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
+<span id="cb36-3"><a href="3-6-vetores.html#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="3-6-vetores.html#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(vetor1)</span>
+<span id="cb36-5"><a href="3-6-vetores.html#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;numeric&quot;</span></span>
+<span id="cb36-6"><a href="3-6-vetores.html#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(vetor2)</span>
+<span id="cb36-7"><a href="3-6-vetores.html#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;character&quot;</span></span></code></pre></div>
 <p>Se tentarmos misturar duas classes, o R vai apresentar o comportamento conhecido como <strong>coerção</strong>.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="3-6-vetores.html#cb37-1"></a>vetor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">&quot;a&quot;</span>)</span>
-<span id="cb37-2"><a href="3-6-vetores.html#cb37-2"></a></span>
-<span id="cb37-3"><a href="3-6-vetores.html#cb37-3"></a>vetor</span>
-<span id="cb37-4"><a href="3-6-vetores.html#cb37-4"></a><span class="co">## [1] &quot;1&quot; &quot;2&quot; &quot;a&quot;</span></span>
-<span id="cb37-5"><a href="3-6-vetores.html#cb37-5"></a><span class="kw">class</span>(vetor)</span>
-<span id="cb37-6"><a href="3-6-vetores.html#cb37-6"></a><span class="co">## [1] &quot;character&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="3-6-vetores.html#cb37-1" aria-hidden="true" tabindex="-1"></a>vetor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">&quot;a&quot;</span>)</span>
+<span id="cb37-2"><a href="3-6-vetores.html#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="3-6-vetores.html#cb37-3" aria-hidden="true" tabindex="-1"></a>vetor</span>
+<span id="cb37-4"><a href="3-6-vetores.html#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;1&quot; &quot;2&quot; &quot;a&quot;</span></span>
+<span id="cb37-5"><a href="3-6-vetores.html#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(vetor)</span>
+<span id="cb37-6"><a href="3-6-vetores.html#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;character&quot;</span></span></code></pre></div>
 <p>Veja que todos os elementos do vetor se transformaram em texto. Agora temos um vetor com o texto <code>"1"</code>, o texto <code>"2"</code> e o texto <code>"a"</code>. Como um vetor só pode ter uma classe de objeto dentro dele, classes mais fracas serão sempre reprimidas pelas classes mais fortes. Como regra de bolso: caracteres serão sempre a classe mais forte. Então, sempre que você misturar números e texto em um vetor, os números virarão texto.</p>
 <p>Falaremos bastante de coerção nas próximas seções e capítulos, trazendo exemplos de quando ela ajuda e de quando ela atrapalha.</p>
 <p>De forma bastante intuitiva, você pode fazer operações com vetores.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="3-6-vetores.html#cb38-1"></a>vetor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">-3</span>)</span>
-<span id="cb38-2"><a href="3-6-vetores.html#cb38-2"></a>vetor <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
-<span id="cb38-3"><a href="3-6-vetores.html#cb38-3"></a><span class="co">## [1]  1  6 21 -2</span></span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="3-6-vetores.html#cb38-1" aria-hidden="true" tabindex="-1"></a>vetor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">20</span>, <span class="sc">-</span><span class="dv">3</span>)</span>
+<span id="cb38-2"><a href="3-6-vetores.html#cb38-2" aria-hidden="true" tabindex="-1"></a>vetor <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb38-3"><a href="3-6-vetores.html#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  1  6 21 -2</span></span></code></pre></div>
 <p>Ao rodarmos <code>vetor1 + 1</code>, o R subtrai <code>1</code> de cada um dos elementos do vetor. O mesmo acontece com qualquer outra operação aritmética.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="3-6-vetores.html#cb39-1"></a>vetor <span class="op">-</span><span class="st"> </span><span class="dv">1</span></span>
-<span id="cb39-2"><a href="3-6-vetores.html#cb39-2"></a>vetor <span class="op">/</span><span class="st"> </span><span class="dv">2</span></span>
-<span id="cb39-3"><a href="3-6-vetores.html#cb39-3"></a>vetor <span class="op">*</span><span class="st"> </span><span class="dv">10</span></span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="3-6-vetores.html#cb39-1" aria-hidden="true" tabindex="-1"></a>vetor <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb39-2"><a href="3-6-vetores.html#cb39-2" aria-hidden="true" tabindex="-1"></a>vetor <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb39-3"><a href="3-6-vetores.html#cb39-3" aria-hidden="true" tabindex="-1"></a>vetor <span class="sc">*</span> <span class="dv">10</span></span></code></pre></div>
 <p>Você também pode fazer operações que envolvem mais de um vetor:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="3-6-vetores.html#cb40-1"></a>vetor1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb40-2"><a href="3-6-vetores.html#cb40-2"></a>vetor2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>)</span>
-<span id="cb40-3"><a href="3-6-vetores.html#cb40-3"></a></span>
-<span id="cb40-4"><a href="3-6-vetores.html#cb40-4"></a>vetor1  <span class="op">+</span><span class="st"> </span>vetor2</span>
-<span id="cb40-5"><a href="3-6-vetores.html#cb40-5"></a><span class="co">## [1] 11 22 33</span></span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="3-6-vetores.html#cb40-1" aria-hidden="true" tabindex="-1"></a>vetor1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb40-2"><a href="3-6-vetores.html#cb40-2" aria-hidden="true" tabindex="-1"></a>vetor2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>)</span>
+<span id="cb40-3"><a href="3-6-vetores.html#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="3-6-vetores.html#cb40-4" aria-hidden="true" tabindex="-1"></a>vetor1  <span class="sc">+</span> vetor2</span>
+<span id="cb40-5"><a href="3-6-vetores.html#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 11 22 33</span></span></code></pre></div>
 <p>Neste caso, o R irá alinhar os dois vetores e somar elemento a elemento. Esse tipo de comportamento é chamado de <strong>vetorização</strong>. Isso pode ficar um pouco confuso quando os dois vetores não possuem o mesmo tamanho. Tente adivinhar qual será a saída do código a seguir:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="3-6-vetores.html#cb41-1"></a>vetor1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb41-2"><a href="3-6-vetores.html#cb41-2"></a>vetor2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>)</span>
-<span id="cb41-3"><a href="3-6-vetores.html#cb41-3"></a></span>
-<span id="cb41-4"><a href="3-6-vetores.html#cb41-4"></a>vetor1 <span class="op">+</span><span class="st"> </span>vetor2</span>
-<span id="cb41-5"><a href="3-6-vetores.html#cb41-5"></a><span class="co">## [1] 11 22 31 42</span></span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="3-6-vetores.html#cb41-1" aria-hidden="true" tabindex="-1"></a>vetor1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb41-2"><a href="3-6-vetores.html#cb41-2" aria-hidden="true" tabindex="-1"></a>vetor2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>)</span>
+<span id="cb41-3"><a href="3-6-vetores.html#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="3-6-vetores.html#cb41-4" aria-hidden="true" tabindex="-1"></a>vetor1 <span class="sc">+</span> vetor2</span>
+<span id="cb41-5"><a href="3-6-vetores.html#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 11 22 31 42</span></span></code></pre></div>
 <p>Embora estejamos somando dois vetores de tamanho diferentes, o R não devolve um erro (o que parecia ser a resposta mais intuitiva). O R alinhou os dois vetores e, como eles não possuíam o mesmo tamanho, o primeiro foi repetido para ficar do mesmo tamanho do segundo. É como se o primeiro vetor fosse na verdade <code>c(1, 2, 1, 2)</code>. Esse comportamento é chamado de <strong>reciclagem</strong>.</p>
 <p>Embora contra-intuitiva, a reciclagem é muito útil no R graças a um caso particular muito importante. Quando somamos <code>vetor + 1</code> no nosso primeiro exemplo, o que o R está fazendo por trás é transformando o <code>1</code> em <code>c(1, 1, 1, 1)</code> e realizando a soma vetorizada <code>c(0, 5, 20, -3) + c(1, 1, 1, 1)</code>. Isso porque o número <code>1</code> nada mais é do que um vetor de tamanho 1, isto é, <code>1</code> é igual a <code>c(1)</code>.</p>
 <p>Usaremos esse comportamento no R o tempo todo e é muito importante a reciclagem para termos certeza de que o R está fazendo exatamente aquilo que gostaríamos que ele fizesse.</p>
 <p>Um outro caso interessante de reciclagem é quando o comprimento dos vetores não são múltiplos um do outro.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="3-6-vetores.html#cb42-1"></a>vetor1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb42-2"><a href="3-6-vetores.html#cb42-2"></a>vetor2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>)</span>
-<span id="cb42-3"><a href="3-6-vetores.html#cb42-3"></a></span>
-<span id="cb42-4"><a href="3-6-vetores.html#cb42-4"></a>vetor1 <span class="op">+</span><span class="st"> </span>vetor2</span>
-<span id="cb42-5"><a href="3-6-vetores.html#cb42-5"></a><span class="co">## Warning in vetor1 + vetor2: longer object length is not a multiple of shorter</span></span>
-<span id="cb42-6"><a href="3-6-vetores.html#cb42-6"></a><span class="co">## object length</span></span>
-<span id="cb42-7"><a href="3-6-vetores.html#cb42-7"></a><span class="co">## [1] 11 22 33 41 52</span></span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="3-6-vetores.html#cb42-1" aria-hidden="true" tabindex="-1"></a>vetor1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb42-2"><a href="3-6-vetores.html#cb42-2" aria-hidden="true" tabindex="-1"></a>vetor2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>)</span>
+<span id="cb42-3"><a href="3-6-vetores.html#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="3-6-vetores.html#cb42-4" aria-hidden="true" tabindex="-1"></a>vetor1 <span class="sc">+</span> vetor2</span>
+<span id="cb42-5"><a href="3-6-vetores.html#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Warning in vetor1 + vetor2: longer object length is not a multiple of shorter</span></span>
+<span id="cb42-6"><a href="3-6-vetores.html#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="do">## object length</span></span>
+<span id="cb42-7"><a href="3-6-vetores.html#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 11 22 33 41 52</span></span></code></pre></div>
 <p>Neste caso, duas coisas aconteceram:</p>
 <ol style="list-style-type: decimal">
 <li><p>O R realizou a conta, repetindo cada valor do primeiro vetor até que os dois tenham o mesmo tamanho. No fundo, a operação realizada foi <code>c(1, 2, 3, 1, 2) + c(10, 20, 30, 40, 50)</code>.</p></li>
@@ -506,7 +566,7 @@ um novo objeto chamado <code>vetor_negativo</code>.</p></li>
 <p><strong>5.</strong> Por que a coerção pode ser um problema na hora de importarmos bases de dados para o R?</p>
 <p><strong>6.</strong> Use a função <code>sum()</code> para somar os valores de 1 a 100.</p>
 <p><strong>7.</strong> Considere o vetor booleano a seguir:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="3-6-vetores.html#cb43-1"></a>dolar_subiu &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="3-6-vetores.html#cb43-1" aria-hidden="true" tabindex="-1"></a>dolar_subiu <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>Este vetor tem informação de uma semana (7 dias, começando no domingo) indicando se o dólar subiu (TRUE) ou não subiu (FALSE) no respectivo dia. Interprete o resultado dos códigos abaixo:</p>
 <ul>
 <li><p><strong>a.</strong> <code>length(dolar_subiu)</code></p></li>

@@ -32,6 +32,7 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="12-respostas.html"/>
 <link rel="next" href="12-2-importação.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,7 +50,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
@@ -75,18 +75,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -106,7 +106,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -156,14 +156,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre</a></li>
-<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a><ul>
-<li class="chapter" data-level="1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
+<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
 <li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
-<li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a><ul>
+<li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
 <li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
 <li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
@@ -172,7 +175,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#rtools"><i class="fa fa-check"></i><b>1.3.6</b> Rtools</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a><ul>
+<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="2-1-telas.html"><a href="2-1-telas.html"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
 <li class="chapter" data-level="2.2" data-path="2-2-atalhos.html"><a href="2-2-atalhos.html"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
 <li class="chapter" data-level="2.3" data-path="2-3-projetos.html"><a href="2-3-projetos.html"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
@@ -181,60 +185,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="2-6-addins.html"><a href="2-6-addins.html"><i class="fa fa-check"></i><b>2.6</b> Addins</a></li>
 <li class="chapter" data-level="2.7" data-path="2-7-snippets.html"><a href="2-7-snippets.html"><i class="fa fa-check"></i><b>2.7</b> Snippets</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a><ul>
-<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a><ul>
+<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
 <li class="chapter" data-level="3.1.2" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
 <li class="chapter" data-level="3.1.3" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
+<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a><ul>
+<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="3-4-data-frames.html"><a href="3-4-data-frames.html"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
-<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a><ul>
+<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a>
+<ul>
 <li class="chapter" data-level="3.5.1" data-path="3-5-classes.html"><a href="3-5-classes.html#exercícios-2"><i class="fa fa-check"></i><b>3.5.1</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a><ul>
+<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-6-vetores.html"><a href="3-6-vetores.html#exercícios-3"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a><ul>
+<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html#exercícios-4"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a><ul>
+<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.9" data-path="3-9-listas.html"><a href="3-9-listas.html"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
-<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
+<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html#exercícios-6"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a><ul>
+<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html#exercícios-7"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
+<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a>
+<ul>
 <li class="chapter" data-level="3.12.1" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
 <li class="chapter" data-level="3.12.2" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#iteradores-for-e-while"><i class="fa fa-check"></i><b>3.12.2</b> Iteradores: for e while</a></li>
 <li class="chapter" data-level="" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#exercícios-8"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a><ul>
+<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a>
+<ul>
 <li class="chapter" data-level="3.13.1" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#matrizes"><i class="fa fa-check"></i><b>3.13.1</b> Matrizes</a></li>
 <li class="chapter" data-level="3.13.2" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#fatores"><i class="fa fa-check"></i><b>3.13.2</b> Fatores</a></li>
 <li class="chapter" data-level="3.13.3" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#gráficos-r-base"><i class="fa fa-check"></i><b>3.13.3</b> Gráficos (R base)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a><ul>
-<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a><ul>
+<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-cran"><i class="fa fa-check"></i><b>4.1.1</b> Via CRAN</a></li>
 <li class="chapter" data-level="4.1.2" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-github"><i class="fa fa-check"></i><b>4.1.2</b> Via Github</a></li>
 <li class="chapter" data-level="4.1.3" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-arquivo-.zip-ou-.tar.gz"><i class="fa fa-check"></i><b>4.1.3</b> Via arquivo .zip ou .tar.gz</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="4-2-tidyverse.html"><a href="4-2-tidyverse.html"><i class="fa fa-check"></i><b>4.2</b> Tidyverse</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a><ul>
+<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="5-1-caminhos.html"><a href="5-1-caminhos.html"><i class="fa fa-check"></i><b>5.1</b> Caminhos</a></li>
-<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a><ul>
+<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="5-2-readr.html"><a href="5-2-readr.html#lendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.1</b> Lendo arquivos de texto</a></li>
 <li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.2</b> Locale</a></li>
 <li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.3</b> Parseando valores</a></li>
@@ -245,15 +265,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3" data-path="5-3-readxl.html"><a href="5-3-readxl.html"><i class="fa fa-check"></i><b>5.3</b> Os pacotes readxl e writexl</a></li>
 <li class="chapter" data-level="5.4" data-path="5-4-haven.html"><a href="5-4-haven.html"><i class="fa fa-check"></i><b>5.4</b> haven</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
-<li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a><ul>
+<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a>
+<ul>
 <li class="chapter" data-level="" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html#exercícios-10"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
+<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="7-1-tibbles.html"><a href="7-1-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Tibbles</a></li>
-<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a><ul>
+<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#selecionando-colunas"><i class="fa fa-check"></i><b>7.2.1</b> Selecionando colunas</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#ordenando-a-base"><i class="fa fa-check"></i><b>7.2.2</b> Ordenando a base</a></li>
 <li class="chapter" data-level="7.2.3" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#o-pipe-em-ação"><i class="fa fa-check"></i><b>7.2.3</b> O pipe em ação</a></li>
@@ -263,27 +287,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.7" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#juntando-duas-bases"><i class="fa fa-check"></i><b>7.2.7</b> Juntando duas bases</a></li>
 <li class="chapter" data-level="7.2.8" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#dplyr-1.0"><i class="fa fa-check"></i><b>7.2.8</b> dplyr 1.0</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a><ul>
+<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#separate-e-unite"><i class="fa fa-check"></i><b>7.3.1</b> <code>separate()</code> e <code>unite()</code></a></li>
 <li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#pivotagem"><i class="fa fa-check"></i><b>7.3.2</b> Pivotagem</a></li>
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#list-columns"><i class="fa fa-check"></i><b>7.3.3</b> <em>List columns</em></a></li>
 <li class="chapter" data-level="7.3.4" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#exercícios-18"><i class="fa fa-check"></i><b>7.3.4</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a><ul>
+<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a>
+<ul>
 <li class="chapter" data-level="7.4.1" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#introdução"><i class="fa fa-check"></i><b>7.4.1</b> Introdução</a></li>
 <li class="chapter" data-level="7.4.2" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-básicas"><i class="fa fa-check"></i><b>7.4.2</b> Funções básicas</a></li>
 <li class="chapter" data-level="7.4.3" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#expressões-regulares"><i class="fa fa-check"></i><b>7.4.3</b> Expressões Regulares</a></li>
 <li class="chapter" data-level="7.4.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-que-utilizam-regex"><i class="fa fa-check"></i><b>7.4.4</b> Funções que utilizam regex</a></li>
 <li class="chapter" data-level="7.4.5" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#exercícios-19"><i class="fa fa-check"></i><b>7.4.5</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.5</b> O pacote lubridate</a><ul>
+<li class="chapter" data-level="7.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.5</b> O pacote lubridate</a>
+<ul>
 <li class="chapter" data-level="7.5.1" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#a-classe-date"><i class="fa fa-check"></i><b>7.5.1</b> A classe <code>date</code></a></li>
 <li class="chapter" data-level="7.5.2" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#funções-úteis"><i class="fa fa-check"></i><b>7.5.2</b> Funções úteis</a></li>
 <li class="chapter" data-level="7.5.3" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#fusos-horários"><i class="fa fa-check"></i><b>7.5.3</b> Fusos horários</a></li>
 <li class="chapter" data-level="7.5.4" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#operações-com-datas"><i class="fa fa-check"></i><b>7.5.4</b> Operações com datas</a></li>
 <li class="chapter" data-level="7.5.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#exercícios-20"><i class="fa fa-check"></i><b>7.5.5</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="7-6-forcats.html"><a href="7-6-forcats.html"><i class="fa fa-check"></i><b>7.6</b> O pacote forcats</a><ul>
+<li class="chapter" data-level="7.6" data-path="7-6-forcats.html"><a href="7-6-forcats.html"><i class="fa fa-check"></i><b>7.6</b> O pacote forcats</a>
+<ul>
 <li class="chapter" data-level="7.6.1" data-path="7-6-forcats.html"><a href="7-6-forcats.html#o-que-são-fatores"><i class="fa fa-check"></i><b>7.6.1</b> O que são fatores?</a></li>
 <li class="chapter" data-level="7.6.2" data-path="7-6-forcats.html"><a href="7-6-forcats.html#modificando-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.2</b> Modificando níveis de um fator</a></li>
 <li class="chapter" data-level="7.6.3" data-path="7-6-forcats.html"><a href="7-6-forcats.html#mudando-a-ordem-dos-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.3</b> Mudando a ordem dos níveis de um fator</a></li>
@@ -291,8 +319,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.6.5" data-path="7-6-forcats.html"><a href="7-6-forcats.html#outras-funções-úteis"><i class="fa fa-check"></i><b>7.6.5</b> Outras funções úteis</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a><ul>
-<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a><ul>
+<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-pontos-dispersão"><i class="fa fa-check"></i><b>8.1.1</b> Gráficos de pontos (dispersão)</a></li>
 <li class="chapter" data-level="8.1.2" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-linhas"><i class="fa fa-check"></i><b>8.1.2</b> Gráficos de linhas</a></li>
 <li class="chapter" data-level="8.1.3" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-barras"><i class="fa fa-check"></i><b>8.1.3</b> Gráficos de barras</a></li>
@@ -303,13 +333,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.8" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>8.1.8</b> Juntando gráficos</a></li>
 <li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-21"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a><ul>
+<li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a>
+<ul>
 <li class="chapter" data-level="8.2.1" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#gghighlight"><i class="fa fa-check"></i><b>8.2.1</b> gghighlight</a></li>
 <li class="chapter" data-level="8.2.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#ggridges"><i class="fa fa-check"></i><b>8.2.2</b> ggridges</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="9-relatorios.html"><a href="9-relatorios.html"><i class="fa fa-check"></i><b>9</b> Relatórios</a><ul>
-<li class="chapter" data-level="9.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html"><i class="fa fa-check"></i><b>9.1</b> Markdown</a><ul>
+<li class="chapter" data-level="9" data-path="9-relatorios.html"><a href="9-relatorios.html"><i class="fa fa-check"></i><b>9</b> Relatórios</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html"><i class="fa fa-check"></i><b>9.1</b> Markdown</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html#ênfase"><i class="fa fa-check"></i><b>9.1.1</b> Ênfase</a></li>
 <li class="chapter" data-level="9.1.2" data-path="9-1-markdown.html"><a href="9-1-markdown.html#títulos"><i class="fa fa-check"></i><b>9.1.2</b> Títulos</a></li>
 <li class="chapter" data-level="9.1.3" data-path="9-1-markdown.html"><a href="9-1-markdown.html#listas-1"><i class="fa fa-check"></i><b>9.1.3</b> Listas</a></li>
@@ -321,7 +354,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1.9" data-path="9-1-markdown.html"><a href="9-1-markdown.html#recapitulando"><i class="fa fa-check"></i><b>9.1.9</b> Recapitulando</a></li>
 <li class="chapter" data-level="" data-path="9-1-markdown.html"><a href="9-1-markdown.html#exercicios-md"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a><ul>
+<li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a>
+<ul>
 <li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#códigos-em-r"><i class="fa fa-check"></i><b>9.2.1</b> Códigos em R</a></li>
 <li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#imagens-1"><i class="fa fa-check"></i><b>9.2.2</b> Imagens</a></li>
 <li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#tabelas-1"><i class="fa fa-check"></i><b>9.2.3</b> Tabelas</a></li>
@@ -329,17 +363,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="10-funcionais.html"><a href="10-funcionais.html"><i class="fa fa-check"></i><b>10</b> Funcionais</a></li>
-<li class="chapter" data-level="11" data-path="11-misc.html"><a href="11-misc.html"><i class="fa fa-check"></i><b>11</b> Miscelânea</a><ul>
-<li class="chapter" data-level="11.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>11.1</b> Arrumando banco de dados: o pacote janitor</a><ul>
+<li class="chapter" data-level="10" data-path="10-funcionais.html"><a href="10-funcionais.html"><i class="fa fa-check"></i><b>10</b> Programação funcional (purrr)</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="10-1-iterações-básicas.html"><a href="10-1-iterações-básicas.html"><i class="fa fa-check"></i><b>10.1</b> Iterações básicas</a></li>
+<li class="chapter" data-level="10.2" data-path="10-2-iterações-intermediárias.html"><a href="10-2-iterações-intermediárias.html"><i class="fa fa-check"></i><b>10.2</b> Iterações intermediárias</a></li>
+<li class="chapter" data-level="10.3" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html"><i class="fa fa-check"></i><b>10.3</b> Iterações avançadas</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#iterações-com-condicionais"><i class="fa fa-check"></i><b>10.3.1</b> Iterações com condicionais</a></li>
+<li class="chapter" data-level="10.3.2" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#iterações-com-tabelas-e-funções"><i class="fa fa-check"></i><b>10.3.2</b> Iterações com tabelas e funções</a></li>
+<li class="chapter" data-level="10.3.3" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#redução-e-acúmulo"><i class="fa fa-check"></i><b>10.3.3</b> Redução e acúmulo</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html"><i class="fa fa-check"></i><b>10.4</b> Miscelânea</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#manter-e-descartar"><i class="fa fa-check"></i><b>10.4.1</b> Manter e descartar</a></li>
+<li class="chapter" data-level="10.4.2" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#a-família-is"><i class="fa fa-check"></i><b>10.4.2</b> A família <code>is</code></a></li>
+<li class="chapter" data-level="10.4.3" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#andar-e-modificar"><i class="fa fa-check"></i><b>10.4.3</b> Andar e modificar</a></li>
+<li class="chapter" data-level="10.4.4" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#transposição-e-indexação-profunda"><i class="fa fa-check"></i><b>10.4.4</b> Transposição e indexação profunda</a></li>
+<li class="chapter" data-level="10.4.5" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#aplicação-parcial"><i class="fa fa-check"></i><b>10.4.5</b> Aplicação parcial</a></li>
+<li class="chapter" data-level="10.4.6" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#execução-segura"><i class="fa fa-check"></i><b>10.4.6</b> Execução segura</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="11-misc.html"><a href="11-misc.html"><i class="fa fa-check"></i><b>11</b> Miscelânea</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>11.1</b> Arrumando banco de dados: o pacote janitor</a>
+<ul>
 <li class="chapter" data-level="11.1.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#arrumando-o-nome-das-variáveis"><i class="fa fa-check"></i><b>11.1.1</b> Arrumando o nome das variáveis</a></li>
 <li class="chapter" data-level="11.1.2" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#removendo-linhas-e-colunas-vazias"><i class="fa fa-check"></i><b>11.1.2</b> Removendo linhas e colunas vazias</a></li>
 <li class="chapter" data-level="11.1.3" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#identificando-linhas-duplicadas"><i class="fa fa-check"></i><b>11.1.3</b> Identificando linhas duplicadas</a></li>
 <li class="chapter" data-level="11.1.4" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>11.1.4</b> Outras funções</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="12-respostas.html"><a href="12-respostas.html"><i class="fa fa-check"></i><b>12</b> Respostas</a><ul>
-<li class="chapter" data-level="12.1" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html"><i class="fa fa-check"></i><b>12.1</b> R básico</a><ul>
+<li class="chapter" data-level="12" data-path="12-respostas.html"><a href="12-respostas.html"><i class="fa fa-check"></i><b>12</b> Respostas</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html"><i class="fa fa-check"></i><b>12.1</b> R básico</a>
+<ul>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#objetos-e-funções"><i class="fa fa-check"></i>Objetos e funções</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#classes-1"><i class="fa fa-check"></i>Classes</a></li>
@@ -350,11 +407,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i>Mais sobre funções</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#controle-de-fluxo-1"><i class="fa fa-check"></i>Controle de fluxo</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="12-2-importação.html"><a href="12-2-importação.html"><i class="fa fa-check"></i><b>12.2</b> Importação</a><ul>
+<li class="chapter" data-level="12.2" data-path="12-2-importação.html"><a href="12-2-importação.html"><i class="fa fa-check"></i><b>12.2</b> Importação</a>
+<ul>
 <li class="chapter" data-level="" data-path="12-2-importação.html"><a href="12-2-importação.html#o-pacote-readr"><i class="fa fa-check"></i>O pacote readr</a></li>
 </ul></li>
 <li class="chapter" data-level="12.3" data-path="12-3-pipe-1.html"><a href="12-3-pipe-1.html"><i class="fa fa-check"></i><b>12.3</b> Pipe</a></li>
-<li class="chapter" data-level="12.4" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>12.4</b> O pacote dplyr</a><ul>
+<li class="chapter" data-level="12.4" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>12.4</b> O pacote dplyr</a>
+<ul>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#selecionando-colunas-1"><i class="fa fa-check"></i>Selecionando colunas</a></li>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#ordenando-a-base-1"><i class="fa fa-check"></i>Ordenando a base</a></li>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#filtrando-linhas-1"><i class="fa fa-check"></i>Filtrando linhas</a></li>
@@ -366,7 +425,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.6" data-path="12-6-o-pacote-lubridate-1.html"><a href="12-6-o-pacote-lubridate-1.html"><i class="fa fa-check"></i><b>12.6</b> O pacote lubridate</a></li>
 <li class="chapter" data-level="12.7" data-path="12-7-o-pacote-ggplot2-1.html"><a href="12-7-o-pacote-ggplot2-1.html"><i class="fa fa-check"></i><b>12.7</b> O pacote ggplot2</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a>
+<ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i>Programação em R</a></li>
 </ul></li>
@@ -390,7 +450,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="r-básico" class="section level2">
+<div id="r-básico" class="section level2" number="12.1">
 <h2><span class="header-section-number">12.1</span> R básico</h2>
 <div id="r-como-calculadora-1" class="section level3 unnumbered">
 <h3>R como calculadora</h3>
@@ -404,10 +464,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>Não. Um código em R é interpretado linha a linha, isto é, podemos ir rodando nosso código parcialmente, conforme vamos escrevendo.</em></p>
 <hr />
 <p><strong>4.</strong> Calcule o número de ouro no R. Dica: o número de ouro é dado pela expressão <span class="math inline">\(\frac{1 + \sqrt{5}}{2}\)</span>.</p>
-<div class="sourceCode" id="cb593"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb593-1"><a href="12-1-r-básico.html#cb593-1"></a>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">5</span><span class="op">^</span>(<span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="dv">2</span>))<span class="op">/</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb660"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb660-1"><a href="12-1-r-básico.html#cb660-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">+</span> <span class="dv">5</span><span class="sc">^</span>(<span class="dv">1</span> <span class="sc">/</span> <span class="dv">2</span>))<span class="sc">/</span><span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] 1.618034</code></pre>
 <p><em>Também poderia ser resolvido usando a função <code>sqrt()</code> para calcular a raiz quadrada.</em></p>
-<div class="sourceCode" id="cb595"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb595-1"><a href="12-1-r-básico.html#cb595-1"></a>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">5</span>))<span class="op">/</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb662"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb662-1"><a href="12-1-r-básico.html#cb662-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">sqrt</span>(<span class="dv">5</span>))<span class="sc">/</span><span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] 1.618034</code></pre>
 <hr />
 <p><strong>5.</strong> Por que é preferível escrevermos sempre o nosso código no <em>script</em> e não no <em>Console</em>?</p>
@@ -416,111 +476,111 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="objetos-e-funções" class="section level3 unnumbered">
 <h3>Objetos e funções</h3>
 <p><strong>1.</strong> Qual a diferença entre os códigos abaixo?</p>
-<div class="sourceCode" id="cb597"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb597-1"><a href="12-1-r-básico.html#cb597-1"></a><span class="co"># Código 1</span></span>
-<span id="cb597-2"><a href="12-1-r-básico.html#cb597-2"></a><span class="dv">33</span> <span class="op">/</span><span class="st"> </span><span class="dv">11</span></span>
-<span id="cb597-3"><a href="12-1-r-básico.html#cb597-3"></a></span>
-<span id="cb597-4"><a href="12-1-r-básico.html#cb597-4"></a><span class="co"># Código 2</span></span>
-<span id="cb597-5"><a href="12-1-r-básico.html#cb597-5"></a>divisao &lt;-<span class="st"> </span><span class="dv">33</span> <span class="op">/</span><span class="st"> </span><span class="dv">11</span></span></code></pre></div>
+<div class="sourceCode" id="cb664"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb664-1"><a href="12-1-r-básico.html#cb664-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Código 1</span></span>
+<span id="cb664-2"><a href="12-1-r-básico.html#cb664-2" aria-hidden="true" tabindex="-1"></a><span class="dv">33</span> <span class="sc">/</span> <span class="dv">11</span></span>
+<span id="cb664-3"><a href="12-1-r-básico.html#cb664-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb664-4"><a href="12-1-r-básico.html#cb664-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Código 2</span></span>
+<span id="cb664-5"><a href="12-1-r-básico.html#cb664-5" aria-hidden="true" tabindex="-1"></a>divisao <span class="ot">&lt;-</span> <span class="dv">33</span> <span class="sc">/</span> <span class="dv">11</span></span></code></pre></div>
 <p><em>O primeiro código calcula a divisão de 33 por 11 e devolve o resultado na tela. O segundo código faz o mesmo cálculo, mas guardo o resultado no objeto <code>divisao</code>, isto é, o resultado não é retornado na tela.</em></p>
 <hr />
 <p><strong>2.</strong> Multiplique a sua idade por meses e salve o resultado em um objeto chamado <code>idade_em_meses</code>. Em seguida, multiplique esse objeto por 30 e salve o resultado em um objeto chamado <code>idade_em_dias</code>.</p>
-<div class="sourceCode" id="cb598"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb598-1"><a href="12-1-r-básico.html#cb598-1"></a>idade_em_meses &lt;-<span class="st"> </span><span class="dv">31</span> <span class="op">*</span><span class="st"> </span><span class="dv">12</span></span>
-<span id="cb598-2"><a href="12-1-r-básico.html#cb598-2"></a></span>
-<span id="cb598-3"><a href="12-1-r-básico.html#cb598-3"></a>idade_em_dias &lt;-<span class="st"> </span>idade_em_meses <span class="op">*</span><span class="st"> </span><span class="dv">30</span></span></code></pre></div>
+<div class="sourceCode" id="cb665"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb665-1"><a href="12-1-r-básico.html#cb665-1" aria-hidden="true" tabindex="-1"></a>idade_em_meses <span class="ot">&lt;-</span> <span class="dv">31</span> <span class="sc">*</span> <span class="dv">12</span></span>
+<span id="cb665-2"><a href="12-1-r-básico.html#cb665-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb665-3"><a href="12-1-r-básico.html#cb665-3" aria-hidden="true" tabindex="-1"></a>idade_em_dias <span class="ot">&lt;-</span> idade_em_meses <span class="sc">*</span> <span class="dv">30</span></span></code></pre></div>
 <hr />
 <p><strong>3.</strong> Por que o nome <code>meu-objeto</code> não pode ser utilizado para criar um objeto? O que significa a mensagem de erro resultante?</p>
-<div class="sourceCode" id="cb599"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb599-1"><a href="12-1-r-básico.html#cb599-1"></a>meu<span class="op">-</span>objeto &lt;-<span class="st"> </span><span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb666"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb666-1"><a href="12-1-r-básico.html#cb666-1" aria-hidden="true" tabindex="-1"></a>meu<span class="sc">-</span>objeto <span class="ot">&lt;-</span> <span class="dv">1</span></span></code></pre></div>
 <pre><code>## Error in meu - objeto &lt;- 1: object &#39;meu&#39; not found</code></pre>
 <p><em>Porque o sinal <code>-</code> é utilizado pelo R como o operador de subtração. O código acima está sendo interpretado como a subtração dos objetos <code>meu</code> e <code>objeto</code>. Como nenhum dos objetos existe na sessão, é devolvido um erro dizendo que o objeto <code>meu</code> (o primeiro deles) não foi encontrado.</em></p>
 <p><em>No entanto, mesmo que os objetos existissem, seria retornado um erro. Neste caso, seria um erro de sintaxe, pois o R não sabe como interpretar a atribuição do valor <code>3</code> à operação <code>meu - objeto</code>. Veja que a mensagem de erro não é muito intuitiva, pois o R entende que <code>-&lt;-</code> é uma função que esquecemos de definir.</em></p>
-<div class="sourceCode" id="cb601"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb601-1"><a href="12-1-r-básico.html#cb601-1"></a>meu &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb601-2"><a href="12-1-r-básico.html#cb601-2"></a>objeto &lt;-<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb601-3"><a href="12-1-r-básico.html#cb601-3"></a>meu<span class="op">-</span>objeto &lt;-<span class="st"> </span><span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb668"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb668-1"><a href="12-1-r-básico.html#cb668-1" aria-hidden="true" tabindex="-1"></a>meu <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb668-2"><a href="12-1-r-básico.html#cb668-2" aria-hidden="true" tabindex="-1"></a>objeto <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb668-3"><a href="12-1-r-básico.html#cb668-3" aria-hidden="true" tabindex="-1"></a>meu<span class="sc">-</span>objeto <span class="ot">&lt;-</span> <span class="dv">1</span></span></code></pre></div>
 <pre><code>## Error in meu - objeto &lt;- 1: could not find function &quot;-&lt;-&quot;</code></pre>
 </div>
 <div id="classes-1" class="section level3 unnumbered">
 <h3>Classes</h3>
 <p><strong>1.</strong> Guarde em um objeto chamado <code>nome</code> uma <em>string</em> contendo o seu nome completo.</p>
-<div class="sourceCode" id="cb603"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb603-1"><a href="12-1-r-básico.html#cb603-1"></a>nome &lt;-<span class="st"> &quot;William Nilson de Amorim&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb670"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb670-1"><a href="12-1-r-básico.html#cb670-1" aria-hidden="true" tabindex="-1"></a>nome <span class="ot">&lt;-</span> <span class="st">&quot;William Nilson de Amorim&quot;</span></span></code></pre></div>
 <hr />
 <p><strong>2.</strong> Guarde em um objeto chamado <code>cidade</code> o nome da cidade onde você mora. Em seguida, guarde em um objeto chamado <code>estado</code> o nome do estado onde você mora. Usando esses objetos, resolva os itens abaixo:</p>
 <p><strong>a.</strong> Utilize a função <code>nchar()</code> para contar o número de caracteres em cada cada string.</p>
-<div class="sourceCode" id="cb604"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb604-1"><a href="12-1-r-básico.html#cb604-1"></a>cidade &lt;-<span class="st"> &quot;São Paulo&quot;</span></span>
-<span id="cb604-2"><a href="12-1-r-básico.html#cb604-2"></a>estado &lt;-<span class="st"> &quot;SP&quot;</span></span>
-<span id="cb604-3"><a href="12-1-r-básico.html#cb604-3"></a></span>
-<span id="cb604-4"><a href="12-1-r-básico.html#cb604-4"></a><span class="kw">nchar</span>(cidade)</span></code></pre></div>
+<div class="sourceCode" id="cb671"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb671-1"><a href="12-1-r-básico.html#cb671-1" aria-hidden="true" tabindex="-1"></a>cidade <span class="ot">&lt;-</span> <span class="st">&quot;São Paulo&quot;</span></span>
+<span id="cb671-2"><a href="12-1-r-básico.html#cb671-2" aria-hidden="true" tabindex="-1"></a>estado <span class="ot">&lt;-</span> <span class="st">&quot;SP&quot;</span></span>
+<span id="cb671-3"><a href="12-1-r-básico.html#cb671-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb671-4"><a href="12-1-r-básico.html#cb671-4" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(cidade)</span></code></pre></div>
 <pre><code>## [1] 9</code></pre>
-<div class="sourceCode" id="cb606"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb606-1"><a href="12-1-r-básico.html#cb606-1"></a><span class="kw">nchar</span>(estado)</span></code></pre></div>
+<div class="sourceCode" id="cb673"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb673-1"><a href="12-1-r-básico.html#cb673-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(estado)</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p><strong>b.</strong> Interprete o resultado do seguinte código:</p>
-<div class="sourceCode" id="cb608"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb608-1"><a href="12-1-r-básico.html#cb608-1"></a><span class="kw">paste</span>(cidade, estado)</span></code></pre></div>
+<div class="sourceCode" id="cb675"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb675-1"><a href="12-1-r-básico.html#cb675-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(cidade, estado)</span></code></pre></div>
 <pre><code>## [1] &quot;São Paulo SP&quot;</code></pre>
 <p><em>A função <code>paste</code> juntou (colou) as duas strings, uma do lado da outra, separando-as por um espaço. O resultado gerado foi uma única string.</em></p>
 <p><strong>c.</strong> Interprete o resultado do seguinte código:</p>
-<div class="sourceCode" id="cb610"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb610-1"><a href="12-1-r-básico.html#cb610-1"></a><span class="kw">paste</span>(cidade, estado, <span class="dt">sep =</span> <span class="st">&quot; - &quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb677"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb677-1"><a href="12-1-r-básico.html#cb677-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(cidade, estado, <span class="at">sep =</span> <span class="st">&quot; - &quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;São Paulo - SP&quot;</code></pre>
 <p><em>O argumento <code>sep</code> da função <code>paste()</code> nos permite escolher qual caracter será utilizado para separar as duas strings. Por padrão será utilizado um espaço em branco <code>" "</code>. No exemplo, foi utilizado um espaço, seguido de um traço, seguido de outro espaço. Sem os espaços o resultado seria:</em></p>
-<div class="sourceCode" id="cb612"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb612-1"><a href="12-1-r-básico.html#cb612-1"></a><span class="kw">paste</span>(cidade, estado, <span class="dt">sep =</span> <span class="st">&quot;-&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb679"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb679-1"><a href="12-1-r-básico.html#cb679-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(cidade, estado, <span class="at">sep =</span> <span class="st">&quot;-&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;São Paulo-SP&quot;</code></pre>
 <p><em>Veja que qualquer caracter ou string pode ser utilizada como separador:</em></p>
-<div class="sourceCode" id="cb614"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb614-1"><a href="12-1-r-básico.html#cb614-1"></a><span class="kw">paste</span>(cidade, estado, <span class="dt">sep =</span> <span class="st">&quot; #tricolor &quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb681"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb681-1"><a href="12-1-r-básico.html#cb681-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(cidade, estado, <span class="at">sep =</span> <span class="st">&quot; #tricolor &quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;São Paulo #tricolor SP&quot;</code></pre>
 <p><strong>d.</strong> Desafio. Como você reproduziria o mesmo resultado do item (c) sem utilizar o argumento <code>sep</code>?</p>
-<div class="sourceCode" id="cb616"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb616-1"><a href="12-1-r-básico.html#cb616-1"></a><span class="kw">paste</span>(cidade, <span class="st">&quot;-&quot;</span>, estado)</span></code></pre></div>
+<div class="sourceCode" id="cb683"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb683-1"><a href="12-1-r-básico.html#cb683-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(cidade, <span class="st">&quot;-&quot;</span>, estado)</span></code></pre></div>
 <pre><code>## [1] &quot;São Paulo - SP&quot;</code></pre>
 <p><strong>e.</strong> Qual a diferença entre as funções <code>paste()</code> e <code>paste0()</code>?</p>
 <p><em>A função <code>paste0()</code> é equivalente à função <code>paste()</code> com o argumento <code>sep = ""</code>.</em></p>
-<div class="sourceCode" id="cb618"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb618-1"><a href="12-1-r-básico.html#cb618-1"></a><span class="kw">paste</span>(cidade, <span class="st">&quot;-&quot;</span>, estado)</span></code></pre></div>
+<div class="sourceCode" id="cb685"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb685-1"><a href="12-1-r-básico.html#cb685-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(cidade, <span class="st">&quot;-&quot;</span>, estado)</span></code></pre></div>
 <pre><code>## [1] &quot;São Paulo - SP&quot;</code></pre>
-<div class="sourceCode" id="cb620"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb620-1"><a href="12-1-r-básico.html#cb620-1"></a><span class="kw">paste</span>(cidade, <span class="st">&quot;-&quot;</span>, estado, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb687"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb687-1"><a href="12-1-r-básico.html#cb687-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(cidade, <span class="st">&quot;-&quot;</span>, estado, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;São Paulo-SP&quot;</code></pre>
-<div class="sourceCode" id="cb622"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb622-1"><a href="12-1-r-básico.html#cb622-1"></a><span class="kw">paste0</span>(cidade, <span class="st">&quot;-&quot;</span>, estado)</span></code></pre></div>
+<div class="sourceCode" id="cb689"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb689-1"><a href="12-1-r-básico.html#cb689-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(cidade, <span class="st">&quot;-&quot;</span>, estado)</span></code></pre></div>
 <pre><code>## [1] &quot;São Paulo-SP&quot;</code></pre>
 </div>
 <div id="vetores-1" class="section level3 unnumbered">
 <h3>Vetores</h3>
 <p><strong>1.</strong> Guarde em um objeto a sequência de números de 0 a 5 e resolva os itens abaixos.</p>
 <p><strong>a.</strong> Use subsetting para fazer o R devolver o primeiro número dessa sequência. Em seguida, faça o R devolver o último número da sequência.</p>
-<div class="sourceCode" id="cb624"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb624-1"><a href="12-1-r-básico.html#cb624-1"></a>vetor &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">5</span></span>
-<span id="cb624-2"><a href="12-1-r-básico.html#cb624-2"></a></span>
-<span id="cb624-3"><a href="12-1-r-básico.html#cb624-3"></a><span class="co"># Primeiro elemento</span></span>
-<span id="cb624-4"><a href="12-1-r-básico.html#cb624-4"></a>vetor[<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb691"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb691-1"><a href="12-1-r-básico.html#cb691-1" aria-hidden="true" tabindex="-1"></a>vetor <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb691-2"><a href="12-1-r-básico.html#cb691-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb691-3"><a href="12-1-r-básico.html#cb691-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Primeiro elemento</span></span>
+<span id="cb691-4"><a href="12-1-r-básico.html#cb691-4" aria-hidden="true" tabindex="-1"></a>vetor[<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
-<div class="sourceCode" id="cb626"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb626-1"><a href="12-1-r-básico.html#cb626-1"></a><span class="co"># Último elemento</span></span>
-<span id="cb626-2"><a href="12-1-r-básico.html#cb626-2"></a>vetor[<span class="dv">6</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb693"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb693-1"><a href="12-1-r-básico.html#cb693-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Último elemento</span></span>
+<span id="cb693-2"><a href="12-1-r-básico.html#cb693-2" aria-hidden="true" tabindex="-1"></a>vetor[<span class="dv">6</span>]</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
 <p><strong>b.</strong> Multiplique todos os valores do vetor por -1. Guarde o resultado em
 um novo objeto chamado <code>vetor_negativo</code>.</p>
-<div class="sourceCode" id="cb628"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb628-1"><a href="12-1-r-básico.html#cb628-1"></a>vetor_negativo &lt;-<span class="st"> </span>vetor <span class="op">*</span><span class="st"> </span><span class="dv">-1</span></span>
-<span id="cb628-2"><a href="12-1-r-básico.html#cb628-2"></a>vetor_negativo</span></code></pre></div>
+<div class="sourceCode" id="cb695"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb695-1"><a href="12-1-r-básico.html#cb695-1" aria-hidden="true" tabindex="-1"></a>vetor_negativo <span class="ot">&lt;-</span> vetor <span class="sc">*</span> <span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb695-2"><a href="12-1-r-básico.html#cb695-2" aria-hidden="true" tabindex="-1"></a>vetor_negativo</span></code></pre></div>
 <pre><code>## [1]  0 -1 -2 -3 -4 -5</code></pre>
 <hr />
 <p><strong>2.</strong> Crie um vetor com o nome de tres frutas, guarde em um objeto chamado <code>frutas</code> e resolva os itens abaixo.</p>
 <p><strong>a.</strong> Utilize a a função <code>length()</code> para verificar o tamanho do vetor.</p>
-<div class="sourceCode" id="cb630"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb630-1"><a href="12-1-r-básico.html#cb630-1"></a>frutas &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;banana&quot;</span>, <span class="st">&quot;maçã&quot;</span>, <span class="st">&quot;mamão&quot;</span>)</span>
-<span id="cb630-2"><a href="12-1-r-básico.html#cb630-2"></a></span>
-<span id="cb630-3"><a href="12-1-r-básico.html#cb630-3"></a><span class="kw">length</span>(frutas)</span></code></pre></div>
+<div class="sourceCode" id="cb697"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb697-1"><a href="12-1-r-básico.html#cb697-1" aria-hidden="true" tabindex="-1"></a>frutas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;banana&quot;</span>, <span class="st">&quot;maçã&quot;</span>, <span class="st">&quot;mamão&quot;</span>)</span>
+<span id="cb697-2"><a href="12-1-r-básico.html#cb697-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb697-3"><a href="12-1-r-básico.html#cb697-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(frutas)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <p><strong>b.</strong> Inspecione a saída de <code>paste("eu gosto de", frutas)</code> e responda se o tamanho do vetor mudou.</p>
-<div class="sourceCode" id="cb632"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb632-1"><a href="12-1-r-básico.html#cb632-1"></a><span class="kw">paste</span>(<span class="st">&quot;eu gosto de&quot;</span>, frutas)</span></code></pre></div>
+<div class="sourceCode" id="cb699"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb699-1"><a href="12-1-r-básico.html#cb699-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">&quot;eu gosto de&quot;</span>, frutas)</span></code></pre></div>
 <pre><code>## [1] &quot;eu gosto de banana&quot; &quot;eu gosto de maçã&quot;   &quot;eu gosto de mamão&quot;</code></pre>
 <p><em>O tamanho do vetor não muda. O que aconteceu foi o acréscimo do prefixo “eu gosto de” a cada valor do vetor <code>frutas</code>. Podemos confirmar essa afirmação calculando o comprimento do novo vetor:</em></p>
-<div class="sourceCode" id="cb634"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb634-1"><a href="12-1-r-básico.html#cb634-1"></a><span class="kw">length</span>(<span class="kw">paste</span>(<span class="st">&quot;eu gosto de&quot;</span>, frutas))</span></code></pre></div>
+<div class="sourceCode" id="cb701"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb701-1"><a href="12-1-r-básico.html#cb701-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">paste</span>(<span class="st">&quot;eu gosto de&quot;</span>, frutas))</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <hr />
 <p><strong>3.</strong> O que é reciclagem? Escreva um código em R que exemplifique esse comportamento.</p>
 <p><em>Reciclagem é a repetição de valores de um vetor para que uma operação com vetores de tamanhos diferentes possa ser realizada. Embora pareça um comportamento estranho, utilizamos a reciclagem o tempo todo dentro do R, muitas vezes sem perceber. No exemplo a seguir, os valores do <code>vetor_menor</code> serão repetidos (reciclados) até o dois vetores terem o mesmo tamanho. Então, o primeiro valor do vetor menor será somado com o promeiro valor do vetor maior, o segundo do menor somado com o segundo do maior e assim por diante.</em></p>
-<div class="sourceCode" id="cb636"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb636-1"><a href="12-1-r-básico.html#cb636-1"></a><span class="co"># Exemplo</span></span>
-<span id="cb636-2"><a href="12-1-r-básico.html#cb636-2"></a>vetor_menor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)</span>
-<span id="cb636-3"><a href="12-1-r-básico.html#cb636-3"></a>vetor_maior &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb636-4"><a href="12-1-r-básico.html#cb636-4"></a></span>
-<span id="cb636-5"><a href="12-1-r-básico.html#cb636-5"></a>vetor_menor <span class="op">+</span><span class="st"> </span>vetor_maior</span></code></pre></div>
+<div class="sourceCode" id="cb703"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb703-1"><a href="12-1-r-básico.html#cb703-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemplo</span></span>
+<span id="cb703-2"><a href="12-1-r-básico.html#cb703-2" aria-hidden="true" tabindex="-1"></a>vetor_menor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)</span>
+<span id="cb703-3"><a href="12-1-r-básico.html#cb703-3" aria-hidden="true" tabindex="-1"></a>vetor_maior <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb703-4"><a href="12-1-r-básico.html#cb703-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb703-5"><a href="12-1-r-básico.html#cb703-5" aria-hidden="true" tabindex="-1"></a>vetor_menor <span class="sc">+</span> vetor_maior</span></code></pre></div>
 <pre><code>## [1] 2 5 4 7</code></pre>
 <hr />
 <p><strong>4.</strong> O que é coerção? Escreva um código em R que exemplifique esse comportamento.</p>
 <p><em>Coerção é a homogenização da classe dos valores de um vetor. Se construirmos um vetor com valores de classes diferentes, todos os valores serão reprimidos para a classe mais dominante entre eles. No exemplo abaixo, todos os valores do vetor foram transformados em <code>character</code>, pois <code>character</code> é mais dominante do que as demais classes presentes (<code>numeric</code> e <code>logical</code>).</em></p>
 <p><em>Considerando apenas as principais classes, temos a seguinte ordem de dominância: <code>character &gt; numeric &gt; integer &gt; logical</code></em>.</p>
-<div class="sourceCode" id="cb638"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb638-1"><a href="12-1-r-básico.html#cb638-1"></a><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">-3</span>, <span class="st">&quot;a&quot;</span>, <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb705"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb705-1"><a href="12-1-r-básico.html#cb705-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="st">&quot;a&quot;</span>, <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;1&quot;    &quot;-3&quot;   &quot;a&quot;    &quot;TRUE&quot;</code></pre>
 <hr />
 <p><strong>5.</strong> Por que a coerção pode ser um problema na hora de importarmos bases de dados para o R?</p>
@@ -528,105 +588,105 @@ um novo objeto chamado <code>vetor_negativo</code>.</p>
 <p><em>O caso mais comum desse problema é gerado pelo separador de decimais. Se não especificarmos corretamente qual é o separador de decimais que estamos utilizando na nossa base de dados na hora da importação, qualquer coluna com valores decimais será importada como texto.</em></p>
 <hr />
 <p><strong>6.</strong> Use a função <code>sum()</code> para somar os valores de 1 a 100.</p>
-<div class="sourceCode" id="cb640"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb640-1"><a href="12-1-r-básico.html#cb640-1"></a><span class="kw">sum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb707"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb707-1"><a href="12-1-r-básico.html#cb707-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)</span></code></pre></div>
 <pre><code>## [1] 5050</code></pre>
 <hr />
 <p><strong>7.</strong> Considere o vetor booleano a seguir:</p>
-<div class="sourceCode" id="cb642"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb642-1"><a href="12-1-r-básico.html#cb642-1"></a>dolar_subiu &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb709"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb709-1"><a href="12-1-r-básico.html#cb709-1" aria-hidden="true" tabindex="-1"></a>dolar_subiu <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>Este vetor tem informação de uma semana (7 dias, começando no domingo) indicando se o dólar subiu (TRUE) ou não subiu (FALSE) no respectivo dia. Interprete o resultado dos códigos abaixo:</p>
 <p><strong>a.</strong> <code>length(dolar_subiu)</code></p>
-<div class="sourceCode" id="cb643"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb643-1"><a href="12-1-r-básico.html#cb643-1"></a><span class="kw">length</span>(dolar_subiu)</span></code></pre></div>
+<div class="sourceCode" id="cb710"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb710-1"><a href="12-1-r-básico.html#cb710-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(dolar_subiu)</span></code></pre></div>
 <pre><code>## [1] 7</code></pre>
 <p><em>Devolve o comprimento do vetor <code>dolar_subiu</code>. Podemos interpretar como o número de dias analisados nesse estudo.</em></p>
 <p><strong>b.</strong> <code>dolar_subiu[2]</code></p>
-<div class="sourceCode" id="cb645"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb645-1"><a href="12-1-r-básico.html#cb645-1"></a>dolar_subiu[<span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb712"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb712-1"><a href="12-1-r-básico.html#cb712-1" aria-hidden="true" tabindex="-1"></a>dolar_subiu[<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p><em>Verifica se o dólar subiu no segundo dia do estudo (segunda-feira).</em></p>
 <p><strong>c.</strong> <code>sum(dolar_subiu)</code></p>
-<div class="sourceCode" id="cb647"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb647-1"><a href="12-1-r-básico.html#cb647-1"></a><span class="kw">sum</span>(dolar_subiu)</span></code></pre></div>
+<div class="sourceCode" id="cb714"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb714-1"><a href="12-1-r-básico.html#cb714-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(dolar_subiu)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <p><em>Verifica o número de dias que o dólar subiu (já que na soma, os valores <code>TRUE</code> viram 1 e os valores <code>FALSE</code> viram 0), no caso, 4 dias com alta do dólar.</em></p>
 <p><strong>d.</strong> <code>mean(dolar_subiu)</code></p>
-<div class="sourceCode" id="cb649"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb649-1"><a href="12-1-r-básico.html#cb649-1"></a><span class="kw">mean</span>(dolar_subiu)</span></code></pre></div>
+<div class="sourceCode" id="cb716"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb716-1"><a href="12-1-r-básico.html#cb716-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dolar_subiu)</span></code></pre></div>
 <pre><code>## [1] 0.5714286</code></pre>
 <p><em>Verifica a proporção de dias em que o dólar subiu (a média de valores 0 e 1 é igual a proporção de valores 1), no caso, cerca de 57% dos dias.</em></p>
 </div>
 <div id="testes-lógicos-1" class="section level3 unnumbered">
 <h3>Testes lógicos</h3>
 <p><strong>1.</strong> O código abaixo vai guardar no objeto <code>segredo</code> um número inteiro entre 0 e 10. Sem olhar qual número foi guardado no objeto, resolva os itens a seguir:</p>
-<div class="sourceCode" id="cb651"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb651-1"><a href="12-1-r-básico.html#cb651-1"></a>segredo &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">1</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">10</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb718"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb718-1"><a href="12-1-r-básico.html#cb718-1" aria-hidden="true" tabindex="-1"></a>segredo <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">1</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>))</span></code></pre></div>
 <p><strong>a.</strong> Teste se o segredo é maior ou igual a 0.</p>
-<div class="sourceCode" id="cb652"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb652-1"><a href="12-1-r-básico.html#cb652-1"></a>segredo <span class="op">&gt;=</span><span class="st"> </span><span class="dv">0</span></span></code></pre></div>
+<div class="sourceCode" id="cb719"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb719-1"><a href="12-1-r-básico.html#cb719-1" aria-hidden="true" tabindex="-1"></a>segredo <span class="sc">&gt;=</span> <span class="dv">0</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p><strong>b.</strong> Teste se o segredo é menor ou igual a 10.</p>
-<div class="sourceCode" id="cb654"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb654-1"><a href="12-1-r-básico.html#cb654-1"></a>segredo <span class="op">&lt;=</span><span class="st"> </span><span class="dv">10</span></span></code></pre></div>
+<div class="sourceCode" id="cb721"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb721-1"><a href="12-1-r-básico.html#cb721-1" aria-hidden="true" tabindex="-1"></a>segredo <span class="sc">&lt;=</span> <span class="dv">10</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p><strong>c.</strong> Teste se o segredo é maior que 5.</p>
-<div class="sourceCode" id="cb656"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb656-1"><a href="12-1-r-básico.html#cb656-1"></a>segredo <span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span></span></code></pre></div>
+<div class="sourceCode" id="cb723"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb723-1"><a href="12-1-r-básico.html#cb723-1" aria-hidden="true" tabindex="-1"></a>segredo <span class="sc">&gt;</span> <span class="dv">5</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <p><strong>d.</strong> Teste se o segredo é par.</p>
 <p><em>Precisamos verificar se o resto da divisão por 2 é igual a zero.</em></p>
-<div class="sourceCode" id="cb658"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb658-1"><a href="12-1-r-básico.html#cb658-1"></a><span class="co"># Resto da divisão por 2</span></span>
-<span id="cb658-2"><a href="12-1-r-básico.html#cb658-2"></a>segredo <span class="op">%%</span><span class="st"> </span><span class="dv">2</span></span></code></pre></div>
-<pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb660"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb660-1"><a href="12-1-r-básico.html#cb660-1"></a><span class="co"># Guardando o resultado</span></span>
-<span id="cb660-2"><a href="12-1-r-básico.html#cb660-2"></a>resto &lt;-<span class="st"> </span>segredo <span class="op">%%</span><span class="st"> </span><span class="dv">2</span></span>
-<span id="cb660-3"><a href="12-1-r-básico.html#cb660-3"></a></span>
-<span id="cb660-4"><a href="12-1-r-básico.html#cb660-4"></a><span class="co"># Teste</span></span>
-<span id="cb660-5"><a href="12-1-r-básico.html#cb660-5"></a>resto <span class="op">==</span><span class="st"> </span><span class="dv">0</span></span></code></pre></div>
-<pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb662"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb662-1"><a href="12-1-r-básico.html#cb662-1"></a><span class="co"># Equivalentemente poderíamos fazer</span></span>
-<span id="cb662-2"><a href="12-1-r-básico.html#cb662-2"></a>segredo <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span></span></code></pre></div>
-<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb725"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb725-1"><a href="12-1-r-básico.html#cb725-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resto da divisão por 2</span></span>
+<span id="cb725-2"><a href="12-1-r-básico.html#cb725-2" aria-hidden="true" tabindex="-1"></a>segredo <span class="sc">%%</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode" id="cb727"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb727-1"><a href="12-1-r-básico.html#cb727-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Guardando o resultado</span></span>
+<span id="cb727-2"><a href="12-1-r-básico.html#cb727-2" aria-hidden="true" tabindex="-1"></a>resto <span class="ot">&lt;-</span> segredo <span class="sc">%%</span> <span class="dv">2</span></span>
+<span id="cb727-3"><a href="12-1-r-básico.html#cb727-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb727-4"><a href="12-1-r-básico.html#cb727-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Teste</span></span>
+<span id="cb727-5"><a href="12-1-r-básico.html#cb727-5" aria-hidden="true" tabindex="-1"></a>resto <span class="sc">==</span> <span class="dv">0</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb729"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb729-1"><a href="12-1-r-básico.html#cb729-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Equivalentemente poderíamos fazer</span></span>
+<span id="cb729-2"><a href="12-1-r-básico.html#cb729-2" aria-hidden="true" tabindex="-1"></a>segredo <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
 <p><strong>e.</strong> Teste se <code>segredo * 5</code> é maior que a sua idade.</p>
-<div class="sourceCode" id="cb664"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb664-1"><a href="12-1-r-básico.html#cb664-1"></a>segredo <span class="op">*</span><span class="st"> </span><span class="dv">5</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">31</span></span></code></pre></div>
+<div class="sourceCode" id="cb731"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb731-1"><a href="12-1-r-básico.html#cb731-1" aria-hidden="true" tabindex="-1"></a>segredo <span class="sc">*</span> <span class="dv">5</span> <span class="sc">&gt;</span> <span class="dv">31</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <p><strong>f.</strong> Desafio. Escreva um teste para descobrir o valor do segredo.</p>
 <p><em>Vamos descobrir a posição do segredo no vetor <code>0:10</code>.</em></p>
-<div class="sourceCode" id="cb666"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb666-1"><a href="12-1-r-básico.html#cb666-1"></a>numeros_possiveis &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">10</span></span>
-<span id="cb666-2"><a href="12-1-r-básico.html#cb666-2"></a>numeros_possiveis</span></code></pre></div>
+<div class="sourceCode" id="cb733"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb733-1"><a href="12-1-r-básico.html#cb733-1" aria-hidden="true" tabindex="-1"></a>numeros_possiveis <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb733-2"><a href="12-1-r-básico.html#cb733-2" aria-hidden="true" tabindex="-1"></a>numeros_possiveis</span></code></pre></div>
 <pre><code>##  [1]  0  1  2  3  4  5  6  7  8  9 10</code></pre>
-<div class="sourceCode" id="cb668"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb668-1"><a href="12-1-r-básico.html#cb668-1"></a>segredo <span class="op">==</span><span class="st"> </span>numeros_possiveis</span></code></pre></div>
-<pre><code>##  [1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<div class="sourceCode" id="cb735"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb735-1"><a href="12-1-r-básico.html#cb735-1" aria-hidden="true" tabindex="-1"></a>segredo <span class="sc">==</span> numeros_possiveis</span></code></pre></div>
+<pre><code>##  [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
 <p><em>No código acima, para cada valor de <code>numero_possiveis</code>, foi testado se esse valor é igual ao segredo. Em caso afirmativo, um TRUE é devolvido. Veja que há apenas um TRUE no vetor resultante. Essa é posição do nosso segredo dentro do vetor <code>numeros_possiveis</code>.</em></p>
 <p><em>Podemos usar esse vetor de TRUE/FALSE para recuperar o valor do segredo fazendo subsetting.</em></p>
-<div class="sourceCode" id="cb670"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb670-1"><a href="12-1-r-básico.html#cb670-1"></a><span class="co"># Eis o valor do segredo</span></span>
-<span id="cb670-2"><a href="12-1-r-básico.html#cb670-2"></a>numeros_possiveis[segredo <span class="op">==</span><span class="st"> </span>numeros_possiveis]</span></code></pre></div>
-<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb737"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb737-1"><a href="12-1-r-básico.html#cb737-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Eis o valor do segredo</span></span>
+<span id="cb737-2"><a href="12-1-r-básico.html#cb737-2" aria-hidden="true" tabindex="-1"></a>numeros_possiveis[segredo <span class="sc">==</span> numeros_possiveis]</span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
 <p><em>No código acima, foi retornado apenas o número associado ao valor TRUE dado pelo teste <code>segredo == numeros_possiveis</code></em>.</p>
 <hr />
 <p><strong>2.</strong> Escreva um código em R que devolva apenas os valores maiores
 ou iguais a 10 do vetor abaixo:</p>
-<div class="sourceCode" id="cb672"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb672-1"><a href="12-1-r-básico.html#cb672-1"></a>vetor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">23</span>, <span class="dv">42</span>)</span>
-<span id="cb672-2"><a href="12-1-r-básico.html#cb672-2"></a></span>
-<span id="cb672-3"><a href="12-1-r-básico.html#cb672-3"></a><span class="co"># Resposta</span></span>
-<span id="cb672-4"><a href="12-1-r-básico.html#cb672-4"></a>vetor[vetor <span class="op">&gt;=</span><span class="st"> </span><span class="dv">10</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb739"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb739-1"><a href="12-1-r-básico.html#cb739-1" aria-hidden="true" tabindex="-1"></a>vetor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">23</span>, <span class="dv">42</span>)</span>
+<span id="cb739-2"><a href="12-1-r-básico.html#cb739-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb739-3"><a href="12-1-r-básico.html#cb739-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Resposta</span></span>
+<span id="cb739-4"><a href="12-1-r-básico.html#cb739-4" aria-hidden="true" tabindex="-1"></a>vetor[vetor <span class="sc">&gt;=</span> <span class="dv">10</span>]</span></code></pre></div>
 <pre><code>## [1] 15 16 23 42</code></pre>
 <hr />
 <p><strong>3.</strong> Use o vetor numeross abaixo para responder as questoes seguintes.</p>
-<div class="sourceCode" id="cb674"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb674-1"><a href="12-1-r-básico.html#cb674-1"></a>numeros &lt;-<span class="st"> </span><span class="dv">-4</span><span class="op">:</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb741"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb741-1"><a href="12-1-r-básico.html#cb741-1" aria-hidden="true" tabindex="-1"></a>numeros <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">4</span><span class="sc">:</span><span class="dv">2</span></span></code></pre></div>
 <p><strong>a.</strong> Escreva um código que devolva apenas valores positivos do vetor <code>numeros</code>.</p>
-<div class="sourceCode" id="cb675"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb675-1"><a href="12-1-r-básico.html#cb675-1"></a>numeros[numeros <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb742"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb742-1"><a href="12-1-r-básico.html#cb742-1" aria-hidden="true" tabindex="-1"></a>numeros[numeros <span class="sc">&gt;</span> <span class="dv">0</span>]</span></code></pre></div>
 <pre><code>## [1] 1 2</code></pre>
 <p><strong>b.</strong> Escreva um código que devolta apenas os valores pares do vetor <code>numeros</code>.</p>
-<div class="sourceCode" id="cb677"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb677-1"><a href="12-1-r-básico.html#cb677-1"></a><span class="co"># Resto da divisão por 2</span></span>
-<span id="cb677-2"><a href="12-1-r-básico.html#cb677-2"></a>numeros <span class="op">%%</span><span class="st"> </span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb744"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb744-1"><a href="12-1-r-básico.html#cb744-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resto da divisão por 2</span></span>
+<span id="cb744-2"><a href="12-1-r-básico.html#cb744-2" aria-hidden="true" tabindex="-1"></a>numeros <span class="sc">%%</span> <span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] 0 1 0 1 0 1 0</code></pre>
-<div class="sourceCode" id="cb679"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb679-1"><a href="12-1-r-básico.html#cb679-1"></a><span class="co"># Quais números são pares?</span></span>
-<span id="cb679-2"><a href="12-1-r-básico.html#cb679-2"></a>numeros <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span></span></code></pre></div>
+<div class="sourceCode" id="cb746"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb746-1"><a href="12-1-r-básico.html#cb746-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Quais números são pares?</span></span>
+<span id="cb746-2"><a href="12-1-r-básico.html#cb746-2" aria-hidden="true" tabindex="-1"></a>numeros <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span></span></code></pre></div>
 <pre><code>## [1]  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE</code></pre>
-<div class="sourceCode" id="cb681"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb681-1"><a href="12-1-r-básico.html#cb681-1"></a><span class="co"># Usando para filtrar o vetor</span></span>
-<span id="cb681-2"><a href="12-1-r-básico.html#cb681-2"></a>numeros[numeros <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb748"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb748-1"><a href="12-1-r-básico.html#cb748-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando para filtrar o vetor</span></span>
+<span id="cb748-2"><a href="12-1-r-básico.html#cb748-2" aria-hidden="true" tabindex="-1"></a>numeros[numeros <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>]</span></code></pre></div>
 <pre><code>## [1] -4 -2  0  2</code></pre>
 <p><strong>c.</strong> Filtre o vetor para que retorne apenas aqueles valores que, quando elevados a 2, são menores do que 4.</p>
-<div class="sourceCode" id="cb683"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb683-1"><a href="12-1-r-básico.html#cb683-1"></a><span class="co"># Quadrado dos valores do vetor</span></span>
-<span id="cb683-2"><a href="12-1-r-básico.html#cb683-2"></a>numeros<span class="op">^</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb750"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb750-1"><a href="12-1-r-básico.html#cb750-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Quadrado dos valores do vetor</span></span>
+<span id="cb750-2"><a href="12-1-r-básico.html#cb750-2" aria-hidden="true" tabindex="-1"></a>numeros<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] 16  9  4  1  0  1  4</code></pre>
-<div class="sourceCode" id="cb685"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb685-1"><a href="12-1-r-básico.html#cb685-1"></a><span class="co"># Aqueles menores que 4</span></span>
-<span id="cb685-2"><a href="12-1-r-básico.html#cb685-2"></a>numeros<span class="op">^</span><span class="dv">2</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">4</span></span></code></pre></div>
+<div class="sourceCode" id="cb752"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb752-1"><a href="12-1-r-básico.html#cb752-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aqueles menores que 4</span></span>
+<span id="cb752-2"><a href="12-1-r-básico.html#cb752-2" aria-hidden="true" tabindex="-1"></a>numeros<span class="sc">^</span><span class="dv">2</span> <span class="sc">&lt;</span> <span class="dv">4</span></span></code></pre></div>
 <pre><code>## [1] FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE</code></pre>
-<div class="sourceCode" id="cb687"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb687-1"><a href="12-1-r-básico.html#cb687-1"></a><span class="co"># Usando para filtrar</span></span>
-<span id="cb687-2"><a href="12-1-r-básico.html#cb687-2"></a>numeros[numeros<span class="op">^</span><span class="dv">2</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">4</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb754"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb754-1"><a href="12-1-r-básico.html#cb754-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando para filtrar</span></span>
+<span id="cb754-2"><a href="12-1-r-básico.html#cb754-2" aria-hidden="true" tabindex="-1"></a>numeros[numeros<span class="sc">^</span><span class="dv">2</span> <span class="sc">&lt;</span> <span class="dv">4</span>]</span></code></pre></div>
 <pre><code>## [1] -1  0  1</code></pre>
 </div>
 <div id="valores-especiais" class="section level3 unnumbered">
@@ -635,78 +695,78 @@ ou iguais a 10 do vetor abaixo:</p>
 <ul>
 <li><em>O <code>NaN</code> representa uma indefinição matemática. Todo <code>NaN</code> é um <code>NA</code>, mas o contrário não é verdade.</em></li>
 </ul>
-<div class="sourceCode" id="cb689"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb689-1"><a href="12-1-r-básico.html#cb689-1"></a><span class="dv">0</span><span class="op">/</span><span class="dv">0</span></span></code></pre></div>
+<div class="sourceCode" id="cb756"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb756-1"><a href="12-1-r-básico.html#cb756-1" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span><span class="sc">/</span><span class="dv">0</span></span></code></pre></div>
 <pre><code>## [1] NaN</code></pre>
 <ul>
 <li><em>O <code>NA</code> representa o nosso desconhecimento acerca de um valor. Esse valor existe, mas nós não o conhecemos. Na Estatística, ele é conhecido como valor omisso ou valor faltante.</em></li>
 </ul>
-<div class="sourceCode" id="cb691"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb691-1"><a href="12-1-r-básico.html#cb691-1"></a><span class="kw">sum</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="ot">NA</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb758"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb758-1"><a href="12-1-r-básico.html#cb758-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="cn">NA</span>))</span></code></pre></div>
 <pre><code>## [1] NA</code></pre>
 <ul>
 <li><em>O <code>NULL</code> é um valor especial para o R, isto é, ao contrário do NA, ele não tem um significado prático para a análise de dados, mas sim computacional. Ele representa a ausência de um vetor e é útil na construção da lógica de programação de alguns códigos.</em></li>
 </ul>
-<div class="sourceCode" id="cb693"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb693-1"><a href="12-1-r-básico.html#cb693-1"></a>mtcars<span class="op">$</span>coluna_que_nao_existe</span></code></pre></div>
+<div class="sourceCode" id="cb760"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb760-1"><a href="12-1-r-básico.html#cb760-1" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>coluna_que_nao_existe</span></code></pre></div>
 <pre><code>## NULL</code></pre>
 <ul>
 <li><em>O <code>Inf</code> representa um número muito grande (que o computador não consegue representar) ou um limite matemático.</em></li>
 </ul>
-<div class="sourceCode" id="cb695"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb695-1"><a href="12-1-r-básico.html#cb695-1"></a><span class="dv">2</span><span class="op">^</span><span class="dv">2000</span></span></code></pre></div>
+<div class="sourceCode" id="cb762"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb762-1"><a href="12-1-r-básico.html#cb762-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">^</span><span class="dv">2000</span></span></code></pre></div>
 <pre><code>## [1] Inf</code></pre>
 <hr />
 <p><strong>2.</strong> Escreva um código que conte o número de <code>NAs</code> do vetor <code>b</code>.</p>
-<div class="sourceCode" id="cb697"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb697-1"><a href="12-1-r-básico.html#cb697-1"></a>b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="dv">7</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="dv">2</span>, <span class="ot">NA</span>, <span class="ot">NA</span>, <span class="dv">10</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="ot">NA</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb698"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb698-1"><a href="12-1-r-básico.html#cb698-1"></a><span class="kw">sum</span>(<span class="kw">is.na</span>(b))</span></code></pre></div>
+<div class="sourceCode" id="cb764"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb764-1"><a href="12-1-r-básico.html#cb764-1" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">7</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">2</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">10</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="cn">NA</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb765"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb765-1"><a href="12-1-r-básico.html#cb765-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(b))</span></code></pre></div>
 <pre><code>## [1] 12</code></pre>
 </div>
 <div id="data-frames-1" class="section level3 unnumbered">
 <h3>Data frames</h3>
 <p><strong>1.</strong> Quais códigos abaixo retornam <strong>um vetor</strong> com a coluna <code>mpg</code> do data frame <code>mtcars</code>?</p>
 <p><strong>a.</strong> <code>mtcars$mpg</code></p>
-<div class="sourceCode" id="cb700"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb700-1"><a href="12-1-r-básico.html#cb700-1"></a>mtcars<span class="op">$</span>mpg</span></code></pre></div>
+<div class="sourceCode" id="cb767"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb767-1"><a href="12-1-r-básico.html#cb767-1" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>mpg</span></code></pre></div>
 <pre><code>##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4
 ## [16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7
 ## [31] 15.0 21.4</code></pre>
 <p><em>Retorna!</em></p>
 <p><strong>b.</strong> <code>mtcars[ , 3]</code></p>
-<div class="sourceCode" id="cb702"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb702-1"><a href="12-1-r-básico.html#cb702-1"></a>mtcars[ , <span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb769"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb769-1"><a href="12-1-r-básico.html#cb769-1" aria-hidden="true" tabindex="-1"></a>mtcars[ , <span class="dv">3</span>]</span></code></pre></div>
 <pre><code>##  [1] 160.0 160.0 108.0 258.0 360.0 225.0 360.0 146.7 140.8 167.6 167.6 275.8
 ## [13] 275.8 275.8 472.0 460.0 440.0  78.7  75.7  71.1 120.1 318.0 304.0 350.0
 ## [25] 400.0  79.0 120.3  95.1 351.0 145.0 301.0 121.0</code></pre>
 <p><em>Não retorna. A coluna <code>mpg</code> é a primeira coluna do data frame. A coluna que esse código retornou foi a <code>disp</code>.</em></p>
 <p><strong>c.</strong> <code>mtcars("mpg")</code></p>
-<div class="sourceCode" id="cb704"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb704-1"><a href="12-1-r-básico.html#cb704-1"></a><span class="kw">mtcars</span>(<span class="st">&quot;mpg&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb771"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb771-1"><a href="12-1-r-básico.html#cb771-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mtcars</span>(<span class="st">&quot;mpg&quot;</span>)</span></code></pre></div>
 <pre><code>## Error in mtcars(&quot;mpg&quot;): could not find function &quot;mtcars&quot;</code></pre>
 <p><em>A sintaxe desse código não é válida pois <code>()</code> não são utilizados para fazer subsetting, mas sim para definir os argumentos de uma função (e <code>mtcars</code> não é uma função).</em></p>
 <p><strong>d.</strong> <code>mtcars[ , "mpg"]</code></p>
-<div class="sourceCode" id="cb706"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb706-1"><a href="12-1-r-básico.html#cb706-1"></a>mtcars[ , <span class="st">&quot;mpg&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb773"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb773-1"><a href="12-1-r-básico.html#cb773-1" aria-hidden="true" tabindex="-1"></a>mtcars[ , <span class="st">&quot;mpg&quot;</span>]</span></code></pre></div>
 <pre><code>##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4
 ## [16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7
 ## [31] 15.0 21.4</code></pre>
 <p>“Retorna!”</p>
 <p><strong>e.</strong> <code>mtcars.mpg</code></p>
-<div class="sourceCode" id="cb708"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb708-1"><a href="12-1-r-básico.html#cb708-1"></a>mtcars.mpg</span></code></pre></div>
+<div class="sourceCode" id="cb775"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb775-1"><a href="12-1-r-básico.html#cb775-1" aria-hidden="true" tabindex="-1"></a>mtcars.mpg</span></code></pre></div>
 <pre><code>## Error in eval(expr, envir, enclos): object &#39;mtcars.mpg&#39; not found</code></pre>
 <p><em>Essa sintaxe não é válida no R. Ele está procurando por um objeto chamado <code>mtcars.mpg</code>, que não existe.</em></p>
 <p><strong>f.</strong> <code>mtcars[ , 1]</code></p>
-<div class="sourceCode" id="cb710"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb710-1"><a href="12-1-r-básico.html#cb710-1"></a>mtcars[ , <span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb777"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb777-1"><a href="12-1-r-básico.html#cb777-1" aria-hidden="true" tabindex="-1"></a>mtcars[ , <span class="dv">1</span>]</span></code></pre></div>
 <pre><code>##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4
 ## [16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7
 ## [31] 15.0 21.4</code></pre>
 <p><em>Retorna!</em></p>
 <p><strong>g.</strong> <code>mtcars[1, 1]</code></p>
-<div class="sourceCode" id="cb712"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb712-1"><a href="12-1-r-básico.html#cb712-1"></a>mtcars[<span class="dv">1</span>, <span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb779"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb779-1"><a href="12-1-r-básico.html#cb779-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">1</span>, <span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## [1] 21</code></pre>
 <p><em>Esse código retorna apenas o primeiro valor da coluna <code>mpg</code>.</em></p>
 <ol start="8" style="list-style-type: lower-alpha">
 <li><code>mpg$mtcars</code></li>
 </ol>
-<div class="sourceCode" id="cb714"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb714-1"><a href="12-1-r-básico.html#cb714-1"></a>mpg<span class="op">$</span>mtcars</span></code></pre></div>
+<div class="sourceCode" id="cb781"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb781-1"><a href="12-1-r-básico.html#cb781-1" aria-hidden="true" tabindex="-1"></a>mpg<span class="sc">$</span>mtcars</span></code></pre></div>
 <pre><code>## Error in eval(expr, envir, enclos): object &#39;mpg&#39; not found</code></pre>
 <p><em>Não retorna. Essa sintaxe não é válida para selecionar colunas de um data frame. O correto seria <code>nome_do_data_frame$nome_da_coluna</code>.</em></p>
 <hr />
 <p><strong>2.</strong> Para que serve a função <code>str()</code>. Dê um exemplo do seu uso.</p>
 <p><em>Serve para espiarmos a estrutura de um data frame, como número de linhas, colunas, classes das colunas e exemplo de valores em cada uma delas.</em></p>
-<div class="sourceCode" id="cb716"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb716-1"><a href="12-1-r-básico.html#cb716-1"></a><span class="kw">str</span>(mtcars)</span></code></pre></div>
+<div class="sourceCode" id="cb783"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb783-1"><a href="12-1-r-básico.html#cb783-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(mtcars)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    32 obs. of  11 variables:
 ##  $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
 ##  $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
@@ -721,19 +781,19 @@ ou iguais a 10 do vetor abaixo:</p>
 ##  $ carb: num  4 4 1 1 2 1 4 2 2 4 ...</code></pre>
 <p><strong>3.</strong> Para que serve a função <code>nanes()</code>. Dê um exemplo do seu uso.</p>
 <p><em>Serve para observamos os nomes das colunas de um data frame. O valor retornado é um vetor de strings.</em></p>
-<div class="sourceCode" id="cb718"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb718-1"><a href="12-1-r-básico.html#cb718-1"></a><span class="kw">names</span>(mtcars)</span></code></pre></div>
+<div class="sourceCode" id="cb785"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb785-1"><a href="12-1-r-básico.html#cb785-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(mtcars)</span></code></pre></div>
 <pre><code>##  [1] &quot;mpg&quot;  &quot;cyl&quot;  &quot;disp&quot; &quot;hp&quot;   &quot;drat&quot; &quot;wt&quot;   &quot;qsec&quot; &quot;vs&quot;   &quot;am&quot;   &quot;gear&quot;
 ## [11] &quot;carb&quot;</code></pre>
 <p><strong>4.</strong> Use o data frame <code>airquality</code> para responder às questões abaixo:</p>
 <p><strong>a.</strong> Quantas colunas <code>airquality</code> tem?</p>
-<div class="sourceCode" id="cb720"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb720-1"><a href="12-1-r-básico.html#cb720-1"></a><span class="kw">ncol</span>(airquality)</span></code></pre></div>
+<div class="sourceCode" id="cb787"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb787-1"><a href="12-1-r-básico.html#cb787-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(airquality)</span></code></pre></div>
 <pre><code>## [1] 6</code></pre>
 <p><strong>b.</strong> Quantas linhas <code>airquality</code> tem?</p>
-<div class="sourceCode" id="cb722"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb722-1"><a href="12-1-r-básico.html#cb722-1"></a><span class="kw">nrow</span>(airquality)</span></code></pre></div>
+<div class="sourceCode" id="cb789"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb789-1"><a href="12-1-r-básico.html#cb789-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(airquality)</span></code></pre></div>
 <pre><code>## [1] 153</code></pre>
 <p><strong>c.</strong> O que a função <code>head()</code> retorna?</p>
 <p><em>Retorna as 6 primeiras linhas do data frame.</em></p>
-<div class="sourceCode" id="cb724"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb724-1"><a href="12-1-r-básico.html#cb724-1"></a><span class="kw">head</span>(airquality)</span></code></pre></div>
+<div class="sourceCode" id="cb791"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb791-1"><a href="12-1-r-básico.html#cb791-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(airquality)</span></code></pre></div>
 <pre><code>##   Ozone Solar.R Wind Temp Month Day
 ## 1    41     190  7.4   67     5   1
 ## 2    36     118  8.0   72     5   2
@@ -742,10 +802,10 @@ ou iguais a 10 do vetor abaixo:</p>
 ## 5    NA      NA 14.3   56     5   5
 ## 6    28      NA 14.9   66     5   6</code></pre>
 <p><strong>d.</strong> Quais são os nomes das colunas?</p>
-<div class="sourceCode" id="cb726"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb726-1"><a href="12-1-r-básico.html#cb726-1"></a><span class="kw">names</span>(airquality)</span></code></pre></div>
+<div class="sourceCode" id="cb793"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb793-1"><a href="12-1-r-básico.html#cb793-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(airquality)</span></code></pre></div>
 <pre><code>## [1] &quot;Ozone&quot;   &quot;Solar.R&quot; &quot;Wind&quot;    &quot;Temp&quot;    &quot;Month&quot;   &quot;Day&quot;</code></pre>
 <p><strong>e.</strong> Qual é a classe da coluna <code>Ozone</code>?</p>
-<div class="sourceCode" id="cb728"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb728-1"><a href="12-1-r-básico.html#cb728-1"></a><span class="kw">str</span>(airquality)</span></code></pre></div>
+<div class="sourceCode" id="cb795"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb795-1"><a href="12-1-r-básico.html#cb795-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(airquality)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    153 obs. of  6 variables:
 ##  $ Ozone  : int  41 36 12 18 NA 28 23 19 8 NA ...
 ##  $ Solar.R: int  190 118 149 313 NA NA 299 99 19 194 ...
@@ -753,43 +813,43 @@ ou iguais a 10 do vetor abaixo:</p>
 ##  $ Temp   : int  67 72 74 62 56 66 65 59 61 69 ...
 ##  $ Month  : int  5 5 5 5 5 5 5 5 5 5 ...
 ##  $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...</code></pre>
-<div class="sourceCode" id="cb730"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb730-1"><a href="12-1-r-básico.html#cb730-1"></a><span class="co"># Também podemos ver apenas a coluna Ozone</span></span>
-<span id="cb730-2"><a href="12-1-r-básico.html#cb730-2"></a><span class="kw">class</span>(airquality<span class="op">$</span>Ozone)</span></code></pre></div>
+<div class="sourceCode" id="cb797"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb797-1"><a href="12-1-r-básico.html#cb797-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Também podemos ver apenas a coluna Ozone</span></span>
+<span id="cb797-2"><a href="12-1-r-básico.html#cb797-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(airquality<span class="sc">$</span>Ozone)</span></code></pre></div>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
 <p><strong>5.</strong> Desafio. Calculando desvio-padrão no R. Use o data frame <code>airquality</code> para responder às questões abaixo:</p>
 <p><strong>a.</strong> Tire a média da coluna Ozone e guarde em um objeto.</p>
-<div class="sourceCode" id="cb732"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb732-1"><a href="12-1-r-básico.html#cb732-1"></a>media_ozone &lt;-<span class="st"> </span><span class="kw">mean</span>(airquality<span class="op">$</span>Ozone, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb799"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb799-1"><a href="12-1-r-básico.html#cb799-1" aria-hidden="true" tabindex="-1"></a>media_ozone <span class="ot">&lt;-</span> <span class="fu">mean</span>(airquality<span class="sc">$</span>Ozone, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p><strong>b.</strong> Guarde em um objeto o vetor correspondente à coluna Ozone subtraída da sua própria média (calculada em no item a).</p>
-<div class="sourceCode" id="cb733"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb733-1"><a href="12-1-r-básico.html#cb733-1"></a>ozone_centralizado &lt;-<span class="st"> </span>airquality<span class="op">$</span>Ozone <span class="op">-</span><span class="st"> </span>media_ozone</span></code></pre></div>
+<div class="sourceCode" id="cb800"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb800-1"><a href="12-1-r-básico.html#cb800-1" aria-hidden="true" tabindex="-1"></a>ozone_centralizado <span class="ot">&lt;-</span> airquality<span class="sc">$</span>Ozone <span class="sc">-</span> media_ozone</span></code></pre></div>
 <p><strong>c.</strong> Eleve o vetor calculado em (b) ao quadrado. Salve o resultado em um novo objeto.</p>
-<div class="sourceCode" id="cb734"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb734-1"><a href="12-1-r-básico.html#cb734-1"></a>ozone_centr_quadrado &lt;-<span class="st"> </span>ozone_centralizado <span class="op">^</span><span class="st"> </span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb801"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb801-1"><a href="12-1-r-básico.html#cb801-1" aria-hidden="true" tabindex="-1"></a>ozone_centr_quadrado <span class="ot">&lt;-</span> ozone_centralizado <span class="sc">^</span> <span class="dv">2</span></span></code></pre></div>
 <p><strong>d.</strong> Tire a média do vetor calculado em (c) e salve o resultado em um objeto chamado <code>variancia</code>. Em seguida, calcule a raiz quadrada desse valor e salve em um objeto chamado <code>desvio_padrao</code>.</p>
-<div class="sourceCode" id="cb735"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb735-1"><a href="12-1-r-básico.html#cb735-1"></a>variancia &lt;-<span class="st"> </span><span class="kw">mean</span>(ozone_centr_quadrado, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb735-2"><a href="12-1-r-básico.html#cb735-2"></a>desvio_padrao &lt;-<span class="st"> </span><span class="kw">sqrt</span>(variancia)</span></code></pre></div>
+<div class="sourceCode" id="cb802"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb802-1"><a href="12-1-r-básico.html#cb802-1" aria-hidden="true" tabindex="-1"></a>variancia <span class="ot">&lt;-</span> <span class="fu">mean</span>(ozone_centr_quadrado, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb802-2"><a href="12-1-r-básico.html#cb802-2" aria-hidden="true" tabindex="-1"></a>desvio_padrao <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(variancia)</span></code></pre></div>
 <p><strong>e.</strong> Compare o valor de <code>desvio_padrao</code> com <code>sd(airquality$Ozone)</code> e pesquise por que os valores não são iguais. Dica: veja a documentação da função <code>sd()</code>.</p>
-<div class="sourceCode" id="cb736"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb736-1"><a href="12-1-r-básico.html#cb736-1"></a>desvio_padrao</span></code></pre></div>
+<div class="sourceCode" id="cb803"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb803-1"><a href="12-1-r-básico.html#cb803-1" aria-hidden="true" tabindex="-1"></a>desvio_padrao</span></code></pre></div>
 <pre><code>## [1] 32.84539</code></pre>
-<div class="sourceCode" id="cb738"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb738-1"><a href="12-1-r-básico.html#cb738-1"></a><span class="kw">sd</span>(airquality<span class="op">$</span>Ozone, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb805"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb805-1"><a href="12-1-r-básico.html#cb805-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(airquality<span class="sc">$</span>Ozone, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 32.98788</code></pre>
 <p><em>Os valores não são iguais, pois na nossa conta, ao calcularmos a média no item (d), dividimos a soma de quadrados por <code>n</code> (tamanho da amostra, no caso, 116), enquanto na função <code>sd()</code> a divisão é por <code>n - 1</code> (115). A divisão por <code>n - 1</code>, na Estatística, representa o estimador não viesado para a variância/desvio-padrão de uma quantidade. Na prática, ambas podem ser utilizadas como medidas de variabilidade, mas em contextos inferenciais o valor dividido por <code>n - 1</code> é preferível.</em></p>
 <p><em>Para chegarmos no mesmo resultado, poderíamos fazer:</em></p>
-<div class="sourceCode" id="cb740"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb740-1"><a href="12-1-r-básico.html#cb740-1"></a><span class="co"># Número de valores sem NA</span></span>
-<span id="cb740-2"><a href="12-1-r-básico.html#cb740-2"></a>n &lt;-<span class="st"> </span><span class="kw">length</span>(<span class="kw">na.omit</span>(airquality<span class="op">$</span>Ozone))</span>
-<span id="cb740-3"><a href="12-1-r-básico.html#cb740-3"></a></span>
-<span id="cb740-4"><a href="12-1-r-básico.html#cb740-4"></a>variancia &lt;-<span class="st"> </span><span class="kw">sum</span>(ozone_centr_quadrado, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">/</span><span class="st"> </span>(n <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)</span>
-<span id="cb740-5"><a href="12-1-r-básico.html#cb740-5"></a>desvio_padrao &lt;-<span class="st"> </span><span class="kw">sqrt</span>(variancia)</span>
-<span id="cb740-6"><a href="12-1-r-básico.html#cb740-6"></a>desvio_padrao</span></code></pre></div>
+<div class="sourceCode" id="cb807"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb807-1"><a href="12-1-r-básico.html#cb807-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Número de valores sem NA</span></span>
+<span id="cb807-2"><a href="12-1-r-básico.html#cb807-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">na.omit</span>(airquality<span class="sc">$</span>Ozone))</span>
+<span id="cb807-3"><a href="12-1-r-básico.html#cb807-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb807-4"><a href="12-1-r-básico.html#cb807-4" aria-hidden="true" tabindex="-1"></a>variancia <span class="ot">&lt;-</span> <span class="fu">sum</span>(ozone_centr_quadrado, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">/</span> (n <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb807-5"><a href="12-1-r-básico.html#cb807-5" aria-hidden="true" tabindex="-1"></a>desvio_padrao <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(variancia)</span>
+<span id="cb807-6"><a href="12-1-r-básico.html#cb807-6" aria-hidden="true" tabindex="-1"></a>desvio_padrao</span></code></pre></div>
 <pre><code>## [1] 32.98788</code></pre>
 <hr />
 <p><strong>6.</strong> Use o <em>data frame</em> <code>airquality</code> para responder às questões abaixo.</p>
 <p><strong>a.</strong> Conte quantos <code>NAs</code> tem na coluna <code>Solar.R</code>.</p>
-<div class="sourceCode" id="cb742"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb742-1"><a href="12-1-r-básico.html#cb742-1"></a><span class="kw">sum</span>(<span class="kw">is.na</span>(airquality<span class="op">$</span>Solar.R))</span></code></pre></div>
+<div class="sourceCode" id="cb809"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb809-1"><a href="12-1-r-básico.html#cb809-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(airquality<span class="sc">$</span>Solar.R))</span></code></pre></div>
 <pre><code>## [1] 7</code></pre>
 <p><strong>b.</strong> Filtre a tabela <code>airquality</code>com apenas linhas em que <code>Solar.R</code> é <code>NA</code>.</p>
-<div class="sourceCode" id="cb744"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb744-1"><a href="12-1-r-básico.html#cb744-1"></a>tab &lt;-<span class="st"> </span>airquality[<span class="kw">is.na</span>(airquality<span class="op">$</span>Solar.R),]</span>
-<span id="cb744-2"><a href="12-1-r-básico.html#cb744-2"></a></span>
-<span id="cb744-3"><a href="12-1-r-básico.html#cb744-3"></a><span class="co"># Imprimindo apenas as primeiras linhas para facilitar a leitura</span></span>
-<span id="cb744-4"><a href="12-1-r-básico.html#cb744-4"></a><span class="kw">head</span>(tab)</span></code></pre></div>
+<div class="sourceCode" id="cb811"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb811-1"><a href="12-1-r-básico.html#cb811-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> airquality[<span class="fu">is.na</span>(airquality<span class="sc">$</span>Solar.R),]</span>
+<span id="cb811-2"><a href="12-1-r-básico.html#cb811-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb811-3"><a href="12-1-r-básico.html#cb811-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimindo apenas as primeiras linhas para facilitar a leitura</span></span>
+<span id="cb811-4"><a href="12-1-r-básico.html#cb811-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tab)</span></code></pre></div>
 <pre><code>##    Ozone Solar.R Wind Temp Month Day
 ## 5     NA      NA 14.3   56     5   5
 ## 6     28      NA 14.9   66     5   6
@@ -798,10 +858,10 @@ ou iguais a 10 do vetor abaixo:</p>
 ## 96    78      NA  6.9   86     8   4
 ## 97    35      NA  7.4   85     8   5</code></pre>
 <p><strong>c.</strong> Filtre a tabela <code>airquality</code> com apenas linhas em que <code>Solar.R</code> <strong>não</strong> é <code>NA</code>.</p>
-<div class="sourceCode" id="cb746"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb746-1"><a href="12-1-r-básico.html#cb746-1"></a>tab &lt;-<span class="st"> </span>airquality[<span class="op">!</span><span class="kw">is.na</span>(airquality<span class="op">$</span>Solar.R),]</span>
-<span id="cb746-2"><a href="12-1-r-básico.html#cb746-2"></a></span>
-<span id="cb746-3"><a href="12-1-r-básico.html#cb746-3"></a><span class="co"># Imprimindo apenas as primeiras linhas para facilitar a leitura</span></span>
-<span id="cb746-4"><a href="12-1-r-básico.html#cb746-4"></a><span class="kw">head</span>(tab)</span></code></pre></div>
+<div class="sourceCode" id="cb813"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb813-1"><a href="12-1-r-básico.html#cb813-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> airquality[<span class="sc">!</span><span class="fu">is.na</span>(airquality<span class="sc">$</span>Solar.R),]</span>
+<span id="cb813-2"><a href="12-1-r-básico.html#cb813-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb813-3"><a href="12-1-r-básico.html#cb813-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimindo apenas as primeiras linhas para facilitar a leitura</span></span>
+<span id="cb813-4"><a href="12-1-r-básico.html#cb813-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tab)</span></code></pre></div>
 <pre><code>##   Ozone Solar.R Wind Temp Month Day
 ## 1    41     190  7.4   67     5   1
 ## 2    36     118  8.0   72     5   2
@@ -810,10 +870,10 @@ ou iguais a 10 do vetor abaixo:</p>
 ## 7    23     299  8.6   65     5   7
 ## 8    19      99 13.8   59     5   8</code></pre>
 <p><strong>d.</strong> Filtre a tabela <code>airquality</code> com apenas linhas em que <code>Solar.R</code> <strong>não</strong> é <code>NA</code> e <code>Month</code> é igual a 5.</p>
-<div class="sourceCode" id="cb748"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb748-1"><a href="12-1-r-básico.html#cb748-1"></a>tab &lt;-<span class="st"> </span>airquality[<span class="op">!</span><span class="kw">is.na</span>(airquality<span class="op">$</span>Solar.R) <span class="op">&amp;</span><span class="st"> </span>airquality<span class="op">$</span>Month <span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span>,]</span>
-<span id="cb748-2"><a href="12-1-r-básico.html#cb748-2"></a></span>
-<span id="cb748-3"><a href="12-1-r-básico.html#cb748-3"></a><span class="co"># Imprimindo apenas as primeiras linhas para facilitar a leitura</span></span>
-<span id="cb748-4"><a href="12-1-r-básico.html#cb748-4"></a><span class="kw">head</span>(tab)</span></code></pre></div>
+<div class="sourceCode" id="cb815"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb815-1"><a href="12-1-r-básico.html#cb815-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> airquality[<span class="sc">!</span><span class="fu">is.na</span>(airquality<span class="sc">$</span>Solar.R) <span class="sc">&amp;</span> airquality<span class="sc">$</span>Month <span class="sc">&gt;</span> <span class="dv">5</span>,]</span>
+<span id="cb815-2"><a href="12-1-r-básico.html#cb815-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb815-3"><a href="12-1-r-básico.html#cb815-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimindo apenas as primeiras linhas para facilitar a leitura</span></span>
+<span id="cb815-4"><a href="12-1-r-básico.html#cb815-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tab)</span></code></pre></div>
 <pre><code>##    Ozone Solar.R Wind Temp Month Day
 ## 32    NA     286  8.6   78     6   1
 ## 33    NA     287  9.7   74     6   2
@@ -826,181 +886,181 @@ ou iguais a 10 do vetor abaixo:</p>
 <h3>Mais sobre funções</h3>
 <p><strong>1.</strong> Qual dos códigos abaixo devolverá um erro se for avaliado?</p>
 <p><strong>a.</strong> <code>3 * 5 + 10</code></p>
-<div class="sourceCode" id="cb750"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb750-1"><a href="12-1-r-básico.html#cb750-1"></a><span class="dv">3</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">10</span></span></code></pre></div>
+<div class="sourceCode" id="cb817"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb817-1"><a href="12-1-r-básico.html#cb817-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">*</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">10</span></span></code></pre></div>
 <pre><code>## [1] 25</code></pre>
 <p><em>Sem erro.</em></p>
 <p><strong>b.</strong> <code>function &lt;- 10</code></p>
-<div class="sourceCode" id="cb752"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb752-1"><a href="12-1-r-básico.html#cb752-1"></a><span class="cf">function</span> &lt;-<span class="st"> </span><span class="dv">10</span></span></code></pre></div>
+<div class="sourceCode" id="cb819"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb819-1"><a href="12-1-r-básico.html#cb819-1" aria-hidden="true" tabindex="-1"></a><span class="cf">function</span> <span class="ot">&lt;-</span> <span class="dv">10</span></span></code></pre></div>
 <pre><code>## Error: &lt;text&gt;:1:10: unexpected assignment
 ## 1: function &lt;-
 ##              ^</code></pre>
 <p><em>Retorna erro pois <code>function</code> é um nome reservado no R. Não podemos utilizá-lo para nomear outros objetos.</em></p>
 <p><strong>c.</strong> <code>mean(1, 10)</code></p>
-<div class="sourceCode" id="cb754"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb754-1"><a href="12-1-r-básico.html#cb754-1"></a><span class="kw">mean</span>(<span class="dv">1</span>, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb821"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb821-1"><a href="12-1-r-básico.html#cb821-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="dv">1</span>, <span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <p><em>Não retorna erro, mas o 10 não é considerado na média. O código correto seria <code>mean(c(1, 10))</code>.</em></p>
 <p><strong>d.</strong> <code>(soma &lt;- sum(1, 1))</code></p>
-<div class="sourceCode" id="cb756"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb756-1"><a href="12-1-r-básico.html#cb756-1"></a>(soma &lt;-<span class="st"> </span><span class="kw">sum</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb823"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb823-1"><a href="12-1-r-básico.html#cb823-1" aria-hidden="true" tabindex="-1"></a>(soma <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p><em>Não retorna erro. Cercar o código com parênteses força a saída a sempre ser apresentada no Console, além de ser gravada dentro do objeto.</em></p>
 <hr />
 <p><strong>2.</strong> Crie uma função que receba um número e retorne o quadrado deste número.</p>
-<div class="sourceCode" id="cb758"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb758-1"><a href="12-1-r-básico.html#cb758-1"></a>quadrado &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
-<span id="cb758-2"><a href="12-1-r-básico.html#cb758-2"></a>  x <span class="op">^</span><span class="st"> </span><span class="dv">2</span></span>
-<span id="cb758-3"><a href="12-1-r-básico.html#cb758-3"></a>}</span>
-<span id="cb758-4"><a href="12-1-r-básico.html#cb758-4"></a></span>
-<span id="cb758-5"><a href="12-1-r-básico.html#cb758-5"></a><span class="kw">quadrado</span>(<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb825"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb825-1"><a href="12-1-r-básico.html#cb825-1" aria-hidden="true" tabindex="-1"></a>quadrado <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb825-2"><a href="12-1-r-básico.html#cb825-2" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">^</span> <span class="dv">2</span></span>
+<span id="cb825-3"><a href="12-1-r-básico.html#cb825-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb825-4"><a href="12-1-r-básico.html#cb825-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb825-5"><a href="12-1-r-básico.html#cb825-5" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrado</span>(<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb760"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb760-1"><a href="12-1-r-básico.html#cb760-1"></a><span class="kw">quadrado</span>(<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb827"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb827-1"><a href="12-1-r-básico.html#cb827-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrado</span>(<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 9</code></pre>
-<div class="sourceCode" id="cb762"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb762-1"><a href="12-1-r-básico.html#cb762-1"></a><span class="kw">quadrado</span>(<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb829"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb829-1"><a href="12-1-r-básico.html#cb829-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quadrado</span>(<span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
 <hr />
 <p><strong>3.</strong> Crie uma função que receba 2 números e devolva a raiz quadrada da soma desses números.</p>
-<div class="sourceCode" id="cb764"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb764-1"><a href="12-1-r-básico.html#cb764-1"></a>raiz_da_soma &lt;-<span class="st"> </span><span class="cf">function</span>(a, b) {</span>
-<span id="cb764-2"><a href="12-1-r-básico.html#cb764-2"></a>  <span class="kw">sqrt</span>(a <span class="op">+</span><span class="st"> </span>b)</span>
-<span id="cb764-3"><a href="12-1-r-básico.html#cb764-3"></a>}</span>
-<span id="cb764-4"><a href="12-1-r-básico.html#cb764-4"></a></span>
-<span id="cb764-5"><a href="12-1-r-básico.html#cb764-5"></a><span class="kw">raiz_da_soma</span>(<span class="dv">2</span>, <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb831"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb831-1"><a href="12-1-r-básico.html#cb831-1" aria-hidden="true" tabindex="-1"></a>raiz_da_soma <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb831-2"><a href="12-1-r-básico.html#cb831-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sqrt</span>(a <span class="sc">+</span> b)</span>
+<span id="cb831-3"><a href="12-1-r-básico.html#cb831-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb831-4"><a href="12-1-r-básico.html#cb831-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb831-5"><a href="12-1-r-básico.html#cb831-5" aria-hidden="true" tabindex="-1"></a><span class="fu">raiz_da_soma</span>(<span class="dv">2</span>, <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb766"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb766-1"><a href="12-1-r-básico.html#cb766-1"></a><span class="kw">raiz_da_soma</span>(<span class="dv">1</span>, <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb833"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb833-1"><a href="12-1-r-básico.html#cb833-1" aria-hidden="true" tabindex="-1"></a><span class="fu">raiz_da_soma</span>(<span class="dv">1</span>, <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## [1] 2.236068</code></pre>
 <hr />
 <p><strong>4.</strong> Crie uma função que receba dois valores (numéricos) e devolva o maior deles.</p>
-<div class="sourceCode" id="cb768"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb768-1"><a href="12-1-r-básico.html#cb768-1"></a>retornar_maior &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</span>
-<span id="cb768-2"><a href="12-1-r-básico.html#cb768-2"></a>  vetor &lt;-<span class="st"> </span><span class="kw">c</span>(x, y)</span>
-<span id="cb768-3"><a href="12-1-r-básico.html#cb768-3"></a>  filtro &lt;-<span class="st"> </span><span class="kw">c</span>(x <span class="op">&gt;</span><span class="st"> </span>y, x <span class="op">&lt;=</span><span class="st"> </span>y)</span>
-<span id="cb768-4"><a href="12-1-r-básico.html#cb768-4"></a>  vetor[filtro]</span>
-<span id="cb768-5"><a href="12-1-r-básico.html#cb768-5"></a>}</span>
-<span id="cb768-6"><a href="12-1-r-básico.html#cb768-6"></a></span>
-<span id="cb768-7"><a href="12-1-r-básico.html#cb768-7"></a><span class="kw">retornar_maior</span>(<span class="dv">10</span>, <span class="dv">20</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb835"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb835-1"><a href="12-1-r-básico.html#cb835-1" aria-hidden="true" tabindex="-1"></a>retornar_maior <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb835-2"><a href="12-1-r-básico.html#cb835-2" aria-hidden="true" tabindex="-1"></a>  vetor <span class="ot">&lt;-</span> <span class="fu">c</span>(x, y)</span>
+<span id="cb835-3"><a href="12-1-r-básico.html#cb835-3" aria-hidden="true" tabindex="-1"></a>  filtro <span class="ot">&lt;-</span> <span class="fu">c</span>(x <span class="sc">&gt;</span> y, x <span class="sc">&lt;=</span> y)</span>
+<span id="cb835-4"><a href="12-1-r-básico.html#cb835-4" aria-hidden="true" tabindex="-1"></a>  vetor[filtro]</span>
+<span id="cb835-5"><a href="12-1-r-básico.html#cb835-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb835-6"><a href="12-1-r-básico.html#cb835-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb835-7"><a href="12-1-r-básico.html#cb835-7" aria-hidden="true" tabindex="-1"></a><span class="fu">retornar_maior</span>(<span class="dv">10</span>, <span class="dv">20</span>)</span></code></pre></div>
 <pre><code>## [1] 20</code></pre>
-<div class="sourceCode" id="cb770"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb770-1"><a href="12-1-r-básico.html#cb770-1"></a><span class="kw">retornar_maior</span>(<span class="dv">5</span>, <span class="dv">-5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb837"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb837-1"><a href="12-1-r-básico.html#cb837-1" aria-hidden="true" tabindex="-1"></a><span class="fu">retornar_maior</span>(<span class="dv">5</span>, <span class="sc">-</span><span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
 <p>*Também poderíamos resolver usando a função <code>max()</code>.</p>
-<div class="sourceCode" id="cb772"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb772-1"><a href="12-1-r-básico.html#cb772-1"></a>retornar_maior &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {</span>
-<span id="cb772-2"><a href="12-1-r-básico.html#cb772-2"></a>  <span class="kw">max</span>(x, y)</span>
-<span id="cb772-3"><a href="12-1-r-básico.html#cb772-3"></a>}</span>
-<span id="cb772-4"><a href="12-1-r-básico.html#cb772-4"></a></span>
-<span id="cb772-5"><a href="12-1-r-básico.html#cb772-5"></a><span class="kw">retornar_maior</span>(<span class="dv">10</span>, <span class="dv">20</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb839"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb839-1"><a href="12-1-r-básico.html#cb839-1" aria-hidden="true" tabindex="-1"></a>retornar_maior <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb839-2"><a href="12-1-r-básico.html#cb839-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">max</span>(x, y)</span>
+<span id="cb839-3"><a href="12-1-r-básico.html#cb839-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb839-4"><a href="12-1-r-básico.html#cb839-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb839-5"><a href="12-1-r-básico.html#cb839-5" aria-hidden="true" tabindex="-1"></a><span class="fu">retornar_maior</span>(<span class="dv">10</span>, <span class="dv">20</span>)</span></code></pre></div>
 <pre><code>## [1] 20</code></pre>
-<div class="sourceCode" id="cb774"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb774-1"><a href="12-1-r-básico.html#cb774-1"></a><span class="kw">retornar_maior</span>(<span class="dv">5</span>, <span class="dv">-5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb841"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb841-1"><a href="12-1-r-básico.html#cb841-1" aria-hidden="true" tabindex="-1"></a><span class="fu">retornar_maior</span>(<span class="dv">5</span>, <span class="sc">-</span><span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
 <hr />
 <p><strong>5.</strong> Use a função <code>runif()</code> para criar uma função que retorne um número aleatório inteiro entre 0 e 10 (0 e 10 inclusive). Caso você não conheça a função <code>runif()</code>, rode <code>help(runif)</code> para ler a sua documentação.</p>
-<div class="sourceCode" id="cb776"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb776-1"><a href="12-1-r-básico.html#cb776-1"></a>sortear_numero &lt;-<span class="st"> </span><span class="cf">function</span>() {</span>
-<span id="cb776-2"><a href="12-1-r-básico.html#cb776-2"></a>  numero &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">1</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">10</span>)</span>
-<span id="cb776-3"><a href="12-1-r-básico.html#cb776-3"></a>  </span>
-<span id="cb776-4"><a href="12-1-r-básico.html#cb776-4"></a>  numero_inteiro &lt;-<span class="st"> </span><span class="kw">round</span>(numero)</span>
-<span id="cb776-5"><a href="12-1-r-básico.html#cb776-5"></a>  </span>
-<span id="cb776-6"><a href="12-1-r-básico.html#cb776-6"></a>  <span class="kw">return</span>(numero_inteiro)</span>
-<span id="cb776-7"><a href="12-1-r-básico.html#cb776-7"></a>}</span>
-<span id="cb776-8"><a href="12-1-r-básico.html#cb776-8"></a></span>
-<span id="cb776-9"><a href="12-1-r-básico.html#cb776-9"></a><span class="kw">sortear_numero</span>()</span></code></pre></div>
-<pre><code>## [1] 7</code></pre>
+<div class="sourceCode" id="cb843"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb843-1"><a href="12-1-r-básico.html#cb843-1" aria-hidden="true" tabindex="-1"></a>sortear_numero <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb843-2"><a href="12-1-r-básico.html#cb843-2" aria-hidden="true" tabindex="-1"></a>  numero <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>)</span>
+<span id="cb843-3"><a href="12-1-r-básico.html#cb843-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb843-4"><a href="12-1-r-básico.html#cb843-4" aria-hidden="true" tabindex="-1"></a>  numero_inteiro <span class="ot">&lt;-</span> <span class="fu">round</span>(numero)</span>
+<span id="cb843-5"><a href="12-1-r-básico.html#cb843-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb843-6"><a href="12-1-r-básico.html#cb843-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(numero_inteiro)</span>
+<span id="cb843-7"><a href="12-1-r-básico.html#cb843-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb843-8"><a href="12-1-r-básico.html#cb843-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb843-9"><a href="12-1-r-básico.html#cb843-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sortear_numero</span>()</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
 <hr />
 <p><strong>6.</strong> Rode <code>help(sample)</code> para descobrir o que a função <code>sample()</code> faz. Em seguida:</p>
 <p><strong>a.</strong> Use a função <code>sample()</code> para escrever uma função que devolva uma linha aleatória de um <em>data frame</em>.</p>
-<div class="sourceCode" id="cb778"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb778-1"><a href="12-1-r-básico.html#cb778-1"></a>sortear_linha &lt;-<span class="st"> </span><span class="cf">function</span>(data_frame) {</span>
-<span id="cb778-2"><a href="12-1-r-básico.html#cb778-2"></a>  num_linhas &lt;-<span class="st"> </span><span class="kw">nrow</span>(data_frame)</span>
-<span id="cb778-3"><a href="12-1-r-básico.html#cb778-3"></a>  linha_sorteada &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span>num_linhas, <span class="dv">1</span>)</span>
-<span id="cb778-4"><a href="12-1-r-básico.html#cb778-4"></a>  </span>
-<span id="cb778-5"><a href="12-1-r-básico.html#cb778-5"></a>  data_frame[linha_sorteada, ]</span>
-<span id="cb778-6"><a href="12-1-r-básico.html#cb778-6"></a>}</span>
-<span id="cb778-7"><a href="12-1-r-básico.html#cb778-7"></a></span>
-<span id="cb778-8"><a href="12-1-r-básico.html#cb778-8"></a><span class="kw">sortear_linha</span>(mtcars)</span></code></pre></div>
-<pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
-## Chrysler Imperial 14.7   8  440 230 3.23 5.345 17.42  0  0    3    4</code></pre>
+<div class="sourceCode" id="cb845"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb845-1"><a href="12-1-r-básico.html#cb845-1" aria-hidden="true" tabindex="-1"></a>sortear_linha <span class="ot">&lt;-</span> <span class="cf">function</span>(data_frame) {</span>
+<span id="cb845-2"><a href="12-1-r-básico.html#cb845-2" aria-hidden="true" tabindex="-1"></a>  num_linhas <span class="ot">&lt;-</span> <span class="fu">nrow</span>(data_frame)</span>
+<span id="cb845-3"><a href="12-1-r-básico.html#cb845-3" aria-hidden="true" tabindex="-1"></a>  linha_sorteada <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>num_linhas, <span class="dv">1</span>)</span>
+<span id="cb845-4"><a href="12-1-r-básico.html#cb845-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb845-5"><a href="12-1-r-básico.html#cb845-5" aria-hidden="true" tabindex="-1"></a>  data_frame[linha_sorteada, ]</span>
+<span id="cb845-6"><a href="12-1-r-básico.html#cb845-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb845-7"><a href="12-1-r-básico.html#cb845-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb845-8"><a href="12-1-r-básico.html#cb845-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sortear_linha</span>(mtcars)</span></code></pre></div>
+<pre><code>##               mpg cyl  disp hp drat   wt qsec vs am gear carb
+## Porsche 914-2  26   4 120.3 91 4.43 2.14 16.7  0  1    5    2</code></pre>
 <p><strong>b.</strong> Generalize a função para retornar um número qualquer de linhas, escolhido pelo usuário.</p>
-<div class="sourceCode" id="cb780"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb780-1"><a href="12-1-r-básico.html#cb780-1"></a>sortear_linha &lt;-<span class="st"> </span><span class="cf">function</span>(data_frame, n) {</span>
-<span id="cb780-2"><a href="12-1-r-básico.html#cb780-2"></a>  num_linhas &lt;-<span class="st"> </span><span class="kw">nrow</span>(data_frame)</span>
-<span id="cb780-3"><a href="12-1-r-básico.html#cb780-3"></a>  linha_sorteada &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span>num_linhas, n)</span>
-<span id="cb780-4"><a href="12-1-r-básico.html#cb780-4"></a>  </span>
-<span id="cb780-5"><a href="12-1-r-básico.html#cb780-5"></a>  data_frame[linha_sorteada, ]</span>
-<span id="cb780-6"><a href="12-1-r-básico.html#cb780-6"></a>}</span>
-<span id="cb780-7"><a href="12-1-r-básico.html#cb780-7"></a></span>
-<span id="cb780-8"><a href="12-1-r-básico.html#cb780-8"></a><span class="kw">sortear_linha</span>(mtcars, <span class="dv">10</span>)</span></code></pre></div>
-<pre><code>##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-## Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
-## Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
-## Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
-## Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
-## Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
-## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
-## Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
-## Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
-## Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
-## Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1</code></pre>
+<div class="sourceCode" id="cb847"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb847-1"><a href="12-1-r-básico.html#cb847-1" aria-hidden="true" tabindex="-1"></a>sortear_linha <span class="ot">&lt;-</span> <span class="cf">function</span>(data_frame, n) {</span>
+<span id="cb847-2"><a href="12-1-r-básico.html#cb847-2" aria-hidden="true" tabindex="-1"></a>  num_linhas <span class="ot">&lt;-</span> <span class="fu">nrow</span>(data_frame)</span>
+<span id="cb847-3"><a href="12-1-r-básico.html#cb847-3" aria-hidden="true" tabindex="-1"></a>  linha_sorteada <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>num_linhas, n)</span>
+<span id="cb847-4"><a href="12-1-r-básico.html#cb847-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb847-5"><a href="12-1-r-básico.html#cb847-5" aria-hidden="true" tabindex="-1"></a>  data_frame[linha_sorteada, ]</span>
+<span id="cb847-6"><a href="12-1-r-básico.html#cb847-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb847-7"><a href="12-1-r-básico.html#cb847-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb847-8"><a href="12-1-r-básico.html#cb847-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sortear_linha</span>(mtcars, <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##                    mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Merc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+## Hornet 4 Drive    21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+## Merc 450SLC       15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+## Porsche 914-2     26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
+## Chrysler Imperial 14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+## Toyota Corolla    33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+## Mazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+## Hornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+## Maserati Bora     15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
+## Ford Pantera L    15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4</code></pre>
 </div>
 <div id="controle-de-fluxo-1" class="section level3 unnumbered">
 <h3>Controle de fluxo</h3>
 <p><strong>1.</strong> Por que o código abaixo retorna erro? Arrume o código para retornar o valor <code>TRUE</code>.</p>
-<div class="sourceCode" id="cb782"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb782-1"><a href="12-1-r-básico.html#cb782-1"></a>x &lt;-<span class="st"> </span><span class="dv">4</span></span>
-<span id="cb782-2"><a href="12-1-r-básico.html#cb782-2"></a><span class="cf">if</span>(<span class="dt">x =</span> <span class="dv">4</span>) {</span>
-<span id="cb782-3"><a href="12-1-r-básico.html#cb782-3"></a>  <span class="ot">TRUE</span></span>
-<span id="cb782-4"><a href="12-1-r-básico.html#cb782-4"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb849"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb849-1"><a href="12-1-r-básico.html#cb849-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb849-2"><a href="12-1-r-básico.html#cb849-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="at">x =</span> <span class="dv">4</span>) {</span>
+<span id="cb849-3"><a href="12-1-r-básico.html#cb849-3" aria-hidden="true" tabindex="-1"></a>  <span class="cn">TRUE</span></span>
+<span id="cb849-4"><a href="12-1-r-básico.html#cb849-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>**Porque a expressão dentro do <code>if</code> deve retornar um valor lógico (TRUE ou FALSE) e o código <code>x = 4</code> é uma atribuição (equivalente a <code>x &lt;- 4</code>). O correto seria utilizar <code>==</code> em vez de <code>=</code>.*</p>
-<div class="sourceCode" id="cb783"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb783-1"><a href="12-1-r-básico.html#cb783-1"></a>x &lt;-<span class="st"> </span><span class="dv">4</span></span>
-<span id="cb783-2"><a href="12-1-r-básico.html#cb783-2"></a><span class="cf">if</span>(x <span class="op">==</span><span class="st"> </span><span class="dv">4</span>) {</span>
-<span id="cb783-3"><a href="12-1-r-básico.html#cb783-3"></a>  <span class="ot">TRUE</span></span>
-<span id="cb783-4"><a href="12-1-r-básico.html#cb783-4"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb850"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb850-1"><a href="12-1-r-básico.html#cb850-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb850-2"><a href="12-1-r-básico.html#cb850-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">==</span> <span class="dv">4</span>) {</span>
+<span id="cb850-3"><a href="12-1-r-básico.html#cb850-3" aria-hidden="true" tabindex="-1"></a>  <span class="cn">TRUE</span></span>
+<span id="cb850-4"><a href="12-1-r-básico.html#cb850-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <hr />
 <p><strong>2.</strong> Usando <code>if</code> e <code>else</code>, escreva um código que retorne a string <code>"número"</code> caso um valor <code>x</code> seja da classe <code>numeric</code> ou <code>integer</code>; a string <code>"palavra"</code> caso seja da classe <code>character</code>; e <code>NA</code> caso contrário.</p>
-<div class="sourceCode" id="cb785"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb785-1"><a href="12-1-r-básico.html#cb785-1"></a>x &lt;-<span class="st"> </span><span class="dv">10</span></span>
-<span id="cb785-2"><a href="12-1-r-básico.html#cb785-2"></a></span>
-<span id="cb785-3"><a href="12-1-r-básico.html#cb785-3"></a><span class="cf">if</span> (<span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;numeric&quot;</span> <span class="op">|</span><span class="st"> </span><span class="kw">class</span>(x) <span class="op">==</span><span class="st"> &quot;integer&quot;</span>) {</span>
-<span id="cb785-4"><a href="12-1-r-básico.html#cb785-4"></a>  <span class="st">&quot;número&quot;</span></span>
-<span id="cb785-5"><a href="12-1-r-básico.html#cb785-5"></a><span class="st">} else if (class(x) == &quot;</span>character<span class="st">&quot;) {</span></span>
-<span id="cb785-6"><a href="12-1-r-básico.html#cb785-6"></a><span class="st">  &quot;</span>palavra<span class="st">&quot;</span></span>
-<span id="cb785-7"><a href="12-1-r-básico.html#cb785-7"></a><span class="st">} else {</span></span>
-<span id="cb785-8"><a href="12-1-r-básico.html#cb785-8"></a><span class="st">  NA</span></span>
-<span id="cb785-9"><a href="12-1-r-básico.html#cb785-9"></a><span class="st">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb852"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb852-1"><a href="12-1-r-básico.html#cb852-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb852-2"><a href="12-1-r-básico.html#cb852-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb852-3"><a href="12-1-r-básico.html#cb852-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">class</span>(x) <span class="sc">==</span> <span class="st">&quot;numeric&quot;</span> <span class="sc">|</span> <span class="fu">class</span>(x) <span class="sc">==</span> <span class="st">&quot;integer&quot;</span>) {</span>
+<span id="cb852-4"><a href="12-1-r-básico.html#cb852-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;número&quot;</span></span>
+<span id="cb852-5"><a href="12-1-r-básico.html#cb852-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (<span class="fu">class</span>(x) <span class="sc">==</span> <span class="st">&quot;character&quot;</span>) {</span>
+<span id="cb852-6"><a href="12-1-r-básico.html#cb852-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;palavra&quot;</span></span>
+<span id="cb852-7"><a href="12-1-r-básico.html#cb852-7" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb852-8"><a href="12-1-r-básico.html#cb852-8" aria-hidden="true" tabindex="-1"></a>  <span class="cn">NA</span></span>
+<span id="cb852-9"><a href="12-1-r-básico.html#cb852-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## [1] &quot;número&quot;</code></pre>
 <p><strong>Uma solução mais simples seria utilizar as funções <code>is.numeric()</code> e <code>is.character()</code>.</strong></p>
-<div class="sourceCode" id="cb787"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb787-1"><a href="12-1-r-básico.html#cb787-1"></a>x &lt;-<span class="st"> &quot;qualquer texto&quot;</span></span>
-<span id="cb787-2"><a href="12-1-r-básico.html#cb787-2"></a></span>
-<span id="cb787-3"><a href="12-1-r-básico.html#cb787-3"></a><span class="cf">if</span> (<span class="kw">is.numeric</span>(x)) {</span>
-<span id="cb787-4"><a href="12-1-r-básico.html#cb787-4"></a>  <span class="st">&quot;número&quot;</span></span>
-<span id="cb787-5"><a href="12-1-r-básico.html#cb787-5"></a><span class="st">} else if (is.character(x)) {</span></span>
-<span id="cb787-6"><a href="12-1-r-básico.html#cb787-6"></a><span class="st">  &quot;</span>palavra<span class="st">&quot;</span></span>
-<span id="cb787-7"><a href="12-1-r-básico.html#cb787-7"></a><span class="st">} else {</span></span>
-<span id="cb787-8"><a href="12-1-r-básico.html#cb787-8"></a><span class="st">  NA</span></span>
-<span id="cb787-9"><a href="12-1-r-básico.html#cb787-9"></a><span class="st">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb854"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb854-1"><a href="12-1-r-básico.html#cb854-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;qualquer texto&quot;</span></span>
+<span id="cb854-2"><a href="12-1-r-básico.html#cb854-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb854-3"><a href="12-1-r-básico.html#cb854-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">is.numeric</span>(x)) {</span>
+<span id="cb854-4"><a href="12-1-r-básico.html#cb854-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;número&quot;</span></span>
+<span id="cb854-5"><a href="12-1-r-básico.html#cb854-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (<span class="fu">is.character</span>(x)) {</span>
+<span id="cb854-6"><a href="12-1-r-básico.html#cb854-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;palavra&quot;</span></span>
+<span id="cb854-7"><a href="12-1-r-básico.html#cb854-7" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb854-8"><a href="12-1-r-básico.html#cb854-8" aria-hidden="true" tabindex="-1"></a>  <span class="cn">NA</span></span>
+<span id="cb854-9"><a href="12-1-r-básico.html#cb854-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## [1] &quot;palavra&quot;</code></pre>
 <hr />
 <p><strong>3.</strong> Usando apenas <code>for</code> e a função <code>length()</code>, construa uma função que calcule a média de um vetor numérico qualquer. Construa uma condição para a função retornar <code>NULL</code> caso o vetor não seja numérico.</p>
-<div class="sourceCode" id="cb789"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb789-1"><a href="12-1-r-básico.html#cb789-1"></a>minha_media &lt;-<span class="st"> </span><span class="cf">function</span>(vetor) {</span>
-<span id="cb789-2"><a href="12-1-r-básico.html#cb789-2"></a></span>
-<span id="cb789-3"><a href="12-1-r-básico.html#cb789-3"></a>  soma &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb789-4"><a href="12-1-r-básico.html#cb789-4"></a>  </span>
-<span id="cb789-5"><a href="12-1-r-básico.html#cb789-5"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(vetor)) {</span>
-<span id="cb789-6"><a href="12-1-r-básico.html#cb789-6"></a>    soma &lt;-<span class="st"> </span>soma <span class="op">+</span><span class="st"> </span>vetor[i]</span>
-<span id="cb789-7"><a href="12-1-r-básico.html#cb789-7"></a>  }</span>
-<span id="cb789-8"><a href="12-1-r-básico.html#cb789-8"></a>  </span>
-<span id="cb789-9"><a href="12-1-r-básico.html#cb789-9"></a>  media &lt;-<span class="st"> </span>soma <span class="op">/</span><span class="st"> </span><span class="kw">length</span>(vetor)  </span>
-<span id="cb789-10"><a href="12-1-r-básico.html#cb789-10"></a>  </span>
-<span id="cb789-11"><a href="12-1-r-básico.html#cb789-11"></a>  <span class="kw">return</span>(media)</span>
-<span id="cb789-12"><a href="12-1-r-básico.html#cb789-12"></a>  </span>
-<span id="cb789-13"><a href="12-1-r-básico.html#cb789-13"></a>}</span>
-<span id="cb789-14"><a href="12-1-r-básico.html#cb789-14"></a></span>
-<span id="cb789-15"><a href="12-1-r-básico.html#cb789-15"></a><span class="kw">minha_media</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb856"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb856-1"><a href="12-1-r-básico.html#cb856-1" aria-hidden="true" tabindex="-1"></a>minha_media <span class="ot">&lt;-</span> <span class="cf">function</span>(vetor) {</span>
+<span id="cb856-2"><a href="12-1-r-básico.html#cb856-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb856-3"><a href="12-1-r-básico.html#cb856-3" aria-hidden="true" tabindex="-1"></a>  soma <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb856-4"><a href="12-1-r-básico.html#cb856-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb856-5"><a href="12-1-r-básico.html#cb856-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(vetor)) {</span>
+<span id="cb856-6"><a href="12-1-r-básico.html#cb856-6" aria-hidden="true" tabindex="-1"></a>    soma <span class="ot">&lt;-</span> soma <span class="sc">+</span> vetor[i]</span>
+<span id="cb856-7"><a href="12-1-r-básico.html#cb856-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb856-8"><a href="12-1-r-básico.html#cb856-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb856-9"><a href="12-1-r-básico.html#cb856-9" aria-hidden="true" tabindex="-1"></a>  media <span class="ot">&lt;-</span> soma <span class="sc">/</span> <span class="fu">length</span>(vetor)  </span>
+<span id="cb856-10"><a href="12-1-r-básico.html#cb856-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb856-11"><a href="12-1-r-básico.html#cb856-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(media)</span>
+<span id="cb856-12"><a href="12-1-r-básico.html#cb856-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb856-13"><a href="12-1-r-básico.html#cb856-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb856-14"><a href="12-1-r-básico.html#cb856-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb856-15"><a href="12-1-r-básico.html#cb856-15" aria-hidden="true" tabindex="-1"></a><span class="fu">minha_media</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span></code></pre></div>
 <pre><code>## [1] 1.5</code></pre>
-<div class="sourceCode" id="cb791"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb791-1"><a href="12-1-r-básico.html#cb791-1"></a><span class="kw">minha_media</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb858"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb858-1"><a href="12-1-r-básico.html#cb858-1" aria-hidden="true" tabindex="-1"></a><span class="fu">minha_media</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
-<div class="sourceCode" id="cb793"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb793-1"><a href="12-1-r-básico.html#cb793-1"></a><span class="kw">minha_media</span>(<span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb860"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb860-1"><a href="12-1-r-básico.html#cb860-1" aria-hidden="true" tabindex="-1"></a><span class="fu">minha_media</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <hr />
 <p><strong>4.</strong> Utilize o vetor <code>a</code> para resolver as questões a seguir:</p>
-<div class="sourceCode" id="cb795"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb795-1"><a href="12-1-r-básico.html#cb795-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">-1</span>, <span class="dv">3</span>, <span class="dv">-4</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">-10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb862"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb862-1"><a href="12-1-r-básico.html#cb862-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">3</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="sc">-</span><span class="dv">10</span>)</span></code></pre></div>
 <p><strong>a.</strong> Utilize o <code>for</code> para imprimir as médias acumuladas do vetor <code>a</code>, isto é, primeiro vamos imprimir 10, depois a média entre 10 e 3, depois a média entre 10, 3 e 5 e assim por diante.</p>
-<div class="sourceCode" id="cb796"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb796-1"><a href="12-1-r-básico.html#cb796-1"></a>soma &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb796-2"><a href="12-1-r-básico.html#cb796-2"></a></span>
-<span id="cb796-3"><a href="12-1-r-básico.html#cb796-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(a)) {</span>
-<span id="cb796-4"><a href="12-1-r-básico.html#cb796-4"></a>  soma &lt;-<span class="st"> </span>soma <span class="op">+</span><span class="st"> </span>a[i]</span>
-<span id="cb796-5"><a href="12-1-r-básico.html#cb796-5"></a>  </span>
-<span id="cb796-6"><a href="12-1-r-básico.html#cb796-6"></a>  <span class="kw">print</span>(soma <span class="op">/</span><span class="st"> </span>i)</span>
-<span id="cb796-7"><a href="12-1-r-básico.html#cb796-7"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb863"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb863-1"><a href="12-1-r-básico.html#cb863-1" aria-hidden="true" tabindex="-1"></a>soma <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb863-2"><a href="12-1-r-básico.html#cb863-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb863-3"><a href="12-1-r-básico.html#cb863-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(a)) {</span>
+<span id="cb863-4"><a href="12-1-r-básico.html#cb863-4" aria-hidden="true" tabindex="-1"></a>  soma <span class="ot">&lt;-</span> soma <span class="sc">+</span> a[i]</span>
+<span id="cb863-5"><a href="12-1-r-básico.html#cb863-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb863-6"><a href="12-1-r-básico.html#cb863-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(soma <span class="sc">/</span> i)</span>
+<span id="cb863-7"><a href="12-1-r-básico.html#cb863-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## [1] 10
 ## [1] 6.5
 ## [1] 6
@@ -1011,16 +1071,16 @@ ou iguais a 10 do vetor abaixo:</p>
 ## [1] 4.125
 ## [1] 2.555556</code></pre>
 <p><strong>b.</strong> Adapte o laço que você fez no item anterior para ignorar os valores negativos, isto é, em caso de valor negativo, o laço não deve calcular a média e não imprimir nada.</p>
-<div class="sourceCode" id="cb798"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb798-1"><a href="12-1-r-básico.html#cb798-1"></a>soma &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb798-2"><a href="12-1-r-básico.html#cb798-2"></a>divisor &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb798-3"><a href="12-1-r-básico.html#cb798-3"></a></span>
-<span id="cb798-4"><a href="12-1-r-básico.html#cb798-4"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(a)) {</span>
-<span id="cb798-5"><a href="12-1-r-básico.html#cb798-5"></a>  <span class="cf">if</span> (a[i] <span class="op">&gt;=</span><span class="st"> </span><span class="dv">0</span>) {</span>
-<span id="cb798-6"><a href="12-1-r-básico.html#cb798-6"></a>    soma &lt;-<span class="st"> </span>soma <span class="op">+</span><span class="st"> </span>a[i]</span>
-<span id="cb798-7"><a href="12-1-r-básico.html#cb798-7"></a>    divisor &lt;-<span class="st"> </span>divisor <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
-<span id="cb798-8"><a href="12-1-r-básico.html#cb798-8"></a>    <span class="kw">print</span>(soma <span class="op">/</span><span class="st"> </span>divisor)</span>
-<span id="cb798-9"><a href="12-1-r-básico.html#cb798-9"></a>  }</span>
-<span id="cb798-10"><a href="12-1-r-básico.html#cb798-10"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb865"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb865-1"><a href="12-1-r-básico.html#cb865-1" aria-hidden="true" tabindex="-1"></a>soma <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb865-2"><a href="12-1-r-básico.html#cb865-2" aria-hidden="true" tabindex="-1"></a>divisor <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb865-3"><a href="12-1-r-básico.html#cb865-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb865-4"><a href="12-1-r-básico.html#cb865-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(a)) {</span>
+<span id="cb865-5"><a href="12-1-r-básico.html#cb865-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (a[i] <span class="sc">&gt;=</span> <span class="dv">0</span>) {</span>
+<span id="cb865-6"><a href="12-1-r-básico.html#cb865-6" aria-hidden="true" tabindex="-1"></a>    soma <span class="ot">&lt;-</span> soma <span class="sc">+</span> a[i]</span>
+<span id="cb865-7"><a href="12-1-r-básico.html#cb865-7" aria-hidden="true" tabindex="-1"></a>    divisor <span class="ot">&lt;-</span> divisor <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb865-8"><a href="12-1-r-básico.html#cb865-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(soma <span class="sc">/</span> divisor)</span>
+<span id="cb865-9"><a href="12-1-r-básico.html#cb865-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb865-10"><a href="12-1-r-básico.html#cb865-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## [1] 10
 ## [1] 6.5
 ## [1] 6

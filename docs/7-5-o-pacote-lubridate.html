@@ -32,6 +32,7 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="7-4-o-pacote-stringr.html"/>
 <link rel="next" href="7-6-forcats.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,7 +50,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
@@ -75,18 +75,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -106,7 +106,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -156,14 +156,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre</a></li>
-<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a><ul>
-<li class="chapter" data-level="1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
+<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
 <li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
-<li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a><ul>
+<li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
 <li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
 <li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
@@ -172,7 +175,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#rtools"><i class="fa fa-check"></i><b>1.3.6</b> Rtools</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a><ul>
+<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="2-1-telas.html"><a href="2-1-telas.html"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
 <li class="chapter" data-level="2.2" data-path="2-2-atalhos.html"><a href="2-2-atalhos.html"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
 <li class="chapter" data-level="2.3" data-path="2-3-projetos.html"><a href="2-3-projetos.html"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
@@ -181,60 +185,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="2-6-addins.html"><a href="2-6-addins.html"><i class="fa fa-check"></i><b>2.6</b> Addins</a></li>
 <li class="chapter" data-level="2.7" data-path="2-7-snippets.html"><a href="2-7-snippets.html"><i class="fa fa-check"></i><b>2.7</b> Snippets</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a><ul>
-<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a><ul>
+<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
 <li class="chapter" data-level="3.1.2" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
 <li class="chapter" data-level="3.1.3" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
+<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a><ul>
+<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="3-4-data-frames.html"><a href="3-4-data-frames.html"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
-<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a><ul>
+<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a>
+<ul>
 <li class="chapter" data-level="3.5.1" data-path="3-5-classes.html"><a href="3-5-classes.html#exercícios-2"><i class="fa fa-check"></i><b>3.5.1</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a><ul>
+<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-6-vetores.html"><a href="3-6-vetores.html#exercícios-3"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a><ul>
+<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html#exercícios-4"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a><ul>
+<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.9" data-path="3-9-listas.html"><a href="3-9-listas.html"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
-<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
+<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html#exercícios-6"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a><ul>
+<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html#exercícios-7"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
+<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a>
+<ul>
 <li class="chapter" data-level="3.12.1" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
 <li class="chapter" data-level="3.12.2" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#iteradores-for-e-while"><i class="fa fa-check"></i><b>3.12.2</b> Iteradores: for e while</a></li>
 <li class="chapter" data-level="" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#exercícios-8"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a><ul>
+<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a>
+<ul>
 <li class="chapter" data-level="3.13.1" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#matrizes"><i class="fa fa-check"></i><b>3.13.1</b> Matrizes</a></li>
 <li class="chapter" data-level="3.13.2" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#fatores"><i class="fa fa-check"></i><b>3.13.2</b> Fatores</a></li>
 <li class="chapter" data-level="3.13.3" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#gráficos-r-base"><i class="fa fa-check"></i><b>3.13.3</b> Gráficos (R base)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a><ul>
-<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a><ul>
+<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-cran"><i class="fa fa-check"></i><b>4.1.1</b> Via CRAN</a></li>
 <li class="chapter" data-level="4.1.2" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-github"><i class="fa fa-check"></i><b>4.1.2</b> Via Github</a></li>
 <li class="chapter" data-level="4.1.3" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-arquivo-.zip-ou-.tar.gz"><i class="fa fa-check"></i><b>4.1.3</b> Via arquivo .zip ou .tar.gz</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="4-2-tidyverse.html"><a href="4-2-tidyverse.html"><i class="fa fa-check"></i><b>4.2</b> Tidyverse</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a><ul>
+<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="5-1-caminhos.html"><a href="5-1-caminhos.html"><i class="fa fa-check"></i><b>5.1</b> Caminhos</a></li>
-<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a><ul>
+<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="5-2-readr.html"><a href="5-2-readr.html#lendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.1</b> Lendo arquivos de texto</a></li>
 <li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.2</b> Locale</a></li>
 <li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.3</b> Parseando valores</a></li>
@@ -245,15 +265,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3" data-path="5-3-readxl.html"><a href="5-3-readxl.html"><i class="fa fa-check"></i><b>5.3</b> Os pacotes readxl e writexl</a></li>
 <li class="chapter" data-level="5.4" data-path="5-4-haven.html"><a href="5-4-haven.html"><i class="fa fa-check"></i><b>5.4</b> haven</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
-<li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a><ul>
+<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a>
+<ul>
 <li class="chapter" data-level="" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html#exercícios-10"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
+<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="7-1-tibbles.html"><a href="7-1-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Tibbles</a></li>
-<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a><ul>
+<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#selecionando-colunas"><i class="fa fa-check"></i><b>7.2.1</b> Selecionando colunas</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#ordenando-a-base"><i class="fa fa-check"></i><b>7.2.2</b> Ordenando a base</a></li>
 <li class="chapter" data-level="7.2.3" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#o-pipe-em-ação"><i class="fa fa-check"></i><b>7.2.3</b> O pipe em ação</a></li>
@@ -263,27 +287,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.7" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#juntando-duas-bases"><i class="fa fa-check"></i><b>7.2.7</b> Juntando duas bases</a></li>
 <li class="chapter" data-level="7.2.8" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#dplyr-1.0"><i class="fa fa-check"></i><b>7.2.8</b> dplyr 1.0</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a><ul>
+<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#separate-e-unite"><i class="fa fa-check"></i><b>7.3.1</b> <code>separate()</code> e <code>unite()</code></a></li>
 <li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#pivotagem"><i class="fa fa-check"></i><b>7.3.2</b> Pivotagem</a></li>
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#list-columns"><i class="fa fa-check"></i><b>7.3.3</b> <em>List columns</em></a></li>
 <li class="chapter" data-level="7.3.4" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#exercícios-18"><i class="fa fa-check"></i><b>7.3.4</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a><ul>
+<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a>
+<ul>
 <li class="chapter" data-level="7.4.1" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#introdução"><i class="fa fa-check"></i><b>7.4.1</b> Introdução</a></li>
 <li class="chapter" data-level="7.4.2" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-básicas"><i class="fa fa-check"></i><b>7.4.2</b> Funções básicas</a></li>
 <li class="chapter" data-level="7.4.3" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#expressões-regulares"><i class="fa fa-check"></i><b>7.4.3</b> Expressões Regulares</a></li>
 <li class="chapter" data-level="7.4.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-que-utilizam-regex"><i class="fa fa-check"></i><b>7.4.4</b> Funções que utilizam regex</a></li>
 <li class="chapter" data-level="7.4.5" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#exercícios-19"><i class="fa fa-check"></i><b>7.4.5</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.5</b> O pacote lubridate</a><ul>
+<li class="chapter" data-level="7.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.5</b> O pacote lubridate</a>
+<ul>
 <li class="chapter" data-level="7.5.1" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#a-classe-date"><i class="fa fa-check"></i><b>7.5.1</b> A classe <code>date</code></a></li>
 <li class="chapter" data-level="7.5.2" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#funções-úteis"><i class="fa fa-check"></i><b>7.5.2</b> Funções úteis</a></li>
 <li class="chapter" data-level="7.5.3" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#fusos-horários"><i class="fa fa-check"></i><b>7.5.3</b> Fusos horários</a></li>
 <li class="chapter" data-level="7.5.4" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#operações-com-datas"><i class="fa fa-check"></i><b>7.5.4</b> Operações com datas</a></li>
 <li class="chapter" data-level="7.5.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#exercícios-20"><i class="fa fa-check"></i><b>7.5.5</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="7-6-forcats.html"><a href="7-6-forcats.html"><i class="fa fa-check"></i><b>7.6</b> O pacote forcats</a><ul>
+<li class="chapter" data-level="7.6" data-path="7-6-forcats.html"><a href="7-6-forcats.html"><i class="fa fa-check"></i><b>7.6</b> O pacote forcats</a>
+<ul>
 <li class="chapter" data-level="7.6.1" data-path="7-6-forcats.html"><a href="7-6-forcats.html#o-que-são-fatores"><i class="fa fa-check"></i><b>7.6.1</b> O que são fatores?</a></li>
 <li class="chapter" data-level="7.6.2" data-path="7-6-forcats.html"><a href="7-6-forcats.html#modificando-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.2</b> Modificando níveis de um fator</a></li>
 <li class="chapter" data-level="7.6.3" data-path="7-6-forcats.html"><a href="7-6-forcats.html#mudando-a-ordem-dos-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.3</b> Mudando a ordem dos níveis de um fator</a></li>
@@ -291,8 +319,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.6.5" data-path="7-6-forcats.html"><a href="7-6-forcats.html#outras-funções-úteis"><i class="fa fa-check"></i><b>7.6.5</b> Outras funções úteis</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a><ul>
-<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a><ul>
+<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-pontos-dispersão"><i class="fa fa-check"></i><b>8.1.1</b> Gráficos de pontos (dispersão)</a></li>
 <li class="chapter" data-level="8.1.2" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-linhas"><i class="fa fa-check"></i><b>8.1.2</b> Gráficos de linhas</a></li>
 <li class="chapter" data-level="8.1.3" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-barras"><i class="fa fa-check"></i><b>8.1.3</b> Gráficos de barras</a></li>
@@ -303,13 +333,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.8" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>8.1.8</b> Juntando gráficos</a></li>
 <li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-21"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a><ul>
+<li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a>
+<ul>
 <li class="chapter" data-level="8.2.1" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#gghighlight"><i class="fa fa-check"></i><b>8.2.1</b> gghighlight</a></li>
 <li class="chapter" data-level="8.2.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#ggridges"><i class="fa fa-check"></i><b>8.2.2</b> ggridges</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="9-relatorios.html"><a href="9-relatorios.html"><i class="fa fa-check"></i><b>9</b> Relatórios</a><ul>
-<li class="chapter" data-level="9.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html"><i class="fa fa-check"></i><b>9.1</b> Markdown</a><ul>
+<li class="chapter" data-level="9" data-path="9-relatorios.html"><a href="9-relatorios.html"><i class="fa fa-check"></i><b>9</b> Relatórios</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html"><i class="fa fa-check"></i><b>9.1</b> Markdown</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html#ênfase"><i class="fa fa-check"></i><b>9.1.1</b> Ênfase</a></li>
 <li class="chapter" data-level="9.1.2" data-path="9-1-markdown.html"><a href="9-1-markdown.html#títulos"><i class="fa fa-check"></i><b>9.1.2</b> Títulos</a></li>
 <li class="chapter" data-level="9.1.3" data-path="9-1-markdown.html"><a href="9-1-markdown.html#listas-1"><i class="fa fa-check"></i><b>9.1.3</b> Listas</a></li>
@@ -321,7 +354,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1.9" data-path="9-1-markdown.html"><a href="9-1-markdown.html#recapitulando"><i class="fa fa-check"></i><b>9.1.9</b> Recapitulando</a></li>
 <li class="chapter" data-level="" data-path="9-1-markdown.html"><a href="9-1-markdown.html#exercicios-md"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a><ul>
+<li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a>
+<ul>
 <li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#códigos-em-r"><i class="fa fa-check"></i><b>9.2.1</b> Códigos em R</a></li>
 <li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#imagens-1"><i class="fa fa-check"></i><b>9.2.2</b> Imagens</a></li>
 <li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#tabelas-1"><i class="fa fa-check"></i><b>9.2.3</b> Tabelas</a></li>
@@ -329,17 +363,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="10-funcionais.html"><a href="10-funcionais.html"><i class="fa fa-check"></i><b>10</b> Funcionais</a></li>
-<li class="chapter" data-level="11" data-path="11-misc.html"><a href="11-misc.html"><i class="fa fa-check"></i><b>11</b> Miscelânea</a><ul>
-<li class="chapter" data-level="11.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>11.1</b> Arrumando banco de dados: o pacote janitor</a><ul>
+<li class="chapter" data-level="10" data-path="10-funcionais.html"><a href="10-funcionais.html"><i class="fa fa-check"></i><b>10</b> Programação funcional (purrr)</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="10-1-iterações-básicas.html"><a href="10-1-iterações-básicas.html"><i class="fa fa-check"></i><b>10.1</b> Iterações básicas</a></li>
+<li class="chapter" data-level="10.2" data-path="10-2-iterações-intermediárias.html"><a href="10-2-iterações-intermediárias.html"><i class="fa fa-check"></i><b>10.2</b> Iterações intermediárias</a></li>
+<li class="chapter" data-level="10.3" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html"><i class="fa fa-check"></i><b>10.3</b> Iterações avançadas</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#iterações-com-condicionais"><i class="fa fa-check"></i><b>10.3.1</b> Iterações com condicionais</a></li>
+<li class="chapter" data-level="10.3.2" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#iterações-com-tabelas-e-funções"><i class="fa fa-check"></i><b>10.3.2</b> Iterações com tabelas e funções</a></li>
+<li class="chapter" data-level="10.3.3" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#redução-e-acúmulo"><i class="fa fa-check"></i><b>10.3.3</b> Redução e acúmulo</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html"><i class="fa fa-check"></i><b>10.4</b> Miscelânea</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#manter-e-descartar"><i class="fa fa-check"></i><b>10.4.1</b> Manter e descartar</a></li>
+<li class="chapter" data-level="10.4.2" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#a-família-is"><i class="fa fa-check"></i><b>10.4.2</b> A família <code>is</code></a></li>
+<li class="chapter" data-level="10.4.3" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#andar-e-modificar"><i class="fa fa-check"></i><b>10.4.3</b> Andar e modificar</a></li>
+<li class="chapter" data-level="10.4.4" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#transposição-e-indexação-profunda"><i class="fa fa-check"></i><b>10.4.4</b> Transposição e indexação profunda</a></li>
+<li class="chapter" data-level="10.4.5" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#aplicação-parcial"><i class="fa fa-check"></i><b>10.4.5</b> Aplicação parcial</a></li>
+<li class="chapter" data-level="10.4.6" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#execução-segura"><i class="fa fa-check"></i><b>10.4.6</b> Execução segura</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="11-misc.html"><a href="11-misc.html"><i class="fa fa-check"></i><b>11</b> Miscelânea</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>11.1</b> Arrumando banco de dados: o pacote janitor</a>
+<ul>
 <li class="chapter" data-level="11.1.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#arrumando-o-nome-das-variáveis"><i class="fa fa-check"></i><b>11.1.1</b> Arrumando o nome das variáveis</a></li>
 <li class="chapter" data-level="11.1.2" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#removendo-linhas-e-colunas-vazias"><i class="fa fa-check"></i><b>11.1.2</b> Removendo linhas e colunas vazias</a></li>
 <li class="chapter" data-level="11.1.3" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#identificando-linhas-duplicadas"><i class="fa fa-check"></i><b>11.1.3</b> Identificando linhas duplicadas</a></li>
 <li class="chapter" data-level="11.1.4" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>11.1.4</b> Outras funções</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="12-respostas.html"><a href="12-respostas.html"><i class="fa fa-check"></i><b>12</b> Respostas</a><ul>
-<li class="chapter" data-level="12.1" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html"><i class="fa fa-check"></i><b>12.1</b> R básico</a><ul>
+<li class="chapter" data-level="12" data-path="12-respostas.html"><a href="12-respostas.html"><i class="fa fa-check"></i><b>12</b> Respostas</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html"><i class="fa fa-check"></i><b>12.1</b> R básico</a>
+<ul>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#objetos-e-funções"><i class="fa fa-check"></i>Objetos e funções</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#classes-1"><i class="fa fa-check"></i>Classes</a></li>
@@ -350,11 +407,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i>Mais sobre funções</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#controle-de-fluxo-1"><i class="fa fa-check"></i>Controle de fluxo</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="12-2-importação.html"><a href="12-2-importação.html"><i class="fa fa-check"></i><b>12.2</b> Importação</a><ul>
+<li class="chapter" data-level="12.2" data-path="12-2-importação.html"><a href="12-2-importação.html"><i class="fa fa-check"></i><b>12.2</b> Importação</a>
+<ul>
 <li class="chapter" data-level="" data-path="12-2-importação.html"><a href="12-2-importação.html#o-pacote-readr"><i class="fa fa-check"></i>O pacote readr</a></li>
 </ul></li>
 <li class="chapter" data-level="12.3" data-path="12-3-pipe-1.html"><a href="12-3-pipe-1.html"><i class="fa fa-check"></i><b>12.3</b> Pipe</a></li>
-<li class="chapter" data-level="12.4" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>12.4</b> O pacote dplyr</a><ul>
+<li class="chapter" data-level="12.4" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>12.4</b> O pacote dplyr</a>
+<ul>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#selecionando-colunas-1"><i class="fa fa-check"></i>Selecionando colunas</a></li>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#ordenando-a-base-1"><i class="fa fa-check"></i>Ordenando a base</a></li>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#filtrando-linhas-1"><i class="fa fa-check"></i>Filtrando linhas</a></li>
@@ -366,7 +425,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.6" data-path="12-6-o-pacote-lubridate-1.html"><a href="12-6-o-pacote-lubridate-1.html"><i class="fa fa-check"></i><b>12.6</b> O pacote lubridate</a></li>
 <li class="chapter" data-level="12.7" data-path="12-7-o-pacote-ggplot2-1.html"><a href="12-7-o-pacote-ggplot2-1.html"><i class="fa fa-check"></i><b>12.7</b> O pacote ggplot2</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a>
+<ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i>Programação em R</a></li>
 </ul></li>
@@ -390,13 +450,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="o-pacote-lubridate" class="section level2">
+<div id="o-pacote-lubridate" class="section level2" number="7.5">
 <h2><span class="header-section-number">7.5</span> O pacote lubridate</h2>
 <p>Trabalhar com datas no R era uma chateação. As funções do R base são, em grande parte, contraintuitivas e podem mudar de acordo com o tipo do objeto que você está usando (data, hora, data/hora). Além disso, características como fusos horários, anos bissextos, horários de verão, entre outras, podem não estar bem especificadas ou nem mesmo sendo levadas em conta.</p>
 <p>O pacote <code>{lubridate}</code>, criado por <a href="https://github.com/garrettgman">Garrett Grolemund</a> e <a href="https://github.com/hadley">Hadley Wickham</a>, surgiu para lidar com esses problemas, fazendo o trabalho com datas ser muito mais fácil.</p>
 <p>Antes de começar a usar, você precisa instalar e carregar o pacote.</p>
-<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="7-5-o-pacote-lubridate.html#cb424-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;lubridate&quot;</span>)</span>
-<span id="cb424-2"><a href="7-5-o-pacote-lubridate.html#cb424-2"></a><span class="kw">library</span>(lubridate)</span></code></pre></div>
+<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="7-5-o-pacote-lubridate.html#cb424-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;lubridate&quot;</span>)</span>
+<span id="cb424-2"><a href="7-5-o-pacote-lubridate.html#cb424-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code></pre></div>
 <p>Neste seção, falaremos sobre:</p>
 <ul>
 <li>transformar e extrair datas;</li>
@@ -404,60 +464,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>trabalhar com fusos horários; e</li>
 <li>operações aritméticas com datas.</li>
 </ul>
-<div id="a-classe-date" class="section level3">
+<div id="a-classe-date" class="section level3" number="7.5.1">
 <h3><span class="header-section-number">7.5.1</span> A classe <code>date</code></h3>
 <p>Datas no R são tratadas como um tipo especial de objeto, com classe <code>date</code>. Há várias formas de criar objetos dessa classe com o pacote <code>{lubridate}</code>:</p>
-<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="7-5-o-pacote-lubridate.html#cb425-1"></a>data_string &lt;-<span class="st"> &quot;21-10-2015&quot;</span></span>
-<span id="cb425-2"><a href="7-5-o-pacote-lubridate.html#cb425-2"></a><span class="kw">class</span>(data_string)</span>
-<span id="cb425-3"><a href="7-5-o-pacote-lubridate.html#cb425-3"></a><span class="co">## [1] &quot;character&quot;</span></span>
-<span id="cb425-4"><a href="7-5-o-pacote-lubridate.html#cb425-4"></a></span>
-<span id="cb425-5"><a href="7-5-o-pacote-lubridate.html#cb425-5"></a>data_date &lt;-<span class="st"> </span><span class="kw">date</span>(data_string)</span>
-<span id="cb425-6"><a href="7-5-o-pacote-lubridate.html#cb425-6"></a><span class="kw">class</span>(data_date)</span>
-<span id="cb425-7"><a href="7-5-o-pacote-lubridate.html#cb425-7"></a><span class="co">## [1] &quot;Date&quot;</span></span>
-<span id="cb425-8"><a href="7-5-o-pacote-lubridate.html#cb425-8"></a>data_date</span>
-<span id="cb425-9"><a href="7-5-o-pacote-lubridate.html#cb425-9"></a><span class="co">## [1] &quot;0021-10-20&quot;</span></span>
-<span id="cb425-10"><a href="7-5-o-pacote-lubridate.html#cb425-10"></a></span>
-<span id="cb425-11"><a href="7-5-o-pacote-lubridate.html#cb425-11"></a>data_as_date &lt;-<span class="st"> </span><span class="kw">as_date</span>(data_string)</span>
-<span id="cb425-12"><a href="7-5-o-pacote-lubridate.html#cb425-12"></a><span class="co">## Warning: All formats failed to parse. No formats found.</span></span>
-<span id="cb425-13"><a href="7-5-o-pacote-lubridate.html#cb425-13"></a><span class="kw">class</span>(data_as_date)</span>
-<span id="cb425-14"><a href="7-5-o-pacote-lubridate.html#cb425-14"></a><span class="co">## [1] &quot;Date&quot;</span></span>
-<span id="cb425-15"><a href="7-5-o-pacote-lubridate.html#cb425-15"></a>data_as_date</span>
-<span id="cb425-16"><a href="7-5-o-pacote-lubridate.html#cb425-16"></a><span class="co">## [1] NA</span></span>
-<span id="cb425-17"><a href="7-5-o-pacote-lubridate.html#cb425-17"></a></span>
-<span id="cb425-18"><a href="7-5-o-pacote-lubridate.html#cb425-18"></a>data_mdy &lt;-<span class="st"> </span><span class="kw">dmy</span>(data_string)</span>
-<span id="cb425-19"><a href="7-5-o-pacote-lubridate.html#cb425-19"></a><span class="kw">class</span>(data_mdy)</span>
-<span id="cb425-20"><a href="7-5-o-pacote-lubridate.html#cb425-20"></a><span class="co">## [1] &quot;Date&quot;</span></span>
-<span id="cb425-21"><a href="7-5-o-pacote-lubridate.html#cb425-21"></a>data_mdy</span>
-<span id="cb425-22"><a href="7-5-o-pacote-lubridate.html#cb425-22"></a><span class="co">## [1] &quot;2015-10-21&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="7-5-o-pacote-lubridate.html#cb425-1" aria-hidden="true" tabindex="-1"></a>data_string <span class="ot">&lt;-</span> <span class="st">&quot;21-10-2015&quot;</span></span>
+<span id="cb425-2"><a href="7-5-o-pacote-lubridate.html#cb425-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(data_string)</span>
+<span id="cb425-3"><a href="7-5-o-pacote-lubridate.html#cb425-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;character&quot;</span></span>
+<span id="cb425-4"><a href="7-5-o-pacote-lubridate.html#cb425-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb425-5"><a href="7-5-o-pacote-lubridate.html#cb425-5" aria-hidden="true" tabindex="-1"></a>data_date <span class="ot">&lt;-</span> <span class="fu">date</span>(data_string)</span>
+<span id="cb425-6"><a href="7-5-o-pacote-lubridate.html#cb425-6" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(data_date)</span>
+<span id="cb425-7"><a href="7-5-o-pacote-lubridate.html#cb425-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Date&quot;</span></span>
+<span id="cb425-8"><a href="7-5-o-pacote-lubridate.html#cb425-8" aria-hidden="true" tabindex="-1"></a>data_date</span>
+<span id="cb425-9"><a href="7-5-o-pacote-lubridate.html#cb425-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;0021-10-20&quot;</span></span>
+<span id="cb425-10"><a href="7-5-o-pacote-lubridate.html#cb425-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb425-11"><a href="7-5-o-pacote-lubridate.html#cb425-11" aria-hidden="true" tabindex="-1"></a>data_as_date <span class="ot">&lt;-</span> <span class="fu">as_date</span>(data_string)</span>
+<span id="cb425-12"><a href="7-5-o-pacote-lubridate.html#cb425-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Warning: All formats failed to parse. No formats found.</span></span>
+<span id="cb425-13"><a href="7-5-o-pacote-lubridate.html#cb425-13" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(data_as_date)</span>
+<span id="cb425-14"><a href="7-5-o-pacote-lubridate.html#cb425-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Date&quot;</span></span>
+<span id="cb425-15"><a href="7-5-o-pacote-lubridate.html#cb425-15" aria-hidden="true" tabindex="-1"></a>data_as_date</span>
+<span id="cb425-16"><a href="7-5-o-pacote-lubridate.html#cb425-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] NA</span></span>
+<span id="cb425-17"><a href="7-5-o-pacote-lubridate.html#cb425-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb425-18"><a href="7-5-o-pacote-lubridate.html#cb425-18" aria-hidden="true" tabindex="-1"></a>data_mdy <span class="ot">&lt;-</span> <span class="fu">dmy</span>(data_string)</span>
+<span id="cb425-19"><a href="7-5-o-pacote-lubridate.html#cb425-19" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(data_mdy)</span>
+<span id="cb425-20"><a href="7-5-o-pacote-lubridate.html#cb425-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Date&quot;</span></span>
+<span id="cb425-21"><a href="7-5-o-pacote-lubridate.html#cb425-21" aria-hidden="true" tabindex="-1"></a>data_mdy</span>
+<span id="cb425-22"><a href="7-5-o-pacote-lubridate.html#cb425-22" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2015-10-21&quot;</span></span></code></pre></div>
 <p>Veja que as funções <code>date()</code> e <code>as_date()</code> converteram a <em>string</em> para data, mas não devolveram o valor esperado. A função <code>dmy()</code> resolve esse problema estabelecendo explicitamente a ordem dia-mês-ano. Existem funções para todas as ordens possíveis: <code>dmy()</code>, <code>mdy()</code>, <code>myd()</code>, <code>ymd()</code>, <code>ydm()</code> etc.</p>
 <p>As funções <code>date()</code> e <code>as_date()</code> assumem que a ordem segue o padrão da língua inglesa: ano-mês-dia (ymd).</p>
-<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="7-5-o-pacote-lubridate.html#cb426-1"></a><span class="kw">date</span>(<span class="st">&quot;2015-10-21&quot;</span>)</span>
-<span id="cb426-2"><a href="7-5-o-pacote-lubridate.html#cb426-2"></a><span class="co">## [1] &quot;2015-10-21&quot;</span></span>
-<span id="cb426-3"><a href="7-5-o-pacote-lubridate.html#cb426-3"></a><span class="kw">as_date</span>(<span class="st">&quot;2015-10-21&quot;</span>)</span>
-<span id="cb426-4"><a href="7-5-o-pacote-lubridate.html#cb426-4"></a><span class="co">## [1] &quot;2015-10-21&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="7-5-o-pacote-lubridate.html#cb426-1" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span>(<span class="st">&quot;2015-10-21&quot;</span>)</span>
+<span id="cb426-2"><a href="7-5-o-pacote-lubridate.html#cb426-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2015-10-21&quot;</span></span>
+<span id="cb426-3"><a href="7-5-o-pacote-lubridate.html#cb426-3" aria-hidden="true" tabindex="-1"></a><span class="fu">as_date</span>(<span class="st">&quot;2015-10-21&quot;</span>)</span>
+<span id="cb426-4"><a href="7-5-o-pacote-lubridate.html#cb426-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2015-10-21&quot;</span></span></code></pre></div>
 <p>Uma grande facilidade que essas funções trazem é poder criar objetos com classe <code>date</code> a partir de números e <em>strings</em> em diversos formatos.</p>
-<div class="sourceCode" id="cb427"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb427-1"><a href="7-5-o-pacote-lubridate.html#cb427-1"></a><span class="kw">dmy</span>(<span class="dv">21102015</span>)</span>
-<span id="cb427-2"><a href="7-5-o-pacote-lubridate.html#cb427-2"></a><span class="co">## [1] &quot;2015-10-21&quot;</span></span>
-<span id="cb427-3"><a href="7-5-o-pacote-lubridate.html#cb427-3"></a><span class="kw">dmy</span>(<span class="st">&quot;21102015&quot;</span>)</span>
-<span id="cb427-4"><a href="7-5-o-pacote-lubridate.html#cb427-4"></a><span class="co">## [1] &quot;2015-10-21&quot;</span></span>
-<span id="cb427-5"><a href="7-5-o-pacote-lubridate.html#cb427-5"></a><span class="kw">dmy</span>(<span class="st">&quot;21/10/2015&quot;</span>)</span>
-<span id="cb427-6"><a href="7-5-o-pacote-lubridate.html#cb427-6"></a><span class="co">## [1] &quot;2015-10-21&quot;</span></span>
-<span id="cb427-7"><a href="7-5-o-pacote-lubridate.html#cb427-7"></a><span class="kw">dmy</span>(<span class="st">&quot;21.10.2015&quot;</span>)</span>
-<span id="cb427-8"><a href="7-5-o-pacote-lubridate.html#cb427-8"></a><span class="co">## [1] &quot;2015-10-21&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb427"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb427-1"><a href="7-5-o-pacote-lubridate.html#cb427-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dmy</span>(<span class="dv">21102015</span>)</span>
+<span id="cb427-2"><a href="7-5-o-pacote-lubridate.html#cb427-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2015-10-21&quot;</span></span>
+<span id="cb427-3"><a href="7-5-o-pacote-lubridate.html#cb427-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dmy</span>(<span class="st">&quot;21102015&quot;</span>)</span>
+<span id="cb427-4"><a href="7-5-o-pacote-lubridate.html#cb427-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2015-10-21&quot;</span></span>
+<span id="cb427-5"><a href="7-5-o-pacote-lubridate.html#cb427-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dmy</span>(<span class="st">&quot;21/10/2015&quot;</span>)</span>
+<span id="cb427-6"><a href="7-5-o-pacote-lubridate.html#cb427-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2015-10-21&quot;</span></span>
+<span id="cb427-7"><a href="7-5-o-pacote-lubridate.html#cb427-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dmy</span>(<span class="st">&quot;21.10.2015&quot;</span>)</span>
+<span id="cb427-8"><a href="7-5-o-pacote-lubridate.html#cb427-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2015-10-21&quot;</span></span></code></pre></div>
 <p>Se além da data você precisar especificar o horário, basta usar as funções do tipo <code>ymd_h()</code>, <code>ymd_hm()</code>, <code>ymd_hms()</code>, sendo que também há uma função para cada formato de dia-mês-ano.</p>
-<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="7-5-o-pacote-lubridate.html#cb428-1"></a><span class="kw">ymd_hms</span>(<span class="dv">20151021165411</span>)</span>
-<span id="cb428-2"><a href="7-5-o-pacote-lubridate.html#cb428-2"></a><span class="co">## [1] &quot;2015-10-21 16:54:11 UTC&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="7-5-o-pacote-lubridate.html#cb428-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ymd_hms</span>(<span class="dv">20151021165411</span>)</span>
+<span id="cb428-2"><a href="7-5-o-pacote-lubridate.html#cb428-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2015-10-21 16:54:11 UTC&quot;</span></span></code></pre></div>
 <p>No R base, utilizamos a função <code>as.Date()</code> para transformar uma string em data:</p>
-<div class="sourceCode" id="cb429"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb429-1"><a href="7-5-o-pacote-lubridate.html#cb429-1"></a>data_base &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;2015-10-21&quot;</span>)</span>
-<span id="cb429-2"><a href="7-5-o-pacote-lubridate.html#cb429-2"></a><span class="kw">class</span>(data_base)</span>
-<span id="cb429-3"><a href="7-5-o-pacote-lubridate.html#cb429-3"></a><span class="co">## [1] &quot;Date&quot;</span></span>
-<span id="cb429-4"><a href="7-5-o-pacote-lubridate.html#cb429-4"></a>data_base</span>
-<span id="cb429-5"><a href="7-5-o-pacote-lubridate.html#cb429-5"></a><span class="co">## [1] &quot;2015-10-21&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb429"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb429-1"><a href="7-5-o-pacote-lubridate.html#cb429-1" aria-hidden="true" tabindex="-1"></a>data_base <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">&quot;2015-10-21&quot;</span>)</span>
+<span id="cb429-2"><a href="7-5-o-pacote-lubridate.html#cb429-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(data_base)</span>
+<span id="cb429-3"><a href="7-5-o-pacote-lubridate.html#cb429-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Date&quot;</span></span>
+<span id="cb429-4"><a href="7-5-o-pacote-lubridate.html#cb429-4" aria-hidden="true" tabindex="-1"></a>data_base</span>
+<span id="cb429-5"><a href="7-5-o-pacote-lubridate.html#cb429-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2015-10-21&quot;</span></span></code></pre></div>
 <p>Repare que a função <code>date()</code> do R base retorna a data e horário no momento da execução:</p>
-<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="7-5-o-pacote-lubridate.html#cb430-1"></a>base<span class="op">::</span><span class="kw">date</span>()</span>
-<span id="cb430-2"><a href="7-5-o-pacote-lubridate.html#cb430-2"></a><span class="co">## [1] &quot;Mon Mar 22 11:34:07 2021&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="7-5-o-pacote-lubridate.html#cb430-1" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">date</span>()</span>
+<span id="cb430-2"><a href="7-5-o-pacote-lubridate.html#cb430-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Mon Mar 22 11:34:07 2021&quot;</span></span></code></pre></div>
 </div>
-<div id="funções-úteis" class="section level3">
+<div id="funções-úteis" class="section level3" number="7.5.2">
 <h3><span class="header-section-number">7.5.2</span> Funções úteis</h3>
 <p>O <code>lubridate</code> traz diversas funções para extrair os componentes de um objeto da classe <code>date</code>.</p>
 <ul>
@@ -470,142 +530,142 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>year()</code> - extrai o ano.</li>
 </ul>
 <p>Os nomes são tão óbvios que a explicação do que cada função faz é praticamente desnecessária.</p>
-<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="7-5-o-pacote-lubridate.html#cb431-1"></a>bday &lt;-<span class="st"> </span><span class="kw">ymd_hms</span>(<span class="st">&quot;1989-07-29 030142&quot;</span>)</span>
-<span id="cb431-2"><a href="7-5-o-pacote-lubridate.html#cb431-2"></a>bday</span>
-<span id="cb431-3"><a href="7-5-o-pacote-lubridate.html#cb431-3"></a><span class="co">## [1] &quot;1989-07-29 03:01:42 UTC&quot;</span></span>
-<span id="cb431-4"><a href="7-5-o-pacote-lubridate.html#cb431-4"></a></span>
-<span id="cb431-5"><a href="7-5-o-pacote-lubridate.html#cb431-5"></a><span class="kw">second</span>(bday)</span>
-<span id="cb431-6"><a href="7-5-o-pacote-lubridate.html#cb431-6"></a><span class="co">## [1] 42</span></span>
-<span id="cb431-7"><a href="7-5-o-pacote-lubridate.html#cb431-7"></a><span class="kw">day</span>(bday)</span>
-<span id="cb431-8"><a href="7-5-o-pacote-lubridate.html#cb431-8"></a><span class="co">## [1] 29</span></span>
-<span id="cb431-9"><a href="7-5-o-pacote-lubridate.html#cb431-9"></a><span class="kw">month</span>(bday)</span>
-<span id="cb431-10"><a href="7-5-o-pacote-lubridate.html#cb431-10"></a><span class="co">## [1] 7</span></span>
-<span id="cb431-11"><a href="7-5-o-pacote-lubridate.html#cb431-11"></a><span class="kw">year</span>(bday)</span>
-<span id="cb431-12"><a href="7-5-o-pacote-lubridate.html#cb431-12"></a><span class="co">## [1] 1989</span></span>
-<span id="cb431-13"><a href="7-5-o-pacote-lubridate.html#cb431-13"></a></span>
-<span id="cb431-14"><a href="7-5-o-pacote-lubridate.html#cb431-14"></a><span class="kw">wday</span>(bday)</span>
-<span id="cb431-15"><a href="7-5-o-pacote-lubridate.html#cb431-15"></a><span class="co">## [1] 7</span></span>
-<span id="cb431-16"><a href="7-5-o-pacote-lubridate.html#cb431-16"></a><span class="kw">wday</span>(bday, <span class="dt">label =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb431-17"><a href="7-5-o-pacote-lubridate.html#cb431-17"></a><span class="co">## [1] Sat</span></span>
-<span id="cb431-18"><a href="7-5-o-pacote-lubridate.html#cb431-18"></a><span class="co">## Levels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat</span></span></code></pre></div>
+<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="7-5-o-pacote-lubridate.html#cb431-1" aria-hidden="true" tabindex="-1"></a>bday <span class="ot">&lt;-</span> <span class="fu">ymd_hms</span>(<span class="st">&quot;1989-07-29 030142&quot;</span>)</span>
+<span id="cb431-2"><a href="7-5-o-pacote-lubridate.html#cb431-2" aria-hidden="true" tabindex="-1"></a>bday</span>
+<span id="cb431-3"><a href="7-5-o-pacote-lubridate.html#cb431-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;1989-07-29 03:01:42 UTC&quot;</span></span>
+<span id="cb431-4"><a href="7-5-o-pacote-lubridate.html#cb431-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb431-5"><a href="7-5-o-pacote-lubridate.html#cb431-5" aria-hidden="true" tabindex="-1"></a><span class="fu">second</span>(bday)</span>
+<span id="cb431-6"><a href="7-5-o-pacote-lubridate.html#cb431-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 42</span></span>
+<span id="cb431-7"><a href="7-5-o-pacote-lubridate.html#cb431-7" aria-hidden="true" tabindex="-1"></a><span class="fu">day</span>(bday)</span>
+<span id="cb431-8"><a href="7-5-o-pacote-lubridate.html#cb431-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 29</span></span>
+<span id="cb431-9"><a href="7-5-o-pacote-lubridate.html#cb431-9" aria-hidden="true" tabindex="-1"></a><span class="fu">month</span>(bday)</span>
+<span id="cb431-10"><a href="7-5-o-pacote-lubridate.html#cb431-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 7</span></span>
+<span id="cb431-11"><a href="7-5-o-pacote-lubridate.html#cb431-11" aria-hidden="true" tabindex="-1"></a><span class="fu">year</span>(bday)</span>
+<span id="cb431-12"><a href="7-5-o-pacote-lubridate.html#cb431-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1989</span></span>
+<span id="cb431-13"><a href="7-5-o-pacote-lubridate.html#cb431-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb431-14"><a href="7-5-o-pacote-lubridate.html#cb431-14" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(bday)</span>
+<span id="cb431-15"><a href="7-5-o-pacote-lubridate.html#cb431-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 7</span></span>
+<span id="cb431-16"><a href="7-5-o-pacote-lubridate.html#cb431-16" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(bday, <span class="at">label =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb431-17"><a href="7-5-o-pacote-lubridate.html#cb431-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] Sat</span></span>
+<span id="cb431-18"><a href="7-5-o-pacote-lubridate.html#cb431-18" aria-hidden="true" tabindex="-1"></a><span class="do">## Levels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat</span></span></code></pre></div>
 <p>Você também pode usar essas funções para atribuir esses componentes a uma data:</p>
-<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="7-5-o-pacote-lubridate.html#cb432-1"></a>data &lt;-<span class="st"> </span><span class="kw">dmy</span>(<span class="st">&quot;01/04/1991&quot;</span>)</span>
-<span id="cb432-2"><a href="7-5-o-pacote-lubridate.html#cb432-2"></a>data</span>
-<span id="cb432-3"><a href="7-5-o-pacote-lubridate.html#cb432-3"></a><span class="co">## [1] &quot;1991-04-01&quot;</span></span>
-<span id="cb432-4"><a href="7-5-o-pacote-lubridate.html#cb432-4"></a></span>
-<span id="cb432-5"><a href="7-5-o-pacote-lubridate.html#cb432-5"></a><span class="kw">hour</span>(data) &lt;-<span class="st"> </span><span class="dv">20</span></span>
-<span id="cb432-6"><a href="7-5-o-pacote-lubridate.html#cb432-6"></a>data</span>
-<span id="cb432-7"><a href="7-5-o-pacote-lubridate.html#cb432-7"></a><span class="co">## [1] &quot;1991-04-01 20:00:00 UTC&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="7-5-o-pacote-lubridate.html#cb432-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">dmy</span>(<span class="st">&quot;01/04/1991&quot;</span>)</span>
+<span id="cb432-2"><a href="7-5-o-pacote-lubridate.html#cb432-2" aria-hidden="true" tabindex="-1"></a>data</span>
+<span id="cb432-3"><a href="7-5-o-pacote-lubridate.html#cb432-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;1991-04-01&quot;</span></span>
+<span id="cb432-4"><a href="7-5-o-pacote-lubridate.html#cb432-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb432-5"><a href="7-5-o-pacote-lubridate.html#cb432-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hour</span>(data) <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb432-6"><a href="7-5-o-pacote-lubridate.html#cb432-6" aria-hidden="true" tabindex="-1"></a>data</span>
+<span id="cb432-7"><a href="7-5-o-pacote-lubridate.html#cb432-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;1991-04-01 20:00:00 UTC&quot;</span></span></code></pre></div>
 <p>Também existem funções para extrair a data no instante da execução.</p>
-<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="7-5-o-pacote-lubridate.html#cb433-1"></a><span class="co"># Data e horário do dia em que essa página foi editada pela última vez.</span></span>
-<span id="cb433-2"><a href="7-5-o-pacote-lubridate.html#cb433-2"></a><span class="kw">today</span>() </span>
-<span id="cb433-3"><a href="7-5-o-pacote-lubridate.html#cb433-3"></a><span class="co">## [1] &quot;2021-03-22&quot;</span></span>
-<span id="cb433-4"><a href="7-5-o-pacote-lubridate.html#cb433-4"></a><span class="kw">now</span>()</span>
-<span id="cb433-5"><a href="7-5-o-pacote-lubridate.html#cb433-5"></a><span class="co">## [1] &quot;2021-03-22 11:34:07 -03&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="7-5-o-pacote-lubridate.html#cb433-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data e horário do dia em que essa página foi editada pela última vez.</span></span>
+<span id="cb433-2"><a href="7-5-o-pacote-lubridate.html#cb433-2" aria-hidden="true" tabindex="-1"></a><span class="fu">today</span>() </span>
+<span id="cb433-3"><a href="7-5-o-pacote-lubridate.html#cb433-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2021-03-22&quot;</span></span>
+<span id="cb433-4"><a href="7-5-o-pacote-lubridate.html#cb433-4" aria-hidden="true" tabindex="-1"></a><span class="fu">now</span>()</span>
+<span id="cb433-5"><a href="7-5-o-pacote-lubridate.html#cb433-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2021-03-22 11:34:07 -03&quot;</span></span></code></pre></div>
 </div>
-<div id="fusos-horários" class="section level3">
+<div id="fusos-horários" class="section level3" number="7.5.3">
 <h3><span class="header-section-number">7.5.3</span> Fusos horários</h3>
 <p>Uma característica inerente das datas é o fuso horário. Se você estiver trabalhando com datas de eventos no Brasil e na Escócia, por exemplo, é preciso verificar se os valores seguem o mesmo fuso horário. Além disso, quando a data exata de um evento for relevante, você pode precisar converter horários para outros fusos para comunicar seus resultados em outros países.</p>
 <p>Para fazer essas coisas, o <code>lubridate</code> fornece as funções <code>with_tz()</code> e <code>force_tz()</code>. Veja um exemplo de como usá-las.</p>
-<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="7-5-o-pacote-lubridate.html#cb434-1"></a>estreia_GoT &lt;-<span class="st"> </span><span class="kw">ymd_hms</span>(<span class="st">&quot;2017-07-16 22:00:00&quot;</span>, <span class="dt">tz =</span> <span class="st">&quot;America/Sao_Paulo&quot;</span>)</span>
-<span id="cb434-2"><a href="7-5-o-pacote-lubridate.html#cb434-2"></a>estreia_GoT</span>
-<span id="cb434-3"><a href="7-5-o-pacote-lubridate.html#cb434-3"></a><span class="co">## [1] &quot;2017-07-16 22:00:00 -03&quot;</span></span>
-<span id="cb434-4"><a href="7-5-o-pacote-lubridate.html#cb434-4"></a></span>
-<span id="cb434-5"><a href="7-5-o-pacote-lubridate.html#cb434-5"></a><span class="co"># Devolve qual seria a data em outro fuso</span></span>
-<span id="cb434-6"><a href="7-5-o-pacote-lubridate.html#cb434-6"></a></span>
-<span id="cb434-7"><a href="7-5-o-pacote-lubridate.html#cb434-7"></a><span class="kw">with_tz</span>(estreia_GoT, <span class="dt">tzone =</span> <span class="st">&quot;GMT&quot;</span>)</span>
-<span id="cb434-8"><a href="7-5-o-pacote-lubridate.html#cb434-8"></a><span class="co">## [1] &quot;2017-07-17 01:00:00 GMT&quot;</span></span>
-<span id="cb434-9"><a href="7-5-o-pacote-lubridate.html#cb434-9"></a><span class="kw">with_tz</span>(estreia_GoT, <span class="dt">tzone =</span> <span class="st">&quot;US/Alaska&quot;</span>)  </span>
-<span id="cb434-10"><a href="7-5-o-pacote-lubridate.html#cb434-10"></a><span class="co">## [1] &quot;2017-07-16 17:00:00 AKDT&quot;</span></span>
-<span id="cb434-11"><a href="7-5-o-pacote-lubridate.html#cb434-11"></a></span>
-<span id="cb434-12"><a href="7-5-o-pacote-lubridate.html#cb434-12"></a><span class="co"># Altera o fuso sem mudar a hora</span></span>
-<span id="cb434-13"><a href="7-5-o-pacote-lubridate.html#cb434-13"></a></span>
-<span id="cb434-14"><a href="7-5-o-pacote-lubridate.html#cb434-14"></a><span class="kw">force_tz</span>(estreia_GoT, <span class="dt">tzone =</span> <span class="st">&quot;GMT&quot;</span>)</span>
-<span id="cb434-15"><a href="7-5-o-pacote-lubridate.html#cb434-15"></a><span class="co">## [1] &quot;2017-07-16 22:00:00 GMT&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="7-5-o-pacote-lubridate.html#cb434-1" aria-hidden="true" tabindex="-1"></a>estreia_GoT <span class="ot">&lt;-</span> <span class="fu">ymd_hms</span>(<span class="st">&quot;2017-07-16 22:00:00&quot;</span>, <span class="at">tz =</span> <span class="st">&quot;America/Sao_Paulo&quot;</span>)</span>
+<span id="cb434-2"><a href="7-5-o-pacote-lubridate.html#cb434-2" aria-hidden="true" tabindex="-1"></a>estreia_GoT</span>
+<span id="cb434-3"><a href="7-5-o-pacote-lubridate.html#cb434-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2017-07-16 22:00:00 -03&quot;</span></span>
+<span id="cb434-4"><a href="7-5-o-pacote-lubridate.html#cb434-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb434-5"><a href="7-5-o-pacote-lubridate.html#cb434-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Devolve qual seria a data em outro fuso</span></span>
+<span id="cb434-6"><a href="7-5-o-pacote-lubridate.html#cb434-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb434-7"><a href="7-5-o-pacote-lubridate.html#cb434-7" aria-hidden="true" tabindex="-1"></a><span class="fu">with_tz</span>(estreia_GoT, <span class="at">tzone =</span> <span class="st">&quot;GMT&quot;</span>)</span>
+<span id="cb434-8"><a href="7-5-o-pacote-lubridate.html#cb434-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2017-07-17 01:00:00 GMT&quot;</span></span>
+<span id="cb434-9"><a href="7-5-o-pacote-lubridate.html#cb434-9" aria-hidden="true" tabindex="-1"></a><span class="fu">with_tz</span>(estreia_GoT, <span class="at">tzone =</span> <span class="st">&quot;US/Alaska&quot;</span>)  </span>
+<span id="cb434-10"><a href="7-5-o-pacote-lubridate.html#cb434-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2017-07-16 17:00:00 AKDT&quot;</span></span>
+<span id="cb434-11"><a href="7-5-o-pacote-lubridate.html#cb434-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb434-12"><a href="7-5-o-pacote-lubridate.html#cb434-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Altera o fuso sem mudar a hora</span></span>
+<span id="cb434-13"><a href="7-5-o-pacote-lubridate.html#cb434-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb434-14"><a href="7-5-o-pacote-lubridate.html#cb434-14" aria-hidden="true" tabindex="-1"></a><span class="fu">force_tz</span>(estreia_GoT, <span class="at">tzone =</span> <span class="st">&quot;GMT&quot;</span>)</span>
+<span id="cb434-15"><a href="7-5-o-pacote-lubridate.html#cb434-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2017-07-16 22:00:00 GMT&quot;</span></span></code></pre></div>
 </div>
-<div id="operações-com-datas" class="section level3">
+<div id="operações-com-datas" class="section level3" number="7.5.4">
 <h3><span class="header-section-number">7.5.4</span> Operações com datas</h3>
 <p>O pacote <code>lubridate</code> possui ainda funções para calcular intervalos e fazer operações aritméticas com datas.</p>
 <div id="intervalos" class="section level4 unnumbered">
 <h4>Intervalos</h4>
 <p>Intervalos podem ser salvos em objetos com classe <code>interval</code>.</p>
-<div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb435-1"><a href="7-5-o-pacote-lubridate.html#cb435-1"></a>inicio &lt;-<span class="st"> </span><span class="kw">dmy</span>(<span class="st">&quot;01-04-1991&quot;</span>)</span>
-<span id="cb435-2"><a href="7-5-o-pacote-lubridate.html#cb435-2"></a>evento &lt;-<span class="st"> </span><span class="kw">dmy</span>(<span class="st">&quot;31-10-1993&quot;</span>)</span>
-<span id="cb435-3"><a href="7-5-o-pacote-lubridate.html#cb435-3"></a></span>
-<span id="cb435-4"><a href="7-5-o-pacote-lubridate.html#cb435-4"></a>sobrev &lt;-<span class="st"> </span><span class="kw">interval</span>(inicio, evento)</span>
-<span id="cb435-5"><a href="7-5-o-pacote-lubridate.html#cb435-5"></a>sobrev</span>
-<span id="cb435-6"><a href="7-5-o-pacote-lubridate.html#cb435-6"></a><span class="co">## [1] 1991-04-01 UTC--1993-10-31 UTC</span></span>
-<span id="cb435-7"><a href="7-5-o-pacote-lubridate.html#cb435-7"></a><span class="kw">class</span>(sobrev)</span>
-<span id="cb435-8"><a href="7-5-o-pacote-lubridate.html#cb435-8"></a><span class="co">## [1] &quot;Interval&quot;</span></span>
-<span id="cb435-9"><a href="7-5-o-pacote-lubridate.html#cb435-9"></a><span class="co">## attr(,&quot;package&quot;)</span></span>
-<span id="cb435-10"><a href="7-5-o-pacote-lubridate.html#cb435-10"></a><span class="co">## [1] &quot;lubridate&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb435-1"><a href="7-5-o-pacote-lubridate.html#cb435-1" aria-hidden="true" tabindex="-1"></a>inicio <span class="ot">&lt;-</span> <span class="fu">dmy</span>(<span class="st">&quot;01-04-1991&quot;</span>)</span>
+<span id="cb435-2"><a href="7-5-o-pacote-lubridate.html#cb435-2" aria-hidden="true" tabindex="-1"></a>evento <span class="ot">&lt;-</span> <span class="fu">dmy</span>(<span class="st">&quot;31-10-1993&quot;</span>)</span>
+<span id="cb435-3"><a href="7-5-o-pacote-lubridate.html#cb435-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb435-4"><a href="7-5-o-pacote-lubridate.html#cb435-4" aria-hidden="true" tabindex="-1"></a>sobrev <span class="ot">&lt;-</span> <span class="fu">interval</span>(inicio, evento)</span>
+<span id="cb435-5"><a href="7-5-o-pacote-lubridate.html#cb435-5" aria-hidden="true" tabindex="-1"></a>sobrev</span>
+<span id="cb435-6"><a href="7-5-o-pacote-lubridate.html#cb435-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1991-04-01 UTC--1993-10-31 UTC</span></span>
+<span id="cb435-7"><a href="7-5-o-pacote-lubridate.html#cb435-7" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(sobrev)</span>
+<span id="cb435-8"><a href="7-5-o-pacote-lubridate.html#cb435-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Interval&quot;</span></span>
+<span id="cb435-9"><a href="7-5-o-pacote-lubridate.html#cb435-9" aria-hidden="true" tabindex="-1"></a><span class="do">## attr(,&quot;package&quot;)</span></span>
+<span id="cb435-10"><a href="7-5-o-pacote-lubridate.html#cb435-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;lubridate&quot;</span></span></code></pre></div>
 <p>Você pode verificar se dois intervalos tem intersecção com a função <code>int_overlaps()</code>.</p>
-<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="7-5-o-pacote-lubridate.html#cb436-1"></a><span class="co"># Outra forma de definir um intervalo: o operador %--%</span></span>
-<span id="cb436-2"><a href="7-5-o-pacote-lubridate.html#cb436-2"></a>intervalo_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">dmy</span>(<span class="st">&quot;01-02-2003&quot;</span>) <span class="op">%--%</span><span class="st"> </span><span class="kw">dmy</span>(<span class="st">&quot;02-03-2005&quot;</span>)  </span>
-<span id="cb436-3"><a href="7-5-o-pacote-lubridate.html#cb436-3"></a></span>
-<span id="cb436-4"><a href="7-5-o-pacote-lubridate.html#cb436-4"></a>intervalo_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">dmy</span>(<span class="st">&quot;04-05-2004&quot;</span>) <span class="op">%--%</span><span class="st"> </span><span class="kw">dmy</span>(<span class="st">&quot;12-03-2012&quot;</span>)  </span>
-<span id="cb436-5"><a href="7-5-o-pacote-lubridate.html#cb436-5"></a></span>
-<span id="cb436-6"><a href="7-5-o-pacote-lubridate.html#cb436-6"></a><span class="kw">int_overlaps</span>(intervalo_<span class="dv">1</span>, intervalo_<span class="dv">2</span>)</span>
-<span id="cb436-7"><a href="7-5-o-pacote-lubridate.html#cb436-7"></a><span class="co">## [1] TRUE</span></span></code></pre></div>
+<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="7-5-o-pacote-lubridate.html#cb436-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Outra forma de definir um intervalo: o operador %--%</span></span>
+<span id="cb436-2"><a href="7-5-o-pacote-lubridate.html#cb436-2" aria-hidden="true" tabindex="-1"></a>intervalo_1 <span class="ot">&lt;-</span> <span class="fu">dmy</span>(<span class="st">&quot;01-02-2003&quot;</span>) <span class="sc">%--%</span> <span class="fu">dmy</span>(<span class="st">&quot;02-03-2005&quot;</span>)  </span>
+<span id="cb436-3"><a href="7-5-o-pacote-lubridate.html#cb436-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb436-4"><a href="7-5-o-pacote-lubridate.html#cb436-4" aria-hidden="true" tabindex="-1"></a>intervalo_2 <span class="ot">&lt;-</span> <span class="fu">dmy</span>(<span class="st">&quot;04-05-2004&quot;</span>) <span class="sc">%--%</span> <span class="fu">dmy</span>(<span class="st">&quot;12-03-2012&quot;</span>)  </span>
+<span id="cb436-5"><a href="7-5-o-pacote-lubridate.html#cb436-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb436-6"><a href="7-5-o-pacote-lubridate.html#cb436-6" aria-hidden="true" tabindex="-1"></a><span class="fu">int_overlaps</span>(intervalo_1, intervalo_2)</span>
+<span id="cb436-7"><a href="7-5-o-pacote-lubridate.html#cb436-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span></code></pre></div>
 </div>
-<div id="aritmética-com-datas" class="section level4">
+<div id="aritmética-com-datas" class="section level4" number="7.5.4.1">
 <h4><span class="header-section-number">7.5.4.1</span> Aritmética com datas</h4>
 <p>Veja alguns exemplos de operações aritméticas que você pode fazer utilizando funções do <code>lubridate</code>:</p>
-<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="7-5-o-pacote-lubridate.html#cb437-1"></a><span class="co"># Somando datas</span></span>
-<span id="cb437-2"><a href="7-5-o-pacote-lubridate.html#cb437-2"></a></span>
-<span id="cb437-3"><a href="7-5-o-pacote-lubridate.html#cb437-3"></a>data &lt;-<span class="st"> </span><span class="kw">dmy</span>(<span class="st">&quot;31/01/2000&quot;</span>)</span>
-<span id="cb437-4"><a href="7-5-o-pacote-lubridate.html#cb437-4"></a></span>
-<span id="cb437-5"><a href="7-5-o-pacote-lubridate.html#cb437-5"></a>data <span class="op">+</span><span class="st"> </span><span class="kw">ddays</span>(<span class="dv">1</span>)</span>
-<span id="cb437-6"><a href="7-5-o-pacote-lubridate.html#cb437-6"></a><span class="co">## [1] &quot;2000-02-01&quot;</span></span>
-<span id="cb437-7"><a href="7-5-o-pacote-lubridate.html#cb437-7"></a>data <span class="op">+</span><span class="st"> </span><span class="kw">dyears</span>(<span class="dv">1</span>)</span>
-<span id="cb437-8"><a href="7-5-o-pacote-lubridate.html#cb437-8"></a><span class="co">## [1] &quot;2001-01-30 06:00:00 UTC&quot;</span></span>
-<span id="cb437-9"><a href="7-5-o-pacote-lubridate.html#cb437-9"></a></span>
-<span id="cb437-10"><a href="7-5-o-pacote-lubridate.html#cb437-10"></a><span class="co"># A operação abaixo retornaria uma data inválida</span></span>
-<span id="cb437-11"><a href="7-5-o-pacote-lubridate.html#cb437-11"></a><span class="co"># por isso obtemos NA</span></span>
-<span id="cb437-12"><a href="7-5-o-pacote-lubridate.html#cb437-12"></a>data <span class="op">+</span><span class="st"> </span><span class="kw">months</span>(<span class="dv">1</span>)  </span>
-<span id="cb437-13"><a href="7-5-o-pacote-lubridate.html#cb437-13"></a><span class="co">## [1] NA</span></span>
-<span id="cb437-14"><a href="7-5-o-pacote-lubridate.html#cb437-14"></a></span>
-<span id="cb437-15"><a href="7-5-o-pacote-lubridate.html#cb437-15"></a><span class="co"># Criando datas recorrentes</span></span>
-<span id="cb437-16"><a href="7-5-o-pacote-lubridate.html#cb437-16"></a></span>
-<span id="cb437-17"><a href="7-5-o-pacote-lubridate.html#cb437-17"></a>reuniao &lt;-<span class="st"> </span><span class="kw">dmy</span>(<span class="st">&quot;18-03-2017&quot;</span>)</span>
-<span id="cb437-18"><a href="7-5-o-pacote-lubridate.html#cb437-18"></a>reunioes &lt;-<span class="st"> </span>reuniao <span class="op">+</span><span class="st"> </span><span class="kw">weeks</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10</span>)</span>
-<span id="cb437-19"><a href="7-5-o-pacote-lubridate.html#cb437-19"></a>reunioes</span>
-<span id="cb437-20"><a href="7-5-o-pacote-lubridate.html#cb437-20"></a><span class="co">##  [1] &quot;2017-03-18&quot; &quot;2017-03-25&quot; &quot;2017-04-01&quot; &quot;2017-04-08&quot; &quot;2017-04-15&quot;</span></span>
-<span id="cb437-21"><a href="7-5-o-pacote-lubridate.html#cb437-21"></a><span class="co">##  [6] &quot;2017-04-22&quot; &quot;2017-04-29&quot; &quot;2017-05-06&quot; &quot;2017-05-13&quot; &quot;2017-05-20&quot;</span></span>
-<span id="cb437-22"><a href="7-5-o-pacote-lubridate.html#cb437-22"></a><span class="co">## [11] &quot;2017-05-27&quot;</span></span>
-<span id="cb437-23"><a href="7-5-o-pacote-lubridate.html#cb437-23"></a></span>
-<span id="cb437-24"><a href="7-5-o-pacote-lubridate.html#cb437-24"></a><span class="co"># Duração de um intervalo </span></span>
-<span id="cb437-25"><a href="7-5-o-pacote-lubridate.html#cb437-25"></a></span>
-<span id="cb437-26"><a href="7-5-o-pacote-lubridate.html#cb437-26"></a>intervalo &lt;-<span class="kw">dmy</span>(<span class="st">&quot;01-03-2003&quot;</span>) <span class="op">%--%</span><span class="st"> </span><span class="kw">dmy</span>(<span class="st">&quot;31-03-2003&quot;</span>) </span>
-<span id="cb437-27"><a href="7-5-o-pacote-lubridate.html#cb437-27"></a></span>
-<span id="cb437-28"><a href="7-5-o-pacote-lubridate.html#cb437-28"></a>intervalo <span class="op">/</span><span class="st"> </span><span class="kw">ddays</span>(<span class="dv">1</span>)               <span class="co"># Número de dias</span></span>
-<span id="cb437-29"><a href="7-5-o-pacote-lubridate.html#cb437-29"></a><span class="co">## [1] 30</span></span>
-<span id="cb437-30"><a href="7-5-o-pacote-lubridate.html#cb437-30"></a>intervalo <span class="op">/</span><span class="st"> </span><span class="kw">dminutes</span>(<span class="dv">1</span>)            <span class="co"># Número de minutos</span></span>
-<span id="cb437-31"><a href="7-5-o-pacote-lubridate.html#cb437-31"></a><span class="co">## [1] 43200</span></span>
-<span id="cb437-32"><a href="7-5-o-pacote-lubridate.html#cb437-32"></a></span>
-<span id="cb437-33"><a href="7-5-o-pacote-lubridate.html#cb437-33"></a><span class="kw">as.period</span>(intervalo)</span>
-<span id="cb437-34"><a href="7-5-o-pacote-lubridate.html#cb437-34"></a><span class="co">## [1] &quot;30d 0H 0M 0S&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="7-5-o-pacote-lubridate.html#cb437-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Somando datas</span></span>
+<span id="cb437-2"><a href="7-5-o-pacote-lubridate.html#cb437-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb437-3"><a href="7-5-o-pacote-lubridate.html#cb437-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">dmy</span>(<span class="st">&quot;31/01/2000&quot;</span>)</span>
+<span id="cb437-4"><a href="7-5-o-pacote-lubridate.html#cb437-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb437-5"><a href="7-5-o-pacote-lubridate.html#cb437-5" aria-hidden="true" tabindex="-1"></a>data <span class="sc">+</span> <span class="fu">ddays</span>(<span class="dv">1</span>)</span>
+<span id="cb437-6"><a href="7-5-o-pacote-lubridate.html#cb437-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2000-02-01&quot;</span></span>
+<span id="cb437-7"><a href="7-5-o-pacote-lubridate.html#cb437-7" aria-hidden="true" tabindex="-1"></a>data <span class="sc">+</span> <span class="fu">dyears</span>(<span class="dv">1</span>)</span>
+<span id="cb437-8"><a href="7-5-o-pacote-lubridate.html#cb437-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2001-01-30 06:00:00 UTC&quot;</span></span>
+<span id="cb437-9"><a href="7-5-o-pacote-lubridate.html#cb437-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb437-10"><a href="7-5-o-pacote-lubridate.html#cb437-10" aria-hidden="true" tabindex="-1"></a><span class="co"># A operação abaixo retornaria uma data inválida</span></span>
+<span id="cb437-11"><a href="7-5-o-pacote-lubridate.html#cb437-11" aria-hidden="true" tabindex="-1"></a><span class="co"># por isso obtemos NA</span></span>
+<span id="cb437-12"><a href="7-5-o-pacote-lubridate.html#cb437-12" aria-hidden="true" tabindex="-1"></a>data <span class="sc">+</span> <span class="fu">months</span>(<span class="dv">1</span>)  </span>
+<span id="cb437-13"><a href="7-5-o-pacote-lubridate.html#cb437-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] NA</span></span>
+<span id="cb437-14"><a href="7-5-o-pacote-lubridate.html#cb437-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb437-15"><a href="7-5-o-pacote-lubridate.html#cb437-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando datas recorrentes</span></span>
+<span id="cb437-16"><a href="7-5-o-pacote-lubridate.html#cb437-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb437-17"><a href="7-5-o-pacote-lubridate.html#cb437-17" aria-hidden="true" tabindex="-1"></a>reuniao <span class="ot">&lt;-</span> <span class="fu">dmy</span>(<span class="st">&quot;18-03-2017&quot;</span>)</span>
+<span id="cb437-18"><a href="7-5-o-pacote-lubridate.html#cb437-18" aria-hidden="true" tabindex="-1"></a>reunioes <span class="ot">&lt;-</span> reuniao <span class="sc">+</span> <span class="fu">weeks</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb437-19"><a href="7-5-o-pacote-lubridate.html#cb437-19" aria-hidden="true" tabindex="-1"></a>reunioes</span>
+<span id="cb437-20"><a href="7-5-o-pacote-lubridate.html#cb437-20" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] &quot;2017-03-18&quot; &quot;2017-03-25&quot; &quot;2017-04-01&quot; &quot;2017-04-08&quot; &quot;2017-04-15&quot;</span></span>
+<span id="cb437-21"><a href="7-5-o-pacote-lubridate.html#cb437-21" aria-hidden="true" tabindex="-1"></a><span class="do">##  [6] &quot;2017-04-22&quot; &quot;2017-04-29&quot; &quot;2017-05-06&quot; &quot;2017-05-13&quot; &quot;2017-05-20&quot;</span></span>
+<span id="cb437-22"><a href="7-5-o-pacote-lubridate.html#cb437-22" aria-hidden="true" tabindex="-1"></a><span class="do">## [11] &quot;2017-05-27&quot;</span></span>
+<span id="cb437-23"><a href="7-5-o-pacote-lubridate.html#cb437-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb437-24"><a href="7-5-o-pacote-lubridate.html#cb437-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Duração de um intervalo </span></span>
+<span id="cb437-25"><a href="7-5-o-pacote-lubridate.html#cb437-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb437-26"><a href="7-5-o-pacote-lubridate.html#cb437-26" aria-hidden="true" tabindex="-1"></a>intervalo <span class="ot">&lt;-</span><span class="fu">dmy</span>(<span class="st">&quot;01-03-2003&quot;</span>) <span class="sc">%--%</span> <span class="fu">dmy</span>(<span class="st">&quot;31-03-2003&quot;</span>) </span>
+<span id="cb437-27"><a href="7-5-o-pacote-lubridate.html#cb437-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb437-28"><a href="7-5-o-pacote-lubridate.html#cb437-28" aria-hidden="true" tabindex="-1"></a>intervalo <span class="sc">/</span> <span class="fu">ddays</span>(<span class="dv">1</span>)               <span class="co"># Número de dias</span></span>
+<span id="cb437-29"><a href="7-5-o-pacote-lubridate.html#cb437-29" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 30</span></span>
+<span id="cb437-30"><a href="7-5-o-pacote-lubridate.html#cb437-30" aria-hidden="true" tabindex="-1"></a>intervalo <span class="sc">/</span> <span class="fu">dminutes</span>(<span class="dv">1</span>)            <span class="co"># Número de minutos</span></span>
+<span id="cb437-31"><a href="7-5-o-pacote-lubridate.html#cb437-31" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 43200</span></span>
+<span id="cb437-32"><a href="7-5-o-pacote-lubridate.html#cb437-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb437-33"><a href="7-5-o-pacote-lubridate.html#cb437-33" aria-hidden="true" tabindex="-1"></a><span class="fu">as.period</span>(intervalo)</span>
+<span id="cb437-34"><a href="7-5-o-pacote-lubridate.html#cb437-34" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;30d 0H 0M 0S&quot;</span></span></code></pre></div>
 <p>Para mais informações sobre o<code>lubridate</code>, visite o <a href="https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html">vignette do pacote</a>.</p>
 </div>
 </div>
-<div id="exercícios-20" class="section level3">
+<div id="exercícios-20" class="section level3" number="7.5.5">
 <h3><span class="header-section-number">7.5.5</span> Exercícios</h3>
 <p>Nos exercícios a seguir, vamos utilizar a base <code>lakers</code>, que contém estatísticas jogo a jogo do <a href="http://www.nba.com/lakers/">Los Angeles Lakers</a> na temporada 2008-2009.</p>
-<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="7-5-o-pacote-lubridate.html#cb438-1"></a>lakers <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as_tibble</span>()</span>
-<span id="cb438-2"><a href="7-5-o-pacote-lubridate.html#cb438-2"></a><span class="co">## # A tibble: 34,624 x 13</span></span>
-<span id="cb438-3"><a href="7-5-o-pacote-lubridate.html#cb438-3"></a><span class="co">##      date opponent game_type time  period etype team  player result points type </span></span>
-<span id="cb438-4"><a href="7-5-o-pacote-lubridate.html#cb438-4"></a><span class="co">##     &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;  &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;</span></span>
-<span id="cb438-5"><a href="7-5-o-pacote-lubridate.html#cb438-5"></a><span class="co">##  1 2.01e7 POR      home      12:00      1 jump… OFF   &quot;&quot;     &quot;&quot;          0 &quot;&quot;   </span></span>
-<span id="cb438-6"><a href="7-5-o-pacote-lubridate.html#cb438-6"></a><span class="co">##  2 2.01e7 POR      home      11:39      1 shot  LAL   &quot;Pau … &quot;miss…      0 &quot;hoo…</span></span>
-<span id="cb438-7"><a href="7-5-o-pacote-lubridate.html#cb438-7"></a><span class="co">##  3 2.01e7 POR      home      11:37      1 rebo… LAL   &quot;Vlad… &quot;&quot;          0 &quot;off&quot;</span></span>
-<span id="cb438-8"><a href="7-5-o-pacote-lubridate.html#cb438-8"></a><span class="co">##  4 2.01e7 POR      home      11:25      1 shot  LAL   &quot;Dere… &quot;miss…      0 &quot;lay…</span></span>
-<span id="cb438-9"><a href="7-5-o-pacote-lubridate.html#cb438-9"></a><span class="co">##  5 2.01e7 POR      home      11:23      1 rebo… LAL   &quot;Pau … &quot;&quot;          0 &quot;off&quot;</span></span>
-<span id="cb438-10"><a href="7-5-o-pacote-lubridate.html#cb438-10"></a><span class="co">##  6 2.01e7 POR      home      11:22      1 shot  LAL   &quot;Pau … &quot;made&quot;      2 &quot;hoo…</span></span>
-<span id="cb438-11"><a href="7-5-o-pacote-lubridate.html#cb438-11"></a><span class="co">##  7 2.01e7 POR      home      11:22      1 foul  POR   &quot;Greg… &quot;&quot;          0 &quot;sho…</span></span>
-<span id="cb438-12"><a href="7-5-o-pacote-lubridate.html#cb438-12"></a><span class="co">##  8 2.01e7 POR      home      11:22      1 free… LAL   &quot;Pau … &quot;made&quot;      1 &quot;&quot;   </span></span>
-<span id="cb438-13"><a href="7-5-o-pacote-lubridate.html#cb438-13"></a><span class="co">##  9 2.01e7 POR      home      11:00      1 foul  LAL   &quot;Vlad… &quot;&quot;          0 &quot;per…</span></span>
-<span id="cb438-14"><a href="7-5-o-pacote-lubridate.html#cb438-14"></a><span class="co">## 10 2.01e7 POR      home      10:53      1 shot  POR   &quot;LaMa… &quot;made&quot;      2 &quot;jum…</span></span>
-<span id="cb438-15"><a href="7-5-o-pacote-lubridate.html#cb438-15"></a><span class="co">## # … with 34,614 more rows, and 2 more variables: x &lt;int&gt;, y &lt;int&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="7-5-o-pacote-lubridate.html#cb438-1" aria-hidden="true" tabindex="-1"></a>lakers <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>()</span>
+<span id="cb438-2"><a href="7-5-o-pacote-lubridate.html#cb438-2" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 34,624 x 13</span></span>
+<span id="cb438-3"><a href="7-5-o-pacote-lubridate.html#cb438-3" aria-hidden="true" tabindex="-1"></a><span class="do">##      date opponent game_type time  period etype team  player result points type </span></span>
+<span id="cb438-4"><a href="7-5-o-pacote-lubridate.html#cb438-4" aria-hidden="true" tabindex="-1"></a><span class="do">##     &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;  &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;</span></span>
+<span id="cb438-5"><a href="7-5-o-pacote-lubridate.html#cb438-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  1 2.01e7 POR      home      12:00      1 jump… OFF   &quot;&quot;     &quot;&quot;          0 &quot;&quot;   </span></span>
+<span id="cb438-6"><a href="7-5-o-pacote-lubridate.html#cb438-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  2 2.01e7 POR      home      11:39      1 shot  LAL   &quot;Pau … &quot;miss…      0 &quot;hoo…</span></span>
+<span id="cb438-7"><a href="7-5-o-pacote-lubridate.html#cb438-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  3 2.01e7 POR      home      11:37      1 rebo… LAL   &quot;Vlad… &quot;&quot;          0 &quot;off&quot;</span></span>
+<span id="cb438-8"><a href="7-5-o-pacote-lubridate.html#cb438-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  4 2.01e7 POR      home      11:25      1 shot  LAL   &quot;Dere… &quot;miss…      0 &quot;lay…</span></span>
+<span id="cb438-9"><a href="7-5-o-pacote-lubridate.html#cb438-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  5 2.01e7 POR      home      11:23      1 rebo… LAL   &quot;Pau … &quot;&quot;          0 &quot;off&quot;</span></span>
+<span id="cb438-10"><a href="7-5-o-pacote-lubridate.html#cb438-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  6 2.01e7 POR      home      11:22      1 shot  LAL   &quot;Pau … &quot;made&quot;      2 &quot;hoo…</span></span>
+<span id="cb438-11"><a href="7-5-o-pacote-lubridate.html#cb438-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  7 2.01e7 POR      home      11:22      1 foul  POR   &quot;Greg… &quot;&quot;          0 &quot;sho…</span></span>
+<span id="cb438-12"><a href="7-5-o-pacote-lubridate.html#cb438-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  8 2.01e7 POR      home      11:22      1 free… LAL   &quot;Pau … &quot;made&quot;      1 &quot;&quot;   </span></span>
+<span id="cb438-13"><a href="7-5-o-pacote-lubridate.html#cb438-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  9 2.01e7 POR      home      11:00      1 foul  LAL   &quot;Vlad… &quot;&quot;          0 &quot;per…</span></span>
+<span id="cb438-14"><a href="7-5-o-pacote-lubridate.html#cb438-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 10 2.01e7 POR      home      10:53      1 shot  POR   &quot;LaMa… &quot;made&quot;      2 &quot;jum…</span></span>
+<span id="cb438-15"><a href="7-5-o-pacote-lubridate.html#cb438-15" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 34,614 more rows, and 2 more variables: x &lt;int&gt;, y &lt;int&gt;</span></span></code></pre></div>
 <p><strong>1.</strong> Repare que a coluna <code>date</code> no data.frame é um vetor de inteiros. Transforme essa coluna em um vetor de valores com classe <code>date</code>.</p>
 <p><strong>2.</strong> Crie uma coluna que junte as informações de data e tempo de jogo (colunas <code>date</code> e <code>time</code>) em objetos da classe <code>date</code>.</p>
 <p><strong>3.</strong> Crie as colunas <code>dia</code>, <code>mês</code> e <code>ano</code> com as respectivas informações sobre a data do jogo.</p>

@@ -32,6 +32,7 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="7-2-dplyr.html"/>
 <link rel="next" href="7-4-o-pacote-stringr.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,7 +50,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
@@ -75,18 +75,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -106,7 +106,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -156,14 +156,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre</a></li>
-<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a><ul>
-<li class="chapter" data-level="1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a><ul>
+<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
 <li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
-<li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a><ul>
+<li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
 <li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
 <li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
@@ -172,7 +175,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#rtools"><i class="fa fa-check"></i><b>1.3.6</b> Rtools</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a><ul>
+<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="2-1-telas.html"><a href="2-1-telas.html"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
 <li class="chapter" data-level="2.2" data-path="2-2-atalhos.html"><a href="2-2-atalhos.html"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
 <li class="chapter" data-level="2.3" data-path="2-3-projetos.html"><a href="2-3-projetos.html"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
@@ -181,60 +185,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="2-6-addins.html"><a href="2-6-addins.html"><i class="fa fa-check"></i><b>2.6</b> Addins</a></li>
 <li class="chapter" data-level="2.7" data-path="2-7-snippets.html"><a href="2-7-snippets.html"><i class="fa fa-check"></i><b>2.7</b> Snippets</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a><ul>
-<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a><ul>
+<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
 <li class="chapter" data-level="3.1.2" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
 <li class="chapter" data-level="3.1.3" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a><ul>
+<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a><ul>
+<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="3-4-data-frames.html"><a href="3-4-data-frames.html"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
-<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a><ul>
+<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a>
+<ul>
 <li class="chapter" data-level="3.5.1" data-path="3-5-classes.html"><a href="3-5-classes.html#exercícios-2"><i class="fa fa-check"></i><b>3.5.1</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a><ul>
+<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-6-vetores.html"><a href="3-6-vetores.html#exercícios-3"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a><ul>
+<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html#exercícios-4"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a><ul>
+<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="3.9" data-path="3-9-listas.html"><a href="3-9-listas.html"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
-<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a><ul>
+<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html#exercícios-6"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a><ul>
+<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a>
+<ul>
 <li class="chapter" data-level="" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html#exercícios-7"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a><ul>
+<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a>
+<ul>
 <li class="chapter" data-level="3.12.1" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
 <li class="chapter" data-level="3.12.2" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#iteradores-for-e-while"><i class="fa fa-check"></i><b>3.12.2</b> Iteradores: for e while</a></li>
 <li class="chapter" data-level="" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#exercícios-8"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a><ul>
+<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a>
+<ul>
 <li class="chapter" data-level="3.13.1" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#matrizes"><i class="fa fa-check"></i><b>3.13.1</b> Matrizes</a></li>
 <li class="chapter" data-level="3.13.2" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#fatores"><i class="fa fa-check"></i><b>3.13.2</b> Fatores</a></li>
 <li class="chapter" data-level="3.13.3" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#gráficos-r-base"><i class="fa fa-check"></i><b>3.13.3</b> Gráficos (R base)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a><ul>
-<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a><ul>
+<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-cran"><i class="fa fa-check"></i><b>4.1.1</b> Via CRAN</a></li>
 <li class="chapter" data-level="4.1.2" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-github"><i class="fa fa-check"></i><b>4.1.2</b> Via Github</a></li>
 <li class="chapter" data-level="4.1.3" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-arquivo-.zip-ou-.tar.gz"><i class="fa fa-check"></i><b>4.1.3</b> Via arquivo .zip ou .tar.gz</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="4-2-tidyverse.html"><a href="4-2-tidyverse.html"><i class="fa fa-check"></i><b>4.2</b> Tidyverse</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a><ul>
+<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="5-1-caminhos.html"><a href="5-1-caminhos.html"><i class="fa fa-check"></i><b>5.1</b> Caminhos</a></li>
-<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a><ul>
+<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="5-2-readr.html"><a href="5-2-readr.html#lendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.1</b> Lendo arquivos de texto</a></li>
 <li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.2</b> Locale</a></li>
 <li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.3</b> Parseando valores</a></li>
@@ -245,15 +265,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3" data-path="5-3-readxl.html"><a href="5-3-readxl.html"><i class="fa fa-check"></i><b>5.3</b> Os pacotes readxl e writexl</a></li>
 <li class="chapter" data-level="5.4" data-path="5-4-haven.html"><a href="5-4-haven.html"><i class="fa fa-check"></i><b>5.4</b> haven</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a><ul>
-<li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a><ul>
+<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a>
+<ul>
 <li class="chapter" data-level="" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html#exercícios-10"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a><ul>
+<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="7-1-tibbles.html"><a href="7-1-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Tibbles</a></li>
-<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a><ul>
+<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#selecionando-colunas"><i class="fa fa-check"></i><b>7.2.1</b> Selecionando colunas</a></li>
 <li class="chapter" data-level="7.2.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#ordenando-a-base"><i class="fa fa-check"></i><b>7.2.2</b> Ordenando a base</a></li>
 <li class="chapter" data-level="7.2.3" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#o-pipe-em-ação"><i class="fa fa-check"></i><b>7.2.3</b> O pipe em ação</a></li>
@@ -263,27 +287,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.7" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#juntando-duas-bases"><i class="fa fa-check"></i><b>7.2.7</b> Juntando duas bases</a></li>
 <li class="chapter" data-level="7.2.8" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#dplyr-1.0"><i class="fa fa-check"></i><b>7.2.8</b> dplyr 1.0</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a><ul>
+<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#separate-e-unite"><i class="fa fa-check"></i><b>7.3.1</b> <code>separate()</code> e <code>unite()</code></a></li>
 <li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#pivotagem"><i class="fa fa-check"></i><b>7.3.2</b> Pivotagem</a></li>
 <li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#list-columns"><i class="fa fa-check"></i><b>7.3.3</b> <em>List columns</em></a></li>
 <li class="chapter" data-level="7.3.4" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#exercícios-18"><i class="fa fa-check"></i><b>7.3.4</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a><ul>
+<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a>
+<ul>
 <li class="chapter" data-level="7.4.1" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#introdução"><i class="fa fa-check"></i><b>7.4.1</b> Introdução</a></li>
 <li class="chapter" data-level="7.4.2" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-básicas"><i class="fa fa-check"></i><b>7.4.2</b> Funções básicas</a></li>
 <li class="chapter" data-level="7.4.3" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#expressões-regulares"><i class="fa fa-check"></i><b>7.4.3</b> Expressões Regulares</a></li>
 <li class="chapter" data-level="7.4.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-que-utilizam-regex"><i class="fa fa-check"></i><b>7.4.4</b> Funções que utilizam regex</a></li>
 <li class="chapter" data-level="7.4.5" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#exercícios-19"><i class="fa fa-check"></i><b>7.4.5</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.5</b> O pacote lubridate</a><ul>
+<li class="chapter" data-level="7.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.5</b> O pacote lubridate</a>
+<ul>
 <li class="chapter" data-level="7.5.1" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#a-classe-date"><i class="fa fa-check"></i><b>7.5.1</b> A classe <code>date</code></a></li>
 <li class="chapter" data-level="7.5.2" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#funções-úteis"><i class="fa fa-check"></i><b>7.5.2</b> Funções úteis</a></li>
 <li class="chapter" data-level="7.5.3" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#fusos-horários"><i class="fa fa-check"></i><b>7.5.3</b> Fusos horários</a></li>
 <li class="chapter" data-level="7.5.4" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#operações-com-datas"><i class="fa fa-check"></i><b>7.5.4</b> Operações com datas</a></li>
 <li class="chapter" data-level="7.5.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#exercícios-20"><i class="fa fa-check"></i><b>7.5.5</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="7-6-forcats.html"><a href="7-6-forcats.html"><i class="fa fa-check"></i><b>7.6</b> O pacote forcats</a><ul>
+<li class="chapter" data-level="7.6" data-path="7-6-forcats.html"><a href="7-6-forcats.html"><i class="fa fa-check"></i><b>7.6</b> O pacote forcats</a>
+<ul>
 <li class="chapter" data-level="7.6.1" data-path="7-6-forcats.html"><a href="7-6-forcats.html#o-que-são-fatores"><i class="fa fa-check"></i><b>7.6.1</b> O que são fatores?</a></li>
 <li class="chapter" data-level="7.6.2" data-path="7-6-forcats.html"><a href="7-6-forcats.html#modificando-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.2</b> Modificando níveis de um fator</a></li>
 <li class="chapter" data-level="7.6.3" data-path="7-6-forcats.html"><a href="7-6-forcats.html#mudando-a-ordem-dos-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.3</b> Mudando a ordem dos níveis de um fator</a></li>
@@ -291,8 +319,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.6.5" data-path="7-6-forcats.html"><a href="7-6-forcats.html#outras-funções-úteis"><i class="fa fa-check"></i><b>7.6.5</b> Outras funções úteis</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a><ul>
-<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a><ul>
+<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-pontos-dispersão"><i class="fa fa-check"></i><b>8.1.1</b> Gráficos de pontos (dispersão)</a></li>
 <li class="chapter" data-level="8.1.2" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-linhas"><i class="fa fa-check"></i><b>8.1.2</b> Gráficos de linhas</a></li>
 <li class="chapter" data-level="8.1.3" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-barras"><i class="fa fa-check"></i><b>8.1.3</b> Gráficos de barras</a></li>
@@ -303,13 +333,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.8" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>8.1.8</b> Juntando gráficos</a></li>
 <li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-21"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a><ul>
+<li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a>
+<ul>
 <li class="chapter" data-level="8.2.1" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#gghighlight"><i class="fa fa-check"></i><b>8.2.1</b> gghighlight</a></li>
 <li class="chapter" data-level="8.2.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#ggridges"><i class="fa fa-check"></i><b>8.2.2</b> ggridges</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="9-relatorios.html"><a href="9-relatorios.html"><i class="fa fa-check"></i><b>9</b> Relatórios</a><ul>
-<li class="chapter" data-level="9.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html"><i class="fa fa-check"></i><b>9.1</b> Markdown</a><ul>
+<li class="chapter" data-level="9" data-path="9-relatorios.html"><a href="9-relatorios.html"><i class="fa fa-check"></i><b>9</b> Relatórios</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html"><i class="fa fa-check"></i><b>9.1</b> Markdown</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html#ênfase"><i class="fa fa-check"></i><b>9.1.1</b> Ênfase</a></li>
 <li class="chapter" data-level="9.1.2" data-path="9-1-markdown.html"><a href="9-1-markdown.html#títulos"><i class="fa fa-check"></i><b>9.1.2</b> Títulos</a></li>
 <li class="chapter" data-level="9.1.3" data-path="9-1-markdown.html"><a href="9-1-markdown.html#listas-1"><i class="fa fa-check"></i><b>9.1.3</b> Listas</a></li>
@@ -321,7 +354,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1.9" data-path="9-1-markdown.html"><a href="9-1-markdown.html#recapitulando"><i class="fa fa-check"></i><b>9.1.9</b> Recapitulando</a></li>
 <li class="chapter" data-level="" data-path="9-1-markdown.html"><a href="9-1-markdown.html#exercicios-md"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a><ul>
+<li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a>
+<ul>
 <li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#códigos-em-r"><i class="fa fa-check"></i><b>9.2.1</b> Códigos em R</a></li>
 <li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#imagens-1"><i class="fa fa-check"></i><b>9.2.2</b> Imagens</a></li>
 <li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#tabelas-1"><i class="fa fa-check"></i><b>9.2.3</b> Tabelas</a></li>
@@ -329,17 +363,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="10-funcionais.html"><a href="10-funcionais.html"><i class="fa fa-check"></i><b>10</b> Funcionais</a></li>
-<li class="chapter" data-level="11" data-path="11-misc.html"><a href="11-misc.html"><i class="fa fa-check"></i><b>11</b> Miscelânea</a><ul>
-<li class="chapter" data-level="11.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>11.1</b> Arrumando banco de dados: o pacote janitor</a><ul>
+<li class="chapter" data-level="10" data-path="10-funcionais.html"><a href="10-funcionais.html"><i class="fa fa-check"></i><b>10</b> Programação funcional (purrr)</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="10-1-iterações-básicas.html"><a href="10-1-iterações-básicas.html"><i class="fa fa-check"></i><b>10.1</b> Iterações básicas</a></li>
+<li class="chapter" data-level="10.2" data-path="10-2-iterações-intermediárias.html"><a href="10-2-iterações-intermediárias.html"><i class="fa fa-check"></i><b>10.2</b> Iterações intermediárias</a></li>
+<li class="chapter" data-level="10.3" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html"><i class="fa fa-check"></i><b>10.3</b> Iterações avançadas</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#iterações-com-condicionais"><i class="fa fa-check"></i><b>10.3.1</b> Iterações com condicionais</a></li>
+<li class="chapter" data-level="10.3.2" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#iterações-com-tabelas-e-funções"><i class="fa fa-check"></i><b>10.3.2</b> Iterações com tabelas e funções</a></li>
+<li class="chapter" data-level="10.3.3" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#redução-e-acúmulo"><i class="fa fa-check"></i><b>10.3.3</b> Redução e acúmulo</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html"><i class="fa fa-check"></i><b>10.4</b> Miscelânea</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#manter-e-descartar"><i class="fa fa-check"></i><b>10.4.1</b> Manter e descartar</a></li>
+<li class="chapter" data-level="10.4.2" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#a-família-is"><i class="fa fa-check"></i><b>10.4.2</b> A família <code>is</code></a></li>
+<li class="chapter" data-level="10.4.3" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#andar-e-modificar"><i class="fa fa-check"></i><b>10.4.3</b> Andar e modificar</a></li>
+<li class="chapter" data-level="10.4.4" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#transposição-e-indexação-profunda"><i class="fa fa-check"></i><b>10.4.4</b> Transposição e indexação profunda</a></li>
+<li class="chapter" data-level="10.4.5" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#aplicação-parcial"><i class="fa fa-check"></i><b>10.4.5</b> Aplicação parcial</a></li>
+<li class="chapter" data-level="10.4.6" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#execução-segura"><i class="fa fa-check"></i><b>10.4.6</b> Execução segura</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="11-misc.html"><a href="11-misc.html"><i class="fa fa-check"></i><b>11</b> Miscelânea</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>11.1</b> Arrumando banco de dados: o pacote janitor</a>
+<ul>
 <li class="chapter" data-level="11.1.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#arrumando-o-nome-das-variáveis"><i class="fa fa-check"></i><b>11.1.1</b> Arrumando o nome das variáveis</a></li>
 <li class="chapter" data-level="11.1.2" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#removendo-linhas-e-colunas-vazias"><i class="fa fa-check"></i><b>11.1.2</b> Removendo linhas e colunas vazias</a></li>
 <li class="chapter" data-level="11.1.3" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#identificando-linhas-duplicadas"><i class="fa fa-check"></i><b>11.1.3</b> Identificando linhas duplicadas</a></li>
 <li class="chapter" data-level="11.1.4" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>11.1.4</b> Outras funções</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="12-respostas.html"><a href="12-respostas.html"><i class="fa fa-check"></i><b>12</b> Respostas</a><ul>
-<li class="chapter" data-level="12.1" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html"><i class="fa fa-check"></i><b>12.1</b> R básico</a><ul>
+<li class="chapter" data-level="12" data-path="12-respostas.html"><a href="12-respostas.html"><i class="fa fa-check"></i><b>12</b> Respostas</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html"><i class="fa fa-check"></i><b>12.1</b> R básico</a>
+<ul>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#objetos-e-funções"><i class="fa fa-check"></i>Objetos e funções</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#classes-1"><i class="fa fa-check"></i>Classes</a></li>
@@ -350,11 +407,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i>Mais sobre funções</a></li>
 <li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#controle-de-fluxo-1"><i class="fa fa-check"></i>Controle de fluxo</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="12-2-importação.html"><a href="12-2-importação.html"><i class="fa fa-check"></i><b>12.2</b> Importação</a><ul>
+<li class="chapter" data-level="12.2" data-path="12-2-importação.html"><a href="12-2-importação.html"><i class="fa fa-check"></i><b>12.2</b> Importação</a>
+<ul>
 <li class="chapter" data-level="" data-path="12-2-importação.html"><a href="12-2-importação.html#o-pacote-readr"><i class="fa fa-check"></i>O pacote readr</a></li>
 </ul></li>
 <li class="chapter" data-level="12.3" data-path="12-3-pipe-1.html"><a href="12-3-pipe-1.html"><i class="fa fa-check"></i><b>12.3</b> Pipe</a></li>
-<li class="chapter" data-level="12.4" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>12.4</b> O pacote dplyr</a><ul>
+<li class="chapter" data-level="12.4" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>12.4</b> O pacote dplyr</a>
+<ul>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#selecionando-colunas-1"><i class="fa fa-check"></i>Selecionando colunas</a></li>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#ordenando-a-base-1"><i class="fa fa-check"></i>Ordenando a base</a></li>
 <li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#filtrando-linhas-1"><i class="fa fa-check"></i>Filtrando linhas</a></li>
@@ -366,7 +425,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.6" data-path="12-6-o-pacote-lubridate-1.html"><a href="12-6-o-pacote-lubridate-1.html"><i class="fa fa-check"></i><b>12.6</b> O pacote lubridate</a></li>
 <li class="chapter" data-level="12.7" data-path="12-7-o-pacote-ggplot2-1.html"><a href="12-7-o-pacote-ggplot2-1.html"><i class="fa fa-check"></i><b>12.7</b> O pacote ggplot2</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a><ul>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a>
+<ul>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i>Programação em R</a></li>
 </ul></li>
@@ -390,7 +450,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tidyr" class="section level2">
+<div id="tidyr" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span> O pacote tidyr</h2>
 <p>Dentro do <code>tidyverse</code>, uma base <em>tidy</em> é uma base fácil de se trabalhar, isto é, fácil de se fazer manipulação de dados, fácil de se criar visualizações, fácil de se ajustar modelos e por aí vai.</p>
 <p>Na prática, uma base <em>tidy</em> é aquela que se encaixa bem no <em>framework</em> do <code>tidyverse</code>, pois os pacotes como o <code>dplyr</code> e o <code>ggplot2</code> foram desenvolvidos para funcionar bem com bases <em>tidy</em>. E assim como esses pacotes motivaram o uso de bases <em>tidy</em>, o conceito <em>tidy</em> motiva o surgimento de novos <em>frameworks</em>, como o <code>tidymodels</code> para modelagem.</p>
@@ -408,22 +468,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>nest()</code> e <code>unnest()</code>: para criar <em>list columns</em>.</p></li>
 </ul>
 <p>Como motivação para utilizar esssas funções, vamos utilizar a nossa boa e velha base <code>imdb</code>. Essa base pode ser baixada <a href="https://github.com/curso-r/livro-material/raw/master/assets/data/imdb.rds">clicando aqui</a>.</p>
-<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="7-3-tidyr.html#cb353-1"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb353-2"><a href="7-3-tidyr.html#cb353-2"></a><span class="kw">library</span>(tidyr)</span>
-<span id="cb353-3"><a href="7-3-tidyr.html#cb353-3"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb353-4"><a href="7-3-tidyr.html#cb353-4"></a></span>
-<span id="cb353-5"><a href="7-3-tidyr.html#cb353-5"></a>imdb &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_rds</span>(<span class="st">&quot;imdb.rds&quot;</span>)</span></code></pre></div>
-<div id="separate-e-unite" class="section level3">
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="7-3-tidyr.html#cb353-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb353-2"><a href="7-3-tidyr.html#cb353-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb353-3"><a href="7-3-tidyr.html#cb353-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb353-4"><a href="7-3-tidyr.html#cb353-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb353-5"><a href="7-3-tidyr.html#cb353-5" aria-hidden="true" tabindex="-1"></a>imdb <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_rds</span>(<span class="st">&quot;imdb.rds&quot;</span>)</span></code></pre></div>
+<div id="separate-e-unite" class="section level3" number="7.3.1">
 <h3><span class="header-section-number">7.3.1</span> <code>separate()</code> e <code>unite()</code></h3>
 <p>A função <code>separate()</code> separa duas ou mais variáveis que estão concatenadas em uma mesma coluna. A sintaxe da função está apresentada abaixo.</p>
-<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="7-3-tidyr.html#cb354-1"></a>dados <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb354-2"><a href="7-3-tidyr.html#cb354-2"></a><span class="st">  </span><span class="kw">separate</span>( </span>
-<span id="cb354-3"><a href="7-3-tidyr.html#cb354-3"></a>    <span class="dt">col =</span> coluna_velha, </span>
-<span id="cb354-4"><a href="7-3-tidyr.html#cb354-4"></a>    <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;colunas&quot;</span>, <span class="st">&quot;novas&quot;</span>),</span>
-<span id="cb354-5"><a href="7-3-tidyr.html#cb354-5"></a>    <span class="dt">sep =</span> <span class="st">&quot;separador&quot;</span></span>
-<span id="cb354-6"><a href="7-3-tidyr.html#cb354-6"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="7-3-tidyr.html#cb354-1" aria-hidden="true" tabindex="-1"></a>dados <span class="sc">%&gt;%</span> </span>
+<span id="cb354-2"><a href="7-3-tidyr.html#cb354-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>( </span>
+<span id="cb354-3"><a href="7-3-tidyr.html#cb354-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> coluna_velha, </span>
+<span id="cb354-4"><a href="7-3-tidyr.html#cb354-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;colunas&quot;</span>, <span class="st">&quot;novas&quot;</span>),</span>
+<span id="cb354-5"><a href="7-3-tidyr.html#cb354-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep =</span> <span class="st">&quot;separador&quot;</span></span>
+<span id="cb354-6"><a href="7-3-tidyr.html#cb354-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p>Como exemplo, vamos transformar a coluna <code>generos</code> da base IMDB em três colunas, cada uma com um dos gêneros do filme. Lembrando que os valores da coluna <code>generos</code> estão no seguinte formato:</p>
-<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="7-3-tidyr.html#cb355-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pull</span>(generos) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="7-3-tidyr.html#cb355-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> <span class="fu">pull</span>(generos) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;Action|Adventure|Fantasy|Sci-Fi&quot;                          
 ## [2] &quot;Action|Adventure|Fantasy&quot;                                 
 ## [3] &quot;Action|Thriller&quot;                                          
@@ -431,12 +491,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [5] &quot;Action|Adventure|Romance&quot;                                 
 ## [6] &quot;Adventure|Animation|Comedy|Family|Fantasy|Musical|Romance&quot;</code></pre>
 <p>Veja que agora, temos 3 colunas de gênero. Filmes com menos de 3 gêneros recebem <code>NA</code> na coluna <code>genero2</code> e/ou <code>genero3</code>. Os gêneros sobressalentes são descartados, assim como a coluna <code>generos</code> original.</p>
-<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="7-3-tidyr.html#cb357-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb357-2"><a href="7-3-tidyr.html#cb357-2"></a><span class="st">  </span><span class="kw">separate</span>( </span>
-<span id="cb357-3"><a href="7-3-tidyr.html#cb357-3"></a>    <span class="dt">col =</span> generos,</span>
-<span id="cb357-4"><a href="7-3-tidyr.html#cb357-4"></a>    <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;genero1&quot;</span>, <span class="st">&quot;genero2&quot;</span>, <span class="st">&quot;genero3&quot;</span>), </span>
-<span id="cb357-5"><a href="7-3-tidyr.html#cb357-5"></a>    <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">|&quot;</span></span>
-<span id="cb357-6"><a href="7-3-tidyr.html#cb357-6"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="7-3-tidyr.html#cb357-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb357-2"><a href="7-3-tidyr.html#cb357-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>( </span>
+<span id="cb357-3"><a href="7-3-tidyr.html#cb357-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> generos,</span>
+<span id="cb357-4"><a href="7-3-tidyr.html#cb357-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;genero1&quot;</span>, <span class="st">&quot;genero2&quot;</span>, <span class="st">&quot;genero3&quot;</span>), </span>
+<span id="cb357-5"><a href="7-3-tidyr.html#cb357-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">|&quot;</span></span>
+<span id="cb357-6"><a href="7-3-tidyr.html#cb357-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## Warning: Expected 3 pieces. Additional pieces discarded in 1052 rows [1, 6, 12,
 ## 13, 16, 18, 23, 24, 25, 28, 32, 34, 36, 39, 40, 43, 47, 48, 49, 50, ...].</code></pre>
 <pre><code>## Warning: Expected 3 pieces. Missing pieces filled with `NA` in 1537 rows [3, 19,
@@ -459,14 +519,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   orcamento &lt;int&gt;, receita &lt;int&gt;, nota_imdb &lt;dbl&gt;, likes_facebook &lt;int&gt;,
 ## #   ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 <p>A função <code>unite()</code> realiza a operação inversa da função <code>separate()</code>. Ela concatena os valores de várias variáveis em uma única coluna. A sintaxe é a seguinte:</p>
-<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="7-3-tidyr.html#cb361-1"></a>dados <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb361-2"><a href="7-3-tidyr.html#cb361-2"></a><span class="st">  </span><span class="kw">unite</span>(</span>
-<span id="cb361-3"><a href="7-3-tidyr.html#cb361-3"></a>    <span class="dt">col =</span> coluna_nova, </span>
-<span id="cb361-4"><a href="7-3-tidyr.html#cb361-4"></a>    colunas_para_juntar, </span>
-<span id="cb361-5"><a href="7-3-tidyr.html#cb361-5"></a>    <span class="dt">sep =</span> <span class="st">&quot;separador&quot;</span> </span>
-<span id="cb361-6"><a href="7-3-tidyr.html#cb361-6"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="7-3-tidyr.html#cb361-1" aria-hidden="true" tabindex="-1"></a>dados <span class="sc">%&gt;%</span> </span>
+<span id="cb361-2"><a href="7-3-tidyr.html#cb361-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(</span>
+<span id="cb361-3"><a href="7-3-tidyr.html#cb361-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> coluna_nova, </span>
+<span id="cb361-4"><a href="7-3-tidyr.html#cb361-4" aria-hidden="true" tabindex="-1"></a>    colunas_para_juntar, </span>
+<span id="cb361-5"><a href="7-3-tidyr.html#cb361-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep =</span> <span class="st">&quot;separador&quot;</span> </span>
+<span id="cb361-6"><a href="7-3-tidyr.html#cb361-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p>Como exemplo, vamos agora transformar as colunas <code>ator1</code>, <code>ator2</code> e <code>ator3</code> em uma única coluna <code>atores</code>. Lembrando que essas colunas estão no formato abaixo.</p>
-<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="7-3-tidyr.html#cb362-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="kw">starts_with</span>(<span class="st">&quot;ator&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>(<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="7-3-tidyr.html#cb362-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;ator&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 3 x 3
 ##   ator_1      ator_2           ator_3              
 ##   &lt;chr&gt;       &lt;chr&gt;            &lt;chr&gt;               
@@ -474,13 +534,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 2 Johnny Depp Orlando Bloom    Jack Davenport      
 ## 3 Tom Hardy   Christian Bale   Joseph Gordon-Levitt</code></pre>
 <p>Veja que agora a coluna <code>atores</code> possui os 3 atores concatenados. Se a ordem das colunas <code>ator1</code>, <code>ator2</code> e <code>ator3</code> nos trazia a informação de protagonismo, essa informação passa a ficar implícita nesse novo formato. As 3 colunas originais são removidas da base resultante.</p>
-<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="7-3-tidyr.html#cb364-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb364-2"><a href="7-3-tidyr.html#cb364-2"></a><span class="st">  </span><span class="kw">unite</span>(</span>
-<span id="cb364-3"><a href="7-3-tidyr.html#cb364-3"></a>    <span class="dt">col =</span> <span class="st">&quot;elenco&quot;</span>,</span>
-<span id="cb364-4"><a href="7-3-tidyr.html#cb364-4"></a>    <span class="kw">starts_with</span>(<span class="st">&quot;ator&quot;</span>), </span>
-<span id="cb364-5"><a href="7-3-tidyr.html#cb364-5"></a>    <span class="dt">sep =</span> <span class="st">&quot; - &quot;</span></span>
-<span id="cb364-6"><a href="7-3-tidyr.html#cb364-6"></a>  ) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb364-7"><a href="7-3-tidyr.html#cb364-7"></a><span class="st">  </span><span class="kw">select</span>(elenco)</span></code></pre></div>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="7-3-tidyr.html#cb364-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb364-2"><a href="7-3-tidyr.html#cb364-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(</span>
+<span id="cb364-3"><a href="7-3-tidyr.html#cb364-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="st">&quot;elenco&quot;</span>,</span>
+<span id="cb364-4"><a href="7-3-tidyr.html#cb364-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">starts_with</span>(<span class="st">&quot;ator&quot;</span>), </span>
+<span id="cb364-5"><a href="7-3-tidyr.html#cb364-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep =</span> <span class="st">&quot; - &quot;</span></span>
+<span id="cb364-6"><a href="7-3-tidyr.html#cb364-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb364-7"><a href="7-3-tidyr.html#cb364-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(elenco)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 1
 ##    elenco                                                  
 ##    &lt;chr&gt;                                                   
@@ -496,7 +556,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 Johnny Depp - Orlando Bloom - Jack Davenport            
 ## # … with 3,797 more rows</code></pre>
 </div>
-<div id="pivotagem" class="section level3">
+<div id="pivotagem" class="section level3" number="7.3.2">
 <h3><span class="header-section-number">7.3.2</span> Pivotagem</h3>
 <p>O conceito de pivotagem no <em>tidyverse</em> se refere a mudança da estrutura da base, geralmente para alcançar o formato <em>tidy</em>.</p>
 <p>Geralmente realizamos pivotagem quando nossas linhas não são unidades observacionais ou nossas colunas não são variáveis. Ela é similiar à pivotagem do Excel, mas um pouco mais complexa.</p>
@@ -505,14 +565,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Esses formatos são sempre relativos às colunas que estão sendo pivotadas, sendo que uma base <em>tidy</em> pode estar tanto no formato <em>long</em> quanto <em>wide</em>.</p>
 <p>Antigamente, utilizávamos as funções <code>gather()</code> e <code>spread()</code> para fazer as operações de pivotagem.</p>
 <p>Agora, no lugar de <code>gather()</code>, utilizamos a função <code>pivot_longer()</code>. Abaixo, transformamos as colunas <code>ator1</code>, <code>ator2</code> e <code>ator3</code> em duas colunas: <code>ator_atriz</code> e <code>protagonismo</code>.</p>
-<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="7-3-tidyr.html#cb366-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb366-2"><a href="7-3-tidyr.html#cb366-2"></a><span class="st">  </span><span class="kw">pivot_longer</span>(</span>
-<span id="cb366-3"><a href="7-3-tidyr.html#cb366-3"></a>    <span class="dt">cols =</span> <span class="kw">starts_with</span>(<span class="st">&quot;ator&quot;</span>), </span>
-<span id="cb366-4"><a href="7-3-tidyr.html#cb366-4"></a>    <span class="dt">names_to =</span> <span class="st">&quot;protagonismo&quot;</span>,</span>
-<span id="cb366-5"><a href="7-3-tidyr.html#cb366-5"></a>    <span class="dt">values_to =</span> <span class="st">&quot;ator_atriz&quot;</span></span>
-<span id="cb366-6"><a href="7-3-tidyr.html#cb366-6"></a>  ) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb366-7"><a href="7-3-tidyr.html#cb366-7"></a><span class="st">  </span><span class="kw">select</span>(titulo, ator_atriz, protagonismo) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb366-8"><a href="7-3-tidyr.html#cb366-8"></a><span class="st">  </span><span class="kw">head</span>(<span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="7-3-tidyr.html#cb366-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb366-2"><a href="7-3-tidyr.html#cb366-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb366-3"><a href="7-3-tidyr.html#cb366-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">&quot;ator&quot;</span>), </span>
+<span id="cb366-4"><a href="7-3-tidyr.html#cb366-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">&quot;protagonismo&quot;</span>,</span>
+<span id="cb366-5"><a href="7-3-tidyr.html#cb366-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">&quot;ator_atriz&quot;</span></span>
+<span id="cb366-6"><a href="7-3-tidyr.html#cb366-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb366-7"><a href="7-3-tidyr.html#cb366-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(titulo, ator_atriz, protagonismo) <span class="sc">%&gt;%</span> </span>
+<span id="cb366-8"><a href="7-3-tidyr.html#cb366-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">6</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 3
 ##   titulo                                    ator_atriz       protagonismo
 ##   &lt;chr&gt;                                     &lt;chr&gt;            &lt;chr&gt;       
@@ -525,17 +585,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Se considerarmos que na análise da base IMDB cada observação deve ser um filme, então essa nova base já não mais <em>tidy</em>, pois agora cada filme aparece em três linhas diferentes, uma vez para cada um de seus atores.</p>
 <p>Nesse sentido, embora possa parecer que a variável <code>protagonismo</code> estava implícita na base original, ela não é uma variável de fato. Todos filmes têm um <code>ator_1</code>, um <code>ator_2</code> e um <code>ator_3</code>. Não existe nenhuma informação sobre o filme que podemos tirar da coluna <code>protagonismo</code>, pois ela qualifica apenas os atores, não o filme em si.</p>
 <p>A função <code>pivot_wider()</code> faz a operação inversa da <code>pivot_longer()</code>. Sem aplicarmos as duas funções em sequência, voltamos para a base original.</p>
-<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="7-3-tidyr.html#cb368-1"></a>imdb <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb368-2"><a href="7-3-tidyr.html#cb368-2"></a><span class="st">  </span><span class="kw">pivot_longer</span>(</span>
-<span id="cb368-3"><a href="7-3-tidyr.html#cb368-3"></a>    <span class="dt">cols =</span> <span class="kw">starts_with</span>(<span class="st">&quot;ator&quot;</span>), </span>
-<span id="cb368-4"><a href="7-3-tidyr.html#cb368-4"></a>    <span class="dt">names_to =</span> <span class="st">&quot;ator_protagonismo&quot;</span>,</span>
-<span id="cb368-5"><a href="7-3-tidyr.html#cb368-5"></a>    <span class="dt">values_to =</span> <span class="st">&quot;ator_nome&quot;</span></span>
-<span id="cb368-6"><a href="7-3-tidyr.html#cb368-6"></a>  ) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb368-7"><a href="7-3-tidyr.html#cb368-7"></a><span class="st">  </span><span class="kw">pivot_wider</span>(</span>
-<span id="cb368-8"><a href="7-3-tidyr.html#cb368-8"></a>    <span class="dt">names_from =</span> <span class="st">&quot;ator_protagonismo&quot;</span>,</span>
-<span id="cb368-9"><a href="7-3-tidyr.html#cb368-9"></a>    <span class="dt">values_from =</span> <span class="st">&quot;ator_nome&quot;</span></span>
-<span id="cb368-10"><a href="7-3-tidyr.html#cb368-10"></a>  ) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb368-11"><a href="7-3-tidyr.html#cb368-11"></a><span class="st">  </span><span class="kw">head</span>(<span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="7-3-tidyr.html#cb368-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb368-2"><a href="7-3-tidyr.html#cb368-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb368-3"><a href="7-3-tidyr.html#cb368-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">&quot;ator&quot;</span>), </span>
+<span id="cb368-4"><a href="7-3-tidyr.html#cb368-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">&quot;ator_protagonismo&quot;</span>,</span>
+<span id="cb368-5"><a href="7-3-tidyr.html#cb368-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">&quot;ator_nome&quot;</span></span>
+<span id="cb368-6"><a href="7-3-tidyr.html#cb368-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb368-7"><a href="7-3-tidyr.html#cb368-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb368-8"><a href="7-3-tidyr.html#cb368-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> <span class="st">&quot;ator_protagonismo&quot;</span>,</span>
+<span id="cb368-9"><a href="7-3-tidyr.html#cb368-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> <span class="st">&quot;ator_nome&quot;</span></span>
+<span id="cb368-10"><a href="7-3-tidyr.html#cb368-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb368-11"><a href="7-3-tidyr.html#cb368-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## Warning: Values are not uniquely identified; output will contain list-cols.
 ## * Use `values_fn = list` to suppress this warning.
 ## * Use `values_fn = length` to identify where the duplicates arise
@@ -550,23 +610,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;list&gt;, ator_2 &lt;list&gt;, ator_3 &lt;list&gt;</code></pre>
 <p>A base <code>imdb</code> não possui nenhuma variável que faça sentido aplicarmos diretamente a função <code>pivot_wider()</code>. Vamos então considerar a seguinte tabela derivada da base <code>imdb</code>:</p>
-<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="7-3-tidyr.html#cb371-1"></a>tab_romance_terror &lt;-<span class="st"> </span>imdb <span class="op">%&gt;%</span></span>
-<span id="cb371-2"><a href="7-3-tidyr.html#cb371-2"></a><span class="st">  </span><span class="kw">filter</span>(ano <span class="op">&gt;=</span><span class="st"> </span><span class="dv">2010</span>) <span class="op">%&gt;%</span></span>
-<span id="cb371-3"><a href="7-3-tidyr.html#cb371-3"></a><span class="st">  </span><span class="kw">mutate</span>(</span>
-<span id="cb371-4"><a href="7-3-tidyr.html#cb371-4"></a>    <span class="dt">genero =</span> <span class="kw">case_when</span>(</span>
-<span id="cb371-5"><a href="7-3-tidyr.html#cb371-5"></a>      stringr<span class="op">::</span><span class="kw">str_detect</span>(generos, <span class="st">&quot;Romance&quot;</span>) <span class="op">~</span><span class="st"> &quot;Romance&quot;</span>,</span>
-<span id="cb371-6"><a href="7-3-tidyr.html#cb371-6"></a>      stringr<span class="op">::</span><span class="kw">str_detect</span>(generos, <span class="st">&quot;Horror&quot;</span>) <span class="op">~</span><span class="st"> &quot;Horror&quot;</span>,</span>
-<span id="cb371-7"><a href="7-3-tidyr.html#cb371-7"></a>      <span class="ot">TRUE</span> <span class="op">~</span><span class="st"> </span><span class="ot">NA_character_</span></span>
-<span id="cb371-8"><a href="7-3-tidyr.html#cb371-8"></a>    )</span>
-<span id="cb371-9"><a href="7-3-tidyr.html#cb371-9"></a>  ) <span class="op">%&gt;%</span></span>
-<span id="cb371-10"><a href="7-3-tidyr.html#cb371-10"></a><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(genero)) <span class="op">%&gt;%</span></span>
-<span id="cb371-11"><a href="7-3-tidyr.html#cb371-11"></a><span class="st">  </span><span class="kw">group_by</span>(ano, genero) <span class="op">%&gt;%</span></span>
-<span id="cb371-12"><a href="7-3-tidyr.html#cb371-12"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">receita_media =</span> <span class="kw">mean</span>(receita, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="7-3-tidyr.html#cb371-1" aria-hidden="true" tabindex="-1"></a>tab_romance_terror <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span></span>
+<span id="cb371-2"><a href="7-3-tidyr.html#cb371-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ano <span class="sc">&gt;=</span> <span class="dv">2010</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb371-3"><a href="7-3-tidyr.html#cb371-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb371-4"><a href="7-3-tidyr.html#cb371-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">genero =</span> <span class="fu">case_when</span>(</span>
+<span id="cb371-5"><a href="7-3-tidyr.html#cb371-5" aria-hidden="true" tabindex="-1"></a>      stringr<span class="sc">::</span><span class="fu">str_detect</span>(generos, <span class="st">&quot;Romance&quot;</span>) <span class="sc">~</span> <span class="st">&quot;Romance&quot;</span>,</span>
+<span id="cb371-6"><a href="7-3-tidyr.html#cb371-6" aria-hidden="true" tabindex="-1"></a>      stringr<span class="sc">::</span><span class="fu">str_detect</span>(generos, <span class="st">&quot;Horror&quot;</span>) <span class="sc">~</span> <span class="st">&quot;Horror&quot;</span>,</span>
+<span id="cb371-7"><a href="7-3-tidyr.html#cb371-7" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_character_</span></span>
+<span id="cb371-8"><a href="7-3-tidyr.html#cb371-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb371-9"><a href="7-3-tidyr.html#cb371-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb371-10"><a href="7-3-tidyr.html#cb371-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(genero)) <span class="sc">%&gt;%</span></span>
+<span id="cb371-11"><a href="7-3-tidyr.html#cb371-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano, genero) <span class="sc">%&gt;%</span></span>
+<span id="cb371-12"><a href="7-3-tidyr.html#cb371-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">receita_media =</span> <span class="fu">mean</span>(receita, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
 <pre><code>## `summarise()` regrouping output by &#39;ano&#39; (override with `.groups` argument)</code></pre>
 <p>Essa tabela possui a receita média dos filmes de romance e terror nos anos de 2010 a 2016.</p>
 <p>Para apresentar essa tabela em uma reunião, por exemplo, pode ficar ser mais agradável ter os anos nas colunas e não nas linhas. Para isso, basta utilizarmos a função <code>pivot_wider()</code>.</p>
-<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="7-3-tidyr.html#cb373-1"></a><span class="co"># Tabela original</span></span>
-<span id="cb373-2"><a href="7-3-tidyr.html#cb373-2"></a>tab_romance_terror</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="7-3-tidyr.html#cb373-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabela original</span></span>
+<span id="cb373-2"><a href="7-3-tidyr.html#cb373-2" aria-hidden="true" tabindex="-1"></a>tab_romance_terror</span></code></pre></div>
 <pre><code>## # A tibble: 14 x 3
 ## # Groups:   ano [7]
 ##      ano genero  receita_media
@@ -585,12 +645,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 12  2015 Romance     60166036.
 ## 13  2016 Horror      57896396.
 ## 14  2016 Romance    105439985.</code></pre>
-<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="7-3-tidyr.html#cb375-1"></a><span class="co"># Tabela com os anos nas colunas</span></span>
-<span id="cb375-2"><a href="7-3-tidyr.html#cb375-2"></a>tab_romance_terror <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb375-3"><a href="7-3-tidyr.html#cb375-3"></a><span class="st">  </span><span class="kw">pivot_wider</span>(</span>
-<span id="cb375-4"><a href="7-3-tidyr.html#cb375-4"></a>    <span class="dt">names_from =</span> ano,</span>
-<span id="cb375-5"><a href="7-3-tidyr.html#cb375-5"></a>    <span class="dt">values_from =</span> receita_media</span>
-<span id="cb375-6"><a href="7-3-tidyr.html#cb375-6"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="7-3-tidyr.html#cb375-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabela com os anos nas colunas</span></span>
+<span id="cb375-2"><a href="7-3-tidyr.html#cb375-2" aria-hidden="true" tabindex="-1"></a>tab_romance_terror <span class="sc">%&gt;%</span> </span>
+<span id="cb375-3"><a href="7-3-tidyr.html#cb375-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb375-4"><a href="7-3-tidyr.html#cb375-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> ano,</span>
+<span id="cb375-5"><a href="7-3-tidyr.html#cb375-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> receita_media</span>
+<span id="cb375-6"><a href="7-3-tidyr.html#cb375-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 8
 ##   genero     `2010`    `2011`    `2012`   `2013`    `2014`    `2015`     `2016`
 ##   &lt;chr&gt;       &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
@@ -598,7 +658,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 2 Romance 48834552  40780528. 53134506. 25590508 51353872. 60166036. 105439985.</code></pre>
 <p>Esse é um caso que <em>bagunçar</em> um pouquinho a tabela nos trouxe um resultado desejado.</p>
 </div>
-<div id="list-columns" class="section level3">
+<div id="list-columns" class="section level3" number="7.3.3">
 <h3><span class="header-section-number">7.3.3</span> <em>List columns</em></h3>
 <p>Um terceiro conceito de dados <em>tidy</em> é que cada célula da tabela possui um valor. No entanto, quando estamos programando, muitas vezes vale apena abandonar essa definição e guardarmos objetos mais complexos nas células de uma tabela.</p>
 <p>Utilizando as chamadas <em>list columns</em> podemos guardar virtualmente qualquer objeto em nossas <em>tibbles</em>, como gráficos, resultados de modelos ou até mesmo outras tabelas.</p>
@@ -608,12 +668,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>unnest()</code>: para desfazer uma <em>list column</em>.</p></li>
 </ul>
 <p>A forma mais simples de utilizarmos uma <em>list column</em> é <em>aninhar</em> a nossa base com relação a uma variável.</p>
-<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="7-3-tidyr.html#cb377-1"></a>imdb_nest &lt;-<span class="st"> </span>imdb <span class="op">%&gt;%</span></span>
-<span id="cb377-2"><a href="7-3-tidyr.html#cb377-2"></a><span class="st">  </span><span class="kw">group_by</span>(ano) <span class="op">%&gt;%</span></span>
-<span id="cb377-3"><a href="7-3-tidyr.html#cb377-3"></a><span class="st">  </span><span class="kw">nest</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb377-4"><a href="7-3-tidyr.html#cb377-4"></a><span class="st">  </span><span class="kw">arrange</span>(ano)</span>
-<span id="cb377-5"><a href="7-3-tidyr.html#cb377-5"></a></span>
-<span id="cb377-6"><a href="7-3-tidyr.html#cb377-6"></a><span class="kw">head</span>(imdb_nest, <span class="dv">8</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="7-3-tidyr.html#cb377-1" aria-hidden="true" tabindex="-1"></a>imdb_nest <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span></span>
+<span id="cb377-2"><a href="7-3-tidyr.html#cb377-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span></span>
+<span id="cb377-3"><a href="7-3-tidyr.html#cb377-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nest</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb377-4"><a href="7-3-tidyr.html#cb377-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(ano)</span>
+<span id="cb377-5"><a href="7-3-tidyr.html#cb377-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb377-6"><a href="7-3-tidyr.html#cb377-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(imdb_nest, <span class="dv">8</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 8 x 2
 ## # Groups:   ano [8]
 ##     ano data             
@@ -628,7 +688,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 8  1934 &lt;tibble [1 × 14]&gt;</code></pre>
 <p>A base <code>imdb_nest</code> possui duas colunas <code>ano</code> e <code>data</code> e uma linha para cada ano. Na coluna <code>data</code>, temos o restante da base <code>imdb</code>, recortada para cada um dos anos.</p>
 <p>Abaixo, acessmos os dados do único filme de 1916 (primeira linha da base <code>imdb_nest</code>).</p>
-<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="7-3-tidyr.html#cb379-1"></a>imdb_nest<span class="op">$</span>data[[<span class="dv">1</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="7-3-tidyr.html#cb379-1" aria-hidden="true" tabindex="-1"></a>imdb_nest<span class="sc">$</span>data[[<span class="dv">1</span>]]</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 14
 ##   titulo diretor duracao cor   generos pais  classificacao orcamento receita
 ##   &lt;chr&gt;  &lt;chr&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;             &lt;int&gt;   &lt;int&gt;
@@ -638,18 +698,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Imagine que queiramos fazer, para cada ano, um gráfico de dispersão da receita contra o orçamento dos filmes lançados no ano.</p>
 <p>Com a base no formato de <em>list columns</em>, basta criarmos uma função para gerar o gráfico e utilizarmos a função <code>purrr::map()</code>.</p>
 <p>Abaixo, construímos a função <code>fazer_grafico_dispersao()</code>, que será aplicada a cada uma das bases contidas na coluna <code>data</code> da base <code>imdb_nest</code>. Os gráficos, respectivamos a cada ano, são salvos na coluna <code>grafico</code>.</p>
-<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="7-3-tidyr.html#cb381-1"></a>fazer_grafico_dispersao &lt;-<span class="st"> </span><span class="cf">function</span>(tab) {</span>
-<span id="cb381-2"><a href="7-3-tidyr.html#cb381-2"></a>  tab <span class="op">%&gt;%</span></span>
-<span id="cb381-3"><a href="7-3-tidyr.html#cb381-3"></a><span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> orcamento, <span class="dt">y =</span> receita)) <span class="op">+</span></span>
-<span id="cb381-4"><a href="7-3-tidyr.html#cb381-4"></a><span class="st">    </span><span class="kw">geom_point</span>()</span>
-<span id="cb381-5"><a href="7-3-tidyr.html#cb381-5"></a>}</span>
-<span id="cb381-6"><a href="7-3-tidyr.html#cb381-6"></a></span>
-<span id="cb381-7"><a href="7-3-tidyr.html#cb381-7"></a>imdb_graficos &lt;-<span class="st"> </span>imdb_nest <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb381-8"><a href="7-3-tidyr.html#cb381-8"></a><span class="st">  </span><span class="kw">mutate</span>(</span>
-<span id="cb381-9"><a href="7-3-tidyr.html#cb381-9"></a>    <span class="dt">grafico =</span> purrr<span class="op">::</span><span class="kw">map</span>(data, fazer_grafico_dispersao)</span>
-<span id="cb381-10"><a href="7-3-tidyr.html#cb381-10"></a>  )</span>
-<span id="cb381-11"><a href="7-3-tidyr.html#cb381-11"></a></span>
-<span id="cb381-12"><a href="7-3-tidyr.html#cb381-12"></a><span class="kw">head</span>(imdb_graficos, <span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="7-3-tidyr.html#cb381-1" aria-hidden="true" tabindex="-1"></a>fazer_grafico_dispersao <span class="ot">&lt;-</span> <span class="cf">function</span>(tab) {</span>
+<span id="cb381-2"><a href="7-3-tidyr.html#cb381-2" aria-hidden="true" tabindex="-1"></a>  tab <span class="sc">%&gt;%</span></span>
+<span id="cb381-3"><a href="7-3-tidyr.html#cb381-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) <span class="sc">+</span></span>
+<span id="cb381-4"><a href="7-3-tidyr.html#cb381-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>()</span>
+<span id="cb381-5"><a href="7-3-tidyr.html#cb381-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb381-6"><a href="7-3-tidyr.html#cb381-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb381-7"><a href="7-3-tidyr.html#cb381-7" aria-hidden="true" tabindex="-1"></a>imdb_graficos <span class="ot">&lt;-</span> imdb_nest <span class="sc">%&gt;%</span> </span>
+<span id="cb381-8"><a href="7-3-tidyr.html#cb381-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb381-9"><a href="7-3-tidyr.html#cb381-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">grafico =</span> purrr<span class="sc">::</span><span class="fu">map</span>(data, fazer_grafico_dispersao)</span>
+<span id="cb381-10"><a href="7-3-tidyr.html#cb381-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb381-11"><a href="7-3-tidyr.html#cb381-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb381-12"><a href="7-3-tidyr.html#cb381-12" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(imdb_graficos, <span class="dv">6</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 3
 ## # Groups:   ano [6]
 ##     ano data              grafico
@@ -661,20 +721,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5  1930 &lt;tibble [1 × 14]&gt; &lt;gg&gt;   
 ## 6  1932 &lt;tibble [1 × 14]&gt; &lt;gg&gt;</code></pre>
 <p>Para acessar cada um dos gráficos, basta rodar o código abaixo.</p>
-<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="7-3-tidyr.html#cb383-1"></a><span class="co"># Pegando o gráfico referente ao ano de 2000</span></span>
-<span id="cb383-2"><a href="7-3-tidyr.html#cb383-2"></a>imdb_graficos<span class="op">$</span>grafico[[<span class="dv">74</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="7-3-tidyr.html#cb383-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pegando o gráfico referente ao ano de 2000</span></span>
+<span id="cb383-2"><a href="7-3-tidyr.html#cb383-2" aria-hidden="true" tabindex="-1"></a>imdb_graficos<span class="sc">$</span>grafico[[<span class="dv">74</span>]]</span></code></pre></div>
 <pre><code>## Warning: Removed 5 rows containing missing values (geom_point).</code></pre>
 <p><img src="073-tidyr_files/figure-html/unnamed-chunk-17-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>Ou, escolhendo diretamente pelo ano</p>
-<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="7-3-tidyr.html#cb385-1"></a>imdb_graficos <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb385-2"><a href="7-3-tidyr.html#cb385-2"></a><span class="st">  </span><span class="kw">filter</span>(ano <span class="op">==</span><span class="st"> </span><span class="dv">2000</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb385-3"><a href="7-3-tidyr.html#cb385-3"></a><span class="st">  </span><span class="kw">pull</span>(grafico)</span></code></pre></div>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="7-3-tidyr.html#cb385-1" aria-hidden="true" tabindex="-1"></a>imdb_graficos <span class="sc">%&gt;%</span> </span>
+<span id="cb385-2"><a href="7-3-tidyr.html#cb385-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ano <span class="sc">==</span> <span class="dv">2000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb385-3"><a href="7-3-tidyr.html#cb385-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(grafico)</span></code></pre></div>
 <pre><code>## [[1]]</code></pre>
 <pre><code>## Warning: Removed 5 rows containing missing values (geom_point).</code></pre>
 <p><img src="073-tidyr_files/figure-html/unnamed-chunk-18-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>A função <code>unnest()</code> remove a estrutura de <em>list column</em>. Fazendo a operação abaixo, voltamos para a base <code>imdb</code> original.</p>
-<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="7-3-tidyr.html#cb388-1"></a>imdb_nest <span class="op">%&gt;%</span></span>
-<span id="cb388-2"><a href="7-3-tidyr.html#cb388-2"></a><span class="st">  </span><span class="kw">unnest</span>(<span class="dt">cols =</span> <span class="st">&quot;data&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="7-3-tidyr.html#cb388-1" aria-hidden="true" tabindex="-1"></a>imdb_nest <span class="sc">%&gt;%</span></span>
+<span id="cb388-2"><a href="7-3-tidyr.html#cb388-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(<span class="at">cols =</span> <span class="st">&quot;data&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 3,807 x 15
 ## # Groups:   ano [91]
 ##      ano titulo diretor duracao cor   generos pais  classificacao orcamento
@@ -692,19 +752,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## # … with 3,797 more rows, and 6 more variables: receita &lt;int&gt;, nota_imdb &lt;dbl&gt;,
 ## #   likes_facebook &lt;int&gt;, ator_1 &lt;chr&gt;, ator_2 &lt;chr&gt;, ator_3 &lt;chr&gt;</code></pre>
 </div>
-<div id="exercícios-18" class="section level3">
+<div id="exercícios-18" class="section level3" number="7.3.4">
 <h3><span class="header-section-number">7.3.4</span> Exercícios</h3>
 <p><strong>1.</strong> Crie 5 novas colunas de gêneros na base imdb, cada uma com um dos gêneros contidos na coluna generos. Para os filmes com menos de 5 gêneros, substitua os valores <code>NA</code> pela string “inexistente”.</p>
 <p><strong>2.</strong> Substitua os “????” no código abaixo para criar uma tabela do lucro médio dos filmes ao longo dos anos de 2000 a 2016, com cada ano sendo uma coluna da base.</p>
-<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="7-3-tidyr.html#cb390-1"></a>imdb <span class="op">%&gt;%</span></span>
-<span id="cb390-2"><a href="7-3-tidyr.html#cb390-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">lucro =</span> receita <span class="op">-</span><span class="st"> </span>orcamento) <span class="op">%&gt;%</span></span>
-<span id="cb390-3"><a href="7-3-tidyr.html#cb390-3"></a><span class="st">  </span><span class="kw">filter</span>(ano <span class="op">%in%</span><span class="st"> &quot;????&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb390-4"><a href="7-3-tidyr.html#cb390-4"></a><span class="st">  </span><span class="kw">group_by</span>(<span class="st">&quot;????&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb390-5"><a href="7-3-tidyr.html#cb390-5"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">lucro_medio =</span> <span class="st">&quot;????&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb390-6"><a href="7-3-tidyr.html#cb390-6"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> <span class="st">&quot;????&quot;</span>, <span class="dt">values_from =</span> <span class="st">&quot;????&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="7-3-tidyr.html#cb390-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span></span>
+<span id="cb390-2"><a href="7-3-tidyr.html#cb390-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lucro =</span> receita <span class="sc">-</span> orcamento) <span class="sc">%&gt;%</span></span>
+<span id="cb390-3"><a href="7-3-tidyr.html#cb390-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ano <span class="sc">%in%</span> <span class="st">&quot;????&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb390-4"><a href="7-3-tidyr.html#cb390-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="st">&quot;????&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb390-5"><a href="7-3-tidyr.html#cb390-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">lucro_medio =</span> <span class="st">&quot;????&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb390-6"><a href="7-3-tidyr.html#cb390-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">&quot;????&quot;</span>, <span class="at">values_from =</span> <span class="st">&quot;????&quot;</span>)</span></code></pre></div>
 <p>Para os exercícios 3, 4 e 5, vamos utilize a base <code>pokemon</code>, disponível no pacote <code>basesCursoR</code>.</p>
-<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="7-3-tidyr.html#cb391-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;remotes&quot;</span>)</span>
-<span id="cb391-2"><a href="7-3-tidyr.html#cb391-2"></a>remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;curso-r/basesCursoR&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="7-3-tidyr.html#cb391-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;remotes&quot;</span>)</span>
+<span id="cb391-2"><a href="7-3-tidyr.html#cb391-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;curso-r/basesCursoR&quot;</span>)</span></code></pre></div>
 <p><strong>3.</strong> Utilize a função <code>unite()</code> para juntar as duas colunas de tipo em uma única coluna na base pokemon.</p>
 <p><strong>4.</strong> Utilize a função <code>unite()</code> para juntar as três colunas de cor em uma única coluna na base pokemon. Faça isso sem remover as 3 colunas originais.</p>
 <p><strong>5.</strong> Utilizando a base <code>pokemon</code>, resolva os itens abaixo:</p>
