@@ -135,8 +135,8 @@ Existem algumas funções diferentes para fazer isso. Para apresentar alguns exe
 
 ```{r message=FALSE, warning=FALSE}
 media_massa <- pinguins %>% # usamos a base de pinguins
-  # agrupamos por especies e ilhas
-  dplyr::group_by(especies, ilha) %>%  
+  # agrupamos por especie e ilhas
+  dplyr::group_by(especie, ilha) %>%  
   # calculamos a média da massa corporal 
   dplyr::summarise(media_massa = mean(massa_corporal, na.rm = TRUE)) %>% 
   # criamos uma nova coluna, com a massa em kg, e arredondada com 2 casas decimais

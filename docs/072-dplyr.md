@@ -48,18 +48,18 @@ imdb
 
 ```
 ## # A tibble: 3,807 x 15
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
-##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
-##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
-##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
-##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
-##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
-##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
-## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
+##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
+##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
+##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
+##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
+##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
+##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
+##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
+##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
+##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
+##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
+##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
+## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -185,18 +185,18 @@ imdb %>%
 
 ```
 ## # A tibble: 3,807 x 13
-##    titulo duracao cor   generos pais  classificacao orcamento receita nota_imdb
-##    <chr>    <int> <chr> <chr>   <chr> <chr>             <int>   <int>     <dbl>
-##  1 Avata…     178 Color Action… USA   A partir de … 237000000  7.61e8       7.9
-##  2 Pirat…     169 Color Action… USA   A partir de … 300000000  3.09e8       7.1
-##  3 The D…     164 Color Action… USA   A partir de … 250000000  4.48e8       8.5
-##  4 John …     132 Color Action… USA   A partir de … 263700000  7.31e7       6.6
-##  5 Spide…     156 Color Action… USA   A partir de … 258000000  3.37e8       6.2
-##  6 Tangl…     100 Color Advent… USA   Livre         260000000  2.01e8       7.8
-##  7 Aveng…     141 Color Action… USA   A partir de … 250000000  4.59e8       7.5
-##  8 Batma…     183 Color Action… USA   A partir de … 250000000  3.30e8       6.9
-##  9 Super…     169 Color Action… USA   A partir de … 209000000  2.00e8       6.1
-## 10 Pirat…     151 Color Action… USA   A partir de … 225000000  4.23e8       7.3
+##    titulo  duracao cor   generos pais  classificacao orcamento receita nota_imdb
+##    <chr>     <int> <chr> <chr>   <chr> <chr>             <int>   <int>     <dbl>
+##  1 Avatar      178 Color Action… USA   A partir de … 237000000  7.61e8       7.9
+##  2 Pirate…     169 Color Action… USA   A partir de … 300000000  3.09e8       7.1
+##  3 The Da…     164 Color Action… USA   A partir de … 250000000  4.48e8       8.5
+##  4 John C…     132 Color Action… USA   A partir de … 263700000  7.31e7       6.6
+##  5 Spider…     156 Color Action… USA   A partir de … 258000000  3.37e8       6.2
+##  6 Tangle…     100 Color Advent… USA   Livre         260000000  2.01e8       7.8
+##  7 Avenge…     141 Color Action… USA   A partir de … 250000000  4.59e8       7.5
+##  8 Batman…     183 Color Action… USA   A partir de … 250000000  3.30e8       6.9
+##  9 Superm…     169 Color Action… USA   A partir de … 209000000  2.00e8       6.1
+## 10 Pirate…     151 Color Action… USA   A partir de … 225000000  4.23e8       7.3
 ## # … with 3,797 more rows, and 4 more variables: likes_facebook <int>,
 ## #   ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -208,18 +208,18 @@ imdb %>%
 
 ```
 ## # A tibble: 3,807 x 12
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
-##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
-##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
-##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
-##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
-##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
-##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
-## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
+##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
+##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
+##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
+##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
+##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
+##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
+##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
+##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
+##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
+##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
+##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
+## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 3 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>
 ```
@@ -247,18 +247,18 @@ arrange(imdb, orcamento)
 
 ```
 ## # A tibble: 3,807 x 15
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Tarna…  2003 Jonath…      88 Color Biogra… USA   Outros              218
-##  2 My Da…  2004 Jon Gu…      90 Color Docume… USA   Livre              1100
-##  3 A Pla…  2013 Benjam…      76 Color Drama|… USA   Outros             1400
-##  4 The M…  2005 Anthon…      84 Color Crime|… USA   A partir de …      3250
-##  5 Prime…  2004 Shane …      77 Color Drama|… USA   A partir de …      7000
-##  6 El Ma…  1992 Robert…      81 Color Action… USA   A partir de …      7000
-##  7 Newly…  2011 Edward…      95 Color Comedy… USA   Outros             9000
-##  8 Pink …  1972 John W…     108 Color Comedy… USA   A partir de …     10000
-##  9 The T…  2007 Jane C…       7 Color Romanc… USA   Outros            13000
-## 10 Paran…  2007 Oren P…      84 Color Horror  USA   A partir de …     15000
+##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
+##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
+##  1 Tarnati…  2003 Jonatha…      88 Color Biograph… USA   Outros              218
+##  2 My Date…  2004 Jon Gunn      90 Color Document… USA   Livre              1100
+##  3 A Plagu…  2013 Benjami…      76 Color Drama|Ho… USA   Outros             1400
+##  4 The Mon…  2005 Anthony…      84 Color Crime|Dr… USA   A partir de …      3250
+##  5 Primer    2004 Shane C…      77 Color Drama|Sc… USA   A partir de …      7000
+##  6 El Mari…  1992 Robert …      81 Color Action|C… USA   A partir de …      7000
+##  7 Newlywe…  2011 Edward …      95 Color Comedy|D… USA   Outros             9000
+##  8 Pink Fl…  1972 John Wa…     108 Color Comedy|C… USA   A partir de …     10000
+##  9 The Tou…  2007 Jane Cl…       7 Color Romance|… USA   Outros            13000
+## 10 Paranor…  2007 Oren Pe…      84 Color Horror    USA   A partir de …     15000
 ## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -272,18 +272,18 @@ arrange(imdb, desc(orcamento))
 
 ```
 ## # A tibble: 3,807 x 15
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
-##  2 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
-##  3 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
-##  4 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  6 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
-##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
-##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  9 Pirat…  2011 Rob Ma…     136 Color Action… USA   A partir de … 250000000
-## 10 Capta…  2016 Anthon…     147 Color Action… USA   A partir de … 250000000
+##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
+##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
+##  1 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
+##  2 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
+##  3 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
+##  4 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
+##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
+##  6 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
+##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
+##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
+##  9 Pirates…  2011 Rob Mar…     136 Color Action|A… USA   A partir de … 250000000
+## 10 Captain…  2016 Anthony…     147 Color Action|A… USA   A partir de … 250000000
 ## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -298,18 +298,18 @@ arrange(imdb, desc(ano), desc(orcamento))
 
 ```
 ## # A tibble: 3,807 x 15
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  2 Capta…  2016 Anthon…     147 Color Action… USA   A partir de … 250000000
-##  3 Star …  2016 Justin…     122 Color Action… USA   A partir de … 185000000
-##  4 The L…  2016 David …     110 Color Action… USA   A partir de … 180000000
-##  5 The L…  2016 David …     110 Color Action… USA   A partir de … 180000000
-##  6 X-Men…  2016 Bryan …     144 Color Action… USA   A partir de … 178000000
-##  7 Suici…  2016 David …     123 Color Action… USA   A partir de … 175000000
-##  8 Alice…  2016 James …     113 Color Advent… USA   Livre         170000000
-##  9 Indep…  2016 Roland…     120 Color Action… USA   A partir de … 165000000
-## 10 Warcr…  2016 Duncan…     123 Color Action… USA   A partir de … 160000000
+##    titulo      ano diretor  duracao cor   generos  pais  classificacao orcamento
+##    <chr>     <int> <chr>      <int> <chr> <chr>    <chr> <chr>             <int>
+##  1 Batman v…  2016 Zack Sn…     183 Color Action|… USA   A partir de … 250000000
+##  2 Captain …  2016 Anthony…     147 Color Action|… USA   A partir de … 250000000
+##  3 Star Tre…  2016 Justin …     122 Color Action|… USA   A partir de … 185000000
+##  4 The Lege…  2016 David Y…     110 Color Action|… USA   A partir de … 180000000
+##  5 The Lege…  2016 David Y…     110 Color Action|… USA   A partir de … 180000000
+##  6 X-Men: A…  2016 Bryan S…     144 Color Action|… USA   A partir de … 178000000
+##  7 Suicide …  2016 David A…     123 Color Action|… USA   A partir de … 175000000
+##  8 Alice Th…  2016 James B…     113 Color Adventu… USA   Livre         170000000
+##  9 Independ…  2016 Roland …     120 Color Action|… USA   A partir de … 165000000
+## 10 Warcraft   2016 Duncan …     123 Color Action|… USA   A partir de … 160000000
 ## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -421,11 +421,11 @@ imdb %>% filter(nota_imdb > 9)
 
 ```
 ## # A tibble: 3 x 15
-##   titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##   <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-## 1 The S…  1994 Frank …     142 Color Crime|… USA   A partir de …  25000000
-## 2 The G…  1972 Franci…     175 Color Crime|… USA   A partir de …   6000000
-## 3 Kickb…  2016 John S…      90 <NA>  Action  USA   Outros         17000000
+##   titulo      ano diretor   duracao cor   generos  pais  classificacao orcamento
+##   <chr>     <int> <chr>       <int> <chr> <chr>    <chr> <chr>             <int>
+## 1 The Shaw…  1994 Frank Da…     142 Color Crime|D… USA   A partir de …  25000000
+## 2 The Godf…  1972 Francis …     175 Color Crime|D… USA   A partir de …   6000000
+## 3 Kickboxe…  2016 John Sto…      90 <NA>  Action   USA   Outros         17000000
 ## # … with 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -458,13 +458,13 @@ imdb %>% filter(ano > 2010, nota_imdb > 8.5)
 
 ```
 ## # A tibble: 5 x 15
-##   titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##   <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-## 1 Inter…  2014 Christ…     169 Color Advent… USA   A partir de … 165000000
-## 2 Runni…  2015 Mike M…      88 Color Family  USA   Outros          5000000
-## 3 A Beg…  2016 Mitche…      87 Color Comedy… USA   Outros               NA
-## 4 Kickb…  2016 John S…      90 <NA>  Action  USA   Outros         17000000
-## 5 Butte…  2014 Cary B…      78 Color Docume… USA   Outros           180000
+##   titulo      ano diretor   duracao cor   generos  pais  classificacao orcamento
+##   <chr>     <int> <chr>       <int> <chr> <chr>    <chr> <chr>             <int>
+## 1 Interste…  2014 Christop…     169 Color Adventu… USA   A partir de … 165000000
+## 2 Running …  2015 Mike May…      88 Color Family   USA   Outros          5000000
+## 3 A Beginn…  2016 Mitchell…      87 Color Comedy|… USA   Outros               NA
+## 4 Kickboxe…  2016 John Sto…      90 <NA>  Action   USA   Outros         17000000
+## 5 Butterfl…  2014 Cary Bell      78 Color Documen… USA   Outros           180000
 ## # … with 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -478,18 +478,18 @@ imdb %>% filter(receita - orcamento > 0)
 
 ```
 ## # A tibble: 1,761 x 15
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
-##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
-##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
-##  4 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  5 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
-##  6 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  7 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
-##  8 Man o…  2013 Zack S…     143 Color Action… USA   A partir de … 225000000
-##  9 The A…  2012 Joss W…     173 Color Action… USA   A partir de … 220000000
-## 10 The A…  2012 Marc W…     153 Color Action… USA   A partir de … 230000000
+##    titulo      ano diretor  duracao cor   generos  pais  classificacao orcamento
+##    <chr>     <int> <chr>      <int> <chr> <chr>    <chr> <chr>             <int>
+##  1 Avatar     2009 James C…     178 Color Action|… USA   A partir de … 237000000
+##  2 Pirates …  2007 Gore Ve…     169 Color Action|… USA   A partir de … 300000000
+##  3 The Dark…  2012 Christo…     164 Color Action|… USA   A partir de … 250000000
+##  4 Spider-M…  2007 Sam Rai…     156 Color Action|… USA   A partir de … 258000000
+##  5 Avengers…  2015 Joss Wh…     141 Color Action|… USA   A partir de … 250000000
+##  6 Batman v…  2016 Zack Sn…     183 Color Action|… USA   A partir de … 250000000
+##  7 Pirates …  2006 Gore Ve…     151 Color Action|… USA   A partir de … 225000000
+##  8 Man of S…  2013 Zack Sn…     143 Color Action|… USA   A partir de … 225000000
+##  9 The Aven…  2012 Joss Wh…     173 Color Action|… USA   A partir de … 220000000
+## 10 The Amaz…  2012 Marc We…     153 Color Action|… USA   A partir de … 230000000
 ## # … with 1,751 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -504,18 +504,18 @@ imdb %>%
 
 ```
 ## # A tibble: 29 x 15
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Malef…  2014 Robert…      97 Color Action… USA   Livre         180000000
-##  2 The C…  2008 David …     166 Color Drama|… USA   A partir de … 150000000
-##  3 Kung …  2011 Jennif…      90 Color Action… USA   Livre         150000000
-##  4 Troy    2004 Wolfga…     196 Color Advent… USA   A partir de … 175000000
-##  5 Kung …  2008 Mark O…      92 Color Action… USA   Livre         130000000
-##  6 Salt    2010 Philli…     101 Color Action… USA   A partir de … 110000000
-##  7 Ocean…  2004 Steven…     125 Color Crime|… USA   A partir de … 110000000
-##  8 Mr. &…  2005 Doug L…     126 Color Action… USA   A partir de … 120000000
-##  9 Lara …  2001 Simon …     100 Color Action… USA   A partir de … 115000000
-## 10 Ocean…  2001 Steven…     116 Color Crime|… USA   A partir de …  85000000
+##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
+##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
+##  1 Malefic…  2014 Robert …      97 Color Action|A… USA   Livre         180000000
+##  2 The Cur…  2008 David F…     166 Color Drama|Fa… USA   A partir de … 150000000
+##  3 Kung Fu…  2011 Jennife…      90 Color Action|A… USA   Livre         150000000
+##  4 Troy      2004 Wolfgan…     196 Color Adventure USA   A partir de … 175000000
+##  5 Kung Fu…  2008 Mark Os…      92 Color Action|A… USA   Livre         130000000
+##  6 Salt      2010 Phillip…     101 Color Action|C… USA   A partir de … 110000000
+##  7 Ocean's…  2004 Steven …     125 Color Crime|Th… USA   A partir de … 110000000
+##  8 Mr. & M…  2005 Doug Li…     126 Color Action|C… USA   A partir de … 120000000
+##  9 Lara Cr…  2001 Simon W…     100 Color Action|A… USA   A partir de … 115000000
+## 10 Ocean's…  2001 Steven …     116 Color Crime|Th… USA   A partir de …  85000000
 ## # … with 19 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -572,18 +572,18 @@ imdb %>% filter(str_detect(generos, "Action"))
 
 ```
 ## # A tibble: 861 x 15
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
-##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
-##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
-##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
-##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  6 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
-##  7 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  8 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
-##  9 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
-## 10 The L…  2013 Gore V…     150 Color Action… USA   A partir de … 215000000
+##    titulo      ano diretor  duracao cor   generos  pais  classificacao orcamento
+##    <chr>     <int> <chr>      <int> <chr> <chr>    <chr> <chr>             <int>
+##  1 Avatar     2009 James C…     178 Color Action|… USA   A partir de … 237000000
+##  2 Pirates …  2007 Gore Ve…     169 Color Action|… USA   A partir de … 300000000
+##  3 The Dark…  2012 Christo…     164 Color Action|… USA   A partir de … 250000000
+##  4 John Car…  2012 Andrew …     132 Color Action|… USA   A partir de … 263700000
+##  5 Spider-M…  2007 Sam Rai…     156 Color Action|… USA   A partir de … 258000000
+##  6 Avengers…  2015 Joss Wh…     141 Color Action|… USA   A partir de … 250000000
+##  7 Batman v…  2016 Zack Sn…     183 Color Action|… USA   A partir de … 250000000
+##  8 Superman…  2006 Bryan S…     169 Color Action|… USA   A partir de … 209000000
+##  9 Pirates …  2006 Gore Ve…     151 Color Action|… USA   A partir de … 225000000
+## 10 The Lone…  2013 Gore Ve…     150 Color Action|… USA   A partir de … 215000000
 ## # … with 851 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -622,18 +622,18 @@ imdb %>% mutate(duracao = duracao/60)
 
 ```
 ## # A tibble: 3,807 x 15
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <dbl> <chr> <chr>   <chr> <chr>             <int>
-##  1 Avata…  2009 James …    2.97 Color Action… USA   A partir de … 237000000
-##  2 Pirat…  2007 Gore V…    2.82 Color Action… USA   A partir de … 300000000
-##  3 The D…  2012 Christ…    2.73 Color Action… USA   A partir de … 250000000
-##  4 John …  2012 Andrew…    2.2  Color Action… USA   A partir de … 263700000
-##  5 Spide…  2007 Sam Ra…    2.6  Color Action… USA   A partir de … 258000000
-##  6 Tangl…  2010 Nathan…    1.67 Color Advent… USA   Livre         260000000
-##  7 Aveng…  2015 Joss W…    2.35 Color Action… USA   A partir de … 250000000
-##  8 Batma…  2016 Zack S…    3.05 Color Action… USA   A partir de … 250000000
-##  9 Super…  2006 Bryan …    2.82 Color Action… USA   A partir de … 209000000
-## 10 Pirat…  2006 Gore V…    2.52 Color Action… USA   A partir de … 225000000
+##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
+##    <chr>    <int> <chr>      <dbl> <chr> <chr>     <chr> <chr>             <int>
+##  1 Avatar    2009 James C…    2.97 Color Action|A… USA   A partir de … 237000000
+##  2 Pirates…  2007 Gore Ve…    2.82 Color Action|A… USA   A partir de … 300000000
+##  3 The Dar…  2012 Christo…    2.73 Color Action|T… USA   A partir de … 250000000
+##  4 John Ca…  2012 Andrew …    2.2  Color Action|A… USA   A partir de … 263700000
+##  5 Spider-…  2007 Sam Rai…    2.6  Color Action|A… USA   A partir de … 258000000
+##  6 Tangled   2010 Nathan …    1.67 Color Adventur… USA   Livre         260000000
+##  7 Avenger…  2015 Joss Wh…    2.35 Color Action|A… USA   A partir de … 250000000
+##  8 Batman …  2016 Zack Sn…    3.05 Color Action|A… USA   A partir de … 250000000
+##  9 Superma…  2006 Bryan S…    2.82 Color Action|A… USA   A partir de … 209000000
+## 10 Pirates…  2006 Gore Ve…    2.52 Color Action|A… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -647,18 +647,18 @@ imdb %>% mutate(duracao_horas = duracao/60)
 
 ```
 ## # A tibble: 3,807 x 16
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
-##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
-##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
-##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
-##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
-##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
-##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
-## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
+##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
+##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
+##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
+##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
+##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
+##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
+##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
+##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
+##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
+##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
+##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
+## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 7 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>,
 ## #   duracao_horas <dbl>
@@ -743,7 +743,7 @@ imdb %>% summarise(
 ## # A tibble: 1 x 3
 ##   media_orcamento mediana_orcamento variancia_orcamento
 ##             <dbl>             <int>               <dbl>
-## 1       35755986.          20000000   1822337181441743.
+## 1       35755986.          20000000             1.82e15
 ```
 
 E também sumarizar diversas colunas.
@@ -776,10 +776,6 @@ imdb %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 3 x 2
 ##   cor             receita_media
 ##   <chr>                   <dbl>
@@ -798,18 +794,18 @@ imdb %>% group_by(cor)
 ```
 ## # A tibble: 3,807 x 15
 ## # Groups:   cor [3]
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
-##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
-##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
-##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
-##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
-##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
-##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
-## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
+##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
+##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
+##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
+##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
+##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
+##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
+##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
+##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
+##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
+##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
+##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
+## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```
@@ -841,13 +837,7 @@ Podemos juntar duas tabelas a partir de uma (coluna) chave utilizando a função
 tab_lucro_diretor <- imdb %>%
   group_by(diretor) %>% 
   summarise(lucro_medio = mean(receita - orcamento, na.rm = TRUE))
-```
 
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```r
 tab_lucro_diretor
 ```
 
@@ -879,18 +869,18 @@ imdb_com_lucro_medio
 
 ```
 ## # A tibble: 3,807 x 16
-##    titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
-##  2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
-##  3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
-##  4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
-##  5 Spide…  2007 Sam Ra…     156 Color Action… USA   A partir de … 258000000
-##  6 Tangl…  2010 Nathan…     100 Color Advent… USA   Livre         260000000
-##  7 Aveng…  2015 Joss W…     141 Color Action… USA   A partir de … 250000000
-##  8 Batma…  2016 Zack S…     183 Color Action… USA   A partir de … 250000000
-##  9 Super…  2006 Bryan …     169 Color Action… USA   A partir de … 209000000
-## 10 Pirat…  2006 Gore V…     151 Color Action… USA   A partir de … 225000000
+##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
+##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
+##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
+##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
+##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
+##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
+##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
+##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
+##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
+##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
+##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
+## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
 ## # … with 3,797 more rows, and 7 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>,
 ## #   lucro_medio <dbl>
@@ -1002,10 +992,6 @@ casas %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 10 x 3
 ##    geral_qualidade lote_area_media venda_valor_medio
 ##    <chr>                     <dbl>             <dbl>
@@ -1013,7 +999,7 @@ casas %>%
 ##  2 acima da média            9788.           162130.
 ##  3 boa                      10309.           205026.
 ##  4 excelente                12777.           368337.
-##  5 média                     9995.           134753.
+##  5 média                     9996.           134753.
 ##  6 muito boa                10618.           270914.
 ##  7 Muito excelente          18071.           450217.
 ##  8 muito ruim               15214.            48725 
@@ -1042,7 +1028,7 @@ casas %>%
 ##  2 acima da média      9788.     162130.
 ##  3 boa                10309.     205026.
 ##  4 excelente          12777.     368337.
-##  5 média               9995.     134753.
+##  5 média               9996.     134753.
 ##  6 muito boa          10618.     270914.
 ##  7 Muito excelente    18071.     450217.
 ##  8 muito ruim         15214.      48725 
@@ -1064,10 +1050,6 @@ casas %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 10 x 3
 ##    geral_qualidade lote_area venda_valor
 ##    <chr>               <dbl>       <dbl>
@@ -1075,7 +1057,7 @@ casas %>%
 ##  2 acima da média      9788.     162130.
 ##  3 boa                10309.     205026.
 ##  4 excelente          12777.     368337.
-##  5 média               9995.     134753.
+##  5 média               9996.     134753.
 ##  6 muito boa          10618.     270914.
 ##  7 Muito excelente    18071.     450217.
 ##  8 muito ruim         15214.      48725 
@@ -1095,9 +1077,9 @@ casas %>%
 
 ```
 ## # A tibble: 1 x 82
-##   ordem   pid moradia_classe moradia_zoneame… lote_fachada lote_area rua_tipo
-##   <int> <int>          <int>            <int>        <int>     <int>    <int>
-## 1  2930  2930             16                7          129      1960        2
+##   ordem   pid moradia_classe moradia_zoneamento lote_fachada lote_area rua_tipo
+##   <int> <int>          <int>              <int>        <int>     <int>    <int>
+## 1  2930  2930             16                  7          129      1960        2
 ## # … with 75 more variables: beco_tipo <int>, lote_formato <int>,
 ## #   terreno_contorno <int>, utilidades <int>, lote_config <int>,
 ## #   terreno_declive <int>, vizinhanca <int>, condicao_1 <int>,
@@ -1141,9 +1123,9 @@ casas %>%
 
 ```
 ## # A tibble: 1 x 82
-##   ordem   pid moradia_classe moradia_zoneame… lote_fachada lote_area rua_tipo
-##   <int> <int>          <int>            <int>        <int>     <int>    <int>
-## 1  2930  2930             16                7          129      1960        2
+##   ordem   pid moradia_classe moradia_zoneamento lote_fachada lote_area rua_tipo
+##   <int> <int>          <int>              <int>        <int>     <int>    <int>
+## 1  2930  2930             16                  7          129      1960        2
 ## # … with 75 more variables: beco_tipo <int>, lote_formato <int>,
 ## #   terreno_contorno <int>, utilidades <int>, lote_config <int>,
 ## #   terreno_declive <int>, vizinhanca <int>, condicao_1 <int>,
@@ -1189,9 +1171,9 @@ casas %>%
 
 ```
 ## # A tibble: 1 x 47
-##     pid moradia_classe moradia_zoneame… rua_tipo beco_tipo lote_formato
-##   <int>          <int>            <int>    <int>     <int>        <int>
-## 1  2930             16                7        2         3            4
+##     pid moradia_classe moradia_zoneamento rua_tipo beco_tipo lote_formato
+##   <int>          <int>              <int>    <int>     <int>        <int>
+## 1  2930             16                  7        2         3            4
 ## # … with 41 more variables: terreno_contorno <int>, utilidades <int>,
 ## #   lote_config <int>, terreno_declive <int>, vizinhanca <int>,
 ## #   condicao_1 <int>, condicao_2 <int>, moradia_tipo <int>,
@@ -1222,9 +1204,9 @@ casas %>%
 
 ```
 ## # A tibble: 1 x 47
-##     pid moradia_classe moradia_zoneame… rua_tipo beco_tipo lote_formato
-##   <int>          <int>            <int>    <int>     <int>        <int>
-## 1  2930             16                7        2         3            4
+##     pid moradia_classe moradia_zoneamento rua_tipo beco_tipo lote_formato
+##   <int>          <int>              <int>    <int>     <int>        <int>
+## 1  2930             16                  7        2         3            4
 ## # … with 41 more variables: terreno_contorno <int>, utilidades <int>,
 ## #   lote_config <int>, terreno_declive <int>, vizinhanca <int>,
 ## #   condicao_1 <int>, condicao_2 <int>, moradia_tipo <int>,
@@ -1253,9 +1235,9 @@ casas %>%
 
 ```
 ## # A tibble: 1 x 17
-##   lote_area alvenaria_area porao_area_com_… porao_area_com_… porao_area_sem_…
-##       <dbl>          <dbl>            <dbl>            <dbl>            <dbl>
-## 1    10148.           102.             443.             49.7             559.
+##   lote_area alvenaria_area porao_area_com_ac… porao_area_com_a… porao_area_sem_…
+##       <dbl>          <dbl>              <dbl>             <dbl>            <dbl>
+## 1    10148.           102.               443.              49.7             559.
 ## # … with 12 more variables: porao_area_total <dbl>, primeiro_andar_area <dbl>,
 ## #   segundo_andar_area <dbl>, acabamento_baixa_qualidade_area <dbl>,
 ## #   acima_solo_area <dbl>, garagem_area <dbl>, deck_madeira_area <dbl>,
@@ -1275,10 +1257,6 @@ casas %>%
     n_obs = n(),
   ) %>% 
   select(1:4, n_obs)
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
@@ -1370,18 +1348,18 @@ casas %>%
 
 ```
 ## # A tibble: 2,930 x 82
-##    ordem pid   moradia_classe moradia_zoneame… lote_fachada lote_area rua_tipo
-##    <int> <chr> <chr>          <chr>                   <int>     <int> <chr>   
-##  1     1 0526… 020            Residencial bai…          141     31770 pavimen…
-##  2     2 0526… 020            Residencial alt…           80     11622 pavimen…
-##  3     3 0526… 020            Residencial bai…           81     14267 pavimen…
-##  4     4 0526… 020            Residencial bai…           93     11160 pavimen…
-##  5     5 0527… 060            Residencial bai…           74     13830 pavimen…
-##  6     6 0527… 060            Residencial bai…           78      9978 pavimen…
-##  7     7 0527… desenvolvimen… Residencial bai…           41      4920 pavimen…
-##  8     8 0527… desenvolvimen… Residencial bai…           43      5005 pavimen…
-##  9     9 0527… desenvolvimen… Residencial bai…           39      5389 pavimen…
-## 10    10 0527… 060            Residencial bai…           60      7500 pavimen…
+##    ordem pid    moradia_classe  moradia_zoneame… lote_fachada lote_area rua_tipo
+##    <int> <chr>  <chr>           <chr>                   <int>     <int> <chr>   
+##  1     1 05263… 020             Residencial bai…          141     31770 pavimen…
+##  2     2 05263… 020             Residencial alt…           80     11622 pavimen…
+##  3     3 05263… 020             Residencial bai…           81     14267 pavimen…
+##  4     4 05263… 020             Residencial bai…           93     11160 pavimen…
+##  5     5 05271… 060             Residencial bai…           74     13830 pavimen…
+##  6     6 05271… 060             Residencial bai…           78      9978 pavimen…
+##  7     7 05271… desenvolviment… Residencial bai…           41      4920 pavimen…
+##  8     8 05271… desenvolviment… Residencial bai…           43      5005 pavimen…
+##  9     9 05271… desenvolviment… Residencial bai…           39      5389 pavimen…
+## 10    10 05271… 060             Residencial bai…           60      7500 pavimen…
 ## # … with 2,920 more rows, and 75 more variables: beco_tipo <chr>,
 ## #   lote_formato <chr>, terreno_contorno <chr>, utilidades <chr>,
 ## #   lote_config <chr>, terreno_declive <chr>, vizinhanca <chr>,
@@ -1428,18 +1406,18 @@ casas %>%
 
 ```
 ## # A tibble: 2,930 x 82
-##    venda_valor venda_tipo ordem pid   moradia_classe moradia_zoneame…
-##          <int> <chr>      <int> <chr> <chr>          <chr>           
-##  1      215000 "WD "          1 0526… 020            Residencial bai…
-##  2      105000 "WD "          2 0526… 020            Residencial alt…
-##  3      172000 "WD "          3 0526… 020            Residencial bai…
-##  4      244000 "WD "          4 0526… 020            Residencial bai…
-##  5      189900 "WD "          5 0527… 060            Residencial bai…
-##  6      195500 "WD "          6 0527… 060            Residencial bai…
-##  7      213500 "WD "          7 0527… desenvolvimen… Residencial bai…
-##  8      191500 "WD "          8 0527… desenvolvimen… Residencial bai…
-##  9      236500 "WD "          9 0527… desenvolvimen… Residencial bai…
-## 10      189000 "WD "         10 0527… 060            Residencial bai…
+##    venda_valor venda_tipo ordem pid    moradia_classe          moradia_zoneamen…
+##          <int> <chr>      <int> <chr>  <chr>                   <chr>            
+##  1      215000 "WD "          1 05263… 020                     Residencial baix…
+##  2      105000 "WD "          2 05263… 020                     Residencial alta…
+##  3      172000 "WD "          3 05263… 020                     Residencial baix…
+##  4      244000 "WD "          4 05263… 020                     Residencial baix…
+##  5      189900 "WD "          5 05271… 060                     Residencial baix…
+##  6      195500 "WD "          6 05271… 060                     Residencial baix…
+##  7      213500 "WD "          7 05271… desenvolvimento de uni… Residencial baix…
+##  8      191500 "WD "          8 05271… desenvolvimento de uni… Residencial baix…
+##  9      236500 "WD "          9 05271… desenvolvimento de uni… Residencial baix…
+## 10      189000 "WD "         10 05271… 060                     Residencial baix…
 ## # … with 2,920 more rows, and 76 more variables: lote_fachada <int>,
 ## #   lote_area <int>, rua_tipo <chr>, beco_tipo <chr>, lote_formato <chr>,
 ## #   terreno_contorno <chr>, utilidades <chr>, lote_config <chr>,
@@ -1513,11 +1491,11 @@ tab_notas
 ## # A tibble: 5 x 5
 ##   student_id prova1 prova2 prova3 prova4
 ##        <int>  <int>  <int>  <int>  <int>
-## 1          1      7      5     10      2
-## 2          2      6      2      2      6
-## 3          3      3      6      0      1
-## 4          4      9      8      1      5
-## 5          5      1      3      9      4
+## 1          1      4      2      5      8
+## 2          2     10      9      7      6
+## 3          3      0      4      3      7
+## 4          4      5      7      1      4
+## 5          5      7      8     10     10
 ```
 
 Se quisermos gerar uma coluna com a nota média de cada aluno nas quatro provas, não poderíamos usar o `mutate()` diretamente.
@@ -1531,11 +1509,11 @@ tab_notas %>% mutate(media = mean(c(prova1, prova2, prova3, prova4)))
 ## # A tibble: 5 x 6
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      7      5     10      2   4.5
-## 2          2      6      2      2      6   4.5
-## 3          3      3      6      0      1   4.5
-## 4          4      9      8      1      5   4.5
-## 5          5      1      3      9      4   4.5
+## 1          1      4      2      5      8  5.85
+## 2          2     10      9      7      6  5.85
+## 3          3      0      4      3      7  5.85
+## 4          4      5      7      1      4  5.85
+## 5          5      7      8     10     10  5.85
 ```
 
 Neste caso, todas as colunas estão sendo empilhadas e gerando uma única média, passada a todas as linhas da coluna `media`.
@@ -1554,11 +1532,11 @@ tab_notas %>%
 ## # Groups:   student_id [5]
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      7      5     10      2  6   
-## 2          2      6      2      2      6  4   
-## 3          3      3      6      0      1  2.5 
-## 4          4      9      8      1      5  5.75
-## 5          5      1      3      9      4  4.25
+## 1          1      4      2      5      8  4.75
+## 2          2     10      9      7      6  8   
+## 3          3      0      4      3      7  3.5 
+## 4          4      5      7      1      4  4.25
+## 5          5      7      8     10     10  8.75
 ```
 
 Também podemos nos aproveitar da sintaxe do `across()` neste caso. Para isso, precisamos substutir a função `c()` pela função `c_across()`.
@@ -1575,11 +1553,11 @@ tab_notas %>%
 ## # Groups:   student_id [5]
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      7      5     10      2  6   
-## 2          2      6      2      2      6  4   
-## 3          3      3      6      0      1  2.5 
-## 4          4      9      8      1      5  5.75
-## 5          5      1      3      9      4  4.25
+## 1          1      4      2      5      8  4.75
+## 2          2     10      9      7      6  8   
+## 3          3      0      4      3      7  3.5 
+## 4          4      5      7      1      4  4.25
+## 5          5      7      8     10     10  8.75
 ```
 
 Equivalentemente ao `group_by()`, neste caso, podemos usar a função `rowwise()`.
@@ -1596,11 +1574,11 @@ tab_notas %>%
 ## # Rowwise:  student_id
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      7      5     10      2  6   
-## 2          2      6      2      2      6  4   
-## 3          3      3      6      0      1  2.5 
-## 4          4      9      8      1      5  5.75
-## 5          5      1      3      9      4  4.25
+## 1          1      4      2      5      8  4.75
+## 2          2     10      9      7      6  8   
+## 3          3      0      4      3      7  3.5 
+## 4          4      5      7      1      4  4.25
+## 5          5      7      8     10     10  8.75
 ```
 
 Ela é muito útil quando queremos fazer operação por linhas, mas não temos uma coluna de identificação. Por padrão, se não indicarmos nenhuma coluna, cada linha será um "grupo".
@@ -1617,11 +1595,11 @@ tab_notas %>%
 ## # Rowwise: 
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      7      5     10      2  6   
-## 2          2      6      2      2      6  4   
-## 3          3      3      6      0      1  2.5 
-## 4          4      9      8      1      5  5.75
-## 5          5      1      3      9      4  4.25
+## 1          1      4      2      5      8  4.75
+## 2          2     10      9      7      6  8   
+## 3          3      0      4      3      7  3.5 
+## 4          4      5      7      1      4  4.25
+## 5          5      7      8     10     10  8.75
 ```
 
 Veja que `student_id` não é passada para a função `rowwise()`. Não precisaríamos dessa coluna na base para reproduzir a geração da columa `media` neste caso.

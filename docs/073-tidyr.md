@@ -90,18 +90,18 @@ imdb %>%
 
 ```
 ## # A tibble: 3,807 x 17
-##    titulo   ano diretor duracao cor   genero1 genero2 genero3 pais 
-##    <chr>  <int> <chr>     <int> <chr> <chr>   <chr>   <chr>   <chr>
-##  1 Avata…  2009 James …     178 Color Action  Advent… Fantasy USA  
-##  2 Pirat…  2007 Gore V…     169 Color Action  Advent… Fantasy USA  
-##  3 The D…  2012 Christ…     164 Color Action  Thrill… <NA>    USA  
-##  4 John …  2012 Andrew…     132 Color Action  Advent… Sci-Fi  USA  
-##  5 Spide…  2007 Sam Ra…     156 Color Action  Advent… Romance USA  
-##  6 Tangl…  2010 Nathan…     100 Color Advent… Animat… Comedy  USA  
-##  7 Aveng…  2015 Joss W…     141 Color Action  Advent… Sci-Fi  USA  
-##  8 Batma…  2016 Zack S…     183 Color Action  Advent… Sci-Fi  USA  
-##  9 Super…  2006 Bryan …     169 Color Action  Advent… Sci-Fi  USA  
-## 10 Pirat…  2006 Gore V…     151 Color Action  Advent… Fantasy USA  
+##    titulo             ano diretor    duracao cor   genero1 genero2 genero3 pais 
+##    <chr>            <int> <chr>        <int> <chr> <chr>   <chr>   <chr>   <chr>
+##  1 Avatar            2009 James Cam…     178 Color Action  Advent… Fantasy USA  
+##  2 Pirates of the …  2007 Gore Verb…     169 Color Action  Advent… Fantasy USA  
+##  3 The Dark Knight…  2012 Christoph…     164 Color Action  Thrill… <NA>    USA  
+##  4 John Carter       2012 Andrew St…     132 Color Action  Advent… Sci-Fi  USA  
+##  5 Spider-Man 3      2007 Sam Raimi      156 Color Action  Advent… Romance USA  
+##  6 Tangled           2010 Nathan Gr…     100 Color Advent… Animat… Comedy  USA  
+##  7 Avengers: Age o…  2015 Joss Whed…     141 Color Action  Advent… Sci-Fi  USA  
+##  8 Batman v Superm…  2016 Zack Snyd…     183 Color Action  Advent… Sci-Fi  USA  
+##  9 Superman Return…  2006 Bryan Sin…     169 Color Action  Advent… Sci-Fi  USA  
+## 10 Pirates of the …  2006 Gore Verb…     151 Color Action  Advent… Fantasy USA  
 ## # … with 3,797 more rows, and 8 more variables: classificacao <chr>,
 ## #   orcamento <int>, receita <int>, nota_imdb <dbl>, likes_facebook <int>,
 ## #   ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
@@ -235,12 +235,12 @@ imdb %>%
 
 ```
 ## # A tibble: 4 x 15
-##   titulo   ano diretor duracao cor   generos pais  classificacao orcamento
-##   <chr>  <int> <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-## 1 Avata…  2009 James …     178 Color Action… USA   A partir de … 237000000
-## 2 Pirat…  2007 Gore V…     169 Color Action… USA   A partir de … 300000000
-## 3 The D…  2012 Christ…     164 Color Action… USA   A partir de … 250000000
-## 4 John …  2012 Andrew…     132 Color Action… USA   A partir de … 263700000
+##   titulo      ano diretor  duracao cor   generos   pais  classificacao orcamento
+##   <chr>     <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
+## 1 Avatar     2009 James C…     178 Color Action|A… USA   A partir de … 237000000
+## 2 Pirates …  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
+## 3 The Dark…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
+## 4 John Car…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
 ## # … with 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <list>, ator_2 <list>, ator_3 <list>
 ```
@@ -264,7 +264,7 @@ tab_romance_terror <- imdb %>%
 ```
 
 ```
-## `summarise()` regrouping output by 'ano' (override with `.groups` argument)
+## `summarise()` has grouped output by 'ano'. You can override using the `.groups` argument.
 ```
 
 Essa tabela possui a receita média dos filmes de romance e terror nos anos de 2010 a 2016.
@@ -345,16 +345,16 @@ head(imdb_nest, 8)
 ```
 ## # A tibble: 8 x 2
 ## # Groups:   ano [8]
-##     ano data             
-##   <int> <list>           
-## 1  1916 <tibble [1 × 14]>
-## 2  1920 <tibble [1 × 14]>
-## 3  1925 <tibble [1 × 14]>
-## 4  1929 <tibble [1 × 14]>
-## 5  1930 <tibble [1 × 14]>
-## 6  1932 <tibble [1 × 14]>
-## 7  1933 <tibble [2 × 14]>
-## 8  1934 <tibble [1 × 14]>
+##     ano data                  
+##   <int> <list>                
+## 1  1916 <tibble[,14] [1 × 14]>
+## 2  1920 <tibble[,14] [1 × 14]>
+## 3  1925 <tibble[,14] [1 × 14]>
+## 4  1929 <tibble[,14] [1 × 14]>
+## 5  1930 <tibble[,14] [1 × 14]>
+## 6  1932 <tibble[,14] [1 × 14]>
+## 7  1933 <tibble[,14] [2 × 14]>
+## 8  1934 <tibble[,14] [1 × 14]>
 ```
 
 A base `imdb_nest` possui duas colunas `ano` e `data` e uma linha para cada ano. Na coluna `data`, temos o restante da base `imdb`, recortada para cada um dos anos.
@@ -368,9 +368,9 @@ imdb_nest$data[[1]]
 
 ```
 ## # A tibble: 1 x 14
-##   titulo diretor duracao cor   generos pais  classificacao orcamento receita
-##   <chr>  <chr>     <int> <chr> <chr>   <chr> <chr>             <int>   <int>
-## 1 Intol… D.W. G…     123 Blac… Drama|… USA   Outros           385907      NA
+##   titulo    diretor  duracao cor   generos pais  classificacao orcamento receita
+##   <chr>     <chr>      <int> <chr> <chr>   <chr> <chr>             <int>   <int>
+## 1 Intolera… D.W. Gr…     123 Blac… Drama|… USA   Outros           385907      NA
 ## # … with 5 more variables: nota_imdb <dbl>, likes_facebook <int>, ator_1 <chr>,
 ## #   ator_2 <chr>, ator_3 <chr>
 ```
@@ -400,14 +400,14 @@ head(imdb_graficos, 6)
 ```
 ## # A tibble: 6 x 3
 ## # Groups:   ano [6]
-##     ano data              grafico
-##   <int> <list>            <list> 
-## 1  1916 <tibble [1 × 14]> <gg>   
-## 2  1920 <tibble [1 × 14]> <gg>   
-## 3  1925 <tibble [1 × 14]> <gg>   
-## 4  1929 <tibble [1 × 14]> <gg>   
-## 5  1930 <tibble [1 × 14]> <gg>   
-## 6  1932 <tibble [1 × 14]> <gg>
+##     ano data                   grafico
+##   <int> <list>                 <list> 
+## 1  1916 <tibble[,14] [1 × 14]> <gg>   
+## 2  1920 <tibble[,14] [1 × 14]> <gg>   
+## 3  1925 <tibble[,14] [1 × 14]> <gg>   
+## 4  1929 <tibble[,14] [1 × 14]> <gg>   
+## 5  1930 <tibble[,14] [1 × 14]> <gg>   
+## 6  1932 <tibble[,14] [1 × 14]> <gg>
 ```
 
 Para acessar cada um dos gráficos, basta rodar o código abaixo.
@@ -454,18 +454,18 @@ imdb_nest %>%
 ```
 ## # A tibble: 3,807 x 15
 ## # Groups:   ano [91]
-##      ano titulo diretor duracao cor   generos pais  classificacao orcamento
-##    <int> <chr>  <chr>     <int> <chr> <chr>   <chr> <chr>             <int>
-##  1  1916 Intol… D.W. G…     123 Blac… Drama|… USA   Outros           385907
-##  2  1920 Over … Harry …     110 Blac… Crime|… USA   Outros           100000
-##  3  1925 The B… King V…     151 Blac… Drama|… USA   Outros           245000
-##  4  1929 The B… Harry …     100 Blac… Musica… USA   Outros           379000
-##  5  1930 Hell'… Howard…      96 Blac… Drama|… USA   Outros          3950000
-##  6  1932 A Far… Frank …      79 Blac… Drama|… USA   Outros           800000
-##  7  1933 42nd … Lloyd …      89 Blac… Comedy… USA   Outros           439000
-##  8  1933 She D… Lowell…      66 Blac… Comedy… USA   Outros           200000
-##  9  1934 It Ha… Frank …      65 Blac… Comedy… USA   Outros           325000
-## 10  1935 Top H… Mark S…      81 Blac… Comedy… USA   Outros           609000
+##      ano titulo    diretor  duracao cor   generos  pais  classificacao orcamento
+##    <int> <chr>     <chr>      <int> <chr> <chr>    <chr> <chr>             <int>
+##  1  1916 Intolera… D.W. Gr…     123 Blac… Drama|H… USA   Outros           385907
+##  2  1920 Over the… Harry F…     110 Blac… Crime|D… USA   Outros           100000
+##  3  1925 The Big … King Vi…     151 Blac… Drama|R… USA   Outros           245000
+##  4  1929 The Broa… Harry B…     100 Blac… Musical… USA   Outros           379000
+##  5  1930 Hell's A… Howard …      96 Blac… Drama|W… USA   Outros          3950000
+##  6  1932 A Farewe… Frank B…      79 Blac… Drama|R… USA   Outros           800000
+##  7  1933 42nd Str… Lloyd B…      89 Blac… Comedy|… USA   Outros           439000
+##  8  1933 She Done… Lowell …      66 Blac… Comedy|… USA   Outros           200000
+##  9  1934 It Happe… Frank C…      65 Blac… Comedy|… USA   Outros           325000
+## 10  1935 Top Hat   Mark Sa…      81 Blac… Comedy|… USA   Outros           609000
 ## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
 ## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
 ```

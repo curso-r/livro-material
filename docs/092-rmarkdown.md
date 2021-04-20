@@ -147,8 +147,8 @@ Existem algumas funções diferentes para fazer isso. Para apresentar alguns exe
 
 ```r
 media_massa <- pinguins %>% # usamos a base de pinguins
-  # agrupamos por especies e ilhas
-  dplyr::group_by(especies, ilha) %>%  
+  # agrupamos por especie e ilhas
+  dplyr::group_by(especie, ilha) %>%  
   # calculamos a média da massa corporal 
   dplyr::summarise(media_massa = mean(massa_corporal, na.rm = TRUE)) %>% 
   # criamos uma nova coluna, com a massa em kg, e arredondada com 2 casas decimais
@@ -162,8 +162,8 @@ media_massa
 
 ```
 ## # A tibble: 5 x 3
-## # Groups:   especies [3]
-##   especies            ilha      media_massa_kg
+## # Groups:   especie [3]
+##   especie             ilha      media_massa_kg
 ##   <fct>               <fct>              <dbl>
 ## 1 Pinguim-de-adélia   Biscoe              3.71
 ## 2 Pinguim-de-adélia   Dream               3.69
@@ -185,7 +185,7 @@ media_massa %>%
 
 
 
-|especies            |ilha      | media_massa_kg|
+|especie             |ilha      | media_massa_kg|
 |:-------------------|:---------|--------------:|
 |Pinguim-de-adélia   |Biscoe    |           3.71|
 |Pinguim-de-adélia   |Dream     |           3.69|
@@ -203,8 +203,8 @@ media_massa %>%
   DT::datatable()
 ```
 
-<!--html_preserve--><div id="htmlwidget-27c256049e67ff8e5a45" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-27c256049e67ff8e5a45">{"x":{"filter":"none","data":[["1","2","3","4","5"],["Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-barbicha","Pinguim-gentoo"],["Biscoe","Dream","Torgersen","Dream","Biscoe"],[3.71,3.69,3.71,3.73,5.08]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>especies<\/th>\n      <th>ilha<\/th>\n      <th>media_massa_kg<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+<!--html_preserve--><div id="htmlwidget-59deb4605c6375ce96f2" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-59deb4605c6375ce96f2">{"x":{"filter":"none","data":[["1","2","3","4","5"],["Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-barbicha","Pinguim-gentoo"],["Biscoe","Dream","Torgersen","Dream","Biscoe"],[3.71,3.69,3.71,3.73,5.08]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>especie<\/th>\n      <th>ilha<\/th>\n      <th>media_massa_kg<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 Os exemplos anteriores são as formas mais simples de apresentar as tabelas, porém cada pacote possibilita diferentes personalizações (por exemplo, alterar o nome das colunas, etc). Existem outros pacotes que permitem adicionar tabela nos relatórios em RMarkdown, como por exemplo:
 

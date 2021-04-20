@@ -494,3 +494,62 @@ fct_rev(fator)
 ## Levels: c b a
 ```
 
+### Exercícios
+
+A base `casas` nos exercícios abaixo está no pacote `dados`:
+
+
+```r
+remotes::install_github("cienciadedatos/dados")
+```
+
+**1.** Qual a diferença nos fatores criados com os códigos abaixo?
+
+
+```r
+fator1 <- as.factor(c("c", "a", "z", "B"))
+fator2 <- forcats::as_factor(c("c", "a", "z", "B"))
+```
+
+**2.** Ordene os níveis do fator `frutas` conforme a sua preferência, isto é, as que você mais gosta primeiro e as que você menos gosta por último.
+
+
+```r
+frutas <- as.factor(c("maçã", "banana", "mamão", "laranja", "melancia"))
+```
+
+**3.** Com base no vetor `series`, resolva os itens a seguir.
+
+
+```r
+series <- as.factor(c("Game of Thrones", "How I Met your Mother", "Friends", "Lost", "The Office", "Breaking Bad"))
+```
+
+- **a.** Ordene os níveis do vetor `series` conforme a sua preferência, isto é, as que você mais gosta primeiro e as que você menos gosta por último. 
+
+- **b.** Junte ao vetor `series` o vetor `novas_series` a seguir, reordenando os níveis para manter a sua ordem de preferência.
+
+
+```r
+novas_series <- as.factor(c("The Boys", "Stranger Things", "Queen's Gambit"))
+```
+
+- **c.** Renomeie o níveis do vetor criado no item (b) para os nomes em Português das séries. Mantenha o mesmo nome caso não haja tradução.
+
+**4.** Ordene as categorias do eixo y do gráfico abaixo para que os pontos no eixo x fique em ordem crescente.
+
+
+```r
+library(dplyr)
+library(ggplot2)
+mtcars %>% 
+  tibble::rownames_to_column("modelo") %>% 
+  ggplot(aes(x = mpg, y = modelo)) +
+  geom_point()
+```
+
+<img src="076-forcats_files/figure-html/unnamed-chunk-33-1.png" width="75%" style="display: block; margin: auto;" />
+
+**5.** Utilize a base `dados::casas` para fazer um gráfico de barras mostrando as vizinhanças (coluna `vizinhanca`) com casas mais caras (segundo a coluna `venda_valor`). O gráfico deve conter as 9 vizinhanças mais frequentes e as demais devem ser agrupadas em uma categoria chamada `Outras vizinhanças`.
+
+
