@@ -1,0 +1,49 @@
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.align = "center"
+)
+
+imdb <- readr::read_rds("assets/data/imdb.rds")
+```
+
+## O pacote forcats
+
+```{r, message = FALSE, warning = FALSE}
+library(dplyr)
+library(forcats)
+library(ggplot2)
+```
+
+**1.** Qual a diferença nos fatores criados com os códigos abaixo?
+
+```{r}
+fator1 <- as.factor(c("c", "a", "z", "B"))
+fator2 <- forcats::as_factor(c("c", "a", "z", "B"))
+```
+
+A função do R base `as.factor()` ordena os níveis do fator em ordem alfabética. A função `as_factor()` do pacote `forcats` ordena os níveis do fator na ordem que eles aparecem no vetor.
+
+---
+
+**2.** Ordene os níveis do fator `frutas` conforme a sua preferência, isto é, as que você mais gosta primeiro e as que você menos gosta por último.
+
+```{r}
+frutas <- as.factor(c("maçã", "banana", "mamão", "laranja", "melancia"))
+frutas
+
+# preferência do Willy
+lvls_reorder(frutas, c(4, 5, 1, 3, 2))
+```
+
+---
+
+**3.** Ordene as categorias do eixo y do gráfico abaixo para que os pontos no eixo x fique em ordem crescente.
+
+```{r}
+mtcars %>% 
+  tibble::rownames_to_column("modelo") %>% 
+  mutate(modelo = fct_reorder(modelo, mpg)) %>% 
+  ggplot(aes(x = mpg, y = modelo)) +
+  geom_point()
+```

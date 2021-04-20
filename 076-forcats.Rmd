@@ -326,3 +326,38 @@ Inverte os níveis de um fator.
 fct_rev(fator)
 ```
 
+### Exercícios
+
+**1.** Qual a diferença nos fatores criados com os códigos abaixo?
+
+```{r}
+fator1 <- as.factor(c("c", "a", "z", "B"))
+fator2 <- forcats::as_factor(c("c", "a", "z", "B"))
+```
+
+**2.** Ordene os níveis do fator `frutas` conforme a sua preferência, isto é, as que você mais gosta primeiro e as que você menos gosta por último.
+
+```{r}
+frutas <- as.factor(c("maçã", "banana", "mamão", "laranja", "melancia"))
+```
+
+**3.** Ordene as categorias do eixo y do gráfico abaixo para que os pontos no eixo x fique em ordem crescente.
+
+```{r}
+library(dplyr)
+library(ggplot2)
+mtcars %>% 
+  tibble::rownames_to_column("modelo") %>% 
+  ggplot(aes(x = mpg, y = modelo)) +
+  geom_point()
+```
+
+
+
+
+**1.**
+
+**1.**
+
+**1.**
+
