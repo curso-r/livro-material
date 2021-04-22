@@ -393,6 +393,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.1.2" data-path="11-1-nse.html"><a href="11-1-nse.html#tidy-evaluation"><i class="fa fa-check"></i><b>11.1.2</b> Tidy evaluation</a></li>
 <li class="chapter" data-level="11.1.3" data-path="11-1-nse.html"><a href="11-1-nse.html#curly-curly"><i class="fa fa-check"></i><b>11.1.3</b> Curly-curly</a></li>
 <li class="chapter" data-level="11.1.4" data-path="11-1-nse.html"><a href="11-1-nse.html#strings-como-argumentos"><i class="fa fa-check"></i><b>11.1.4</b> Strings como argumentos</a></li>
+<li class="chapter" data-level="11.1.5" data-path="11-1-nse.html"><a href="11-1-nse.html#exercícios-24"><i class="fa fa-check"></i><b>11.1.5</b> Exercícios</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="12-misc.html"><a href="12-misc.html"><i class="fa fa-check"></i><b>12</b> Miscelânea</a>
@@ -438,6 +439,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.7" data-path="13-7-o-pacote-forcats.html"><a href="13-7-o-pacote-forcats.html"><i class="fa fa-check"></i><b>13.7</b> O pacote forcats</a></li>
 <li class="chapter" data-level="13.8" data-path="13-8-o-pacote-ggplot2-1.html"><a href="13-8-o-pacote-ggplot2-1.html"><i class="fa fa-check"></i><b>13.8</b> O pacote ggplot2</a></li>
 <li class="chapter" data-level="13.9" data-path="13-9-programação-funcional-purrr.html"><a href="13-9-programação-funcional-purrr.html"><i class="fa fa-check"></i><b>13.9</b> Programação funcional (purrr)</a></li>
+<li class="chapter" data-level="13.10" data-path="13-10-nse-1.html"><a href="13-10-nse-1.html"><i class="fa fa-check"></i><b>13.10</b> NSE</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a>
 <ul>
@@ -1503,21 +1505,21 @@ para a tabela <code>imdb</code> original.</p>
 <pre><code>## # A tibble: 5 x 5
 ##   student_id prova1 prova2 prova3 prova4
 ##        &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;
-## 1          1      8      8      8      1
-## 2          2      6      9      6      4
-## 3          3     10      1     10      3
-## 4          4      1      3      2      9
-## 5          5      2     10      3      7</code></pre>
+## 1          1      2      0      5      8
+## 2          2      5      5      8      2
+## 3          3      4      7      3      6
+## 4          4      7     10      6      3
+## 5          5     10      6      1      9</code></pre>
 <p>Se quisermos gerar uma coluna com a nota média de cada aluno nas quatro provas, não poderíamos usar o <code>mutate()</code> diretamente.</p>
 <div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="7-2-dplyr.html#cb333-1" aria-hidden="true" tabindex="-1"></a>tab_notas <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">media =</span> <span class="fu">mean</span>(<span class="fu">c</span>(prova1, prova2, prova3, prova4)))</span></code></pre></div>
 <pre><code>## # A tibble: 5 x 6
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt; &lt;dbl&gt;
-## 1          1      8      8      8      1  5.55
-## 2          2      6      9      6      4  5.55
-## 3          3     10      1     10      3  5.55
-## 4          4      1      3      2      9  5.55
-## 5          5      2     10      3      7  5.55</code></pre>
+## 1          1      2      0      5      8  5.35
+## 2          2      5      5      8      2  5.35
+## 3          3      4      7      3      6  5.35
+## 4          4      7     10      6      3  5.35
+## 5          5     10      6      1      9  5.35</code></pre>
 <p>Neste caso, todas as colunas estão sendo empilhadas e gerando uma única média, passada a todas as linhas da coluna <code>media</code>.</p>
 <p>Para fazermos a conta para cada aluno, podemos agrupar por aluno. Agora sim a média é calculada apenas nas notas de cada estudante.</p>
 <div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="7-2-dplyr.html#cb335-1" aria-hidden="true" tabindex="-1"></a>tab_notas <span class="sc">%&gt;%</span></span>
@@ -1527,11 +1529,11 @@ para a tabela <code>imdb</code> original.</p>
 ## # Groups:   student_id [5]
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt; &lt;dbl&gt;
-## 1          1      8      8      8      1  6.25
-## 2          2      6      9      6      4  6.25
-## 3          3     10      1     10      3  6   
-## 4          4      1      3      2      9  3.75
-## 5          5      2     10      3      7  5.5</code></pre>
+## 1          1      2      0      5      8  3.75
+## 2          2      5      5      8      2  5   
+## 3          3      4      7      3      6  5   
+## 4          4      7     10      6      3  6.5 
+## 5          5     10      6      1      9  6.5</code></pre>
 <p>Também podemos nos aproveitar da sintaxe do <code>across()</code> neste caso. Para isso, precisamos substutir a função <code>c()</code> pela função <code>c_across()</code>.</p>
 <div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="7-2-dplyr.html#cb337-1" aria-hidden="true" tabindex="-1"></a>tab_notas <span class="sc">%&gt;%</span></span>
 <span id="cb337-2"><a href="7-2-dplyr.html#cb337-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(student_id) <span class="sc">%&gt;%</span></span>
@@ -1540,11 +1542,11 @@ para a tabela <code>imdb</code> original.</p>
 ## # Groups:   student_id [5]
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt; &lt;dbl&gt;
-## 1          1      8      8      8      1  6.25
-## 2          2      6      9      6      4  6.25
-## 3          3     10      1     10      3  6   
-## 4          4      1      3      2      9  3.75
-## 5          5      2     10      3      7  5.5</code></pre>
+## 1          1      2      0      5      8  3.75
+## 2          2      5      5      8      2  5   
+## 3          3      4      7      3      6  5   
+## 4          4      7     10      6      3  6.5 
+## 5          5     10      6      1      9  6.5</code></pre>
 <p>Equivalentemente ao <code>group_by()</code>, neste caso, podemos usar a função <code>rowwise()</code>.</p>
 <div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="7-2-dplyr.html#cb339-1" aria-hidden="true" tabindex="-1"></a>tab_notas <span class="sc">%&gt;%</span></span>
 <span id="cb339-2"><a href="7-2-dplyr.html#cb339-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>(student_id) <span class="sc">%&gt;%</span></span>
@@ -1553,11 +1555,11 @@ para a tabela <code>imdb</code> original.</p>
 ## # Rowwise:  student_id
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt; &lt;dbl&gt;
-## 1          1      8      8      8      1  6.25
-## 2          2      6      9      6      4  6.25
-## 3          3     10      1     10      3  6   
-## 4          4      1      3      2      9  3.75
-## 5          5      2     10      3      7  5.5</code></pre>
+## 1          1      2      0      5      8  3.75
+## 2          2      5      5      8      2  5   
+## 3          3      4      7      3      6  5   
+## 4          4      7     10      6      3  6.5 
+## 5          5     10      6      1      9  6.5</code></pre>
 <p>Ela é muito útil quando queremos fazer operação por linhas, mas não temos uma coluna de identificação. Por padrão, se não indicarmos nenhuma coluna, cada linha será um “grupo”.</p>
 <div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="7-2-dplyr.html#cb341-1" aria-hidden="true" tabindex="-1"></a>tab_notas <span class="sc">%&gt;%</span></span>
 <span id="cb341-2"><a href="7-2-dplyr.html#cb341-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
@@ -1566,11 +1568,11 @@ para a tabela <code>imdb</code> original.</p>
 ## # Rowwise: 
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt;  &lt;int&gt; &lt;dbl&gt;
-## 1          1      8      8      8      1  6.25
-## 2          2      6      9      6      4  6.25
-## 3          3     10      1     10      3  6   
-## 4          4      1      3      2      9  3.75
-## 5          5      2     10      3      7  5.5</code></pre>
+## 1          1      2      0      5      8  3.75
+## 2          2      5      5      8      2  5   
+## 3          3      4      7      3      6  5   
+## 4          4      7     10      6      3  6.5 
+## 5          5     10      6      1      9  6.5</code></pre>
 <p>Veja que <code>student_id</code> não é passada para a função <code>rowwise()</code>. Não precisaríamos dessa coluna na base para reproduzir a geração da columa <code>media</code> neste caso.</p>
 </div>
 <div id="exercícios-17" class="section level4 unnumbered">

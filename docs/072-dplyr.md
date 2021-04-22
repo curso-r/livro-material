@@ -1491,11 +1491,11 @@ tab_notas
 ## # A tibble: 5 x 5
 ##   student_id prova1 prova2 prova3 prova4
 ##        <int>  <int>  <int>  <int>  <int>
-## 1          1      8      8      8      1
-## 2          2      6      9      6      4
-## 3          3     10      1     10      3
-## 4          4      1      3      2      9
-## 5          5      2     10      3      7
+## 1          1      2      0      5      8
+## 2          2      5      5      8      2
+## 3          3      4      7      3      6
+## 4          4      7     10      6      3
+## 5          5     10      6      1      9
 ```
 
 Se quisermos gerar uma coluna com a nota média de cada aluno nas quatro provas, não poderíamos usar o `mutate()` diretamente.
@@ -1509,11 +1509,11 @@ tab_notas %>% mutate(media = mean(c(prova1, prova2, prova3, prova4)))
 ## # A tibble: 5 x 6
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      8      8      8      1  5.55
-## 2          2      6      9      6      4  5.55
-## 3          3     10      1     10      3  5.55
-## 4          4      1      3      2      9  5.55
-## 5          5      2     10      3      7  5.55
+## 1          1      2      0      5      8  5.35
+## 2          2      5      5      8      2  5.35
+## 3          3      4      7      3      6  5.35
+## 4          4      7     10      6      3  5.35
+## 5          5     10      6      1      9  5.35
 ```
 
 Neste caso, todas as colunas estão sendo empilhadas e gerando uma única média, passada a todas as linhas da coluna `media`.
@@ -1532,11 +1532,11 @@ tab_notas %>%
 ## # Groups:   student_id [5]
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      8      8      8      1  6.25
-## 2          2      6      9      6      4  6.25
-## 3          3     10      1     10      3  6   
-## 4          4      1      3      2      9  3.75
-## 5          5      2     10      3      7  5.5
+## 1          1      2      0      5      8  3.75
+## 2          2      5      5      8      2  5   
+## 3          3      4      7      3      6  5   
+## 4          4      7     10      6      3  6.5 
+## 5          5     10      6      1      9  6.5
 ```
 
 Também podemos nos aproveitar da sintaxe do `across()` neste caso. Para isso, precisamos substutir a função `c()` pela função `c_across()`.
@@ -1553,11 +1553,11 @@ tab_notas %>%
 ## # Groups:   student_id [5]
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      8      8      8      1  6.25
-## 2          2      6      9      6      4  6.25
-## 3          3     10      1     10      3  6   
-## 4          4      1      3      2      9  3.75
-## 5          5      2     10      3      7  5.5
+## 1          1      2      0      5      8  3.75
+## 2          2      5      5      8      2  5   
+## 3          3      4      7      3      6  5   
+## 4          4      7     10      6      3  6.5 
+## 5          5     10      6      1      9  6.5
 ```
 
 Equivalentemente ao `group_by()`, neste caso, podemos usar a função `rowwise()`.
@@ -1574,11 +1574,11 @@ tab_notas %>%
 ## # Rowwise:  student_id
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      8      8      8      1  6.25
-## 2          2      6      9      6      4  6.25
-## 3          3     10      1     10      3  6   
-## 4          4      1      3      2      9  3.75
-## 5          5      2     10      3      7  5.5
+## 1          1      2      0      5      8  3.75
+## 2          2      5      5      8      2  5   
+## 3          3      4      7      3      6  5   
+## 4          4      7     10      6      3  6.5 
+## 5          5     10      6      1      9  6.5
 ```
 
 Ela é muito útil quando queremos fazer operação por linhas, mas não temos uma coluna de identificação. Por padrão, se não indicarmos nenhuma coluna, cada linha será um "grupo".
@@ -1595,11 +1595,11 @@ tab_notas %>%
 ## # Rowwise: 
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      8      8      8      1  6.25
-## 2          2      6      9      6      4  6.25
-## 3          3     10      1     10      3  6   
-## 4          4      1      3      2      9  3.75
-## 5          5      2     10      3      7  5.5
+## 1          1      2      0      5      8  3.75
+## 2          2      5      5      8      2  5   
+## 3          3      4      7      3      6  5   
+## 4          4      7     10      6      3  6.5 
+## 5          5     10      6      1      9  6.5
 ```
 
 Veja que `student_id` não é passada para a função `rowwise()`. Não precisaríamos dessa coluna na base para reproduzir a geração da columa `media` neste caso.
