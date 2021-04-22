@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10.3 Iterações intermediárias | Ciência de Dados em R</title>
+  <title>13.7 O pacote forcats | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="10.3 Iterações intermediárias | Ciência de Dados em R" />
+  <meta property="og:title" content="13.7 O pacote forcats | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10.3 Iterações intermediárias | Ciência de Dados em R" />
+  <meta name="twitter:title" content="13.7 O pacote forcats | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="10-2-iterações-básicas.html"/>
-<link rel="next" href="10-4-iterações-avançadas.html"/>
+<link rel="prev" href="13-6-o-pacote-lubridate-1.html"/>
+<link rel="next" href="13-8-o-pacote-ggplot2-1.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -317,6 +317,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.6.3" data-path="7-6-forcats.html"><a href="7-6-forcats.html#mudando-a-ordem-dos-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.3</b> Mudando a ordem dos níveis de um fator</a></li>
 <li class="chapter" data-level="7.6.4" data-path="7-6-forcats.html"><a href="7-6-forcats.html#colapsando-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.4</b> Colapsando níveis de um fator</a></li>
 <li class="chapter" data-level="7.6.5" data-path="7-6-forcats.html"><a href="7-6-forcats.html#outras-funções-úteis"><i class="fa fa-check"></i><b>7.6.5</b> Outras funções úteis</a></li>
+<li class="chapter" data-level="7.6.6" data-path="7-6-forcats.html"><a href="7-6-forcats.html#exercícios-21"><i class="fa fa-check"></i><b>7.6.6</b> Exercícios</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a>
@@ -331,7 +332,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.6" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#escalas"><i class="fa fa-check"></i><b>8.1.6</b> Escalas</a></li>
 <li class="chapter" data-level="8.1.7" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#temas"><i class="fa fa-check"></i><b>8.1.7</b> Temas</a></li>
 <li class="chapter" data-level="8.1.8" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>8.1.8</b> Juntando gráficos</a></li>
-<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-21"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
+<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-22"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a>
 <ul>
@@ -363,68 +364,80 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="10-funcionais.html"><a href="10-funcionais.html"><i class="fa fa-check"></i><b>10</b> Programação funcional</a>
+<li class="chapter" data-level="10" data-path="10-funcionais.html"><a href="10-funcionais.html"><i class="fa fa-check"></i><b>10</b> Programação funcional (purrr)</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="10-1-introdução-1.html"><a href="10-1-introdução-1.html"><i class="fa fa-check"></i><b>10.1</b> Introdução</a></li>
-<li class="chapter" data-level="10.2" data-path="10-2-iterações-básicas.html"><a href="10-2-iterações-básicas.html"><i class="fa fa-check"></i><b>10.2</b> Iterações básicas</a></li>
-<li class="chapter" data-level="10.3" data-path="10-3-iterações-intermediárias.html"><a href="10-3-iterações-intermediárias.html"><i class="fa fa-check"></i><b>10.3</b> Iterações intermediárias</a></li>
-<li class="chapter" data-level="10.4" data-path="10-4-iterações-avançadas.html"><a href="10-4-iterações-avançadas.html"><i class="fa fa-check"></i><b>10.4</b> Iterações avançadas</a>
+<li class="chapter" data-level="10.1" data-path="10-1-iterações-básicas.html"><a href="10-1-iterações-básicas.html"><i class="fa fa-check"></i><b>10.1</b> Iterações básicas</a></li>
+<li class="chapter" data-level="10.2" data-path="10-2-iterações-intermediárias.html"><a href="10-2-iterações-intermediárias.html"><i class="fa fa-check"></i><b>10.2</b> Iterações intermediárias</a></li>
+<li class="chapter" data-level="10.3" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html"><i class="fa fa-check"></i><b>10.3</b> Iterações avançadas</a>
 <ul>
-<li class="chapter" data-level="10.4.1" data-path="10-4-iterações-avançadas.html"><a href="10-4-iterações-avançadas.html#iterações-com-condicionais"><i class="fa fa-check"></i><b>10.4.1</b> Iterações com condicionais</a></li>
-<li class="chapter" data-level="10.4.2" data-path="10-4-iterações-avançadas.html"><a href="10-4-iterações-avançadas.html#iterações-com-tabelas-e-funções"><i class="fa fa-check"></i><b>10.4.2</b> Iterações com tabelas e funções</a></li>
-<li class="chapter" data-level="10.4.3" data-path="10-4-iterações-avançadas.html"><a href="10-4-iterações-avançadas.html#redução-e-acúmulo"><i class="fa fa-check"></i><b>10.4.3</b> Redução e acúmulo</a></li>
+<li class="chapter" data-level="10.3.1" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#iterações-com-condicionais"><i class="fa fa-check"></i><b>10.3.1</b> Iterações com condicionais</a></li>
+<li class="chapter" data-level="10.3.2" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#iterações-com-tabelas-e-funções"><i class="fa fa-check"></i><b>10.3.2</b> Iterações com tabelas e funções</a></li>
+<li class="chapter" data-level="10.3.3" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#redução-e-acúmulo"><i class="fa fa-check"></i><b>10.3.3</b> Redução e acúmulo</a></li>
 </ul></li>
-<li class="chapter" data-level="10.5" data-path="10-5-miscelânea-1.html"><a href="10-5-miscelânea-1.html"><i class="fa fa-check"></i><b>10.5</b> Miscelânea</a>
+<li class="chapter" data-level="10.4" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html"><i class="fa fa-check"></i><b>10.4</b> Miscelânea</a>
 <ul>
-<li class="chapter" data-level="10.5.1" data-path="10-5-miscelânea-1.html"><a href="10-5-miscelânea-1.html#manter-e-descartar"><i class="fa fa-check"></i><b>10.5.1</b> Manter e descartar</a></li>
-<li class="chapter" data-level="10.5.2" data-path="10-5-miscelânea-1.html"><a href="10-5-miscelânea-1.html#a-família-is"><i class="fa fa-check"></i><b>10.5.2</b> A família <code>is</code></a></li>
-<li class="chapter" data-level="10.5.3" data-path="10-5-miscelânea-1.html"><a href="10-5-miscelânea-1.html#andar-e-modificar"><i class="fa fa-check"></i><b>10.5.3</b> Andar e modificar</a></li>
-<li class="chapter" data-level="10.5.4" data-path="10-5-miscelânea-1.html"><a href="10-5-miscelânea-1.html#transposição-e-indexação-profunda"><i class="fa fa-check"></i><b>10.5.4</b> Transposição e indexação profunda</a></li>
-<li class="chapter" data-level="10.5.5" data-path="10-5-miscelânea-1.html"><a href="10-5-miscelânea-1.html#aplicação-parcial"><i class="fa fa-check"></i><b>10.5.5</b> Aplicação parcial</a></li>
-<li class="chapter" data-level="10.5.6" data-path="10-5-miscelânea-1.html"><a href="10-5-miscelânea-1.html#execução-segura"><i class="fa fa-check"></i><b>10.5.6</b> Execução segura</a></li>
+<li class="chapter" data-level="10.4.1" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#manter-e-descartar"><i class="fa fa-check"></i><b>10.4.1</b> Manter e descartar</a></li>
+<li class="chapter" data-level="10.4.2" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#a-família-is"><i class="fa fa-check"></i><b>10.4.2</b> A família <code>is</code></a></li>
+<li class="chapter" data-level="10.4.3" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#andar-e-modificar"><i class="fa fa-check"></i><b>10.4.3</b> Andar e modificar</a></li>
+<li class="chapter" data-level="10.4.4" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#transposição-e-indexação-profunda"><i class="fa fa-check"></i><b>10.4.4</b> Transposição e indexação profunda</a></li>
+<li class="chapter" data-level="10.4.5" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#aplicação-parcial"><i class="fa fa-check"></i><b>10.4.5</b> Aplicação parcial</a></li>
+<li class="chapter" data-level="10.4.6" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#execução-segura"><i class="fa fa-check"></i><b>10.4.6</b> Execução segura</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="10-5-exercícios-23.html"><a href="10-5-exercícios-23.html"><i class="fa fa-check"></i><b>10.5</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="11-ravancado.html"><a href="11-ravancado.html"><i class="fa fa-check"></i><b>11</b> R avançado</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="11-1-nse.html"><a href="11-1-nse.html"><i class="fa fa-check"></i><b>11.1</b> NSE</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="11-1-nse.html"><a href="11-1-nse.html#o-que-é"><i class="fa fa-check"></i><b>11.1.1</b> O que é?</a></li>
+<li class="chapter" data-level="11.1.2" data-path="11-1-nse.html"><a href="11-1-nse.html#tidy-evaluation"><i class="fa fa-check"></i><b>11.1.2</b> Tidy evaluation</a></li>
+<li class="chapter" data-level="11.1.3" data-path="11-1-nse.html"><a href="11-1-nse.html#curly-curly"><i class="fa fa-check"></i><b>11.1.3</b> Curly-curly</a></li>
+<li class="chapter" data-level="11.1.4" data-path="11-1-nse.html"><a href="11-1-nse.html#strings-como-argumentos"><i class="fa fa-check"></i><b>11.1.4</b> Strings como argumentos</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="11-misc.html"><a href="11-misc.html"><i class="fa fa-check"></i><b>11</b> Miscelânea</a>
+<li class="chapter" data-level="12" data-path="12-misc.html"><a href="12-misc.html"><i class="fa fa-check"></i><b>12</b> Miscelânea</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>11.1</b> Arrumando banco de dados: o pacote janitor</a>
+<li class="chapter" data-level="12.1" data-path="12-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="12-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>12.1</b> Arrumando banco de dados: o pacote janitor</a>
 <ul>
-<li class="chapter" data-level="11.1.1" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#arrumando-o-nome-das-variáveis"><i class="fa fa-check"></i><b>11.1.1</b> Arrumando o nome das variáveis</a></li>
-<li class="chapter" data-level="11.1.2" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#removendo-linhas-e-colunas-vazias"><i class="fa fa-check"></i><b>11.1.2</b> Removendo linhas e colunas vazias</a></li>
-<li class="chapter" data-level="11.1.3" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#identificando-linhas-duplicadas"><i class="fa fa-check"></i><b>11.1.3</b> Identificando linhas duplicadas</a></li>
-<li class="chapter" data-level="11.1.4" data-path="11-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="11-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>11.1.4</b> Outras funções</a></li>
+<li class="chapter" data-level="12.1.1" data-path="12-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="12-1-arrumando-banco-de-dados-o-pacote-janitor.html#arrumando-o-nome-das-variáveis"><i class="fa fa-check"></i><b>12.1.1</b> Arrumando o nome das variáveis</a></li>
+<li class="chapter" data-level="12.1.2" data-path="12-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="12-1-arrumando-banco-de-dados-o-pacote-janitor.html#removendo-linhas-e-colunas-vazias"><i class="fa fa-check"></i><b>12.1.2</b> Removendo linhas e colunas vazias</a></li>
+<li class="chapter" data-level="12.1.3" data-path="12-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="12-1-arrumando-banco-de-dados-o-pacote-janitor.html#identificando-linhas-duplicadas"><i class="fa fa-check"></i><b>12.1.3</b> Identificando linhas duplicadas</a></li>
+<li class="chapter" data-level="12.1.4" data-path="12-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="12-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>12.1.4</b> Outras funções</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="12-respostas.html"><a href="12-respostas.html"><i class="fa fa-check"></i><b>12</b> Respostas</a>
+<li class="chapter" data-level="13" data-path="13-respostas.html"><a href="13-respostas.html"><i class="fa fa-check"></i><b>13</b> Respostas</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html"><i class="fa fa-check"></i><b>12.1</b> R básico</a>
+<li class="chapter" data-level="13.1" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html"><i class="fa fa-check"></i><b>13.1</b> R básico</a>
 <ul>
-<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
-<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#objetos-e-funções"><i class="fa fa-check"></i>Objetos e funções</a></li>
-<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#classes-1"><i class="fa fa-check"></i>Classes</a></li>
-<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#vetores-1"><i class="fa fa-check"></i>Vetores</a></li>
-<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i>Testes lógicos</a></li>
-<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#valores-especiais"><i class="fa fa-check"></i>Valores especiais</a></li>
-<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i>Data frames</a></li>
-<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i>Mais sobre funções</a></li>
-<li class="chapter" data-level="" data-path="12-1-r-básico.html"><a href="12-1-r-básico.html#controle-de-fluxo-1"><i class="fa fa-check"></i>Controle de fluxo</a></li>
+<li class="chapter" data-level="" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
+<li class="chapter" data-level="" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html#objetos-e-funções"><i class="fa fa-check"></i>Objetos e funções</a></li>
+<li class="chapter" data-level="" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html#classes-1"><i class="fa fa-check"></i>Classes</a></li>
+<li class="chapter" data-level="" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html#vetores-1"><i class="fa fa-check"></i>Vetores</a></li>
+<li class="chapter" data-level="" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i>Testes lógicos</a></li>
+<li class="chapter" data-level="" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html#valores-especiais"><i class="fa fa-check"></i>Valores especiais</a></li>
+<li class="chapter" data-level="" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i>Data frames</a></li>
+<li class="chapter" data-level="" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i>Mais sobre funções</a></li>
+<li class="chapter" data-level="" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html#controle-de-fluxo-1"><i class="fa fa-check"></i>Controle de fluxo</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="12-2-importação.html"><a href="12-2-importação.html"><i class="fa fa-check"></i><b>12.2</b> Importação</a>
+<li class="chapter" data-level="13.2" data-path="13-2-importação.html"><a href="13-2-importação.html"><i class="fa fa-check"></i><b>13.2</b> Importação</a>
 <ul>
-<li class="chapter" data-level="" data-path="12-2-importação.html"><a href="12-2-importação.html#o-pacote-readr"><i class="fa fa-check"></i>O pacote readr</a></li>
+<li class="chapter" data-level="" data-path="13-2-importação.html"><a href="13-2-importação.html#o-pacote-readr"><i class="fa fa-check"></i>O pacote readr</a></li>
 </ul></li>
-<li class="chapter" data-level="12.3" data-path="12-3-pipe-1.html"><a href="12-3-pipe-1.html"><i class="fa fa-check"></i><b>12.3</b> Pipe</a></li>
-<li class="chapter" data-level="12.4" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>12.4</b> O pacote dplyr</a>
+<li class="chapter" data-level="13.3" data-path="13-3-pipe-1.html"><a href="13-3-pipe-1.html"><i class="fa fa-check"></i><b>13.3</b> Pipe</a></li>
+<li class="chapter" data-level="13.4" data-path="13-4-o-pacote-dplyr.html"><a href="13-4-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>13.4</b> O pacote dplyr</a>
 <ul>
-<li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#selecionando-colunas-1"><i class="fa fa-check"></i>Selecionando colunas</a></li>
-<li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#ordenando-a-base-1"><i class="fa fa-check"></i>Ordenando a base</a></li>
-<li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#filtrando-linhas-1"><i class="fa fa-check"></i>Filtrando linhas</a></li>
-<li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#modificando-e-criando-novas-colunas-1"><i class="fa fa-check"></i>Modificando e criando novas colunas</a></li>
-<li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#summarisando-a-base-1"><i class="fa fa-check"></i>Summarisando a base</a></li>
-<li class="chapter" data-level="" data-path="12-4-o-pacote-dplyr.html"><a href="12-4-o-pacote-dplyr.html#juntando-duas-bases-1"><i class="fa fa-check"></i>Juntando duas bases</a></li>
+<li class="chapter" data-level="" data-path="13-4-o-pacote-dplyr.html"><a href="13-4-o-pacote-dplyr.html#selecionando-colunas-1"><i class="fa fa-check"></i>Selecionando colunas</a></li>
+<li class="chapter" data-level="" data-path="13-4-o-pacote-dplyr.html"><a href="13-4-o-pacote-dplyr.html#ordenando-a-base-1"><i class="fa fa-check"></i>Ordenando a base</a></li>
+<li class="chapter" data-level="" data-path="13-4-o-pacote-dplyr.html"><a href="13-4-o-pacote-dplyr.html#filtrando-linhas-1"><i class="fa fa-check"></i>Filtrando linhas</a></li>
+<li class="chapter" data-level="" data-path="13-4-o-pacote-dplyr.html"><a href="13-4-o-pacote-dplyr.html#modificando-e-criando-novas-colunas-1"><i class="fa fa-check"></i>Modificando e criando novas colunas</a></li>
+<li class="chapter" data-level="" data-path="13-4-o-pacote-dplyr.html"><a href="13-4-o-pacote-dplyr.html#summarisando-a-base-1"><i class="fa fa-check"></i>Summarisando a base</a></li>
+<li class="chapter" data-level="" data-path="13-4-o-pacote-dplyr.html"><a href="13-4-o-pacote-dplyr.html#juntando-duas-bases-1"><i class="fa fa-check"></i>Juntando duas bases</a></li>
 </ul></li>
-<li class="chapter" data-level="12.5" data-path="12-5-o-pacote-stringr-1.html"><a href="12-5-o-pacote-stringr-1.html"><i class="fa fa-check"></i><b>12.5</b> O pacote stringr</a></li>
-<li class="chapter" data-level="12.6" data-path="12-6-o-pacote-lubridate-1.html"><a href="12-6-o-pacote-lubridate-1.html"><i class="fa fa-check"></i><b>12.6</b> O pacote lubridate</a></li>
-<li class="chapter" data-level="12.7" data-path="12-7-o-pacote-ggplot2-1.html"><a href="12-7-o-pacote-ggplot2-1.html"><i class="fa fa-check"></i><b>12.7</b> O pacote ggplot2</a></li>
+<li class="chapter" data-level="13.5" data-path="13-5-o-pacote-stringr-1.html"><a href="13-5-o-pacote-stringr-1.html"><i class="fa fa-check"></i><b>13.5</b> O pacote stringr</a></li>
+<li class="chapter" data-level="13.6" data-path="13-6-o-pacote-lubridate-1.html"><a href="13-6-o-pacote-lubridate-1.html"><i class="fa fa-check"></i><b>13.6</b> O pacote lubridate</a></li>
+<li class="chapter" data-level="13.7" data-path="13-7-o-pacote-forcats.html"><a href="13-7-o-pacote-forcats.html"><i class="fa fa-check"></i><b>13.7</b> O pacote forcats</a></li>
+<li class="chapter" data-level="13.8" data-path="13-8-o-pacote-ggplot2-1.html"><a href="13-8-o-pacote-ggplot2-1.html"><i class="fa fa-check"></i><b>13.8</b> O pacote ggplot2</a></li>
+<li class="chapter" data-level="13.9" data-path="13-9-programação-funcional-purrr.html"><a href="13-9-programação-funcional-purrr.html"><i class="fa fa-check"></i><b>13.9</b> Programação funcional (purrr)</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a>
 <ul>
@@ -451,66 +464,83 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="iterações-intermediárias" class="section level2" number="10.3">
-<h2><span class="header-section-number">10.3</span> Iterações intermediárias</h2>
-<p>Agora que já exploramos os básicos da família <code>map()</code> podemos partir para
-iterações um pouco mais complexas. Observe o laço a seguir:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="10-3-iterações-intermediárias.html#cb12-1" aria-hidden="true" tabindex="-1"></a>soma_ambos <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) { x <span class="sc">+</span> y }</span>
-<span id="cb12-2"><a href="10-3-iterações-intermediárias.html#cb12-2" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb12-3"><a href="10-3-iterações-intermediárias.html#cb12-3" aria-hidden="true" tabindex="-1"></a>obj_2 <span class="ot">&lt;-</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">25</span></span>
-<span id="cb12-4"><a href="10-3-iterações-intermediárias.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(obj_1)) {</span>
-<span id="cb12-5"><a href="10-3-iterações-intermediárias.html#cb12-5" aria-hidden="true" tabindex="-1"></a>  obj_1[i] <span class="ot">&lt;-</span> <span class="fu">soma_ambos</span>(obj_1[i], obj_2[i])</span>
-<span id="cb12-6"><a href="10-3-iterações-intermediárias.html#cb12-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb12-7"><a href="10-3-iterações-intermediárias.html#cb12-7" aria-hidden="true" tabindex="-1"></a>obj_1</span></code></pre></div>
-<pre><code>## [1] 30 32 34 36 38 40</code></pre>
-<p>Com a função <code>map2()</code> podemos reproduzir o laço acima em apenas uma linha. Ela
-abstrai a iteração em paralelo, aplica a função em cada par de elementos das
-entradas e, assim como sua prima <code>map()</code>, pode achatar o objeto retornado com os
-sufixos <code>_chr</code>, <code>_dbl</code>, <code>_int</code> e <code>_lgl</code>.</p>
-<blockquote>
-<p>O termo “paralelo” neste capítulos se refere a laços em mais de uma estrutura e não a paralelização de computações em mais de uma unidade de processamento.</p>
-</blockquote>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="10-3-iterações-intermediárias.html#cb14-1" aria-hidden="true" tabindex="-1"></a>soma_ambos <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) { x <span class="sc">+</span> y }</span>
-<span id="cb14-2"><a href="10-3-iterações-intermediárias.html#cb14-2" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb14-3"><a href="10-3-iterações-intermediárias.html#cb14-3" aria-hidden="true" tabindex="-1"></a>obj_2 <span class="ot">&lt;-</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">25</span></span>
-<span id="cb14-4"><a href="10-3-iterações-intermediárias.html#cb14-4" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="fu">map2_dbl</span>(obj_1, obj_2, soma_ambos)</span>
-<span id="cb14-5"><a href="10-3-iterações-intermediárias.html#cb14-5" aria-hidden="true" tabindex="-1"></a>obj_1</span></code></pre></div>
-<pre><code>## [1] 30 32 34 36 38 40</code></pre>
-<p>Como o pacote <code>purrr</code> é extremamente consistente, a <code>map2()</code> também funciona com
-reticências e fórmulas. Poderíamos, por exemplo, transformar <code>soma_ambos()</code> em
-uma função anônima:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="10-3-iterações-intermediárias.html#cb16-1" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb16-2"><a href="10-3-iterações-intermediárias.html#cb16-2" aria-hidden="true" tabindex="-1"></a>obj_2 <span class="ot">&lt;-</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">25</span></span>
-<span id="cb16-3"><a href="10-3-iterações-intermediárias.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">map2_dbl</span>(obj_1, obj_2, <span class="sc">~</span>.x<span class="sc">+</span>.y)</span></code></pre></div>
-<pre><code>## [1] 30 32 34 36 38 40</code></pre>
-<p>Desta vez também temos acesso ao placeholder <code>.y</code> para indicar onde os elementos
-de do segundo vetor devem ir.</p>
-<p>Para não precisar oferecer uma função para cada número de argumentos, o pacote
-<code>purrr</code> fornece a <code>pmap()</code>. Para essa função devemos passar uma lista em que cada
-elemento é um dos objetos a ser iterado:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="10-3-iterações-intermediárias.html#cb18-1" aria-hidden="true" tabindex="-1"></a>soma_varios <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, z) { x <span class="sc">+</span> y <span class="sc">+</span> z }</span>
-<span id="cb18-2"><a href="10-3-iterações-intermediárias.html#cb18-2" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb18-3"><a href="10-3-iterações-intermediárias.html#cb18-3" aria-hidden="true" tabindex="-1"></a>obj_2 <span class="ot">&lt;-</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">25</span></span>
-<span id="cb18-4"><a href="10-3-iterações-intermediárias.html#cb18-4" aria-hidden="true" tabindex="-1"></a>obj_3 <span class="ot">&lt;-</span> <span class="dv">30</span><span class="sc">:</span><span class="dv">35</span></span>
-<span id="cb18-5"><a href="10-3-iterações-intermediárias.html#cb18-5" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="fu">pmap_dbl</span>(<span class="fu">list</span>(obj_1, obj_2, obj_3), soma_varios)</span>
-<span id="cb18-6"><a href="10-3-iterações-intermediárias.html#cb18-6" aria-hidden="true" tabindex="-1"></a>obj_1</span></code></pre></div>
-<pre><code>## [1] 60 63 66 69 72 75</code></pre>
-<p>Com a <code>pmap()</code> infelizmente não podemos usar fórmulas. Se quisermos usar uma
-função anônima com ela, precisamos declará-la a função no seu corpo:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="10-3-iterações-intermediárias.html#cb20-1" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb20-2"><a href="10-3-iterações-intermediárias.html#cb20-2" aria-hidden="true" tabindex="-1"></a>obj_2 <span class="ot">&lt;-</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">25</span></span>
-<span id="cb20-3"><a href="10-3-iterações-intermediárias.html#cb20-3" aria-hidden="true" tabindex="-1"></a>obj_3 <span class="ot">&lt;-</span> <span class="dv">30</span><span class="sc">:</span><span class="dv">35</span></span>
-<span id="cb20-4"><a href="10-3-iterações-intermediárias.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">pmap_dbl</span>(<span class="fu">list</span>(obj_1, obj_2, obj_3), <span class="cf">function</span>(x, y, z) { x <span class="sc">+</span> y <span class="sc">+</span> z })</span></code></pre></div>
-<pre><code>## [1] 60 63 66 69 72 75</code></pre>
-<p>A última função que veremos nessa seção é a <code>imap()</code>. No fundo ela é um
-atalho para <code>map2(x, names(x), ...)</code> quando <code>x</code> tem nomes e para
-<code>map2(x, seq_along(x), ...)</code> caso contrário:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="10-3-iterações-intermediárias.html#cb22-1" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb22-2"><a href="10-3-iterações-intermediárias.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">imap_dbl</span>(obj, <span class="sc">~</span>.x<span class="sc">+</span>.y)</span></code></pre></div>
-<pre><code>## [1] 11 13 15 17 19 21</code></pre>
-<p>Como podemos observar, agora <code>.y</code> é o placeholder para o índice atual (equivalente
-ao <code>i</code> no laço com <code>for</code>). Naturalmente, assim como toda a família <code>map()</code>, a
-<code>imap()</code> também funciona com os sufixos de achatamento.</p>
+<div id="o-pacote-forcats" class="section level2" number="13.7">
+<h2><span class="header-section-number">13.7</span> O pacote forcats</h2>
+<div class="sourceCode" id="cb973"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb973-1"><a href="13-7-o-pacote-forcats.html#cb973-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb973-2"><a href="13-7-o-pacote-forcats.html#cb973-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb973-3"><a href="13-7-o-pacote-forcats.html#cb973-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<p><strong>1.</strong> Qual a diferença nos fatores criados com os códigos abaixo?</p>
+<div class="sourceCode" id="cb974"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb974-1"><a href="13-7-o-pacote-forcats.html#cb974-1" aria-hidden="true" tabindex="-1"></a>fator1 <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="st">&quot;c&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;z&quot;</span>, <span class="st">&quot;B&quot;</span>))</span>
+<span id="cb974-2"><a href="13-7-o-pacote-forcats.html#cb974-2" aria-hidden="true" tabindex="-1"></a>fator2 <span class="ot">&lt;-</span> forcats<span class="sc">::</span><span class="fu">as_factor</span>(<span class="fu">c</span>(<span class="st">&quot;c&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;z&quot;</span>, <span class="st">&quot;B&quot;</span>))</span></code></pre></div>
+<p>A função do R base <code>as.factor()</code> ordena os níveis do fator em ordem alfabética. A função <code>as_factor()</code> do pacote <code>forcats</code> ordena os níveis do fator na ordem que eles aparecem no vetor.</p>
+<hr />
+<p><strong>2.</strong> Ordene os níveis do fator <code>frutas</code> conforme a sua preferência, isto é, as que você mais gosta primeiro e as que você menos gosta por último.</p>
+<div class="sourceCode" id="cb975"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb975-1"><a href="13-7-o-pacote-forcats.html#cb975-1" aria-hidden="true" tabindex="-1"></a>frutas <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="st">&quot;maçã&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;mamão&quot;</span>, <span class="st">&quot;laranja&quot;</span>, <span class="st">&quot;melancia&quot;</span>))</span>
+<span id="cb975-2"><a href="13-7-o-pacote-forcats.html#cb975-2" aria-hidden="true" tabindex="-1"></a>frutas</span>
+<span id="cb975-3"><a href="13-7-o-pacote-forcats.html#cb975-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] maçã     banana   mamão    laranja  melancia</span></span>
+<span id="cb975-4"><a href="13-7-o-pacote-forcats.html#cb975-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Levels: banana laranja maçã mamão melancia</span></span>
+<span id="cb975-5"><a href="13-7-o-pacote-forcats.html#cb975-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb975-6"><a href="13-7-o-pacote-forcats.html#cb975-6" aria-hidden="true" tabindex="-1"></a><span class="co"># preferência do Willy</span></span>
+<span id="cb975-7"><a href="13-7-o-pacote-forcats.html#cb975-7" aria-hidden="true" tabindex="-1"></a><span class="fu">lvls_reorder</span>(frutas, <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>))</span>
+<span id="cb975-8"><a href="13-7-o-pacote-forcats.html#cb975-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] maçã     banana   mamão    laranja  melancia</span></span>
+<span id="cb975-9"><a href="13-7-o-pacote-forcats.html#cb975-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Levels: mamão melancia banana maçã laranja</span></span></code></pre></div>
+<hr />
+<p><strong>3.</strong> Com base no vetor <code>series</code>, resolva os itens a seguir.</p>
+<div class="sourceCode" id="cb976"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb976-1"><a href="13-7-o-pacote-forcats.html#cb976-1" aria-hidden="true" tabindex="-1"></a>series <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="st">&quot;Game of Thrones&quot;</span>, <span class="st">&quot;How I Met your Mother&quot;</span>, <span class="st">&quot;Friends&quot;</span>, <span class="st">&quot;Lost&quot;</span>, <span class="st">&quot;The Office&quot;</span>, <span class="st">&quot;Breaking Bad&quot;</span>))</span></code></pre></div>
+<p><strong>a.</strong> Ordene os níveis do vetor <code>series</code> conforme a sua preferência, isto é, as que você mais gosta primeiro e as que você menos gosta por último.</p>
+<div class="sourceCode" id="cb977"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb977-1"><a href="13-7-o-pacote-forcats.html#cb977-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(series)</span>
+<span id="cb977-2"><a href="13-7-o-pacote-forcats.html#cb977-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Breaking Bad&quot;          &quot;Friends&quot;               &quot;Game of Thrones&quot;      </span></span>
+<span id="cb977-3"><a href="13-7-o-pacote-forcats.html#cb977-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [4] &quot;How I Met your Mother&quot; &quot;Lost&quot;                  &quot;The Office&quot;</span></span>
+<span id="cb977-4"><a href="13-7-o-pacote-forcats.html#cb977-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb977-5"><a href="13-7-o-pacote-forcats.html#cb977-5" aria-hidden="true" tabindex="-1"></a><span class="co"># preferência do Willy</span></span>
+<span id="cb977-6"><a href="13-7-o-pacote-forcats.html#cb977-6" aria-hidden="true" tabindex="-1"></a>series <span class="ot">&lt;-</span> <span class="fu">lvls_reorder</span>(series, <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">4</span>))</span></code></pre></div>
+<p><strong>b.</strong> Junte ao vetor <code>series</code> o vetor <code>novas_series</code> a seguir, reordenando os níveis para manter a sua ordem de preferência.</p>
+<div class="sourceCode" id="cb978"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb978-1"><a href="13-7-o-pacote-forcats.html#cb978-1" aria-hidden="true" tabindex="-1"></a>novas_series <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="st">&quot;Stranger Things&quot;</span>, <span class="st">&quot;The Boys&quot;</span>, <span class="st">&quot;Queen&#39;s Gambit&quot;</span>))</span>
+<span id="cb978-2"><a href="13-7-o-pacote-forcats.html#cb978-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb978-3"><a href="13-7-o-pacote-forcats.html#cb978-3" aria-hidden="true" tabindex="-1"></a>series <span class="ot">&lt;-</span> series <span class="sc">%&gt;%</span> </span>
+<span id="cb978-4"><a href="13-7-o-pacote-forcats.html#cb978-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fct_c</span>(novas_series) </span>
+<span id="cb978-5"><a href="13-7-o-pacote-forcats.html#cb978-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb978-6"><a href="13-7-o-pacote-forcats.html#cb978-6" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(series)</span>
+<span id="cb978-7"><a href="13-7-o-pacote-forcats.html#cb978-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;The Office&quot;            &quot;Lost&quot;                  &quot;Breaking Bad&quot;         </span></span>
+<span id="cb978-8"><a href="13-7-o-pacote-forcats.html#cb978-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [4] &quot;Game of Thrones&quot;       &quot;Friends&quot;               &quot;How I Met your Mother&quot;</span></span>
+<span id="cb978-9"><a href="13-7-o-pacote-forcats.html#cb978-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [7] &quot;Queen&#39;s Gambit&quot;        &quot;Stranger Things&quot;       &quot;The Boys&quot;</span></span>
+<span id="cb978-10"><a href="13-7-o-pacote-forcats.html#cb978-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb978-11"><a href="13-7-o-pacote-forcats.html#cb978-11" aria-hidden="true" tabindex="-1"></a>series <span class="ot">&lt;-</span> <span class="fu">lvls_reorder</span>(series, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">8</span>))</span>
+<span id="cb978-12"><a href="13-7-o-pacote-forcats.html#cb978-12" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(series)</span>
+<span id="cb978-13"><a href="13-7-o-pacote-forcats.html#cb978-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;The Office&quot;            &quot;Lost&quot;                  &quot;Breaking Bad&quot;         </span></span>
+<span id="cb978-14"><a href="13-7-o-pacote-forcats.html#cb978-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [4] &quot;Game of Thrones&quot;       &quot;Friends&quot;               &quot;How I Met your Mother&quot;</span></span>
+<span id="cb978-15"><a href="13-7-o-pacote-forcats.html#cb978-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [7] &quot;Queen&#39;s Gambit&quot;        &quot;The Boys&quot;              &quot;Stranger Things&quot;</span></span></code></pre></div>
+<p><strong>c.</strong> Renomeie o níveis do vetor criado no item (b) para os nomes em Português das séries. Mantenha o mesmo nome caso não haja tradução.</p>
+<div class="sourceCode" id="cb979"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb979-1"><a href="13-7-o-pacote-forcats.html#cb979-1" aria-hidden="true" tabindex="-1"></a>series <span class="sc">%&gt;%</span> </span>
+<span id="cb979-2"><a href="13-7-o-pacote-forcats.html#cb979-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fct_recode</span>(</span>
+<span id="cb979-3"><a href="13-7-o-pacote-forcats.html#cb979-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;A Guerra dos Tronos&quot;</span> <span class="ot">=</span> <span class="st">&quot;Game of Thrones&quot;</span>,</span>
+<span id="cb979-4"><a href="13-7-o-pacote-forcats.html#cb979-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Como Eu Conheci Sua Mãe&quot;</span> <span class="ot">=</span> <span class="st">&quot;How I Met your Mother&quot;</span>,</span>
+<span id="cb979-5"><a href="13-7-o-pacote-forcats.html#cb979-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;A Química do Mal&quot;</span> <span class="ot">=</span> <span class="st">&quot;Breaking Bad&quot;</span>,</span>
+<span id="cb979-6"><a href="13-7-o-pacote-forcats.html#cb979-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;O Gambito da Rainha&quot;</span> <span class="ot">=</span> <span class="st">&quot;Queen&#39;s Gambit&quot;</span></span>
+<span id="cb979-7"><a href="13-7-o-pacote-forcats.html#cb979-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb979-8"><a href="13-7-o-pacote-forcats.html#cb979-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] A Guerra dos Tronos     Como Eu Conheci Sua Mãe Friends                </span></span>
+<span id="cb979-9"><a href="13-7-o-pacote-forcats.html#cb979-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [4] Lost                    The Office              A Química do Mal       </span></span>
+<span id="cb979-10"><a href="13-7-o-pacote-forcats.html#cb979-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [7] Stranger Things         The Boys                O Gambito da Rainha    </span></span>
+<span id="cb979-11"><a href="13-7-o-pacote-forcats.html#cb979-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 9 Levels: The Office Lost A Química do Mal A Guerra dos Tronos ... Stranger Things</span></span></code></pre></div>
+<hr />
+<p><strong>4.</strong> Ordene as categorias do eixo y do gráfico abaixo para que os pontos no eixo x fique em ordem crescente.</p>
+<div class="sourceCode" id="cb980"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb980-1"><a href="13-7-o-pacote-forcats.html#cb980-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> </span>
+<span id="cb980-2"><a href="13-7-o-pacote-forcats.html#cb980-2" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">rownames_to_column</span>(<span class="st">&quot;modelo&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb980-3"><a href="13-7-o-pacote-forcats.html#cb980-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">modelo =</span> <span class="fu">fct_reorder</span>(modelo, mpg)) <span class="sc">%&gt;%</span> </span>
+<span id="cb980-4"><a href="13-7-o-pacote-forcats.html#cb980-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mpg, <span class="at">y =</span> modelo)) <span class="sc">+</span></span>
+<span id="cb980-5"><a href="13-7-o-pacote-forcats.html#cb980-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="9845-respostas-forcats_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
+<hr />
+<p><strong>5.</strong> Utilize a base <code>dados::casas</code> para fazer um gráfico de barras mostrando as vizinhanças (coluna <code>vizinhanca</code>) com casas mais caras (segundo a coluna <code>venda_valor</code>). O gráfico deve conter as 9 vizinhanças mais frequentes e as demais devem ser agrupadas em uma categoria chamada <code>Outras vizinhanças</code>.</p>
+<div class="sourceCode" id="cb981"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb981-1"><a href="13-7-o-pacote-forcats.html#cb981-1" aria-hidden="true" tabindex="-1"></a>dados<span class="sc">::</span>casas <span class="sc">%&gt;%</span> </span>
+<span id="cb981-2"><a href="13-7-o-pacote-forcats.html#cb981-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">vizinhanca =</span> <span class="fu">fct_lump_n</span>(vizinhanca, <span class="dv">9</span>, <span class="at">other_level =</span> <span class="st">&quot;Outras vizinhanças&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb981-3"><a href="13-7-o-pacote-forcats.html#cb981-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(vizinhanca) <span class="sc">%&gt;%</span> </span>
+<span id="cb981-4"><a href="13-7-o-pacote-forcats.html#cb981-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">venda_valor =</span> <span class="fu">mean</span>(venda_valor, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb981-5"><a href="13-7-o-pacote-forcats.html#cb981-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">vizinhanca =</span> <span class="fu">fct_reorder</span>(vizinhanca, venda_valor)) <span class="sc">%&gt;%</span> </span>
+<span id="cb981-6"><a href="13-7-o-pacote-forcats.html#cb981-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> venda_valor, <span class="at">y =</span> vizinhanca)) <span class="sc">+</span></span>
+<span id="cb981-7"><a href="13-7-o-pacote-forcats.html#cb981-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
+<p><img src="9845-respostas-forcats_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
+
 </div>
 <hr/>
 <footer>
@@ -521,8 +551,8 @@ ao <code>i</code> no laço com <code>for</code>). Naturalmente, assim como toda 
           </div>
         </div>
       </div>
-<a href="10-2-iterações-básicas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="10-4-iterações-avançadas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="13-6-o-pacote-lubridate-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="13-8-o-pacote-ggplot2-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -572,6 +602,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

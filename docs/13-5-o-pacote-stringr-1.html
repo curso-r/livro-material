@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.2 Atalhos | Ciência de Dados em R</title>
+  <title>13.5 O pacote stringr | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.2 Atalhos | Ciência de Dados em R" />
+  <meta property="og:title" content="13.5 O pacote stringr | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/img/logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="curso-r/livro-material" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.2 Atalhos | Ciência de Dados em R" />
+  <meta name="twitter:title" content="13.5 O pacote stringr | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="twitter:image" content="assets/img/logo.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="2-1-telas.html"/>
-<link rel="next" href="2-3-projetos.html"/>
+<link rel="prev" href="13-4-o-pacote-dplyr.html"/>
+<link rel="next" href="13-6-o-pacote-lubridate-1.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -464,20 +464,195 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="atalhos" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Atalhos</h2>
-<p>Conhecer os atalhos do teclado ajuda bastante quando estamos programando no RStudio. Veja os principais:</p>
+<div id="o-pacote-stringr-1" class="section level2" number="13.5">
+<h2><span class="header-section-number">13.5</span> O pacote stringr</h2>
+<div class="sourceCode" id="cb951"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb951-1"><a href="13-5-o-pacote-stringr-1.html#cb951-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb951-2"><a href="13-5-o-pacote-stringr-1.html#cb951-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb951-3"><a href="13-5-o-pacote-stringr-1.html#cb951-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glue)</span></code></pre></div>
+<p><strong>1.</strong> O CPF é um número de 11 dígitos, por exemplo: 54491651884. No entanto para facilitar a visualização costumamos mostrá-lo com separadores a cada 3 casas: 544.916.518-84. Crie uma função que transforma um número de 11 dígitos em uma string com as separações, como um CPF.</p>
+<div class="sourceCode" id="cb952"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb952-1"><a href="13-5-o-pacote-stringr-1.html#cb952-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sem regex</span></span>
+<span id="cb952-2"><a href="13-5-o-pacote-stringr-1.html#cb952-2" aria-hidden="true" tabindex="-1"></a>formata_CPF <span class="ot">&lt;-</span> <span class="cf">function</span>(num) {</span>
+<span id="cb952-3"><a href="13-5-o-pacote-stringr-1.html#cb952-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb952-4"><a href="13-5-o-pacote-stringr-1.html#cb952-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_count</span>(num) <span class="sc">!=</span> <span class="dv">11</span>) {</span>
+<span id="cb952-5"><a href="13-5-o-pacote-stringr-1.html#cb952-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">&quot;Número inválido!&quot;</span>)</span>
+<span id="cb952-6"><a href="13-5-o-pacote-stringr-1.html#cb952-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb952-7"><a href="13-5-o-pacote-stringr-1.html#cb952-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb952-8"><a href="13-5-o-pacote-stringr-1.html#cb952-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Concatemos cada parte do número, interpolando</span></span>
+<span id="cb952-9"><a href="13-5-o-pacote-stringr-1.html#cb952-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># com os pontos e o traço.</span></span>
+<span id="cb952-10"><a href="13-5-o-pacote-stringr-1.html#cb952-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb952-11"><a href="13-5-o-pacote-stringr-1.html#cb952-11" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">str_c</span>(</span>
+<span id="cb952-12"><a href="13-5-o-pacote-stringr-1.html#cb952-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_sub</span>(num, <span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">3</span>),</span>
+<span id="cb952-13"><a href="13-5-o-pacote-stringr-1.html#cb952-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;.&quot;</span>,</span>
+<span id="cb952-14"><a href="13-5-o-pacote-stringr-1.html#cb952-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_sub</span>(num, <span class="at">start =</span> <span class="dv">4</span>, <span class="at">end =</span> <span class="dv">6</span>),</span>
+<span id="cb952-15"><a href="13-5-o-pacote-stringr-1.html#cb952-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;.&quot;</span>,</span>
+<span id="cb952-16"><a href="13-5-o-pacote-stringr-1.html#cb952-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_sub</span>(num, <span class="at">start =</span> <span class="dv">7</span>, <span class="at">end =</span> <span class="dv">9</span>),</span>
+<span id="cb952-17"><a href="13-5-o-pacote-stringr-1.html#cb952-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;-&quot;</span>,</span>
+<span id="cb952-18"><a href="13-5-o-pacote-stringr-1.html#cb952-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_sub</span>(num, <span class="at">start =</span> <span class="dv">10</span>, <span class="at">end =</span> <span class="dv">11</span>)</span>
+<span id="cb952-19"><a href="13-5-o-pacote-stringr-1.html#cb952-19" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb952-20"><a href="13-5-o-pacote-stringr-1.html#cb952-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb952-21"><a href="13-5-o-pacote-stringr-1.html#cb952-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb952-22"><a href="13-5-o-pacote-stringr-1.html#cb952-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Com regex</span></span>
+<span id="cb952-23"><a href="13-5-o-pacote-stringr-1.html#cb952-23" aria-hidden="true" tabindex="-1"></a>formata_CPF <span class="ot">&lt;-</span> <span class="cf">function</span>(num) {</span>
+<span id="cb952-24"><a href="13-5-o-pacote-stringr-1.html#cb952-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb952-25"><a href="13-5-o-pacote-stringr-1.html#cb952-25" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">str_count</span>(num) <span class="sc">!=</span> <span class="dv">11</span>) {</span>
+<span id="cb952-26"><a href="13-5-o-pacote-stringr-1.html#cb952-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">&quot;Número inválido!&quot;</span>)</span>
+<span id="cb952-27"><a href="13-5-o-pacote-stringr-1.html#cb952-27" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb952-28"><a href="13-5-o-pacote-stringr-1.html#cb952-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb952-29"><a href="13-5-o-pacote-stringr-1.html#cb952-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_replace</span>(</span>
+<span id="cb952-30"><a href="13-5-o-pacote-stringr-1.html#cb952-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">string =</span> num, </span>
+<span id="cb952-31"><a href="13-5-o-pacote-stringr-1.html#cb952-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">pattern =</span> <span class="st">&quot;([0-9]{3})([0-9]{3})([0-9]{3})&quot;</span>, </span>
+<span id="cb952-32"><a href="13-5-o-pacote-stringr-1.html#cb952-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">replacement =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">1.</span><span class="sc">\\</span><span class="st">2.</span><span class="sc">\\</span><span class="st">3-&quot;</span></span>
+<span id="cb952-33"><a href="13-5-o-pacote-stringr-1.html#cb952-33" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb952-34"><a href="13-5-o-pacote-stringr-1.html#cb952-34" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>A função <code>str_replace()</code> faz o seguinte:</p>
 <ul>
-<li><strong>CTRL+ENTER</strong>: avalia a linha selecionada no script. O atalho mais utilizado.</li>
-<li><strong>ALT+-</strong>: cria no script um sinal de atribuição (&lt;-). Você o usará o tempo todo.</li>
-<li><strong>CTRL+SHIFT+M</strong>: (%&gt;%) operador <em>pipe</em>. Guarde esse atalho, você o usará bastante.</li>
-<li><strong>CTRL+1</strong>: altera cursor para o script.</li>
-<li><strong>CTRL+2</strong>: altera cursor para o console.</li>
-<li><strong>CTRL+ALT+I</strong>: cria um chunk no R Markdown.</li>
-<li><strong>CTRL+SHIFT+K</strong>: compila um arquivo no R Markdown.</li>
-<li><strong>ALT+SHIFT+K</strong>: janela com todos os atalhos disponíveis.</li>
+<li>O <code>pattern=</code> procurará um padrão de 9 números:
+<ul>
+<li>O primeiro <code>([0-9]{3})</code> pega os três primeiros números.</li>
+<li>O segundo <code>([0-9]{3})</code> pega os três próximos números (quarto ao sexto).</li>
+<li>O terceiro <code>([0-9]{3})</code> pega os três números seguintes (sétimo ao nono).</li>
+</ul></li>
+<li>O <code>replacement=</code> substituirá esses 9 números pela <em>string</em> formada por:
+<ul>
+<li><code>\\1</code>, a expressão dada pelo primeiro parêntese do <code>pattern=</code>, isto é, os três primeiros números.</li>
+<li><code>.</code>, o primeiro ponto.</li>
+<li><code>\\2</code>, a expressão dada pelo segundo parêntese do <code>pattern=</code>, isto é, os três próximos números (quarto ao sexto).</li>
+<li><code>.</code>, o segundo ponto.</li>
+<li><code>\\3</code>, a expressão dada pelo terceiro parêntese do <code>pattern=</code>, isto é, os três números seguintes (sétimo ao nono).</li>
+<li><code>-</code>, o traço.</li>
+</ul></li>
 </ul>
-<p>No MacBook, os atalhos geralmente são os mesmos, substituindo o <strong>CTRL</strong> por <strong>command</strong> e o <strong>ALT</strong> por <strong>option</strong>.</p>
+<hr />
+<p><strong>2.</strong> Transforme o vetor de <em>strings</em> abaixo em <code>"01 - Alto" "02 - Médio" "03 - Baixo"</code>.</p>
+<div class="sourceCode" id="cb953"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb953-1"><a href="13-5-o-pacote-stringr-1.html#cb953-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;Alto&#39;</span>, <span class="st">&#39;Médio&#39;</span>, <span class="st">&#39;Baixo&#39;</span>)</span>
+<span id="cb953-2"><a href="13-5-o-pacote-stringr-1.html#cb953-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando str_c()</span></span>
+<span id="cb953-3"><a href="13-5-o-pacote-stringr-1.html#cb953-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str_c</span>(<span class="st">&quot;0&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(s), <span class="st">&quot; - &quot;</span>, s, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb953-4"><a href="13-5-o-pacote-stringr-1.html#cb953-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;01 - Alto&quot;  &quot;02 - Médio&quot; &quot;03 - Baixo&quot;</span></span>
+<span id="cb953-5"><a href="13-5-o-pacote-stringr-1.html#cb953-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb953-6"><a href="13-5-o-pacote-stringr-1.html#cb953-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando o pacote glue</span></span>
+<span id="cb953-7"><a href="13-5-o-pacote-stringr-1.html#cb953-7" aria-hidden="true" tabindex="-1"></a><span class="fu">glue</span>(<span class="st">&quot;0{1:length(s)} - {s}&quot;</span>)</span>
+<span id="cb953-8"><a href="13-5-o-pacote-stringr-1.html#cb953-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 01 - Alto</span></span>
+<span id="cb953-9"><a href="13-5-o-pacote-stringr-1.html#cb953-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 02 - Médio</span></span>
+<span id="cb953-10"><a href="13-5-o-pacote-stringr-1.html#cb953-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 03 - Baixo</span></span></code></pre></div>
+<p>Para mais informações sobre o pacote <code>glue</code>, confira <a href="http://curso-r.com/blog/2017/04/17/2017-04-08-glue/">este post</a>.</p>
+<hr />
+<p><strong>3.</strong> Crie uma regex que capture múltiplas versões da palavra ‘casa’. Ela deve funcionar com as palavras ‘Casa’, ‘CASA’, ‘CaSa’, ‘CAsa’. Teste-a usando a função <code>str_detect()</code>.</p>
+<div class="sourceCode" id="cb954"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb954-1"><a href="13-5-o-pacote-stringr-1.html#cb954-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;Casa&#39;</span>, <span class="st">&#39;CASA&#39;</span>, <span class="st">&#39;CaSa&#39;</span>, <span class="st">&#39;CAsa&#39;</span>)</span>
+<span id="cb954-2"><a href="13-5-o-pacote-stringr-1.html#cb954-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_detect</span>(s, <span class="st">&quot;[CcAaSsAa]&quot;</span>)</span>
+<span id="cb954-3"><a href="13-5-o-pacote-stringr-1.html#cb954-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE TRUE TRUE TRUE</span></span>
+<span id="cb954-4"><a href="13-5-o-pacote-stringr-1.html#cb954-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str_detect</span>(s, <span class="st">&quot;[Cc][Aa][Ss][Aa]&quot;</span>)</span>
+<span id="cb954-5"><a href="13-5-o-pacote-stringr-1.html#cb954-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE TRUE TRUE TRUE</span></span></code></pre></div>
+<hr />
+<p><strong>4.</strong> Imagine que a seguinte <em>string</em> é a parte final de uma URL.</p>
+<ul>
+<li><code>/ac/rio-branco/xpto-xyz-1-0-1fds2396-5</code></li>
+</ul>
+<p>Transforme-a em “AC - Rio Branco” utilizando a função <code>str_split()</code>.</p>
+<div class="sourceCode" id="cb955"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb955-1"><a href="13-5-o-pacote-stringr-1.html#cb955-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;/ac/rio-branco/xpto-xyz-1-0-1fds2396-5&#39;</span>)</span>
+<span id="cb955-2"><a href="13-5-o-pacote-stringr-1.html#cb955-2" aria-hidden="true" tabindex="-1"></a>UF <span class="ot">&lt;-</span> url <span class="sc">%&gt;%</span></span>
+<span id="cb955-3"><a href="13-5-o-pacote-stringr-1.html#cb955-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_split</span>(<span class="st">&quot;[/]&quot;</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb955-4"><a href="13-5-o-pacote-stringr-1.html#cb955-4" aria-hidden="true" tabindex="-1"></a>  .[<span class="dv">1</span>,<span class="dv">2</span>] <span class="sc">%&gt;%</span> </span>
+<span id="cb955-5"><a href="13-5-o-pacote-stringr-1.html#cb955-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_to_upper</span>()</span>
+<span id="cb955-6"><a href="13-5-o-pacote-stringr-1.html#cb955-6" aria-hidden="true" tabindex="-1"></a>cidade <span class="ot">&lt;-</span> url <span class="sc">%&gt;%</span> </span>
+<span id="cb955-7"><a href="13-5-o-pacote-stringr-1.html#cb955-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_split</span>(<span class="st">&quot;[/]&quot;</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb955-8"><a href="13-5-o-pacote-stringr-1.html#cb955-8" aria-hidden="true" tabindex="-1"></a>  .[<span class="dv">1</span>,<span class="dv">3</span>] <span class="sc">%&gt;%</span> </span>
+<span id="cb955-9"><a href="13-5-o-pacote-stringr-1.html#cb955-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_replace</span>(<span class="st">&quot;-&quot;</span>, <span class="st">&quot; &quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb955-10"><a href="13-5-o-pacote-stringr-1.html#cb955-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_to_title</span>()</span>
+<span id="cb955-11"><a href="13-5-o-pacote-stringr-1.html#cb955-11" aria-hidden="true" tabindex="-1"></a><span class="fu">str_c</span>(UF, <span class="st">&quot; - &quot;</span>, cidade)</span>
+<span id="cb955-12"><a href="13-5-o-pacote-stringr-1.html#cb955-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;AC - Rio Branco&quot;</span></span></code></pre></div>
+<hr />
+<p><strong>5.</strong> Crie uma função que retorna <code>TRUE</code> quando a string é um <a href="https://pt.wikipedia.org/wiki/Pal%C3%ADndromo">palíndromo</a> e <code>FALSO</code> caso não seja.</p>
+<div class="sourceCode" id="cb956"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb956-1"><a href="13-5-o-pacote-stringr-1.html#cb956-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solução 1: usando a função rev() para inverter uma string fragmentada</span></span>
+<span id="cb956-2"><a href="13-5-o-pacote-stringr-1.html#cb956-2" aria-hidden="true" tabindex="-1"></a>testa_palindromo <span class="ot">&lt;-</span> <span class="cf">function</span>(s) {</span>
+<span id="cb956-3"><a href="13-5-o-pacote-stringr-1.html#cb956-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb956-4"><a href="13-5-o-pacote-stringr-1.html#cb956-4" aria-hidden="true" tabindex="-1"></a>  s <span class="sc">%&gt;%</span></span>
+<span id="cb956-5"><a href="13-5-o-pacote-stringr-1.html#cb956-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_split</span>(<span class="st">&quot;&quot;</span>, <span class="at">simplify =</span> T) <span class="sc">%&gt;%</span> </span>
+<span id="cb956-6"><a href="13-5-o-pacote-stringr-1.html#cb956-6" aria-hidden="true" tabindex="-1"></a>    rev <span class="sc">%&gt;%</span> </span>
+<span id="cb956-7"><a href="13-5-o-pacote-stringr-1.html#cb956-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_c</span>(<span class="at">collapse =</span> <span class="st">&quot;&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb956-8"><a href="13-5-o-pacote-stringr-1.html#cb956-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(s)</span>
+<span id="cb956-9"><a href="13-5-o-pacote-stringr-1.html#cb956-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb956-10"><a href="13-5-o-pacote-stringr-1.html#cb956-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb956-11"><a href="13-5-o-pacote-stringr-1.html#cb956-11" aria-hidden="true" tabindex="-1"></a><span class="fu">testa_palindromo</span>(<span class="st">&quot;ana&quot;</span>)</span>
+<span id="cb956-12"><a href="13-5-o-pacote-stringr-1.html#cb956-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
+<span id="cb956-13"><a href="13-5-o-pacote-stringr-1.html#cb956-13" aria-hidden="true" tabindex="-1"></a><span class="fu">testa_palindromo</span>(<span class="st">&quot;bananas&quot;</span>)</span>
+<span id="cb956-14"><a href="13-5-o-pacote-stringr-1.html#cb956-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb956-15"><a href="13-5-o-pacote-stringr-1.html#cb956-15" aria-hidden="true" tabindex="-1"></a><span class="fu">testa_palindromo</span>(<span class="st">&quot;socorrammesubinoonibusemmarrocos&quot;</span>)</span>
+<span id="cb956-16"><a href="13-5-o-pacote-stringr-1.html#cb956-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
+<span id="cb956-17"><a href="13-5-o-pacote-stringr-1.html#cb956-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb956-18"><a href="13-5-o-pacote-stringr-1.html#cb956-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Solução 2: usando a função str_reverse() do pacote stringi,</span></span>
+<span id="cb956-19"><a href="13-5-o-pacote-stringr-1.html#cb956-19" aria-hidden="true" tabindex="-1"></a><span class="co"># que já inverte a string diretamente.</span></span>
+<span id="cb956-20"><a href="13-5-o-pacote-stringr-1.html#cb956-20" aria-hidden="true" tabindex="-1"></a>testa_palindromo <span class="ot">&lt;-</span> <span class="cf">function</span>(s) {</span>
+<span id="cb956-21"><a href="13-5-o-pacote-stringr-1.html#cb956-21" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb956-22"><a href="13-5-o-pacote-stringr-1.html#cb956-22" aria-hidden="true" tabindex="-1"></a>  s <span class="sc">%&gt;%</span> </span>
+<span id="cb956-23"><a href="13-5-o-pacote-stringr-1.html#cb956-23" aria-hidden="true" tabindex="-1"></a>    stringi<span class="sc">::</span><span class="fu">stri_reverse</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb956-24"><a href="13-5-o-pacote-stringr-1.html#cb956-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(s)</span>
+<span id="cb956-25"><a href="13-5-o-pacote-stringr-1.html#cb956-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb956-26"><a href="13-5-o-pacote-stringr-1.html#cb956-26" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb956-27"><a href="13-5-o-pacote-stringr-1.html#cb956-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb956-28"><a href="13-5-o-pacote-stringr-1.html#cb956-28" aria-hidden="true" tabindex="-1"></a><span class="fu">testa_palindromo</span>(<span class="st">&quot;ana&quot;</span>)</span>
+<span id="cb956-29"><a href="13-5-o-pacote-stringr-1.html#cb956-29" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
+<span id="cb956-30"><a href="13-5-o-pacote-stringr-1.html#cb956-30" aria-hidden="true" tabindex="-1"></a><span class="fu">testa_palindromo</span>(<span class="st">&quot;bananas&quot;</span>)</span>
+<span id="cb956-31"><a href="13-5-o-pacote-stringr-1.html#cb956-31" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb956-32"><a href="13-5-o-pacote-stringr-1.html#cb956-32" aria-hidden="true" tabindex="-1"></a><span class="fu">testa_palindromo</span>(<span class="st">&quot;socorrammesubinoonibusemmarrocos&quot;</span>)</span>
+<span id="cb956-33"><a href="13-5-o-pacote-stringr-1.html#cb956-33" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span></code></pre></div>
+<hr />
+<p><strong>6.</strong> De acordo com as regras da língua portuguesa, antes de “p” ou “b” devemos usar a letra “m”. Em outras palavras, com outras consoantes, usamos a letra “N”. Suponha que você tem o seguinte texto com erros gramaticais:</p>
+<div class="sourceCode" id="cb957"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb957-1"><a href="13-5-o-pacote-stringr-1.html#cb957-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="st">&#39;Nós chamamos os bonbeiros quando começou o incêmdio.&#39;</span></span></code></pre></div>
+<p>Crie uma função para corrigi-lo.</p>
+<div class="sourceCode" id="cb958"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb958-1"><a href="13-5-o-pacote-stringr-1.html#cb958-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Função que funciona para o exemplo</span></span>
+<span id="cb958-2"><a href="13-5-o-pacote-stringr-1.html#cb958-2" aria-hidden="true" tabindex="-1"></a>corrige_mn <span class="ot">&lt;-</span> <span class="cf">function</span>(s) {</span>
+<span id="cb958-3"><a href="13-5-o-pacote-stringr-1.html#cb958-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb958-4"><a href="13-5-o-pacote-stringr-1.html#cb958-4" aria-hidden="true" tabindex="-1"></a>  s <span class="sc">%&gt;%</span> </span>
+<span id="cb958-5"><a href="13-5-o-pacote-stringr-1.html#cb958-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_replace</span>(<span class="st">&quot;nb&quot;</span>, <span class="st">&quot;mb&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb958-6"><a href="13-5-o-pacote-stringr-1.html#cb958-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_replace</span>(<span class="st">&quot;md&quot;</span>, <span class="st">&quot;nd&quot;</span>)</span>
+<span id="cb958-7"><a href="13-5-o-pacote-stringr-1.html#cb958-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb958-8"><a href="13-5-o-pacote-stringr-1.html#cb958-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb958-9"><a href="13-5-o-pacote-stringr-1.html#cb958-9" aria-hidden="true" tabindex="-1"></a><span class="fu">corrige_mn</span>(s)</span>
+<span id="cb958-10"><a href="13-5-o-pacote-stringr-1.html#cb958-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Nós chamamos os bombeiros quando começou o incêndio.&quot;</span></span>
+<span id="cb958-11"><a href="13-5-o-pacote-stringr-1.html#cb958-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb958-12"><a href="13-5-o-pacote-stringr-1.html#cb958-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Função que funciona no caso geral</span></span>
+<span id="cb958-13"><a href="13-5-o-pacote-stringr-1.html#cb958-13" aria-hidden="true" tabindex="-1"></a>corrige_mn <span class="ot">&lt;-</span> <span class="cf">function</span>(s) {</span>
+<span id="cb958-14"><a href="13-5-o-pacote-stringr-1.html#cb958-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb958-15"><a href="13-5-o-pacote-stringr-1.html#cb958-15" aria-hidden="true" tabindex="-1"></a>  s <span class="sc">%&gt;%</span> </span>
+<span id="cb958-16"><a href="13-5-o-pacote-stringr-1.html#cb958-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_replace_all</span>(<span class="st">&quot;m([^aeioubp[[:space:]]+])&quot;</span>, <span class="st">&quot;n</span><span class="sc">\\</span><span class="st">1&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb958-17"><a href="13-5-o-pacote-stringr-1.html#cb958-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_replace_all</span>(<span class="st">&quot;n([pb])&quot;</span>, <span class="st">&quot;m</span><span class="sc">\\</span><span class="st">1&quot;</span>)</span>
+<span id="cb958-18"><a href="13-5-o-pacote-stringr-1.html#cb958-18" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb958-19"><a href="13-5-o-pacote-stringr-1.html#cb958-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb958-20"><a href="13-5-o-pacote-stringr-1.html#cb958-20" aria-hidden="true" tabindex="-1"></a><span class="fu">corrige_mn</span>(s)</span>
+<span id="cb958-21"><a href="13-5-o-pacote-stringr-1.html#cb958-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Nós chamamos os bombeiros quando começou o incêndio.&quot;</span></span></code></pre></div>
+<p>O padrão <code>[^aeioubp[[:space:]]+]</code> significa “tudo menos vogais, b, p ou espaços”. O <code>\\1</code> devolve o padrão encontrado pelo primeiro parêntese do argumento <code>patern=</code>.</p>
+<hr />
+<p><strong>7.</strong> Considere o seguinte texto</p>
+<div class="sourceCode" id="cb959"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb959-1"><a href="13-5-o-pacote-stringr-1.html#cb959-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="st">&quot;A função mais importante para leitura de dados no `lubridate` é a `ymd`. Essa função serve para ler qualquer data de uma `string` no formato `YYYY-MM-DD`. Essa função é útil pois funciona com qualquer separador entre os elementos da data e também porque temos uma função para cada formato (`ymd`, `mdy`, `dmy`, `dym`, `myd`, `ydm`).&quot;</span></span></code></pre></div>
+<p>Extraia todas as combinações da função <code>ymd</code>, sem repetições.</p>
+<div class="sourceCode" id="cb960"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb960-1"><a href="13-5-o-pacote-stringr-1.html#cb960-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_extract_all</span>(s, <span class="st">&quot;[ymd]{3}&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb960-2"><a href="13-5-o-pacote-stringr-1.html#cb960-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unlist</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb960-3"><a href="13-5-o-pacote-stringr-1.html#cb960-3" aria-hidden="true" tabindex="-1"></a>  unique</span>
+<span id="cb960-4"><a href="13-5-o-pacote-stringr-1.html#cb960-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;ymd&quot; &quot;mdy&quot; &quot;dmy&quot; &quot;dym&quot; &quot;myd&quot; &quot;ydm&quot;</span></span></code></pre></div>
+<hr />
+<p><strong>8.</strong> Considere as frases abaixo</p>
+<div class="sourceCode" id="cb961"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb961-1"><a href="13-5-o-pacote-stringr-1.html#cb961-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb961-2"><a href="13-5-o-pacote-stringr-1.html#cb961-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;O produto é bom.&#39;</span>,</span>
+<span id="cb961-3"><a href="13-5-o-pacote-stringr-1.html#cb961-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;O produto não é bom.&#39;</span>,</span>
+<span id="cb961-4"><a href="13-5-o-pacote-stringr-1.html#cb961-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;O produto não é muito bom.&#39;</span>,</span>
+<span id="cb961-5"><a href="13-5-o-pacote-stringr-1.html#cb961-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;O produto é muito bom&#39;</span>,</span>
+<span id="cb961-6"><a href="13-5-o-pacote-stringr-1.html#cb961-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;O produto não é ruim.&#39;</span>,</span>
+<span id="cb961-7"><a href="13-5-o-pacote-stringr-1.html#cb961-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;O produto não é não ruim.&#39;</span>,</span>
+<span id="cb961-8"><a href="13-5-o-pacote-stringr-1.html#cb961-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;O produto não é não bom.&#39;</span></span>
+<span id="cb961-9"><a href="13-5-o-pacote-stringr-1.html#cb961-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>Crie uma regra para identificar se o texto refere-se a um feedback positivo ou negativo sobre o produto (considere não bom = ruim e não ruim = bom). Retorne um vetor lógico que vale <code>TRUE</code> se o feedback for positivo e <code>FALSE</code> caso contrário.</p>
+<div class="sourceCode" id="cb962"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb962-1"><a href="13-5-o-pacote-stringr-1.html#cb962-1" aria-hidden="true" tabindex="-1"></a>feedback <span class="ot">&lt;-</span> <span class="cf">function</span>(s) {</span>
+<span id="cb962-2"><a href="13-5-o-pacote-stringr-1.html#cb962-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb962-3"><a href="13-5-o-pacote-stringr-1.html#cb962-3" aria-hidden="true" tabindex="-1"></a>  s <span class="sc">%&gt;%</span> </span>
+<span id="cb962-4"><a href="13-5-o-pacote-stringr-1.html#cb962-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_replace</span>(<span class="st">&quot;não bom&quot;</span>, <span class="st">&quot;ruim&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb962-5"><a href="13-5-o-pacote-stringr-1.html#cb962-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_replace</span>(<span class="st">&quot;não ruim&quot;</span>, <span class="st">&quot;bom&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb962-6"><a href="13-5-o-pacote-stringr-1.html#cb962-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_replace</span>(<span class="st">&quot;muito &quot;</span>, <span class="st">&quot;&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb962-7"><a href="13-5-o-pacote-stringr-1.html#cb962-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(<span class="st">&quot;(.*) produto é bom|(.*) não é ruim&quot;</span>)</span>
+<span id="cb962-8"><a href="13-5-o-pacote-stringr-1.html#cb962-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb962-9"><a href="13-5-o-pacote-stringr-1.html#cb962-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb962-10"><a href="13-5-o-pacote-stringr-1.html#cb962-10" aria-hidden="true" tabindex="-1"></a><span class="fu">feedback</span>(s)</span>
+<span id="cb962-11"><a href="13-5-o-pacote-stringr-1.html#cb962-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  TRUE FALSE FALSE  TRUE  TRUE FALSE  TRUE</span></span></code></pre></div>
+
 </div>
 <hr/>
 <footer>
@@ -488,8 +663,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="2-1-telas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="2-3-projetos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="13-4-o-pacote-dplyr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="13-6-o-pacote-lubridate-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
