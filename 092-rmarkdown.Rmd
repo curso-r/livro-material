@@ -1,6 +1,6 @@
 ## R Markdown
 
-O R Markdown é a junção da linguagem Markdown com o poder de códigos em R. A mágica aconte em arquivos do tipo `.Rmd`, onde é possível adicionar textos, códigos, resultados de códigos e muito mais!
+O R Markdown é a junção da linguagem Markdown com o poder de códigos em R. A mágica acontece em arquivos do tipo `.Rmd`, onde é possível adicionar textos, códigos, resultados de códigos e muito mais!
 
 Nesta seção, utilizaremos como exemplos alguns códigos envolvendo a base de dados de pinguins. A versão original deste dataset (em Inglês) está disponível no pacote [palmerpenguins](https://github.com/allisonhorst/palmerpenguins), e a versão traduzida para Português está disponível no pacote [dados](https://cienciadedatos.github.io/dados/).
 
@@ -23,7 +23,28 @@ library(dados)  # Pacote com bases de dados em Português
 library(magrittr)  # Pacote para utilizar o Pipe %>%
 ```
 
-### Códigos em R
+
+### Criando um arquivo `.Rmd`
+
+Falamos que mágica acontece em arquivos do tipo `.Rmd`, porém, como podemos criar esses arquivos?  Primeiramente, No menu superior, clique em **File** > **New File** > **R Markdown**, ou utilize os botões da interface gráfica, como mostrado na imagem a seguir:
+
+```{r echo=FALSE, fig.align="center", fig.cap="Captura de tela da IDE RStudio", fig.alt="Captura de tela da IDE RStudio, mostrando os ícones usados para criar um arquivo R Markdown"}
+knitr::include_graphics("assets/img/relatorios/criar-rmd.png")
+```
+
+Uma janela será aberta, chamada **New R Markdown**. Neste momento, iremos focar na seção inicial (**Document**). Nessa janela, é possível informar o título do relatório, o nome das pessoas autoras, e o formato em que deseja criar o relatório (sendo HTML, PDF ou Word). Recomendamos que escolha para aprendizado a opção HTML, sendo que é possível alterar todos esses campos posteriormente. Para que o arquivo seja criado, é necessário clicar no botão **OK**.
+
+```{r echo=FALSE, fig.align="center", fig.cap="Captura de tela da IDE RStudio", fig.alt="Captura de tela da IDE RStudio, mostrando a janela de escolha de opc'ões para criar um arquivo R Markdown"}
+knitr::include_graphics("assets/img/relatorios/criar-rmd-2.png")
+```
+
+
+<!-- ### Estrutura do arquivo R Markdown - adicionar depois -->
+
+
+### Adicionando conteúdo
+
+#### Códigos em R
 
 Ao analisar dados, escrevemos códigos que calculam estatísticas descritivas, geram gráficos e tabelas, entre outros.
 Para adicionar esses resultados nos relatórios, não é muito prático adicionar manualmente o resultado final (copiando e colando, por exemplo), pois em caso de alguma mudança na base de dados, será necessário gerar novamente estes resultados e adicioná-los novamente!
@@ -40,7 +61,7 @@ Caso você queira que o código seja executado como código R, existem duas poss
 
 -   **código em linha** (ou '*inline code*' em Inglês), quando o resultado aparece junto ao texto;
 
-#### Campos de código (chunks) {-}
+##### Campos de código (chunks) {-}
 
 É possível adicionar campos de código utilizando a seguinte sintaxe:
 
@@ -56,18 +77,18 @@ Um exemplo de campo de código é o campo abaixo, onde é possível executar o c
 
 ````md
 ```{r}`r ''`
-# calcula a média
+ # calcula a média
 media_massa_g <-
   mean(pinguins$massa_corporal, na.rm = TRUE) 
 
-# converte de gramas para kilogramas
+ # converte de gramas para kilogramas
 media_massa_kg_completo <-
   media_massa_g / 1000 
 
-# arredonda o valor para ter uma casa decimal
+ # arredonda o valor para ter uma casa decimal
 media_massa_kg <- round(media_massa_kg_completo, 1)
 
-# exibe o resultado
+ # exibe o resultado
 media_massa_kg 
 ```
 ````
@@ -92,7 +113,7 @@ media_massa_kg
 
 Veja que no resultado obtivemos o código em R e também o resultado deste código. Dependendo do público alvo do relatório, não queremos mostrar códigos. É possível escondê-los (e fazer muito mais!) alterando as opções de chunks (ou _chunk options_ em Inglês). Veremos mais sobre isso posteriormente!
 
-#### Inline code  {-}
+##### Inline code  {-}
 
 Para que um resultado de código apareça ao longo do texto, é possivel usar a seguinte estrutura: `` `r ` `` .
 
@@ -111,7 +132,7 @@ A média da massa corporal dos pinguins é `r knitr::inline_expr('media_massa_kg
 
 
 
-### Imagens
+#### Imagens
 
 Na seção anterior (sobre [Markdown](#markdown)), mostramos como é possóvel adicionar uma imagem em um relatório utilizando Markdown.
 
@@ -125,7 +146,7 @@ Veja o exemplo abaixo:
 knitr::include_graphics("https://cienciadedatos.github.io/dados/reference/figures/dados-hex.png")
 ```
 
-### Tabelas
+#### Tabelas
 
 Na seção anterior (sobre [Markdown](#markdown)), foi apresentado como adicionar uma tabela utilizando Markdown.
 
@@ -176,6 +197,9 @@ Os exemplos anteriores são as formas mais simples de apresentar as tabelas, por
   - [kableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) 
   
   <!-- Quais mais? -->
+  
+  
+<!-- ### Opcoes de chunk - Adicionar depois -->
 
 ### Dicas para o RStudio
 
