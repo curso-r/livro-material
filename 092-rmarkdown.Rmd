@@ -2,6 +2,55 @@
 
 O R Markdown é a junção da linguagem Markdown com o poder de códigos em R. A mágica acontece em arquivos do tipo `.Rmd`, onde é possível adicionar textos, códigos, resultados de códigos e muito mais!
 
+
+### Criando um arquivo `.Rmd`
+
+Falamos que mágica acontece em arquivos do tipo `.Rmd`, porém, como podemos criar esses arquivos?  Primeiramente, no menu superior, clique em **File** > **New File** > **R Markdown**, ou utilize os botões da interface gráfica, como mostrado na imagem a seguir:
+
+```{r echo=FALSE, fig.align="center", fig.cap="Captura de tela da IDE RStudio", fig.alt="Captura de tela da IDE RStudio, mostrando os ícones usados para criar um arquivo R Markdown"}
+knitr::include_graphics("assets/img/relatorios/criar-rmd.png")
+```
+
+Uma janela será aberta, chamada **New R Markdown**. Neste momento, iremos focar na seção inicial (**Document**). Nessa janela, é possível informar o título do relatório, o nome das pessoas autoras, e o formato em que deseja criar o relatório (sendo HTML, PDF ou Word). Caso queira gerar um PDF, será necessário instalar o LaTeX (saiba como no [capítulo sobre instalações adicionais](#instalacao-latex)).
+
+
+Para facilitar o aprendizado, recomendamos que escolha a opção HTML, sendo que é possível alterar todos esses campos posteriormente. Para que o arquivo seja criado, é necessário clicar no botão **OK**.
+
+
+```{r echo=FALSE, fig.align="center", fig.cap="Captura de tela da IDE RStudio", fig.alt="Captura de tela da IDE RStudio, mostrando a janela de escolha de opções para criar um arquivo R Markdown"}
+knitr::include_graphics("assets/img/relatorios/criar-rmd-2.png")
+```
+
+
+### Estrutura do arquivo R Markdown
+
+Quando criamos um novo arquivo `.Rmd` (como descrito na seção anterior), o arquivo vem com alguns conteúdos para nos ajudar a organizar corretamente.
+
+O arquivo `.Rmd` possui a seguinte estrutura, ilustrada pela figura a seguir:
+
+- 1) **YAML** - Uma seção de metadados, que apresenta códigos `YAML`. Essa seção apresenta informações que serão usadas para gerar o arquivo final, como por exemplo: título do relatório, autoria, data, formato gerado, etc. É necessário cuidado ao editar essa seção, pois coisas simples como indentação incorreta, fechamento incorreto de textos, etc, podem resultar em um erro ao gerar seu relatório. Essa seção deve estar sempre ao início do documento, e é delimitado por três traços no começo e no final: `---`.
+
+- 2) **Chunks** - Nos campos de código (também chamados de *chunks*) podemos adicionar códigos em R (ou em algumas outras linguagens). Os chunks são delimitados por três crases, e a linguagem deve ser especificada entre chaves. Caso queira adicionar chunks com código em Python, é necessário ter o pacote [{reticulate}](https://rstudio.github.io/reticulate/) instalado. Exemplo de um chunk que apresenta código em R:
+
+
+````md
+```{r}`r ''`
+1 + 1 
+```
+````
+
+
+- 3) **Markdown** - Textos marcados com Markdown podem ser adicionados ao longo do relatório, fora das demarcações do YAMl e dos Chunks. Caso queira saber mais sobre como marcar textos com Markdown, é possível ler mais [na seção anterior deste capítulo](#markdown).
+
+
+```{r echo=FALSE, fig.align="center", fig.cap="Captura de tela da IDE RStudio", fig.alt="Captura de tela da IDE RStudio, mostrando um novo arquivo R Markdown"}
+knitr::include_graphics("assets/img/relatorios/rmarkdown.png")
+```
+
+
+
+### Adicionando conteúdo
+
 Nesta seção, utilizaremos como exemplos alguns códigos envolvendo a base de dados de pinguins. A versão original deste dataset (em Inglês) está disponível no pacote [palmerpenguins](https://github.com/allisonhorst/palmerpenguins), e a versão traduzida para Português está disponível no pacote [dados](https://cienciadedatos.github.io/dados/).
 
 ```{r echo=FALSE, out.width="80%", fig.align='center', fig.cap="Conheça os Pinguins do dataset PalmerPenguins! Ilustração por <a href='https://github.com/allisonhorst/stats-illustrations'>Allison Horst</a>."}
@@ -24,25 +73,6 @@ library(magrittr)  # Pacote para utilizar o Pipe %>%
 ```
 
 
-### Criando um arquivo `.Rmd`
-
-Falamos que mágica acontece em arquivos do tipo `.Rmd`, porém, como podemos criar esses arquivos?  Primeiramente, No menu superior, clique em **File** > **New File** > **R Markdown**, ou utilize os botões da interface gráfica, como mostrado na imagem a seguir:
-
-```{r echo=FALSE, fig.align="center", fig.cap="Captura de tela da IDE RStudio", fig.alt="Captura de tela da IDE RStudio, mostrando os ícones usados para criar um arquivo R Markdown"}
-knitr::include_graphics("assets/img/relatorios/criar-rmd.png")
-```
-
-Uma janela será aberta, chamada **New R Markdown**. Neste momento, iremos focar na seção inicial (**Document**). Nessa janela, é possível informar o título do relatório, o nome das pessoas autoras, e o formato em que deseja criar o relatório (sendo HTML, PDF ou Word). Recomendamos que escolha para aprendizado a opção HTML, sendo que é possível alterar todos esses campos posteriormente. Para que o arquivo seja criado, é necessário clicar no botão **OK**.
-
-```{r echo=FALSE, fig.align="center", fig.cap="Captura de tela da IDE RStudio", fig.alt="Captura de tela da IDE RStudio, mostrando a janela de escolha de opc'ões para criar um arquivo R Markdown"}
-knitr::include_graphics("assets/img/relatorios/criar-rmd-2.png")
-```
-
-
-<!-- ### Estrutura do arquivo R Markdown - adicionar depois -->
-
-
-### Adicionando conteúdo
 
 #### Códigos em R
 
@@ -190,6 +220,8 @@ media_massa %>%
 
 Os exemplos anteriores são as formas mais simples de apresentar as tabelas, porém cada pacote possibilita diferentes personalizações (por exemplo, alterar o nome das colunas, etc). Existem outros pacotes que permitem adicionar tabela nos relatórios em RMarkdown, como por exemplo:
 
+  - [gt](https://gt.rstudio.com/) 
+
   - [reactable](https://glin.github.io/reactable/index.html) 
   
   - [flextable](https://davidgohel.github.io/flextable/articles/overview.html)
@@ -200,6 +232,12 @@ Os exemplos anteriores são as formas mais simples de apresentar as tabelas, por
   
   
 <!-- ### Opcoes de chunk - Adicionar depois -->
+
+<!-- colocar depois: dicas - sobre ser reprodutivel, erros, caminhos, etc -->
+
+<!-- erros comuns.. -->
+<!-- #title: "Untitled' -->
+
 
 ### Dicas para o RStudio
 
