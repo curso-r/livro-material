@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8.2 Extensões do pacote ggplot2 | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8.2 Extensões do pacote ggplot2 | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="assets/img/logo.png" />
+  <meta property="og:image" content="/assets/img/logo.png" />
   <meta property="og:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="github-repo" content="curso-r/livro-material" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="8.2 Extensões do pacote ggplot2 | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="twitter:image" content="assets/img/logo.png" />
+  <meta name="twitter:image" content="/assets/img/logo.png" />
 
 <meta name="author" content="Curso-R" />
 
@@ -32,8 +32,8 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="8-1-o-pacote-ggplot2.html"/>
 <link rel="next" href="9-relatorios.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.9.1/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,16 +50,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.16/datatables.js"></script>
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
@@ -139,6 +139,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="assets/style.css" type="text/css" />
 </head>
 
@@ -162,17 +163,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
-<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
+<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-macos"><i class="fa fa-check"></i><b>1.1.3</b> No MacOS</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
 <li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
+<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#instalacao-latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
 <li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
 <li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
 <li class="chapter" data-level="1.3.4" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#renderizando-html-widgets"><i class="fa fa-check"></i><b>1.3.4</b> Renderizando HTML widgets</a></li>
 <li class="chapter" data-level="1.3.5" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#blogdown"><i class="fa fa-check"></i><b>1.3.5</b> Blogdown</a></li>
-<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#rtools"><i class="fa fa-check"></i><b>1.3.6</b> Rtools</a></li>
+<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#ferramentas-de-desenvolvimento"><i class="fa fa-check"></i><b>1.3.6</b> Ferramentas de desenvolvimento</a></li>
+<li class="chapter" data-level="1.3.7" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#git"><i class="fa fa-check"></i><b>1.3.7</b> Git</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
@@ -357,9 +359,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#códigos-em-r"><i class="fa fa-check"></i><b>9.2.1</b> Códigos em R</a></li>
-<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#imagens-1"><i class="fa fa-check"></i><b>9.2.2</b> Imagens</a></li>
-<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#tabelas-1"><i class="fa fa-check"></i><b>9.2.3</b> Tabelas</a></li>
+<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#criando-um-arquivo-.rmd"><i class="fa fa-check"></i><b>9.2.1</b> Criando um arquivo <code>.Rmd</code></a></li>
+<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#estrutura-do-arquivo-r-markdown"><i class="fa fa-check"></i><b>9.2.2</b> Estrutura do arquivo R Markdown</a></li>
+<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#adicionando-conteúdo"><i class="fa fa-check"></i><b>9.2.3</b> Adicionando conteúdo</a></li>
 <li class="chapter" data-level="9.2.4" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#dicas-para-o-rstudio"><i class="fa fa-check"></i><b>9.2.4</b> Dicas para o RStudio</a></li>
 <li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
@@ -477,36 +479,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="realçando-pontos" class="section level4 unnumbered">
 <h4>Realçando pontos</h4>
 <p>Muitas vezes temos um gráfico de dispersão em que queremos realçar alguns pontos de acordo com alguma característica. Por exemplo, abaixo estamos realçando os pontos que possuem <code>carat &gt; 4</code>, além disso colocamos uma label em cada um.</p>
-<div class="sourceCode" id="cb548"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb548-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb548-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> </span>
-<span id="cb548-2"><a href="8-2-extensões-do-pacote-ggplot2.html#cb548-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
-<span id="cb548-3"><a href="8-2-extensões-do-pacote-ggplot2.html#cb548-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb548-4"><a href="8-2-extensões-do-pacote-ggplot2.html#cb548-4" aria-hidden="true" tabindex="-1"></a>  gghighlight<span class="sc">::</span><span class="fu">gghighlight</span>(carat <span class="sc">&gt;</span> <span class="dv">4</span>, <span class="at">label_key =</span> carat)</span></code></pre></div>
+<div class="sourceCode" id="cb542"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb542-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb542-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> </span>
+<span id="cb542-2"><a href="8-2-extensões-do-pacote-ggplot2.html#cb542-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb542-3"><a href="8-2-extensões-do-pacote-ggplot2.html#cb542-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb542-4"><a href="8-2-extensões-do-pacote-ggplot2.html#cb542-4" aria-hidden="true" tabindex="-1"></a>  gghighlight<span class="sc">::</span><span class="fu">gghighlight</span>(carat <span class="sc">&gt;</span> <span class="dv">4</span>, <span class="at">label_key =</span> carat)</span></code></pre></div>
 <p><img src="082-extensoes-ggplot2_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Também é possível configurar a cor dos pontos que serão realçados e dos que não serão, bem como o estilo das labels.</p>
-<div class="sourceCode" id="cb549"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb549-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb549-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> </span>
-<span id="cb549-2"><a href="8-2-extensões-do-pacote-ggplot2.html#cb549-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
-<span id="cb549-3"><a href="8-2-extensões-do-pacote-ggplot2.html#cb549-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
-<span id="cb549-4"><a href="8-2-extensões-do-pacote-ggplot2.html#cb549-4" aria-hidden="true" tabindex="-1"></a>  gghighlight<span class="sc">::</span><span class="fu">gghighlight</span>(</span>
-<span id="cb549-5"><a href="8-2-extensões-do-pacote-ggplot2.html#cb549-5" aria-hidden="true" tabindex="-1"></a>    carat <span class="sc">&gt;</span> <span class="dv">4</span>, </span>
-<span id="cb549-6"><a href="8-2-extensões-do-pacote-ggplot2.html#cb549-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">label_key =</span> carat,</span>
-<span id="cb549-7"><a href="8-2-extensões-do-pacote-ggplot2.html#cb549-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">unhighlighted_params =</span> <span class="fu">list</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
-<span id="cb549-8"><a href="8-2-extensões-do-pacote-ggplot2.html#cb549-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">label_params =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">fill =</span> <span class="st">&quot;grey&quot;</span>)</span>
-<span id="cb549-9"><a href="8-2-extensões-do-pacote-ggplot2.html#cb549-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb543"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb543-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb543-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> </span>
+<span id="cb543-2"><a href="8-2-extensões-do-pacote-ggplot2.html#cb543-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb543-3"><a href="8-2-extensões-do-pacote-ggplot2.html#cb543-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb543-4"><a href="8-2-extensões-do-pacote-ggplot2.html#cb543-4" aria-hidden="true" tabindex="-1"></a>  gghighlight<span class="sc">::</span><span class="fu">gghighlight</span>(</span>
+<span id="cb543-5"><a href="8-2-extensões-do-pacote-ggplot2.html#cb543-5" aria-hidden="true" tabindex="-1"></a>    carat <span class="sc">&gt;</span> <span class="dv">4</span>, </span>
+<span id="cb543-6"><a href="8-2-extensões-do-pacote-ggplot2.html#cb543-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">label_key =</span> carat,</span>
+<span id="cb543-7"><a href="8-2-extensões-do-pacote-ggplot2.html#cb543-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">unhighlighted_params =</span> <span class="fu">list</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb543-8"><a href="8-2-extensões-do-pacote-ggplot2.html#cb543-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">label_params =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">fill =</span> <span class="st">&quot;grey&quot;</span>)</span>
+<span id="cb543-9"><a href="8-2-extensões-do-pacote-ggplot2.html#cb543-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p><img src="082-extensoes-ggplot2_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 <div id="realçando-linhas" class="section level4 unnumbered">
 <h4>Realçando linhas</h4>
 <p>Com o <code>{gghighlight}</code> também é possível realçar linhas em um gráfico que possui varias linhas. Isso é interessante quando você quer ver como uma série temporal se compara com relação à um conjunto de outras séries.</p>
 <p>No gráfico a seguir mostramos o número de downloads de cada um dos pacotes do tidyverse no ano de 2019. Uma das séries se destaca por mudar de padrão no meio do ano. Usamos o <code>{gghighlight}</code> para destacá-la no gráfico.</p>
-<div class="sourceCode" id="cb550"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb550-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb550-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> cranlogs<span class="sc">::</span><span class="fu">cran_downloads</span>(</span>
-<span id="cb550-2"><a href="8-2-extensões-do-pacote-ggplot2.html#cb550-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">packages =</span> tidyverse<span class="sc">::</span><span class="fu">tidyverse_deps</span>()<span class="sc">$</span>package,</span>
-<span id="cb550-3"><a href="8-2-extensões-do-pacote-ggplot2.html#cb550-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">from =</span> <span class="st">&quot;2019-01-01&quot;</span>, <span class="at">to =</span> <span class="st">&quot;2019-12-31&quot;</span></span>
-<span id="cb550-4"><a href="8-2-extensões-do-pacote-ggplot2.html#cb550-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb550-5"><a href="8-2-extensões-do-pacote-ggplot2.html#cb550-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb550-6"><a href="8-2-extensões-do-pacote-ggplot2.html#cb550-6" aria-hidden="true" tabindex="-1"></a>tab <span class="sc">%&gt;%</span> </span>
-<span id="cb550-7"><a href="8-2-extensões-do-pacote-ggplot2.html#cb550-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> count, <span class="at">group =</span> package)) <span class="sc">+</span></span>
-<span id="cb550-8"><a href="8-2-extensões-do-pacote-ggplot2.html#cb550-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb550-9"><a href="8-2-extensões-do-pacote-ggplot2.html#cb550-9" aria-hidden="true" tabindex="-1"></a>  gghighlight<span class="sc">::</span><span class="fu">gghighlight</span>(<span class="fu">max</span>(count) <span class="sc">&gt;</span> <span class="dv">100000</span>, <span class="at">label_key =</span> package)</span></code></pre></div>
+<div class="sourceCode" id="cb544"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb544-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb544-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> cranlogs<span class="sc">::</span><span class="fu">cran_downloads</span>(</span>
+<span id="cb544-2"><a href="8-2-extensões-do-pacote-ggplot2.html#cb544-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">packages =</span> tidyverse<span class="sc">::</span><span class="fu">tidyverse_deps</span>()<span class="sc">$</span>package,</span>
+<span id="cb544-3"><a href="8-2-extensões-do-pacote-ggplot2.html#cb544-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">from =</span> <span class="st">&quot;2019-01-01&quot;</span>, <span class="at">to =</span> <span class="st">&quot;2019-12-31&quot;</span></span>
+<span id="cb544-4"><a href="8-2-extensões-do-pacote-ggplot2.html#cb544-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb544-5"><a href="8-2-extensões-do-pacote-ggplot2.html#cb544-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb544-6"><a href="8-2-extensões-do-pacote-ggplot2.html#cb544-6" aria-hidden="true" tabindex="-1"></a>tab <span class="sc">%&gt;%</span> </span>
+<span id="cb544-7"><a href="8-2-extensões-do-pacote-ggplot2.html#cb544-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> count, <span class="at">group =</span> package)) <span class="sc">+</span></span>
+<span id="cb544-8"><a href="8-2-extensões-do-pacote-ggplot2.html#cb544-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb544-9"><a href="8-2-extensões-do-pacote-ggplot2.html#cb544-9" aria-hidden="true" tabindex="-1"></a>  gghighlight<span class="sc">::</span><span class="fu">gghighlight</span>(<span class="fu">max</span>(count) <span class="sc">&gt;</span> <span class="dv">100000</span>, <span class="at">label_key =</span> package)</span></code></pre></div>
 <p><img src="082-extensoes-ggplot2_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Para mais informações sobre o <code>{gghighlight}</code>, recomendamos a leitura da <a href="https://yutannihilation.github.io/gghighlight/index.html">excelente documentação oficial</a>.</p>
 </div>
@@ -515,14 +517,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">8.2.2</span> ggridges</h3>
 <p>A extensão <code>{ggridges}</code> é uma ótima alternativa para histogramas e boxplots, quando queremos comparar a distribuição de uma variável A em vários níveis de uma variável B.</p>
 <p>Primeiro, instale o pacote.</p>
-<div class="sourceCode" id="cb551"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb551-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb551-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggridges&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb545"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb545-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb545-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggridges&quot;</span>)</span></code></pre></div>
 <p>No gráfico abaixo, comparamos a distribuição da receita dos filmes em cada um dos anos de 2005 a 2016. Para isso, utilizamos o novo <code>geom_density_ridges()</code>, disponibilizado pelo pacote <code>{ggridges}</code>.</p>
-<div class="sourceCode" id="cb552"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb552-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb552-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span>
-<span id="cb552-2"><a href="8-2-extensões-do-pacote-ggplot2.html#cb552-2" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span></span>
-<span id="cb552-3"><a href="8-2-extensões-do-pacote-ggplot2.html#cb552-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ano <span class="sc">&gt;</span> <span class="dv">2005</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb552-4"><a href="8-2-extensões-do-pacote-ggplot2.html#cb552-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ano =</span> <span class="fu">as.factor</span>(ano)) <span class="sc">%&gt;%</span> </span>
-<span id="cb552-5"><a href="8-2-extensões-do-pacote-ggplot2.html#cb552-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> ano, <span class="at">x =</span> receita, <span class="at">fill =</span> ano)) <span class="sc">+</span></span>
-<span id="cb552-6"><a href="8-2-extensões-do-pacote-ggplot2.html#cb552-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb546"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb546-1"><a href="8-2-extensões-do-pacote-ggplot2.html#cb546-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span>
+<span id="cb546-2"><a href="8-2-extensões-do-pacote-ggplot2.html#cb546-2" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span></span>
+<span id="cb546-3"><a href="8-2-extensões-do-pacote-ggplot2.html#cb546-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ano <span class="sc">&gt;</span> <span class="dv">2005</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb546-4"><a href="8-2-extensões-do-pacote-ggplot2.html#cb546-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ano =</span> <span class="fu">as.factor</span>(ano)) <span class="sc">%&gt;%</span> </span>
+<span id="cb546-5"><a href="8-2-extensões-do-pacote-ggplot2.html#cb546-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> ano, <span class="at">x =</span> receita, <span class="at">fill =</span> ano)) <span class="sc">+</span></span>
+<span id="cb546-6"><a href="8-2-extensões-do-pacote-ggplot2.html#cb546-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## Picking joint bandwidth of 17300000</code></pre>
 <p><img src="082-extensoes-ggplot2_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>Você pode baixar a base IMDB utilizada <a href="https://github.com/curso-r/livro-material/raw/master/assets/data/imdb.rds">clicando aqui</a>.</p>
@@ -564,6 +566,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

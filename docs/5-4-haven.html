@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5.4 haven | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5.4 haven | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="assets/img/logo.png" />
+  <meta property="og:image" content="/assets/img/logo.png" />
   <meta property="og:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="github-repo" content="curso-r/livro-material" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="5.4 haven | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="twitter:image" content="assets/img/logo.png" />
+  <meta name="twitter:image" content="/assets/img/logo.png" />
 
 <meta name="author" content="Curso-R" />
 
@@ -32,8 +32,8 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="5-3-readxl.html"/>
 <link rel="next" href="6-pipe.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.9.1/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,16 +50,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.16/datatables.js"></script>
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
@@ -139,6 +139,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="assets/style.css" type="text/css" />
 </head>
 
@@ -162,17 +163,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
-<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
+<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-macos"><i class="fa fa-check"></i><b>1.1.3</b> No MacOS</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
 <li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
+<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#instalacao-latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
 <li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
 <li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
 <li class="chapter" data-level="1.3.4" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#renderizando-html-widgets"><i class="fa fa-check"></i><b>1.3.4</b> Renderizando HTML widgets</a></li>
 <li class="chapter" data-level="1.3.5" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#blogdown"><i class="fa fa-check"></i><b>1.3.5</b> Blogdown</a></li>
-<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#rtools"><i class="fa fa-check"></i><b>1.3.6</b> Rtools</a></li>
+<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#ferramentas-de-desenvolvimento"><i class="fa fa-check"></i><b>1.3.6</b> Ferramentas de desenvolvimento</a></li>
+<li class="chapter" data-level="1.3.7" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#git"><i class="fa fa-check"></i><b>1.3.7</b> Git</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
@@ -357,9 +359,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#códigos-em-r"><i class="fa fa-check"></i><b>9.2.1</b> Códigos em R</a></li>
-<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#imagens-1"><i class="fa fa-check"></i><b>9.2.2</b> Imagens</a></li>
-<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#tabelas-1"><i class="fa fa-check"></i><b>9.2.3</b> Tabelas</a></li>
+<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#criando-um-arquivo-.rmd"><i class="fa fa-check"></i><b>9.2.1</b> Criando um arquivo <code>.Rmd</code></a></li>
+<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#estrutura-do-arquivo-r-markdown"><i class="fa fa-check"></i><b>9.2.2</b> Estrutura do arquivo R Markdown</a></li>
+<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#adicionando-conteúdo"><i class="fa fa-check"></i><b>9.2.3</b> Adicionando conteúdo</a></li>
 <li class="chapter" data-level="9.2.4" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#dicas-para-o-rstudio"><i class="fa fa-check"></i><b>9.2.4</b> Dicas para o RStudio</a></li>
 <li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
@@ -469,17 +471,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="haven" class="section level2" number="5.4">
 <h2><span class="header-section-number">5.4</span> haven</h2>
 <p>Para ler arquivos gerados por outros softwares, como SPSS, SAS e STATA, você pode usar as funções do pacote <code>haven</code>. Este pacote faz parte do <code>tidyverse</code> e é um wrapper da biblioteca ReadStat, escrita em C.</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="5-4-haven.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb173-2"><a href="5-4-haven.html#cb173-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb173-3"><a href="5-4-haven.html#cb173-3" aria-hidden="true" tabindex="-1"></a>imdb_sas <span class="ot">&lt;-</span> <span class="fu">read_sas</span>(<span class="st">&quot;assets/data/imdb.sas7bdat&quot;</span>)</span>
-<span id="cb173-4"><a href="5-4-haven.html#cb173-4" aria-hidden="true" tabindex="-1"></a>imdb_spss <span class="ot">&lt;-</span> <span class="fu">read_spss</span>(<span class="st">&quot;assets/data/imdb.sav&quot;</span>)</span>
-<span id="cb173-5"><a href="5-4-haven.html#cb173-5" aria-hidden="true" tabindex="-1"></a>imdb_dta <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">&quot;assets/data/imdb.dta&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="5-4-haven.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb176-2"><a href="5-4-haven.html#cb176-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb176-3"><a href="5-4-haven.html#cb176-3" aria-hidden="true" tabindex="-1"></a>imdb_sas <span class="ot">&lt;-</span> <span class="fu">read_sas</span>(<span class="st">&quot;assets/data/imdb.sas7bdat&quot;</span>)</span>
+<span id="cb176-4"><a href="5-4-haven.html#cb176-4" aria-hidden="true" tabindex="-1"></a>imdb_spss <span class="ot">&lt;-</span> <span class="fu">read_spss</span>(<span class="st">&quot;assets/data/imdb.sav&quot;</span>)</span>
+<span id="cb176-5"><a href="5-4-haven.html#cb176-5" aria-hidden="true" tabindex="-1"></a>imdb_dta <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">&quot;assets/data/imdb.dta&quot;</span>)</span></code></pre></div>
 <p>É possível salvar ou escrever bases em SAS e STATA com as funções <code>write_sas</code> e <code>write_dta</code>.</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="5-4-haven.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_dta</span>(mtcars, <span class="st">&#39;assets/data/mtcars.dta&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="5-4-haven.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_dta</span>(mtcars, <span class="st">&#39;assets/data/mtcars.dta&#39;</span>)</span></code></pre></div>
 <p>Quando importamos arquivos gerados pelo SAS SPSS ou STATA para o R, os rótulos de uma variável podem não ser importados de forma correta. O pacote <code>haven</code> tem uma soluçao para este problema.</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="5-4-haven.html#cb175-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">labelled</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="fu">c</span>(<span class="at">Ruim =</span> <span class="dv">1</span>, <span class="at">Bom =</span> <span class="dv">2</span>, <span class="at">Otimo =</span> <span class="dv">3</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="5-4-haven.html#cb178-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">labelled</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="fu">c</span>(<span class="at">Ruim =</span> <span class="dv">1</span>, <span class="at">Bom =</span> <span class="dv">2</span>, <span class="at">Otimo =</span> <span class="dv">3</span>))</span></code></pre></div>
 <p><code>labelled()</code> adiciona rótulos à valores de uma variável. Para verificar quais são estes rótulos, podemos usar a função <code>print_labels()</code>.</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="5-4-haven.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print_labels</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="5-4-haven.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print_labels</span>(x)</span></code></pre></div>
 <pre><code>## 
 ## Labels:
 ##  value label
@@ -487,13 +489,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##      2   Bom
 ##      3 Otimo</code></pre>
 <p>Existe uma função similar a <code>labelled()</code>, exclusiva para o SPSS, que além de rotular as variáveis, também defini quais símbolos representam valores faltantes, dado que em SPSS pode haver mais de um tipo de <em>missing</em>.</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="5-4-haven.html#cb178-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">labelled_spss</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">4</span>), <span class="fu">c</span>(<span class="at">Ruim =</span> <span class="dv">1</span>,<span class="at">Bom =</span> <span class="dv">2</span>, <span class="at">Otimo =</span> <span class="dv">3</span>), <span class="at">na_values =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>))</span>
-<span id="cb178-2"><a href="5-4-haven.html#cb178-2" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb178-3"><a href="5-4-haven.html#cb178-3" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(x1)</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="5-4-haven.html#cb181-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">labelled_spss</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">4</span>), <span class="fu">c</span>(<span class="at">Ruim =</span> <span class="dv">1</span>,<span class="at">Bom =</span> <span class="dv">2</span>, <span class="at">Otimo =</span> <span class="dv">3</span>), <span class="at">na_values =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>))</span>
+<span id="cb181-2"><a href="5-4-haven.html#cb181-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb181-3"><a href="5-4-haven.html#cb181-3" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(x1)</span></code></pre></div>
 <pre><code>## [1] FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE</code></pre>
 <p>Agora que já definimos os <em>missings</em> “especiais”, podemos transformá-los no <em>missing</em> padrão do R, representado pelo símbolo <em>NA</em>.</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="5-4-haven.html#cb180-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">zap_missing</span>(x1)</span>
-<span id="cb180-2"><a href="5-4-haven.html#cb180-2" aria-hidden="true" tabindex="-1"></a>x1</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="5-4-haven.html#cb183-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">zap_missing</span>(x1)</span>
+<span id="cb183-2"><a href="5-4-haven.html#cb183-2" aria-hidden="true" tabindex="-1"></a>x1</span></code></pre></div>
 <pre><code>## [1]  1  3 NA  2  2  1 NA  2 NA
 ## attr(,&quot;labels&quot;)
 ##  Ruim   Bom Otimo 
@@ -503,11 +505,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Existem outras funções <code>zap_</code> interessantes no <a href="https://cran.r-project.org/web/packages/haven/haven.pdf">pacote</a>.</p>
 <p>Após rotular os valores do vetor, podemos convertê-los, por exemplo, em fator. Para isso, usamos uma função do pacote <code>haven</code>.
 A função base <code>as.factor()</code> também poderia ser usada, mas quando a usamos, os rótulos não são considerados.</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="5-4-haven.html#cb182-1" aria-hidden="true" tabindex="-1"></a>x_base <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">as.factor</span>(x)</span>
-<span id="cb182-2"><a href="5-4-haven.html#cb182-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(x_base)</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="5-4-haven.html#cb185-1" aria-hidden="true" tabindex="-1"></a>x_base <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">as.factor</span>(x)</span>
+<span id="cb185-2"><a href="5-4-haven.html#cb185-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(x_base)</span></code></pre></div>
 <pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot;</code></pre>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="5-4-haven.html#cb184-1" aria-hidden="true" tabindex="-1"></a>x_factor <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">as_factor</span>(x)</span>
-<span id="cb184-2"><a href="5-4-haven.html#cb184-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(x_factor)</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="5-4-haven.html#cb187-1" aria-hidden="true" tabindex="-1"></a>x_factor <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">as_factor</span>(x)</span>
+<span id="cb187-2"><a href="5-4-haven.html#cb187-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(x_factor)</span></code></pre></div>
 <pre><code>## [1] &quot;Ruim&quot;  &quot;Bom&quot;   &quot;Otimo&quot;</code></pre>
 
 </div>
@@ -545,6 +547,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5.3 Os pacotes readxl e writexl | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5.3 Os pacotes readxl e writexl | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="assets/img/logo.png" />
+  <meta property="og:image" content="/assets/img/logo.png" />
   <meta property="og:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="github-repo" content="curso-r/livro-material" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="5.3 Os pacotes readxl e writexl | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="twitter:image" content="assets/img/logo.png" />
+  <meta name="twitter:image" content="/assets/img/logo.png" />
 
 <meta name="author" content="Curso-R" />
 
@@ -32,8 +32,8 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="5-2-readr.html"/>
 <link rel="next" href="5-4-haven.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.9.1/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,16 +50,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.16/datatables.js"></script>
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
@@ -139,6 +139,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="assets/style.css" type="text/css" />
 </head>
 
@@ -162,17 +163,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
-<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
+<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-macos"><i class="fa fa-check"></i><b>1.1.3</b> No MacOS</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
 <li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
+<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#instalacao-latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
 <li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
 <li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
 <li class="chapter" data-level="1.3.4" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#renderizando-html-widgets"><i class="fa fa-check"></i><b>1.3.4</b> Renderizando HTML widgets</a></li>
 <li class="chapter" data-level="1.3.5" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#blogdown"><i class="fa fa-check"></i><b>1.3.5</b> Blogdown</a></li>
-<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#rtools"><i class="fa fa-check"></i><b>1.3.6</b> Rtools</a></li>
+<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#ferramentas-de-desenvolvimento"><i class="fa fa-check"></i><b>1.3.6</b> Ferramentas de desenvolvimento</a></li>
+<li class="chapter" data-level="1.3.7" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#git"><i class="fa fa-check"></i><b>1.3.7</b> Git</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
@@ -357,9 +359,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#códigos-em-r"><i class="fa fa-check"></i><b>9.2.1</b> Códigos em R</a></li>
-<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#imagens-1"><i class="fa fa-check"></i><b>9.2.2</b> Imagens</a></li>
-<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#tabelas-1"><i class="fa fa-check"></i><b>9.2.3</b> Tabelas</a></li>
+<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#criando-um-arquivo-.rmd"><i class="fa fa-check"></i><b>9.2.1</b> Criando um arquivo <code>.Rmd</code></a></li>
+<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#estrutura-do-arquivo-r-markdown"><i class="fa fa-check"></i><b>9.2.2</b> Estrutura do arquivo R Markdown</a></li>
+<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#adicionando-conteúdo"><i class="fa fa-check"></i><b>9.2.3</b> Adicionando conteúdo</a></li>
 <li class="chapter" data-level="9.2.4" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#dicas-para-o-rstudio"><i class="fa fa-check"></i><b>9.2.4</b> Dicas para o RStudio</a></li>
 <li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
@@ -469,29 +471,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="readxl" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> Os pacotes readxl e writexl</h2>
 <p>Para ler planilhas do Excel (arquivos <code>.xlsx</code> ou <code>.xls</code>), basta utilizarmos a função <code>read_excel()</code> do pacote <code>readxl</code>. Instale o pacote antes caso você ainda não o tenha instalado.</p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="5-3-readxl.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>)</span>
-<span id="cb158-2"><a href="5-3-readxl.html#cb158-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb158-3"><a href="5-3-readxl.html#cb158-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb158-4"><a href="5-3-readxl.html#cb158-4" aria-hidden="true" tabindex="-1"></a>imdb_xlsx <span class="ot">&lt;-</span> <span class="fu">read_xls</span>(<span class="st">&quot;dados/imdb.xlss&quot;</span>)</span>
-<span id="cb158-5"><a href="5-3-readxl.html#cb158-5" aria-hidden="true" tabindex="-1"></a>imdb_xlsx <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;dados/imdb.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="5-3-readxl.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>)</span>
+<span id="cb161-2"><a href="5-3-readxl.html#cb161-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb161-3"><a href="5-3-readxl.html#cb161-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb161-4"><a href="5-3-readxl.html#cb161-4" aria-hidden="true" tabindex="-1"></a>imdb_xlsx <span class="ot">&lt;-</span> <span class="fu">read_xls</span>(<span class="st">&quot;dados/imdb.xlss&quot;</span>)</span>
+<span id="cb161-5"><a href="5-3-readxl.html#cb161-5" aria-hidden="true" tabindex="-1"></a>imdb_xlsx <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;dados/imdb.xlsx&quot;</span>)</span></code></pre></div>
 <p>A funçao <code>read_excel()</code> auto detecta a extensão do arquivo.</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="5-3-readxl.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(<span class="at">path =</span> <span class="st">&quot;assets/data/imdb.xls&quot;</span>)</span>
-<span id="cb159-2"><a href="5-3-readxl.html#cb159-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(<span class="at">path =</span> <span class="st">&quot;assets/data/imdb.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="5-3-readxl.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(<span class="at">path =</span> <span class="st">&quot;assets/data/imdb.xls&quot;</span>)</span>
+<span id="cb162-2"><a href="5-3-readxl.html#cb162-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(<span class="at">path =</span> <span class="st">&quot;assets/data/imdb.xlsx&quot;</span>)</span></code></pre></div>
 <p>O pacote disponibiliza 5 exemplos de arquivos com formato <code>.xls</code> e <code>.xlsx</code>.</p>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="5-3-readxl.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">readxl_example</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="5-3-readxl.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="fu">readxl_example</span>()</span></code></pre></div>
 <pre><code>##  [1] &quot;clippy.xls&quot;    &quot;clippy.xlsx&quot;   &quot;datasets.xls&quot;  &quot;datasets.xlsx&quot;
 ##  [5] &quot;deaths.xls&quot;    &quot;deaths.xlsx&quot;   &quot;geometry.xls&quot;  &quot;geometry.xlsx&quot;
 ##  [9] &quot;type-me.xls&quot;   &quot;type-me.xlsx&quot;</code></pre>
 <p>Vamos pegar o caminho até o arquivo <code>datasets.xlsx</code> usando a função <code>readxl_example()</code>.</p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="5-3-readxl.html#cb162-1" aria-hidden="true" tabindex="-1"></a>caminho_datasets <span class="ot">&lt;-</span> <span class="fu">readxl_example</span>(<span class="st">&quot;datasets.xlsx&quot;</span>)</span>
-<span id="cb162-2"><a href="5-3-readxl.html#cb162-2" aria-hidden="true" tabindex="-1"></a>caminho_datasets</span></code></pre></div>
-<pre><code>## [1] &quot;/Library/Frameworks/R.framework/Versions/4.0/Resources/library/readxl/extdata/datasets.xlsx&quot;</code></pre>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="5-3-readxl.html#cb165-1" aria-hidden="true" tabindex="-1"></a>caminho_datasets <span class="ot">&lt;-</span> <span class="fu">readxl_example</span>(<span class="st">&quot;datasets.xlsx&quot;</span>)</span>
+<span id="cb165-2"><a href="5-3-readxl.html#cb165-2" aria-hidden="true" tabindex="-1"></a>caminho_datasets</span></code></pre></div>
+<pre><code>## [1] &quot;/Library/Frameworks/R.framework/Versions/4.1-arm64/Resources/library/readxl/extdata/datasets.xlsx&quot;</code></pre>
 <p>No Excel, um arquivo pode ter várias planilhas. Esse é o caso do arquivo <code>datasets.xlsx</code>. Você pode ver quais planilhas fazem parte do arquivo utilizando a função <code>excel_sheets()</code>.</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="5-3-readxl.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">excel_sheets</span>(caminho_datasets)</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="5-3-readxl.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">excel_sheets</span>(caminho_datasets)</span></code></pre></div>
 <pre><code>## [1] &quot;iris&quot;     &quot;mtcars&quot;   &quot;chickwts&quot; &quot;quakes&quot;</code></pre>
 <p>Por padrão, as funções de leitura trarão apenas a primeira planilha do arquivo. Para trazer outra planilha, basta utilizarmos o argumento <code>sheet</code>.</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="5-3-readxl.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pega a primeira planilha</span></span>
-<span id="cb166-2"><a href="5-3-readxl.html#cb166-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(caminho_datasets)</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="5-3-readxl.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pega a primeira planilha</span></span>
+<span id="cb169-2"><a href="5-3-readxl.html#cb169-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(caminho_datasets)</span></code></pre></div>
 <pre><code>## # A tibble: 150 x 5
 ##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  
@@ -506,8 +508,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9          4.4         2.9          1.4         0.2 setosa 
 ## 10          4.9         3.1          1.5         0.1 setosa 
 ## # … with 140 more rows</code></pre>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="5-3-readxl.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pega a segunda planilha</span></span>
-<span id="cb168-2"><a href="5-3-readxl.html#cb168-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(caminho_datasets, <span class="at">sheet =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="5-3-readxl.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pega a segunda planilha</span></span>
+<span id="cb171-2"><a href="5-3-readxl.html#cb171-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(caminho_datasets, <span class="at">sheet =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 32 x 11
 ##      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
 ##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -522,8 +524,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9  22.8     4  141.    95  3.92  3.15  22.9     1     0     4     2
 ## 10  19.2     6  168.   123  3.92  3.44  18.3     1     0     4     4
 ## # … with 22 more rows</code></pre>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="5-3-readxl.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pega a planilha selecionada</span></span>
-<span id="cb170-2"><a href="5-3-readxl.html#cb170-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(caminho_datasets, <span class="at">sheet =</span> <span class="st">&#39;chickwts&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="5-3-readxl.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pega a planilha selecionada</span></span>
+<span id="cb173-2"><a href="5-3-readxl.html#cb173-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(caminho_datasets, <span class="at">sheet =</span> <span class="st">&#39;chickwts&#39;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 71 x 2
 ##    weight feed     
 ##     &lt;dbl&gt; &lt;chr&gt;    
@@ -546,10 +548,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>na=</code> indica quais strings devem ser interpretadas como NA.</p></li>
 </ul>
 <p>Também podemos escrever um arquivo Excel (com extensão <code>.xlsx</code>) utilizando a função <code>write_xlsx()</code> do pacote <code>writexl</code>.</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="5-3-readxl.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;writexl&quot;</span>)</span>
-<span id="cb172-2"><a href="5-3-readxl.html#cb172-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(writexl)</span>
-<span id="cb172-3"><a href="5-3-readxl.html#cb172-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb172-4"><a href="5-3-readxl.html#cb172-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_excel</span>(mtcars, <span class="st">&quot;imdb.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="5-3-readxl.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;writexl&quot;</span>)</span>
+<span id="cb175-2"><a href="5-3-readxl.html#cb175-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(writexl)</span>
+<span id="cb175-3"><a href="5-3-readxl.html#cb175-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb175-4"><a href="5-3-readxl.html#cb175-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_excel</span>(mtcars, <span class="st">&quot;imdb.xlsx&quot;</span>)</span></code></pre></div>
 
 </div>
 <hr/>
@@ -585,6 +587,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

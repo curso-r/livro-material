@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>13.9 Programação funcional (purrr) | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="13.9 Programação funcional (purrr) | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="assets/img/logo.png" />
+  <meta property="og:image" content="/assets/img/logo.png" />
   <meta property="og:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="github-repo" content="curso-r/livro-material" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="13.9 Programação funcional (purrr) | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="twitter:image" content="assets/img/logo.png" />
+  <meta name="twitter:image" content="/assets/img/logo.png" />
 
 <meta name="author" content="Curso-R" />
 
@@ -32,8 +32,8 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="13-8-o-pacote-ggplot2-1.html"/>
 <link rel="next" href="13-10-nse-1.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.9.1/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,16 +50,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.16/datatables.js"></script>
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
@@ -139,6 +139,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="assets/style.css" type="text/css" />
 </head>
 
@@ -162,17 +163,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
-<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
+<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-macos"><i class="fa fa-check"></i><b>1.1.3</b> No MacOS</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
 <li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
+<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#instalacao-latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
 <li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
 <li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
 <li class="chapter" data-level="1.3.4" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#renderizando-html-widgets"><i class="fa fa-check"></i><b>1.3.4</b> Renderizando HTML widgets</a></li>
 <li class="chapter" data-level="1.3.5" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#blogdown"><i class="fa fa-check"></i><b>1.3.5</b> Blogdown</a></li>
-<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#rtools"><i class="fa fa-check"></i><b>1.3.6</b> Rtools</a></li>
+<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#ferramentas-de-desenvolvimento"><i class="fa fa-check"></i><b>1.3.6</b> Ferramentas de desenvolvimento</a></li>
+<li class="chapter" data-level="1.3.7" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#git"><i class="fa fa-check"></i><b>1.3.7</b> Git</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
@@ -357,9 +359,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#códigos-em-r"><i class="fa fa-check"></i><b>9.2.1</b> Códigos em R</a></li>
-<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#imagens-1"><i class="fa fa-check"></i><b>9.2.2</b> Imagens</a></li>
-<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#tabelas-1"><i class="fa fa-check"></i><b>9.2.3</b> Tabelas</a></li>
+<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#criando-um-arquivo-.rmd"><i class="fa fa-check"></i><b>9.2.1</b> Criando um arquivo <code>.Rmd</code></a></li>
+<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#estrutura-do-arquivo-r-markdown"><i class="fa fa-check"></i><b>9.2.2</b> Estrutura do arquivo R Markdown</a></li>
+<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#adicionando-conteúdo"><i class="fa fa-check"></i><b>9.2.3</b> Adicionando conteúdo</a></li>
 <li class="chapter" data-level="9.2.4" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#dicas-para-o-rstudio"><i class="fa fa-check"></i><b>9.2.4</b> Dicas para o RStudio</a></li>
 <li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
@@ -468,210 +470,210 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="programação-funcional-purrr" class="section level2" number="13.9">
 <h2><span class="header-section-number">13.9</span> Programação funcional (purrr)</h2>
-<div class="sourceCode" id="cb1014"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1014-1"><a href="13-9-programação-funcional-purrr.html#cb1014-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1014-2"><a href="13-9-programação-funcional-purrr.html#cb1014-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
-<span id="cb1014-3"><a href="13-9-programação-funcional-purrr.html#cb1014-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<div class="sourceCode" id="cb1007"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1007-1"><a href="13-9-programação-funcional-purrr.html#cb1007-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1007-2"><a href="13-9-programação-funcional-purrr.html#cb1007-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb1007-3"><a href="13-9-programação-funcional-purrr.html#cb1007-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
 <p><strong>1.</strong> Utilize a função <code>map()</code> para calcular a média de cada coluna da base <code>mtcars</code>.</p>
-<div class="sourceCode" id="cb1015"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1015-1"><a href="13-9-programação-funcional-purrr.html#cb1015-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(mtcars, mean)</span>
-<span id="cb1015-2"><a href="13-9-programação-funcional-purrr.html#cb1015-2" aria-hidden="true" tabindex="-1"></a><span class="do">## $mpg</span></span>
-<span id="cb1015-3"><a href="13-9-programação-funcional-purrr.html#cb1015-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 20.09062</span></span>
-<span id="cb1015-4"><a href="13-9-programação-funcional-purrr.html#cb1015-4" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1015-5"><a href="13-9-programação-funcional-purrr.html#cb1015-5" aria-hidden="true" tabindex="-1"></a><span class="do">## $cyl</span></span>
-<span id="cb1015-6"><a href="13-9-programação-funcional-purrr.html#cb1015-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 6.1875</span></span>
-<span id="cb1015-7"><a href="13-9-programação-funcional-purrr.html#cb1015-7" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1015-8"><a href="13-9-programação-funcional-purrr.html#cb1015-8" aria-hidden="true" tabindex="-1"></a><span class="do">## $disp</span></span>
-<span id="cb1015-9"><a href="13-9-programação-funcional-purrr.html#cb1015-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 230.7219</span></span>
-<span id="cb1015-10"><a href="13-9-programação-funcional-purrr.html#cb1015-10" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1015-11"><a href="13-9-programação-funcional-purrr.html#cb1015-11" aria-hidden="true" tabindex="-1"></a><span class="do">## $hp</span></span>
-<span id="cb1015-12"><a href="13-9-programação-funcional-purrr.html#cb1015-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 146.6875</span></span>
-<span id="cb1015-13"><a href="13-9-programação-funcional-purrr.html#cb1015-13" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1015-14"><a href="13-9-programação-funcional-purrr.html#cb1015-14" aria-hidden="true" tabindex="-1"></a><span class="do">## $drat</span></span>
-<span id="cb1015-15"><a href="13-9-programação-funcional-purrr.html#cb1015-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 3.596563</span></span>
-<span id="cb1015-16"><a href="13-9-programação-funcional-purrr.html#cb1015-16" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1015-17"><a href="13-9-programação-funcional-purrr.html#cb1015-17" aria-hidden="true" tabindex="-1"></a><span class="do">## $wt</span></span>
-<span id="cb1015-18"><a href="13-9-programação-funcional-purrr.html#cb1015-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 3.21725</span></span>
-<span id="cb1015-19"><a href="13-9-programação-funcional-purrr.html#cb1015-19" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1015-20"><a href="13-9-programação-funcional-purrr.html#cb1015-20" aria-hidden="true" tabindex="-1"></a><span class="do">## $qsec</span></span>
-<span id="cb1015-21"><a href="13-9-programação-funcional-purrr.html#cb1015-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 17.84875</span></span>
-<span id="cb1015-22"><a href="13-9-programação-funcional-purrr.html#cb1015-22" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1015-23"><a href="13-9-programação-funcional-purrr.html#cb1015-23" aria-hidden="true" tabindex="-1"></a><span class="do">## $vs</span></span>
-<span id="cb1015-24"><a href="13-9-programação-funcional-purrr.html#cb1015-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.4375</span></span>
-<span id="cb1015-25"><a href="13-9-programação-funcional-purrr.html#cb1015-25" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1015-26"><a href="13-9-programação-funcional-purrr.html#cb1015-26" aria-hidden="true" tabindex="-1"></a><span class="do">## $am</span></span>
-<span id="cb1015-27"><a href="13-9-programação-funcional-purrr.html#cb1015-27" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.40625</span></span>
-<span id="cb1015-28"><a href="13-9-programação-funcional-purrr.html#cb1015-28" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1015-29"><a href="13-9-programação-funcional-purrr.html#cb1015-29" aria-hidden="true" tabindex="-1"></a><span class="do">## $gear</span></span>
-<span id="cb1015-30"><a href="13-9-programação-funcional-purrr.html#cb1015-30" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 3.6875</span></span>
-<span id="cb1015-31"><a href="13-9-programação-funcional-purrr.html#cb1015-31" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1015-32"><a href="13-9-programação-funcional-purrr.html#cb1015-32" aria-hidden="true" tabindex="-1"></a><span class="do">## $carb</span></span>
-<span id="cb1015-33"><a href="13-9-programação-funcional-purrr.html#cb1015-33" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2.8125</span></span></code></pre></div>
+<div class="sourceCode" id="cb1008"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1008-1"><a href="13-9-programação-funcional-purrr.html#cb1008-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(mtcars, mean)</span>
+<span id="cb1008-2"><a href="13-9-programação-funcional-purrr.html#cb1008-2" aria-hidden="true" tabindex="-1"></a><span class="do">## $mpg</span></span>
+<span id="cb1008-3"><a href="13-9-programação-funcional-purrr.html#cb1008-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 20.09062</span></span>
+<span id="cb1008-4"><a href="13-9-programação-funcional-purrr.html#cb1008-4" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1008-5"><a href="13-9-programação-funcional-purrr.html#cb1008-5" aria-hidden="true" tabindex="-1"></a><span class="do">## $cyl</span></span>
+<span id="cb1008-6"><a href="13-9-programação-funcional-purrr.html#cb1008-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 6.1875</span></span>
+<span id="cb1008-7"><a href="13-9-programação-funcional-purrr.html#cb1008-7" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1008-8"><a href="13-9-programação-funcional-purrr.html#cb1008-8" aria-hidden="true" tabindex="-1"></a><span class="do">## $disp</span></span>
+<span id="cb1008-9"><a href="13-9-programação-funcional-purrr.html#cb1008-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 230.7219</span></span>
+<span id="cb1008-10"><a href="13-9-programação-funcional-purrr.html#cb1008-10" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1008-11"><a href="13-9-programação-funcional-purrr.html#cb1008-11" aria-hidden="true" tabindex="-1"></a><span class="do">## $hp</span></span>
+<span id="cb1008-12"><a href="13-9-programação-funcional-purrr.html#cb1008-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 146.6875</span></span>
+<span id="cb1008-13"><a href="13-9-programação-funcional-purrr.html#cb1008-13" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1008-14"><a href="13-9-programação-funcional-purrr.html#cb1008-14" aria-hidden="true" tabindex="-1"></a><span class="do">## $drat</span></span>
+<span id="cb1008-15"><a href="13-9-programação-funcional-purrr.html#cb1008-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 3.596563</span></span>
+<span id="cb1008-16"><a href="13-9-programação-funcional-purrr.html#cb1008-16" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1008-17"><a href="13-9-programação-funcional-purrr.html#cb1008-17" aria-hidden="true" tabindex="-1"></a><span class="do">## $wt</span></span>
+<span id="cb1008-18"><a href="13-9-programação-funcional-purrr.html#cb1008-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 3.21725</span></span>
+<span id="cb1008-19"><a href="13-9-programação-funcional-purrr.html#cb1008-19" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1008-20"><a href="13-9-programação-funcional-purrr.html#cb1008-20" aria-hidden="true" tabindex="-1"></a><span class="do">## $qsec</span></span>
+<span id="cb1008-21"><a href="13-9-programação-funcional-purrr.html#cb1008-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 17.84875</span></span>
+<span id="cb1008-22"><a href="13-9-programação-funcional-purrr.html#cb1008-22" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1008-23"><a href="13-9-programação-funcional-purrr.html#cb1008-23" aria-hidden="true" tabindex="-1"></a><span class="do">## $vs</span></span>
+<span id="cb1008-24"><a href="13-9-programação-funcional-purrr.html#cb1008-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.4375</span></span>
+<span id="cb1008-25"><a href="13-9-programação-funcional-purrr.html#cb1008-25" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1008-26"><a href="13-9-programação-funcional-purrr.html#cb1008-26" aria-hidden="true" tabindex="-1"></a><span class="do">## $am</span></span>
+<span id="cb1008-27"><a href="13-9-programação-funcional-purrr.html#cb1008-27" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.40625</span></span>
+<span id="cb1008-28"><a href="13-9-programação-funcional-purrr.html#cb1008-28" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1008-29"><a href="13-9-programação-funcional-purrr.html#cb1008-29" aria-hidden="true" tabindex="-1"></a><span class="do">## $gear</span></span>
+<span id="cb1008-30"><a href="13-9-programação-funcional-purrr.html#cb1008-30" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 3.6875</span></span>
+<span id="cb1008-31"><a href="13-9-programação-funcional-purrr.html#cb1008-31" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1008-32"><a href="13-9-programação-funcional-purrr.html#cb1008-32" aria-hidden="true" tabindex="-1"></a><span class="do">## $carb</span></span>
+<span id="cb1008-33"><a href="13-9-programação-funcional-purrr.html#cb1008-33" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2.8125</span></span></code></pre></div>
 <hr />
 <p><strong>2.</strong> Use a função <code>map()</code> para testar se cada elemento do vetor <code>letters</code> é uma vogal ou não. Dica: você precisará criar uma função para testar se é uma letra é vogal. Faça o resultado ser (a) uma lista de <code>TRUE/FALSE</code> e (b) um vetor de <code>TRUE/FALSE</code>.</p>
-<div class="sourceCode" id="cb1016"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1016-1"><a href="13-9-programação-funcional-purrr.html#cb1016-1" aria-hidden="true" tabindex="-1"></a>testar_vogal <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb1016-2"><a href="13-9-programação-funcional-purrr.html#cb1016-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(x <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;i&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot;u&quot;</span>)) {</span>
-<span id="cb1016-3"><a href="13-9-programação-funcional-purrr.html#cb1016-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">TRUE</span>)</span>
-<span id="cb1016-4"><a href="13-9-programação-funcional-purrr.html#cb1016-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb1016-5"><a href="13-9-programação-funcional-purrr.html#cb1016-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">FALSE</span>)</span>
-<span id="cb1016-6"><a href="13-9-programação-funcional-purrr.html#cb1016-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1016-7"><a href="13-9-programação-funcional-purrr.html#cb1016-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1016-8"><a href="13-9-programação-funcional-purrr.html#cb1016-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1016-9"><a href="13-9-programação-funcional-purrr.html#cb1016-9" aria-hidden="true" tabindex="-1"></a><span class="co"># retornando uma lista</span></span>
-<span id="cb1016-10"><a href="13-9-programação-funcional-purrr.html#cb1016-10" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(letters, testar_vogal)</span>
-<span id="cb1016-11"><a href="13-9-programação-funcional-purrr.html#cb1016-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
-<span id="cb1016-12"><a href="13-9-programação-funcional-purrr.html#cb1016-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
-<span id="cb1016-13"><a href="13-9-programação-funcional-purrr.html#cb1016-13" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-14"><a href="13-9-programação-funcional-purrr.html#cb1016-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [[2]]</span></span>
-<span id="cb1016-15"><a href="13-9-programação-funcional-purrr.html#cb1016-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-16"><a href="13-9-programação-funcional-purrr.html#cb1016-16" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-17"><a href="13-9-programação-funcional-purrr.html#cb1016-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [[3]]</span></span>
-<span id="cb1016-18"><a href="13-9-programação-funcional-purrr.html#cb1016-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-19"><a href="13-9-programação-funcional-purrr.html#cb1016-19" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-20"><a href="13-9-programação-funcional-purrr.html#cb1016-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [[4]]</span></span>
-<span id="cb1016-21"><a href="13-9-programação-funcional-purrr.html#cb1016-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-22"><a href="13-9-programação-funcional-purrr.html#cb1016-22" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-23"><a href="13-9-programação-funcional-purrr.html#cb1016-23" aria-hidden="true" tabindex="-1"></a><span class="do">## [[5]]</span></span>
-<span id="cb1016-24"><a href="13-9-programação-funcional-purrr.html#cb1016-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
-<span id="cb1016-25"><a href="13-9-programação-funcional-purrr.html#cb1016-25" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-26"><a href="13-9-programação-funcional-purrr.html#cb1016-26" aria-hidden="true" tabindex="-1"></a><span class="do">## [[6]]</span></span>
-<span id="cb1016-27"><a href="13-9-programação-funcional-purrr.html#cb1016-27" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-28"><a href="13-9-programação-funcional-purrr.html#cb1016-28" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-29"><a href="13-9-programação-funcional-purrr.html#cb1016-29" aria-hidden="true" tabindex="-1"></a><span class="do">## [[7]]</span></span>
-<span id="cb1016-30"><a href="13-9-programação-funcional-purrr.html#cb1016-30" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-31"><a href="13-9-programação-funcional-purrr.html#cb1016-31" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-32"><a href="13-9-programação-funcional-purrr.html#cb1016-32" aria-hidden="true" tabindex="-1"></a><span class="do">## [[8]]</span></span>
-<span id="cb1016-33"><a href="13-9-programação-funcional-purrr.html#cb1016-33" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-34"><a href="13-9-programação-funcional-purrr.html#cb1016-34" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-35"><a href="13-9-programação-funcional-purrr.html#cb1016-35" aria-hidden="true" tabindex="-1"></a><span class="do">## [[9]]</span></span>
-<span id="cb1016-36"><a href="13-9-programação-funcional-purrr.html#cb1016-36" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
-<span id="cb1016-37"><a href="13-9-programação-funcional-purrr.html#cb1016-37" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-38"><a href="13-9-programação-funcional-purrr.html#cb1016-38" aria-hidden="true" tabindex="-1"></a><span class="do">## [[10]]</span></span>
-<span id="cb1016-39"><a href="13-9-programação-funcional-purrr.html#cb1016-39" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-40"><a href="13-9-programação-funcional-purrr.html#cb1016-40" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-41"><a href="13-9-programação-funcional-purrr.html#cb1016-41" aria-hidden="true" tabindex="-1"></a><span class="do">## [[11]]</span></span>
-<span id="cb1016-42"><a href="13-9-programação-funcional-purrr.html#cb1016-42" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-43"><a href="13-9-programação-funcional-purrr.html#cb1016-43" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-44"><a href="13-9-programação-funcional-purrr.html#cb1016-44" aria-hidden="true" tabindex="-1"></a><span class="do">## [[12]]</span></span>
-<span id="cb1016-45"><a href="13-9-programação-funcional-purrr.html#cb1016-45" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-46"><a href="13-9-programação-funcional-purrr.html#cb1016-46" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-47"><a href="13-9-programação-funcional-purrr.html#cb1016-47" aria-hidden="true" tabindex="-1"></a><span class="do">## [[13]]</span></span>
-<span id="cb1016-48"><a href="13-9-programação-funcional-purrr.html#cb1016-48" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-49"><a href="13-9-programação-funcional-purrr.html#cb1016-49" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-50"><a href="13-9-programação-funcional-purrr.html#cb1016-50" aria-hidden="true" tabindex="-1"></a><span class="do">## [[14]]</span></span>
-<span id="cb1016-51"><a href="13-9-programação-funcional-purrr.html#cb1016-51" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-52"><a href="13-9-programação-funcional-purrr.html#cb1016-52" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-53"><a href="13-9-programação-funcional-purrr.html#cb1016-53" aria-hidden="true" tabindex="-1"></a><span class="do">## [[15]]</span></span>
-<span id="cb1016-54"><a href="13-9-programação-funcional-purrr.html#cb1016-54" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
-<span id="cb1016-55"><a href="13-9-programação-funcional-purrr.html#cb1016-55" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-56"><a href="13-9-programação-funcional-purrr.html#cb1016-56" aria-hidden="true" tabindex="-1"></a><span class="do">## [[16]]</span></span>
-<span id="cb1016-57"><a href="13-9-programação-funcional-purrr.html#cb1016-57" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-58"><a href="13-9-programação-funcional-purrr.html#cb1016-58" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-59"><a href="13-9-programação-funcional-purrr.html#cb1016-59" aria-hidden="true" tabindex="-1"></a><span class="do">## [[17]]</span></span>
-<span id="cb1016-60"><a href="13-9-programação-funcional-purrr.html#cb1016-60" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-61"><a href="13-9-programação-funcional-purrr.html#cb1016-61" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-62"><a href="13-9-programação-funcional-purrr.html#cb1016-62" aria-hidden="true" tabindex="-1"></a><span class="do">## [[18]]</span></span>
-<span id="cb1016-63"><a href="13-9-programação-funcional-purrr.html#cb1016-63" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-64"><a href="13-9-programação-funcional-purrr.html#cb1016-64" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-65"><a href="13-9-programação-funcional-purrr.html#cb1016-65" aria-hidden="true" tabindex="-1"></a><span class="do">## [[19]]</span></span>
-<span id="cb1016-66"><a href="13-9-programação-funcional-purrr.html#cb1016-66" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-67"><a href="13-9-programação-funcional-purrr.html#cb1016-67" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-68"><a href="13-9-programação-funcional-purrr.html#cb1016-68" aria-hidden="true" tabindex="-1"></a><span class="do">## [[20]]</span></span>
-<span id="cb1016-69"><a href="13-9-programação-funcional-purrr.html#cb1016-69" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-70"><a href="13-9-programação-funcional-purrr.html#cb1016-70" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-71"><a href="13-9-programação-funcional-purrr.html#cb1016-71" aria-hidden="true" tabindex="-1"></a><span class="do">## [[21]]</span></span>
-<span id="cb1016-72"><a href="13-9-programação-funcional-purrr.html#cb1016-72" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
-<span id="cb1016-73"><a href="13-9-programação-funcional-purrr.html#cb1016-73" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-74"><a href="13-9-programação-funcional-purrr.html#cb1016-74" aria-hidden="true" tabindex="-1"></a><span class="do">## [[22]]</span></span>
-<span id="cb1016-75"><a href="13-9-programação-funcional-purrr.html#cb1016-75" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-76"><a href="13-9-programação-funcional-purrr.html#cb1016-76" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-77"><a href="13-9-programação-funcional-purrr.html#cb1016-77" aria-hidden="true" tabindex="-1"></a><span class="do">## [[23]]</span></span>
-<span id="cb1016-78"><a href="13-9-programação-funcional-purrr.html#cb1016-78" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-79"><a href="13-9-programação-funcional-purrr.html#cb1016-79" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-80"><a href="13-9-programação-funcional-purrr.html#cb1016-80" aria-hidden="true" tabindex="-1"></a><span class="do">## [[24]]</span></span>
-<span id="cb1016-81"><a href="13-9-programação-funcional-purrr.html#cb1016-81" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-82"><a href="13-9-programação-funcional-purrr.html#cb1016-82" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-83"><a href="13-9-programação-funcional-purrr.html#cb1016-83" aria-hidden="true" tabindex="-1"></a><span class="do">## [[25]]</span></span>
-<span id="cb1016-84"><a href="13-9-programação-funcional-purrr.html#cb1016-84" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-85"><a href="13-9-programação-funcional-purrr.html#cb1016-85" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb1016-86"><a href="13-9-programação-funcional-purrr.html#cb1016-86" aria-hidden="true" tabindex="-1"></a><span class="do">## [[26]]</span></span>
-<span id="cb1016-87"><a href="13-9-programação-funcional-purrr.html#cb1016-87" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
-<span id="cb1016-88"><a href="13-9-programação-funcional-purrr.html#cb1016-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1016-89"><a href="13-9-programação-funcional-purrr.html#cb1016-89" aria-hidden="true" tabindex="-1"></a><span class="co"># retornando um vetor (2 soluções equivalentes)</span></span>
-<span id="cb1016-90"><a href="13-9-programação-funcional-purrr.html#cb1016-90" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(letters, testar_vogal) <span class="sc">%&gt;%</span> <span class="fu">flatten_lgl</span>()</span>
-<span id="cb1016-91"><a href="13-9-programação-funcional-purrr.html#cb1016-91" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE</span></span>
-<span id="cb1016-92"><a href="13-9-programação-funcional-purrr.html#cb1016-92" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE</span></span>
-<span id="cb1016-93"><a href="13-9-programação-funcional-purrr.html#cb1016-93" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] FALSE FALSE</span></span>
-<span id="cb1016-94"><a href="13-9-programação-funcional-purrr.html#cb1016-94" aria-hidden="true" tabindex="-1"></a><span class="fu">map_lgl</span>(letters, testar_vogal)</span>
-<span id="cb1016-95"><a href="13-9-programação-funcional-purrr.html#cb1016-95" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE</span></span>
-<span id="cb1016-96"><a href="13-9-programação-funcional-purrr.html#cb1016-96" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE</span></span>
-<span id="cb1016-97"><a href="13-9-programação-funcional-purrr.html#cb1016-97" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] FALSE FALSE</span></span></code></pre></div>
+<div class="sourceCode" id="cb1009"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1009-1"><a href="13-9-programação-funcional-purrr.html#cb1009-1" aria-hidden="true" tabindex="-1"></a>testar_vogal <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb1009-2"><a href="13-9-programação-funcional-purrr.html#cb1009-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(x <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;i&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot;u&quot;</span>)) {</span>
+<span id="cb1009-3"><a href="13-9-programação-funcional-purrr.html#cb1009-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">TRUE</span>)</span>
+<span id="cb1009-4"><a href="13-9-programação-funcional-purrr.html#cb1009-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb1009-5"><a href="13-9-programação-funcional-purrr.html#cb1009-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">FALSE</span>)</span>
+<span id="cb1009-6"><a href="13-9-programação-funcional-purrr.html#cb1009-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1009-7"><a href="13-9-programação-funcional-purrr.html#cb1009-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1009-8"><a href="13-9-programação-funcional-purrr.html#cb1009-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1009-9"><a href="13-9-programação-funcional-purrr.html#cb1009-9" aria-hidden="true" tabindex="-1"></a><span class="co"># retornando uma lista</span></span>
+<span id="cb1009-10"><a href="13-9-programação-funcional-purrr.html#cb1009-10" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(letters, testar_vogal)</span>
+<span id="cb1009-11"><a href="13-9-programação-funcional-purrr.html#cb1009-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
+<span id="cb1009-12"><a href="13-9-programação-funcional-purrr.html#cb1009-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
+<span id="cb1009-13"><a href="13-9-programação-funcional-purrr.html#cb1009-13" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-14"><a href="13-9-programação-funcional-purrr.html#cb1009-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [[2]]</span></span>
+<span id="cb1009-15"><a href="13-9-programação-funcional-purrr.html#cb1009-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-16"><a href="13-9-programação-funcional-purrr.html#cb1009-16" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-17"><a href="13-9-programação-funcional-purrr.html#cb1009-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [[3]]</span></span>
+<span id="cb1009-18"><a href="13-9-programação-funcional-purrr.html#cb1009-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-19"><a href="13-9-programação-funcional-purrr.html#cb1009-19" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-20"><a href="13-9-programação-funcional-purrr.html#cb1009-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [[4]]</span></span>
+<span id="cb1009-21"><a href="13-9-programação-funcional-purrr.html#cb1009-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-22"><a href="13-9-programação-funcional-purrr.html#cb1009-22" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-23"><a href="13-9-programação-funcional-purrr.html#cb1009-23" aria-hidden="true" tabindex="-1"></a><span class="do">## [[5]]</span></span>
+<span id="cb1009-24"><a href="13-9-programação-funcional-purrr.html#cb1009-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
+<span id="cb1009-25"><a href="13-9-programação-funcional-purrr.html#cb1009-25" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-26"><a href="13-9-programação-funcional-purrr.html#cb1009-26" aria-hidden="true" tabindex="-1"></a><span class="do">## [[6]]</span></span>
+<span id="cb1009-27"><a href="13-9-programação-funcional-purrr.html#cb1009-27" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-28"><a href="13-9-programação-funcional-purrr.html#cb1009-28" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-29"><a href="13-9-programação-funcional-purrr.html#cb1009-29" aria-hidden="true" tabindex="-1"></a><span class="do">## [[7]]</span></span>
+<span id="cb1009-30"><a href="13-9-programação-funcional-purrr.html#cb1009-30" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-31"><a href="13-9-programação-funcional-purrr.html#cb1009-31" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-32"><a href="13-9-programação-funcional-purrr.html#cb1009-32" aria-hidden="true" tabindex="-1"></a><span class="do">## [[8]]</span></span>
+<span id="cb1009-33"><a href="13-9-programação-funcional-purrr.html#cb1009-33" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-34"><a href="13-9-programação-funcional-purrr.html#cb1009-34" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-35"><a href="13-9-programação-funcional-purrr.html#cb1009-35" aria-hidden="true" tabindex="-1"></a><span class="do">## [[9]]</span></span>
+<span id="cb1009-36"><a href="13-9-programação-funcional-purrr.html#cb1009-36" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
+<span id="cb1009-37"><a href="13-9-programação-funcional-purrr.html#cb1009-37" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-38"><a href="13-9-programação-funcional-purrr.html#cb1009-38" aria-hidden="true" tabindex="-1"></a><span class="do">## [[10]]</span></span>
+<span id="cb1009-39"><a href="13-9-programação-funcional-purrr.html#cb1009-39" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-40"><a href="13-9-programação-funcional-purrr.html#cb1009-40" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-41"><a href="13-9-programação-funcional-purrr.html#cb1009-41" aria-hidden="true" tabindex="-1"></a><span class="do">## [[11]]</span></span>
+<span id="cb1009-42"><a href="13-9-programação-funcional-purrr.html#cb1009-42" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-43"><a href="13-9-programação-funcional-purrr.html#cb1009-43" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-44"><a href="13-9-programação-funcional-purrr.html#cb1009-44" aria-hidden="true" tabindex="-1"></a><span class="do">## [[12]]</span></span>
+<span id="cb1009-45"><a href="13-9-programação-funcional-purrr.html#cb1009-45" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-46"><a href="13-9-programação-funcional-purrr.html#cb1009-46" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-47"><a href="13-9-programação-funcional-purrr.html#cb1009-47" aria-hidden="true" tabindex="-1"></a><span class="do">## [[13]]</span></span>
+<span id="cb1009-48"><a href="13-9-programação-funcional-purrr.html#cb1009-48" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-49"><a href="13-9-programação-funcional-purrr.html#cb1009-49" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-50"><a href="13-9-programação-funcional-purrr.html#cb1009-50" aria-hidden="true" tabindex="-1"></a><span class="do">## [[14]]</span></span>
+<span id="cb1009-51"><a href="13-9-programação-funcional-purrr.html#cb1009-51" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-52"><a href="13-9-programação-funcional-purrr.html#cb1009-52" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-53"><a href="13-9-programação-funcional-purrr.html#cb1009-53" aria-hidden="true" tabindex="-1"></a><span class="do">## [[15]]</span></span>
+<span id="cb1009-54"><a href="13-9-programação-funcional-purrr.html#cb1009-54" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
+<span id="cb1009-55"><a href="13-9-programação-funcional-purrr.html#cb1009-55" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-56"><a href="13-9-programação-funcional-purrr.html#cb1009-56" aria-hidden="true" tabindex="-1"></a><span class="do">## [[16]]</span></span>
+<span id="cb1009-57"><a href="13-9-programação-funcional-purrr.html#cb1009-57" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-58"><a href="13-9-programação-funcional-purrr.html#cb1009-58" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-59"><a href="13-9-programação-funcional-purrr.html#cb1009-59" aria-hidden="true" tabindex="-1"></a><span class="do">## [[17]]</span></span>
+<span id="cb1009-60"><a href="13-9-programação-funcional-purrr.html#cb1009-60" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-61"><a href="13-9-programação-funcional-purrr.html#cb1009-61" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-62"><a href="13-9-programação-funcional-purrr.html#cb1009-62" aria-hidden="true" tabindex="-1"></a><span class="do">## [[18]]</span></span>
+<span id="cb1009-63"><a href="13-9-programação-funcional-purrr.html#cb1009-63" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-64"><a href="13-9-programação-funcional-purrr.html#cb1009-64" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-65"><a href="13-9-programação-funcional-purrr.html#cb1009-65" aria-hidden="true" tabindex="-1"></a><span class="do">## [[19]]</span></span>
+<span id="cb1009-66"><a href="13-9-programação-funcional-purrr.html#cb1009-66" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-67"><a href="13-9-programação-funcional-purrr.html#cb1009-67" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-68"><a href="13-9-programação-funcional-purrr.html#cb1009-68" aria-hidden="true" tabindex="-1"></a><span class="do">## [[20]]</span></span>
+<span id="cb1009-69"><a href="13-9-programação-funcional-purrr.html#cb1009-69" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-70"><a href="13-9-programação-funcional-purrr.html#cb1009-70" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-71"><a href="13-9-programação-funcional-purrr.html#cb1009-71" aria-hidden="true" tabindex="-1"></a><span class="do">## [[21]]</span></span>
+<span id="cb1009-72"><a href="13-9-programação-funcional-purrr.html#cb1009-72" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
+<span id="cb1009-73"><a href="13-9-programação-funcional-purrr.html#cb1009-73" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-74"><a href="13-9-programação-funcional-purrr.html#cb1009-74" aria-hidden="true" tabindex="-1"></a><span class="do">## [[22]]</span></span>
+<span id="cb1009-75"><a href="13-9-programação-funcional-purrr.html#cb1009-75" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-76"><a href="13-9-programação-funcional-purrr.html#cb1009-76" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-77"><a href="13-9-programação-funcional-purrr.html#cb1009-77" aria-hidden="true" tabindex="-1"></a><span class="do">## [[23]]</span></span>
+<span id="cb1009-78"><a href="13-9-programação-funcional-purrr.html#cb1009-78" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-79"><a href="13-9-programação-funcional-purrr.html#cb1009-79" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-80"><a href="13-9-programação-funcional-purrr.html#cb1009-80" aria-hidden="true" tabindex="-1"></a><span class="do">## [[24]]</span></span>
+<span id="cb1009-81"><a href="13-9-programação-funcional-purrr.html#cb1009-81" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-82"><a href="13-9-programação-funcional-purrr.html#cb1009-82" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-83"><a href="13-9-programação-funcional-purrr.html#cb1009-83" aria-hidden="true" tabindex="-1"></a><span class="do">## [[25]]</span></span>
+<span id="cb1009-84"><a href="13-9-programação-funcional-purrr.html#cb1009-84" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-85"><a href="13-9-programação-funcional-purrr.html#cb1009-85" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1009-86"><a href="13-9-programação-funcional-purrr.html#cb1009-86" aria-hidden="true" tabindex="-1"></a><span class="do">## [[26]]</span></span>
+<span id="cb1009-87"><a href="13-9-programação-funcional-purrr.html#cb1009-87" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb1009-88"><a href="13-9-programação-funcional-purrr.html#cb1009-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1009-89"><a href="13-9-programação-funcional-purrr.html#cb1009-89" aria-hidden="true" tabindex="-1"></a><span class="co"># retornando um vetor (2 soluções equivalentes)</span></span>
+<span id="cb1009-90"><a href="13-9-programação-funcional-purrr.html#cb1009-90" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(letters, testar_vogal) <span class="sc">%&gt;%</span> <span class="fu">flatten_lgl</span>()</span>
+<span id="cb1009-91"><a href="13-9-programação-funcional-purrr.html#cb1009-91" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE</span></span>
+<span id="cb1009-92"><a href="13-9-programação-funcional-purrr.html#cb1009-92" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE</span></span>
+<span id="cb1009-93"><a href="13-9-programação-funcional-purrr.html#cb1009-93" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] FALSE FALSE</span></span>
+<span id="cb1009-94"><a href="13-9-programação-funcional-purrr.html#cb1009-94" aria-hidden="true" tabindex="-1"></a><span class="fu">map_lgl</span>(letters, testar_vogal)</span>
+<span id="cb1009-95"><a href="13-9-programação-funcional-purrr.html#cb1009-95" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE</span></span>
+<span id="cb1009-96"><a href="13-9-programação-funcional-purrr.html#cb1009-96" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE</span></span>
+<span id="cb1009-97"><a href="13-9-programação-funcional-purrr.html#cb1009-97" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] FALSE FALSE</span></span></code></pre></div>
 <hr />
 <p><strong>3</strong> Faça uma função que divida um número por 2 se ele for par ou multiplique ele por 2 caso seja ímpar. Utilize uma função <code>map</code> para aplicar essa função ao vetor <code>1:100</code>. O resultado do código deve ser um vetor numérico.</p>
-<div class="sourceCode" id="cb1017"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1017-1"><a href="13-9-programação-funcional-purrr.html#cb1017-1" aria-hidden="true" tabindex="-1"></a>operacao <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb1017-2"><a href="13-9-programação-funcional-purrr.html#cb1017-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
-<span id="cb1017-3"><a href="13-9-programação-funcional-purrr.html#cb1017-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(x <span class="sc">/</span> <span class="dv">2</span>)</span>
-<span id="cb1017-4"><a href="13-9-programação-funcional-purrr.html#cb1017-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb1017-5"><a href="13-9-programação-funcional-purrr.html#cb1017-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(x <span class="sc">*</span> <span class="dv">2</span>)</span>
-<span id="cb1017-6"><a href="13-9-programação-funcional-purrr.html#cb1017-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1017-7"><a href="13-9-programação-funcional-purrr.html#cb1017-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1017-8"><a href="13-9-programação-funcional-purrr.html#cb1017-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1017-9"><a href="13-9-programação-funcional-purrr.html#cb1017-9" aria-hidden="true" tabindex="-1"></a><span class="fu">operacao</span>(<span class="dv">2</span>)</span>
-<span id="cb1017-10"><a href="13-9-programação-funcional-purrr.html#cb1017-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1</span></span>
-<span id="cb1017-11"><a href="13-9-programação-funcional-purrr.html#cb1017-11" aria-hidden="true" tabindex="-1"></a><span class="fu">operacao</span>(<span class="dv">3</span>)</span>
-<span id="cb1017-12"><a href="13-9-programação-funcional-purrr.html#cb1017-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 6</span></span>
-<span id="cb1017-13"><a href="13-9-programação-funcional-purrr.html#cb1017-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1017-14"><a href="13-9-programação-funcional-purrr.html#cb1017-14" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, operacao)</span>
-<span id="cb1017-15"><a href="13-9-programação-funcional-purrr.html#cb1017-15" aria-hidden="true" tabindex="-1"></a><span class="do">##   [1]   2   1   6   2  10   3  14   4  18   5  22   6  26   7  30   8  34   9</span></span>
-<span id="cb1017-16"><a href="13-9-programação-funcional-purrr.html#cb1017-16" aria-hidden="true" tabindex="-1"></a><span class="do">##  [19]  38  10  42  11  46  12  50  13  54  14  58  15  62  16  66  17  70  18</span></span>
-<span id="cb1017-17"><a href="13-9-programação-funcional-purrr.html#cb1017-17" aria-hidden="true" tabindex="-1"></a><span class="do">##  [37]  74  19  78  20  82  21  86  22  90  23  94  24  98  25 102  26 106  27</span></span>
-<span id="cb1017-18"><a href="13-9-programação-funcional-purrr.html#cb1017-18" aria-hidden="true" tabindex="-1"></a><span class="do">##  [55] 110  28 114  29 118  30 122  31 126  32 130  33 134  34 138  35 142  36</span></span>
-<span id="cb1017-19"><a href="13-9-programação-funcional-purrr.html#cb1017-19" aria-hidden="true" tabindex="-1"></a><span class="do">##  [73] 146  37 150  38 154  39 158  40 162  41 166  42 170  43 174  44 178  45</span></span>
-<span id="cb1017-20"><a href="13-9-programação-funcional-purrr.html#cb1017-20" aria-hidden="true" tabindex="-1"></a><span class="do">##  [91] 182  46 186  47 190  48 194  49 198  50</span></span></code></pre></div>
+<div class="sourceCode" id="cb1010"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1010-1"><a href="13-9-programação-funcional-purrr.html#cb1010-1" aria-hidden="true" tabindex="-1"></a>operacao <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb1010-2"><a href="13-9-programação-funcional-purrr.html#cb1010-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb1010-3"><a href="13-9-programação-funcional-purrr.html#cb1010-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(x <span class="sc">/</span> <span class="dv">2</span>)</span>
+<span id="cb1010-4"><a href="13-9-programação-funcional-purrr.html#cb1010-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb1010-5"><a href="13-9-programação-funcional-purrr.html#cb1010-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(x <span class="sc">*</span> <span class="dv">2</span>)</span>
+<span id="cb1010-6"><a href="13-9-programação-funcional-purrr.html#cb1010-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1010-7"><a href="13-9-programação-funcional-purrr.html#cb1010-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1010-8"><a href="13-9-programação-funcional-purrr.html#cb1010-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1010-9"><a href="13-9-programação-funcional-purrr.html#cb1010-9" aria-hidden="true" tabindex="-1"></a><span class="fu">operacao</span>(<span class="dv">2</span>)</span>
+<span id="cb1010-10"><a href="13-9-programação-funcional-purrr.html#cb1010-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1</span></span>
+<span id="cb1010-11"><a href="13-9-programação-funcional-purrr.html#cb1010-11" aria-hidden="true" tabindex="-1"></a><span class="fu">operacao</span>(<span class="dv">3</span>)</span>
+<span id="cb1010-12"><a href="13-9-programação-funcional-purrr.html#cb1010-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 6</span></span>
+<span id="cb1010-13"><a href="13-9-programação-funcional-purrr.html#cb1010-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1010-14"><a href="13-9-programação-funcional-purrr.html#cb1010-14" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, operacao)</span>
+<span id="cb1010-15"><a href="13-9-programação-funcional-purrr.html#cb1010-15" aria-hidden="true" tabindex="-1"></a><span class="do">##   [1]   2   1   6   2  10   3  14   4  18   5  22   6  26   7  30   8  34   9</span></span>
+<span id="cb1010-16"><a href="13-9-programação-funcional-purrr.html#cb1010-16" aria-hidden="true" tabindex="-1"></a><span class="do">##  [19]  38  10  42  11  46  12  50  13  54  14  58  15  62  16  66  17  70  18</span></span>
+<span id="cb1010-17"><a href="13-9-programação-funcional-purrr.html#cb1010-17" aria-hidden="true" tabindex="-1"></a><span class="do">##  [37]  74  19  78  20  82  21  86  22  90  23  94  24  98  25 102  26 106  27</span></span>
+<span id="cb1010-18"><a href="13-9-programação-funcional-purrr.html#cb1010-18" aria-hidden="true" tabindex="-1"></a><span class="do">##  [55] 110  28 114  29 118  30 122  31 126  32 130  33 134  34 138  35 142  36</span></span>
+<span id="cb1010-19"><a href="13-9-programação-funcional-purrr.html#cb1010-19" aria-hidden="true" tabindex="-1"></a><span class="do">##  [73] 146  37 150  38 154  39 158  40 162  41 166  42 170  43 174  44 178  45</span></span>
+<span id="cb1010-20"><a href="13-9-programação-funcional-purrr.html#cb1010-20" aria-hidden="true" tabindex="-1"></a><span class="do">##  [91] 182  46 186  47 190  48 194  49 198  50</span></span></code></pre></div>
 <hr />
 <p><strong>4.</strong> Use a função <code>map()</code> para criar gráficos de dispersão da receita vs orçamento para os filmes da base <code>imdb</code>. Os filmes de cada ano deverão compor um gráfico diferente. Faça o resultado ser (a) uma lista de gráficos e (b) uma nova coluna na base <code>imdb</code> (utilizando a função <code>tidyr::nest()</code>).</p>
-<div class="sourceCode" id="cb1018"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1018-1"><a href="13-9-programação-funcional-purrr.html#cb1018-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_rds</span>(<span class="st">&quot;imdb.rds&quot;</span>)</span>
-<span id="cb1018-2"><a href="13-9-programação-funcional-purrr.html#cb1018-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1018-3"><a href="13-9-programação-funcional-purrr.html#cb1018-3" aria-hidden="true" tabindex="-1"></a><span class="co"># gerando uma lista de gráficos</span></span>
-<span id="cb1018-4"><a href="13-9-programação-funcional-purrr.html#cb1018-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1018-5"><a href="13-9-programação-funcional-purrr.html#cb1018-5" aria-hidden="true" tabindex="-1"></a>fazer_grafico <span class="ot">&lt;-</span> <span class="cf">function</span>(tab, ano_) {</span>
-<span id="cb1018-6"><a href="13-9-programação-funcional-purrr.html#cb1018-6" aria-hidden="true" tabindex="-1"></a>  tab <span class="sc">%&gt;%</span> </span>
-<span id="cb1018-7"><a href="13-9-programação-funcional-purrr.html#cb1018-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(ano <span class="sc">==</span> ano_) <span class="sc">%&gt;%</span> </span>
-<span id="cb1018-8"><a href="13-9-programação-funcional-purrr.html#cb1018-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) <span class="sc">+</span></span>
-<span id="cb1018-9"><a href="13-9-programação-funcional-purrr.html#cb1018-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>()</span>
-<span id="cb1018-10"><a href="13-9-programação-funcional-purrr.html#cb1018-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1018-11"><a href="13-9-programação-funcional-purrr.html#cb1018-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1018-12"><a href="13-9-programação-funcional-purrr.html#cb1018-12" aria-hidden="true" tabindex="-1"></a>anos <span class="ot">&lt;-</span> <span class="fu">unique</span>(imdb<span class="sc">$</span>ano)</span>
-<span id="cb1018-13"><a href="13-9-programação-funcional-purrr.html#cb1018-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1018-14"><a href="13-9-programação-funcional-purrr.html#cb1018-14" aria-hidden="true" tabindex="-1"></a>graficos <span class="ot">&lt;-</span> <span class="fu">map</span>(anos, fazer_grafico, <span class="at">tab =</span> imdb)</span>
-<span id="cb1018-15"><a href="13-9-programação-funcional-purrr.html#cb1018-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1018-16"><a href="13-9-programação-funcional-purrr.html#cb1018-16" aria-hidden="true" tabindex="-1"></a><span class="co"># gerando uma coluna na tabela imdb</span></span>
-<span id="cb1018-17"><a href="13-9-programação-funcional-purrr.html#cb1018-17" aria-hidden="true" tabindex="-1"></a>fazer_grafico2 <span class="ot">&lt;-</span> <span class="cf">function</span>(tab) {</span>
-<span id="cb1018-18"><a href="13-9-programação-funcional-purrr.html#cb1018-18" aria-hidden="true" tabindex="-1"></a>  tab <span class="sc">%&gt;%</span> </span>
-<span id="cb1018-19"><a href="13-9-programação-funcional-purrr.html#cb1018-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) <span class="sc">+</span></span>
-<span id="cb1018-20"><a href="13-9-programação-funcional-purrr.html#cb1018-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>()</span>
-<span id="cb1018-21"><a href="13-9-programação-funcional-purrr.html#cb1018-21" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1018-22"><a href="13-9-programação-funcional-purrr.html#cb1018-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1018-23"><a href="13-9-programação-funcional-purrr.html#cb1018-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1018-24"><a href="13-9-programação-funcional-purrr.html#cb1018-24" aria-hidden="true" tabindex="-1"></a>imdb_com_graficos <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb1018-25"><a href="13-9-programação-funcional-purrr.html#cb1018-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
-<span id="cb1018-26"><a href="13-9-programação-funcional-purrr.html#cb1018-26" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">nest</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb1018-27"><a href="13-9-programação-funcional-purrr.html#cb1018-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb1018-28"><a href="13-9-programação-funcional-purrr.html#cb1018-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">grafico =</span> <span class="fu">map</span>(data, fazer_grafico2)</span>
-<span id="cb1018-29"><a href="13-9-programação-funcional-purrr.html#cb1018-29" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb1011"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1011-1"><a href="13-9-programação-funcional-purrr.html#cb1011-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_rds</span>(<span class="st">&quot;imdb.rds&quot;</span>)</span>
+<span id="cb1011-2"><a href="13-9-programação-funcional-purrr.html#cb1011-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1011-3"><a href="13-9-programação-funcional-purrr.html#cb1011-3" aria-hidden="true" tabindex="-1"></a><span class="co"># gerando uma lista de gráficos</span></span>
+<span id="cb1011-4"><a href="13-9-programação-funcional-purrr.html#cb1011-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1011-5"><a href="13-9-programação-funcional-purrr.html#cb1011-5" aria-hidden="true" tabindex="-1"></a>fazer_grafico <span class="ot">&lt;-</span> <span class="cf">function</span>(tab, ano_) {</span>
+<span id="cb1011-6"><a href="13-9-programação-funcional-purrr.html#cb1011-6" aria-hidden="true" tabindex="-1"></a>  tab <span class="sc">%&gt;%</span> </span>
+<span id="cb1011-7"><a href="13-9-programação-funcional-purrr.html#cb1011-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(ano <span class="sc">==</span> ano_) <span class="sc">%&gt;%</span> </span>
+<span id="cb1011-8"><a href="13-9-programação-funcional-purrr.html#cb1011-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) <span class="sc">+</span></span>
+<span id="cb1011-9"><a href="13-9-programação-funcional-purrr.html#cb1011-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>()</span>
+<span id="cb1011-10"><a href="13-9-programação-funcional-purrr.html#cb1011-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1011-11"><a href="13-9-programação-funcional-purrr.html#cb1011-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1011-12"><a href="13-9-programação-funcional-purrr.html#cb1011-12" aria-hidden="true" tabindex="-1"></a>anos <span class="ot">&lt;-</span> <span class="fu">unique</span>(imdb<span class="sc">$</span>ano)</span>
+<span id="cb1011-13"><a href="13-9-programação-funcional-purrr.html#cb1011-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1011-14"><a href="13-9-programação-funcional-purrr.html#cb1011-14" aria-hidden="true" tabindex="-1"></a>graficos <span class="ot">&lt;-</span> <span class="fu">map</span>(anos, fazer_grafico, <span class="at">tab =</span> imdb)</span>
+<span id="cb1011-15"><a href="13-9-programação-funcional-purrr.html#cb1011-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1011-16"><a href="13-9-programação-funcional-purrr.html#cb1011-16" aria-hidden="true" tabindex="-1"></a><span class="co"># gerando uma coluna na tabela imdb</span></span>
+<span id="cb1011-17"><a href="13-9-programação-funcional-purrr.html#cb1011-17" aria-hidden="true" tabindex="-1"></a>fazer_grafico2 <span class="ot">&lt;-</span> <span class="cf">function</span>(tab) {</span>
+<span id="cb1011-18"><a href="13-9-programação-funcional-purrr.html#cb1011-18" aria-hidden="true" tabindex="-1"></a>  tab <span class="sc">%&gt;%</span> </span>
+<span id="cb1011-19"><a href="13-9-programação-funcional-purrr.html#cb1011-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> orcamento, <span class="at">y =</span> receita)) <span class="sc">+</span></span>
+<span id="cb1011-20"><a href="13-9-programação-funcional-purrr.html#cb1011-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>()</span>
+<span id="cb1011-21"><a href="13-9-programação-funcional-purrr.html#cb1011-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1011-22"><a href="13-9-programação-funcional-purrr.html#cb1011-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1011-23"><a href="13-9-programação-funcional-purrr.html#cb1011-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1011-24"><a href="13-9-programação-funcional-purrr.html#cb1011-24" aria-hidden="true" tabindex="-1"></a>imdb_com_graficos <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb1011-25"><a href="13-9-programação-funcional-purrr.html#cb1011-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ano) <span class="sc">%&gt;%</span> </span>
+<span id="cb1011-26"><a href="13-9-programação-funcional-purrr.html#cb1011-26" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">nest</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb1011-27"><a href="13-9-programação-funcional-purrr.html#cb1011-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1011-28"><a href="13-9-programação-funcional-purrr.html#cb1011-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">grafico =</span> <span class="fu">map</span>(data, fazer_grafico2)</span>
+<span id="cb1011-29"><a href="13-9-programação-funcional-purrr.html#cb1011-29" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <hr />
 <p><strong>5.</strong> Utilize a função <code>walk</code> para salvar cada ano da base <code>imdb</code> em um arquivo <code>.rds</code> diferente, isto é, o arquivo <code>imdb_2001.rds</code>, por exemplo, deve conter apenas filmes do ano de 2001.</p>
-<div class="sourceCode" id="cb1019"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1019-1"><a href="13-9-programação-funcional-purrr.html#cb1019-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_rds</span>(<span class="st">&quot;imdb.rds&quot;</span>)</span>
-<span id="cb1019-2"><a href="13-9-programação-funcional-purrr.html#cb1019-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1019-3"><a href="13-9-programação-funcional-purrr.html#cb1019-3" aria-hidden="true" tabindex="-1"></a>salvar_base <span class="ot">&lt;-</span> <span class="cf">function</span>(tab, ano_) {</span>
-<span id="cb1019-4"><a href="13-9-programação-funcional-purrr.html#cb1019-4" aria-hidden="true" tabindex="-1"></a>  tab <span class="sc">%&gt;%</span> </span>
-<span id="cb1019-5"><a href="13-9-programação-funcional-purrr.html#cb1019-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(ano <span class="sc">==</span> ano_) <span class="sc">%&gt;%</span> </span>
-<span id="cb1019-6"><a href="13-9-programação-funcional-purrr.html#cb1019-6" aria-hidden="true" tabindex="-1"></a>    readr<span class="sc">::</span><span class="fu">write_rds</span>(<span class="at">file =</span> <span class="fu">paste0</span>(<span class="st">&quot;teste/imdb_&quot;</span>, ano_, <span class="st">&quot;.rds&quot;</span>))</span>
-<span id="cb1019-7"><a href="13-9-programação-funcional-purrr.html#cb1019-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1019-8"><a href="13-9-programação-funcional-purrr.html#cb1019-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1019-9"><a href="13-9-programação-funcional-purrr.html#cb1019-9" aria-hidden="true" tabindex="-1"></a>anos <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span> </span>
-<span id="cb1019-10"><a href="13-9-programação-funcional-purrr.html#cb1019-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(ano)) <span class="sc">%&gt;%</span> </span>
-<span id="cb1019-11"><a href="13-9-programação-funcional-purrr.html#cb1019-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(ano)</span>
-<span id="cb1019-12"><a href="13-9-programação-funcional-purrr.html#cb1019-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1019-13"><a href="13-9-programação-funcional-purrr.html#cb1019-13" aria-hidden="true" tabindex="-1"></a><span class="fu">walk</span>(anos, salvar_base, <span class="at">tab =</span> imdb)</span></code></pre></div>
+<div class="sourceCode" id="cb1012"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1012-1"><a href="13-9-programação-funcional-purrr.html#cb1012-1" aria-hidden="true" tabindex="-1"></a>imdb <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_rds</span>(<span class="st">&quot;imdb.rds&quot;</span>)</span>
+<span id="cb1012-2"><a href="13-9-programação-funcional-purrr.html#cb1012-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1012-3"><a href="13-9-programação-funcional-purrr.html#cb1012-3" aria-hidden="true" tabindex="-1"></a>salvar_base <span class="ot">&lt;-</span> <span class="cf">function</span>(tab, ano_) {</span>
+<span id="cb1012-4"><a href="13-9-programação-funcional-purrr.html#cb1012-4" aria-hidden="true" tabindex="-1"></a>  tab <span class="sc">%&gt;%</span> </span>
+<span id="cb1012-5"><a href="13-9-programação-funcional-purrr.html#cb1012-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(ano <span class="sc">==</span> ano_) <span class="sc">%&gt;%</span> </span>
+<span id="cb1012-6"><a href="13-9-programação-funcional-purrr.html#cb1012-6" aria-hidden="true" tabindex="-1"></a>    readr<span class="sc">::</span><span class="fu">write_rds</span>(<span class="at">file =</span> <span class="fu">paste0</span>(<span class="st">&quot;teste/imdb_&quot;</span>, ano_, <span class="st">&quot;.rds&quot;</span>))</span>
+<span id="cb1012-7"><a href="13-9-programação-funcional-purrr.html#cb1012-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1012-8"><a href="13-9-programação-funcional-purrr.html#cb1012-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1012-9"><a href="13-9-programação-funcional-purrr.html#cb1012-9" aria-hidden="true" tabindex="-1"></a>anos <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span> </span>
+<span id="cb1012-10"><a href="13-9-programação-funcional-purrr.html#cb1012-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(ano)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1012-11"><a href="13-9-programação-funcional-purrr.html#cb1012-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(ano)</span>
+<span id="cb1012-12"><a href="13-9-programação-funcional-purrr.html#cb1012-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1012-13"><a href="13-9-programação-funcional-purrr.html#cb1012-13" aria-hidden="true" tabindex="-1"></a><span class="fu">walk</span>(anos, salvar_base, <span class="at">tab =</span> imdb)</span></code></pre></div>
 
 </div>
 <hr/>
@@ -707,6 +709,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

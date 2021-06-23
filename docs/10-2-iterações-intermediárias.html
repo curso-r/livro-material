@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10.2 Iterações intermediárias | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10.2 Iterações intermediárias | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="assets/img/logo.png" />
+  <meta property="og:image" content="/assets/img/logo.png" />
   <meta property="og:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="github-repo" content="curso-r/livro-material" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="10.2 Iterações intermediárias | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="twitter:image" content="assets/img/logo.png" />
+  <meta name="twitter:image" content="/assets/img/logo.png" />
 
 <meta name="author" content="Curso-R" />
 
@@ -32,8 +32,8 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="10-1-iterações-básicas.html"/>
 <link rel="next" href="10-3-iterações-avançadas.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.9.1/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,16 +50,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.16/datatables.js"></script>
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
@@ -139,6 +139,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="assets/style.css" type="text/css" />
 </head>
 
@@ -162,17 +163,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
-<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
+<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-macos"><i class="fa fa-check"></i><b>1.1.3</b> No MacOS</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
 <li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
+<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#instalacao-latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
 <li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
 <li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
 <li class="chapter" data-level="1.3.4" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#renderizando-html-widgets"><i class="fa fa-check"></i><b>1.3.4</b> Renderizando HTML widgets</a></li>
 <li class="chapter" data-level="1.3.5" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#blogdown"><i class="fa fa-check"></i><b>1.3.5</b> Blogdown</a></li>
-<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#rtools"><i class="fa fa-check"></i><b>1.3.6</b> Rtools</a></li>
+<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#ferramentas-de-desenvolvimento"><i class="fa fa-check"></i><b>1.3.6</b> Ferramentas de desenvolvimento</a></li>
+<li class="chapter" data-level="1.3.7" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#git"><i class="fa fa-check"></i><b>1.3.7</b> Git</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
@@ -357,9 +359,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#códigos-em-r"><i class="fa fa-check"></i><b>9.2.1</b> Códigos em R</a></li>
-<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#imagens-1"><i class="fa fa-check"></i><b>9.2.2</b> Imagens</a></li>
-<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#tabelas-1"><i class="fa fa-check"></i><b>9.2.3</b> Tabelas</a></li>
+<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#criando-um-arquivo-.rmd"><i class="fa fa-check"></i><b>9.2.1</b> Criando um arquivo <code>.Rmd</code></a></li>
+<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#estrutura-do-arquivo-r-markdown"><i class="fa fa-check"></i><b>9.2.2</b> Estrutura do arquivo R Markdown</a></li>
+<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#adicionando-conteúdo"><i class="fa fa-check"></i><b>9.2.3</b> Adicionando conteúdo</a></li>
 <li class="chapter" data-level="9.2.4" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#dicas-para-o-rstudio"><i class="fa fa-check"></i><b>9.2.4</b> Dicas para o RStudio</a></li>
 <li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
@@ -470,13 +472,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">10.2</span> Iterações intermediárias</h2>
 <p>Agora que já exploramos os básicos da família <code>map()</code> podemos partir para
 iterações um pouco mais complexas. Observe o laço a seguir:</p>
-<div class="sourceCode" id="cb583"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb583-1"><a href="10-2-iterações-intermediárias.html#cb583-1" aria-hidden="true" tabindex="-1"></a>soma_ambos <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) { x <span class="sc">+</span> y }</span>
-<span id="cb583-2"><a href="10-2-iterações-intermediárias.html#cb583-2" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb583-3"><a href="10-2-iterações-intermediárias.html#cb583-3" aria-hidden="true" tabindex="-1"></a>obj_2 <span class="ot">&lt;-</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">25</span></span>
-<span id="cb583-4"><a href="10-2-iterações-intermediárias.html#cb583-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(obj_1)) {</span>
-<span id="cb583-5"><a href="10-2-iterações-intermediárias.html#cb583-5" aria-hidden="true" tabindex="-1"></a>  obj_1[i] <span class="ot">&lt;-</span> <span class="fu">soma_ambos</span>(obj_1[i], obj_2[i])</span>
-<span id="cb583-6"><a href="10-2-iterações-intermediárias.html#cb583-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb583-7"><a href="10-2-iterações-intermediárias.html#cb583-7" aria-hidden="true" tabindex="-1"></a>obj_1</span></code></pre></div>
+<div class="sourceCode" id="cb578"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb578-1"><a href="10-2-iterações-intermediárias.html#cb578-1" aria-hidden="true" tabindex="-1"></a>soma_ambos <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) { x <span class="sc">+</span> y }</span>
+<span id="cb578-2"><a href="10-2-iterações-intermediárias.html#cb578-2" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb578-3"><a href="10-2-iterações-intermediárias.html#cb578-3" aria-hidden="true" tabindex="-1"></a>obj_2 <span class="ot">&lt;-</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">25</span></span>
+<span id="cb578-4"><a href="10-2-iterações-intermediárias.html#cb578-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(obj_1)) {</span>
+<span id="cb578-5"><a href="10-2-iterações-intermediárias.html#cb578-5" aria-hidden="true" tabindex="-1"></a>  obj_1[i] <span class="ot">&lt;-</span> <span class="fu">soma_ambos</span>(obj_1[i], obj_2[i])</span>
+<span id="cb578-6"><a href="10-2-iterações-intermediárias.html#cb578-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb578-7"><a href="10-2-iterações-intermediárias.html#cb578-7" aria-hidden="true" tabindex="-1"></a>obj_1</span></code></pre></div>
 <pre><code>## [1] 30 32 34 36 38 40</code></pre>
 <p>Com a função <code>map2()</code> podemos reproduzir o laço acima em apenas uma linha. Ela
 abstrai a iteração em paralelo, aplica a função em cada par de elementos das
@@ -485,43 +487,43 @@ sufixos <code>_chr</code>, <code>_dbl</code>, <code>_int</code> e <code>_lgl</co
 <blockquote>
 <p>O termo “paralelo” neste capítulos se refere a laços em mais de uma estrutura e não a paralelização de computações em mais de uma unidade de processamento.</p>
 </blockquote>
-<div class="sourceCode" id="cb585"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb585-1"><a href="10-2-iterações-intermediárias.html#cb585-1" aria-hidden="true" tabindex="-1"></a>soma_ambos <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) { x <span class="sc">+</span> y }</span>
-<span id="cb585-2"><a href="10-2-iterações-intermediárias.html#cb585-2" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb585-3"><a href="10-2-iterações-intermediárias.html#cb585-3" aria-hidden="true" tabindex="-1"></a>obj_2 <span class="ot">&lt;-</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">25</span></span>
-<span id="cb585-4"><a href="10-2-iterações-intermediárias.html#cb585-4" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="fu">map2_dbl</span>(obj_1, obj_2, soma_ambos)</span>
-<span id="cb585-5"><a href="10-2-iterações-intermediárias.html#cb585-5" aria-hidden="true" tabindex="-1"></a>obj_1</span></code></pre></div>
+<div class="sourceCode" id="cb580"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb580-1"><a href="10-2-iterações-intermediárias.html#cb580-1" aria-hidden="true" tabindex="-1"></a>soma_ambos <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) { x <span class="sc">+</span> y }</span>
+<span id="cb580-2"><a href="10-2-iterações-intermediárias.html#cb580-2" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb580-3"><a href="10-2-iterações-intermediárias.html#cb580-3" aria-hidden="true" tabindex="-1"></a>obj_2 <span class="ot">&lt;-</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">25</span></span>
+<span id="cb580-4"><a href="10-2-iterações-intermediárias.html#cb580-4" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="fu">map2_dbl</span>(obj_1, obj_2, soma_ambos)</span>
+<span id="cb580-5"><a href="10-2-iterações-intermediárias.html#cb580-5" aria-hidden="true" tabindex="-1"></a>obj_1</span></code></pre></div>
 <pre><code>## [1] 30 32 34 36 38 40</code></pre>
 <p>Como o pacote <code>purrr</code> é extremamente consistente, a <code>map2()</code> também funciona com
 reticências e fórmulas. Poderíamos, por exemplo, transformar <code>soma_ambos()</code> em
 uma função anônima:</p>
-<div class="sourceCode" id="cb587"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb587-1"><a href="10-2-iterações-intermediárias.html#cb587-1" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb587-2"><a href="10-2-iterações-intermediárias.html#cb587-2" aria-hidden="true" tabindex="-1"></a>obj_2 <span class="ot">&lt;-</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">25</span></span>
-<span id="cb587-3"><a href="10-2-iterações-intermediárias.html#cb587-3" aria-hidden="true" tabindex="-1"></a><span class="fu">map2_dbl</span>(obj_1, obj_2, <span class="sc">~</span>.x<span class="sc">+</span>.y)</span></code></pre></div>
+<div class="sourceCode" id="cb582"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb582-1"><a href="10-2-iterações-intermediárias.html#cb582-1" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb582-2"><a href="10-2-iterações-intermediárias.html#cb582-2" aria-hidden="true" tabindex="-1"></a>obj_2 <span class="ot">&lt;-</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">25</span></span>
+<span id="cb582-3"><a href="10-2-iterações-intermediárias.html#cb582-3" aria-hidden="true" tabindex="-1"></a><span class="fu">map2_dbl</span>(obj_1, obj_2, <span class="sc">~</span>.x<span class="sc">+</span>.y)</span></code></pre></div>
 <pre><code>## [1] 30 32 34 36 38 40</code></pre>
 <p>Desta vez também temos acesso ao placeholder <code>.y</code> para indicar onde os elementos
 de do segundo vetor devem ir.</p>
 <p>Para não precisar oferecer uma função para cada número de argumentos, o pacote
 <code>purrr</code> fornece a <code>pmap()</code>. Para essa função devemos passar uma lista em que cada
 elemento é um dos objetos a ser iterado:</p>
-<div class="sourceCode" id="cb589"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb589-1"><a href="10-2-iterações-intermediárias.html#cb589-1" aria-hidden="true" tabindex="-1"></a>soma_varios <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, z) { x <span class="sc">+</span> y <span class="sc">+</span> z }</span>
-<span id="cb589-2"><a href="10-2-iterações-intermediárias.html#cb589-2" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb589-3"><a href="10-2-iterações-intermediárias.html#cb589-3" aria-hidden="true" tabindex="-1"></a>obj_2 <span class="ot">&lt;-</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">25</span></span>
-<span id="cb589-4"><a href="10-2-iterações-intermediárias.html#cb589-4" aria-hidden="true" tabindex="-1"></a>obj_3 <span class="ot">&lt;-</span> <span class="dv">30</span><span class="sc">:</span><span class="dv">35</span></span>
-<span id="cb589-5"><a href="10-2-iterações-intermediárias.html#cb589-5" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="fu">pmap_dbl</span>(<span class="fu">list</span>(obj_1, obj_2, obj_3), soma_varios)</span>
-<span id="cb589-6"><a href="10-2-iterações-intermediárias.html#cb589-6" aria-hidden="true" tabindex="-1"></a>obj_1</span></code></pre></div>
+<div class="sourceCode" id="cb584"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb584-1"><a href="10-2-iterações-intermediárias.html#cb584-1" aria-hidden="true" tabindex="-1"></a>soma_varios <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, z) { x <span class="sc">+</span> y <span class="sc">+</span> z }</span>
+<span id="cb584-2"><a href="10-2-iterações-intermediárias.html#cb584-2" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb584-3"><a href="10-2-iterações-intermediárias.html#cb584-3" aria-hidden="true" tabindex="-1"></a>obj_2 <span class="ot">&lt;-</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">25</span></span>
+<span id="cb584-4"><a href="10-2-iterações-intermediárias.html#cb584-4" aria-hidden="true" tabindex="-1"></a>obj_3 <span class="ot">&lt;-</span> <span class="dv">30</span><span class="sc">:</span><span class="dv">35</span></span>
+<span id="cb584-5"><a href="10-2-iterações-intermediárias.html#cb584-5" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="fu">pmap_dbl</span>(<span class="fu">list</span>(obj_1, obj_2, obj_3), soma_varios)</span>
+<span id="cb584-6"><a href="10-2-iterações-intermediárias.html#cb584-6" aria-hidden="true" tabindex="-1"></a>obj_1</span></code></pre></div>
 <pre><code>## [1] 60 63 66 69 72 75</code></pre>
 <p>Com a <code>pmap()</code> infelizmente não podemos usar fórmulas. Se quisermos usar uma
 função anônima com ela, precisamos declará-la a função no seu corpo:</p>
-<div class="sourceCode" id="cb591"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb591-1"><a href="10-2-iterações-intermediárias.html#cb591-1" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb591-2"><a href="10-2-iterações-intermediárias.html#cb591-2" aria-hidden="true" tabindex="-1"></a>obj_2 <span class="ot">&lt;-</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">25</span></span>
-<span id="cb591-3"><a href="10-2-iterações-intermediárias.html#cb591-3" aria-hidden="true" tabindex="-1"></a>obj_3 <span class="ot">&lt;-</span> <span class="dv">30</span><span class="sc">:</span><span class="dv">35</span></span>
-<span id="cb591-4"><a href="10-2-iterações-intermediárias.html#cb591-4" aria-hidden="true" tabindex="-1"></a><span class="fu">pmap_dbl</span>(<span class="fu">list</span>(obj_1, obj_2, obj_3), <span class="cf">function</span>(x, y, z) { x <span class="sc">+</span> y <span class="sc">+</span> z })</span></code></pre></div>
+<div class="sourceCode" id="cb586"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb586-1"><a href="10-2-iterações-intermediárias.html#cb586-1" aria-hidden="true" tabindex="-1"></a>obj_1 <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb586-2"><a href="10-2-iterações-intermediárias.html#cb586-2" aria-hidden="true" tabindex="-1"></a>obj_2 <span class="ot">&lt;-</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">25</span></span>
+<span id="cb586-3"><a href="10-2-iterações-intermediárias.html#cb586-3" aria-hidden="true" tabindex="-1"></a>obj_3 <span class="ot">&lt;-</span> <span class="dv">30</span><span class="sc">:</span><span class="dv">35</span></span>
+<span id="cb586-4"><a href="10-2-iterações-intermediárias.html#cb586-4" aria-hidden="true" tabindex="-1"></a><span class="fu">pmap_dbl</span>(<span class="fu">list</span>(obj_1, obj_2, obj_3), <span class="cf">function</span>(x, y, z) { x <span class="sc">+</span> y <span class="sc">+</span> z })</span></code></pre></div>
 <pre><code>## [1] 60 63 66 69 72 75</code></pre>
 <p>A última função que veremos nessa seção é a <code>imap()</code>. No fundo ela é um
 atalho para <code>map2(x, names(x), ...)</code> quando <code>x</code> tem nomes e para
 <code>map2(x, seq_along(x), ...)</code> caso contrário:</p>
-<div class="sourceCode" id="cb593"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb593-1"><a href="10-2-iterações-intermediárias.html#cb593-1" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb593-2"><a href="10-2-iterações-intermediárias.html#cb593-2" aria-hidden="true" tabindex="-1"></a><span class="fu">imap_dbl</span>(obj, <span class="sc">~</span>.x<span class="sc">+</span>.y)</span></code></pre></div>
+<div class="sourceCode" id="cb588"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb588-1"><a href="10-2-iterações-intermediárias.html#cb588-1" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb588-2"><a href="10-2-iterações-intermediárias.html#cb588-2" aria-hidden="true" tabindex="-1"></a><span class="fu">imap_dbl</span>(obj, <span class="sc">~</span>.x<span class="sc">+</span>.y)</span></code></pre></div>
 <pre><code>## [1] 11 13 15 17 19 21</code></pre>
 <p>Como podemos observar, agora <code>.y</code> é o placeholder para o índice atual (equivalente
 ao <code>i</code> no laço com <code>for</code>). Naturalmente, assim como toda a família <code>map()</code>, a
@@ -560,6 +562,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

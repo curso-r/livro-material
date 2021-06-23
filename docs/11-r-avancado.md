@@ -88,8 +88,8 @@ starwars %>% filter_na(col = birth_year) %>% nrow()
 
 ```
 ## Error: Problem with `filter()` input `..1`.
-## x object 'birth_year' not found
 ## ℹ Input `..1` is `is.na(col)`.
+## x object 'birth_year' not found
 ```
 
 ### Curly-curly

@@ -1,7 +1,7 @@
 --- 
 title: "Ciência de Dados em R"
 author: "Curso-R"
-date: "Última atualização: 22/04/2021"
+date: "Última atualização: 23/06/2021"
 github-repo: "curso-r/livro-material"
 site: bookdown::bookdown_site
 documentclass: book
@@ -53,7 +53,7 @@ O RStudio é o ambiente de desenvolvimento mais utilizado para programação em 
 Este livro tem como objetivo guiar o leitor por todas as etapas de uma análise de dados, utilizando o R como ferramenta. Nele, você encontrará ferramentas para importar, arrumar, manipular, visualizar e modelar bases de dados. E também ferramentas para comunicar e automatizar resultados.
 
 <div class="figure" style="text-align: center">
-<img src="assets/img/environmental-data-science-r4ds-general.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la." width="2400" />
+<img src="assets/img/environmental-data-science-r4ds-general.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la." width="960" />
 <p class="caption">(\#fig:allison-env)Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la.</p>
 </div>
 
@@ -63,7 +63,7 @@ Seja bem-vinda(o) ao #rstats.
 
 Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e participe dos grupos e comunidades de programadores.
 
-- Comunidade RLadies: https://benubah.github.io/r-community-explorer/rladies.html
+- Comunidade R-Ladies: [Global](https://benubah.github.io/r-community-explorer/rladies.html) e [Brasil](https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil#readme)
 
 - Fórum de dúvidas da Curso-R: https://discourse.curso-r.com/
 
@@ -80,4 +80,4 @@ Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartil
 
 - [Haydee Svab](https://www.linkedin.com/in/hsvab) - Revisão do conteúdo inicial sobre [Markdown](#markdown).
 
-- Sugestões feitas durante transmissões na Twitch: [@AugustoCL_](https://www.twitch.tv/AugustoCL_/about) e [@pouchewar](https://www.twitch.tv/pouchewar/about) .
+- Sugestões feitas durante transmissões na Twitch: [AugustoCL_](https://www.twitch.tv/AugustoCL_/about) e [pouchewar](https://www.twitch.tv/pouchewar/about) .

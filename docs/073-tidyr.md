@@ -345,16 +345,16 @@ head(imdb_nest, 8)
 ```
 ## # A tibble: 8 x 2
 ## # Groups:   ano [8]
-##     ano data                  
-##   <int> <list>                
-## 1  1916 <tibble[,14] [1 × 14]>
-## 2  1920 <tibble[,14] [1 × 14]>
-## 3  1925 <tibble[,14] [1 × 14]>
-## 4  1929 <tibble[,14] [1 × 14]>
-## 5  1930 <tibble[,14] [1 × 14]>
-## 6  1932 <tibble[,14] [1 × 14]>
-## 7  1933 <tibble[,14] [2 × 14]>
-## 8  1934 <tibble[,14] [1 × 14]>
+##     ano data             
+##   <int> <list>           
+## 1  1916 <tibble [1 × 14]>
+## 2  1920 <tibble [1 × 14]>
+## 3  1925 <tibble [1 × 14]>
+## 4  1929 <tibble [1 × 14]>
+## 5  1930 <tibble [1 × 14]>
+## 6  1932 <tibble [1 × 14]>
+## 7  1933 <tibble [2 × 14]>
+## 8  1934 <tibble [1 × 14]>
 ```
 
 A base `imdb_nest` possui duas colunas `ano` e `data` e uma linha para cada ano. Na coluna `data`, temos o restante da base `imdb`, recortada para cada um dos anos.
@@ -400,14 +400,14 @@ head(imdb_graficos, 6)
 ```
 ## # A tibble: 6 x 3
 ## # Groups:   ano [6]
-##     ano data                   grafico
-##   <int> <list>                 <list> 
-## 1  1916 <tibble[,14] [1 × 14]> <gg>   
-## 2  1920 <tibble[,14] [1 × 14]> <gg>   
-## 3  1925 <tibble[,14] [1 × 14]> <gg>   
-## 4  1929 <tibble[,14] [1 × 14]> <gg>   
-## 5  1930 <tibble[,14] [1 × 14]> <gg>   
-## 6  1932 <tibble[,14] [1 × 14]> <gg>
+##     ano data              grafico
+##   <int> <list>            <list> 
+## 1  1916 <tibble [1 × 14]> <gg>   
+## 2  1920 <tibble [1 × 14]> <gg>   
+## 3  1925 <tibble [1 × 14]> <gg>   
+## 4  1929 <tibble [1 × 14]> <gg>   
+## 5  1930 <tibble [1 × 14]> <gg>   
+## 6  1932 <tibble [1 × 14]> <gg>
 ```
 
 Para acessar cada um dos gráficos, basta rodar o código abaixo.

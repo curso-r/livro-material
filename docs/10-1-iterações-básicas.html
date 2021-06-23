@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10.1 Iterações básicas | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10.1 Iterações básicas | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="assets/img/logo.png" />
+  <meta property="og:image" content="/assets/img/logo.png" />
   <meta property="og:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="github-repo" content="curso-r/livro-material" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="10.1 Iterações básicas | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="twitter:image" content="assets/img/logo.png" />
+  <meta name="twitter:image" content="/assets/img/logo.png" />
 
 <meta name="author" content="Curso-R" />
 
@@ -32,8 +32,8 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="10-funcionais.html"/>
 <link rel="next" href="10-2-iterações-intermediárias.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.9.1/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,16 +50,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.16/datatables.js"></script>
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
@@ -139,6 +139,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="assets/style.css" type="text/css" />
 </head>
 
@@ -162,17 +163,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
-<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
+<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-macos"><i class="fa fa-check"></i><b>1.1.3</b> No MacOS</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
 <li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
+<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#instalacao-latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
 <li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
 <li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
 <li class="chapter" data-level="1.3.4" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#renderizando-html-widgets"><i class="fa fa-check"></i><b>1.3.4</b> Renderizando HTML widgets</a></li>
 <li class="chapter" data-level="1.3.5" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#blogdown"><i class="fa fa-check"></i><b>1.3.5</b> Blogdown</a></li>
-<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#rtools"><i class="fa fa-check"></i><b>1.3.6</b> Rtools</a></li>
+<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#ferramentas-de-desenvolvimento"><i class="fa fa-check"></i><b>1.3.6</b> Ferramentas de desenvolvimento</a></li>
+<li class="chapter" data-level="1.3.7" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#git"><i class="fa fa-check"></i><b>1.3.7</b> Git</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
@@ -357,9 +359,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#códigos-em-r"><i class="fa fa-check"></i><b>9.2.1</b> Códigos em R</a></li>
-<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#imagens-1"><i class="fa fa-check"></i><b>9.2.2</b> Imagens</a></li>
-<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#tabelas-1"><i class="fa fa-check"></i><b>9.2.3</b> Tabelas</a></li>
+<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#criando-um-arquivo-.rmd"><i class="fa fa-check"></i><b>9.2.1</b> Criando um arquivo <code>.Rmd</code></a></li>
+<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#estrutura-do-arquivo-r-markdown"><i class="fa fa-check"></i><b>9.2.2</b> Estrutura do arquivo R Markdown</a></li>
+<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#adicionando-conteúdo"><i class="fa fa-check"></i><b>9.2.3</b> Adicionando conteúdo</a></li>
 <li class="chapter" data-level="9.2.4" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#dicas-para-o-rstudio"><i class="fa fa-check"></i><b>9.2.4</b> Dicas para o RStudio</a></li>
 <li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
@@ -472,21 +474,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 extensível. As funções <code>map()</code> são quase como substitutas para laços <code>for</code>,
 elas abstraem a iteração em apenas uma linha. Veja esse exemplo de laço usando
 <code>for</code>:</p>
-<div class="sourceCode" id="cb573"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb573-1"><a href="10-1-iterações-básicas.html#cb573-1" aria-hidden="true" tabindex="-1"></a>soma_um <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { x <span class="sc">+</span> <span class="dv">1</span> }</span>
-<span id="cb573-2"><a href="10-1-iterações-básicas.html#cb573-2" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb573-3"><a href="10-1-iterações-básicas.html#cb573-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(obj)) {</span>
-<span id="cb573-4"><a href="10-1-iterações-básicas.html#cb573-4" aria-hidden="true" tabindex="-1"></a>  obj[i] <span class="ot">&lt;-</span> <span class="fu">soma_um</span>(obj[i])</span>
-<span id="cb573-5"><a href="10-1-iterações-básicas.html#cb573-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb573-6"><a href="10-1-iterações-básicas.html#cb573-6" aria-hidden="true" tabindex="-1"></a>obj</span></code></pre></div>
+<div class="sourceCode" id="cb568"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb568-1"><a href="10-1-iterações-básicas.html#cb568-1" aria-hidden="true" tabindex="-1"></a>soma_um <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { x <span class="sc">+</span> <span class="dv">1</span> }</span>
+<span id="cb568-2"><a href="10-1-iterações-básicas.html#cb568-2" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb568-3"><a href="10-1-iterações-básicas.html#cb568-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(obj)) {</span>
+<span id="cb568-4"><a href="10-1-iterações-básicas.html#cb568-4" aria-hidden="true" tabindex="-1"></a>  obj[i] <span class="ot">&lt;-</span> <span class="fu">soma_um</span>(obj[i])</span>
+<span id="cb568-5"><a href="10-1-iterações-básicas.html#cb568-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb568-6"><a href="10-1-iterações-básicas.html#cb568-6" aria-hidden="true" tabindex="-1"></a>obj</span></code></pre></div>
 <pre><code>## [1] 11 12 13 14 15 16</code></pre>
 <p>O que de fato estamos tentando fazer com o laço acima? Temos um vetor (<code>obj</code>) e
 queremos aplicar uma função (<code>soma_um()</code>) em cada elemento dele. A função <code>map()</code>
 remove a necessidade de declaramos um objeto iterador auxiliar (<code>i</code>) e
 simplesmente aplica a função desejada em cada elemento do objeto dado.</p>
-<div class="sourceCode" id="cb575"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb575-1"><a href="10-1-iterações-básicas.html#cb575-1" aria-hidden="true" tabindex="-1"></a>soma_um <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { x <span class="sc">+</span> <span class="dv">1</span> }</span>
-<span id="cb575-2"><a href="10-1-iterações-básicas.html#cb575-2" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb575-3"><a href="10-1-iterações-básicas.html#cb575-3" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="fu">map</span>(obj, soma_um)</span>
-<span id="cb575-4"><a href="10-1-iterações-básicas.html#cb575-4" aria-hidden="true" tabindex="-1"></a>obj</span></code></pre></div>
+<div class="sourceCode" id="cb570"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb570-1"><a href="10-1-iterações-básicas.html#cb570-1" aria-hidden="true" tabindex="-1"></a>soma_um <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { x <span class="sc">+</span> <span class="dv">1</span> }</span>
+<span id="cb570-2"><a href="10-1-iterações-básicas.html#cb570-2" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb570-3"><a href="10-1-iterações-básicas.html#cb570-3" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="fu">map</span>(obj, soma_um)</span>
+<span id="cb570-4"><a href="10-1-iterações-básicas.html#cb570-4" aria-hidden="true" tabindex="-1"></a>obj</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] 11
 ## 
@@ -512,8 +514,8 @@ cada saída.</p>
 é super simples e pode ser feito com as irmãs da <code>map()</code>: <code>map_chr()</code> (para
 strings), <code>map_dbl()</code> (para números reais), <code>map_int()</code> (para números inteiros) e
 <code>map_lgl()</code> (para booleanos).</p>
-<div class="sourceCode" id="cb577"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb577-1"><a href="10-1-iterações-básicas.html#cb577-1" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb577-2"><a href="10-1-iterações-básicas.html#cb577-2" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(obj, soma_um)</span></code></pre></div>
+<div class="sourceCode" id="cb572"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb572-1"><a href="10-1-iterações-básicas.html#cb572-1" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb572-2"><a href="10-1-iterações-básicas.html#cb572-2" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(obj, soma_um)</span></code></pre></div>
 <pre><code>## [1] 11 12 13 14 15 16</code></pre>
 <blockquote>
 <p>O <code>purrr</code> também nos fornece outra ferramenta interessante para
@@ -523,9 +525,9 @@ achatar listas: a família <code>flatten()</code>. No fundo, <code>map_chr()</co
 <p>Algo bastante útil da família <code>map()</code> é a possibilidade de passar argumentos
 fixos para a função que será aplicada. A primeira forma de fazer isso envolve
 fórmulas:</p>
-<div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb579-1"><a href="10-1-iterações-básicas.html#cb579-1" aria-hidden="true" tabindex="-1"></a>soma_n <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">n =</span> <span class="dv">1</span>) { x <span class="sc">+</span> n }</span>
-<span id="cb579-2"><a href="10-1-iterações-básicas.html#cb579-2" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb579-3"><a href="10-1-iterações-básicas.html#cb579-3" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(obj, <span class="sc">~</span><span class="fu">soma_n</span>(.x, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb574"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb574-1"><a href="10-1-iterações-básicas.html#cb574-1" aria-hidden="true" tabindex="-1"></a>soma_n <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">n =</span> <span class="dv">1</span>) { x <span class="sc">+</span> n }</span>
+<span id="cb574-2"><a href="10-1-iterações-básicas.html#cb574-2" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb574-3"><a href="10-1-iterações-básicas.html#cb574-3" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(obj, <span class="sc">~</span><span class="fu">soma_n</span>(.x, <span class="dv">2</span>))</span></code></pre></div>
 <pre><code>## [1] 12 13 14 15 16 17</code></pre>
 <p>Como vemos no exemplo acima, para utilizar fórmulas precisamos colocar um til
 (<code>~</code>) antes da função que será chamada. Feito isso, podemos utilizar o
@@ -533,9 +535,9 @@ placeholder <code>.x</code> para indicar onde deve ser colocado cada elemento de
 <p>A outra forma de passar argumentos para a função é através das reticências da
 <code>map()</code>. Desta maneira precisamos apenas dar o nome do argumento e seu valor
 logo após a função <code>soma_n()</code>.</p>
-<div class="sourceCode" id="cb581"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb581-1"><a href="10-1-iterações-básicas.html#cb581-1" aria-hidden="true" tabindex="-1"></a>soma_n <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">n =</span> <span class="dv">1</span>) { x <span class="sc">+</span> n }</span>
-<span id="cb581-2"><a href="10-1-iterações-básicas.html#cb581-2" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb581-3"><a href="10-1-iterações-básicas.html#cb581-3" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(obj, soma_n, <span class="at">n =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb576"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb576-1"><a href="10-1-iterações-básicas.html#cb576-1" aria-hidden="true" tabindex="-1"></a>soma_n <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">n =</span> <span class="dv">1</span>) { x <span class="sc">+</span> n }</span>
+<span id="cb576-2"><a href="10-1-iterações-básicas.html#cb576-2" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb576-3"><a href="10-1-iterações-básicas.html#cb576-3" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(obj, soma_n, <span class="at">n =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 12 13 14 15 16 17</code></pre>
 <p>Usando fórmulas temos uma maior flexibilidade (podemos, por exemplo, declarar
 funções anônimas como <code>~.x+2</code>), enquanto com as reticências temos maior
@@ -574,6 +576,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

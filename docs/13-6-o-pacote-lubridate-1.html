@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>13.6 O pacote lubridate | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="13.6 O pacote lubridate | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="assets/img/logo.png" />
+  <meta property="og:image" content="/assets/img/logo.png" />
   <meta property="og:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="github-repo" content="curso-r/livro-material" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="13.6 O pacote lubridate | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="twitter:image" content="assets/img/logo.png" />
+  <meta name="twitter:image" content="/assets/img/logo.png" />
 
 <meta name="author" content="Curso-R" />
 
@@ -32,8 +32,8 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="13-5-o-pacote-stringr-1.html"/>
 <link rel="next" href="13-7-o-pacote-forcats.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.9.1/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,16 +50,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.16/datatables.js"></script>
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
@@ -139,6 +139,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="assets/style.css" type="text/css" />
 </head>
 
@@ -162,17 +163,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
-<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
+<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-macos"><i class="fa fa-check"></i><b>1.1.3</b> No MacOS</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
 <li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
+<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#instalacao-latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
 <li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
 <li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
 <li class="chapter" data-level="1.3.4" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#renderizando-html-widgets"><i class="fa fa-check"></i><b>1.3.4</b> Renderizando HTML widgets</a></li>
 <li class="chapter" data-level="1.3.5" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#blogdown"><i class="fa fa-check"></i><b>1.3.5</b> Blogdown</a></li>
-<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#rtools"><i class="fa fa-check"></i><b>1.3.6</b> Rtools</a></li>
+<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#ferramentas-de-desenvolvimento"><i class="fa fa-check"></i><b>1.3.6</b> Ferramentas de desenvolvimento</a></li>
+<li class="chapter" data-level="1.3.7" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#git"><i class="fa fa-check"></i><b>1.3.7</b> Git</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
@@ -357,9 +359,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#códigos-em-r"><i class="fa fa-check"></i><b>9.2.1</b> Códigos em R</a></li>
-<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#imagens-1"><i class="fa fa-check"></i><b>9.2.2</b> Imagens</a></li>
-<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#tabelas-1"><i class="fa fa-check"></i><b>9.2.3</b> Tabelas</a></li>
+<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#criando-um-arquivo-.rmd"><i class="fa fa-check"></i><b>9.2.1</b> Criando um arquivo <code>.Rmd</code></a></li>
+<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#estrutura-do-arquivo-r-markdown"><i class="fa fa-check"></i><b>9.2.2</b> Estrutura do arquivo R Markdown</a></li>
+<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#adicionando-conteúdo"><i class="fa fa-check"></i><b>9.2.3</b> Adicionando conteúdo</a></li>
 <li class="chapter" data-level="9.2.4" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#dicas-para-o-rstudio"><i class="fa fa-check"></i><b>9.2.4</b> Dicas para o RStudio</a></li>
 <li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
@@ -468,113 +470,113 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="o-pacote-lubridate-1" class="section level2" number="13.6">
 <h2><span class="header-section-number">13.6</span> O pacote lubridate</h2>
-<div class="sourceCode" id="cb963"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb963-1"><a href="13-6-o-pacote-lubridate-1.html#cb963-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb963-2"><a href="13-6-o-pacote-lubridate-1.html#cb963-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb963-3"><a href="13-6-o-pacote-lubridate-1.html#cb963-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb963-4"><a href="13-6-o-pacote-lubridate-1.html#cb963-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb963-5"><a href="13-6-o-pacote-lubridate-1.html#cb963-5" aria-hidden="true" tabindex="-1"></a>lakers <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">as_tibble</span>(lakers)</span></code></pre></div>
+<div class="sourceCode" id="cb958"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb958-1"><a href="13-6-o-pacote-lubridate-1.html#cb958-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb958-2"><a href="13-6-o-pacote-lubridate-1.html#cb958-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb958-3"><a href="13-6-o-pacote-lubridate-1.html#cb958-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb958-4"><a href="13-6-o-pacote-lubridate-1.html#cb958-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb958-5"><a href="13-6-o-pacote-lubridate-1.html#cb958-5" aria-hidden="true" tabindex="-1"></a>lakers <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">as_tibble</span>(lakers)</span></code></pre></div>
 <p><strong>1.</strong> Repare que a coluna <code>date</code> no data.frame é um vetor de inteiros. Transforme essa coluna em um vetor de valores com classe <code>date</code>.</p>
-<div class="sourceCode" id="cb964"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb964-1"><a href="13-6-o-pacote-lubridate-1.html#cb964-1" aria-hidden="true" tabindex="-1"></a>lakers <span class="sc">%&gt;%</span> </span>
-<span id="cb964-2"><a href="13-6-o-pacote-lubridate-1.html#cb964-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">ymd</span>(date))</span>
-<span id="cb964-3"><a href="13-6-o-pacote-lubridate-1.html#cb964-3" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 34,624 x 13</span></span>
-<span id="cb964-4"><a href="13-6-o-pacote-lubridate-1.html#cb964-4" aria-hidden="true" tabindex="-1"></a><span class="do">##    date       opponent game_type time  period etype  team  player  result points</span></span>
-<span id="cb964-5"><a href="13-6-o-pacote-lubridate-1.html#cb964-5" aria-hidden="true" tabindex="-1"></a><span class="do">##    &lt;date&gt;     &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;int&gt;</span></span>
-<span id="cb964-6"><a href="13-6-o-pacote-lubridate-1.html#cb964-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  1 2008-10-28 POR      home      12:00      1 jump … OFF   &quot;&quot;      &quot;&quot;          0</span></span>
-<span id="cb964-7"><a href="13-6-o-pacote-lubridate-1.html#cb964-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  2 2008-10-28 POR      home      11:39      1 shot   LAL   &quot;Pau G… &quot;miss…      0</span></span>
-<span id="cb964-8"><a href="13-6-o-pacote-lubridate-1.html#cb964-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  3 2008-10-28 POR      home      11:37      1 rebou… LAL   &quot;Vladi… &quot;&quot;          0</span></span>
-<span id="cb964-9"><a href="13-6-o-pacote-lubridate-1.html#cb964-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  4 2008-10-28 POR      home      11:25      1 shot   LAL   &quot;Derek… &quot;miss…      0</span></span>
-<span id="cb964-10"><a href="13-6-o-pacote-lubridate-1.html#cb964-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  5 2008-10-28 POR      home      11:23      1 rebou… LAL   &quot;Pau G… &quot;&quot;          0</span></span>
-<span id="cb964-11"><a href="13-6-o-pacote-lubridate-1.html#cb964-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  6 2008-10-28 POR      home      11:22      1 shot   LAL   &quot;Pau G… &quot;made&quot;      2</span></span>
-<span id="cb964-12"><a href="13-6-o-pacote-lubridate-1.html#cb964-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  7 2008-10-28 POR      home      11:22      1 foul   POR   &quot;Greg … &quot;&quot;          0</span></span>
-<span id="cb964-13"><a href="13-6-o-pacote-lubridate-1.html#cb964-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  8 2008-10-28 POR      home      11:22      1 free … LAL   &quot;Pau G… &quot;made&quot;      1</span></span>
-<span id="cb964-14"><a href="13-6-o-pacote-lubridate-1.html#cb964-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  9 2008-10-28 POR      home      11:00      1 foul   LAL   &quot;Vladi… &quot;&quot;          0</span></span>
-<span id="cb964-15"><a href="13-6-o-pacote-lubridate-1.html#cb964-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 10 2008-10-28 POR      home      10:53      1 shot   POR   &quot;LaMar… &quot;made&quot;      2</span></span>
-<span id="cb964-16"><a href="13-6-o-pacote-lubridate-1.html#cb964-16" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 34,614 more rows, and 3 more variables: type &lt;chr&gt;, x &lt;int&gt;, y &lt;int&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb959"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb959-1"><a href="13-6-o-pacote-lubridate-1.html#cb959-1" aria-hidden="true" tabindex="-1"></a>lakers <span class="sc">%&gt;%</span> </span>
+<span id="cb959-2"><a href="13-6-o-pacote-lubridate-1.html#cb959-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">ymd</span>(date))</span>
+<span id="cb959-3"><a href="13-6-o-pacote-lubridate-1.html#cb959-3" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 34,624 x 13</span></span>
+<span id="cb959-4"><a href="13-6-o-pacote-lubridate-1.html#cb959-4" aria-hidden="true" tabindex="-1"></a><span class="do">##    date       opponent game_type time  period etype  team  player  result points</span></span>
+<span id="cb959-5"><a href="13-6-o-pacote-lubridate-1.html#cb959-5" aria-hidden="true" tabindex="-1"></a><span class="do">##    &lt;date&gt;     &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;int&gt;</span></span>
+<span id="cb959-6"><a href="13-6-o-pacote-lubridate-1.html#cb959-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  1 2008-10-28 POR      home      12:00      1 jump … OFF   &quot;&quot;      &quot;&quot;          0</span></span>
+<span id="cb959-7"><a href="13-6-o-pacote-lubridate-1.html#cb959-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  2 2008-10-28 POR      home      11:39      1 shot   LAL   &quot;Pau G… &quot;miss…      0</span></span>
+<span id="cb959-8"><a href="13-6-o-pacote-lubridate-1.html#cb959-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  3 2008-10-28 POR      home      11:37      1 rebou… LAL   &quot;Vladi… &quot;&quot;          0</span></span>
+<span id="cb959-9"><a href="13-6-o-pacote-lubridate-1.html#cb959-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  4 2008-10-28 POR      home      11:25      1 shot   LAL   &quot;Derek… &quot;miss…      0</span></span>
+<span id="cb959-10"><a href="13-6-o-pacote-lubridate-1.html#cb959-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  5 2008-10-28 POR      home      11:23      1 rebou… LAL   &quot;Pau G… &quot;&quot;          0</span></span>
+<span id="cb959-11"><a href="13-6-o-pacote-lubridate-1.html#cb959-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  6 2008-10-28 POR      home      11:22      1 shot   LAL   &quot;Pau G… &quot;made&quot;      2</span></span>
+<span id="cb959-12"><a href="13-6-o-pacote-lubridate-1.html#cb959-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  7 2008-10-28 POR      home      11:22      1 foul   POR   &quot;Greg … &quot;&quot;          0</span></span>
+<span id="cb959-13"><a href="13-6-o-pacote-lubridate-1.html#cb959-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  8 2008-10-28 POR      home      11:22      1 free … LAL   &quot;Pau G… &quot;made&quot;      1</span></span>
+<span id="cb959-14"><a href="13-6-o-pacote-lubridate-1.html#cb959-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  9 2008-10-28 POR      home      11:00      1 foul   LAL   &quot;Vladi… &quot;&quot;          0</span></span>
+<span id="cb959-15"><a href="13-6-o-pacote-lubridate-1.html#cb959-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 10 2008-10-28 POR      home      10:53      1 shot   POR   &quot;LaMar… &quot;made&quot;      2</span></span>
+<span id="cb959-16"><a href="13-6-o-pacote-lubridate-1.html#cb959-16" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 34,614 more rows, and 3 more variables: type &lt;chr&gt;, x &lt;int&gt;, y &lt;int&gt;</span></span></code></pre></div>
 <p>Repare que <code>as_date()</code> não funciona neste caso.</p>
-<div class="sourceCode" id="cb965"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb965-1"><a href="13-6-o-pacote-lubridate-1.html#cb965-1" aria-hidden="true" tabindex="-1"></a>lakers <span class="sc">%&gt;%</span></span>
-<span id="cb965-2"><a href="13-6-o-pacote-lubridate-1.html#cb965-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as_date</span>(date))</span>
-<span id="cb965-3"><a href="13-6-o-pacote-lubridate-1.html#cb965-3" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 34,624 x 13</span></span>
-<span id="cb965-4"><a href="13-6-o-pacote-lubridate-1.html#cb965-4" aria-hidden="true" tabindex="-1"></a><span class="do">##    date       opponent game_type time  period etype  team  player  result points</span></span>
-<span id="cb965-5"><a href="13-6-o-pacote-lubridate-1.html#cb965-5" aria-hidden="true" tabindex="-1"></a><span class="do">##    &lt;date&gt;     &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;int&gt;</span></span>
-<span id="cb965-6"><a href="13-6-o-pacote-lubridate-1.html#cb965-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  1 56949-12-27 POR      home      12:00      1 jump … OFF   &quot;&quot;      &quot;&quot;          0</span></span>
-<span id="cb965-7"><a href="13-6-o-pacote-lubridate-1.html#cb965-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  2 56949-12-27 POR      home      11:39      1 shot   LAL   &quot;Pau G… &quot;miss…      0</span></span>
-<span id="cb965-8"><a href="13-6-o-pacote-lubridate-1.html#cb965-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  3 56949-12-27 POR      home      11:37      1 rebou… LAL   &quot;Vladi… &quot;&quot;          0</span></span>
-<span id="cb965-9"><a href="13-6-o-pacote-lubridate-1.html#cb965-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  4 56949-12-27 POR      home      11:25      1 shot   LAL   &quot;Derek… &quot;miss…      0</span></span>
-<span id="cb965-10"><a href="13-6-o-pacote-lubridate-1.html#cb965-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  5 56949-12-27 POR      home      11:23      1 rebou… LAL   &quot;Pau G… &quot;&quot;          0</span></span>
-<span id="cb965-11"><a href="13-6-o-pacote-lubridate-1.html#cb965-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  6 56949-12-27 POR      home      11:22      1 shot   LAL   &quot;Pau G… &quot;made&quot;      2</span></span>
-<span id="cb965-12"><a href="13-6-o-pacote-lubridate-1.html#cb965-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  7 56949-12-27 POR      home      11:22      1 foul   POR   &quot;Greg … &quot;&quot;          0</span></span>
-<span id="cb965-13"><a href="13-6-o-pacote-lubridate-1.html#cb965-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  8 56949-12-27 POR      home      11:22      1 free … LAL   &quot;Pau G… &quot;made&quot;      1</span></span>
-<span id="cb965-14"><a href="13-6-o-pacote-lubridate-1.html#cb965-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  9 56949-12-27 POR      home      11:00      1 foul   LAL   &quot;Vladi… &quot;&quot;          0</span></span>
-<span id="cb965-15"><a href="13-6-o-pacote-lubridate-1.html#cb965-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 10 56949-12-27 POR      home      10:53      1 shot   POR   &quot;LaMar… &quot;made&quot;      2</span></span>
-<span id="cb965-16"><a href="13-6-o-pacote-lubridate-1.html#cb965-16" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 34,614 more rows, and 3 more variables: type &lt;chr&gt;, x &lt;int&gt;, y &lt;int&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb960"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb960-1"><a href="13-6-o-pacote-lubridate-1.html#cb960-1" aria-hidden="true" tabindex="-1"></a>lakers <span class="sc">%&gt;%</span></span>
+<span id="cb960-2"><a href="13-6-o-pacote-lubridate-1.html#cb960-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as_date</span>(date))</span>
+<span id="cb960-3"><a href="13-6-o-pacote-lubridate-1.html#cb960-3" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 34,624 x 13</span></span>
+<span id="cb960-4"><a href="13-6-o-pacote-lubridate-1.html#cb960-4" aria-hidden="true" tabindex="-1"></a><span class="do">##    date       opponent game_type time  period etype  team  player  result points</span></span>
+<span id="cb960-5"><a href="13-6-o-pacote-lubridate-1.html#cb960-5" aria-hidden="true" tabindex="-1"></a><span class="do">##    &lt;date&gt;     &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;int&gt;</span></span>
+<span id="cb960-6"><a href="13-6-o-pacote-lubridate-1.html#cb960-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  1 56949-12-27 POR      home      12:00      1 jump … OFF   &quot;&quot;      &quot;&quot;          0</span></span>
+<span id="cb960-7"><a href="13-6-o-pacote-lubridate-1.html#cb960-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  2 56949-12-27 POR      home      11:39      1 shot   LAL   &quot;Pau G… &quot;miss…      0</span></span>
+<span id="cb960-8"><a href="13-6-o-pacote-lubridate-1.html#cb960-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  3 56949-12-27 POR      home      11:37      1 rebou… LAL   &quot;Vladi… &quot;&quot;          0</span></span>
+<span id="cb960-9"><a href="13-6-o-pacote-lubridate-1.html#cb960-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  4 56949-12-27 POR      home      11:25      1 shot   LAL   &quot;Derek… &quot;miss…      0</span></span>
+<span id="cb960-10"><a href="13-6-o-pacote-lubridate-1.html#cb960-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  5 56949-12-27 POR      home      11:23      1 rebou… LAL   &quot;Pau G… &quot;&quot;          0</span></span>
+<span id="cb960-11"><a href="13-6-o-pacote-lubridate-1.html#cb960-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  6 56949-12-27 POR      home      11:22      1 shot   LAL   &quot;Pau G… &quot;made&quot;      2</span></span>
+<span id="cb960-12"><a href="13-6-o-pacote-lubridate-1.html#cb960-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  7 56949-12-27 POR      home      11:22      1 foul   POR   &quot;Greg … &quot;&quot;          0</span></span>
+<span id="cb960-13"><a href="13-6-o-pacote-lubridate-1.html#cb960-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  8 56949-12-27 POR      home      11:22      1 free … LAL   &quot;Pau G… &quot;made&quot;      1</span></span>
+<span id="cb960-14"><a href="13-6-o-pacote-lubridate-1.html#cb960-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  9 56949-12-27 POR      home      11:00      1 foul   LAL   &quot;Vladi… &quot;&quot;          0</span></span>
+<span id="cb960-15"><a href="13-6-o-pacote-lubridate-1.html#cb960-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 10 56949-12-27 POR      home      10:53      1 shot   POR   &quot;LaMar… &quot;made&quot;      2</span></span>
+<span id="cb960-16"><a href="13-6-o-pacote-lubridate-1.html#cb960-16" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 34,614 more rows, and 3 more variables: type &lt;chr&gt;, x &lt;int&gt;, y &lt;int&gt;</span></span></code></pre></div>
 <p>Para entender porque a função devolveu um dia do ano 56949, rode os códigos abaixo.</p>
-<div class="sourceCode" id="cb966"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb966-1"><a href="13-6-o-pacote-lubridate-1.html#cb966-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as_date</span>(<span class="dv">0</span>)</span>
-<span id="cb966-2"><a href="13-6-o-pacote-lubridate-1.html#cb966-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;1970-01-01&quot;</span></span>
-<span id="cb966-3"><a href="13-6-o-pacote-lubridate-1.html#cb966-3" aria-hidden="true" tabindex="-1"></a><span class="fu">as_date</span>(<span class="sc">-</span><span class="dv">3</span><span class="sc">:</span><span class="dv">3</span>)</span>
-<span id="cb966-4"><a href="13-6-o-pacote-lubridate-1.html#cb966-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;1969-12-29&quot; &quot;1969-12-30&quot; &quot;1969-12-31&quot; &quot;1970-01-01&quot; &quot;1970-01-02&quot;</span></span>
-<span id="cb966-5"><a href="13-6-o-pacote-lubridate-1.html#cb966-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [6] &quot;1970-01-03&quot; &quot;1970-01-04&quot;</span></span>
-<span id="cb966-6"><a href="13-6-o-pacote-lubridate-1.html#cb966-6" aria-hidden="true" tabindex="-1"></a><span class="fu">as_date</span>(<span class="dv">20081027</span><span class="sc">:</span><span class="dv">20081029</span>)</span>
-<span id="cb966-7"><a href="13-6-o-pacote-lubridate-1.html#cb966-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;56949-12-26&quot; &quot;56949-12-27&quot; &quot;56949-12-28&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb961"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb961-1"><a href="13-6-o-pacote-lubridate-1.html#cb961-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as_date</span>(<span class="dv">0</span>)</span>
+<span id="cb961-2"><a href="13-6-o-pacote-lubridate-1.html#cb961-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;1970-01-01&quot;</span></span>
+<span id="cb961-3"><a href="13-6-o-pacote-lubridate-1.html#cb961-3" aria-hidden="true" tabindex="-1"></a><span class="fu">as_date</span>(<span class="sc">-</span><span class="dv">3</span><span class="sc">:</span><span class="dv">3</span>)</span>
+<span id="cb961-4"><a href="13-6-o-pacote-lubridate-1.html#cb961-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;1969-12-29&quot; &quot;1969-12-30&quot; &quot;1969-12-31&quot; &quot;1970-01-01&quot; &quot;1970-01-02&quot;</span></span>
+<span id="cb961-5"><a href="13-6-o-pacote-lubridate-1.html#cb961-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [6] &quot;1970-01-03&quot; &quot;1970-01-04&quot;</span></span>
+<span id="cb961-6"><a href="13-6-o-pacote-lubridate-1.html#cb961-6" aria-hidden="true" tabindex="-1"></a><span class="fu">as_date</span>(<span class="dv">20081027</span><span class="sc">:</span><span class="dv">20081029</span>)</span>
+<span id="cb961-7"><a href="13-6-o-pacote-lubridate-1.html#cb961-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;56949-12-26&quot; &quot;56949-12-27&quot; &quot;56949-12-28&quot;</span></span></code></pre></div>
 <hr />
 <p><strong>2.</strong> Crie uma coluna que junte as informações de data e hora (colunas <code>date</code> e <code>time</code>) em objetos da classe <code>date</code>.</p>
-<div class="sourceCode" id="cb967"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb967-1"><a href="13-6-o-pacote-lubridate-1.html#cb967-1" aria-hidden="true" tabindex="-1"></a>lakers <span class="sc">%&gt;%</span> </span>
-<span id="cb967-2"><a href="13-6-o-pacote-lubridate-1.html#cb967-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date_time =</span> <span class="fu">paste0</span>(date, <span class="st">&quot; 00:&quot;</span>, time) <span class="sc">%&gt;%</span> ymd_hms) <span class="sc">%&gt;%</span> </span>
-<span id="cb967-3"><a href="13-6-o-pacote-lubridate-1.html#cb967-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(date_time)</span>
-<span id="cb967-4"><a href="13-6-o-pacote-lubridate-1.html#cb967-4" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 34,624 x 1</span></span>
-<span id="cb967-5"><a href="13-6-o-pacote-lubridate-1.html#cb967-5" aria-hidden="true" tabindex="-1"></a><span class="do">##    date_time          </span></span>
-<span id="cb967-6"><a href="13-6-o-pacote-lubridate-1.html#cb967-6" aria-hidden="true" tabindex="-1"></a><span class="do">##    &lt;dttm&gt;             </span></span>
-<span id="cb967-7"><a href="13-6-o-pacote-lubridate-1.html#cb967-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  1 2008-10-28 00:12:00</span></span>
-<span id="cb967-8"><a href="13-6-o-pacote-lubridate-1.html#cb967-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  2 2008-10-28 00:11:39</span></span>
-<span id="cb967-9"><a href="13-6-o-pacote-lubridate-1.html#cb967-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  3 2008-10-28 00:11:37</span></span>
-<span id="cb967-10"><a href="13-6-o-pacote-lubridate-1.html#cb967-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  4 2008-10-28 00:11:25</span></span>
-<span id="cb967-11"><a href="13-6-o-pacote-lubridate-1.html#cb967-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  5 2008-10-28 00:11:23</span></span>
-<span id="cb967-12"><a href="13-6-o-pacote-lubridate-1.html#cb967-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  6 2008-10-28 00:11:22</span></span>
-<span id="cb967-13"><a href="13-6-o-pacote-lubridate-1.html#cb967-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  7 2008-10-28 00:11:22</span></span>
-<span id="cb967-14"><a href="13-6-o-pacote-lubridate-1.html#cb967-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  8 2008-10-28 00:11:22</span></span>
-<span id="cb967-15"><a href="13-6-o-pacote-lubridate-1.html#cb967-15" aria-hidden="true" tabindex="-1"></a><span class="do">##  9 2008-10-28 00:11:00</span></span>
-<span id="cb967-16"><a href="13-6-o-pacote-lubridate-1.html#cb967-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 10 2008-10-28 00:10:53</span></span>
-<span id="cb967-17"><a href="13-6-o-pacote-lubridate-1.html#cb967-17" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 34,614 more rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb962"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb962-1"><a href="13-6-o-pacote-lubridate-1.html#cb962-1" aria-hidden="true" tabindex="-1"></a>lakers <span class="sc">%&gt;%</span> </span>
+<span id="cb962-2"><a href="13-6-o-pacote-lubridate-1.html#cb962-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date_time =</span> <span class="fu">paste0</span>(date, <span class="st">&quot; 00:&quot;</span>, time) <span class="sc">%&gt;%</span> ymd_hms) <span class="sc">%&gt;%</span> </span>
+<span id="cb962-3"><a href="13-6-o-pacote-lubridate-1.html#cb962-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(date_time)</span>
+<span id="cb962-4"><a href="13-6-o-pacote-lubridate-1.html#cb962-4" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 34,624 x 1</span></span>
+<span id="cb962-5"><a href="13-6-o-pacote-lubridate-1.html#cb962-5" aria-hidden="true" tabindex="-1"></a><span class="do">##    date_time          </span></span>
+<span id="cb962-6"><a href="13-6-o-pacote-lubridate-1.html#cb962-6" aria-hidden="true" tabindex="-1"></a><span class="do">##    &lt;dttm&gt;             </span></span>
+<span id="cb962-7"><a href="13-6-o-pacote-lubridate-1.html#cb962-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  1 2008-10-28 00:12:00</span></span>
+<span id="cb962-8"><a href="13-6-o-pacote-lubridate-1.html#cb962-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  2 2008-10-28 00:11:39</span></span>
+<span id="cb962-9"><a href="13-6-o-pacote-lubridate-1.html#cb962-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  3 2008-10-28 00:11:37</span></span>
+<span id="cb962-10"><a href="13-6-o-pacote-lubridate-1.html#cb962-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  4 2008-10-28 00:11:25</span></span>
+<span id="cb962-11"><a href="13-6-o-pacote-lubridate-1.html#cb962-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  5 2008-10-28 00:11:23</span></span>
+<span id="cb962-12"><a href="13-6-o-pacote-lubridate-1.html#cb962-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  6 2008-10-28 00:11:22</span></span>
+<span id="cb962-13"><a href="13-6-o-pacote-lubridate-1.html#cb962-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  7 2008-10-28 00:11:22</span></span>
+<span id="cb962-14"><a href="13-6-o-pacote-lubridate-1.html#cb962-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  8 2008-10-28 00:11:22</span></span>
+<span id="cb962-15"><a href="13-6-o-pacote-lubridate-1.html#cb962-15" aria-hidden="true" tabindex="-1"></a><span class="do">##  9 2008-10-28 00:11:00</span></span>
+<span id="cb962-16"><a href="13-6-o-pacote-lubridate-1.html#cb962-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 10 2008-10-28 00:10:53</span></span>
+<span id="cb962-17"><a href="13-6-o-pacote-lubridate-1.html#cb962-17" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 34,614 more rows</span></span></code></pre></div>
 <hr />
 <p><strong>3.</strong> Crie as colunas <code>dia</code>, <code>mes</code> e <code>ano</code> com as respectivas informações sobre a data do jogo.</p>
-<div class="sourceCode" id="cb968"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb968-1"><a href="13-6-o-pacote-lubridate-1.html#cb968-1" aria-hidden="true" tabindex="-1"></a>lakers <span class="sc">%&gt;%</span></span>
-<span id="cb968-2"><a href="13-6-o-pacote-lubridate-1.html#cb968-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb968-3"><a href="13-6-o-pacote-lubridate-1.html#cb968-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">ymd</span>(date),</span>
-<span id="cb968-4"><a href="13-6-o-pacote-lubridate-1.html#cb968-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">dia =</span> <span class="fu">day</span>(date),</span>
-<span id="cb968-5"><a href="13-6-o-pacote-lubridate-1.html#cb968-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mes =</span> <span class="fu">month</span>(date),</span>
-<span id="cb968-6"><a href="13-6-o-pacote-lubridate-1.html#cb968-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">ano =</span> <span class="fu">year</span>(date)</span>
-<span id="cb968-7"><a href="13-6-o-pacote-lubridate-1.html#cb968-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb968-8"><a href="13-6-o-pacote-lubridate-1.html#cb968-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(date, dia, mes, ano)</span>
-<span id="cb968-9"><a href="13-6-o-pacote-lubridate-1.html#cb968-9" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 34,624 x 4</span></span>
-<span id="cb968-10"><a href="13-6-o-pacote-lubridate-1.html#cb968-10" aria-hidden="true" tabindex="-1"></a><span class="do">##    date         dia   mes   ano</span></span>
-<span id="cb968-11"><a href="13-6-o-pacote-lubridate-1.html#cb968-11" aria-hidden="true" tabindex="-1"></a><span class="do">##    &lt;date&gt;     &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
-<span id="cb968-12"><a href="13-6-o-pacote-lubridate-1.html#cb968-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  1 2008-10-28    28    10  2008</span></span>
-<span id="cb968-13"><a href="13-6-o-pacote-lubridate-1.html#cb968-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  2 2008-10-28    28    10  2008</span></span>
-<span id="cb968-14"><a href="13-6-o-pacote-lubridate-1.html#cb968-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  3 2008-10-28    28    10  2008</span></span>
-<span id="cb968-15"><a href="13-6-o-pacote-lubridate-1.html#cb968-15" aria-hidden="true" tabindex="-1"></a><span class="do">##  4 2008-10-28    28    10  2008</span></span>
-<span id="cb968-16"><a href="13-6-o-pacote-lubridate-1.html#cb968-16" aria-hidden="true" tabindex="-1"></a><span class="do">##  5 2008-10-28    28    10  2008</span></span>
-<span id="cb968-17"><a href="13-6-o-pacote-lubridate-1.html#cb968-17" aria-hidden="true" tabindex="-1"></a><span class="do">##  6 2008-10-28    28    10  2008</span></span>
-<span id="cb968-18"><a href="13-6-o-pacote-lubridate-1.html#cb968-18" aria-hidden="true" tabindex="-1"></a><span class="do">##  7 2008-10-28    28    10  2008</span></span>
-<span id="cb968-19"><a href="13-6-o-pacote-lubridate-1.html#cb968-19" aria-hidden="true" tabindex="-1"></a><span class="do">##  8 2008-10-28    28    10  2008</span></span>
-<span id="cb968-20"><a href="13-6-o-pacote-lubridate-1.html#cb968-20" aria-hidden="true" tabindex="-1"></a><span class="do">##  9 2008-10-28    28    10  2008</span></span>
-<span id="cb968-21"><a href="13-6-o-pacote-lubridate-1.html#cb968-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 10 2008-10-28    28    10  2008</span></span>
-<span id="cb968-22"><a href="13-6-o-pacote-lubridate-1.html#cb968-22" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 34,614 more rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb963"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb963-1"><a href="13-6-o-pacote-lubridate-1.html#cb963-1" aria-hidden="true" tabindex="-1"></a>lakers <span class="sc">%&gt;%</span></span>
+<span id="cb963-2"><a href="13-6-o-pacote-lubridate-1.html#cb963-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb963-3"><a href="13-6-o-pacote-lubridate-1.html#cb963-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">date =</span> <span class="fu">ymd</span>(date),</span>
+<span id="cb963-4"><a href="13-6-o-pacote-lubridate-1.html#cb963-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">dia =</span> <span class="fu">day</span>(date),</span>
+<span id="cb963-5"><a href="13-6-o-pacote-lubridate-1.html#cb963-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mes =</span> <span class="fu">month</span>(date),</span>
+<span id="cb963-6"><a href="13-6-o-pacote-lubridate-1.html#cb963-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">ano =</span> <span class="fu">year</span>(date)</span>
+<span id="cb963-7"><a href="13-6-o-pacote-lubridate-1.html#cb963-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb963-8"><a href="13-6-o-pacote-lubridate-1.html#cb963-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(date, dia, mes, ano)</span>
+<span id="cb963-9"><a href="13-6-o-pacote-lubridate-1.html#cb963-9" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 34,624 x 4</span></span>
+<span id="cb963-10"><a href="13-6-o-pacote-lubridate-1.html#cb963-10" aria-hidden="true" tabindex="-1"></a><span class="do">##    date         dia   mes   ano</span></span>
+<span id="cb963-11"><a href="13-6-o-pacote-lubridate-1.html#cb963-11" aria-hidden="true" tabindex="-1"></a><span class="do">##    &lt;date&gt;     &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb963-12"><a href="13-6-o-pacote-lubridate-1.html#cb963-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  1 2008-10-28    28    10  2008</span></span>
+<span id="cb963-13"><a href="13-6-o-pacote-lubridate-1.html#cb963-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  2 2008-10-28    28    10  2008</span></span>
+<span id="cb963-14"><a href="13-6-o-pacote-lubridate-1.html#cb963-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  3 2008-10-28    28    10  2008</span></span>
+<span id="cb963-15"><a href="13-6-o-pacote-lubridate-1.html#cb963-15" aria-hidden="true" tabindex="-1"></a><span class="do">##  4 2008-10-28    28    10  2008</span></span>
+<span id="cb963-16"><a href="13-6-o-pacote-lubridate-1.html#cb963-16" aria-hidden="true" tabindex="-1"></a><span class="do">##  5 2008-10-28    28    10  2008</span></span>
+<span id="cb963-17"><a href="13-6-o-pacote-lubridate-1.html#cb963-17" aria-hidden="true" tabindex="-1"></a><span class="do">##  6 2008-10-28    28    10  2008</span></span>
+<span id="cb963-18"><a href="13-6-o-pacote-lubridate-1.html#cb963-18" aria-hidden="true" tabindex="-1"></a><span class="do">##  7 2008-10-28    28    10  2008</span></span>
+<span id="cb963-19"><a href="13-6-o-pacote-lubridate-1.html#cb963-19" aria-hidden="true" tabindex="-1"></a><span class="do">##  8 2008-10-28    28    10  2008</span></span>
+<span id="cb963-20"><a href="13-6-o-pacote-lubridate-1.html#cb963-20" aria-hidden="true" tabindex="-1"></a><span class="do">##  9 2008-10-28    28    10  2008</span></span>
+<span id="cb963-21"><a href="13-6-o-pacote-lubridate-1.html#cb963-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 10 2008-10-28    28    10  2008</span></span>
+<span id="cb963-22"><a href="13-6-o-pacote-lubridate-1.html#cb963-22" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 34,614 more rows</span></span></code></pre></div>
 <hr />
 <p><strong>4.</strong> Em média, quanto tempo o Lakers demora para arremessar a primeira bola no primeiro período?</p>
 <p><strong>Dicas</strong>: arremessos são representados pela categoria <code>shot</code> da coluna <code>etype</code> e cada período tem 12 minutos.</p>
-<div class="sourceCode" id="cb969"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb969-1"><a href="13-6-o-pacote-lubridate-1.html#cb969-1" aria-hidden="true" tabindex="-1"></a>lakers <span class="sc">%&gt;%</span> </span>
-<span id="cb969-2"><a href="13-6-o-pacote-lubridate-1.html#cb969-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(etype <span class="sc">==</span> <span class="st">&quot;shot&quot;</span>, period <span class="sc">==</span> <span class="dv">1</span>, team <span class="sc">==</span> <span class="st">&quot;LAL&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb969-3"><a href="13-6-o-pacote-lubridate-1.html#cb969-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb969-4"><a href="13-6-o-pacote-lubridate-1.html#cb969-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">time =</span> <span class="fu">hms</span>(<span class="fu">paste0</span>(<span class="st">&quot;00:&quot;</span>, time)),</span>
-<span id="cb969-5"><a href="13-6-o-pacote-lubridate-1.html#cb969-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">cronometro =</span> <span class="dv">12</span><span class="sc">*</span><span class="dv">60</span> <span class="sc">-</span> <span class="fu">minute</span>(time)<span class="sc">*</span><span class="dv">60</span> <span class="sc">-</span> <span class="fu">second</span>(time)</span>
-<span id="cb969-6"><a href="13-6-o-pacote-lubridate-1.html#cb969-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb969-7"><a href="13-6-o-pacote-lubridate-1.html#cb969-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(date) <span class="sc">%&gt;%</span> </span>
-<span id="cb969-8"><a href="13-6-o-pacote-lubridate-1.html#cb969-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(cronometro <span class="sc">==</span> <span class="fu">min</span>(cronometro)) <span class="sc">%&gt;%</span> </span>
-<span id="cb969-9"><a href="13-6-o-pacote-lubridate-1.html#cb969-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb969-10"><a href="13-6-o-pacote-lubridate-1.html#cb969-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">media =</span> <span class="fu">mean</span>(cronometro))</span>
-<span id="cb969-11"><a href="13-6-o-pacote-lubridate-1.html#cb969-11" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 1 x 1</span></span>
-<span id="cb969-12"><a href="13-6-o-pacote-lubridate-1.html#cb969-12" aria-hidden="true" tabindex="-1"></a><span class="do">##   media</span></span>
-<span id="cb969-13"><a href="13-6-o-pacote-lubridate-1.html#cb969-13" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;dbl&gt;</span></span>
-<span id="cb969-14"><a href="13-6-o-pacote-lubridate-1.html#cb969-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 1  29.6</span></span></code></pre></div>
+<div class="sourceCode" id="cb964"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb964-1"><a href="13-6-o-pacote-lubridate-1.html#cb964-1" aria-hidden="true" tabindex="-1"></a>lakers <span class="sc">%&gt;%</span> </span>
+<span id="cb964-2"><a href="13-6-o-pacote-lubridate-1.html#cb964-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(etype <span class="sc">==</span> <span class="st">&quot;shot&quot;</span>, period <span class="sc">==</span> <span class="dv">1</span>, team <span class="sc">==</span> <span class="st">&quot;LAL&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb964-3"><a href="13-6-o-pacote-lubridate-1.html#cb964-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb964-4"><a href="13-6-o-pacote-lubridate-1.html#cb964-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">time =</span> <span class="fu">hms</span>(<span class="fu">paste0</span>(<span class="st">&quot;00:&quot;</span>, time)),</span>
+<span id="cb964-5"><a href="13-6-o-pacote-lubridate-1.html#cb964-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">cronometro =</span> <span class="dv">12</span><span class="sc">*</span><span class="dv">60</span> <span class="sc">-</span> <span class="fu">minute</span>(time)<span class="sc">*</span><span class="dv">60</span> <span class="sc">-</span> <span class="fu">second</span>(time)</span>
+<span id="cb964-6"><a href="13-6-o-pacote-lubridate-1.html#cb964-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb964-7"><a href="13-6-o-pacote-lubridate-1.html#cb964-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(date) <span class="sc">%&gt;%</span> </span>
+<span id="cb964-8"><a href="13-6-o-pacote-lubridate-1.html#cb964-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(cronometro <span class="sc">==</span> <span class="fu">min</span>(cronometro)) <span class="sc">%&gt;%</span> </span>
+<span id="cb964-9"><a href="13-6-o-pacote-lubridate-1.html#cb964-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb964-10"><a href="13-6-o-pacote-lubridate-1.html#cb964-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">media =</span> <span class="fu">mean</span>(cronometro))</span>
+<span id="cb964-11"><a href="13-6-o-pacote-lubridate-1.html#cb964-11" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 1 x 1</span></span>
+<span id="cb964-12"><a href="13-6-o-pacote-lubridate-1.html#cb964-12" aria-hidden="true" tabindex="-1"></a><span class="do">##   media</span></span>
+<span id="cb964-13"><a href="13-6-o-pacote-lubridate-1.html#cb964-13" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;dbl&gt;</span></span>
+<span id="cb964-14"><a href="13-6-o-pacote-lubridate-1.html#cb964-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 1  29.6</span></span></code></pre></div>
 <p>O que foi feito:</p>
 <ul>
 <li><p>Primeiro filtramos a base para arremessos, <code>etype == "shot"</code>, do primeiro período, <code>period ==</code>, que fossem do Lakers, <code>team == "LAL"</code>.</p></li>
@@ -584,64 +586,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <hr />
 <p><strong>5.</strong> Em média, quanto tempo demora para sair a primeira cesta de três pontos em cada um dos quatro períodos? Considere toda a base, e cestas de ambos os times.</p>
-<div class="sourceCode" id="cb970"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb970-1"><a href="13-6-o-pacote-lubridate-1.html#cb970-1" aria-hidden="true" tabindex="-1"></a>lakers <span class="sc">%&gt;%</span> </span>
-<span id="cb970-2"><a href="13-6-o-pacote-lubridate-1.html#cb970-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(etype <span class="sc">==</span> <span class="st">&quot;shot&quot;</span>, period <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, points <span class="sc">==</span> <span class="st">&quot;3&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb970-3"><a href="13-6-o-pacote-lubridate-1.html#cb970-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">time =</span> <span class="fu">hms</span>(<span class="fu">paste0</span>(<span class="st">&quot;00:&quot;</span>, time)),</span>
-<span id="cb970-4"><a href="13-6-o-pacote-lubridate-1.html#cb970-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">cronometro =</span> <span class="dv">12</span><span class="sc">*</span><span class="dv">60</span> <span class="sc">-</span> <span class="fu">minute</span>(time)<span class="sc">*</span><span class="dv">60</span> <span class="sc">-</span> <span class="fu">second</span>(time)) <span class="sc">%&gt;%</span> </span>
-<span id="cb970-5"><a href="13-6-o-pacote-lubridate-1.html#cb970-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(date, period) <span class="sc">%&gt;%</span> </span>
-<span id="cb970-6"><a href="13-6-o-pacote-lubridate-1.html#cb970-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(cronometro <span class="sc">==</span> <span class="fu">min</span>(cronometro)) <span class="sc">%&gt;%</span> </span>
-<span id="cb970-7"><a href="13-6-o-pacote-lubridate-1.html#cb970-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb970-8"><a href="13-6-o-pacote-lubridate-1.html#cb970-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(period) <span class="sc">%&gt;%</span> </span>
-<span id="cb970-9"><a href="13-6-o-pacote-lubridate-1.html#cb970-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">media =</span> <span class="fu">mean</span>(cronometro))</span>
-<span id="cb970-10"><a href="13-6-o-pacote-lubridate-1.html#cb970-10" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 4 x 2</span></span>
-<span id="cb970-11"><a href="13-6-o-pacote-lubridate-1.html#cb970-11" aria-hidden="true" tabindex="-1"></a><span class="do">##   period media</span></span>
-<span id="cb970-12"><a href="13-6-o-pacote-lubridate-1.html#cb970-12" aria-hidden="true" tabindex="-1"></a><span class="do">##    &lt;int&gt; &lt;dbl&gt;</span></span>
-<span id="cb970-13"><a href="13-6-o-pacote-lubridate-1.html#cb970-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 1      1  202.</span></span>
-<span id="cb970-14"><a href="13-6-o-pacote-lubridate-1.html#cb970-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 2      2  219.</span></span>
-<span id="cb970-15"><a href="13-6-o-pacote-lubridate-1.html#cb970-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 3      3  203.</span></span>
-<span id="cb970-16"><a href="13-6-o-pacote-lubridate-1.html#cb970-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 4      4  192.</span></span></code></pre></div>
+<div class="sourceCode" id="cb965"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb965-1"><a href="13-6-o-pacote-lubridate-1.html#cb965-1" aria-hidden="true" tabindex="-1"></a>lakers <span class="sc">%&gt;%</span> </span>
+<span id="cb965-2"><a href="13-6-o-pacote-lubridate-1.html#cb965-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(etype <span class="sc">==</span> <span class="st">&quot;shot&quot;</span>, period <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, points <span class="sc">==</span> <span class="st">&quot;3&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb965-3"><a href="13-6-o-pacote-lubridate-1.html#cb965-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">time =</span> <span class="fu">hms</span>(<span class="fu">paste0</span>(<span class="st">&quot;00:&quot;</span>, time)),</span>
+<span id="cb965-4"><a href="13-6-o-pacote-lubridate-1.html#cb965-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">cronometro =</span> <span class="dv">12</span><span class="sc">*</span><span class="dv">60</span> <span class="sc">-</span> <span class="fu">minute</span>(time)<span class="sc">*</span><span class="dv">60</span> <span class="sc">-</span> <span class="fu">second</span>(time)) <span class="sc">%&gt;%</span> </span>
+<span id="cb965-5"><a href="13-6-o-pacote-lubridate-1.html#cb965-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(date, period) <span class="sc">%&gt;%</span> </span>
+<span id="cb965-6"><a href="13-6-o-pacote-lubridate-1.html#cb965-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(cronometro <span class="sc">==</span> <span class="fu">min</span>(cronometro)) <span class="sc">%&gt;%</span> </span>
+<span id="cb965-7"><a href="13-6-o-pacote-lubridate-1.html#cb965-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb965-8"><a href="13-6-o-pacote-lubridate-1.html#cb965-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(period) <span class="sc">%&gt;%</span> </span>
+<span id="cb965-9"><a href="13-6-o-pacote-lubridate-1.html#cb965-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">media =</span> <span class="fu">mean</span>(cronometro))</span>
+<span id="cb965-10"><a href="13-6-o-pacote-lubridate-1.html#cb965-10" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 4 x 2</span></span>
+<span id="cb965-11"><a href="13-6-o-pacote-lubridate-1.html#cb965-11" aria-hidden="true" tabindex="-1"></a><span class="do">##   period media</span></span>
+<span id="cb965-12"><a href="13-6-o-pacote-lubridate-1.html#cb965-12" aria-hidden="true" tabindex="-1"></a><span class="do">##    &lt;int&gt; &lt;dbl&gt;</span></span>
+<span id="cb965-13"><a href="13-6-o-pacote-lubridate-1.html#cb965-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 1      1  202.</span></span>
+<span id="cb965-14"><a href="13-6-o-pacote-lubridate-1.html#cb965-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 2      2  219.</span></span>
+<span id="cb965-15"><a href="13-6-o-pacote-lubridate-1.html#cb965-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 3      3  203.</span></span>
+<span id="cb965-16"><a href="13-6-o-pacote-lubridate-1.html#cb965-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 4      4  192.</span></span></code></pre></div>
 <p>A resolução desse exercício é análoga ao anterior, só mudamos o filtro inicial e o agrupamento. Se você ficou com dúvidas, consulte o passo a passo na resolução do exercício 4.</p>
 <p>Repare que não precisarímos filtrar por <code>etype == "shot"</code>, já que o único evento que gera 3 pontos é a cesta de 3 pontos.</p>
 <hr />
 <p><strong>6.</strong> Construa boxplots do tempo entre pontos consecutivos para cada períodos. Considere toda a base de dados e apenas pontos do Lakers.</p>
-<div class="sourceCode" id="cb971"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb971-1"><a href="13-6-o-pacote-lubridate-1.html#cb971-1" aria-hidden="true" tabindex="-1"></a>lakers <span class="sc">%&gt;%</span> </span>
-<span id="cb971-2"><a href="13-6-o-pacote-lubridate-1.html#cb971-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(points <span class="sc">&gt;</span> <span class="dv">0</span>, team <span class="sc">==</span> <span class="st">&quot;LAL&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb971-3"><a href="13-6-o-pacote-lubridate-1.html#cb971-3" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb971-4"><a href="13-6-o-pacote-lubridate-1.html#cb971-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">time =</span> <span class="fu">hms</span>(<span class="fu">paste0</span>(<span class="st">&quot;00:&quot;</span>, time)),</span>
-<span id="cb971-5"><a href="13-6-o-pacote-lubridate-1.html#cb971-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">tempo_segundos =</span> <span class="dv">60</span> <span class="sc">*</span> <span class="fu">minute</span>(time) <span class="sc">+</span> <span class="fu">second</span>(time),</span>
-<span id="cb971-6"><a href="13-6-o-pacote-lubridate-1.html#cb971-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">dif =</span> tempo_segundos <span class="sc">-</span> <span class="fu">lead</span>(tempo_segundos),</span>
-<span id="cb971-7"><a href="13-6-o-pacote-lubridate-1.html#cb971-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">period =</span> <span class="fu">as.character</span>(period)</span>
-<span id="cb971-8"><a href="13-6-o-pacote-lubridate-1.html#cb971-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
-<span id="cb971-9"><a href="13-6-o-pacote-lubridate-1.html#cb971-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(dif <span class="sc">&gt;=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb971-10"><a href="13-6-o-pacote-lubridate-1.html#cb971-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> period, <span class="at">y =</span> dif)) <span class="sc">+</span></span>
-<span id="cb971-11"><a href="13-6-o-pacote-lubridate-1.html#cb971-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb966"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb966-1"><a href="13-6-o-pacote-lubridate-1.html#cb966-1" aria-hidden="true" tabindex="-1"></a>lakers <span class="sc">%&gt;%</span> </span>
+<span id="cb966-2"><a href="13-6-o-pacote-lubridate-1.html#cb966-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(points <span class="sc">&gt;</span> <span class="dv">0</span>, team <span class="sc">==</span> <span class="st">&quot;LAL&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb966-3"><a href="13-6-o-pacote-lubridate-1.html#cb966-3" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb966-4"><a href="13-6-o-pacote-lubridate-1.html#cb966-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">time =</span> <span class="fu">hms</span>(<span class="fu">paste0</span>(<span class="st">&quot;00:&quot;</span>, time)),</span>
+<span id="cb966-5"><a href="13-6-o-pacote-lubridate-1.html#cb966-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">tempo_segundos =</span> <span class="dv">60</span> <span class="sc">*</span> <span class="fu">minute</span>(time) <span class="sc">+</span> <span class="fu">second</span>(time),</span>
+<span id="cb966-6"><a href="13-6-o-pacote-lubridate-1.html#cb966-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">dif =</span> tempo_segundos <span class="sc">-</span> <span class="fu">lead</span>(tempo_segundos),</span>
+<span id="cb966-7"><a href="13-6-o-pacote-lubridate-1.html#cb966-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">period =</span> <span class="fu">as.character</span>(period)</span>
+<span id="cb966-8"><a href="13-6-o-pacote-lubridate-1.html#cb966-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb966-9"><a href="13-6-o-pacote-lubridate-1.html#cb966-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(dif <span class="sc">&gt;=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb966-10"><a href="13-6-o-pacote-lubridate-1.html#cb966-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> period, <span class="at">y =</span> dif)) <span class="sc">+</span></span>
+<span id="cb966-11"><a href="13-6-o-pacote-lubridate-1.html#cb966-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
 <p><img src="9844-respostas-lubridate_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
 <hr />
 <p><strong>7.</strong> Qual foi o dia e mês do jogo que o Lakers demorou mais tempo para fazer uma cesta? Quanto tempo foi?</p>
-<div class="sourceCode" id="cb972"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb972-1"><a href="13-6-o-pacote-lubridate-1.html#cb972-1" aria-hidden="true" tabindex="-1"></a>cesta_demorada <span class="ot">&lt;-</span> lakers <span class="sc">%&gt;%</span> </span>
-<span id="cb972-2"><a href="13-6-o-pacote-lubridate-1.html#cb972-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(points <span class="sc">&gt;</span> <span class="dv">0</span>, team <span class="sc">==</span> <span class="st">&quot;LAL&quot;</span>, period <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb972-3"><a href="13-6-o-pacote-lubridate-1.html#cb972-3" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb972-4"><a href="13-6-o-pacote-lubridate-1.html#cb972-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">time =</span> <span class="fu">hms</span>(<span class="fu">paste0</span>(<span class="st">&quot;00:&quot;</span>, time)),</span>
-<span id="cb972-5"><a href="13-6-o-pacote-lubridate-1.html#cb972-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">time =</span> <span class="dv">60</span> <span class="sc">*</span> <span class="fu">minute</span>(time) <span class="sc">+</span> <span class="fu">second</span>(time),</span>
-<span id="cb972-6"><a href="13-6-o-pacote-lubridate-1.html#cb972-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">date =</span> <span class="fu">ymd</span>(date),</span>
-<span id="cb972-7"><a href="13-6-o-pacote-lubridate-1.html#cb972-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">dia =</span> <span class="fu">day</span>(date),</span>
-<span id="cb972-8"><a href="13-6-o-pacote-lubridate-1.html#cb972-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">mes =</span> <span class="fu">month</span>(date),</span>
-<span id="cb972-9"><a href="13-6-o-pacote-lubridate-1.html#cb972-9" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
-<span id="cb972-10"><a href="13-6-o-pacote-lubridate-1.html#cb972-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(date) <span class="sc">%&gt;%</span> </span>
-<span id="cb972-11"><a href="13-6-o-pacote-lubridate-1.html#cb972-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(time <span class="sc">==</span> <span class="fu">max</span>(time)) <span class="sc">%&gt;%</span></span>
-<span id="cb972-12"><a href="13-6-o-pacote-lubridate-1.html#cb972-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb972-13"><a href="13-6-o-pacote-lubridate-1.html#cb972-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_min</span>(time)</span>
-<span id="cb972-14"><a href="13-6-o-pacote-lubridate-1.html#cb972-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb972-15"><a href="13-6-o-pacote-lubridate-1.html#cb972-15" aria-hidden="true" tabindex="-1"></a>cesta_demorada <span class="sc">%&gt;%</span> </span>
-<span id="cb972-16"><a href="13-6-o-pacote-lubridate-1.html#cb972-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(date, opponent, dia, mes)</span>
-<span id="cb972-17"><a href="13-6-o-pacote-lubridate-1.html#cb972-17" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 1 x 4</span></span>
-<span id="cb972-18"><a href="13-6-o-pacote-lubridate-1.html#cb972-18" aria-hidden="true" tabindex="-1"></a><span class="do">##   date       opponent   dia   mes</span></span>
-<span id="cb972-19"><a href="13-6-o-pacote-lubridate-1.html#cb972-19" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;date&gt;     &lt;chr&gt;    &lt;int&gt; &lt;dbl&gt;</span></span>
-<span id="cb972-20"><a href="13-6-o-pacote-lubridate-1.html#cb972-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 2009-04-12 MEM         12     4</span></span>
-<span id="cb972-21"><a href="13-6-o-pacote-lubridate-1.html#cb972-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb972-22"><a href="13-6-o-pacote-lubridate-1.html#cb972-22" aria-hidden="true" tabindex="-1"></a>tempo_seg <span class="ot">&lt;-</span> <span class="dv">12</span><span class="sc">*</span><span class="dv">60</span> <span class="sc">-</span> cesta_demorada<span class="sc">$</span>time</span>
-<span id="cb972-23"><a href="13-6-o-pacote-lubridate-1.html#cb972-23" aria-hidden="true" tabindex="-1"></a><span class="fu">seconds_to_period</span>(tempo_seg)</span>
-<span id="cb972-24"><a href="13-6-o-pacote-lubridate-1.html#cb972-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2M 37S&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb967"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb967-1"><a href="13-6-o-pacote-lubridate-1.html#cb967-1" aria-hidden="true" tabindex="-1"></a>cesta_demorada <span class="ot">&lt;-</span> lakers <span class="sc">%&gt;%</span> </span>
+<span id="cb967-2"><a href="13-6-o-pacote-lubridate-1.html#cb967-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(points <span class="sc">&gt;</span> <span class="dv">0</span>, team <span class="sc">==</span> <span class="st">&quot;LAL&quot;</span>, period <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb967-3"><a href="13-6-o-pacote-lubridate-1.html#cb967-3" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb967-4"><a href="13-6-o-pacote-lubridate-1.html#cb967-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">time =</span> <span class="fu">hms</span>(<span class="fu">paste0</span>(<span class="st">&quot;00:&quot;</span>, time)),</span>
+<span id="cb967-5"><a href="13-6-o-pacote-lubridate-1.html#cb967-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">time =</span> <span class="dv">60</span> <span class="sc">*</span> <span class="fu">minute</span>(time) <span class="sc">+</span> <span class="fu">second</span>(time),</span>
+<span id="cb967-6"><a href="13-6-o-pacote-lubridate-1.html#cb967-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">date =</span> <span class="fu">ymd</span>(date),</span>
+<span id="cb967-7"><a href="13-6-o-pacote-lubridate-1.html#cb967-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">dia =</span> <span class="fu">day</span>(date),</span>
+<span id="cb967-8"><a href="13-6-o-pacote-lubridate-1.html#cb967-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">mes =</span> <span class="fu">month</span>(date),</span>
+<span id="cb967-9"><a href="13-6-o-pacote-lubridate-1.html#cb967-9" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb967-10"><a href="13-6-o-pacote-lubridate-1.html#cb967-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(date) <span class="sc">%&gt;%</span> </span>
+<span id="cb967-11"><a href="13-6-o-pacote-lubridate-1.html#cb967-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(time <span class="sc">==</span> <span class="fu">max</span>(time)) <span class="sc">%&gt;%</span></span>
+<span id="cb967-12"><a href="13-6-o-pacote-lubridate-1.html#cb967-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb967-13"><a href="13-6-o-pacote-lubridate-1.html#cb967-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_min</span>(time)</span>
+<span id="cb967-14"><a href="13-6-o-pacote-lubridate-1.html#cb967-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb967-15"><a href="13-6-o-pacote-lubridate-1.html#cb967-15" aria-hidden="true" tabindex="-1"></a>cesta_demorada <span class="sc">%&gt;%</span> </span>
+<span id="cb967-16"><a href="13-6-o-pacote-lubridate-1.html#cb967-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(date, opponent, dia, mes)</span>
+<span id="cb967-17"><a href="13-6-o-pacote-lubridate-1.html#cb967-17" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 1 x 4</span></span>
+<span id="cb967-18"><a href="13-6-o-pacote-lubridate-1.html#cb967-18" aria-hidden="true" tabindex="-1"></a><span class="do">##   date       opponent   dia   mes</span></span>
+<span id="cb967-19"><a href="13-6-o-pacote-lubridate-1.html#cb967-19" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;date&gt;     &lt;chr&gt;    &lt;int&gt; &lt;dbl&gt;</span></span>
+<span id="cb967-20"><a href="13-6-o-pacote-lubridate-1.html#cb967-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 2009-04-12 MEM         12     4</span></span>
+<span id="cb967-21"><a href="13-6-o-pacote-lubridate-1.html#cb967-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb967-22"><a href="13-6-o-pacote-lubridate-1.html#cb967-22" aria-hidden="true" tabindex="-1"></a>tempo_seg <span class="ot">&lt;-</span> <span class="dv">12</span><span class="sc">*</span><span class="dv">60</span> <span class="sc">-</span> cesta_demorada<span class="sc">$</span>time</span>
+<span id="cb967-23"><a href="13-6-o-pacote-lubridate-1.html#cb967-23" aria-hidden="true" tabindex="-1"></a><span class="fu">seconds_to_period</span>(tempo_seg)</span>
+<span id="cb967-24"><a href="13-6-o-pacote-lubridate-1.html#cb967-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2M 37S&quot;</span></span></code></pre></div>
 
 </div>
 <hr/>
@@ -677,6 +679,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

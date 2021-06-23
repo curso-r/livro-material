@@ -181,9 +181,9 @@ dplyr::glimpse(base_exemplo)
 ```
 ## Rows: 25
 ## Columns: 3
-## $ nome                <chr> "Athos", "Daniel", "Athos", "Daniel", "Athos", "At…
-## $ sobrenome           <chr> "Corrêa", "Trecenti", "Corrêa", "Falbel", "Damiani…
-## $ variavel_importante <dbl> -0.306562265, -1.305010361, 1.308778022, 0.0827172…
+## $ nome                <chr> "Julio", "Julio", "William", "Athos", "Fernando", …
+## $ sobrenome           <chr> "Damiani", "Amorim", "Damiani", "Amorim", "Trecent…
+## $ variavel_importante <dbl> -0.49722424, 0.30210774, 1.35772968, -2.51454770, …
 ```
 
 ```r
@@ -193,20 +193,20 @@ janitor::get_dupes(base_exemplo, nome, sobrenome)
 
 ```
 ## # A tibble: 12 x 4
-##    nome   sobrenome dupe_count variavel_importante
-##    <chr>  <chr>          <int>               <dbl>
-##  1 Athos  Corrêa             3             -0.307 
-##  2 Athos  Corrêa             3              1.31  
-##  3 Athos  Corrêa             3             -0.587 
-##  4 Athos  Falbel             2              0.988 
-##  5 Athos  Falbel             2             -0.184 
-##  6 Daniel Falbel             4              0.0827
-##  7 Daniel Falbel             4             -1.39  
-##  8 Daniel Falbel             4             -0.250 
-##  9 Daniel Falbel             4              1.08  
-## 10 Julio  Amorim             3             -0.405 
-## 11 Julio  Amorim             3              0.830 
-## 12 Julio  Amorim             3             -0.199
+##    nome     sobrenome dupe_count variavel_importante
+##    <chr>    <chr>          <int>               <dbl>
+##  1 Athos    Trecenti           2              0.0848
+##  2 Athos    Trecenti           2              1.20  
+##  3 Fernando Amorim             2              0.486 
+##  4 Fernando Amorim             2              0.935 
+##  5 Fernando Falbel             2              0.423 
+##  6 Fernando Falbel             2              1.67  
+##  7 Julio    Corrêa             2              0.110 
+##  8 Julio    Corrêa             2             -2.32  
+##  9 Julio    Damiani            4             -0.497 
+## 10 Julio    Damiani            4              1.90  
+## 11 Julio    Damiani            4             -1.25  
+## 12 Julio    Damiani            4             -0.0765
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.

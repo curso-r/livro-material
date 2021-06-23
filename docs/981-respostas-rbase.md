@@ -482,7 +482,7 @@ segredo %% 2
 ```
 
 ```
-## [1] 0
+## [1] 1
 ```
 
 ```r
@@ -494,7 +494,7 @@ resto == 0
 ```
 
 ```
-## [1] TRUE
+## [1] FALSE
 ```
 
 ```r
@@ -503,7 +503,7 @@ segredo %% 2 == 0
 ```
 
 ```
-## [1] TRUE
+## [1] FALSE
 ```
 
 
@@ -537,7 +537,7 @@ segredo == numeros_possiveis
 ```
 
 ```
-##  [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
 ```
 
 *No código acima, para cada valor de `numero_possiveis`, foi testado se esse valor é igual ao segredo. Em caso afirmativo, um TRUE é devolvido. Veja que há apenas um TRUE no vetor resultante. Essa é posição do nosso segredo dentro do vetor `numeros_possiveis`.*
@@ -551,7 +551,7 @@ numeros_possiveis[segredo == numeros_possiveis]
 ```
 
 ```
-## [1] 4
+## [1] 3
 ```
 
 *No código acima, foi retornado apenas o número associado ao valor TRUE dado pelo teste `segredo == numeros_possiveis`*.
@@ -1295,7 +1295,7 @@ sortear_numero()
 ```
 
 ```
-## [1] 5
+## [1] 9
 ```
 
 
@@ -1318,8 +1318,8 @@ sortear_linha(mtcars)
 ```
 
 ```
-##               mpg cyl disp  hp drat   wt qsec vs am gear carb
-## Ferrari Dino 19.7   6  145 175 3.62 2.77 15.5  0  1    5    6
+##             mpg cyl disp  hp drat   wt  qsec vs am gear carb
+## Duster 360 14.3   8  360 245 3.21 3.57 15.84  0  0    3    4
 ```
 
 **b.** Generalize a função para retornar um número qualquer de linhas, escolhido pelo usuário.
@@ -1337,17 +1337,17 @@ sortear_linha(mtcars, 10)
 ```
 
 ```
-##                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-## Duster 360         14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
-## Merc 230           22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
-## Hornet 4 Drive     21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
-## Merc 450SE         16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
-## Honda Civic        30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
-## AMC Javelin        15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
-## Dodge Challenger   15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
-## Cadillac Fleetwood 10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
-## Fiat 128           32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
-## Porsche 914-2      26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
+##                    mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Merc 450SLC       15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+## Porsche 914-2     26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
+## Merc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+## Merc 280          19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+## Duster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+## Ferrari Dino      19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
+## Mazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+## AMC Javelin       15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
+## Hornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+## Chrysler Imperial 14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
 ```
 
 ### Controle de fluxo {-}

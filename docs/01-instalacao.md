@@ -42,9 +42,9 @@ Como a instalação no Linux depende da distribuição utilizada e, em geral, pe
 
 6. Siga as instruções contidas na página para instalar o R. Se você teve algum problema com o download, tente escolher outro servidor no passo 3.
 
-### No Mac
+### No MacOS
 
-Para instalar o R no Mac, siga os seguintes passos:
+Para instalar o R no MacOS, siga os seguintes passos:
 
 1. Acesse o CRAN: https://www.r-project.org/
 
@@ -91,7 +91,7 @@ Para instalar o RStudio no Windows, siga os seguintes passos:
 
 Os softwares descritos anteriormente são suficientes para realizar as tarefas básicas em R. Porém, principalmente quando tratamos de [relatórios com R](#relatorios), alguns softwares adicionais podem ser necessários em casos específicos! A seguir citamos alguns destes softwares, em quais casos eles são necessários e/ou úteis, e instruções sobre como instalá-los.
 
-### LaTeX
+### LaTeX {#instalacao-latex}
 
 O $\LaTeX$ é um software para renderização de documentos PDF e também uma linguagem de programação. É bastante usada na academia para produção de artigos científicos. 
 
@@ -162,18 +162,18 @@ No linux, a forma mais direta de garantir que temos o LaTeX na máquina com toda
 
 > **Importante**: o texlive-full é uma fora "bruta" de instalar tudo do LaTeX, e pode ocupar mais do que 5GB do seu disco! Então tome cuidado e procure alternativas, como as descritas [neste site](https://linuxconfig.org/how-to-install-latex-on-ubuntu-18-04-bionic-beaver-linux).
 
-#### No Mac
+#### No MacOS
  
-Uma distribuição de LaTeX que apresenta versão para Mac é o MikTex. Para instalá-lo, primeiramente faça o download do arquivo `.dmg` [através deste link](https://miktex.org/download#mac). [Este tutorial](https://miktex.org/howto/install-miktex-mac) apresenta todos os passos de instalação no Mac, porém abaixo também vamos descrever os passos:
+Uma distribuição de LaTeX que apresenta versão para MacOS é o MikTex. Para instalá-lo, primeiramente faça o download do arquivo `.dmg` [através deste link](https://miktex.org/download#mac). [Este tutorial](https://miktex.org/howto/install-miktex-mac) apresenta todos os passos de instalação no MacOS, porém abaixo também vamos descrever os passos:
 
-1. Faça o download do arquivo `.dmg` [através deste link](https://miktex.org/download#mac), escolhendo a versão de instalação para Mac.
+1. Faça o download do arquivo `.dmg` [através deste link](https://miktex.org/download#mac), escolhendo a versão de instalação para MacOS.
 
 2. Abra o arquivo baixado. Uma janela irá abrir, e você deve arrastar o ícone "MiKTeX Console" para a pasta "Applications" (como mostrado na animação abaixo, sendo necessário arrastar apenas uma vez). 
 
 <img src="img/instalacao/miktex_mac/gif_miktex.gif" width="50%" style="display: block; margin: auto;" />
 
 
-3. No Launchpad (menu de arquivos instalados), procure o ícone do "MiKTeX Console" e abra-o. Você também pode usar a pesquisa do Mac (utilizando o atalho Command + Barra de espaço), pesquisando por MiKTeX para abrir o software.
+3. No Launchpad (menu de arquivos instalados), procure o ícone do "MiKTeX Console" e abra-o. Você também pode usar a pesquisa do MacOS (utilizando o atalho Command + Barra de espaço), pesquisando por MiKTeX para abrir o software.
 
 4. Ao abrir pela primeira vez, o MiKTeX solicitará que você selecione uma opção para que a instalação seja completada. Selecione **"Finish private setup"**, e isso fará com que o MiKTeX esteja disponível apenas no seu usuário do computador. Após selecionar essa opcão, ele terminará a configuração, e aparecerá uma mensagem dizendo que o MiKTex será reiniciado. Espere até que ele reinicie. Ao final, aparecerá uma mensagem dizendo que é necessário fazer atualizações no MiKTeX.
 
@@ -218,7 +218,7 @@ No linux, a forma mais fácil de abrir documentos provenientes do Office é util
 
 > o LibreOffice 7.1 não está ainda no aptitude. Se quiser instalar essa versão, é possível baixar o arquivo `.deb` no [site da ferramenta](https://www.libreoffice.org).
 
-#### No Mac
+#### No MacOS
 
 O sistema operaciona MacOS disponibiliza o [iWork](https://www.apple.com/br/iwork/), que é composto pelas ferramentas Numbers, Pages e Keynote.  Esses programas possibilitam abrir arquivos provenientes do Office.
 
@@ -274,15 +274,54 @@ Felizmente, essa tarefa é bem tranquila pois o `{blogdown}` já vem com um help
 blogdown::install_hugo()
 ```
 
-### Rtools
+### Ferramentas de desenvolvimento
+
+Em algumas situações (como por exemplo, no desenvolvimento de pacotes), é solicitado a instalação de ferramentas de desenvolvimento. Essas ferramentas dependem do sistema operacional utilizado.
+
+No caso do desenvolvimento de pacotes, você pode verificar se já possui as ferramentas de desenvolvimento instaladas usando a seguinte função: `devtools::has_devel()`. Caso a mensagem retornada seja _"Your system is ready to build packages!"_, significa que você já tem as ferramentas necessárias instaladas.
+
+```r
+devtools::has_devel()
+#> Your system is ready to build packages!
+```
+
+#### No Windows - Rtools
 
 <!-- Adicionar explicação sobre o rtools. O que é? Quando é necessário? -->
 
-Em algumas situações, é solicitado a instalação do software Rtools. Este software é apenas necessário para computadores que utilizem o sistema operacional Windows. Para instalá-lo, clique [neste link](https://cran.r-project.org/bin/windows/Rtools/) e faça o download do arquivo instalador referente à sua versão do Windows (32 ou 64 bits). Abra o arquivo baixado para realizar a instalação. 
+O software Rtools é apenas necessário para computadores que utilizem o sistema operacional Windows. Para instalá-lo, clique [neste link](https://cran.r-project.org/bin/windows/Rtools/) e faça o download do arquivo instalador referente à sua versão do Windows (32 ou 64 bits). Abra o arquivo baixado para realizar a instalação. 
 
-No linux, caso seja necessário, você também pode instalar o pacote `r-base-dev`, que faz as vezes do Rtools. Por exemplo, no Ubuntu:
+#### No Linux - r-base-dev
+
+No Linux, caso seja necessário, você também pode instalar o pacote `r-base-dev`. Por exemplo, no Ubuntu você pode instalá-lo executando o seguinte código no terminal:
 
 ```
 sudo apt install r-base-dev
 ```
+
+
+#### No MacOS - Xcode command line tools
+
+O Xcode command line tools é uma ferramenta de desenvolvimento oficial da Apple. Para instalar essa ferramenta, primeiramente é preciso acessar o Terminal. Você pode encontrar o Terminal procurando na lista de programas instalados (_Launchpad_), ou então na opção de busca (usando o atalho: **command + barra de espaço**) e escrevendo Terminal. 
+
+No terminal, escreva o seguinte código e aperte Enter, o que iniciará a instalação:
+
+```
+xcode-select --install
+```
+
+Siga as instruções apresentadas para instalar. 
+
+Caso a seguinte mensagem apareça, significa que você já tem a ferramenta instalada: `error: command line tools are already installed, use "Software Update" to install updates`.
+
+Caso queira confirmar que a instalação foi bem sucedida, execute no terminal o código a seguir. Caso a mensagem de retorno seja um caminho (por exemplo: `/Library/Developer/CommandLineTools`), significa que a instalação foi bem sucedida, e esse é o caminho onde a ferramenta foi instalada.
+
+```
+xcode-select -p
+````
+
+
+### Git
+
+O Git é um programa para linha de comando que possibilita realizar o controle de versões dos arquivos em um diretório (ou seja, em uma pasta). Para instalar esse sistema de controle de versões distribuído, acesse a [página sobre Download do Git](http://git-scm.com/download/), escolha o seu sistema operacional, siga as instruções apresentadas para instalação.
 

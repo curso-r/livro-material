@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3.9 Listas | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3.9 Listas | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="assets/img/logo.png" />
+  <meta property="og:image" content="/assets/img/logo.png" />
   <meta property="og:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="github-repo" content="curso-r/livro-material" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="3.9 Listas | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="twitter:image" content="assets/img/logo.png" />
+  <meta name="twitter:image" content="/assets/img/logo.png" />
 
 <meta name="author" content="Curso-R" />
 
@@ -32,8 +32,8 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="3-8-valoresEspeciais.html"/>
 <link rel="next" href="3-10-mais-sobre-data-frames.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.9.1/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,16 +50,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.16/datatables.js"></script>
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
@@ -139,6 +139,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="assets/style.css" type="text/css" />
 </head>
 
@@ -162,17 +163,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
-<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
+<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-macos"><i class="fa fa-check"></i><b>1.1.3</b> No MacOS</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
 <li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
+<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#instalacao-latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
 <li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
 <li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
 <li class="chapter" data-level="1.3.4" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#renderizando-html-widgets"><i class="fa fa-check"></i><b>1.3.4</b> Renderizando HTML widgets</a></li>
 <li class="chapter" data-level="1.3.5" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#blogdown"><i class="fa fa-check"></i><b>1.3.5</b> Blogdown</a></li>
-<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#rtools"><i class="fa fa-check"></i><b>1.3.6</b> Rtools</a></li>
+<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#ferramentas-de-desenvolvimento"><i class="fa fa-check"></i><b>1.3.6</b> Ferramentas de desenvolvimento</a></li>
+<li class="chapter" data-level="1.3.7" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#git"><i class="fa fa-check"></i><b>1.3.7</b> Git</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
@@ -357,9 +359,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#códigos-em-r"><i class="fa fa-check"></i><b>9.2.1</b> Códigos em R</a></li>
-<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#imagens-1"><i class="fa fa-check"></i><b>9.2.2</b> Imagens</a></li>
-<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#tabelas-1"><i class="fa fa-check"></i><b>9.2.3</b> Tabelas</a></li>
+<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#criando-um-arquivo-.rmd"><i class="fa fa-check"></i><b>9.2.1</b> Criando um arquivo <code>.Rmd</code></a></li>
+<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#estrutura-do-arquivo-r-markdown"><i class="fa fa-check"></i><b>9.2.2</b> Estrutura do arquivo R Markdown</a></li>
+<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#adicionando-conteúdo"><i class="fa fa-check"></i><b>9.2.3</b> Adicionando conteúdo</a></li>
 <li class="chapter" data-level="9.2.4" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#dicas-para-o-rstudio"><i class="fa fa-check"></i><b>9.2.4</b> Dicas para o RStudio</a></li>
 <li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
@@ -471,91 +473,91 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Chegamos ao último tópico antes de voltarmos aos data frames: as listas.</p>
 <p>Listas são objetos muito importantes dentro do R. Primeiro porque <strong>todo data frame é uma lista</strong>. Segundo porque elas são bem parecidas com vetores, mas com uma diferença essencial: você pode misturar diferentes classes de objetos dentro dela.</p>
 <p>Para criar uma lista, rodamos <code>list(valor1, valor2, valor3)</code>.</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="3-9-listas.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(<span class="dv">1</span>, <span class="st">&quot;a&quot;</span>, <span class="cn">TRUE</span>)</span>
-<span id="cb64-2"><a href="3-9-listas.html#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
-<span id="cb64-3"><a href="3-9-listas.html#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1</span></span>
-<span id="cb64-4"><a href="3-9-listas.html#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb64-5"><a href="3-9-listas.html#cb64-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [[2]]</span></span>
-<span id="cb64-6"><a href="3-9-listas.html#cb64-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;a&quot;</span></span>
-<span id="cb64-7"><a href="3-9-listas.html#cb64-7" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb64-8"><a href="3-9-listas.html#cb64-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [[3]]</span></span>
-<span id="cb64-9"><a href="3-9-listas.html#cb64-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="3-9-listas.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(<span class="dv">1</span>, <span class="st">&quot;a&quot;</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb67-2"><a href="3-9-listas.html#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
+<span id="cb67-3"><a href="3-9-listas.html#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1</span></span>
+<span id="cb67-4"><a href="3-9-listas.html#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb67-5"><a href="3-9-listas.html#cb67-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [[2]]</span></span>
+<span id="cb67-6"><a href="3-9-listas.html#cb67-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;a&quot;</span></span>
+<span id="cb67-7"><a href="3-9-listas.html#cb67-7" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb67-8"><a href="3-9-listas.html#cb67-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [[3]]</span></span>
+<span id="cb67-9"><a href="3-9-listas.html#cb67-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span></code></pre></div>
 <p>Veja que não houve coerção. Ainda temos um valor número, um texto e um valor lógico dentro da lista.</p>
 <p>O <em>subsetting</em> de listas é um pouco diferente do que o de vetores. Isso porque <strong>cada elemento de uma lista também é uma lista</strong>. Veja o que acontece se tentarmos usar <code>[]</code> para pegar um elemento de uma lista.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="3-9-listas.html#cb65-1" aria-hidden="true" tabindex="-1"></a>lista <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span>, <span class="st">&quot;a&quot;</span>, <span class="cn">TRUE</span>)</span>
-<span id="cb65-2"><a href="3-9-listas.html#cb65-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-3"><a href="3-9-listas.html#cb65-3" aria-hidden="true" tabindex="-1"></a>lista[<span class="dv">1</span>]</span>
-<span id="cb65-4"><a href="3-9-listas.html#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
-<span id="cb65-5"><a href="3-9-listas.html#cb65-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1</span></span>
-<span id="cb65-6"><a href="3-9-listas.html#cb65-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-7"><a href="3-9-listas.html#cb65-7" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(lista[<span class="dv">1</span>])</span>
-<span id="cb65-8"><a href="3-9-listas.html#cb65-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;list&quot;</span></span></code></pre></div>
-<p>O R nos retorna uma lista com apenas aquele elemento. Se quisermos o elemento de fato dentro de cada posição, precisamos usar dois colchetes:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="3-9-listas.html#cb66-1" aria-hidden="true" tabindex="-1"></a>lista[[<span class="dv">1</span>]]</span>
-<span id="cb66-2"><a href="3-9-listas.html#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1</span></span>
-<span id="cb66-3"><a href="3-9-listas.html#cb66-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-4"><a href="3-9-listas.html#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(lista[[<span class="dv">1</span>]])</span>
-<span id="cb66-5"><a href="3-9-listas.html#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;numeric&quot;</span></span></code></pre></div>
-<p>Cada elemento de uma lista ser uma lista é importante pois isso nos permite colocar vetores de tamanhos diferentes em cada posição. Isso faz das listas uma estrutura bem flexível para guardar dados.</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="3-9-listas.html#cb67-1" aria-hidden="true" tabindex="-1"></a>lista <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">&quot;a&quot;</span>, <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>))</span>
-<span id="cb67-2"><a href="3-9-listas.html#cb67-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-3"><a href="3-9-listas.html#cb67-3" aria-hidden="true" tabindex="-1"></a>lista</span>
-<span id="cb67-4"><a href="3-9-listas.html#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
-<span id="cb67-5"><a href="3-9-listas.html#cb67-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1 2 3</span></span>
-<span id="cb67-6"><a href="3-9-listas.html#cb67-6" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb67-7"><a href="3-9-listas.html#cb67-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [[2]]</span></span>
-<span id="cb67-8"><a href="3-9-listas.html#cb67-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;a&quot;</span></span>
-<span id="cb67-9"><a href="3-9-listas.html#cb67-9" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb67-10"><a href="3-9-listas.html#cb67-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [[3]]</span></span>
-<span id="cb67-11"><a href="3-9-listas.html#cb67-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  TRUE  TRUE FALSE FALSE</span></span>
-<span id="cb67-12"><a href="3-9-listas.html#cb67-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-13"><a href="3-9-listas.html#cb67-13" aria-hidden="true" tabindex="-1"></a>lista[<span class="dv">1</span>]</span>
-<span id="cb67-14"><a href="3-9-listas.html#cb67-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
-<span id="cb67-15"><a href="3-9-listas.html#cb67-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1 2 3</span></span>
-<span id="cb67-16"><a href="3-9-listas.html#cb67-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-17"><a href="3-9-listas.html#cb67-17" aria-hidden="true" tabindex="-1"></a>lista[<span class="dv">2</span>]</span>
-<span id="cb67-18"><a href="3-9-listas.html#cb67-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
-<span id="cb67-19"><a href="3-9-listas.html#cb67-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;a&quot;</span></span>
-<span id="cb67-20"><a href="3-9-listas.html#cb67-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-21"><a href="3-9-listas.html#cb67-21" aria-hidden="true" tabindex="-1"></a>lista[<span class="dv">3</span>]</span>
-<span id="cb67-22"><a href="3-9-listas.html#cb67-22" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
-<span id="cb67-23"><a href="3-9-listas.html#cb67-23" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  TRUE  TRUE FALSE FALSE</span></span></code></pre></div>
-<p>É muito comum darmos nomes para cada posição de uma lista.</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="3-9-listas.html#cb68-1" aria-hidden="true" tabindex="-1"></a>dados_cliente <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">cliente =</span> <span class="st">&quot;Ana Silva&quot;</span>, <span class="at">idade =</span> <span class="dv">25</span>, <span class="at">estado_civil =</span> <span class="cn">NA</span>)</span>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="3-9-listas.html#cb68-1" aria-hidden="true" tabindex="-1"></a>lista <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span>, <span class="st">&quot;a&quot;</span>, <span class="cn">TRUE</span>)</span>
 <span id="cb68-2"><a href="3-9-listas.html#cb68-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb68-3"><a href="3-9-listas.html#cb68-3" aria-hidden="true" tabindex="-1"></a>dados_cliente</span>
-<span id="cb68-4"><a href="3-9-listas.html#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="do">## $cliente</span></span>
-<span id="cb68-5"><a href="3-9-listas.html#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Ana Silva&quot;</span></span>
-<span id="cb68-6"><a href="3-9-listas.html#cb68-6" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb68-7"><a href="3-9-listas.html#cb68-7" aria-hidden="true" tabindex="-1"></a><span class="do">## $idade</span></span>
-<span id="cb68-8"><a href="3-9-listas.html#cb68-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 25</span></span>
-<span id="cb68-9"><a href="3-9-listas.html#cb68-9" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb68-10"><a href="3-9-listas.html#cb68-10" aria-hidden="true" tabindex="-1"></a><span class="do">## $estado_civil</span></span>
-<span id="cb68-11"><a href="3-9-listas.html#cb68-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] NA</span></span></code></pre></div>
+<span id="cb68-3"><a href="3-9-listas.html#cb68-3" aria-hidden="true" tabindex="-1"></a>lista[<span class="dv">1</span>]</span>
+<span id="cb68-4"><a href="3-9-listas.html#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
+<span id="cb68-5"><a href="3-9-listas.html#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1</span></span>
+<span id="cb68-6"><a href="3-9-listas.html#cb68-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-7"><a href="3-9-listas.html#cb68-7" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(lista[<span class="dv">1</span>])</span>
+<span id="cb68-8"><a href="3-9-listas.html#cb68-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;list&quot;</span></span></code></pre></div>
+<p>O R nos retorna uma lista com apenas aquele elemento. Se quisermos o elemento de fato dentro de cada posição, precisamos usar dois colchetes:</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="3-9-listas.html#cb69-1" aria-hidden="true" tabindex="-1"></a>lista[[<span class="dv">1</span>]]</span>
+<span id="cb69-2"><a href="3-9-listas.html#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1</span></span>
+<span id="cb69-3"><a href="3-9-listas.html#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-4"><a href="3-9-listas.html#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(lista[[<span class="dv">1</span>]])</span>
+<span id="cb69-5"><a href="3-9-listas.html#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;numeric&quot;</span></span></code></pre></div>
+<p>Cada elemento de uma lista ser uma lista é importante pois isso nos permite colocar vetores de tamanhos diferentes em cada posição. Isso faz das listas uma estrutura bem flexível para guardar dados.</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="3-9-listas.html#cb70-1" aria-hidden="true" tabindex="-1"></a>lista <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">&quot;a&quot;</span>, <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>))</span>
+<span id="cb70-2"><a href="3-9-listas.html#cb70-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-3"><a href="3-9-listas.html#cb70-3" aria-hidden="true" tabindex="-1"></a>lista</span>
+<span id="cb70-4"><a href="3-9-listas.html#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
+<span id="cb70-5"><a href="3-9-listas.html#cb70-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1 2 3</span></span>
+<span id="cb70-6"><a href="3-9-listas.html#cb70-6" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb70-7"><a href="3-9-listas.html#cb70-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [[2]]</span></span>
+<span id="cb70-8"><a href="3-9-listas.html#cb70-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;a&quot;</span></span>
+<span id="cb70-9"><a href="3-9-listas.html#cb70-9" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb70-10"><a href="3-9-listas.html#cb70-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [[3]]</span></span>
+<span id="cb70-11"><a href="3-9-listas.html#cb70-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  TRUE  TRUE FALSE FALSE</span></span>
+<span id="cb70-12"><a href="3-9-listas.html#cb70-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-13"><a href="3-9-listas.html#cb70-13" aria-hidden="true" tabindex="-1"></a>lista[<span class="dv">1</span>]</span>
+<span id="cb70-14"><a href="3-9-listas.html#cb70-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
+<span id="cb70-15"><a href="3-9-listas.html#cb70-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1 2 3</span></span>
+<span id="cb70-16"><a href="3-9-listas.html#cb70-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-17"><a href="3-9-listas.html#cb70-17" aria-hidden="true" tabindex="-1"></a>lista[<span class="dv">2</span>]</span>
+<span id="cb70-18"><a href="3-9-listas.html#cb70-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
+<span id="cb70-19"><a href="3-9-listas.html#cb70-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;a&quot;</span></span>
+<span id="cb70-20"><a href="3-9-listas.html#cb70-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-21"><a href="3-9-listas.html#cb70-21" aria-hidden="true" tabindex="-1"></a>lista[<span class="dv">3</span>]</span>
+<span id="cb70-22"><a href="3-9-listas.html#cb70-22" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
+<span id="cb70-23"><a href="3-9-listas.html#cb70-23" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  TRUE  TRUE FALSE FALSE</span></span></code></pre></div>
+<p>É muito comum darmos nomes para cada posição de uma lista.</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="3-9-listas.html#cb71-1" aria-hidden="true" tabindex="-1"></a>dados_cliente <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">cliente =</span> <span class="st">&quot;Ana Silva&quot;</span>, <span class="at">idade =</span> <span class="dv">25</span>, <span class="at">estado_civil =</span> <span class="cn">NA</span>)</span>
+<span id="cb71-2"><a href="3-9-listas.html#cb71-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-3"><a href="3-9-listas.html#cb71-3" aria-hidden="true" tabindex="-1"></a>dados_cliente</span>
+<span id="cb71-4"><a href="3-9-listas.html#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="do">## $cliente</span></span>
+<span id="cb71-5"><a href="3-9-listas.html#cb71-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Ana Silva&quot;</span></span>
+<span id="cb71-6"><a href="3-9-listas.html#cb71-6" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb71-7"><a href="3-9-listas.html#cb71-7" aria-hidden="true" tabindex="-1"></a><span class="do">## $idade</span></span>
+<span id="cb71-8"><a href="3-9-listas.html#cb71-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 25</span></span>
+<span id="cb71-9"><a href="3-9-listas.html#cb71-9" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb71-10"><a href="3-9-listas.html#cb71-10" aria-hidden="true" tabindex="-1"></a><span class="do">## $estado_civil</span></span>
+<span id="cb71-11"><a href="3-9-listas.html#cb71-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] NA</span></span></code></pre></div>
 <p>Agora, dentro da lista, o valor <code>Ana Silva</code>, por exemplo, está sendo atribuído ao nome <code>cliente</code>. Esse nome só existirá dentro da lista.</p>
 <p>Um detalhe importante: os iguais utilizados nas atribuições dos nomes dentro da lista <strong>não podem</strong> ser substituídos por <code>&lt;-</code>.</p>
 <p>Quando as posições de uma lista tem nome, podemos acessar seus valores diretamente utilizando o operador <code>$</code>.</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="3-9-listas.html#cb69-1" aria-hidden="true" tabindex="-1"></a>dados_cliente<span class="sc">$</span>cliente</span>
-<span id="cb69-2"><a href="3-9-listas.html#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Ana Silva&quot;</span></span>
-<span id="cb69-3"><a href="3-9-listas.html#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-4"><a href="3-9-listas.html#cb69-4" aria-hidden="true" tabindex="-1"></a>dados_cliente<span class="sc">$</span>idade</span>
-<span id="cb69-5"><a href="3-9-listas.html#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 25</span></span>
-<span id="cb69-6"><a href="3-9-listas.html#cb69-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-7"><a href="3-9-listas.html#cb69-7" aria-hidden="true" tabindex="-1"></a>dados_cliente<span class="sc">$</span>estado_civil</span>
-<span id="cb69-8"><a href="3-9-listas.html#cb69-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] NA</span></span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="3-9-listas.html#cb72-1" aria-hidden="true" tabindex="-1"></a>dados_cliente<span class="sc">$</span>cliente</span>
+<span id="cb72-2"><a href="3-9-listas.html#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Ana Silva&quot;</span></span>
+<span id="cb72-3"><a href="3-9-listas.html#cb72-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-4"><a href="3-9-listas.html#cb72-4" aria-hidden="true" tabindex="-1"></a>dados_cliente<span class="sc">$</span>idade</span>
+<span id="cb72-5"><a href="3-9-listas.html#cb72-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 25</span></span>
+<span id="cb72-6"><a href="3-9-listas.html#cb72-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-7"><a href="3-9-listas.html#cb72-7" aria-hidden="true" tabindex="-1"></a>dados_cliente<span class="sc">$</span>estado_civil</span>
+<span id="cb72-8"><a href="3-9-listas.html#cb72-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] NA</span></span></code></pre></div>
 <p>Repare que o R devolve o valor dentro de cada posição, e não uma lista.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="3-9-listas.html#cb70-1" aria-hidden="true" tabindex="-1"></a>dados_cliente[<span class="dv">1</span>]</span>
-<span id="cb70-2"><a href="3-9-listas.html#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="do">## $cliente</span></span>
-<span id="cb70-3"><a href="3-9-listas.html#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Ana Silva&quot;</span></span>
-<span id="cb70-4"><a href="3-9-listas.html#cb70-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb70-5"><a href="3-9-listas.html#cb70-5" aria-hidden="true" tabindex="-1"></a>dados_cliente<span class="sc">$</span>cliente</span>
-<span id="cb70-6"><a href="3-9-listas.html#cb70-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Ana Silva&quot;</span></span>
-<span id="cb70-7"><a href="3-9-listas.html#cb70-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb70-8"><a href="3-9-listas.html#cb70-8" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(dados_cliente[<span class="dv">1</span>])</span>
-<span id="cb70-9"><a href="3-9-listas.html#cb70-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;list&quot;</span></span>
-<span id="cb70-10"><a href="3-9-listas.html#cb70-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb70-11"><a href="3-9-listas.html#cb70-11" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(dados_cliente<span class="sc">$</span>cliente)</span>
-<span id="cb70-12"><a href="3-9-listas.html#cb70-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;character&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="3-9-listas.html#cb73-1" aria-hidden="true" tabindex="-1"></a>dados_cliente[<span class="dv">1</span>]</span>
+<span id="cb73-2"><a href="3-9-listas.html#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="do">## $cliente</span></span>
+<span id="cb73-3"><a href="3-9-listas.html#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Ana Silva&quot;</span></span>
+<span id="cb73-4"><a href="3-9-listas.html#cb73-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-5"><a href="3-9-listas.html#cb73-5" aria-hidden="true" tabindex="-1"></a>dados_cliente<span class="sc">$</span>cliente</span>
+<span id="cb73-6"><a href="3-9-listas.html#cb73-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Ana Silva&quot;</span></span>
+<span id="cb73-7"><a href="3-9-listas.html#cb73-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-8"><a href="3-9-listas.html#cb73-8" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(dados_cliente[<span class="dv">1</span>])</span>
+<span id="cb73-9"><a href="3-9-listas.html#cb73-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;list&quot;</span></span>
+<span id="cb73-10"><a href="3-9-listas.html#cb73-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-11"><a href="3-9-listas.html#cb73-11" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(dados_cliente<span class="sc">$</span>cliente)</span>
+<span id="cb73-12"><a href="3-9-listas.html#cb73-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;character&quot;</span></span></code></pre></div>
 <p>Isto implica que, nesse exemplo, <code>dados_cliente$cliente</code> é equivalente a <code>dados_cliente[[1]]</code>.</p>
 <p>Conforme ficamos mais e mais proficientes na linguagem R, as listas passam a ficar cada vez mais frequentes. Voltaremos a falar delas diversas vezes nos próximos capítulos, em especial no Capítulo <a href="10-funcionais.html#funcionais">10</a>.</p>
 </div>
@@ -592,6 +594,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

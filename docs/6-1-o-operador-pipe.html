@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6.1 O operador pipe | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6.1 O operador pipe | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="assets/img/logo.png" />
+  <meta property="og:image" content="/assets/img/logo.png" />
   <meta property="og:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="github-repo" content="curso-r/livro-material" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="6.1 O operador pipe | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="twitter:image" content="assets/img/logo.png" />
+  <meta name="twitter:image" content="/assets/img/logo.png" />
 
 <meta name="author" content="Curso-R" />
 
@@ -32,8 +32,8 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="6-pipe.html"/>
 <link rel="next" href="6-2-outros-operadores.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.9.1/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,16 +50,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.16/datatables.js"></script>
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
@@ -139,6 +139,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="assets/style.css" type="text/css" />
 </head>
 
@@ -162,17 +163,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
-<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
+<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-macos"><i class="fa fa-check"></i><b>1.1.3</b> No MacOS</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
 <li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
+<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#instalacao-latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
 <li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
 <li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
 <li class="chapter" data-level="1.3.4" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#renderizando-html-widgets"><i class="fa fa-check"></i><b>1.3.4</b> Renderizando HTML widgets</a></li>
 <li class="chapter" data-level="1.3.5" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#blogdown"><i class="fa fa-check"></i><b>1.3.5</b> Blogdown</a></li>
-<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#rtools"><i class="fa fa-check"></i><b>1.3.6</b> Rtools</a></li>
+<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#ferramentas-de-desenvolvimento"><i class="fa fa-check"></i><b>1.3.6</b> Ferramentas de desenvolvimento</a></li>
+<li class="chapter" data-level="1.3.7" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#git"><i class="fa fa-check"></i><b>1.3.7</b> Git</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
@@ -357,9 +359,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#códigos-em-r"><i class="fa fa-check"></i><b>9.2.1</b> Códigos em R</a></li>
-<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#imagens-1"><i class="fa fa-check"></i><b>9.2.2</b> Imagens</a></li>
-<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#tabelas-1"><i class="fa fa-check"></i><b>9.2.3</b> Tabelas</a></li>
+<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#criando-um-arquivo-.rmd"><i class="fa fa-check"></i><b>9.2.1</b> Criando um arquivo <code>.Rmd</code></a></li>
+<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#estrutura-do-arquivo-r-markdown"><i class="fa fa-check"></i><b>9.2.2</b> Estrutura do arquivo R Markdown</a></li>
+<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#adicionando-conteúdo"><i class="fa fa-check"></i><b>9.2.3</b> Adicionando conteúdo</a></li>
 <li class="chapter" data-level="9.2.4" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#dicas-para-o-rstudio"><i class="fa fa-check"></i><b>9.2.4</b> Dicas para o RStudio</a></li>
 <li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
@@ -469,68 +471,68 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="o-operador-pipe" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> O operador pipe</h2>
 <p>A ideia do operador <code>%&gt;%</code> (<em>pipe</em>) é bem simples: usar o valor resultante da expressão do lado esquerdo como primeiro argumento da função do lado direito.</p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="6-1-o-operador-pipe.html#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="co"># As duas linhas abaixo são equivalentes.</span></span>
-<span id="cb187-2"><a href="6-1-o-operador-pipe.html#cb187-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb187-3"><a href="6-1-o-operador-pipe.html#cb187-3" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(x, y)</span>
-<span id="cb187-4"><a href="6-1-o-operador-pipe.html#cb187-4" aria-hidden="true" tabindex="-1"></a>x <span class="sc">%&gt;%</span> <span class="fu">f</span>(y)</span></code></pre></div>
-<p>Nos casos mais simples, o <em>pipe</em> parece não trazer grandes vantagens. Agora, veja como fica um caso com mais etapas.</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="6-1-o-operador-pipe.html#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vamos calcular a raiz quadrada da soma dos valores de 1 a 4. Primeiro, sem o pipe.</span></span>
-<span id="cb188-2"><a href="6-1-o-operador-pipe.html#cb188-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb188-3"><a href="6-1-o-operador-pipe.html#cb188-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb188-4"><a href="6-1-o-operador-pipe.html#cb188-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">sum</span>(x))</span></code></pre></div>
-<pre><code>## [1] 3.162278</code></pre>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="6-1-o-operador-pipe.html#cb190-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Agora com o pipe.</span></span>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="6-1-o-operador-pipe.html#cb190-1" aria-hidden="true" tabindex="-1"></a><span class="co"># As duas linhas abaixo são equivalentes.</span></span>
 <span id="cb190-2"><a href="6-1-o-operador-pipe.html#cb190-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb190-3"><a href="6-1-o-operador-pipe.html#cb190-3" aria-hidden="true" tabindex="-1"></a>x <span class="sc">%&gt;%</span> <span class="fu">sum</span>() <span class="sc">%&gt;%</span> <span class="fu">sqrt</span>()</span></code></pre></div>
+<span id="cb190-3"><a href="6-1-o-operador-pipe.html#cb190-3" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(x, y)</span>
+<span id="cb190-4"><a href="6-1-o-operador-pipe.html#cb190-4" aria-hidden="true" tabindex="-1"></a>x <span class="sc">%&gt;%</span> <span class="fu">f</span>(y)</span></code></pre></div>
+<p>Nos casos mais simples, o <em>pipe</em> parece não trazer grandes vantagens. Agora, veja como fica um caso com mais etapas.</p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="6-1-o-operador-pipe.html#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vamos calcular a raiz quadrada da soma dos valores de 1 a 4. Primeiro, sem o pipe.</span></span>
+<span id="cb191-2"><a href="6-1-o-operador-pipe.html#cb191-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb191-3"><a href="6-1-o-operador-pipe.html#cb191-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb191-4"><a href="6-1-o-operador-pipe.html#cb191-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">sum</span>(x))</span></code></pre></div>
+<pre><code>## [1] 3.162278</code></pre>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="6-1-o-operador-pipe.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Agora com o pipe.</span></span>
+<span id="cb193-2"><a href="6-1-o-operador-pipe.html#cb193-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb193-3"><a href="6-1-o-operador-pipe.html#cb193-3" aria-hidden="true" tabindex="-1"></a>x <span class="sc">%&gt;%</span> <span class="fu">sum</span>() <span class="sc">%&gt;%</span> <span class="fu">sqrt</span>()</span></code></pre></div>
 <pre><code>## [1] 3.162278</code></pre>
 <p>O caminho que o código <code>x %&gt;% sum %&gt;% sqrt</code> seguiu foi enviar o objeto <code>x</code> como argumento da função <code>sum()</code> e, em seguida, enviar a saida da expressão <code>sum(x)</code> como argumento da função <code>sqrt()</code>. Observe que escrevemos o código na mesma ordem em que as operações são realizadas. A utilização de parênteses após o nome das funções não é necessário, mas recomendável.</p>
 <p>Se você ainda não está convencido com o poder do <em>pipe</em>, fica que vai ter bolo!</p>
 <p>No exemplo abaixo, vamos ilustrar um caso em que temos um grande número de funções aninhadas. Veja como a utilização do <em>pipe</em> transforma um código confuso e difícil de ser lido em algo simples e intuitivo.</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="6-1-o-operador-pipe.html#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Receita de bolo sem pipe. Tente entender o que é preciso fazer.</span></span>
-<span id="cb192-2"><a href="6-1-o-operador-pipe.html#cb192-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb192-3"><a href="6-1-o-operador-pipe.html#cb192-3" aria-hidden="true" tabindex="-1"></a><span class="fu">esfrie</span>(</span>
-<span id="cb192-4"><a href="6-1-o-operador-pipe.html#cb192-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">asse</span>(</span>
-<span id="cb192-5"><a href="6-1-o-operador-pipe.html#cb192-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coloque</span>(</span>
-<span id="cb192-6"><a href="6-1-o-operador-pipe.html#cb192-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">bata</span>(</span>
-<span id="cb192-7"><a href="6-1-o-operador-pipe.html#cb192-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">acrescente</span>(</span>
-<span id="cb192-8"><a href="6-1-o-operador-pipe.html#cb192-8" aria-hidden="true" tabindex="-1"></a>          <span class="fu">recipiente</span>(</span>
-<span id="cb192-9"><a href="6-1-o-operador-pipe.html#cb192-9" aria-hidden="true" tabindex="-1"></a>            <span class="fu">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), </span>
-<span id="cb192-10"><a href="6-1-o-operador-pipe.html#cb192-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;água&quot;</span>, </span>
-<span id="cb192-11"><a href="6-1-o-operador-pipe.html#cb192-11" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;fermento&quot;</span>, </span>
-<span id="cb192-12"><a href="6-1-o-operador-pipe.html#cb192-12" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;leite&quot;</span>, </span>
-<span id="cb192-13"><a href="6-1-o-operador-pipe.html#cb192-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;óleo&quot;</span></span>
-<span id="cb192-14"><a href="6-1-o-operador-pipe.html#cb192-14" aria-hidden="true" tabindex="-1"></a>          ), </span>
-<span id="cb192-15"><a href="6-1-o-operador-pipe.html#cb192-15" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;farinha&quot;</span>, </span>
-<span id="cb192-16"><a href="6-1-o-operador-pipe.html#cb192-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">ate =</span> <span class="st">&quot;macio&quot;</span></span>
-<span id="cb192-17"><a href="6-1-o-operador-pipe.html#cb192-17" aria-hidden="true" tabindex="-1"></a>        ), </span>
-<span id="cb192-18"><a href="6-1-o-operador-pipe.html#cb192-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">duracao =</span> <span class="st">&quot;3min&quot;</span></span>
-<span id="cb192-19"><a href="6-1-o-operador-pipe.html#cb192-19" aria-hidden="true" tabindex="-1"></a>      ), </span>
-<span id="cb192-20"><a href="6-1-o-operador-pipe.html#cb192-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">lugar =</span> <span class="st">&quot;forma&quot;</span>, </span>
-<span id="cb192-21"><a href="6-1-o-operador-pipe.html#cb192-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">tipo =</span> <span class="st">&quot;grande&quot;</span>, </span>
-<span id="cb192-22"><a href="6-1-o-operador-pipe.html#cb192-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">untada =</span> <span class="cn">TRUE</span></span>
-<span id="cb192-23"><a href="6-1-o-operador-pipe.html#cb192-23" aria-hidden="true" tabindex="-1"></a>    ), </span>
-<span id="cb192-24"><a href="6-1-o-operador-pipe.html#cb192-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">duracao =</span> <span class="st">&quot;50min&quot;</span></span>
-<span id="cb192-25"><a href="6-1-o-operador-pipe.html#cb192-25" aria-hidden="true" tabindex="-1"></a>  ), </span>
-<span id="cb192-26"><a href="6-1-o-operador-pipe.html#cb192-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">lugar =</span> <span class="st">&quot;geladeira&quot;</span>, </span>
-<span id="cb192-27"><a href="6-1-o-operador-pipe.html#cb192-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">duracao =</span> <span class="st">&quot;20min&quot;</span></span>
-<span id="cb192-28"><a href="6-1-o-operador-pipe.html#cb192-28" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb192-29"><a href="6-1-o-operador-pipe.html#cb192-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb192-30"><a href="6-1-o-operador-pipe.html#cb192-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb192-31"><a href="6-1-o-operador-pipe.html#cb192-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Veja como o código acima pode ser reescrito utilizando-se o pipe. Agora realmente se parece com uma receita de bolo.</span></span>
-<span id="cb192-32"><a href="6-1-o-operador-pipe.html#cb192-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb192-33"><a href="6-1-o-operador-pipe.html#cb192-33" aria-hidden="true" tabindex="-1"></a><span class="fu">recipiente</span>(<span class="fu">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), <span class="st">&quot;água&quot;</span>, <span class="st">&quot;fermento&quot;</span>, <span class="st">&quot;leite&quot;</span>, <span class="st">&quot;óleo&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb192-34"><a href="6-1-o-operador-pipe.html#cb192-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">acrescente</span>(<span class="st">&quot;farinha&quot;</span>, <span class="at">ate =</span> <span class="st">&quot;macio&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb192-35"><a href="6-1-o-operador-pipe.html#cb192-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bata</span>(<span class="at">duracao =</span> <span class="st">&quot;3min&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb192-36"><a href="6-1-o-operador-pipe.html#cb192-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coloque</span>(<span class="at">lugar =</span> <span class="st">&quot;forma&quot;</span>, <span class="at">tipo =</span> <span class="st">&quot;grande&quot;</span>, <span class="at">untada =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb192-37"><a href="6-1-o-operador-pipe.html#cb192-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">asse</span>(<span class="at">duracao =</span> <span class="st">&quot;50min&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb192-38"><a href="6-1-o-operador-pipe.html#cb192-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">esfrie</span>(<span class="at">lugar =</span> <span class="st">&quot;geladeira&quot;</span>, <span class="at">duracao =</span> <span class="st">&quot;20min&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="6-1-o-operador-pipe.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Receita de bolo sem pipe. Tente entender o que é preciso fazer.</span></span>
+<span id="cb195-2"><a href="6-1-o-operador-pipe.html#cb195-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb195-3"><a href="6-1-o-operador-pipe.html#cb195-3" aria-hidden="true" tabindex="-1"></a><span class="fu">esfrie</span>(</span>
+<span id="cb195-4"><a href="6-1-o-operador-pipe.html#cb195-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">asse</span>(</span>
+<span id="cb195-5"><a href="6-1-o-operador-pipe.html#cb195-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coloque</span>(</span>
+<span id="cb195-6"><a href="6-1-o-operador-pipe.html#cb195-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">bata</span>(</span>
+<span id="cb195-7"><a href="6-1-o-operador-pipe.html#cb195-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">acrescente</span>(</span>
+<span id="cb195-8"><a href="6-1-o-operador-pipe.html#cb195-8" aria-hidden="true" tabindex="-1"></a>          <span class="fu">recipiente</span>(</span>
+<span id="cb195-9"><a href="6-1-o-operador-pipe.html#cb195-9" aria-hidden="true" tabindex="-1"></a>            <span class="fu">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), </span>
+<span id="cb195-10"><a href="6-1-o-operador-pipe.html#cb195-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;água&quot;</span>, </span>
+<span id="cb195-11"><a href="6-1-o-operador-pipe.html#cb195-11" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;fermento&quot;</span>, </span>
+<span id="cb195-12"><a href="6-1-o-operador-pipe.html#cb195-12" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;leite&quot;</span>, </span>
+<span id="cb195-13"><a href="6-1-o-operador-pipe.html#cb195-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;óleo&quot;</span></span>
+<span id="cb195-14"><a href="6-1-o-operador-pipe.html#cb195-14" aria-hidden="true" tabindex="-1"></a>          ), </span>
+<span id="cb195-15"><a href="6-1-o-operador-pipe.html#cb195-15" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;farinha&quot;</span>, </span>
+<span id="cb195-16"><a href="6-1-o-operador-pipe.html#cb195-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">ate =</span> <span class="st">&quot;macio&quot;</span></span>
+<span id="cb195-17"><a href="6-1-o-operador-pipe.html#cb195-17" aria-hidden="true" tabindex="-1"></a>        ), </span>
+<span id="cb195-18"><a href="6-1-o-operador-pipe.html#cb195-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">duracao =</span> <span class="st">&quot;3min&quot;</span></span>
+<span id="cb195-19"><a href="6-1-o-operador-pipe.html#cb195-19" aria-hidden="true" tabindex="-1"></a>      ), </span>
+<span id="cb195-20"><a href="6-1-o-operador-pipe.html#cb195-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">lugar =</span> <span class="st">&quot;forma&quot;</span>, </span>
+<span id="cb195-21"><a href="6-1-o-operador-pipe.html#cb195-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">tipo =</span> <span class="st">&quot;grande&quot;</span>, </span>
+<span id="cb195-22"><a href="6-1-o-operador-pipe.html#cb195-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">untada =</span> <span class="cn">TRUE</span></span>
+<span id="cb195-23"><a href="6-1-o-operador-pipe.html#cb195-23" aria-hidden="true" tabindex="-1"></a>    ), </span>
+<span id="cb195-24"><a href="6-1-o-operador-pipe.html#cb195-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">duracao =</span> <span class="st">&quot;50min&quot;</span></span>
+<span id="cb195-25"><a href="6-1-o-operador-pipe.html#cb195-25" aria-hidden="true" tabindex="-1"></a>  ), </span>
+<span id="cb195-26"><a href="6-1-o-operador-pipe.html#cb195-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">lugar =</span> <span class="st">&quot;geladeira&quot;</span>, </span>
+<span id="cb195-27"><a href="6-1-o-operador-pipe.html#cb195-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">duracao =</span> <span class="st">&quot;20min&quot;</span></span>
+<span id="cb195-28"><a href="6-1-o-operador-pipe.html#cb195-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb195-29"><a href="6-1-o-operador-pipe.html#cb195-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb195-30"><a href="6-1-o-operador-pipe.html#cb195-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb195-31"><a href="6-1-o-operador-pipe.html#cb195-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Veja como o código acima pode ser reescrito utilizando-se o pipe. Agora realmente se parece com uma receita de bolo.</span></span>
+<span id="cb195-32"><a href="6-1-o-operador-pipe.html#cb195-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb195-33"><a href="6-1-o-operador-pipe.html#cb195-33" aria-hidden="true" tabindex="-1"></a><span class="fu">recipiente</span>(<span class="fu">rep</span>(<span class="st">&quot;farinha&quot;</span>, <span class="dv">2</span>), <span class="st">&quot;água&quot;</span>, <span class="st">&quot;fermento&quot;</span>, <span class="st">&quot;leite&quot;</span>, <span class="st">&quot;óleo&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb195-34"><a href="6-1-o-operador-pipe.html#cb195-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">acrescente</span>(<span class="st">&quot;farinha&quot;</span>, <span class="at">ate =</span> <span class="st">&quot;macio&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb195-35"><a href="6-1-o-operador-pipe.html#cb195-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bata</span>(<span class="at">duracao =</span> <span class="st">&quot;3min&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb195-36"><a href="6-1-o-operador-pipe.html#cb195-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coloque</span>(<span class="at">lugar =</span> <span class="st">&quot;forma&quot;</span>, <span class="at">tipo =</span> <span class="st">&quot;grande&quot;</span>, <span class="at">untada =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb195-37"><a href="6-1-o-operador-pipe.html#cb195-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">asse</span>(<span class="at">duracao =</span> <span class="st">&quot;50min&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb195-38"><a href="6-1-o-operador-pipe.html#cb195-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">esfrie</span>(<span class="at">lugar =</span> <span class="st">&quot;geladeira&quot;</span>, <span class="at">duracao =</span> <span class="st">&quot;20min&quot;</span>)</span></code></pre></div>
 <p>Às vezes, queremos que o resultado do lado esquerdo vá para outro argumento do lado direito que não o primeiro. Para isso, utilizamos um <code>.</code> como marcador.</p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="6-1-o-operador-pipe.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Queremos que o dataset seja recebido pelo segundo argumento (data=) da função &quot;lm&quot;.</span></span>
-<span id="cb193-2"><a href="6-1-o-operador-pipe.html#cb193-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb193-3"><a href="6-1-o-operador-pipe.html#cb193-3" aria-hidden="true" tabindex="-1"></a>airquality <span class="sc">%&gt;%</span></span>
-<span id="cb193-4"><a href="6-1-o-operador-pipe.html#cb193-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb193-5"><a href="6-1-o-operador-pipe.html#cb193-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lm</span>(Ozone <span class="sc">~</span> Wind <span class="sc">+</span> Temp <span class="sc">+</span> Solar.R, <span class="at">data =</span> .) <span class="sc">%&gt;%</span></span>
-<span id="cb193-6"><a href="6-1-o-operador-pipe.html#cb193-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="6-1-o-operador-pipe.html#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Queremos que o dataset seja recebido pelo segundo argumento (data=) da função &quot;lm&quot;.</span></span>
+<span id="cb196-2"><a href="6-1-o-operador-pipe.html#cb196-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb196-3"><a href="6-1-o-operador-pipe.html#cb196-3" aria-hidden="true" tabindex="-1"></a>airquality <span class="sc">%&gt;%</span></span>
+<span id="cb196-4"><a href="6-1-o-operador-pipe.html#cb196-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb196-5"><a href="6-1-o-operador-pipe.html#cb196-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lm</span>(Ozone <span class="sc">~</span> Wind <span class="sc">+</span> Temp <span class="sc">+</span> Solar.R, <span class="at">data =</span> .) <span class="sc">%&gt;%</span></span>
+<span id="cb196-6"><a href="6-1-o-operador-pipe.html#cb196-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Ozone ~ Wind + Temp + Solar.R, data = .)
@@ -555,23 +557,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="exercícios-10" class="section level3 unnumbered">
 <h3>Exercícios</h3>
 <p><strong>1.</strong> Reescreva a expressão abaixo utilizando o <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="6-1-o-operador-pipe.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(<span class="fu">sum</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)<span class="sc">/</span><span class="dv">3</span>), <span class="at">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="6-1-o-operador-pipe.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(<span class="fu">sum</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)<span class="sc">/</span><span class="dv">3</span>), <span class="at">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
 <p><strong>Dica</strong>: utilize a função <code>magrittr::divide_by()</code>. Veja o help da função para mais informações.</p>
 <p><strong>2.</strong> Reescreva o código abaixo utilizando o <code>%&gt;%</code>.</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="6-1-o-operador-pipe.html#cb196-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb196-2"><a href="6-1-o-operador-pipe.html#cb196-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
-<span id="cb196-3"><a href="6-1-o-operador-pipe.html#cb196-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb196-4"><a href="6-1-o-operador-pipe.html#cb196-4" aria-hidden="true" tabindex="-1"></a>x.pos <span class="ot">&lt;-</span> x[x<span class="sc">&gt;</span><span class="dv">0</span>]</span>
-<span id="cb196-5"><a href="6-1-o-operador-pipe.html#cb196-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb196-6"><a href="6-1-o-operador-pipe.html#cb196-6" aria-hidden="true" tabindex="-1"></a>media <span class="ot">&lt;-</span> <span class="fu">mean</span>(x.pos)</span>
-<span id="cb196-7"><a href="6-1-o-operador-pipe.html#cb196-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb196-8"><a href="6-1-o-operador-pipe.html#cb196-8" aria-hidden="true" tabindex="-1"></a>saida <span class="ot">&lt;-</span> <span class="fu">round</span>(media, <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="6-1-o-operador-pipe.html#cb199-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb199-2"><a href="6-1-o-operador-pipe.html#cb199-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb199-3"><a href="6-1-o-operador-pipe.html#cb199-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb199-4"><a href="6-1-o-operador-pipe.html#cb199-4" aria-hidden="true" tabindex="-1"></a>x.pos <span class="ot">&lt;-</span> x[x<span class="sc">&gt;</span><span class="dv">0</span>]</span>
+<span id="cb199-5"><a href="6-1-o-operador-pipe.html#cb199-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb199-6"><a href="6-1-o-operador-pipe.html#cb199-6" aria-hidden="true" tabindex="-1"></a>media <span class="ot">&lt;-</span> <span class="fu">mean</span>(x.pos)</span>
+<span id="cb199-7"><a href="6-1-o-operador-pipe.html#cb199-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb199-8"><a href="6-1-o-operador-pipe.html#cb199-8" aria-hidden="true" tabindex="-1"></a>saida <span class="ot">&lt;-</span> <span class="fu">round</span>(media, <span class="dv">1</span>)</span></code></pre></div>
 <p><strong>3.</strong> Sem rodar, diga qual a saída do código abaixo. Consulte o help das funções caso precise.</p>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="6-1-o-operador-pipe.html#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">%&gt;%</span></span>
-<span id="cb197-2"><a href="6-1-o-operador-pipe.html#cb197-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb197-3"><a href="6-1-o-operador-pipe.html#cb197-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">6</span>, <span class="cn">NA</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb197-4"><a href="6-1-o-operador-pipe.html#cb197-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(<span class="at">na.rm =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb197-5"><a href="6-1-o-operador-pipe.html#cb197-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">equals</span>(<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="6-1-o-operador-pipe.html#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">%&gt;%</span></span>
+<span id="cb200-2"><a href="6-1-o-operador-pipe.html#cb200-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb200-3"><a href="6-1-o-operador-pipe.html#cb200-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">6</span>, <span class="cn">NA</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb200-4"><a href="6-1-o-operador-pipe.html#cb200-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(<span class="at">na.rm =</span> T) <span class="sc">%&gt;%</span></span>
+<span id="cb200-5"><a href="6-1-o-operador-pipe.html#cb200-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">equals</span>(<span class="dv">5</span>)</span></code></pre></div>
 </div>
 </div>
 <hr/>
@@ -607,6 +609,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

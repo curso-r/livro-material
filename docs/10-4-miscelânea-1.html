@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10.4 Miscelânea | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10.4 Miscelânea | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="assets/img/logo.png" />
+  <meta property="og:image" content="/assets/img/logo.png" />
   <meta property="og:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="github-repo" content="curso-r/livro-material" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="10.4 Miscelânea | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="twitter:image" content="assets/img/logo.png" />
+  <meta name="twitter:image" content="/assets/img/logo.png" />
 
 <meta name="author" content="Curso-R" />
 
@@ -32,8 +32,8 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="10-3-iterações-avançadas.html"/>
 <link rel="next" href="10-5-exercícios-23.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.9.1/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,16 +50,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.16/datatables.js"></script>
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
@@ -139,6 +139,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="assets/style.css" type="text/css" />
 </head>
 
@@ -162,17 +163,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
-<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
+<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-macos"><i class="fa fa-check"></i><b>1.1.3</b> No MacOS</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
 <li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
+<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#instalacao-latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
 <li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
 <li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
 <li class="chapter" data-level="1.3.4" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#renderizando-html-widgets"><i class="fa fa-check"></i><b>1.3.4</b> Renderizando HTML widgets</a></li>
 <li class="chapter" data-level="1.3.5" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#blogdown"><i class="fa fa-check"></i><b>1.3.5</b> Blogdown</a></li>
-<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#rtools"><i class="fa fa-check"></i><b>1.3.6</b> Rtools</a></li>
+<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#ferramentas-de-desenvolvimento"><i class="fa fa-check"></i><b>1.3.6</b> Ferramentas de desenvolvimento</a></li>
+<li class="chapter" data-level="1.3.7" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#git"><i class="fa fa-check"></i><b>1.3.7</b> Git</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
@@ -357,9 +359,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#códigos-em-r"><i class="fa fa-check"></i><b>9.2.1</b> Códigos em R</a></li>
-<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#imagens-1"><i class="fa fa-check"></i><b>9.2.2</b> Imagens</a></li>
-<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#tabelas-1"><i class="fa fa-check"></i><b>9.2.3</b> Tabelas</a></li>
+<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#criando-um-arquivo-.rmd"><i class="fa fa-check"></i><b>9.2.1</b> Criando um arquivo <code>.Rmd</code></a></li>
+<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#estrutura-do-arquivo-r-markdown"><i class="fa fa-check"></i><b>9.2.2</b> Estrutura do arquivo R Markdown</a></li>
+<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#adicionando-conteúdo"><i class="fa fa-check"></i><b>9.2.3</b> Adicionando conteúdo</a></li>
 <li class="chapter" data-level="9.2.4" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#dicas-para-o-rstudio"><i class="fa fa-check"></i><b>9.2.4</b> Dicas para o RStudio</a></li>
 <li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
@@ -478,11 +480,11 @@ um apanhado de funções sortidas que achamos úteis enquanto programando com o
 <p>Se quisermos filtrar elementos de um vetor ou lista, podemos usar as funções
 <code>keep()</code> e <code>discard()</code>. Elas funcionam com fórmulas e podem ser extremamente úteis
 em situações que <code>dplyr::select()</code> e <code>magrittr::extract()</code> não conseguem cobrir:</p>
-<div class="sourceCode" id="cb617"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb617-1"><a href="10-4-miscelânea-1.html#cb617-1" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">15</span>, <span class="dv">20</span><span class="sc">:</span><span class="dv">25</span>, <span class="fu">c</span>(<span class="dv">30</span><span class="sc">:</span><span class="dv">34</span>, <span class="cn">NA</span>))</span>
-<span id="cb617-2"><a href="10-4-miscelânea-1.html#cb617-2" aria-hidden="true" tabindex="-1"></a><span class="fu">keep</span>(obj, <span class="sc">~</span><span class="fu">any</span>(<span class="fu">is.na</span>(.x)))</span></code></pre></div>
+<div class="sourceCode" id="cb612"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb612-1"><a href="10-4-miscelânea-1.html#cb612-1" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">15</span>, <span class="dv">20</span><span class="sc">:</span><span class="dv">25</span>, <span class="fu">c</span>(<span class="dv">30</span><span class="sc">:</span><span class="dv">34</span>, <span class="cn">NA</span>))</span>
+<span id="cb612-2"><a href="10-4-miscelânea-1.html#cb612-2" aria-hidden="true" tabindex="-1"></a><span class="fu">keep</span>(obj, <span class="sc">~</span><span class="fu">any</span>(<span class="fu">is.na</span>(.x)))</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] 30 31 32 33 34 NA</code></pre>
-<div class="sourceCode" id="cb619"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb619-1"><a href="10-4-miscelânea-1.html#cb619-1" aria-hidden="true" tabindex="-1"></a><span class="fu">discard</span>(obj, <span class="sc">~!</span><span class="fu">any</span>(<span class="fu">is.na</span>(.x)))</span></code></pre></div>
+<div class="sourceCode" id="cb614"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb614-1"><a href="10-4-miscelânea-1.html#cb614-1" aria-hidden="true" tabindex="-1"></a><span class="fu">discard</span>(obj, <span class="sc">~!</span><span class="fu">any</span>(<span class="fu">is.na</span>(.x)))</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] 30 31 32 33 34 NA</code></pre>
 <p>No exemplo acima descartamos todos os vetores da lista que não têm pelo menos um
@@ -493,13 +495,13 @@ elemento omisso (<code>NA</code>).</p>
 <p>Uma outra família do pacote <code>purrr</code> é a <code>is()</code>. Com essa série de funções podemos
 fazer verificações extremamente estritas em objetos dos mais variados tipos. Seguem
 alguns poucos exemplos:</p>
-<div class="sourceCode" id="cb621"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb621-1"><a href="10-4-miscelânea-1.html#cb621-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is_scalar_integer</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">15</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb616"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb616-1"><a href="10-4-miscelânea-1.html#cb616-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is_scalar_integer</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">15</span>)</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb623"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb623-1"><a href="10-4-miscelânea-1.html#cb623-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is_bare_integer</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">15</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb618"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb618-1"><a href="10-4-miscelânea-1.html#cb618-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is_bare_integer</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">15</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb625"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb625-1"><a href="10-4-miscelânea-1.html#cb625-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is_atomic</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">15</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb620"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb620-1"><a href="10-4-miscelânea-1.html#cb620-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is_atomic</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">15</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb627"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb627-1"><a href="10-4-miscelânea-1.html#cb627-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is_vector</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">15</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb622"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb622-1"><a href="10-4-miscelânea-1.html#cb622-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is_vector</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">15</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 </div>
 <div id="andar-e-modificar" class="section level3" number="10.4.3">
@@ -524,8 +526,8 @@ queremos transformar as colunas de fator para caractere).</p>
 duas funções extremamente úteis: <code>transpose()</code> e <code>pluck()</code>. A primeira transpõe
 uma lista, enquanto a segunda é capaz de acessar elementos profundos de uma lista
 sem a necessidade de colchetes.</p>
-<div class="sourceCode" id="cb629"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb629-1"><a href="10-4-miscelânea-1.html#cb629-1" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">2</span>, <span class="at">c =</span> <span class="dv">3</span>), <span class="fu">list</span>(<span class="at">a =</span> <span class="dv">4</span>, <span class="at">b =</span> <span class="dv">5</span>, <span class="at">c =</span> <span class="dv">6</span>))</span>
-<span id="cb629-2"><a href="10-4-miscelânea-1.html#cb629-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(obj)</span></code></pre></div>
+<div class="sourceCode" id="cb624"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb624-1"><a href="10-4-miscelânea-1.html#cb624-1" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">2</span>, <span class="at">c =</span> <span class="dv">3</span>), <span class="fu">list</span>(<span class="at">a =</span> <span class="dv">4</span>, <span class="at">b =</span> <span class="dv">5</span>, <span class="at">c =</span> <span class="dv">6</span>))</span>
+<span id="cb624-2"><a href="10-4-miscelânea-1.html#cb624-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(obj)</span></code></pre></div>
 <pre><code>## List of 2
 ##  $ :List of 3
 ##   ..$ a: num 1
@@ -535,9 +537,9 @@ sem a necessidade de colchetes.</p>
 ##   ..$ a: num 4
 ##   ..$ b: num 5
 ##   ..$ c: num 6</code></pre>
-<div class="sourceCode" id="cb631"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb631-1"><a href="10-4-miscelânea-1.html#cb631-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pluck</span>(obj, <span class="dv">2</span>, <span class="st">&quot;b&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb626"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb626-1"><a href="10-4-miscelânea-1.html#cb626-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pluck</span>(obj, <span class="dv">2</span>, <span class="st">&quot;b&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
-<div class="sourceCode" id="cb633"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb633-1"><a href="10-4-miscelânea-1.html#cb633-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(<span class="fu">transpose</span>(obj))</span></code></pre></div>
+<div class="sourceCode" id="cb628"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb628-1"><a href="10-4-miscelânea-1.html#cb628-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(<span class="fu">transpose</span>(obj))</span></code></pre></div>
 <pre><code>## List of 3
 ##  $ a:List of 2
 ##   ..$ : num 1
@@ -557,9 +559,9 @@ nas funções relacionadas a <code>depth()</code> pois elas podem ser muito úte
 pipeline ou com alguma função do próprio <code>purrr</code>), temos <code>partial()</code>. Ela funciona
 nos moldes da família <code>invoke()</code> e pode ser bastante útil para tornar suas
 pipelines mais enxutas:</p>
-<div class="sourceCode" id="cb635"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb635-1"><a href="10-4-miscelânea-1.html#cb635-1" aria-hidden="true" tabindex="-1"></a>soma_varios <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, z) { x <span class="sc">+</span> y <span class="sc">+</span> z }</span>
-<span id="cb635-2"><a href="10-4-miscelânea-1.html#cb635-2" aria-hidden="true" tabindex="-1"></a>nova_soma <span class="ot">&lt;-</span> <span class="fu">partial</span>(soma_varios, <span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">2</span>)</span>
-<span id="cb635-3"><a href="10-4-miscelânea-1.html#cb635-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nova_soma</span>(<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb630"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb630-1"><a href="10-4-miscelânea-1.html#cb630-1" aria-hidden="true" tabindex="-1"></a>soma_varios <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, z) { x <span class="sc">+</span> y <span class="sc">+</span> z }</span>
+<span id="cb630-2"><a href="10-4-miscelânea-1.html#cb630-2" aria-hidden="true" tabindex="-1"></a>nova_soma <span class="ot">&lt;-</span> <span class="fu">partial</span>(soma_varios, <span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">2</span>)</span>
+<span id="cb630-3"><a href="10-4-miscelânea-1.html#cb630-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nova_soma</span>(<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 6</code></pre>
 </div>
 <div id="execução-segura" class="section level3" number="10.4.6">
@@ -572,10 +574,10 @@ silenciam e retornam um valor padrão em seu lugar.</p>
 <p><code>quietly()</code> retorna uma lista com resultado, saída, mensagem e alertas, <code>safely()</code>
 retorna uma lista com resultado e erro (um destes sempre é <code>NULL</code>), e <code>possibly()</code>
 silencia o erro e retorna um valor dado pelo usuário.</p>
-<div class="sourceCode" id="cb637"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb637-1"><a href="10-4-miscelânea-1.html#cb637-1" aria-hidden="true" tabindex="-1"></a>soma_um <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { x <span class="sc">+</span> <span class="dv">1</span> }</span>
-<span id="cb637-2"><a href="10-4-miscelânea-1.html#cb637-2" aria-hidden="true" tabindex="-1"></a>s_soma_um <span class="ot">&lt;-</span> <span class="fu">safely</span>(soma_um, <span class="dv">0</span>)</span>
-<span id="cb637-3"><a href="10-4-miscelânea-1.html#cb637-3" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">11</span>, <span class="st">&quot;a&quot;</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>)</span>
-<span id="cb637-4"><a href="10-4-miscelânea-1.html#cb637-4" aria-hidden="true" tabindex="-1"></a><span class="fu">s_soma_um</span>(obj)</span></code></pre></div>
+<div class="sourceCode" id="cb632"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb632-1"><a href="10-4-miscelânea-1.html#cb632-1" aria-hidden="true" tabindex="-1"></a>soma_um <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { x <span class="sc">+</span> <span class="dv">1</span> }</span>
+<span id="cb632-2"><a href="10-4-miscelânea-1.html#cb632-2" aria-hidden="true" tabindex="-1"></a>s_soma_um <span class="ot">&lt;-</span> <span class="fu">safely</span>(soma_um, <span class="dv">0</span>)</span>
+<span id="cb632-3"><a href="10-4-miscelânea-1.html#cb632-3" aria-hidden="true" tabindex="-1"></a>obj <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">11</span>, <span class="st">&quot;a&quot;</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>)</span>
+<span id="cb632-4"><a href="10-4-miscelânea-1.html#cb632-4" aria-hidden="true" tabindex="-1"></a><span class="fu">s_soma_um</span>(obj)</span></code></pre></div>
 <pre><code>## $result
 ## [1] 0
 ## 
@@ -616,6 +618,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

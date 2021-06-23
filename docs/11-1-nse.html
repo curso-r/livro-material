@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>11.1 NSE | Ciência de Dados em R</title>
   <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="11.1 NSE | Ciência de Dados em R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="assets/img/logo.png" />
+  <meta property="og:image" content="/assets/img/logo.png" />
   <meta property="og:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
   <meta name="github-repo" content="curso-r/livro-material" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="11.1 NSE | Ciência de Dados em R" />
   
   <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
-  <meta name="twitter:image" content="assets/img/logo.png" />
+  <meta name="twitter:image" content="/assets/img/logo.png" />
 
 <meta name="author" content="Curso-R" />
 
@@ -32,8 +32,8 @@
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="11-ravancado.html"/>
 <link rel="next" href="12-misc.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.9.1/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,16 +50,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.16/datatables.js"></script>
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
@@ -139,6 +139,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="assets/style.css" type="text/css" />
 </head>
 
@@ -162,17 +163,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
-<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-mac"><i class="fa fa-check"></i><b>1.1.3</b> No Mac</a></li>
+<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-macos"><i class="fa fa-check"></i><b>1.1.3</b> No MacOS</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
 <li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
+<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#instalacao-latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
 <li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
 <li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
 <li class="chapter" data-level="1.3.4" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#renderizando-html-widgets"><i class="fa fa-check"></i><b>1.3.4</b> Renderizando HTML widgets</a></li>
 <li class="chapter" data-level="1.3.5" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#blogdown"><i class="fa fa-check"></i><b>1.3.5</b> Blogdown</a></li>
-<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#rtools"><i class="fa fa-check"></i><b>1.3.6</b> Rtools</a></li>
+<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#ferramentas-de-desenvolvimento"><i class="fa fa-check"></i><b>1.3.6</b> Ferramentas de desenvolvimento</a></li>
+<li class="chapter" data-level="1.3.7" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#git"><i class="fa fa-check"></i><b>1.3.7</b> Git</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
@@ -357,9 +359,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#códigos-em-r"><i class="fa fa-check"></i><b>9.2.1</b> Códigos em R</a></li>
-<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#imagens-1"><i class="fa fa-check"></i><b>9.2.2</b> Imagens</a></li>
-<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#tabelas-1"><i class="fa fa-check"></i><b>9.2.3</b> Tabelas</a></li>
+<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#criando-um-arquivo-.rmd"><i class="fa fa-check"></i><b>9.2.1</b> Criando um arquivo <code>.Rmd</code></a></li>
+<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#estrutura-do-arquivo-r-markdown"><i class="fa fa-check"></i><b>9.2.2</b> Estrutura do arquivo R Markdown</a></li>
+<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#adicionando-conteúdo"><i class="fa fa-check"></i><b>9.2.3</b> Adicionando conteúdo</a></li>
 <li class="chapter" data-level="9.2.4" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#dicas-para-o-rstudio"><i class="fa fa-check"></i><b>9.2.4</b> Dicas para o RStudio</a></li>
 <li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
 </ul></li>
@@ -475,11 +477,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="o-que-é" class="section level3" number="11.1.1">
 <h3><span class="header-section-number">11.1.1</span> O que é?</h3>
 <p><em>Non-standard evaluation</em> é uma propriedade do R que permite capturar o seu código sem avaliá-lo. Isso mesmo: o R deixa de ser uma caixa para a qual nós enviamos comandos a serem executados e passa a ter a capacidade de <strong>interpretar e trabalhar</strong> os próprios comandos. Genericamente isso se chama <strong>metaprogramação</strong>.</p>
-<div class="sourceCode" id="cb639"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb639-1"><a href="11-1-nse.html#cb639-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O objeto &#39;dplyr&#39; simplesmente não existe...</span></span>
-<span id="cb639-2"><a href="11-1-nse.html#cb639-2" aria-hidden="true" tabindex="-1"></a>dplyr</span></code></pre></div>
+<div class="sourceCode" id="cb634"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb634-1"><a href="11-1-nse.html#cb634-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O objeto &#39;dplyr&#39; simplesmente não existe...</span></span>
+<span id="cb634-2"><a href="11-1-nse.html#cb634-2" aria-hidden="true" tabindex="-1"></a>dplyr</span></code></pre></div>
 <pre><code>## Error in eval(expr, envir, enclos): object &#39;dplyr&#39; not found</code></pre>
-<div class="sourceCode" id="cb641"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb641-1"><a href="11-1-nse.html#cb641-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Por que então esse comando funciona?</span></span>
-<span id="cb641-2"><a href="11-1-nse.html#cb641-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+<div class="sourceCode" id="cb636"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb636-1"><a href="11-1-nse.html#cb636-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Por que então esse comando funciona?</span></span>
+<span id="cb636-2"><a href="11-1-nse.html#cb636-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
 <p>Na chamada <code>library()</code> acima, a palavra “dplyr” não se refere a nenhum objeto! O R consegue ler o código que nós escrevemos e agir em cima dessa informação. Apesar de ser comum para nós, outras linguagens são incapazes de fazer isso por causa da forma com que elas tratam seus argumentos.</p>
 <p>O R tem o que chamamos de avaliação tardia (<em>delayed evaluation</em>), ou seja, uma expressão só é avaliada quando ela é necessária e não logo que ela é criada. No R, <code>print(1 + 2)</code> é diferente de <code>print(3)</code>, mas nas outras linguagens isso não é o caso!</p>
 </div>
@@ -489,73 +491,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>O mundo sem tidy eval é extremamente verborrágico, pois a tabela precisa ser especificada toda vez que nos referirmos a uma coluna:</li>
 </ul>
-<div class="sourceCode" id="cb642"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb642-1"><a href="11-1-nse.html#cb642-1" aria-hidden="true" tabindex="-1"></a>starwars[starwars<span class="sc">$</span>homeworld <span class="sc">==</span> <span class="st">&quot;Naboo&quot;</span> <span class="sc">&amp;</span> starwars<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>, ,]</span></code></pre></div>
+<div class="sourceCode" id="cb637"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb637-1"><a href="11-1-nse.html#cb637-1" aria-hidden="true" tabindex="-1"></a>starwars[starwars<span class="sc">$</span>homeworld <span class="sc">==</span> <span class="st">&quot;Naboo&quot;</span> <span class="sc">&amp;</span> starwars<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>, ,]</span></code></pre></div>
 <ul>
 <li>Para não precisar do <code>$</code>, a nossa única saída é criar objetos com as colunas:</li>
 </ul>
-<div class="sourceCode" id="cb643"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb643-1"><a href="11-1-nse.html#cb643-1" aria-hidden="true" tabindex="-1"></a>homeworld <span class="ot">&lt;-</span> starwars<span class="sc">$</span>homeworld; species <span class="ot">&lt;-</span> starwars<span class="sc">$</span>species</span>
-<span id="cb643-2"><a href="11-1-nse.html#cb643-2" aria-hidden="true" tabindex="-1"></a>starwars[homeworld <span class="sc">==</span> <span class="st">&quot;Naboo&quot;</span> <span class="sc">&amp;</span> species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>, ,]</span></code></pre></div>
+<div class="sourceCode" id="cb638"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb638-1"><a href="11-1-nse.html#cb638-1" aria-hidden="true" tabindex="-1"></a>homeworld <span class="ot">&lt;-</span> starwars<span class="sc">$</span>homeworld; species <span class="ot">&lt;-</span> starwars<span class="sc">$</span>species</span>
+<span id="cb638-2"><a href="11-1-nse.html#cb638-2" aria-hidden="true" tabindex="-1"></a>starwars[homeworld <span class="sc">==</span> <span class="st">&quot;Naboo&quot;</span> <span class="sc">&amp;</span> species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>, ,]</span></code></pre></div>
 <ul>
 <li>O <code>{tidyverse}</code> permite criar um “mini ambiente” em que as colunas da tabela estão disponíveis como se fossem objetos declarados explicitamente:</li>
 </ul>
-<div class="sourceCode" id="cb644"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb644-1"><a href="11-1-nse.html#cb644-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(starwars, homeworld <span class="sc">==</span> <span class="st">&quot;Naboo&quot;</span>, species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb639"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb639-1"><a href="11-1-nse.html#cb639-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(starwars, homeworld <span class="sc">==</span> <span class="st">&quot;Naboo&quot;</span>, species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>)</span></code></pre></div>
 <p>O problema de capturar o código sem avaliá-lo é que fica difícil avaliar algo antes que ele seja capturado.</p>
-<div class="sourceCode" id="cb645"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb645-1"><a href="11-1-nse.html#cb645-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O código &#39;birth_year&#39; é capturado</span></span>
-<span id="cb645-2"><a href="11-1-nse.html#cb645-2" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">is.na</span>(birth_year)) <span class="sc">%&gt;%</span> <span class="fu">nrow</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb640"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb640-1"><a href="11-1-nse.html#cb640-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O código &#39;birth_year&#39; é capturado</span></span>
+<span id="cb640-2"><a href="11-1-nse.html#cb640-2" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">is.na</span>(birth_year)) <span class="sc">%&gt;%</span> <span class="fu">nrow</span>()</span></code></pre></div>
 <pre><code>## [1] 44</code></pre>
-<div class="sourceCode" id="cb647"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb647-1"><a href="11-1-nse.html#cb647-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O objetivo é filtrar uma coluna especificada pelo usuário</span></span>
-<span id="cb647-2"><a href="11-1-nse.html#cb647-2" aria-hidden="true" tabindex="-1"></a>filter_na <span class="ot">&lt;-</span> <span class="cf">function</span>(df, col) {</span>
-<span id="cb647-3"><a href="11-1-nse.html#cb647-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(df, <span class="fu">is.na</span>(col))</span>
-<span id="cb647-4"><a href="11-1-nse.html#cb647-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb647-5"><a href="11-1-nse.html#cb647-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb647-6"><a href="11-1-nse.html#cb647-6" aria-hidden="true" tabindex="-1"></a><span class="co"># A função captura o código &#39;col&#39;</span></span>
-<span id="cb647-7"><a href="11-1-nse.html#cb647-7" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> <span class="fu">filter_na</span>(<span class="at">col =</span> birth_year) <span class="sc">%&gt;%</span> <span class="fu">nrow</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb642"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb642-1"><a href="11-1-nse.html#cb642-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O objetivo é filtrar uma coluna especificada pelo usuário</span></span>
+<span id="cb642-2"><a href="11-1-nse.html#cb642-2" aria-hidden="true" tabindex="-1"></a>filter_na <span class="ot">&lt;-</span> <span class="cf">function</span>(df, col) {</span>
+<span id="cb642-3"><a href="11-1-nse.html#cb642-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(df, <span class="fu">is.na</span>(col))</span>
+<span id="cb642-4"><a href="11-1-nse.html#cb642-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb642-5"><a href="11-1-nse.html#cb642-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb642-6"><a href="11-1-nse.html#cb642-6" aria-hidden="true" tabindex="-1"></a><span class="co"># A função captura o código &#39;col&#39;</span></span>
+<span id="cb642-7"><a href="11-1-nse.html#cb642-7" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> <span class="fu">filter_na</span>(<span class="at">col =</span> birth_year) <span class="sc">%&gt;%</span> <span class="fu">nrow</span>()</span></code></pre></div>
 <pre><code>## Error: Problem with `filter()` input `..1`.
-## x object &#39;birth_year&#39; not found
-## ℹ Input `..1` is `is.na(col)`.</code></pre>
+## ℹ Input `..1` is `is.na(col)`.
+## x object &#39;birth_year&#39; not found</code></pre>
 </div>
 <div id="curly-curly" class="section level3" number="11.1.3">
 <h3><span class="header-section-number">11.1.3</span> Curly-curly</h3>
 <p>O operador que vai resolver nosso problema é o <code>{{ }}</code> (lê-se <em>curly curly</em>), que permite interpolar o código, ou seja, avaliá-lo antes da captura.</p>
-<div class="sourceCode" id="cb649"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb649-1"><a href="11-1-nse.html#cb649-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O objetivo é filtrar uma coluna especificada pelo usuário</span></span>
-<span id="cb649-2"><a href="11-1-nse.html#cb649-2" aria-hidden="true" tabindex="-1"></a>filter_na <span class="ot">&lt;-</span> <span class="cf">function</span>(df, col) {</span>
-<span id="cb649-3"><a href="11-1-nse.html#cb649-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(df, <span class="fu">is.na</span>( {{col}} ))</span>
-<span id="cb649-4"><a href="11-1-nse.html#cb649-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb649-5"><a href="11-1-nse.html#cb649-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb649-6"><a href="11-1-nse.html#cb649-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Agora a função captura o código &#39;birth_year&#39;</span></span>
-<span id="cb649-7"><a href="11-1-nse.html#cb649-7" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> <span class="fu">filter_na</span>(<span class="at">col =</span> birth_year) <span class="sc">%&gt;%</span> <span class="fu">nrow</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb644"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb644-1"><a href="11-1-nse.html#cb644-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O objetivo é filtrar uma coluna especificada pelo usuário</span></span>
+<span id="cb644-2"><a href="11-1-nse.html#cb644-2" aria-hidden="true" tabindex="-1"></a>filter_na <span class="ot">&lt;-</span> <span class="cf">function</span>(df, col) {</span>
+<span id="cb644-3"><a href="11-1-nse.html#cb644-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(df, <span class="fu">is.na</span>( {{col}} ))</span>
+<span id="cb644-4"><a href="11-1-nse.html#cb644-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb644-5"><a href="11-1-nse.html#cb644-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb644-6"><a href="11-1-nse.html#cb644-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Agora a função captura o código &#39;birth_year&#39;</span></span>
+<span id="cb644-7"><a href="11-1-nse.html#cb644-7" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> <span class="fu">filter_na</span>(<span class="at">col =</span> birth_year) <span class="sc">%&gt;%</span> <span class="fu">nrow</span>()</span></code></pre></div>
 <pre><code>## [1] 44</code></pre>
 <p>Essa sintaxe vem da interpolação de strings:</p>
-<div class="sourceCode" id="cb651"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb651-1"><a href="11-1-nse.html#cb651-1" aria-hidden="true" tabindex="-1"></a>col <span class="ot">&lt;-</span> <span class="st">&quot;birth_year&quot;</span></span>
-<span id="cb651-2"><a href="11-1-nse.html#cb651-2" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_glue</span>(<span class="st">&quot;Interpolando &#39;{col}&#39;!&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb646"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb646-1"><a href="11-1-nse.html#cb646-1" aria-hidden="true" tabindex="-1"></a>col <span class="ot">&lt;-</span> <span class="st">&quot;birth_year&quot;</span></span>
+<span id="cb646-2"><a href="11-1-nse.html#cb646-2" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_glue</span>(<span class="st">&quot;Interpolando &#39;{col}&#39;!&quot;</span>)</span></code></pre></div>
 <pre><code>## Interpolando &#39;birth_year&#39;!</code></pre>
 <p>Para passar múltiplos argumentos nem é necessário usar o curly-curly já que a reticência já possui as capacidades de tidy eval:</p>
-<div class="sourceCode" id="cb653"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb653-1"><a href="11-1-nse.html#cb653-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O objetivo é permitir vários cálculos</span></span>
-<span id="cb653-2"><a href="11-1-nse.html#cb653-2" aria-hidden="true" tabindex="-1"></a>summarise_by <span class="ot">&lt;-</span> <span class="cf">function</span>(df, ..., by) {</span>
-<span id="cb653-3"><a href="11-1-nse.html#cb653-3" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">%&gt;%</span></span>
-<span id="cb653-4"><a href="11-1-nse.html#cb653-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>( {{by}} ) <span class="sc">%&gt;%</span></span>
-<span id="cb653-5"><a href="11-1-nse.html#cb653-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(...)</span>
-<span id="cb653-6"><a href="11-1-nse.html#cb653-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb653-7"><a href="11-1-nse.html#cb653-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb653-8"><a href="11-1-nse.html#cb653-8" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
-<span id="cb653-9"><a href="11-1-nse.html#cb653-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_by</span>(</span>
-<span id="cb653-10"><a href="11-1-nse.html#cb653-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">media =</span> <span class="fu">mean</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb653-11"><a href="11-1-nse.html#cb653-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">maximo =</span> <span class="fu">max</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb653-12"><a href="11-1-nse.html#cb653-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">by =</span> gender</span>
-<span id="cb653-13"><a href="11-1-nse.html#cb653-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb648"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb648-1"><a href="11-1-nse.html#cb648-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O objetivo é permitir vários cálculos</span></span>
+<span id="cb648-2"><a href="11-1-nse.html#cb648-2" aria-hidden="true" tabindex="-1"></a>summarise_by <span class="ot">&lt;-</span> <span class="cf">function</span>(df, ..., by) {</span>
+<span id="cb648-3"><a href="11-1-nse.html#cb648-3" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">%&gt;%</span></span>
+<span id="cb648-4"><a href="11-1-nse.html#cb648-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>( {{by}} ) <span class="sc">%&gt;%</span></span>
+<span id="cb648-5"><a href="11-1-nse.html#cb648-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(...)</span>
+<span id="cb648-6"><a href="11-1-nse.html#cb648-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb648-7"><a href="11-1-nse.html#cb648-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb648-8"><a href="11-1-nse.html#cb648-8" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span></span>
+<span id="cb648-9"><a href="11-1-nse.html#cb648-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_by</span>(</span>
+<span id="cb648-10"><a href="11-1-nse.html#cb648-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">media =</span> <span class="fu">mean</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb648-11"><a href="11-1-nse.html#cb648-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">maximo =</span> <span class="fu">max</span>(height, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb648-12"><a href="11-1-nse.html#cb648-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">by =</span> gender</span>
+<span id="cb648-13"><a href="11-1-nse.html#cb648-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p>Note como não houve necessidade de interpolar <code>media</code> e <code>maximo</code>: a
 <code>summarise()</code> não tentou criar uma coluna chamada <code>...</code>.</p>
 </div>
 <div id="strings-como-argumentos" class="section level3" number="11.1.4">
 <h3><span class="header-section-number">11.1.4</span> Strings como argumentos</h3>
 <p>E se quisermos passar strings para as funções do <code>{tidyverse}</code>? Se pedirmos o nome de uma coluna para um usuário, a resposta virá como string.</p>
-<div class="sourceCode" id="cb654"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb654-1"><a href="11-1-nse.html#cb654-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O objetivo é dar um nome para a média</span></span>
-<span id="cb654-2"><a href="11-1-nse.html#cb654-2" aria-hidden="true" tabindex="-1"></a>summarise_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(df, nome, col) {</span>
-<span id="cb654-3"><a href="11-1-nse.html#cb654-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(df, <span class="at">nome =</span> <span class="fu">mean</span>(col, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb654-4"><a href="11-1-nse.html#cb654-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb654-5"><a href="11-1-nse.html#cb654-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb654-6"><a href="11-1-nse.html#cb654-6" aria-hidden="true" tabindex="-1"></a><span class="co"># É criada uma coluna &#39;nome&#39; sem valor (&#39;col&#39; não existe)</span></span>
-<span id="cb654-7"><a href="11-1-nse.html#cb654-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise_mean</span>(starwars, <span class="st">&quot;media&quot;</span>, <span class="st">&quot;height&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb649"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb649-1"><a href="11-1-nse.html#cb649-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O objetivo é dar um nome para a média</span></span>
+<span id="cb649-2"><a href="11-1-nse.html#cb649-2" aria-hidden="true" tabindex="-1"></a>summarise_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(df, nome, col) {</span>
+<span id="cb649-3"><a href="11-1-nse.html#cb649-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(df, <span class="at">nome =</span> <span class="fu">mean</span>(col, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb649-4"><a href="11-1-nse.html#cb649-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb649-5"><a href="11-1-nse.html#cb649-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb649-6"><a href="11-1-nse.html#cb649-6" aria-hidden="true" tabindex="-1"></a><span class="co"># É criada uma coluna &#39;nome&#39; sem valor (&#39;col&#39; não existe)</span></span>
+<span id="cb649-7"><a href="11-1-nse.html#cb649-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise_mean</span>(starwars, <span class="st">&quot;media&quot;</span>, <span class="st">&quot;height&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning in mean.default(col, na.rm = TRUE): argument is not numeric or logical:
 ## returning NA</code></pre>
 <pre><code>## # A tibble: 1 x 1
@@ -563,13 +565,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   &lt;dbl&gt;
 ## 1    NA</code></pre>
 <p>Quando o “lado esquerdo” (<strong>antes de um igual</strong>) de uma expressão com tidy eval é uma string (ou se tornará uma quando avaliado), precisamos apenas usar o operador <code>:=</code> (lê-se <em>walrus</em>, “morsa”):</p>
-<div class="sourceCode" id="cb657"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb657-1"><a href="11-1-nse.html#cb657-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O objetivo é dar um nome para a média</span></span>
-<span id="cb657-2"><a href="11-1-nse.html#cb657-2" aria-hidden="true" tabindex="-1"></a>summarise_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(df, nome, col) {</span>
-<span id="cb657-3"><a href="11-1-nse.html#cb657-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(df, {{nome}} <span class="sc">:</span><span class="er">=</span> <span class="fu">mean</span>(col, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb657-4"><a href="11-1-nse.html#cb657-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb657-5"><a href="11-1-nse.html#cb657-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb657-6"><a href="11-1-nse.html#cb657-6" aria-hidden="true" tabindex="-1"></a><span class="co"># É criada uma coluna &#39;media&#39; sem valor (&#39;col&#39; não existe)</span></span>
-<span id="cb657-7"><a href="11-1-nse.html#cb657-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise_mean</span>(starwars, <span class="st">&quot;media&quot;</span>, <span class="st">&quot;height&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb652"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb652-1"><a href="11-1-nse.html#cb652-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O objetivo é dar um nome para a média</span></span>
+<span id="cb652-2"><a href="11-1-nse.html#cb652-2" aria-hidden="true" tabindex="-1"></a>summarise_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(df, nome, col) {</span>
+<span id="cb652-3"><a href="11-1-nse.html#cb652-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(df, {{nome}} <span class="sc">:</span><span class="er">=</span> <span class="fu">mean</span>(col, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb652-4"><a href="11-1-nse.html#cb652-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb652-5"><a href="11-1-nse.html#cb652-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb652-6"><a href="11-1-nse.html#cb652-6" aria-hidden="true" tabindex="-1"></a><span class="co"># É criada uma coluna &#39;media&#39; sem valor (&#39;col&#39; não existe)</span></span>
+<span id="cb652-7"><a href="11-1-nse.html#cb652-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise_mean</span>(starwars, <span class="st">&quot;media&quot;</span>, <span class="st">&quot;height&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning in mean.default(col, na.rm = TRUE): argument is not numeric or logical:
 ## returning NA</code></pre>
 <pre><code>## # A tibble: 1 x 1
@@ -577,13 +579,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   &lt;dbl&gt;
 ## 1    NA</code></pre>
 <p>Quando uma string (ou algo que se tornará uma quando avaliado) está no “lado direito” (<strong>depois de um igual ou quando não há igual</strong>) de uma expressão com tidy eval, precisamos apenas usar o pronome <code>.data</code>:</p>
-<div class="sourceCode" id="cb660"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb660-1"><a href="11-1-nse.html#cb660-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O objetivo é dar um nome para a média</span></span>
-<span id="cb660-2"><a href="11-1-nse.html#cb660-2" aria-hidden="true" tabindex="-1"></a>summarise_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(df, nome, col) {</span>
-<span id="cb660-3"><a href="11-1-nse.html#cb660-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(df, {{nome}} <span class="sc">:</span><span class="er">=</span> <span class="fu">mean</span>(.data[[col]], <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb660-4"><a href="11-1-nse.html#cb660-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb660-5"><a href="11-1-nse.html#cb660-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb660-6"><a href="11-1-nse.html#cb660-6" aria-hidden="true" tabindex="-1"></a><span class="co"># É criada uma coluna &#39;media&#39; com a média de &#39;height&#39;</span></span>
-<span id="cb660-7"><a href="11-1-nse.html#cb660-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise_mean</span>(starwars, <span class="st">&quot;media&quot;</span>, <span class="st">&quot;height&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb655"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb655-1"><a href="11-1-nse.html#cb655-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O objetivo é dar um nome para a média</span></span>
+<span id="cb655-2"><a href="11-1-nse.html#cb655-2" aria-hidden="true" tabindex="-1"></a>summarise_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(df, nome, col) {</span>
+<span id="cb655-3"><a href="11-1-nse.html#cb655-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(df, {{nome}} <span class="sc">:</span><span class="er">=</span> <span class="fu">mean</span>(.data[[col]], <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb655-4"><a href="11-1-nse.html#cb655-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb655-5"><a href="11-1-nse.html#cb655-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb655-6"><a href="11-1-nse.html#cb655-6" aria-hidden="true" tabindex="-1"></a><span class="co"># É criada uma coluna &#39;media&#39; com a média de &#39;height&#39;</span></span>
+<span id="cb655-7"><a href="11-1-nse.html#cb655-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise_mean</span>(starwars, <span class="st">&quot;media&quot;</span>, <span class="st">&quot;height&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##   media
 ##   &lt;dbl&gt;
@@ -634,6 +636,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
