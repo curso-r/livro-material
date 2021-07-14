@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7.6 O pacote forcats | Ciência de Dados em R</title>
+  <meta name="description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7.6 O pacote forcats | Ciência de Dados em R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="/assets/img/logo.png" />
+  <meta property="og:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
+  <meta name="github-repo" content="curso-r/livro-material" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7.6 O pacote forcats | Ciência de Dados em R" />
+  
+  <meta name="twitter:description" content="Livro com os tutoriais e material dos cursos sobre ciência de dados da Curso-R." />
+  <meta name="twitter:image" content="/assets/img/logo.png" />
+
+<meta name="author" content="Curso-R" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="7-5-o-pacote-lubridate.html"/>
+<link rel="next" href="8-graficos.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<script async defer src="https://hypothes.is/embed.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-87272102-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-87272102-2');
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html"><img src = "https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width = 80%></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Sobre</a></li>
+<li class="chapter" data-level="1" data-path="1-instalacao.html"><a href="1-instalacao.html"><i class="fa fa-check"></i><b>1</b> Instalação</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html"><i class="fa fa-check"></i><b>1.1</b> Instalação do R</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-windows"><i class="fa fa-check"></i><b>1.1.1</b> No Windows</a></li>
+<li class="chapter" data-level="1.1.2" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-linux"><i class="fa fa-check"></i><b>1.1.2</b> No Linux</a></li>
+<li class="chapter" data-level="1.1.3" data-path="1-1-instalacao-do-r.html"><a href="1-1-instalacao-do-r.html#no-macos"><i class="fa fa-check"></i><b>1.1.3</b> No MacOS</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="1-2-instalacao-do-rstudio.html"><a href="1-2-instalacao-do-rstudio.html"><i class="fa fa-check"></i><b>1.2</b> Instalação do RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html"><i class="fa fa-check"></i><b>1.3</b> Instalação de softwares adicionais</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#instalacao-latex"><i class="fa fa-check"></i><b>1.3.1</b> LaTeX</a></li>
+<li class="chapter" data-level="1.3.2" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#office"><i class="fa fa-check"></i><b>1.3.2</b> Office</a></li>
+<li class="chapter" data-level="1.3.3" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#pagedown-e-chrome"><i class="fa fa-check"></i><b>1.3.3</b> Pagedown e Chrome</a></li>
+<li class="chapter" data-level="1.3.4" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#renderizando-html-widgets"><i class="fa fa-check"></i><b>1.3.4</b> Renderizando HTML widgets</a></li>
+<li class="chapter" data-level="1.3.5" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#blogdown"><i class="fa fa-check"></i><b>1.3.5</b> Blogdown</a></li>
+<li class="chapter" data-level="1.3.6" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#ferramentas-de-desenvolvimento"><i class="fa fa-check"></i><b>1.3.6</b> Ferramentas de desenvolvimento</a></li>
+<li class="chapter" data-level="1.3.7" data-path="1-3-instalacao-adicionais.html"><a href="1-3-instalacao-adicionais.html#git"><i class="fa fa-check"></i><b>1.3.7</b> Git</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2-rstudio.html"><a href="2-rstudio.html"><i class="fa fa-check"></i><b>2</b> RStudio</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="2-1-telas.html"><a href="2-1-telas.html"><i class="fa fa-check"></i><b>2.1</b> Telas</a></li>
+<li class="chapter" data-level="2.2" data-path="2-2-atalhos.html"><a href="2-2-atalhos.html"><i class="fa fa-check"></i><b>2.2</b> Atalhos</a></li>
+<li class="chapter" data-level="2.3" data-path="2-3-projetos.html"><a href="2-3-projetos.html"><i class="fa fa-check"></i><b>2.3</b> Projetos</a></li>
+<li class="chapter" data-level="2.4" data-path="2-4-git-e-versionamento.html"><a href="2-4-git-e-versionamento.html"><i class="fa fa-check"></i><b>2.4</b> Git e versionamento</a></li>
+<li class="chapter" data-level="2.5" data-path="2-5-cheatsheets.html"><a href="2-5-cheatsheets.html"><i class="fa fa-check"></i><b>2.5</b> Cheatsheets</a></li>
+<li class="chapter" data-level="2.6" data-path="2-6-addins.html"><a href="2-6-addins.html"><i class="fa fa-check"></i><b>2.6</b> Addins</a></li>
+<li class="chapter" data-level="2.7" data-path="2-7-snippets.html"><a href="2-7-snippets.html"><i class="fa fa-check"></i><b>2.7</b> Snippets</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-r-base.html"><a href="3-r-base.html"><i class="fa fa-check"></i><b>3</b> R Básico</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html"><i class="fa fa-check"></i><b>3.1</b> Pedindo Ajuda</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#documentação-do-r"><i class="fa fa-check"></i><b>3.1.1</b> Documentação do R</a></li>
+<li class="chapter" data-level="3.1.2" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#google"><i class="fa fa-check"></i><b>3.1.2</b> Google</a></li>
+<li class="chapter" data-level="3.1.3" data-path="3-1-pedindo-ajuda.html"><a href="3-1-pedindo-ajuda.html#stack-overflow"><i class="fa fa-check"></i><b>3.1.3</b> Stack Overflow</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html"><i class="fa fa-check"></i><b>3.2</b> R como calculadora</a>
+<ul>
+<li class="chapter" data-level="" data-path="3-2-r-como-calculadora.html"><a href="3-2-r-como-calculadora.html#exercícios"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html"><i class="fa fa-check"></i><b>3.3</b> Objetos e funções</a>
+<ul>
+<li class="chapter" data-level="" data-path="3-3-objetosFuncoes.html"><a href="3-3-objetosFuncoes.html#exercícios-1"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="3-4-data-frames.html"><a href="3-4-data-frames.html"><i class="fa fa-check"></i><b>3.4</b> Data frames</a></li>
+<li class="chapter" data-level="3.5" data-path="3-5-classes.html"><a href="3-5-classes.html"><i class="fa fa-check"></i><b>3.5</b> Classes</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="3-5-classes.html"><a href="3-5-classes.html#exercícios-2"><i class="fa fa-check"></i><b>3.5.1</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="3-6-vetores.html"><a href="3-6-vetores.html"><i class="fa fa-check"></i><b>3.6</b> Vetores</a>
+<ul>
+<li class="chapter" data-level="" data-path="3-6-vetores.html"><a href="3-6-vetores.html#exercícios-3"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html"><i class="fa fa-check"></i><b>3.7</b> Testes lógicos</a>
+<ul>
+<li class="chapter" data-level="" data-path="3-7-testes-lógicos.html"><a href="3-7-testes-lógicos.html#exercícios-4"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html"><i class="fa fa-check"></i><b>3.8</b> Valores especiais</a>
+<ul>
+<li class="chapter" data-level="" data-path="3-8-valoresEspeciais.html"><a href="3-8-valoresEspeciais.html#exercícios-5"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="3-9-listas.html"><a href="3-9-listas.html"><i class="fa fa-check"></i><b>3.9</b> Listas</a></li>
+<li class="chapter" data-level="3.10" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html"><i class="fa fa-check"></i><b>3.10</b> Mais sobre data frames</a>
+<ul>
+<li class="chapter" data-level="" data-path="3-10-mais-sobre-data-frames.html"><a href="3-10-mais-sobre-data-frames.html#exercícios-6"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.11" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html"><i class="fa fa-check"></i><b>3.11</b> Mais sobre funções</a>
+<ul>
+<li class="chapter" data-level="" data-path="3-11-maisFuncoes.html"><a href="3-11-maisFuncoes.html#exercícios-7"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.12" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html"><i class="fa fa-check"></i><b>3.12</b> Controle de Fluxo</a>
+<ul>
+<li class="chapter" data-level="3.12.1" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#condicionamento-if-e-else"><i class="fa fa-check"></i><b>3.12.1</b> Condicionamento: if e else</a></li>
+<li class="chapter" data-level="3.12.2" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#iteradores-for-e-while"><i class="fa fa-check"></i><b>3.12.2</b> Iteradores: for e while</a></li>
+<li class="chapter" data-level="" data-path="3-12-controle-de-fluxo.html"><a href="3-12-controle-de-fluxo.html#exercícios-8"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.13" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html"><i class="fa fa-check"></i><b>3.13</b> Outros tópicos</a>
+<ul>
+<li class="chapter" data-level="3.13.1" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#matrizes"><i class="fa fa-check"></i><b>3.13.1</b> Matrizes</a></li>
+<li class="chapter" data-level="3.13.2" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#fatores"><i class="fa fa-check"></i><b>3.13.2</b> Fatores</a></li>
+<li class="chapter" data-level="3.13.3" data-path="3-13-outros-tópicos.html"><a href="3-13-outros-tópicos.html#gráficos-r-base"><i class="fa fa-check"></i><b>3.13.3</b> Gráficos (R base)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-pacotes.html"><a href="4-pacotes.html"><i class="fa fa-check"></i><b>4</b> Pacotes</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html"><i class="fa fa-check"></i><b>4.1</b> Instalação de pacotes</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-cran"><i class="fa fa-check"></i><b>4.1.1</b> Via CRAN</a></li>
+<li class="chapter" data-level="4.1.2" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-github"><i class="fa fa-check"></i><b>4.1.2</b> Via Github</a></li>
+<li class="chapter" data-level="4.1.3" data-path="4-1-instalação-de-pacotes.html"><a href="4-1-instalação-de-pacotes.html#via-arquivo-.zip-ou-.tar.gz"><i class="fa fa-check"></i><b>4.1.3</b> Via arquivo .zip ou .tar.gz</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="4-2-tidyverse.html"><a href="4-2-tidyverse.html"><i class="fa fa-check"></i><b>4.2</b> Tidyverse</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-importacao.html"><a href="5-importacao.html"><i class="fa fa-check"></i><b>5</b> Importação</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="5-1-caminhos.html"><a href="5-1-caminhos.html"><i class="fa fa-check"></i><b>5.1</b> Caminhos</a></li>
+<li class="chapter" data-level="5.2" data-path="5-2-readr.html"><a href="5-2-readr.html"><i class="fa fa-check"></i><b>5.2</b> O pacote readr</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="5-2-readr.html"><a href="5-2-readr.html#lendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.1</b> Lendo arquivos de texto</a></li>
+<li class="chapter" data-level="5.2.2" data-path="5-2-readr.html"><a href="5-2-readr.html#locale"><i class="fa fa-check"></i><b>5.2.2</b> Locale</a></li>
+<li class="chapter" data-level="5.2.3" data-path="5-2-readr.html"><a href="5-2-readr.html#parseando-valores"><i class="fa fa-check"></i><b>5.2.3</b> Parseando valores</a></li>
+<li class="chapter" data-level="5.2.4" data-path="5-2-readr.html"><a href="5-2-readr.html#escrevendo-arquivos-de-texto"><i class="fa fa-check"></i><b>5.2.4</b> Escrevendo arquivos de texto</a></li>
+<li class="chapter" data-level="5.2.5" data-path="5-2-readr.html"><a href="5-2-readr.html#arquivos-.rds"><i class="fa fa-check"></i><b>5.2.5</b> Arquivos .rds</a></li>
+<li class="chapter" data-level="" data-path="5-2-readr.html"><a href="5-2-readr.html#exercícios-9"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="5-3-readxl.html"><a href="5-3-readxl.html"><i class="fa fa-check"></i><b>5.3</b> Os pacotes readxl e writexl</a></li>
+<li class="chapter" data-level="5.4" data-path="5-4-haven.html"><a href="5-4-haven.html"><i class="fa fa-check"></i><b>5.4</b> haven</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-pipe.html"><a href="6-pipe.html"><i class="fa fa-check"></i><b>6</b> Pipe</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html"><i class="fa fa-check"></i><b>6.1</b> O operador pipe</a>
+<ul>
+<li class="chapter" data-level="" data-path="6-1-o-operador-pipe.html"><a href="6-1-o-operador-pipe.html#exercícios-10"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="6-2-outros-operadores.html"><a href="6-2-outros-operadores.html"><i class="fa fa-check"></i><b>6.2</b> Outros operadores</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="7-manipulacao.html"><a href="7-manipulacao.html"><i class="fa fa-check"></i><b>7</b> Manipulação</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="7-1-tibbles.html"><a href="7-1-tibbles.html"><i class="fa fa-check"></i><b>7.1</b> Tibbles</a></li>
+<li class="chapter" data-level="7.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html"><i class="fa fa-check"></i><b>7.2</b> O pacote dplyr</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#selecionando-colunas"><i class="fa fa-check"></i><b>7.2.1</b> Selecionando colunas</a></li>
+<li class="chapter" data-level="7.2.2" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#ordenando-a-base"><i class="fa fa-check"></i><b>7.2.2</b> Ordenando a base</a></li>
+<li class="chapter" data-level="7.2.3" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#o-pipe-em-ação"><i class="fa fa-check"></i><b>7.2.3</b> O pipe em ação</a></li>
+<li class="chapter" data-level="7.2.4" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#filtrando-linhas"><i class="fa fa-check"></i><b>7.2.4</b> Filtrando linhas</a></li>
+<li class="chapter" data-level="7.2.5" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#modificando-e-criando-novas-colunas"><i class="fa fa-check"></i><b>7.2.5</b> Modificando e criando novas colunas</a></li>
+<li class="chapter" data-level="7.2.6" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#summarisando-a-base"><i class="fa fa-check"></i><b>7.2.6</b> Summarisando a base</a></li>
+<li class="chapter" data-level="7.2.7" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#juntando-duas-bases"><i class="fa fa-check"></i><b>7.2.7</b> Juntando duas bases</a></li>
+<li class="chapter" data-level="7.2.8" data-path="7-2-dplyr.html"><a href="7-2-dplyr.html#dplyr-1.0"><i class="fa fa-check"></i><b>7.2.8</b> dplyr 1.0</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html"><i class="fa fa-check"></i><b>7.3</b> O pacote tidyr</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#separate-e-unite"><i class="fa fa-check"></i><b>7.3.1</b> <code>separate()</code> e <code>unite()</code></a></li>
+<li class="chapter" data-level="7.3.2" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#pivotagem"><i class="fa fa-check"></i><b>7.3.2</b> Pivotagem</a></li>
+<li class="chapter" data-level="7.3.3" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#list-columns"><i class="fa fa-check"></i><b>7.3.3</b> <em>List columns</em></a></li>
+<li class="chapter" data-level="7.3.4" data-path="7-3-tidyr.html"><a href="7-3-tidyr.html#exercícios-18"><i class="fa fa-check"></i><b>7.3.4</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html"><i class="fa fa-check"></i><b>7.4</b> O pacote stringr</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#introdução"><i class="fa fa-check"></i><b>7.4.1</b> Introdução</a></li>
+<li class="chapter" data-level="7.4.2" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-básicas"><i class="fa fa-check"></i><b>7.4.2</b> Funções básicas</a></li>
+<li class="chapter" data-level="7.4.3" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#expressões-regulares"><i class="fa fa-check"></i><b>7.4.3</b> Expressões Regulares</a></li>
+<li class="chapter" data-level="7.4.4" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#funções-que-utilizam-regex"><i class="fa fa-check"></i><b>7.4.4</b> Funções que utilizam regex</a></li>
+<li class="chapter" data-level="7.4.5" data-path="7-4-o-pacote-stringr.html"><a href="7-4-o-pacote-stringr.html#exercícios-19"><i class="fa fa-check"></i><b>7.4.5</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html"><i class="fa fa-check"></i><b>7.5</b> O pacote lubridate</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#a-classe-date"><i class="fa fa-check"></i><b>7.5.1</b> A classe <code>date</code></a></li>
+<li class="chapter" data-level="7.5.2" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#funções-úteis"><i class="fa fa-check"></i><b>7.5.2</b> Funções úteis</a></li>
+<li class="chapter" data-level="7.5.3" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#fusos-horários"><i class="fa fa-check"></i><b>7.5.3</b> Fusos horários</a></li>
+<li class="chapter" data-level="7.5.4" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#operações-com-datas"><i class="fa fa-check"></i><b>7.5.4</b> Operações com datas</a></li>
+<li class="chapter" data-level="7.5.5" data-path="7-5-o-pacote-lubridate.html"><a href="7-5-o-pacote-lubridate.html#exercícios-20"><i class="fa fa-check"></i><b>7.5.5</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="7-6-forcats.html"><a href="7-6-forcats.html"><i class="fa fa-check"></i><b>7.6</b> O pacote forcats</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="7-6-forcats.html"><a href="7-6-forcats.html#o-que-são-fatores"><i class="fa fa-check"></i><b>7.6.1</b> O que são fatores?</a></li>
+<li class="chapter" data-level="7.6.2" data-path="7-6-forcats.html"><a href="7-6-forcats.html#modificando-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.2</b> Modificando níveis de um fator</a></li>
+<li class="chapter" data-level="7.6.3" data-path="7-6-forcats.html"><a href="7-6-forcats.html#mudando-a-ordem-dos-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.3</b> Mudando a ordem dos níveis de um fator</a></li>
+<li class="chapter" data-level="7.6.4" data-path="7-6-forcats.html"><a href="7-6-forcats.html#colapsando-níveis-de-um-fator"><i class="fa fa-check"></i><b>7.6.4</b> Colapsando níveis de um fator</a></li>
+<li class="chapter" data-level="7.6.5" data-path="7-6-forcats.html"><a href="7-6-forcats.html#outras-funções-úteis"><i class="fa fa-check"></i><b>7.6.5</b> Outras funções úteis</a></li>
+<li class="chapter" data-level="7.6.6" data-path="7-6-forcats.html"><a href="7-6-forcats.html#exercícios-21"><i class="fa fa-check"></i><b>7.6.6</b> Exercícios</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="8-graficos.html"><a href="8-graficos.html"><i class="fa fa-check"></i><b>8</b> Visualização</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.1</b> O pacote ggplot2</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-pontos-dispersão"><i class="fa fa-check"></i><b>8.1.1</b> Gráficos de pontos (dispersão)</a></li>
+<li class="chapter" data-level="8.1.2" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-linhas"><i class="fa fa-check"></i><b>8.1.2</b> Gráficos de linhas</a></li>
+<li class="chapter" data-level="8.1.3" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#gráficos-de-barras"><i class="fa fa-check"></i><b>8.1.3</b> Gráficos de barras</a></li>
+<li class="chapter" data-level="8.1.4" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#histogramas-e-boxplots"><i class="fa fa-check"></i><b>8.1.4</b> Histogramas e boxplots</a></li>
+<li class="chapter" data-level="8.1.5" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#títulos-e-labels"><i class="fa fa-check"></i><b>8.1.5</b> Títulos e <em>labels</em></a></li>
+<li class="chapter" data-level="8.1.6" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#escalas"><i class="fa fa-check"></i><b>8.1.6</b> Escalas</a></li>
+<li class="chapter" data-level="8.1.7" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#temas"><i class="fa fa-check"></i><b>8.1.7</b> Temas</a></li>
+<li class="chapter" data-level="8.1.8" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#juntando-gráficos"><i class="fa fa-check"></i><b>8.1.8</b> Juntando gráficos</a></li>
+<li class="chapter" data-level="8.1.9" data-path="8-1-o-pacote-ggplot2.html"><a href="8-1-o-pacote-ggplot2.html#exercícios-22"><i class="fa fa-check"></i><b>8.1.9</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html"><i class="fa fa-check"></i><b>8.2</b> Extensões do pacote ggplot2</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#gghighlight"><i class="fa fa-check"></i><b>8.2.1</b> gghighlight</a></li>
+<li class="chapter" data-level="8.2.2" data-path="8-2-extensões-do-pacote-ggplot2.html"><a href="8-2-extensões-do-pacote-ggplot2.html#ggridges"><i class="fa fa-check"></i><b>8.2.2</b> ggridges</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="9-relatorios.html"><a href="9-relatorios.html"><i class="fa fa-check"></i><b>9</b> Relatórios</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html"><i class="fa fa-check"></i><b>9.1</b> Markdown</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="9-1-markdown.html"><a href="9-1-markdown.html#ênfase"><i class="fa fa-check"></i><b>9.1.1</b> Ênfase</a></li>
+<li class="chapter" data-level="9.1.2" data-path="9-1-markdown.html"><a href="9-1-markdown.html#títulos"><i class="fa fa-check"></i><b>9.1.2</b> Títulos</a></li>
+<li class="chapter" data-level="9.1.3" data-path="9-1-markdown.html"><a href="9-1-markdown.html#listas-1"><i class="fa fa-check"></i><b>9.1.3</b> Listas</a></li>
+<li class="chapter" data-level="9.1.4" data-path="9-1-markdown.html"><a href="9-1-markdown.html#equações"><i class="fa fa-check"></i><b>9.1.4</b> Equações</a></li>
+<li class="chapter" data-level="9.1.5" data-path="9-1-markdown.html"><a href="9-1-markdown.html#código"><i class="fa fa-check"></i><b>9.1.5</b> Código</a></li>
+<li class="chapter" data-level="9.1.6" data-path="9-1-markdown.html"><a href="9-1-markdown.html#links"><i class="fa fa-check"></i><b>9.1.6</b> Links</a></li>
+<li class="chapter" data-level="9.1.7" data-path="9-1-markdown.html"><a href="9-1-markdown.html#imagens"><i class="fa fa-check"></i><b>9.1.7</b> Imagens</a></li>
+<li class="chapter" data-level="9.1.8" data-path="9-1-markdown.html"><a href="9-1-markdown.html#tabelas"><i class="fa fa-check"></i><b>9.1.8</b> Tabelas</a></li>
+<li class="chapter" data-level="9.1.9" data-path="9-1-markdown.html"><a href="9-1-markdown.html#recapitulando"><i class="fa fa-check"></i><b>9.1.9</b> Recapitulando</a></li>
+<li class="chapter" data-level="" data-path="9-1-markdown.html"><a href="9-1-markdown.html#exercicios-md"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html"><i class="fa fa-check"></i><b>9.2</b> R Markdown</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#criando-um-arquivo-.rmd"><i class="fa fa-check"></i><b>9.2.1</b> Criando um arquivo <code>.Rmd</code></a></li>
+<li class="chapter" data-level="9.2.2" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#estrutura-do-arquivo-r-markdown"><i class="fa fa-check"></i><b>9.2.2</b> Estrutura do arquivo R Markdown</a></li>
+<li class="chapter" data-level="9.2.3" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#adicionando-conteúdo"><i class="fa fa-check"></i><b>9.2.3</b> Adicionando conteúdo</a></li>
+<li class="chapter" data-level="9.2.4" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#dicas-para-o-rstudio"><i class="fa fa-check"></i><b>9.2.4</b> Dicas para o RStudio</a></li>
+<li class="chapter" data-level="" data-path="9-2-r-markdown.html"><a href="9-2-r-markdown.html#exercicios-rmd"><i class="fa fa-check"></i>Exercícios</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="10-funcionais.html"><a href="10-funcionais.html"><i class="fa fa-check"></i><b>10</b> Programação funcional (purrr)</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="10-1-iterações-básicas.html"><a href="10-1-iterações-básicas.html"><i class="fa fa-check"></i><b>10.1</b> Iterações básicas</a></li>
+<li class="chapter" data-level="10.2" data-path="10-2-iterações-intermediárias.html"><a href="10-2-iterações-intermediárias.html"><i class="fa fa-check"></i><b>10.2</b> Iterações intermediárias</a></li>
+<li class="chapter" data-level="10.3" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html"><i class="fa fa-check"></i><b>10.3</b> Iterações avançadas</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#iterações-com-condicionais"><i class="fa fa-check"></i><b>10.3.1</b> Iterações com condicionais</a></li>
+<li class="chapter" data-level="10.3.2" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#iterações-com-tabelas-e-funções"><i class="fa fa-check"></i><b>10.3.2</b> Iterações com tabelas e funções</a></li>
+<li class="chapter" data-level="10.3.3" data-path="10-3-iterações-avançadas.html"><a href="10-3-iterações-avançadas.html#redução-e-acúmulo"><i class="fa fa-check"></i><b>10.3.3</b> Redução e acúmulo</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html"><i class="fa fa-check"></i><b>10.4</b> Miscelânea</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#manter-e-descartar"><i class="fa fa-check"></i><b>10.4.1</b> Manter e descartar</a></li>
+<li class="chapter" data-level="10.4.2" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#a-família-is"><i class="fa fa-check"></i><b>10.4.2</b> A família <code>is</code></a></li>
+<li class="chapter" data-level="10.4.3" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#andar-e-modificar"><i class="fa fa-check"></i><b>10.4.3</b> Andar e modificar</a></li>
+<li class="chapter" data-level="10.4.4" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#transposição-e-indexação-profunda"><i class="fa fa-check"></i><b>10.4.4</b> Transposição e indexação profunda</a></li>
+<li class="chapter" data-level="10.4.5" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#aplicação-parcial"><i class="fa fa-check"></i><b>10.4.5</b> Aplicação parcial</a></li>
+<li class="chapter" data-level="10.4.6" data-path="10-4-miscelânea-1.html"><a href="10-4-miscelânea-1.html#execução-segura"><i class="fa fa-check"></i><b>10.4.6</b> Execução segura</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="10-5-exercícios-23.html"><a href="10-5-exercícios-23.html"><i class="fa fa-check"></i><b>10.5</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="11-ravancado.html"><a href="11-ravancado.html"><i class="fa fa-check"></i><b>11</b> R avançado</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="11-1-nse.html"><a href="11-1-nse.html"><i class="fa fa-check"></i><b>11.1</b> NSE</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="11-1-nse.html"><a href="11-1-nse.html#o-que-é"><i class="fa fa-check"></i><b>11.1.1</b> O que é?</a></li>
+<li class="chapter" data-level="11.1.2" data-path="11-1-nse.html"><a href="11-1-nse.html#tidy-evaluation"><i class="fa fa-check"></i><b>11.1.2</b> Tidy evaluation</a></li>
+<li class="chapter" data-level="11.1.3" data-path="11-1-nse.html"><a href="11-1-nse.html#curly-curly"><i class="fa fa-check"></i><b>11.1.3</b> Curly-curly</a></li>
+<li class="chapter" data-level="11.1.4" data-path="11-1-nse.html"><a href="11-1-nse.html#strings-como-argumentos"><i class="fa fa-check"></i><b>11.1.4</b> Strings como argumentos</a></li>
+<li class="chapter" data-level="11.1.5" data-path="11-1-nse.html"><a href="11-1-nse.html#exercícios-24"><i class="fa fa-check"></i><b>11.1.5</b> Exercícios</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="12-misc.html"><a href="12-misc.html"><i class="fa fa-check"></i><b>12</b> Miscelânea</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="12-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="12-1-arrumando-banco-de-dados-o-pacote-janitor.html"><i class="fa fa-check"></i><b>12.1</b> Arrumando banco de dados: o pacote janitor</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="12-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="12-1-arrumando-banco-de-dados-o-pacote-janitor.html#arrumando-o-nome-das-variáveis"><i class="fa fa-check"></i><b>12.1.1</b> Arrumando o nome das variáveis</a></li>
+<li class="chapter" data-level="12.1.2" data-path="12-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="12-1-arrumando-banco-de-dados-o-pacote-janitor.html#removendo-linhas-e-colunas-vazias"><i class="fa fa-check"></i><b>12.1.2</b> Removendo linhas e colunas vazias</a></li>
+<li class="chapter" data-level="12.1.3" data-path="12-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="12-1-arrumando-banco-de-dados-o-pacote-janitor.html#identificando-linhas-duplicadas"><i class="fa fa-check"></i><b>12.1.3</b> Identificando linhas duplicadas</a></li>
+<li class="chapter" data-level="12.1.4" data-path="12-1-arrumando-banco-de-dados-o-pacote-janitor.html"><a href="12-1-arrumando-banco-de-dados-o-pacote-janitor.html#outras-funções"><i class="fa fa-check"></i><b>12.1.4</b> Outras funções</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="13-respostas.html"><a href="13-respostas.html"><i class="fa fa-check"></i><b>13</b> Respostas</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html"><i class="fa fa-check"></i><b>13.1</b> R básico</a>
+<ul>
+<li class="chapter" data-level="" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html#r-como-calculadora-1"><i class="fa fa-check"></i>R como calculadora</a></li>
+<li class="chapter" data-level="" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html#objetos-e-funções"><i class="fa fa-check"></i>Objetos e funções</a></li>
+<li class="chapter" data-level="" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html#classes-1"><i class="fa fa-check"></i>Classes</a></li>
+<li class="chapter" data-level="" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html#vetores-1"><i class="fa fa-check"></i>Vetores</a></li>
+<li class="chapter" data-level="" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html#testes-lógicos-1"><i class="fa fa-check"></i>Testes lógicos</a></li>
+<li class="chapter" data-level="" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html#valores-especiais"><i class="fa fa-check"></i>Valores especiais</a></li>
+<li class="chapter" data-level="" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html#data-frames-1"><i class="fa fa-check"></i>Data frames</a></li>
+<li class="chapter" data-level="" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html#mais-sobre-funções"><i class="fa fa-check"></i>Mais sobre funções</a></li>
+<li class="chapter" data-level="" data-path="13-1-r-básico.html"><a href="13-1-r-básico.html#controle-de-fluxo-1"><i class="fa fa-check"></i>Controle de fluxo</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="13-2-importação.html"><a href="13-2-importação.html"><i class="fa fa-check"></i><b>13.2</b> Importação</a>
+<ul>
+<li class="chapter" data-level="" data-path="13-2-importação.html"><a href="13-2-importação.html#o-pacote-readr"><i class="fa fa-check"></i>O pacote readr</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="13-3-pipe-1.html"><a href="13-3-pipe-1.html"><i class="fa fa-check"></i><b>13.3</b> Pipe</a></li>
+<li class="chapter" data-level="13.4" data-path="13-4-o-pacote-dplyr.html"><a href="13-4-o-pacote-dplyr.html"><i class="fa fa-check"></i><b>13.4</b> O pacote dplyr</a>
+<ul>
+<li class="chapter" data-level="" data-path="13-4-o-pacote-dplyr.html"><a href="13-4-o-pacote-dplyr.html#selecionando-colunas-1"><i class="fa fa-check"></i>Selecionando colunas</a></li>
+<li class="chapter" data-level="" data-path="13-4-o-pacote-dplyr.html"><a href="13-4-o-pacote-dplyr.html#ordenando-a-base-1"><i class="fa fa-check"></i>Ordenando a base</a></li>
+<li class="chapter" data-level="" data-path="13-4-o-pacote-dplyr.html"><a href="13-4-o-pacote-dplyr.html#filtrando-linhas-1"><i class="fa fa-check"></i>Filtrando linhas</a></li>
+<li class="chapter" data-level="" data-path="13-4-o-pacote-dplyr.html"><a href="13-4-o-pacote-dplyr.html#modificando-e-criando-novas-colunas-1"><i class="fa fa-check"></i>Modificando e criando novas colunas</a></li>
+<li class="chapter" data-level="" data-path="13-4-o-pacote-dplyr.html"><a href="13-4-o-pacote-dplyr.html#summarisando-a-base-1"><i class="fa fa-check"></i>Summarisando a base</a></li>
+<li class="chapter" data-level="" data-path="13-4-o-pacote-dplyr.html"><a href="13-4-o-pacote-dplyr.html#juntando-duas-bases-1"><i class="fa fa-check"></i>Juntando duas bases</a></li>
+</ul></li>
+<li class="chapter" data-level="13.5" data-path="13-5-o-pacote-stringr-1.html"><a href="13-5-o-pacote-stringr-1.html"><i class="fa fa-check"></i><b>13.5</b> O pacote stringr</a></li>
+<li class="chapter" data-level="13.6" data-path="13-6-o-pacote-lubridate-1.html"><a href="13-6-o-pacote-lubridate-1.html"><i class="fa fa-check"></i><b>13.6</b> O pacote lubridate</a></li>
+<li class="chapter" data-level="13.7" data-path="13-7-o-pacote-forcats.html"><a href="13-7-o-pacote-forcats.html"><i class="fa fa-check"></i><b>13.7</b> O pacote forcats</a></li>
+<li class="chapter" data-level="13.8" data-path="13-8-o-pacote-ggplot2-1.html"><a href="13-8-o-pacote-ggplot2-1.html"><i class="fa fa-check"></i><b>13.8</b> O pacote ggplot2</a></li>
+<li class="chapter" data-level="13.9" data-path="13-9-programação-funcional-purrr.html"><a href="13-9-programação-funcional-purrr.html"><i class="fa fa-check"></i><b>13.9</b> Programação funcional (purrr)</a></li>
+<li class="chapter" data-level="13.10" data-path="13-10-nse-1.html"><a href="13-10-nse-1.html"><i class="fa fa-check"></i><b>13.10</b> NSE</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a>
+<ul>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#allison-horst"><i class="fa fa-check"></i>Allison Horst</a></li>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html#programação-em-r"><i class="fa fa-check"></i>Programação em R</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Ciência de Dados em R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="forcats" class="section level2" number="7.6">
+<h2><span class="header-section-number">7.6</span> O pacote forcats</h2>
+<p>Se você utiliza R antes do surgimento do <code>tidyverse</code>, provavelmente já escreveu a expressão <code>stringsAsFactors = F</code> quando importava dados usando as funções <code>read.csv</code> ou <code>read.table</code>. É muito frustrante quando uma coluna de <code>strings</code> é lida como um fator, pois fatores não podem ser manipulados do mesmo jeito que manipulamos vetores de <code>strings</code>.</p>
+<p>Felizmente, depois de aprender a usar o <code>readr</code> você não terá mais esse problema, pois as funções do pacote não lê colunas de caracteres como fatores por padrão. Mas isso não significa que fatores são inúteis. Eles representam uma forma muito prática de lidar com variáveis categorizadas, tanto para fins de modelagem quanto para fins de visualização.</p>
+<p>Grande parte da frustração associada ao uso de fatores no R existe por conta da falta de algumas ferramentas úteis no pacote <code>base</code>. Para resolver esse o problema, Hadley Wickham ajudou a comunidade R (de novo) desenvolvendo o pacote <code>forcats</code>(<strong>for</strong> <strong>cat</strong>egorial variable<strong>s</strong>), que implementa algumas dessas ferramentas.</p>
+<p>As principais funções do <code>forcats</code> servem para alterar a <strong>ordem</strong> e modificar os <strong>níveis</strong> de um fator. Para exemplificar a utilidade dessas funções, nesta seção vamos utilizá-las em situações corriqueiras.</p>
+<p>Se você não tem o pacote <code>{forcats}</code>, instalado rode o código abaixo antes de utilizá-lo:</p>
+<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="7-6-forcats.html#cb436-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;forcats&quot;</span>)</span></code></pre></div>
+<p>Nos exemplos a seguir, utilizarmos os seguintes pacotes:</p>
+<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="7-6-forcats.html#cb437-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb437-2"><a href="7-6-forcats.html#cb437-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb437-3"><a href="7-6-forcats.html#cb437-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+<div id="o-que-são-fatores" class="section level3" number="7.6.1">
+<h3><span class="header-section-number">7.6.1</span> O que são fatores?</h3>
+<p>Como vimos na Seção <a href="3-13-outros-tópicos.html#fatores">3.13.2</a>, fatores são uma classe de objetos no R criada para representar as variáveis categóricas numericamente.</p>
+<p>Eles são necessários pois muitas vezes precisamos representar variáveis categóricas como números. Quando estamos fazendo um gráfico, por exemplo, só podemos mapear variáveis numéricas em seus eixos, pois o plano cartesiano é formado por duas retas de números reais.</p>
+<p>O que fazemos então quando plotamos uma variável categórica? Nós a transformamos em fatores.</p>
+<p>Mas como a manipulação de fatores é diferente da manipulação de números e strings (graças aos famosos <em>levels</em>), tarefas que parecem simples, como ordenar as barras de um gráfico de barras, acabam se tornando grandes desafios quando não sabemos lidar com essa classe de valores.</p>
+<p>Nos exemplos a seguir, vamos utilizar a base <code>starwars</code> (do pacote <code>{dplyr}</code>) para aprendermos a fazer as principais operações com fatores utilizando o pacote <code>{forcats}</code>.</p>
+</div>
+<div id="modificando-níveis-de-um-fator" class="section level3" number="7.6.2">
+<h3><span class="header-section-number">7.6.2</span> Modificando níveis de um fator</h3>
+<p>Vamos trabalhar primeiro com a coluna <code>sex</code>, que diz qual é o sexo de cada personagem. As possibilidades são:</p>
+<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="7-6-forcats.html#cb438-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb438-2"><a href="7-6-forcats.html#cb438-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(sex) <span class="sc">%&gt;%</span> </span>
+<span id="cb438-3"><a href="7-6-forcats.html#cb438-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unique</span>()</span>
+<span id="cb438-4"><a href="7-6-forcats.html#cb438-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;male&quot;           &quot;none&quot;           &quot;female&quot;         &quot;hermaphroditic&quot;</span></span>
+<span id="cb438-5"><a href="7-6-forcats.html#cb438-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [5] NA</span></span></code></pre></div>
+<p>Veja que se transformarmos a coluna em fator, esses serão os <em>levels</em> da variável, não importa se o sub-conjunto que estivermos observando possua ou não todas as categorias.</p>
+<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="7-6-forcats.html#cb439-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb439-2"><a href="7-6-forcats.html#cb439-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">as.factor</span>(sex)) <span class="sc">%&gt;%</span> </span>
+<span id="cb439-3"><a href="7-6-forcats.html#cb439-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(sex) <span class="sc">%&gt;%</span> </span>
+<span id="cb439-4"><a href="7-6-forcats.html#cb439-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span>
+<span id="cb439-5"><a href="7-6-forcats.html#cb439-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] male   none   none   male   female male  </span></span>
+<span id="cb439-6"><a href="7-6-forcats.html#cb439-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Levels: female hermaphroditic male none</span></span></code></pre></div>
+<p>Vamos criar um objeto com os 16 primeiros valores da coluna <code>sex</code> já transformados em fator.</p>
+<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="7-6-forcats.html#cb440-1" aria-hidden="true" tabindex="-1"></a>fator_sex <span class="ot">&lt;-</span> starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb440-2"><a href="7-6-forcats.html#cb440-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(sex) <span class="sc">%&gt;%</span> </span>
+<span id="cb440-3"><a href="7-6-forcats.html#cb440-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.factor</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb440-4"><a href="7-6-forcats.html#cb440-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">16</span>)</span>
+<span id="cb440-5"><a href="7-6-forcats.html#cb440-5" aria-hidden="true" tabindex="-1"></a>fator_sex</span>
+<span id="cb440-6"><a href="7-6-forcats.html#cb440-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] male           none           none           male           female        </span></span>
+<span id="cb440-7"><a href="7-6-forcats.html#cb440-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  [6] male           female         none           male           male          </span></span>
+<span id="cb440-8"><a href="7-6-forcats.html#cb440-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [11] male           male           male           male           male          </span></span>
+<span id="cb440-9"><a href="7-6-forcats.html#cb440-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [16] hermaphroditic</span></span>
+<span id="cb440-10"><a href="7-6-forcats.html#cb440-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Levels: female hermaphroditic male none</span></span></code></pre></div>
+<p>Para mudar os níveis de um fator, podemos utilizar a função <code>lvls_revalue()</code>. Veja que, ao mudarmos os níveis de um fator, o <em>label</em> de cada valor também muda. Os novos valores precisam ser passados conforme a ordem dos níveis antigos.</p>
+<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="7-6-forcats.html#cb441-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lvls_revalue</span>(</span>
+<span id="cb441-2"><a href="7-6-forcats.html#cb441-2" aria-hidden="true" tabindex="-1"></a>  fator_sex, </span>
+<span id="cb441-3"><a href="7-6-forcats.html#cb441-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">new_levels =</span> <span class="fu">c</span>(<span class="st">&quot;Fêmea&quot;</span>, <span class="st">&quot;Hermafrodita&quot;</span>, <span class="st">&quot;Macho&quot;</span>, <span class="st">&quot;Nenhum&quot;</span>)</span>
+<span id="cb441-4"><a href="7-6-forcats.html#cb441-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb441-5"><a href="7-6-forcats.html#cb441-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] Macho        Nenhum       Nenhum       Macho        Fêmea       </span></span>
+<span id="cb441-6"><a href="7-6-forcats.html#cb441-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  [6] Macho        Fêmea        Nenhum       Macho        Macho       </span></span>
+<span id="cb441-7"><a href="7-6-forcats.html#cb441-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [11] Macho        Macho        Macho        Macho        Macho       </span></span>
+<span id="cb441-8"><a href="7-6-forcats.html#cb441-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [16] Hermafrodita</span></span>
+<span id="cb441-9"><a href="7-6-forcats.html#cb441-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Levels: Fêmea Hermafrodita Macho Nenhum</span></span></code></pre></div>
+<p>Essa função é uma boa alternativa para mudar o nome das categorias de uma variável antes de construir um gráfico.</p>
+<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="7-6-forcats.html#cb442-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb442-2"><a href="7-6-forcats.html#cb442-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(sex)) <span class="sc">%&gt;%</span> </span>
+<span id="cb442-3"><a href="7-6-forcats.html#cb442-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(sex) <span class="sc">%&gt;%</span> </span>
+<span id="cb442-4"><a href="7-6-forcats.html#cb442-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb442-5"><a href="7-6-forcats.html#cb442-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sex =</span> <span class="fu">lvls_revalue</span>(sex, <span class="fu">c</span>(<span class="st">&quot;Fêmea&quot;</span>, <span class="st">&quot;Hermafrodita&quot;</span>, <span class="st">&quot;Macho&quot;</span>, <span class="st">&quot;Nenhum&quot;</span>))</span>
+<span id="cb442-6"><a href="7-6-forcats.html#cb442-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb442-7"><a href="7-6-forcats.html#cb442-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb442-8"><a href="7-6-forcats.html#cb442-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> n)) </span></code></pre></div>
+<p><img src="076-forcats_files/figure-html/unnamed-chunk-7-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>Como as colunas no gráfico respeitam a ordem dos níveis do fator, não importa a ordem que as linhas aparecem na tabela, o gráfico sempre será gerado com as colunas na mesma ordem. Assim, se quiséssemos alterar a ordem das barras do gráfico anterior, precisamos mudar a ordem dos níveis do fator <code>sex</code>.</p>
+</div>
+<div id="mudando-a-ordem-dos-níveis-de-um-fator" class="section level3" number="7.6.3">
+<h3><span class="header-section-number">7.6.3</span> Mudando a ordem dos níveis de um fator</h3>
+<p>Para mudar a ordem dos níveis de um fator, podemos utilizar a função <code>lvls_reorder()</code>. Basta passarmos qual a nova ordem dos fatores, com relação à ordem anterior. No exemplo abaixo definimos que, na nova ordem,</p>
+<ul>
+<li><p>a primeira posição terá o nível que estava na terceira posição na ordem antiga;</p></li>
+<li><p>a segunda posição terá o nível que estava na primeira posição na ordem antiga;</p></li>
+<li><p>a terceira posição terá o nível que estava na quarta posição na ordem antiga;</p></li>
+<li><p>a quarta posição terá o nível que estava na segunda posição na ordem antiga.</p></li>
+</ul>
+<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb443-1"><a href="7-6-forcats.html#cb443-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lvls_reorder</span>(fator_sex, <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">2</span>))</span>
+<span id="cb443-2"><a href="7-6-forcats.html#cb443-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] male           none           none           male           female        </span></span>
+<span id="cb443-3"><a href="7-6-forcats.html#cb443-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  [6] male           female         none           male           male          </span></span>
+<span id="cb443-4"><a href="7-6-forcats.html#cb443-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [11] male           male           male           male           male          </span></span>
+<span id="cb443-5"><a href="7-6-forcats.html#cb443-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [16] hermaphroditic</span></span>
+<span id="cb443-6"><a href="7-6-forcats.html#cb443-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Levels: male female none hermaphroditic</span></span></code></pre></div>
+<p>Assim, poderíamos usar essa nova ordem para ordenar as colunas do nosso gráfico.</p>
+<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="7-6-forcats.html#cb444-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb444-2"><a href="7-6-forcats.html#cb444-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(sex)) <span class="sc">%&gt;%</span> </span>
+<span id="cb444-3"><a href="7-6-forcats.html#cb444-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(sex) <span class="sc">%&gt;%</span> </span>
+<span id="cb444-4"><a href="7-6-forcats.html#cb444-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb444-5"><a href="7-6-forcats.html#cb444-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sex =</span> <span class="fu">lvls_revalue</span>(sex, <span class="fu">c</span>(<span class="st">&quot;Fêmea&quot;</span>, <span class="st">&quot;Hermafrodita&quot;</span>, <span class="st">&quot;Macho&quot;</span>, <span class="st">&quot;Nenhum&quot;</span>)),</span>
+<span id="cb444-6"><a href="7-6-forcats.html#cb444-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sex =</span> <span class="fu">lvls_reorder</span>(sex, <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">2</span>))</span>
+<span id="cb444-7"><a href="7-6-forcats.html#cb444-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb444-8"><a href="7-6-forcats.html#cb444-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb444-9"><a href="7-6-forcats.html#cb444-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> n)) </span></code></pre></div>
+<p><img src="076-forcats_files/figure-html/unnamed-chunk-9-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>Repare que precisamos passar a nova ordem na mão, o que pode deixar de funcionar se a nossa base mudar (recebemos mais linhas ou fizermos um filtro anteriormente).</p>
+<p>Anterior ao <code>mutate()</code> temos a seguinte tabela:</p>
+<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="7-6-forcats.html#cb445-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb445-2"><a href="7-6-forcats.html#cb445-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(sex)) <span class="sc">%&gt;%</span> </span>
+<span id="cb445-3"><a href="7-6-forcats.html#cb445-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(sex) </span>
+<span id="cb445-4"><a href="7-6-forcats.html#cb445-4" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 4 x 2</span></span>
+<span id="cb445-5"><a href="7-6-forcats.html#cb445-5" aria-hidden="true" tabindex="-1"></a><span class="do">##   sex                n</span></span>
+<span id="cb445-6"><a href="7-6-forcats.html#cb445-6" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;chr&gt;          &lt;int&gt;</span></span>
+<span id="cb445-7"><a href="7-6-forcats.html#cb445-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 female            16</span></span>
+<span id="cb445-8"><a href="7-6-forcats.html#cb445-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 hermaphroditic     1</span></span>
+<span id="cb445-9"><a href="7-6-forcats.html#cb445-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 male              60</span></span>
+<span id="cb445-10"><a href="7-6-forcats.html#cb445-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 none               6</span></span></code></pre></div>
+<p>O que queremos é que os níveis da coluna <code>sex</code> sejam ordenados segundo os valores da coluna <code>n</code>, isto é, quem tiver o maior valor de <code>n</code> deve ser o primeiro nível, o segundo maior valor de <code>n</code> seja o segundo nível e assim por diante.</p>
+<p>Podemos melhorar esse código utilizando a função <code>fct_reorder()</code>. Com ela, em vez de definirmos na mão a ordem dos níveis do fator, podemos ordená-lo segundo valores de uma segunda variável.</p>
+<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="7-6-forcats.html#cb446-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb446-2"><a href="7-6-forcats.html#cb446-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(sex)) <span class="sc">%&gt;%</span> </span>
+<span id="cb446-3"><a href="7-6-forcats.html#cb446-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(sex) <span class="sc">%&gt;%</span> </span>
+<span id="cb446-4"><a href="7-6-forcats.html#cb446-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb446-5"><a href="7-6-forcats.html#cb446-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sex =</span> <span class="fu">lvls_revalue</span>(sex, <span class="fu">c</span>(<span class="st">&quot;Fêmea&quot;</span>, <span class="st">&quot;Hermafrodita&quot;</span>, <span class="st">&quot;Macho&quot;</span>, <span class="st">&quot;Nenhum&quot;</span>)),</span>
+<span id="cb446-6"><a href="7-6-forcats.html#cb446-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sex =</span> <span class="fu">fct_reorder</span>(sex, n)</span>
+<span id="cb446-7"><a href="7-6-forcats.html#cb446-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb446-8"><a href="7-6-forcats.html#cb446-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb446-9"><a href="7-6-forcats.html#cb446-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> n)) </span></code></pre></div>
+<p><img src="076-forcats_files/figure-html/unnamed-chunk-11-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>É quase o que queríamos! O problema é que os níveis estão sendo ordenados de forma crescente e gostaríamos de ordenar na ordem decrescente. Para isso, basta utilizarmos o parâmetro <code>.desc</code>.</p>
+<div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="7-6-forcats.html#cb447-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb447-2"><a href="7-6-forcats.html#cb447-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(sex)) <span class="sc">%&gt;%</span> </span>
+<span id="cb447-3"><a href="7-6-forcats.html#cb447-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(sex) <span class="sc">%&gt;%</span> </span>
+<span id="cb447-4"><a href="7-6-forcats.html#cb447-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb447-5"><a href="7-6-forcats.html#cb447-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sex =</span> <span class="fu">lvls_revalue</span>(sex, <span class="fu">c</span>(<span class="st">&quot;Fêmea&quot;</span>, <span class="st">&quot;Hermafrodita&quot;</span>, <span class="st">&quot;Macho&quot;</span>, <span class="st">&quot;Nenhum&quot;</span>)),</span>
+<span id="cb447-6"><a href="7-6-forcats.html#cb447-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sex =</span> <span class="fu">fct_reorder</span>(sex, n, <span class="at">.desc =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb447-7"><a href="7-6-forcats.html#cb447-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb447-8"><a href="7-6-forcats.html#cb447-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb447-9"><a href="7-6-forcats.html#cb447-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> n)) </span></code></pre></div>
+<p><img src="076-forcats_files/figure-html/unnamed-chunk-12-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>Agora sim! Com esse código, as colunas estarão sendo ordenadas pela frequência, independentemente dos valores de <code>n</code> e <code>sex</code> que chegarem no <code>mutate()</code>.</p>
+<p>Se olharmos a documentação da função <code>fct_reorder()</code> vamos descobrir que esse exemplo é apenas um caso particular de como podemos utilizá-la. No contexto geral, ela ordena os níveis de um fator segundo <strong>uma função</strong> dos valores de uma segunda variável.</p>
+<p>Se em vez de construirmos um gráfico de barras da frequência da variável <code>sex</code>, construíssemos boxplots da altura para cada sexo diferente, teríamos o gráfico a seguir.</p>
+<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="7-6-forcats.html#cb448-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb448-2"><a href="7-6-forcats.html#cb448-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(sex)) <span class="sc">%&gt;%</span> </span>
+<span id="cb448-3"><a href="7-6-forcats.html#cb448-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb448-4"><a href="7-6-forcats.html#cb448-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> height))</span>
+<span id="cb448-5"><a href="7-6-forcats.html#cb448-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Warning: Removed 5 rows containing non-finite values (stat_boxplot).</span></span></code></pre></div>
+<p><img src="076-forcats_files/figure-html/unnamed-chunk-13-1.png" width="75%" style="display: block; margin: auto;" />
+Se quiséssemos ordenar cada boxplot (pela mediana, por exemplo), continuamos podendo usar a função <code>fct_reorder()</code>. Veja que ela possui o argumento <code>.fun</code>, que indica qual função será utilizada na variável secundária para determinar a ordem dos níveis.</p>
+<p>No exemplo abaixo, utilizamos <code>.fun = median</code>, o que significa que, para cada nível da variável <code>sex</code>, vamos calcular a mediana da variável <code>height</code> e ordenaremos os níveis de <code>sex</code> conforme a ordem dessas medianas. Assim, o primeiro nível será o sexo com menor altura mediana, o segundo nível será o sexo com a segunda menor algura media e assim por diante. Se quiséssemos ordenar de forma decrescente, bastaria utilizar o argumento <code>.desc = TRUE</code>.</p>
+<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="7-6-forcats.html#cb449-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb449-2"><a href="7-6-forcats.html#cb449-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(sex)) <span class="sc">%&gt;%</span> </span>
+<span id="cb449-3"><a href="7-6-forcats.html#cb449-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb449-4"><a href="7-6-forcats.html#cb449-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">sex =</span> <span class="fu">lvls_revalue</span>(sex, <span class="fu">c</span>(<span class="st">&quot;Fêmea&quot;</span>, <span class="st">&quot;Hermafrodita&quot;</span>, <span class="st">&quot;Macho&quot;</span>, <span class="st">&quot;Nenhum&quot;</span>)),</span>
+<span id="cb449-5"><a href="7-6-forcats.html#cb449-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sex =</span> <span class="fu">fct_reorder</span>(sex, height, <span class="at">.fun =</span> median, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb449-6"><a href="7-6-forcats.html#cb449-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb449-7"><a href="7-6-forcats.html#cb449-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb449-8"><a href="7-6-forcats.html#cb449-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> height))</span>
+<span id="cb449-9"><a href="7-6-forcats.html#cb449-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Warning: Removed 5 rows containing non-finite values (stat_boxplot).</span></span></code></pre></div>
+<p><img src="076-forcats_files/figure-html/unnamed-chunk-14-1.png" width="75%" style="display: block; margin: auto;" />
+Também poderíamos ordenar pelo máximo, utilizando <code>.fun = max</code>. Neste argumento, podemos usar qualquer função sumarizadora: <code>min()</code>, <code>mean()</code>, <code>median()</code>, <code>max()</code>, <code>sd()</code>, <code>var()</code> etc.</p>
+<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="7-6-forcats.html#cb450-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb450-2"><a href="7-6-forcats.html#cb450-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(sex)) <span class="sc">%&gt;%</span> </span>
+<span id="cb450-3"><a href="7-6-forcats.html#cb450-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb450-4"><a href="7-6-forcats.html#cb450-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">sex =</span> <span class="fu">lvls_revalue</span>(sex, <span class="fu">c</span>(<span class="st">&quot;Fêmea&quot;</span>, <span class="st">&quot;Hermafrodita&quot;</span>, <span class="st">&quot;Macho&quot;</span>, <span class="st">&quot;Nenhum&quot;</span>)),</span>
+<span id="cb450-5"><a href="7-6-forcats.html#cb450-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sex =</span> <span class="fu">fct_reorder</span>(sex, height, <span class="at">.fun =</span> max, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb450-6"><a href="7-6-forcats.html#cb450-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb450-7"><a href="7-6-forcats.html#cb450-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb450-8"><a href="7-6-forcats.html#cb450-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> height))</span>
+<span id="cb450-9"><a href="7-6-forcats.html#cb450-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Warning: Removed 5 rows containing non-finite values (stat_boxplot).</span></span></code></pre></div>
+<p><img src="076-forcats_files/figure-html/unnamed-chunk-15-1.png" width="75%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="colapsando-níveis-de-um-fator" class="section level3" number="7.6.4">
+<h3><span class="header-section-number">7.6.4</span> Colapsando níveis de um fator</h3>
+<p>Imagine que quermos fazer um gráfico de barras com a frequência de personagens por espécie.</p>
+<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="7-6-forcats.html#cb451-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb451-2"><a href="7-6-forcats.html#cb451-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species)) <span class="sc">+</span></span>
+<span id="cb451-3"><a href="7-6-forcats.html#cb451-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
+<p><img src="076-forcats_files/figure-html/unnamed-chunk-16-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>O gráfico resultante é horrível, pois temos muitas espécies diferentes. Uma solução seria agrupar as espécies menos frequentes, criando uma nova categoria (<em>outras</em>, por exemplo).</p>
+<p>Para isso, podemos usar a função <code>fct_lump()</code>. Vamos fazer isso primeiro com o vetor de espécies.</p>
+<div class="sourceCode" id="cb452"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb452-1"><a href="7-6-forcats.html#cb452-1" aria-hidden="true" tabindex="-1"></a>fator_especies <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(starwars<span class="sc">$</span>species)</span>
+<span id="cb452-2"><a href="7-6-forcats.html#cb452-2" aria-hidden="true" tabindex="-1"></a>fator_especies</span>
+<span id="cb452-3"><a href="7-6-forcats.html#cb452-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] Human          Droid          Droid          Human          Human         </span></span>
+<span id="cb452-4"><a href="7-6-forcats.html#cb452-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  [6] Human          Human          Droid          Human          Human         </span></span>
+<span id="cb452-5"><a href="7-6-forcats.html#cb452-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [11] Human          Human          Wookiee        Human          Rodian        </span></span>
+<span id="cb452-6"><a href="7-6-forcats.html#cb452-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [16] Hutt           Human          Human          Yoda&#39;s species Human         </span></span>
+<span id="cb452-7"><a href="7-6-forcats.html#cb452-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [21] Human          Droid          Trandoshan     Human          Human         </span></span>
+<span id="cb452-8"><a href="7-6-forcats.html#cb452-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [26] Mon Calamari   Human          Human          Ewok           Sullustan     </span></span>
+<span id="cb452-9"><a href="7-6-forcats.html#cb452-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [31] Human          Neimodian      Human          Gungan         Gungan        </span></span>
+<span id="cb452-10"><a href="7-6-forcats.html#cb452-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [36] Gungan         &lt;NA&gt;           Toydarian      Dug            &lt;NA&gt;          </span></span>
+<span id="cb452-11"><a href="7-6-forcats.html#cb452-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [41] Human          Zabrak         Twi&#39;lek        Twi&#39;lek        Vulptereen    </span></span>
+<span id="cb452-12"><a href="7-6-forcats.html#cb452-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [46] Xexto          Toong          Human          Cerean         Nautolan      </span></span>
+<span id="cb452-13"><a href="7-6-forcats.html#cb452-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [51] Zabrak         Tholothian     Iktotchi       Quermian       Kel Dor       </span></span>
+<span id="cb452-14"><a href="7-6-forcats.html#cb452-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [56] Chagrian       Human          Human          Human          Geonosian     </span></span>
+<span id="cb452-15"><a href="7-6-forcats.html#cb452-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [61] Mirialan       Mirialan       Human          Human          Human         </span></span>
+<span id="cb452-16"><a href="7-6-forcats.html#cb452-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [66] Human          Clawdite       Besalisk       Kaminoan       Kaminoan      </span></span>
+<span id="cb452-17"><a href="7-6-forcats.html#cb452-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [71] Human          Aleena         Droid          Skakoan        Muun          </span></span>
+<span id="cb452-18"><a href="7-6-forcats.html#cb452-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [76] Togruta        Kaleesh        Wookiee        Human          &lt;NA&gt;          </span></span>
+<span id="cb452-19"><a href="7-6-forcats.html#cb452-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [81] Pau&#39;an         Human          Human          Human          Droid         </span></span>
+<span id="cb452-20"><a href="7-6-forcats.html#cb452-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [86] &lt;NA&gt;           Human         </span></span>
+<span id="cb452-21"><a href="7-6-forcats.html#cb452-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 37 Levels: Aleena Besalisk Cerean Chagrian Clawdite Droid Dug ... Zabrak</span></span></code></pre></div>
+<p>Temos 37 espécies diferentes na base. Podemos deixar apenas as 3 mais frequentes da seguinte forma:</p>
+<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="7-6-forcats.html#cb453-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_lump</span>(fator_especies, <span class="at">n =</span> <span class="dv">3</span>)</span>
+<span id="cb453-2"><a href="7-6-forcats.html#cb453-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] Human  Droid  Droid  Human  Human  Human  Human  Droid  Human  Human </span></span>
+<span id="cb453-3"><a href="7-6-forcats.html#cb453-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [11] Human  Human  Other  Human  Other  Other  Human  Human  Other  Human </span></span>
+<span id="cb453-4"><a href="7-6-forcats.html#cb453-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [21] Human  Droid  Other  Human  Human  Other  Human  Human  Other  Other </span></span>
+<span id="cb453-5"><a href="7-6-forcats.html#cb453-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [31] Human  Other  Human  Gungan Gungan Gungan &lt;NA&gt;   Other  Other  &lt;NA&gt;  </span></span>
+<span id="cb453-6"><a href="7-6-forcats.html#cb453-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [41] Human  Other  Other  Other  Other  Other  Other  Human  Other  Other </span></span>
+<span id="cb453-7"><a href="7-6-forcats.html#cb453-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [51] Other  Other  Other  Other  Other  Other  Human  Human  Human  Other </span></span>
+<span id="cb453-8"><a href="7-6-forcats.html#cb453-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [61] Other  Other  Human  Human  Human  Human  Other  Other  Other  Other </span></span>
+<span id="cb453-9"><a href="7-6-forcats.html#cb453-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [71] Human  Other  Droid  Other  Other  Other  Other  Other  Human  &lt;NA&gt;  </span></span>
+<span id="cb453-10"><a href="7-6-forcats.html#cb453-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [81] Other  Human  Human  Human  Droid  &lt;NA&gt;   Human </span></span>
+<span id="cb453-11"><a href="7-6-forcats.html#cb453-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Levels: Droid Gungan Human Other</span></span></code></pre></div>
+<p>O fator resultante possui 4 níveis: <code>Droid</code>, <code>Gungan</code>, <code>Human</code> e <code>Other</code>. Os 3 primeiros níveis são os mais frequentes, enquanto o nível <code>Other</code> foi atribuído a todos os outros 34 níveis que existiam anteiormente.</p>
+<p>Poderíamos definir o nome do nível <code>Others</code> usando o argumento <code>other_level</code>.</p>
+<div class="sourceCode" id="cb454"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb454-1"><a href="7-6-forcats.html#cb454-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_lump</span>(fator_especies, <span class="at">n =</span> <span class="dv">3</span>, <span class="at">other_level =</span> <span class="st">&quot;Outras espécies&quot;</span>)</span>
+<span id="cb454-2"><a href="7-6-forcats.html#cb454-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] Human           Droid           Droid           Human          </span></span>
+<span id="cb454-3"><a href="7-6-forcats.html#cb454-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  [5] Human           Human           Human           Droid          </span></span>
+<span id="cb454-4"><a href="7-6-forcats.html#cb454-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  [9] Human           Human           Human           Human          </span></span>
+<span id="cb454-5"><a href="7-6-forcats.html#cb454-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] Outras espécies Human           Outras espécies Outras espécies</span></span>
+<span id="cb454-6"><a href="7-6-forcats.html#cb454-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [17] Human           Human           Outras espécies Human          </span></span>
+<span id="cb454-7"><a href="7-6-forcats.html#cb454-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [21] Human           Droid           Outras espécies Human          </span></span>
+<span id="cb454-8"><a href="7-6-forcats.html#cb454-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] Human           Outras espécies Human           Human          </span></span>
+<span id="cb454-9"><a href="7-6-forcats.html#cb454-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [29] Outras espécies Outras espécies Human           Outras espécies</span></span>
+<span id="cb454-10"><a href="7-6-forcats.html#cb454-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [33] Human           Gungan          Gungan          Gungan         </span></span>
+<span id="cb454-11"><a href="7-6-forcats.html#cb454-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [37] &lt;NA&gt;            Outras espécies Outras espécies &lt;NA&gt;           </span></span>
+<span id="cb454-12"><a href="7-6-forcats.html#cb454-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [41] Human           Outras espécies Outras espécies Outras espécies</span></span>
+<span id="cb454-13"><a href="7-6-forcats.html#cb454-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [45] Outras espécies Outras espécies Outras espécies Human          </span></span>
+<span id="cb454-14"><a href="7-6-forcats.html#cb454-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [49] Outras espécies Outras espécies Outras espécies Outras espécies</span></span>
+<span id="cb454-15"><a href="7-6-forcats.html#cb454-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [53] Outras espécies Outras espécies Outras espécies Outras espécies</span></span>
+<span id="cb454-16"><a href="7-6-forcats.html#cb454-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [57] Human           Human           Human           Outras espécies</span></span>
+<span id="cb454-17"><a href="7-6-forcats.html#cb454-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [61] Outras espécies Outras espécies Human           Human          </span></span>
+<span id="cb454-18"><a href="7-6-forcats.html#cb454-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [65] Human           Human           Outras espécies Outras espécies</span></span>
+<span id="cb454-19"><a href="7-6-forcats.html#cb454-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [69] Outras espécies Outras espécies Human           Outras espécies</span></span>
+<span id="cb454-20"><a href="7-6-forcats.html#cb454-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [73] Droid           Outras espécies Outras espécies Outras espécies</span></span>
+<span id="cb454-21"><a href="7-6-forcats.html#cb454-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [77] Outras espécies Outras espécies Human           &lt;NA&gt;           </span></span>
+<span id="cb454-22"><a href="7-6-forcats.html#cb454-22" aria-hidden="true" tabindex="-1"></a><span class="do">## [81] Outras espécies Human           Human           Human          </span></span>
+<span id="cb454-23"><a href="7-6-forcats.html#cb454-23" aria-hidden="true" tabindex="-1"></a><span class="do">## [85] Droid           &lt;NA&gt;            Human          </span></span>
+<span id="cb454-24"><a href="7-6-forcats.html#cb454-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Levels: Droid Gungan Human Outras espécies</span></span></code></pre></div>
+<p>Também podemos transformar em <code>Outras</code> os níveis cuja frequência relativa é menor que um determinado limite, por exemplo, 2%. No exemplo abaixo, apenas espécies que representam mais de 2% dos personagem na base são mantidas. As demais foram transformadas em <code>Outras</code>.</p>
+<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="7-6-forcats.html#cb455-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_lump</span>(fator_especies, <span class="at">p =</span> <span class="fl">0.02</span>, <span class="at">other_level =</span> <span class="st">&quot;Outras&quot;</span>)</span>
+<span id="cb455-2"><a href="7-6-forcats.html#cb455-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] Human    Droid    Droid    Human    Human    Human    Human    Droid   </span></span>
+<span id="cb455-3"><a href="7-6-forcats.html#cb455-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  [9] Human    Human    Human    Human    Wookiee  Human    Outras   Outras  </span></span>
+<span id="cb455-4"><a href="7-6-forcats.html#cb455-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [17] Human    Human    Outras   Human    Human    Droid    Outras   Human   </span></span>
+<span id="cb455-5"><a href="7-6-forcats.html#cb455-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] Human    Outras   Human    Human    Outras   Outras   Human    Outras  </span></span>
+<span id="cb455-6"><a href="7-6-forcats.html#cb455-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [33] Human    Gungan   Gungan   Gungan   &lt;NA&gt;     Outras   Outras   &lt;NA&gt;    </span></span>
+<span id="cb455-7"><a href="7-6-forcats.html#cb455-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [41] Human    Zabrak   Twi&#39;lek  Twi&#39;lek  Outras   Outras   Outras   Human   </span></span>
+<span id="cb455-8"><a href="7-6-forcats.html#cb455-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [49] Outras   Outras   Zabrak   Outras   Outras   Outras   Outras   Outras  </span></span>
+<span id="cb455-9"><a href="7-6-forcats.html#cb455-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [57] Human    Human    Human    Outras   Mirialan Mirialan Human    Human   </span></span>
+<span id="cb455-10"><a href="7-6-forcats.html#cb455-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [65] Human    Human    Outras   Outras   Kaminoan Kaminoan Human    Outras  </span></span>
+<span id="cb455-11"><a href="7-6-forcats.html#cb455-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [73] Droid    Outras   Outras   Outras   Outras   Wookiee  Human    &lt;NA&gt;    </span></span>
+<span id="cb455-12"><a href="7-6-forcats.html#cb455-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [81] Outras   Human    Human    Human    Droid    &lt;NA&gt;     Human   </span></span>
+<span id="cb455-13"><a href="7-6-forcats.html#cb455-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 9 Levels: Droid Gungan Human Kaminoan Mirialan Twi&#39;lek Wookiee ... Outras</span></span></code></pre></div>
+<p>Com isso, já conseguimos fazer um gráfico de barras mais agradável.</p>
+<div class="sourceCode" id="cb456"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb456-1"><a href="7-6-forcats.html#cb456-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb456-2"><a href="7-6-forcats.html#cb456-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(species)) <span class="sc">%&gt;%</span> </span>
+<span id="cb456-3"><a href="7-6-forcats.html#cb456-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">species =</span> <span class="fu">fct_lump</span>(species, <span class="at">n =</span> <span class="dv">2</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb456-4"><a href="7-6-forcats.html#cb456-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species)) <span class="sc">+</span></span>
+<span id="cb456-5"><a href="7-6-forcats.html#cb456-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
+<p><img src="076-forcats_files/figure-html/unnamed-chunk-21-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="7-6-forcats.html#cb457-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb457-2"><a href="7-6-forcats.html#cb457-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb457-3"><a href="7-6-forcats.html#cb457-3" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb457-4"><a href="7-6-forcats.html#cb457-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(species)) <span class="sc">%&gt;%</span> </span>
+<span id="cb457-5"><a href="7-6-forcats.html#cb457-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb457-6"><a href="7-6-forcats.html#cb457-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">species =</span> <span class="fu">fct_lump</span>(species, <span class="at">p =</span> <span class="fl">0.02</span>),</span>
+<span id="cb457-7"><a href="7-6-forcats.html#cb457-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">species =</span> <span class="fu">fct_infreq</span>(species) <span class="co"># Ordena pela frequência de cada nível</span></span>
+<span id="cb457-8"><a href="7-6-forcats.html#cb457-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb457-9"><a href="7-6-forcats.html#cb457-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species)) <span class="sc">+</span></span>
+<span id="cb457-10"><a href="7-6-forcats.html#cb457-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
+<p><img src="076-forcats_files/figure-html/unnamed-chunk-21-2.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>Também é possível colapsar níveis criando manualmente os grupos. Para isso, utilizamos a função <code>fct_collapse()</code>. No exemplo a seguir, reclassificamos os níveis da variável <code>eye_color</code>. Os níveis não listados são reclassificados como <code>"outros"</code>.</p>
+<div class="sourceCode" id="cb458"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb458-1"><a href="7-6-forcats.html#cb458-1" aria-hidden="true" tabindex="-1"></a>fator_cor_olhos <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(starwars<span class="sc">$</span>eye_color)</span>
+<span id="cb458-2"><a href="7-6-forcats.html#cb458-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb458-3"><a href="7-6-forcats.html#cb458-3" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_collapse</span>(</span>
+<span id="cb458-4"><a href="7-6-forcats.html#cb458-4" aria-hidden="true" tabindex="-1"></a>  fator_cor_olhos,</span>
+<span id="cb458-5"><a href="7-6-forcats.html#cb458-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">preto =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb458-6"><a href="7-6-forcats.html#cb458-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">castanho =</span> <span class="fu">c</span>(<span class="st">&quot;brown&quot;</span>, <span class="st">&quot;hazel&quot;</span>),</span>
+<span id="cb458-7"><a href="7-6-forcats.html#cb458-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">azul_verde =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>),</span>
+<span id="cb458-8"><a href="7-6-forcats.html#cb458-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">exotico =</span> <span class="fu">c</span>(<span class="st">&quot;pink&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;white&quot;</span>),</span>
+<span id="cb458-9"><a href="7-6-forcats.html#cb458-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">colorido =</span> <span class="fu">c</span>(<span class="st">&quot;red, blue&quot;</span>, <span class="st">&quot;green, yellow&quot;</span>),</span>
+<span id="cb458-10"><a href="7-6-forcats.html#cb458-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">other_level =</span> <span class="st">&quot;outros&quot;</span></span>
+<span id="cb458-11"><a href="7-6-forcats.html#cb458-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb458-12"><a href="7-6-forcats.html#cb458-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Warning: Unknown levels in `f`: green</span></span>
+<span id="cb458-13"><a href="7-6-forcats.html#cb458-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] azul_verde outros     exotico    outros     castanho   azul_verde</span></span>
+<span id="cb458-14"><a href="7-6-forcats.html#cb458-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  [7] azul_verde exotico    castanho   outros     azul_verde azul_verde</span></span>
+<span id="cb458-15"><a href="7-6-forcats.html#cb458-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] azul_verde castanho   preto      outros     castanho   azul_verde</span></span>
+<span id="cb458-16"><a href="7-6-forcats.html#cb458-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [19] castanho   outros     castanho   exotico    exotico    castanho  </span></span>
+<span id="cb458-17"><a href="7-6-forcats.html#cb458-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] azul_verde outros     azul_verde castanho   castanho   preto     </span></span>
+<span id="cb458-18"><a href="7-6-forcats.html#cb458-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [31] azul_verde exotico    azul_verde outros     outros     outros    </span></span>
+<span id="cb458-19"><a href="7-6-forcats.html#cb458-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [37] azul_verde outros     outros     castanho   castanho   outros    </span></span>
+<span id="cb458-20"><a href="7-6-forcats.html#cb458-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [43] exotico    castanho   outros     preto      outros     castanho  </span></span>
+<span id="cb458-21"><a href="7-6-forcats.html#cb458-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [49] outros     preto      castanho   azul_verde outros     outros    </span></span>
+<span id="cb458-22"><a href="7-6-forcats.html#cb458-22" aria-hidden="true" tabindex="-1"></a><span class="do">## [55] preto      azul_verde castanho   castanho   azul_verde outros    </span></span>
+<span id="cb458-23"><a href="7-6-forcats.html#cb458-23" aria-hidden="true" tabindex="-1"></a><span class="do">## [61] azul_verde azul_verde castanho   castanho   castanho   castanho  </span></span>
+<span id="cb458-24"><a href="7-6-forcats.html#cb458-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [67] outros     outros     preto      preto      azul_verde outros    </span></span>
+<span id="cb458-25"><a href="7-6-forcats.html#cb458-25" aria-hidden="true" tabindex="-1"></a><span class="do">## [73] colorido   outros     outros     preto      colorido   azul_verde</span></span>
+<span id="cb458-26"><a href="7-6-forcats.html#cb458-26" aria-hidden="true" tabindex="-1"></a><span class="do">## [79] castanho   exotico    preto      outros     castanho   castanho  </span></span>
+<span id="cb458-27"><a href="7-6-forcats.html#cb458-27" aria-hidden="true" tabindex="-1"></a><span class="do">## [85] preto      outros     castanho  </span></span>
+<span id="cb458-28"><a href="7-6-forcats.html#cb458-28" aria-hidden="true" tabindex="-1"></a><span class="do">## Levels: preto azul_verde castanho colorido exotico outros</span></span></code></pre></div>
+</div>
+<div id="outras-funções-úteis" class="section level3" number="7.6.5">
+<h3><span class="header-section-number">7.6.5</span> Outras funções úteis</h3>
+<p>A seguir, listamos outras funções úteis do pacote <code>{forcats}</code>, apresentando exemplos simples de como usá-las.</p>
+<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="7-6-forcats.html#cb459-1" aria-hidden="true" tabindex="-1"></a>fator <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;a&quot;</span>))</span>
+<span id="cb459-2"><a href="7-6-forcats.html#cb459-2" aria-hidden="true" tabindex="-1"></a>fator</span>
+<span id="cb459-3"><a href="7-6-forcats.html#cb459-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] a b a c c a</span></span>
+<span id="cb459-4"><a href="7-6-forcats.html#cb459-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Levels: a b c</span></span></code></pre></div>
+<div id="fct_c" class="section level4 unnumbered">
+<h4><code>fct_c()</code></h4>
+<p>Junta dois fatores (e seus níveis).</p>
+<div class="sourceCode" id="cb460"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb460-1"><a href="7-6-forcats.html#cb460-1" aria-hidden="true" tabindex="-1"></a>fator2 <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">&quot;d&quot;</span>, <span class="st">&quot;e&quot;</span>))</span>
+<span id="cb460-2"><a href="7-6-forcats.html#cb460-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_c</span>(fator, fator2)</span>
+<span id="cb460-3"><a href="7-6-forcats.html#cb460-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] a b a c c a d e</span></span>
+<span id="cb460-4"><a href="7-6-forcats.html#cb460-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Levels: a b c d e</span></span></code></pre></div>
+</div>
+<div id="fct_count" class="section level4 unnumbered">
+<h4><code>fct_count()</code></h4>
+<p>Devolve a frequência dos níveis de um vetor.</p>
+<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="7-6-forcats.html#cb461-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_count</span>(fator)</span>
+<span id="cb461-2"><a href="7-6-forcats.html#cb461-2" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 3 x 2</span></span>
+<span id="cb461-3"><a href="7-6-forcats.html#cb461-3" aria-hidden="true" tabindex="-1"></a><span class="do">##   f         n</span></span>
+<span id="cb461-4"><a href="7-6-forcats.html#cb461-4" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;fct&gt; &lt;int&gt;</span></span>
+<span id="cb461-5"><a href="7-6-forcats.html#cb461-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 a         3</span></span>
+<span id="cb461-6"><a href="7-6-forcats.html#cb461-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 b         1</span></span>
+<span id="cb461-7"><a href="7-6-forcats.html#cb461-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 c         2</span></span></code></pre></div>
+</div>
+<div id="fct_expand" class="section level4 unnumbered">
+<h4><code>fct_expand()</code></h4>
+<p>Acrescenta níveis a um fator</p>
+<div class="sourceCode" id="cb462"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb462-1"><a href="7-6-forcats.html#cb462-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_expand</span>(fator, <span class="fu">c</span>(<span class="st">&quot;d&quot;</span>, <span class="st">&quot;e&quot;</span>))</span>
+<span id="cb462-2"><a href="7-6-forcats.html#cb462-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] a b a c c a</span></span>
+<span id="cb462-3"><a href="7-6-forcats.html#cb462-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Levels: a b c d e</span></span></code></pre></div>
+</div>
+<div id="fct_rev" class="section level4 unnumbered">
+<h4><code>fct_rev()</code></h4>
+<p>Inverte os níveis de um fator.</p>
+<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="7-6-forcats.html#cb463-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_rev</span>(fator)</span>
+<span id="cb463-2"><a href="7-6-forcats.html#cb463-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] a b a c c a</span></span>
+<span id="cb463-3"><a href="7-6-forcats.html#cb463-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Levels: c b a</span></span></code></pre></div>
+</div>
+</div>
+<div id="exercícios-21" class="section level3" number="7.6.6">
+<h3><span class="header-section-number">7.6.6</span> Exercícios</h3>
+<p>A base <code>casas</code> nos exercícios abaixo está no pacote <code>dados</code>:</p>
+<div class="sourceCode" id="cb464"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb464-1"><a href="7-6-forcats.html#cb464-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;cienciadedatos/dados&quot;</span>)</span></code></pre></div>
+<p><strong>1.</strong> Qual a diferença nos fatores criados com os códigos abaixo?</p>
+<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="7-6-forcats.html#cb465-1" aria-hidden="true" tabindex="-1"></a>fator1 <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="st">&quot;c&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;z&quot;</span>, <span class="st">&quot;B&quot;</span>))</span>
+<span id="cb465-2"><a href="7-6-forcats.html#cb465-2" aria-hidden="true" tabindex="-1"></a>fator2 <span class="ot">&lt;-</span> forcats<span class="sc">::</span><span class="fu">as_factor</span>(<span class="fu">c</span>(<span class="st">&quot;c&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;z&quot;</span>, <span class="st">&quot;B&quot;</span>))</span></code></pre></div>
+<p><strong>2.</strong> Ordene os níveis do fator <code>frutas</code> conforme a sua preferência, isto é, as que você mais gosta primeiro e as que você menos gosta por último.</p>
+<div class="sourceCode" id="cb466"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb466-1"><a href="7-6-forcats.html#cb466-1" aria-hidden="true" tabindex="-1"></a>frutas <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="st">&quot;maçã&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;mamão&quot;</span>, <span class="st">&quot;laranja&quot;</span>, <span class="st">&quot;melancia&quot;</span>))</span></code></pre></div>
+<p><strong>3.</strong> Com base no vetor <code>series</code>, resolva os itens a seguir.</p>
+<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="7-6-forcats.html#cb467-1" aria-hidden="true" tabindex="-1"></a>series <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="st">&quot;Game of Thrones&quot;</span>, <span class="st">&quot;How I Met your Mother&quot;</span>, <span class="st">&quot;Friends&quot;</span>, <span class="st">&quot;Lost&quot;</span>, <span class="st">&quot;The Office&quot;</span>, <span class="st">&quot;Breaking Bad&quot;</span>))</span></code></pre></div>
+<ul>
+<li><p><strong>a.</strong> Ordene os níveis do vetor <code>series</code> conforme a sua preferência, isto é, as que você mais gosta primeiro e as que você menos gosta por último.</p></li>
+<li><p><strong>b.</strong> Junte ao vetor <code>series</code> o vetor <code>novas_series</code> a seguir, reordenando os níveis para manter a sua ordem de preferência.</p></li>
+</ul>
+<div class="sourceCode" id="cb468"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb468-1"><a href="7-6-forcats.html#cb468-1" aria-hidden="true" tabindex="-1"></a>novas_series <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="st">&quot;The Boys&quot;</span>, <span class="st">&quot;Stranger Things&quot;</span>, <span class="st">&quot;Queen&#39;s Gambit&quot;</span>))</span></code></pre></div>
+<ul>
+<li><strong>c.</strong> Renomeie o níveis do vetor criado no item (b) para os nomes em Português das séries. Mantenha o mesmo nome caso não haja tradução.</li>
+</ul>
+<p><strong>4.</strong> Ordene as categorias do eixo y do gráfico abaixo para que os pontos no eixo x fique em ordem crescente.</p>
+<div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb469-1"><a href="7-6-forcats.html#cb469-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb469-2"><a href="7-6-forcats.html#cb469-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb469-3"><a href="7-6-forcats.html#cb469-3" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> </span>
+<span id="cb469-4"><a href="7-6-forcats.html#cb469-4" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">rownames_to_column</span>(<span class="st">&quot;modelo&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb469-5"><a href="7-6-forcats.html#cb469-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mpg, <span class="at">y =</span> modelo)) <span class="sc">+</span></span>
+<span id="cb469-6"><a href="7-6-forcats.html#cb469-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="076-forcats_files/figure-html/unnamed-chunk-33-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><strong>5.</strong> Utilize a base <code>dados::casas</code> para fazer um gráfico de barras mostrando as vizinhanças (coluna <code>vizinhanca</code>) com casas mais caras (segundo a coluna <code>venda_valor</code>). O gráfico deve conter as 9 vizinhanças mais frequentes e as demais devem ser agrupadas em uma categoria chamada <code>Outras vizinhanças</code>.</p>
+
+</div>
+</div>
+<!-- </div> -->
+<hr/>
+<footer>
+<a href="https://curso-r.com" target="_blank"><img src="https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width="15%", alt="Curso-R"/></a>
+</footer>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="7-5-o-pacote-lubridate.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="8-graficos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["livro-curso-r.pdf", "livro-curso-r.epub", "livro-curso-r.mobi"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
