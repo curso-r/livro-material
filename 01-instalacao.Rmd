@@ -93,7 +93,7 @@ Os softwares descritos anteriormente são suficientes para realizar as tarefas b
 
 ### LaTeX {#instalacao-latex}
 
-O $\LaTeX$ é um software para renderização de documentos PDF e também uma linguagem de programação. É bastante usada na academia para produção de artigos científicos. 
+O LaTeX é um software para renderização de documentos PDF e também uma linguagem de programação. É bastante usada na academia para produção de artigos científicos. 
 
 No R, o LaTeX aparece quando queremos gerar relatórios e apresentações em PDF, a partir de um documento RMarkdown. Na prática, o RMarkdown é transformado para LaTeX através do software [*Pandoc*](https://pandoc.org)[^pandoc], que por sua vez é processado para gerar o PDF. Portanto, para gerar um relatório em PDF através do RMarkdown, precisamos ter alguma ferramenta de LaTeX instalada.
 
@@ -189,7 +189,9 @@ Uma distribuição de LaTeX que apresenta versão para MacOS é o MikTex. Para i
 2. Abra o arquivo baixado. Uma janela irá abrir, e você deve arrastar o ícone "MiKTeX Console" para a pasta "Applications" (como mostrado na animação abaixo, sendo necessário arrastar apenas uma vez). 
 
 ```{r echo=FALSE, out.width="50%", fig.align='center'}
-knitr::include_graphics("img/instalacao/miktex_mac/gif_miktex.gif")
+if (!knitr::is_latex_output()) {
+  knitr::include_graphics("img/instalacao/miktex_mac/gif_miktex.gif")
+}
 ```
 
 
@@ -199,14 +201,18 @@ knitr::include_graphics("img/instalacao/miktex_mac/gif_miktex.gif")
 
 
 ```{r echo=FALSE, out.width="80%", fig.align='center'}
-knitr::include_graphics("img/instalacao/miktex_mac/miktex-instalacao-1.gif")
+if (!knitr::is_latex_output()) {
+  knitr::include_graphics("img/instalacao/miktex_mac/miktex-instalacao-1.gif")
+}
 ```
 
 5. No menu lateral, escolha a opção "Updates". Clique em **"Check for updates"**, e o MiKTex buscará informações sobre as possíveis atualizações necessárias. Então clique em **"Update now"**, para que as atualizações sejam baixadas e instaladas. 
 
 
 ```{r echo=FALSE, out.width="80%", fig.align='center'}
-knitr::include_graphics("img/instalacao/miktex_mac/miktex-instalacao-2.gif")
+if (!knitr::is_latex_output()) {
+  knitr::include_graphics("img/instalacao/miktex_mac/miktex-instalacao-2.gif")
+}
 ```
 
 
@@ -253,7 +259,9 @@ Outra opção é a utilização do LibreOffice.
 2. Após baixar o arquivo, abra-o. Uma janela irá abrir (como na imagem a seguir).  Você deve arrastar o ícone "LibreOffice" para a pasta "Applications" (como mostrado na animação abaixo, sendo necessário arrastar apenas uma vez). 
 
 ```{r echo=FALSE, out.width="50%", fig.align='center'}
-knitr::include_graphics("img/instalacao/gif_libreoffice.gif")
+if (!knitr::is_latex_output()) {
+  knitr::include_graphics("img/instalacao/gif_libreoffice.gif")
+}
 ```
 
 3. O LibreOffice será instalado e você poderá utilizá-lo abrindo através do Launchpad (menu de arquivos instalados), ou também  utilizando a pesquisa do Mac (utilizando o atalho Command + Barra de espaço), pesquisando por LibreOffice para abrir o software.

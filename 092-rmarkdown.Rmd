@@ -54,7 +54,7 @@ knitr::include_graphics("assets/img/relatorios/rmarkdown.png")
 Nesta seção, utilizaremos como exemplos alguns códigos envolvendo a base de dados de pinguins. A versão original deste dataset (em Inglês) está disponível no pacote [palmerpenguins](https://github.com/allisonhorst/palmerpenguins), e a versão traduzida para Português está disponível no pacote [dados](https://cienciadedatos.github.io/dados/).
 
 ```{r echo=FALSE, out.width="80%", fig.align='center', fig.cap="Conheça os Pinguins do dataset PalmerPenguins! Ilustração por <a href='https://github.com/allisonhorst/stats-illustrations'>Allison Horst</a>."}
-knitr::include_graphics("https://github.com/allisonhorst/palmerpenguins/blob/master/man/figures/lter_penguins.png?raw=true")
+knitr::include_graphics("assets/img/relatorios/lter_penguins.png")
 ```
 
 Caso não tenha o pacote [dados](https://cienciadedatos.github.io/dados/) instalado, é possível instalar com o seguinte código:
@@ -173,7 +173,7 @@ Usando o  `knitr` é possível personalizar de forma mais intuitiva como a image
 Veja o exemplo abaixo:
 
 ```{r echo=TRUE, out.width='30%', fig.align='center'}
-knitr::include_graphics("https://cienciadedatos.github.io/dados/reference/figures/dados-hex.png")
+knitr::include_graphics("assets/img/relatorios/dados-hex.png")
 ```
 
 #### Tabelas
@@ -246,7 +246,9 @@ A versão mais recente do RStudio possui uma ferramenta de edição de Markdown 
 Veja mais [neste post no blog da RStudio](https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/), e também a animação disponível neste post:
 
 ```{r, echo=FALSE, out.width="80%", fig.cap="Demonstração do RStudio versão 1.4", fig.align='center'}
-knitr::include_graphics("https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/images/visualmode-demo.gif")
+if (!knitr::is_latex_output()) {
+  knitr::include_graphics("assets/img/relatorios/visualmode-demo.gif")
+}
 ```
 
 ### Exercícios {- #exercicios-rmd}

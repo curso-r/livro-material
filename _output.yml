@@ -11,15 +11,15 @@ bookdown::gitbook:
         <li><a href="./index.html"><img src = "https://raw.githubusercontent.com/curso-r/site-v2/master/static/img/logo_cursor_full.png" width = 80%></a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado com bookdown</a></li>
-    download: ["pdf"]
+    download: ["pdf", "epub", "mobi"]
   includes:
     in_header: [assets/include_hyphotesis.html, assets/google_fonts.html, assets/google-analytics.html]
     # in_header: ga.html
     after_body: assets/gitbook-footer-cursor.html
-# bookdown::pdf_book:
-#   includes:
-#     in_header: assets/preamble.tex
-#   latex_engine: xelatex
-#   citation_package: natbib
-#   keep_tex: yes
-# bookdown::epub_book: default
+bookdown::pdf_book:
+  includes:
+    in_header: assets/preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: yes
+bookdown::epub_book: default
