@@ -32,7 +32,7 @@ Os demais painéis são auxiliares. O objetivo deles é facilitar pequenas taref
 
 Conhecer os atalhos do teclado ajuda bastante quando estamos programando no RStudio. Veja os principais:
 
-- **CTRL+ENTER**: avalia a linha selecionada no script. O atalho mais utilizado.
+- **CTRL+ENTER**: roda a(s) linha(s) selecionada(s) no script. O atalho mais utilizado.
 - **ALT+-**: cria no script um sinal de atribuição (<-). Você o usará o tempo todo.
 - **CTRL+SHIFT+M**: (%>%) operador *pipe*. Guarde esse atalho, você o usará bastante.
 - **CTRL+1**: altera cursor para o script.
@@ -47,7 +47,7 @@ No MacBook, os atalhos geralmente são os mesmos, substituindo o **CTRL** por **
 
 Uma funcionalidade muito importante do RStudio é a possibilidade de criar **projetos**. 
 
-Um projeto nada mais é do que uma pasta no seu computador. Nessa pasta, estarão todos os arquivos que você usurá ou criará na sua análise. 
+Um projeto nada mais é do que uma pasta no seu computador. Nessa pasta, estarão todos os arquivos que você usará ou criará na sua análise. 
 
 A principal razão de utilizarmos projetos é **organização**. Com eles, fica muito mais fácil importar bases de dados para dentro do R, criar análises reprodutíveis e compartilhar o nosso trabalho.
 
@@ -96,20 +96,20 @@ nome_do_projeto/
 **Estrutura 2**. Típico projeto de análise estatística.
 
 ```{r, engine='bash', eval = FALSE}
-project/
+nome_do_projeto/
   - README.Rmd   # Descrição do pacote
   - set-up.R     # Pacotes etc
   - R/           # Código R, organizado com 0-load.R, 1-tidy.R, 2-vis.R, ...
   - data/        # Dados (estruturados ou não)
   - figures/     # gráficos (pode ficar dentro de output/)
   - output/      # Relatórios em .Rmd, .tex etc
-  - project.Rproj
+  - nome_do_projeto.Rproj
 ```
 
 **Estrutura 3**. Pacote do R.
 
 ```{r, engine='bash', eval = FALSE}
-project/
+nome_do_projeto/
   - README.md    # Descrição do pacote
   - DESCRIPTION  # Metadados estruturados do pacote e dependências
   - NAMESPACE    # importações e exportações do pacote
@@ -117,7 +117,7 @@ project/
   - R/           # Funções do R
   - data/        # Dados estruturados (tidy data)
   - data-raw/    # Dados não estruturados e arqs 0-load.R, 1-tidy.R, 2-vis.R, ...
-  - project.Rproj
+  - nome_do_projeto.Rproj
 ```
 
 ## Git e versionamento
