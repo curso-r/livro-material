@@ -53,7 +53,7 @@ Algumas dicas:
 3. Os exemplos no final são particularmente úteis.
 4. Caso essa função não atenda às suas necessidades, a seção *See Also* sugere funções relacionadas.
 
-Alguns pacotes possuem tutorias de uso mais completos. Esses textos são chamados de `vignettes` e podem ser acessados com a função `vignette(package = 'nomeDoPacote')`. Por exemplo, `vignette(package = 'dplyr')`.
+Alguns pacotes possuem tutoriais de uso mais completos. Esses textos são chamados de `vignettes` e podem ser acessados com a função `vignette(package = 'nomeDoPacote')`. Por exemplo, `vignette(package = 'dplyr')`.
 
 ### Google
 
@@ -541,7 +541,7 @@ Neste caso, duas coisas aconteceram:
 
 ### Exercícios {-}
 
-**1.** Guarde em um objeto a sequência de números de 0 a 5 e resolva os itens abaixos.
+**1.** Guarde em um objeto a sequência de números de 0 a 5 e resolva os itens abaixo.
 
 - **a.** Use subsetting para fazer o R devolver o primeiro número dessa sequência. Em seguida, faça o R devolver o último número da sequência.
 
@@ -584,7 +584,7 @@ Poder fazer qualquer tipo de operação lógica é um dos motivos pelos quais pr
 
 Uma operação lógica nada mais é do que um teste que retorna **verdadeiro** ou **falso**. No R (e em outras linguagens de programação), esses dois valores recebem uma classe especial: `logical`.
 
-O verdadeiro no R vai ser representado pelo valor `TRUE` e o falso pelo valor `FALSE`. Esses nomes no R são **reservados**, isto é, você não pode chamar nenhum objeto de TRUE ou FALSE.
+O **verdadeiro** no R vai ser representado pelo valor `TRUE` e o **falso** pelo valor `FALSE`. Esses nomes no R são **reservados**, isto é, você não pode chamar nenhum objeto de *TRUE* ou *FALSE*.
 
 ```{r, eval = FALSE}
 TRUE <- 1
@@ -1394,7 +1394,7 @@ minha_soma(1, 2)
 minha_soma("a", "b")
 ```
 
-Nesses casos, é muito comum o uso das funções `return()` e `stop()` para, respectivamente, retornar um resultado antecipadamente ou parar a execução da função e devolver ao usuário uma mensagem de erro personalizada.
+Nesses casos, é muito comum o uso das funções `return()` e `stop()` para, respectivamente, retornar um resultado antecipadamente ou parar a execução da função e devolver uma mensagem de erro personalizada.
 
 Um exemplo usando `return()`.
 
@@ -1443,7 +1443,7 @@ minha_soma_erro("a", "b")
 minha_soma_erro(1, "b")
 ```
 
-Na função `minha_soma_erro()`, testamos no `if` se a classe de `x` **ou** a classe de `y` é diferente de `numeric`, isto é, se pelo menos um dos dois não é um número. Se esse teste retornar `TRUE`, a função para a sua execução e devolve para o usuário a seguinte mensagem de erro: "A classe dos objetos x e y deve ser numérica.". Se o teste retorna `FALSE`, a soma é realizada e seu resultado nos é retornado.
+Na função `minha_soma_erro()`, testamos no `if` se a classe de `x` **ou** a classe de `y` é diferente de `numeric`, isto é, se pelo menos um dos dois não é um número. Se esse teste retornar `TRUE`, a função para a sua execução e devolve para a seguinte mensagem de erro: "A classe dos objetos x e y deve ser numérica.". Se o teste retorna `FALSE`, a soma é realizada e seu resultado nos é retornado.
 
 O `else` funciona como uma extensão do `if`, dando uma alternativa caso o teste executado seja falso.
 
@@ -1560,7 +1560,7 @@ while (i < 3){
 }
 ```
 
-É importante que o valor de i seja atualizado em cada interação, caso contrário a função entrará em um loop infinito. Por isso fazemos `i <- i + 1` após o `print`.
+É importante que o valor de `i` seja atualizado em cada interação, caso contrário a função entrará em um loop infinito. Por isso fazemos `i <- i + 1` após o `print`.
 
 ### Exercícios {-}
 
