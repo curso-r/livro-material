@@ -12,7 +12,7 @@ Agora que já temos em mãos as ferramentas para importar, arrumar, transformar 
 
 Visualizar os dados é uma etapa importantíssima da análise estatística, pois é a partir dela que criamos boa parte da intuição necessária para escolher o teste ou modelo mais adequado para o nosso problema. Muitas vezes, um problema de análise de dados pode ser resolvido apenas com visualizações. Além disso, elas são o principal combustível da etapa de Comunicação da análise.
 
-Visualizações podem ser uma simples medida resumo (frequência, média, variância, mínimo, máximo etc), um conjunto dessas medidas organizadas em uma tabela ou a representação (de uma parte) dos dados em um gráfico. Neste capítulo, mostraremos como construir gráficos e tabelas bem formatadas dentro do R. Começaremos com a construção de gráficos e, em seguida, falaremos sobre a formatação de tabelas^[Em geral, boa parte do trabalho necessário para a construção de uma tabela descritiva pode ser feito com as funções dos pacotes `{dplyr}` e `{tidyr}`, vistas no capítulo anterior.].
+Visualizações podem ser uma simples medida resumo (frequência, média, variância, mínimo, máximo etc), um conjunto dessas medidas organizadas em uma tabela, ou a representação (de uma parte) dos dados em um gráfico. Neste capítulo, mostraremos como construir gráficos e tabelas bem formatadas dentro do R. Começaremos com a construção de gráficos e, em seguida, falaremos sobre a formatação de tabelas^[Em geral, boa parte do trabalho necessário para a construção de uma tabela descritiva pode ser feito com as funções dos pacotes `{dplyr}` e `{tidyr}`, vistas no capítulo anterior.].
 
 Mas, antes de mais nada, o que é um gráfico estatístico?
 
@@ -30,7 +30,7 @@ Além de uma filosofia bem fundamentada, o `ggplot2` ainda traz outras vantagens
 
 - gráficos naturalmente mais bonitos;
 - fácil personalização (mais simples deixar o gráfico do jeito que você quer);
-- a estrutura padronizada das funções deixa o aprendizado muito mais intuitivo;
+- a estrutura padronizada das funções deixa o aprendizado mais intuitivo;
 - a diferença no código entre tipos diferentes de gráficos é muito pequena.
 
 Para discutir os principais aspectos da construção de gráficos com o `ggplot2`, vamos continuar utilizando a base de filmes do IMDB. Você pode baixá-la [clicando aqui](https://github.com/curso-r/livro-material/raw/master/assets/data/imdb.rds).
@@ -59,7 +59,7 @@ ggplot(data = imdb)
 
 Apesar de termos passado os dados para a função, precisamos especificar como as observações serão mapeadas nos aspectos visuais do gráfico e quais formas geométricas serão utilizadas para isso.
 
-O código abaixo constrói um gráfico de dispersão entre as variáveis orçamento e receita.
+O código abaixo constrói um gráfico de dispersão entre as variáveis `orcamento` e `receita`.
 
 ```{r}
 ggplot(imdb) +
@@ -73,7 +73,7 @@ Observe que:
 - as camadas são unidas com um `+`;
 - o mapeamento na função `geom_point()` recebe a função `aes()`, responsável por descrever como as variáveis serão mapeadas nos aspectos visuais dos pontos (a forma geométrica escolhida);
 - neste caso, os aspectos visuais mapeados são a posição do ponto no eixo x e a posição do ponto no eixo y;
-- o `Warning` nos avisa sobre a exclusão das observações que possuem `NA` na variável receita e/ou orçamento;
+- o `Warning` nos avisa sobre a exclusão das observações que possuem `NA` na variável `receita` e/ou `orcamento`;
 - todas essas funções são do pacote `{ggplot2}`.
 
 A combinação da função `ggplot()` e de uma ou mais funções `geom_()` definirá o tipo de gráfico gerado. 
@@ -82,7 +82,7 @@ O primeiro argumento de qualquer função `geom` é o `mapping`. Esse argumento 
 
 > **Atenção!** As camadas dos gráficos são empilhadas utilizando-se o sinal `+`. Como a estrutura é muito parecida com a do *pipe*, é comum trocarmos o `+` por um `%>%` no meio do código, resultando em erro.
 
-Podemos acrescentar uma terceira camada ao gráfico, desenhando a reta `y = x` para visualizarmos os filmes não se pagaram.
+Podemos acrescentar uma terceira camada ao gráfico, desenhando a reta `y = x` para visualizarmos os filmes que não se pagaram.
 
 ```{r}
 ggplot(imdb) +
@@ -176,7 +176,7 @@ imdb %>%
   geom_point(aes(x = ano, y = nota_media))
 ```
 
-Quando precisamos usar o mesmo `aes()` em vários `geoms`, podemos defini-lo dentro da função `ggplot()`. Esse `aes()` será então distribuído para todo `geom` do gráfico. O código anterior pode ser reescrito da seguinte forma.
+Quando precisamos usar o mesmo `aes()` em vários `geoms`, podemos definí-lo dentro da função `ggplot()`. Esse `aes()` será então distribuído para todo `geom` do gráfico. O código anterior pode ser reescrito da seguinte forma:
 
 ```{r}
 imdb %>% 
@@ -524,7 +524,7 @@ imdb %>%
 
 ### Juntando gráficos
 
-No ggplot, temos várias formas de juntar gráficos. Vamos apresentar a seguir as principais.
+No ggplot2, temos várias formas de juntar gráficos. Vamos apresentar a seguir as principais.
 
 #### Vários geoms no mesmo gráfico {-}
 
