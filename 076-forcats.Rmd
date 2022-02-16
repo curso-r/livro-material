@@ -8,11 +8,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-Se você utiliza R antes do surgimento do `tidyverse`, provavelmente já escreveu a expressão `stringsAsFactors = F` quando importava dados usando as funções `read.csv` ou `read.table`. É muito frustrante quando uma coluna de `strings` é lida como um fator, pois fatores não podem ser manipulados do mesmo jeito que manipulamos vetores de `strings`.
+Se você já utilizava o R antes do surgimento do `tidyverse`, provavelmente já escreveu a expressão `stringsAsFactors = F` quando importava dados usando as funções `read.csv` ou `read.table`. É muito frustrante quando uma coluna de `strings` é lida como um fator, pois fatores não podem ser manipulados do mesmo jeito que manipulamos vetores de `strings`.
 
-Felizmente, depois de aprender a usar o `readr` você não terá mais esse problema, pois as funções do pacote não lê colunas de caracteres como fatores por padrão. Mas isso não significa que fatores são inúteis. Eles representam uma forma muito prática de lidar com variáveis categorizadas, tanto para fins de modelagem quanto para fins de visualização. 
+Felizmente, depois de aprender a usar o `readr` você não terá mais esse problema, pois as funções do pacote não leem colunas de caracteres como fatores por padrão. Mas isso não significa que fatores são inúteis. Eles representam uma forma muito prática de lidar com variáveis categorizadas, tanto para fins de modelagem quanto para fins de visualização. 
 
-Grande parte da frustração associada ao uso de fatores no R existe por conta da falta de algumas ferramentas úteis no pacote `base`. Para resolver esse o problema, Hadley Wickham ajudou a comunidade R (de novo) desenvolvendo o pacote `forcats`(**for** **cat**egorial variable**s**), que implementa algumas dessas ferramentas.
+Grande parte da frustração associada ao uso de fatores no R existe por conta da falta de algumas ferramentas úteis no pacote `base`. Para resolver esse problema, Hadley Wickham ajudou a comunidade R (de novo) desenvolvendo o pacote `forcats`(**for** **cat**egorial variable**s**), que implementa algumas dessas ferramentas.
 
 As principais funções do `forcats` servem para alterar a **ordem** e modificar os **níveis** de um fator. Para exemplificar a utilidade dessas funções, nesta seção vamos utilizá-las em situações corriqueiras.
 
@@ -93,7 +93,7 @@ starwars %>%
   geom_col(aes(x = sex, y = n)) 
 ```
 
-Como as colunas no gráfico respeitam a ordem dos níveis do fator, não importa a ordem que as linhas aparecem na tabela, o gráfico sempre será gerado com as colunas na mesma ordem. Assim, se quiséssemos alterar a ordem das barras do gráfico anterior, precisamos mudar a ordem dos níveis do fator `sex`.
+Como as colunas no gráfico respeitam a ordem dos níveis do fator, não importa a ordem que as linhas aparecem na tabela, o gráfico sempre será gerado com as colunas na mesma ordem. Assim, se quiséssemos alterar a ordem das barras do gráfico anterior, precisaríamos mudar a ordem dos níveis do fator `sex`.
 
 ### Mudando a ordem dos níveis de um fator
 
@@ -127,7 +127,7 @@ starwars %>%
   geom_col(aes(x = sex, y = n)) 
 ```
 
-Repare que precisamos passar a nova ordem na mão, o que pode deixar de funcionar se a nossa base mudar (recebemos mais linhas ou fizermos um filtro anteriormente).
+Repare que precisamos passar a nova ordem na mão, o que pode deixar de funcionar se a nossa base mudar (recebermos mais linhas ou fizermos um filtro anteriormente).
 
 Anterior ao `mutate()` temos a seguinte tabela:
 
@@ -209,7 +209,7 @@ ggplot() +
 
 ### Colapsando níveis de um fator
 
-Imagine que quermos fazer um gráfico de barras com a frequência de personagens por espécie.
+Imagine que queremos fazer um gráfico de barras com a frequência de personagens por espécie.
 
 ```{r}
 starwars %>% 
@@ -232,7 +232,7 @@ Temos 37 espécies diferentes na base. Podemos deixar apenas as 3 mais frequente
 fct_lump(fator_especies, n = 3)
 ```
 
-O fator resultante possui 4 níveis: `Droid`, `Gungan`, `Human` e `Other`. Os 3 primeiros níveis são os mais frequentes, enquanto o nível `Other` foi atribuído a todos os outros 34 níveis que existiam anteiormente.
+O fator resultante possui 4 níveis: `Droid`, `Gungan`, `Human` e `Other`. Os 3 primeiros níveis são os mais frequentes, enquanto o nível `Other` foi atribuído a todos os outros 34 níveis que existiam anteriormente.
 
 Poderíamos definir o nome do nível `Others` usando o argumento `other_level`.
 

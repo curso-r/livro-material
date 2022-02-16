@@ -1,6 +1,6 @@
 ## Tibbles
 
-Uma *tibble* é um *data frame* com ajustes que as deixam mais amigáveis a nós cientistas de dados. Elas são parte do pacote `{tibble}`. Assim, para começar a usá-las, instale e carregue o pacote.
+*Tibbles* são *data frames* com ajustes que as deixam mais amigáveis a nós cientistas de dados. Elas são parte do pacote `{tibble}`. Assim, para começar a usá-las, instale e carregue o pacote.
 
 ```{r, eval = FALSE}
 install.packages("tibble")
@@ -39,7 +39,7 @@ tibble(
 Observamos pelo código acima que:
 
 - podemos criar uma coluna a partir de uma função de colunas anteriores (a `coluna3` é uma função da `coluna2`);
-- se passarmos um vetor de tamanho 1 a uma das colunas, esse vetor será reciclado, igualando-se ao número de linha da *tibble* (o `0` na `coluna4` é transformado em `c(0, 0, 0, 0)`).
+- se passarmos um vetor de tamanho 1 a uma das colunas, esse vetor será reciclado, igualando-se ao número de linhas da *tibble* (o `0` na `coluna4` é transformado em `c(0, 0, 0, 0)`).
 
 Uma outra diferença entre *data frames* e *tibbles* está no *subsetting*. *Tibbles* **nunca fazem correspondência parcial**. Tibbles retornam `NULL` e um aviso quando você tenta selecionar uma coluna que não existe.
 

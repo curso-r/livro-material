@@ -31,7 +31,7 @@ if (grepl("darwin", R.version$os))
   Sys.setenv("TZDIR" = "/Library/Frameworks/R.framework/Resources/share/zoneinfo/")
 ```
 
-Neste seção, falaremos sobre:
+Nesta seção, falaremos sobre:
 
 - transformar e extrair datas;
 - algumas funções úteis para trabalhar com datas;
@@ -109,7 +109,6 @@ O `lubridate` traz diversas funções para extrair os componentes de um objeto d
 - `month()` - extrai o mês.
 - `year()` - extrai o ano.
 
-Os nomes são tão óbvios que a explicação do que cada função faz é praticamente desnecessária.
 
 ```{r}
 bday <- ymd_hms("1989-07-29 030142")
@@ -226,7 +225,7 @@ Para mais informações sobre o`lubridate`, visite o [vignette do pacote](https:
 
 ### Exercícios
 
-Nos exercícios a seguir, vamos utilizar a base `lakers`, que contém estatísticas jogo a jogo do [Los Angeles Lakers](http://www.nba.com/lakers/) na temporada 2008-2009.
+Nos exercícios a seguir, vamos utilizar a base `lakers` (do pacote `lubridate`), que contém estatísticas jogo a jogo do [Los Angeles Lakers](http://www.nba.com/lakers/) na temporada 2008-2009.
 
 ```{r}
 lakers %>% as_tibble()
