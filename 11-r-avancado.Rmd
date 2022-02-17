@@ -15,7 +15,7 @@ Uma das características mais marcantes do `{tidyverse}` é a possibilidade de t
 
 Existe uma ferramenta especial (e exclusiva ao R!) que nos permite fazer esse tipo de mágica: a _non-standard evaluation_ (NSE) ou, em português, a avaliação não-padrão. Usamos NSE desde a primeira vez que escrevemos o comando `library()`, mas o seu funcionamento ainda é um mistério para a maioria.
 
-Para criar funções flexíveis e exutas como as do `{tidyverse}`, é necessário entender o básico da NSE e de como trabalhar com alguns operadores desse novo mundo.
+Para criar funções flexíveis e enxutas como as do `{tidyverse}`, é necessário entender o básico da NSE e de como trabalhar com alguns operadores desse novo mundo.
 
 ### O que é?
 
@@ -40,14 +40,14 @@ A faceta da NSE que nos interessa no momento é a chamada _tidy evaluation_, ou 
 - O mundo sem tidy eval é extremamente verborrágico, pois a tabela precisa ser especificada toda vez que nos referirmos a uma coluna:
 
 ```{r, eval = FALSE}
-starwars[starwars$homeworld == "Naboo" & starwars$species == "Human", ,]
+starwars[starwars$homeworld == "Naboo" & starwars$species == "Human", ]
 ```
 
 - Para não precisar do `$`, a nossa única saída é criar objetos com as colunas:
 
 ```{r, eval = FALSE}
 homeworld <- starwars$homeworld; species <- starwars$species
-starwars[homeworld == "Naboo" & species == "Human", ,]
+starwars[homeworld == "Naboo" & species == "Human", ]
 ```
 
 - O `{tidyverse}` permite criar um "mini ambiente" em que as colunas da tabela estão disponíveis como se fossem objetos declarados explicitamente:
