@@ -81,7 +81,7 @@ dados <- dados_brutos %>%
 ### Removendo linhas e colunas vazias
 
 
-Esse banco de dados também contém outro problema: linhas vazias. Na verdade, elas não eram completamente vazias, pois havia algumas informações de identificação da(o) paciente, mas nenhuma outra variável tinha sido computada.
+Esse banco de dados também contém outro problema: linhas vazias. Na verdade, elas não eram completamente vazias, pois havia algumas informações de identificação de pacientes, mas nenhuma outra variável tinha sido computada.
 
 ```{r}
 dados %>% 
@@ -148,7 +148,7 @@ Todas as linhas na `tibble` resultante representam uma combinação de nome-sobr
 
 Por fim, o `janitor` também tem funções equivalentes à `table()` para produzir tabelas de frequência:
 
-- `tabyl()` - similar a `table()`, mas pipe-ável e com mais recursos.
+- `tabyl()` - similar a `table()`, mas *pipeável* e com mais recursos.
 - `adorn_totals()` - acrescenta o total das linhas ou colunas.
 
 
