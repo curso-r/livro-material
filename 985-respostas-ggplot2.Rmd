@@ -7,8 +7,11 @@ knitr::opts_chunk$set(
 )
 
 imdb <- readr::read_csv("assets/data/imdb.csv")
-library(ggplot2)
+```
+
+```{r, message = FALSE, warning = FALSE}
 library(dplyr)
+library(ggplot2)
 ```
 
 **1.** O que acontece quando rodamos o código `ggplot(data = mtcars)`?
@@ -193,7 +196,7 @@ imdb %>%
 
 *A função `facet_wrap()` replica o gráfico especificado para cada categoria de uma coluna.*
 
-**.b** Utilize os argumentos nrow e `ncol` da função `facet_wrap()` para colocar os quatro gráficos em uma única coluna.
+**b.** Utilize os argumentos `nrow` e `ncol` da função `facet_wrap()` para colocar os quatro gráficos em uma única coluna.
 
 ```{r}
 imdb %>%

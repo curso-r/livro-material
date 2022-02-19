@@ -2,6 +2,9 @@
 
 ```{r, include=FALSE}
 imdb <- readr::read_csv("assets/data/imdb.csv")
+```
+
+```{r, message=FALSE, warning=FALSE}
 library(dplyr)
 ```
 
@@ -199,7 +202,7 @@ imdb %>%
   mutate(antigo_ou_recente = ifelse(ano > 2000, "recente", "antigo"))
 ```
 
-### Summarisando a base {-}
+### Sumarizando a base {-}
 
 Utilize a base `imdb` nos exercícios a seguir.
 
