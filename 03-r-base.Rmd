@@ -401,7 +401,7 @@ paste(cidade, estado)
 paste(cidade, estado, sep = " - ")
 ```
 
-- **d.** Desafio. Como você reproduziria o mesmo resultado do item (b) sem utilizar o argumento `sep`?
+- **d.** Desafio. Como você reproduziria o mesmo resultado do item (c) sem utilizar o argumento `sep`?
 
 - **e.** Qual a diferença entre as funções `paste()` e `paste0()`?
 
@@ -1112,7 +1112,7 @@ Encerramos aqui a nossa primeira conversa sobre `data frames` para falar de outr
 
 - **d.** Tire a média do vetor calculado em (c) e salve o resultado em um objeto chamado `variancia`. Em seguida, calcule a raiz quadrada desse valor e salve em um objeto chamado `desvio_padrao`.
 
-- **e.** Compare o valor de `desvio_padrao` com `sd(airquality$Ozone)` e pesquise por que os valores não são iguais. Dica: veja a documentação da função `sd()`.
+- **e.** Compare o valor de `desvio_padrao` com `sd(airquality$Ozone, na.rm=TRUE)` e pesquise por que os valores não são iguais. Dica: veja a documentação da função `sd()`.
 
 **6.** Use o *data frame* `airquality` para responder às questões abaixo.
 
