@@ -92,7 +92,7 @@ dados <- dados_brutos %>%
 ### Removendo linhas e colunas vazias
 
 
-Esse banco de dados também contém outro problema: linhas vazias. Na verdade, elas não eram completamente vazias, pois havia algumas informações de identificação da(o) paciente, mas nenhuma outra variável tinha sido computada.
+Esse banco de dados também contém outro problema: linhas vazias. Na verdade, elas não eram completamente vazias, pois havia algumas informações de identificação de pacientes, mas nenhuma outra variável tinha sido computada.
 
 
 ```r
@@ -181,9 +181,9 @@ dplyr::glimpse(base_exemplo)
 ```
 ## Rows: 25
 ## Columns: 3
-## $ nome                <chr> "Daniel", "Daniel", "Fernando", "William", "Fernan…
-## $ sobrenome           <chr> "Trecenti", "Corrêa", "Trecenti", "Corrêa", "Damia…
-## $ variavel_importante <dbl> 1.36006139, -0.04447114, 1.12481662, 0.62213182, 0…
+## $ nome                <chr> "Athos", "Athos", "Athos", "Athos", "Daniel", "Dan…
+## $ sobrenome           <chr> "Falbel", "Damiani", "Amorim", "Damiani", "Trecent…
+## $ variavel_importante <dbl> -0.07942386, 0.12279630, 0.31136766, -1.92171731, …
 ```
 
 ```r
@@ -192,23 +192,25 @@ janitor::get_dupes(base_exemplo, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 14 x 4
+## # A tibble: 16 × 4
 ##    nome     sobrenome dupe_count variavel_importante
 ##    <chr>    <chr>          <int>               <dbl>
-##  1 Athos    Trecenti           2              0.0471
-##  2 Athos    Trecenti           2             -1.05  
-##  3 Daniel   Corrêa             3             -0.0445
-##  4 Daniel   Corrêa             3             -0.594 
-##  5 Daniel   Corrêa             3             -0.641 
-##  6 Daniel   Damiani            3             -0.0490
-##  7 Daniel   Damiani            3             -0.291 
-##  8 Daniel   Damiani            3              0.932 
-##  9 Fernando Damiani            2              0.253 
-## 10 Fernando Damiani            2              0.668 
-## 11 Julio    Corrêa             2              0.987 
-## 12 Julio    Corrêa             2             -0.385 
-## 13 William  Damiani            2             -0.652 
-## 14 William  Damiani            2             -0.0733
+##  1 Athos    Damiani            3              0.123 
+##  2 Athos    Damiani            3             -1.92  
+##  3 Athos    Damiani            3             -1.15  
+##  4 Daniel   Corrêa             2              0.449 
+##  5 Daniel   Corrêa             2              1.00  
+##  6 Daniel   Trecenti           2              0.513 
+##  7 Daniel   Trecenti           2             -0.848 
+##  8 Fernando Amorim             3              0.387 
+##  9 Fernando Amorim             3              0.0357
+## 10 Fernando Amorim             3              0.147 
+## 11 Julio    Falbel             2             -1.60  
+## 12 Julio    Falbel             2              1.14  
+## 13 William  Amorim             2              1.63  
+## 14 William  Amorim             2             -0.0369
+## 15 William  Falbel             2              0.193 
+## 16 William  Falbel             2             -2.55
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.
@@ -217,7 +219,7 @@ Todas as linhas na `tibble` resultante representam uma combinação de nome-sobr
 
 Por fim, o `janitor` também tem funções equivalentes à `table()` para produzir tabelas de frequência:
 
-- `tabyl()` - similar a `table()`, mas pipe-ável e com mais recursos.
+- `tabyl()` - similar a `table()`, mas *pipeável* e com mais recursos.
 - `adorn_totals()` - acrescenta o total das linhas ou colunas.
 
 

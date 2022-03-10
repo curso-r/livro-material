@@ -1,7 +1,6 @@
 # Programação funcional (purrr) {#funcionais}
 
-Programação funcional (PF) é um paradigma de programação com o qual a maior parte
-dos estatísticos não está familiarizada. Essa técnica costuma ser ignorada na
+Programação funcional (PF) é um paradigma de programação com o qual a maior parte das pessoas que estudam estatística não está familiarizada. Essa técnica costuma ser ignorada na
 maioria dos tutoriais de R por não estar diretamente envolvida com manipulação e
 visualização de dados, mas isso não quer dizer que ela não tenha suas vantagens.
 
@@ -444,7 +443,7 @@ Para a nossa comodidade, essas duas funções também têm variedades paralelas
 
 ## Miscelânea
 
-Por fim, veremos algumas funções do `purrr` que nêo têm exatamente a ver com
+Por fim, veremos algumas funções do `purrr` que não têm exatamente a ver com
 laços, mas que acabam sendo bastante úteis quando usando as funções que vimos
 até agora. Elas não serão apresentadas em nenhuma ordem específica, este é apenas
 um apanhado de funções sortidas que achamos úteis enquanto programando com o 
