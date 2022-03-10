@@ -11,15 +11,15 @@ library(readxl)
 install.packages("readxl")
 library(readxl)
 
-imdb_xlsx <- read_xls("dados/imdb.xlss")
+imdb_xls <- read_xlsx("dados/imdb.xls")
 imdb_xlsx <- read_xlsx("dados/imdb.xlsx")
 ```
 
 A funçao `read_excel()` auto detecta a extensão do arquivo.
 
 ```{r eval=FALSE}
-read_excel(path = "assets/data/imdb.xls")
-read_excel(path = "assets/data/imdb.xlsx")
+read_excel(path = "dados/imdb.xls")
+read_excel(path = "dados/imdb.xlsx")
 ```
 
 O pacote disponibiliza 5 exemplos de arquivos com formato `.xls` e `.xlsx`.
