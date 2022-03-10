@@ -73,7 +73,7 @@ select(imdb, titulo, ano, orcamento)
 O operador `:` é muito útil para selecionar colunas consecutivas.
 
 ```{r}
-select(imdb, titulo:cor)
+select(imdb, titulo:generos)
 ```
 
 
@@ -83,18 +83,18 @@ O `dplyr` possui um conjunto de funções auxiliares muito úteis para seleção
 - `ends_with()`: para colunas que terminam com um texto padrão
 - `contains()`: para colunas que contêm um texto padrão
 
-Selecionamos a seguir todas as colunas que começam com o texto "ator".
+Selecionamos a seguir todas as colunas que começam com o texto "num".
 
 ```{r}
-select(imdb, starts_with("ator"))
+select(imdb, starts_with("num"))
 ```
 
 Para retirar colunas da base, base acrescentar um `-` antes da seleção.
 
 ```{r}
-select(imdb, -ano, - diretor)
+select(imdb, -ano, -direcao)
 
-select(imdb, -starts_with("ator"))
+select(imdb, -starts_with("num"))
 ```
 
 #### Exercícios {-}
@@ -103,11 +103,11 @@ Utilize a base `imdb` nos exercícios a seguir.
 
 **1.** Teste aplicar a função `glimpse()` do pacote `{dplyr}` à base `imdb`. O que ela faz?
 
-**2.** Crie uma tabela com apenas as colunas `titulo`, `diretor`, e `orcamento.` Salve em um objeto chamado `imdb_simples`.
+**2.** Crie uma tabela com apenas as colunas `titulo`, `direcao`, e `orcamento.` Salve em um objeto chamado `imdb_simples`.
 
-**3.** Selecione apenas as colunas `ator_1`, `ator_2` e `ator_3` usando a função auxiliar `contains()`.
+**3.** Selecione apenas as colunas `duracao`, `direcao`, `descricao` e `producao` usando a função auxiliar `contains()`.
 
-**4.** Usando a função `select()` (e suas funções auxiliares), escreva códigos que retornem a base IMDB sem as colunas `ator_1`, `ator_2` e `ator_3.` Escreva todas as soluções diferentes que você conseguir pensar. 
+**4.** Usando a função `select()` (e suas funções auxiliares), escreva códigos que retornem a base IMDB sem as colunas `num_avaliacoes`, `num_criticas_publico` e `num_criticas_critica`. Escreva todas as soluções diferentes que você conseguir pensar. 
 
 ### Ordenando a base
 
@@ -201,11 +201,11 @@ Também podemos fazer operações com as colunas da base dentro da função filt
 imdb %>% filter(receita - orcamento > 0)
 ```
 
-Naturalmente, podemos filtrar colunas categóricas. O exemplo abaixo retorna uma tabela apenas com os filmes com a Angelina Jolie Pitt ou o Brad Pitt no papel principal.
+Naturalmente, podemos filtrar colunas categóricas. O exemplo abaixo retorna uma tabela apenas com os filmes dirigidos por Quentin Tarantino ou Steven Spielberg.
 
 ```{r}
 imdb %>%
-  filter(ator_1 %in% c('Angelina Jolie Pitt', "Brad Pitt"))
+  filter(direcao %in% c("Quentin Tarantino", "Steven Spielberg"))
 ```
 
 Para filtrar textos sem correspondência exata, podemos utilizar a função auxiliar `str_detect()` do pacote `{stringr}`. Ela serve para verificar se cada string de um vetor contém um determinado padrão de texto.
@@ -219,35 +219,35 @@ str_detect(
 )
 ```
 
-Podemos utilizá-la para filtrar apenas os filmes que contêm o gênero ação.
+Podemos utilizá-la para filtrar apenas os filmes que contêm o gênero Drama.
 
 ```{r}
 # A coluna gêneros apresenta todos os gêneros dos filmes concatenados
 imdb$generos[1:6]
 
-# Podemos detectar se o gênero Action aparece na string
+# Podemos detectar se o gênero Drama aparece na string
 str_detect(
   string = imdb$generos[1:6],
-  pattern = "Action"
+  pattern = "Drama"
 )
 
 # Aplicamos essa lógica dentro da função filter, para a coluna completa
-imdb %>% filter(str_detect(generos, "Action"))
+imdb %>% filter(str_detect(generos, "Drama"))
 ```
 
 #### Exercícios {-}
 
 Utilize a base `imdb` nos exercícios a seguir.
 
-**1.** Crie um objeto chamado `filmes_pb` apenas com filmes preto e branco.
+**1.** Crie um objeto chamado `filmes_ingles` apenas com filmes que sejam apenas no idioma inglês (`English`).
 
 **2.** Crie um objeto chamado `curtos_legais` com filmes de 90 minutos ou menos de duração e nota no imdb maior do que 8.5.
 
 **3.** Retorne tabelas (`tibbles`) apenas com:
 
-- **a.** filmes coloridos anteriores a 1950;
+- **a.** filmes de ação anteriores a 1950;
 
-- **b.** filmes do "Woody Allen" ou do "Wes Anderson";
+- **b.** filmes dirigidos por "Woody Allen" ou "Wes Anderson";
 
 - **c.** filmes do "Steven Spielberg" ordenados de forma decrescente por ano, mostrando apenas as colunas `titulo` e `ano`;
 
@@ -336,14 +336,15 @@ O código a seguir calcula a receita média dos filmes para cada categoria da co
 
 ```{r}
 imdb %>% 
-  group_by(cor) %>% 
-  summarise(receita_media = mean(receita, na.rm = TRUE))
+  filter(!is.na(producao), !is.na(receita))  %>% 
+  group_by(producao) %>% 
+  summarise(receita_media = mean(receita, na.rm = TRUE)) 
 ```
 
 A única alteração que a função `group_by()` faz na base é a marcação de que a base está agrupada.
 
 ```{r}
-imdb %>% group_by(cor)
+imdb %>% group_by(producao)
 ```
 
 #### Exercícios {-}
@@ -352,39 +353,39 @@ Utilize a base `imdb` nos exercícios a seguir.
 
 **1.** Calcule a duração média e mediana dos filmes da base.
 
-**2.** Calcule o lucro médio dos filmes com duração menor que 60 minutos.
+**2.** Calcule o lucro médio dos filmes com duração maior que 2 horas (ou seja, 120 minutos).
 
-**3.** Apresente na mesma tabela o lucro médio dos filmes com duracao menor que 60 minutos e o lucro médio dos filmes com duracao maior ou igual a 60 minutos.
+**3.** Apresente na mesma tabela o lucro médio dos filmes com duracao menor que 120 minutos e o lucro médio dos filmes com duracao maior ou igual a 120 minutos.
 
 **4.** Retorne tabelas (`tibbles`) apenas com:
 
-- **a.** a nota IMDB média dos filmes por tipo de classificacao;
+- **a.** a nota IMDB média dos filmes por ano de lançamento;
 
 - **b.** a receita média e mediana dos filmes por ano;
 
-- **c.** apenas o nome dos diretores com mais de 10 filmes.
+- **c.** apenas o nome das pessoas que dirigiram mais de 10 filmes.
 
 ### Juntando duas bases
 
-Podemos juntar duas tabelas a partir de uma (coluna) chave utilizando a função `left_join()`. Como exempo, vamos inicialmente calcular o lucro médio dos filmes de cada diretor e salvar no objeto `tab_lucro_diretor`.
+Podemos juntar duas tabelas a partir de uma (coluna) chave utilizando a função `left_join()`. Como exempo, vamos inicialmente calcular o lucro médio dos filmes de cada direção e salvar no objeto `tab_lucro_direcao`.
 
 ```{r}
-tab_lucro_diretor <- imdb %>%
-  group_by(diretor) %>% 
+tab_lucro_direcao <- imdb %>%
+  group_by(direcao) %>% 
   summarise(lucro_medio = mean(receita - orcamento, na.rm = TRUE))
 
-tab_lucro_diretor
+tab_lucro_direcao
 ```
 
-E se quisermos colocar essa informação na base original? Basta usar a função `left_join()` utilizando a coluna `diretor` como chave. Observe que a coluna `lucro_medio` aparece agora no fim da tabela.
+E se quisermos colocar essa informação na base original? Basta usar a função `left_join()` utilizando a coluna `direcao` como chave. Observe que a coluna `lucro_medio` aparece agora no fim da tabela.
 
 ```{r}
-imdb_com_lucro_medio <- left_join(imdb, tab_lucro_diretor, by = "diretor")
+imdb_com_lucro_medio <- left_join(imdb, tab_lucro_direcao, by = "direcao")
 
 imdb_com_lucro_medio
 ```
 
-Na tabela `imdb_com_lucro_medio`, como na tabela `imdb`, cada linha continua a representar um filme diferente, mas agora temos também a informação do lucro médio do diretor de cada filme. 
+Na tabela `imdb_com_lucro_medio`, como na tabela `imdb`, cada linha continua a representar um filme diferente, mas agora temos também a informação do lucro médio da direção de cada filme. 
 
 A primeira linha, por exemplo, traz as informações do filme Avatar. O valor do `lucro_medio` nessa linha representa o lucro médio de todos os filmes do James Cameron, que é o diretor de Avatar. Com essa informação, podemos calcular o quanto o lucro do Avatar se afasta do lucro médio do James Cameron.
 
@@ -395,7 +396,7 @@ imdb_com_lucro_medio %>%
     lucro_relativo = (lucro - lucro_medio)/lucro_medio,
     lucro_relativo = scales::percent(lucro_relativo)
   ) %>% 
-  select(titulo, diretor, lucro, lucro_medio, lucro_relativo)
+  select(titulo, direcao, lucro, lucro_medio, lucro_relativo)
 ```
 
 Observamos então que o Avatar obteve um lucro aproximadamente 169% maior que a média dos filmes do James Cameron.
@@ -417,9 +418,9 @@ knitr::include_graphics('assets/img/manipulacao/joins.png')
 **1.** Utilize a base `imdb` para resolver os itens a seguir.
 
 **a.** Salve em um novo objeto uma tabela com a
-nota média dos filmes de cada diretor. Essa tabela
-deve conter duas colunas (`diretor` e `nota_imdb_media`)
-e cada linha deve ser um diretor diferente.
+nota média dos filmes de cada direção. Essa tabela
+deve conter duas colunas (`direcao` e `nota_imdb_media`)
+e cada linha deve ser uma direção diferente.
 
 **b.** Use o `left_join()` para trazer a coluna
 `nota_imdb_media` da tabela do item anterior
