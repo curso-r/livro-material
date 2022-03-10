@@ -12,13 +12,13 @@ As duas propriedades mais importantes de uma base *tidy* são:
 
 Essa definição proporciona uma maneira consistente de se referir a variáveis (nomes de colunas) e observações (índices das linhas).
 
-O pacote `{tidyr}` possui funções que nos ajudam a deixar uma base bagunçada em uma base *tidy*. Ou então, nos ajudam a bagunçar um pouquinho a nossa base quando isso nos ajudar a produzir o resultados que queremos.
+O pacote `{tidyr}` possui funções que nos ajudam a transformar uma base bagunçada em uma base *tidy*. Ou então, nos ajudam a bagunçar um pouquinho a nossa base quando isso nos ajudar a produzir o resultados que queremos.
 
 Vamos ver aqui algumas de suas principais funções:
 
 - `separate()` e `unite()`: para separar variáveis concatenadas em uma única coluna ou uni-las.
 
-- `pivot_wider()` e `pivot_longer()`: para pirvotar a base.
+- `pivot_wider()` e `pivot_longer()`: para pivotar a base.
 
 - `nest()` e `unnest()`: para criar *list columns*.
 
@@ -130,7 +130,7 @@ Se considerarmos que na análise da base IMDB cada observação deve ser um film
 
 Nesse sentido, embora possa parecer que a variável `protagonismo` estava implícita na base original, ela não é uma variável de fato. Todos filmes têm um `ator_1`, um `ator_2` e um `ator_3`. Não existe nenhuma informação sobre o filme que podemos tirar da coluna `protagonismo`, pois ela qualifica apenas os atores, não o filme em si.
 
-A função `pivot_wider()` faz a operação inversa da `pivot_longer()`. Sem aplicarmos as duas funções em sequência, voltamos para a base original.
+A função `pivot_wider()` faz a operação inversa da `pivot_longer()`. Se aplicarmos as duas funções em sequência, voltamos para a base original.
 
 ```{r}
 imdb %>% 

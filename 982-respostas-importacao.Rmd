@@ -4,7 +4,7 @@
 
 **1.** Qual a diferença entre as funções `read_csv()` e `read_csv2()`?
 
-*A função `read_csv() lê arquivos CSV separados por vírgula (padrão norte-americano). A função `read_csv2()` lê arquivos CSV separados por ponto-e-vírgula (padrão brasileiro, já que usamos a vírgula como seperador de decimais).*
+*A função `read_csv()` lê arquivos CSV separados por vírgula (padrão norte-americano). A função `read_csv2()` lê arquivos CSV separados por ponto-e-vírgula (padrão brasileiro, já que usamos a vírgula como separador de decimais).*
 
 ---
 

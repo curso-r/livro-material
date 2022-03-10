@@ -18,7 +18,7 @@ write_dta(mtcars, 'assets/data/mtcars.dta')
 ```
 
 
-Quando importamos arquivos gerados pelo SAS SPSS ou STATA para o R, os rótulos de uma variável podem não ser importados de forma correta.  O pacote `haven` tem uma soluçao para este problema. 
+Quando importamos arquivos gerados pelo SAS, SPSS ou STATA para o R, os rótulos de uma variável podem não ser importados de forma correta.  O pacote `haven` tem uma solução para este problema. 
 
 ```{r }
 x <- labelled(c(1,1,2,3,2,2,1,2), c(Ruim = 1, Bom = 2, Otimo = 3))
@@ -29,7 +29,7 @@ x <- labelled(c(1,1,2,3,2,2,1,2), c(Ruim = 1, Bom = 2, Otimo = 3))
 ```{r}
 print_labels(x)
 ```
-Existe uma função similar a `labelled()`, exclusiva para o SPSS, que além de rotular as variáveis, também defini quais símbolos representam valores faltantes, dado que em SPSS pode haver mais de um tipo de *missing*.
+Existe uma função similar a `labelled()`, exclusiva para o SPSS, que além de rotular as variáveis, também define quais símbolos representam valores faltantes, dado que em SPSS pode haver mais de um tipo de *missing*.
 
 ```{r}
 x1 <- labelled_spss(c(1,3,0,2,2,1,0,2,4), c(Ruim = 1,Bom = 2, Otimo = 3), na_values = c(0,4))

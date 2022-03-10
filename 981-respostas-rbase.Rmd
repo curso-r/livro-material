@@ -56,7 +56,7 @@ divisao <- 33 / 11
 
 ---
 
-**2.** Multiplique a sua idade por meses e salve o resultado em um objeto chamado `idade_em_meses`. Em seguida, multiplique esse objeto por 30 e salve o resultado em um objeto chamado `idade_em_dias`.
+**2.** Multiplique a sua idade por 12 e salve o resultado em um objeto chamado `idade_em_meses`. Em seguida, multiplique esse objeto por 30 e salve o resultado em um objeto chamado `idade_em_dias`.
 
 ```{r}
 idade_em_meses <- 31 * 12
@@ -75,7 +75,7 @@ meu-objeto <- 1
 
 *Porque o sinal `-` é utilizado pelo R como o operador de subtração. O código acima está sendo interpretado como a subtração dos objetos `meu` e `objeto`. Como nenhum dos objetos existe na sessão, é devolvido um erro dizendo que o objeto `meu` (o primeiro deles) não foi encontrado.*
 
-*No entanto, mesmo que os objetos existissem, seria retornado um erro. Neste caso, seria um erro de sintaxe, pois o R não sabe como interpretar a atribuição do valor ` 3` à operação `meu - objeto`. Veja que a mensagem de erro não é muito intuitiva, pois o R entende que `-<-` é uma função que esquecemos de definir.*
+*No entanto, mesmo que os objetos existissem, seria retornado um erro. Neste caso, seria um erro de sintaxe, pois o R não sabe como interpretar a atribuição do valor ` 1` à operação `meu - objeto`. Veja que a mensagem de erro não é muito intuitiva, pois o R entende que `-<-` é uma função que esquecemos de definir.*
 
 ```{r, error=TRUE}
 meu <- 1
@@ -152,7 +152,7 @@ paste0(cidade, "-", estado)
 
 ### Vetores {-}
 
-**1.** Guarde em um objeto a sequência de números de 0 a 5 e resolva os itens abaixos.
+**1.** Guarde em um objeto a sequência de números de 0 a 5 e resolva os itens abaixo.
 
 **a.** Use subsetting para fazer o R devolver o primeiro número dessa sequência. Em seguida, faça o R devolver o último número da sequência.
 
@@ -176,9 +176,9 @@ vetor_negativo
 
 ---
 
-**2.** Crie um vetor com o nome de tres frutas, guarde em um objeto chamado `frutas` e resolva os itens abaixo.
+**2.** Crie um vetor com o nome de três frutas, guarde em um objeto chamado `frutas` e resolva os itens abaixo.
 
-**a.** Utilize a a função `length()` para verificar o tamanho do vetor.
+**a.** Utilize a função `length()` para verificar o tamanho do vetor.
 
 ```{r}
 frutas <- c("banana", "maçã", "mamão")
@@ -203,7 +203,7 @@ length(paste("eu gosto de", frutas))
 
 **3.** O que é reciclagem? Escreva um código em R que exemplifique esse comportamento.
 
-*Reciclagem é a repetição de valores de um vetor para que uma operação com vetores de tamanhos diferentes possa ser realizada. Embora pareça um comportamento estranho, utilizamos a reciclagem o tempo todo dentro do R, muitas vezes sem perceber. No exemplo a seguir, os valores do `vetor_menor` serão repetidos (reciclados) até o dois vetores terem o mesmo tamanho. Então, o primeiro valor do vetor menor será somado com o promeiro valor do vetor maior, o segundo do menor somado com o segundo do maior e assim por diante.*
+*Reciclagem é a repetição de valores de um vetor para que uma operação com vetores de tamanhos diferentes possa ser realizada. Embora pareça um comportamento estranho, utilizamos a reciclagem o tempo todo dentro do R, muitas vezes sem perceber. No exemplo a seguir, os valores do `vetor_menor` serão repetidos (reciclados) até os dois vetores terem o mesmo tamanho. Então, o primeiro valor do vetor menor será somado com o promeiro valor do vetor maior, o segundo do menor somado com o segundo do maior e assim por diante.*
 
 ```{r}
 # Exemplo
@@ -217,7 +217,7 @@ vetor_menor + vetor_maior
 
 **4.** O que é coerção? Escreva um código em R que exemplifique esse comportamento.
 
-*Coerção é a homogenização da classe dos valores de um vetor. Se construirmos um vetor com valores de classes diferentes, todos os valores serão reprimidos para a classe mais dominante entre eles. No exemplo abaixo, todos os valores do vetor foram transformados em `character`, pois `character` é mais dominante do que as demais classes presentes (`numeric` e `logical`).*
+*Coerção é a homogeneização da classe dos valores de um vetor. Se construirmos um vetor com valores de classes diferentes, todos os valores serão reprimidos para a classe mais dominante entre eles. No exemplo abaixo, todos os valores do vetor foram transformados em `character`, pois `character` é mais dominante do que as demais classes presentes (`numeric` e `logical`).*
 
 *Considerando apenas as principais classes, temos a seguinte ordem de dominância: `character > numeric > integer > logical`*.
 
@@ -371,7 +371,7 @@ vetor[vetor >= 10]
 
 ---
 
-**3.** Use o vetor numeross abaixo para responder as questoes seguintes.
+**3.** Use o vetor `numeros` abaixo para responder as questões seguintes.
 
 ```{r}
 numeros <- -4:2
@@ -532,7 +532,7 @@ str(mtcars)
 ```
 
 
-**3.** Para que serve a função `nanes()`. Dê um exemplo do seu uso.
+**3.** Para que serve a função `names()`. Dê um exemplo do seu uso.
 
 *Serve para observamos os nomes das colunas de um data frame. O valor retornado é um vetor de strings.*
 
@@ -612,7 +612,7 @@ desvio_padrao <- sqrt(variancia)
 ```
 
 
-**e.** Compare o valor de `desvio_padrao` com `sd(airquality$Ozone)` e pesquise por que os valores não são iguais. Dica: veja a documentação da função `sd()`.
+**e.** Compare o valor de `desvio_padrao` com `sd(airquality$Ozone, na.rm=TRUE)` e pesquise por que os valores não são iguais. Dica: veja a documentação da função `sd()`.
 
 ```{r}
 desvio_padrao
@@ -664,7 +664,7 @@ head(tab)
 **d.** Filtre a tabela `airquality` com apenas linhas em que `Solar.R` **não** é `NA` e `Month` é igual a 5.
 
 ```{r}
-tab <- airquality[!is.na(airquality$Solar.R) & airquality$Month > 5,]
+tab <- airquality[!is.na(airquality$Solar.R) & airquality$Month == 5,]
 
 # Imprimindo apenas as primeiras linhas para facilitar a leitura
 head(tab)
@@ -792,7 +792,7 @@ sortear_linha <- function(data_frame) {
 sortear_linha(mtcars)
 ```
 
-**b.** Generalize a função para retornar um número qualquer de linhas, escolhido pelo usuário.
+**b.** Generalize a função para retornar um número qualquer de linhas, que poderá ser escolhido por quem for usá-la.
 
 ```{r}
 sortear_linha <- function(data_frame, n) {

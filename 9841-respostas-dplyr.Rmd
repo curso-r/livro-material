@@ -2,6 +2,9 @@
 
 ```{r, include=FALSE}
 imdb <- readr::read_csv("assets/data/imdb.csv")
+```
+
+```{r, message=FALSE, warning=FALSE}
 library(dplyr)
 ```
 
@@ -29,7 +32,7 @@ imdb_simples
 
 ---
 
-**3.** Selecione apenas as colunas `ator_1`, `ator_2` e `ator_3` usando o ajudante `contains()`.
+**3.** Selecione apenas as colunas `ator_1`, `ator_2` e `ator_3` usando a função auxiliar `contains()`.
 
 ```{r}
 select(imdb, contains("ator"))
@@ -37,7 +40,7 @@ select(imdb, contains("ator"))
 
 ---
 
-**4.** Usando a função `select()` (e seus ajudantes), escreva códigos que retornem a base IMDB sem as colunas `ator_1`, `ator_2` e `ator_3.` Escreva todas as soluções diferentes que você conseguir pensar. 
+**4.** Usando a função `select()` (e suas funções auxiliares), escreva códigos que retornem a base IMDB sem as colunas `ator_1`, `ator_2` e `ator_3.` Escreva todas as soluções diferentes que você conseguir pensar. 
 
 ```{r, eval = FALSE}
 select(imdb, -starts_with("ator"))
@@ -199,7 +202,7 @@ imdb %>%
   mutate(antigo_ou_recente = ifelse(ano > 2000, "recente", "antigo"))
 ```
 
-### Summarisando a base {-}
+### Sumarizando a base {-}
 
 Utilize a base `imdb` nos exercícios a seguir.
 

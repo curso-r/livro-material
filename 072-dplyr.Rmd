@@ -1,6 +1,6 @@
 ## O pacote dplyr {#dplyr}
 
-O `dplyr` é o pacote mais útil para realizar transformação de dados, aliando simplicidade e eficiência de uma forma elegante. Os scripts em R que fazem uso inteligente dos verbos `dplyr` e as facilidades do operador _pipe_ tendem a ficar mais legíveis e organizados sem perder velocidade de execução.
+O `dplyr` é o pacote mais útil para realizar transformação de dados, aliando simplicidade e eficiência de uma forma elegante. Os scripts em R que fazem uso inteligente dos verbos `dplyr` e as facilidades do operador _pipe_ tendem a ficar mais legíveis e organizados, sem perder velocidade de execução.
 
 As principais funções do `dplyr` são:
 
@@ -13,7 +13,7 @@ As principais funções do `dplyr` são:
 
 Todas essas funções seguem as mesmas características:
 
-- O _input_  é sempre uma `tibble` e o _output_  é sempre um `tibble`.
+- O _input_  é sempre uma `tibble` e o _output_  é sempre uma `tibble`.
 - Colocamos a `tibble` no primeiro argumento e o que queremos fazer nos outros argumentos.
 - A utilização é facilitada com o emprego do operador `%>%`.
 
@@ -77,7 +77,7 @@ select(imdb, titulo:cor)
 ```
 
 
-O `dplyr` possui o conjunto de funções auxiliares muito úteis para seleção de colunas. As principais são:
+O `dplyr` possui um conjunto de funções auxiliares muito úteis para seleção de colunas. As principais são:
 
 - `starts_with()`: para colunas que começam com um texto padrão
 - `ends_with()`: para colunas que terminam com um texto padrão
@@ -92,11 +92,9 @@ select(imdb, starts_with("ator"))
 Para retirar colunas da base, base acrescentar um `-` antes da seleção.
 
 ```{r}
-imdb %>%
-  select(-ano, - diretor)
+select(imdb, -ano, - diretor)
 
-imdb %>%
-  select(-starts_with("ator"))
+select(imdb, -starts_with("ator"))
 ```
 
 #### Exercícios {-}
@@ -107,9 +105,9 @@ Utilize a base `imdb` nos exercícios a seguir.
 
 **2.** Crie uma tabela com apenas as colunas `titulo`, `diretor`, e `orcamento.` Salve em um objeto chamado `imdb_simples`.
 
-**3.** Selecione apenas as colunas `ator_1`, `ator_2` e `ator_3` usando o ajudante `contains()`.
+**3.** Selecione apenas as colunas `ator_1`, `ator_2` e `ator_3` usando a função auxiliar `contains()`.
 
-**4.** Usando a função `select()` (e seus ajudantes), escreva códigos que retornem a base IMDB sem as colunas `ator_1`, `ator_2` e `ator_3.` Escreva todas as soluções diferentes que você conseguir pensar. 
+**4.** Usando a função `select()` (e suas funções auxiliares), escreva códigos que retornem a base IMDB sem as colunas `ator_1`, `ator_2` e `ator_3.` Escreva todas as soluções diferentes que você conseguir pensar. 
 
 ### Ordenando a base
 
@@ -156,11 +154,11 @@ tab_titulo_ano <- select(imdb, titulo, ano)
 arrange(tab_titulo_ano, ano)
 ```
 
-Os dois códigos funcionam e levam ao mesmo resultado, mas não são muito boas.
+Os dois códigos funcionam e levam ao mesmo resultado, mas não são muito bons.
 
-A primeira alternativa é ruim de escrever, já que precisamos escrever primeiro a função que roda por último, e de ler, pois é difícil identificar qual argumento pertence a qual função.
+A primeira alternativa é ruim de escrever (já que precisamos escrever primeiro a função que roda por último) e de ler (pois é difícil identificar qual argumento pertence a qual função).
 
-A segunda alternativa é ruim pois exige a criação de objetos auxiliares. Se quiséssimos aplicar 10 operações na base, precisaríamos criar 9 objetos intermediários.
+A segunda alternativa também é ruim, pois exige a criação de objetos auxiliares. Se quiséssimos aplicar 10 operações na base, precisaríamos criar 9 objetos intermediários.
 
 A solução para aplicar diversas operações de manipulação em uma base de dados é aplicar o operador pipe: `%>%`.
 
@@ -172,7 +170,7 @@ imdb %>%
 
 O que está sendo feito no código com pipe? Da primeira para a segunda linha, estamos aplicando a função `select()` à base imdb. Da segunda para a terceira, estamos aplicando a função `arrange()` à base resultante da função `select()`.
 
-O resultado desse código é identico às tentativas sem pipe, com a vantagem de termos escrito o código na ordem em que as funções são aplicadas, de termos um código muito mais legível e de não precisarmos utilizar objetos intermediários.
+O resultado desse código é idêntico às tentativas sem pipe, com a vantagem de termos escrito o código na ordem em que as funções são aplicadas, de termos um código muito mais legível e de não precisarmos utilizar objetos intermediários.
 
 ### Filtrando linhas
 
@@ -300,7 +298,7 @@ Utilize a base `imdb` nos exercícios a seguir.
 
 **3.** Crie uma nova coluna que classifique o filme em `"recente"` (posterior a 2000) e `"antigo"` (de 2000 para trás).
 
-### Summarisando a base
+### Sumarizando a base
 
 Sumarização é a técnica de se resumir um conjunto de dados utilizando alguma métrica de interesse. A média, a mediana, a variância, a frequência, a proporção, por exemplo, são tipos de sumarização que trazem diferentes informações sobre uma variável. 
 
@@ -497,7 +495,7 @@ casas %>%
 
 A sintaxe é parecida com a função `summarise_at()`, mas agora não precisamos mais usar a função `vars()` e nem usar `list(nome_da_funcao)`para definir a função aplicada nas colunas.
 
-Usando `across()`, podemos facilmente aplicar uma função em todas as colunas da nossa base. Abaixo, calculamos o número de valores distintos para todas as variáveis da base `casas`. O padrão do parâmetro `.cols` é `everithing()`, que representa "todas as colunas".
+Usando `across()`, podemos facilmente aplicar uma função em todas as colunas da nossa base. Abaixo, calculamos o número de valores distintos para todas as variáveis da base `casas`. O padrão do parâmetro `.cols` é `everything()`, que representa "todas as colunas".
 
 ```{r}
 casas %>% 
