@@ -1,0 +1,143 @@
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.align = "center"
+)
+
+imdb <- readr::read_rds("assets/data/imdb.rds")
+```
+
+## O pacote tidyr
+
+```{r, message = FALSE, warning = FALSE}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+```
+
+
+**1.** Crie 5 novas colunas de idiomas na base imdb, cada uma com um dos idiomas contidos na coluna `idioma`. Para os filmes com menos de 5 idiomas, substitua os valores `NA` pela string "Inexistente".
+
+
+```{r, include = FALSE}
+imdb <- readr::read_rds("assets/data/imdb.rds")
+```
+
+```{r, eval = FALSE}
+imdb <- readr::read_rds("imdb.rds")
+```
+
+```{r}
+imdb %>%
+  separate(
+    col = idioma,
+    into = c("idioma1", "idioma2", "idioma3", "idioma4", "idioma5"),
+    sep = ","
+  ) %>% 
+  mutate(across(starts_with("idioma"), ~ replace_na(., "Inexistente"))) %>% 
+  select(titulo, starts_with("idioma"))
+```
+
+
+---
+
+**2.** Substitua os "????" no código abaixo para criar uma tabela do lucro médio dos filmes ao longo dos anos de 2000 a 2020, com cada ano sendo uma coluna da base.
+
+```{r}
+imdb %>%
+  mutate(lucro = receita - orcamento) %>%
+  filter(ano %in% 2000:2020) %>%
+  group_by(ano) %>%
+  summarise(lucro_medio = mean(lucro, na.rm = TRUE)) %>%
+  pivot_wider(names_from = ano, values_from = lucro_medio)
+```
+
+
+---
+
+
+Para os exercícios 3, 4 e 5, vamos utilize a base `pokemon`, disponível no pacote `basesCursoR`.
+
+```{r, eval = FALSE}
+install.packages("remotes")
+remotes::install_github("curso-r/basesCursoR")
+pokemon <- basesCursoR::pegar_base("pokemon")
+```
+
+```{r include=FALSE}
+pokemon <- readr::read_rds("assets/data/pokemon.rds")
+```
+
+
+**3.** Utilize a função `unite()` para juntar as duas colunas de tipo em uma única coluna na base pokemon.
+
+```{r}
+pokemon %>% 
+  unite("tipo", c(tipo_1, tipo_2), sep = ", ", na.rm = TRUE) %>% 
+  select(pokemon, tipo)
+```
+
+
+
+---
+
+
+**4.** Utilize a função `unite()` para juntar as três colunas de cor em uma única coluna na base pokemon. Faça isso sem remover as 3 colunas originais.
+
+```{r}
+pokemon %>% 
+  unite("cor", c(cor_1, cor_2, cor_final), sep = ", ", na.rm = TRUE, remove = FALSE) %>% 
+  select(pokemon, cor, cor_1, cor_2, cor_final)
+```
+
+---
+
+
+
+**5.** Utilizando a base `pokemon`, resolva os itens abaixo:
+
+**a.** Utilize a função `pivot_longer()` para criar uma única coluna de tipo na base pokemon.
+
+```{r}
+tipos_pokemon <- pokemon %>% 
+  pivot_longer(cols = c(tipo_1, tipo_2), names_to = "ordem_tipo", values_to = "tipo")
+
+select(tipos_pokemon, pokemon, ordem_tipo, tipo)
+```
+
+
+**b.** Utilize a base criada no item (a) e escreva um código para descobrir qual o tipo mais frequente na base, independentemente se ele é primário (tipo_1) ou secundário (tipo_2).
+
+```{r}
+tipos_pokemon %>% 
+  drop_na(tipo) %>% 
+  count(tipo, sort = TRUE) %>% 
+  slice(1)
+```
+
+
+
+---
+
+
+**6.** DESAFIO! Escreva uma função que receba uma base qualquer e o nome de uma coluna numérica dessa base e retorne uma figura com um gráfico de dispersão da coluna escolhida contra cada uma das outras variáveis numéricas da base.
+
+```{r}
+gerar_grafico <- function(base, var) {
+  base %>%
+    select(where(is.numeric)) %>%
+    pivot_longer(
+      cols = -all_of(var),
+      names_to = "outras_variaveis",
+      values_to = "valores_outras_variaveis"
+    ) %>%
+    ggplot() +
+    geom_point(aes(x = .data[[var]], valores_outras_variaveis)) +
+    facet_wrap( ~ outras_variaveis, scales = "free")
+}
+
+# exemplos de uso:
+gerar_grafico(pokemon, "ataque")
+gerar_grafico(imdb, "receita")
+```
+
