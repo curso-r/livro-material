@@ -6,12 +6,13 @@ basesCursoR::bases_disponiveis()
 
 # Salvar a base imdb em um objeto
 imdb <- basesCursoR::pegar_base("imdb")
-imdb_avaliacoes <- basesCursoR::pegar_base("imdb_avaliacoes")
+# imdb_avaliacoes <- basesCursoR::pegar_base("imdb_avaliacoes")
 
 imdb <- imdb  |>
   dplyr::select(-titulo)  |>
   dplyr::rename(titulo = titulo_original)  |>
-  dplyr::filter(pais == "USA")
+  dplyr::filter(pais == "USA") |>
+  dplyr::filter(num_avaliacoes > 1000)
 
 # Salvar o imdb localmente
 readr::write_csv2(imdb, "assets/data/imdb2.csv")
@@ -22,7 +23,7 @@ readr::write_tsv(imdb, "assets/data/imdb.tsv")
 writexl::write_xlsx(imdb, "assets/data/imdb.xlsx")
 writexl::write_xlsx(imdb, "assets/data/imdb.xls")
 haven::write_sas(imdb, "assets/data/imdb.sas7bdat")
-haven::write_spss(imdb, "assets/data/imdb.sav")
+haven::write_sav(imdb, "assets/data/imdb.sav")
 haven::write_dta(imdb, "assets/data/imdb.dta")
 jsonlite::write_json(imdb, "assets/data/imdb.json")
 
@@ -43,7 +44,7 @@ arquivos_para_zipar <- list.files(path = "assets/data",
   tibble::enframe() |>
   dplyr::filter(!stringr::str_detect(value, ".R$|.zip$"))
 
-utils::zip("assets/data/imdb.zip", files = arquivos_para_zipar$value, )
+utils::zip("assets/data/imdb.zip", files = arquivos_para_zipar$value)
 
 # readr::write_rds(imdb_avaliacoes, "assets/data/imdb_avaliacoes.rds")
 
