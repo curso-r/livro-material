@@ -66,8 +66,20 @@ imdb %>%
   separate( 
     col = generos,
     into = c("genero1", "genero2", "genero3"), 
-    sep = "\\|"
+    sep = ","
   )
+```
+
+Também podemos usar a função `separate()` para separar os nomes que fazem parte da coluna `elenco`:
+
+```{r}
+imdb_atuacao <- imdb %>% 
+  separate( 
+    col = elenco,
+    into = c("atuacao1", "atuacao2", "atuacao3"), 
+    sep = ","
+  )
+imdb_atuacao
 ```
 
 A função `unite()` realiza a operação inversa da função `separate()`. Ela concatena os valores de várias variáveis em uma única coluna. A sintaxe é a seguinte:
@@ -81,22 +93,22 @@ dados %>%
   )
 ```
 
-Como exemplo, vamos agora transformar as colunas `ator1`, `ator2` e `ator3` em uma única coluna `atores`. Lembrando que essas colunas estão no formato abaixo.
+Usando a base `imdb_atuacao` gerada no exemplo anterior, vamos agora transformar as colunas `atuacao1`, `atuacao2` e `atuacao3` em uma única coluna `atuacao_principal`. Lembrando que essas colunas estão no formato abaixo.
 
 ```{r}
-imdb %>% select(starts_with("ator")) %>% head(3)
+imdb_atuacao %>% select(starts_with("atuacao")) %>% head(3)
 ```
 
-Veja que agora a coluna `atores` possui os 3 atores concatenados. Se a ordem das colunas `ator1`, `ator2` e `ator3` nos trazia a informação de protagonismo, essa informação passa a ficar implícita nesse novo formato. As 3 colunas originais são removidas da base resultante.
+Veja que agora a coluna `atuacao_principal` possui os 3 atores concatenados. Se a ordem das colunas `atuacao1`, `atuacao2` e `atuacao3` nos trazia a informação de protagonismo, essa informação passa a ficar implícita nesse novo formato. As 3 colunas originais são removidas da base resultante.
 
 ```{r}
-imdb %>% 
+imdb_atuacao %>% 
   unite(
-    col = "elenco",
-    starts_with("ator"), 
+    col = "atuacao_principal",
+    starts_with("atuacao"), 
     sep = " - "
   ) %>% 
-  select(elenco)
+  select(atuacao_principal)
 ```
 
 ### Pivotagem
@@ -113,12 +125,12 @@ Esses formatos são sempre relativos às colunas que estão sendo pivotadas, sen
 
 Antigamente, utilizávamos as funções `gather()` e `spread()` para fazer as operações de pivotagem. 
 
-Agora, no lugar de `gather()`, utilizamos a função `pivot_longer()`. Abaixo, transformamos as colunas `ator1`, `ator2` e `ator3` em duas colunas: `ator_atriz` e `protagonismo`.
+Agora, no lugar de `gather()`, utilizamos a função `pivot_longer()`. Abaixo, usando a base `imdb_atuacao` gerada anteriormente, transformamos as colunas `atuacao1`, `atuacao2` e `atuacao3` em duas colunas: `ator_atriz` e `protagonismo`.
 
 ```{r}
-imdb %>% 
+imdb_atuacao %>% 
   pivot_longer(
-    cols = starts_with("ator"), 
+    cols = starts_with("atuacao"), 
     names_to = "protagonismo",
     values_to = "ator_atriz"
   ) %>% 
@@ -133,9 +145,9 @@ Nesse sentido, embora possa parecer que a variável `protagonismo` estava implí
 A função `pivot_wider()` faz a operação inversa da `pivot_longer()`. Se aplicarmos as duas funções em sequência, voltamos para a base original.
 
 ```{r}
-imdb %>% 
+imdb_atuacao %>% 
   pivot_longer(
-    cols = starts_with("ator"), 
+    cols = starts_with("atuacao"), 
     names_to = "ator_protagonismo",
     values_to = "ator_nome"
   ) %>% 
@@ -259,9 +271,9 @@ imdb_nest %>%
 
 ### Exercícios
 
-**1.** Crie 5 novas colunas de gêneros na base imdb, cada uma com um dos gêneros contidos na coluna generos. Para os filmes com menos de 5 gêneros, substitua os valores `NA` pela string "inexistente".
+**1.** Crie 5 novas colunas de idiomas na base imdb, cada uma com um dos idiomas contidos na coluna `idioma`. Para os filmes com menos de 5 idiomas, substitua os valores `NA` pela string "Inexistente".
 
-**2.** Substitua os "????" no código abaixo para criar uma tabela do lucro médio dos filmes ao longo dos anos de 2000 a 2016, com cada ano sendo uma coluna da base.
+**2.** Substitua os "????" no código abaixo para criar uma tabela do lucro médio dos filmes ao longo dos anos de 2000 a 2020, com cada ano sendo uma coluna da base.
 
 ```{r, eval = FALSE}
 imdb %>%
@@ -277,6 +289,7 @@ Para os exercícios 3, 4 e 5, vamos utilize a base `pokemon`, disponível no pac
 ```{r, eval = FALSE}
 install.packages("remotes")
 remotes::install_github("curso-r/basesCursoR")
+pokemon <- basesCursoR::pegar_base("pokemon")
 ```
 
 **3.** Utilize a função `unite()` para juntar as duas colunas de tipo em uma única coluna na base pokemon.
@@ -289,6 +302,6 @@ remotes::install_github("curso-r/basesCursoR")
 
 **b.** Utilize a base criada no item (a) e escreva um código para descobrir qual o tipo mais frequente na base, independentemente se ele é primário (tipo_1) ou secundário (tipo_2).
 
-**6.** Escreva uma função que receba uma base qualquer e o nome de uma coluna numérica dessa base e retorne uma figura com um gráfico de dispersão da coluna escolhida contra cada uma das outras variáveis numéricas da base.
+**6.** DESAFIO! Escreva uma função que receba uma base qualquer e o nome de uma coluna numérica dessa base e retorne uma figura com um gráfico de dispersão da coluna escolhida contra cada uma das outras variáveis numéricas da base.
 
 
