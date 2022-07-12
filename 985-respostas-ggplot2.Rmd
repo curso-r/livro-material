@@ -159,7 +159,7 @@ imdb %>%
 ```{r}
 top_5_produtoras <- imdb %>% 
   count(producao) %>% 
-  top_n(5, n) %>% 
+  slice_max(order_by = n, n = 5) %>% 
   pull(producao)
 
 imdb %>% 

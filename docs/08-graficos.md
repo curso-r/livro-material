@@ -272,7 +272,7 @@ Para construir gráficos de barras, utilizamos o `geom_col`. A seguir, construí
 ```r
 imdb %>% 
   count(direcao) %>%
-  top_n(10, n) %>%
+  slice_max(order_by = n, n = 10) %>% 
   ggplot() +
   geom_col(aes(x = direcao, y = n))
 ```
@@ -290,7 +290,7 @@ A seguir, além de retirar os `NAs`, atribuímos a coluna `direcao` à cor das c
 imdb %>% 
   count(direcao) %>%
   filter(!is.na(direcao)) %>% 
-  top_n(10, n) %>%
+  slice_max(order_by = n, n = 10) %>% 
   ggplot() +
   geom_col(
     aes(x = direcao, y = n, fill = direcao),
@@ -307,7 +307,7 @@ Para consertar as labels do eixo `x`, a melhor prática é invertermos os eixos 
 imdb %>% 
   count(direcao) %>%
   filter(!is.na(direcao)) %>% 
-  top_n(10, n) %>%
+  slice_max(order_by = n, n = 10) %>% 
   ggplot() +
   geom_col(
     aes(y = direcao, x = n, fill = direcao),
@@ -328,7 +328,7 @@ Por padrão, os inteiros são atribuídos a cada categoria de uma variável pela
 imdb %>% 
   count(direcao) %>%
   filter(!is.na(direcao)) %>% 
-  top_n(10, n) %>%
+  slice_max(order_by = n, n = 10) %>% 
   mutate(direcao = forcats::fct_reorder(direcao, n)) %>% 
   ggplot() +
   geom_col(
@@ -346,7 +346,7 @@ Por fim, podemos colocar uma label com o número de filmes de cada diretor(a) de
 imdb %>% 
   count(direcao) %>%
   filter(!is.na(direcao)) %>% 
-  top_n(10, n) %>%
+  slice_max(order_by = n, n = 10) %>% 
   mutate(direcao = forcats::fct_reorder(direcao, n)) %>% 
   ggplot() +
   geom_col(aes(x = direcao, y = n, fill = direcao), show.legend = FALSE) +
@@ -537,14 +537,14 @@ Para escolher manualmente as cores de um gráfico, utilize as funções
 imdb %>% 
   count(direcao) %>%
   filter(!is.na(direcao)) %>% 
-  top_n(5, n) %>%
+  slice_max(order_by = n, n = 6) %>% 
   ggplot() +
   geom_col(
     aes(x = direcao, y = n, fill = direcao),
     show.legend = FALSE
   ) +
   coord_flip() +
-  scale_fill_manual(values = c("red", "blue", "green", "pink", "purple", "black"))
+  scale_fill_manual(values = c("red", "blue", "green", "pink", "purple", "black" ))
 ```
 
 <img src="08-graficos_files/figure-html/unnamed-chunk-29-1.png" width="672" style="display: block; margin: auto;" />
@@ -556,7 +556,7 @@ Também podemos usar códigos hexadecimais.
 imdb %>% 
   count(direcao) %>%
   filter(!is.na(direcao)) %>% 
-  top_n(5, n) %>%
+  slice_max(order_by = n, n = 6) %>% 
   ggplot() +
   geom_col(
     aes(x = direcao, y = n, fill = direcao),

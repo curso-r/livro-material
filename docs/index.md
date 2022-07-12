@@ -23,7 +23,7 @@ Autoria:
 
 - [Athos Damiani](https://twitter.com/athos_damiani)
 - [Beatriz Milz](https://twitter.com/BeaMilz)
-- [Caio Lente](https://twitter.com/clente_)
+- [Caio Lente](https://twitter.com/ctlente)
 - [Daniel Falbel](https://twitter.com/dfalbel)
 - [Fernando Correa](https://twitter.com/Azeloc)
 - [Julio Trecenti](https://twitter.com/jtrecenti)

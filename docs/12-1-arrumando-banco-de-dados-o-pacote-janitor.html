@@ -892,28 +892,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb669-11"><a href="12-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb669-11" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(base_exemplo)</span></code></pre></div>
 <pre><code>## Rows: 25
 ## Columns: 3
-## $ nome                &lt;chr&gt; &quot;William&quot;, &quot;Athos&quot;, &quot;Julio&quot;, &quot;William&quot;, &quot;Julio&quot;, &quot;…
-## $ sobrenome           &lt;chr&gt; &quot;Trecenti&quot;, &quot;Amorim&quot;, &quot;Amorim&quot;, &quot;Damiani&quot;, &quot;Amorim…
-## $ variavel_importante &lt;dbl&gt; -1.0778373773, -0.2571940447, 0.6937698029, -0.702…</code></pre>
+## $ nome                &lt;chr&gt; &quot;Fernando&quot;, &quot;William&quot;, &quot;Julio&quot;, &quot;Julio&quot;, &quot;Daniel&quot;,…
+## $ sobrenome           &lt;chr&gt; &quot;Falbel&quot;, &quot;Trecenti&quot;, &quot;Corrêa&quot;, &quot;Corrêa&quot;, &quot;Damiani…
+## $ variavel_importante &lt;dbl&gt; -0.56290325, 0.13758113, -0.72016506, 1.06618109, …</code></pre>
 <div class="sourceCode" id="cb671"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb671-1"><a href="12-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb671-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver as duplicatas com a função get_dupes()</span></span>
 <span id="cb671-2"><a href="12-1-arrumando-banco-de-dados-o-pacote-janitor.html#cb671-2" aria-hidden="true" tabindex="-1"></a>janitor<span class="sc">::</span><span class="fu">get_dupes</span>(base_exemplo, nome, sobrenome)</span></code></pre></div>
-<pre><code>## # A tibble: 14 × 4
-##    nome    sobrenome dupe_count variavel_importante
-##    &lt;chr&gt;   &lt;chr&gt;          &lt;int&gt;               &lt;dbl&gt;
-##  1 Julio   Amorim             4            0.694   
-##  2 Julio   Amorim             4           -0.655   
-##  3 Julio   Amorim             4           -0.420   
-##  4 Julio   Amorim             4           -0.877   
-##  5 Julio   Corrêa             2            0.479   
-##  6 Julio   Corrêa             2            0.363   
-##  7 Julio   Falbel             3            1.28    
-##  8 Julio   Falbel             3            0.649   
-##  9 Julio   Falbel             3            0.483   
-## 10 Julio   Trecenti           3           -0.816   
-## 11 Julio   Trecenti           3           -0.410   
-## 12 Julio   Trecenti           3           -0.000836
-## 13 William Damiani            2           -0.703   
-## 14 William Damiani            2            0.398</code></pre>
+<pre><code>## # A tibble: 17 × 4
+##    nome     sobrenome dupe_count variavel_importante
+##    &lt;chr&gt;    &lt;chr&gt;          &lt;int&gt;               &lt;dbl&gt;
+##  1 Daniel   Damiani            2             -0.371 
+##  2 Daniel   Damiani            2             -0.723 
+##  3 Daniel   Trecenti           2             -1.19  
+##  4 Daniel   Trecenti           2             -0.218 
+##  5 Fernando Corrêa             3              0.136 
+##  6 Fernando Corrêa             3              1.28  
+##  7 Fernando Corrêa             3              1.03  
+##  8 Fernando Falbel             2             -0.563 
+##  9 Fernando Falbel             2             -2.05  
+## 10 Julio    Corrêa             2             -0.720 
+## 11 Julio    Corrêa             2              1.07  
+## 12 Julio    Falbel             2             -2.71  
+## 13 Julio    Falbel             2             -0.475 
+## 14 William  Falbel             2              1.51  
+## 15 William  Falbel             2             -0.0982
+## 16 William  Trecenti           2              0.138 
+## 17 William  Trecenti           2             -0.290</code></pre>
 <p>Todas as linhas na <code>tibble</code> resultante representam uma combinação de nome-sobrenome repetida.</p>
 </div>
 <div id="outras-funções" class="section level3 hasAnchor" number="12.1.4">

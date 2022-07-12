@@ -641,36 +641,36 @@ um novo objeto chamado <code>vetor_negativo</code>.</p>
 <pre><code>## [1] TRUE</code></pre>
 <p><strong>c.</strong> Teste se o segredo é maior que 5.</p>
 <div class="sourceCode" id="cb742"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb742-1"><a href="13-1-r-básico.html#cb742-1" aria-hidden="true" tabindex="-1"></a>segredo <span class="sc">&gt;</span> <span class="dv">5</span></span></code></pre></div>
-<pre><code>## [1] FALSE</code></pre>
+<pre><code>## [1] TRUE</code></pre>
 <p><strong>d.</strong> Teste se o segredo é par.</p>
 <p><em>Precisamos verificar se o resto da divisão por 2 é igual a zero.</em></p>
 <div class="sourceCode" id="cb744"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb744-1"><a href="13-1-r-básico.html#cb744-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resto da divisão por 2</span></span>
 <span id="cb744-2"><a href="13-1-r-básico.html#cb744-2" aria-hidden="true" tabindex="-1"></a>segredo <span class="sc">%%</span> <span class="dv">2</span></span></code></pre></div>
-<pre><code>## [1] 0</code></pre>
+<pre><code>## [1] 1</code></pre>
 <div class="sourceCode" id="cb746"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb746-1"><a href="13-1-r-básico.html#cb746-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Guardando o resultado</span></span>
 <span id="cb746-2"><a href="13-1-r-básico.html#cb746-2" aria-hidden="true" tabindex="-1"></a>resto <span class="ot">&lt;-</span> segredo <span class="sc">%%</span> <span class="dv">2</span></span>
 <span id="cb746-3"><a href="13-1-r-básico.html#cb746-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb746-4"><a href="13-1-r-básico.html#cb746-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Teste</span></span>
 <span id="cb746-5"><a href="13-1-r-básico.html#cb746-5" aria-hidden="true" tabindex="-1"></a>resto <span class="sc">==</span> <span class="dv">0</span></span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
+<pre><code>## [1] FALSE</code></pre>
 <div class="sourceCode" id="cb748"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb748-1"><a href="13-1-r-básico.html#cb748-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Equivalentemente poderíamos fazer</span></span>
 <span id="cb748-2"><a href="13-1-r-básico.html#cb748-2" aria-hidden="true" tabindex="-1"></a>segredo <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span></span></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
+<pre><code>## [1] FALSE</code></pre>
 <p><strong>e.</strong> Teste se <code>segredo * 5</code> é maior que a sua idade.</p>
 <div class="sourceCode" id="cb750"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb750-1"><a href="13-1-r-básico.html#cb750-1" aria-hidden="true" tabindex="-1"></a>segredo <span class="sc">*</span> <span class="dv">5</span> <span class="sc">&gt;</span> <span class="dv">31</span></span></code></pre></div>
-<pre><code>## [1] FALSE</code></pre>
+<pre><code>## [1] TRUE</code></pre>
 <p><strong>f.</strong> Desafio. Escreva um teste para descobrir o valor do segredo.</p>
 <p><em>Vamos descobrir a posição do segredo no vetor <code>0:10</code>.</em></p>
 <div class="sourceCode" id="cb752"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb752-1"><a href="13-1-r-básico.html#cb752-1" aria-hidden="true" tabindex="-1"></a>numeros_possiveis <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span></span>
 <span id="cb752-2"><a href="13-1-r-básico.html#cb752-2" aria-hidden="true" tabindex="-1"></a>numeros_possiveis</span></code></pre></div>
 <pre><code>##  [1]  0  1  2  3  4  5  6  7  8  9 10</code></pre>
 <div class="sourceCode" id="cb754"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb754-1"><a href="13-1-r-básico.html#cb754-1" aria-hidden="true" tabindex="-1"></a>segredo <span class="sc">==</span> numeros_possiveis</span></code></pre></div>
-<pre><code>##  [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE</code></pre>
 <p><em>No código acima, para cada valor de <code>numero_possiveis</code>, foi testado se esse valor é igual ao segredo. Em caso afirmativo, um TRUE é devolvido. Veja que há apenas um TRUE no vetor resultante. Essa é posição do nosso segredo dentro do vetor <code>numeros_possiveis</code>.</em></p>
 <p><em>Podemos usar esse vetor de TRUE/FALSE para recuperar o valor do segredo fazendo subsetting.</em></p>
 <div class="sourceCode" id="cb756"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb756-1"><a href="13-1-r-básico.html#cb756-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Eis o valor do segredo</span></span>
 <span id="cb756-2"><a href="13-1-r-básico.html#cb756-2" aria-hidden="true" tabindex="-1"></a>numeros_possiveis[segredo <span class="sc">==</span> numeros_possiveis]</span></code></pre></div>
-<pre><code>## [1] 4</code></pre>
+<pre><code>## [1] 9</code></pre>
 <p><em>No código acima, foi retornado apenas o número associado ao valor TRUE dado pelo teste <code>segredo == numeros_possiveis</code></em>.</p>
 <hr />
 <p><strong>2.</strong> Escreva um código em R que devolva apenas os valores maiores
@@ -975,7 +975,7 @@ ou iguais a 10 do vetor abaixo:</p>
 <span id="cb862-7"><a href="13-1-r-básico.html#cb862-7" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb862-8"><a href="13-1-r-básico.html#cb862-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb862-9"><a href="13-1-r-básico.html#cb862-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sortear_numero</span>()</span></code></pre></div>
-<pre><code>## [1] 9</code></pre>
+<pre><code>## [1] 10</code></pre>
 <hr />
 <p><strong>6.</strong> Rode <code>help(sample)</code> para descobrir o que a função <code>sample()</code> faz. Em seguida:</p>
 <p><strong>a.</strong> Use a função <code>sample()</code> para escrever uma função que devolva uma linha aleatória de um <em>data frame</em>.</p>
@@ -987,8 +987,8 @@ ou iguais a 10 do vetor abaixo:</p>
 <span id="cb864-6"><a href="13-1-r-básico.html#cb864-6" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb864-7"><a href="13-1-r-básico.html#cb864-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb864-8"><a href="13-1-r-básico.html#cb864-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sortear_linha</span>(mtcars)</span></code></pre></div>
-<pre><code>##          mpg cyl disp  hp drat   wt  qsec vs am gear carb
-## Valiant 18.1   6  225 105 2.76 3.46 20.22  1  0    3    1</code></pre>
+<pre><code>##             mpg cyl disp  hp drat   wt  qsec vs am gear carb
+## Camaro Z28 13.3   8  350 245 3.73 3.84 15.41  0  0    3    4</code></pre>
 <p><strong>b.</strong> Generalize a função para retornar um número qualquer de linhas, que poderá ser escolhido por quem for usá-la.</p>
 <div class="sourceCode" id="cb866"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb866-1"><a href="13-1-r-básico.html#cb866-1" aria-hidden="true" tabindex="-1"></a>sortear_linha <span class="ot">&lt;-</span> <span class="cf">function</span>(data_frame, n) {</span>
 <span id="cb866-2"><a href="13-1-r-básico.html#cb866-2" aria-hidden="true" tabindex="-1"></a>  num_linhas <span class="ot">&lt;-</span> <span class="fu">nrow</span>(data_frame)</span>
@@ -999,16 +999,16 @@ ou iguais a 10 do vetor abaixo:</p>
 <span id="cb866-7"><a href="13-1-r-básico.html#cb866-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb866-8"><a href="13-1-r-básico.html#cb866-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sortear_linha</span>(mtcars, <span class="dv">10</span>)</span></code></pre></div>
 <pre><code>##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-## Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
-## Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
-## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
-## Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+## Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
 ## Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
-## Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
-## Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
-## Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
-## Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
-## Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2</code></pre>
+## Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+## Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
+## Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
+## Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+## Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
+## Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4</code></pre>
 </div>
 <div id="controle-de-fluxo-1" class="section level3 unnumbered hasAnchor">
 <h3>Controle de fluxo<a href="13-1-r-básico.html#controle-de-fluxo-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>

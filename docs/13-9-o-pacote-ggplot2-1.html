@@ -570,7 +570,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>9.</strong> Descubra quais são as 5 produtoras (como a Walt Disney Animation Studios e a Walt Disney Pictures) que mais aparecem na coluna <code>producao</code> e faça um boxplot do lucro dos filmes dessas produtoras.</p>
 <div class="sourceCode" id="cb1011"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1011-1"><a href="13-9-o-pacote-ggplot2-1.html#cb1011-1" aria-hidden="true" tabindex="-1"></a>top_5_produtoras <span class="ot">&lt;-</span> imdb <span class="sc">%&gt;%</span> </span>
 <span id="cb1011-2"><a href="13-9-o-pacote-ggplot2-1.html#cb1011-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(producao) <span class="sc">%&gt;%</span> </span>
-<span id="cb1011-3"><a href="13-9-o-pacote-ggplot2-1.html#cb1011-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">5</span>, n) <span class="sc">%&gt;%</span> </span>
+<span id="cb1011-3"><a href="13-9-o-pacote-ggplot2-1.html#cb1011-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> n, <span class="at">n =</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb1011-4"><a href="13-9-o-pacote-ggplot2-1.html#cb1011-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(producao)</span>
 <span id="cb1011-5"><a href="13-9-o-pacote-ggplot2-1.html#cb1011-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1011-6"><a href="13-9-o-pacote-ggplot2-1.html#cb1011-6" aria-hidden="true" tabindex="-1"></a>imdb <span class="sc">%&gt;%</span> </span>
