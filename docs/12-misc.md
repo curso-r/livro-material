@@ -181,9 +181,9 @@ dplyr::glimpse(base_exemplo)
 ```
 ## Rows: 25
 ## Columns: 3
-## $ nome                <chr> "Athos", "Athos", "Athos", "Athos", "Daniel", "Dan…
-## $ sobrenome           <chr> "Falbel", "Damiani", "Amorim", "Damiani", "Trecent…
-## $ variavel_importante <dbl> -0.07942386, 0.12279630, 0.31136766, -1.92171731, …
+## $ nome                <chr> "William", "Athos", "Julio", "William", "Julio", "…
+## $ sobrenome           <chr> "Trecenti", "Amorim", "Amorim", "Damiani", "Amorim…
+## $ variavel_importante <dbl> -1.0778373773, -0.2571940447, 0.6937698029, -0.702…
 ```
 
 ```r
@@ -192,25 +192,23 @@ janitor::get_dupes(base_exemplo, nome, sobrenome)
 ```
 
 ```
-## # A tibble: 16 × 4
-##    nome     sobrenome dupe_count variavel_importante
-##    <chr>    <chr>          <int>               <dbl>
-##  1 Athos    Damiani            3              0.123 
-##  2 Athos    Damiani            3             -1.92  
-##  3 Athos    Damiani            3             -1.15  
-##  4 Daniel   Corrêa             2              0.449 
-##  5 Daniel   Corrêa             2              1.00  
-##  6 Daniel   Trecenti           2              0.513 
-##  7 Daniel   Trecenti           2             -0.848 
-##  8 Fernando Amorim             3              0.387 
-##  9 Fernando Amorim             3              0.0357
-## 10 Fernando Amorim             3              0.147 
-## 11 Julio    Falbel             2             -1.60  
-## 12 Julio    Falbel             2              1.14  
-## 13 William  Amorim             2              1.63  
-## 14 William  Amorim             2             -0.0369
-## 15 William  Falbel             2              0.193 
-## 16 William  Falbel             2             -2.55
+## # A tibble: 14 × 4
+##    nome    sobrenome dupe_count variavel_importante
+##    <chr>   <chr>          <int>               <dbl>
+##  1 Julio   Amorim             4            0.694   
+##  2 Julio   Amorim             4           -0.655   
+##  3 Julio   Amorim             4           -0.420   
+##  4 Julio   Amorim             4           -0.877   
+##  5 Julio   Corrêa             2            0.479   
+##  6 Julio   Corrêa             2            0.363   
+##  7 Julio   Falbel             3            1.28    
+##  8 Julio   Falbel             3            0.649   
+##  9 Julio   Falbel             3            0.483   
+## 10 Julio   Trecenti           3           -0.816   
+## 11 Julio   Trecenti           3           -0.410   
+## 12 Julio   Trecenti           3           -0.000836
+## 13 William Damiani            2           -0.703   
+## 14 William Damiani            2            0.398
 ```
 
 Todas as linhas na `tibble` resultante representam uma combinação de nome-sobrenome repetida.

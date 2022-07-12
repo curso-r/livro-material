@@ -23,7 +23,7 @@ filtrar_na <- function(tab, coluna) {
 }
 
 filtrar_na(tabela_qualquer, x)
-## # A tibble: 4 x 2
+## # A tibble: 4 × 2
 ##       x y    
 ##   <dbl> <chr>
 ## 1     1 a    
@@ -31,7 +31,7 @@ filtrar_na(tabela_qualquer, x)
 ## 3     3 <NA> 
 ## 4     6 e
 filtrar_na(tabela_qualquer, y)
-## # A tibble: 4 x 2
+## # A tibble: 4 × 2
 ##       x y    
 ##   <dbl> <chr>
 ## 1     1 a    
@@ -47,7 +47,7 @@ filtrar_na <- function(tab, coluna) {
 }
 
 filtrar_na(tabela_qualquer, "x")
-## # A tibble: 4 x 2
+## # A tibble: 4 × 2
 ##       x y    
 ##   <dbl> <chr>
 ## 1     1 a    
@@ -55,7 +55,7 @@ filtrar_na(tabela_qualquer, "x")
 ## 3     3 <NA> 
 ## 4     6 e
 filtrar_na(tabela_qualquer, "y")
-## # A tibble: 4 x 2
+## # A tibble: 4 × 2
 ##       x y    
 ##   <dbl> <chr>
 ## 1     1 a    
@@ -81,7 +81,7 @@ criar_grafico <- function(tab, coluna) {
 criar_grafico(mtcars, cyl)
 ```
 
-<img src="9881-respostas-nse_files/figure-epub3/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+<img src="9881-respostas-nse_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 
@@ -96,7 +96,7 @@ criar_grafico <- function(tab, coluna) {
 criar_grafico(mtcars, "cyl")
 ```
 
-<img src="9881-respostas-nse_files/figure-epub3/unnamed-chunk-4-2.png" style="display: block; margin: auto;" />
+<img src="9881-respostas-nse_files/figure-html/unnamed-chunk-4-2.png" width="672" style="display: block; margin: auto;" />
 
 
 ---
@@ -114,7 +114,7 @@ fazer_grafico_disp <- function(tab, col1, col2) {
 fazer_grafico_disp(mtcars, mpg, wt)
 ```
 
-<img src="9881-respostas-nse_files/figure-epub3/unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
+<img src="9881-respostas-nse_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 
@@ -130,7 +130,7 @@ fazer_grafico_disp <- function(tab, col1, col2) {
 fazer_grafico_disp(mtcars, "mpg", "wt")
 ```
 
-<img src="9881-respostas-nse_files/figure-epub3/unnamed-chunk-5-2.png" style="display: block; margin: auto;" />
+<img src="9881-respostas-nse_files/figure-html/unnamed-chunk-5-2.png" width="672" style="display: block; margin: auto;" />
 
 
 ---
@@ -146,7 +146,7 @@ calcular_media <- function(tab, col_grupo, col_num) {
 }
 
 calcular_media(mtcars, cyl, mpg)
-## # A tibble: 3 x 2
+## # A tibble: 3 × 2
 ##     cyl media
 ##   <dbl> <dbl>
 ## 1     4  26.7
@@ -162,7 +162,7 @@ calcular_media <- function(tab, col_grupo, col_num) {
 }
 
 calcular_media(mtcars, "cyl", "mpg")
-## # A tibble: 3 x 2
+## # A tibble: 3 × 2
 ##     cyl media
 ##   <dbl> <dbl>
 ## 1     4  26.7

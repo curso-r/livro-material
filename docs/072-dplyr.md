@@ -1,6 +1,6 @@
 ## O pacote dplyr {#dplyr}
 
-O `dplyr` é o pacote mais útil para realizar transformação de dados, aliando simplicidade e eficiência de uma forma elegante. Os scripts em R que fazem uso inteligente dos verbos `dplyr` e as facilidades do operador _pipe_ tendem a ficar mais legíveis e organizados sem perder velocidade de execução.
+O `dplyr` é o pacote mais útil para realizar transformação de dados, aliando simplicidade e eficiência de uma forma elegante. Os scripts em R que fazem uso inteligente dos verbos `dplyr` e as facilidades do operador _pipe_ tendem a ficar mais legíveis e organizados, sem perder velocidade de execução.
 
 As principais funções do `dplyr` são:
 
@@ -13,7 +13,7 @@ As principais funções do `dplyr` são:
 
 Todas essas funções seguem as mesmas características:
 
-- O _input_  é sempre uma `tibble` e o _output_  é sempre um `tibble`.
+- O _input_  é sempre uma `tibble` e o _output_  é sempre uma `tibble`.
 - Colocamos a `tibble` no primeiro argumento e o que queremos fazer nos outros argumentos.
 - A utilização é facilitada com o emprego do operador `%>%`.
 
@@ -47,21 +47,23 @@ imdb
 
 
 ```
-## # A tibble: 3,807 x 15
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
-##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
-##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
-##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
-##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
-##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
-##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
-##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
-##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
-##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
-## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
-## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
-## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
+## # A tibble: 11,340 × 20
+##    id_filme  titulo   ano data_lancamento generos duracao pais  idioma orcamento
+##    <chr>     <chr>  <dbl> <chr>           <chr>     <dbl> <chr> <chr>      <dbl>
+##  1 tt0092699 Broad…  1987 1988-04-01      Comedy…     133 USA   Engli…  20000000
+##  2 tt0037931 Murde…  1945 1945-06-23      Comedy…      91 USA   Engli…        NA
+##  3 tt0183505 Me, M…  2000 2000-09-08      Comedy      116 USA   Engli…  51000000
+##  4 tt0033945 Never…  1941 1947-05-02      Comedy…      71 USA   Engli…        NA
+##  5 tt0372122 Adam …  2005 2007-05-17      Comedy…      99 USA   Engli…        NA
+##  6 tt3703836 Henry…  2015 2016-01-08      Drama        87 USA   Engli…        NA
+##  7 tt0093640 No Wa…  1987 1987-12-11      Action…     114 USA   Engli…  15000000
+##  8 tt0494652 Welco…  2008 2008-02-08      Comedy…     104 USA   Engli…  35000000
+##  9 tt0094006 Some …  1987 1988-01-13      Drama,…      95 USA   Engli…        NA
+## 10 tt1142798 The F…  2008 2008-09-12      Drama       111 USA   Engli…        NA
+## # … with 11,330 more rows, and 11 more variables: receita <dbl>,
+## #   receita_eua <dbl>, nota_imdb <dbl>, num_avaliacoes <dbl>, direcao <chr>,
+## #   roteiro <chr>, producao <chr>, elenco <chr>, descricao <chr>,
+## #   num_criticas_publico <dbl>, num_criticas_critica <dbl>
 ```
 
 
@@ -79,20 +81,20 @@ select(imdb, titulo)
 ```
 
 ```
-## # A tibble: 3,807 x 1
-##    titulo                                     
-##    <chr>                                      
-##  1 Avatar                                     
-##  2 Pirates of the Caribbean: At World's End   
-##  3 The Dark Knight Rises                      
-##  4 John Carter                                
-##  5 Spider-Man 3                               
-##  6 Tangled                                    
-##  7 Avengers: Age of Ultron                    
-##  8 Batman v Superman: Dawn of Justice         
-##  9 Superman Returns                           
-## 10 Pirates of the Caribbean: Dead Man's Chest 
-## # … with 3,797 more rows
+## # A tibble: 11,340 × 1
+##    titulo                           
+##    <chr>                            
+##  1 Broadcast News                   
+##  2 Murder, He Says                  
+##  3 Me, Myself & Irene               
+##  4 Never Give a Sucker an Even Break
+##  5 Adam & Steve                     
+##  6 Henry Gamble's Birthday Party    
+##  7 No Way Out                       
+##  8 Welcome Home, Roscoe Jenkins     
+##  9 Some Kind of Wonderful           
+## 10 The Family That Preys            
+## # … with 11,330 more rows
 ```
 
 
@@ -104,124 +106,125 @@ select(imdb, titulo, ano, orcamento)
 ```
 
 ```
-## # A tibble: 3,807 x 3
-##    titulo                                        ano orcamento
-##    <chr>                                       <int>     <int>
-##  1 Avatar                                       2009 237000000
-##  2 Pirates of the Caribbean: At World's End     2007 300000000
-##  3 The Dark Knight Rises                        2012 250000000
-##  4 John Carter                                  2012 263700000
-##  5 Spider-Man 3                                 2007 258000000
-##  6 Tangled                                      2010 260000000
-##  7 Avengers: Age of Ultron                      2015 250000000
-##  8 Batman v Superman: Dawn of Justice           2016 250000000
-##  9 Superman Returns                             2006 209000000
-## 10 Pirates of the Caribbean: Dead Man's Chest   2006 225000000
-## # … with 3,797 more rows
+## # A tibble: 11,340 × 3
+##    titulo                              ano orcamento
+##    <chr>                             <dbl>     <dbl>
+##  1 Broadcast News                     1987  20000000
+##  2 Murder, He Says                    1945        NA
+##  3 Me, Myself & Irene                 2000  51000000
+##  4 Never Give a Sucker an Even Break  1941        NA
+##  5 Adam & Steve                       2005        NA
+##  6 Henry Gamble's Birthday Party      2015        NA
+##  7 No Way Out                         1987  15000000
+##  8 Welcome Home, Roscoe Jenkins       2008  35000000
+##  9 Some Kind of Wonderful             1987        NA
+## 10 The Family That Preys              2008        NA
+## # … with 11,330 more rows
 ```
 
 O operador `:` é muito útil para selecionar colunas consecutivas.
 
 
 ```r
-select(imdb, titulo:cor)
+select(imdb, titulo:generos)
 ```
 
 ```
-## # A tibble: 3,807 x 5
-##    titulo                                     ano diretor          duracao cor  
-##    <chr>                                    <int> <chr>              <int> <chr>
-##  1 Avatar                                    2009 James Cameron        178 Color
-##  2 Pirates of the Caribbean: At World's En…  2007 Gore Verbinski       169 Color
-##  3 The Dark Knight Rises                     2012 Christopher Nol…     164 Color
-##  4 John Carter                               2012 Andrew Stanton       132 Color
-##  5 Spider-Man 3                              2007 Sam Raimi            156 Color
-##  6 Tangled                                   2010 Nathan Greno         100 Color
-##  7 Avengers: Age of Ultron                   2015 Joss Whedon          141 Color
-##  8 Batman v Superman: Dawn of Justice        2016 Zack Snyder          183 Color
-##  9 Superman Returns                          2006 Bryan Singer         169 Color
-## 10 Pirates of the Caribbean: Dead Man's Ch…  2006 Gore Verbinski       151 Color
-## # … with 3,797 more rows
+## # A tibble: 11,340 × 4
+##    titulo                              ano data_lancamento generos              
+##    <chr>                             <dbl> <chr>           <chr>                
+##  1 Broadcast News                     1987 1988-04-01      Comedy, Drama, Roman…
+##  2 Murder, He Says                    1945 1945-06-23      Comedy, Crime, Myste…
+##  3 Me, Myself & Irene                 2000 2000-09-08      Comedy               
+##  4 Never Give a Sucker an Even Break  1941 1947-05-02      Comedy, Musical      
+##  5 Adam & Steve                       2005 2007-05-17      Comedy, Drama, Music 
+##  6 Henry Gamble's Birthday Party      2015 2016-01-08      Drama                
+##  7 No Way Out                         1987 1987-12-11      Action, Crime, Drama 
+##  8 Welcome Home, Roscoe Jenkins       2008 2008-02-08      Comedy, Romance      
+##  9 Some Kind of Wonderful             1987 1988-01-13      Drama, Romance       
+## 10 The Family That Preys              2008 2008-09-12      Drama                
+## # … with 11,330 more rows
 ```
 
 
-O `dplyr` possui o conjunto de funções auxiliares muito úteis para seleção de colunas. As principais são:
+O `dplyr` possui um conjunto de funções auxiliares muito úteis para seleção de colunas. As principais são:
 
 - `starts_with()`: para colunas que começam com um texto padrão
 - `ends_with()`: para colunas que terminam com um texto padrão
 - `contains()`: para colunas que contêm um texto padrão
 
-Selecionamos a seguir todas as colunas que começam com o texto "ator".
+Selecionamos a seguir todas as colunas que começam com o texto "num".
 
 
 ```r
-select(imdb, starts_with("ator"))
+select(imdb, starts_with("num"))
 ```
 
 ```
-## # A tibble: 3,807 x 3
-##    ator_1          ator_2            ator_3              
-##    <chr>           <chr>             <chr>               
-##  1 CCH Pounder     Joel David Moore  Wes Studi           
-##  2 Johnny Depp     Orlando Bloom     Jack Davenport      
-##  3 Tom Hardy       Christian Bale    Joseph Gordon-Levitt
-##  4 Daryl Sabara    Samantha Morton   Polly Walker        
-##  5 J.K. Simmons    James Franco      Kirsten Dunst       
-##  6 Brad Garrett    Donna Murphy      M.C. Gainey         
-##  7 Chris Hemsworth Robert Downey Jr. Scarlett Johansson  
-##  8 Henry Cavill    Lauren Cohan      Alan D. Purwin      
-##  9 Kevin Spacey    Marlon Brando     Frank Langella      
-## 10 Johnny Depp     Orlando Bloom     Jack Davenport      
-## # … with 3,797 more rows
+## # A tibble: 11,340 × 3
+##    num_avaliacoes num_criticas_publico num_criticas_critica
+##             <dbl>                <dbl>                <dbl>
+##  1          26257                  142                   62
+##  2           1639                   35                   10
+##  3         219069                  502                  161
+##  4           2108                   35                   18
+##  5           2953                   48                   15
+##  6           2364                   26                   14
+##  7          34513                  125                   72
+##  8          13315                   45                   74
+##  9          27065                  145                   55
+## 10           6703                   52                   29
+## # … with 11,330 more rows
 ```
 
 Para retirar colunas da base, base acrescentar um `-` antes da seleção.
 
 
 ```r
-imdb %>%
-  select(-ano, - diretor)
+select(imdb, -ano, -direcao)
 ```
 
 ```
-## # A tibble: 3,807 x 13
-##    titulo  duracao cor   generos pais  classificacao orcamento receita nota_imdb
-##    <chr>     <int> <chr> <chr>   <chr> <chr>             <int>   <int>     <dbl>
-##  1 Avatar      178 Color Action… USA   A partir de … 237000000  7.61e8       7.9
-##  2 Pirate…     169 Color Action… USA   A partir de … 300000000  3.09e8       7.1
-##  3 The Da…     164 Color Action… USA   A partir de … 250000000  4.48e8       8.5
-##  4 John C…     132 Color Action… USA   A partir de … 263700000  7.31e7       6.6
-##  5 Spider…     156 Color Action… USA   A partir de … 258000000  3.37e8       6.2
-##  6 Tangle…     100 Color Advent… USA   Livre         260000000  2.01e8       7.8
-##  7 Avenge…     141 Color Action… USA   A partir de … 250000000  4.59e8       7.5
-##  8 Batman…     183 Color Action… USA   A partir de … 250000000  3.30e8       6.9
-##  9 Superm…     169 Color Action… USA   A partir de … 209000000  2.00e8       6.1
-## 10 Pirate…     151 Color Action… USA   A partir de … 225000000  4.23e8       7.3
-## # … with 3,797 more rows, and 4 more variables: likes_facebook <int>,
-## #   ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
+## # A tibble: 11,340 × 18
+##    id_filme  titulo       data_lancamento generos duracao pais  idioma orcamento
+##    <chr>     <chr>        <chr>           <chr>     <dbl> <chr> <chr>      <dbl>
+##  1 tt0092699 Broadcast N… 1988-04-01      Comedy…     133 USA   Engli…  20000000
+##  2 tt0037931 Murder, He … 1945-06-23      Comedy…      91 USA   Engli…        NA
+##  3 tt0183505 Me, Myself … 2000-09-08      Comedy      116 USA   Engli…  51000000
+##  4 tt0033945 Never Give … 1947-05-02      Comedy…      71 USA   Engli…        NA
+##  5 tt0372122 Adam & Steve 2007-05-17      Comedy…      99 USA   Engli…        NA
+##  6 tt3703836 Henry Gambl… 2016-01-08      Drama        87 USA   Engli…        NA
+##  7 tt0093640 No Way Out   1987-12-11      Action…     114 USA   Engli…  15000000
+##  8 tt0494652 Welcome Hom… 2008-02-08      Comedy…     104 USA   Engli…  35000000
+##  9 tt0094006 Some Kind o… 1988-01-13      Drama,…      95 USA   Engli…        NA
+## 10 tt1142798 The Family … 2008-09-12      Drama       111 USA   Engli…        NA
+## # … with 11,330 more rows, and 10 more variables: receita <dbl>,
+## #   receita_eua <dbl>, nota_imdb <dbl>, num_avaliacoes <dbl>, roteiro <chr>,
+## #   producao <chr>, elenco <chr>, descricao <chr>, num_criticas_publico <dbl>,
+## #   num_criticas_critica <dbl>
 ```
 
 ```r
-imdb %>%
-  select(-starts_with("ator"))
+select(imdb, -starts_with("num"))
 ```
 
 ```
-## # A tibble: 3,807 x 12
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
-##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
-##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
-##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
-##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
-##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
-##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
-##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
-##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
-##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
-## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
-## # … with 3,797 more rows, and 3 more variables: receita <int>, nota_imdb <dbl>,
-## #   likes_facebook <int>
+## # A tibble: 11,340 × 17
+##    id_filme  titulo   ano data_lancamento generos duracao pais  idioma orcamento
+##    <chr>     <chr>  <dbl> <chr>           <chr>     <dbl> <chr> <chr>      <dbl>
+##  1 tt0092699 Broad…  1987 1988-04-01      Comedy…     133 USA   Engli…  20000000
+##  2 tt0037931 Murde…  1945 1945-06-23      Comedy…      91 USA   Engli…        NA
+##  3 tt0183505 Me, M…  2000 2000-09-08      Comedy      116 USA   Engli…  51000000
+##  4 tt0033945 Never…  1941 1947-05-02      Comedy…      71 USA   Engli…        NA
+##  5 tt0372122 Adam …  2005 2007-05-17      Comedy…      99 USA   Engli…        NA
+##  6 tt3703836 Henry…  2015 2016-01-08      Drama        87 USA   Engli…        NA
+##  7 tt0093640 No Wa…  1987 1987-12-11      Action…     114 USA   Engli…  15000000
+##  8 tt0494652 Welco…  2008 2008-02-08      Comedy…     104 USA   Engli…  35000000
+##  9 tt0094006 Some …  1987 1988-01-13      Drama,…      95 USA   Engli…        NA
+## 10 tt1142798 The F…  2008 2008-09-12      Drama       111 USA   Engli…        NA
+## # … with 11,330 more rows, and 8 more variables: receita <dbl>,
+## #   receita_eua <dbl>, nota_imdb <dbl>, direcao <chr>, roteiro <chr>,
+## #   producao <chr>, elenco <chr>, descricao <chr>
 ```
 
 #### Exercícios {-}
@@ -230,11 +233,11 @@ Utilize a base `imdb` nos exercícios a seguir.
 
 **1.** Teste aplicar a função `glimpse()` do pacote `{dplyr}` à base `imdb`. O que ela faz?
 
-**2.** Crie uma tabela com apenas as colunas `titulo`, `diretor`, e `orcamento.` Salve em um objeto chamado `imdb_simples`.
+**2.** Crie uma tabela com apenas as colunas `titulo`, `direcao`, e `orcamento.` Salve em um objeto chamado `imdb_simples`.
 
-**3.** Selecione apenas as colunas `ator_1`, `ator_2` e `ator_3` usando o ajudante `contains()`.
+**3.** Selecione apenas as colunas `duracao`, `direcao`, `descricao` e `producao` usando a função auxiliar `contains()`.
 
-**4.** Usando a função `select()` (e seus ajudantes), escreva códigos que retornem a base IMDB sem as colunas `ator_1`, `ator_2` e `ator_3.` Escreva todas as soluções diferentes que você conseguir pensar. 
+**4.** Usando a função `select()` (e suas funções auxiliares), escreva códigos que retornem a base IMDB sem as colunas `num_avaliacoes`, `num_criticas_publico` e `num_criticas_critica`. Escreva todas as soluções diferentes que você conseguir pensar. 
 
 ### Ordenando a base
 
@@ -246,21 +249,23 @@ arrange(imdb, orcamento)
 ```
 
 ```
-## # A tibble: 3,807 x 15
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
-##  1 Tarnati…  2003 Jonatha…      88 Color Biograph… USA   Outros              218
-##  2 My Date…  2004 Jon Gunn      90 Color Document… USA   Livre              1100
-##  3 A Plagu…  2013 Benjami…      76 Color Drama|Ho… USA   Outros             1400
-##  4 The Mon…  2005 Anthony…      84 Color Crime|Dr… USA   A partir de …      3250
-##  5 Primer    2004 Shane C…      77 Color Drama|Sc… USA   A partir de …      7000
-##  6 El Mari…  1992 Robert …      81 Color Action|C… USA   A partir de …      7000
-##  7 Newlywe…  2011 Edward …      95 Color Comedy|D… USA   Outros             9000
-##  8 Pink Fl…  1972 John Wa…     108 Color Comedy|C… USA   A partir de …     10000
-##  9 The Tou…  2007 Jane Cl…       7 Color Romance|… USA   Outros            13000
-## 10 Paranor…  2007 Oren Pe…      84 Color Horror    USA   A partir de …     15000
-## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
-## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
+## # A tibble: 11,340 × 20
+##    id_filme  titulo   ano data_lancamento generos duracao pais  idioma orcamento
+##    <chr>     <chr>  <dbl> <chr>           <chr>     <dbl> <chr> <chr>      <dbl>
+##  1 tt5345298 Patie…  2016 2016-10-11      Horror      116 USA   Icela…         0
+##  2 tt7692822 Driven  2019 2019-02-09      Comedy…      90 USA   Engli…         0
+##  3 tt3748918 To Yo…  2019 2020-03-17      Animat…      91 USA   Engli…         1
+##  4 tt8196068 Twist…  2018 2018-10-03      Drama,…      89 USA   Engli…         3
+##  5 tt0772152 Amate…  2006 2006-07-30      Crime,…      71 USA   Engli…        45
+##  6 tt1260680 Pathf…  2011 2011-01-11      Action…     100 USA   Engli…        50
+##  7 tt1701224 My Na…  2012 2012-10-19      Crime,…      90 USA   Frenc…       300
+##  8 tt0054880 Flami…  1963 1963-04-29      Comedy…      45 USA   Engli…       300
+##  9 tt1980185 Memor…  2012 2014-03-10      Crime,…      70 USA   Engli…       300
+## 10 tt5009236 King …  2015 2015-03-27      Biogra…      46 USA   Engli…       500
+## # … with 11,330 more rows, and 11 more variables: receita <dbl>,
+## #   receita_eua <dbl>, nota_imdb <dbl>, num_avaliacoes <dbl>, direcao <chr>,
+## #   roteiro <chr>, producao <chr>, elenco <chr>, descricao <chr>,
+## #   num_criticas_publico <dbl>, num_criticas_critica <dbl>
 ```
 
 Também podemos ordenar de forma decrescente usando a função `desc()`.
@@ -271,21 +276,23 @@ arrange(imdb, desc(orcamento))
 ```
 
 ```
-## # A tibble: 3,807 x 15
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
-##  1 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
-##  2 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
-##  3 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
-##  4 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
-##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
-##  6 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
-##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
-##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
-##  9 Pirates…  2011 Rob Mar…     136 Color Action|A… USA   A partir de … 250000000
-## 10 Captain…  2016 Anthony…     147 Color Action|A… USA   A partir de … 250000000
-## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
-## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
+## # A tibble: 11,340 × 20
+##    id_filme  titulo   ano data_lancamento generos duracao pais  idioma orcamento
+##    <chr>     <chr>  <dbl> <chr>           <chr>     <dbl> <chr> <chr>      <dbl>
+##  1 tt4154796 Aveng…  2019 2019-04-24      Action…     181 USA   Engli… 356000000
+##  2 tt4154756 Aveng…  2018 2018-04-25      Action…     149 USA   Engli… 321000000
+##  3 tt2527336 Star …  2017 2017-12-13      Action…     152 USA   Engli… 317000000
+##  4 tt0449088 Pirat…  2007 2007-05-23      Action…     169 USA   Engli… 300000000
+##  5 tt2527338 Star …  2019 2019-12-18      Action…     141 USA   Engli… 275000000
+##  6 tt3778644 Solo:…  2018 2018-05-23      Action…     135 USA   Engli… 275000000
+##  7 tt0348150 Super…  2006 2006-09-01      Action…     154 USA   Engli… 270000000
+##  8 tt0398286 Tangl…  2010 2010-11-26      Animat…     100 USA   Engli… 260000000
+##  9 tt0413300 Spide…  2007 2007-05-01      Action…     139 USA   Engli… 258000000
+## 10 tt2975590 Batma…  2016 2016-03-23      Action…     152 USA   Engli… 250000000
+## # … with 11,330 more rows, and 11 more variables: receita <dbl>,
+## #   receita_eua <dbl>, nota_imdb <dbl>, num_avaliacoes <dbl>, direcao <chr>,
+## #   roteiro <chr>, producao <chr>, elenco <chr>, descricao <chr>,
+## #   num_criticas_publico <dbl>, num_criticas_critica <dbl>
 ```
 
 
@@ -297,21 +304,23 @@ arrange(imdb, desc(ano), desc(orcamento))
 ```
 
 ```
-## # A tibble: 3,807 x 15
-##    titulo      ano diretor  duracao cor   generos  pais  classificacao orcamento
-##    <chr>     <int> <chr>      <int> <chr> <chr>    <chr> <chr>             <int>
-##  1 Batman v…  2016 Zack Sn…     183 Color Action|… USA   A partir de … 250000000
-##  2 Captain …  2016 Anthony…     147 Color Action|… USA   A partir de … 250000000
-##  3 Star Tre…  2016 Justin …     122 Color Action|… USA   A partir de … 185000000
-##  4 The Lege…  2016 David Y…     110 Color Action|… USA   A partir de … 180000000
-##  5 The Lege…  2016 David Y…     110 Color Action|… USA   A partir de … 180000000
-##  6 X-Men: A…  2016 Bryan S…     144 Color Action|… USA   A partir de … 178000000
-##  7 Suicide …  2016 David A…     123 Color Action|… USA   A partir de … 175000000
-##  8 Alice Th…  2016 James B…     113 Color Adventu… USA   Livre         170000000
-##  9 Independ…  2016 Roland …     120 Color Action|… USA   A partir de … 165000000
-## 10 Warcraft   2016 Duncan …     123 Color Action|… USA   A partir de … 160000000
-## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
-## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
+## # A tibble: 11,340 × 20
+##    id_filme  titulo   ano data_lancamento generos duracao pais  idioma orcamento
+##    <chr>     <chr>  <dbl> <chr>           <chr>     <dbl> <chr> <chr>      <dbl>
+##  1 tt6587640 Troll…  2020 2020-04-10      Animat…      90 USA   Engli…  90000000
+##  2 tt7713068 Birds…  2020 2020-02-06      Action…     109 USA   Engli…  84500000
+##  3 tt5774060 Under…  2020 2020-01-30      Action…      95 USA   Engli…  80000000
+##  4 tt6820324 Timmy…  2020 2020-03-24      Advent…      99 USA   Engli…  45000000
+##  5 tt1634106 Blood…  2020 2020-03-27      Action…     109 USA   Engli…  45000000
+##  6 tt100595… Unhin…  2020 2020-09-24      Action…      90 USA   Engli…  33000000
+##  7 tt8461224 The T…  2020 2020-08-07      Action…      95 USA   Engli…  30000000
+##  8 tt103089… Force…  2020 2020-06-30      Action…      91 USA   Engli…  23000000
+##  9 tt4411584 The S…  2020 2020-07-31      Drama,…     107 USA   Engli…  21000000
+## 10 tt8244784 The H…  2020 2020-03-24      Action…      90 USA   Engli…  14000000
+## # … with 11,330 more rows, and 11 more variables: receita <dbl>,
+## #   receita_eua <dbl>, nota_imdb <dbl>, num_avaliacoes <dbl>, direcao <chr>,
+## #   roteiro <chr>, producao <chr>, elenco <chr>, descricao <chr>,
+## #   num_criticas_publico <dbl>, num_criticas_critica <dbl>
 ```
 
 #### Exercícios {-}
@@ -332,20 +341,20 @@ arrange(select(imdb, titulo, ano), ano)
 ```
 
 ```
-## # A tibble: 3,807 x 2
+## # A tibble: 11,340 × 2
 ##    titulo                                              ano
-##    <chr>                                             <int>
-##  1 Intolerance: Love's Struggle Throughout the Ages   1916
-##  2 Over the Hill to the Poorhouse                     1920
-##  3 The Big Parade                                     1925
-##  4 The Broadway Melody                                1929
-##  5 Hell's Angels                                      1930
-##  6 A Farewell to Arms                                 1932
-##  7 42nd Street                                        1933
-##  8 She Done Him Wrong                                 1933
-##  9 It Happened One Night                              1934
-## 10 Top Hat                                            1935
-## # … with 3,797 more rows
+##    <chr>                                             <dbl>
+##  1 Tillie's Punctured Romance                         1914
+##  2 Judith of Bethulia                                 1914
+##  3 The Avenging Conscience: or 'Thou Shalt Not Kill'  1914
+##  4 The Regeneration                                   1915
+##  5 The Cheat                                          1915
+##  6 The Birth of a Nation                              1915
+##  7 Intolerance: Love's Struggle Throughout the Ages   1916
+##  8 20,000 Leagues Under the Sea                       1916
+##  9 The Poor Little Rich Girl                          1917
+## 10 Shoulder Arms                                      1918
+## # … with 11,330 more rows
 ```
 
 ou criar um objeto intermediário 
@@ -358,27 +367,27 @@ arrange(tab_titulo_ano, ano)
 ```
 
 ```
-## # A tibble: 3,807 x 2
+## # A tibble: 11,340 × 2
 ##    titulo                                              ano
-##    <chr>                                             <int>
-##  1 Intolerance: Love's Struggle Throughout the Ages   1916
-##  2 Over the Hill to the Poorhouse                     1920
-##  3 The Big Parade                                     1925
-##  4 The Broadway Melody                                1929
-##  5 Hell's Angels                                      1930
-##  6 A Farewell to Arms                                 1932
-##  7 42nd Street                                        1933
-##  8 She Done Him Wrong                                 1933
-##  9 It Happened One Night                              1934
-## 10 Top Hat                                            1935
-## # … with 3,797 more rows
+##    <chr>                                             <dbl>
+##  1 Tillie's Punctured Romance                         1914
+##  2 Judith of Bethulia                                 1914
+##  3 The Avenging Conscience: or 'Thou Shalt Not Kill'  1914
+##  4 The Regeneration                                   1915
+##  5 The Cheat                                          1915
+##  6 The Birth of a Nation                              1915
+##  7 Intolerance: Love's Struggle Throughout the Ages   1916
+##  8 20,000 Leagues Under the Sea                       1916
+##  9 The Poor Little Rich Girl                          1917
+## 10 Shoulder Arms                                      1918
+## # … with 11,330 more rows
 ```
 
-Os dois códigos funcionam e levam ao mesmo resultado, mas não são muito boas.
+Os dois códigos funcionam e levam ao mesmo resultado, mas não são muito bons.
 
-A primeira alternativa é ruim de escrever, já que precisamos escrever primeiro a função que roda por último, e de ler, pois é difícil identificar qual argumento pertence a qual função.
+A primeira alternativa é ruim de escrever (já que precisamos escrever primeiro a função que roda por último) e de ler (pois é difícil identificar qual argumento pertence a qual função).
 
-A segunda alternativa é ruim pois exige a criação de objetos auxiliares. Se quiséssimos aplicar 10 operações na base, precisaríamos criar 9 objetos intermediários.
+A segunda alternativa também é ruim, pois exige a criação de objetos auxiliares. Se quiséssimos aplicar 10 operações na base, precisaríamos criar 9 objetos intermediários.
 
 A solução para aplicar diversas operações de manipulação em uma base de dados é aplicar o operador pipe: `%>%`.
 
@@ -390,25 +399,25 @@ imdb %>%
 ```
 
 ```
-## # A tibble: 3,807 x 2
+## # A tibble: 11,340 × 2
 ##    titulo                                              ano
-##    <chr>                                             <int>
-##  1 Intolerance: Love's Struggle Throughout the Ages   1916
-##  2 Over the Hill to the Poorhouse                     1920
-##  3 The Big Parade                                     1925
-##  4 The Broadway Melody                                1929
-##  5 Hell's Angels                                      1930
-##  6 A Farewell to Arms                                 1932
-##  7 42nd Street                                        1933
-##  8 She Done Him Wrong                                 1933
-##  9 It Happened One Night                              1934
-## 10 Top Hat                                            1935
-## # … with 3,797 more rows
+##    <chr>                                             <dbl>
+##  1 Tillie's Punctured Romance                         1914
+##  2 Judith of Bethulia                                 1914
+##  3 The Avenging Conscience: or 'Thou Shalt Not Kill'  1914
+##  4 The Regeneration                                   1915
+##  5 The Cheat                                          1915
+##  6 The Birth of a Nation                              1915
+##  7 Intolerance: Love's Struggle Throughout the Ages   1916
+##  8 20,000 Leagues Under the Sea                       1916
+##  9 The Poor Little Rich Girl                          1917
+## 10 Shoulder Arms                                      1918
+## # … with 11,330 more rows
 ```
 
 O que está sendo feito no código com pipe? Da primeira para a segunda linha, estamos aplicando a função `select()` à base imdb. Da segunda para a terceira, estamos aplicando a função `arrange()` à base resultante da função `select()`.
 
-O resultado desse código é identico às tentativas sem pipe, com a vantagem de termos escrito o código na ordem em que as funções são aplicadas, de termos um código muito mais legível e de não precisarmos utilizar objetos intermediários.
+O resultado desse código é idêntico às tentativas sem pipe, com a vantagem de termos escrito o código na ordem em que as funções são aplicadas, de termos um código muito mais legível e de não precisarmos utilizar objetos intermediários.
 
 ### Filtrando linhas
 
@@ -420,14 +429,18 @@ imdb %>% filter(nota_imdb > 9)
 ```
 
 ```
-## # A tibble: 3 x 15
-##   titulo      ano diretor   duracao cor   generos  pais  classificacao orcamento
-##   <chr>     <int> <chr>       <int> <chr> <chr>    <chr> <chr>             <int>
-## 1 The Shaw…  1994 Frank Da…     142 Color Crime|D… USA   A partir de …  25000000
-## 2 The Godf…  1972 Francis …     175 Color Crime|D… USA   A partir de …   6000000
-## 3 Kickboxe…  2016 John Sto…      90 <NA>  Action   USA   Outros         17000000
-## # … with 6 more variables: receita <int>, nota_imdb <dbl>,
-## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
+## # A tibble: 5 × 20
+##   id_filme   titulo   ano data_lancamento generos duracao pais  idioma orcamento
+##   <chr>      <chr>  <dbl> <chr>           <chr>     <dbl> <chr> <chr>      <dbl>
+## 1 tt10218912 As I …  2019 2019-12-06      Drama,…      62 USA   Engli…     10000
+## 2 tt6735740  Love …  2019 2019-06-23      Comedy      100 USA   Engli…   3000000
+## 3 tt0111161  The S…  1994 1995-02-10      Drama       142 USA   Engli…  25000000
+## 4 tt0068646  The G…  1972 1972-09-21      Crime,…     175 USA   Engli…   6000000
+## 5 tt5980638  The T…  2018 2020-06-19      Music,…      96 USA   Engli…     90000
+## # … with 11 more variables: receita <dbl>, receita_eua <dbl>, nota_imdb <dbl>,
+## #   num_avaliacoes <dbl>, direcao <chr>, roteiro <chr>, producao <chr>,
+## #   elenco <chr>, descricao <chr>, num_criticas_publico <dbl>,
+## #   num_criticas_critica <dbl>
 ```
 
 
@@ -441,12 +454,14 @@ imdb %>%
 ```
 
 ```
-## # A tibble: 3 x 2
-##   titulo                    nota_imdb
-##   <chr>                         <dbl>
-## 1 The Shawshank Redemption        9.3
-## 2 The Godfather                   9.2
-## 3 Kickboxer: Vengeance            9.1
+## # A tibble: 5 × 2
+##   titulo                   nota_imdb
+##   <chr>                        <dbl>
+## 1 As I Am                        9.3
+## 2 Love in Kilnerry               9.3
+## 3 The Shawshank Redemption       9.3
+## 4 The Godfather                  9.2
+## 5 The Transcendents              9.2
 ```
 
 Podemos estender o filtro para duas ou mais colunas. Para isso, separamos cada operação por uma vírgula.
@@ -457,16 +472,21 @@ imdb %>% filter(ano > 2010, nota_imdb > 8.5)
 ```
 
 ```
-## # A tibble: 5 x 15
-##   titulo      ano diretor   duracao cor   generos  pais  classificacao orcamento
-##   <chr>     <int> <chr>       <int> <chr> <chr>    <chr> <chr>             <int>
-## 1 Interste…  2014 Christop…     169 Color Adventu… USA   A partir de … 165000000
-## 2 Running …  2015 Mike May…      88 Color Family   USA   Outros          5000000
-## 3 A Beginn…  2016 Mitchell…      87 Color Comedy|… USA   Outros               NA
-## 4 Kickboxe…  2016 John Sto…      90 <NA>  Action   USA   Outros         17000000
-## 5 Butterfl…  2014 Cary Bell      78 Color Documen… USA   Outros           180000
-## # … with 6 more variables: receita <int>, nota_imdb <dbl>,
-## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
+## # A tibble: 8 × 20
+##   id_filme   titulo   ano data_lancamento generos duracao pais  idioma orcamento
+##   <chr>      <chr>  <dbl> <chr>           <chr>     <dbl> <chr> <chr>      <dbl>
+## 1 tt10218912 As I …  2019 2019-12-06      Drama,…      62 USA   Engli…     10000
+## 2 tt8503618  Hamil…  2020 2020-07-03      Biogra…     160 USA   Engli…        NA
+## 3 tt6735740  Love …  2019 2019-06-23      Comedy      100 USA   Engli…   3000000
+## 4 tt10765852 Metal…  2019 2019-10-18      Music       150 USA   Engli…        NA
+## 5 tt6019206  Kill …  2011 2011-03-27      Action…     247 USA   <NA>          NA
+## 6 tt8241876  5th B…  2020 2020-06-03      Crime        95 USA   Engli…        NA
+## 7 tt2170667  Wheels  2014 2017-02-01      Drama       115 USA   Engli…        NA
+## 8 tt5980638  The T…  2018 2020-06-19      Music,…      96 USA   Engli…     90000
+## # … with 11 more variables: receita <dbl>, receita_eua <dbl>, nota_imdb <dbl>,
+## #   num_avaliacoes <dbl>, direcao <chr>, roteiro <chr>, producao <chr>,
+## #   elenco <chr>, descricao <chr>, num_criticas_publico <dbl>,
+## #   num_criticas_critica <dbl>
 ```
 
 Também podemos fazer operações com as colunas da base dentro da função filter. O código abaixo devolve uma tabela apenas com os filmes que lucraram.
@@ -477,47 +497,51 @@ imdb %>% filter(receita - orcamento > 0)
 ```
 
 ```
-## # A tibble: 1,761 x 15
-##    titulo      ano diretor  duracao cor   generos  pais  classificacao orcamento
-##    <chr>     <int> <chr>      <int> <chr> <chr>    <chr> <chr>             <int>
-##  1 Avatar     2009 James C…     178 Color Action|… USA   A partir de … 237000000
-##  2 Pirates …  2007 Gore Ve…     169 Color Action|… USA   A partir de … 300000000
-##  3 The Dark…  2012 Christo…     164 Color Action|… USA   A partir de … 250000000
-##  4 Spider-M…  2007 Sam Rai…     156 Color Action|… USA   A partir de … 258000000
-##  5 Avengers…  2015 Joss Wh…     141 Color Action|… USA   A partir de … 250000000
-##  6 Batman v…  2016 Zack Sn…     183 Color Action|… USA   A partir de … 250000000
-##  7 Pirates …  2006 Gore Ve…     151 Color Action|… USA   A partir de … 225000000
-##  8 Man of S…  2013 Zack Sn…     143 Color Action|… USA   A partir de … 225000000
-##  9 The Aven…  2012 Joss Wh…     173 Color Action|… USA   A partir de … 220000000
-## 10 The Amaz…  2012 Marc We…     153 Color Action|… USA   A partir de … 230000000
-## # … with 1,751 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
-## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
+## # A tibble: 2,541 × 20
+##    id_filme  titulo   ano data_lancamento generos duracao pais  idioma orcamento
+##    <chr>     <chr>  <dbl> <chr>           <chr>     <dbl> <chr> <chr>      <dbl>
+##  1 tt0092699 Broad…  1987 1988-04-01      Comedy…     133 USA   Engli…  20000000
+##  2 tt0183505 Me, M…  2000 2000-09-08      Comedy      116 USA   Engli…  51000000
+##  3 tt0093640 No Wa…  1987 1987-12-11      Action…     114 USA   Engli…  15000000
+##  4 tt0494652 Welco…  2008 2008-02-08      Comedy…     104 USA   Engli…  35000000
+##  5 tt1488555 The C…  2011 2011-12-09      Comedy…     112 USA   Engli…  52000000
+##  6 tt0090022 Silve…  1985 1986-01-16      Action…     133 USA   Engli…  26000000
+##  7 tt0120434 Vegas…  1997 1997-02-14      Comedy       93 USA   Engli…  25000000
+##  8 tt1086772 Blend…  2014 2014-07-02      Comedy…     117 USA   Engli…  40000000
+##  9 tt0064115 Butch…  1969 1969-09-26      Biogra…     110 USA   Engli…   6000000
+## 10 tt0441796 Stay …  2006 2006-03-24      Fantas…      85 USA   Engli…   7000000
+## # … with 2,531 more rows, and 11 more variables: receita <dbl>,
+## #   receita_eua <dbl>, nota_imdb <dbl>, num_avaliacoes <dbl>, direcao <chr>,
+## #   roteiro <chr>, producao <chr>, elenco <chr>, descricao <chr>,
+## #   num_criticas_publico <dbl>, num_criticas_critica <dbl>
 ```
 
-Naturalmente, podemos filtrar colunas categóricas. O exemplo abaixo retorna uma tabela apenas com os filmes com a Angelina Jolie Pitt ou o Brad Pitt no papel principal.
+Naturalmente, podemos filtrar colunas categóricas. O exemplo abaixo retorna uma tabela apenas com os filmes dirigidos por Quentin Tarantino ou Steven Spielberg.
 
 
 ```r
 imdb %>%
-  filter(ator_1 %in% c('Angelina Jolie Pitt', "Brad Pitt"))
+  filter(direcao %in% c("Quentin Tarantino", "Steven Spielberg"))
 ```
 
 ```
-## # A tibble: 29 x 15
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
-##  1 Malefic…  2014 Robert …      97 Color Action|A… USA   Livre         180000000
-##  2 The Cur…  2008 David F…     166 Color Drama|Fa… USA   A partir de … 150000000
-##  3 Kung Fu…  2011 Jennife…      90 Color Action|A… USA   Livre         150000000
-##  4 Troy      2004 Wolfgan…     196 Color Adventure USA   A partir de … 175000000
-##  5 Kung Fu…  2008 Mark Os…      92 Color Action|A… USA   Livre         130000000
-##  6 Salt      2010 Phillip…     101 Color Action|C… USA   A partir de … 110000000
-##  7 Ocean's…  2004 Steven …     125 Color Crime|Th… USA   A partir de … 110000000
-##  8 Mr. & M…  2005 Doug Li…     126 Color Action|C… USA   A partir de … 120000000
-##  9 Lara Cr…  2001 Simon W…     100 Color Action|A… USA   A partir de … 115000000
-## 10 Ocean's…  2001 Steven …     116 Color Crime|Th… USA   A partir de …  85000000
-## # … with 19 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
-## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
+## # A tibble: 30 × 20
+##    id_filme  titulo   ano data_lancamento generos duracao pais  idioma orcamento
+##    <chr>     <chr>  <dbl> <chr>           <chr>     <dbl> <chr> <chr>      <dbl>
+##  1 tt0102057 Hook    1991 1992-03-27      Advent…     142 USA   Engli…  70000000
+##  2 tt0118607 Amist…  1997 1998-03-13      Biogra…     155 USA   Engli…  36000000
+##  3 tt0096794 Always  1989 1989-12-22      Drama,…     122 USA   Engli…  31000000
+##  4 tt0110912 Pulp …  1994 1994-10-28      Crime,…     154 USA   Engli…   8000000
+##  5 tt0407304 War o…  2005 2005-06-29      Advent…     116 USA   Engli… 132000000
+##  6 tt0075860 Close…  1977 1978-03-03      Drama,…     138 USA   Engli…  20000000
+##  7 tt0082971 Raide…  1981 1981-06-12      Action…     115 USA   Engli…  18000000
+##  8 tt0097576 India…  1989 1989-10-06      Action…     127 USA   Engli…  48000000
+##  9 tt0362227 The T…  2004 2004-09-03      Comedy…     128 USA   Engli…  60000000
+## 10 tt0120815 Savin…  1998 1998-10-30      Drama,…     169 USA   Engli…  70000000
+## # … with 20 more rows, and 11 more variables: receita <dbl>, receita_eua <dbl>,
+## #   nota_imdb <dbl>, num_avaliacoes <dbl>, direcao <chr>, roteiro <chr>,
+## #   producao <chr>, elenco <chr>, descricao <chr>, num_criticas_publico <dbl>,
+## #   num_criticas_critica <dbl>
 ```
 
 Para filtrar textos sem correspondência exata, podemos utilizar a função auxiliar `str_detect()` do pacote `{stringr}`. Ela serve para verificar se cada string de um vetor contém um determinado padrão de texto.
@@ -536,7 +560,7 @@ str_detect(
 ## [1]  TRUE  TRUE  TRUE FALSE FALSE    NA
 ```
 
-Podemos utilizá-la para filtrar apenas os filmes que contêm o gênero ação.
+Podemos utilizá-la para filtrar apenas os filmes que contêm o gênero Drama.
 
 
 ```r
@@ -545,62 +569,60 @@ imdb$generos[1:6]
 ```
 
 ```
-## [1] "Action|Adventure|Fantasy|Sci-Fi"                          
-## [2] "Action|Adventure|Fantasy"                                 
-## [3] "Action|Thriller"                                          
-## [4] "Action|Adventure|Sci-Fi"                                  
-## [5] "Action|Adventure|Romance"                                 
-## [6] "Adventure|Animation|Comedy|Family|Fantasy|Musical|Romance"
+## [1] "Comedy, Drama, Romance" "Comedy, Crime, Mystery" "Comedy"                
+## [4] "Comedy, Musical"        "Comedy, Drama, Music"   "Drama"
 ```
 
 ```r
-# Podemos detectar se o gênero Action aparece na string
+# Podemos detectar se o gênero Drama aparece na string
 str_detect(
   string = imdb$generos[1:6],
-  pattern = "Action"
+  pattern = "Drama"
 )
 ```
 
 ```
-## [1]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE
+## [1]  TRUE FALSE FALSE FALSE  TRUE  TRUE
 ```
 
 ```r
 # Aplicamos essa lógica dentro da função filter, para a coluna completa
-imdb %>% filter(str_detect(generos, "Action"))
+imdb %>% filter(str_detect(generos, "Drama"))
 ```
 
 ```
-## # A tibble: 861 x 15
-##    titulo      ano diretor  duracao cor   generos  pais  classificacao orcamento
-##    <chr>     <int> <chr>      <int> <chr> <chr>    <chr> <chr>             <int>
-##  1 Avatar     2009 James C…     178 Color Action|… USA   A partir de … 237000000
-##  2 Pirates …  2007 Gore Ve…     169 Color Action|… USA   A partir de … 300000000
-##  3 The Dark…  2012 Christo…     164 Color Action|… USA   A partir de … 250000000
-##  4 John Car…  2012 Andrew …     132 Color Action|… USA   A partir de … 263700000
-##  5 Spider-M…  2007 Sam Rai…     156 Color Action|… USA   A partir de … 258000000
-##  6 Avengers…  2015 Joss Wh…     141 Color Action|… USA   A partir de … 250000000
-##  7 Batman v…  2016 Zack Sn…     183 Color Action|… USA   A partir de … 250000000
-##  8 Superman…  2006 Bryan S…     169 Color Action|… USA   A partir de … 209000000
-##  9 Pirates …  2006 Gore Ve…     151 Color Action|… USA   A partir de … 225000000
-## 10 The Lone…  2013 Gore Ve…     150 Color Action|… USA   A partir de … 215000000
-## # … with 851 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
-## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
+## # A tibble: 5,894 × 20
+##    id_filme  titulo   ano data_lancamento generos duracao pais  idioma orcamento
+##    <chr>     <chr>  <dbl> <chr>           <chr>     <dbl> <chr> <chr>      <dbl>
+##  1 tt0092699 Broad…  1987 1988-04-01      Comedy…     133 USA   Engli…  20000000
+##  2 tt0372122 Adam …  2005 2007-05-17      Comedy…      99 USA   Engli…        NA
+##  3 tt3703836 Henry…  2015 2016-01-08      Drama        87 USA   Engli…        NA
+##  4 tt0093640 No Wa…  1987 1987-12-11      Action…     114 USA   Engli…  15000000
+##  5 tt0094006 Some …  1987 1988-01-13      Drama,…      95 USA   Engli…        NA
+##  6 tt1142798 The F…  2008 2008-09-12      Drama       111 USA   Engli…        NA
+##  7 tt0035784 Dead …  1943 1943-04-12      Drama,…      64 USA   Engli…        NA
+##  8 tt0025101 Fashi…  1934 1934-02-14      Comedy…      78 USA   Engli…        NA
+##  9 tt0082009 Ameri…  1981 1981-02-13      Animat…      96 USA   Engli…   1500000
+## 10 tt0049474 The M…  1956 1956-05-08      Drama,…     153 USA   Engli…   2670000
+## # … with 5,884 more rows, and 11 more variables: receita <dbl>,
+## #   receita_eua <dbl>, nota_imdb <dbl>, num_avaliacoes <dbl>, direcao <chr>,
+## #   roteiro <chr>, producao <chr>, elenco <chr>, descricao <chr>,
+## #   num_criticas_publico <dbl>, num_criticas_critica <dbl>
 ```
 
 #### Exercícios {-}
 
 Utilize a base `imdb` nos exercícios a seguir.
 
-**1.** Crie um objeto chamado `filmes_pb` apenas com filmes preto e branco.
+**1.** Crie um objeto chamado `filmes_ingles` apenas com filmes que sejam apenas no idioma inglês (`English`).
 
 **2.** Crie um objeto chamado `curtos_legais` com filmes de 90 minutos ou menos de duração e nota no imdb maior do que 8.5.
 
 **3.** Retorne tabelas (`tibbles`) apenas com:
 
-- **a.** filmes coloridos anteriores a 1950;
+- **a.** filmes de ação anteriores a 1950;
 
-- **b.** filmes do "Woody Allen" ou do "Wes Anderson";
+- **b.** filmes dirigidos por "Woody Allen" ou "Wes Anderson";
 
 - **c.** filmes do "Steven Spielberg" ordenados de forma decrescente por ano, mostrando apenas as colunas `titulo` e `ano`;
 
@@ -621,21 +643,23 @@ imdb %>% mutate(duracao = duracao/60)
 ```
 
 ```
-## # A tibble: 3,807 x 15
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    <chr>    <int> <chr>      <dbl> <chr> <chr>     <chr> <chr>             <int>
-##  1 Avatar    2009 James C…    2.97 Color Action|A… USA   A partir de … 237000000
-##  2 Pirates…  2007 Gore Ve…    2.82 Color Action|A… USA   A partir de … 300000000
-##  3 The Dar…  2012 Christo…    2.73 Color Action|T… USA   A partir de … 250000000
-##  4 John Ca…  2012 Andrew …    2.2  Color Action|A… USA   A partir de … 263700000
-##  5 Spider-…  2007 Sam Rai…    2.6  Color Action|A… USA   A partir de … 258000000
-##  6 Tangled   2010 Nathan …    1.67 Color Adventur… USA   Livre         260000000
-##  7 Avenger…  2015 Joss Wh…    2.35 Color Action|A… USA   A partir de … 250000000
-##  8 Batman …  2016 Zack Sn…    3.05 Color Action|A… USA   A partir de … 250000000
-##  9 Superma…  2006 Bryan S…    2.82 Color Action|A… USA   A partir de … 209000000
-## 10 Pirates…  2006 Gore Ve…    2.52 Color Action|A… USA   A partir de … 225000000
-## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
-## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
+## # A tibble: 11,340 × 20
+##    id_filme  titulo   ano data_lancamento generos duracao pais  idioma orcamento
+##    <chr>     <chr>  <dbl> <chr>           <chr>     <dbl> <chr> <chr>      <dbl>
+##  1 tt0092699 Broad…  1987 1988-04-01      Comedy…    2.22 USA   Engli…  20000000
+##  2 tt0037931 Murde…  1945 1945-06-23      Comedy…    1.52 USA   Engli…        NA
+##  3 tt0183505 Me, M…  2000 2000-09-08      Comedy     1.93 USA   Engli…  51000000
+##  4 tt0033945 Never…  1941 1947-05-02      Comedy…    1.18 USA   Engli…        NA
+##  5 tt0372122 Adam …  2005 2007-05-17      Comedy…    1.65 USA   Engli…        NA
+##  6 tt3703836 Henry…  2015 2016-01-08      Drama      1.45 USA   Engli…        NA
+##  7 tt0093640 No Wa…  1987 1987-12-11      Action…    1.9  USA   Engli…  15000000
+##  8 tt0494652 Welco…  2008 2008-02-08      Comedy…    1.73 USA   Engli…  35000000
+##  9 tt0094006 Some …  1987 1988-01-13      Drama,…    1.58 USA   Engli…        NA
+## 10 tt1142798 The F…  2008 2008-09-12      Drama      1.85 USA   Engli…        NA
+## # … with 11,330 more rows, and 11 more variables: receita <dbl>,
+## #   receita_eua <dbl>, nota_imdb <dbl>, num_avaliacoes <dbl>, direcao <chr>,
+## #   roteiro <chr>, producao <chr>, elenco <chr>, descricao <chr>,
+## #   num_criticas_publico <dbl>, num_criticas_critica <dbl>
 ```
 
 Também poderíamos ter criado essa variável em uma nova coluna. Repare que a nova coluna `duracao_horas` é colocada no final da tabela.
@@ -646,22 +670,23 @@ imdb %>% mutate(duracao_horas = duracao/60)
 ```
 
 ```
-## # A tibble: 3,807 x 16
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
-##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
-##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
-##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
-##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
-##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
-##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
-##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
-##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
-##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
-## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
-## # … with 3,797 more rows, and 7 more variables: receita <int>, nota_imdb <dbl>,
-## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>,
-## #   duracao_horas <dbl>
+## # A tibble: 11,340 × 21
+##    id_filme  titulo   ano data_lancamento generos duracao pais  idioma orcamento
+##    <chr>     <chr>  <dbl> <chr>           <chr>     <dbl> <chr> <chr>      <dbl>
+##  1 tt0092699 Broad…  1987 1988-04-01      Comedy…     133 USA   Engli…  20000000
+##  2 tt0037931 Murde…  1945 1945-06-23      Comedy…      91 USA   Engli…        NA
+##  3 tt0183505 Me, M…  2000 2000-09-08      Comedy      116 USA   Engli…  51000000
+##  4 tt0033945 Never…  1941 1947-05-02      Comedy…      71 USA   Engli…        NA
+##  5 tt0372122 Adam …  2005 2007-05-17      Comedy…      99 USA   Engli…        NA
+##  6 tt3703836 Henry…  2015 2016-01-08      Drama        87 USA   Engli…        NA
+##  7 tt0093640 No Wa…  1987 1987-12-11      Action…     114 USA   Engli…  15000000
+##  8 tt0494652 Welco…  2008 2008-02-08      Comedy…     104 USA   Engli…  35000000
+##  9 tt0094006 Some …  1987 1988-01-13      Drama,…      95 USA   Engli…        NA
+## 10 tt1142798 The F…  2008 2008-09-12      Drama       111 USA   Engli…        NA
+## # … with 11,330 more rows, and 12 more variables: receita <dbl>,
+## #   receita_eua <dbl>, nota_imdb <dbl>, num_avaliacoes <dbl>, direcao <chr>,
+## #   roteiro <chr>, producao <chr>, elenco <chr>, descricao <chr>,
+## #   num_criticas_publico <dbl>, num_criticas_critica <dbl>, duracao_horas <dbl>
 ```
 
 Podemos fazer qualquer operação com uma ou mais colunas. A única regra é que o resultado da operação retorne um vetor com comprimento igual ao número de linhas da base (ou com comprimento 1 para distribuir um mesmo valor em todas as linhas). Você também pode criar/modificar quantas colunas quiser dentro de um mesmo `mutate`.
@@ -674,20 +699,20 @@ imdb %>%
 ```
 
 ```
-## # A tibble: 3,807 x 3
-##    titulo                                           lucro pais          
-##    <chr>                                            <int> <chr>         
-##  1 Avatar                                       523505847 Estados Unidos
-##  2 Pirates of the Caribbean: At World's End       9404152 Estados Unidos
-##  3 The Dark Knight Rises                        198130642 Estados Unidos
-##  4 John Carter                                 -190641321 Estados Unidos
-##  5 Spider-Man 3                                  78530303 Estados Unidos
-##  6 Tangled                                      -59192738 Estados Unidos
-##  7 Avengers: Age of Ultron                      208991599 Estados Unidos
-##  8 Batman v Superman: Dawn of Justice            80249062 Estados Unidos
-##  9 Superman Returns                              -8930592 Estados Unidos
-## 10 Pirates of the Caribbean: Dead Man's Chest   198032628 Estados Unidos
-## # … with 3,797 more rows
+## # A tibble: 11,340 × 3
+##    titulo                               lucro pais          
+##    <chr>                                <dbl> <chr>         
+##  1 Broadcast News                    47331309 Estados Unidos
+##  2 Murder, He Says                         NA Estados Unidos
+##  3 Me, Myself & Irene                98270999 Estados Unidos
+##  4 Never Give a Sucker an Even Break       NA Estados Unidos
+##  5 Adam & Steve                            NA Estados Unidos
+##  6 Henry Gamble's Birthday Party           NA Estados Unidos
+##  7 No Way Out                        20509515 Estados Unidos
+##  8 Welcome Home, Roscoe Jenkins       8655418 Estados Unidos
+##  9 Some Kind of Wonderful                  NA Estados Unidos
+## 10 The Family That Preys                   NA Estados Unidos
+## # … with 11,330 more rows
 ```
 
 #### Exercícios {-}
@@ -708,7 +733,7 @@ Utilize a base `imdb` nos exercícios a seguir.
 
 **3.** Crie uma nova coluna que classifique o filme em `"recente"` (posterior a 2000) e `"antigo"` (de 2000 para trás).
 
-### Summarisando a base
+### Sumarizando a base
 
 Sumarização é a técnica de se resumir um conjunto de dados utilizando alguma métrica de interesse. A média, a mediana, a variância, a frequência, a proporção, por exemplo, são tipos de sumarização que trazem diferentes informações sobre uma variável. 
 
@@ -720,10 +745,10 @@ imdb %>% summarize(media_orcamento = mean(orcamento, na.rm = TRUE))
 ```
 
 ```
-## # A tibble: 1 x 1
+## # A tibble: 1 × 1
 ##   media_orcamento
 ##             <dbl>
-## 1       35755986.
+## 1       19030515.
 ```
 
 Repare que a saída da função continua sendo uma tibble.
@@ -740,10 +765,10 @@ imdb %>% summarise(
 ```
 
 ```
-## # A tibble: 1 x 3
+## # A tibble: 1 × 3
 ##   media_orcamento mediana_orcamento variancia_orcamento
-##             <dbl>             <int>               <dbl>
-## 1       35755986.          20000000             1.82e15
+##             <dbl>             <dbl>               <dbl>
+## 1       19030515.           6500000             1.05e15
 ```
 
 E também sumarizar diversas colunas.
@@ -758,10 +783,10 @@ imdb %>% summarize(
 ```
 
 ```
-## # A tibble: 1 x 3
+## # A tibble: 1 × 3
 ##   media_orcamento media_receita media_lucro
 ##             <dbl>         <dbl>       <dbl>
-## 1       35755986.     55214607.   17258230.
+## 1       19030515.     54682645.   50182761.
 ```
 
 Muitas vezes queremos sumarizar uma coluna agrupada pelas categorias de uma segunda coluna. Para isso, além do `summarize`, utilizamos também a função `group_by()`.
@@ -771,43 +796,54 @@ O código a seguir calcula a receita média dos filmes para cada categoria da co
 
 ```r
 imdb %>% 
-  group_by(cor) %>% 
-  summarise(receita_media = mean(receita, na.rm = TRUE))
+  filter(!is.na(producao), !is.na(receita))  %>% 
+  group_by(producao) %>% 
+  summarise(receita_media = mean(receita, na.rm = TRUE)) 
 ```
 
 ```
-## # A tibble: 3 x 2
-##   cor             receita_media
-##   <chr>                   <dbl>
-## 1 Black and White     36938737.
-## 2 Color               55765813.
-## 3 <NA>                80014842
+## # A tibble: 2,299 × 2
+##    producao                         receita_media
+##    <chr>                                    <dbl>
+##  1 .406 Production                         10580 
+##  2 10 West Studios                        814906 
+##  3 101st Street Films                     181233 
+##  4 10th Hole Productions                  191019 
+##  5 120dB Films                            557263.
+##  6 1492 Pictures                        68581364.
+##  7 1818 Productions                     12232628 
+##  8 1821 Pictures                         1537640.
+##  9 19 Entertainment                      4928883 
+## 10 1984 Private Defense Contractors     29430198.
+## # … with 2,289 more rows
 ```
 
 A única alteração que a função `group_by()` faz na base é a marcação de que a base está agrupada.
 
 
 ```r
-imdb %>% group_by(cor)
+imdb %>% group_by(producao)
 ```
 
 ```
-## # A tibble: 3,807 x 15
-## # Groups:   cor [3]
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
-##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
-##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
-##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
-##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
-##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
-##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
-##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
-##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
-##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
-## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
-## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
-## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
+## # A tibble: 11,340 × 20
+## # Groups:   producao [4,256]
+##    id_filme  titulo   ano data_lancamento generos duracao pais  idioma orcamento
+##    <chr>     <chr>  <dbl> <chr>           <chr>     <dbl> <chr> <chr>      <dbl>
+##  1 tt0092699 Broad…  1987 1988-04-01      Comedy…     133 USA   Engli…  20000000
+##  2 tt0037931 Murde…  1945 1945-06-23      Comedy…      91 USA   Engli…        NA
+##  3 tt0183505 Me, M…  2000 2000-09-08      Comedy      116 USA   Engli…  51000000
+##  4 tt0033945 Never…  1941 1947-05-02      Comedy…      71 USA   Engli…        NA
+##  5 tt0372122 Adam …  2005 2007-05-17      Comedy…      99 USA   Engli…        NA
+##  6 tt3703836 Henry…  2015 2016-01-08      Drama        87 USA   Engli…        NA
+##  7 tt0093640 No Wa…  1987 1987-12-11      Action…     114 USA   Engli…  15000000
+##  8 tt0494652 Welco…  2008 2008-02-08      Comedy…     104 USA   Engli…  35000000
+##  9 tt0094006 Some …  1987 1988-01-13      Drama,…      95 USA   Engli…        NA
+## 10 tt1142798 The F…  2008 2008-09-12      Drama       111 USA   Engli…        NA
+## # … with 11,330 more rows, and 11 more variables: receita <dbl>,
+## #   receita_eua <dbl>, nota_imdb <dbl>, num_avaliacoes <dbl>, direcao <chr>,
+## #   roteiro <chr>, producao <chr>, elenco <chr>, descricao <chr>,
+## #   num_criticas_publico <dbl>, num_criticas_critica <dbl>
 ```
 
 #### Exercícios {-}
@@ -816,77 +852,78 @@ Utilize a base `imdb` nos exercícios a seguir.
 
 **1.** Calcule a duração média e mediana dos filmes da base.
 
-**2.** Calcule o lucro médio dos filmes com duração menor que 60 minutos.
+**2.** Calcule o lucro médio dos filmes com duração maior que 2 horas (ou seja, 120 minutos).
 
-**3.** Apresente na mesma tabela o lucro médio dos filmes com duracao menor que 60 minutos e o lucro médio dos filmes com duracao maior ou igual a 60 minutos.
+**3.** Apresente na mesma tabela o lucro médio dos filmes com duracao menor que 120 minutos e o lucro médio dos filmes com duracao maior ou igual a 120 minutos.
 
 **4.** Retorne tabelas (`tibbles`) apenas com:
 
-- **a.** a nota IMDB média dos filmes por tipo de classificacao;
+- **a.** a nota IMDB média dos filmes por ano de lançamento;
 
 - **b.** a receita média e mediana dos filmes por ano;
 
-- **c.** apenas o nome dos diretores com mais de 10 filmes.
+- **c.** apenas o nome das pessoas que dirigiram mais de 10 filmes.
 
 ### Juntando duas bases
 
-Podemos juntar duas tabelas a partir de uma (coluna) chave utilizando a função `left_join()`. Como exempo, vamos inicialmente calcular o lucro médio dos filmes de cada diretor e salvar no objeto `tab_lucro_diretor`.
+Podemos juntar duas tabelas a partir de uma (coluna) chave utilizando a função `left_join()`. Como exempo, vamos inicialmente calcular o lucro médio dos filmes de cada direção e salvar no objeto `tab_lucro_direcao`.
 
 
 ```r
-tab_lucro_diretor <- imdb %>%
-  group_by(diretor) %>% 
+tab_lucro_direcao <- imdb %>%
+  group_by(direcao) %>% 
   summarise(lucro_medio = mean(receita - orcamento, na.rm = TRUE))
 
-tab_lucro_diretor
+tab_lucro_direcao
 ```
 
 ```
-## # A tibble: 1,813 x 2
-##    diretor          lucro_medio
-##    <chr>                  <dbl>
-##  1 A. Raven Cruz            NaN
-##  2 Aaron Hann               NaN
-##  3 Aaron Schneider      1676553
-##  4 Aaron Seltzer       28546578
-##  5 Abel Ferrara       -11272676
-##  6 Adam Carolla        -1394057
-##  7 Adam Goldberg       -1647420
-##  8 Adam Green               NaN
-##  9 Adam Jay Epstein         NaN
-## 10 Adam Marcus         13435068
-## # … with 1,803 more rows
+## # A tibble: 5,140 × 2
+##    direcao                           lucro_medio
+##    <chr>                                   <dbl>
+##  1 A. Edward Sutherland                     NaN 
+##  2 A.J. Edwards                             NaN 
+##  3 A.T. White                               NaN 
+##  4 Aaron Blaise, Robert Walker        122397798 
+##  5 Aaron Hann, Mario Miscione               NaN 
+##  6 Aaron Harvey                        -4349286.
+##  7 Aaron Horvath, Peter Rida Michail   42090236 
+##  8 Aaron K. Carter                          NaN 
+##  9 Aaron Katz                             13110 
+## 10 Aaron Kaufman                            NaN 
+## # … with 5,130 more rows
 ```
 
-E se quisermos colocar essa informação na base original? Basta usar a função `left_join()` utilizando a coluna `diretor` como chave. Observe que a coluna `lucro_medio` aparece agora no fim da tabela.
+E se quisermos colocar essa informação na base original? Basta usar a função `left_join()` utilizando a coluna `direcao` como chave. Observe que a coluna `lucro_medio` aparece agora no fim da tabela.
 
 
 ```r
-imdb_com_lucro_medio <- left_join(imdb, tab_lucro_diretor, by = "diretor")
+imdb_com_lucro_medio <- left_join(imdb, tab_lucro_direcao, by = "direcao")
 
 imdb_com_lucro_medio
 ```
 
 ```
-## # A tibble: 3,807 x 16
-##    titulo     ano diretor  duracao cor   generos   pais  classificacao orcamento
-##    <chr>    <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
-##  1 Avatar    2009 James C…     178 Color Action|A… USA   A partir de … 237000000
-##  2 Pirates…  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
-##  3 The Dar…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
-##  4 John Ca…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
-##  5 Spider-…  2007 Sam Rai…     156 Color Action|A… USA   A partir de … 258000000
-##  6 Tangled   2010 Nathan …     100 Color Adventur… USA   Livre         260000000
-##  7 Avenger…  2015 Joss Wh…     141 Color Action|A… USA   A partir de … 250000000
-##  8 Batman …  2016 Zack Sn…     183 Color Action|A… USA   A partir de … 250000000
-##  9 Superma…  2006 Bryan S…     169 Color Action|A… USA   A partir de … 209000000
-## 10 Pirates…  2006 Gore Ve…     151 Color Action|A… USA   A partir de … 225000000
-## # … with 3,797 more rows, and 7 more variables: receita <int>, nota_imdb <dbl>,
-## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>,
-## #   lucro_medio <dbl>
+## # A tibble: 11,340 × 21
+##    id_filme  titulo   ano data_lancamento generos duracao pais  idioma orcamento
+##    <chr>     <chr>  <dbl> <chr>           <chr>     <dbl> <chr> <chr>      <dbl>
+##  1 tt0092699 Broad…  1987 1988-04-01      Comedy…     133 USA   Engli…  20000000
+##  2 tt0037931 Murde…  1945 1945-06-23      Comedy…      91 USA   Engli…        NA
+##  3 tt0183505 Me, M…  2000 2000-09-08      Comedy      116 USA   Engli…  51000000
+##  4 tt0033945 Never…  1941 1947-05-02      Comedy…      71 USA   Engli…        NA
+##  5 tt0372122 Adam …  2005 2007-05-17      Comedy…      99 USA   Engli…        NA
+##  6 tt3703836 Henry…  2015 2016-01-08      Drama        87 USA   Engli…        NA
+##  7 tt0093640 No Wa…  1987 1987-12-11      Action…     114 USA   Engli…  15000000
+##  8 tt0494652 Welco…  2008 2008-02-08      Comedy…     104 USA   Engli…  35000000
+##  9 tt0094006 Some …  1987 1988-01-13      Drama,…      95 USA   Engli…        NA
+## 10 tt1142798 The F…  2008 2008-09-12      Drama       111 USA   Engli…        NA
+## # … with 11,330 more rows, and 12 more variables: receita <dbl>,
+## #   receita_eua <dbl>, nota_imdb <dbl>, num_avaliacoes <dbl>, direcao <chr>,
+## #   roteiro <chr>, producao <chr>, elenco <chr>, descricao <chr>,
+## #   num_criticas_publico <dbl>, num_criticas_critica <dbl>, lucro_medio <dbl>
 ```
 
-Na tabela `imdb_com_lucro_medio`, como na tabela `imdb`, cada linha continua a representar um filme diferente, mas agora temos também a informação do lucro médio do diretor de cada filme. 
+Na tabela `imdb_com_lucro_medio`, como na tabela `imdb`, cada linha continua a representar um filme diferente, mas agora temos também a informação do lucro médio da direção de cada filme. 
 
 A primeira linha, por exemplo, traz as informações do filme Avatar. O valor do `lucro_medio` nessa linha representa o lucro médio de todos os filmes do James Cameron, que é o diretor de Avatar. Com essa informação, podemos calcular o quanto o lucro do Avatar se afasta do lucro médio do James Cameron.
 
@@ -898,24 +935,24 @@ imdb_com_lucro_medio %>%
     lucro_relativo = (lucro - lucro_medio)/lucro_medio,
     lucro_relativo = scales::percent(lucro_relativo)
   ) %>% 
-  select(titulo, diretor, lucro, lucro_medio, lucro_relativo)
+  select(titulo, direcao, lucro, lucro_medio, lucro_relativo)
 ```
 
 ```
-## # A tibble: 3,807 x 5
-##    titulo                      diretor          lucro lucro_medio lucro_relativo
-##    <chr>                       <chr>            <int>       <dbl> <chr>         
-##  1 Avatar                      James Cameron   5.24e8  194620985  168.98736%    
-##  2 Pirates of the Caribbean: … Gore Verbins…   9.40e6   36942999. -74.54416%    
-##  3 The Dark Knight Rises       Christopher …   1.98e8  101028447  96.11372%     
-##  4 John Carter                 Andrew Stant…  -1.91e8   46668146  -508.50417%   
-##  5 Spider-Man 3                Sam Raimi       7.85e7   63300090. 24.06033%     
-##  6 Tangled                     Nathan Greno   -5.92e7  -59192738  0.00000%      
-##  7 Avengers: Age of Ultron     Joss Whedon     2.09e8  250221657  -16.47741%    
-##  8 Batman v Superman: Dawn of… Zack Snyder     8.02e7   33149106. 142.08514%    
-##  9 Superman Returns            Bryan Singer   -8.93e6   -2887024. 209.33560%    
-## 10 Pirates of the Caribbean: … Gore Verbins…   1.98e8   36942999. 436.04913%    
-## # … with 3,797 more rows
+## # A tibble: 11,340 × 5
+##    titulo                            direcao    lucro lucro_medio lucro_relativo
+##    <chr>                             <chr>      <dbl>       <dbl> <chr>         
+##  1 Broadcast News                    James L…  4.73e7   47749419. -0.87563%     
+##  2 Murder, He Says                   George … NA             NaN  <NA>          
+##  3 Me, Myself & Irene                Bobby F…  9.83e7   74584082. 31.75868%     
+##  4 Never Give a Sucker an Even Break Edward … NA             NaN  <NA>          
+##  5 Adam & Steve                      Craig C… NA             NaN  <NA>          
+##  6 Henry Gamble's Birthday Party     Stephen… NA             NaN  <NA>          
+##  7 No Way Out                        Roger D…  2.05e7   28936159. -29.12150%    
+##  8 Welcome Home, Roscoe Jenkins      Malcolm…  8.66e6   35967552. -75.93548%    
+##  9 Some Kind of Wonderful            Howard … NA        13381606. <NA>          
+## 10 The Family That Preys             Tyler P… NA        33508412. <NA>          
+## # … with 11,330 more rows
 ```
 
 Observamos então que o Avatar obteve um lucro aproximadamente 169% maior que a média dos filmes do James Cameron.
@@ -928,16 +965,16 @@ Além da função `left_join()`, também são muito utilizadas as funções `rig
 
 A figura a seguir esquematiza as operações dessas funções:
 
-<img src="assets/img/manipulacao/joins.png" width="710" style="display: block; margin: auto;" />
+<img src="assets/img/manipulacao/joins.png" width="355" style="display: block; margin: auto;" />
 
 #### Exercícios {-}
 
 **1.** Utilize a base `imdb` para resolver os itens a seguir.
 
 **a.** Salve em um novo objeto uma tabela com a
-nota média dos filmes de cada diretor. Essa tabela
-deve conter duas colunas (`diretor` e `nota_imdb_media`)
-e cada linha deve ser um diretor diferente.
+nota média dos filmes de cada direção. Essa tabela
+deve conter duas colunas (`direcao` e `nota_imdb_media`)
+e cada linha deve ser uma direção diferente.
 
 **b.** Use o `left_join()` para trazer a coluna
 `nota_imdb_media` da tabela do item anterior
@@ -992,7 +1029,7 @@ casas %>%
 ```
 
 ```
-## # A tibble: 10 x 3
+## # A tibble: 10 × 3
 ##    geral_qualidade lote_area_media venda_valor_medio
 ##    <chr>                     <dbl>             <dbl>
 ##  1 abaixo da média           8464.           106485.
@@ -1021,7 +1058,7 @@ casas %>%
 ```
 
 ```
-## # A tibble: 10 x 3
+## # A tibble: 10 × 3
 ##    geral_qualidade lote_area venda_valor
 ##    <chr>               <dbl>       <dbl>
 ##  1 abaixo da média     8464.     106485.
@@ -1050,7 +1087,7 @@ casas %>%
 ```
 
 ```
-## # A tibble: 10 x 3
+## # A tibble: 10 × 3
 ##    geral_qualidade lote_area venda_valor
 ##    <chr>               <dbl>       <dbl>
 ##  1 abaixo da média     8464.     106485.
@@ -1067,7 +1104,7 @@ casas %>%
 
 A sintaxe é parecida com a função `summarise_at()`, mas agora não precisamos mais usar a função `vars()` e nem usar `list(nome_da_funcao)`para definir a função aplicada nas colunas.
 
-Usando `across()`, podemos facilmente aplicar uma função em todas as colunas da nossa base. Abaixo, calculamos o número de valores distintos para todas as variáveis da base `casas`. O padrão do parâmetro `.cols` é `everithing()`, que representa "todas as colunas".
+Usando `across()`, podemos facilmente aplicar uma função em todas as colunas da nossa base. Abaixo, calculamos o número de valores distintos para todas as variáveis da base `casas`. O padrão do parâmetro `.cols` é `everything()`, que representa "todas as colunas".
 
 
 ```r
@@ -1076,7 +1113,7 @@ casas %>%
 ```
 
 ```
-## # A tibble: 1 x 82
+## # A tibble: 1 × 82
 ##   ordem   pid moradia_classe moradia_zoneamento lote_fachada lote_area rua_tipo
 ##   <int> <int>          <int>              <int>        <int>     <int>    <int>
 ## 1  2930  2930             16                  7          129      1960        2
@@ -1086,31 +1123,7 @@ casas %>%
 ## #   condicao_2 <int>, moradia_tipo <int>, moradia_estilo <int>,
 ## #   geral_qualidade <int>, geral_condicao <int>, construcao_ano <int>,
 ## #   remodelacao_ano <int>, telhado_estilo <int>, telhado_material <int>,
-## #   exterior_cobertura_1 <int>, exterior_cobertura_2 <int>,
-## #   alvenaria_tipo <int>, alvenaria_area <int>, exterior_qualidade <int>,
-## #   exterior_condicao <int>, fundacao_tipo <int>, porao_qualidade <int>,
-## #   porao_condicao <int>, porao_exposicao <int>, porao_acabamento_1 <int>,
-## #   porao_area_com_acabamento_1 <int>, porao_acabamento_2 <int>,
-## #   porao_area_com_acabamento_2 <int>, porao_area_sem_acabamento <int>,
-## #   porao_area_total <int>, porao_num_banheiros <int>,
-## #   porao_num_banheiros_lavabos <int>, aquecimento_tipo <int>,
-## #   aquecimento_qualidade_condicao <int>, ar_condicionado_central <int>,
-## #   sistema_eletrico_tipo <int>, primeiro_andar_area <int>,
-## #   segundo_andar_area <int>, acabamento_baixa_qualidade_area <int>,
-## #   acima_solo_area <int>, acima_solo_num_banheiros <int>,
-## #   acima_solo_num_lavabos <int>, acima_solo_num_quartos <int>,
-## #   acima_solo_num_cozinhas <int>, cozinha_qualidade <int>,
-## #   acima_solo_num_comodos <int>, funcional <int>, total_num_lareiras <int>,
-## #   lareira_qualidade <int>, garagem_tipo <int>, garagem_ano_construcao <int>,
-## #   garagem_acabamento <int>, garagem_capacidade_carros <int>,
-## #   garagem_area <int>, garagem_qualidade <int>, garagem_condicao <int>,
-## #   entrada_veiculo_pavimentada <int>, deck_madeira_area <int>,
-## #   varanda_aberta_area <int>, varanda_fechada_area <int>,
-## #   varanda_3ssn_area <int>, varanda_com_tela_area <int>, piscina_area <int>,
-## #   piscina_qualidade <int>, cerca_qualidade <int>,
-## #   funcionalidades_diversas <int>, funcionalidades_valor <int>,
-## #   venda_mes <int>, venda_ano <int>, venda_tipo <int>, venda_condicao <int>,
-## #   venda_valor <int>
+## #   exterior_cobertura_1 <int>, exterior_cobertura_2 <int>, …
 ```
 
 Para fazer essa mesma operação, antes utilizaríamos a função `summarise_all()`.
@@ -1122,7 +1135,7 @@ casas %>%
 ```
 
 ```
-## # A tibble: 1 x 82
+## # A tibble: 1 × 82
 ##   ordem   pid moradia_classe moradia_zoneamento lote_fachada lote_area rua_tipo
 ##   <int> <int>          <int>              <int>        <int>     <int>    <int>
 ## 1  2930  2930             16                  7          129      1960        2
@@ -1132,31 +1145,7 @@ casas %>%
 ## #   condicao_2 <int>, moradia_tipo <int>, moradia_estilo <int>,
 ## #   geral_qualidade <int>, geral_condicao <int>, construcao_ano <int>,
 ## #   remodelacao_ano <int>, telhado_estilo <int>, telhado_material <int>,
-## #   exterior_cobertura_1 <int>, exterior_cobertura_2 <int>,
-## #   alvenaria_tipo <int>, alvenaria_area <int>, exterior_qualidade <int>,
-## #   exterior_condicao <int>, fundacao_tipo <int>, porao_qualidade <int>,
-## #   porao_condicao <int>, porao_exposicao <int>, porao_acabamento_1 <int>,
-## #   porao_area_com_acabamento_1 <int>, porao_acabamento_2 <int>,
-## #   porao_area_com_acabamento_2 <int>, porao_area_sem_acabamento <int>,
-## #   porao_area_total <int>, porao_num_banheiros <int>,
-## #   porao_num_banheiros_lavabos <int>, aquecimento_tipo <int>,
-## #   aquecimento_qualidade_condicao <int>, ar_condicionado_central <int>,
-## #   sistema_eletrico_tipo <int>, primeiro_andar_area <int>,
-## #   segundo_andar_area <int>, acabamento_baixa_qualidade_area <int>,
-## #   acima_solo_area <int>, acima_solo_num_banheiros <int>,
-## #   acima_solo_num_lavabos <int>, acima_solo_num_quartos <int>,
-## #   acima_solo_num_cozinhas <int>, cozinha_qualidade <int>,
-## #   acima_solo_num_comodos <int>, funcional <int>, total_num_lareiras <int>,
-## #   lareira_qualidade <int>, garagem_tipo <int>, garagem_ano_construcao <int>,
-## #   garagem_acabamento <int>, garagem_capacidade_carros <int>,
-## #   garagem_area <int>, garagem_qualidade <int>, garagem_condicao <int>,
-## #   entrada_veiculo_pavimentada <int>, deck_madeira_area <int>,
-## #   varanda_aberta_area <int>, varanda_fechada_area <int>,
-## #   varanda_3ssn_area <int>, varanda_com_tela_area <int>, piscina_area <int>,
-## #   piscina_qualidade <int>, cerca_qualidade <int>,
-## #   funcionalidades_diversas <int>, funcionalidades_valor <int>,
-## #   venda_mes <int>, venda_ano <int>, venda_tipo <int>, venda_condicao <int>,
-## #   venda_valor <int>
+## #   exterior_cobertura_1 <int>, exterior_cobertura_2 <int>, …
 ```
 
 Se quisermos selecionar as colunas a serem modificadas a partir de um teste lógico, utilizamos o ajudante `where()`.
@@ -1170,7 +1159,7 @@ casas %>%
 ```
 
 ```
-## # A tibble: 1 x 47
+## # A tibble: 1 × 47
 ##     pid moradia_classe moradia_zoneamento rua_tipo beco_tipo lote_formato
 ##   <int>          <int>              <int>    <int>     <int>        <int>
 ## 1  2930             16                  7        2         3            4
@@ -1180,16 +1169,7 @@ casas %>%
 ## #   moradia_estilo <int>, geral_qualidade <int>, geral_condicao <int>,
 ## #   telhado_estilo <int>, telhado_material <int>, exterior_cobertura_1 <int>,
 ## #   exterior_cobertura_2 <int>, alvenaria_tipo <int>, exterior_qualidade <int>,
-## #   exterior_condicao <int>, fundacao_tipo <int>, porao_qualidade <int>,
-## #   porao_condicao <int>, porao_exposicao <int>, porao_acabamento_1 <int>,
-## #   porao_acabamento_2 <int>, aquecimento_tipo <int>,
-## #   aquecimento_qualidade_condicao <int>, ar_condicionado_central <int>,
-## #   sistema_eletrico_tipo <int>, cozinha_qualidade <int>, funcional <int>,
-## #   lareira_qualidade <int>, garagem_tipo <int>, garagem_acabamento <int>,
-## #   garagem_qualidade <int>, garagem_condicao <int>,
-## #   entrada_veiculo_pavimentada <int>, piscina_qualidade <int>,
-## #   cerca_qualidade <int>, funcionalidades_diversas <int>, venda_tipo <int>,
-## #   venda_condicao <int>
+## #   exterior_condicao <int>, fundacao_tipo <int>, porao_qualidade <int>, …
 ```
 
 Todas as colunas da base resultante eram colunas com classe `character` na base `casas`.
@@ -1203,7 +1183,7 @@ casas %>%
 ```
 
 ```
-## # A tibble: 1 x 47
+## # A tibble: 1 × 47
 ##     pid moradia_classe moradia_zoneamento rua_tipo beco_tipo lote_formato
 ##   <int>          <int>              <int>    <int>     <int>        <int>
 ## 1  2930             16                  7        2         3            4
@@ -1213,16 +1193,7 @@ casas %>%
 ## #   moradia_estilo <int>, geral_qualidade <int>, geral_condicao <int>,
 ## #   telhado_estilo <int>, telhado_material <int>, exterior_cobertura_1 <int>,
 ## #   exterior_cobertura_2 <int>, alvenaria_tipo <int>, exterior_qualidade <int>,
-## #   exterior_condicao <int>, fundacao_tipo <int>, porao_qualidade <int>,
-## #   porao_condicao <int>, porao_exposicao <int>, porao_acabamento_1 <int>,
-## #   porao_acabamento_2 <int>, aquecimento_tipo <int>,
-## #   aquecimento_qualidade_condicao <int>, ar_condicionado_central <int>,
-## #   sistema_eletrico_tipo <int>, cozinha_qualidade <int>, funcional <int>,
-## #   lareira_qualidade <int>, garagem_tipo <int>, garagem_acabamento <int>,
-## #   garagem_qualidade <int>, garagem_condicao <int>,
-## #   entrada_veiculo_pavimentada <int>, piscina_qualidade <int>,
-## #   cerca_qualidade <int>, funcionalidades_diversas <int>, venda_tipo <int>,
-## #   venda_condicao <int>
+## #   exterior_condicao <int>, fundacao_tipo <int>, porao_qualidade <int>, …
 ```
 
 Com o `across()`, podemos combinar os efeitos de um `summarise_if()` e um `summarise_at()` em um único `summarise()`. A seguir, calculamos as áreas médias, garantindo que pegamos apenas variáveis numéricas.
@@ -1234,10 +1205,10 @@ casas %>%
 ```
 
 ```
-## # A tibble: 1 x 17
-##   lote_area alvenaria_area porao_area_com_ac… porao_area_com_a… porao_area_sem_…
-##       <dbl>          <dbl>              <dbl>             <dbl>            <dbl>
-## 1    10148.           102.               443.              49.7             559.
+## # A tibble: 1 × 17
+##   lote_area alvenaria_area porao_area_com_aca… porao_area_com_… porao_area_sem_…
+##       <dbl>          <dbl>               <dbl>            <dbl>            <dbl>
+## 1    10148.           102.                443.             49.7             559.
 ## # … with 12 more variables: porao_area_total <dbl>, primeiro_andar_area <dbl>,
 ## #   segundo_andar_area <dbl>, acabamento_baixa_qualidade_area <dbl>,
 ## #   acima_solo_area <dbl>, garagem_area <dbl>, deck_madeira_area <dbl>,
@@ -1260,7 +1231,7 @@ casas %>%
 ```
 
 ```
-## # A tibble: 6 x 5
+## # A tibble: 6 × 5
 ##   fundacao_tipo       lote_area alvenaria_area porao_area_com_acabamento_1 n_obs
 ##   <chr>                   <dbl>          <dbl>                       <dbl> <int>
 ## 1 bloco de concreto      10616.           85.0                       468.   1244
@@ -1308,7 +1279,7 @@ casas %>%
 ```
 
 ```
-## # A tibble: 2,930 x 35
+## # A tibble: 2,930 × 35
 ##    ordem lote_fachada lote_area construcao_ano remodelacao_ano alvenaria_area
 ##    <int>        <int>     <int>          <int>           <int>          <int>
 ##  1     1          141     31770           1960            1960            112
@@ -1327,15 +1298,7 @@ casas %>%
 ## #   porao_num_banheiros <int>, porao_num_banheiros_lavabos <int>,
 ## #   primeiro_andar_area <int>, segundo_andar_area <int>,
 ## #   acabamento_baixa_qualidade_area <int>, acima_solo_area <int>,
-## #   acima_solo_num_banheiros <int>, acima_solo_num_lavabos <int>,
-## #   acima_solo_num_quartos <int>, acima_solo_num_cozinhas <int>,
-## #   acima_solo_num_comodos <int>, total_num_lareiras <int>,
-## #   garagem_ano_construcao <int>, garagem_capacidade_carros <int>,
-## #   garagem_area <int>, deck_madeira_area <int>, varanda_aberta_area <int>,
-## #   varanda_fechada_area <int>, varanda_3ssn_area <int>,
-## #   varanda_com_tela_area <int>, piscina_area <int>,
-## #   funcionalidades_valor <int>, venda_mes <int>, venda_ano <int>,
-## #   venda_valor <int>
+## #   acima_solo_num_banheiros <int>, acima_solo_num_lavabos <int>, …
 ```
 
 O mesmo vale para o `rename()`. Se quisermos renomer várias colunas, a partir de uma função, utilizamos o `rename_with()`.
@@ -1347,51 +1310,26 @@ casas %>%
 ```
 
 ```
-## # A tibble: 2,930 x 82
-##    ordem pid    moradia_classe  moradia_zoneame… lote_fachada lote_area rua_tipo
-##    <int> <chr>  <chr>           <chr>                   <int>     <int> <chr>   
-##  1     1 05263… 020             Residencial bai…          141     31770 pavimen…
-##  2     2 05263… 020             Residencial alt…           80     11622 pavimen…
-##  3     3 05263… 020             Residencial bai…           81     14267 pavimen…
-##  4     4 05263… 020             Residencial bai…           93     11160 pavimen…
-##  5     5 05271… 060             Residencial bai…           74     13830 pavimen…
-##  6     6 05271… 060             Residencial bai…           78      9978 pavimen…
-##  7     7 05271… desenvolviment… Residencial bai…           41      4920 pavimen…
-##  8     8 05271… desenvolviment… Residencial bai…           43      5005 pavimen…
-##  9     9 05271… desenvolviment… Residencial bai…           39      5389 pavimen…
-## 10    10 05271… 060             Residencial bai…           60      7500 pavimen…
+## # A tibble: 2,930 × 82
+##    ordem pid     moradia_classe moradia_zoneame… lote_fachada lote_area rua_tipo
+##    <int> <chr>   <chr>          <chr>                   <int>     <int> <chr>   
+##  1     1 052630… 020            Residencial bai…          141     31770 pavimen…
+##  2     2 052635… 020            Residencial alt…           80     11622 pavimen…
+##  3     3 052635… 020            Residencial bai…           81     14267 pavimen…
+##  4     4 052635… 020            Residencial bai…           93     11160 pavimen…
+##  5     5 052710… 060            Residencial bai…           74     13830 pavimen…
+##  6     6 052710… 060            Residencial bai…           78      9978 pavimen…
+##  7     7 052712… desenvolvimen… Residencial bai…           41      4920 pavimen…
+##  8     8 052714… desenvolvimen… Residencial bai…           43      5005 pavimen…
+##  9     9 052714… desenvolvimen… Residencial bai…           39      5389 pavimen…
+## 10    10 052716… 060            Residencial bai…           60      7500 pavimen…
 ## # … with 2,920 more rows, and 75 more variables: beco_tipo <chr>,
 ## #   lote_formato <chr>, terreno_contorno <chr>, utilidades <chr>,
 ## #   lote_config <chr>, terreno_declive <chr>, vizinhanca <chr>,
 ## #   condicao_1 <chr>, condicao_2 <chr>, moradia_tipo <chr>,
 ## #   moradia_estilo <chr>, geral_qualidade <chr>, geral_condicao <chr>,
 ## #   construcao_ano <int>, remodelacao_ano <int>, telhado_estilo <chr>,
-## #   telhado_material <chr>, exterior_cobertura_1 <chr>,
-## #   exterior_cobertura_2 <chr>, alvenaria_tipo <chr>, alvenaria_area <int>,
-## #   exterior_qualidade <chr>, exterior_condicao <chr>, fundacao_tipo <chr>,
-## #   porao_qualidade <chr>, porao_condicao <chr>, porao_exposicao <chr>,
-## #   porao_acabamento_1 <chr>, porao_area_com_acabamento_1 <int>,
-## #   porao_acabamento_2 <chr>, porao_area_com_acabamento_2 <int>,
-## #   porao_area_sem_acabamento <int>, porao_area_total <int>,
-## #   porao_num_banheiros <int>, porao_num_banheiros_lavabos <int>,
-## #   aquecimento_tipo <chr>, aquecimento_qualidade_condicao <chr>,
-## #   ar_condicionado_central <chr>, sistema_eletrico_tipo <chr>,
-## #   primeiro_andar_area <int>, segundo_andar_area <int>,
-## #   acabamento_baixa_qualidade_area <int>, acima_solo_area <int>,
-## #   acima_solo_num_banheiros <int>, acima_solo_num_lavabos <int>,
-## #   acima_solo_num_quartos <int>, acima_solo_num_cozinhas <int>,
-## #   cozinha_qualidade <chr>, acima_solo_num_comodos <int>, funcional <chr>,
-## #   total_num_lareiras <int>, lareira_qualidade <chr>, garagem_tipo <chr>,
-## #   garagem_ano_construcao <int>, garagem_acabamento <chr>,
-## #   garagem_capacidade_carros <int>, garagem_area <int>,
-## #   garagem_qualidade <chr>, garagem_condicao <chr>,
-## #   entrada_veiculo_pavimentada <chr>, deck_madeira_area <int>,
-## #   varanda_aberta_area <int>, varanda_fechada_area <int>,
-## #   varanda_3ssn_area <int>, varanda_com_tela_area <int>, piscina_area <int>,
-## #   piscina_qualidade <chr>, cerca_qualidade <chr>,
-## #   funcionalidades_diversas <chr>, funcionalidades_valor <int>,
-## #   VENDA_MES <int>, VENDA_ANO <int>, VENDA_TIPO <chr>, VENDA_CONDICAO <chr>,
-## #   VENDA_VALOR <int>
+## #   telhado_material <chr>, exterior_cobertura_1 <chr>, …
 ```
 
 #### A função `relocate()` {-}
@@ -1405,50 +1343,26 @@ casas %>%
 ```
 
 ```
-## # A tibble: 2,930 x 82
-##    venda_valor venda_tipo ordem pid    moradia_classe          moradia_zoneamen…
-##          <int> <chr>      <int> <chr>  <chr>                   <chr>            
-##  1      215000 "WD "          1 05263… 020                     Residencial baix…
-##  2      105000 "WD "          2 05263… 020                     Residencial alta…
-##  3      172000 "WD "          3 05263… 020                     Residencial baix…
-##  4      244000 "WD "          4 05263… 020                     Residencial baix…
-##  5      189900 "WD "          5 05271… 060                     Residencial baix…
-##  6      195500 "WD "          6 05271… 060                     Residencial baix…
-##  7      213500 "WD "          7 05271… desenvolvimento de uni… Residencial baix…
-##  8      191500 "WD "          8 05271… desenvolvimento de uni… Residencial baix…
-##  9      236500 "WD "          9 05271… desenvolvimento de uni… Residencial baix…
-## 10      189000 "WD "         10 05271… 060                     Residencial baix…
+## # A tibble: 2,930 × 82
+##    venda_valor venda_tipo ordem pid        moradia_classe       moradia_zoneame…
+##          <int> <chr>      <int> <chr>      <chr>                <chr>           
+##  1      215000 "WD "          1 0526301100 020                  Residencial bai…
+##  2      105000 "WD "          2 0526350040 020                  Residencial alt…
+##  3      172000 "WD "          3 0526351010 020                  Residencial bai…
+##  4      244000 "WD "          4 0526353030 020                  Residencial bai…
+##  5      189900 "WD "          5 0527105010 060                  Residencial bai…
+##  6      195500 "WD "          6 0527105030 060                  Residencial bai…
+##  7      213500 "WD "          7 0527127150 desenvolvimento de … Residencial bai…
+##  8      191500 "WD "          8 0527145080 desenvolvimento de … Residencial bai…
+##  9      236500 "WD "          9 0527146030 desenvolvimento de … Residencial bai…
+## 10      189000 "WD "         10 0527162130 060                  Residencial bai…
 ## # … with 2,920 more rows, and 76 more variables: lote_fachada <int>,
 ## #   lote_area <int>, rua_tipo <chr>, beco_tipo <chr>, lote_formato <chr>,
 ## #   terreno_contorno <chr>, utilidades <chr>, lote_config <chr>,
 ## #   terreno_declive <chr>, vizinhanca <chr>, condicao_1 <chr>,
 ## #   condicao_2 <chr>, moradia_tipo <chr>, moradia_estilo <chr>,
 ## #   geral_qualidade <chr>, geral_condicao <chr>, construcao_ano <int>,
-## #   remodelacao_ano <int>, telhado_estilo <chr>, telhado_material <chr>,
-## #   exterior_cobertura_1 <chr>, exterior_cobertura_2 <chr>,
-## #   alvenaria_tipo <chr>, alvenaria_area <int>, exterior_qualidade <chr>,
-## #   exterior_condicao <chr>, fundacao_tipo <chr>, porao_qualidade <chr>,
-## #   porao_condicao <chr>, porao_exposicao <chr>, porao_acabamento_1 <chr>,
-## #   porao_area_com_acabamento_1 <int>, porao_acabamento_2 <chr>,
-## #   porao_area_com_acabamento_2 <int>, porao_area_sem_acabamento <int>,
-## #   porao_area_total <int>, porao_num_banheiros <int>,
-## #   porao_num_banheiros_lavabos <int>, aquecimento_tipo <chr>,
-## #   aquecimento_qualidade_condicao <chr>, ar_condicionado_central <chr>,
-## #   sistema_eletrico_tipo <chr>, primeiro_andar_area <int>,
-## #   segundo_andar_area <int>, acabamento_baixa_qualidade_area <int>,
-## #   acima_solo_area <int>, acima_solo_num_banheiros <int>,
-## #   acima_solo_num_lavabos <int>, acima_solo_num_quartos <int>,
-## #   acima_solo_num_cozinhas <int>, cozinha_qualidade <chr>,
-## #   acima_solo_num_comodos <int>, funcional <chr>, total_num_lareiras <int>,
-## #   lareira_qualidade <chr>, garagem_tipo <chr>, garagem_ano_construcao <int>,
-## #   garagem_acabamento <chr>, garagem_capacidade_carros <int>,
-## #   garagem_area <int>, garagem_qualidade <chr>, garagem_condicao <chr>,
-## #   entrada_veiculo_pavimentada <chr>, deck_madeira_area <int>,
-## #   varanda_aberta_area <int>, varanda_fechada_area <int>,
-## #   varanda_3ssn_area <int>, varanda_com_tela_area <int>, piscina_area <int>,
-## #   piscina_qualidade <chr>, cerca_qualidade <chr>,
-## #   funcionalidades_diversas <chr>, funcionalidades_valor <int>,
-## #   venda_mes <int>, venda_ano <int>, venda_condicao <chr>
+## #   remodelacao_ano <int>, telhado_estilo <chr>, telhado_material <chr>, …
 ```
 
 Podemos usar os argumentos `.after` e `.before` para fazer mudanças mais complexas.
@@ -1488,14 +1402,14 @@ tab_notas
 ```
 
 ```
-## # A tibble: 5 x 5
+## # A tibble: 5 × 5
 ##   student_id prova1 prova2 prova3 prova4
 ##        <int>  <int>  <int>  <int>  <int>
-## 1          1      5      7      6      1
-## 2          2      4      3      7      7
-## 3          3      0      0      9      8
-## 4          4      2      6     10      5
-## 5          5      3     10      8      3
+## 1          1     10      4      0      7
+## 2          2      9     10      9      6
+## 3          3      4      7      2      1
+## 4          4      8      5      8      0
+## 5          5      5      6      3      8
 ```
 
 Se quisermos gerar uma coluna com a nota média de cada aluno nas quatro provas, não poderíamos usar o `mutate()` diretamente.
@@ -1506,14 +1420,14 @@ tab_notas %>% mutate(media = mean(c(prova1, prova2, prova3, prova4)))
 ```
 
 ```
-## # A tibble: 5 x 6
+## # A tibble: 5 × 6
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      5      7      6      1   5.2
-## 2          2      4      3      7      7   5.2
-## 3          3      0      0      9      8   5.2
-## 4          4      2      6     10      5   5.2
-## 5          5      3     10      8      3   5.2
+## 1          1     10      4      0      7   5.6
+## 2          2      9     10      9      6   5.6
+## 3          3      4      7      2      1   5.6
+## 4          4      8      5      8      0   5.6
+## 5          5      5      6      3      8   5.6
 ```
 
 Neste caso, todas as colunas estão sendo empilhadas e gerando uma única média, passada a todas as linhas da coluna `media`.
@@ -1528,15 +1442,15 @@ tab_notas %>%
 ```
 
 ```
-## # A tibble: 5 x 6
+## # A tibble: 5 × 6
 ## # Groups:   student_id [5]
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      5      7      6      1  4.75
-## 2          2      4      3      7      7  5.25
-## 3          3      0      0      9      8  4.25
-## 4          4      2      6     10      5  5.75
-## 5          5      3     10      8      3  6
+## 1          1     10      4      0      7  5.25
+## 2          2      9     10      9      6  8.5 
+## 3          3      4      7      2      1  3.5 
+## 4          4      8      5      8      0  5.25
+## 5          5      5      6      3      8  5.5
 ```
 
 Também podemos nos aproveitar da sintaxe do `across()` neste caso. Para isso, precisamos substutir a função `c()` pela função `c_across()`.
@@ -1549,15 +1463,15 @@ tab_notas %>%
 ```
 
 ```
-## # A tibble: 5 x 6
+## # A tibble: 5 × 6
 ## # Groups:   student_id [5]
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      5      7      6      1  4.75
-## 2          2      4      3      7      7  5.25
-## 3          3      0      0      9      8  4.25
-## 4          4      2      6     10      5  5.75
-## 5          5      3     10      8      3  6
+## 1          1     10      4      0      7  5.25
+## 2          2      9     10      9      6  8.5 
+## 3          3      4      7      2      1  3.5 
+## 4          4      8      5      8      0  5.25
+## 5          5      5      6      3      8  5.5
 ```
 
 Equivalentemente ao `group_by()`, neste caso, podemos usar a função `rowwise()`.
@@ -1570,15 +1484,15 @@ tab_notas %>%
 ```
 
 ```
-## # A tibble: 5 x 6
+## # A tibble: 5 × 6
 ## # Rowwise:  student_id
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      5      7      6      1  4.75
-## 2          2      4      3      7      7  5.25
-## 3          3      0      0      9      8  4.25
-## 4          4      2      6     10      5  5.75
-## 5          5      3     10      8      3  6
+## 1          1     10      4      0      7  5.25
+## 2          2      9     10      9      6  8.5 
+## 3          3      4      7      2      1  3.5 
+## 4          4      8      5      8      0  5.25
+## 5          5      5      6      3      8  5.5
 ```
 
 Ela é muito útil quando queremos fazer operação por linhas, mas não temos uma coluna de identificação. Por padrão, se não indicarmos nenhuma coluna, cada linha será um "grupo".
@@ -1591,15 +1505,15 @@ tab_notas %>%
 ```
 
 ```
-## # A tibble: 5 x 6
+## # A tibble: 5 × 6
 ## # Rowwise: 
 ##   student_id prova1 prova2 prova3 prova4 media
 ##        <int>  <int>  <int>  <int>  <int> <dbl>
-## 1          1      5      7      6      1  4.75
-## 2          2      4      3      7      7  5.25
-## 3          3      0      0      9      8  4.25
-## 4          4      2      6     10      5  5.75
-## 5          5      3     10      8      3  6
+## 1          1     10      4      0      7  5.25
+## 2          2      9     10      9      6  8.5 
+## 3          3      4      7      2      1  3.5 
+## 4          4      8      5      8      0  5.25
+## 5          5      5      6      3      8  5.5
 ```
 
 Veja que `student_id` não é passada para a função `rowwise()`. Não precisaríamos dessa coluna na base para reproduzir a geração da columa `media` neste caso.

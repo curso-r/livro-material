@@ -67,7 +67,7 @@ divisao <- 33 / 11
 
 ---
 
-**2.** Multiplique a sua idade por meses e salve o resultado em um objeto chamado `idade_em_meses`. Em seguida, multiplique esse objeto por 30 e salve o resultado em um objeto chamado `idade_em_dias`.
+**2.** Multiplique a sua idade por 12 e salve o resultado em um objeto chamado `idade_em_meses`. Em seguida, multiplique esse objeto por 30 e salve o resultado em um objeto chamado `idade_em_dias`.
 
 
 ```r
@@ -92,7 +92,7 @@ meu-objeto <- 1
 
 *Porque o sinal `-` é utilizado pelo R como o operador de subtração. O código acima está sendo interpretado como a subtração dos objetos `meu` e `objeto`. Como nenhum dos objetos existe na sessão, é devolvido um erro dizendo que o objeto `meu` (o primeiro deles) não foi encontrado.*
 
-*No entanto, mesmo que os objetos existissem, seria retornado um erro. Neste caso, seria um erro de sintaxe, pois o R não sabe como interpretar a atribuição do valor ` 3` à operação `meu - objeto`. Veja que a mensagem de erro não é muito intuitiva, pois o R entende que `-<-` é uma função que esquecemos de definir.*
+*No entanto, mesmo que os objetos existissem, seria retornado um erro. Neste caso, seria um erro de sintaxe, pois o R não sabe como interpretar a atribuição do valor ` 1` à operação `meu - objeto`. Veja que a mensagem de erro não é muito intuitiva, pois o R entende que `-<-` é uma função que esquecemos de definir.*
 
 
 ```r
@@ -230,7 +230,7 @@ paste0(cidade, "-", estado)
 
 ### Vetores {-}
 
-**1.** Guarde em um objeto a sequência de números de 0 a 5 e resolva os itens abaixos.
+**1.** Guarde em um objeto a sequência de números de 0 a 5 e resolva os itens abaixo.
 
 **a.** Use subsetting para fazer o R devolver o primeiro número dessa sequência. Em seguida, faça o R devolver o último número da sequência.
 
@@ -270,9 +270,9 @@ vetor_negativo
 
 ---
 
-**2.** Crie um vetor com o nome de tres frutas, guarde em um objeto chamado `frutas` e resolva os itens abaixo.
+**2.** Crie um vetor com o nome de três frutas, guarde em um objeto chamado `frutas` e resolva os itens abaixo.
 
-**a.** Utilize a a função `length()` para verificar o tamanho do vetor.
+**a.** Utilize a função `length()` para verificar o tamanho do vetor.
 
 
 ```r
@@ -312,7 +312,7 @@ length(paste("eu gosto de", frutas))
 
 **3.** O que é reciclagem? Escreva um código em R que exemplifique esse comportamento.
 
-*Reciclagem é a repetição de valores de um vetor para que uma operação com vetores de tamanhos diferentes possa ser realizada. Embora pareça um comportamento estranho, utilizamos a reciclagem o tempo todo dentro do R, muitas vezes sem perceber. No exemplo a seguir, os valores do `vetor_menor` serão repetidos (reciclados) até o dois vetores terem o mesmo tamanho. Então, o primeiro valor do vetor menor será somado com o promeiro valor do vetor maior, o segundo do menor somado com o segundo do maior e assim por diante.*
+*Reciclagem é a repetição de valores de um vetor para que uma operação com vetores de tamanhos diferentes possa ser realizada. Embora pareça um comportamento estranho, utilizamos a reciclagem o tempo todo dentro do R, muitas vezes sem perceber. No exemplo a seguir, os valores do `vetor_menor` serão repetidos (reciclados) até os dois vetores terem o mesmo tamanho. Então, o primeiro valor do vetor menor será somado com o promeiro valor do vetor maior, o segundo do menor somado com o segundo do maior e assim por diante.*
 
 
 ```r
@@ -331,7 +331,7 @@ vetor_menor + vetor_maior
 
 **4.** O que é coerção? Escreva um código em R que exemplifique esse comportamento.
 
-*Coerção é a homogenização da classe dos valores de um vetor. Se construirmos um vetor com valores de classes diferentes, todos os valores serão reprimidos para a classe mais dominante entre eles. No exemplo abaixo, todos os valores do vetor foram transformados em `character`, pois `character` é mais dominante do que as demais classes presentes (`numeric` e `logical`).*
+*Coerção é a homogeneização da classe dos valores de um vetor. Se construirmos um vetor com valores de classes diferentes, todos os valores serão reprimidos para a classe mais dominante entre eles. No exemplo abaixo, todos os valores do vetor foram transformados em `character`, pois `character` é mais dominante do que as demais classes presentes (`numeric` e `logical`).*
 
 *Considerando apenas as principais classes, temos a seguinte ordem de dominância: `character > numeric > integer > logical`*.
 
@@ -467,7 +467,7 @@ segredo > 5
 ```
 
 ```
-## [1] TRUE
+## [1] FALSE
 ```
 
 
@@ -515,7 +515,7 @@ segredo * 5 > 31
 ```
 
 ```
-## [1] TRUE
+## [1] FALSE
 ```
 
 **f.** Desafio. Escreva um teste para descobrir o valor do segredo.
@@ -537,7 +537,7 @@ segredo == numeros_possiveis
 ```
 
 ```
-##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE
+##  [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
 ```
 
 *No código acima, para cada valor de `numero_possiveis`, foi testado se esse valor é igual ao segredo. Em caso afirmativo, um TRUE é devolvido. Veja que há apenas um TRUE no vetor resultante. Essa é posição do nosso segredo dentro do vetor `numeros_possiveis`.*
@@ -551,7 +551,7 @@ numeros_possiveis[segredo == numeros_possiveis]
 ```
 
 ```
-## [1] 8
+## [1] 4
 ```
 
 *No código acima, foi retornado apenas o número associado ao valor TRUE dado pelo teste `segredo == numeros_possiveis`*.
@@ -575,7 +575,7 @@ vetor[vetor >= 10]
 
 ---
 
-**3.** Use o vetor numeross abaixo para responder as questoes seguintes.
+**3.** Use o vetor `numeros` abaixo para responder as questões seguintes.
 
 
 ```r
@@ -866,7 +866,7 @@ str(mtcars)
 ```
 
 
-**3.** Para que serve a função `nanes()`. Dê um exemplo do seu uso.
+**3.** Para que serve a função `names()`. Dê um exemplo do seu uso.
 
 *Serve para observamos os nomes das colunas de um data frame. O valor retornado é um vetor de strings.*
 
@@ -999,7 +999,7 @@ desvio_padrao <- sqrt(variancia)
 ```
 
 
-**e.** Compare o valor de `desvio_padrao` com `sd(airquality$Ozone)` e pesquise por que os valores não são iguais. Dica: veja a documentação da função `sd()`.
+**e.** Compare o valor de `desvio_padrao` com `sd(airquality$Ozone, na.rm=TRUE)` e pesquise por que os valores não são iguais. Dica: veja a documentação da função `sd()`.
 
 
 ```r
@@ -1096,20 +1096,20 @@ head(tab)
 
 
 ```r
-tab <- airquality[!is.na(airquality$Solar.R) & airquality$Month > 5,]
+tab <- airquality[!is.na(airquality$Solar.R) & airquality$Month == 5,]
 
 # Imprimindo apenas as primeiras linhas para facilitar a leitura
 head(tab)
 ```
 
 ```
-##    Ozone Solar.R Wind Temp Month Day
-## 32    NA     286  8.6   78     6   1
-## 33    NA     287  9.7   74     6   2
-## 34    NA     242 16.1   67     6   3
-## 35    NA     186  9.2   84     6   4
-## 36    NA     220  8.6   85     6   5
-## 37    NA     264 14.3   79     6   6
+##   Ozone Solar.R Wind Temp Month Day
+## 1    41     190  7.4   67     5   1
+## 2    36     118  8.0   72     5   2
+## 3    12     149 12.6   74     5   3
+## 4    18     313 11.5   62     5   4
+## 7    23     299  8.6   65     5   7
+## 8    19      99 13.8   59     5   8
 ```
 
 ### Mais sobre funções {-}
@@ -1295,7 +1295,7 @@ sortear_numero()
 ```
 
 ```
-## [1] 7
+## [1] 9
 ```
 
 
@@ -1318,11 +1318,11 @@ sortear_linha(mtcars)
 ```
 
 ```
-##                mpg cyl  disp hp drat    wt  qsec vs am gear carb
-## Toyota Corona 21.5   4 120.1 97  3.7 2.465 20.01  1  0    3    1
+##          mpg cyl disp  hp drat   wt  qsec vs am gear carb
+## Valiant 18.1   6  225 105 2.76 3.46 20.22  1  0    3    1
 ```
 
-**b.** Generalize a função para retornar um número qualquer de linhas, escolhido pelo usuário.
+**b.** Generalize a função para retornar um número qualquer de linhas, que poderá ser escolhido por quem for usá-la.
 
 
 ```r
@@ -1338,16 +1338,16 @@ sortear_linha(mtcars, 10)
 
 ```
 ##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-## Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
-## Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
-## Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
 ## Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
 ## Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
-## Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
-## Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
 ## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
-## Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2
-## Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+## Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+## Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+## Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
+## Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+## Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+## Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
+## Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
 ```
 
 ### Controle de fluxo {-}

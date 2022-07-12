@@ -102,7 +102,7 @@ recipiente(rep("farinha", 2), "água", "fermento", "leite", "óleo") %>%
   esfrie(lugar = "geladeira", duracao = "20min")
 ```
 
-Às vezes, queremos que o resultado do lado esquerdo vá para outro argumento do lado direito que não o primeiro. Para isso, utilizamos um `.` como marcador.
+Às vezes, queremos que o resultado do lado esquerdo vá para outro argumento do lado direito, que não o primeiro. Para isso, utilizamos um `.` como marcador.
 
 
 ```r

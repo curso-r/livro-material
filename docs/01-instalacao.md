@@ -18,13 +18,15 @@ Para instalar o R no Windows, siga os seguintes passos:
 
 3. Escolha a opção de servidor (*mirror*) mais próxima de você. 
 
-4. Clique na opção **base**.
+4. Clique em **Download R for Windows**.
 
-5. Na nova página, clique em **Download R x.x.x for Windows*, sendo x.x.x o número da versão que será baixada. Se você teve algum problema com o download, tente escolher outro servidor no passo 3.
+5. Clique na opção **base**.
 
-6. Feito o download, clique duas vezes no arquivo baixado e siga as instruções para instalação.
+6. Na nova página, clique em **Download R x.x.x for Windows**, sendo x.x.x o número da versão que será baixada. Se você teve algum problema com o download, tente escolher outro servidor no passo 3.
 
-> Na etapa de escolher a pasta de destino da instalação, se você escolher um local que não esteja dentro da sua pasta de usuário, você precisará de acesso de administrador. Se escolher uma pasta dentro da sua paste de usuário, não precisará.
+7. Feito o download, clique duas vezes no arquivo baixado e siga as instruções para instalação.
+
+> Na etapa de escolher a pasta de destino da instalação, se você escolher um local que não esteja dentro da sua pasta de usuário, você precisará de acesso de administrador. Se escolher uma pasta dentro da sua pasta de usuário, não precisará.
 
 ### No Linux
 
@@ -36,7 +38,7 @@ Como a instalação no Linux depende da distribuição utilizada e, em geral, pe
 
 3. Escolha a opção de servidor (*mirror*) mais próxima de você.
 
-4. Clique em *Download R for Linux*.
+4. Clique em **Download R for Linux**.
 
 5. Clique no link referente à distribuição que você utiliza.
 
@@ -52,7 +54,7 @@ Para instalar o R no MacOS, siga os seguintes passos:
 
 3. Escolha a opção de servidor (*mirror*) mais próxima de você.
 
-4. Na nova página, clique em **Download R for (Mac) OS X*.
+4. Na nova página, clique em **Download R for (Mac) OS X**.
 
 5. Clique na versão do R que você quer baixar (geralmente queremos baixar a mais recente). O objetivo aqui é baixar um arquivo do tipo "R-x.x.x.pkg", sendo x.x.x o número da versão que vamos instalar. Se você teve algum problema com o download, tente escolher outro servidor no passo 3.
 
@@ -68,15 +70,15 @@ Para instalar o RStudio no Windows, siga os seguintes passos:
 
 1. Acesse a página de downloads da RStudio: https://rstudio.com/products/rstudio/download/#download
 
-- Se você tiver acesso administrador, baixe a versão referente ao seu sistema operacional que está na lista de *All Installers*.
+- Se você tiver acesso de administrador, baixe a versão referente ao seu sistema operacional que está na lista de *All Installers*.
 
 - Se você não tiver acesso de administrador, baixe a versão referente ao seu sistema operacional que está na lista de *Zip/Tarballs*.
 
-#### Instalando se você for administrador {-}
+#### Instalando se você tiver acesso de administrador {-}
 
 2. Clique duas vezes no arquivo que você baixou da página do RStudio e siga as instruções de instalação.
 
-#### Instalação se você não for administrador {-}
+#### Instalação se você não tiver acesso de administrador {-}
 
 2. Descompacte o arquivo baixado no passo anterior. Geralmente isso pode ser feito clicando no arquivo compactado com o botão direito do mouse e clicando na opção *descompactar* ou *extrair*.
 
@@ -130,16 +132,16 @@ Uma distribuição de LaTeX que apresenta versão para Windows é o MiKTeX.
 
 <img src="img/instalacao/miktex_windows/win_miktex4.png" width="80%" style="display: block; margin: auto;" />
 
-6. Na etapa "Review", é apresentado as configurações escolhidas anteriormente. Clique em **Start** para que a instalação seja começada. 
+6. Na etapa "Review", são apresentadas as configurações escolhidas anteriormente. Clique em **Start** para que a instalação seja começada. 
 
 <img src="img/instalacao/miktex_windows/win_miktex5.png" width="80%" style="display: block; margin: auto;" />
 
-7. O processo de instalação será realizado, e pode demorar alguns minutos. Duas barras verdes aparecerão para demonstrar a porcentagem da instalação já realizada. Quando essa etapa terminar, as barras ficarão cinza e o você deverá clicar no botão **Start**.
+7. O processo de instalação será realizado, e pode demorar alguns minutos. Duas barras verdes aparecerão para demonstrar a porcentagem da instalação já realizada. Quando essa etapa terminar, as barras ficarão cinzas e o você deverá clicar no botão **Start**.
 
 <img src="img/instalacao/miktex_windows/win_miktex6.png" width="80%" style="display: block; margin: auto;" />
 
 
-8. Na etapa "Update Check", apresentará a opção de buscar por atualizações. Mantenha o botão **"Check for updates now"** selecionado, e clique no botão **Start**.
+8. Na etapa "Update Check", aparecerá a opção de buscar por atualizações. Mantenha o botão **"Check for updates now"** selecionado, e clique no botão **Start**.
 
 <img src="img/instalacao/miktex_windows/win_miktex7.png" width="80%" style="display: block; margin: auto;" />
 
@@ -160,7 +162,7 @@ No linux, a forma mais direta de garantir que temos o LaTeX na máquina com toda
 
     sudo apt install texlive-full
 
-> **Importante**: o texlive-full é uma fora "bruta" de instalar tudo do LaTeX, e pode ocupar mais do que 5GB do seu disco! Então tome cuidado e procure alternativas, como as descritas [neste site](https://linuxconfig.org/how-to-install-latex-on-ubuntu-18-04-bionic-beaver-linux).
+> **Importante**: o texlive-full é uma forma "bruta" de instalar tudo do LaTeX, e pode ocupar mais do que 5GB do seu disco! Então tome cuidado e procure alternativas, como as descritas [neste site](https://linuxconfig.org/how-to-install-latex-on-ubuntu-18-04-bionic-beaver-linux).
 
 #### No MacOS
  
@@ -216,7 +218,7 @@ No linux, a forma mais fácil de abrir documentos provenientes do Office é util
 
 > O LibreOffice possui algumas limitações quando comparado ao software da Microsoft. Por exemplo, as tabelas que saem bonitas no Office podem ficar desformatadas no LibreOffice.
 
-> o LibreOffice 7.1 não está ainda no aptitude. Se quiser instalar essa versão, é possível baixar o arquivo `.deb` no [site da ferramenta](https://www.libreoffice.org).
+> o LibreOffice 7.2 não está ainda no aptitude. Se quiser instalar essa versão, é possível baixar o arquivo `.deb` no [site da ferramenta](https://www.libreoffice.org).
 
 #### No MacOS
 
@@ -276,7 +278,7 @@ blogdown::install_hugo()
 
 ### Ferramentas de desenvolvimento
 
-Em algumas situações (como por exemplo, no desenvolvimento de pacotes), é solicitado a instalação de ferramentas de desenvolvimento. Essas ferramentas dependem do sistema operacional utilizado.
+Em algumas situações (como por exemplo, no desenvolvimento de pacotes), é solicitada a instalação de ferramentas de desenvolvimento. Essas ferramentas dependem do sistema operacional utilizado.
 
 No caso do desenvolvimento de pacotes, você pode verificar se já possui as ferramentas de desenvolvimento instaladas usando a seguinte função: `devtools::has_devel()`. Caso a mensagem retornada seja _"Your system is ready to build packages!"_, significa que você já tem as ferramentas necessárias instaladas.
 

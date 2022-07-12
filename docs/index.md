@@ -1,7 +1,7 @@
 --- 
 title: "Ciência de Dados em R"
 author: "Curso-R"
-date: "Última atualização: 14/07/2021"
+date: "Última atualização: 12/07/2022"
 github-repo: "curso-r/livro-material"
 site: bookdown::bookdown_site
 documentclass: book
@@ -28,6 +28,7 @@ Autoria:
 - [Fernando Correa](https://twitter.com/Azeloc)
 - [Julio Trecenti](https://twitter.com/jtrecenti)
 - [Nicole Luduvice](http://linkedin.com/in/nicole-luduvice-9a6379197)
+- [Tereza Lacerda](https://twitter.com/tereza_lacerda)
 - [William Amorim](https://wamorim.com)
 
 #### A Curso-R {-}
@@ -40,7 +41,7 @@ A Curso-R é o braço de Educação da R6 Consultoria, uma empresa de treinament
 
 - Conheça o restante do nosso material: https://www.curso-r.com/material/
 
-- Saiba mais sobre a Curso-R: https://www.curso-r.com/sobre/
+- Saiba mais sobre a Curso-R: https://curso-r.com/
 
 #### O R e o RStudio {-}
 
@@ -50,18 +51,18 @@ O RStudio é o ambiente de desenvolvimento mais utilizado para programação em 
 
 #### Este livro {-}
 
-Este livro tem como objetivo guiar o leitor por todas as etapas de uma análise de dados, utilizando o R como ferramenta. Nele, você encontrará ferramentas para importar, arrumar, manipular, visualizar e modelar bases de dados. E também ferramentas para comunicar e automatizar resultados.
+Este livro tem como objetivo te guiar por todas as etapas de uma análise de dados, utilizando o R como ferramenta. Nele, você encontrará ferramentas para importar, arrumar, manipular, visualizar e modelar bases de dados. E também ferramentas para comunicar e automatizar resultados.
 
 <div class="figure" style="text-align: center">
-<img src="assets/img/environmental-data-science-r4ds-general.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la." width="1920" />
+<img src="assets/img/environmental-data-science-r4ds-general.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la." width="960" />
 <p class="caption">(\#fig:allison-env)Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la.</p>
 </div>
 
 #### Comunidade {-}
 
-Seja bem-vinda(o) ao #rstats.
+Boas vindas ao #rstats!
 
-Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e participe dos grupos e comunidades de programadores.
+Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartilhe suas dúvidas em fóruns, procure e participe dos grupos e comunidades de programação.
 
 - Comunidade R-Ladies: [Global](https://benubah.github.io/r-community-explorer/rladies.html) e [Brasil](https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil#readme)
 
@@ -72,7 +73,7 @@ Compartilhe seu desenvolvimento! Poste seus avaços nas redes sociais, compartil
 - Grupo R Brasil no Telegram: https://t.me/rbrasiloficial
 
 <div class="figure" style="text-align: center">
-<img src="assets/img/welcome_to_rstats_twitter.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la." width="2009" />
+<img src="assets/img/welcome_to_rstats_twitter.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la." width="1004" />
 <p class="caption">(\#fig:allison-twitter)Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la.</p>
 </div>
 

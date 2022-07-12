@@ -109,7 +109,7 @@ mtcars %>%
   geom_point()
 ```
 
-<img src="9845-respostas-forcats_files/figure-epub3/unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
+<img src="9845-respostas-forcats_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" />
 
 ---
 
@@ -126,7 +126,7 @@ dados::casas %>%
   geom_col()
 ```
 
-<img src="9845-respostas-forcats_files/figure-epub3/unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
+<img src="9845-respostas-forcats_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
 
 
 

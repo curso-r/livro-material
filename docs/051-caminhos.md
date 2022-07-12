@@ -1,6 +1,6 @@
 ## Caminhos
 
-Um passo importante na tarefa de importação de dados para o R é saber onde está o arquivo que queremos importar. Toda função de importação vai exigir um **caminho**, uma string que representa o endereço do arquivo no computador.
+Um passo importante na tarefa de importação de dados para o R é saber onde está o arquivo que queremos importar. Toda função de importação vai exigir um **caminho**, ou seja, uma string que representa o endereço do arquivo no computador.
 
 Há duas formas de passarmos o caminho de arquivo: usar o **caminho absoluto** ou usar o **caminho relativo**.
 
@@ -20,7 +20,7 @@ getwd()
 ```
 
 ```
-## [1] "/Users/clente/Documents/livro-material"
+## [1] "/Users/beatrizmilz/Documents/Curso-R/livro-material"
 ```
 
 Esse é o caminho absoluto para a pasta onde esse livro foi produzido.

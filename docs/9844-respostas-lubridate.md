@@ -18,19 +18,19 @@ lakers <- tibble::as_tibble(lakers)
 ```r
 lakers %>% 
   mutate(date = ymd(date))
-## # A tibble: 34,624 x 13
-##    date       opponent game_type time  period etype  team  player  result points
-##    <date>     <chr>    <chr>     <chr>  <int> <chr>  <chr> <chr>   <chr>   <int>
-##  1 2008-10-28 POR      home      12:00      1 jump … OFF   ""      ""          0
-##  2 2008-10-28 POR      home      11:39      1 shot   LAL   "Pau G… "miss…      0
-##  3 2008-10-28 POR      home      11:37      1 rebou… LAL   "Vladi… ""          0
-##  4 2008-10-28 POR      home      11:25      1 shot   LAL   "Derek… "miss…      0
-##  5 2008-10-28 POR      home      11:23      1 rebou… LAL   "Pau G… ""          0
-##  6 2008-10-28 POR      home      11:22      1 shot   LAL   "Pau G… "made"      2
-##  7 2008-10-28 POR      home      11:22      1 foul   POR   "Greg … ""          0
-##  8 2008-10-28 POR      home      11:22      1 free … LAL   "Pau G… "made"      1
-##  9 2008-10-28 POR      home      11:00      1 foul   LAL   "Vladi… ""          0
-## 10 2008-10-28 POR      home      10:53      1 shot   POR   "LaMar… "made"      2
+## # A tibble: 34,624 × 13
+##    date       opponent game_type time  period etype   team  player result points
+##    <date>     <chr>    <chr>     <chr>  <int> <chr>   <chr> <chr>  <chr>   <int>
+##  1 2008-10-28 POR      home      12:00      1 jump b… OFF   ""     ""          0
+##  2 2008-10-28 POR      home      11:39      1 shot    LAL   "Pau … "miss…      0
+##  3 2008-10-28 POR      home      11:37      1 rebound LAL   "Vlad… ""          0
+##  4 2008-10-28 POR      home      11:25      1 shot    LAL   "Dere… "miss…      0
+##  5 2008-10-28 POR      home      11:23      1 rebound LAL   "Pau … ""          0
+##  6 2008-10-28 POR      home      11:22      1 shot    LAL   "Pau … "made"      2
+##  7 2008-10-28 POR      home      11:22      1 foul    POR   "Greg… ""          0
+##  8 2008-10-28 POR      home      11:22      1 free t… LAL   "Pau … "made"      1
+##  9 2008-10-28 POR      home      11:00      1 foul    LAL   "Vlad… ""          0
+## 10 2008-10-28 POR      home      10:53      1 shot    POR   "LaMa… "made"      2
 ## # … with 34,614 more rows, and 3 more variables: type <chr>, x <int>, y <int>
 ```
 
@@ -40,19 +40,19 @@ Repare que `as_date()` não funciona neste caso.
 ```r
 lakers %>%
   mutate(date = as_date(date))
-## # A tibble: 34,624 x 13
-##    date       opponent game_type time  period etype  team  player  result points
-##    <date>     <chr>    <chr>     <chr>  <int> <chr>  <chr> <chr>   <chr>   <int>
-##  1 56949-12-27 POR      home      12:00      1 jump … OFF   ""      ""          0
-##  2 56949-12-27 POR      home      11:39      1 shot   LAL   "Pau G… "miss…      0
-##  3 56949-12-27 POR      home      11:37      1 rebou… LAL   "Vladi… ""          0
-##  4 56949-12-27 POR      home      11:25      1 shot   LAL   "Derek… "miss…      0
-##  5 56949-12-27 POR      home      11:23      1 rebou… LAL   "Pau G… ""          0
-##  6 56949-12-27 POR      home      11:22      1 shot   LAL   "Pau G… "made"      2
-##  7 56949-12-27 POR      home      11:22      1 foul   POR   "Greg … ""          0
-##  8 56949-12-27 POR      home      11:22      1 free … LAL   "Pau G… "made"      1
-##  9 56949-12-27 POR      home      11:00      1 foul   LAL   "Vladi… ""          0
-## 10 56949-12-27 POR      home      10:53      1 shot   POR   "LaMar… "made"      2
+## # A tibble: 34,624 × 13
+##    date        opponent game_type time  period etype  team  player result points
+##    <date>      <chr>    <chr>     <chr>  <int> <chr>  <chr> <chr>  <chr>   <int>
+##  1 56949-12-27 POR      home      12:00      1 jump … OFF   ""     ""          0
+##  2 56949-12-27 POR      home      11:39      1 shot   LAL   "Pau … "miss…      0
+##  3 56949-12-27 POR      home      11:37      1 rebou… LAL   "Vlad… ""          0
+##  4 56949-12-27 POR      home      11:25      1 shot   LAL   "Dere… "miss…      0
+##  5 56949-12-27 POR      home      11:23      1 rebou… LAL   "Pau … ""          0
+##  6 56949-12-27 POR      home      11:22      1 shot   LAL   "Pau … "made"      2
+##  7 56949-12-27 POR      home      11:22      1 foul   POR   "Greg… ""          0
+##  8 56949-12-27 POR      home      11:22      1 free … LAL   "Pau … "made"      1
+##  9 56949-12-27 POR      home      11:00      1 foul   LAL   "Vlad… ""          0
+## 10 56949-12-27 POR      home      10:53      1 shot   POR   "LaMa… "made"      2
 ## # … with 34,614 more rows, and 3 more variables: type <chr>, x <int>, y <int>
 ```
 
@@ -78,7 +78,7 @@ as_date(20081027:20081029)
 lakers %>% 
   mutate(date_time = paste0(date, " 00:", time) %>% ymd_hms) %>% 
   select(date_time)
-## # A tibble: 34,624 x 1
+## # A tibble: 34,624 × 1
 ##    date_time          
 ##    <dttm>             
 ##  1 2008-10-28 00:12:00
@@ -108,7 +108,7 @@ lakers %>%
     ano = year(date)
   ) %>% 
   select(date, dia, mes, ano)
-## # A tibble: 34,624 x 4
+## # A tibble: 34,624 × 4
 ##    date         dia   mes   ano
 ##    <date>     <int> <dbl> <dbl>
 ##  1 2008-10-28    28    10  2008
@@ -143,7 +143,7 @@ lakers %>%
   dplyr::filter(cronometro == min(cronometro)) %>% 
   dplyr::ungroup() %>% 
   dplyr::summarise(media = mean(cronometro))
-## # A tibble: 1 x 1
+## # A tibble: 1 × 1
 ##   media
 ##   <dbl>
 ## 1  29.6
@@ -174,7 +174,7 @@ lakers %>%
   dplyr::ungroup() %>%
   dplyr::group_by(period) %>% 
   dplyr::summarise(media = mean(cronometro))
-## # A tibble: 4 x 2
+## # A tibble: 4 × 2
 ##   period media
 ##    <int> <dbl>
 ## 1      1  202.
@@ -206,7 +206,7 @@ lakers %>%
   geom_boxplot()
 ```
 
-<img src="9844-respostas-lubridate_files/figure-epub3/unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
+<img src="9844-respostas-lubridate_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
 
 ---
 
@@ -230,7 +230,7 @@ cesta_demorada <- lakers %>%
 
 cesta_demorada %>% 
   select(date, opponent, dia, mes)
-## # A tibble: 1 x 4
+## # A tibble: 1 × 4
 ##   date       opponent   dia   mes
 ##   <date>     <chr>    <int> <dbl>
 ## 1 2009-04-12 MEM         12     4
