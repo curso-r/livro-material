@@ -10,7 +10,7 @@ A seguir, listamos algumas das mais famosas.
 
 O [`gghighlight`](https://yutannihilation.github.io/gghighlight/) é uma  extensões do `{ggplot2}` que serve para realçar partes de um gráfico feito com `ggplot`. 
 
-A seguir, mostramos como utilizar essa extensão pare realçar gráficos de pontos e linhas.
+A seguir, mostramos como utilizar essa extensão para realçar gráficos de pontos e linhas.
 
 #### Realçando pontos {-}
 
@@ -24,7 +24,7 @@ diamonds %>%
   gghighlight::gghighlight(carat > 4, label_key = carat)
 ```
 
-![](082-extensoes-ggplot2_files/figure-epub3/unnamed-chunk-2-1.png)<!-- -->
+<img src="082-extensoes-ggplot2_files/figure-html/unnamed-chunk-2-1.png" width="672" />
 
 Também é possível configurar a cor dos pontos que serão realçados e dos que não serão, bem como o estilo das labels.
 
@@ -41,7 +41,7 @@ diamonds %>%
   )
 ```
 
-![](082-extensoes-ggplot2_files/figure-epub3/unnamed-chunk-3-1.png)<!-- -->
+<img src="082-extensoes-ggplot2_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
 #### Realçando linhas {-}
 
@@ -62,7 +62,7 @@ tab %>%
   gghighlight::gghighlight(max(count) > 100000, label_key = package)
 ```
 
-![](082-extensoes-ggplot2_files/figure-epub3/unnamed-chunk-4-1.png)<!-- -->
+<img src="082-extensoes-ggplot2_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 Para mais informações sobre o `{gghighlight}`, recomendamos a leitura da [excelente documentação oficial](https://yutannihilation.github.io/gghighlight/index.html).
 
@@ -91,9 +91,9 @@ imdb %>%
 ```
 
 ```
-## Picking joint bandwidth of 17300000
+## Picking joint bandwidth of 11100000
 ```
 
-![](082-extensoes-ggplot2_files/figure-epub3/unnamed-chunk-6-1.png)<!-- -->
+<img src="082-extensoes-ggplot2_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 
 Você pode baixar a base IMDB utilizada [clicando aqui](https://github.com/curso-r/livro-material/raw/master/assets/data/imdb.rds).

@@ -10,7 +10,7 @@ Para ler planilhas do Excel (arquivos `.xlsx` ou `.xls`), basta utilizarmos a fu
 install.packages("readxl")
 library(readxl)
 
-imdb_xlsx <- read_xls("dados/imdb.xlss")
+imdb_xls <- read_xlsx("dados/imdb.xls")
 imdb_xlsx <- read_xlsx("dados/imdb.xlsx")
 ```
 
@@ -18,8 +18,8 @@ A funçao `read_excel()` auto detecta a extensão do arquivo.
 
 
 ```r
-read_excel(path = "assets/data/imdb.xls")
-read_excel(path = "assets/data/imdb.xlsx")
+read_excel(path = "dados/imdb.xls")
+read_excel(path = "dados/imdb.xlsx")
 ```
 
 O pacote disponibiliza 5 exemplos de arquivos com formato `.xls` e `.xlsx`.
@@ -44,7 +44,7 @@ caminho_datasets
 ```
 
 ```
-## [1] "/Library/Frameworks/R.framework/Versions/4.1/Resources/library/readxl/extdata/datasets.xlsx"
+## [1] "/Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library/readxl/extdata/datasets.xlsx"
 ```
 
 No Excel, um arquivo pode ter várias planilhas. Esse é o caso do arquivo `datasets.xlsx`. Você pode ver quais planilhas fazem parte do arquivo utilizando a função `excel_sheets()`.
@@ -67,7 +67,7 @@ read_excel(caminho_datasets)
 ```
 
 ```
-## # A tibble: 150 x 5
+## # A tibble: 150 × 5
 ##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ##           <dbl>       <dbl>        <dbl>       <dbl> <chr>  
 ##  1          5.1         3.5          1.4         0.2 setosa 
@@ -89,7 +89,7 @@ read_excel(caminho_datasets, sheet = 2)
 ```
 
 ```
-## # A tibble: 32 x 11
+## # A tibble: 32 × 11
 ##      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
 ##    <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
 ##  1  21       6  160    110  3.9   2.62  16.5     0     1     4     4
@@ -111,7 +111,7 @@ read_excel(caminho_datasets, sheet = 'chickwts')
 ```
 
 ```
-## # A tibble: 71 x 2
+## # A tibble: 71 × 2
 ##    weight feed     
 ##     <dbl> <chr>    
 ##  1    179 horsebean
@@ -129,7 +129,7 @@ read_excel(caminho_datasets, sheet = 'chickwts')
 
 A seguir, listamos outros argumentos úteis da função `read_excel()`:
 
-- `col_names` indica se a primeira linha representa o nome das colunas;
+- `col_names=` indica se a primeira linha representa o nome das colunas;
 
 - `col_types=` para definir a classe das colunas;
 

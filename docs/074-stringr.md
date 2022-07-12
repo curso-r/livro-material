@@ -8,7 +8,7 @@ Variáveis de texto são muito comuns nos bancos de dados e, geralmente, dão ba
 
 O R possui várias funções para manipular textos (ou *strings*). No entanto, as funções do `base` não possuem uma interface consistente e cada uma tem a sua forma de passar os parâmetros, dificultando a programação durante a análise.
 
-Pensando nisso, Hadley Wickham deu aquela força para a comunidade R e criou o pacote `stringr`, que possui uma sintaxe consistente, permitindo o usuário manipular textos com muito mais facilidade.
+Pensando nisso, Hadley Wickham deu aquela força para a comunidade R e criou o pacote `stringr`, que possui uma sintaxe consistente, permitindo a manipulação de textos com muito mais facilidade.
 
 ##### Vantagens do stringr em relação às funções do R base {-}
 
@@ -34,7 +34,7 @@ Veja [essa página](https://github.com/tidyverse/stringr/blob/master/NEWS.md) pa
 
 Todas as funções do `stringr` começam com o prefixo `str_`. Isso ajuda na hora de encontrar a função que você está procurando. No RStudio, digite `str_` e aperte **TAB** para visualizar a lista de funções com esse prefixo. Você pode verificar o que cada função faz até encontrar a que atende às suas necessidades.
 
-<img src="assets/img/manipulacao/str_tab.png" width="719" style="display: block; margin: auto;" />
+<img src="assets/img/manipulacao/str_tab.png" width="360" style="display: block; margin: auto;" />
 
 Na próxima seção, vamos apresentar as funções mais simples do `{stringr}`. Em seguida, vamos falar um pouco de expressões regulares (regex) e então veremos funções mais avançadas do pacote, que utilizam regex para identificar padrões.
 
@@ -56,7 +56,7 @@ A seguir, apresentamos as funções mais simples do `{stringr}`, que não utiliz
 
 ##### str_length {-}
 
-A função mais simples do `stringr()` é a função `str_length()`. Esta função recebe como argumento um vetor de *strings* e retorna o número de caracteres de cada *string*. Repare que o espaço `" "` é considerado um caracter.
+A função mais simples do `stringr()` é a função `str_length()`. Esta função recebe como argumento um vetor de *strings* e retorna o número de caracteres de cada *string*. Repare que o espaço `" "` é considerado um caractere.
 
 
 ```r
@@ -180,7 +180,9 @@ str_c(string1, string2)
 ## [1] "O valor p é: 0.03"
 ```
 
-Pode misturar objetos com strings definidas diretamente na função.
+Além disso, essa função:
+
+- Pode misturar objetos com strings definidas diretamente na função.
 
 
 ```r
@@ -189,11 +191,11 @@ string2 <- "bom"
 string3 <- "melhor"
 
 str_c(string1, " é a prova de que não existe nada tão ", string2,
-      " que não pode ficar ", string3, ".")
-## [1] "Brigadeiro é a prova de que não existe nada tão bom que não pode ficar melhor."
+      " que não possa ficar ", string3, ".")
+## [1] "Brigadeiro é a prova de que não existe nada tão bom que não possa ficar melhor."
 ```
 
-A função é vetorizada.
+- É vetorizada.
 
 
 ```r
@@ -202,9 +204,9 @@ string2 <- c("bom", "ruim")
 string3 <- c("melhor", "pior")
 
 str_c(string1, " é a prova de que não existe nada tão ", string2,
-      " que não pode ficar ", string3, ".")
-## [1] "Brigadeiro é a prova de que não existe nada tão bom que não pode ficar melhor."          
-## [2] "A política brasileira é a prova de que não existe nada tão ruim que não pode ficar pior."
+      " que não possa ficar ", string3, ".")
+## [1] "Brigadeiro é a prova de que não existe nada tão bom que não possa ficar melhor."          
+## [2] "A política brasileira é a prova de que não existe nada tão ruim que não possa ficar pior."
 ```
 
 Essas são as funções mais simples do pacote `stringr` e não exigem nenhum conhecimento de **expressões regulares**. Note que nenhuma delas possui o parâmetro `pattern`. Você verá como especificar esse parâmetro nas próximas seções. 
@@ -213,7 +215,7 @@ Essas são as funções mais simples do pacote `stringr` e não exigem nenhum co
 
 Trabalhar com textos exige um certo conhecimento de [expressões regulares](https://pt.wikipedia.org/wiki/Express%C3%A3o_regular). As expressões regulares --- ou simplesmente **regex** --- permitem identificar conjuntos de caracteres, palavras e outros padrões por meio de uma sintaxe concisa. 
 
-O `stringr` utiliza regex da forma descrita [neste documento](http://www.gagolewski.com/software/stringi/manual/?manpage=stringi-search-regex). A própria [definição](https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html) de regex do R é um ótimo manual.
+O `stringr` utiliza regex da forma descrita [neste documento](https://stringi.gagolewski.com/weave/regular_expressions.html). A própria [definição](https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html) de regex do R é um ótimo manual.
 
 Vamos estudar expressões regulares por meio de exemplos e da função `str_detect()`. Ela retorna `TRUE` se uma *string* atende a uma expressão regular e `FALSE` caso contrário. Por exemplo:
 
@@ -296,7 +298,7 @@ Um bom lugar para testar o funcionamento das regex é o [regex101](https://regex
 
 Agora que já vimos as funções básicas do `stringr` e aprendemos um pouco de regex, vamos às funções mais avançadas. Basicamente, essas funções buscarão `patterns` em um vetor de *strings* e farão alguma coisa quando encontrá-lo.
 
-Como já vimos na sessão sobre regex, a função mais simples que possui o argumento `pattern=` é a `str_detect()`.
+Como já vimos na seção sobre regex, a função mais simples que possui o argumento `pattern=` é a `str_detect()`.
 
 ##### str_detect()  {-}
 
@@ -313,9 +315,9 @@ str_detect("sao paulo sp", pattern = "paulo$")
 
 ##### str_replace() e str_replace_all() {-}
 
-Substituem um padrão (ou todos) encontrado para um outro padrão.
+Substituem um padrão (ou todos) encontrado por um outro padrão.
 
-Substituindo apenas a primeira ocorrência.
+Substituindo apenas a primeira ocorrência:
 
 
 ```r

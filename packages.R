@@ -4,4 +4,5 @@ packages <-
     "gghighlight",
     "cranlogs",
     "ggridges")
+
 install.packages(packages)

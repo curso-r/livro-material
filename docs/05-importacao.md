@@ -8,5 +8,5 @@ Antes de começarmos, vale a pena destacarmos um ponto importante. As funções 
 
 - permite a utilização de *list-columns*.
 
-Se você não estiver familiarizado com o conceito de *list-columns*, não se preocupe. Trataremos melhor do assunto no Capítulo \@ref(funcionais).
+Se você não tiver familiaridade com o conceito de *list-columns*, não se preocupe. Trataremos melhor do assunto no Capítulo \@ref(funcionais).
 

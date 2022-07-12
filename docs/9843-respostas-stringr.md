@@ -81,8 +81,7 @@ glue("0{1:length(s)} - {s}")
 ## 02 - Médio
 ## 03 - Baixo
 ```
-
-Para mais informações sobre o pacote `glue`, confira [este post](http://curso-r.com/blog/2017/04/17/2017-04-08-glue/).
+Para mais informações sobre o pacote `glue`, confira [este post](https://blog.curso-r.com/posts/2017-04-08-glue/).
 
 ---
 

@@ -17,7 +17,7 @@ library(lubridate)
 
 
 
-Neste seção, falaremos sobre:
+Nesta seção, falaremos sobre:
 
 - transformar e extrair datas;
 - algumas funções úteis para trabalhar com datas;
@@ -104,7 +104,7 @@ Repare que a função `date()` do R base retorna a data e horário no momento da
 
 ```r
 base::date()
-## [1] "Wed Jul 14 14:35:00 2021"
+## [1] "Mon May 23 15:47:16 2022"
 ```
 
 ### Funções úteis
@@ -119,7 +119,6 @@ O `lubridate` traz diversas funções para extrair os componentes de um objeto d
 - `month()` - extrai o mês.
 - `year()` - extrai o ano.
 
-Os nomes são tão óbvios que a explicação do que cada função faz é praticamente desnecessária.
 
 
 ```r
@@ -162,9 +161,9 @@ Também existem funções para extrair a data no instante da execução.
 ```r
 # Data e horário do dia em que essa página foi editada pela última vez.
 today() 
-## [1] "2021-07-14"
+## [1] "2022-05-23"
 now()
-## [1] "2021-07-14 14:35:00 -03"
+## [1] "2022-05-23 15:47:16 -03"
 ```
 
 ### Fusos horários
@@ -273,12 +272,12 @@ Para mais informações sobre o`lubridate`, visite o [vignette do pacote](https:
 
 ### Exercícios
 
-Nos exercícios a seguir, vamos utilizar a base `lakers`, que contém estatísticas jogo a jogo do [Los Angeles Lakers](http://www.nba.com/lakers/) na temporada 2008-2009.
+Nos exercícios a seguir, vamos utilizar a base `lakers` (do pacote `lubridate`), que contém estatísticas jogo a jogo do [Los Angeles Lakers](http://www.nba.com/lakers/) na temporada 2008-2009.
 
 
 ```r
 lakers %>% as_tibble()
-## # A tibble: 34,624 x 13
+## # A tibble: 34,624 × 13
 ##      date opponent game_type time  period etype team  player result points type 
 ##     <int> <chr>    <chr>     <chr>  <int> <chr> <chr> <chr>  <chr>   <int> <chr>
 ##  1 2.01e7 POR      home      12:00      1 jump… OFF   ""     ""          0 ""   

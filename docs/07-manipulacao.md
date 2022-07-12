@@ -4,10 +4,10 @@ Esta seção trata do tema *manipulação de dados*. Trata-se de uma tarefa dolo
 
 > *The fact that data science exists as a field is a colossal failure of statistics. To me, what I do is what statistics is all about. It is gaining insight from data using modelling and visualization. Data munging and manipulation is hard and statistics has just said that’s not our domain.* --- Hadley Wickham
 
-Usualmente, o cientista de dados parte de uma base "crua" e a transforma até obter uma base de dados analítica, que, a menos de transformações simples, está preparada para gerar tabelas e gráficos e alimentar modelos.
+Usualmente, cientistas de dados partem de uma base "crua" e a transformam até obter uma base de dados analítica, que, a menos de transformações simples, está preparada para gerar tabelas e gráficos e alimentar modelos.
 
 <div class="figure" style="text-align: center">
-<img src="assets/img/manipulacao/ciclo-ciencia-de-dados.png" alt="Estamos na etapa de arrumação do ciclo da Ciência de Dados." width="958" />
+<img src="assets/img/manipulacao/ciclo-ciencia-de-dados.png" alt="Estamos na etapa de arrumação do ciclo da Ciência de Dados." width="479" />
 <p class="caption">(\#fig:transform)Estamos na etapa de arrumação do ciclo da Ciência de Dados.</p>
 </div>
 

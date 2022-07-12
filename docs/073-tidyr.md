@@ -12,13 +12,13 @@ As duas propriedades mais importantes de uma base *tidy* são:
 
 Essa definição proporciona uma maneira consistente de se referir a variáveis (nomes de colunas) e observações (índices das linhas).
 
-O pacote `{tidyr}` possui funções que nos ajudam a deixar uma base bagunçada em uma base *tidy*. Ou então, nos ajudam a bagunçar um pouquinho a nossa base quando isso nos ajudar a produzir o resultados que queremos.
+O pacote `{tidyr}` possui funções que nos ajudam a transformar uma base bagunçada em uma base *tidy*. Ou então, nos ajudam a bagunçar um pouquinho a nossa base quando isso nos ajudar a produzir o resultados que queremos.
 
 Vamos ver aqui algumas de suas principais funções:
 
 - `separate()` e `unite()`: para separar variáveis concatenadas em uma única coluna ou uni-las.
 
-- `pivot_wider()` e `pivot_longer()`: para pirvotar a base.
+- `pivot_wider()` e `pivot_longer()`: para pivotar a base.
 
 - `nest()` e `unnest()`: para criar *list columns*.
 
@@ -57,12 +57,8 @@ imdb %>% pull(generos) %>% head()
 ```
 
 ```
-## [1] "Action|Adventure|Fantasy|Sci-Fi"                          
-## [2] "Action|Adventure|Fantasy"                                 
-## [3] "Action|Thriller"                                          
-## [4] "Action|Adventure|Sci-Fi"                                  
-## [5] "Action|Adventure|Romance"                                 
-## [6] "Adventure|Animation|Comedy|Family|Fantasy|Musical|Romance"
+## [1] "Comedy, Drama, Romance" "Comedy, Crime, Mystery" "Comedy"                
+## [4] "Comedy, Musical"        "Comedy, Drama, Music"   "Drama"
 ```
 
 Veja que agora, temos 3 colunas de gênero. Filmes com menos de 3 gêneros recebem `NA` na coluna `genero2` e/ou `genero3`. Os gêneros sobressalentes são descartados, assim como a coluna `generos` original.
@@ -73,38 +69,82 @@ imdb %>%
   separate( 
     col = generos,
     into = c("genero1", "genero2", "genero3"), 
-    sep = "\\|"
+    sep = ","
   )
 ```
 
 ```
-## Warning: Expected 3 pieces. Additional pieces discarded in 1052 rows [1, 6, 12,
-## 13, 16, 18, 23, 24, 25, 28, 32, 34, 36, 39, 40, 43, 47, 48, 49, 50, ...].
+## Warning: Expected 3 pieces. Missing pieces filled with `NA` in 5093 rows [3, 4,
+## 6, 8, 9, 10, 18, 20, 22, 23, 24, 26, 28, 37, 38, 40, 41, 44, 45, 47, ...].
 ```
 
 ```
-## Warning: Expected 3 pieces. Missing pieces filled with `NA` in 1537 rows [3, 19,
-## 21, 42, 84, 88, 92, 102, 106, 111, 113, 129, 138, 147, 178, 183, 186, 219, 222,
-## 233, ...].
+## # A tibble: 11,340 × 22
+##    id_filme  titulo    ano data_lancamento genero1 genero2 genero3 duracao pais 
+##    <chr>     <chr>   <dbl> <chr>           <chr>   <chr>   <chr>     <dbl> <chr>
+##  1 tt0092699 Broadc…  1987 1988-04-01      Comedy  " Dram… " Roma…     133 USA  
+##  2 tt0037931 Murder…  1945 1945-06-23      Comedy  " Crim… " Myst…      91 USA  
+##  3 tt0183505 Me, My…  2000 2000-09-08      Comedy   <NA>    <NA>       116 USA  
+##  4 tt0033945 Never …  1941 1947-05-02      Comedy  " Musi…  <NA>        71 USA  
+##  5 tt0372122 Adam &…  2005 2007-05-17      Comedy  " Dram… " Musi…      99 USA  
+##  6 tt3703836 Henry …  2015 2016-01-08      Drama    <NA>    <NA>        87 USA  
+##  7 tt0093640 No Way…  1987 1987-12-11      Action  " Crim… " Dram…     114 USA  
+##  8 tt0494652 Welcom…  2008 2008-02-08      Comedy  " Roma…  <NA>       104 USA  
+##  9 tt0094006 Some K…  1987 1988-01-13      Drama   " Roma…  <NA>        95 USA  
+## 10 tt1142798 The Fa…  2008 2008-09-12      Drama    <NA>    <NA>       111 USA  
+## # … with 11,330 more rows, and 13 more variables: idioma <chr>,
+## #   orcamento <dbl>, receita <dbl>, receita_eua <dbl>, nota_imdb <dbl>,
+## #   num_avaliacoes <dbl>, direcao <chr>, roteiro <chr>, producao <chr>,
+## #   elenco <chr>, descricao <chr>, num_criticas_publico <dbl>,
+## #   num_criticas_critica <dbl>
+```
+
+Também podemos usar a função `separate()` para separar os nomes que fazem parte da coluna `elenco`:
+
+
+```r
+imdb_atuacao <- imdb %>% 
+  separate( 
+    col = elenco,
+    into = c("atuacao1", "atuacao2", "atuacao3"), 
+    sep = ","
+  )
 ```
 
 ```
-## # A tibble: 3,807 x 17
-##    titulo             ano diretor    duracao cor   genero1 genero2 genero3 pais 
-##    <chr>            <int> <chr>        <int> <chr> <chr>   <chr>   <chr>   <chr>
-##  1 Avatar            2009 James Cam…     178 Color Action  Advent… Fantasy USA  
-##  2 Pirates of the …  2007 Gore Verb…     169 Color Action  Advent… Fantasy USA  
-##  3 The Dark Knight…  2012 Christoph…     164 Color Action  Thrill… <NA>    USA  
-##  4 John Carter       2012 Andrew St…     132 Color Action  Advent… Sci-Fi  USA  
-##  5 Spider-Man 3      2007 Sam Raimi      156 Color Action  Advent… Romance USA  
-##  6 Tangled           2010 Nathan Gr…     100 Color Advent… Animat… Comedy  USA  
-##  7 Avengers: Age o…  2015 Joss Whed…     141 Color Action  Advent… Sci-Fi  USA  
-##  8 Batman v Superm…  2016 Zack Snyd…     183 Color Action  Advent… Sci-Fi  USA  
-##  9 Superman Return…  2006 Bryan Sin…     169 Color Action  Advent… Sci-Fi  USA  
-## 10 Pirates of the …  2006 Gore Verb…     151 Color Action  Advent… Fantasy USA  
-## # … with 3,797 more rows, and 8 more variables: classificacao <chr>,
-## #   orcamento <int>, receita <int>, nota_imdb <dbl>, likes_facebook <int>,
-## #   ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
+## Warning: Expected 3 pieces. Additional pieces discarded in 11300 rows [1, 2, 3,
+## 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, ...].
+```
+
+```
+## Warning: Expected 3 pieces. Missing pieces filled with `NA` in 15 rows [226,
+## 1178, 1767, 3536, 3900, 4188, 4706, 5557, 5591, 6030, 7475, 7579, 8190, 8376,
+## 9649].
+```
+
+```r
+imdb_atuacao
+```
+
+```
+## # A tibble: 11,340 × 22
+##    id_filme  titulo   ano data_lancamento generos duracao pais  idioma orcamento
+##    <chr>     <chr>  <dbl> <chr>           <chr>     <dbl> <chr> <chr>      <dbl>
+##  1 tt0092699 Broad…  1987 1988-04-01      Comedy…     133 USA   Engli…  20000000
+##  2 tt0037931 Murde…  1945 1945-06-23      Comedy…      91 USA   Engli…        NA
+##  3 tt0183505 Me, M…  2000 2000-09-08      Comedy      116 USA   Engli…  51000000
+##  4 tt0033945 Never…  1941 1947-05-02      Comedy…      71 USA   Engli…        NA
+##  5 tt0372122 Adam …  2005 2007-05-17      Comedy…      99 USA   Engli…        NA
+##  6 tt3703836 Henry…  2015 2016-01-08      Drama        87 USA   Engli…        NA
+##  7 tt0093640 No Wa…  1987 1987-12-11      Action…     114 USA   Engli…  15000000
+##  8 tt0494652 Welco…  2008 2008-02-08      Comedy…     104 USA   Engli…  35000000
+##  9 tt0094006 Some …  1987 1988-01-13      Drama,…      95 USA   Engli…        NA
+## 10 tt1142798 The F…  2008 2008-09-12      Drama       111 USA   Engli…        NA
+## # … with 11,330 more rows, and 13 more variables: receita <dbl>,
+## #   receita_eua <dbl>, nota_imdb <dbl>, num_avaliacoes <dbl>, direcao <chr>,
+## #   roteiro <chr>, producao <chr>, atuacao1 <chr>, atuacao2 <chr>,
+## #   atuacao3 <chr>, descricao <chr>, num_criticas_publico <dbl>,
+## #   num_criticas_critica <dbl>
 ```
 
 A função `unite()` realiza a operação inversa da função `separate()`. Ela concatena os valores de várias variáveis em uma única coluna. A sintaxe é a seguinte:
@@ -119,50 +159,50 @@ dados %>%
   )
 ```
 
-Como exemplo, vamos agora transformar as colunas `ator1`, `ator2` e `ator3` em uma única coluna `atores`. Lembrando que essas colunas estão no formato abaixo.
+Usando a base `imdb_atuacao` gerada no exemplo anterior, vamos agora transformar as colunas `atuacao1`, `atuacao2` e `atuacao3` em uma única coluna `atuacao_principal`. Lembrando que essas colunas estão no formato abaixo.
 
 
 ```r
-imdb %>% select(starts_with("ator")) %>% head(3)
+imdb_atuacao %>% select(starts_with("atuacao")) %>% head(3)
 ```
 
 ```
-## # A tibble: 3 x 3
-##   ator_1      ator_2           ator_3              
-##   <chr>       <chr>            <chr>               
-## 1 CCH Pounder Joel David Moore Wes Studi           
-## 2 Johnny Depp Orlando Bloom    Jack Davenport      
-## 3 Tom Hardy   Christian Bale   Joseph Gordon-Levitt
+## # A tibble: 3 × 3
+##   atuacao1       atuacao2           atuacao3           
+##   <chr>          <chr>              <chr>              
+## 1 William Hurt   " Albert Brooks"   " Holly Hunter"    
+## 2 Fred MacMurray " Helen Walker"    " Marjorie Main"   
+## 3 Jim Carrey     " Renée Zellweger" " Anthony Anderson"
 ```
 
-Veja que agora a coluna `atores` possui os 3 atores concatenados. Se a ordem das colunas `ator1`, `ator2` e `ator3` nos trazia a informação de protagonismo, essa informação passa a ficar implícita nesse novo formato. As 3 colunas originais são removidas da base resultante.
+Veja que agora a coluna `atuacao_principal` possui os 3 atores concatenados. Se a ordem das colunas `atuacao1`, `atuacao2` e `atuacao3` nos trazia a informação de protagonismo, essa informação passa a ficar implícita nesse novo formato. As 3 colunas originais são removidas da base resultante.
 
 
 ```r
-imdb %>% 
+imdb_atuacao %>% 
   unite(
-    col = "elenco",
-    starts_with("ator"), 
+    col = "atuacao_principal",
+    starts_with("atuacao"), 
     sep = " - "
   ) %>% 
-  select(elenco)
+  select(atuacao_principal)
 ```
 
 ```
-## # A tibble: 3,807 x 1
-##    elenco                                                  
-##    <chr>                                                   
-##  1 CCH Pounder - Joel David Moore - Wes Studi              
-##  2 Johnny Depp - Orlando Bloom - Jack Davenport            
-##  3 Tom Hardy - Christian Bale - Joseph Gordon-Levitt       
-##  4 Daryl Sabara - Samantha Morton - Polly Walker           
-##  5 J.K. Simmons - James Franco - Kirsten Dunst             
-##  6 Brad Garrett - Donna Murphy - M.C. Gainey               
-##  7 Chris Hemsworth - Robert Downey Jr. - Scarlett Johansson
-##  8 Henry Cavill - Lauren Cohan - Alan D. Purwin            
-##  9 Kevin Spacey - Marlon Brando - Frank Langella           
-## 10 Johnny Depp - Orlando Bloom - Jack Davenport            
-## # … with 3,797 more rows
+## # A tibble: 11,340 × 1
+##    atuacao_principal                                    
+##    <chr>                                                
+##  1 William Hurt -  Albert Brooks -  Holly Hunter        
+##  2 Fred MacMurray -  Helen Walker -  Marjorie Main      
+##  3 Jim Carrey -  Renée Zellweger -  Anthony Anderson    
+##  4 W.C. Fields -  Gloria Jean -  Leon Errol             
+##  5 Malcolm Gets -  Cary Curran -  Craig Chester         
+##  6 Cole Doman -  Joe Keery -  Elizabeth Laidlaw         
+##  7 Kevin Costner -  Gene Hackman -  Sean Young          
+##  8 Martin Lawrence -  James Earl Jones -  Margaret Avery
+##  9 Eric Stoltz -  Mary Stuart Masterson -  Lea Thompson 
+## 10 Alfre Woodard -  Sanaa Lathan -  Rockmond Dunbar     
+## # … with 11,330 more rows
 ```
 
 ### Pivotagem
@@ -179,13 +219,13 @@ Esses formatos são sempre relativos às colunas que estão sendo pivotadas, sen
 
 Antigamente, utilizávamos as funções `gather()` e `spread()` para fazer as operações de pivotagem. 
 
-Agora, no lugar de `gather()`, utilizamos a função `pivot_longer()`. Abaixo, transformamos as colunas `ator1`, `ator2` e `ator3` em duas colunas: `ator_atriz` e `protagonismo`.
+Agora, no lugar de `gather()`, utilizamos a função `pivot_longer()`. Abaixo, usando a base `imdb_atuacao` gerada anteriormente, transformamos as colunas `atuacao1`, `atuacao2` e `atuacao3` em duas colunas: `ator_atriz` e `protagonismo`.
 
 
 ```r
-imdb %>% 
+imdb_atuacao %>% 
   pivot_longer(
-    cols = starts_with("ator"), 
+    cols = starts_with("atuacao"), 
     names_to = "protagonismo",
     values_to = "ator_atriz"
   ) %>% 
@@ -194,28 +234,28 @@ imdb %>%
 ```
 
 ```
-## # A tibble: 6 x 3
-##   titulo                                    ator_atriz       protagonismo
-##   <chr>                                     <chr>            <chr>       
-## 1 Avatar                                    CCH Pounder      ator_1      
-## 2 Avatar                                    Joel David Moore ator_2      
-## 3 Avatar                                    Wes Studi        ator_3      
-## 4 Pirates of the Caribbean: At World's End  Johnny Depp      ator_1      
-## 5 Pirates of the Caribbean: At World's End  Orlando Bloom    ator_2      
-## 6 Pirates of the Caribbean: At World's End  Jack Davenport   ator_3
+## # A tibble: 6 × 3
+##   titulo          ator_atriz       protagonismo
+##   <chr>           <chr>            <chr>       
+## 1 Broadcast News  "William Hurt"   atuacao1    
+## 2 Broadcast News  " Albert Brooks" atuacao2    
+## 3 Broadcast News  " Holly Hunter"  atuacao3    
+## 4 Murder, He Says "Fred MacMurray" atuacao1    
+## 5 Murder, He Says " Helen Walker"  atuacao2    
+## 6 Murder, He Says " Marjorie Main" atuacao3
 ```
 
 Se considerarmos que na análise da base IMDB cada observação deve ser um filme, então essa nova base já não mais *tidy*, pois agora cada filme aparece em três linhas diferentes, uma vez para cada um de seus atores.
 
 Nesse sentido, embora possa parecer que a variável `protagonismo` estava implícita na base original, ela não é uma variável de fato. Todos filmes têm um `ator_1`, um `ator_2` e um `ator_3`. Não existe nenhuma informação sobre o filme que podemos tirar da coluna `protagonismo`, pois ela qualifica apenas os atores, não o filme em si.
 
-A função `pivot_wider()` faz a operação inversa da `pivot_longer()`. Sem aplicarmos as duas funções em sequência, voltamos para a base original.
+A função `pivot_wider()` faz a operação inversa da `pivot_longer()`. Se aplicarmos as duas funções em sequência, voltamos para a base original.
 
 
 ```r
-imdb %>% 
+imdb_atuacao %>% 
   pivot_longer(
-    cols = starts_with("ator"), 
+    cols = starts_with("atuacao"), 
     names_to = "ator_protagonismo",
     values_to = "ator_nome"
   ) %>% 
@@ -227,22 +267,17 @@ imdb %>%
 ```
 
 ```
-## Warning: Values are not uniquely identified; output will contain list-cols.
-## * Use `values_fn = list` to suppress this warning.
-## * Use `values_fn = length` to identify where the duplicates arise
-## * Use `values_fn = {summary_fun}` to summarise duplicates
-```
-
-```
-## # A tibble: 4 x 15
-##   titulo      ano diretor  duracao cor   generos   pais  classificacao orcamento
-##   <chr>     <int> <chr>      <int> <chr> <chr>     <chr> <chr>             <int>
-## 1 Avatar     2009 James C…     178 Color Action|A… USA   A partir de … 237000000
-## 2 Pirates …  2007 Gore Ve…     169 Color Action|A… USA   A partir de … 300000000
-## 3 The Dark…  2012 Christo…     164 Color Action|T… USA   A partir de … 250000000
-## 4 John Car…  2012 Andrew …     132 Color Action|A… USA   A partir de … 263700000
-## # … with 6 more variables: receita <int>, nota_imdb <dbl>,
-## #   likes_facebook <int>, ator_1 <list>, ator_2 <list>, ator_3 <list>
+## # A tibble: 4 × 22
+##   id_filme  titulo    ano data_lancamento generos duracao pais  idioma orcamento
+##   <chr>     <chr>   <dbl> <chr>           <chr>     <dbl> <chr> <chr>      <dbl>
+## 1 tt0092699 Broadc…  1987 1988-04-01      Comedy…     133 USA   Engli…  20000000
+## 2 tt0037931 Murder…  1945 1945-06-23      Comedy…      91 USA   Engli…        NA
+## 3 tt0183505 Me, My…  2000 2000-09-08      Comedy      116 USA   Engli…  51000000
+## 4 tt0033945 Never …  1941 1947-05-02      Comedy…      71 USA   Engli…        NA
+## # … with 13 more variables: receita <dbl>, receita_eua <dbl>, nota_imdb <dbl>,
+## #   num_avaliacoes <dbl>, direcao <chr>, roteiro <chr>, producao <chr>,
+## #   descricao <chr>, num_criticas_publico <dbl>, num_criticas_critica <dbl>,
+## #   atuacao1 <chr>, atuacao2 <chr>, atuacao3 <chr>
 ```
 
 A base `imdb` não possui nenhuma variável que faça sentido aplicarmos diretamente a função `pivot_wider()`. Vamos então considerar a seguinte tabela derivada da base `imdb`:
@@ -264,7 +299,8 @@ tab_romance_terror <- imdb %>%
 ```
 
 ```
-## `summarise()` has grouped output by 'ano'. You can override using the `.groups` argument.
+## `summarise()` has grouped output by 'ano'. You can override using the `.groups`
+## argument.
 ```
 
 Essa tabela possui a receita média dos filmes de romance e terror nos anos de 2010 a 2016.
@@ -278,24 +314,21 @@ tab_romance_terror
 ```
 
 ```
-## # A tibble: 14 x 3
-## # Groups:   ano [7]
+## # A tibble: 22 × 3
+## # Groups:   ano [11]
 ##      ano genero  receita_media
-##    <int> <chr>           <dbl>
-##  1  2010 Horror      30242147.
-##  2  2010 Romance     48834552 
-##  3  2011 Horror      33186210.
-##  4  2011 Romance     40780528.
-##  5  2012 Horror      36090815.
-##  6  2012 Romance     53134506.
-##  7  2013 Horror      56829163 
-##  8  2013 Romance     25590508 
-##  9  2014 Horror      37324785.
-## 10  2014 Romance     51353872.
-## 11  2015 Horror      27965711.
-## 12  2015 Romance     60166036.
-## 13  2016 Horror      57896396.
-## 14  2016 Romance    105439985.
+##    <dbl> <chr>           <dbl>
+##  1  2010 Horror      35186671.
+##  2  2010 Romance     56885184.
+##  3  2011 Horror      20176100.
+##  4  2011 Romance     51856138.
+##  5  2012 Horror      19722687.
+##  6  2012 Romance     33651867.
+##  7  2013 Horror      26271101.
+##  8  2013 Romance     22546610.
+##  9  2014 Horror      20623813.
+## 10  2014 Romance     28482653.
+## # … with 12 more rows
 ```
 
 
@@ -309,11 +342,12 @@ tab_romance_terror %>%
 ```
 
 ```
-## # A tibble: 2 x 8
-##   genero     `2010`    `2011`    `2012`   `2013`    `2014`    `2015`     `2016`
-##   <chr>       <dbl>     <dbl>     <dbl>    <dbl>     <dbl>     <dbl>      <dbl>
-## 1 Horror  30242147. 33186210. 36090815. 56829163 37324785. 27965711.  57896396.
-## 2 Romance 48834552  40780528. 53134506. 25590508 51353872. 60166036. 105439985.
+## # A tibble: 2 × 12
+##   genero   `2010` `2011` `2012` `2013` `2014` `2015` `2016` `2017` `2018` `2019`
+##   <chr>     <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>
+## 1 Horror   3.52e7 2.02e7 1.97e7 2.63e7 2.06e7 1.22e7 1.53e7 2.24e7 3.40e7 1.88e7
+## 2 Romance  5.69e7 5.19e7 3.37e7 2.25e7 2.85e7 3.53e7 1.97e7 8.96e6 6.88e7 4.14e7
+## # … with 1 more variable: `2020` <dbl>
 ```
 
 Esse é um caso que *bagunçar* um pouquinho a tabela nos trouxe um resultado desejado.
@@ -343,18 +377,18 @@ head(imdb_nest, 8)
 ```
 
 ```
-## # A tibble: 8 x 2
+## # A tibble: 8 × 2
 ## # Groups:   ano [8]
 ##     ano data             
-##   <int> <list>           
-## 1  1916 <tibble [1 × 14]>
-## 2  1920 <tibble [1 × 14]>
-## 3  1925 <tibble [1 × 14]>
-## 4  1929 <tibble [1 × 14]>
-## 5  1930 <tibble [1 × 14]>
-## 6  1932 <tibble [1 × 14]>
-## 7  1933 <tibble [2 × 14]>
-## 8  1934 <tibble [1 × 14]>
+##   <dbl> <list>           
+## 1  1914 <tibble [3 × 19]>
+## 2  1915 <tibble [3 × 19]>
+## 3  1916 <tibble [2 × 19]>
+## 4  1917 <tibble [1 × 19]>
+## 5  1918 <tibble [3 × 19]>
+## 6  1919 <tibble [6 × 19]>
+## 7  1920 <tibble [7 × 19]>
+## 8  1921 <tibble [7 × 19]>
 ```
 
 A base `imdb_nest` possui duas colunas `ano` e `data` e uma linha para cada ano. Na coluna `data`, temos o restante da base `imdb`, recortada para cada um dos anos.
@@ -367,12 +401,16 @@ imdb_nest$data[[1]]
 ```
 
 ```
-## # A tibble: 1 x 14
-##   titulo    diretor  duracao cor   generos pais  classificacao orcamento receita
-##   <chr>     <chr>      <int> <chr> <chr>   <chr> <chr>             <int>   <int>
-## 1 Intolera… D.W. Gr…     123 Blac… Drama|… USA   Outros           385907      NA
-## # … with 5 more variables: nota_imdb <dbl>, likes_facebook <int>, ator_1 <chr>,
-## #   ator_2 <chr>, ator_3 <chr>
+## # A tibble: 3 × 19
+##   id_filme titulo data_lancamento generos duracao pais  idioma orcamento receita
+##   <chr>    <chr>  <chr>           <chr>     <dbl> <chr> <chr>      <dbl>   <dbl>
+## 1 tt00047… Tilli… 1914-12-21      Comedy       82 USA   None,…     50000      NA
+## 2 tt00041… Judit… 1914-03-08      Drama        61 USA   Engli…     40000      NA
+## 3 tt00036… The A… 1914-08-24      Crime,…      78 USA   Engli…        NA      NA
+## # … with 10 more variables: receita_eua <dbl>, nota_imdb <dbl>,
+## #   num_avaliacoes <dbl>, direcao <chr>, roteiro <chr>, producao <chr>,
+## #   elenco <chr>, descricao <chr>, num_criticas_publico <dbl>,
+## #   num_criticas_critica <dbl>
 ```
 
 Imagine que queiramos fazer, para cada ano, um gráfico de dispersão da receita contra o orçamento dos filmes lançados no ano.
@@ -398,16 +436,16 @@ head(imdb_graficos, 6)
 ```
 
 ```
-## # A tibble: 6 x 3
+## # A tibble: 6 × 3
 ## # Groups:   ano [6]
 ##     ano data              grafico
-##   <int> <list>            <list> 
-## 1  1916 <tibble [1 × 14]> <gg>   
-## 2  1920 <tibble [1 × 14]> <gg>   
-## 3  1925 <tibble [1 × 14]> <gg>   
-## 4  1929 <tibble [1 × 14]> <gg>   
-## 5  1930 <tibble [1 × 14]> <gg>   
-## 6  1932 <tibble [1 × 14]> <gg>
+##   <dbl> <list>            <list> 
+## 1  1914 <tibble [3 × 19]> <gg>   
+## 2  1915 <tibble [3 × 19]> <gg>   
+## 3  1916 <tibble [2 × 19]> <gg>   
+## 4  1917 <tibble [1 × 19]> <gg>   
+## 5  1918 <tibble [3 × 19]> <gg>   
+## 6  1919 <tibble [6 × 19]> <gg>
 ```
 
 Para acessar cada um dos gráficos, basta rodar o código abaixo.
@@ -419,10 +457,10 @@ imdb_graficos$grafico[[74]]
 ```
 
 ```
-## Warning: Removed 5 rows containing missing values (geom_point).
+## Warning: Removed 76 rows containing missing values (geom_point).
 ```
 
-<img src="073-tidyr_files/figure-epub3/unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
+<img src="073-tidyr_files/figure-html/unnamed-chunk-18-1.png" width="480" style="display: block; margin: auto;" />
 
 Ou, escolhendo diretamente pelo ano
 
@@ -438,10 +476,10 @@ imdb_graficos %>%
 ```
 
 ```
-## Warning: Removed 5 rows containing missing values (geom_point).
+## Warning: Removed 43 rows containing missing values (geom_point).
 ```
 
-<img src="073-tidyr_files/figure-epub3/unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
+<img src="073-tidyr_files/figure-html/unnamed-chunk-19-1.png" width="480" style="display: block; margin: auto;" />
 
 A função `unnest()` remove a estrutura de *list column*. Fazendo a operação abaixo, voltamos para a base `imdb` original.
 
@@ -452,29 +490,31 @@ imdb_nest %>%
 ```
 
 ```
-## # A tibble: 3,807 x 15
-## # Groups:   ano [91]
-##      ano titulo    diretor  duracao cor   generos  pais  classificacao orcamento
-##    <int> <chr>     <chr>      <int> <chr> <chr>    <chr> <chr>             <int>
-##  1  1916 Intolera… D.W. Gr…     123 Blac… Drama|H… USA   Outros           385907
-##  2  1920 Over the… Harry F…     110 Blac… Crime|D… USA   Outros           100000
-##  3  1925 The Big … King Vi…     151 Blac… Drama|R… USA   Outros           245000
-##  4  1929 The Broa… Harry B…     100 Blac… Musical… USA   Outros           379000
-##  5  1930 Hell's A… Howard …      96 Blac… Drama|W… USA   Outros          3950000
-##  6  1932 A Farewe… Frank B…      79 Blac… Drama|R… USA   Outros           800000
-##  7  1933 42nd Str… Lloyd B…      89 Blac… Comedy|… USA   Outros           439000
-##  8  1933 She Done… Lowell …      66 Blac… Comedy|… USA   Outros           200000
-##  9  1934 It Happe… Frank C…      65 Blac… Comedy|… USA   Outros           325000
-## 10  1935 Top Hat   Mark Sa…      81 Blac… Comedy|… USA   Outros           609000
-## # … with 3,797 more rows, and 6 more variables: receita <int>, nota_imdb <dbl>,
-## #   likes_facebook <int>, ator_1 <chr>, ator_2 <chr>, ator_3 <chr>
+## # A tibble: 11,340 × 20
+## # Groups:   ano [108]
+##      ano id_filme  titulo data_lancamento generos duracao pais  idioma orcamento
+##    <dbl> <chr>     <chr>  <chr>           <chr>     <dbl> <chr> <chr>      <dbl>
+##  1  1914 tt0004707 Tilli… 1914-12-21      Comedy       82 USA   None,…     50000
+##  2  1914 tt0004181 Judit… 1914-03-08      Drama        61 USA   Engli…     40000
+##  3  1914 tt0003643 The A… 1914-08-24      Crime,…      78 USA   Engli…        NA
+##  4  1915 tt0005960 The R… 1915-09-13      Biogra…      72 USA   Engli…        NA
+##  5  1915 tt0005078 The C… 1915-12-13      Drama,…      59 USA   Engli…     17311
+##  6  1915 tt0004972 The B… 1915-03-21      Drama,…     195 USA   None      100000
+##  7  1916 tt0006864 Intol… 1918-02-24      Drama,…     163 USA   Engli…    385907
+##  8  1916 tt0006333 20,00… 1916-12-24      Action…     105 USA   Engli…    200000
+##  9  1917 tt0008443 The P… 1917-03-05      Comedy…      65 USA   Engli…        NA
+## 10  1918 tt0009611 Shoul… 1918-10-27      Comedy…      45 USA   None,…        NA
+## # … with 11,330 more rows, and 11 more variables: receita <dbl>,
+## #   receita_eua <dbl>, nota_imdb <dbl>, num_avaliacoes <dbl>, direcao <chr>,
+## #   roteiro <chr>, producao <chr>, elenco <chr>, descricao <chr>,
+## #   num_criticas_publico <dbl>, num_criticas_critica <dbl>
 ```
 
 ### Exercícios
 
-**1.** Crie 5 novas colunas de gêneros na base imdb, cada uma com um dos gêneros contidos na coluna generos. Para os filmes com menos de 5 gêneros, substitua os valores `NA` pela string "inexistente".
+**1.** Crie 5 novas colunas de idiomas na base imdb, cada uma com um dos idiomas contidos na coluna `idioma`. Para os filmes com menos de 5 idiomas, substitua os valores `NA` pela string "Inexistente".
 
-**2.** Substitua os "????" no código abaixo para criar uma tabela do lucro médio dos filmes ao longo dos anos de 2000 a 2016, com cada ano sendo uma coluna da base.
+**2.** Substitua os "????" no código abaixo para criar uma tabela do lucro médio dos filmes ao longo dos anos de 2000 a 2020, com cada ano sendo uma coluna da base.
 
 
 ```r
@@ -492,6 +532,7 @@ Para os exercícios 3, 4 e 5, vamos utilize a base `pokemon`, disponível no pac
 ```r
 install.packages("remotes")
 remotes::install_github("curso-r/basesCursoR")
+pokemon <- basesCursoR::pegar_base("pokemon")
 ```
 
 **3.** Utilize a função `unite()` para juntar as duas colunas de tipo em uma única coluna na base pokemon.
@@ -504,6 +545,6 @@ remotes::install_github("curso-r/basesCursoR")
 
 **b.** Utilize a base criada no item (a) e escreva um código para descobrir qual o tipo mais frequente na base, independentemente se ele é primário (tipo_1) ou secundário (tipo_2).
 
-**6.** Escreva uma função que receba uma base qualquer e o nome de uma coluna numérica dessa base e retorne uma figura com um gráfico de dispersão da coluna escolhida contra cada uma das outras variáveis numéricas da base.
+**6.** DESAFIO! Escreva uma função que receba uma base qualquer e o nome de uma coluna numérica dessa base e retorne uma figura com um gráfico de dispersão da coluna escolhida contra cada uma das outras variáveis numéricas da base.
 
 

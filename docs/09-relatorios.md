@@ -25,7 +25,7 @@ Além do próprio `{rmarkdown}`, existem diversos pacotes que podem ser utilizad
 
 - artigos científicos —  [rticles](https://github.com/rstudio/rticles).
 
-Antes de mais nada, vamos instalar os pacotes `{rmarkdown}` e `{knitr}`. O primeiro reune todas as funcionalidades para juntar nossos textos narrativos e códigos de R. O segundo vai fazer a *magia* de transformar nossos simples arquivos de texto em arquivos HTML, PDF e Word (`.doc`) bonitões.
+Antes de mais nada, vamos instalar os pacotes `{rmarkdown}` e `{knitr}`. O primeiro reúne todas as funcionalidades para juntar nossos textos narrativos e códigos de R. O segundo vai fazer a *magia* de transformar nossos simples arquivos de texto em arquivos HTML, PDF e Word (`.doc`) bonitões.
 
 
 ```r
@@ -34,9 +34,9 @@ install.packages(c("rmarkdown", "knitr"))
 
 Nas seções a seguir, vamos mostrar como começar a utilizar o R Markdown para criar esses documentos. Não se esqueça de conferir (e deixar por perto) as folhas de cola sobre R Markdown:
 
-  - [`rmarkdown` cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+- [`rmarkdown` cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf)
   
-  - [`rmarkdown` cheatsheet 2.0](http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+  - [Guia de referência do `rmarkdown`](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
   
 
   

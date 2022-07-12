@@ -2,6 +2,11 @@
 
 ---
 
+
+```r
+library(magrittr)
+```
+
 **1.** Reescreva a expressão abaixo utilizando o `%>%`.
 
 

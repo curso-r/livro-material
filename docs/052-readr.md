@@ -2,7 +2,7 @@
 
 
 
-O pacote `{readr}`do tidyverse é utilizado para importar arquivos de texto, como `.txt` ou `.csv`, para o R. Para carregá-lo, rode o código:
+O pacote `{readr}` do tidyverse é utilizado para importar arquivos de texto, como `.txt` ou `.csv`, para o R. Para carregá-lo, rode o código:
 
 
 ```r
@@ -15,7 +15,7 @@ O `{readr}` transforma arquivos de textos em `tibbles` usando as funções:
 
 - `read_tsv()`: para arquivos separados por tabulação.
 
-- `read_delim()`: para arquivos separados por um delimitador genérico. O argumento `delim=` indica qual caracter separa cada coluna no arquivo de texto.
+- `read_delim()`: para arquivos separados por um delimitador genérico. O argumento `delim=` indica qual caractere separa cada coluna no arquivo de texto.
 
 - `read_table()`: para arquivos de texto tabular com colunas separadas por espaço.
 
@@ -38,25 +38,14 @@ imdb_csv <- read_csv(file = "imdb.csv")
 
 
 ```
-## 
+## Rows: 11340 Columns: 20
 ## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   titulo = col_character(),
-##   ano = col_double(),
-##   diretor = col_character(),
-##   duracao = col_double(),
-##   cor = col_character(),
-##   generos = col_character(),
-##   pais = col_character(),
-##   classificacao = col_character(),
-##   orcamento = col_double(),
-##   receita = col_double(),
-##   nota_imdb = col_double(),
-##   likes_facebook = col_double(),
-##   ator_1 = col_character(),
-##   ator_2 = col_character(),
-##   ator_3 = col_character()
-## )
+## Delimiter: ","
+## chr (11): id_filme, titulo, data_lancamento, generos, pais, idioma, direcao,...
+## dbl  (9): ano, duracao, orcamento, receita, receita_eua, nota_imdb, num_aval...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
 A mensagem retornada pela função indica qual classe foi atribuída para cada coluna. Repare que o argumento `file=` representa o caminho até o arquivo. Se o arquivo a ser lido não estiver no diretório de trabalho da sua sessão, você precisa especificar o caminho até o arquivo. 
@@ -177,6 +166,8 @@ Encoding(frase_com_acentos) <-  "latin1"
 # Agora temos um problema de encoding
 frase_com_acentos
 ## [1] "VocÃª comerÃ¡ uma maÃ§Ã£ amanhÃ£ Ã  tarde"
+
+# Obs: esse código foi rodado em um computador que utiliza o encoding UTF-8.
 ```
 
 Quando estivermos enfrentando esse problema, devemos dizer à função `read_()` qual o encoding deve ser utilizado no arquivo.
@@ -186,7 +177,7 @@ Quando estivermos enfrentando esse problema, devemos dizer à função `read_()`
 read_csv("base_que_veio_do_windows.csv", locale = locale(encoding = "latin1"))
 ```
 
-O `latin1` é apenas um dos encodings que podem funcionar em arquivos do Windows. Outras sugestões são: `windows-1250`, `windows-1252`, `ISO-8859-2` e `ISO-8859-1`. Se você estiver lendo um arquivo cruado no Linux/Mac no Windows, basta usar o encoding `UTF-8`.
+O `latin1` é apenas um dos encodings que podem funcionar em arquivos do Windows. Outras sugestões são: `windows-1250`, `windows-1252`, `ISO-8859-2` e `ISO-8859-1`. Se você estiver lendo um arquivo criado no Linux/Mac no Windows, basta usar o encoding `UTF-8`.
 
 > Eu consegui resolver 99% dos meus problemas de encoding quando passei a fingir que o Windows não existe. --- Julio Trecenti
 
@@ -203,7 +194,7 @@ parse_number(c("5", "5.0", "5,0", "R$5.00", "5 a"))
 ```
 
 <div class="figure" style="text-align: center">
-<img src="assets/img/importacao/parse_number.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la." width="3542" />
+<img src="assets/img/importacao/parse_number.png" alt="Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la." width="1771" />
 <p class="caption">(\#fig:unnamed-chunk-14)Arte por Allison Horst (@allison_horst). Veja nas Referências onde encontrá-la.</p>
 </div>
 
@@ -268,13 +259,13 @@ write_delim(x = mtcars, path = "data/mtcars.txt", delim = "\t")
 
 ### Arquivos .rds
 
-A linguagem R tem uma extensão própria de arquivos binários chamada `RDS` ou `.rds`. Essa extensão pode ser utilizada para guarda qualquer tipo de objeto do R, inclusive bases de dados. Temos duas principais vantagens ao utilizarmos essa extensão para salvarvamos as nossas bases:
+A linguagem R tem uma extensão própria de arquivos binários chamada `RDS` ou `.rds`. Essa extensão pode ser utilizada para guardar qualquer tipo de objeto do R, inclusive bases de dados. Temos duas principais vantagens ao utilizarmos essa extensão para salvarvamos as nossas bases:
 
-- ele salva as classes especificadas para as colunas;
+- ela salva as classes especificadas para as colunas;
 
-- ele pode ser compactado, gerando arquivos muito menores.
+- ela pode ser compactada, gerando arquivos muito menores.
 
-A desvantagem é que ele só poderá ser lido dentro do R.
+A desvantagem é que ela só poderá ser lida dentro do R.
 
 Para criar um arquivo `.rds`, utilize a função `write_rds()`.
 

@@ -1,6 +1,6 @@
 ## Tibbles
 
-Uma *tibble* é um *data frame* com ajustes que as deixam mais amigáveis a nós cientistas de dados. Elas são parte do pacote `{tibble}`. Assim, para começar a usá-las, instale e carregue o pacote.
+*Tibbles* são *data frames* com ajustes que as deixam mais amigáveis a nós cientistas de dados. Elas são parte do pacote `{tibble}`. Assim, para começar a usá-las, instale e carregue o pacote.
 
 
 ```r
@@ -19,7 +19,7 @@ as_tibble(mtcars)
 ```
 
 ```
-## # A tibble: 32 x 11
+## # A tibble: 32 × 11
 ##      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
 ##    <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
 ##  1  21       6  160    110  3.9   2.62  16.5     0     1     4     4
@@ -93,7 +93,7 @@ tibble(
 ```
 
 ```
-## # A tibble: 4 x 4
+## # A tibble: 4 × 4
 ##   coluna1 coluna2 coluna3 coluna4
 ##   <chr>     <int>   <dbl>   <dbl>
 ## 1 a             1       1       0
@@ -104,7 +104,7 @@ tibble(
 Observamos pelo código acima que:
 
 - podemos criar uma coluna a partir de uma função de colunas anteriores (a `coluna3` é uma função da `coluna2`);
-- se passarmos um vetor de tamanho 1 a uma das colunas, esse vetor será reciclado, igualando-se ao número de linha da *tibble* (o `0` na `coluna4` é transformado em `c(0, 0, 0, 0)`).
+- se passarmos um vetor de tamanho 1 a uma das colunas, esse vetor será reciclado, igualando-se ao número de linhas da *tibble* (o `0` na `coluna4` é transformado em `c(0, 0, 0, 0)`).
 
 Uma outra diferença entre *data frames* e *tibbles* está no *subsetting*. *Tibbles* **nunca fazem correspondência parcial**. Tibbles retornam `NULL` e um aviso quando você tenta selecionar uma coluna que não existe.
 
@@ -212,4 +212,4 @@ rownames_to_column(mtcars, var = "modelo_do_carro")
 
 - `column_to_rownames()`: transforma uma coluna em nomes das linhas.
 
-Mais informações sobre `tibbles` podem ser encontradas [neste tutorial do RStudio](https://tibble.tidyverse.org/) e [neste caplítulo do R for Data Science](http://r4ds.had.co.nz/tibbles.html).
+Mais informações sobre `tibbles` podem ser encontradas [neste tutorial do RStudio](https://tibble.tidyverse.org/) e [neste capítulo do livro R for Data Science](http://r4ds.had.co.nz/tibbles.html).

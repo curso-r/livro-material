@@ -2,11 +2,11 @@
 
 
 
-Se você utiliza R antes do surgimento do `tidyverse`, provavelmente já escreveu a expressão `stringsAsFactors = F` quando importava dados usando as funções `read.csv` ou `read.table`. É muito frustrante quando uma coluna de `strings` é lida como um fator, pois fatores não podem ser manipulados do mesmo jeito que manipulamos vetores de `strings`.
+Se você já utilizava o R antes do surgimento do `tidyverse`, provavelmente já escreveu a expressão `stringsAsFactors = F` quando importava dados usando as funções `read.csv` ou `read.table`. É muito frustrante quando uma coluna de `strings` é lida como um fator, pois fatores não podem ser manipulados do mesmo jeito que manipulamos vetores de `strings`.
 
-Felizmente, depois de aprender a usar o `readr` você não terá mais esse problema, pois as funções do pacote não lê colunas de caracteres como fatores por padrão. Mas isso não significa que fatores são inúteis. Eles representam uma forma muito prática de lidar com variáveis categorizadas, tanto para fins de modelagem quanto para fins de visualização. 
+Felizmente, depois de aprender a usar o `readr` você não terá mais esse problema, pois as funções do pacote não leem colunas de caracteres como fatores por padrão. Mas isso não significa que fatores são inúteis. Eles representam uma forma muito prática de lidar com variáveis categorizadas, tanto para fins de modelagem quanto para fins de visualização. 
 
-Grande parte da frustração associada ao uso de fatores no R existe por conta da falta de algumas ferramentas úteis no pacote `base`. Para resolver esse o problema, Hadley Wickham ajudou a comunidade R (de novo) desenvolvendo o pacote `forcats`(**for** **cat**egorial variable**s**), que implementa algumas dessas ferramentas.
+Grande parte da frustração associada ao uso de fatores no R existe por conta da falta de algumas ferramentas úteis no pacote `base`. Para resolver esse problema, Hadley Wickham ajudou a comunidade R (de novo) desenvolvendo o pacote `forcats`(**for** **cat**egorial variable**s**), que implementa algumas dessas ferramentas.
 
 As principais funções do `forcats` servem para alterar a **ordem** e modificar os **níveis** de um fator. Para exemplificar a utilidade dessas funções, nesta seção vamos utilizá-las em situações corriqueiras.
 
@@ -108,9 +108,9 @@ starwars %>%
   geom_col(aes(x = sex, y = n)) 
 ```
 
-<img src="076-forcats_files/figure-epub3/unnamed-chunk-7-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="076-forcats_files/figure-html/unnamed-chunk-7-1.png" width="75%" style="display: block; margin: auto;" />
 
-Como as colunas no gráfico respeitam a ordem dos níveis do fator, não importa a ordem que as linhas aparecem na tabela, o gráfico sempre será gerado com as colunas na mesma ordem. Assim, se quiséssemos alterar a ordem das barras do gráfico anterior, precisamos mudar a ordem dos níveis do fator `sex`.
+Como as colunas no gráfico respeitam a ordem dos níveis do fator, não importa a ordem que as linhas aparecem na tabela, o gráfico sempre será gerado com as colunas na mesma ordem. Assim, se quiséssemos alterar a ordem das barras do gráfico anterior, precisaríamos mudar a ordem dos níveis do fator `sex`.
 
 ### Mudando a ordem dos níveis de um fator
 
@@ -151,9 +151,9 @@ starwars %>%
   geom_col(aes(x = sex, y = n)) 
 ```
 
-<img src="076-forcats_files/figure-epub3/unnamed-chunk-9-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="076-forcats_files/figure-html/unnamed-chunk-9-1.png" width="75%" style="display: block; margin: auto;" />
 
-Repare que precisamos passar a nova ordem na mão, o que pode deixar de funcionar se a nossa base mudar (recebemos mais linhas ou fizermos um filtro anteriormente).
+Repare que precisamos passar a nova ordem na mão, o que pode deixar de funcionar se a nossa base mudar (recebermos mais linhas ou fizermos um filtro anteriormente).
 
 Anterior ao `mutate()` temos a seguinte tabela:
 
@@ -162,7 +162,7 @@ Anterior ao `mutate()` temos a seguinte tabela:
 starwars %>% 
   filter(!is.na(sex)) %>% 
   count(sex) 
-## # A tibble: 4 x 2
+## # A tibble: 4 × 2
 ##   sex                n
 ##   <chr>          <int>
 ## 1 female            16
@@ -188,7 +188,7 @@ starwars %>%
   geom_col(aes(x = sex, y = n)) 
 ```
 
-<img src="076-forcats_files/figure-epub3/unnamed-chunk-11-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="076-forcats_files/figure-html/unnamed-chunk-11-1.png" width="75%" style="display: block; margin: auto;" />
 
 É quase o que queríamos! O problema é que os níveis estão sendo ordenados de forma crescente e gostaríamos de ordenar na ordem decrescente. Para isso, basta utilizarmos o parâmetro `.desc`.
 
@@ -205,7 +205,7 @@ starwars %>%
   geom_col(aes(x = sex, y = n)) 
 ```
 
-<img src="076-forcats_files/figure-epub3/unnamed-chunk-12-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="076-forcats_files/figure-html/unnamed-chunk-12-1.png" width="75%" style="display: block; margin: auto;" />
 
 
 Agora sim! Com esse código, as colunas estarão sendo ordenadas pela frequência, independentemente dos valores de `n` e `sex` que chegarem no `mutate()`.
@@ -223,7 +223,7 @@ starwars %>%
 ## Warning: Removed 5 rows containing non-finite values (stat_boxplot).
 ```
 
-<img src="076-forcats_files/figure-epub3/unnamed-chunk-13-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="076-forcats_files/figure-html/unnamed-chunk-13-1.png" width="75%" style="display: block; margin: auto;" />
 Se quiséssemos ordenar cada boxplot (pela mediana, por exemplo), continuamos podendo usar a função `fct_reorder()`. Veja que ela possui o argumento `.fun`, que indica qual função será utilizada na variável secundária para determinar a ordem dos níveis.
 
 No exemplo abaixo, utilizamos `.fun = median`, o que significa que, para cada nível da variável `sex`, vamos calcular a mediana da variável `height` e ordenaremos os níveis de `sex` conforme a ordem dessas medianas. Assim, o primeiro nível será o sexo com menor altura mediana, o segundo nível será o sexo com a segunda menor algura media e assim por diante. Se quiséssemos ordenar de forma decrescente, bastaria utilizar o argumento `.desc = TRUE`.
@@ -241,7 +241,7 @@ ggplot() +
 ## Warning: Removed 5 rows containing non-finite values (stat_boxplot).
 ```
 
-<img src="076-forcats_files/figure-epub3/unnamed-chunk-14-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="076-forcats_files/figure-html/unnamed-chunk-14-1.png" width="75%" style="display: block; margin: auto;" />
 Também poderíamos ordenar pelo máximo, utilizando `.fun = max`. Neste argumento, podemos usar qualquer função sumarizadora: `min()`, `mean()`, `median()`, `max()`, `sd()`, `var()` etc.
 
 
@@ -257,11 +257,11 @@ ggplot() +
 ## Warning: Removed 5 rows containing non-finite values (stat_boxplot).
 ```
 
-<img src="076-forcats_files/figure-epub3/unnamed-chunk-15-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="076-forcats_files/figure-html/unnamed-chunk-15-1.png" width="75%" style="display: block; margin: auto;" />
 
 ### Colapsando níveis de um fator
 
-Imagine que quermos fazer um gráfico de barras com a frequência de personagens por espécie.
+Imagine que queremos fazer um gráfico de barras com a frequência de personagens por espécie.
 
 
 ```r
@@ -270,7 +270,7 @@ starwars %>%
   geom_bar()
 ```
 
-<img src="076-forcats_files/figure-epub3/unnamed-chunk-16-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="076-forcats_files/figure-html/unnamed-chunk-16-1.png" width="75%" style="display: block; margin: auto;" />
 
 O gráfico resultante é horrível, pois temos muitas espécies diferentes. Uma solução seria agrupar as espécies menos frequentes, criando uma nova categoria (*outras*, por exemplo).
 
@@ -318,7 +318,7 @@ fct_lump(fator_especies, n = 3)
 ## Levels: Droid Gungan Human Other
 ```
 
-O fator resultante possui 4 níveis: `Droid`, `Gungan`, `Human` e `Other`. Os 3 primeiros níveis são os mais frequentes, enquanto o nível `Other` foi atribuído a todos os outros 34 níveis que existiam anteiormente.
+O fator resultante possui 4 níveis: `Droid`, `Gungan`, `Human` e `Other`. Os 3 primeiros níveis são os mais frequentes, enquanto o nível `Other` foi atribuído a todos os outros 34 níveis que existiam anteriormente.
 
 Poderíamos definir o nome do nível `Others` usando o argumento `other_level`.
 
@@ -381,7 +381,7 @@ starwars %>%
   geom_bar()
 ```
 
-<img src="076-forcats_files/figure-epub3/unnamed-chunk-21-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="076-forcats_files/figure-html/unnamed-chunk-21-1.png" width="75%" style="display: block; margin: auto;" />
 
 ```r
 
@@ -396,7 +396,7 @@ starwars %>%
   geom_bar()
 ```
 
-<img src="076-forcats_files/figure-epub3/unnamed-chunk-21-2.png" width="75%" style="display: block; margin: auto;" />
+<img src="076-forcats_files/figure-html/unnamed-chunk-21-2.png" width="75%" style="display: block; margin: auto;" />
 
 Também é possível colapsar níveis criando manualmente os grupos. Para isso, utilizamos a função `fct_collapse()`. No exemplo a seguir, reclassificamos os níveis da variável `eye_color`. Os níveis não listados são reclassificados como  `"outros"`.
 
@@ -464,7 +464,7 @@ Devolve a frequência dos níveis de um vetor.
 
 ```r
 fct_count(fator)
-## # A tibble: 3 x 2
+## # A tibble: 3 × 2
 ##   f         n
 ##   <fct> <int>
 ## 1 a         3
@@ -548,7 +548,7 @@ mtcars %>%
   geom_point()
 ```
 
-<img src="076-forcats_files/figure-epub3/unnamed-chunk-33-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="076-forcats_files/figure-html/unnamed-chunk-33-1.png" width="75%" style="display: block; margin: auto;" />
 
 **5.** Utilize a base `dados::casas` para fazer um gráfico de barras mostrando as vizinhanças (coluna `vizinhanca`) com casas mais caras (segundo a coluna `venda_valor`). O gráfico deve conter as 9 vizinhanças mais frequentes e as demais devem ser agrupadas em uma categoria chamada `Outras vizinhanças`.
 

@@ -8,7 +8,7 @@ O R Markdown é a junção da linguagem Markdown com o poder de códigos em R. A
 Falamos que mágica acontece em arquivos do tipo `.Rmd`, porém, como podemos criar esses arquivos?  Primeiramente, no menu superior, clique em **File** > **New File** > **R Markdown**, ou utilize os botões da interface gráfica, como mostrado na imagem a seguir:
 
 <div class="figure" style="text-align: center">
-<img src="assets/img/relatorios/criar-rmd.png" alt="Captura de tela da IDE RStudio, mostrando os ícones usados para criar um arquivo R Markdown" width="382" />
+<img src="assets/img/relatorios/criar-rmd.png" alt="Captura de tela da IDE RStudio, mostrando os ícones usados para criar um arquivo R Markdown" width="191" />
 <p class="caption">(\#fig:unnamed-chunk-1)Captura de tela da IDE RStudio</p>
 </div>
 
@@ -19,7 +19,7 @@ Para facilitar o aprendizado, recomendamos que escolha a opção HTML, sendo que
 
 
 <div class="figure" style="text-align: center">
-<img src="assets/img/relatorios/criar-rmd-2.png" alt="Captura de tela da IDE RStudio, mostrando a janela de escolha de opções para criar um arquivo R Markdown" width="1172" />
+<img src="assets/img/relatorios/criar-rmd-2.png" alt="Captura de tela da IDE RStudio, mostrando a janela de escolha de opções para criar um arquivo R Markdown" width="586" />
 <p class="caption">(\#fig:unnamed-chunk-2)Captura de tela da IDE RStudio</p>
 </div>
 
@@ -46,7 +46,7 @@ O arquivo `.Rmd` possui a seguinte estrutura, ilustrada pela figura a seguir:
 
 
 <div class="figure" style="text-align: center">
-<img src="assets/img/relatorios/rmarkdown.png" alt="Captura de tela da IDE RStudio, mostrando um novo arquivo R Markdown" width="2876" />
+<img src="assets/img/relatorios/rmarkdown.png" alt="Captura de tela da IDE RStudio, mostrando um novo arquivo R Markdown" width="1438" />
 <p class="caption">(\#fig:unnamed-chunk-3)Captura de tela da IDE RStudio</p>
 </div>
 
@@ -87,7 +87,7 @@ Para adicionar esses resultados nos relatórios, não é muito prático adiciona
 
 <!--# Acho que esse trecho abaixo pode ser aprimorado. tem algumas palavras que repetem bastante! -->
 
-Com RMarkdown, podemos adicionar códigos nos nossos relatórios que geram os resultados, assim a cada vez que compilarmos o relatório os códigos que geram estes resultados serão executados, e o relatório terá sempre os resultados atualizados.
+Com o RMarkdown, podemos adicionar códigos nos nossos relatórios que geram os resultados, assim a cada vez que compilarmos o relatório, os códigos que geram estes resultados serão executados, e o relatório terá sempre os resultados atualizados.
 
 Caso você queira que o código seja executado como código R, existem duas possibilidades:
 
@@ -215,7 +215,7 @@ media_massa
 ```
 
 ```
-## # A tibble: 5 x 3
+## # A tibble: 5 × 3
 ## # Groups:   especie [3]
 ##   especie             ilha      media_massa_kg
 ##   <fct>               <fct>              <dbl>
@@ -257,7 +257,10 @@ media_massa %>%
   DT::datatable()
 ```
 
-![](092-rmarkdown_files/figure-epub3/exemplo-DT-1.png)<!-- -->
+```{=html}
+<div id="htmlwidget-81ceec511029a6346674" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-81ceec511029a6346674">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5"],["Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-adélia","Pinguim-de-barbicha","Pinguim-gentoo"],["Biscoe","Dream","Torgersen","Dream","Biscoe"],[3.71,3.69,3.71,3.73,5.08]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>especie<\/th>\n      <th>ilha<\/th>\n      <th>media_massa_kg<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+```
 
 Os exemplos anteriores são as formas mais simples de apresentar as tabelas, porém cada pacote possibilita diferentes personalizações (por exemplo, alterar o nome das colunas, etc). Existem outros pacotes que permitem adicionar tabela nos relatórios em RMarkdown, como por exemplo:
 
