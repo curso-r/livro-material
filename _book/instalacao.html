@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Ciência de Dados em R - 1&nbsp; Instalação</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./rstudio.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./instalacao.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Instalação</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Ciência de Dados em R</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sobre</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./instalacao.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Instalação</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rstudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">RStudio</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#instalacao-do-r" id="toc-instalacao-do-r" class="nav-link active" data-scroll-target="#instalacao-do-r"><span class="header-section-number">1.1</span> Instalação do R</a>
+  <ul class="collapse">
+  <li><a href="#no-windows" id="toc-no-windows" class="nav-link" data-scroll-target="#no-windows"><span class="header-section-number">1.1.1</span> No Windows</a></li>
+  <li><a href="#no-linux" id="toc-no-linux" class="nav-link" data-scroll-target="#no-linux"><span class="header-section-number">1.1.2</span> No Linux</a></li>
+  <li><a href="#no-macos" id="toc-no-macos" class="nav-link" data-scroll-target="#no-macos"><span class="header-section-number">1.1.3</span> No MacOS</a></li>
+  </ul></li>
+  <li><a href="#instalacao-do-rstudio" id="toc-instalacao-do-rstudio" class="nav-link" data-scroll-target="#instalacao-do-rstudio"><span class="header-section-number">1.2</span> Instalação do RStudio</a></li>
+  <li><a href="#instalacao-adicionais" id="toc-instalacao-adicionais" class="nav-link" data-scroll-target="#instalacao-adicionais"><span class="header-section-number">1.3</span> Instalação de softwares adicionais</a>
+  <ul class="collapse">
+  <li><a href="#instalacao-latex" id="toc-instalacao-latex" class="nav-link" data-scroll-target="#instalacao-latex"><span class="header-section-number">1.3.1</span> LaTeX</a></li>
+  <li><a href="#office" id="toc-office" class="nav-link" data-scroll-target="#office"><span class="header-section-number">1.3.2</span> Office</a></li>
+  <li><a href="#pagedown-e-chrome" id="toc-pagedown-e-chrome" class="nav-link" data-scroll-target="#pagedown-e-chrome"><span class="header-section-number">1.3.3</span> Pagedown e Chrome</a></li>
+  <li><a href="#renderizando-html-widgets" id="toc-renderizando-html-widgets" class="nav-link" data-scroll-target="#renderizando-html-widgets"><span class="header-section-number">1.3.4</span> Renderizando HTML widgets</a></li>
+  <li><a href="#blogdown" id="toc-blogdown" class="nav-link" data-scroll-target="#blogdown"><span class="header-section-number">1.3.5</span> Blogdown</a></li>
+  <li><a href="#ferramentas-de-desenvolvimento" id="toc-ferramentas-de-desenvolvimento" class="nav-link" data-scroll-target="#ferramentas-de-desenvolvimento"><span class="header-section-number">1.3.6</span> Ferramentas de desenvolvimento</a></li>
+  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git"><span class="header-section-number">1.3.7</span> Git</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="instalacao" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Instalação</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Nesta seção, abordaremos como instalar o R e o RStudio no Linux e no Windows. Também discutiremos sobre a instalação de pacotes no R.</p>
+<section id="instalacao-do-r" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="instalacao-do-r"><span class="header-section-number">1.1</span> Instalação do R</h2>
+<p>A instalação padrão do R é feita a partir do CRAN, uma rede de servidores espalhada pelo mundo que armazena versões idênticas e atualizadas de códigos e documentações para o R.</p>
+<blockquote class="blockquote">
+<p>Sempre que for instalar algo do CRAN, utilize o servidor (<em>mirror</em>) mais próximo de você.</p>
+</blockquote>
+<section id="no-windows" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="no-windows"><span class="header-section-number">1.1.1</span> No Windows</h3>
+<p>Para instalar o R no Windows, siga os seguintes passos:</p>
+<ol type="1">
+<li><p>Acesse o CRAN: https://www.r-project.org/</p></li>
+<li><p>No menu à esquerda, encontre a opção <strong>Download</strong> e clique em <strong>CRAN</strong>.</p></li>
+<li><p>Escolha a opção de servidor (<em>mirror</em>) mais próxima de você.</p></li>
+<li><p>Clique em <strong>Download R for Windows</strong>.</p></li>
+<li><p>Clique na opção <strong>base</strong>.</p></li>
+<li><p>Na nova página, clique em <strong>Download R x.x.x for Windows</strong>, sendo x.x.x o número da versão que será baixada. Se você teve algum problema com o download, tente escolher outro servidor no passo 3.</p></li>
+<li><p>Feito o download, clique duas vezes no arquivo baixado e siga as instruções para instalação.</p></li>
+</ol>
+<blockquote class="blockquote">
+<p>Na etapa de escolher a pasta de destino da instalação, se você escolher um local que não esteja dentro da sua pasta de usuário, você precisará de acesso de administrador. Se escolher uma pasta dentro da sua pasta de usuário, não precisará.</p>
+</blockquote>
+</section>
+<section id="no-linux" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="no-linux"><span class="header-section-number">1.1.2</span> No Linux</h3>
+<p>Como a instalação no Linux depende da distribuição utilizada e, em geral, pessoas que utilizam Linux são mais experientes, vamos informar apenas as coordenadas até as instruções/arquivos. Se você tiver alguma dificuldade durante o processo, por favor envie a sua dúvida para a nossa <a href="https://discourse.curso-r.com/">comunidade</a>. Faremos o possível para ajudar.</p>
+<ol type="1">
+<li><p>Acesse o CRAN: https://cran.r-project.org/</p></li>
+<li><p>No menu à esquerda, encontre a opção <strong>Download</strong> e clique em <strong>CRAN</strong>.</p></li>
+<li><p>Escolha a opção de servidor (<em>mirror</em>) mais próxima de você.</p></li>
+<li><p>Clique em <strong>Download R for Linux</strong>.</p></li>
+<li><p>Clique no link referente à distribuição que você utiliza.</p></li>
+<li><p>Siga as instruções contidas na página para instalar o R. Se você teve algum problema com o download, tente escolher outro servidor no passo 3.</p></li>
+</ol>
+</section>
+<section id="no-macos" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="no-macos"><span class="header-section-number">1.1.3</span> No MacOS</h3>
+<p>Para instalar o R no MacOS, siga os seguintes passos:</p>
+<ol type="1">
+<li><p>Acesse o CRAN: https://www.r-project.org/</p></li>
+<li><p>No menu à esquerda, encontre a opção <strong>Download</strong> e clique em <strong>CRAN</strong>.</p></li>
+<li><p>Escolha a opção de servidor (<em>mirror</em>) mais próxima de você.</p></li>
+<li><p>Na nova página, clique em <strong>Download R for (Mac) OS X</strong>.</p></li>
+<li><p>Clique na versão do R que você quer baixar (geralmente queremos baixar a mais recente). O objetivo aqui é baixar um arquivo do tipo “R-x.x.x.pkg”, sendo x.x.x o número da versão que vamos instalar. Se você teve algum problema com o download, tente escolher outro servidor no passo 3.</p></li>
+<li><p>Feito o download, clique duas vezes no arquivo baixado e siga as instruções para instalação.</p></li>
+</ol>
+</section>
+</section>
+<section id="instalacao-do-rstudio" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="instalacao-do-rstudio"><span class="header-section-number">1.2</span> Instalação do RStudio</h2>
+<p>Agora vamos instalar a versão <em>open source</em> do RStudio, a IDE que utilizaremos para escrever e executar códigos em R.</p>
+<p>Para instalar o RStudio no Windows, siga os seguintes passos:</p>
+<ol type="1">
+<li>Acesse a página de downloads da RStudio: https://rstudio.com/products/rstudio/download/#download</li>
+</ol>
+<ul>
+<li><p>Se você tiver acesso de administrador, baixe a versão referente ao seu sistema operacional que está na lista de <em>All Installers</em>.</p></li>
+<li><p>Se você não tiver acesso de administrador, baixe a versão referente ao seu sistema operacional que está na lista de <em>Zip/Tarballs</em>.</p></li>
+</ul>
+<section id="instalando-se-você-tiver-acesso-de-administrador" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="instalando-se-você-tiver-acesso-de-administrador">Instalando se você tiver acesso de administrador</h4>
+<ol start="2" type="1">
+<li>Clique duas vezes no arquivo que você baixou da página do RStudio e siga as instruções de instalação.</li>
+</ol>
+</section>
+<section id="instalação-se-você-não-tiver-acesso-de-administrador" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="instalação-se-você-não-tiver-acesso-de-administrador">Instalação se você não tiver acesso de administrador</h4>
+<ol start="2" type="1">
+<li><p>Descompacte o arquivo baixado no passo anterior. Geralmente isso pode ser feito clicando no arquivo compactado com o botão direito do mouse e clicando na opção <em>descompactar</em> ou <em>extrair</em>.</p></li>
+<li><p>Após a descompactação ter sido finalizada, você terá uma pasta chamada: <code>RStudio-x.x.x</code>, em que x.x.x é o número da versão baixada. Abra essa pasta e entre na subpasta com nome <code>bin</code>.</p></li>
+<li><p>Procure pelo arquivo chamado <code>rstudio</code> e clique duas vezes. Isso abrirá o RStudio. Recomendamos fixar o programa na barra de tarefas para não precisar repetir essa etapa sempre que for abrir o programa.</p></li>
+</ol>
+<p><strong>Observação</strong>: se você excluir a pasta que extraímos, o RStudio irá parar de funcionar.</p>
+</section>
+</section>
+<section id="instalacao-adicionais" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="instalacao-adicionais"><span class="header-section-number">1.3</span> Instalação de softwares adicionais</h2>
+<p>Os softwares descritos anteriormente são suficientes para realizar as tarefas básicas em R. Porém, principalmente quando tratamos de <a href="#relatorios">relatórios com R</a>, alguns softwares adicionais podem ser necessários em casos específicos! A seguir citamos alguns destes softwares, em quais casos eles são necessários e/ou úteis, e instruções sobre como instalá-los.</p>
+<section id="instalacao-latex" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="instalacao-latex"><span class="header-section-number">1.3.1</span> LaTeX</h3>
+<p>O LaTeX é um software para renderização de documentos PDF e também uma linguagem de programação. É bastante usada na academia para produção de artigos científicos.</p>
+<p>No R, o LaTeX aparece quando queremos gerar relatórios e apresentações em PDF, a partir de um documento RMarkdown. Na prática, o RMarkdown é transformado para LaTeX através do software <a href="https://pandoc.org"><em>Pandoc</em></a><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, que por sua vez é processado para gerar o PDF. Portanto, para gerar um relatório em PDF através do RMarkdown, precisamos ter alguma ferramenta de LaTeX instalada.</p>
+<p>A recomendação das pessoas que desenvolvem o RMarkdown é a utilização do <a href="https://yihui.org/tinytex/"><code>tinytex</code></a>, uma distribuição leve do LaTeX.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'tinytex'</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()  <span class="co"># instalar o TinyTeX</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Caso você encontre algum problema para instalar o TinyTex, também é possível instalar outros editores de LaTex. A seguir estão apresentadas algumas opções!</p>
+<section id="no-windows-1" class="level4" data-number="1.3.1.1">
+<h4 data-number="1.3.1.1" class="anchored" data-anchor-id="no-windows-1"><span class="header-section-number">1.3.1.1</span> No Windows</h4>
+<p>Uma distribuição de LaTeX que apresenta versão para Windows é o MiKTeX.</p>
+<ol type="1">
+<li><p>Para instalá-lo, primeiramente faça o download do arquivo <code>.exe</code> <a href="https://MiKTeX.org/download#win">através deste link</a>, escolhendo a versão de instalação para Windows.</p></li>
+<li><p>Abra o arquivo baixado. Uma janela irá abrir, e a primeira etapa de instalação é a “Copying Conditions”. Nesta etapa você deve selecionar a opção <strong>“I accept the MiKTeX copying conditions”</strong> e clicar em <strong>“Avançar”</strong>.</p></li>
+</ol>
+<p><img src="assets/img/instalacao/miktex_windows/win_miktex1.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>A próxima etapa da instalação, chamada de “Installation Scope”, você deve escolher em qual usuário o software deve ser instalado. Selecione a primeira opção (<strong>“Install MiKTeX only for me.<strong>”) para que o MiKTeX seja instalado apenas no seu usuário atual no computador. Essa é a opção recomendada. Então clique em </strong>”Avançar”</strong>.</li>
+</ol>
+<p><img src="assets/img/instalacao/miktex_windows/win_miktex2.png" class="img-fluid"></p>
+<ol start="4" type="1">
+<li>Na etapa “Installation Directory”, escolha o diretório em que o MiKTeX será instalado. Caso tenha dúvidas sobre isso, não altere nada e utilize o caminho padrão de instalação. Então clique em <strong>“Avançar”</strong>.</li>
+</ol>
+<p><img src="assets/img/instalacao/miktex_windows/win_miktex3.png" class="img-fluid"></p>
+<ol start="5" type="1">
+<li>Na etapa “Settings”, utilize as configurações padrão e clique em <strong>“Avançar”</strong>.</li>
+</ol>
+<p><img src="assets/img/instalacao/miktex_windows/win_miktex4.png" class="img-fluid"></p>
+<ol start="6" type="1">
+<li>Na etapa “Review”, são apresentadas as configurações escolhidas anteriormente. Clique em <strong>Start</strong> para que a instalação seja começada.</li>
+</ol>
+<p><img src="assets/img/instalacao/miktex_windows/win_miktex5.png" class="img-fluid"></p>
+<ol start="7" type="1">
+<li>O processo de instalação será realizado, e pode demorar alguns minutos. Duas barras verdes aparecerão para demonstrar a porcentagem da instalação já realizada. Quando essa etapa terminar, as barras ficarão cinzas e o você deverá clicar no botão <strong>Start</strong>.</li>
+</ol>
+<p><img src="assets/img/instalacao/miktex_windows/win_miktex6.png" class="img-fluid"></p>
+<ol start="8" type="1">
+<li>Na etapa “Update Check”, aparecerá a opção de buscar por atualizações. Mantenha o botão <strong>“Check for updates now”</strong> selecionado, e clique no botão <strong>Start</strong>.</li>
+</ol>
+<p><img src="assets/img/instalacao/miktex_windows/win_miktex7.png" class="img-fluid"></p>
+<ol start="9" type="1">
+<li>A próxima janela mostrará uma mensagem dizendo que a instalação foi completa. Clique no botão <strong>Close</strong> para fechar essa janela.</li>
+</ol>
+<p><img src="assets/img/instalacao/miktex_windows/win_miktex8.png" class="img-fluid"> 10. Abra o MiKTeX console através do menu Iniciar do Windows. No menu lateral, escolha a opção “Updates”. Clique em <strong>“Check for updates”</strong>, e o MiKTeX buscará informações sobre as possíveis atualizações necessárias. Então clique em <strong>“Update now”</strong>, para que as atualizações sejam baixadas e instaladas. Essa etapa também pode demorar um pouco!</p>
+<p><img src="assets/img/instalacao/miktex_windows/win_miktex9.png" class="img-fluid"></p>
+<ol start="11" type="1">
+<li>Após instalar as atualizações, o MiKTeX avisará que ele precisa ser fechado. Abra-o novamente. Após este processo, o MiKTex estará pronto para uso.</li>
+</ol>
+</section>
+<section id="no-linux-1" class="level4" data-number="1.3.1.2">
+<h4 data-number="1.3.1.2" class="anchored" data-anchor-id="no-linux-1"><span class="header-section-number">1.3.1.2</span> No Linux</h4>
+<p>No linux, a forma mais direta de garantir que temos o LaTeX na máquina com todas as dependências é instalando o <code>texlive-full</code>. No Ubuntu, basta rodar</p>
+<pre><code>sudo apt install texlive-full</code></pre>
+<blockquote class="blockquote">
+<p><strong>Importante</strong>: o texlive-full é uma forma “bruta” de instalar tudo do LaTeX, e pode ocupar mais do que 5GB do seu disco! Então tome cuidado e procure alternativas, como as descritas <a href="https://linuxconfig.org/how-to-install-latex-on-ubuntu-18-04-bionic-beaver-linux">neste site</a>.</p>
+</blockquote>
+</section>
+<section id="no-macos-1" class="level4" data-number="1.3.1.3">
+<h4 data-number="1.3.1.3" class="anchored" data-anchor-id="no-macos-1"><span class="header-section-number">1.3.1.3</span> No MacOS</h4>
+<p>Uma distribuição de LaTeX que apresenta versão para MacOS é o MikTex. Para instalá-lo, primeiramente faça o download do arquivo <code>.dmg</code> <a href="https://miktex.org/download#mac">através deste link</a>. <a href="https://miktex.org/howto/install-miktex-mac">Este tutorial</a> apresenta todos os passos de instalação no MacOS, porém abaixo também vamos descrever os passos:</p>
+<ol type="1">
+<li><p>Faça o download do arquivo <code>.dmg</code> <a href="https://miktex.org/download#mac">através deste link</a>, escolhendo a versão de instalação para MacOS.</p></li>
+<li><p>Abra o arquivo baixado. Uma janela irá abrir, e você deve arrastar o ícone “MiKTeX Console” para a pasta “Applications”.</p></li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="assets/img/instalacao/miktex_mac/gif_miktex.gif" class="img-fluid"></p>
+</div>
+</div>
+<ol start="3" type="1">
+<li><p>No Launchpad (menu de arquivos instalados), procure o ícone do “MiKTeX Console” e abra-o. Você também pode usar a pesquisa do MacOS (utilizando o atalho Command + Barra de espaço), pesquisando por MiKTeX para abrir o software.</p></li>
+<li><p>Ao abrir pela primeira vez, o MiKTeX solicitará que você selecione uma opção para que a instalação seja completada. Selecione <strong>“Finish private setup”</strong>, e isso fará com que o MiKTeX esteja disponível apenas no seu usuário do computador. Após selecionar essa opcão, ele terminará a configuração, e aparecerá uma mensagem dizendo que o MiKTex será reiniciado. Espere até que ele reinicie. Ao final, aparecerá uma mensagem dizendo que é necessário fazer atualizações no MiKTeX.</p></li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="assets/img/instalacao/miktex_mac/miktex-instalacao-1.gif" class="img-fluid"></p>
+</div>
+</div>
+<ol start="5" type="1">
+<li>No menu lateral, escolha a opção “Updates”. Clique em <strong>“Check for updates”</strong>, e o MiKTex buscará informações sobre as possíveis atualizações necessárias. Então clique em <strong>“Update now”</strong>, para que as atualizações sejam baixadas e instaladas.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="assets/img/instalacao/miktex_mac/miktex-instalacao-2.gif" class="img-fluid"></p>
+</div>
+</div>
+<ol start="6" type="1">
+<li>Após instalar e atualizar, o MiKTeX está pronto para uso!</li>
+</ol>
+</section>
+</section>
+<section id="office" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="office"><span class="header-section-number">1.3.2</span> Office</h3>
+<p>No R, os arquivos do pacote office também são gerados a partir do Pandoc. Por isso, não é necessário instalar nenhum software adicional para gerar os documentos.</p>
+<p>No entanto, para abrir documentos do Office, como <code>.pptx</code> e <code>.docx</code>, é necessário ter o Office ou alguma alternativa aberta instalados.</p>
+<p>Além disso, por conta das particularidades desses tipos de documentos, muitas vezes é necessário instalar pacotes adicionais, que não vêm com o <code>{rmarkdown}</code>. Abaixo, segue uma lista de pacotes usualmente utilizados nesse contexto:</p>
+<ul>
+<li><code>{officedown}</code>.</li>
+<li><code>{officer}</code>, que é uma dependência do <code>{officedown}</code>.</li>
+<li><code>{flextable}</code>, para geração de tabelas.</li>
+<li><code>{svglite}</code>, para renderizar gráficos em SVG.</li>
+</ul>
+<blockquote class="blockquote">
+<p>Uma dica adicional: É possível gerar gráficos <em>editáveis</em> nos documentos Office! Dessa forma, você pode gerar o relatório bruto e depois editar manualmente. Para isso, siga o tutorial deste <a href="https://www.youtube.com/watch?v=Yprmq8AUf8g">vídeo do YouTube</a>. Referência: <a href="http://www.sthda.com/english/wiki/saving-high-resolution-ggplots-how-to-preserve-semi-transparency">link</a>.</p>
+</blockquote>
+<section id="no-windows-2" class="level4" data-number="1.3.2.1">
+<h4 data-number="1.3.2.1" class="anchored" data-anchor-id="no-windows-2"><span class="header-section-number">1.3.2.1</span> No Windows</h4>
+<p>O LibreOffice pode ser instalado através <a href="https://pt-br.libreoffice.org/baixe-ja/libreoffice-novo/">deste link</a>, escolhendo o sistema operacional “Windows” e clicando em “Baixar” e executando o arquivo baixado.</p>
+</section>
+<section id="no-linux-2" class="level4" data-number="1.3.2.2">
+<h4 data-number="1.3.2.2" class="anchored" data-anchor-id="no-linux-2"><span class="header-section-number">1.3.2.2</span> No Linux</h4>
+<p>No linux, a forma mais fácil de abrir documentos provenientes do Office é utilizando o LibreOffice:</p>
+<pre><code>sudo apt install libreoffice</code></pre>
+<blockquote class="blockquote">
+<p>O LibreOffice possui algumas limitações quando comparado ao software da Microsoft. Por exemplo, as tabelas que saem bonitas no Office podem ficar desformatadas no LibreOffice.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>o LibreOffice 7.2 não está ainda no aptitude. Se quiser instalar essa versão, é possível baixar o arquivo <code>.deb</code> no <a href="https://www.libreoffice.org">site da ferramenta</a>.</p>
+</blockquote>
+</section>
+<section id="no-macos-2" class="level4" data-number="1.3.2.3">
+<h4 data-number="1.3.2.3" class="anchored" data-anchor-id="no-macos-2"><span class="header-section-number">1.3.2.3</span> No MacOS</h4>
+<p>O sistema operaciona MacOS disponibiliza o <a href="https://www.apple.com/br/iwork/">iWork</a>, que é composto pelas ferramentas Numbers, Pages e Keynote. Esses programas possibilitam abrir arquivos provenientes do Office.</p>
+<p>Outra opção é a utilização do LibreOffice.</p>
+<ol type="1">
+<li><p>Primeiro, faça o download do arquivo <code>.dmg</code> de instalação, através <a href="https://pt-br.libreoffice.org/baixe-ja/libreoffice-novo/">deste link</a>, escolhendo o sistema operacional “MacOS” e clicando em “Baixar”.</p></li>
+<li><p>Após baixar o arquivo, abra-o. Uma janela irá abrir (como na imagem a seguir). Você deve arrastar o ícone “LibreOffice” para a pasta “Applications”.</p></li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="assets/img/instalacao/gif_libreoffice.gif" class="img-fluid"></p>
+</div>
+</div>
+<ol start="3" type="1">
+<li>O LibreOffice será instalado e você poderá utilizá-lo abrindo através do Launchpad (menu de arquivos instalados), ou também utilizando a pesquisa do Mac (utilizando o atalho Command + Barra de espaço), pesquisando por LibreOffice para abrir o software.</li>
+</ol>
+</section>
+</section>
+<section id="pagedown-e-chrome" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="pagedown-e-chrome"><span class="header-section-number">1.3.3</span> Pagedown e Chrome</h3>
+<p>O <code>{pagedown}</code> é uma alternativa recente para produzir arquivos em HTML utilizando o <a href="https://www.pagedjs.org/"><code>paged.js</code></a>, uma biblioteca em JavaScript que torna um arquivo HTML muito parecido com um PDF. Com a ajuda do Chrome, é possível, inclusive, exportar o arquivo para PDF.</p>
+<p>O <code>{pagedown}</code>, portanto, apresenta o melhor de dois mundos: a praticidade da extensão HTML e a portabilidade de arquivos PDF. Dessa forma, é possível gerar documentos PDF com formatos agradáveis sem depender do LaTeX.</p>
+<p>No entanto, para gerar documentos PDF, é preciso utilizar um navegador. O navegador recomendado pelo <code>{pagedown}</code> é o <a href="https://www.google.com/intl/pt-BR/chrome/">Chrome</a>, tanto que o pacote já vem com a função <code>pagedown::chrome_print()</code>, que pode ser utilizada para transformar um arquivo HTML ou RMarkdown em PDF.</p>
+<blockquote class="blockquote">
+<p>Se você já tiver o Chrome instalado na sua máquina, provavelmente tudo funcionará sem problemas. Se não tiver e não quiser instalar, é possível instalar somente o <a href="https://developers.google.com/web/updates/2017/04/headless-chrome">headless Chrome</a>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>No linux, uma alternativa é instalar o projeto Chromium, que é quase que totalmente open source.</p>
+</blockquote>
+</section>
+<section id="renderizando-html-widgets" class="level3" data-number="1.3.4">
+<h3 data-number="1.3.4" class="anchored" data-anchor-id="renderizando-html-widgets"><span class="header-section-number">1.3.4</span> Renderizando HTML widgets</h3>
+<p>Os HTML widgets são formas de ligar bibliotecas do JavaScript com pacotes do R. Isso permite gerar relatórios dinâmicos em HTML diretamente do R. O pacote <code>{htmlwidgets}</code> possui um conjunto de melhores práticas para criação dessas soluções.</p>
+<p>No entanto, é comum utilizar HTML widgets em relatórios estáticos. Para isso, o R precisa de uma estratégia para tirar fotos estáticas dos widgets. Isso é realizado através do pacote <code>{webshot}</code>.</p>
+<p>Você pode instalar o <code>{webshot}</code> executando o código abaixo:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"webshot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para que o <code>{webshot}</code> funcione, no entanto, também é necessário ter o PhantomJS instalado na máquina. O PhantomJS é basicamente um navegador que roda totalmente no plano de fundo, possibilitando a captura de tela.</p>
+<p>Para instalar o PhantomJS, execute o código abaixo:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">install_phantomjs</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="blogdown" class="level3" data-number="1.3.5">
+<h3 data-number="1.3.5" class="anchored" data-anchor-id="blogdown"><span class="header-section-number">1.3.5</span> Blogdown</h3>
+<p>Para criar blogs utilizando o pacote <code>{blogdown}</code>, também é necessário instalar o Hugo, programa que renderiza sites estáticos.</p>
+<p>Felizmente, essa tarefa é bem tranquila pois o <code>{blogdown}</code> já vem com um helper para isso. Basta executar o código abaixo e reiniciar a sua sessão do R para que o Hugo seja instalado:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>blogdown<span class="sc">::</span><span class="fu">install_hugo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ferramentas-de-desenvolvimento" class="level3" data-number="1.3.6">
+<h3 data-number="1.3.6" class="anchored" data-anchor-id="ferramentas-de-desenvolvimento"><span class="header-section-number">1.3.6</span> Ferramentas de desenvolvimento</h3>
+<p>Em algumas situações (como por exemplo, no desenvolvimento de pacotes), é solicitada a instalação de ferramentas de desenvolvimento. Essas ferramentas dependem do sistema operacional utilizado.</p>
+<p>No caso do desenvolvimento de pacotes, você pode verificar se já possui as ferramentas de desenvolvimento instaladas usando a seguinte função: <code>devtools::has_devel()</code>. Caso a mensagem retornada seja <em>“Your system is ready to build packages!”</em>, significa que você já tem as ferramentas necessárias instaladas.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">has_devel</span>()</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Your system is ready to build packages!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="no-windows---rtools" class="level4" data-number="1.3.6.1">
+<h4 data-number="1.3.6.1" class="anchored" data-anchor-id="no-windows---rtools"><span class="header-section-number">1.3.6.1</span> No Windows - Rtools</h4>
+<!-- Adicionar explicação sobre o rtools. O que é? Quando é necessário? -->
+<p>O software Rtools é apenas necessário para computadores que utilizem o sistema operacional Windows. Para instalá-lo, clique <a href="https://cran.r-project.org/bin/windows/Rtools/">neste link</a> e faça o download do arquivo instalador referente à sua versão do Windows (32 ou 64 bits). Abra o arquivo baixado para realizar a instalação.</p>
+</section>
+<section id="no-linux---r-base-dev" class="level4" data-number="1.3.6.2">
+<h4 data-number="1.3.6.2" class="anchored" data-anchor-id="no-linux---r-base-dev"><span class="header-section-number">1.3.6.2</span> No Linux - r-base-dev</h4>
+<p>No Linux, caso seja necessário, você também pode instalar o pacote <code>r-base-dev</code>. Por exemplo, no Ubuntu você pode instalá-lo executando o seguinte código no terminal:</p>
+<pre><code>sudo apt install r-base-dev</code></pre>
+</section>
+<section id="no-macos---xcode-command-line-tools" class="level4" data-number="1.3.6.3">
+<h4 data-number="1.3.6.3" class="anchored" data-anchor-id="no-macos---xcode-command-line-tools"><span class="header-section-number">1.3.6.3</span> No MacOS - Xcode command line tools</h4>
+<p>O Xcode command line tools é uma ferramenta de desenvolvimento oficial da Apple. Para instalar essa ferramenta, primeiramente é preciso acessar o Terminal. Você pode encontrar o Terminal procurando na lista de programas instalados (<em>Launchpad</em>), ou então na opção de busca (usando o atalho: <strong>command + barra de espaço</strong>) e escrevendo Terminal.</p>
+<p>No terminal, escreva o seguinte código e aperte Enter, o que iniciará a instalação:</p>
+<pre><code>xcode-select --install</code></pre>
+<p>Siga as instruções apresentadas para instalar.</p>
+<p>Caso a seguinte mensagem apareça, significa que você já tem a ferramenta instalada: <code>error: command line tools are already installed, use "Software Update" to install updates</code>.</p>
+<p>Caso queira confirmar que a instalação foi bem sucedida, execute no terminal o código a seguir. Caso a mensagem de retorno seja um caminho (por exemplo: <code>/Library/Developer/CommandLineTools</code>), significa que a instalação foi bem sucedida, e esse é o caminho onde a ferramenta foi instalada.</p>
+<pre><code>xcode-select -p</code></pre>
+</section>
+</section>
+<section id="git" class="level3" data-number="1.3.7">
+<h3 data-number="1.3.7" class="anchored" data-anchor-id="git"><span class="header-section-number">1.3.7</span> Git</h3>
+<p>O Git é um programa para linha de comando que possibilita realizar o controle de versões dos arquivos em um diretório (ou seja, em uma pasta). Para instalar esse sistema de controle de versões distribuído, acesse a <a href="http://git-scm.com/download/">página sobre Download do Git</a>, escolha o seu sistema operacional, siga as instruções apresentadas para instalação.</p>
+
+
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>O Pandoc já vem dentro do próprio RStudio, então não é necessário instalar este <em>software</em>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Sobre</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./rstudio.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">RStudio</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
